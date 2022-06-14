@@ -33,27 +33,61 @@ public final class NetworkSecurityGroupVnic {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC
+         * is attached to (for example, a Compute instance).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC
+         * is attached to (for example, a Compute instance).
+         *
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * The date and time the VNIC was added to the network security group, in the format
+         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAssociated")
         private java.util.Date timeAssociated;
 
+        /**
+         * The date and time the VNIC was added to the network security group, in the format
+         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeAssociated the value to set
+         * @return this builder
+         **/
         public Builder timeAssociated(java.util.Date timeAssociated) {
             this.timeAssociated = timeAssociated;
             this.__explicitlySet__.add("timeAssociated");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         * @param vnicId the value to set
+         * @return this builder
+         **/
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
@@ -101,6 +135,12 @@ public final class NetworkSecurityGroupVnic {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC
+     * is attached to (for example, a Compute instance).
+     *
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -115,6 +155,14 @@ public final class NetworkSecurityGroupVnic {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssociated")
     private final java.util.Date timeAssociated;
 
+    /**
+     * The date and time the VNIC was added to the network security group, in the format
+     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAssociated() {
         return timeAssociated;
     }
@@ -125,6 +173,10 @@ public final class NetworkSecurityGroupVnic {
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+     * @return the value
+     **/
     public String getVnicId() {
         return vnicId;
     }

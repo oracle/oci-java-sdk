@@ -29,9 +29,19 @@ public final class CreateVaultReplicaDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The region in the realm to which the vault need to be replicated to
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
         private String replicaRegion;
 
+        /**
+         * The region in the realm to which the vault need to be replicated to
+         *
+         * @param replicaRegion the value to set
+         * @return this builder
+         **/
         public Builder replicaRegion(String replicaRegion) {
             this.replicaRegion = replicaRegion;
             this.__explicitlySet__.add("replicaRegion");
@@ -74,6 +84,11 @@ public final class CreateVaultReplicaDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
     private final String replicaRegion;
 
+    /**
+     * The region in the realm to which the vault need to be replicated to
+     *
+     * @return the value
+     **/
     public String getReplicaRegion() {
         return replicaRegion;
     }

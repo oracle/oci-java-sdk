@@ -29,27 +29,49 @@ public final class ApprovalAction {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The subject ID of the user who approves or disapproves a DevOps deployment stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
         private String subjectId;
 
+        /**
+         * The subject ID of the user who approves or disapproves a DevOps deployment stage.
+         * @param subjectId the value to set
+         * @return this builder
+         **/
         public Builder subjectId(String subjectId) {
             this.subjectId = subjectId;
             this.__explicitlySet__.add("subjectId");
             return this;
         }
-
+        /**
+         * The action of the user on the DevOps deployment stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The action of the user on the DevOps deployment stage.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-
+        /**
+         * The reason for approving or rejecting the deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
+        /**
+         * The reason for approving or rejecting the deployment.
+         * @param reason the value to set
+         * @return this builder
+         **/
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
@@ -92,6 +114,10 @@ public final class ApprovalAction {
     @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
     private final String subjectId;
 
+    /**
+     * The subject ID of the user who approves or disapproves a DevOps deployment stage.
+     * @return the value
+     **/
     public String getSubjectId() {
         return subjectId;
     }
@@ -149,6 +175,10 @@ public final class ApprovalAction {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The action of the user on the DevOps deployment stage.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }
@@ -159,6 +189,10 @@ public final class ApprovalAction {
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
+    /**
+     * The reason for approving or rejecting the deployment.
+     * @return the value
+     **/
     public String getReason() {
         return reason;
     }

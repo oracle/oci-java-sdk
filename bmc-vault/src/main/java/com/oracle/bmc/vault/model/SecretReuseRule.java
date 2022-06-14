@@ -26,9 +26,19 @@ package com.oracle.bmc.vault.model;
 public final class SecretReuseRule extends SecretRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedOnDeletedSecretVersions")
         private Boolean isEnforcedOnDeletedSecretVersions;
 
+        /**
+         * A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
+         *
+         * @param isEnforcedOnDeletedSecretVersions the value to set
+         * @return this builder
+         **/
         public Builder isEnforcedOnDeletedSecretVersions(
                 Boolean isEnforcedOnDeletedSecretVersions) {
             this.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
@@ -79,6 +89,11 @@ public final class SecretReuseRule extends SecretRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedOnDeletedSecretVersions")
     private final Boolean isEnforcedOnDeletedSecretVersions;
 
+    /**
+     * A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnforcedOnDeletedSecretVersions() {
         return isEnforcedOnDeletedSecretVersions;
     }

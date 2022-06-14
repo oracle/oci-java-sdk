@@ -77,146 +77,275 @@ public final class OperationsInsightsPrivateEndpoint {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the Private service accessed database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the Private service accessed database.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The display name of the private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the private endpoint.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The compartment OCID of the Private service accessed database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment OCID of the Private service accessed database.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The OCID of the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * The OCID of the VCN.
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-
+        /**
+         * The OCID of the subnet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of the subnet.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
+        /**
+         * The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
+         *
+         * @param privateIp the value to set
+         * @return this builder
+         **/
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
             return this;
         }
-
+        /**
+         * The description of the private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the private endpoint.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The current state of the private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OperationsInsightsPrivateEndpointLifecycleState lifecycleState;
 
+        /**
+         * The current state of the private endpoint.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(
                 OperationsInsightsPrivateEndpointLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointStatusDetails")
         private String privateEndpointStatusDetails;
 
+        /**
+         * A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
+         * @param privateEndpointStatusDetails the value to set
+         * @return this builder
+         **/
         public Builder privateEndpointStatusDetails(String privateEndpointStatusDetails) {
             this.privateEndpointStatusDetails = privateEndpointStatusDetails;
             this.__explicitlySet__.add("privateEndpointStatusDetails");
             return this;
         }
-
+        /**
+         * The flag is to identify if private endpoint is used for rac database or not
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
         private Boolean isUsedForRacDbs;
 
+        /**
+         * The flag is to identify if private endpoint is used for rac database or not
+         * @param isUsedForRacDbs the value to set
+         * @return this builder
+         **/
         public Builder isUsedForRacDbs(Boolean isUsedForRacDbs) {
             this.isUsedForRacDbs = isUsedForRacDbs;
             this.__explicitlySet__.add("isUsedForRacDbs");
             return this;
         }
-
+        /**
+         * The OCIDs of the network security groups that the private endpoint belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * The OCIDs of the network security groups that the private endpoint belongs to.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -291,6 +420,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the Private service accessed database.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -301,6 +434,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the private endpoint.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -311,6 +448,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment OCID of the Private service accessed database.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -321,6 +462,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * The OCID of the VCN.
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }
@@ -331,6 +476,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of the subnet.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -342,6 +491,11 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
+    /**
+     * The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
+     *
+     * @return the value
+     **/
     public String getPrivateIp() {
         return privateIp;
     }
@@ -352,6 +506,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the private endpoint.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -362,6 +520,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -372,6 +534,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OperationsInsightsPrivateEndpointLifecycleState lifecycleState;
 
+    /**
+     * The current state of the private endpoint.
+     * @return the value
+     **/
     public OperationsInsightsPrivateEndpointLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -382,6 +548,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -392,6 +562,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointStatusDetails")
     private final String privateEndpointStatusDetails;
 
+    /**
+     * A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
+     * @return the value
+     **/
     public String getPrivateEndpointStatusDetails() {
         return privateEndpointStatusDetails;
     }
@@ -402,6 +576,10 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
     private final Boolean isUsedForRacDbs;
 
+    /**
+     * The flag is to identify if private endpoint is used for rac database or not
+     * @return the value
+     **/
     public Boolean getIsUsedForRacDbs() {
         return isUsedForRacDbs;
     }
@@ -413,6 +591,11 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * The OCIDs of the network security groups that the private endpoint belongs to.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -425,6 +608,12 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -437,6 +626,12 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -449,6 +644,12 @@ public final class OperationsInsightsPrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

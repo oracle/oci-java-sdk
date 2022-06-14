@@ -17,6 +17,9 @@ public class ListOrganizationTenanciesRequest
      */
     private String organizationId;
 
+    /**
+     * OCID of the organization.
+     */
     public String getOrganizationId() {
         return organizationId;
     }
@@ -25,6 +28,9 @@ public class ListOrganizationTenanciesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +39,9 @@ public class ListOrganizationTenanciesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -41,6 +50,9 @@ public class ListOrganizationTenanciesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -52,10 +64,14 @@ public class ListOrganizationTenanciesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of the organization.
+         */
         private String organizationId = null;
 
         /**
          * OCID of the organization.
+         * @param organizationId the value to set
          * @return this builder instance
          */
         public Builder organizationId(String organizationId) {
@@ -63,10 +79,14 @@ public class ListOrganizationTenanciesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -74,10 +94,14 @@ public class ListOrganizationTenanciesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -85,10 +109,14 @@ public class ListOrganizationTenanciesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -170,7 +198,8 @@ public class ListOrganizationTenanciesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -180,6 +209,10 @@ public class ListOrganizationTenanciesRequest
                 .limit(limit);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

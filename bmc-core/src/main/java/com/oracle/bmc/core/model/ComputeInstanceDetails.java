@@ -27,6 +27,7 @@ package com.oracle.bmc.core.model;
 public final class ComputeInstanceDetails extends InstanceConfigurationInstanceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumes")
         private java.util.List<InstanceConfigurationBlockVolumeDetails> blockVolumes;
 

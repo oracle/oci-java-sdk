@@ -30,18 +30,41 @@ public final class UpdateResourceActionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of the resource action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the resource action.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The date and time the current status will change. The format is defined by RFC3339.
+         * <p>
+         * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
+         * date and time."
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
         private java.util.Date timeStatusEnd;
 
+        /**
+         * The date and time the current status will change. The format is defined by RFC3339.
+         * <p>
+         * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
+         * date and time."
+         *
+         * @param timeStatusEnd the value to set
+         * @return this builder
+         **/
         public Builder timeStatusEnd(java.util.Date timeStatusEnd) {
             this.timeStatusEnd = timeStatusEnd;
             this.__explicitlySet__.add("timeStatusEnd");
@@ -84,6 +107,10 @@ public final class UpdateResourceActionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the resource action.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -98,6 +125,14 @@ public final class UpdateResourceActionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
     private final java.util.Date timeStatusEnd;
 
+    /**
+     * The date and time the current status will change. The format is defined by RFC3339.
+     * <p>
+     * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
+     * date and time."
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStatusEnd() {
         return timeStatusEnd;
     }

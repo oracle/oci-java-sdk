@@ -16,6 +16,9 @@ public class DeleteSuppressionRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String suppressionId;
 
+    /**
+     * The unique OCID of the suppression.
+     */
     public String getSuppressionId() {
         return suppressionId;
     }
@@ -24,6 +27,9 @@ public class DeleteSuppressionRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class DeleteSuppressionRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique OCID of the suppression.
+         */
         private String suppressionId = null;
 
         /**
          * The unique OCID of the suppression.
+         * @param suppressionId the value to set
          * @return this builder instance
          */
         public Builder suppressionId(String suppressionId) {
@@ -46,10 +56,14 @@ public class DeleteSuppressionRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class DeleteSuppressionRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().suppressionId(suppressionId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class ChangeVolumeCompartmentRequest
      */
     private String volumeId;
 
+    /**
+     * The OCID of the volume.
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -26,6 +29,9 @@ public class ChangeVolumeCompartmentRequest
      */
     private com.oracle.bmc.core.model.ChangeVolumeCompartmentDetails changeVolumeCompartmentDetails;
 
+    /**
+     * Request to change the compartment of given volume.
+     */
     public com.oracle.bmc.core.model.ChangeVolumeCompartmentDetails
             getChangeVolumeCompartmentDetails() {
         return changeVolumeCompartmentDetails;
@@ -37,6 +43,11 @@ public class ChangeVolumeCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -59,10 +70,14 @@ public class ChangeVolumeCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the volume.
+         */
         private String volumeId = null;
 
         /**
          * The OCID of the volume.
+         * @param volumeId the value to set
          * @return this builder instance
          */
         public Builder volumeId(String volumeId) {
@@ -70,11 +85,15 @@ public class ChangeVolumeCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of given volume.
+         */
         private com.oracle.bmc.core.model.ChangeVolumeCompartmentDetails
                 changeVolumeCompartmentDetails = null;
 
         /**
          * Request to change the compartment of given volume.
+         * @param changeVolumeCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeVolumeCompartmentDetails(
@@ -84,12 +103,18 @@ public class ChangeVolumeCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -180,7 +205,8 @@ public class ChangeVolumeCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +215,10 @@ public class ChangeVolumeCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

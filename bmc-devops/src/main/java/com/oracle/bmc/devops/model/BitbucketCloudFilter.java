@@ -27,9 +27,17 @@ package com.oracle.bmc.devops.model;
 public final class BitbucketCloudFilter extends Filter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The events, for example, PUSH, PULL_REQUEST_MERGE.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("events")
         private java.util.List<Events> events;
 
+        /**
+         * The events, for example, PUSH, PULL_REQUEST_MERGE.
+         * @param events the value to set
+         * @return this builder
+         **/
         public Builder events(java.util.List<Events> events) {
             this.events = events;
             this.__explicitlySet__.add("events");
@@ -136,6 +144,10 @@ public final class BitbucketCloudFilter extends Filter {
     @com.fasterxml.jackson.annotation.JsonProperty("events")
     private final java.util.List<Events> events;
 
+    /**
+     * The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return the value
+     **/
     public java.util.List<Events> getEvents() {
         return events;
     }

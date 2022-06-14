@@ -16,6 +16,9 @@ public class GetDbSystemPatchRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String dbSystemId;
 
+    /**
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -24,6 +27,9 @@ public class GetDbSystemPatchRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String patchId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+     */
     public String getPatchId() {
         return patchId;
     }
@@ -35,10 +41,14 @@ public class GetDbSystemPatchRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbSystemId = null;
 
         /**
          * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbSystemId the value to set
          * @return this builder instance
          */
         public Builder dbSystemId(String dbSystemId) {
@@ -46,10 +56,14 @@ public class GetDbSystemPatchRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         */
         private String patchId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         * @param patchId the value to set
          * @return this builder instance
          */
         public Builder patchId(String patchId) {
@@ -127,12 +141,17 @@ public class GetDbSystemPatchRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dbSystemId(dbSystemId).patchId(patchId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

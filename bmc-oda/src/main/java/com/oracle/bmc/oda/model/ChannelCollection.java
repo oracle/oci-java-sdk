@@ -29,9 +29,17 @@ public final class ChannelCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Channel summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ChannelSummary> items;
 
+        /**
+         * The Channel summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ChannelSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ChannelCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ChannelSummary> items;
 
+    /**
+     * The Channel summaries.
+     * @return the value
+     **/
     public java.util.List<ChannelSummary> getItems() {
         return items;
     }

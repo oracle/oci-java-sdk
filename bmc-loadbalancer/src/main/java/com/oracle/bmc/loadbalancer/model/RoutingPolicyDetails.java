@@ -30,9 +30,17 @@ public final class RoutingPolicyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of routing rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<RoutingRule> rules;
 
+        /**
+         * The list of routing rules.
+         * @param rules the value to set
+         * @return this builder
+         **/
         public Builder rules(java.util.List<RoutingRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -74,6 +82,10 @@ public final class RoutingPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<RoutingRule> rules;
 
+    /**
+     * The list of routing rules.
+     * @return the value
+     **/
     public java.util.List<RoutingRule> getRules() {
         return rules;
     }

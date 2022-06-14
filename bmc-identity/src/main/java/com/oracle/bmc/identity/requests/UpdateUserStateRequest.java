@@ -18,6 +18,9 @@ public class UpdateUserStateRequest
      */
     private String userId;
 
+    /**
+     * The OCID of the user.
+     */
     public String getUserId() {
         return userId;
     }
@@ -26,6 +29,9 @@ public class UpdateUserStateRequest
      */
     private com.oracle.bmc.identity.model.UpdateStateDetails updateStateDetails;
 
+    /**
+     * Request object for updating a user state.
+     */
     public com.oracle.bmc.identity.model.UpdateStateDetails getUpdateStateDetails() {
         return updateStateDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateUserStateRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,10 +70,14 @@ public class UpdateUserStateRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the user.
+         */
         private String userId = null;
 
         /**
          * The OCID of the user.
+         * @param userId the value to set
          * @return this builder instance
          */
         public Builder userId(String userId) {
@@ -69,10 +85,14 @@ public class UpdateUserStateRequest
             return this;
         }
 
+        /**
+         * Request object for updating a user state.
+         */
         private com.oracle.bmc.identity.model.UpdateStateDetails updateStateDetails = null;
 
         /**
          * Request object for updating a user state.
+         * @param updateStateDetails the value to set
          * @return this builder instance
          */
         public Builder updateStateDetails(
@@ -81,6 +101,12 @@ public class UpdateUserStateRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -88,6 +114,7 @@ public class UpdateUserStateRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -178,12 +205,17 @@ public class UpdateUserStateRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().userId(userId).updateStateDetails(updateStateDetails).ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

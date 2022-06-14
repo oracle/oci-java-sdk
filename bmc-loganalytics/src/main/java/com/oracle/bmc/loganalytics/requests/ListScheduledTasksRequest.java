@@ -17,6 +17,10 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -25,6 +29,9 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private com.oracle.bmc.loganalytics.model.TaskType taskType;
 
+    /**
+     * Required parameter to specify schedule task type.
+     */
     public com.oracle.bmc.loganalytics.model.TaskType getTaskType() {
         return taskType;
     }
@@ -33,6 +40,9 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -41,6 +51,9 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +62,9 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -57,6 +73,9 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -66,6 +85,10 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -112,6 +135,10 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -159,6 +186,10 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -169,6 +200,11 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String savedSearchId;
 
+    /**
+     * A filter to return only scheduled tasks whose stream action savedSearchId matches the given
+     * ManagementSavedSearch id [OCID] exactly.
+     *
+     */
     public String getSavedSearchId() {
         return savedSearchId;
     }
@@ -178,6 +214,10 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String displayNameContains;
 
+    /**
+     * A filter to return only resources whose display name contains the substring.
+     *
+     */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
@@ -189,11 +229,16 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -201,10 +246,14 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Required parameter to specify schedule task type.
+         */
         private com.oracle.bmc.loganalytics.model.TaskType taskType = null;
 
         /**
          * Required parameter to specify schedule task type.
+         * @param taskType the value to set
          * @return this builder instance
          */
         public Builder taskType(com.oracle.bmc.loganalytics.model.TaskType taskType) {
@@ -212,10 +261,14 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -223,10 +276,14 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -234,10 +291,14 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -245,10 +306,14 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -256,11 +321,16 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the given display name exactly.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -268,11 +338,16 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -280,11 +355,16 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -292,12 +372,18 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only scheduled tasks whose stream action savedSearchId matches the given
+         * ManagementSavedSearch id [OCID] exactly.
+         *
+         */
         private String savedSearchId = null;
 
         /**
          * A filter to return only scheduled tasks whose stream action savedSearchId matches the given
          * ManagementSavedSearch id [OCID] exactly.
          *
+         * @param savedSearchId the value to set
          * @return this builder instance
          */
         public Builder savedSearchId(String savedSearchId) {
@@ -305,11 +391,16 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only resources whose display name contains the substring.
+         *
+         */
         private String displayNameContains = null;
 
         /**
          * A filter to return only resources whose display name contains the substring.
          *
+         * @param displayNameContains the value to set
          * @return this builder instance
          */
         public Builder displayNameContains(String displayNameContains) {
@@ -405,7 +496,8 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -422,6 +514,10 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
                 .displayNameContains(displayNameContains);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,9 +29,17 @@ public final class WorkRequestLogEntryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of work request log entries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<WorkRequestLogEntry> items;
 
+        /**
+         * A list of work request log entries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<WorkRequestLogEntry> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class WorkRequestLogEntryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<WorkRequestLogEntry> items;
 
+    /**
+     * A list of work request log entries.
+     * @return the value
+     **/
     public java.util.List<WorkRequestLogEntry> getItems() {
         return items;
     }

@@ -16,6 +16,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String glossaryKey;
 
+    /**
+     * Unique glossary key.
+     */
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -32,6 +38,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -43,6 +52,12 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String displayNameContains;
 
+    /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
+     */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
@@ -51,6 +66,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+     */
     public com.oracle.bmc.datacatalog.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -59,6 +77,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String parentTermKey;
 
+    /**
+     * Unique key of the parent term.
+     */
     public String getParentTermKey() {
         return parentTermKey;
     }
@@ -67,6 +88,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Boolean isAllowedToHaveChildTerms;
 
+    /**
+     * Indicates whether a term may contain child terms.
+     */
     public Boolean getIsAllowedToHaveChildTerms() {
         return isAllowedToHaveChildTerms;
     }
@@ -75,6 +99,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private com.oracle.bmc.datacatalog.model.TermWorkflowStatus workflowStatus;
 
+    /**
+     * Status of the approval workflow for this business term in the glossary.
+     */
     public com.oracle.bmc.datacatalog.model.TermWorkflowStatus getWorkflowStatus() {
         return workflowStatus;
     }
@@ -83,6 +110,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String path;
 
+    /**
+     * Full path of the resource for resources that support paths.
+     */
     public String getPath() {
         return path;
     }
@@ -139,6 +169,10 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * Specifies the fields to return in a term summary response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -185,6 +219,10 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -229,6 +267,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -237,6 +278,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -245,6 +289,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -253,6 +300,9 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -264,10 +314,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -275,10 +329,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique glossary key.
+         */
         private String glossaryKey = null;
 
         /**
          * Unique glossary key.
+         * @param glossaryKey the value to set
          * @return this builder instance
          */
         public Builder glossaryKey(String glossaryKey) {
@@ -286,10 +344,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -297,6 +359,12 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
+         */
         private String displayNameContains = null;
 
         /**
@@ -304,6 +372,7 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * For Example : /folders?displayNameContains=Cu.*
          * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
+         * @param displayNameContains the value to set
          * @return this builder instance
          */
         public Builder displayNameContains(String displayNameContains) {
@@ -311,10 +380,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         */
         private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -323,10 +396,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique key of the parent term.
+         */
         private String parentTermKey = null;
 
         /**
          * Unique key of the parent term.
+         * @param parentTermKey the value to set
          * @return this builder instance
          */
         public Builder parentTermKey(String parentTermKey) {
@@ -334,10 +411,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Indicates whether a term may contain child terms.
+         */
         private Boolean isAllowedToHaveChildTerms = null;
 
         /**
          * Indicates whether a term may contain child terms.
+         * @param isAllowedToHaveChildTerms the value to set
          * @return this builder instance
          */
         public Builder isAllowedToHaveChildTerms(Boolean isAllowedToHaveChildTerms) {
@@ -345,10 +426,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Status of the approval workflow for this business term in the glossary.
+         */
         private com.oracle.bmc.datacatalog.model.TermWorkflowStatus workflowStatus = null;
 
         /**
          * Status of the approval workflow for this business term in the glossary.
+         * @param workflowStatus the value to set
          * @return this builder instance
          */
         public Builder workflowStatus(
@@ -357,10 +442,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Full path of the resource for resources that support paths.
+         */
         private String path = null;
 
         /**
          * Full path of the resource for resources that support paths.
+         * @param path the value to set
          * @return this builder instance
          */
         public Builder path(String path) {
@@ -368,11 +457,16 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Specifies the fields to return in a term summary response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in a term summary response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -383,17 +477,23 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Singular setter. Specifies the fields to return in a term summary response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -401,10 +501,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -412,10 +516,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -423,10 +531,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -434,10 +546,14 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -541,7 +657,8 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -562,6 +679,10 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

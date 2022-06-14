@@ -17,6 +17,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -63,6 +67,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * The field to sort by.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -109,6 +117,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -118,6 +130,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -127,6 +143,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -137,6 +157,11 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -148,11 +173,16 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -160,11 +190,16 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The field to sort by.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -172,11 +207,16 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -184,11 +224,16 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -196,11 +241,16 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -208,12 +258,18 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -299,7 +355,8 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -311,6 +368,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

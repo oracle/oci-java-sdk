@@ -53,72 +53,129 @@ public final class BdsMetastoreConfigurationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ID of the metastore configuration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The ID of the metastore configuration
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The display name of metastore configuration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of metastore configuration
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The type of the metastore in the metastore configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreType")
         private BdsMetastoreConfiguration.MetastoreType metastoreType;
 
+        /**
+         * The type of the metastore in the metastore configuration.
+         * @param metastoreType the value to set
+         * @return this builder
+         **/
         public Builder metastoreType(BdsMetastoreConfiguration.MetastoreType metastoreType) {
             this.metastoreType = metastoreType;
             this.__explicitlySet__.add("metastoreType");
             return this;
         }
-
+        /**
+         * The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
         private String metastoreId;
 
+        /**
+         * The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
+         * @param metastoreId the value to set
+         * @return this builder
+         **/
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = metastoreId;
             this.__explicitlySet__.add("metastoreId");
             return this;
         }
-
+        /**
+         * The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyId")
         private String bdsApiKeyId;
 
+        /**
+         * The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
+         * @param bdsApiKeyId the value to set
+         * @return this builder
+         **/
         public Builder bdsApiKeyId(String bdsApiKeyId) {
             this.bdsApiKeyId = bdsApiKeyId;
             this.__explicitlySet__.add("bdsApiKeyId");
             return this;
         }
-
+        /**
+         * the lifecycle state of the metastore configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private BdsMetastoreConfiguration.LifecycleState lifecycleState;
 
+        /**
+         * the lifecycle state of the metastore configuration.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(BdsMetastoreConfiguration.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -177,6 +234,10 @@ public final class BdsMetastoreConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The ID of the metastore configuration
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -187,6 +248,10 @@ public final class BdsMetastoreConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of metastore configuration
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -197,6 +262,10 @@ public final class BdsMetastoreConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreType")
     private final BdsMetastoreConfiguration.MetastoreType metastoreType;
 
+    /**
+     * The type of the metastore in the metastore configuration.
+     * @return the value
+     **/
     public BdsMetastoreConfiguration.MetastoreType getMetastoreType() {
         return metastoreType;
     }
@@ -207,6 +276,10 @@ public final class BdsMetastoreConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
     private final String metastoreId;
 
+    /**
+     * The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
+     * @return the value
+     **/
     public String getMetastoreId() {
         return metastoreId;
     }
@@ -217,6 +290,10 @@ public final class BdsMetastoreConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyId")
     private final String bdsApiKeyId;
 
+    /**
+     * The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
+     * @return the value
+     **/
     public String getBdsApiKeyId() {
         return bdsApiKeyId;
     }
@@ -227,6 +304,10 @@ public final class BdsMetastoreConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final BdsMetastoreConfiguration.LifecycleState lifecycleState;
 
+    /**
+     * the lifecycle state of the metastore configuration.
+     * @return the value
+     **/
     public BdsMetastoreConfiguration.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -237,6 +318,10 @@ public final class BdsMetastoreConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -247,6 +332,10 @@ public final class BdsMetastoreConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

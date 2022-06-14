@@ -63,54 +63,97 @@ public final class Record {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the record.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the record.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name is created by the user. It is unique and immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name is created by the user. It is unique and immutable.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The date and time the resource was created, in the timestamp format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the resource was created, in the timestamp format defined by RFC3339.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the resource was updated, in the timestamp format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the resource was updated, in the timestamp format defined by RFC3339.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The OCID of the dataset to associate the record with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
         private String datasetId;
 
+        /**
+         * The OCID of the dataset to associate the record with.
+         * @param datasetId the value to set
+         * @return this builder
+         **/
         public Builder datasetId(String datasetId) {
             this.datasetId = datasetId;
             this.__explicitlySet__.add("datasetId");
             return this;
         }
-
+        /**
+         * The OCID of the compartment for the task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment for the task.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -125,19 +168,41 @@ public final class Record {
             this.__explicitlySet__.add("sourceDetails");
             return this;
         }
-
+        /**
+         * Whether or not the record has been labeled and has associated annotations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
         private Boolean isLabeled;
 
+        /**
+         * Whether or not the record has been labeled and has associated annotations.
+         * @param isLabeled the value to set
+         * @return this builder
+         **/
         public Builder isLabeled(Boolean isLabeled) {
             this.isLabeled = isLabeled;
             this.__explicitlySet__.add("isLabeled");
             return this;
         }
-
+        /**
+         * The lifecycle state of the record.
+         * ACTIVE - The record is active and ready for labeling.
+         * INACTIVE - The record has been marked as inactive and should not be used for labeling.
+         * DELETED - The record has been deleted and is no longer available for labeling.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The lifecycle state of the record.
+         * ACTIVE - The record is active and ready for labeling.
+         * INACTIVE - The record has been marked as inactive and should not be used for labeling.
+         * DELETED - The record has been deleted and is no longer available for labeling.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -152,19 +217,41 @@ public final class Record {
             this.__explicitlySet__.add("recordMetadata");
             return this;
         }
-
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -232,6 +319,10 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the record.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -242,6 +333,10 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name is created by the user. It is unique and immutable.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -252,6 +347,10 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the resource was created, in the timestamp format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -262,6 +361,10 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the resource was updated, in the timestamp format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -272,6 +375,10 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
     private final String datasetId;
 
+    /**
+     * The OCID of the dataset to associate the record with.
+     * @return the value
+     **/
     public String getDatasetId() {
         return datasetId;
     }
@@ -282,6 +389,10 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment for the task.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -299,6 +410,10 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
     private final Boolean isLabeled;
 
+    /**
+     * Whether or not the record has been labeled and has associated annotations.
+     * @return the value
+     **/
     public Boolean getIsLabeled() {
         return isLabeled;
     }
@@ -366,6 +481,14 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The lifecycle state of the record.
+     * ACTIVE - The record is active and ready for labeling.
+     * INACTIVE - The record has been marked as inactive and should not be used for labeling.
+     * DELETED - The record has been deleted and is no longer available for labeling.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -385,6 +508,12 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -397,6 +526,12 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

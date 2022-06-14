@@ -36,19 +36,33 @@ public final class HostResourceAllocation extends HostConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Total number of CPUs available
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
         private Integer totalCpus;
 
+        /**
+         * Total number of CPUs available
+         * @param totalCpus the value to set
+         * @return this builder
+         **/
         public Builder totalCpus(Integer totalCpus) {
             this.totalCpus = totalCpus;
             this.__explicitlySet__.add("totalCpus");
             return this;
         }
-
+        /**
+         * Total amount of usable physical memory in gibabytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGB")
         private Double totalMemoryInGB;
 
+        /**
+         * Total amount of usable physical memory in gibabytes
+         * @param totalMemoryInGB the value to set
+         * @return this builder
+         **/
         public Builder totalMemoryInGB(Double totalMemoryInGB) {
             this.totalMemoryInGB = totalMemoryInGB;
             this.__explicitlySet__.add("totalMemoryInGB");
@@ -102,6 +116,10 @@ public final class HostResourceAllocation extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
     private final Integer totalCpus;
 
+    /**
+     * Total number of CPUs available
+     * @return the value
+     **/
     public Integer getTotalCpus() {
         return totalCpus;
     }
@@ -112,6 +130,10 @@ public final class HostResourceAllocation extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGB")
     private final Double totalMemoryInGB;
 
+    /**
+     * Total amount of usable physical memory in gibabytes
+     * @return the value
+     **/
     public Double getTotalMemoryInGB() {
         return totalMemoryInGB;
     }

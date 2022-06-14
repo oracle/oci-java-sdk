@@ -17,6 +17,9 @@ public class ListVirtualServiceRouteTablesRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListVirtualServiceRouteTablesRequest
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire name given.
+     */
     public String getName() {
         return name;
     }
@@ -33,6 +39,9 @@ public class ListVirtualServiceRouteTablesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -41,6 +50,9 @@ public class ListVirtualServiceRouteTablesRequest
      */
     private String page;
 
+    /**
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     */
     public String getPage() {
         return page;
     }
@@ -49,6 +61,9 @@ public class ListVirtualServiceRouteTablesRequest
      */
     private com.oracle.bmc.servicemesh.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.servicemesh.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -96,6 +111,10 @@ public class ListVirtualServiceRouteTablesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for 'timeCreated' is descending. Default order for 'name' is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -104,6 +123,9 @@ public class ListVirtualServiceRouteTablesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -112,6 +134,9 @@ public class ListVirtualServiceRouteTablesRequest
      */
     private String virtualServiceId;
 
+    /**
+     * Unique VirtualService identifier.
+     */
     public String getVirtualServiceId() {
         return virtualServiceId;
     }
@@ -120,6 +145,9 @@ public class ListVirtualServiceRouteTablesRequest
      */
     private String id;
 
+    /**
+     * Unique VirtualServiceRouteTable identifier.
+     */
     public String getId() {
         return id;
     }
@@ -128,6 +156,9 @@ public class ListVirtualServiceRouteTablesRequest
      */
     private String lifecycleState;
 
+    /**
+     * A filter to return only resources that match the life cycle state given.
+     */
     public String getLifecycleState() {
         return lifecycleState;
     }
@@ -139,10 +170,14 @@ public class ListVirtualServiceRouteTablesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -150,10 +185,14 @@ public class ListVirtualServiceRouteTablesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name given.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -161,10 +200,14 @@ public class ListVirtualServiceRouteTablesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -172,10 +215,14 @@ public class ListVirtualServiceRouteTablesRequest
             return this;
         }
 
+        /**
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         */
         private String page = null;
 
         /**
          * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -183,10 +230,14 @@ public class ListVirtualServiceRouteTablesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.servicemesh.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.servicemesh.model.SortOrder sortOrder) {
@@ -194,11 +245,16 @@ public class ListVirtualServiceRouteTablesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for 'timeCreated' is descending. Default order for 'name' is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for 'timeCreated' is descending. Default order for 'name' is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -206,10 +262,14 @@ public class ListVirtualServiceRouteTablesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -217,10 +277,14 @@ public class ListVirtualServiceRouteTablesRequest
             return this;
         }
 
+        /**
+         * Unique VirtualService identifier.
+         */
         private String virtualServiceId = null;
 
         /**
          * Unique VirtualService identifier.
+         * @param virtualServiceId the value to set
          * @return this builder instance
          */
         public Builder virtualServiceId(String virtualServiceId) {
@@ -228,10 +292,14 @@ public class ListVirtualServiceRouteTablesRequest
             return this;
         }
 
+        /**
+         * Unique VirtualServiceRouteTable identifier.
+         */
         private String id = null;
 
         /**
          * Unique VirtualServiceRouteTable identifier.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -239,10 +307,14 @@ public class ListVirtualServiceRouteTablesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the life cycle state given.
+         */
         private String lifecycleState = null;
 
         /**
          * A filter to return only resources that match the life cycle state given.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(String lifecycleState) {
@@ -337,7 +409,8 @@ public class ListVirtualServiceRouteTablesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -353,6 +426,10 @@ public class ListVirtualServiceRouteTablesRequest
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

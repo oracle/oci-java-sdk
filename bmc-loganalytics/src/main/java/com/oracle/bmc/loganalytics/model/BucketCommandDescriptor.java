@@ -72,37 +72,73 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * number of auto calculated ranges to compute if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxBuckets")
         private Integer maxBuckets;
 
+        /**
+         * number of auto calculated ranges to compute if specified.
+         *
+         * @param maxBuckets the value to set
+         * @return this builder
+         **/
         public Builder maxBuckets(Integer maxBuckets) {
             this.maxBuckets = maxBuckets;
             this.__explicitlySet__.add("maxBuckets");
             return this;
         }
-
+        /**
+         * Size of each numeric range if specified. Data type should match numeric field data type specified in the query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private java.math.BigDecimal span;
 
+        /**
+         * Size of each numeric range if specified. Data type should match numeric field data type specified in the query string.
+         *
+         * @param span the value to set
+         * @return this builder
+         **/
         public Builder span(java.math.BigDecimal span) {
             this.span = span;
             this.__explicitlySet__.add("span");
             return this;
         }
-
+        /**
+         * List of the specified numeric ranges.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ranges")
         private java.util.List<BucketRange> ranges;
 
+        /**
+         * List of the specified numeric ranges.
+         *
+         * @param ranges the value to set
+         * @return this builder
+         **/
         public Builder ranges(java.util.List<BucketRange> ranges) {
             this.ranges = ranges;
             this.__explicitlySet__.add("ranges");
             return this;
         }
-
+        /**
+         * Default value to use in place of null if a result does not fit into any of the specified / calculated ranges.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
+        /**
+         * Default value to use in place of null if a result does not fit into any of the specified / calculated ranges.
+         *
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -182,6 +218,11 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("maxBuckets")
     private final Integer maxBuckets;
 
+    /**
+     * number of auto calculated ranges to compute if specified.
+     *
+     * @return the value
+     **/
     public Integer getMaxBuckets() {
         return maxBuckets;
     }
@@ -193,6 +234,11 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final java.math.BigDecimal span;
 
+    /**
+     * Size of each numeric range if specified. Data type should match numeric field data type specified in the query string.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getSpan() {
         return span;
     }
@@ -204,6 +250,11 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("ranges")
     private final java.util.List<BucketRange> ranges;
 
+    /**
+     * List of the specified numeric ranges.
+     *
+     * @return the value
+     **/
     public java.util.List<BucketRange> getRanges() {
         return ranges;
     }
@@ -215,6 +266,11 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
+    /**
+     * Default value to use in place of null if a result does not fit into any of the specified / calculated ranges.
+     *
+     * @return the value
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }

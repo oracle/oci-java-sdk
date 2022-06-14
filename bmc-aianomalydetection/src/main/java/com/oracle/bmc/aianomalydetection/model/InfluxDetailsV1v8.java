@@ -27,18 +27,33 @@ package com.oracle.bmc.aianomalydetection.model;
 public final class InfluxDetailsV1v8 extends InfluxDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * DB Name for influx connection
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
+        /**
+         * DB Name for influx connection
+         * @param databaseName the value to set
+         * @return this builder
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-
+        /**
+         * retention policy is how long the bucket would last
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPolicyName")
         private String retentionPolicyName;
 
+        /**
+         * retention policy is how long the bucket would last
+         * @param retentionPolicyName the value to set
+         * @return this builder
+         **/
         public Builder retentionPolicyName(String retentionPolicyName) {
             this.retentionPolicyName = retentionPolicyName;
             this.__explicitlySet__.add("retentionPolicyName");
@@ -90,6 +105,10 @@ public final class InfluxDetailsV1v8 extends InfluxDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
+    /**
+     * DB Name for influx connection
+     * @return the value
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
@@ -100,6 +119,10 @@ public final class InfluxDetailsV1v8 extends InfluxDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPolicyName")
     private final String retentionPolicyName;
 
+    /**
+     * retention policy is how long the bucket would last
+     * @return the value
+     **/
     public String getRetentionPolicyName() {
         return retentionPolicyName;
     }

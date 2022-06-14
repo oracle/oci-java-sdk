@@ -39,36 +39,65 @@ public final class KafkaSettings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Bootstrap servers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
         private String bootstrapServers;
 
+        /**
+         * Bootstrap servers.
+         * @param bootstrapServers the value to set
+         * @return this builder
+         **/
         public Builder bootstrapServers(String bootstrapServers) {
             this.bootstrapServers = bootstrapServers;
             this.__explicitlySet__.add("bootstrapServers");
             return this;
         }
-
+        /**
+         * Enable auto creation of topic on the server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoCreateTopicsEnable")
         private Boolean autoCreateTopicsEnable;
 
+        /**
+         * Enable auto creation of topic on the server.
+         * @param autoCreateTopicsEnable the value to set
+         * @return this builder
+         **/
         public Builder autoCreateTopicsEnable(Boolean autoCreateTopicsEnable) {
             this.autoCreateTopicsEnable = autoCreateTopicsEnable;
             this.__explicitlySet__.add("autoCreateTopicsEnable");
             return this;
         }
-
+        /**
+         * The number of hours to keep a log file before deleting it (in hours).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logRetentionHours")
         private Integer logRetentionHours;
 
+        /**
+         * The number of hours to keep a log file before deleting it (in hours).
+         * @param logRetentionHours the value to set
+         * @return this builder
+         **/
         public Builder logRetentionHours(Integer logRetentionHours) {
             this.logRetentionHours = logRetentionHours;
             this.__explicitlySet__.add("logRetentionHours");
             return this;
         }
-
+        /**
+         * The default number of log partitions per topic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numPartitions")
         private Integer numPartitions;
 
+        /**
+         * The default number of log partitions per topic.
+         * @param numPartitions the value to set
+         * @return this builder
+         **/
         public Builder numPartitions(Integer numPartitions) {
             this.numPartitions = numPartitions;
             this.__explicitlySet__.add("numPartitions");
@@ -119,6 +148,10 @@ public final class KafkaSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
     private final String bootstrapServers;
 
+    /**
+     * Bootstrap servers.
+     * @return the value
+     **/
     public String getBootstrapServers() {
         return bootstrapServers;
     }
@@ -129,6 +162,10 @@ public final class KafkaSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("autoCreateTopicsEnable")
     private final Boolean autoCreateTopicsEnable;
 
+    /**
+     * Enable auto creation of topic on the server.
+     * @return the value
+     **/
     public Boolean getAutoCreateTopicsEnable() {
         return autoCreateTopicsEnable;
     }
@@ -139,6 +176,10 @@ public final class KafkaSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("logRetentionHours")
     private final Integer logRetentionHours;
 
+    /**
+     * The number of hours to keep a log file before deleting it (in hours).
+     * @return the value
+     **/
     public Integer getLogRetentionHours() {
         return logRetentionHours;
     }
@@ -149,6 +190,10 @@ public final class KafkaSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("numPartitions")
     private final Integer numPartitions;
 
+    /**
+     * The default number of log partitions per topic.
+     * @return the value
+     **/
     public Integer getNumPartitions() {
         return numPartitions;
     }

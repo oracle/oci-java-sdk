@@ -29,9 +29,17 @@ public final class DetectLanguageKeyPhrasesResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of detected keyPhrases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyPhrases")
         private java.util.List<KeyPhrase> keyPhrases;
 
+        /**
+         * List of detected keyPhrases.
+         * @param keyPhrases the value to set
+         * @return this builder
+         **/
         public Builder keyPhrases(java.util.List<KeyPhrase> keyPhrases) {
             this.keyPhrases = keyPhrases;
             this.__explicitlySet__.add("keyPhrases");
@@ -74,6 +82,10 @@ public final class DetectLanguageKeyPhrasesResult {
     @com.fasterxml.jackson.annotation.JsonProperty("keyPhrases")
     private final java.util.List<KeyPhrase> keyPhrases;
 
+    /**
+     * List of detected keyPhrases.
+     * @return the value
+     **/
     public java.util.List<KeyPhrase> getKeyPhrases() {
         return keyPhrases;
     }

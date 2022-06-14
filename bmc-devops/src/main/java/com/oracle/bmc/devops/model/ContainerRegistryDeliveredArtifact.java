@@ -44,19 +44,33 @@ public final class ContainerRegistryDeliveredArtifact extends DeliveredArtifact 
             this.__explicitlySet__.add("outputArtifactName");
             return this;
         }
-
+        /**
+         * The hash of the container registry artifact pushed by the Deliver Artifacts stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deliveredArtifactHash")
         private String deliveredArtifactHash;
 
+        /**
+         * The hash of the container registry artifact pushed by the Deliver Artifacts stage.
+         * @param deliveredArtifactHash the value to set
+         * @return this builder
+         **/
         public Builder deliveredArtifactHash(String deliveredArtifactHash) {
             this.deliveredArtifactHash = deliveredArtifactHash;
             this.__explicitlySet__.add("deliveredArtifactHash");
             return this;
         }
-
+        /**
+         * The imageUri of the OCIR artifact pushed by the DeliverArtifactStage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageUri")
         private String imageUri;
 
+        /**
+         * The imageUri of the OCIR artifact pushed by the DeliverArtifactStage
+         * @param imageUri the value to set
+         * @return this builder
+         **/
         public Builder imageUri(String imageUri) {
             this.imageUri = imageUri;
             this.__explicitlySet__.add("imageUri");
@@ -115,6 +129,10 @@ public final class ContainerRegistryDeliveredArtifact extends DeliveredArtifact 
     @com.fasterxml.jackson.annotation.JsonProperty("deliveredArtifactHash")
     private final String deliveredArtifactHash;
 
+    /**
+     * The hash of the container registry artifact pushed by the Deliver Artifacts stage.
+     * @return the value
+     **/
     public String getDeliveredArtifactHash() {
         return deliveredArtifactHash;
     }
@@ -125,6 +143,10 @@ public final class ContainerRegistryDeliveredArtifact extends DeliveredArtifact 
     @com.fasterxml.jackson.annotation.JsonProperty("imageUri")
     private final String imageUri;
 
+    /**
+     * The imageUri of the OCIR artifact pushed by the DeliverArtifactStage
+     * @return the value
+     **/
     public String getImageUri() {
         return imageUri;
     }

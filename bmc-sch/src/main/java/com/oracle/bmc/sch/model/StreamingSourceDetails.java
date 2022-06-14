@@ -28,9 +28,19 @@ package com.oracle.bmc.sch.model;
 public final class StreamingSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamId")
         private String streamId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+         *
+         * @param streamId the value to set
+         * @return this builder
+         **/
         public Builder streamId(String streamId) {
             this.streamId = streamId;
             this.__explicitlySet__.add("streamId");
@@ -89,6 +99,11 @@ public final class StreamingSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("streamId")
     private final String streamId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+     *
+     * @return the value
+     **/
     public String getStreamId() {
         return streamId;
     }

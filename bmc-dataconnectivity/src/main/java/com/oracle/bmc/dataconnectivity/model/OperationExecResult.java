@@ -44,45 +44,81 @@ public final class OperationExecResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Status of the operation job for particular set of input.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
         private ExecutionStatus executionStatus;
 
+        /**
+         * Status of the operation job for particular set of input.
+         * @param executionStatus the value to set
+         * @return this builder
+         **/
         public Builder executionStatus(ExecutionStatus executionStatus) {
             this.executionStatus = executionStatus;
             this.__explicitlySet__.add("executionStatus");
             return this;
         }
-
+        /**
+         * Error message if execution of operation is failed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * Error message if execution of operation is failed.
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-
+        /**
+         * Metrics of operation execution job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private Object metrics;
 
+        /**
+         * Metrics of operation execution job.
+         * @param metrics the value to set
+         * @return this builder
+         **/
         public Builder metrics(Object metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
             return this;
         }
-
+        /**
+         * List of emitted rows for each OUT/INOUT param.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputValues")
         private java.util.List<java.util.List<Object>> outputValues;
 
+        /**
+         * List of emitted rows for each OUT/INOUT param.
+         * @param outputValues the value to set
+         * @return this builder
+         **/
         public Builder outputValues(java.util.List<java.util.List<Object>> outputValues) {
             this.outputValues = outputValues;
             this.__explicitlySet__.add("outputValues");
             return this;
         }
-
+        /**
+         * True, if error message should be displayed on UI.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isWhitelistedErrorMessage")
         private Boolean isWhitelistedErrorMessage;
 
+        /**
+         * True, if error message should be displayed on UI.
+         * @param isWhitelistedErrorMessage the value to set
+         * @return this builder
+         **/
         public Builder isWhitelistedErrorMessage(Boolean isWhitelistedErrorMessage) {
             this.isWhitelistedErrorMessage = isWhitelistedErrorMessage;
             this.__explicitlySet__.add("isWhitelistedErrorMessage");
@@ -185,6 +221,10 @@ public final class OperationExecResult {
     @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
     private final ExecutionStatus executionStatus;
 
+    /**
+     * Status of the operation job for particular set of input.
+     * @return the value
+     **/
     public ExecutionStatus getExecutionStatus() {
         return executionStatus;
     }
@@ -195,6 +235,10 @@ public final class OperationExecResult {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * Error message if execution of operation is failed.
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -205,6 +249,10 @@ public final class OperationExecResult {
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final Object metrics;
 
+    /**
+     * Metrics of operation execution job.
+     * @return the value
+     **/
     public Object getMetrics() {
         return metrics;
     }
@@ -215,6 +263,10 @@ public final class OperationExecResult {
     @com.fasterxml.jackson.annotation.JsonProperty("outputValues")
     private final java.util.List<java.util.List<Object>> outputValues;
 
+    /**
+     * List of emitted rows for each OUT/INOUT param.
+     * @return the value
+     **/
     public java.util.List<java.util.List<Object>> getOutputValues() {
         return outputValues;
     }
@@ -225,6 +277,10 @@ public final class OperationExecResult {
     @com.fasterxml.jackson.annotation.JsonProperty("isWhitelistedErrorMessage")
     private final Boolean isWhitelistedErrorMessage;
 
+    /**
+     * True, if error message should be displayed on UI.
+     * @return the value
+     **/
     public Boolean getIsWhitelistedErrorMessage() {
         return isWhitelistedErrorMessage;
     }

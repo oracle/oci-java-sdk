@@ -16,6 +16,9 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String tenancyId;
 
+    /**
+     * The ID of the tenancy in which to list resources.
+     */
     public String getTenancyId() {
         return tenancyId;
     }
@@ -35,6 +41,12 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -43,6 +55,9 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -51,6 +66,9 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -95,6 +113,9 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -141,6 +162,10 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -149,6 +174,9 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private com.oracle.bmc.oce.model.LifecycleState lifecycleState;
 
+    /**
+     * Filter results on lifecycleState.
+     */
     public com.oracle.bmc.oce.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -157,6 +185,9 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -168,10 +199,14 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -179,10 +214,14 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The ID of the tenancy in which to list resources.
+         */
         private String tenancyId = null;
 
         /**
          * The ID of the tenancy in which to list resources.
+         * @param tenancyId the value to set
          * @return this builder instance
          */
         public Builder tenancyId(String tenancyId) {
@@ -190,6 +229,12 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -197,6 +242,7 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * Example: {@code My new resource}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -204,10 +250,14 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -215,10 +265,14 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -226,10 +280,14 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -237,11 +295,16 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -249,10 +312,14 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Filter results on lifecycleState.
+         */
         private com.oracle.bmc.oce.model.LifecycleState lifecycleState = null;
 
         /**
          * Filter results on lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(com.oracle.bmc.oce.model.LifecycleState lifecycleState) {
@@ -260,10 +327,14 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -355,7 +426,8 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -370,6 +442,10 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

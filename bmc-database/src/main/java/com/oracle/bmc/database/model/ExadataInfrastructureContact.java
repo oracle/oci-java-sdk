@@ -44,45 +44,81 @@ public final class ExadataInfrastructureContact {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the Exadata Infrastructure contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Exadata Infrastructure contact.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The phone number for the Exadata Infrastructure contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
         private String phoneNumber;
 
+        /**
+         * The phone number for the Exadata Infrastructure contact.
+         * @param phoneNumber the value to set
+         * @return this builder
+         **/
         public Builder phoneNumber(String phoneNumber) {
             this.phoneNumber = phoneNumber;
             this.__explicitlySet__.add("phoneNumber");
             return this;
         }
-
+        /**
+         * The email for the Exadata Infrastructure contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
+        /**
+         * The email for the Exadata Infrastructure contact.
+         * @param email the value to set
+         * @return this builder
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
             return this;
         }
-
+        /**
+         * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false}, this Exadata Infrastructure is a secondary contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
+        /**
+         * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false}, this Exadata Infrastructure is a secondary contact.
+         * @param isPrimary the value to set
+         * @return this builder
+         **/
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
             return this;
         }
-
+        /**
+         * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isContactMosValidated")
         private Boolean isContactMosValidated;
 
+        /**
+         * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
+         * @param isContactMosValidated the value to set
+         * @return this builder
+         **/
         public Builder isContactMosValidated(Boolean isContactMosValidated) {
             this.isContactMosValidated = isContactMosValidated;
             this.__explicitlySet__.add("isContactMosValidated");
@@ -131,6 +167,10 @@ public final class ExadataInfrastructureContact {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Exadata Infrastructure contact.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -141,6 +181,10 @@ public final class ExadataInfrastructureContact {
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
     private final String phoneNumber;
 
+    /**
+     * The phone number for the Exadata Infrastructure contact.
+     * @return the value
+     **/
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -151,6 +195,10 @@ public final class ExadataInfrastructureContact {
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
+    /**
+     * The email for the Exadata Infrastructure contact.
+     * @return the value
+     **/
     public String getEmail() {
         return email;
     }
@@ -161,6 +209,10 @@ public final class ExadataInfrastructureContact {
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
+    /**
+     * If {@code true}, this Exadata Infrastructure contact is a primary contact. If {@code false}, this Exadata Infrastructure is a secondary contact.
+     * @return the value
+     **/
     public Boolean getIsPrimary() {
         return isPrimary;
     }
@@ -171,6 +223,10 @@ public final class ExadataInfrastructureContact {
     @com.fasterxml.jackson.annotation.JsonProperty("isContactMosValidated")
     private final Boolean isContactMosValidated;
 
+    /**
+     * If {@code true}, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If {@code false}, this Exadata Infrastructure contact is not a valid MOS contact.
+     * @return the value
+     **/
     public Boolean getIsContactMosValidated() {
         return isContactMosValidated;
     }

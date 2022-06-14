@@ -45,48 +45,100 @@ public final class QueryResultMetadataSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A collection of QueryResultRowTypeSummary objects that describe the type and properties of the individual row elements of the query rows
+         * being returned.  The i-th element in this list contains the QueryResultRowTypeSummary of the i-th key-value pair in the QueryResultRowData map.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowTypeSummaries")
         private java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries;
 
+        /**
+         * A collection of QueryResultRowTypeSummary objects that describe the type and properties of the individual row elements of the query rows
+         * being returned.  The i-th element in this list contains the QueryResultRowTypeSummary of the i-th key-value pair in the QueryResultRowData map.
+         *
+         * @param queryResultRowTypeSummaries the value to set
+         * @return this builder
+         **/
         public Builder queryResultRowTypeSummaries(
                 java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries) {
             this.queryResultRowTypeSummaries = queryResultRowTypeSummaries;
             this.__explicitlySet__.add("queryResultRowTypeSummaries");
             return this;
         }
-
+        /**
+         * Source of the query result set (traces, spans, and so on).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
+        /**
+         * Source of the query result set (traces, spans, and so on).
+         *
+         * @param sourceName the value to set
+         * @return this builder
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-
+        /**
+         * Columns or attributes of the query rows  which are group by values.  This is a list of ResultsGroupedBy summary objects,
+         * and the list will contain as many elements as the attributes and aggregate functions in the group by clause in the select query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultsGroupedBy")
         private java.util.List<QueryResultsGroupedBySummary> queryResultsGroupedBy;
 
+        /**
+         * Columns or attributes of the query rows  which are group by values.  This is a list of ResultsGroupedBy summary objects,
+         * and the list will contain as many elements as the attributes and aggregate functions in the group by clause in the select query.
+         *
+         * @param queryResultsGroupedBy the value to set
+         * @return this builder
+         **/
         public Builder queryResultsGroupedBy(
                 java.util.List<QueryResultsGroupedBySummary> queryResultsGroupedBy) {
             this.queryResultsGroupedBy = queryResultsGroupedBy;
             this.__explicitlySet__.add("queryResultsGroupedBy");
             return this;
         }
-
+        /**
+         * Order by which the query results are organized.  This is a list of queryResultsOrderedBy summary objects, and the list
+         * will contain more than one OrderedBy summary object, if the sort was multidimensional.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultsOrderedBy")
         private java.util.List<QueryResultsOrderedBySummary> queryResultsOrderedBy;
 
+        /**
+         * Order by which the query results are organized.  This is a list of queryResultsOrderedBy summary objects, and the list
+         * will contain more than one OrderedBy summary object, if the sort was multidimensional.
+         *
+         * @param queryResultsOrderedBy the value to set
+         * @return this builder
+         **/
         public Builder queryResultsOrderedBy(
                 java.util.List<QueryResultsOrderedBySummary> queryResultsOrderedBy) {
             this.queryResultsOrderedBy = queryResultsOrderedBy;
             this.__explicitlySet__.add("queryResultsOrderedBy");
             return this;
         }
-
+        /**
+         * Interval for the time series function in minutes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSeriesIntervalInMins")
         private Integer timeSeriesIntervalInMins;
 
+        /**
+         * Interval for the time series function in minutes.
+         *
+         * @param timeSeriesIntervalInMins the value to set
+         * @return this builder
+         **/
         public Builder timeSeriesIntervalInMins(Integer timeSeriesIntervalInMins) {
             this.timeSeriesIntervalInMins = timeSeriesIntervalInMins;
             this.__explicitlySet__.add("timeSeriesIntervalInMins");
@@ -141,6 +193,12 @@ public final class QueryResultMetadataSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowTypeSummaries")
     private final java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries;
 
+    /**
+     * A collection of QueryResultRowTypeSummary objects that describe the type and properties of the individual row elements of the query rows
+     * being returned.  The i-th element in this list contains the QueryResultRowTypeSummary of the i-th key-value pair in the QueryResultRowData map.
+     *
+     * @return the value
+     **/
     public java.util.List<QueryResultRowTypeSummary> getQueryResultRowTypeSummaries() {
         return queryResultRowTypeSummaries;
     }
@@ -152,6 +210,11 @@ public final class QueryResultMetadataSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * Source of the query result set (traces, spans, and so on).
+     *
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }
@@ -164,6 +227,12 @@ public final class QueryResultMetadataSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultsGroupedBy")
     private final java.util.List<QueryResultsGroupedBySummary> queryResultsGroupedBy;
 
+    /**
+     * Columns or attributes of the query rows  which are group by values.  This is a list of ResultsGroupedBy summary objects,
+     * and the list will contain as many elements as the attributes and aggregate functions in the group by clause in the select query.
+     *
+     * @return the value
+     **/
     public java.util.List<QueryResultsGroupedBySummary> getQueryResultsGroupedBy() {
         return queryResultsGroupedBy;
     }
@@ -176,6 +245,12 @@ public final class QueryResultMetadataSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultsOrderedBy")
     private final java.util.List<QueryResultsOrderedBySummary> queryResultsOrderedBy;
 
+    /**
+     * Order by which the query results are organized.  This is a list of queryResultsOrderedBy summary objects, and the list
+     * will contain more than one OrderedBy summary object, if the sort was multidimensional.
+     *
+     * @return the value
+     **/
     public java.util.List<QueryResultsOrderedBySummary> getQueryResultsOrderedBy() {
         return queryResultsOrderedBy;
     }
@@ -187,6 +262,11 @@ public final class QueryResultMetadataSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeSeriesIntervalInMins")
     private final Integer timeSeriesIntervalInMins;
 
+    /**
+     * Interval for the time series function in minutes.
+     *
+     * @return the value
+     **/
     public Integer getTimeSeriesIntervalInMins() {
         return timeSeriesIntervalInMins;
     }

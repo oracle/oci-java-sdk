@@ -18,6 +18,9 @@ public class UpdateAuthenticationPolicyRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,9 @@ public class UpdateAuthenticationPolicyRequest
     private com.oracle.bmc.identity.model.UpdateAuthenticationPolicyDetails
             updateAuthenticationPolicyDetails;
 
+    /**
+     * Request object for updating the authentication policy.
+     */
     public com.oracle.bmc.identity.model.UpdateAuthenticationPolicyDetails
             getUpdateAuthenticationPolicyDetails() {
         return updateAuthenticationPolicyDetails;
@@ -39,6 +45,12 @@ public class UpdateAuthenticationPolicyRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -61,10 +73,14 @@ public class UpdateAuthenticationPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -72,11 +88,15 @@ public class UpdateAuthenticationPolicyRequest
             return this;
         }
 
+        /**
+         * Request object for updating the authentication policy.
+         */
         private com.oracle.bmc.identity.model.UpdateAuthenticationPolicyDetails
                 updateAuthenticationPolicyDetails = null;
 
         /**
          * Request object for updating the authentication policy.
+         * @param updateAuthenticationPolicyDetails the value to set
          * @return this builder instance
          */
         public Builder updateAuthenticationPolicyDetails(
@@ -86,6 +106,12 @@ public class UpdateAuthenticationPolicyRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -93,6 +119,7 @@ public class UpdateAuthenticationPolicyRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -183,7 +210,8 @@ public class UpdateAuthenticationPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -192,6 +220,10 @@ public class UpdateAuthenticationPolicyRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

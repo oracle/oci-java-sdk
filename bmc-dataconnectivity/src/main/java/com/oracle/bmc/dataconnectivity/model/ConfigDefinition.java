@@ -51,27 +51,49 @@ public final class ConfigDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The key of the object.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
+        /**
+         * The type of the object.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The model version of an object.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -86,37 +108,65 @@ public final class ConfigDefinition {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Specifies whether the configuration is contained or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isContained")
         private Boolean isContained;
 
+        /**
+         * Specifies whether the configuration is contained or not.
+         * @param isContained the value to set
+         * @return this builder
+         **/
         public Builder isContained(Boolean isContained) {
             this.isContained = isContained;
             this.__explicitlySet__.add("isContained");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-
+        /**
+         * The parameter configuration details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configParameterDefinitions")
         private java.util.Map<String, ConfigParameterDefinition> configParameterDefinitions;
 
+        /**
+         * The parameter configuration details.
+         * @param configParameterDefinitions the value to set
+         * @return this builder
+         **/
         public Builder configParameterDefinitions(
                 java.util.Map<String, ConfigParameterDefinition> configParameterDefinitions) {
             this.configParameterDefinitions = configParameterDefinitions;
@@ -176,6 +226,10 @@ public final class ConfigDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The key of the object.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -186,6 +240,10 @@ public final class ConfigDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
+    /**
+     * The type of the object.
+     * @return the value
+     **/
     public String getModelType() {
         return modelType;
     }
@@ -196,6 +254,10 @@ public final class ConfigDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The model version of an object.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -213,6 +275,10 @@ public final class ConfigDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -223,6 +289,10 @@ public final class ConfigDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("isContained")
     private final Boolean isContained;
 
+    /**
+     * Specifies whether the configuration is contained or not.
+     * @return the value
+     **/
     public Boolean getIsContained() {
         return isContained;
     }
@@ -233,6 +303,10 @@ public final class ConfigDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -243,6 +317,10 @@ public final class ConfigDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("configParameterDefinitions")
     private final java.util.Map<String, ConfigParameterDefinition> configParameterDefinitions;
 
+    /**
+     * The parameter configuration details.
+     * @return the value
+     **/
     public java.util.Map<String, ConfigParameterDefinition> getConfigParameterDefinitions() {
         return configParameterDefinitions;
     }

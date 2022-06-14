@@ -14,6 +14,11 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.FieldSummaryReport fieldSummaryReport;
 
+    /**
+     * The returned FieldSummaryReport instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.FieldSummaryReport getFieldSummaryReport() {
         return fieldSummaryReport;
     }
@@ -45,15 +54,33 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned FieldSummaryReport instance.
+         */
         private com.oracle.bmc.loganalytics.model.FieldSummaryReport fieldSummaryReport;
 
+        /**
+         * The returned FieldSummaryReport instance.
+         * @param fieldSummaryReport the value to set
+         * @return this builder
+         */
         public Builder fieldSummaryReport(
                 com.oracle.bmc.loganalytics.model.FieldSummaryReport fieldSummaryReport) {
             this.fieldSummaryReport = fieldSummaryReport;
@@ -72,12 +99,20 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetFieldsSummaryResponse build() {
             return new GetFieldsSummaryResponse(
                     __httpStatusCode__, opcRequestId, fieldSummaryReport);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

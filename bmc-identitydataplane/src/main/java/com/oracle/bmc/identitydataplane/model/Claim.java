@@ -29,27 +29,49 @@ public final class Claim {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key of the claim.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The key of the claim.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The value of the claim.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The value of the claim.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The issuer of the claim.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issuer")
         private String issuer;
 
+        /**
+         * The issuer of the claim.
+         * @param issuer the value to set
+         * @return this builder
+         **/
         public Builder issuer(String issuer) {
             this.issuer = issuer;
             this.__explicitlySet__.add("issuer");
@@ -91,6 +113,10 @@ public final class Claim {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The key of the claim.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -101,6 +127,10 @@ public final class Claim {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The value of the claim.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -111,6 +141,10 @@ public final class Claim {
     @com.fasterxml.jackson.annotation.JsonProperty("issuer")
     private final String issuer;
 
+    /**
+     * The issuer of the claim.
+     * @return the value
+     **/
     public String getIssuer() {
         return issuer;
     }

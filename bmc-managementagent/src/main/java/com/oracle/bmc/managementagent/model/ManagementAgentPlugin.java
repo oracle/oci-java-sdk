@@ -53,73 +53,130 @@ public final class ManagementAgentPlugin {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Management Agent Plugin Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Management Agent Plugin Id
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Management Agent Plugin Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Management Agent Plugin Name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Management Agent Plugin Version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Integer version;
 
+        /**
+         * Management Agent Plugin Version
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(Integer version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Supported Platform Types
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedPlatformTypes")
         private java.util.List<PlatformTypes> supportedPlatformTypes;
 
+        /**
+         * Supported Platform Types
+         * @param supportedPlatformTypes the value to set
+         * @return this builder
+         **/
         public Builder supportedPlatformTypes(
                 java.util.List<PlatformTypes> supportedPlatformTypes) {
             this.supportedPlatformTypes = supportedPlatformTypes;
             this.__explicitlySet__.add("supportedPlatformTypes");
             return this;
         }
-
+        /**
+         * Management Agent Plugin Display Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Management Agent Plugin Display Name
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Management Agent Plugin description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Management Agent Plugin description
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isConsoleDeployable")
         private Boolean isConsoleDeployable;
 
+        /**
+         * A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
+         * @param isConsoleDeployable the value to set
+         * @return this builder
+         **/
         public Builder isConsoleDeployable(Boolean isConsoleDeployable) {
             this.isConsoleDeployable = isConsoleDeployable;
             this.__explicitlySet__.add("isConsoleDeployable");
             return this;
         }
-
+        /**
+         * The current state of Management Agent Plugin
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
+        /**
+         * The current state of Management Agent Plugin
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -178,6 +235,10 @@ public final class ManagementAgentPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Management Agent Plugin Id
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -188,6 +249,10 @@ public final class ManagementAgentPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Management Agent Plugin Name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -198,6 +263,10 @@ public final class ManagementAgentPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Integer version;
 
+    /**
+     * Management Agent Plugin Version
+     * @return the value
+     **/
     public Integer getVersion() {
         return version;
     }
@@ -208,6 +277,10 @@ public final class ManagementAgentPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("supportedPlatformTypes")
     private final java.util.List<PlatformTypes> supportedPlatformTypes;
 
+    /**
+     * Supported Platform Types
+     * @return the value
+     **/
     public java.util.List<PlatformTypes> getSupportedPlatformTypes() {
         return supportedPlatformTypes;
     }
@@ -218,6 +291,10 @@ public final class ManagementAgentPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Management Agent Plugin Display Name
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -228,6 +305,10 @@ public final class ManagementAgentPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Management Agent Plugin description
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -238,6 +319,10 @@ public final class ManagementAgentPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("isConsoleDeployable")
     private final Boolean isConsoleDeployable;
 
+    /**
+     * A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
+     * @return the value
+     **/
     public Boolean getIsConsoleDeployable() {
         return isConsoleDeployable;
     }
@@ -248,6 +333,10 @@ public final class ManagementAgentPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
+    /**
+     * The current state of Management Agent Plugin
+     * @return the value
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }

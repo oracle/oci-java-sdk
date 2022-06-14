@@ -35,27 +35,49 @@ public final class PluggableDatabaseConnectionStrings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A host name-based PDB connection string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbDefault")
         private String pdbDefault;
 
+        /**
+         * A host name-based PDB connection string.
+         * @param pdbDefault the value to set
+         * @return this builder
+         **/
         public Builder pdbDefault(String pdbDefault) {
             this.pdbDefault = pdbDefault;
             this.__explicitlySet__.add("pdbDefault");
             return this;
         }
-
+        /**
+         * An IP-based PDB connection string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbIpDefault")
         private String pdbIpDefault;
 
+        /**
+         * An IP-based PDB connection string.
+         * @param pdbIpDefault the value to set
+         * @return this builder
+         **/
         public Builder pdbIpDefault(String pdbIpDefault) {
             this.pdbIpDefault = pdbIpDefault;
             this.__explicitlySet__.add("pdbIpDefault");
             return this;
         }
-
+        /**
+         * All connection strings to use to connect to the pluggable database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
         private java.util.Map<String, String> allConnectionStrings;
 
+        /**
+         * All connection strings to use to connect to the pluggable database.
+         * @param allConnectionStrings the value to set
+         * @return this builder
+         **/
         public Builder allConnectionStrings(java.util.Map<String, String> allConnectionStrings) {
             this.allConnectionStrings = allConnectionStrings;
             this.__explicitlySet__.add("allConnectionStrings");
@@ -102,6 +124,10 @@ public final class PluggableDatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("pdbDefault")
     private final String pdbDefault;
 
+    /**
+     * A host name-based PDB connection string.
+     * @return the value
+     **/
     public String getPdbDefault() {
         return pdbDefault;
     }
@@ -112,6 +138,10 @@ public final class PluggableDatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("pdbIpDefault")
     private final String pdbIpDefault;
 
+    /**
+     * An IP-based PDB connection string.
+     * @return the value
+     **/
     public String getPdbIpDefault() {
         return pdbIpDefault;
     }
@@ -122,6 +152,10 @@ public final class PluggableDatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     private final java.util.Map<String, String> allConnectionStrings;
 
+    /**
+     * All connection strings to use to connect to the pluggable database.
+     * @return the value
+     **/
     public java.util.Map<String, String> getAllConnectionStrings() {
         return allConnectionStrings;
     }

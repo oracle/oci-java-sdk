@@ -72,37 +72,73 @@ public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor 
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Optional timestamp datatype field if specified. Default field is time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("time")
         private AbstractField time;
 
+        /**
+         * Optional timestamp datatype field if specified. Default field is time.
+         *
+         * @param time the value to set
+         * @return this builder
+         **/
         public Builder time(AbstractField time) {
             this.time = time;
             this.__explicitlySet__.add("time");
             return this;
         }
-
+        /**
+         * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private String span;
 
+        /**
+         * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+         *
+         * @param span the value to set
+         * @return this builder
+         **/
         public Builder span(String span) {
             this.span = span;
             this.__explicitlySet__.add("span");
             return this;
         }
-
+        /**
+         * Group by fields if specified in the query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
         private java.util.List<AbstractField> groupByFields;
 
+        /**
+         * Group by fields if specified in the query string.
+         *
+         * @param groupByFields the value to set
+         * @return this builder
+         **/
         public Builder groupByFields(java.util.List<AbstractField> groupByFields) {
             this.groupByFields = groupByFields;
             this.__explicitlySet__.add("groupByFields");
             return this;
         }
-
+        /**
+         * Statistical functions specified in the query string. Atleast 1 is required for a TIMESTATS command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functions")
         private java.util.List<FunctionField> functions;
 
+        /**
+         * Statistical functions specified in the query string. Atleast 1 is required for a TIMESTATS command.
+         *
+         * @param functions the value to set
+         * @return this builder
+         **/
         public Builder functions(java.util.List<FunctionField> functions) {
             this.functions = functions;
             this.__explicitlySet__.add("functions");
@@ -182,6 +218,11 @@ public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor 
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     private final AbstractField time;
 
+    /**
+     * Optional timestamp datatype field if specified. Default field is time.
+     *
+     * @return the value
+     **/
     public AbstractField getTime() {
         return time;
     }
@@ -193,6 +234,11 @@ public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor 
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final String span;
 
+    /**
+     * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+     *
+     * @return the value
+     **/
     public String getSpan() {
         return span;
     }
@@ -204,6 +250,11 @@ public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor 
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
     private final java.util.List<AbstractField> groupByFields;
 
+    /**
+     * Group by fields if specified in the query string.
+     *
+     * @return the value
+     **/
     public java.util.List<AbstractField> getGroupByFields() {
         return groupByFields;
     }
@@ -215,6 +266,11 @@ public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor 
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
     private final java.util.List<FunctionField> functions;
 
+    /**
+     * Statistical functions specified in the query string. Atleast 1 is required for a TIMESTATS command.
+     *
+     * @return the value
+     **/
     public java.util.List<FunctionField> getFunctions() {
         return functions;
     }

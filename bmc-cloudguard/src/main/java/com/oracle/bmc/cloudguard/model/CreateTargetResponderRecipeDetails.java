@@ -32,18 +32,33 @@ public final class CreateTargetResponderRecipeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Identifier for ResponderRecipe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
         private String responderRecipeId;
 
+        /**
+         * Identifier for ResponderRecipe.
+         * @param responderRecipeId the value to set
+         * @return this builder
+         **/
         public Builder responderRecipeId(String responderRecipeId) {
             this.responderRecipeId = responderRecipeId;
             this.__explicitlySet__.add("responderRecipeId");
             return this;
         }
-
+        /**
+         * Override responder rules associated with reponder recipe in a target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
         private java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
+        /**
+         * Override responder rules associated with reponder recipe in a target.
+         * @param responderRules the value to set
+         * @return this builder
+         **/
         public Builder responderRules(
                 java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules) {
             this.responderRules = responderRules;
@@ -89,6 +104,10 @@ public final class CreateTargetResponderRecipeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
     private final String responderRecipeId;
 
+    /**
+     * Identifier for ResponderRecipe.
+     * @return the value
+     **/
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
@@ -99,6 +118,10 @@ public final class CreateTargetResponderRecipeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
     private final java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
+    /**
+     * Override responder rules associated with reponder recipe in a target.
+     * @return the value
+     **/
     public java.util.List<UpdateTargetRecipeResponderRuleDetails> getResponderRules() {
         return responderRules;
     }

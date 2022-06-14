@@ -46,28 +46,49 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The name of the schema that contains the substitution column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
+        /**
+         * The name of the schema that contains the substitution column.
+         * @param schemaName the value to set
+         * @return this builder
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-
+        /**
+         * The name of the table that contains the substitution column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
+        /**
+         * The name of the table that contains the substitution column.
+         * @param tableName the value to set
+         * @return this builder
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-
+        /**
+         * The name of the substitution column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
+        /**
+         * The name of the substitution column.
+         * @param columnName the value to set
+         * @return this builder
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
@@ -124,6 +145,10 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
+    /**
+     * The name of the schema that contains the substitution column.
+     * @return the value
+     **/
     public String getSchemaName() {
         return schemaName;
     }
@@ -134,6 +159,10 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
+    /**
+     * The name of the table that contains the substitution column.
+     * @return the value
+     **/
     public String getTableName() {
         return tableName;
     }
@@ -144,6 +173,10 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
+    /**
+     * The name of the substitution column.
+     * @return the value
+     **/
     public String getColumnName() {
         return columnName;
     }

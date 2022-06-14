@@ -19,6 +19,11 @@ public class ListPrivateEndpointsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -28,6 +33,10 @@ public class ListPrivateEndpointsRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -37,6 +46,10 @@ public class ListPrivateEndpointsRequest
      */
     private String privateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     *
+     */
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -49,6 +62,13 @@ public class ListPrivateEndpointsRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     * Use this filter to list a resource by name.
+     * Requires {@code sortBy} set to {@code DISPLAYNAME}.
+     * Alternatively, when you know the resource OCID, use the related Get operation.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -57,6 +77,9 @@ public class ListPrivateEndpointsRequest
      */
     private String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     */
     public String getVcnId() {
         return vcnId;
     }
@@ -107,6 +130,12 @@ public class ListPrivateEndpointsRequest
         }
     };
 
+    /**
+     * The field to use when sorting returned resources.
+     * By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -153,6 +182,10 @@ public class ListPrivateEndpointsRequest
         }
     };
 
+    /**
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -163,6 +196,11 @@ public class ListPrivateEndpointsRequest
      */
     private Integer limit;
 
+    /**
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -173,6 +211,11 @@ public class ListPrivateEndpointsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -184,12 +227,18 @@ public class ListPrivateEndpointsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -197,11 +246,16 @@ public class ListPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -209,11 +263,16 @@ public class ListPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         *
+         */
         private String privateEndpointId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
          *
+         * @param privateEndpointId the value to set
          * @return this builder instance
          */
         public Builder privateEndpointId(String privateEndpointId) {
@@ -221,6 +280,13 @@ public class ListPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         * Use this filter to list a resource by name.
+         * Requires {@code sortBy} set to {@code DISPLAYNAME}.
+         * Alternatively, when you know the resource OCID, use the related Get operation.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -229,6 +295,7 @@ public class ListPrivateEndpointsRequest
          * Requires {@code sortBy} set to {@code DISPLAYNAME}.
          * Alternatively, when you know the resource OCID, use the related Get operation.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -236,10 +303,14 @@ public class ListPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         */
         private String vcnId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         * @param vcnId the value to set
          * @return this builder instance
          */
         public Builder vcnId(String vcnId) {
@@ -247,6 +318,12 @@ public class ListPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The field to use when sorting returned resources.
+         * By default, {@code TIMECREATED} is ordered descending.
+         * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -254,6 +331,7 @@ public class ListPrivateEndpointsRequest
          * By default, {@code TIMECREATED} is ordered descending.
          * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -261,11 +339,16 @@ public class ListPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -273,12 +356,18 @@ public class ListPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The number of items returned in a paginated {@code List} call. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
          * The number of items returned in a paginated {@code List} call. For information about pagination, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -286,12 +375,18 @@ public class ListPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+         * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
          * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -383,7 +478,8 @@ public class ListPrivateEndpointsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -398,6 +494,10 @@ public class ListPrivateEndpointsRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -53,72 +53,157 @@ public final class WorkRequestResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resource type the work request affects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The resource type the work request affects.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The way in which this resource is affected by the work tracked in the work request.
+         * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
+         * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+         * or DELETED, respectively.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionTypes actionType;
 
+        /**
+         * The way in which this resource is affected by the work tracked in the work request.
+         * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
+         * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+         * or DELETED, respectively.
+         *
+         * @param actionType the value to set
+         * @return this builder
+         **/
         public Builder actionType(ActionTypes actionType) {
             this.actionType = actionType;
             this.__explicitlySet__.add("actionType");
             return this;
         }
-
+        /**
+         * The identifier of the resource the work request affects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * The identifier of the resource the work request affects.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * The URI path that the user can do a GET on to access the resource metadata
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
+        /**
+         * The URI path that the user can do a GET on to access the resource metadata
+         * @param entityUri the value to set
+         * @return this builder
+         **/
         public Builder entityUri(String entityUri) {
             this.entityUri = entityUri;
             this.__explicitlySet__.add("entityUri");
             return this;
         }
-
+        /**
+         * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * Additional metadata about the resource that has been operated upon by
+         * this work request. For WorkRequests operationType WORK_DELIVERY the metadata will contain: workDeliveryStatus
+         * indicating the status of the work delivery item as a WorkDeliveryStatus value, workSubmissionKey the WorkSubmission request id,
+         *  and workSubmissionDetails containing any details of result
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private Object metadata;
 
+        /**
+         * Additional metadata about the resource that has been operated upon by
+         * this work request. For WorkRequests operationType WORK_DELIVERY the metadata will contain: workDeliveryStatus
+         * indicating the status of the work delivery item as a WorkDeliveryStatus value, workSubmissionKey the WorkSubmission request id,
+         *  and workSubmissionDetails containing any details of result
+         *
+         * @param metadata the value to set
+         * @return this builder
+         **/
         public Builder metadata(Object metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -177,6 +262,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The resource type the work request affects.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -191,6 +280,14 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionTypes actionType;
 
+    /**
+     * The way in which this resource is affected by the work tracked in the work request.
+     * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
+     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+     * or DELETED, respectively.
+     *
+     * @return the value
+     **/
     public ActionTypes getActionType() {
         return actionType;
     }
@@ -201,6 +298,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * The identifier of the resource the work request affects.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -211,6 +312,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
+    /**
+     * The URI path that the user can do a GET on to access the resource metadata
+     * @return the value
+     **/
     public String getEntityUri() {
         return entityUri;
     }
@@ -223,6 +328,12 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+     * section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -235,6 +346,12 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+     * section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -247,6 +364,12 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+     * section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -261,6 +384,14 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final Object metadata;
 
+    /**
+     * Additional metadata about the resource that has been operated upon by
+     * this work request. For WorkRequests operationType WORK_DELIVERY the metadata will contain: workDeliveryStatus
+     * indicating the status of the work delivery item as a WorkDeliveryStatus value, workSubmissionKey the WorkSubmission request id,
+     *  and workSubmissionDetails containing any details of result
+     *
+     * @return the value
+     **/
     public Object getMetadata() {
         return metadata;
     }

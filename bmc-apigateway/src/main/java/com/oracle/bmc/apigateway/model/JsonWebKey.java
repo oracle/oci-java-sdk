@@ -33,55 +33,105 @@ public final class JsonWebKey extends StaticPublicKey {
             this.__explicitlySet__.add("kid");
             return this;
         }
-
+        /**
+         * The key type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kty")
         private Kty kty;
 
+        /**
+         * The key type.
+         * @param kty the value to set
+         * @return this builder
+         **/
         public Builder kty(Kty kty) {
             this.kty = kty;
             this.__explicitlySet__.add("kty");
             return this;
         }
-
+        /**
+         * The intended use of the public key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("use")
         private Use use;
 
+        /**
+         * The intended use of the public key.
+         * @param use the value to set
+         * @return this builder
+         **/
         public Builder use(Use use) {
             this.use = use;
             this.__explicitlySet__.add("use");
             return this;
         }
-
+        /**
+         * The operations for which this key is to be used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key_ops")
         private java.util.List<KeyOps> keyOps;
 
+        /**
+         * The operations for which this key is to be used.
+         * @param keyOps the value to set
+         * @return this builder
+         **/
         public Builder keyOps(java.util.List<KeyOps> keyOps) {
             this.keyOps = keyOps;
             this.__explicitlySet__.add("keyOps");
             return this;
         }
-
+        /**
+         * The algorithm intended for use with this key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alg")
         private String alg;
 
+        /**
+         * The algorithm intended for use with this key.
+         * @param alg the value to set
+         * @return this builder
+         **/
         public Builder alg(String alg) {
             this.alg = alg;
             this.__explicitlySet__.add("alg");
             return this;
         }
-
+        /**
+         * The base64 url encoded modulus of the RSA public key represented
+         * by this key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("n")
         private String n;
 
+        /**
+         * The base64 url encoded modulus of the RSA public key represented
+         * by this key.
+         *
+         * @param n the value to set
+         * @return this builder
+         **/
         public Builder n(String n) {
             this.n = n;
             this.__explicitlySet__.add("n");
             return this;
         }
-
+        /**
+         * The base64 url encoded exponent of the RSA public key represented
+         * by this key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("e")
         private String e;
 
+        /**
+         * The base64 url encoded exponent of the RSA public key represented
+         * by this key.
+         *
+         * @param e the value to set
+         * @return this builder
+         **/
         public Builder e(String e) {
             this.e = e;
             this.__explicitlySet__.add("e");
@@ -192,6 +242,10 @@ public final class JsonWebKey extends StaticPublicKey {
     @com.fasterxml.jackson.annotation.JsonProperty("kty")
     private final Kty kty;
 
+    /**
+     * The key type.
+     * @return the value
+     **/
     public Kty getKty() {
         return kty;
     }
@@ -246,6 +300,10 @@ public final class JsonWebKey extends StaticPublicKey {
     @com.fasterxml.jackson.annotation.JsonProperty("use")
     private final Use use;
 
+    /**
+     * The intended use of the public key.
+     * @return the value
+     **/
     public Use getUse() {
         return use;
     }
@@ -301,6 +359,10 @@ public final class JsonWebKey extends StaticPublicKey {
     @com.fasterxml.jackson.annotation.JsonProperty("key_ops")
     private final java.util.List<KeyOps> keyOps;
 
+    /**
+     * The operations for which this key is to be used.
+     * @return the value
+     **/
     public java.util.List<KeyOps> getKeyOps() {
         return keyOps;
     }
@@ -311,6 +373,10 @@ public final class JsonWebKey extends StaticPublicKey {
     @com.fasterxml.jackson.annotation.JsonProperty("alg")
     private final String alg;
 
+    /**
+     * The algorithm intended for use with this key.
+     * @return the value
+     **/
     public String getAlg() {
         return alg;
     }
@@ -323,6 +389,12 @@ public final class JsonWebKey extends StaticPublicKey {
     @com.fasterxml.jackson.annotation.JsonProperty("n")
     private final String n;
 
+    /**
+     * The base64 url encoded modulus of the RSA public key represented
+     * by this key.
+     *
+     * @return the value
+     **/
     public String getN() {
         return n;
     }
@@ -335,6 +407,12 @@ public final class JsonWebKey extends StaticPublicKey {
     @com.fasterxml.jackson.annotation.JsonProperty("e")
     private final String e;
 
+    /**
+     * The base64 url encoded exponent of the RSA public key represented
+     * by this key.
+     *
+     * @return the value
+     **/
     public String getE() {
         return e;
     }

@@ -56,81 +56,163 @@ public final class WorkRequestSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The asynchronous operation tracked by this work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private WorkRequest.OperationType operationType;
 
+        /**
+         * The asynchronous operation tracked by this work request.
+         * @param operationType the value to set
+         * @return this builder
+         **/
         public Builder operationType(WorkRequest.OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-
+        /**
+         * The status of the specified work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private WorkRequest.Status status;
 
+        /**
+         * The status of the specified work request.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(WorkRequest.Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying this work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying this work request.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the compartment that contains the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the compartment that contains the work request.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The resources affected by this work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
+        /**
+         * The resources affected by this work request.
+         * @param resources the value to set
+         * @return this builder
+         **/
         public Builder resources(java.util.List<WorkRequestResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
             return this;
         }
-
+        /**
+         * Percentage of the work request completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
+        /**
+         * Percentage of the work request completed.
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-
+        /**
+         * The date and time when the work request was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * The date and time when the work request was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * The date and time when the work request transitioned from ACCEPTED to IN_PROGRESS.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The date and time when the work request transitioned from ACCEPTED to IN_PROGRESS.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The date and time when the work request reached a terminal state (FAILED or SUCCEEDED).
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The date and time when the work request reached a terminal state (FAILED or SUCCEEDED).
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
@@ -191,6 +273,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final WorkRequest.OperationType operationType;
 
+    /**
+     * The asynchronous operation tracked by this work request.
+     * @return the value
+     **/
     public WorkRequest.OperationType getOperationType() {
         return operationType;
     }
@@ -201,6 +287,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final WorkRequest.Status status;
 
+    /**
+     * The status of the specified work request.
+     * @return the value
+     **/
     public WorkRequest.Status getStatus() {
         return status;
     }
@@ -211,6 +301,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying this work request.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -221,6 +315,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the compartment that contains the work request.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -231,6 +329,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
+    /**
+     * The resources affected by this work request.
+     * @return the value
+     **/
     public java.util.List<WorkRequestResource> getResources() {
         return resources;
     }
@@ -241,6 +343,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
+    /**
+     * Percentage of the work request completed.
+     * @return the value
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
@@ -254,6 +360,13 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * The date and time when the work request was created.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -267,6 +380,13 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The date and time when the work request transitioned from ACCEPTED to IN_PROGRESS.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -280,6 +400,13 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The date and time when the work request reached a terminal state (FAILED or SUCCEEDED).
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }

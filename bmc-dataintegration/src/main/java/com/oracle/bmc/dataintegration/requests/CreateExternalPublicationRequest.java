@@ -18,6 +18,9 @@ public class CreateExternalPublicationRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class CreateExternalPublicationRequest
      */
     private String taskKey;
 
+    /**
+     * The task key.
+     */
     public String getTaskKey() {
         return taskKey;
     }
@@ -35,6 +41,9 @@ public class CreateExternalPublicationRequest
     private com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails
             createExternalPublicationDetails;
 
+    /**
+     * Details needed to publish a task to OCI DataFlow application.
+     */
     public com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails
             getCreateExternalPublicationDetails() {
         return createExternalPublicationDetails;
@@ -47,6 +56,12 @@ public class CreateExternalPublicationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -56,6 +71,10 @@ public class CreateExternalPublicationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -78,10 +97,14 @@ public class CreateExternalPublicationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -89,10 +112,14 @@ public class CreateExternalPublicationRequest
             return this;
         }
 
+        /**
+         * The task key.
+         */
         private String taskKey = null;
 
         /**
          * The task key.
+         * @param taskKey the value to set
          * @return this builder instance
          */
         public Builder taskKey(String taskKey) {
@@ -100,11 +127,15 @@ public class CreateExternalPublicationRequest
             return this;
         }
 
+        /**
+         * Details needed to publish a task to OCI DataFlow application.
+         */
         private com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails
                 createExternalPublicationDetails = null;
 
         /**
          * Details needed to publish a task to OCI DataFlow application.
+         * @param createExternalPublicationDetails the value to set
          * @return this builder instance
          */
         public Builder createExternalPublicationDetails(
@@ -114,6 +145,12 @@ public class CreateExternalPublicationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -121,6 +158,7 @@ public class CreateExternalPublicationRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,11 +166,16 @@ public class CreateExternalPublicationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -228,7 +271,8 @@ public class CreateExternalPublicationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -239,6 +283,10 @@ public class CreateExternalPublicationRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +30,11 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -37,6 +45,11 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String objectName;
 
+    /**
+     * The name of the object. Avoid entering confidential information.
+     * Example: {@code test/object1.log}
+     *
+     */
     public String getObjectName() {
         return objectName;
     }
@@ -45,6 +58,9 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private Long contentLength;
 
+    /**
+     * The content length of the body.
+     */
     public Long getContentLength() {
         return contentLength;
     }
@@ -53,6 +69,9 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private java.io.InputStream putObjectBody;
 
+    /**
+     * The object to upload to the object store.
+     */
     public java.io.InputStream getPutObjectBody() {
         return putObjectBody;
     }
@@ -64,6 +83,12 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String ifMatch;
 
+    /**
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -74,6 +99,11 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String ifNoneMatch;
 
+    /**
+     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+     * fail if the resource already exists.
+     *
+     */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
@@ -82,6 +112,9 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -93,6 +126,12 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String expect;
 
+    /**
+     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+     *
+     */
     public String getExpect() {
         return expect;
     }
@@ -107,6 +146,15 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String contentMD5;
 
+    /**
+     * The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object
+     * Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the
+     * MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
+     * is returned with the message:
+     * <p>
+     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+     *
+     */
     public String getContentMD5() {
         return contentMD5;
     }
@@ -119,6 +167,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String contentType;
 
+    /**
+     * The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to
+     * 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect
+     * on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example,
+     * you could use this header to identify and perform special operations on text only objects.
+     *
+     */
     public String getContentType() {
         return contentType;
     }
@@ -131,6 +186,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String contentLanguage;
 
+    /**
+     * The optional Content-Language header that defines the content language of the object to upload. Specifying
+     * values for this header has no effect on Object Storage behavior. Programs that read the object determine what
+     * to do based on the value provided. For example, you could use this header to identify and differentiate objects
+     * based on a particular language.
+     *
+     */
     public String getContentLanguage() {
         return contentLanguage;
     }
@@ -144,6 +206,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String contentEncoding;
 
+    /**
+     * The optional Content-Encoding header that defines the content encodings that were applied to the object to
+     * upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
+     * object determine what to do based on the value provided. For example, you could use this header to determine
+     * what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
+     * the object.
+     *
+     */
     public String getContentEncoding() {
         return contentEncoding;
     }
@@ -156,6 +226,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String contentDisposition;
 
+    /**
+     * The optional Content-Disposition header that defines presentational information for the object to be
+     * returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
+     * Storage behavior. Programs that read the object determine what to do based on the value provided.
+     * For example, you could use this header to let users download objects with custom filenames in a browser.
+     *
+     */
     public String getContentDisposition() {
         return contentDisposition;
     }
@@ -168,6 +245,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String cacheControl;
 
+    /**
+     * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
+     * HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
+     * that read the object determine what to do based on the value provided.
+     * For example, you could use this header to identify objects that require caching restrictions.
+     *
+     */
     public String getCacheControl() {
         return cacheControl;
     }
@@ -178,6 +262,11 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String opcSseCustomerAlgorithm;
 
+    /**
+     * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
+     */
     public String getOpcSseCustomerAlgorithm() {
         return opcSseCustomerAlgorithm;
     }
@@ -189,6 +278,12 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String opcSseCustomerKey;
 
+    /**
+     * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+     * decrypt the data. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
+     */
     public String getOpcSseCustomerKey() {
         return opcSseCustomerKey;
     }
@@ -200,6 +295,12 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String opcSseCustomerKeySha256;
 
+    /**
+     * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+     * value is used to check the integrity of the encryption key. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
+     */
     public String getOpcSseCustomerKeySha256() {
         return opcSseCustomerKeySha256;
     }
@@ -210,6 +311,11 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private String opcSseKmsKeyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+     * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+     *
+     */
     public String getOpcSseKmsKeyId() {
         return opcSseKmsKeyId;
     }
@@ -220,6 +326,11 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private com.oracle.bmc.objectstorage.model.StorageTier storageTier;
 
+    /**
+     * The storage tier that the object should be stored in. If not specified, the object will be stored in
+     * the same storage tier as the bucket.
+     *
+     */
     public com.oracle.bmc.objectstorage.model.StorageTier getStorageTier() {
         return storageTier;
     }
@@ -228,6 +339,9 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
      */
     private java.util.Map<String, String> opcMeta;
 
+    /**
+     * Optional user-defined metadata key and value.
+     */
     public java.util.Map<String, String> getOpcMeta() {
         return opcMeta;
     }
@@ -254,10 +368,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -265,12 +383,18 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         */
         private String bucketName = null;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
          * Example: {@code my-new-bucket1}
          *
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -278,12 +402,18 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The name of the object. Avoid entering confidential information.
+         * Example: {@code test/object1.log}
+         *
+         */
         private String objectName = null;
 
         /**
          * The name of the object. Avoid entering confidential information.
          * Example: {@code test/object1.log}
          *
+         * @param objectName the value to set
          * @return this builder instance
          */
         public Builder objectName(String objectName) {
@@ -291,10 +421,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The content length of the body.
+         */
         private Long contentLength = null;
 
         /**
          * The content length of the body.
+         * @param contentLength the value to set
          * @return this builder instance
          */
         public Builder contentLength(Long contentLength) {
@@ -302,10 +436,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The object to upload to the object store.
+         */
         private java.io.InputStream putObjectBody = null;
 
         /**
          * The object to upload to the object store.
+         * @param putObjectBody the value to set
          * @return this builder instance
          */
         public Builder putObjectBody(java.io.InputStream putObjectBody) {
@@ -313,6 +451,12 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -320,6 +464,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
          * the resource.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -327,12 +472,18 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+         * fail if the resource already exists.
+         *
+         */
         private String ifNoneMatch = null;
 
         /**
          * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
          * fail if the resource already exists.
          *
+         * @param ifNoneMatch the value to set
          * @return this builder instance
          */
         public Builder ifNoneMatch(String ifNoneMatch) {
@@ -340,10 +491,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -351,6 +506,12 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+         *
+         */
         private String expect = null;
 
         /**
@@ -358,6 +519,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
          * The only allowed value for this parameter is "100-Continue" (case-insensitive).
          *
+         * @param expect the value to set
          * @return this builder instance
          */
         public Builder expect(String expect) {
@@ -365,6 +527,15 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object
+         * Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the
+         * MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
+         * is returned with the message:
+         * <p>
+         * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+         *
+         */
         private String contentMD5 = null;
 
         /**
@@ -375,6 +546,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * <p>
          * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
          *
+         * @param contentMD5 the value to set
          * @return this builder instance
          */
         public Builder contentMD5(String contentMD5) {
@@ -382,6 +554,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to
+         * 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect
+         * on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example,
+         * you could use this header to identify and perform special operations on text only objects.
+         *
+         */
         private String contentType = null;
 
         /**
@@ -390,6 +569,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example,
          * you could use this header to identify and perform special operations on text only objects.
          *
+         * @param contentType the value to set
          * @return this builder instance
          */
         public Builder contentType(String contentType) {
@@ -397,6 +577,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The optional Content-Language header that defines the content language of the object to upload. Specifying
+         * values for this header has no effect on Object Storage behavior. Programs that read the object determine what
+         * to do based on the value provided. For example, you could use this header to identify and differentiate objects
+         * based on a particular language.
+         *
+         */
         private String contentLanguage = null;
 
         /**
@@ -405,6 +592,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * to do based on the value provided. For example, you could use this header to identify and differentiate objects
          * based on a particular language.
          *
+         * @param contentLanguage the value to set
          * @return this builder instance
          */
         public Builder contentLanguage(String contentLanguage) {
@@ -412,6 +600,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The optional Content-Encoding header that defines the content encodings that were applied to the object to
+         * upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
+         * object determine what to do based on the value provided. For example, you could use this header to determine
+         * what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
+         * the object.
+         *
+         */
         private String contentEncoding = null;
 
         /**
@@ -421,6 +617,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
          * the object.
          *
+         * @param contentEncoding the value to set
          * @return this builder instance
          */
         public Builder contentEncoding(String contentEncoding) {
@@ -428,6 +625,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The optional Content-Disposition header that defines presentational information for the object to be
+         * returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
+         * Storage behavior. Programs that read the object determine what to do based on the value provided.
+         * For example, you could use this header to let users download objects with custom filenames in a browser.
+         *
+         */
         private String contentDisposition = null;
 
         /**
@@ -436,6 +640,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * Storage behavior. Programs that read the object determine what to do based on the value provided.
          * For example, you could use this header to let users download objects with custom filenames in a browser.
          *
+         * @param contentDisposition the value to set
          * @return this builder instance
          */
         public Builder contentDisposition(String contentDisposition) {
@@ -443,6 +648,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
+         * HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
+         * that read the object determine what to do based on the value provided.
+         * For example, you could use this header to identify objects that require caching restrictions.
+         *
+         */
         private String cacheControl = null;
 
         /**
@@ -451,6 +663,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * that read the object determine what to do based on the value provided.
          * For example, you could use this header to identify objects that require caching restrictions.
          *
+         * @param cacheControl the value to set
          * @return this builder instance
          */
         public Builder cacheControl(String cacheControl) {
@@ -458,12 +671,18 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
+         */
         private String opcSseCustomerAlgorithm = null;
 
         /**
          * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
          * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
+         * @param opcSseCustomerAlgorithm the value to set
          * @return this builder instance
          */
         public Builder opcSseCustomerAlgorithm(String opcSseCustomerAlgorithm) {
@@ -471,6 +690,12 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+         * decrypt the data. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
+         */
         private String opcSseCustomerKey = null;
 
         /**
@@ -478,6 +703,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * decrypt the data. For more information, see
          * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
+         * @param opcSseCustomerKey the value to set
          * @return this builder instance
          */
         public Builder opcSseCustomerKey(String opcSseCustomerKey) {
@@ -485,6 +711,12 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+         * value is used to check the integrity of the encryption key. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
+         */
         private String opcSseCustomerKeySha256 = null;
 
         /**
@@ -492,6 +724,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
          * value is used to check the integrity of the encryption key. For more information, see
          * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
+         * @param opcSseCustomerKeySha256 the value to set
          * @return this builder instance
          */
         public Builder opcSseCustomerKeySha256(String opcSseCustomerKeySha256) {
@@ -499,12 +732,18 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+         * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+         *
+         */
         private String opcSseKmsKeyId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
          * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
          *
+         * @param opcSseKmsKeyId the value to set
          * @return this builder instance
          */
         public Builder opcSseKmsKeyId(String opcSseKmsKeyId) {
@@ -512,12 +751,18 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * The storage tier that the object should be stored in. If not specified, the object will be stored in
+         * the same storage tier as the bucket.
+         *
+         */
         private com.oracle.bmc.objectstorage.model.StorageTier storageTier = null;
 
         /**
          * The storage tier that the object should be stored in. If not specified, the object will be stored in
          * the same storage tier as the bucket.
          *
+         * @param storageTier the value to set
          * @return this builder instance
          */
         public Builder storageTier(com.oracle.bmc.objectstorage.model.StorageTier storageTier) {
@@ -525,10 +770,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return this;
         }
 
+        /**
+         * Optional user-defined metadata key and value.
+         */
         private java.util.Map<String, String> opcMeta = null;
 
         /**
          * Optional user-defined metadata key and value.
+         * @param opcMeta the value to set
          * @return this builder instance
          */
         public Builder opcMeta(java.util.Map<String, String> opcMeta) {
@@ -655,7 +904,8 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -682,6 +932,10 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
                 .opcMeta(opcMeta);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class UpdateAuditArchiveRetrievalRequest
      */
     private String auditArchiveRetrievalId;
 
+    /**
+     * OCID of the archive retrieval.
+     */
     public String getAuditArchiveRetrievalId() {
         return auditArchiveRetrievalId;
     }
@@ -27,6 +30,9 @@ public class UpdateAuditArchiveRetrievalRequest
     private com.oracle.bmc.datasafe.model.UpdateAuditArchiveRetrievalDetails
             updateAuditArchiveRetrievalDetails;
 
+    /**
+     * Details to update the audit archive retrieval.
+     */
     public com.oracle.bmc.datasafe.model.UpdateAuditArchiveRetrievalDetails
             getUpdateAuditArchiveRetrievalDetails() {
         return updateAuditArchiveRetrievalDetails;
@@ -41,6 +47,14 @@ public class UpdateAuditArchiveRetrievalRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class UpdateAuditArchiveRetrievalRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateAuditArchiveRetrievalRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of the archive retrieval.
+         */
         private String auditArchiveRetrievalId = null;
 
         /**
          * OCID of the archive retrieval.
+         * @param auditArchiveRetrievalId the value to set
          * @return this builder instance
          */
         public Builder auditArchiveRetrievalId(String auditArchiveRetrievalId) {
@@ -82,11 +103,15 @@ public class UpdateAuditArchiveRetrievalRequest
             return this;
         }
 
+        /**
+         * Details to update the audit archive retrieval.
+         */
         private com.oracle.bmc.datasafe.model.UpdateAuditArchiveRetrievalDetails
                 updateAuditArchiveRetrievalDetails = null;
 
         /**
          * Details to update the audit archive retrieval.
+         * @param updateAuditArchiveRetrievalDetails the value to set
          * @return this builder instance
          */
         public Builder updateAuditArchiveRetrievalDetails(
@@ -96,6 +121,14 @@ public class UpdateAuditArchiveRetrievalRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -105,6 +138,7 @@ public class UpdateAuditArchiveRetrievalRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -112,10 +146,14 @@ public class UpdateAuditArchiveRetrievalRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +247,8 @@ public class UpdateAuditArchiveRetrievalRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +258,10 @@ public class UpdateAuditArchiveRetrievalRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,9 +29,17 @@ public final class RegistrySummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of Registry summariess
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RegistrySummary> items;
 
+        /**
+         * The array of Registry summariess
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<RegistrySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class RegistrySummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RegistrySummary> items;
 
+    /**
+     * The array of Registry summariess
+     * @return the value
+     **/
     public java.util.List<RegistrySummary> getItems() {
         return items;
     }

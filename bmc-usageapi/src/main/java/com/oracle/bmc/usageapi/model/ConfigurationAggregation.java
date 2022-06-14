@@ -29,9 +29,17 @@ public final class ConfigurationAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of available configurations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<Configuration> items;
 
+        /**
+         * The list of available configurations.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<Configuration> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ConfigurationAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<Configuration> items;
 
+    /**
+     * The list of available configurations.
+     * @return the value
+     **/
     public java.util.List<Configuration> getItems() {
         return items;
     }

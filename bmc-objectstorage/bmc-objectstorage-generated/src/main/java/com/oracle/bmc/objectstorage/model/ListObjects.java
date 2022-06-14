@@ -35,27 +35,59 @@ public final class ListObjects {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of object summaries.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objects")
         private java.util.List<ObjectSummary> objects;
 
+        /**
+         * An array of object summaries.
+         *
+         * @param objects the value to set
+         * @return this builder
+         **/
         public Builder objects(java.util.List<ObjectSummary> objects) {
             this.objects = objects;
             this.__explicitlySet__.add("objects");
             return this;
         }
-
+        /**
+         * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
         private java.util.List<String> prefixes;
 
+        /**
+         * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+         *
+         * @param prefixes the value to set
+         * @return this builder
+         **/
         public Builder prefixes(java.util.List<String> prefixes) {
             this.prefixes = prefixes;
             this.__explicitlySet__.add("prefixes");
             return this;
         }
-
+        /**
+         * The name of the object to use in the {@code start} parameter to obtain the next page of
+         * a truncated ListObjects response. Avoid entering confidential information.
+         * Example: test/object1.log
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextStartWith")
         private String nextStartWith;
 
+        /**
+         * The name of the object to use in the {@code start} parameter to obtain the next page of
+         * a truncated ListObjects response. Avoid entering confidential information.
+         * Example: test/object1.log
+         *
+         * @param nextStartWith the value to set
+         * @return this builder
+         **/
         public Builder nextStartWith(String nextStartWith) {
             this.nextStartWith = nextStartWith;
             this.__explicitlySet__.add("nextStartWith");
@@ -101,6 +133,11 @@ public final class ListObjects {
     @com.fasterxml.jackson.annotation.JsonProperty("objects")
     private final java.util.List<ObjectSummary> objects;
 
+    /**
+     * An array of object summaries.
+     *
+     * @return the value
+     **/
     public java.util.List<ObjectSummary> getObjects() {
         return objects;
     }
@@ -112,6 +149,11 @@ public final class ListObjects {
     @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
     private final java.util.List<String> prefixes;
 
+    /**
+     * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getPrefixes() {
         return prefixes;
     }
@@ -125,6 +167,13 @@ public final class ListObjects {
     @com.fasterxml.jackson.annotation.JsonProperty("nextStartWith")
     private final String nextStartWith;
 
+    /**
+     * The name of the object to use in the {@code start} parameter to obtain the next page of
+     * a truncated ListObjects response. Avoid entering confidential information.
+     * Example: test/object1.log
+     *
+     * @return the value
+     **/
     public String getNextStartWith() {
         return nextStartWith;
     }

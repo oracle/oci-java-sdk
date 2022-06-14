@@ -30,18 +30,33 @@ public final class PasswordResetAuthenticationRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The id of the user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
+        /**
+         * The id of the user
+         * @param userId the value to set
+         * @return this builder
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-
+        /**
+         * The password reset token
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordResetToken")
         private String passwordResetToken;
 
+        /**
+         * The password reset token
+         * @param passwordResetToken the value to set
+         * @return this builder
+         **/
         public Builder passwordResetToken(String passwordResetToken) {
             this.passwordResetToken = passwordResetToken;
             this.__explicitlySet__.add("passwordResetToken");
@@ -85,6 +100,10 @@ public final class PasswordResetAuthenticationRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
+    /**
+     * The id of the user
+     * @return the value
+     **/
     public String getUserId() {
         return userId;
     }
@@ -95,6 +114,10 @@ public final class PasswordResetAuthenticationRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordResetToken")
     private final String passwordResetToken;
 
+    /**
+     * The password reset token
+     * @return the value
+     **/
     public String getPasswordResetToken() {
         return passwordResetToken;
     }

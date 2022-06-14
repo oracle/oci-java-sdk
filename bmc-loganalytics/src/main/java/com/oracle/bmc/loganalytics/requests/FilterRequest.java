@@ -19,6 +19,10 @@ public class FilterRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,9 @@ public class FilterRequest
      */
     private com.oracle.bmc.loganalytics.model.FilterDetails filterDetails;
 
+    /**
+     * Query string and filters to add or remove
+     */
     public com.oracle.bmc.loganalytics.model.FilterDetails getFilterDetails() {
         return filterDetails;
     }
@@ -35,6 +42,9 @@ public class FilterRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,11 +71,16 @@ public class FilterRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -73,10 +88,14 @@ public class FilterRequest
             return this;
         }
 
+        /**
+         * Query string and filters to add or remove
+         */
         private com.oracle.bmc.loganalytics.model.FilterDetails filterDetails = null;
 
         /**
          * Query string and filters to add or remove
+         * @param filterDetails the value to set
          * @return this builder instance
          */
         public Builder filterDetails(
@@ -85,10 +104,14 @@ public class FilterRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -179,7 +202,8 @@ public class FilterRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -188,6 +212,10 @@ public class FilterRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,9 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String repositoryId;
 
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -24,6 +27,9 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String refName;
 
+    /**
+     * A filter to return only resources that match the given reference name.
+     */
     public String getRefName() {
         return refName;
     }
@@ -32,6 +38,9 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -42,10 +51,14 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -53,10 +66,14 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given reference name.
+         */
         private String refName = null;
 
         /**
          * A filter to return only resources that match the given reference name.
+         * @param refName the value to set
          * @return this builder instance
          */
         public Builder refName(String refName) {
@@ -64,10 +81,14 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -147,12 +168,17 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().repositoryId(repositoryId).refName(refName).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

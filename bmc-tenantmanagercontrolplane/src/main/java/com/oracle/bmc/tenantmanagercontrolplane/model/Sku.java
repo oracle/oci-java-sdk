@@ -29,27 +29,49 @@ public final class Sku {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * SKU number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("number")
         private String number;
 
+        /**
+         * SKU number.
+         * @param number the value to set
+         * @return this builder
+         **/
         public Builder number(String number) {
             this.number = number;
             this.__explicitlySet__.add("number");
             return this;
         }
-
+        /**
+         * SKU name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * SKU name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * SKU quantity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private Integer quantity;
 
+        /**
+         * SKU quantity.
+         * @param quantity the value to set
+         * @return this builder
+         **/
         public Builder quantity(Integer quantity) {
             this.quantity = quantity;
             this.__explicitlySet__.add("quantity");
@@ -92,6 +114,10 @@ public final class Sku {
     @com.fasterxml.jackson.annotation.JsonProperty("number")
     private final String number;
 
+    /**
+     * SKU number.
+     * @return the value
+     **/
     public String getNumber() {
         return number;
     }
@@ -102,6 +128,10 @@ public final class Sku {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * SKU name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -112,6 +142,10 @@ public final class Sku {
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final Integer quantity;
 
+    /**
+     * SKU quantity.
+     * @return the value
+     **/
     public Integer getQuantity() {
         return quantity;
     }

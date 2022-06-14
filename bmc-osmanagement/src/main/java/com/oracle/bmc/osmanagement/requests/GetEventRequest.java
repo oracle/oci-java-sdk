@@ -16,6 +16,9 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String managedInstanceId;
 
+    /**
+     * Instance Oracle Cloud identifier (ocid)
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -24,6 +27,9 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String eventId;
 
+    /**
+     * Unique Event identifier (OCID)
+     */
     public String getEventId() {
         return eventId;
     }
@@ -32,6 +38,9 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -40,6 +49,9 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,10 +62,14 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Instance Oracle Cloud identifier (ocid)
+         */
         private String managedInstanceId = null;
 
         /**
          * Instance Oracle Cloud identifier (ocid)
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -61,10 +77,14 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Unique Event identifier (OCID)
+         */
         private String eventId = null;
 
         /**
          * Unique Event identifier (OCID)
+         * @param eventId the value to set
          * @return this builder instance
          */
         public Builder eventId(String eventId) {
@@ -72,10 +92,14 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -83,10 +107,14 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -168,7 +196,8 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -178,6 +207,10 @@ public class GetEventRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

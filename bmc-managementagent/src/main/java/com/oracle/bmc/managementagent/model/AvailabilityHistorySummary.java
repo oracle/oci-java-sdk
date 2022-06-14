@@ -41,36 +41,65 @@ public final class AvailabilityHistorySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * agent identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * agent identifier
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * The availability status of managementAgent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
         private AvailabilityStatus availabilityStatus;
 
+        /**
+         * The availability status of managementAgent
+         * @param availabilityStatus the value to set
+         * @return this builder
+         **/
         public Builder availabilityStatus(AvailabilityStatus availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
             this.__explicitlySet__.add("availabilityStatus");
             return this;
         }
-
+        /**
+         * The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusStarted")
         private java.util.Date timeAvailabilityStatusStarted;
 
+        /**
+         * The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
+         * @param timeAvailabilityStatusStarted the value to set
+         * @return this builder
+         **/
         public Builder timeAvailabilityStatusStarted(java.util.Date timeAvailabilityStatusStarted) {
             this.timeAvailabilityStatusStarted = timeAvailabilityStatusStarted;
             this.__explicitlySet__.add("timeAvailabilityStatusStarted");
             return this;
         }
-
+        /**
+         * The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusEnded")
         private java.util.Date timeAvailabilityStatusEnded;
 
+        /**
+         * The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
+         * @param timeAvailabilityStatusEnded the value to set
+         * @return this builder
+         **/
         public Builder timeAvailabilityStatusEnded(java.util.Date timeAvailabilityStatusEnded) {
             this.timeAvailabilityStatusEnded = timeAvailabilityStatusEnded;
             this.__explicitlySet__.add("timeAvailabilityStatusEnded");
@@ -121,6 +150,10 @@ public final class AvailabilityHistorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * agent identifier
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -131,6 +164,10 @@ public final class AvailabilityHistorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
     private final AvailabilityStatus availabilityStatus;
 
+    /**
+     * The availability status of managementAgent
+     * @return the value
+     **/
     public AvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
     }
@@ -141,6 +178,10 @@ public final class AvailabilityHistorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusStarted")
     private final java.util.Date timeAvailabilityStatusStarted;
 
+    /**
+     * The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeAvailabilityStatusStarted() {
         return timeAvailabilityStatusStarted;
     }
@@ -151,6 +192,10 @@ public final class AvailabilityHistorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusEnded")
     private final java.util.Date timeAvailabilityStatusEnded;
 
+    /**
+     * The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeAvailabilityStatusEnded() {
         return timeAvailabilityStatusEnded;
     }

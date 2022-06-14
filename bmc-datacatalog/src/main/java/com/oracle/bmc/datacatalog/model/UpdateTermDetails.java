@@ -47,54 +47,101 @@ public final class UpdateTermDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Detailed description of the term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the term.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The parent key of the term. In the case of a root-level category only, the term would have no parent and this should be left unset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
         private String parentTermKey;
 
+        /**
+         * The parent key of the term. In the case of a root-level category only, the term would have no parent and this should be left unset.
+         * @param parentTermKey the value to set
+         * @return this builder
+         **/
         public Builder parentTermKey(String parentTermKey) {
             this.parentTermKey = parentTermKey;
             this.__explicitlySet__.add("parentTermKey");
             return this;
         }
-
+        /**
+         * OCID of the user who is the owner of this business terminology.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
+        /**
+         * OCID of the user who is the owner of this business terminology.
+         * @param owner the value to set
+         * @return this builder
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-
+        /**
+         * Status of the approval process workflow for this business term in the glossary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
         private TermWorkflowStatus workflowStatus;
 
+        /**
+         * Status of the approval process workflow for this business term in the glossary
+         * @param workflowStatus the value to set
+         * @return this builder
+         **/
         public Builder workflowStatus(TermWorkflowStatus workflowStatus) {
             this.workflowStatus = workflowStatus;
             this.__explicitlySet__.add("workflowStatus");
             return this;
         }
-
+        /**
+         * The list of customized properties along with the values for this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
         private java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+        /**
+         * The list of customized properties along with the values for this object
+         * @param customPropertyMembers the value to set
+         * @return this builder
+         **/
         public Builder customPropertyMembers(
                 java.util.List<CustomPropertySetUsage> customPropertyMembers) {
             this.customPropertyMembers = customPropertyMembers;
@@ -152,6 +199,12 @@ public final class UpdateTermDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -162,6 +215,10 @@ public final class UpdateTermDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the term.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -172,6 +229,10 @@ public final class UpdateTermDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
     private final String parentTermKey;
 
+    /**
+     * The parent key of the term. In the case of a root-level category only, the term would have no parent and this should be left unset.
+     * @return the value
+     **/
     public String getParentTermKey() {
         return parentTermKey;
     }
@@ -182,6 +243,10 @@ public final class UpdateTermDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
+    /**
+     * OCID of the user who is the owner of this business terminology.
+     * @return the value
+     **/
     public String getOwner() {
         return owner;
     }
@@ -192,6 +257,10 @@ public final class UpdateTermDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
     private final TermWorkflowStatus workflowStatus;
 
+    /**
+     * Status of the approval process workflow for this business term in the glossary
+     * @return the value
+     **/
     public TermWorkflowStatus getWorkflowStatus() {
         return workflowStatus;
     }
@@ -202,6 +271,10 @@ public final class UpdateTermDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
     private final java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+    /**
+     * The list of customized properties along with the values for this object
+     * @return the value
+     **/
     public java.util.List<CustomPropertySetUsage> getCustomPropertyMembers() {
         return customPropertyMembers;
     }

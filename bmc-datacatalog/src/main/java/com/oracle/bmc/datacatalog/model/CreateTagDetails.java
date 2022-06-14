@@ -28,18 +28,37 @@ public final class CreateTagDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the tag in the case of a free form tag.
+         * When linking to a glossary term, this field is not specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the tag in the case of a free form tag.
+         * When linking to a glossary term, this field is not specified.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Unique key of the related term or null in the case of a free form tag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("termKey")
         private String termKey;
 
+        /**
+         * Unique key of the related term or null in the case of a free form tag.
+         * @param termKey the value to set
+         * @return this builder
+         **/
         public Builder termKey(String termKey) {
             this.termKey = termKey;
             this.__explicitlySet__.add("termKey");
@@ -83,6 +102,12 @@ public final class CreateTagDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the tag in the case of a free form tag.
+     * When linking to a glossary term, this field is not specified.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -93,6 +118,10 @@ public final class CreateTagDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("termKey")
     private final String termKey;
 
+    /**
+     * Unique key of the related term or null in the case of a free form tag.
+     * @return the value
+     **/
     public String getTermKey() {
         return termKey;
     }

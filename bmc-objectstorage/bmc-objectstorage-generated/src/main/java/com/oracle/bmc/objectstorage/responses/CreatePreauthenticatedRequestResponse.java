@@ -13,6 +13,10 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -24,6 +28,12 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.objectstorage.model.PreauthenticatedRequest preauthenticatedRequest;
 
+    /**
+     * The returned PreauthenticatedRequest instance.
+     * @return the value
+     */
     public com.oracle.bmc.objectstorage.model.PreauthenticatedRequest getPreauthenticatedRequest() {
         return preauthenticatedRequest;
     }
@@ -62,22 +76,50 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned PreauthenticatedRequest instance.
+         */
         private com.oracle.bmc.objectstorage.model.PreauthenticatedRequest preauthenticatedRequest;
 
+        /**
+         * The returned PreauthenticatedRequest instance.
+         * @param preauthenticatedRequest the value to set
+         * @return this builder
+         */
         public Builder preauthenticatedRequest(
                 com.oracle.bmc.objectstorage.model.PreauthenticatedRequest
                         preauthenticatedRequest) {
@@ -98,12 +140,20 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreatePreauthenticatedRequestResponse build() {
             return new CreatePreauthenticatedRequestResponse(
                     __httpStatusCode__, opcClientRequestId, opcRequestId, preauthenticatedRequest);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

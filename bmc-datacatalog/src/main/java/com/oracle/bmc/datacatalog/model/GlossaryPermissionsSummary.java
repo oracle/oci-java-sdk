@@ -30,18 +30,33 @@ public final class GlossaryPermissionsSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique key of the parent glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
         private String glossaryKey;
 
+        /**
+         * The unique key of the parent glossary.
+         * @param glossaryKey the value to set
+         * @return this builder
+         **/
         public Builder glossaryKey(String glossaryKey) {
             this.glossaryKey = glossaryKey;
             this.__explicitlySet__.add("glossaryKey");
             return this;
         }
-
+        /**
+         * An array of permissions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userPermissions")
         private java.util.List<String> userPermissions;
 
+        /**
+         * An array of permissions.
+         * @param userPermissions the value to set
+         * @return this builder
+         **/
         public Builder userPermissions(java.util.List<String> userPermissions) {
             this.userPermissions = userPermissions;
             this.__explicitlySet__.add("userPermissions");
@@ -85,6 +100,10 @@ public final class GlossaryPermissionsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
     private final String glossaryKey;
 
+    /**
+     * The unique key of the parent glossary.
+     * @return the value
+     **/
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -95,6 +114,10 @@ public final class GlossaryPermissionsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userPermissions")
     private final java.util.List<String> userPermissions;
 
+    /**
+     * An array of permissions.
+     * @return the value
+     **/
     public java.util.List<String> getUserPermissions() {
         return userPermissions;
     }

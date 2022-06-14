@@ -16,6 +16,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String id;
 
+    /**
+     * The identifier of the resource.
+     */
     public String getId() {
         return id;
     }
@@ -40,6 +49,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String jobId;
 
+    /**
+     * The identifier of the job.
+     */
     public String getJobId() {
         return jobId;
     }
@@ -48,6 +60,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -56,6 +71,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String managedDatabaseGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+     */
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
@@ -64,6 +82,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String status;
 
+    /**
+     * The status of the job execution.
+     */
     public String getStatus() {
         return status;
     }
@@ -72,6 +93,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire name.
+     */
     public String getName() {
         return name;
     }
@@ -80,6 +104,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -90,6 +117,11 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -140,6 +172,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -148,6 +186,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -156,6 +197,9 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String jobRunId;
 
+    /**
+     * The identifier of the job run.
+     */
     public String getJobRunId() {
         return jobRunId;
     }
@@ -167,10 +211,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -178,10 +226,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -189,10 +241,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The identifier of the resource.
+         */
         private String id = null;
 
         /**
          * The identifier of the resource.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -200,10 +256,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The identifier of the job.
+         */
         private String jobId = null;
 
         /**
          * The identifier of the job.
+         * @param jobId the value to set
          * @return this builder instance
          */
         public Builder jobId(String jobId) {
@@ -211,10 +271,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -222,10 +286,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         */
         private String managedDatabaseGroupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         * @param managedDatabaseGroupId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseGroupId(String managedDatabaseGroupId) {
@@ -233,10 +301,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The status of the job execution.
+         */
         private String status = null;
 
         /**
          * The status of the job execution.
+         * @param status the value to set
          * @return this builder instance
          */
         public Builder status(String status) {
@@ -244,10 +316,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire name.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -255,10 +331,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -266,12 +346,18 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page from where the next set of paginated results
          * are retrieved. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -279,6 +365,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort information by. Only one sortOrder can be used. The default sort order
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -286,6 +378,7 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
          * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
          * The \u2018NAME\u2019 sort order is case-sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -293,10 +386,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -304,10 +401,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The identifier of the job run.
+         */
         private String jobRunId = null;
 
         /**
          * The identifier of the job run.
+         * @param jobRunId the value to set
          * @return this builder instance
          */
         public Builder jobRunId(String jobRunId) {
@@ -407,7 +508,8 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -426,6 +528,10 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
                 .jobRunId(jobRunId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

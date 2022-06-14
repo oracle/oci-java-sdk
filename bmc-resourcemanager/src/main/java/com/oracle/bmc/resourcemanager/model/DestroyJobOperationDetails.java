@@ -28,6 +28,7 @@ package com.oracle.bmc.resourcemanager.model;
 public final class DestroyJobOperationDetails extends JobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
         private TerraformAdvancedOptions terraformAdvancedOptions;
 
@@ -36,10 +37,23 @@ public final class DestroyJobOperationDetails extends JobOperationDetails {
             this.__explicitlySet__.add("terraformAdvancedOptions");
             return this;
         }
-
+        /**
+         * Specifies the source of the execution plan to apply.
+         * Currently, only {@code AUTO_APPROVED} is allowed, which indicates that the job
+         * will be run without an execution plan.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
         private ExecutionPlanStrategy executionPlanStrategy;
 
+        /**
+         * Specifies the source of the execution plan to apply.
+         * Currently, only {@code AUTO_APPROVED} is allowed, which indicates that the job
+         * will be run without an execution plan.
+         *
+         * @param executionPlanStrategy the value to set
+         * @return this builder
+         **/
         public Builder executionPlanStrategy(ExecutionPlanStrategy executionPlanStrategy) {
             this.executionPlanStrategy = executionPlanStrategy;
             this.__explicitlySet__.add("executionPlanStrategy");
@@ -153,6 +167,13 @@ public final class DestroyJobOperationDetails extends JobOperationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
     private final ExecutionPlanStrategy executionPlanStrategy;
 
+    /**
+     * Specifies the source of the execution plan to apply.
+     * Currently, only {@code AUTO_APPROVED} is allowed, which indicates that the job
+     * will be run without an execution plan.
+     *
+     * @return the value
+     **/
     public ExecutionPlanStrategy getExecutionPlanStrategy() {
         return executionPlanStrategy;
     }

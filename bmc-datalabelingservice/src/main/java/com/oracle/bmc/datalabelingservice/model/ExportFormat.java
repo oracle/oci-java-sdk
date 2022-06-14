@@ -28,18 +28,33 @@ public final class ExportFormat {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of export format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Name name;
 
+        /**
+         * Name of export format.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(Name name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Version of export format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Version version;
 
+        /**
+         * Version of export format.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(Version version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -121,6 +136,10 @@ public final class ExportFormat {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Name name;
 
+    /**
+     * Name of export format.
+     * @return the value
+     **/
     public Name getName() {
         return name;
     }
@@ -166,6 +185,10 @@ public final class ExportFormat {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Version version;
 
+    /**
+     * Version of export format.
+     * @return the value
+     **/
     public Version getVersion() {
         return version;
     }

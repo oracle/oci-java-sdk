@@ -72,55 +72,109 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * User specified color to highlight matches with if found.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("color")
         private String color;
 
+        /**
+         * User specified color to highlight matches with if found.
+         *
+         * @param color the value to set
+         * @return this builder
+         **/
         public Builder color(String color) {
             this.color = color;
             this.__explicitlySet__.add("color");
             return this;
         }
-
+        /**
+         * User specified priority assigned to highlighted matches if found.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private String priority;
 
+        /**
+         * User specified priority assigned to highlighted matches if found.
+         *
+         * @param priority the value to set
+         * @return this builder
+         **/
         public Builder priority(String priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
             return this;
         }
-
+        /**
+         * List of fields to search for terms or phrases to highlight.  If not specified all string fields are scanned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchOnly")
         private java.util.List<String> matchOnly;
 
+        /**
+         * List of fields to search for terms or phrases to highlight.  If not specified all string fields are scanned.
+         *
+         * @param matchOnly the value to set
+         * @return this builder
+         **/
         public Builder matchOnly(java.util.List<String> matchOnly) {
             this.matchOnly = matchOnly;
             this.__explicitlySet__.add("matchOnly");
             return this;
         }
-
+        /**
+         * List of fields to search for terms or phrases to highlight.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<String> fields;
 
+        /**
+         * List of fields to search for terms or phrases to highlight.
+         *
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.List<String> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-
+        /**
+         * List of terms or phrases to highlight if found.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keywords")
         private java.util.List<String> keywords;
 
+        /**
+         * List of terms or phrases to highlight if found.
+         *
+         * @param keywords the value to set
+         * @return this builder
+         **/
         public Builder keywords(java.util.List<String> keywords) {
             this.keywords = keywords;
             this.__explicitlySet__.add("keywords");
             return this;
         }
-
+        /**
+         * List of subQueries specified as highlightgroups command arguments
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subQueries")
         private java.util.List<ParseQueryOutput> subQueries;
 
+        /**
+         * List of subQueries specified as highlightgroups command arguments
+         *
+         * @param subQueries the value to set
+         * @return this builder
+         **/
         public Builder subQueries(java.util.List<ParseQueryOutput> subQueries) {
             this.subQueries = subQueries;
             this.__explicitlySet__.add("subQueries");
@@ -208,6 +262,11 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
     @com.fasterxml.jackson.annotation.JsonProperty("color")
     private final String color;
 
+    /**
+     * User specified color to highlight matches with if found.
+     *
+     * @return the value
+     **/
     public String getColor() {
         return color;
     }
@@ -219,6 +278,11 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final String priority;
 
+    /**
+     * User specified priority assigned to highlighted matches if found.
+     *
+     * @return the value
+     **/
     public String getPriority() {
         return priority;
     }
@@ -230,6 +294,11 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
     @com.fasterxml.jackson.annotation.JsonProperty("matchOnly")
     private final java.util.List<String> matchOnly;
 
+    /**
+     * List of fields to search for terms or phrases to highlight.  If not specified all string fields are scanned.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getMatchOnly() {
         return matchOnly;
     }
@@ -241,6 +310,11 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<String> fields;
 
+    /**
+     * List of fields to search for terms or phrases to highlight.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getFields() {
         return fields;
     }
@@ -252,6 +326,11 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
     @com.fasterxml.jackson.annotation.JsonProperty("keywords")
     private final java.util.List<String> keywords;
 
+    /**
+     * List of terms or phrases to highlight if found.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getKeywords() {
         return keywords;
     }
@@ -263,6 +342,11 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
     @com.fasterxml.jackson.annotation.JsonProperty("subQueries")
     private final java.util.List<ParseQueryOutput> subQueries;
 
+    /**
+     * List of subQueries specified as highlightgroups command arguments
+     *
+     * @return the value
+     **/
     public java.util.List<ParseQueryOutput> getSubQueries() {
         return subQueries;
     }

@@ -27,27 +27,49 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
 public final class CreateObjectStorageSourceDetails extends CreateSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The path relative to the prefix specified in the dataset source details (file name).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relativePath")
         private String relativePath;
 
+        /**
+         * The path relative to the prefix specified in the dataset source details (file name).
+         * @param relativePath the value to set
+         * @return this builder
+         **/
         public Builder relativePath(String relativePath) {
             this.relativePath = relativePath;
             this.__explicitlySet__.add("relativePath");
             return this;
         }
-
+        /**
+         * The offset into the file containing the content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private java.math.BigDecimal offset;
 
+        /**
+         * The offset into the file containing the content.
+         * @param offset the value to set
+         * @return this builder
+         **/
         public Builder offset(java.math.BigDecimal offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-
+        /**
+         * The length from offset into the file containing the content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private java.math.BigDecimal length;
 
+        /**
+         * The length from offset into the file containing the content.
+         * @param length the value to set
+         * @return this builder
+         **/
         public Builder length(java.math.BigDecimal length) {
             this.length = length;
             this.__explicitlySet__.add("length");
@@ -100,6 +122,10 @@ public final class CreateObjectStorageSourceDetails extends CreateSourceDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("relativePath")
     private final String relativePath;
 
+    /**
+     * The path relative to the prefix specified in the dataset source details (file name).
+     * @return the value
+     **/
     public String getRelativePath() {
         return relativePath;
     }
@@ -110,6 +136,10 @@ public final class CreateObjectStorageSourceDetails extends CreateSourceDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final java.math.BigDecimal offset;
 
+    /**
+     * The offset into the file containing the content.
+     * @return the value
+     **/
     public java.math.BigDecimal getOffset() {
         return offset;
     }
@@ -120,6 +150,10 @@ public final class CreateObjectStorageSourceDetails extends CreateSourceDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final java.math.BigDecimal length;
 
+    /**
+     * The length from offset into the file containing the content.
+     * @return the value
+     **/
     public java.math.BigDecimal getLength() {
         return length;
     }

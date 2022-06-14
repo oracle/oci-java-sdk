@@ -36,27 +36,49 @@ public final class StorageUsage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the number of bytes of active data (non-archived)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activeDataSizeInBytes")
         private Long activeDataSizeInBytes;
 
+        /**
+         * This is the number of bytes of active data (non-archived)
+         * @param activeDataSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder activeDataSizeInBytes(Long activeDataSizeInBytes) {
             this.activeDataSizeInBytes = activeDataSizeInBytes;
             this.__explicitlySet__.add("activeDataSizeInBytes");
             return this;
         }
-
+        /**
+         * This is the number of bytes of archived data in object storage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archivedDataSizeInBytes")
         private Long archivedDataSizeInBytes;
 
+        /**
+         * This is the number of bytes of archived data in object storage
+         * @param archivedDataSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder archivedDataSizeInBytes(Long archivedDataSizeInBytes) {
             this.archivedDataSizeInBytes = archivedDataSizeInBytes;
             this.__explicitlySet__.add("archivedDataSizeInBytes");
             return this;
         }
-
+        /**
+         * This is the number of bytes of recalled data from archived in object store
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recalledArchivedDataSizeInBytes")
         private Long recalledArchivedDataSizeInBytes;
 
+        /**
+         * This is the number of bytes of recalled data from archived in object store
+         * @param recalledArchivedDataSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder recalledArchivedDataSizeInBytes(Long recalledArchivedDataSizeInBytes) {
             this.recalledArchivedDataSizeInBytes = recalledArchivedDataSizeInBytes;
             this.__explicitlySet__.add("recalledArchivedDataSizeInBytes");
@@ -106,6 +128,10 @@ public final class StorageUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("activeDataSizeInBytes")
     private final Long activeDataSizeInBytes;
 
+    /**
+     * This is the number of bytes of active data (non-archived)
+     * @return the value
+     **/
     public Long getActiveDataSizeInBytes() {
         return activeDataSizeInBytes;
     }
@@ -116,6 +142,10 @@ public final class StorageUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("archivedDataSizeInBytes")
     private final Long archivedDataSizeInBytes;
 
+    /**
+     * This is the number of bytes of archived data in object storage
+     * @return the value
+     **/
     public Long getArchivedDataSizeInBytes() {
         return archivedDataSizeInBytes;
     }
@@ -126,6 +156,10 @@ public final class StorageUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("recalledArchivedDataSizeInBytes")
     private final Long recalledArchivedDataSizeInBytes;
 
+    /**
+     * This is the number of bytes of recalled data from archived in object store
+     * @return the value
+     **/
     public Long getRecalledArchivedDataSizeInBytes() {
         return recalledArchivedDataSizeInBytes;
     }

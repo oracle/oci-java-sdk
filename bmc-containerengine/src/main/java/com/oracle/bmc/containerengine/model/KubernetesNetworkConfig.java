@@ -30,18 +30,33 @@ public final class KubernetesNetworkConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("podsCidr")
         private String podsCidr;
 
+        /**
+         * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+         * @param podsCidr the value to set
+         * @return this builder
+         **/
         public Builder podsCidr(String podsCidr) {
             this.podsCidr = podsCidr;
             this.__explicitlySet__.add("podsCidr");
             return this;
         }
-
+        /**
+         * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("servicesCidr")
         private String servicesCidr;
 
+        /**
+         * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+         * @param servicesCidr the value to set
+         * @return this builder
+         **/
         public Builder servicesCidr(String servicesCidr) {
             this.servicesCidr = servicesCidr;
             this.__explicitlySet__.add("servicesCidr");
@@ -84,6 +99,10 @@ public final class KubernetesNetworkConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("podsCidr")
     private final String podsCidr;
 
+    /**
+     * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+     * @return the value
+     **/
     public String getPodsCidr() {
         return podsCidr;
     }
@@ -94,6 +113,10 @@ public final class KubernetesNetworkConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("servicesCidr")
     private final String servicesCidr;
 
+    /**
+     * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+     * @return the value
+     **/
     public String getServicesCidr() {
         return servicesCidr;
     }

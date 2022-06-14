@@ -16,6 +16,9 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String workRequestId;
 
+    /**
+     * The ID of the asynchronous request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -24,6 +27,9 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -35,10 +41,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the asynchronous request.
+         */
         private String workRequestId = null;
 
         /**
          * The ID of the asynchronous request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -46,10 +56,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -127,12 +141,17 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().workRequestId(workRequestId).opcClientRequestId(opcClientRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

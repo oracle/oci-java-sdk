@@ -29,27 +29,49 @@ public final class MetadataDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Metadata param name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paramName")
         private String paramName;
 
+        /**
+         * Metadata param name
+         * @param paramName the value to set
+         * @return this builder
+         **/
         public Builder paramName(String paramName) {
             this.paramName = paramName;
             this.__explicitlySet__.add("paramName");
             return this;
         }
-
+        /**
+         * Metadata param value. Complex value will be a JSON string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paramValue")
         private String paramValue;
 
+        /**
+         * Metadata param value. Complex value will be a JSON string.
+         * @param paramValue the value to set
+         * @return this builder
+         **/
         public Builder paramValue(String paramValue) {
             this.paramValue = paramValue;
             this.__explicitlySet__.add("paramValue");
             return this;
         }
-
+        /**
+         * Indicates if the value is a JSON string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isJsonValue")
         private Boolean isJsonValue;
 
+        /**
+         * Indicates if the value is a JSON string
+         * @param isJsonValue the value to set
+         * @return this builder
+         **/
         public Builder isJsonValue(Boolean isJsonValue) {
             this.isJsonValue = isJsonValue;
             this.__explicitlySet__.add("isJsonValue");
@@ -94,6 +116,10 @@ public final class MetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("paramName")
     private final String paramName;
 
+    /**
+     * Metadata param name
+     * @return the value
+     **/
     public String getParamName() {
         return paramName;
     }
@@ -104,6 +130,10 @@ public final class MetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("paramValue")
     private final String paramValue;
 
+    /**
+     * Metadata param value. Complex value will be a JSON string.
+     * @return the value
+     **/
     public String getParamValue() {
         return paramValue;
     }
@@ -114,6 +144,10 @@ public final class MetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isJsonValue")
     private final Boolean isJsonValue;
 
+    /**
+     * Indicates if the value is a JSON string
+     * @return the value
+     **/
     public Boolean getIsJsonValue() {
         return isJsonValue;
     }

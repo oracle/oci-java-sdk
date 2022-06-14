@@ -29,9 +29,17 @@ public final class FilterGroupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<Filter> filters;
 
+        /**
+         * A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+         * @param filters the value to set
+         * @return this builder
+         **/
         public Builder filters(java.util.List<Filter> filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
@@ -73,6 +81,10 @@ public final class FilterGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final java.util.List<Filter> filters;
 
+    /**
+     * A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+     * @return the value
+     **/
     public java.util.List<Filter> getFilters() {
         return filters;
     }

@@ -18,6 +18,9 @@ public class UpdateVolumeKmsKeyRequest
      */
     private String volumeId;
 
+    /**
+     * The OCID of the volume.
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -26,6 +29,9 @@ public class UpdateVolumeKmsKeyRequest
      */
     private com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails;
 
+    /**
+     * Updates the Key Management master encryption key assigned to the specified volume.
+     */
     public com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails getUpdateVolumeKmsKeyDetails() {
         return updateVolumeKmsKeyDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateVolumeKmsKeyRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -59,10 +71,14 @@ public class UpdateVolumeKmsKeyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the volume.
+         */
         private String volumeId = null;
 
         /**
          * The OCID of the volume.
+         * @param volumeId the value to set
          * @return this builder instance
          */
         public Builder volumeId(String volumeId) {
@@ -70,11 +86,15 @@ public class UpdateVolumeKmsKeyRequest
             return this;
         }
 
+        /**
+         * Updates the Key Management master encryption key assigned to the specified volume.
+         */
         private com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails =
                 null;
 
         /**
          * Updates the Key Management master encryption key assigned to the specified volume.
+         * @param updateVolumeKmsKeyDetails the value to set
          * @return this builder instance
          */
         public Builder updateVolumeKmsKeyDetails(
@@ -83,6 +103,12 @@ public class UpdateVolumeKmsKeyRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -90,6 +116,7 @@ public class UpdateVolumeKmsKeyRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -180,7 +207,8 @@ public class UpdateVolumeKmsKeyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +217,10 @@ public class UpdateVolumeKmsKeyRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

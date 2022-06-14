@@ -48,18 +48,33 @@ public final class IncidentSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier of the incident.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique identifier of the incident.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the tenancy.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -101,10 +116,17 @@ public final class IncidentSummary {
             this.__explicitlySet__.add("incidentType");
             return this;
         }
-
+        /**
+         * The kind of support ticket, such as a technical support request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
+        /**
+         * The kind of support ticket, such as a technical support request.
+         * @param problemType the value to set
+         * @return this builder
+         **/
         public Builder problemType(ProblemType problemType) {
             this.problemType = problemType;
             this.__explicitlySet__.add("problemType");
@@ -161,6 +183,10 @@ public final class IncidentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique identifier of the incident.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -171,6 +197,10 @@ public final class IncidentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the tenancy.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -209,6 +239,10 @@ public final class IncidentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
+    /**
+     * The kind of support ticket, such as a technical support request.
+     * @return the value
+     **/
     public ProblemType getProblemType() {
         return problemType;
     }

@@ -32,27 +32,49 @@ public final class SourceSummaryReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The count of custom (user defined) sources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
         private Integer nonOobCount;
 
+        /**
+         * The count of custom (user defined) sources.
+         * @param nonOobCount the value to set
+         * @return this builder
+         **/
         public Builder nonOobCount(Integer nonOobCount) {
             this.nonOobCount = nonOobCount;
             this.__explicitlySet__.add("nonOobCount");
             return this;
         }
-
+        /**
+         * The count of sources set to auto-associate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoAssociationSourceCount")
         private Integer autoAssociationSourceCount;
 
+        /**
+         * The count of sources set to auto-associate.
+         * @param autoAssociationSourceCount the value to set
+         * @return this builder
+         **/
         public Builder autoAssociationSourceCount(Integer autoAssociationSourceCount) {
             this.autoAssociationSourceCount = autoAssociationSourceCount;
             this.__explicitlySet__.add("autoAssociationSourceCount");
             return this;
         }
-
+        /**
+         * The count of built in sources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
         private Integer oobCount;
 
+        /**
+         * The count of built in sources.
+         * @param oobCount the value to set
+         * @return this builder
+         **/
         public Builder oobCount(Integer oobCount) {
             this.oobCount = oobCount;
             this.__explicitlySet__.add("oobCount");
@@ -98,6 +120,10 @@ public final class SourceSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
     private final Integer nonOobCount;
 
+    /**
+     * The count of custom (user defined) sources.
+     * @return the value
+     **/
     public Integer getNonOobCount() {
         return nonOobCount;
     }
@@ -108,6 +134,10 @@ public final class SourceSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("autoAssociationSourceCount")
     private final Integer autoAssociationSourceCount;
 
+    /**
+     * The count of sources set to auto-associate.
+     * @return the value
+     **/
     public Integer getAutoAssociationSourceCount() {
         return autoAssociationSourceCount;
     }
@@ -118,6 +148,10 @@ public final class SourceSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
     private final Integer oobCount;
 
+    /**
+     * The count of built in sources.
+     * @return the value
+     **/
     public Integer getOobCount() {
         return oobCount;
     }

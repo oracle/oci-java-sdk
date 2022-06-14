@@ -19,6 +19,11 @@ public class ListHealthChecksVantagePointsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -28,6 +33,10 @@ public class ListHealthChecksVantagePointsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -38,6 +47,11 @@ public class ListHealthChecksVantagePointsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -82,6 +96,9 @@ public class ListHealthChecksVantagePointsRequest
         }
     };
 
+    /**
+     * The field to sort by when listing vantage points.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -126,6 +143,9 @@ public class ListHealthChecksVantagePointsRequest
         }
     };
 
+    /**
+     * Controls the sort order of results.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -134,6 +154,9 @@ public class ListHealthChecksVantagePointsRequest
      */
     private String name;
 
+    /**
+     * Filters results that exactly match the {@code name} field.
+     */
     public String getName() {
         return name;
     }
@@ -142,6 +165,9 @@ public class ListHealthChecksVantagePointsRequest
      */
     private String displayName;
 
+    /**
+     * Filters results that exactly match the {@code displayName} field.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -153,12 +179,18 @@ public class ListHealthChecksVantagePointsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -166,11 +198,16 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -178,12 +215,18 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header
+         * from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header
          * from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -191,10 +234,14 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
+        /**
+         * The field to sort by when listing vantage points.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by when listing vantage points.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -202,10 +249,14 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
+        /**
+         * Controls the sort order of results.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Controls the sort order of results.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -213,10 +264,14 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
+        /**
+         * Filters results that exactly match the {@code name} field.
+         */
         private String name = null;
 
         /**
          * Filters results that exactly match the {@code name} field.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -224,10 +279,14 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
+        /**
+         * Filters results that exactly match the {@code displayName} field.
+         */
         private String displayName = null;
 
         /**
          * Filters results that exactly match the {@code displayName} field.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -316,7 +375,8 @@ public class ListHealthChecksVantagePointsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -329,6 +389,10 @@ public class ListHealthChecksVantagePointsRequest
                 .displayName(displayName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

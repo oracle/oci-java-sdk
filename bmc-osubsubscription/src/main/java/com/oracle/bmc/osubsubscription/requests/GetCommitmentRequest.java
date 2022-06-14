@@ -16,6 +16,9 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String commitmentId;
 
+    /**
+     * The Commitment Id
+     */
     public String getCommitmentId() {
         return commitmentId;
     }
@@ -25,6 +28,10 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +42,11 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String xOneGatewaySubscriptionId;
 
+    /**
+     * This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is
+     * to help on Gateway to API calls identification.
+     *
+     */
     public String getXOneGatewaySubscriptionId() {
         return xOneGatewaySubscriptionId;
     }
@@ -44,6 +56,10 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String xOneOriginRegion;
 
+    /**
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+     *
+     */
     public String getXOneOriginRegion() {
         return xOneOriginRegion;
     }
@@ -55,10 +71,14 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Commitment Id
+         */
         private String commitmentId = null;
 
         /**
          * The Commitment Id
+         * @param commitmentId the value to set
          * @return this builder instance
          */
         public Builder commitmentId(String commitmentId) {
@@ -66,11 +86,16 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -78,12 +103,18 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is
+         * to help on Gateway to API calls identification.
+         *
+         */
         private String xOneGatewaySubscriptionId = null;
 
         /**
          * This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is
          * to help on Gateway to API calls identification.
          *
+         * @param xOneGatewaySubscriptionId the value to set
          * @return this builder instance
          */
         public Builder xOneGatewaySubscriptionId(String xOneGatewaySubscriptionId) {
@@ -91,11 +122,16 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+         *
+         */
         private String xOneOriginRegion = null;
 
         /**
          * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
          *
+         * @param xOneOriginRegion the value to set
          * @return this builder instance
          */
         public Builder xOneOriginRegion(String xOneOriginRegion) {
@@ -177,7 +213,8 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -187,6 +224,10 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .xOneOriginRegion(xOneOriginRegion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

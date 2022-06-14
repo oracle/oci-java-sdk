@@ -51,64 +51,142 @@ public final class UpdatePrivateEndpointDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly description. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A user-friendly description. Avoid entering confidential information.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * An array of DNS zone names.
+         * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
         private java.util.List<String> dnsZones;
 
+        /**
+         * An array of DNS zone names.
+         * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
+         *
+         * @param dnsZones the value to set
+         * @return this builder
+         **/
         public Builder dnsZones(java.util.List<String> dnsZones) {
             this.dnsZones = dnsZones;
             this.__explicitlySet__.add("dnsZones");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The maximum number of hosts to be accessed through the private endpoint. This value is used
+         * to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
+         * multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
+         * to 512.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxHostCount")
         private Integer maxHostCount;
 
+        /**
+         * The maximum number of hosts to be accessed through the private endpoint. This value is used
+         * to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
+         * multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
+         * to 512.
+         *
+         * @param maxHostCount the value to set
+         * @return this builder
+         **/
         public Builder maxHostCount(Integer maxHostCount) {
             this.maxHostCount = maxHostCount;
             this.__explicitlySet__.add("maxHostCount");
             return this;
         }
-
+        /**
+         * An array of network security group OCIDs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * An array of network security group OCIDs.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -167,6 +245,12 @@ public final class UpdatePrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -178,6 +262,11 @@ public final class UpdatePrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A user-friendly description. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -189,6 +278,11 @@ public final class UpdatePrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -201,6 +295,12 @@ public final class UpdatePrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
     private final java.util.List<String> dnsZones;
 
+    /**
+     * An array of DNS zone names.
+     * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getDnsZones() {
         return dnsZones;
     }
@@ -214,6 +314,13 @@ public final class UpdatePrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -228,6 +335,14 @@ public final class UpdatePrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxHostCount")
     private final Integer maxHostCount;
 
+    /**
+     * The maximum number of hosts to be accessed through the private endpoint. This value is used
+     * to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
+     * multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
+     * to 512.
+     *
+     * @return the value
+     **/
     public Integer getMaxHostCount() {
         return maxHostCount;
     }
@@ -239,6 +354,11 @@ public final class UpdatePrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * An array of network security group OCIDs.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }

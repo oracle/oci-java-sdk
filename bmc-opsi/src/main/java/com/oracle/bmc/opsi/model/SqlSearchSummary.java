@@ -48,63 +48,113 @@ public final class SqlSearchSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         * @param databaseId the value to set
+         * @return this builder
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The database name. The database name is unique within the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
+        /**
+         * The database name. The database name is unique within the tenancy.
+         * @param databaseName the value to set
+         * @return this builder
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-
+        /**
+         * The user-friendly name for the database. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
         private String databaseDisplayName;
 
+        /**
+         * The user-friendly name for the database. The name does not have to be unique.
+         * @param databaseDisplayName the value to set
+         * @return this builder
+         **/
         public Builder databaseDisplayName(String databaseDisplayName) {
             this.databaseDisplayName = databaseDisplayName;
             this.__explicitlySet__.add("databaseDisplayName");
             return this;
         }
-
+        /**
+         * Operations Insights internal representation of the database type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private String databaseType;
 
+        /**
+         * Operations Insights internal representation of the database type.
+         * @param databaseType the value to set
+         * @return this builder
+         **/
         public Builder databaseType(String databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-
+        /**
+         * The version of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
         private String databaseVersion;
 
+        /**
+         * The version of the database.
+         * @param databaseVersion the value to set
+         * @return this builder
+         **/
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = databaseVersion;
             this.__explicitlySet__.add("databaseVersion");
@@ -161,6 +211,10 @@ public final class SqlSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -171,6 +225,10 @@ public final class SqlSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * @return the value
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
@@ -181,6 +239,10 @@ public final class SqlSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -191,6 +253,10 @@ public final class SqlSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
+    /**
+     * The database name. The database name is unique within the tenancy.
+     * @return the value
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
@@ -201,6 +267,10 @@ public final class SqlSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
     private final String databaseDisplayName;
 
+    /**
+     * The user-friendly name for the database. The name does not have to be unique.
+     * @return the value
+     **/
     public String getDatabaseDisplayName() {
         return databaseDisplayName;
     }
@@ -211,6 +281,10 @@ public final class SqlSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final String databaseType;
 
+    /**
+     * Operations Insights internal representation of the database type.
+     * @return the value
+     **/
     public String getDatabaseType() {
         return databaseType;
     }
@@ -221,6 +295,10 @@ public final class SqlSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
+    /**
+     * The version of the database.
+     * @return the value
+     **/
     public String getDatabaseVersion() {
         return databaseVersion;
     }

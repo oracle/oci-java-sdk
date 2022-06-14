@@ -30,18 +30,33 @@ public final class VirtualDeploymentListener {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of protocol used in virtual deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * Type of protocol used in virtual deployment.
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * Port in which virtual deployment is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * Port in which virtual deployment is running.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -134,6 +149,10 @@ public final class VirtualDeploymentListener {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * Type of protocol used in virtual deployment.
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
@@ -144,6 +163,10 @@ public final class VirtualDeploymentListener {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * Port in which virtual deployment is running.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }

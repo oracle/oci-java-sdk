@@ -18,6 +18,9 @@ public class CreateTransferDeviceRequest
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
@@ -26,12 +29,13 @@ public class CreateTransferDeviceRequest
      */
     private com.oracle.bmc.dts.model.CreateTransferDeviceDetails createTransferDeviceDetails;
 
+    /**
+     * Creates a New Transfer Device
+     */
     public com.oracle.bmc.dts.model.CreateTransferDeviceDetails getCreateTransferDeviceDetails() {
         return createTransferDeviceDetails;
     }
-    /**
-     *
-     */
+
     private String opcRetryToken;
 
     public String getOpcRetryToken() {
@@ -56,10 +60,14 @@ public class CreateTransferDeviceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -67,11 +75,15 @@ public class CreateTransferDeviceRequest
             return this;
         }
 
+        /**
+         * Creates a New Transfer Device
+         */
         private com.oracle.bmc.dts.model.CreateTransferDeviceDetails createTransferDeviceDetails =
                 null;
 
         /**
          * Creates a New Transfer Device
+         * @param createTransferDeviceDetails the value to set
          * @return this builder instance
          */
         public Builder createTransferDeviceDetails(
@@ -84,6 +96,7 @@ public class CreateTransferDeviceRequest
 
         /**
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -174,7 +187,8 @@ public class CreateTransferDeviceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -183,6 +197,10 @@ public class CreateTransferDeviceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

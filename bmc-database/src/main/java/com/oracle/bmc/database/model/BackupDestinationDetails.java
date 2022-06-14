@@ -34,45 +34,81 @@ public final class BackupDestinationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of the database backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * Type of the database backup destination.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
         private String vpcUser;
 
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         * @param vpcUser the value to set
+         * @return this builder
+         **/
         public Builder vpcUser(String vpcUser) {
             this.vpcUser = vpcUser;
             this.__explicitlySet__.add("vpcUser");
             return this;
         }
-
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
         private String vpcPassword;
 
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         * @param vpcPassword the value to set
+         * @return this builder
+         **/
         public Builder vpcPassword(String vpcPassword) {
             this.vpcPassword = vpcPassword;
             this.__explicitlySet__.add("vpcPassword");
             return this;
         }
-
+        /**
+         * Proxy URL to connect to object store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
         private String internetProxy;
 
+        /**
+         * Proxy URL to connect to object store.
+         * @param internetProxy the value to set
+         * @return this builder
+         **/
         public Builder internetProxy(String internetProxy) {
             this.internetProxy = internetProxy;
             this.__explicitlySet__.add("internetProxy");
@@ -168,6 +204,10 @@ public final class BackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * Type of the database backup destination.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -178,6 +218,10 @@ public final class BackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -188,6 +232,10 @@ public final class BackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
     private final String vpcUser;
 
+    /**
+     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+     * @return the value
+     **/
     public String getVpcUser() {
         return vpcUser;
     }
@@ -198,6 +246,10 @@ public final class BackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
     private final String vpcPassword;
 
+    /**
+     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+     * @return the value
+     **/
     public String getVpcPassword() {
         return vpcPassword;
     }
@@ -208,6 +260,10 @@ public final class BackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
     private final String internetProxy;
 
+    /**
+     * Proxy URL to connect to object store.
+     * @return the value
+     **/
     public String getInternetProxy() {
         return internetProxy;
     }

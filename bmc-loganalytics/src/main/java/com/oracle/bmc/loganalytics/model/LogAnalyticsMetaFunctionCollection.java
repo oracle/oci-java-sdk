@@ -29,9 +29,17 @@ public final class LogAnalyticsMetaFunctionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of meta functions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsMetaFunction> items;
 
+        /**
+         * An array of meta functions.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsMetaFunction> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class LogAnalyticsMetaFunctionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsMetaFunction> items;
 
+    /**
+     * An array of meta functions.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsMetaFunction> getItems() {
         return items;
     }

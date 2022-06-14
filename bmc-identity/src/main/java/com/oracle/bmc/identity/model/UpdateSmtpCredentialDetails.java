@@ -29,9 +29,23 @@ public final class UpdateSmtpCredentialDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
+         * <p>
+         * (For tenancies that support identity domains) You can have an empty description.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
+         * <p>
+         * (For tenancies that support identity domains) You can have an empty description.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -76,6 +90,13 @@ public final class UpdateSmtpCredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

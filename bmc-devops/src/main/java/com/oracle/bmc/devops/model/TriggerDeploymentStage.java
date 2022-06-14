@@ -154,19 +154,33 @@ public final class TriggerDeploymentStage extends BuildPipelineStage {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * A target deployment pipeline OCID that will run in this stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployPipelineId")
         private String deployPipelineId;
 
+        /**
+         * A target deployment pipeline OCID that will run in this stage.
+         * @param deployPipelineId the value to set
+         * @return this builder
+         **/
         public Builder deployPipelineId(String deployPipelineId) {
             this.deployPipelineId = deployPipelineId;
             this.__explicitlySet__.add("deployPipelineId");
             return this;
         }
-
+        /**
+         * A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPassAllParametersEnabled")
         private Boolean isPassAllParametersEnabled;
 
+        /**
+         * A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
+         * @param isPassAllParametersEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPassAllParametersEnabled(Boolean isPassAllParametersEnabled) {
             this.isPassAllParametersEnabled = isPassAllParametersEnabled;
             this.__explicitlySet__.add("isPassAllParametersEnabled");
@@ -279,6 +293,10 @@ public final class TriggerDeploymentStage extends BuildPipelineStage {
     @com.fasterxml.jackson.annotation.JsonProperty("deployPipelineId")
     private final String deployPipelineId;
 
+    /**
+     * A target deployment pipeline OCID that will run in this stage.
+     * @return the value
+     **/
     public String getDeployPipelineId() {
         return deployPipelineId;
     }
@@ -289,6 +307,10 @@ public final class TriggerDeploymentStage extends BuildPipelineStage {
     @com.fasterxml.jackson.annotation.JsonProperty("isPassAllParametersEnabled")
     private final Boolean isPassAllParametersEnabled;
 
+    /**
+     * A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
+     * @return the value
+     **/
     public Boolean getIsPassAllParametersEnabled() {
         return isPassAllParametersEnabled;
     }

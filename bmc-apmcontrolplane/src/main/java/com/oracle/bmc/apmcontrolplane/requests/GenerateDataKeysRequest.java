@@ -19,6 +19,9 @@ public class GenerateDataKeysRequest
     private java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
             generateDataKeysListDetails;
 
+    /**
+     * List of new Data Keys to be generated.
+     */
     public java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
             getGenerateDataKeysListDetails() {
         return generateDataKeysListDetails;
@@ -28,6 +31,9 @@ public class GenerateDataKeysRequest
      */
     private String apmDomainId;
 
+    /**
+     * The OCID of the APM domain.
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -40,6 +46,13 @@ public class GenerateDataKeysRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. Set the {@code if-match} parameter
+     * to the value of the etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +61,9 @@ public class GenerateDataKeysRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,11 +86,15 @@ public class GenerateDataKeysRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * List of new Data Keys to be generated.
+         */
         private java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
                 generateDataKeysListDetails = null;
 
         /**
          * List of new Data Keys to be generated.
+         * @param generateDataKeysListDetails the value to set
          * @return this builder instance
          */
         public Builder generateDataKeysListDetails(
@@ -86,6 +106,7 @@ public class GenerateDataKeysRequest
 
         /**
          * Singular setter. List of new Data Keys to be generated.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder generateDataKeysListDetails(
@@ -93,10 +114,14 @@ public class GenerateDataKeysRequest
             return this.generateDataKeysListDetails(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The OCID of the APM domain.
+         */
         private String apmDomainId = null;
 
         /**
          * The OCID of the APM domain.
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -104,6 +129,13 @@ public class GenerateDataKeysRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. Set the {@code if-match} parameter
+         * to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -112,6 +144,7 @@ public class GenerateDataKeysRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -119,10 +152,14 @@ public class GenerateDataKeysRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -216,7 +253,8 @@ public class GenerateDataKeysRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -226,6 +264,10 @@ public class GenerateDataKeysRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

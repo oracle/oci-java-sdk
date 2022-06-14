@@ -30,9 +30,19 @@ public final class UpgradeBlockchainPlatformDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The patch ID corresponding to the version to which platform will be upgraded.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
+        /**
+         * The patch ID corresponding to the version to which platform will be upgraded.
+         *
+         * @param patchId the value to set
+         * @return this builder
+         **/
         public Builder patchId(String patchId) {
             this.patchId = patchId;
             this.__explicitlySet__.add("patchId");
@@ -76,6 +86,11 @@ public final class UpgradeBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     private final String patchId;
 
+    /**
+     * The patch ID corresponding to the version to which platform will be upgraded.
+     *
+     * @return the value
+     **/
     public String getPatchId() {
         return patchId;
     }

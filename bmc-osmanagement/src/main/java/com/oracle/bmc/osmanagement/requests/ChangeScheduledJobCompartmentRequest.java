@@ -18,6 +18,9 @@ public class ChangeScheduledJobCompartmentRequest
      */
     private String scheduledJobId;
 
+    /**
+     * The ID of the scheduled job.
+     */
     public String getScheduledJobId() {
         return scheduledJobId;
     }
@@ -27,6 +30,9 @@ public class ChangeScheduledJobCompartmentRequest
     private com.oracle.bmc.osmanagement.model.ChangeScheduledJobCompartmentDetails
             changeScheduledJobCompartmentDetails;
 
+    /**
+     * OCID for the compartment to which the resource will be moved.
+     */
     public com.oracle.bmc.osmanagement.model.ChangeScheduledJobCompartmentDetails
             getChangeScheduledJobCompartmentDetails() {
         return changeScheduledJobCompartmentDetails;
@@ -36,6 +42,9 @@ public class ChangeScheduledJobCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +58,14 @@ public class ChangeScheduledJobCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -62,6 +79,14 @@ public class ChangeScheduledJobCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,10 +109,14 @@ public class ChangeScheduledJobCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the scheduled job.
+         */
         private String scheduledJobId = null;
 
         /**
          * The ID of the scheduled job.
+         * @param scheduledJobId the value to set
          * @return this builder instance
          */
         public Builder scheduledJobId(String scheduledJobId) {
@@ -95,11 +124,15 @@ public class ChangeScheduledJobCompartmentRequest
             return this;
         }
 
+        /**
+         * OCID for the compartment to which the resource will be moved.
+         */
         private com.oracle.bmc.osmanagement.model.ChangeScheduledJobCompartmentDetails
                 changeScheduledJobCompartmentDetails = null;
 
         /**
          * OCID for the compartment to which the resource will be moved.
+         * @param changeScheduledJobCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeScheduledJobCompartmentDetails(
@@ -109,10 +142,14 @@ public class ChangeScheduledJobCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -120,6 +157,14 @@ public class ChangeScheduledJobCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -129,6 +174,7 @@ public class ChangeScheduledJobCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -136,6 +182,14 @@ public class ChangeScheduledJobCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -145,6 +199,7 @@ public class ChangeScheduledJobCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -241,7 +296,8 @@ public class ChangeScheduledJobCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -252,6 +308,10 @@ public class ChangeScheduledJobCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

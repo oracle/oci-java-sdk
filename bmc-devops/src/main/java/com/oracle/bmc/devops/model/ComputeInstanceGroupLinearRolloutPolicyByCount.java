@@ -36,10 +36,17 @@ public final class ComputeInstanceGroupLinearRolloutPolicyByCount
             this.__explicitlySet__.add("batchDelayInSeconds");
             return this;
         }
-
+        /**
+         * The number that will be used to determine how many instances will be deployed concurrently.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchCount")
         private Integer batchCount;
 
+        /**
+         * The number that will be used to determine how many instances will be deployed concurrently.
+         * @param batchCount the value to set
+         * @return this builder
+         **/
         public Builder batchCount(Integer batchCount) {
             this.batchCount = batchCount;
             this.__explicitlySet__.add("batchCount");
@@ -91,6 +98,10 @@ public final class ComputeInstanceGroupLinearRolloutPolicyByCount
     @com.fasterxml.jackson.annotation.JsonProperty("batchCount")
     private final Integer batchCount;
 
+    /**
+     * The number that will be used to determine how many instances will be deployed concurrently.
+     * @return the value
+     **/
     public Integer getBatchCount() {
         return batchCount;
     }

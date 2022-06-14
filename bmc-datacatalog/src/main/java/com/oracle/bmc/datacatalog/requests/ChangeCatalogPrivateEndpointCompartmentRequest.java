@@ -19,6 +19,9 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
     private com.oracle.bmc.datacatalog.model.ChangeCatalogPrivateEndpointCompartmentDetails
             changeCatalogPrivateEndpointCompartmentDetails;
 
+    /**
+     * Details for the target compartment.
+     */
     public com.oracle.bmc.datacatalog.model.ChangeCatalogPrivateEndpointCompartmentDetails
             getChangeCatalogPrivateEndpointCompartmentDetails() {
         return changeCatalogPrivateEndpointCompartmentDetails;
@@ -28,6 +31,9 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
      */
     private String catalogPrivateEndpointId;
 
+    /**
+     * Unique private reverse connection identifier.
+     */
     public String getCatalogPrivateEndpointId() {
         return catalogPrivateEndpointId;
     }
@@ -41,6 +47,14 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,11 +90,15 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the target compartment.
+         */
         private com.oracle.bmc.datacatalog.model.ChangeCatalogPrivateEndpointCompartmentDetails
                 changeCatalogPrivateEndpointCompartmentDetails = null;
 
         /**
          * Details for the target compartment.
+         * @param changeCatalogPrivateEndpointCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeCatalogPrivateEndpointCompartmentDetails(
@@ -88,10 +109,14 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique private reverse connection identifier.
+         */
         private String catalogPrivateEndpointId = null;
 
         /**
          * Unique private reverse connection identifier.
+         * @param catalogPrivateEndpointId the value to set
          * @return this builder instance
          */
         public Builder catalogPrivateEndpointId(String catalogPrivateEndpointId) {
@@ -99,6 +124,14 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -108,6 +141,7 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -115,10 +149,14 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -217,7 +255,8 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -228,6 +267,10 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

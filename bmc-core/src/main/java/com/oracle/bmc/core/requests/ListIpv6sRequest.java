@@ -21,6 +21,14 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -32,6 +40,12 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -42,6 +56,11 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ipAddress;
 
+    /**
+     * An IP address. This could be either IPv4 or IPv6, depending on the resource.
+     * Example: {@code 10.0.3.3}
+     *
+     */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -50,6 +69,9 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String subnetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -58,6 +80,9 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String vnicId;
 
+    /**
+     * The OCID of the VNIC.
+     */
     public String getVnicId() {
         return vnicId;
     }
@@ -68,6 +93,11 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -79,6 +109,14 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -88,6 +126,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -95,6 +134,12 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -102,6 +147,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -109,12 +155,18 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * An IP address. This could be either IPv4 or IPv6, depending on the resource.
+         * Example: {@code 10.0.3.3}
+         *
+         */
         private String ipAddress = null;
 
         /**
          * An IP address. This could be either IPv4 or IPv6, depending on the resource.
          * Example: {@code 10.0.3.3}
          *
+         * @param ipAddress the value to set
          * @return this builder instance
          */
         public Builder ipAddress(String ipAddress) {
@@ -122,10 +174,14 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         */
         private String subnetId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         * @param subnetId the value to set
          * @return this builder instance
          */
         public Builder subnetId(String subnetId) {
@@ -133,10 +189,14 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The OCID of the VNIC.
+         */
         private String vnicId = null;
 
         /**
          * The OCID of the VNIC.
+         * @param vnicId the value to set
          * @return this builder instance
          */
         public Builder vnicId(String vnicId) {
@@ -144,12 +204,18 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -235,7 +301,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -247,6 +314,10 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

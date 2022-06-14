@@ -30,9 +30,17 @@ public final class MonitoredResourceMembersCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of Members.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<MonitoredResourceMemberSummary> items;
 
+        /**
+         * List of Members.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<MonitoredResourceMemberSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class MonitoredResourceMembersCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<MonitoredResourceMemberSummary> items;
 
+    /**
+     * List of Members.
+     * @return the value
+     **/
     public java.util.List<MonitoredResourceMemberSummary> getItems() {
         return items;
     }

@@ -59,36 +59,73 @@ public final class CreateDataMaskRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Data mask rule name.
+         * <p>
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Data mask rule name.
+         * <p>
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Compartment Identifier where the resource is created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier where the resource is created
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The data mask rule description.
+         * Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The data mask rule description.
+         * Avoid entering confidential information.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * IAM Group id associated with the data mask rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("iamGroupId")
         private String iamGroupId;
 
+        /**
+         * IAM Group id associated with the data mask rule
+         * @param iamGroupId the value to set
+         * @return this builder
+         **/
         public Builder iamGroupId(String iamGroupId) {
             this.iamGroupId = iamGroupId;
             this.__explicitlySet__.add("iamGroupId");
@@ -103,46 +140,93 @@ public final class CreateDataMaskRuleDetails {
             this.__explicitlySet__.add("targetSelected");
             return this;
         }
-
+        /**
+         * Data Mask Categories
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataMaskCategories")
         private java.util.List<DataMaskCategory> dataMaskCategories;
 
+        /**
+         * Data Mask Categories
+         * @param dataMaskCategories the value to set
+         * @return this builder
+         **/
         public Builder dataMaskCategories(java.util.List<DataMaskCategory> dataMaskCategories) {
             this.dataMaskCategories = dataMaskCategories;
             this.__explicitlySet__.add("dataMaskCategories");
             return this;
         }
-
+        /**
+         * The status of the dataMaskRule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataMaskRuleStatus")
         private DataMaskRuleStatus dataMaskRuleStatus;
 
+        /**
+         * The status of the dataMaskRule.
+         * @param dataMaskRuleStatus the value to set
+         * @return this builder
+         **/
         public Builder dataMaskRuleStatus(DataMaskRuleStatus dataMaskRuleStatus) {
             this.dataMaskRuleStatus = dataMaskRuleStatus;
             this.__explicitlySet__.add("dataMaskRuleStatus");
             return this;
         }
-
+        /**
+         * The current state of the DataMaskRule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the DataMaskRule.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -209,6 +293,13 @@ public final class CreateDataMaskRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Data mask rule name.
+     * <p>
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -219,6 +310,10 @@ public final class CreateDataMaskRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier where the resource is created
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -230,6 +325,11 @@ public final class CreateDataMaskRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The data mask rule description.
+     * Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -240,6 +340,10 @@ public final class CreateDataMaskRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("iamGroupId")
     private final String iamGroupId;
 
+    /**
+     * IAM Group id associated with the data mask rule
+     * @return the value
+     **/
     public String getIamGroupId() {
         return iamGroupId;
     }
@@ -257,6 +361,10 @@ public final class CreateDataMaskRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskCategories")
     private final java.util.List<DataMaskCategory> dataMaskCategories;
 
+    /**
+     * Data Mask Categories
+     * @return the value
+     **/
     public java.util.List<DataMaskCategory> getDataMaskCategories() {
         return dataMaskCategories;
     }
@@ -267,6 +375,10 @@ public final class CreateDataMaskRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskRuleStatus")
     private final DataMaskRuleStatus dataMaskRuleStatus;
 
+    /**
+     * The status of the dataMaskRule.
+     * @return the value
+     **/
     public DataMaskRuleStatus getDataMaskRuleStatus() {
         return dataMaskRuleStatus;
     }
@@ -277,6 +389,10 @@ public final class CreateDataMaskRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the DataMaskRule.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -291,6 +407,14 @@ public final class CreateDataMaskRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -303,6 +427,12 @@ public final class CreateDataMaskRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

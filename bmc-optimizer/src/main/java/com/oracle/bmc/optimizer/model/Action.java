@@ -30,27 +30,49 @@ public final class Action {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of the resource action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ActionType type;
 
+        /**
+         * The status of the resource action.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(ActionType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Text describing the recommended action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Text describing the recommended action.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The URL path to documentation that explains how to perform the action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * The URL path to documentation that explains how to perform the action.
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
@@ -93,6 +115,10 @@ public final class Action {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ActionType type;
 
+    /**
+     * The status of the resource action.
+     * @return the value
+     **/
     public ActionType getType() {
         return type;
     }
@@ -103,6 +129,10 @@ public final class Action {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Text describing the recommended action.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -113,6 +143,10 @@ public final class Action {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * The URL path to documentation that explains how to perform the action.
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }

@@ -30,18 +30,45 @@ public final class ArchivingConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the duration data in active storage before data is archived, as described in
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
+         * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activeStorageDuration")
         private String activeStorageDuration;
 
+        /**
+         * This is the duration data in active storage before data is archived, as described in
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
+         * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+         *
+         * @param activeStorageDuration the value to set
+         * @return this builder
+         **/
         public Builder activeStorageDuration(String activeStorageDuration) {
             this.activeStorageDuration = activeStorageDuration;
             this.__explicitlySet__.add("activeStorageDuration");
             return this;
         }
-
+        /**
+         * This is the duration before archived data is deleted from object storage, as described in
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations
+         * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archivalStorageDuration")
         private String archivalStorageDuration;
 
+        /**
+         * This is the duration before archived data is deleted from object storage, as described in
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations
+         * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+         *
+         * @param archivalStorageDuration the value to set
+         * @return this builder
+         **/
         public Builder archivalStorageDuration(String archivalStorageDuration) {
             this.archivalStorageDuration = archivalStorageDuration;
             this.__explicitlySet__.add("archivalStorageDuration");
@@ -89,6 +116,13 @@ public final class ArchivingConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("activeStorageDuration")
     private final String activeStorageDuration;
 
+    /**
+     * This is the duration data in active storage before data is archived, as described in
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations.
+     * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+     *
+     * @return the value
+     **/
     public String getActiveStorageDuration() {
         return activeStorageDuration;
     }
@@ -102,6 +136,13 @@ public final class ArchivingConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("archivalStorageDuration")
     private final String archivalStorageDuration;
 
+    /**
+     * This is the duration before archived data is deleted from object storage, as described in
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations
+     * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+     *
+     * @return the value
+     **/
     public String getArchivalStorageDuration() {
         return archivalStorageDuration;
     }

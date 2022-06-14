@@ -30,18 +30,33 @@ public final class AwrDbCpuUsageSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The timestamp for the CPU summary data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The timestamp for the CPU summary data.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The average CPU usage per second.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
         private Double avgValue;
 
+        /**
+         * The average CPU usage per second.
+         * @param avgValue the value to set
+         * @return this builder
+         **/
         public Builder avgValue(Double avgValue) {
             this.avgValue = avgValue;
             this.__explicitlySet__.add("avgValue");
@@ -83,6 +98,10 @@ public final class AwrDbCpuUsageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The timestamp for the CPU summary data.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -93,6 +112,10 @@ public final class AwrDbCpuUsageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
     private final Double avgValue;
 
+    /**
+     * The average CPU usage per second.
+     * @return the value
+     **/
     public Double getAvgValue() {
         return avgValue;
     }

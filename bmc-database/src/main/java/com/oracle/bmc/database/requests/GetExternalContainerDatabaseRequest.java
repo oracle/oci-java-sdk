@@ -17,6 +17,9 @@ public class GetExternalContainerDatabaseRequest
      */
     private String externalContainerDatabaseId;
 
+    /**
+     * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getExternalContainerDatabaseId() {
         return externalContainerDatabaseId;
     }
@@ -26,6 +29,10 @@ public class GetExternalContainerDatabaseRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,10 +44,14 @@ public class GetExternalContainerDatabaseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String externalContainerDatabaseId = null;
 
         /**
          * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param externalContainerDatabaseId the value to set
          * @return this builder instance
          */
         public Builder externalContainerDatabaseId(String externalContainerDatabaseId) {
@@ -48,11 +59,16 @@ public class GetExternalContainerDatabaseRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -130,7 +146,8 @@ public class GetExternalContainerDatabaseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -138,6 +155,10 @@ public class GetExternalContainerDatabaseRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

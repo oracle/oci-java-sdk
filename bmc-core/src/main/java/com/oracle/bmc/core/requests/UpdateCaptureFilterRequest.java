@@ -18,6 +18,9 @@ public class UpdateCaptureFilterRequest
      */
     private String captureFilterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
+     */
     public String getCaptureFilterId() {
         return captureFilterId;
     }
@@ -26,6 +29,9 @@ public class UpdateCaptureFilterRequest
      */
     private com.oracle.bmc.core.model.UpdateCaptureFilterDetails updateCaptureFilterDetails;
 
+    /**
+     * Details object for updating a VTAP.
+     */
     public com.oracle.bmc.core.model.UpdateCaptureFilterDetails getUpdateCaptureFilterDetails() {
         return updateCaptureFilterDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateCaptureFilterRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +59,11 @@ public class UpdateCaptureFilterRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,10 +86,14 @@ public class UpdateCaptureFilterRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
+         */
         private String captureFilterId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
+         * @param captureFilterId the value to set
          * @return this builder instance
          */
         public Builder captureFilterId(String captureFilterId) {
@@ -80,11 +101,15 @@ public class UpdateCaptureFilterRequest
             return this;
         }
 
+        /**
+         * Details object for updating a VTAP.
+         */
         private com.oracle.bmc.core.model.UpdateCaptureFilterDetails updateCaptureFilterDetails =
                 null;
 
         /**
          * Details object for updating a VTAP.
+         * @param updateCaptureFilterDetails the value to set
          * @return this builder instance
          */
         public Builder updateCaptureFilterDetails(
@@ -93,6 +118,12 @@ public class UpdateCaptureFilterRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -100,6 +131,7 @@ public class UpdateCaptureFilterRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -107,12 +139,18 @@ public class UpdateCaptureFilterRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -205,7 +243,8 @@ public class UpdateCaptureFilterRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +254,10 @@ public class UpdateCaptureFilterRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

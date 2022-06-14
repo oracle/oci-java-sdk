@@ -16,6 +16,9 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -24,6 +27,9 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Long sqlTuningAdvisorTaskId;
 
+    /**
+     * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public Long getSqlTuningAdvisorTaskId() {
         return sqlTuningAdvisorTaskId;
     }
@@ -32,6 +38,9 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Long sqlObjectId;
 
+    /**
+     * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public Long getSqlObjectId() {
         return sqlObjectId;
     }
@@ -79,6 +88,9 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The attribute of the SQL execution plan.
+     */
     public Attribute getAttribute() {
         return attribute;
     }
@@ -87,6 +99,9 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -98,10 +113,14 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -109,10 +128,14 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private Long sqlTuningAdvisorTaskId = null;
 
         /**
          * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlTuningAdvisorTaskId the value to set
          * @return this builder instance
          */
         public Builder sqlTuningAdvisorTaskId(Long sqlTuningAdvisorTaskId) {
@@ -120,10 +143,14 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private Long sqlObjectId = null;
 
         /**
          * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlObjectId the value to set
          * @return this builder instance
          */
         public Builder sqlObjectId(Long sqlObjectId) {
@@ -131,10 +158,14 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The attribute of the SQL execution plan.
+         */
         private Attribute attribute = null;
 
         /**
          * The attribute of the SQL execution plan.
+         * @param attribute the value to set
          * @return this builder instance
          */
         public Builder attribute(Attribute attribute) {
@@ -142,10 +173,14 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -229,7 +264,8 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -240,6 +276,10 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

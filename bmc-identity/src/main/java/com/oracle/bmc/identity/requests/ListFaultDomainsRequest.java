@@ -17,6 +17,10 @@ public class ListFaultDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +30,10 @@ public class ListFaultDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String availabilityDomain;
 
+    /**
+     * The name of the availabilityDomain.
+     *
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -37,11 +45,16 @@ public class ListFaultDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -49,11 +62,16 @@ public class ListFaultDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The name of the availabilityDomain.
+         *
+         */
         private String availabilityDomain = null;
 
         /**
          * The name of the availabilityDomain.
          *
+         * @param availabilityDomain the value to set
          * @return this builder instance
          */
         public Builder availabilityDomain(String availabilityDomain) {
@@ -131,12 +149,17 @@ public class ListFaultDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().compartmentId(compartmentId).availabilityDomain(availabilityDomain);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

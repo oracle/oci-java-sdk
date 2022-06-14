@@ -30,18 +30,39 @@ public final class CrossConnectLocation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A description of the location.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the location.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The name of the location.
+         * <p>
+         * Example: {@code CyrusOne, Chandler, AZ}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the location.
+         * <p>
+         * Example: {@code CyrusOne, Chandler, AZ}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -83,6 +104,10 @@ public final class CrossConnectLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the location.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -96,6 +121,13 @@ public final class CrossConnectLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the location.
+     * <p>
+     * Example: {@code CyrusOne, Chandler, AZ}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

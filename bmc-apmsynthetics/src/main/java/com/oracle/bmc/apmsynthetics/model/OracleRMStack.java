@@ -33,19 +33,33 @@ public final class OracleRMStack extends DvpStackDetails {
             this.__explicitlySet__.add("dvpVersion");
             return this;
         }
-
+        /**
+         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dvpStackId")
         private String dvpStackId;
 
+        /**
+         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * @param dvpStackId the value to set
+         * @return this builder
+         **/
         public Builder dvpStackId(String dvpStackId) {
             this.dvpStackId = dvpStackId;
             this.__explicitlySet__.add("dvpStackId");
             return this;
         }
-
+        /**
+         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dvpStreamId")
         private String dvpStreamId;
 
+        /**
+         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * @param dvpStreamId the value to set
+         * @return this builder
+         **/
         public Builder dvpStreamId(String dvpStreamId) {
             this.dvpStreamId = dvpStreamId;
             this.__explicitlySet__.add("dvpStreamId");
@@ -97,6 +111,10 @@ public final class OracleRMStack extends DvpStackDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dvpStackId")
     private final String dvpStackId;
 
+    /**
+     * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * @return the value
+     **/
     public String getDvpStackId() {
         return dvpStackId;
     }
@@ -107,6 +125,10 @@ public final class OracleRMStack extends DvpStackDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dvpStreamId")
     private final String dvpStreamId;
 
+    /**
+     * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * @return the value
+     **/
     public String getDvpStreamId() {
         return dvpStreamId;
     }

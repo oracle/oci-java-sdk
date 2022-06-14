@@ -30,9 +30,19 @@ public final class BulkDeleteVirtualCircuitPublicPrefixesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The public IP prefixes (CIDRs) to remove from the public virtual circuit.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
         private java.util.List<DeleteVirtualCircuitPublicPrefixDetails> publicPrefixes;
 
+        /**
+         * The public IP prefixes (CIDRs) to remove from the public virtual circuit.
+         *
+         * @param publicPrefixes the value to set
+         * @return this builder
+         **/
         public Builder publicPrefixes(
                 java.util.List<DeleteVirtualCircuitPublicPrefixDetails> publicPrefixes) {
             this.publicPrefixes = publicPrefixes;
@@ -77,6 +87,11 @@ public final class BulkDeleteVirtualCircuitPublicPrefixesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
     private final java.util.List<DeleteVirtualCircuitPublicPrefixDetails> publicPrefixes;
 
+    /**
+     * The public IP prefixes (CIDRs) to remove from the public virtual circuit.
+     *
+     * @return the value
+     **/
     public java.util.List<DeleteVirtualCircuitPublicPrefixDetails> getPublicPrefixes() {
         return publicPrefixes;
     }

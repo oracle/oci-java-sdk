@@ -15,6 +15,12 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
      */
     private String eTag;
 
+    /**
+     * The current version of the resource, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
+     *
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -36,6 +49,10 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
+    /**
+     * The returned SteeringPolicyAttachment instance.
+     * @return the value
+     */
     public com.oracle.bmc.dns.model.SteeringPolicyAttachment getSteeringPolicyAttachment() {
         return steeringPolicyAttachment;
     }
@@ -65,22 +82,56 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         */
         private String eTag;
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
         }
 
+        /**
+         * The returned SteeringPolicyAttachment instance.
+         */
         private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
+        /**
+         * The returned SteeringPolicyAttachment instance.
+         * @param steeringPolicyAttachment the value to set
+         * @return this builder
+         */
         public Builder steeringPolicyAttachment(
                 com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment) {
             this.steeringPolicyAttachment = steeringPolicyAttachment;
@@ -100,12 +151,20 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateSteeringPolicyAttachmentResponse build() {
             return new UpdateSteeringPolicyAttachmentResponse(
                     __httpStatusCode__, opcRequestId, eTag, steeringPolicyAttachment);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

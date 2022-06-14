@@ -30,27 +30,55 @@ public final class FieldValue {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Display representation of the field value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayValue")
         private String displayValue;
 
+        /**
+         * Display representation of the field value.
+         *
+         * @param displayValue the value to set
+         * @return this builder
+         **/
         public Builder displayValue(String displayValue) {
             this.displayValue = displayValue;
             this.__explicitlySet__.add("displayValue");
             return this;
         }
-
+        /**
+         * Internal representation of the field value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internalValue")
         private Object internalValue;
 
+        /**
+         * Internal representation of the field value.
+         *
+         * @param internalValue the value to set
+         * @return this builder
+         **/
         public Builder internalValue(Object internalValue) {
             this.internalValue = internalValue;
             this.__explicitlySet__.add("internalValue");
             return this;
         }
-
+        /**
+         * Denotes if this list-of-values value has been marked as deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeleted")
         private Boolean isDeleted;
 
+        /**
+         * Denotes if this list-of-values value has been marked as deleted.
+         *
+         * @param isDeleted the value to set
+         * @return this builder
+         **/
         public Builder isDeleted(Boolean isDeleted) {
             this.isDeleted = isDeleted;
             this.__explicitlySet__.add("isDeleted");
@@ -96,6 +124,11 @@ public final class FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("displayValue")
     private final String displayValue;
 
+    /**
+     * Display representation of the field value.
+     *
+     * @return the value
+     **/
     public String getDisplayValue() {
         return displayValue;
     }
@@ -107,6 +140,11 @@ public final class FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("internalValue")
     private final Object internalValue;
 
+    /**
+     * Internal representation of the field value.
+     *
+     * @return the value
+     **/
     public Object getInternalValue() {
         return internalValue;
     }
@@ -118,6 +156,11 @@ public final class FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleted")
     private final Boolean isDeleted;
 
+    /**
+     * Denotes if this list-of-values value has been marked as deleted.
+     *
+     * @return the value
+     **/
     public Boolean getIsDeleted() {
         return isDeleted;
     }

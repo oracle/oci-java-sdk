@@ -39,37 +39,74 @@ public final class LicenseMetric {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total number of product licenses in a particular compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalProductLicenseCount")
         private Integer totalProductLicenseCount;
 
+        /**
+         * Total number of product licenses in a particular compartment.
+         *
+         * @param totalProductLicenseCount the value to set
+         * @return this builder
+         **/
         public Builder totalProductLicenseCount(Integer totalProductLicenseCount) {
             this.totalProductLicenseCount = totalProductLicenseCount;
             this.__explicitlySet__.add("totalProductLicenseCount");
             return this;
         }
-
+        /**
+         * Total number of BYOL instances in a particular compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalByolInstanceCount")
         private Integer totalByolInstanceCount;
 
+        /**
+         * Total number of BYOL instances in a particular compartment.
+         *
+         * @param totalByolInstanceCount the value to set
+         * @return this builder
+         **/
         public Builder totalByolInstanceCount(Integer totalByolInstanceCount) {
             this.totalByolInstanceCount = totalByolInstanceCount;
             this.__explicitlySet__.add("totalByolInstanceCount");
             return this;
         }
-
+        /**
+         * Total number of License Included (LI) instances in a particular compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalLicenseIncludedInstanceCount")
         private Integer totalLicenseIncludedInstanceCount;
 
+        /**
+         * Total number of License Included (LI) instances in a particular compartment.
+         *
+         * @param totalLicenseIncludedInstanceCount the value to set
+         * @return this builder
+         **/
         public Builder totalLicenseIncludedInstanceCount(
                 Integer totalLicenseIncludedInstanceCount) {
             this.totalLicenseIncludedInstanceCount = totalLicenseIncludedInstanceCount;
             this.__explicitlySet__.add("totalLicenseIncludedInstanceCount");
             return this;
         }
-
+        /**
+         * Total number of license records that will expire within 90 days in a particular compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseRecordExpiringSoonCount")
         private Integer licenseRecordExpiringSoonCount;
 
+        /**
+         * Total number of license records that will expire within 90 days in a particular compartment.
+         *
+         * @param licenseRecordExpiringSoonCount the value to set
+         * @return this builder
+         **/
         public Builder licenseRecordExpiringSoonCount(Integer licenseRecordExpiringSoonCount) {
             this.licenseRecordExpiringSoonCount = licenseRecordExpiringSoonCount;
             this.__explicitlySet__.add("licenseRecordExpiringSoonCount");
@@ -122,6 +159,11 @@ public final class LicenseMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("totalProductLicenseCount")
     private final Integer totalProductLicenseCount;
 
+    /**
+     * Total number of product licenses in a particular compartment.
+     *
+     * @return the value
+     **/
     public Integer getTotalProductLicenseCount() {
         return totalProductLicenseCount;
     }
@@ -133,6 +175,11 @@ public final class LicenseMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("totalByolInstanceCount")
     private final Integer totalByolInstanceCount;
 
+    /**
+     * Total number of BYOL instances in a particular compartment.
+     *
+     * @return the value
+     **/
     public Integer getTotalByolInstanceCount() {
         return totalByolInstanceCount;
     }
@@ -144,6 +191,11 @@ public final class LicenseMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("totalLicenseIncludedInstanceCount")
     private final Integer totalLicenseIncludedInstanceCount;
 
+    /**
+     * Total number of License Included (LI) instances in a particular compartment.
+     *
+     * @return the value
+     **/
     public Integer getTotalLicenseIncludedInstanceCount() {
         return totalLicenseIncludedInstanceCount;
     }
@@ -155,6 +207,11 @@ public final class LicenseMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseRecordExpiringSoonCount")
     private final Integer licenseRecordExpiringSoonCount;
 
+    /**
+     * Total number of license records that will expire within 90 days in a particular compartment.
+     *
+     * @return the value
+     **/
     public Integer getLicenseRecordExpiringSoonCount() {
         return licenseRecordExpiringSoonCount;
     }

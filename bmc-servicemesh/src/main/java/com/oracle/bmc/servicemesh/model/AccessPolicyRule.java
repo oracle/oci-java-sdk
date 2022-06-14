@@ -30,9 +30,17 @@ public final class AccessPolicyRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Action for the traffic between the source and the destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * Action for the traffic between the source and the destination.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -139,6 +147,10 @@ public final class AccessPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * Action for the traffic between the source and the destination.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }

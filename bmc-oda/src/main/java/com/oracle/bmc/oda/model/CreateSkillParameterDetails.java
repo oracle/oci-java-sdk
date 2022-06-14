@@ -34,45 +34,81 @@ public final class CreateSkillParameterDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Parameter name.  This must be unique within the parent resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The Parameter name.  This must be unique within the parent resource.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The display name for the Parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name for the Parameter.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A description of the Parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the Parameter.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The value type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ParameterType type;
 
+        /**
+         * The value type.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(ParameterType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The current value.  The value will be interpreted based on the {@code type}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The current value.  The value will be interpreted based on the {@code type}.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -120,6 +156,10 @@ public final class CreateSkillParameterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The Parameter name.  This must be unique within the parent resource.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -130,6 +170,10 @@ public final class CreateSkillParameterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name for the Parameter.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -140,6 +184,10 @@ public final class CreateSkillParameterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the Parameter.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -150,6 +198,10 @@ public final class CreateSkillParameterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ParameterType type;
 
+    /**
+     * The value type.
+     * @return the value
+     **/
     public ParameterType getType() {
         return type;
     }
@@ -160,6 +212,10 @@ public final class CreateSkillParameterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The current value.  The value will be interpreted based on the {@code type}.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

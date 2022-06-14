@@ -29,9 +29,21 @@ public final class RemovePublicIpPoolCapacityDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The CIDR block to remove from the  public IP pool.
+         * Example: {@code 10.0.1.0/24}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        /**
+         * The CIDR block to remove from the  public IP pool.
+         * Example: {@code 10.0.1.0/24}
+         *
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
@@ -76,6 +88,12 @@ public final class RemovePublicIpPoolCapacityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
+    /**
+     * The CIDR block to remove from the  public IP pool.
+     * Example: {@code 10.0.1.0/24}
+     *
+     * @return the value
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }

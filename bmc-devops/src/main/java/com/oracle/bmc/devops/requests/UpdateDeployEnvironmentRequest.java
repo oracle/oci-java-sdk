@@ -18,6 +18,9 @@ public class UpdateDeployEnvironmentRequest
      */
     private String deployEnvironmentId;
 
+    /**
+     * Unique environment identifier.
+     */
     public String getDeployEnvironmentId() {
         return deployEnvironmentId;
     }
@@ -27,6 +30,9 @@ public class UpdateDeployEnvironmentRequest
     private com.oracle.bmc.devops.model.UpdateDeployEnvironmentDetails
             updateDeployEnvironmentDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.devops.model.UpdateDeployEnvironmentDetails
             getUpdateDeployEnvironmentDetails() {
         return updateDeployEnvironmentDetails;
@@ -36,6 +42,9 @@ public class UpdateDeployEnvironmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -44,6 +53,9 @@ public class UpdateDeployEnvironmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -66,10 +78,14 @@ public class UpdateDeployEnvironmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique environment identifier.
+         */
         private String deployEnvironmentId = null;
 
         /**
          * Unique environment identifier.
+         * @param deployEnvironmentId the value to set
          * @return this builder instance
          */
         public Builder deployEnvironmentId(String deployEnvironmentId) {
@@ -77,11 +93,15 @@ public class UpdateDeployEnvironmentRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.devops.model.UpdateDeployEnvironmentDetails
                 updateDeployEnvironmentDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateDeployEnvironmentDetails the value to set
          * @return this builder instance
          */
         public Builder updateDeployEnvironmentDetails(
@@ -91,10 +111,14 @@ public class UpdateDeployEnvironmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -102,10 +126,14 @@ public class UpdateDeployEnvironmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -198,7 +226,8 @@ public class UpdateDeployEnvironmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -208,6 +237,10 @@ public class UpdateDeployEnvironmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -34,18 +34,33 @@ public final class Line {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The text recognized.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * The text recognized.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-
+        /**
+         * The confidence score between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
+        /**
+         * The confidence score between 0 and 1.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -60,10 +75,17 @@ public final class Line {
             this.__explicitlySet__.add("boundingPolygon");
             return this;
         }
-
+        /**
+         * The array of words.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
         private java.util.List<Integer> wordIndexes;
 
+        /**
+         * The array of words.
+         * @param wordIndexes the value to set
+         * @return this builder
+         **/
         public Builder wordIndexes(java.util.List<Integer> wordIndexes) {
             this.wordIndexes = wordIndexes;
             this.__explicitlySet__.add("wordIndexes");
@@ -109,6 +131,10 @@ public final class Line {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * The text recognized.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }
@@ -119,6 +145,10 @@ public final class Line {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
+    /**
+     * The confidence score between 0 and 1.
+     * @return the value
+     **/
     public Float getConfidence() {
         return confidence;
     }
@@ -136,6 +166,10 @@ public final class Line {
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     private final java.util.List<Integer> wordIndexes;
 
+    /**
+     * The array of words.
+     * @return the value
+     **/
     public java.util.List<Integer> getWordIndexes() {
         return wordIndexes;
     }

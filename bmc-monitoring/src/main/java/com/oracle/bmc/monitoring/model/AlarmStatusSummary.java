@@ -57,54 +57,127 @@ public final class AlarmStatusSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The configured name of the alarm.
+         * <p>
+         * Example: {@code High CPU Utilization}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The configured name of the alarm.
+         * <p>
+         * Example: {@code High CPU Utilization}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The configured severity of the alarm.
+         * <p>
+         * Example: {@code CRITICAL}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
+        /**
+         * The configured severity of the alarm.
+         * <p>
+         * Example: {@code CRITICAL}
+         *
+         * @param severity the value to set
+         * @return this builder
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-
+        /**
+         * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
+         * Note: A three-minute lag for this value accounts for any late-arriving metrics.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
         private java.util.Date timestampTriggered;
 
+        /**
+         * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
+         * Note: A three-minute lag for this value accounts for any late-arriving metrics.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         * @param timestampTriggered the value to set
+         * @return this builder
+         **/
         public Builder timestampTriggered(java.util.Date timestampTriggered) {
             this.timestampTriggered = timestampTriggered;
             this.__explicitlySet__.add("timestampTriggered");
             return this;
         }
-
+        /**
+         * The status of this alarm.
+         * <p>
+         * Example: {@code FIRING}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of this alarm.
+         * <p>
+         * Example: {@code FIRING}
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The configuration details for suppressing an alarm.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suppression")
         private Suppression suppression;
 
+        /**
+         * The configuration details for suppressing an alarm.
+         *
+         * @param suppression the value to set
+         * @return this builder
+         **/
         public Builder suppression(Suppression suppression) {
             this.suppression = suppression;
             this.__explicitlySet__.add("suppression");
@@ -155,6 +228,11 @@ public final class AlarmStatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -168,6 +246,13 @@ public final class AlarmStatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The configured name of the alarm.
+     * <p>
+     * Example: {@code High CPU Utilization}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -234,6 +319,13 @@ public final class AlarmStatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
+    /**
+     * The configured severity of the alarm.
+     * <p>
+     * Example: {@code CRITICAL}
+     *
+     * @return the value
+     **/
     public Severity getSeverity() {
         return severity;
     }
@@ -248,6 +340,14 @@ public final class AlarmStatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
     private final java.util.Date timestampTriggered;
 
+    /**
+     * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
+     * Note: A three-minute lag for this value accounts for any late-arriving metrics.
+     * <p>
+     * Example: {@code 2019-02-01T01:02:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestampTriggered() {
         return timestampTriggered;
     }
@@ -312,6 +412,13 @@ public final class AlarmStatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of this alarm.
+     * <p>
+     * Example: {@code FIRING}
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -323,6 +430,11 @@ public final class AlarmStatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("suppression")
     private final Suppression suppression;
 
+    /**
+     * The configuration details for suppressing an alarm.
+     *
+     * @return the value
+     **/
     public Suppression getSuppression() {
         return suppression;
     }

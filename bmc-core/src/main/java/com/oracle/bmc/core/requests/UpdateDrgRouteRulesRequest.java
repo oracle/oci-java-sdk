@@ -18,6 +18,9 @@ public class UpdateDrgRouteRulesRequest
      */
     private String drgRouteTableId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+     */
     public String getDrgRouteTableId() {
         return drgRouteTableId;
     }
@@ -27,6 +30,10 @@ public class UpdateDrgRouteRulesRequest
      */
     private com.oracle.bmc.core.model.UpdateDrgRouteRulesDetails updateDrgRouteRulesDetails;
 
+    /**
+     * Request to update one or more route rules in the DRG route table.
+     *
+     */
     public com.oracle.bmc.core.model.UpdateDrgRouteRulesDetails getUpdateDrgRouteRulesDetails() {
         return updateDrgRouteRulesDetails;
     }
@@ -49,10 +56,14 @@ public class UpdateDrgRouteRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+         */
         private String drgRouteTableId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+         * @param drgRouteTableId the value to set
          * @return this builder instance
          */
         public Builder drgRouteTableId(String drgRouteTableId) {
@@ -60,12 +71,17 @@ public class UpdateDrgRouteRulesRequest
             return this;
         }
 
+        /**
+         * Request to update one or more route rules in the DRG route table.
+         *
+         */
         private com.oracle.bmc.core.model.UpdateDrgRouteRulesDetails updateDrgRouteRulesDetails =
                 null;
 
         /**
          * Request to update one or more route rules in the DRG route table.
          *
+         * @param updateDrgRouteRulesDetails the value to set
          * @return this builder instance
          */
         public Builder updateDrgRouteRulesDetails(
@@ -155,7 +171,8 @@ public class UpdateDrgRouteRulesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -163,6 +180,10 @@ public class UpdateDrgRouteRulesRequest
                 .updateDrgRouteRulesDetails(updateDrgRouteRulesDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,9 +29,17 @@ public final class UserDefinedFunctionSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of user defined function summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<UserDefinedFunctionSummary> items;
 
+        /**
+         * The array of user defined function summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<UserDefinedFunctionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class UserDefinedFunctionSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<UserDefinedFunctionSummary> items;
 
+    /**
+     * The array of user defined function summaries.
+     * @return the value
+     **/
     public java.util.List<UserDefinedFunctionSummary> getItems() {
         return items;
     }

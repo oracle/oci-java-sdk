@@ -17,6 +17,9 @@ public class ListBlockchainPlatformPatchesRequest
      */
     private String blockchainPlatformId;
 
+    /**
+     * Unique service identifier.
+     */
     public String getBlockchainPlatformId() {
         return blockchainPlatformId;
     }
@@ -25,6 +28,9 @@ public class ListBlockchainPlatformPatchesRequest
      */
     private String page;
 
+    /**
+     * The page at which to start retrieving results.
+     */
     public String getPage() {
         return page;
     }
@@ -33,6 +39,9 @@ public class ListBlockchainPlatformPatchesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -41,6 +50,9 @@ public class ListBlockchainPlatformPatchesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,10 +64,14 @@ public class ListBlockchainPlatformPatchesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique service identifier.
+         */
         private String blockchainPlatformId = null;
 
         /**
          * Unique service identifier.
+         * @param blockchainPlatformId the value to set
          * @return this builder instance
          */
         public Builder blockchainPlatformId(String blockchainPlatformId) {
@@ -63,10 +79,14 @@ public class ListBlockchainPlatformPatchesRequest
             return this;
         }
 
+        /**
+         * The page at which to start retrieving results.
+         */
         private String page = null;
 
         /**
          * The page at which to start retrieving results.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -74,10 +94,14 @@ public class ListBlockchainPlatformPatchesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -85,10 +109,14 @@ public class ListBlockchainPlatformPatchesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -171,7 +199,8 @@ public class ListBlockchainPlatformPatchesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -181,6 +210,10 @@ public class ListBlockchainPlatformPatchesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

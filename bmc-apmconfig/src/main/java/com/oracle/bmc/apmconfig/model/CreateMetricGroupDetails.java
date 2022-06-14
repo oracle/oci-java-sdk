@@ -47,46 +47,89 @@ public final class CreateMetricGroupDetails extends CreateConfigDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation
+         * of MetricGroups. A filterId is generated when a Span Filter is created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterId")
         private String filterId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation
+         * of MetricGroups. A filterId is generated when a Span Filter is created.
+         *
+         * @param filterId the value to set
+         * @return this builder
+         **/
         public Builder filterId(String filterId) {
             this.filterId = filterId;
             this.__explicitlySet__.add("filterId");
             return this;
         }
-
+        /**
+         * The namespace to which the metrics are published. It must be one of several predefined namespaces.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The namespace to which the metrics are published. It must be one of several predefined namespaces.
+         *
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * A list of dimensions for the metric. This variable should not be used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<Dimension> dimensions;
 
+        /**
+         * A list of dimensions for the metric. This variable should not be used.
+         * @param dimensions the value to set
+         * @return this builder
+         **/
         public Builder dimensions(java.util.List<Dimension> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * The list of metrics in this group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<Metric> metrics;
 
+        /**
+         * The list of metrics in this group.
+         *
+         * @param metrics the value to set
+         * @return this builder
+         **/
         public Builder metrics(java.util.List<Metric> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
@@ -155,11 +198,15 @@ public final class CreateMetricGroupDetails extends CreateConfigDetails {
     }
 
     /**
-     * The name of the metric group.
+     * The name by which a configuration entity is displayed to the end user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name by which a configuration entity is displayed to the end user.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -172,6 +219,12 @@ public final class CreateMetricGroupDetails extends CreateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
     private final String filterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation
+     * of MetricGroups. A filterId is generated when a Span Filter is created.
+     *
+     * @return the value
+     **/
     public String getFilterId() {
         return filterId;
     }
@@ -183,6 +236,11 @@ public final class CreateMetricGroupDetails extends CreateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The namespace to which the metrics are published. It must be one of several predefined namespaces.
+     *
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -193,6 +251,10 @@ public final class CreateMetricGroupDetails extends CreateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<Dimension> dimensions;
 
+    /**
+     * A list of dimensions for the metric. This variable should not be used.
+     * @return the value
+     **/
     public java.util.List<Dimension> getDimensions() {
         return dimensions;
     }
@@ -204,6 +266,11 @@ public final class CreateMetricGroupDetails extends CreateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<Metric> metrics;
 
+    /**
+     * The list of metrics in this group.
+     *
+     * @return the value
+     **/
     public java.util.List<Metric> getMetrics() {
         return metrics;
     }

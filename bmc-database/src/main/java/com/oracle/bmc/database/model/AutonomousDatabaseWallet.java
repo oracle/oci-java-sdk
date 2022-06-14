@@ -31,18 +31,33 @@ public final class AutonomousDatabaseWallet {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The current lifecycle state of the Autonomous Database wallet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current lifecycle state of the Autonomous Database wallet.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the wallet was last rotated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRotated")
         private java.util.Date timeRotated;
 
+        /**
+         * The date and time the wallet was last rotated.
+         * @param timeRotated the value to set
+         * @return this builder
+         **/
         public Builder timeRotated(java.util.Date timeRotated) {
             this.timeRotated = timeRotated;
             this.__explicitlySet__.add("timeRotated");
@@ -134,6 +149,10 @@ public final class AutonomousDatabaseWallet {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the Autonomous Database wallet.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -144,6 +163,10 @@ public final class AutonomousDatabaseWallet {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRotated")
     private final java.util.Date timeRotated;
 
+    /**
+     * The date and time the wallet was last rotated.
+     * @return the value
+     **/
     public java.util.Date getTimeRotated() {
         return timeRotated;
     }

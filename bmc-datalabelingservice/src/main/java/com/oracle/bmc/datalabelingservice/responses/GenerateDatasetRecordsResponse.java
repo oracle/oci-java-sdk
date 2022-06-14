@@ -14,6 +14,11 @@ public class GenerateDatasetRecordsResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcWorkRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query the status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -25,6 +30,12 @@ public class GenerateDatasetRecordsResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,15 +56,37 @@ public class GenerateDatasetRecordsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query the status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query the status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
@@ -71,12 +104,20 @@ public class GenerateDatasetRecordsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GenerateDatasetRecordsResponse build() {
             return new GenerateDatasetRecordsResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

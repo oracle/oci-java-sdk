@@ -42,45 +42,81 @@ public final class NamespaceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the namespace name of a tenancy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
+        /**
+         * This is the namespace name of a tenancy
+         * @param namespaceName the value to set
+         * @return this builder
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-
+        /**
+         * The is the tenancy ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The is the tenancy ID
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * This indicates if the tenancy is onboarded to Logging Analytics
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOnboarded")
         private Boolean isOnboarded;
 
+        /**
+         * This indicates if the tenancy is onboarded to Logging Analytics
+         * @param isOnboarded the value to set
+         * @return this builder
+         **/
         public Builder isOnboarded(Boolean isOnboarded) {
             this.isOnboarded = isOnboarded;
             this.__explicitlySet__.add("isOnboarded");
             return this;
         }
-
+        /**
+         * This indicates if the log set feature is enabled for the tenancy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLogSetEnabled")
         private Boolean isLogSetEnabled;
 
+        /**
+         * This indicates if the log set feature is enabled for the tenancy
+         * @param isLogSetEnabled the value to set
+         * @return this builder
+         **/
         public Builder isLogSetEnabled(Boolean isLogSetEnabled) {
             this.isLogSetEnabled = isLogSetEnabled;
             this.__explicitlySet__.add("isLogSetEnabled");
             return this;
         }
-
+        /**
+         * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDataEverIngested")
         private Boolean isDataEverIngested;
 
+        /**
+         * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+         * @param isDataEverIngested the value to set
+         * @return this builder
+         **/
         public Builder isDataEverIngested(Boolean isDataEverIngested) {
             this.isDataEverIngested = isDataEverIngested;
             this.__explicitlySet__.add("isDataEverIngested");
@@ -133,6 +169,10 @@ public final class NamespaceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
+    /**
+     * This is the namespace name of a tenancy
+     * @return the value
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -143,6 +183,10 @@ public final class NamespaceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The is the tenancy ID
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -153,6 +197,10 @@ public final class NamespaceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isOnboarded")
     private final Boolean isOnboarded;
 
+    /**
+     * This indicates if the tenancy is onboarded to Logging Analytics
+     * @return the value
+     **/
     public Boolean getIsOnboarded() {
         return isOnboarded;
     }
@@ -163,6 +211,10 @@ public final class NamespaceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isLogSetEnabled")
     private final Boolean isLogSetEnabled;
 
+    /**
+     * This indicates if the log set feature is enabled for the tenancy
+     * @return the value
+     **/
     public Boolean getIsLogSetEnabled() {
         return isLogSetEnabled;
     }
@@ -173,6 +225,10 @@ public final class NamespaceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDataEverIngested")
     private final Boolean isDataEverIngested;
 
+    /**
+     * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+     * @return the value
+     **/
     public Boolean getIsDataEverIngested() {
         return isDataEverIngested;
     }

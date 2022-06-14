@@ -17,6 +17,9 @@ public class GetConditionMetadataTypeRequest
      */
     private com.oracle.bmc.cloudguard.model.ConditionTypeEnum conditionMetadataTypeId;
 
+    /**
+     * The type of the condition meta data.
+     */
     public com.oracle.bmc.cloudguard.model.ConditionTypeEnum getConditionMetadataTypeId() {
         return conditionMetadataTypeId;
     }
@@ -25,6 +28,9 @@ public class GetConditionMetadataTypeRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +39,9 @@ public class GetConditionMetadataTypeRequest
      */
     private String serviceType;
 
+    /**
+     * ServiceType filter for the condition meta data.
+     */
     public String getServiceType() {
         return serviceType;
     }
@@ -41,6 +50,9 @@ public class GetConditionMetadataTypeRequest
      */
     private String resourceType;
 
+    /**
+     * Resource filter for the condition meta data.
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -52,10 +64,14 @@ public class GetConditionMetadataTypeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The type of the condition meta data.
+         */
         private com.oracle.bmc.cloudguard.model.ConditionTypeEnum conditionMetadataTypeId = null;
 
         /**
          * The type of the condition meta data.
+         * @param conditionMetadataTypeId the value to set
          * @return this builder instance
          */
         public Builder conditionMetadataTypeId(
@@ -64,10 +80,14 @@ public class GetConditionMetadataTypeRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -75,10 +95,14 @@ public class GetConditionMetadataTypeRequest
             return this;
         }
 
+        /**
+         * ServiceType filter for the condition meta data.
+         */
         private String serviceType = null;
 
         /**
          * ServiceType filter for the condition meta data.
+         * @param serviceType the value to set
          * @return this builder instance
          */
         public Builder serviceType(String serviceType) {
@@ -86,10 +110,14 @@ public class GetConditionMetadataTypeRequest
             return this;
         }
 
+        /**
+         * Resource filter for the condition meta data.
+         */
         private String resourceType = null;
 
         /**
          * Resource filter for the condition meta data.
+         * @param resourceType the value to set
          * @return this builder instance
          */
         public Builder resourceType(String resourceType) {
@@ -171,7 +199,8 @@ public class GetConditionMetadataTypeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -181,6 +210,10 @@ public class GetConditionMetadataTypeRequest
                 .resourceType(resourceType);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

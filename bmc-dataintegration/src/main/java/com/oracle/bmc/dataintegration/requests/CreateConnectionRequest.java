@@ -18,6 +18,9 @@ public class CreateConnectionRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class CreateConnectionRequest
      */
     private com.oracle.bmc.dataintegration.model.CreateConnectionDetails createConnectionDetails;
 
+    /**
+     * The information needed to create a connection.
+     */
     public com.oracle.bmc.dataintegration.model.CreateConnectionDetails
             getCreateConnectionDetails() {
         return createConnectionDetails;
@@ -38,6 +44,12 @@ public class CreateConnectionRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,6 +59,10 @@ public class CreateConnectionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -69,10 +85,14 @@ public class CreateConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -80,11 +100,15 @@ public class CreateConnectionRequest
             return this;
         }
 
+        /**
+         * The information needed to create a connection.
+         */
         private com.oracle.bmc.dataintegration.model.CreateConnectionDetails
                 createConnectionDetails = null;
 
         /**
          * The information needed to create a connection.
+         * @param createConnectionDetails the value to set
          * @return this builder instance
          */
         public Builder createConnectionDetails(
@@ -94,6 +118,12 @@ public class CreateConnectionRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -101,6 +131,7 @@ public class CreateConnectionRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -108,11 +139,16 @@ public class CreateConnectionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -205,7 +241,8 @@ public class CreateConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +252,10 @@ public class CreateConnectionRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -61,6 +61,11 @@ public class CreateResolverEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -73,6 +78,12 @@ public class CreateResolverEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("forwardingAddress")
     private final String forwardingAddress;
 
+    /**
+     * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part
+     * of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+     *
+     * @return the value
+     **/
     public String getForwardingAddress() {
         return forwardingAddress;
     }
@@ -84,6 +95,11 @@ public class CreateResolverEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isForwarding")
     private final Boolean isForwarding;
 
+    /**
+     * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
+     *
+     * @return the value
+     **/
     public Boolean getIsForwarding() {
         return isForwarding;
     }
@@ -95,6 +111,11 @@ public class CreateResolverEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isListening")
     private final Boolean isListening;
 
+    /**
+     * A Boolean flag indicating whether or not the resolver endpoint is for listening.
+     *
+     * @return the value
+     **/
     public Boolean getIsListening() {
         return isListening;
     }
@@ -107,6 +128,12 @@ public class CreateResolverEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("listeningAddress")
     private final String listeningAddress;
 
+    /**
+     * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the
+     * subnet and will be assigned by the system if unspecified when isListening is true.
+     *
+     * @return the value
+     **/
     public String getListeningAddress() {
         return listeningAddress;
     }

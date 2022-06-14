@@ -15,6 +15,11 @@ public class ListLogAnalyticsObjectCollectionRulesResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +32,13 @@ public class ListLogAnalyticsObjectCollectionRulesResponse
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -37,6 +49,10 @@ public class ListLogAnalyticsObjectCollectionRulesResponse
     private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
             logAnalyticsObjectCollectionRuleCollection;
 
+    /**
+     * The returned LogAnalyticsObjectCollectionRuleCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
             getLogAnalyticsObjectCollectionRuleCollection() {
         return logAnalyticsObjectCollectionRuleCollection;
@@ -69,23 +85,55 @@ public class ListLogAnalyticsObjectCollectionRulesResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned LogAnalyticsObjectCollectionRuleCollection instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
                 logAnalyticsObjectCollectionRuleCollection;
 
+        /**
+         * The returned LogAnalyticsObjectCollectionRuleCollection instance.
+         * @param logAnalyticsObjectCollectionRuleCollection the value to set
+         * @return this builder
+         */
         public Builder logAnalyticsObjectCollectionRuleCollection(
                 com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
                         logAnalyticsObjectCollectionRuleCollection) {
@@ -108,6 +156,10 @@ public class ListLogAnalyticsObjectCollectionRulesResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListLogAnalyticsObjectCollectionRulesResponse build() {
             return new ListLogAnalyticsObjectCollectionRulesResponse(
                     __httpStatusCode__,
@@ -117,6 +169,10 @@ public class ListLogAnalyticsObjectCollectionRulesResponse
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

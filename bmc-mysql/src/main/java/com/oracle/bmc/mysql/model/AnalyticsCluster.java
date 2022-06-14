@@ -53,72 +53,137 @@ public final class AnalyticsCluster {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the parent DB System this Analytics Cluster is attached to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
+        /**
+         * The OCID of the parent DB System this Analytics Cluster is attached to.
+         * @param dbSystemId the value to set
+         * @return this builder
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-
+        /**
+         * The shape determines resources to allocate to the Analytics
+         * Cluster nodes - CPU cores, memory.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * The shape determines resources to allocate to the Analytics
+         * Cluster nodes - CPU cores, memory.
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * The number of analytics-processing compute instances, of the
+         * specified shape, in the Analytics Cluster.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
         private Integer clusterSize;
 
+        /**
+         * The number of analytics-processing compute instances, of the
+         * specified shape, in the Analytics Cluster.
+         *
+         * @param clusterSize the value to set
+         * @return this builder
+         **/
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = clusterSize;
             this.__explicitlySet__.add("clusterSize");
             return this;
         }
-
+        /**
+         * An Analytics Cluster Node is a compute host that is part of an Analytics Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterNodes")
         private java.util.List<AnalyticsClusterNode> clusterNodes;
 
+        /**
+         * An Analytics Cluster Node is a compute host that is part of an Analytics Cluster.
+         * @param clusterNodes the value to set
+         * @return this builder
+         **/
         public Builder clusterNodes(java.util.List<AnalyticsClusterNode> clusterNodes) {
             this.clusterNodes = clusterNodes;
             this.__explicitlySet__.add("clusterNodes");
             return this;
         }
-
+        /**
+         * The current state of the Analytics Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the Analytics Cluster.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Additional information about the current lifecycleState.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current lifecycleState.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -177,6 +242,10 @@ public final class AnalyticsCluster {
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
+    /**
+     * The OCID of the parent DB System this Analytics Cluster is attached to.
+     * @return the value
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -189,6 +258,12 @@ public final class AnalyticsCluster {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * The shape determines resources to allocate to the Analytics
+     * Cluster nodes - CPU cores, memory.
+     *
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -201,6 +276,12 @@ public final class AnalyticsCluster {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
     private final Integer clusterSize;
 
+    /**
+     * The number of analytics-processing compute instances, of the
+     * specified shape, in the Analytics Cluster.
+     *
+     * @return the value
+     **/
     public Integer getClusterSize() {
         return clusterSize;
     }
@@ -211,6 +292,10 @@ public final class AnalyticsCluster {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterNodes")
     private final java.util.List<AnalyticsClusterNode> clusterNodes;
 
+    /**
+     * An Analytics Cluster Node is a compute host that is part of an Analytics Cluster.
+     * @return the value
+     **/
     public java.util.List<AnalyticsClusterNode> getClusterNodes() {
         return clusterNodes;
     }
@@ -274,6 +359,10 @@ public final class AnalyticsCluster {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the Analytics Cluster.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -284,6 +373,10 @@ public final class AnalyticsCluster {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current lifecycleState.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -294,6 +387,10 @@ public final class AnalyticsCluster {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -304,6 +401,10 @@ public final class AnalyticsCluster {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

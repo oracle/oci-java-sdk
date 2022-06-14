@@ -74,9 +74,17 @@ public final class TransferAppliance {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique alpha-numeric identifier for a transfer appliance auto generated during create.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
+        /**
+         * Unique alpha-numeric identifier for a transfer appliance auto generated during create.
+         * @param label the value to set
+         * @return this builder
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
@@ -277,6 +285,10 @@ public final class TransferAppliance {
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
+    /**
+     * Unique alpha-numeric identifier for a transfer appliance auto generated during create.
+     * @return the value
+     **/
     public String getLabel() {
         return label;
     }

@@ -16,6 +16,13 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcPrevPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the previous batch of items.
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -28,6 +35,13 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -38,6 +52,11 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,6 +66,10 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.loganalytics.model.LabelPriorityCollection labelPriorityCollection;
 
+    /**
+     * The returned LabelPriorityCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LabelPriorityCollection getLabelPriorityCollection() {
         return labelPriorityCollection;
     }
@@ -79,29 +102,75 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LabelPriorityCollection instance.
+         */
         private com.oracle.bmc.loganalytics.model.LabelPriorityCollection labelPriorityCollection;
 
+        /**
+         * The returned LabelPriorityCollection instance.
+         * @param labelPriorityCollection the value to set
+         * @return this builder
+         */
         public Builder labelPriorityCollection(
                 com.oracle.bmc.loganalytics.model.LabelPriorityCollection labelPriorityCollection) {
             this.labelPriorityCollection = labelPriorityCollection;
@@ -122,6 +191,10 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListLabelPrioritiesResponse build() {
             return new ListLabelPrioritiesResponse(
                     __httpStatusCode__,
@@ -132,6 +205,10 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

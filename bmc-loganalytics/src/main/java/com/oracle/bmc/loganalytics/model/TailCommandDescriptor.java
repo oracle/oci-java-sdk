@@ -72,10 +72,19 @@ public final class TailCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Value specified as limit argument in queryString
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limit")
         private Integer limit;
 
+        /**
+         * Value specified as limit argument in queryString
+         *
+         * @param limit the value to set
+         * @return this builder
+         **/
         public Builder limit(Integer limit) {
             this.limit = limit;
             this.__explicitlySet__.add("limit");
@@ -143,6 +152,11 @@ public final class TailCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("limit")
     private final Integer limit;
 
+    /**
+     * Value specified as limit argument in queryString
+     *
+     * @return the value
+     **/
     public Integer getLimit() {
         return limit;
     }

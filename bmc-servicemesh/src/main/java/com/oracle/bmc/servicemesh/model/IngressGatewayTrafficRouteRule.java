@@ -60,6 +60,10 @@ public class IngressGatewayTrafficRouteRule {
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<VirtualServiceTrafficRuleTarget> destinations;
 
+    /**
+     * The destination of the request.
+     * @return the value
+     **/
     public java.util.List<VirtualServiceTrafficRuleTarget> getDestinations() {
         return destinations;
     }

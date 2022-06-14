@@ -31,18 +31,33 @@ public final class CloudDatabaseManagementConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of the Database Management service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementStatus")
         private ManagementStatus managementStatus;
 
+        /**
+         * The status of the Database Management service.
+         * @param managementStatus the value to set
+         * @return this builder
+         **/
         public Builder managementStatus(ManagementStatus managementStatus) {
             this.managementStatus = managementStatus;
             this.__explicitlySet__.add("managementStatus");
             return this;
         }
-
+        /**
+         * The Database Management type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementType")
         private ManagementType managementType;
 
+        /**
+         * The Database Management type.
+         * @param managementType the value to set
+         * @return this builder
+         **/
         public Builder managementType(ManagementType managementType) {
             this.managementType = managementType;
             this.__explicitlySet__.add("managementType");
@@ -140,6 +155,10 @@ public final class CloudDatabaseManagementConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("managementStatus")
     private final ManagementStatus managementStatus;
 
+    /**
+     * The status of the Database Management service.
+     * @return the value
+     **/
     public ManagementStatus getManagementStatus() {
         return managementStatus;
     }
@@ -198,6 +217,10 @@ public final class CloudDatabaseManagementConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("managementType")
     private final ManagementType managementType;
 
+    /**
+     * The Database Management type.
+     * @return the value
+     **/
     public ManagementType getManagementType() {
         return managementType;
     }

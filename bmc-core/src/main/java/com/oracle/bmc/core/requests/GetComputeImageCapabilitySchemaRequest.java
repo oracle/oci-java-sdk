@@ -17,6 +17,9 @@ public class GetComputeImageCapabilitySchemaRequest
      */
     private String computeImageCapabilitySchemaId;
 
+    /**
+     * The id of the compute image capability schema or the image ocid
+     */
     public String getComputeImageCapabilitySchemaId() {
         return computeImageCapabilitySchemaId;
     }
@@ -26,6 +29,10 @@ public class GetComputeImageCapabilitySchemaRequest
      */
     private Boolean isMergeEnabled;
 
+    /**
+     * Merge the image capability schema with the global image capability schema
+     *
+     */
     public Boolean getIsMergeEnabled() {
         return isMergeEnabled;
     }
@@ -37,10 +44,14 @@ public class GetComputeImageCapabilitySchemaRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The id of the compute image capability schema or the image ocid
+         */
         private String computeImageCapabilitySchemaId = null;
 
         /**
          * The id of the compute image capability schema or the image ocid
+         * @param computeImageCapabilitySchemaId the value to set
          * @return this builder instance
          */
         public Builder computeImageCapabilitySchemaId(String computeImageCapabilitySchemaId) {
@@ -48,11 +59,16 @@ public class GetComputeImageCapabilitySchemaRequest
             return this;
         }
 
+        /**
+         * Merge the image capability schema with the global image capability schema
+         *
+         */
         private Boolean isMergeEnabled = null;
 
         /**
          * Merge the image capability schema with the global image capability schema
          *
+         * @param isMergeEnabled the value to set
          * @return this builder instance
          */
         public Builder isMergeEnabled(Boolean isMergeEnabled) {
@@ -131,7 +147,8 @@ public class GetComputeImageCapabilitySchemaRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -139,6 +156,10 @@ public class GetComputeImageCapabilitySchemaRequest
                 .isMergeEnabled(isMergeEnabled);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

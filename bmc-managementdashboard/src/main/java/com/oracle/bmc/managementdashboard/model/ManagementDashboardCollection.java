@@ -29,9 +29,17 @@ public final class ManagementDashboardCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of dashboard summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ManagementDashboardSummary> items;
 
+        /**
+         * Array of dashboard summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ManagementDashboardSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ManagementDashboardCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ManagementDashboardSummary> items;
 
+    /**
+     * Array of dashboard summaries.
+     * @return the value
+     **/
     public java.util.List<ManagementDashboardSummary> getItems() {
         return items;
     }

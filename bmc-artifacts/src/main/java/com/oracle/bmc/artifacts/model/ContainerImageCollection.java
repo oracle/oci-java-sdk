@@ -31,18 +31,33 @@ public final class ContainerImageCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Page of matching container images.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ContainerImageSummary> items;
 
+        /**
+         * Page of matching container images.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ContainerImageSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-
+        /**
+         * Estimated number of remaining results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remainingItemsCount")
         private Integer remainingItemsCount;
 
+        /**
+         * Estimated number of remaining results.
+         * @param remainingItemsCount the value to set
+         * @return this builder
+         **/
         public Builder remainingItemsCount(Integer remainingItemsCount) {
             this.remainingItemsCount = remainingItemsCount;
             this.__explicitlySet__.add("remainingItemsCount");
@@ -86,6 +101,10 @@ public final class ContainerImageCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ContainerImageSummary> items;
 
+    /**
+     * Page of matching container images.
+     * @return the value
+     **/
     public java.util.List<ContainerImageSummary> getItems() {
         return items;
     }
@@ -96,6 +115,10 @@ public final class ContainerImageCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("remainingItemsCount")
     private final Integer remainingItemsCount;
 
+    /**
+     * Estimated number of remaining results.
+     * @return the value
+     **/
     public Integer getRemainingItemsCount() {
         return remainingItemsCount;
     }

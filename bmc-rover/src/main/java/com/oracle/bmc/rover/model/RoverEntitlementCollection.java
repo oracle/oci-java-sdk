@@ -29,9 +29,17 @@ public final class RoverEntitlementCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of RoverEntitlementSummary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RoverEntitlementSummary> items;
 
+        /**
+         * List of RoverEntitlementSummary.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<RoverEntitlementSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class RoverEntitlementCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RoverEntitlementSummary> items;
 
+    /**
+     * List of RoverEntitlementSummary.
+     * @return the value
+     **/
     public java.util.List<RoverEntitlementSummary> getItems() {
         return items;
     }

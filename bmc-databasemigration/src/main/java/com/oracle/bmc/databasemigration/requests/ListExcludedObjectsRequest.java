@@ -17,6 +17,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String jobId;
 
+    /**
+     * The OCID of the job
+     *
+     */
     public String getJobId() {
         return jobId;
     }
@@ -27,6 +31,11 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +45,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -45,6 +58,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -54,6 +71,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.databasemigration.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public com.oracle.bmc.databasemigration.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -104,6 +125,12 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     * Default order for reasonCategory is ascending.
+     * If no value is specified reasonCategory is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -113,6 +140,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String type;
 
+    /**
+     * Excluded object type.
+     *
+     */
     public String getType() {
         return type;
     }
@@ -122,6 +153,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String owner;
 
+    /**
+     * Excluded object owner
+     *
+     */
     public String getOwner() {
         return owner;
     }
@@ -131,6 +166,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String object;
 
+    /**
+     * Excluded object name
+     *
+     */
     public String getObject() {
         return object;
     }
@@ -140,6 +179,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String ownerContains;
 
+    /**
+     * Excluded object owner which contains provided value.
+     *
+     */
     public String getOwnerContains() {
         return ownerContains;
     }
@@ -149,6 +192,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String objectContains;
 
+    /**
+     * Excluded object name which contains provided value.
+     *
+     */
     public String getObjectContains() {
         return objectContains;
     }
@@ -158,6 +205,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.databasemigration.model.ReasonKeywords reasonCategory;
 
+    /**
+     * Reason category for the excluded object
+     *
+     */
     public com.oracle.bmc.databasemigration.model.ReasonKeywords getReasonCategory() {
         return reasonCategory;
     }
@@ -167,6 +218,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String sourceRule;
 
+    /**
+     * Exclude object rule that matches the excluded object, if applicable.
+     *
+     */
     public String getSourceRule() {
         return sourceRule;
     }
@@ -178,11 +233,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the job
+         *
+         */
         private String jobId = null;
 
         /**
          * The OCID of the job
          *
+         * @param jobId the value to set
          * @return this builder instance
          */
         public Builder jobId(String jobId) {
@@ -190,12 +250,18 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -203,11 +269,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -215,11 +286,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -227,11 +303,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private com.oracle.bmc.databasemigration.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemigration.model.SortOrders sortOrder) {
@@ -239,6 +320,12 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for reasonCategory is ascending.
+         * If no value is specified reasonCategory is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -246,6 +333,7 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
          * Default order for reasonCategory is ascending.
          * If no value is specified reasonCategory is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -253,11 +341,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Excluded object type.
+         *
+         */
         private String type = null;
 
         /**
          * Excluded object type.
          *
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(String type) {
@@ -265,11 +358,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Excluded object owner
+         *
+         */
         private String owner = null;
 
         /**
          * Excluded object owner
          *
+         * @param owner the value to set
          * @return this builder instance
          */
         public Builder owner(String owner) {
@@ -277,11 +375,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Excluded object name
+         *
+         */
         private String object = null;
 
         /**
          * Excluded object name
          *
+         * @param object the value to set
          * @return this builder instance
          */
         public Builder object(String object) {
@@ -289,11 +392,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Excluded object owner which contains provided value.
+         *
+         */
         private String ownerContains = null;
 
         /**
          * Excluded object owner which contains provided value.
          *
+         * @param ownerContains the value to set
          * @return this builder instance
          */
         public Builder ownerContains(String ownerContains) {
@@ -301,11 +409,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Excluded object name which contains provided value.
+         *
+         */
         private String objectContains = null;
 
         /**
          * Excluded object name which contains provided value.
          *
+         * @param objectContains the value to set
          * @return this builder instance
          */
         public Builder objectContains(String objectContains) {
@@ -313,11 +426,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Reason category for the excluded object
+         *
+         */
         private com.oracle.bmc.databasemigration.model.ReasonKeywords reasonCategory = null;
 
         /**
          * Reason category for the excluded object
          *
+         * @param reasonCategory the value to set
          * @return this builder instance
          */
         public Builder reasonCategory(
@@ -326,11 +444,16 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Exclude object rule that matches the excluded object, if applicable.
+         *
+         */
         private String sourceRule = null;
 
         /**
          * Exclude object rule that matches the excluded object, if applicable.
          *
+         * @param sourceRule the value to set
          * @return this builder instance
          */
         public Builder sourceRule(String sourceRule) {
@@ -430,7 +553,8 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -449,6 +573,10 @@ public class ListExcludedObjectsRequest extends com.oracle.bmc.requests.BmcReque
                 .sourceRule(sourceRule);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

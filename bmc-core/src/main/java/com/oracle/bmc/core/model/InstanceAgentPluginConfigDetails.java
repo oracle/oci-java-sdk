@@ -30,18 +30,49 @@ public final class InstanceAgentPluginConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The plugin name. To get a list of available plugins, use the
+         * {@link #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest) listInstanceagentAvailablePlugins}
+         * operation in the Oracle Cloud Agent API. For more information about the available plugins, see
+         * [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The plugin name. To get a list of available plugins, use the
+         * {@link #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest) listInstanceagentAvailablePlugins}
+         * operation in the Oracle Cloud Agent API. For more information about the available plugins, see
+         * [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Whether the plugin should be enabled or disabled.
+         * <p>
+         * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+         * {@code isManagementDisabled} attributes must also be set to false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("desiredState")
         private DesiredState desiredState;
 
+        /**
+         * Whether the plugin should be enabled or disabled.
+         * <p>
+         * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+         * {@code isManagementDisabled} attributes must also be set to false.
+         *
+         * @param desiredState the value to set
+         * @return this builder
+         **/
         public Builder desiredState(DesiredState desiredState) {
             this.desiredState = desiredState;
             this.__explicitlySet__.add("desiredState");
@@ -88,6 +119,14 @@ public final class InstanceAgentPluginConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The plugin name. To get a list of available plugins, use the
+     * {@link #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest) listInstanceagentAvailablePlugins}
+     * operation in the Oracle Cloud Agent API. For more information about the available plugins, see
+     * [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -154,6 +193,14 @@ public final class InstanceAgentPluginConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("desiredState")
     private final DesiredState desiredState;
 
+    /**
+     * Whether the plugin should be enabled or disabled.
+     * <p>
+     * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+     * {@code isManagementDisabled} attributes must also be set to false.
+     *
+     * @return the value
+     **/
     public DesiredState getDesiredState() {
         return desiredState;
     }

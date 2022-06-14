@@ -29,9 +29,17 @@ public final class AvailabilityDomain {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Availability Domain Identifiers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ads")
         private Ads ads;
 
+        /**
+         * Availability Domain Identifiers
+         * @param ads the value to set
+         * @return this builder
+         **/
         public Builder ads(Ads ads) {
             this.ads = ads;
             this.__explicitlySet__.add("ads");
@@ -109,6 +117,10 @@ public final class AvailabilityDomain {
     @com.fasterxml.jackson.annotation.JsonProperty("ads")
     private final Ads ads;
 
+    /**
+     * Availability Domain Identifiers
+     * @return the value
+     **/
     public Ads getAds() {
         return ads;
     }

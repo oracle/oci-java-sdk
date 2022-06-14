@@ -30,18 +30,33 @@ public final class RecommendationCount {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The level of importance assigned to the recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importance")
         private Importance importance;
 
+        /**
+         * The level of importance assigned to the recommendation.
+         * @param importance the value to set
+         * @return this builder
+         **/
         public Builder importance(Importance importance) {
             this.importance = importance;
             this.__explicitlySet__.add("importance");
             return this;
         }
-
+        /**
+         * The count of recommendations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The count of recommendations.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -83,6 +98,10 @@ public final class RecommendationCount {
     @com.fasterxml.jackson.annotation.JsonProperty("importance")
     private final Importance importance;
 
+    /**
+     * The level of importance assigned to the recommendation.
+     * @return the value
+     **/
     public Importance getImportance() {
         return importance;
     }
@@ -93,6 +112,10 @@ public final class RecommendationCount {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The count of recommendations.
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

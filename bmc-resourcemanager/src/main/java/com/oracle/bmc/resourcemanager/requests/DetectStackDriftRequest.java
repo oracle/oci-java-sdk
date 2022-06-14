@@ -18,6 +18,9 @@ public class DetectStackDriftRequest
      */
     private String stackId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+     */
     public String getStackId() {
         return stackId;
     }
@@ -29,6 +32,12 @@ public class DetectStackDriftRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -39,6 +48,11 @@ public class DetectStackDriftRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,6 +66,14 @@ public class DetectStackDriftRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of retrying the same action. Retry tokens expire after
+     * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+     * if a resource has been deleted and purged from the system, then a retry of the original
+     * creation request may be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -60,6 +82,9 @@ public class DetectStackDriftRequest
      */
     private com.oracle.bmc.resourcemanager.model.DetectStackDriftDetails detectStackDriftDetails;
 
+    /**
+     * The details for detecting drift in a stack
+     */
     public com.oracle.bmc.resourcemanager.model.DetectStackDriftDetails
             getDetectStackDriftDetails() {
         return detectStackDriftDetails;
@@ -83,10 +108,14 @@ public class DetectStackDriftRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+         */
         private String stackId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+         * @param stackId the value to set
          * @return this builder instance
          */
         public Builder stackId(String stackId) {
@@ -94,6 +123,12 @@ public class DetectStackDriftRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -101,6 +136,7 @@ public class DetectStackDriftRequest
          * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -108,12 +144,18 @@ public class DetectStackDriftRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -121,6 +163,14 @@ public class DetectStackDriftRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of retrying the same action. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -130,6 +180,7 @@ public class DetectStackDriftRequest
          * if a resource has been deleted and purged from the system, then a retry of the original
          * creation request may be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -137,11 +188,15 @@ public class DetectStackDriftRequest
             return this;
         }
 
+        /**
+         * The details for detecting drift in a stack
+         */
         private com.oracle.bmc.resourcemanager.model.DetectStackDriftDetails
                 detectStackDriftDetails = null;
 
         /**
          * The details for detecting drift in a stack
+         * @param detectStackDriftDetails the value to set
          * @return this builder instance
          */
         public Builder detectStackDriftDetails(
@@ -238,7 +293,8 @@ public class DetectStackDriftRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -249,6 +305,10 @@ public class DetectStackDriftRequest
                 .detectStackDriftDetails(detectStackDriftDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -38,36 +38,77 @@ public final class TopologyRoutesToRelationshipDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The destinationType can be set to one of two values:
+         * <p>
+         * Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR notation.
+         * <p>
+         * Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock} value for a {@link Service}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private String destinationType;
 
+        /**
+         * The destinationType can be set to one of two values:
+         * <p>
+         * Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR notation.
+         * <p>
+         * Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock} value for a {@link Service}.
+         *
+         * @param destinationType the value to set
+         * @return this builder
+         **/
         public Builder destinationType(String destinationType) {
             this.destinationType = destinationType;
             this.__explicitlySet__.add("destinationType");
             return this;
         }
-
+        /**
+         * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link Service}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
 
+        /**
+         * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link Service}.
+         * @param destination the value to set
+         * @return this builder
+         **/
         public Builder destination(String destination) {
             this.destination = destination;
             this.__explicitlySet__.add("destination");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing table that contains the route rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing table that contains the route rule.
+         * @param routeTableId the value to set
+         * @return this builder
+         **/
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = routeTableId;
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
-
+        /**
+         * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeType")
         private RouteType routeType;
 
+        /**
+         * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
+         *
+         * @param routeType the value to set
+         * @return this builder
+         **/
         public Builder routeType(RouteType routeType) {
             this.routeType = routeType;
             this.__explicitlySet__.add("routeType");
@@ -120,6 +161,15 @@ public final class TopologyRoutesToRelationshipDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     private final String destinationType;
 
+    /**
+     * The destinationType can be set to one of two values:
+     * <p>
+     * Use {@code CIDR_BLOCK} if the rule's {@code destination} is an IP address range in CIDR notation.
+     * <p>
+     * Use {@code SERVICE_CIDR_BLOCK} if the rule's {@code destination} is the {@code cidrBlock} value for a {@link Service}.
+     *
+     * @return the value
+     **/
     public String getDestinationType() {
         return destinationType;
     }
@@ -130,6 +180,10 @@ public final class TopologyRoutesToRelationshipDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
 
+    /**
+     * An IP address range in CIDR notation or the {@code cidrBlock} value for a {@link Service}.
+     * @return the value
+     **/
     public String getDestination() {
         return destination;
     }
@@ -140,6 +194,10 @@ public final class TopologyRoutesToRelationshipDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing table that contains the route rule.
+     * @return the value
+     **/
     public String getRouteTableId() {
         return routeTableId;
     }
@@ -200,6 +258,11 @@ public final class TopologyRoutesToRelationshipDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("routeType")
     private final RouteType routeType;
 
+    /**
+     * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
+     *
+     * @return the value
+     **/
     public RouteType getRouteType() {
         return routeType;
     }

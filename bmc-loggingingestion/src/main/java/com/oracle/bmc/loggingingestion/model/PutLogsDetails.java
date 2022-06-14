@@ -28,18 +28,39 @@ public final class PutLogsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Required for identifying the version of the data format being used.
+         * Permitted values include: "1.0"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("specversion")
         private String specversion;
 
+        /**
+         * Required for identifying the version of the data format being used.
+         * Permitted values include: "1.0"
+         *
+         * @param specversion the value to set
+         * @return this builder
+         **/
         public Builder specversion(String specversion) {
             this.specversion = specversion;
             this.__explicitlySet__.add("specversion");
             return this;
         }
-
+        /**
+         * List of log-batches. Each batch has a single source, type and subject.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logEntryBatches")
         private java.util.List<LogEntryBatch> logEntryBatches;
 
+        /**
+         * List of log-batches. Each batch has a single source, type and subject.
+         *
+         * @param logEntryBatches the value to set
+         * @return this builder
+         **/
         public Builder logEntryBatches(java.util.List<LogEntryBatch> logEntryBatches) {
             this.logEntryBatches = logEntryBatches;
             this.__explicitlySet__.add("logEntryBatches");
@@ -84,6 +105,12 @@ public final class PutLogsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("specversion")
     private final String specversion;
 
+    /**
+     * Required for identifying the version of the data format being used.
+     * Permitted values include: "1.0"
+     *
+     * @return the value
+     **/
     public String getSpecversion() {
         return specversion;
     }
@@ -95,6 +122,11 @@ public final class PutLogsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logEntryBatches")
     private final java.util.List<LogEntryBatch> logEntryBatches;
 
+    /**
+     * List of log-batches. Each batch has a single source, type and subject.
+     *
+     * @return the value
+     **/
     public java.util.List<LogEntryBatch> getLogEntryBatches() {
         return logEntryBatches;
     }

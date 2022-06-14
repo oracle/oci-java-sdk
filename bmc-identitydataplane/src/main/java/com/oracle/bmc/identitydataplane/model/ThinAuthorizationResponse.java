@@ -31,18 +31,37 @@ public final class ThinAuthorizationResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The policy string related to the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
         private AuthorizationRequest authorizationRequest;
 
+        /**
+         * The policy string related to the request.
+         * @param authorizationRequest the value to set
+         * @return this builder
+         **/
         public Builder authorizationRequest(AuthorizationRequest authorizationRequest) {
             this.authorizationRequest = authorizationRequest;
             this.__explicitlySet__.add("authorizationRequest");
             return this;
         }
-
+        /**
+         * The duration of how long this decision should be cached. Note that the type is of type java.time.Duration, not
+         * string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
         private String decisionCacheDuration;
 
+        /**
+         * The duration of how long this decision should be cached. Note that the type is of type java.time.Duration, not
+         * string.
+         *
+         * @param decisionCacheDuration the value to set
+         * @return this builder
+         **/
         public Builder decisionCacheDuration(String decisionCacheDuration) {
             this.decisionCacheDuration = decisionCacheDuration;
             this.__explicitlySet__.add("decisionCacheDuration");
@@ -87,6 +106,10 @@ public final class ThinAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
     private final AuthorizationRequest authorizationRequest;
 
+    /**
+     * The policy string related to the request.
+     * @return the value
+     **/
     public AuthorizationRequest getAuthorizationRequest() {
         return authorizationRequest;
     }
@@ -99,6 +122,12 @@ public final class ThinAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
     private final String decisionCacheDuration;
 
+    /**
+     * The duration of how long this decision should be cached. Note that the type is of type java.time.Duration, not
+     * string.
+     *
+     * @return the value
+     **/
     public String getDecisionCacheDuration() {
         return decisionCacheDuration;
     }

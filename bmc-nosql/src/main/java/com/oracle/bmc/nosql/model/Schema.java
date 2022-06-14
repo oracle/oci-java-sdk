@@ -34,36 +34,65 @@ public final class Schema {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The columns of a table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<Column> columns;
 
+        /**
+         * The columns of a table.
+         * @param columns the value to set
+         * @return this builder
+         **/
         public Builder columns(java.util.List<Column> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-
+        /**
+         * A list of column names that make up a key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryKey")
         private java.util.List<String> primaryKey;
 
+        /**
+         * A list of column names that make up a key.
+         * @param primaryKey the value to set
+         * @return this builder
+         **/
         public Builder primaryKey(java.util.List<String> primaryKey) {
             this.primaryKey = primaryKey;
             this.__explicitlySet__.add("primaryKey");
             return this;
         }
-
+        /**
+         * A list of column names that make up a key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shardKey")
         private java.util.List<String> shardKey;
 
+        /**
+         * A list of column names that make up a key.
+         * @param shardKey the value to set
+         * @return this builder
+         **/
         public Builder shardKey(java.util.List<String> shardKey) {
             this.shardKey = shardKey;
             this.__explicitlySet__.add("shardKey");
             return this;
         }
-
+        /**
+         * The default Time-to-Live for the table, in days.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ttl")
         private Integer ttl;
 
+        /**
+         * The default Time-to-Live for the table, in days.
+         * @param ttl the value to set
+         * @return this builder
+         **/
         public Builder ttl(Integer ttl) {
             this.ttl = ttl;
             this.__explicitlySet__.add("ttl");
@@ -109,6 +138,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<Column> columns;
 
+    /**
+     * The columns of a table.
+     * @return the value
+     **/
     public java.util.List<Column> getColumns() {
         return columns;
     }
@@ -119,6 +152,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("primaryKey")
     private final java.util.List<String> primaryKey;
 
+    /**
+     * A list of column names that make up a key.
+     * @return the value
+     **/
     public java.util.List<String> getPrimaryKey() {
         return primaryKey;
     }
@@ -129,6 +166,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("shardKey")
     private final java.util.List<String> shardKey;
 
+    /**
+     * A list of column names that make up a key.
+     * @return the value
+     **/
     public java.util.List<String> getShardKey() {
         return shardKey;
     }
@@ -139,6 +180,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
     private final Integer ttl;
 
+    /**
+     * The default Time-to-Live for the table, in days.
+     * @return the value
+     **/
     public Integer getTtl() {
         return ttl;
     }

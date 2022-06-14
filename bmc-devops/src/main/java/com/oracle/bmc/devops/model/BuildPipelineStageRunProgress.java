@@ -72,6 +72,10 @@ public class BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("stageDisplayName")
     private final String stageDisplayName;
 
+    /**
+     * Build Run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getStageDisplayName() {
         return stageDisplayName;
     }
@@ -82,6 +86,10 @@ public class BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineStageId")
     private final String buildPipelineStageId;
 
+    /**
+     * The stage OCID.
+     * @return the value
+     **/
     public String getBuildPipelineStageId() {
         return buildPipelineStageId;
     }
@@ -92,6 +100,10 @@ public class BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The time the stage started executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -102,6 +114,10 @@ public class BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The time the stage finished executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -163,6 +179,10 @@ public class BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The current status of the stage.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }

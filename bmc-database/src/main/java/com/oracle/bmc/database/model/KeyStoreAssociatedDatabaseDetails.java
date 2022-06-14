@@ -30,18 +30,33 @@ public final class KeyStoreAssociatedDatabaseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the database that is associated with the key store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
+        /**
+         * The name of the database that is associated with the key store.
+         * @param dbName the value to set
+         * @return this builder
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
@@ -84,6 +99,10 @@ public final class KeyStoreAssociatedDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -94,6 +113,10 @@ public final class KeyStoreAssociatedDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
+    /**
+     * The name of the database that is associated with the key store.
+     * @return the value
+     **/
     public String getDbName() {
         return dbName;
     }

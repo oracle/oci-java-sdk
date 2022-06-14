@@ -93,200 +93,375 @@ public final class Alert {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the alert.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The status of the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private AlertStatus status;
 
+        /**
+         * The status of the alert.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(AlertStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Severity level of the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private AlertSeverity severity;
 
+        /**
+         * Severity level of the alert.
+         * @param severity the value to set
+         * @return this builder
+         **/
         public Builder severity(AlertSeverity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-
+        /**
+         * The display name of the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the alert.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The description of the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the alert.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationTime")
         private java.util.Date operationTime;
 
+        /**
+         * Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param operationTime the value to set
+         * @return this builder
+         **/
         public Builder operationTime(java.util.Date operationTime) {
             this.operationTime = operationTime;
             this.__explicitlySet__.add("operationTime");
             return this;
         }
-
+        /**
+         * The operation (event) that triggered alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
+        /**
+         * The operation (event) that triggered alert.
+         * @param operation the value to set
+         * @return this builder
+         **/
         public Builder operation(String operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-
+        /**
+         * The result of the operation (event) that triggered alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private OperationStatus operationStatus;
 
+        /**
+         * The result of the operation (event) that triggered alert.
+         * @param operationStatus the value to set
+         * @return this builder
+         **/
         public Builder operationStatus(OperationStatus operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-
+        /**
+         * Array of OCIDs of the target database which are associated with the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
         private java.util.List<String> targetIds;
 
+        /**
+         * Array of OCIDs of the target database which are associated with the alert.
+         * @param targetIds the value to set
+         * @return this builder
+         **/
         public Builder targetIds(java.util.List<String> targetIds) {
             this.targetIds = targetIds;
             this.__explicitlySet__.add("targetIds");
             return this;
         }
-
+        /**
+         * Array of names of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetNames")
         private java.util.List<String> targetNames;
 
+        /**
+         * Array of names of the target database.
+         * @param targetNames the value to set
+         * @return this builder
+         **/
         public Builder targetNames(java.util.List<String> targetNames) {
             this.targetNames = targetNames;
             this.__explicitlySet__.add("targetNames");
             return this;
         }
-
+        /**
+         * The OCID of the policy that triggered alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
+        /**
+         * The OCID of the policy that triggered alert.
+         * @param policyId the value to set
+         * @return this builder
+         **/
         public Builder policyId(String policyId) {
             this.policyId = policyId;
             this.__explicitlySet__.add("policyId");
             return this;
         }
-
+        /**
+         * Type of the alert. Indicates the Data Safe feature triggering the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alertType")
         private AlertType alertType;
 
+        /**
+         * Type of the alert. Indicates the Data Safe feature triggering the alert.
+         * @param alertType the value to set
+         * @return this builder
+         **/
         public Builder alertType(AlertType alertType) {
             this.alertType = alertType;
             this.__explicitlySet__.add("alertType");
             return this;
         }
-
+        /**
+         * The resource endpoint that triggered the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * The resource endpoint that triggered the alert.
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * Map that contains maps of values.
+         *  Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("featureDetails")
         private java.util.Map<String, java.util.Map<String, Object>> featureDetails;
 
+        /**
+         * Map that contains maps of values.
+         *  Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param featureDetails the value to set
+         * @return this builder
+         **/
         public Builder featureDetails(
                 java.util.Map<String, java.util.Map<String, Object>> featureDetails) {
             this.featureDetails = featureDetails;
             this.__explicitlySet__.add("featureDetails");
             return this;
         }
-
+        /**
+         * A comment for the alert. Entered by the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
+        /**
+         * A comment for the alert. Entered by the user.
+         * @param comment the value to set
+         * @return this builder
+         **/
         public Builder comment(String comment) {
             this.comment = comment;
             this.__explicitlySet__.add("comment");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the alert.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The current state of the alert.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AlertLifecycleState lifecycleState;
 
+        /**
+         * The current state of the alert.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(AlertLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -373,6 +548,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the alert.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -383,6 +562,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final AlertStatus status;
 
+    /**
+     * The status of the alert.
+     * @return the value
+     **/
     public AlertStatus getStatus() {
         return status;
     }
@@ -393,6 +576,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final AlertSeverity severity;
 
+    /**
+     * Severity level of the alert.
+     * @return the value
+     **/
     public AlertSeverity getSeverity() {
         return severity;
     }
@@ -403,6 +590,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the alert.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -413,6 +604,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the alert.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -423,6 +618,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("operationTime")
     private final java.util.Date operationTime;
 
+    /**
+     * Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getOperationTime() {
         return operationTime;
     }
@@ -433,6 +632,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
+    /**
+     * The operation (event) that triggered alert.
+     * @return the value
+     **/
     public String getOperation() {
         return operation;
     }
@@ -491,6 +694,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final OperationStatus operationStatus;
 
+    /**
+     * The result of the operation (event) that triggered alert.
+     * @return the value
+     **/
     public OperationStatus getOperationStatus() {
         return operationStatus;
     }
@@ -501,6 +708,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
     private final java.util.List<String> targetIds;
 
+    /**
+     * Array of OCIDs of the target database which are associated with the alert.
+     * @return the value
+     **/
     public java.util.List<String> getTargetIds() {
         return targetIds;
     }
@@ -511,6 +722,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("targetNames")
     private final java.util.List<String> targetNames;
 
+    /**
+     * Array of names of the target database.
+     * @return the value
+     **/
     public java.util.List<String> getTargetNames() {
         return targetNames;
     }
@@ -521,6 +736,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
+    /**
+     * The OCID of the policy that triggered alert.
+     * @return the value
+     **/
     public String getPolicyId() {
         return policyId;
     }
@@ -531,6 +750,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("alertType")
     private final AlertType alertType;
 
+    /**
+     * Type of the alert. Indicates the Data Safe feature triggering the alert.
+     * @return the value
+     **/
     public AlertType getAlertType() {
         return alertType;
     }
@@ -541,6 +764,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * The resource endpoint that triggered the alert.
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -553,6 +780,12 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("featureDetails")
     private final java.util.Map<String, java.util.Map<String, Object>> featureDetails;
 
+    /**
+     * Map that contains maps of values.
+     *  Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getFeatureDetails() {
         return featureDetails;
     }
@@ -563,6 +796,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
+    /**
+     * A comment for the alert. Entered by the user.
+     * @return the value
+     **/
     public String getComment() {
         return comment;
     }
@@ -573,6 +810,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the alert.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -583,6 +824,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AlertLifecycleState lifecycleState;
 
+    /**
+     * The current state of the alert.
+     * @return the value
+     **/
     public AlertLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -593,6 +838,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -603,6 +852,10 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -616,6 +869,13 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -629,6 +889,13 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -641,6 +908,12 @@ public final class Alert {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

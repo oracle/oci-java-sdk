@@ -29,9 +29,17 @@ public final class CertificateCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Certificate summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<CertificateSummary> items;
 
+        /**
+         * Certificate summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<CertificateSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class CertificateCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<CertificateSummary> items;
 
+    /**
+     * Certificate summaries.
+     * @return the value
+     **/
     public java.util.List<CertificateSummary> getItems() {
         return items;
     }

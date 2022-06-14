@@ -124,19 +124,37 @@ public final class TimeColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-
+        /**
+         * Time span betwwen each series data point.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private String span;
 
+        /**
+         * Time span betwwen each series data point.
+         *
+         * @param span the value to set
+         * @return this builder
+         **/
         public Builder span(String span) {
             this.span = span;
             this.__explicitlySet__.add("span");
             return this;
         }
-
+        /**
+         * List of timestamps that represent each time stamp in the entire time series even if certain intervals are filtered out of query results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("times")
         private java.util.List<Long> times;
 
+        /**
+         * List of timestamps that represent each time stamp in the entire time series even if certain intervals are filtered out of query results.
+         *
+         * @param times the value to set
+         * @return this builder
+         **/
         public Builder times(java.util.List<Long> times) {
             this.times = times;
             this.__explicitlySet__.add("times");
@@ -237,6 +255,11 @@ public final class TimeColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final String span;
 
+    /**
+     * Time span betwwen each series data point.
+     *
+     * @return the value
+     **/
     public String getSpan() {
         return span;
     }
@@ -248,6 +271,11 @@ public final class TimeColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("times")
     private final java.util.List<Long> times;
 
+    /**
+     * List of timestamps that represent each time stamp in the entire time series even if certain intervals are filtered out of query results.
+     *
+     * @return the value
+     **/
     public java.util.List<Long> getTimes() {
         return times;
     }

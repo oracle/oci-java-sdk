@@ -37,10 +37,17 @@ public final class StructuredSearchDetails extends SearchDetails {
             this.__explicitlySet__.add("matchingContextType");
             return this;
         }
-
+        /**
+         * The structured query describing which resources to search for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
+        /**
+         * The structured query describing which resources to search for.
+         * @param query the value to set
+         * @return this builder
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
@@ -90,6 +97,10 @@ public final class StructuredSearchDetails extends SearchDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
+    /**
+     * The structured query describing which resources to search for.
+     * @return the value
+     **/
     public String getQuery() {
         return query;
     }

@@ -15,6 +15,12 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.keymanagement.model.VerifiedData verifiedData;
 
+    /**
+     * The returned VerifiedData instance.
+     * @return the value
+     */
     public com.oracle.bmc.keymanagement.model.VerifiedData getVerifiedData() {
         return verifiedData;
     }
@@ -46,15 +56,35 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned VerifiedData instance.
+         */
         private com.oracle.bmc.keymanagement.model.VerifiedData verifiedData;
 
+        /**
+         * The returned VerifiedData instance.
+         * @param verifiedData the value to set
+         * @return this builder
+         */
         public Builder verifiedData(com.oracle.bmc.keymanagement.model.VerifiedData verifiedData) {
             this.verifiedData = verifiedData;
             return this;
@@ -72,11 +102,19 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public VerifyResponse build() {
             return new VerifyResponse(__httpStatusCode__, opcRequestId, verifiedData);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

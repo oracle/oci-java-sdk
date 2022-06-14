@@ -16,6 +16,13 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -27,6 +34,12 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +50,10 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
             networkLoadBalancerHealthCollection;
 
+    /**
+     * The returned NetworkLoadBalancerHealthCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
             getNetworkLoadBalancerHealthCollection() {
         return networkLoadBalancerHealthCollection;
@@ -68,23 +85,57 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned NetworkLoadBalancerHealthCollection instance.
+         */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
                 networkLoadBalancerHealthCollection;
 
+        /**
+         * The returned NetworkLoadBalancerHealthCollection instance.
+         * @param networkLoadBalancerHealthCollection the value to set
+         * @return this builder
+         */
         public Builder networkLoadBalancerHealthCollection(
                 com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
                         networkLoadBalancerHealthCollection) {
@@ -105,6 +156,10 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListNetworkLoadBalancerHealthsResponse build() {
             return new ListNetworkLoadBalancerHealthsResponse(
                     __httpStatusCode__,
@@ -114,6 +169,10 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

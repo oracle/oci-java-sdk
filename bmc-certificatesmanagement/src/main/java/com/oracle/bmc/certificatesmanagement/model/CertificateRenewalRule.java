@@ -27,18 +27,41 @@ package com.oracle.bmc.certificatesmanagement.model;
 public final class CertificateRenewalRule extends CertificateRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A property specifying how often, in days, a certificate should be renewed.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("renewalInterval")
         private String renewalInterval;
 
+        /**
+         * A property specifying how often, in days, a certificate should be renewed.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         * @param renewalInterval the value to set
+         * @return this builder
+         **/
         public Builder renewalInterval(String renewalInterval) {
             this.renewalInterval = renewalInterval;
             this.__explicitlySet__.add("renewalInterval");
             return this;
         }
-
+        /**
+         * A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advanceRenewalPeriod")
         private String advanceRenewalPeriod;
 
+        /**
+         * A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         * @param advanceRenewalPeriod the value to set
+         * @return this builder
+         **/
         public Builder advanceRenewalPeriod(String advanceRenewalPeriod) {
             this.advanceRenewalPeriod = advanceRenewalPeriod;
             this.__explicitlySet__.add("advanceRenewalPeriod");
@@ -92,6 +115,12 @@ public final class CertificateRenewalRule extends CertificateRule {
     @com.fasterxml.jackson.annotation.JsonProperty("renewalInterval")
     private final String renewalInterval;
 
+    /**
+     * A property specifying how often, in days, a certificate should be renewed.
+     * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+     *
+     * @return the value
+     **/
     public String getRenewalInterval() {
         return renewalInterval;
     }
@@ -104,6 +133,12 @@ public final class CertificateRenewalRule extends CertificateRule {
     @com.fasterxml.jackson.annotation.JsonProperty("advanceRenewalPeriod")
     private final String advanceRenewalPeriod;
 
+    /**
+     * A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur.
+     * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+     *
+     * @return the value
+     **/
     public String getAdvanceRenewalPeriod() {
         return advanceRenewalPeriod;
     }

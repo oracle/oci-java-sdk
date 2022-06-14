@@ -28,9 +28,17 @@ public final class JsonText {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The object type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
+        /**
+         * The object type.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
@@ -81,6 +89,10 @@ public final class JsonText {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
+    /**
+     * The object type.
+     * @return the value
+     **/
     public String getModelType() {
         return modelType;
     }

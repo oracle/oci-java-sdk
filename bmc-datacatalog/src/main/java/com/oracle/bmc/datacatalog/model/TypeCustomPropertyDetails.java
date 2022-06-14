@@ -31,18 +31,33 @@ public final class TypeCustomPropertyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * array of custom property Ids
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyIds")
         private java.util.List<String> customPropertyIds;
 
+        /**
+         * array of custom property Ids
+         * @param customPropertyIds the value to set
+         * @return this builder
+         **/
         public Builder customPropertyIds(java.util.List<String> customPropertyIds) {
             this.customPropertyIds = customPropertyIds;
             this.__explicitlySet__.add("customPropertyIds");
             return this;
         }
-
+        /**
+         * If an OCI Event will be emitted when the custom property is modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
         private Boolean isEventEnabled;
 
+        /**
+         * If an OCI Event will be emitted when the custom property is modified.
+         * @param isEventEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEventEnabled(Boolean isEventEnabled) {
             this.isEventEnabled = isEventEnabled;
             this.__explicitlySet__.add("isEventEnabled");
@@ -87,6 +102,10 @@ public final class TypeCustomPropertyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyIds")
     private final java.util.List<String> customPropertyIds;
 
+    /**
+     * array of custom property Ids
+     * @return the value
+     **/
     public java.util.List<String> getCustomPropertyIds() {
         return customPropertyIds;
     }
@@ -97,6 +116,10 @@ public final class TypeCustomPropertyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
     private final Boolean isEventEnabled;
 
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     * @return the value
+     **/
     public Boolean getIsEventEnabled() {
         return isEventEnabled;
     }

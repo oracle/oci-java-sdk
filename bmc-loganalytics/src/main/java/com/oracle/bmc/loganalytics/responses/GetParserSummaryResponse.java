@@ -14,6 +14,11 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport;
 
+    /**
+     * The returned ParserSummaryReport instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.ParserSummaryReport getParserSummaryReport() {
         return parserSummaryReport;
     }
@@ -45,15 +54,33 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ParserSummaryReport instance.
+         */
         private com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport;
 
+        /**
+         * The returned ParserSummaryReport instance.
+         * @param parserSummaryReport the value to set
+         * @return this builder
+         */
         public Builder parserSummaryReport(
                 com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport) {
             this.parserSummaryReport = parserSummaryReport;
@@ -72,12 +99,20 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetParserSummaryResponse build() {
             return new GetParserSummaryResponse(
                     __httpStatusCode__, opcRequestId, parserSummaryReport);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

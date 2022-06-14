@@ -33,19 +33,33 @@ public final class NamedEntityMap extends FieldMap {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The object key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The object's model version.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -69,28 +83,49 @@ public final class NamedEntityMap extends FieldMap {
             this.__explicitlySet__.add("configValues");
             return this;
         }
-
+        /**
+         * The source entity name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceEntity")
         private String sourceEntity;
 
+        /**
+         * The source entity name.
+         * @param sourceEntity the value to set
+         * @return this builder
+         **/
         public Builder sourceEntity(String sourceEntity) {
             this.sourceEntity = sourceEntity;
             this.__explicitlySet__.add("sourceEntity");
             return this;
         }
-
+        /**
+         * The target entity name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetEntity")
         private String targetEntity;
 
+        /**
+         * The target entity name.
+         * @param targetEntity the value to set
+         * @return this builder
+         **/
         public Builder targetEntity(String targetEntity) {
             this.targetEntity = targetEntity;
             this.__explicitlySet__.add("targetEntity");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -169,6 +204,10 @@ public final class NamedEntityMap extends FieldMap {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The object key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -179,6 +218,10 @@ public final class NamedEntityMap extends FieldMap {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The object's model version.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -203,6 +246,10 @@ public final class NamedEntityMap extends FieldMap {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceEntity")
     private final String sourceEntity;
 
+    /**
+     * The source entity name.
+     * @return the value
+     **/
     public String getSourceEntity() {
         return sourceEntity;
     }
@@ -213,6 +260,10 @@ public final class NamedEntityMap extends FieldMap {
     @com.fasterxml.jackson.annotation.JsonProperty("targetEntity")
     private final String targetEntity;
 
+    /**
+     * The target entity name.
+     * @return the value
+     **/
     public String getTargetEntity() {
         return targetEntity;
     }
@@ -223,6 +274,10 @@ public final class NamedEntityMap extends FieldMap {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }

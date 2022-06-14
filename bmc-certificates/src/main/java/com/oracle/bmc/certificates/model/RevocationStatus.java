@@ -28,18 +28,33 @@ public final class RevocationStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The time when the certificate or CA was revoked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRevoked")
         private java.util.Date timeRevoked;
 
+        /**
+         * The time when the certificate or CA was revoked.
+         * @param timeRevoked the value to set
+         * @return this builder
+         **/
         public Builder timeRevoked(java.util.Date timeRevoked) {
             this.timeRevoked = timeRevoked;
             this.__explicitlySet__.add("timeRevoked");
             return this;
         }
-
+        /**
+         * The reason that the certificate or CA was revoked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
         private RevocationReason revocationReason;
 
+        /**
+         * The reason that the certificate or CA was revoked.
+         * @param revocationReason the value to set
+         * @return this builder
+         **/
         public Builder revocationReason(RevocationReason revocationReason) {
             this.revocationReason = revocationReason;
             this.__explicitlySet__.add("revocationReason");
@@ -82,6 +97,10 @@ public final class RevocationStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRevoked")
     private final java.util.Date timeRevoked;
 
+    /**
+     * The time when the certificate or CA was revoked.
+     * @return the value
+     **/
     public java.util.Date getTimeRevoked() {
         return timeRevoked;
     }
@@ -92,6 +111,10 @@ public final class RevocationStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
     private final RevocationReason revocationReason;
 
+    /**
+     * The reason that the certificate or CA was revoked.
+     * @return the value
+     **/
     public RevocationReason getRevocationReason() {
         return revocationReason;
     }

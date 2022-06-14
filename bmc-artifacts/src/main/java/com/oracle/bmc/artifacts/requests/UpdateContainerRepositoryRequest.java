@@ -21,6 +21,12 @@ public class UpdateContainerRepositoryRequest
      */
     private String repositoryId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
+     * <p>
+     * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+     *
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -30,6 +36,9 @@ public class UpdateContainerRepositoryRequest
     private com.oracle.bmc.artifacts.model.UpdateContainerRepositoryDetails
             updateContainerRepositoryDetails;
 
+    /**
+     * Update container repository details.
+     */
     public com.oracle.bmc.artifacts.model.UpdateContainerRepositoryDetails
             getUpdateContainerRepositoryDetails() {
         return updateContainerRepositoryDetails;
@@ -42,6 +51,12 @@ public class UpdateContainerRepositoryRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -52,6 +67,11 @@ public class UpdateContainerRepositoryRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -74,6 +94,12 @@ public class UpdateContainerRepositoryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
+         * <p>
+         * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+         *
+         */
         private String repositoryId = null;
 
         /**
@@ -81,6 +107,7 @@ public class UpdateContainerRepositoryRequest
          * <p>
          * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
          *
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -88,11 +115,15 @@ public class UpdateContainerRepositoryRequest
             return this;
         }
 
+        /**
+         * Update container repository details.
+         */
         private com.oracle.bmc.artifacts.model.UpdateContainerRepositoryDetails
                 updateContainerRepositoryDetails = null;
 
         /**
          * Update container repository details.
+         * @param updateContainerRepositoryDetails the value to set
          * @return this builder instance
          */
         public Builder updateContainerRepositoryDetails(
@@ -102,6 +133,12 @@ public class UpdateContainerRepositoryRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -109,6 +146,7 @@ public class UpdateContainerRepositoryRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -116,12 +154,18 @@ public class UpdateContainerRepositoryRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -214,7 +258,8 @@ public class UpdateContainerRepositoryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -224,6 +269,10 @@ public class UpdateContainerRepositoryRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,9 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String exadataInfrastructureId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+     */
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
@@ -32,6 +38,9 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -84,6 +96,9 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -93,6 +108,10 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -136,6 +155,9 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -144,6 +166,9 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.database.model.DbServerSummary.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.DbServerSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -152,6 +177,9 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -163,10 +191,14 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -174,10 +206,14 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+         */
         private String exadataInfrastructureId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+         * @param exadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
@@ -185,10 +221,14 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -196,10 +236,14 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -207,10 +251,14 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -218,11 +266,16 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -230,10 +283,14 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+         */
         private SortBy sortBy = null;
 
         /**
          * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -241,10 +298,14 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.DbServerSummary.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -253,10 +314,14 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -348,7 +413,8 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -363,6 +429,10 @@ public class ListDbServersRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .displayName(displayName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

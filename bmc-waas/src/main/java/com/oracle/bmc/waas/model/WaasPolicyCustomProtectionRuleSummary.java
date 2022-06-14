@@ -44,36 +44,67 @@ public final class WaasPolicyCustomProtectionRuleSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The user-friendly name of the custom protection rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name of the custom protection rule.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The action to take when the custom protection rule is triggered.
+         * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The action to take when the custom protection rule is triggered.
+         * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-
+        /**
+         * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modSecurityRuleIds")
         private java.util.List<String> modSecurityRuleIds;
 
+        /**
+         * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
+         * @param modSecurityRuleIds the value to set
+         * @return this builder
+         **/
         public Builder modSecurityRuleIds(java.util.List<String> modSecurityRuleIds) {
             this.modSecurityRuleIds = modSecurityRuleIds;
             this.__explicitlySet__.add("modSecurityRuleIds");
@@ -131,6 +162,10 @@ public final class WaasPolicyCustomProtectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -141,6 +176,10 @@ public final class WaasPolicyCustomProtectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name of the custom protection rule.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -200,6 +239,11 @@ public final class WaasPolicyCustomProtectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The action to take when the custom protection rule is triggered.
+     * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }
@@ -210,6 +254,10 @@ public final class WaasPolicyCustomProtectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("modSecurityRuleIds")
     private final java.util.List<String> modSecurityRuleIds;
 
+    /**
+     * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
+     * @return the value
+     **/
     public java.util.List<String> getModSecurityRuleIds() {
         return modSecurityRuleIds;
     }

@@ -16,6 +16,9 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String dbSystemId;
 
+    /**
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -32,6 +38,9 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String vmClusterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     */
     public String getVmClusterId() {
         return vmClusterId;
     }
@@ -40,6 +49,9 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -48,6 +60,9 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -91,6 +106,9 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -135,6 +153,9 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -143,6 +164,9 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.database.model.DbNodeSummary.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.DbNodeSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -151,6 +175,9 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String dbServerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+     */
     public String getDbServerId() {
         return dbServerId;
     }
@@ -162,10 +189,14 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -173,10 +204,14 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+         */
         private String dbSystemId = null;
 
         /**
          * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+         * @param dbSystemId the value to set
          * @return this builder instance
          */
         public Builder dbSystemId(String dbSystemId) {
@@ -184,10 +219,14 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         */
         private String vmClusterId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * @param vmClusterId the value to set
          * @return this builder instance
          */
         public Builder vmClusterId(String vmClusterId) {
@@ -195,10 +234,14 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -206,10 +249,14 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -217,10 +264,14 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+         */
         private SortBy sortBy = null;
 
         /**
          * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -228,10 +279,14 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -239,10 +294,14 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.DbNodeSummary.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -251,10 +310,14 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+         */
         private String dbServerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+         * @param dbServerId the value to set
          * @return this builder instance
          */
         public Builder dbServerId(String dbServerId) {
@@ -346,7 +409,8 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -361,6 +425,10 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .dbServerId(dbServerId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

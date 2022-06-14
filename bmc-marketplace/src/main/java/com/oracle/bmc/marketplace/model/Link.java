@@ -28,18 +28,33 @@ public final class Link {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Reference links to the previous page, next page, and other pages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rel")
         private LinkEnum rel;
 
+        /**
+         * Reference links to the previous page, next page, and other pages.
+         * @param rel the value to set
+         * @return this builder
+         **/
         public Builder rel(LinkEnum rel) {
             this.rel = rel;
             this.__explicitlySet__.add("rel");
             return this;
         }
-
+        /**
+         * The anchor tag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("href")
         private String href;
 
+        /**
+         * The anchor tag.
+         * @param href the value to set
+         * @return this builder
+         **/
         public Builder href(String href) {
             this.href = href;
             this.__explicitlySet__.add("href");
@@ -81,6 +96,10 @@ public final class Link {
     @com.fasterxml.jackson.annotation.JsonProperty("rel")
     private final LinkEnum rel;
 
+    /**
+     * Reference links to the previous page, next page, and other pages.
+     * @return the value
+     **/
     public LinkEnum getRel() {
         return rel;
     }
@@ -91,6 +110,10 @@ public final class Link {
     @com.fasterxml.jackson.annotation.JsonProperty("href")
     private final String href;
 
+    /**
+     * The anchor tag.
+     * @return the value
+     **/
     public String getHref() {
         return href;
     }

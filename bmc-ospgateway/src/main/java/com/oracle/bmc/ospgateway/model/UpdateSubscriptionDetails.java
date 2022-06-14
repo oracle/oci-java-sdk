@@ -30,6 +30,7 @@ public final class UpdateSubscriptionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("subscription")
         private Subscription subscription;
 
@@ -38,10 +39,17 @@ public final class UpdateSubscriptionDetails {
             this.__explicitlySet__.add("subscription");
             return this;
         }
-
+        /**
+         * User email
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
+        /**
+         * User email
+         * @param email the value to set
+         * @return this builder
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
@@ -91,6 +99,10 @@ public final class UpdateSubscriptionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
+    /**
+     * User email
+     * @return the value
+     **/
     public String getEmail() {
         return email;
     }

@@ -84,72 +84,129 @@ public final class BdsInstance {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the Big Data Service resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the Big Data Service resource.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name of the cluster.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The state of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The state of the cluster.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Version of the Hadoop distribution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterVersion")
         private ClusterVersion clusterVersion;
 
+        /**
+         * Version of the Hadoop distribution.
+         * @param clusterVersion the value to set
+         * @return this builder
+         **/
         public Builder clusterVersion(ClusterVersion clusterVersion) {
             this.clusterVersion = clusterVersion;
             this.__explicitlySet__.add("clusterVersion");
             return this;
         }
-
+        /**
+         * Boolean flag specifying whether or not the cluster is highly available (HA)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHighAvailability")
         private Boolean isHighAvailability;
 
+        /**
+         * Boolean flag specifying whether or not the cluster is highly available (HA)
+         * @param isHighAvailability the value to set
+         * @return this builder
+         **/
         public Builder isHighAvailability(Boolean isHighAvailability) {
             this.isHighAvailability = isHighAvailability;
             this.__explicitlySet__.add("isHighAvailability");
             return this;
         }
-
+        /**
+         * Boolean flag specifying whether or not the cluster should be set up as secure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSecure")
         private Boolean isSecure;
 
+        /**
+         * Boolean flag specifying whether or not the cluster should be set up as secure.
+         * @param isSecure the value to set
+         * @return this builder
+         **/
         public Builder isSecure(Boolean isSecure) {
             this.isSecure = isSecure;
             this.__explicitlySet__.add("isSecure");
             return this;
         }
-
+        /**
+         * Boolean flag specifying whether or not Cloud SQL should be configured.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCloudSqlConfigured")
         private Boolean isCloudSqlConfigured;
 
+        /**
+         * Boolean flag specifying whether or not Cloud SQL should be configured.
+         * @param isCloudSqlConfigured the value to set
+         * @return this builder
+         **/
         public Builder isCloudSqlConfigured(Boolean isCloudSqlConfigured) {
             this.isCloudSqlConfigured = isCloudSqlConfigured;
             this.__explicitlySet__.add("isCloudSqlConfigured");
@@ -173,10 +230,17 @@ public final class BdsInstance {
             this.__explicitlySet__.add("clusterDetails");
             return this;
         }
-
+        /**
+         * The list of nodes in the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodes")
         private java.util.List<Node> nodes;
 
+        /**
+         * The list of nodes in the cluster.
+         * @param nodes the value to set
+         * @return this builder
+         **/
         public Builder nodes(java.util.List<Node> nodes) {
             this.nodes = nodes;
             this.__explicitlySet__.add("nodes");
@@ -191,64 +255,121 @@ public final class BdsInstance {
             this.__explicitlySet__.add("cloudSqlDetails");
             return this;
         }
-
+        /**
+         * The user who created the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
+        /**
+         * The user who created the cluster.
+         * @param createdBy the value to set
+         * @return this builder
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Number of nodes that forming the cluster
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfNodes")
         private Integer numberOfNodes;
 
+        /**
+         * Number of nodes that forming the cluster
+         * @param numberOfNodes the value to set
+         * @return this builder
+         **/
         public Builder numberOfNodes(Integer numberOfNodes) {
             this.numberOfNodes = numberOfNodes;
             this.__explicitlySet__.add("numberOfNodes");
             return this;
         }
-
+        /**
+         * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
         private String bootstrapScriptUrl;
 
+        /**
+         * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+         * @param bootstrapScriptUrl the value to set
+         * @return this builder
+         **/
         public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
             this.bootstrapScriptUrl = bootstrapScriptUrl;
             this.__explicitlySet__.add("bootstrapScriptUrl");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only. For example, {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only. For example, {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example, {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example, {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -330,6 +451,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the Big Data Service resource.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -340,6 +465,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -350,6 +479,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name of the cluster.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -415,6 +548,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The state of the cluster.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -475,6 +612,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterVersion")
     private final ClusterVersion clusterVersion;
 
+    /**
+     * Version of the Hadoop distribution.
+     * @return the value
+     **/
     public ClusterVersion getClusterVersion() {
         return clusterVersion;
     }
@@ -485,6 +626,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("isHighAvailability")
     private final Boolean isHighAvailability;
 
+    /**
+     * Boolean flag specifying whether or not the cluster is highly available (HA)
+     * @return the value
+     **/
     public Boolean getIsHighAvailability() {
         return isHighAvailability;
     }
@@ -495,6 +640,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("isSecure")
     private final Boolean isSecure;
 
+    /**
+     * Boolean flag specifying whether or not the cluster should be set up as secure.
+     * @return the value
+     **/
     public Boolean getIsSecure() {
         return isSecure;
     }
@@ -505,6 +654,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("isCloudSqlConfigured")
     private final Boolean isCloudSqlConfigured;
 
+    /**
+     * Boolean flag specifying whether or not Cloud SQL should be configured.
+     * @return the value
+     **/
     public Boolean getIsCloudSqlConfigured() {
         return isCloudSqlConfigured;
     }
@@ -529,6 +682,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
     private final java.util.List<Node> nodes;
 
+    /**
+     * The list of nodes in the cluster.
+     * @return the value
+     **/
     public java.util.List<Node> getNodes() {
         return nodes;
     }
@@ -546,6 +703,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
+    /**
+     * The user who created the cluster.
+     * @return the value
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
@@ -556,6 +717,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -566,6 +731,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -576,6 +745,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfNodes")
     private final Integer numberOfNodes;
 
+    /**
+     * Number of nodes that forming the cluster
+     * @return the value
+     **/
     public Integer getNumberOfNodes() {
         return numberOfNodes;
     }
@@ -586,6 +759,10 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
     private final String bootstrapScriptUrl;
 
+    /**
+     * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+     * @return the value
+     **/
     public String getBootstrapScriptUrl() {
         return bootstrapScriptUrl;
     }
@@ -598,6 +775,12 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only. For example, {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -610,6 +793,12 @@ public final class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example, {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

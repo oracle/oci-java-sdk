@@ -30,18 +30,41 @@ public final class IdentityStripeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the Identity Cloud Service instance in My Services to be used.
+         * Example: {@code secondstripe}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * Name of the Identity Cloud Service instance in My Services to be used.
+         * Example: {@code secondstripe}
+         *
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-
+        /**
+         * Value of the Identity Cloud Service tenancy.
+         * Example: {@code idcs-8416ebdd0d674f84803f4193cce026e9}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancy")
         private String tenancy;
 
+        /**
+         * Value of the Identity Cloud Service tenancy.
+         * Example: {@code idcs-8416ebdd0d674f84803f4193cce026e9}
+         *
+         * @param tenancy the value to set
+         * @return this builder
+         **/
         public Builder tenancy(String tenancy) {
             this.tenancy = tenancy;
             this.__explicitlySet__.add("tenancy");
@@ -85,6 +108,12 @@ public final class IdentityStripeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * Name of the Identity Cloud Service instance in My Services to be used.
+     * Example: {@code secondstripe}
+     *
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }
@@ -97,6 +126,12 @@ public final class IdentityStripeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancy")
     private final String tenancy;
 
+    /**
+     * Value of the Identity Cloud Service tenancy.
+     * Example: {@code idcs-8416ebdd0d674f84803f4193cce026e9}
+     *
+     * @return the value
+     **/
     public String getTenancy() {
         return tenancy;
     }

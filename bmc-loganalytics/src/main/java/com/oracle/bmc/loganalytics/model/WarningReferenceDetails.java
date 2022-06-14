@@ -32,9 +32,23 @@ public final class WarningReferenceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of LogAnalyticsWarning references.  Used as input to APIs which operate on a
+         * list.  For example, the suppress warning API accepts a list of warning references
+         * and will suppress all warnings in the input list.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warningReferences")
         private java.util.List<String> warningReferences;
 
+        /**
+         * A list of LogAnalyticsWarning references.  Used as input to APIs which operate on a
+         * list.  For example, the suppress warning API accepts a list of warning references
+         * and will suppress all warnings in the input list.
+         *
+         * @param warningReferences the value to set
+         * @return this builder
+         **/
         public Builder warningReferences(java.util.List<String> warningReferences) {
             this.warningReferences = warningReferences;
             this.__explicitlySet__.add("warningReferences");
@@ -79,6 +93,13 @@ public final class WarningReferenceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("warningReferences")
     private final java.util.List<String> warningReferences;
 
+    /**
+     * A list of LogAnalyticsWarning references.  Used as input to APIs which operate on a
+     * list.  For example, the suppress warning API accepts a list of warning references
+     * and will suppress all warnings in the input list.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getWarningReferences() {
         return warningReferences;
     }

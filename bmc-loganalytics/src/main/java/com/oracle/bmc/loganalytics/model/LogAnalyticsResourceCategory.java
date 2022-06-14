@@ -33,36 +33,69 @@ public final class LogAnalyticsResourceCategory {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier of the resource, usually a name or ocid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * The unique identifier of the resource, usually a name or ocid.
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * The resource type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The resource type.
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The category name to which this resource belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categoryName")
         private String categoryName;
 
+        /**
+         * The category name to which this resource belongs.
+         * @param categoryName the value to set
+         * @return this builder
+         **/
         public Builder categoryName(String categoryName) {
             this.categoryName = categoryName;
             this.__explicitlySet__.add("categoryName");
             return this;
         }
-
+        /**
+         * The system flag. A value of false denotes a user-created category assignment.
+         * A value of true denotes an Oracle-defined category assignment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * The system flag. A value of false denotes a user-created category assignment.
+         * A value of true denotes an Oracle-defined category assignment.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
@@ -110,6 +143,10 @@ public final class LogAnalyticsResourceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The unique identifier of the resource, usually a name or ocid.
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -120,6 +157,10 @@ public final class LogAnalyticsResourceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The resource type.
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -130,6 +171,10 @@ public final class LogAnalyticsResourceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("categoryName")
     private final String categoryName;
 
+    /**
+     * The category name to which this resource belongs.
+     * @return the value
+     **/
     public String getCategoryName() {
         return categoryName;
     }
@@ -142,6 +187,12 @@ public final class LogAnalyticsResourceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * The system flag. A value of false denotes a user-created category assignment.
+     * A value of true denotes an Oracle-defined category assignment.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }

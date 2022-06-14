@@ -18,6 +18,9 @@ public class PatchZoneRecordsRequest
      */
     private String zoneNameOrId;
 
+    /**
+     * The name or OCID of the target zone.
+     */
     public String getZoneNameOrId() {
         return zoneNameOrId;
     }
@@ -27,6 +30,10 @@ public class PatchZoneRecordsRequest
      */
     private com.oracle.bmc.dns.model.PatchZoneRecordsDetails patchZoneRecordsDetails;
 
+    /**
+     * The operations describing how to modify the collection of records.
+     *
+     */
     public com.oracle.bmc.dns.model.PatchZoneRecordsDetails getPatchZoneRecordsDetails() {
         return patchZoneRecordsDetails;
     }
@@ -40,6 +47,14 @@ public class PatchZoneRecordsRequest
      */
     private String ifMatch;
 
+    /**
+     * The {@code If-Match} header field makes the request method conditional on the
+     * existence of at least one current representation of the target resource,
+     * when the field-value is {@code *}, or having a current representation of the
+     * target resource that has an entity-tag matching a member of the list of
+     * entity-tags provided in the field-value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -53,6 +68,14 @@ public class PatchZoneRecordsRequest
      */
     private String ifUnmodifiedSince;
 
+    /**
+     * The {@code If-Unmodified-Since} header field makes the request method
+     * conditional on the selected representation's last modification date being
+     * earlier than or equal to the date provided in the field-value.  This
+     * field accomplishes the same purpose as If-Match for cases where the user
+     * agent does not have an entity-tag for the representation.
+     *
+     */
     public String getIfUnmodifiedSince() {
         return ifUnmodifiedSince;
     }
@@ -64,6 +87,12 @@ public class PatchZoneRecordsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,6 +102,10 @@ public class PatchZoneRecordsRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -81,6 +114,9 @@ public class PatchZoneRecordsRequest
      */
     private String viewId;
 
+    /**
+     * The OCID of the view the resource is associated with.
+     */
     public String getViewId() {
         return viewId;
     }
@@ -92,6 +128,12 @@ public class PatchZoneRecordsRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment the zone belongs to.
+     * <p>
+     * This parameter is deprecated and should be omitted.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -113,10 +155,14 @@ public class PatchZoneRecordsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The name or OCID of the target zone.
+         */
         private String zoneNameOrId = null;
 
         /**
          * The name or OCID of the target zone.
+         * @param zoneNameOrId the value to set
          * @return this builder instance
          */
         public Builder zoneNameOrId(String zoneNameOrId) {
@@ -124,11 +170,16 @@ public class PatchZoneRecordsRequest
             return this;
         }
 
+        /**
+         * The operations describing how to modify the collection of records.
+         *
+         */
         private com.oracle.bmc.dns.model.PatchZoneRecordsDetails patchZoneRecordsDetails = null;
 
         /**
          * The operations describing how to modify the collection of records.
          *
+         * @param patchZoneRecordsDetails the value to set
          * @return this builder instance
          */
         public Builder patchZoneRecordsDetails(
@@ -137,6 +188,14 @@ public class PatchZoneRecordsRequest
             return this;
         }
 
+        /**
+         * The {@code If-Match} header field makes the request method conditional on the
+         * existence of at least one current representation of the target resource,
+         * when the field-value is {@code *}, or having a current representation of the
+         * target resource that has an entity-tag matching a member of the list of
+         * entity-tags provided in the field-value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -146,6 +205,7 @@ public class PatchZoneRecordsRequest
          * target resource that has an entity-tag matching a member of the list of
          * entity-tags provided in the field-value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -153,6 +213,14 @@ public class PatchZoneRecordsRequest
             return this;
         }
 
+        /**
+         * The {@code If-Unmodified-Since} header field makes the request method
+         * conditional on the selected representation's last modification date being
+         * earlier than or equal to the date provided in the field-value.  This
+         * field accomplishes the same purpose as If-Match for cases where the user
+         * agent does not have an entity-tag for the representation.
+         *
+         */
         private String ifUnmodifiedSince = null;
 
         /**
@@ -162,6 +230,7 @@ public class PatchZoneRecordsRequest
          * field accomplishes the same purpose as If-Match for cases where the user
          * agent does not have an entity-tag for the representation.
          *
+         * @param ifUnmodifiedSince the value to set
          * @return this builder instance
          */
         public Builder ifUnmodifiedSince(String ifUnmodifiedSince) {
@@ -169,6 +238,12 @@ public class PatchZoneRecordsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -176,6 +251,7 @@ public class PatchZoneRecordsRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -183,11 +259,16 @@ public class PatchZoneRecordsRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -195,10 +276,14 @@ public class PatchZoneRecordsRequest
             return this;
         }
 
+        /**
+         * The OCID of the view the resource is associated with.
+         */
         private String viewId = null;
 
         /**
          * The OCID of the view the resource is associated with.
+         * @param viewId the value to set
          * @return this builder instance
          */
         public Builder viewId(String viewId) {
@@ -206,6 +291,12 @@ public class PatchZoneRecordsRequest
             return this;
         }
 
+        /**
+         * The OCID of the compartment the zone belongs to.
+         * <p>
+         * This parameter is deprecated and should be omitted.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -213,6 +304,7 @@ public class PatchZoneRecordsRequest
          * <p>
          * This parameter is deprecated and should be omitted.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -313,7 +405,8 @@ public class PatchZoneRecordsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -327,6 +420,10 @@ public class PatchZoneRecordsRequest
                 .compartmentId(compartmentId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

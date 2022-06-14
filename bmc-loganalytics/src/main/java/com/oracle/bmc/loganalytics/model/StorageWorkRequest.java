@@ -87,171 +87,315 @@ public final class StorageWorkRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the OCID of the storage work Request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * This is the OCID of the storage work Request.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * When the work request started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * When the work request started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * When the work request was accepted. Should match timeStarted in all cases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * When the work request was accepted. Should match timeStarted in all cases.
+         *
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * When the work request finished execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * When the work request finished execution.
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * When the work request will expire.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
+        /**
+         * When the work request will expire.
+         * @param timeExpires the value to set
+         * @return this builder
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
             return this;
         }
-
+        /**
+         * Percentage progress completion of the work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Integer percentComplete;
 
+        /**
+         * Percentage progress completion of the work request.
+         *
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Integer percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-
+        /**
+         * This is the work request status.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private WorkRequestStatus status;
 
+        /**
+         * This is the work request status.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(WorkRequestStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * This is the start of the time interval
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
+        /**
+         * This is the start of the time interval
+         * @param timeDataStarted the value to set
+         * @return this builder
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-
+        /**
+         * This is the end of the time interval
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
+        /**
+         * This is the end of the time interval
+         * @param timeDataEnded the value to set
+         * @return this builder
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-
+        /**
+         * This is the solr query used to filter data for purge, '*' means all
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
         private String purgeQueryString;
 
+        /**
+         * This is the solr query used to filter data for purge, '*' means all
+         * @param purgeQueryString the value to set
+         * @return this builder
+         **/
         public Builder purgeQueryString(String purgeQueryString) {
             this.purgeQueryString = purgeQueryString;
             this.__explicitlySet__.add("purgeQueryString");
             return this;
         }
-
+        /**
+         * Thie is the type of data to be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private StorageDataType dataType;
 
+        /**
+         * Thie is the type of data to be purged
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(StorageDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * This provides more detailed status if applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
         private String statusDetails;
 
+        /**
+         * This provides more detailed status if applicable
+         * @param statusDetails the value to set
+         * @return this builder
+         **/
         public Builder statusDetails(String statusDetails) {
             this.statusDetails = statusDetails;
             this.__explicitlySet__.add("statusDetails");
             return this;
         }
-
+        /**
+         * This provides more detailed info about the work request if applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationDetails")
         private String operationDetails;
 
+        /**
+         * This provides more detailed info about the work request if applicable
+         * @param operationDetails the value to set
+         * @return this builder
+         **/
         public Builder operationDetails(String operationDetails) {
             this.operationDetails = operationDetails;
             this.__explicitlySet__.add("operationDetails");
             return this;
         }
-
+        /**
+         * This is the policy name if applicable (e.g. purge policy)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyName")
         private String policyName;
 
+        /**
+         * This is the policy name if applicable (e.g. purge policy)
+         * @param policyName the value to set
+         * @return this builder
+         **/
         public Builder policyName(String policyName) {
             this.policyName = policyName;
             this.__explicitlySet__.add("policyName");
             return this;
         }
-
+        /**
+         * This is the purge policy ID if applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
+        /**
+         * This is the purge policy ID if applicable
+         * @param policyId the value to set
+         * @return this builder
+         **/
         public Builder policyId(String policyId) {
             this.policyId = policyId;
             this.__explicitlySet__.add("policyId");
             return this;
         }
-
+        /**
+         * This is the data usage in bytes if applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUsageInBytes")
         private Long storageUsageInBytes;
 
+        /**
+         * This is the data usage in bytes if applicable
+         * @param storageUsageInBytes the value to set
+         * @return this builder
+         **/
         public Builder storageUsageInBytes(Long storageUsageInBytes) {
             this.storageUsageInBytes = storageUsageInBytes;
             this.__explicitlySet__.add("storageUsageInBytes");
             return this;
         }
-
+        /**
+         * If true, purge child compartments data, only applicable to purge request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
+        /**
+         * If true, purge child compartments data, only applicable to purge request
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
             return this;
         }
-
+        /**
+         * This is the type of the work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private StorageOperationType operationType;
 
+        /**
+         * This is the type of the work request.
+         *
+         * @param operationType the value to set
+         * @return this builder
+         **/
         public Builder operationType(StorageOperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
@@ -333,6 +477,11 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * This is the OCID of the storage work Request.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -343,6 +492,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -353,6 +506,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * When the work request started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -364,6 +521,11 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * When the work request was accepted. Should match timeStarted in all cases.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -374,6 +536,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * When the work request finished execution.
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -384,6 +550,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
+    /**
+     * When the work request will expire.
+     * @return the value
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
@@ -395,6 +565,11 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Integer percentComplete;
 
+    /**
+     * Percentage progress completion of the work request.
+     *
+     * @return the value
+     **/
     public Integer getPercentComplete() {
         return percentComplete;
     }
@@ -406,6 +581,11 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final WorkRequestStatus status;
 
+    /**
+     * This is the work request status.
+     *
+     * @return the value
+     **/
     public WorkRequestStatus getStatus() {
         return status;
     }
@@ -416,6 +596,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
+    /**
+     * This is the start of the time interval
+     * @return the value
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
@@ -426,6 +610,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
+    /**
+     * This is the end of the time interval
+     * @return the value
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
@@ -436,6 +624,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
     private final String purgeQueryString;
 
+    /**
+     * This is the solr query used to filter data for purge, '*' means all
+     * @return the value
+     **/
     public String getPurgeQueryString() {
         return purgeQueryString;
     }
@@ -446,6 +638,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final StorageDataType dataType;
 
+    /**
+     * Thie is the type of data to be purged
+     * @return the value
+     **/
     public StorageDataType getDataType() {
         return dataType;
     }
@@ -456,6 +652,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
     private final String statusDetails;
 
+    /**
+     * This provides more detailed status if applicable
+     * @return the value
+     **/
     public String getStatusDetails() {
         return statusDetails;
     }
@@ -466,6 +666,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("operationDetails")
     private final String operationDetails;
 
+    /**
+     * This provides more detailed info about the work request if applicable
+     * @return the value
+     **/
     public String getOperationDetails() {
         return operationDetails;
     }
@@ -476,6 +680,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("policyName")
     private final String policyName;
 
+    /**
+     * This is the policy name if applicable (e.g. purge policy)
+     * @return the value
+     **/
     public String getPolicyName() {
         return policyName;
     }
@@ -486,6 +694,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
+    /**
+     * This is the purge policy ID if applicable
+     * @return the value
+     **/
     public String getPolicyId() {
         return policyId;
     }
@@ -496,6 +708,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsageInBytes")
     private final Long storageUsageInBytes;
 
+    /**
+     * This is the data usage in bytes if applicable
+     * @return the value
+     **/
     public Long getStorageUsageInBytes() {
         return storageUsageInBytes;
     }
@@ -506,6 +722,10 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
+    /**
+     * If true, purge child compartments data, only applicable to purge request
+     * @return the value
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -517,6 +737,11 @@ public final class StorageWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final StorageOperationType operationType;
 
+    /**
+     * This is the type of the work request.
+     *
+     * @return the value
+     **/
     public StorageOperationType getOperationType() {
         return operationType;
     }

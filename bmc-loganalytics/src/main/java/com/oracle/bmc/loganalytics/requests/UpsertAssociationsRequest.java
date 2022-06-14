@@ -19,6 +19,10 @@ public class UpsertAssociationsRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -28,6 +32,9 @@ public class UpsertAssociationsRequest
     private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails
             upsertLogAnalyticsAssociationDetails;
 
+    /**
+     * list of association details
+     */
     public com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails
             getUpsertLogAnalyticsAssociationDetails() {
         return upsertLogAnalyticsAssociationDetails;
@@ -37,6 +44,9 @@ public class UpsertAssociationsRequest
      */
     private Boolean isFromRepublish;
 
+    /**
+     * isFromRepublish
+     */
     public Boolean getIsFromRepublish() {
         return isFromRepublish;
     }
@@ -50,6 +60,14 @@ public class UpsertAssociationsRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -58,6 +76,9 @@ public class UpsertAssociationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -85,11 +106,16 @@ public class UpsertAssociationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -97,11 +123,15 @@ public class UpsertAssociationsRequest
             return this;
         }
 
+        /**
+         * list of association details
+         */
         private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails
                 upsertLogAnalyticsAssociationDetails = null;
 
         /**
          * list of association details
+         * @param upsertLogAnalyticsAssociationDetails the value to set
          * @return this builder instance
          */
         public Builder upsertLogAnalyticsAssociationDetails(
@@ -111,10 +141,14 @@ public class UpsertAssociationsRequest
             return this;
         }
 
+        /**
+         * isFromRepublish
+         */
         private Boolean isFromRepublish = null;
 
         /**
          * isFromRepublish
+         * @param isFromRepublish the value to set
          * @return this builder instance
          */
         public Builder isFromRepublish(Boolean isFromRepublish) {
@@ -122,6 +156,14 @@ public class UpsertAssociationsRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -131,6 +173,7 @@ public class UpsertAssociationsRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -138,10 +181,14 @@ public class UpsertAssociationsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -237,7 +284,8 @@ public class UpsertAssociationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -248,6 +296,10 @@ public class UpsertAssociationsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

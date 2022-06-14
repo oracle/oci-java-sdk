@@ -18,6 +18,10 @@ public class GetConfirmSubscriptionRequest
      */
     private String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to get the confirmation details for.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -26,6 +30,9 @@ public class GetConfirmSubscriptionRequest
      */
     private String token;
 
+    /**
+     * The subscription confirmation token.
+     */
     public String getToken() {
         return token;
     }
@@ -47,6 +54,22 @@ public class GetConfirmSubscriptionRequest
      */
     private String protocol;
 
+    /**
+     * The protocol used for the subscription.
+     * <p>
+     * Allowed values:
+     *   * {@code CUSTOM_HTTPS}
+     *   * {@code EMAIL}
+     *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
+     *   * {@code ORACLE_FUNCTIONS}
+     *   * {@code PAGERDUTY}
+     *   * {@code SLACK}
+     *   * {@code SMS}
+     * <p>
+     * For information about subscription protocols, see
+     * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+     *
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -57,6 +80,11 @@ public class GetConfirmSubscriptionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,11 +96,16 @@ public class GetConfirmSubscriptionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to get the confirmation details for.
+         *
+         */
         private String id = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to get the confirmation details for.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -80,10 +113,14 @@ public class GetConfirmSubscriptionRequest
             return this;
         }
 
+        /**
+         * The subscription confirmation token.
+         */
         private String token = null;
 
         /**
          * The subscription confirmation token.
+         * @param token the value to set
          * @return this builder instance
          */
         public Builder token(String token) {
@@ -91,6 +128,22 @@ public class GetConfirmSubscriptionRequest
             return this;
         }
 
+        /**
+         * The protocol used for the subscription.
+         * <p>
+         * Allowed values:
+         *   * {@code CUSTOM_HTTPS}
+         *   * {@code EMAIL}
+         *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
+         *   * {@code ORACLE_FUNCTIONS}
+         *   * {@code PAGERDUTY}
+         *   * {@code SLACK}
+         *   * {@code SMS}
+         * <p>
+         * For information about subscription protocols, see
+         * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+         *
+         */
         private String protocol = null;
 
         /**
@@ -108,6 +161,7 @@ public class GetConfirmSubscriptionRequest
          * For information about subscription protocols, see
          * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
          *
+         * @param protocol the value to set
          * @return this builder instance
          */
         public Builder protocol(String protocol) {
@@ -115,12 +169,18 @@ public class GetConfirmSubscriptionRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -202,12 +262,17 @@ public class GetConfirmSubscriptionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().id(id).token(token).protocol(protocol).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

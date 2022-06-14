@@ -28,18 +28,33 @@ public final class Dimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the target database.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * The OCID of the sensitive data model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
         private String sensitiveDataModelId;
 
+        /**
+         * The OCID of the sensitive data model.
+         * @param sensitiveDataModelId the value to set
+         * @return this builder
+         **/
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = sensitiveDataModelId;
             this.__explicitlySet__.add("sensitiveDataModelId");
@@ -82,6 +97,10 @@ public final class Dimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the target database.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -92,6 +111,10 @@ public final class Dimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
     private final String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model.
+     * @return the value
+     **/
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }

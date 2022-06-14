@@ -30,36 +30,65 @@ public final class NodeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The node host name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The node host name.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * The node IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ip")
         private String ip;
 
+        /**
+         * The node IP address.
+         * @param ip the value to set
+         * @return this builder
+         **/
         public Builder ip(String ip) {
             this.ip = ip;
             this.__explicitlySet__.add("ip");
             return this;
         }
-
+        /**
+         * The node virtual IP (VIP) host name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vipHostname")
         private String vipHostname;
 
+        /**
+         * The node virtual IP (VIP) host name.
+         * @param vipHostname the value to set
+         * @return this builder
+         **/
         public Builder vipHostname(String vipHostname) {
             this.vipHostname = vipHostname;
             this.__explicitlySet__.add("vipHostname");
             return this;
         }
-
+        /**
+         * The node virtual IP (VIP) address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vip")
         private String vip;
 
+        /**
+         * The node virtual IP (VIP) address.
+         * @param vip the value to set
+         * @return this builder
+         **/
         public Builder vip(String vip) {
             this.vip = vip;
             this.__explicitlySet__.add("vip");
@@ -105,6 +134,10 @@ public final class NodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The node host name.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -115,6 +148,10 @@ public final class NodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ip")
     private final String ip;
 
+    /**
+     * The node IP address.
+     * @return the value
+     **/
     public String getIp() {
         return ip;
     }
@@ -125,6 +162,10 @@ public final class NodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vipHostname")
     private final String vipHostname;
 
+    /**
+     * The node virtual IP (VIP) host name.
+     * @return the value
+     **/
     public String getVipHostname() {
         return vipHostname;
     }
@@ -135,6 +176,10 @@ public final class NodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vip")
     private final String vip;
 
+    /**
+     * The node virtual IP (VIP) address.
+     * @return the value
+     **/
     public String getVip() {
         return vip;
     }

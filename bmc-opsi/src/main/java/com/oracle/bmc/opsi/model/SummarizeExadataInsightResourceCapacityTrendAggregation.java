@@ -51,63 +51,123 @@ public final class SummarizeExadataInsightResourceCapacityTrendAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
+        /**
+         * The start timestamp that was passed into the request.
+         * @param timeIntervalStart the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
+        /**
+         * The end timestamp that was passed into the request.
+         * @param timeIntervalEnd the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-
+        /**
+         * Defines the type of exadata resource metric (example: CPU, STORAGE)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceMetric")
         private ExadataResourceMetric exadataResourceMetric;
 
+        /**
+         * Defines the type of exadata resource metric (example: CPU, STORAGE)
+         *
+         * @param exadataResourceMetric the value to set
+         * @return this builder
+         **/
         public Builder exadataResourceMetric(ExadataResourceMetric exadataResourceMetric) {
             this.exadataResourceMetric = exadataResourceMetric;
             this.__explicitlySet__.add("exadataResourceMetric");
             return this;
         }
-
+        /**
+         * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceType")
         private ExadataResourceType exadataResourceType;
 
+        /**
+         * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+         *
+         * @param exadataResourceType the value to set
+         * @return this builder
+         **/
         public Builder exadataResourceType(ExadataResourceType exadataResourceType) {
             this.exadataResourceType = exadataResourceType;
             this.__explicitlySet__.add("exadataResourceType");
             return this;
         }
-
+        /**
+         * Identifies the units of the current resource metric (CORES, GB).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
         private UsageUnit usageUnit;
 
+        /**
+         * Identifies the units of the current resource metric (CORES, GB).
+         *
+         * @param usageUnit the value to set
+         * @return this builder
+         **/
         public Builder usageUnit(UsageUnit usageUnit) {
             this.usageUnit = usageUnit;
             this.__explicitlySet__.add("usageUnit");
             return this;
         }
-
+        /**
+         * Time duration in milliseconds between data points (one hour or one day).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("itemDurationInMs")
         private Long itemDurationInMs;
 
+        /**
+         * Time duration in milliseconds between data points (one hour or one day).
+         *
+         * @param itemDurationInMs the value to set
+         * @return this builder
+         **/
         public Builder itemDurationInMs(Long itemDurationInMs) {
             this.itemDurationInMs = itemDurationInMs;
             this.__explicitlySet__.add("itemDurationInMs");
             return this;
         }
-
+        /**
+         * Capacity Data with time interval
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityData")
         private java.util.List<ExadataInsightResourceCapacityTrendAggregation> capacityData;
 
+        /**
+         * Capacity Data with time interval
+         *
+         * @param capacityData the value to set
+         * @return this builder
+         **/
         public Builder capacityData(
                 java.util.List<ExadataInsightResourceCapacityTrendAggregation> capacityData) {
             this.capacityData = capacityData;
@@ -165,6 +225,10 @@ public final class SummarizeExadataInsightResourceCapacityTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
+    /**
+     * The start timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -175,6 +239,10 @@ public final class SummarizeExadataInsightResourceCapacityTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
+    /**
+     * The end timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -239,6 +307,11 @@ public final class SummarizeExadataInsightResourceCapacityTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceMetric")
     private final ExadataResourceMetric exadataResourceMetric;
 
+    /**
+     * Defines the type of exadata resource metric (example: CPU, STORAGE)
+     *
+     * @return the value
+     **/
     public ExadataResourceMetric getExadataResourceMetric() {
         return exadataResourceMetric;
     }
@@ -301,6 +374,11 @@ public final class SummarizeExadataInsightResourceCapacityTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceType")
     private final ExadataResourceType exadataResourceType;
 
+    /**
+     * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+     *
+     * @return the value
+     **/
     public ExadataResourceType getExadataResourceType() {
         return exadataResourceType;
     }
@@ -312,6 +390,11 @@ public final class SummarizeExadataInsightResourceCapacityTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
     private final UsageUnit usageUnit;
 
+    /**
+     * Identifies the units of the current resource metric (CORES, GB).
+     *
+     * @return the value
+     **/
     public UsageUnit getUsageUnit() {
         return usageUnit;
     }
@@ -323,6 +406,11 @@ public final class SummarizeExadataInsightResourceCapacityTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("itemDurationInMs")
     private final Long itemDurationInMs;
 
+    /**
+     * Time duration in milliseconds between data points (one hour or one day).
+     *
+     * @return the value
+     **/
     public Long getItemDurationInMs() {
         return itemDurationInMs;
     }
@@ -334,6 +422,11 @@ public final class SummarizeExadataInsightResourceCapacityTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("capacityData")
     private final java.util.List<ExadataInsightResourceCapacityTrendAggregation> capacityData;
 
+    /**
+     * Capacity Data with time interval
+     *
+     * @return the value
+     **/
     public java.util.List<ExadataInsightResourceCapacityTrendAggregation> getCapacityData() {
         return capacityData;
     }

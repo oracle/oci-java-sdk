@@ -72,6 +72,13 @@ public class RepositorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+     * <p>
+     * Example: {@code ocid1.artifactrepository.oc1..exampleuniqueID}
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -82,6 +89,10 @@ public class RepositorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The repository name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -92,6 +103,10 @@ public class RepositorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the repository's compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -102,6 +117,10 @@ public class RepositorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The repository description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -112,6 +131,10 @@ public class RepositorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
     private final Boolean isImmutable;
 
+    /**
+     * Whether the repository is immutable. The artifacts of an immutable repository cannot be overwritten.
+     * @return the value
+     **/
     public Boolean getIsImmutable() {
         return isImmutable;
     }
@@ -122,6 +145,10 @@ public class RepositorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Repository.LifecycleState lifecycleState;
 
+    /**
+     * The current state of the artifact repository.
+     * @return the value
+     **/
     public Repository.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -136,6 +163,14 @@ public class RepositorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -150,6 +185,14 @@ public class RepositorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -160,6 +203,10 @@ public class RepositorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * An RFC 3339 timestamp indicating when the repository was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

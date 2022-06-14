@@ -45,45 +45,81 @@ public final class ComputePerformanceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of OCPU cores available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
+        /**
+         * The number of OCPU cores available.
+         * @param cpuCoreCount the value to set
+         * @return this builder
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-
+        /**
+         * The amount of memory allocated for the VMDB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Double memoryInGBs;
 
+        /**
+         * The amount of memory allocated for the VMDB System.
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Double memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-
+        /**
+         * The network bandwidth of the VMDB system in gbps.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkBandwidthInGbps")
         private Float networkBandwidthInGbps;
 
+        /**
+         * The network bandwidth of the VMDB system in gbps.
+         * @param networkBandwidthInGbps the value to set
+         * @return this builder
+         **/
         public Builder networkBandwidthInGbps(Float networkBandwidthInGbps) {
             this.networkBandwidthInGbps = networkBandwidthInGbps;
             this.__explicitlySet__.add("networkBandwidthInGbps");
             return this;
         }
-
+        /**
+         * IOPS for the VMDB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkIops")
         private Float networkIops;
 
+        /**
+         * IOPS for the VMDB System.
+         * @param networkIops the value to set
+         * @return this builder
+         **/
         public Builder networkIops(Float networkIops) {
             this.networkIops = networkIops;
             this.__explicitlySet__.add("networkIops");
             return this;
         }
-
+        /**
+         * Network throughput for the VMDB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkThroughputInMbps")
         private Float networkThroughputInMbps;
 
+        /**
+         * Network throughput for the VMDB System.
+         * @param networkThroughputInMbps the value to set
+         * @return this builder
+         **/
         public Builder networkThroughputInMbps(Float networkThroughputInMbps) {
             this.networkThroughputInMbps = networkThroughputInMbps;
             this.__explicitlySet__.add("networkThroughputInMbps");
@@ -136,6 +172,10 @@ public final class ComputePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
+    /**
+     * The number of OCPU cores available.
+     * @return the value
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
@@ -146,6 +186,10 @@ public final class ComputePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Double memoryInGBs;
 
+    /**
+     * The amount of memory allocated for the VMDB System.
+     * @return the value
+     **/
     public Double getMemoryInGBs() {
         return memoryInGBs;
     }
@@ -156,6 +200,10 @@ public final class ComputePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("networkBandwidthInGbps")
     private final Float networkBandwidthInGbps;
 
+    /**
+     * The network bandwidth of the VMDB system in gbps.
+     * @return the value
+     **/
     public Float getNetworkBandwidthInGbps() {
         return networkBandwidthInGbps;
     }
@@ -166,6 +214,10 @@ public final class ComputePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("networkIops")
     private final Float networkIops;
 
+    /**
+     * IOPS for the VMDB System.
+     * @return the value
+     **/
     public Float getNetworkIops() {
         return networkIops;
     }
@@ -176,6 +228,10 @@ public final class ComputePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("networkThroughputInMbps")
     private final Float networkThroughputInMbps;
 
+    /**
+     * Network throughput for the VMDB System.
+     * @return the value
+     **/
     public Float getNetworkThroughputInMbps() {
         return networkThroughputInMbps;
     }

@@ -17,6 +17,9 @@ public class ListExternalPluggableDatabasesRequest
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,10 @@ public class ListExternalPluggableDatabasesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +41,9 @@ public class ListExternalPluggableDatabasesRequest
      */
     private String externalContainerDatabaseId;
 
+    /**
+     * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getExternalContainerDatabaseId() {
         return externalContainerDatabaseId;
     }
@@ -42,6 +52,9 @@ public class ListExternalPluggableDatabasesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -50,6 +63,9 @@ public class ListExternalPluggableDatabasesRequest
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -102,6 +118,13 @@ public class ListExternalPluggableDatabasesRequest
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for TIMECREATED is descending.
+     * Default order for DISPLAYNAME is ascending.
+     * The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -146,6 +169,9 @@ public class ListExternalPluggableDatabasesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -154,6 +180,9 @@ public class ListExternalPluggableDatabasesRequest
      */
     private com.oracle.bmc.database.model.ExternalDatabaseBase.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the specified lifecycle state.
+     */
     public com.oracle.bmc.database.model.ExternalDatabaseBase.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -162,6 +191,9 @@ public class ListExternalPluggableDatabasesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -173,10 +205,14 @@ public class ListExternalPluggableDatabasesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -184,11 +220,16 @@ public class ListExternalPluggableDatabasesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -196,10 +237,14 @@ public class ListExternalPluggableDatabasesRequest
             return this;
         }
 
+        /**
+         * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String externalContainerDatabaseId = null;
 
         /**
          * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param externalContainerDatabaseId the value to set
          * @return this builder instance
          */
         public Builder externalContainerDatabaseId(String externalContainerDatabaseId) {
@@ -207,10 +252,14 @@ public class ListExternalPluggableDatabasesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -218,10 +267,14 @@ public class ListExternalPluggableDatabasesRequest
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -229,6 +282,13 @@ public class ListExternalPluggableDatabasesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}).
+         * Default order for TIMECREATED is descending.
+         * Default order for DISPLAYNAME is ascending.
+         * The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -237,6 +297,7 @@ public class ListExternalPluggableDatabasesRequest
          * Default order for DISPLAYNAME is ascending.
          * The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -244,10 +305,14 @@ public class ListExternalPluggableDatabasesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -255,11 +320,15 @@ public class ListExternalPluggableDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified lifecycle state.
+         */
         private com.oracle.bmc.database.model.ExternalDatabaseBase.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to return only resources that match the specified lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -268,10 +337,14 @@ public class ListExternalPluggableDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -364,7 +437,8 @@ public class ListExternalPluggableDatabasesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -379,6 +453,10 @@ public class ListExternalPluggableDatabasesRequest
                 .displayName(displayName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

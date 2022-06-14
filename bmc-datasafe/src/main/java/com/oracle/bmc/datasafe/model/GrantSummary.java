@@ -42,45 +42,87 @@ public final class GrantSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique key of a user grant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The unique key of a user grant.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The name of a user grant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantName")
         private String grantName;
 
+        /**
+         * The name of a user grant.
+         * @param grantName the value to set
+         * @return this builder
+         **/
         public Builder grantName(String grantName) {
             this.grantName = grantName;
             this.__explicitlySet__.add("grantName");
             return this;
         }
-
+        /**
+         * The type of a user grant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privilegeType")
         private PrivilegeType privilegeType;
 
+        /**
+         * The type of a user grant.
+         * @param privilegeType the value to set
+         * @return this builder
+         **/
         public Builder privilegeType(PrivilegeType privilegeType) {
             this.privilegeType = privilegeType;
             this.__explicitlySet__.add("privilegeType");
             return this;
         }
-
+        /**
+         * The privilege category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privilegeCategory")
         private PrivilegeCategory privilegeCategory;
 
+        /**
+         * The privilege category.
+         * @param privilegeCategory the value to set
+         * @return this builder
+         **/
         public Builder privilegeCategory(PrivilegeCategory privilegeCategory) {
             this.privilegeCategory = privilegeCategory;
             this.__explicitlySet__.add("privilegeCategory");
             return this;
         }
-
+        /**
+         * The grant depth level of the indirect grant.
+         * An indirectly granted role/privilege is granted to the user through another role.
+         * The depth level indicates how deep a privilege is within the grant hierarchy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("depthLevel")
         private Integer depthLevel;
 
+        /**
+         * The grant depth level of the indirect grant.
+         * An indirectly granted role/privilege is granted to the user through another role.
+         * The depth level indicates how deep a privilege is within the grant hierarchy.
+         *
+         * @param depthLevel the value to set
+         * @return this builder
+         **/
         public Builder depthLevel(Integer depthLevel) {
             this.depthLevel = depthLevel;
             this.__explicitlySet__.add("depthLevel");
@@ -128,6 +170,10 @@ public final class GrantSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The unique key of a user grant.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -138,6 +184,10 @@ public final class GrantSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("grantName")
     private final String grantName;
 
+    /**
+     * The name of a user grant.
+     * @return the value
+     **/
     public String getGrantName() {
         return grantName;
     }
@@ -198,6 +248,10 @@ public final class GrantSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("privilegeType")
     private final PrivilegeType privilegeType;
 
+    /**
+     * The type of a user grant.
+     * @return the value
+     **/
     public PrivilegeType getPrivilegeType() {
         return privilegeType;
     }
@@ -258,6 +312,10 @@ public final class GrantSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("privilegeCategory")
     private final PrivilegeCategory privilegeCategory;
 
+    /**
+     * The privilege category.
+     * @return the value
+     **/
     public PrivilegeCategory getPrivilegeCategory() {
         return privilegeCategory;
     }
@@ -271,6 +329,13 @@ public final class GrantSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("depthLevel")
     private final Integer depthLevel;
 
+    /**
+     * The grant depth level of the indirect grant.
+     * An indirectly granted role/privilege is granted to the user through another role.
+     * The depth level indicates how deep a privilege is within the grant hierarchy.
+     *
+     * @return the value
+     **/
     public Integer getDepthLevel() {
         return depthLevel;
     }

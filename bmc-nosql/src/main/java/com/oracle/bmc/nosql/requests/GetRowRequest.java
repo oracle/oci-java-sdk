@@ -16,6 +16,9 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String tableNameOrId;
 
+    /**
+     * A table name within the compartment, or a table OCID.
+     */
     public String getTableNameOrId() {
         return tableNameOrId;
     }
@@ -26,6 +29,11 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private java.util.List<String> key;
 
+    /**
+     * An array of strings, each of the format "column-name:value",
+     * representing the primary key of the row.
+     *
+     */
     public java.util.List<String> getKey() {
         return key;
     }
@@ -37,6 +45,12 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String compartmentId;
 
+    /**
+     * The ID of a table's compartment. When a table is identified
+     * by name, the compartmentId is often needed to provide
+     * context for interpreting the name.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -81,6 +95,9 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         }
     };
 
+    /**
+     * Consistency requirement for a read operation.
+     */
     public Consistency getConsistency() {
         return consistency;
     }
@@ -89,6 +106,9 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private Integer timeoutInMs;
 
+    /**
+     * Timeout setting for this operation.
+     */
     public Integer getTimeoutInMs() {
         return timeoutInMs;
     }
@@ -97,6 +117,9 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -107,10 +130,14 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A table name within the compartment, or a table OCID.
+         */
         private String tableNameOrId = null;
 
         /**
          * A table name within the compartment, or a table OCID.
+         * @param tableNameOrId the value to set
          * @return this builder instance
          */
         public Builder tableNameOrId(String tableNameOrId) {
@@ -118,12 +145,18 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * An array of strings, each of the format "column-name:value",
+         * representing the primary key of the row.
+         *
+         */
         private java.util.List<String> key = null;
 
         /**
          * An array of strings, each of the format "column-name:value",
          * representing the primary key of the row.
          *
+         * @param key the value to set
          * @return this builder instance
          */
         public Builder key(java.util.List<String> key) {
@@ -135,12 +168,19 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
          * Singular setter. An array of strings, each of the format "column-name:value",
          * representing the primary key of the row.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder key(String singularValue) {
             return this.key(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The ID of a table's compartment. When a table is identified
+         * by name, the compartmentId is often needed to provide
+         * context for interpreting the name.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -148,6 +188,7 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
          * by name, the compartmentId is often needed to provide
          * context for interpreting the name.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -155,10 +196,14 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * Consistency requirement for a read operation.
+         */
         private Consistency consistency = null;
 
         /**
          * Consistency requirement for a read operation.
+         * @param consistency the value to set
          * @return this builder instance
          */
         public Builder consistency(Consistency consistency) {
@@ -166,10 +211,14 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * Timeout setting for this operation.
+         */
         private Integer timeoutInMs = null;
 
         /**
          * Timeout setting for this operation.
+         * @param timeoutInMs the value to set
          * @return this builder instance
          */
         public Builder timeoutInMs(Integer timeoutInMs) {
@@ -177,10 +226,14 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -266,7 +319,8 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -278,6 +332,10 @@ public class GetRowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

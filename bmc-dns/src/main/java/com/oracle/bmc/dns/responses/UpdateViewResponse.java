@@ -16,6 +16,13 @@ public class UpdateViewResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String etag;
 
+    /**
+     * The current version of the resource, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -27,6 +34,12 @@ public class UpdateViewResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,6 +51,12 @@ public class UpdateViewResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -47,6 +66,10 @@ public class UpdateViewResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dns.model.View view;
 
+    /**
+     * The returned View instance.
+     * @return the value
+     */
     public com.oracle.bmc.dns.model.View getView() {
         return view;
     }
@@ -79,29 +102,75 @@ public class UpdateViewResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         */
         private String etag;
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * The returned View instance.
+         */
         private com.oracle.bmc.dns.model.View view;
 
+        /**
+         * The returned View instance.
+         * @param view the value to set
+         * @return this builder
+         */
         public Builder view(com.oracle.bmc.dns.model.View view) {
             this.view = view;
             return this;
@@ -121,12 +190,20 @@ public class UpdateViewResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateViewResponse build() {
             return new UpdateViewResponse(
                     __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, view);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

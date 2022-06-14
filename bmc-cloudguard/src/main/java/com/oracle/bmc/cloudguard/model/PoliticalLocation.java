@@ -31,27 +31,49 @@ public final class PoliticalLocation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * City
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("city")
         private String city;
 
+        /**
+         * City
+         * @param city the value to set
+         * @return this builder
+         **/
         public Builder city(String city) {
             this.city = city;
             this.__explicitlySet__.add("city");
             return this;
         }
-
+        /**
+         * State
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
+        /**
+         * State
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(String state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-
+        /**
+         * Country
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
+        /**
+         * Country
+         * @param country the value to set
+         * @return this builder
+         **/
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
@@ -93,6 +115,10 @@ public final class PoliticalLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("city")
     private final String city;
 
+    /**
+     * City
+     * @return the value
+     **/
     public String getCity() {
         return city;
     }
@@ -103,6 +129,10 @@ public final class PoliticalLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
+    /**
+     * State
+     * @return the value
+     **/
     public String getState() {
         return state;
     }
@@ -113,6 +143,10 @@ public final class PoliticalLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
+    /**
+     * Country
+     * @return the value
+     **/
     public String getCountry() {
         return country;
     }

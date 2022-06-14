@@ -29,9 +29,17 @@ public final class InteractionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * contains InteractionSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<InteractionSummary> items;
 
+        /**
+         * contains InteractionSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<InteractionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class InteractionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<InteractionSummary> items;
 
+    /**
+     * contains InteractionSummary
+     * @return the value
+     **/
     public java.util.List<InteractionSummary> getItems() {
         return items;
     }

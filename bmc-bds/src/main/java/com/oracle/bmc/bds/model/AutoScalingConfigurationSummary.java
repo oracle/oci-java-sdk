@@ -53,54 +53,99 @@ public final class AutoScalingConfigurationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the autoscale configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the autoscale configuration.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The state of the autoscale configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AutoScalingConfiguration.LifecycleState lifecycleState;
 
+        /**
+         * The state of the autoscale configuration.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(AutoScalingConfiguration.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
         private Node.NodeType nodeType;
 
+        /**
+         * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+         * @param nodeType the value to set
+         * @return this builder
+         **/
         public Builder nodeType(Node.NodeType nodeType) {
             this.nodeType = nodeType;
             this.__explicitlySet__.add("nodeType");
             return this;
         }
-
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -177,6 +222,10 @@ public final class AutoScalingConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the autoscale configuration.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -187,6 +236,10 @@ public final class AutoScalingConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -197,6 +250,10 @@ public final class AutoScalingConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AutoScalingConfiguration.LifecycleState lifecycleState;
 
+    /**
+     * The state of the autoscale configuration.
+     * @return the value
+     **/
     public AutoScalingConfiguration.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -207,6 +264,10 @@ public final class AutoScalingConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     private final Node.NodeType nodeType;
 
+    /**
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     * @return the value
+     **/
     public Node.NodeType getNodeType() {
         return nodeType;
     }
@@ -217,6 +278,10 @@ public final class AutoScalingConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -228,6 +293,11 @@ public final class AutoScalingConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

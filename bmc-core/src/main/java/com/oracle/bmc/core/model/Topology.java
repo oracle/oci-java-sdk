@@ -52,6 +52,10 @@ public class Topology {
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     private final java.util.List<Object> entities;
 
+    /**
+     * Lists entities comprising the virtual network topology.
+     * @return the value
+     **/
     public java.util.List<Object> getEntities() {
         return entities;
     }
@@ -62,6 +66,10 @@ public class Topology {
     @com.fasterxml.jackson.annotation.JsonProperty("relationships")
     private final java.util.List<TopologyEntityRelationship> relationships;
 
+    /**
+     * Lists relationships between entities in the virtual network topology.
+     * @return the value
+     **/
     public java.util.List<TopologyEntityRelationship> getRelationships() {
         return relationships;
     }
@@ -72,6 +80,10 @@ public class Topology {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Records when the virtual network topology was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format for date and time.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

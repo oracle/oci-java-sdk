@@ -35,27 +35,57 @@ public final class CpeDeviceConfigQuestion {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A string that identifies the question.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * A string that identifies the question.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * A descriptive label for the question (for example, to display in a form in a graphical interface).
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A descriptive label for the question (for example, to display in a form in a graphical interface).
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A description or explanation of the question, to help the customer answer accurately.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("explanation")
         private String explanation;
 
+        /**
+         * A description or explanation of the question, to help the customer answer accurately.
+         *
+         * @param explanation the value to set
+         * @return this builder
+         **/
         public Builder explanation(String explanation) {
             this.explanation = explanation;
             this.__explicitlySet__.add("explanation");
@@ -100,6 +130,11 @@ public final class CpeDeviceConfigQuestion {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * A string that identifies the question.
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -112,6 +147,12 @@ public final class CpeDeviceConfigQuestion {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A descriptive label for the question (for example, to display in a form in a graphical interface).
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -123,6 +164,11 @@ public final class CpeDeviceConfigQuestion {
     @com.fasterxml.jackson.annotation.JsonProperty("explanation")
     private final String explanation;
 
+    /**
+     * A description or explanation of the question, to help the customer answer accurately.
+     *
+     * @return the value
+     **/
     public String getExplanation() {
         return explanation;
     }

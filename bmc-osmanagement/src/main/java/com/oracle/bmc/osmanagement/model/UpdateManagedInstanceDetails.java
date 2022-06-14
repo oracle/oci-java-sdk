@@ -31,18 +31,33 @@ public final class UpdateManagedInstanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the ONS topic used to send notification to users
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
         private String notificationTopicId;
 
+        /**
+         * OCID of the ONS topic used to send notification to users
+         * @param notificationTopicId the value to set
+         * @return this builder
+         **/
         public Builder notificationTopicId(String notificationTopicId) {
             this.notificationTopicId = notificationTopicId;
             this.__explicitlySet__.add("notificationTopicId");
             return this;
         }
-
+        /**
+         * True if user allow data collection for this instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
         private Boolean isDataCollectionAuthorized;
 
+        /**
+         * True if user allow data collection for this instance
+         * @param isDataCollectionAuthorized the value to set
+         * @return this builder
+         **/
         public Builder isDataCollectionAuthorized(Boolean isDataCollectionAuthorized) {
             this.isDataCollectionAuthorized = isDataCollectionAuthorized;
             this.__explicitlySet__.add("isDataCollectionAuthorized");
@@ -88,6 +103,10 @@ public final class UpdateManagedInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
     private final String notificationTopicId;
 
+    /**
+     * OCID of the ONS topic used to send notification to users
+     * @return the value
+     **/
     public String getNotificationTopicId() {
         return notificationTopicId;
     }
@@ -98,6 +117,10 @@ public final class UpdateManagedInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
     private final Boolean isDataCollectionAuthorized;
 
+    /**
+     * True if user allow data collection for this instance
+     * @return the value
+     **/
     public Boolean getIsDataCollectionAuthorized() {
         return isDataCollectionAuthorized;
     }

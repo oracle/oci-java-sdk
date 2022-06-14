@@ -18,6 +18,9 @@ public class UpdateRoverEntitlementRequest
      */
     private String roverEntitlementId;
 
+    /**
+     * ID of the rover node or cluster entitlement
+     */
     public String getRoverEntitlementId() {
         return roverEntitlementId;
     }
@@ -26,6 +29,9 @@ public class UpdateRoverEntitlementRequest
      */
     private com.oracle.bmc.rover.model.UpdateRoverEntitlementDetails updateRoverEntitlementDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.rover.model.UpdateRoverEntitlementDetails
             getUpdateRoverEntitlementDetails() {
         return updateRoverEntitlementDetails;
@@ -40,6 +46,14 @@ public class UpdateRoverEntitlementRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +62,9 @@ public class UpdateRoverEntitlementRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,10 +87,14 @@ public class UpdateRoverEntitlementRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the rover node or cluster entitlement
+         */
         private String roverEntitlementId = null;
 
         /**
          * ID of the rover node or cluster entitlement
+         * @param roverEntitlementId the value to set
          * @return this builder instance
          */
         public Builder roverEntitlementId(String roverEntitlementId) {
@@ -81,11 +102,15 @@ public class UpdateRoverEntitlementRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.rover.model.UpdateRoverEntitlementDetails
                 updateRoverEntitlementDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateRoverEntitlementDetails the value to set
          * @return this builder instance
          */
         public Builder updateRoverEntitlementDetails(
@@ -95,6 +120,14 @@ public class UpdateRoverEntitlementRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -104,6 +137,7 @@ public class UpdateRoverEntitlementRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -111,10 +145,14 @@ public class UpdateRoverEntitlementRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -207,7 +245,8 @@ public class UpdateRoverEntitlementRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +256,10 @@ public class UpdateRoverEntitlementRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

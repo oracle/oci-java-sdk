@@ -42,45 +42,81 @@ public final class Country {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryId")
         private java.math.BigDecimal countryId;
 
+        /**
+         * Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
+         * @param countryId the value to set
+         * @return this builder
+         **/
         public Builder countryId(java.math.BigDecimal countryId) {
             this.countryId = countryId;
             this.__explicitlySet__.add("countryId");
             return this;
         }
-
+        /**
+         * Country code in ISO-3166-1 2-letter format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
         private String countryCode;
 
+        /**
+         * Country code in ISO-3166-1 2-letter format
+         * @param countryCode the value to set
+         * @return this builder
+         **/
         public Builder countryCode(String countryCode) {
             this.countryCode = countryCode;
             this.__explicitlySet__.add("countryCode");
             return this;
         }
-
+        /**
+         * Name of the country
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryName")
         private String countryName;
 
+        /**
+         * Name of the country
+         * @param countryName the value to set
+         * @return this builder
+         **/
         public Builder countryName(String countryName) {
             this.countryName = countryName;
             this.__explicitlySet__.add("countryName");
             return this;
         }
-
+        /**
+         * Language identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageId")
         private java.math.BigDecimal languageId;
 
+        /**
+         * Language identifier
+         * @param languageId the value to set
+         * @return this builder
+         **/
         public Builder languageId(java.math.BigDecimal languageId) {
             this.languageId = languageId;
             this.__explicitlySet__.add("languageId");
             return this;
         }
-
+        /**
+         * Country code in ISO-3166-1 3-letter format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ascii3CountryCode")
         private String ascii3CountryCode;
 
+        /**
+         * Country code in ISO-3166-1 3-letter format
+         * @param ascii3CountryCode the value to set
+         * @return this builder
+         **/
         public Builder ascii3CountryCode(String ascii3CountryCode) {
             this.ascii3CountryCode = ascii3CountryCode;
             this.__explicitlySet__.add("ascii3CountryCode");
@@ -128,6 +164,10 @@ public final class Country {
     @com.fasterxml.jackson.annotation.JsonProperty("countryId")
     private final java.math.BigDecimal countryId;
 
+    /**
+     * Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
+     * @return the value
+     **/
     public java.math.BigDecimal getCountryId() {
         return countryId;
     }
@@ -138,6 +178,10 @@ public final class Country {
     @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
     private final String countryCode;
 
+    /**
+     * Country code in ISO-3166-1 2-letter format
+     * @return the value
+     **/
     public String getCountryCode() {
         return countryCode;
     }
@@ -148,6 +192,10 @@ public final class Country {
     @com.fasterxml.jackson.annotation.JsonProperty("countryName")
     private final String countryName;
 
+    /**
+     * Name of the country
+     * @return the value
+     **/
     public String getCountryName() {
         return countryName;
     }
@@ -158,6 +206,10 @@ public final class Country {
     @com.fasterxml.jackson.annotation.JsonProperty("languageId")
     private final java.math.BigDecimal languageId;
 
+    /**
+     * Language identifier
+     * @return the value
+     **/
     public java.math.BigDecimal getLanguageId() {
         return languageId;
     }
@@ -168,6 +220,10 @@ public final class Country {
     @com.fasterxml.jackson.annotation.JsonProperty("ascii3CountryCode")
     private final String ascii3CountryCode;
 
+    /**
+     * Country code in ISO-3166-1 3-letter format
+     * @return the value
+     **/
     public String getAscii3CountryCode() {
         return ascii3CountryCode;
     }

@@ -18,6 +18,9 @@ public class PreviewScaleBlockchainPlatformRequest
      */
     private String blockchainPlatformId;
 
+    /**
+     * Unique service identifier.
+     */
     public String getBlockchainPlatformId() {
         return blockchainPlatformId;
     }
@@ -28,6 +31,10 @@ public class PreviewScaleBlockchainPlatformRequest
     private com.oracle.bmc.blockchain.model.ScaleBlockchainPlatformDetails
             scaleBlockchainPlatformDetails;
 
+    /**
+     * Input payload to scaleout blockchain platform. The payload cannot be empty.
+     *
+     */
     public com.oracle.bmc.blockchain.model.ScaleBlockchainPlatformDetails
             getScaleBlockchainPlatformDetails() {
         return scaleBlockchainPlatformDetails;
@@ -37,6 +44,9 @@ public class PreviewScaleBlockchainPlatformRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -59,10 +69,14 @@ public class PreviewScaleBlockchainPlatformRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique service identifier.
+         */
         private String blockchainPlatformId = null;
 
         /**
          * Unique service identifier.
+         * @param blockchainPlatformId the value to set
          * @return this builder instance
          */
         public Builder blockchainPlatformId(String blockchainPlatformId) {
@@ -70,12 +84,17 @@ public class PreviewScaleBlockchainPlatformRequest
             return this;
         }
 
+        /**
+         * Input payload to scaleout blockchain platform. The payload cannot be empty.
+         *
+         */
         private com.oracle.bmc.blockchain.model.ScaleBlockchainPlatformDetails
                 scaleBlockchainPlatformDetails = null;
 
         /**
          * Input payload to scaleout blockchain platform. The payload cannot be empty.
          *
+         * @param scaleBlockchainPlatformDetails the value to set
          * @return this builder instance
          */
         public Builder scaleBlockchainPlatformDetails(
@@ -85,10 +104,14 @@ public class PreviewScaleBlockchainPlatformRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -180,7 +203,8 @@ public class PreviewScaleBlockchainPlatformRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +213,10 @@ public class PreviewScaleBlockchainPlatformRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

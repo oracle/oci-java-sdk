@@ -18,6 +18,9 @@ public class ChangeOdaInstanceCompartmentRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -27,6 +30,9 @@ public class ChangeOdaInstanceCompartmentRequest
     private com.oracle.bmc.oda.model.ChangeOdaInstanceCompartmentDetails
             changeOdaInstanceCompartmentDetails;
 
+    /**
+     * The compartment to which the Digital Assistant instance should be moved.
+     */
     public com.oracle.bmc.oda.model.ChangeOdaInstanceCompartmentDetails
             getChangeOdaInstanceCompartmentDetails() {
         return changeOdaInstanceCompartmentDetails;
@@ -42,6 +48,15 @@ public class ChangeOdaInstanceCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +65,9 @@ public class ChangeOdaInstanceCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,6 +82,15 @@ public class ChangeOdaInstanceCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * conflicting operations. For example, if an instance was deleted and purged from the system,
+     * then the service might reject a retry of the original creation request.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -86,10 +113,14 @@ public class ChangeOdaInstanceCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -97,11 +128,15 @@ public class ChangeOdaInstanceCompartmentRequest
             return this;
         }
 
+        /**
+         * The compartment to which the Digital Assistant instance should be moved.
+         */
         private com.oracle.bmc.oda.model.ChangeOdaInstanceCompartmentDetails
                 changeOdaInstanceCompartmentDetails = null;
 
         /**
          * The compartment to which the Digital Assistant instance should be moved.
+         * @param changeOdaInstanceCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeOdaInstanceCompartmentDetails(
@@ -111,6 +146,15 @@ public class ChangeOdaInstanceCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -121,6 +165,7 @@ public class ChangeOdaInstanceCompartmentRequest
          * instance only if the etag that you provide matches the instance's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -128,10 +173,14 @@ public class ChangeOdaInstanceCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -139,6 +188,15 @@ public class ChangeOdaInstanceCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -149,6 +207,7 @@ public class ChangeOdaInstanceCompartmentRequest
          * conflicting operations. For example, if an instance was deleted and purged from the system,
          * then the service might reject a retry of the original creation request.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -243,7 +302,8 @@ public class ChangeOdaInstanceCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -254,6 +314,10 @@ public class ChangeOdaInstanceCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -106,6 +106,10 @@ public class UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A short description of the Channel.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -116,6 +120,10 @@ public class UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sessionExpiryDurationInMilliseconds")
     private final Long sessionExpiryDurationInMilliseconds;
 
+    /**
+     * The number of milliseconds before a session expires.
+     * @return the value
+     **/
     public Long getSessionExpiryDurationInMilliseconds() {
         return sessionExpiryDurationInMilliseconds;
     }
@@ -128,6 +136,12 @@ public class UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -140,6 +154,12 @@ public class UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

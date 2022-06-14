@@ -27,9 +27,17 @@ public final class Compression {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Compression algorithm
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("codec")
         private Codec codec;
 
+        /**
+         * Compression algorithm
+         * @param codec the value to set
+         * @return this builder
+         **/
         public Builder codec(Codec codec) {
             this.codec = codec;
             this.__explicitlySet__.add("codec");
@@ -123,6 +131,10 @@ public final class Compression {
     @com.fasterxml.jackson.annotation.JsonProperty("codec")
     private final Codec codec;
 
+    /**
+     * Compression algorithm
+     * @return the value
+     **/
     public Codec getCodec() {
         return codec;
     }

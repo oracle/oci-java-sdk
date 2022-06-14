@@ -19,6 +19,9 @@ public class CreateAiPrivateEndpointRequest
     private com.oracle.bmc.aianomalydetection.model.CreateAiPrivateEndpointDetails
             createAiPrivateEndpointDetails;
 
+    /**
+     * The information used to create the private reverse connection.
+     */
     public com.oracle.bmc.aianomalydetection.model.CreateAiPrivateEndpointDetails
             getCreateAiPrivateEndpointDetails() {
         return createAiPrivateEndpointDetails;
@@ -28,6 +31,9 @@ public class CreateAiPrivateEndpointRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +47,14 @@ public class CreateAiPrivateEndpointRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -63,11 +77,15 @@ public class CreateAiPrivateEndpointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The information used to create the private reverse connection.
+         */
         private com.oracle.bmc.aianomalydetection.model.CreateAiPrivateEndpointDetails
                 createAiPrivateEndpointDetails = null;
 
         /**
          * The information used to create the private reverse connection.
+         * @param createAiPrivateEndpointDetails the value to set
          * @return this builder instance
          */
         public Builder createAiPrivateEndpointDetails(
@@ -77,10 +95,14 @@ public class CreateAiPrivateEndpointRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -88,6 +110,14 @@ public class CreateAiPrivateEndpointRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -97,6 +127,7 @@ public class CreateAiPrivateEndpointRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -188,7 +219,8 @@ public class CreateAiPrivateEndpointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -197,6 +229,10 @@ public class CreateAiPrivateEndpointRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

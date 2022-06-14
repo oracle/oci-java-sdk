@@ -72,28 +72,55 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Indicates which coordinates to show.  Either client, server or both.  Defaults to client.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("include")
         private Include include;
 
+        /**
+         * Indicates which coordinates to show.  Either client, server or both.  Defaults to client.
+         *
+         * @param include the value to set
+         * @return this builder
+         **/
         public Builder include(Include include) {
             this.include = include;
             this.__explicitlySet__.add("include");
             return this;
         }
-
+        /**
+         * Group by fields if specified in the query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
         private java.util.List<AbstractField> groupByFields;
 
+        /**
+         * Group by fields if specified in the query string.
+         *
+         * @param groupByFields the value to set
+         * @return this builder
+         **/
         public Builder groupByFields(java.util.List<AbstractField> groupByFields) {
             this.groupByFields = groupByFields;
             this.__explicitlySet__.add("groupByFields");
             return this;
         }
-
+        /**
+         * Statistical functions specified in the query string. Atleast 1 is required for a GEOSTATS command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functions")
         private java.util.List<FunctionField> functions;
 
+        /**
+         * Statistical functions specified in the query string. Atleast 1 is required for a GEOSTATS command.
+         *
+         * @param functions the value to set
+         * @return this builder
+         **/
         public Builder functions(java.util.List<FunctionField> functions) {
             this.functions = functions;
             this.__explicitlySet__.add("functions");
@@ -219,6 +246,11 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("include")
     private final Include include;
 
+    /**
+     * Indicates which coordinates to show.  Either client, server or both.  Defaults to client.
+     *
+     * @return the value
+     **/
     public Include getInclude() {
         return include;
     }
@@ -230,6 +262,11 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
     private final java.util.List<AbstractField> groupByFields;
 
+    /**
+     * Group by fields if specified in the query string.
+     *
+     * @return the value
+     **/
     public java.util.List<AbstractField> getGroupByFields() {
         return groupByFields;
     }
@@ -241,6 +278,11 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
     private final java.util.List<FunctionField> functions;
 
+    /**
+     * Statistical functions specified in the query string. Atleast 1 is required for a GEOSTATS command.
+     *
+     * @return the value
+     **/
     public java.util.List<FunctionField> getFunctions() {
         return functions;
     }

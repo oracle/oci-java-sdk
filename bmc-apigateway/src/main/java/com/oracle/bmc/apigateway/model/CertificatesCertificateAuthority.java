@@ -27,9 +27,19 @@ package com.oracle.bmc.apigateway.model;
 public final class CertificatesCertificateAuthority extends CaBundle {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
         private String certificateAuthorityId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+         *
+         * @param certificateAuthorityId the value to set
+         * @return this builder
+         **/
         public Builder certificateAuthorityId(String certificateAuthorityId) {
             this.certificateAuthorityId = certificateAuthorityId;
             this.__explicitlySet__.add("certificateAuthorityId");
@@ -79,6 +89,11 @@ public final class CertificatesCertificateAuthority extends CaBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
     private final String certificateAuthorityId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+     *
+     * @return the value
+     **/
     public String getCertificateAuthorityId() {
         return certificateAuthorityId;
     }

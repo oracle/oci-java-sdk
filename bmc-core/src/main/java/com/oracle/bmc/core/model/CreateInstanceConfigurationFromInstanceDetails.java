@@ -65,10 +65,21 @@ public final class CreateInstanceConfigurationFromInstanceDetails
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the
+         * instance configuration.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the
+         * instance configuration.
+         *
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
@@ -130,6 +141,12 @@ public final class CreateInstanceConfigurationFromInstanceDetails
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the
+     * instance configuration.
+     *
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }

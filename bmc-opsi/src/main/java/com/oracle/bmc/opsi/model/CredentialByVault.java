@@ -35,28 +35,49 @@ public final class CredentialByVault extends CredentialDetails {
             this.__explicitlySet__.add("credentialSourceName");
             return this;
         }
-
+        /**
+         * database user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * database user name.
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The secret [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
+        /**
+         * The secret [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
-
+        /**
+         * database user role.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
+        /**
+         * database user role.
+         * @param role the value to set
+         * @return this builder
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -112,6 +133,10 @@ public final class CredentialByVault extends CredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * database user name.
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -122,6 +147,10 @@ public final class CredentialByVault extends CredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
+    /**
+     * The secret [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+     * @return the value
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
@@ -177,6 +206,10 @@ public final class CredentialByVault extends CredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
+    /**
+     * database user role.
+     * @return the value
+     **/
     public Role getRole() {
         return role;
     }

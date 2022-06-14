@@ -59,54 +59,99 @@ public final class CreatePublicationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingType")
         private ListingType listingType;
 
+        /**
+         * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
+         *
+         * @param listingType the value to set
+         * @return this builder
+         **/
         public Builder listingType(ListingType listingType) {
             this.listingType = listingType;
             this.__explicitlySet__.add("listingType");
             return this;
         }
-
+        /**
+         * The name of the publication, which is also used in the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the publication, which is also used in the listing.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A short description of the publication to use in the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
         private String shortDescription;
 
+        /**
+         * A short description of the publication to use in the listing.
+         * @param shortDescription the value to set
+         * @return this builder
+         **/
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = shortDescription;
             this.__explicitlySet__.add("shortDescription");
             return this;
         }
-
+        /**
+         * A long description of the publication to use in the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
         private String longDescription;
 
+        /**
+         * A long description of the publication to use in the listing.
+         * @param longDescription the value to set
+         * @return this builder
+         **/
         public Builder longDescription(String longDescription) {
             this.longDescription = longDescription;
             this.__explicitlySet__.add("longDescription");
             return this;
         }
-
+        /**
+         * Contact information for getting support from the publisher for the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
         private java.util.List<SupportContact> supportContacts;
 
+        /**
+         * Contact information for getting support from the publisher for the listing.
+         * @param supportContacts the value to set
+         * @return this builder
+         **/
         public Builder supportContacts(java.util.List<SupportContact> supportContacts) {
             this.supportContacts = supportContacts;
             this.__explicitlySet__.add("supportContacts");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -121,29 +166,64 @@ public final class CreatePublicationDetails {
             this.__explicitlySet__.add("packageDetails");
             return this;
         }
-
+        /**
+         * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAgreementAcknowledged")
         private Boolean isAgreementAcknowledged;
 
+        /**
+         * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
+         *
+         * @param isAgreementAcknowledged the value to set
+         * @return this builder
+         **/
         public Builder isAgreementAcknowledged(Boolean isAgreementAcknowledged) {
             this.isAgreementAcknowledged = isAgreementAcknowledged;
             this.__explicitlySet__.add("isAgreementAcknowledged");
             return this;
         }
-
+        /**
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -207,6 +287,11 @@ public final class CreatePublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("listingType")
     private final ListingType listingType;
 
+    /**
+     * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
+     *
+     * @return the value
+     **/
     public ListingType getListingType() {
         return listingType;
     }
@@ -217,6 +302,10 @@ public final class CreatePublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the publication, which is also used in the listing.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -227,6 +316,10 @@ public final class CreatePublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     private final String shortDescription;
 
+    /**
+     * A short description of the publication to use in the listing.
+     * @return the value
+     **/
     public String getShortDescription() {
         return shortDescription;
     }
@@ -237,6 +330,10 @@ public final class CreatePublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
     private final String longDescription;
 
+    /**
+     * A long description of the publication to use in the listing.
+     * @return the value
+     **/
     public String getLongDescription() {
         return longDescription;
     }
@@ -247,6 +344,10 @@ public final class CreatePublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
     private final java.util.List<SupportContact> supportContacts;
 
+    /**
+     * Contact information for getting support from the publisher for the listing.
+     * @return the value
+     **/
     public java.util.List<SupportContact> getSupportContacts() {
         return supportContacts;
     }
@@ -257,6 +358,10 @@ public final class CreatePublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -275,6 +380,11 @@ public final class CreatePublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isAgreementAcknowledged")
     private final Boolean isAgreementAcknowledged;
 
+    /**
+     * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
+     *
+     * @return the value
+     **/
     public Boolean getIsAgreementAcknowledged() {
         return isAgreementAcknowledged;
     }
@@ -288,6 +398,13 @@ public final class CreatePublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -301,6 +418,13 @@ public final class CreatePublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }

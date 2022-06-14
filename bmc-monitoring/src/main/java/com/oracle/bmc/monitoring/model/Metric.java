@@ -44,45 +44,113 @@ public final class Metric {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the metric.
+         * <p>
+         * Example: {@code CpuUtilization}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the metric.
+         * <p>
+         * Example: {@code CpuUtilization}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The source service or application emitting the metric.
+         * <p>
+         * Example: {@code oci_computeagent}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The source service or application emitting the metric.
+         * <p>
+         * Example: {@code oci_computeagent}
+         *
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
+         * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * <p>
+         * Example: {@code frontend-fleet}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
         private String resourceGroup;
 
+        /**
+         * Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
+         * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * <p>
+         * Example: {@code frontend-fleet}
+         *
+         * @param resourceGroup the value to set
+         * @return this builder
+         **/
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = resourceGroup;
             this.__explicitlySet__.add("resourceGroup");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing
+         * the resources monitored by the metric.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing
+         * the resources monitored by the metric.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
+         * Each dimension takes the form of a key-value pair.
+         * <p>
+         * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
+        /**
+         * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
+         * Each dimension takes the form of a key-value pair.
+         * <p>
+         * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         *
+         * @param dimensions the value to set
+         * @return this builder
+         **/
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -133,6 +201,13 @@ public final class Metric {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the metric.
+     * <p>
+     * Example: {@code CpuUtilization}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -146,6 +221,13 @@ public final class Metric {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The source service or application emitting the metric.
+     * <p>
+     * Example: {@code oci_computeagent}
+     *
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -160,6 +242,14 @@ public final class Metric {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
     private final String resourceGroup;
 
+    /**
+     * Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * <p>
+     * Example: {@code frontend-fleet}
+     *
+     * @return the value
+     **/
     public String getResourceGroup() {
         return resourceGroup;
     }
@@ -172,6 +262,12 @@ public final class Metric {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing
+     * the resources monitored by the metric.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -186,6 +282,14 @@ public final class Metric {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
+    /**
+     * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
+     * Each dimension takes the form of a key-value pair.
+     * <p>
+     * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }

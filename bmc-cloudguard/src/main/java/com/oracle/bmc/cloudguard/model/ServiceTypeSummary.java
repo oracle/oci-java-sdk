@@ -30,18 +30,33 @@ public final class ServiceTypeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * name of the service type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * name of the service type
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * List of Resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypes")
         private java.util.List<ResourceTypeSummary> resourceTypes;
 
+        /**
+         * List of Resource
+         * @param resourceTypes the value to set
+         * @return this builder
+         **/
         public Builder resourceTypes(java.util.List<ResourceTypeSummary> resourceTypes) {
             this.resourceTypes = resourceTypes;
             this.__explicitlySet__.add("resourceTypes");
@@ -83,6 +98,10 @@ public final class ServiceTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * name of the service type
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -93,6 +112,10 @@ public final class ServiceTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypes")
     private final java.util.List<ResourceTypeSummary> resourceTypes;
 
+    /**
+     * List of Resource
+     * @return the value
+     **/
     public java.util.List<ResourceTypeSummary> getResourceTypes() {
         return resourceTypes;
     }

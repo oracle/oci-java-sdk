@@ -45,27 +45,49 @@ public final class DiscoveryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
+        /**
+         * The OCID of Management Agent
+         * @param agentId the value to set
+         * @return this builder
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-
+        /**
+         * Resource Type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private ResourceType resourceType;
 
+        /**
+         * Resource Type.
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(ResourceType resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The Name of resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * The Name of resource type
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
@@ -142,6 +164,10 @@ public final class DiscoveryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
+    /**
+     * The OCID of Management Agent
+     * @return the value
+     **/
     public String getAgentId() {
         return agentId;
     }
@@ -201,6 +227,10 @@ public final class DiscoveryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceType resourceType;
 
+    /**
+     * Resource Type.
+     * @return the value
+     **/
     public ResourceType getResourceType() {
         return resourceType;
     }
@@ -211,6 +241,10 @@ public final class DiscoveryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * The Name of resource type
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }

@@ -17,6 +17,9 @@ public class GetDatabaseSoftwareImageRequest
      */
     private String databaseSoftwareImageId;
 
+    /**
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
     }
@@ -28,10 +31,14 @@ public class GetDatabaseSoftwareImageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String databaseSoftwareImageId = null;
 
         /**
          * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param databaseSoftwareImageId the value to set
          * @return this builder instance
          */
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
@@ -107,12 +114,17 @@ public class GetDatabaseSoftwareImageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().databaseSoftwareImageId(databaseSoftwareImageId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

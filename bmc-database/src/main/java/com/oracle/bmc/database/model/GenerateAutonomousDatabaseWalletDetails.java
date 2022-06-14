@@ -31,18 +31,47 @@ public final class GenerateAutonomousDatabaseWalletDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of wallet to generate.
+         * <p>
+         **Shared Exadata infrastructure usage:**
+         * * {@code SINGLE} - used to generate a wallet for a single database
+         * * {@code ALL} - used to generate wallet for all databases in the region
+         * <p>
+         **Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("generateType")
         private GenerateType generateType;
 
+        /**
+         * The type of wallet to generate.
+         * <p>
+         **Shared Exadata infrastructure usage:**
+         * * {@code SINGLE} - used to generate a wallet for a single database
+         * * {@code ALL} - used to generate wallet for all databases in the region
+         * <p>
+         **Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is used.
+         *
+         * @param generateType the value to set
+         * @return this builder
+         **/
         public Builder generateType(GenerateType generateType) {
             this.generateType = generateType;
             this.__explicitlySet__.add("generateType");
             return this;
         }
-
+        /**
+         * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -134,6 +163,17 @@ public final class GenerateAutonomousDatabaseWalletDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("generateType")
     private final GenerateType generateType;
 
+    /**
+     * The type of wallet to generate.
+     * <p>
+     **Shared Exadata infrastructure usage:**
+     * * {@code SINGLE} - used to generate a wallet for a single database
+     * * {@code ALL} - used to generate wallet for all databases in the region
+     * <p>
+     **Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is used.
+     *
+     * @return the value
+     **/
     public GenerateType getGenerateType() {
         return generateType;
     }
@@ -144,6 +184,10 @@ public final class GenerateAutonomousDatabaseWalletDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }

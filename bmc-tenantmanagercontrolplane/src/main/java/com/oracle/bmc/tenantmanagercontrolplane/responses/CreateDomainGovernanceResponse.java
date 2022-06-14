@@ -15,6 +15,12 @@ public class CreateDomainGovernanceResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class CreateDomainGovernanceResponse extends com.oracle.bmc.responses.Bmc
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -34,6 +45,10 @@ public class CreateDomainGovernanceResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance domainGovernance;
 
+    /**
+     * The returned DomainGovernance instance.
+     * @return the value
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance getDomainGovernance() {
         return domainGovernance;
     }
@@ -63,22 +78,52 @@ public class CreateDomainGovernanceResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned DomainGovernance instance.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance domainGovernance;
 
+        /**
+         * The returned DomainGovernance instance.
+         * @param domainGovernance the value to set
+         * @return this builder
+         */
         public Builder domainGovernance(
                 com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance domainGovernance) {
             this.domainGovernance = domainGovernance;
@@ -98,12 +143,20 @@ public class CreateDomainGovernanceResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateDomainGovernanceResponse build() {
             return new CreateDomainGovernanceResponse(
                     __httpStatusCode__, opcRequestId, etag, domainGovernance);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -32,18 +32,37 @@ public final class OperationsInsightsConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of Operations Insights
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
         private OperationsInsightsStatus operationsInsightsStatus;
 
+        /**
+         * The status of Operations Insights
+         * @param operationsInsightsStatus the value to set
+         * @return this builder
+         **/
         public Builder operationsInsightsStatus(OperationsInsightsStatus operationsInsightsStatus) {
             this.operationsInsightsStatus = operationsInsightsStatus;
             this.__explicitlySet__.add("operationsInsightsStatus");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConnectorId")
         private String operationsInsightsConnectorId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         * @param operationsInsightsConnectorId the value to set
+         * @return this builder
+         **/
         public Builder operationsInsightsConnectorId(String operationsInsightsConnectorId) {
             this.operationsInsightsConnectorId = operationsInsightsConnectorId;
             this.__explicitlySet__.add("operationsInsightsConnectorId");
@@ -141,6 +160,10 @@ public final class OperationsInsightsConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
     private final OperationsInsightsStatus operationsInsightsStatus;
 
+    /**
+     * The status of Operations Insights
+     * @return the value
+     **/
     public OperationsInsightsStatus getOperationsInsightsStatus() {
         return operationsInsightsStatus;
     }
@@ -153,6 +176,12 @@ public final class OperationsInsightsConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConnectorId")
     private final String operationsInsightsConnectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+     *
+     * @return the value
+     **/
     public String getOperationsInsightsConnectorId() {
         return operationsInsightsConnectorId;
     }

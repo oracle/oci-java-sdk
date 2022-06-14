@@ -32,18 +32,33 @@ public final class UpdateContainerRepositoryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
         private Boolean isImmutable;
 
+        /**
+         * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+         * @param isImmutable the value to set
+         * @return this builder
+         **/
         public Builder isImmutable(Boolean isImmutable) {
             this.isImmutable = isImmutable;
             this.__explicitlySet__.add("isImmutable");
             return this;
         }
-
+        /**
+         * Whether the repository is public. A public repository allows unauthenticated access.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
+        /**
+         * Whether the repository is public. A public repository allows unauthenticated access.
+         * @param isPublic the value to set
+         * @return this builder
+         **/
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
@@ -96,6 +111,10 @@ public final class UpdateContainerRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
     private final Boolean isImmutable;
 
+    /**
+     * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     * @return the value
+     **/
     public Boolean getIsImmutable() {
         return isImmutable;
     }
@@ -106,6 +125,10 @@ public final class UpdateContainerRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     private final Boolean isPublic;
 
+    /**
+     * Whether the repository is public. A public repository allows unauthenticated access.
+     * @return the value
+     **/
     public Boolean getIsPublic() {
         return isPublic;
     }

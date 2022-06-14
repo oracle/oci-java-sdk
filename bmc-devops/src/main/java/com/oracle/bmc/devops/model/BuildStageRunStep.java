@@ -33,36 +33,65 @@ public final class BuildStageRunStep {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the step.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * State of the step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
+        /**
+         * State of the step.
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-
+        /**
+         * Time when the step started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * Time when the step started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * Time when the step finished.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * Time when the step finished.
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
@@ -109,6 +138,10 @@ public final class BuildStageRunStep {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the step.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -168,6 +201,10 @@ public final class BuildStageRunStep {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
+    /**
+     * State of the step.
+     * @return the value
+     **/
     public State getState() {
         return state;
     }
@@ -178,6 +215,10 @@ public final class BuildStageRunStep {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * Time when the step started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -188,6 +229,10 @@ public final class BuildStageRunStep {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * Time when the step finished.
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }

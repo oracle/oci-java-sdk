@@ -18,6 +18,9 @@ public class UpdateAnnouncementsPreferenceRequest
      */
     private String preferenceId;
 
+    /**
+     * The ID of the preference.
+     */
     public String getPreferenceId() {
         return preferenceId;
     }
@@ -27,6 +30,9 @@ public class UpdateAnnouncementsPreferenceRequest
     private com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
             announcementsPreferenceDetails;
 
+    /**
+     * The object that contains details about tenancy preferences for receiving announcements by email.
+     */
     public com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
             getAnnouncementsPreferenceDetails() {
         return announcementsPreferenceDetails;
@@ -38,6 +44,11 @@ public class UpdateAnnouncementsPreferenceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +57,9 @@ public class UpdateAnnouncementsPreferenceRequest
      */
     private String ifMatch;
 
+    /**
+     * The locking version, used for optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -70,10 +84,14 @@ public class UpdateAnnouncementsPreferenceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the preference.
+         */
         private String preferenceId = null;
 
         /**
          * The ID of the preference.
+         * @param preferenceId the value to set
          * @return this builder instance
          */
         public Builder preferenceId(String preferenceId) {
@@ -81,11 +99,15 @@ public class UpdateAnnouncementsPreferenceRequest
             return this;
         }
 
+        /**
+         * The object that contains details about tenancy preferences for receiving announcements by email.
+         */
         private com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
                 announcementsPreferenceDetails = null;
 
         /**
          * The object that contains details about tenancy preferences for receiving announcements by email.
+         * @param announcementsPreferenceDetails the value to set
          * @return this builder instance
          */
         public Builder announcementsPreferenceDetails(
@@ -95,12 +117,18 @@ public class UpdateAnnouncementsPreferenceRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -108,10 +136,14 @@ public class UpdateAnnouncementsPreferenceRequest
             return this;
         }
 
+        /**
+         * The locking version, used for optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * The locking version, used for optimistic concurrency control.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -207,7 +239,8 @@ public class UpdateAnnouncementsPreferenceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +250,10 @@ public class UpdateAnnouncementsPreferenceRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

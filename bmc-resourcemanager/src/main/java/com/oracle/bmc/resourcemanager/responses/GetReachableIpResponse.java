@@ -13,6 +13,10 @@ public class GetReachableIpResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetReachableIpResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.resourcemanager.model.ReachableIp reachableIp;
 
+    /**
+     * The returned ReachableIp instance.
+     * @return the value
+     */
     public com.oracle.bmc.resourcemanager.model.ReachableIp getReachableIp() {
         return reachableIp;
     }
@@ -44,15 +52,31 @@ public class GetReachableIpResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique identifier for the request.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ReachableIp instance.
+         */
         private com.oracle.bmc.resourcemanager.model.ReachableIp reachableIp;
 
+        /**
+         * The returned ReachableIp instance.
+         * @param reachableIp the value to set
+         * @return this builder
+         */
         public Builder reachableIp(com.oracle.bmc.resourcemanager.model.ReachableIp reachableIp) {
             this.reachableIp = reachableIp;
             return this;
@@ -70,11 +94,19 @@ public class GetReachableIpResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetReachableIpResponse build() {
             return new GetReachableIpResponse(__httpStatusCode__, opcRequestId, reachableIp);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

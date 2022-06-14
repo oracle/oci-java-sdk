@@ -16,6 +16,9 @@ public class GetOnPremConnectorRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String onPremConnectorId;
 
+    /**
+     * The OCID of the on-premises connector.
+     */
     public String getOnPremConnectorId() {
         return onPremConnectorId;
     }
@@ -24,6 +27,9 @@ public class GetOnPremConnectorRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetOnPremConnectorRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the on-premises connector.
+         */
         private String onPremConnectorId = null;
 
         /**
          * The OCID of the on-premises connector.
+         * @param onPremConnectorId the value to set
          * @return this builder instance
          */
         public Builder onPremConnectorId(String onPremConnectorId) {
@@ -46,10 +56,14 @@ public class GetOnPremConnectorRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetOnPremConnectorRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().onPremConnectorId(onPremConnectorId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class GetResourceAvailabilityRequest
      */
     private String serviceName;
 
+    /**
+     * The service name of the target quota.
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -25,6 +28,9 @@ public class GetResourceAvailabilityRequest
      */
     private String limitName;
 
+    /**
+     * The limit name for which to fetch the data.
+     */
     public String getLimitName() {
         return limitName;
     }
@@ -33,6 +39,9 @@ public class GetResourceAvailabilityRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment for which data is being fetched.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -44,6 +53,12 @@ public class GetResourceAvailabilityRequest
      */
     private String availabilityDomain;
 
+    /**
+     * This field is mandatory if the scopeType of the target resource limit is AD.
+     * Otherwise, this field should be omitted.
+     * If the above requirements are not met, the API returns a 400 - InvalidParameter response.
+     *
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -54,6 +69,11 @@ public class GetResourceAvailabilityRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,10 +85,14 @@ public class GetResourceAvailabilityRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The service name of the target quota.
+         */
         private String serviceName = null;
 
         /**
          * The service name of the target quota.
+         * @param serviceName the value to set
          * @return this builder instance
          */
         public Builder serviceName(String serviceName) {
@@ -76,10 +100,14 @@ public class GetResourceAvailabilityRequest
             return this;
         }
 
+        /**
+         * The limit name for which to fetch the data.
+         */
         private String limitName = null;
 
         /**
          * The limit name for which to fetch the data.
+         * @param limitName the value to set
          * @return this builder instance
          */
         public Builder limitName(String limitName) {
@@ -87,10 +115,14 @@ public class GetResourceAvailabilityRequest
             return this;
         }
 
+        /**
+         * The OCID of the compartment for which data is being fetched.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment for which data is being fetched.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -98,6 +130,12 @@ public class GetResourceAvailabilityRequest
             return this;
         }
 
+        /**
+         * This field is mandatory if the scopeType of the target resource limit is AD.
+         * Otherwise, this field should be omitted.
+         * If the above requirements are not met, the API returns a 400 - InvalidParameter response.
+         *
+         */
         private String availabilityDomain = null;
 
         /**
@@ -105,6 +143,7 @@ public class GetResourceAvailabilityRequest
          * Otherwise, this field should be omitted.
          * If the above requirements are not met, the API returns a 400 - InvalidParameter response.
          *
+         * @param availabilityDomain the value to set
          * @return this builder instance
          */
         public Builder availabilityDomain(String availabilityDomain) {
@@ -112,12 +151,18 @@ public class GetResourceAvailabilityRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -201,7 +246,8 @@ public class GetResourceAvailabilityRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -212,6 +258,10 @@ public class GetResourceAvailabilityRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -103,27 +103,55 @@ public final class ComputedUsage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Computed Usage created time, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Computed Usage created time, expressed in RFC 3339 timestamp format.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Computed Usage updated time, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Computed Usage updated time, expressed in RFC 3339 timestamp format.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Subscribed service line parent id
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
         private String parentSubscribedServiceId;
 
+        /**
+         * Subscribed service line parent id
+         *
+         * @param parentSubscribedServiceId the value to set
+         * @return this builder
+         **/
         public Builder parentSubscribedServiceId(String parentSubscribedServiceId) {
             this.parentSubscribedServiceId = parentSubscribedServiceId;
             this.__explicitlySet__.add("parentSubscribedServiceId");
@@ -138,172 +166,343 @@ public final class ComputedUsage {
             this.__explicitlySet__.add("parentProduct");
             return this;
         }
-
+        /**
+         * Subscription plan number
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
         private String planNumber;
 
+        /**
+         * Subscription plan number
+         *
+         * @param planNumber the value to set
+         * @return this builder
+         **/
         public Builder planNumber(String planNumber) {
             this.planNumber = planNumber;
             this.__explicitlySet__.add("planNumber");
             return this;
         }
-
+        /**
+         * Currency code
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
+        /**
+         * Currency code
+         *
+         * @param currencyCode the value to set
+         * @return this builder
+         **/
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-
+        /**
+         * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardTierdId")
         private String rateCardTierdId;
 
+        /**
+         * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
+         *
+         * @param rateCardTierdId the value to set
+         * @return this builder
+         **/
         public Builder rateCardTierdId(String rateCardTierdId) {
             this.rateCardTierdId = rateCardTierdId;
             this.__explicitlySet__.add("rateCardTierdId");
             return this;
         }
-
+        /**
+         * Ratecard Id at subscribed service level
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
         private String rateCardId;
 
+        /**
+         * Ratecard Id at subscribed service level
+         *
+         * @param rateCardId the value to set
+         * @return this builder
+         **/
         public Builder rateCardId(String rateCardId) {
             this.rateCardId = rateCardId;
             this.__explicitlySet__.add("rateCardId");
             return this;
         }
-
+        /**
+         * SPM Internal compute records source .
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeSource")
         private String computeSource;
 
+        /**
+         * SPM Internal compute records source .
+         *
+         * @param computeSource the value to set
+         * @return this builder
+         **/
         public Builder computeSource(String computeSource) {
             this.computeSource = computeSource;
             this.__explicitlySet__.add("computeSource");
             return this;
         }
-
+        /**
+         * Data Center Attribute as sent by MQS to SPM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
         private String dataCenter;
 
+        /**
+         * Data Center Attribute as sent by MQS to SPM.
+         *
+         * @param dataCenter the value to set
+         * @return this builder
+         **/
         public Builder dataCenter(String dataCenter) {
             this.dataCenter = dataCenter;
             this.__explicitlySet__.add("dataCenter");
             return this;
         }
-
+        /**
+         * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mqsMessageId")
         private String mqsMessageId;
 
+        /**
+         * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+         *
+         * @param mqsMessageId the value to set
+         * @return this builder
+         **/
         public Builder mqsMessageId(String mqsMessageId) {
             this.mqsMessageId = mqsMessageId;
             this.__explicitlySet__.add("mqsMessageId");
             return this;
         }
-
+        /**
+         * SPM Internal computed usage Id , 32 character string
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * SPM Internal computed usage Id , 32 character string
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Total Quantity that was used for computation
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
 
+        /**
+         * Total Quantity that was used for computation
+         *
+         * @param quantity the value to set
+         * @return this builder
+         **/
         public Builder quantity(String quantity) {
             this.quantity = quantity;
             this.__explicitlySet__.add("quantity");
             return this;
         }
-
+        /**
+         * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageNumber")
         private String usageNumber;
 
+        /**
+         * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+         *
+         * @param usageNumber the value to set
+         * @return this builder
+         **/
         public Builder usageNumber(String usageNumber) {
             this.usageNumber = usageNumber;
             this.__explicitlySet__.add("usageNumber");
             return this;
         }
-
+        /**
+         * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originalUsageNumber")
         private String originalUsageNumber;
 
+        /**
+         * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
+         *
+         * @param originalUsageNumber the value to set
+         * @return this builder
+         **/
         public Builder originalUsageNumber(String originalUsageNumber) {
             this.originalUsageNumber = originalUsageNumber;
             this.__explicitlySet__.add("originalUsageNumber");
             return this;
         }
-
+        /**
+         * Subscribed service commitmentId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitmentServiceId")
         private String commitmentServiceId;
 
+        /**
+         * Subscribed service commitmentId.
+         *
+         * @param commitmentServiceId the value to set
+         * @return this builder
+         **/
         public Builder commitmentServiceId(String commitmentServiceId) {
             this.commitmentServiceId = commitmentServiceId;
             this.__explicitlySet__.add("commitmentServiceId");
             return this;
         }
-
+        /**
+         * Invoicing status for the aggregated compute usage
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInvoiced")
         private Boolean isInvoiced;
 
+        /**
+         * Invoicing status for the aggregated compute usage
+         *
+         * @param isInvoiced the value to set
+         * @return this builder
+         **/
         public Builder isInvoiced(Boolean isInvoiced) {
             this.isInvoiced = isInvoiced;
             this.__explicitlySet__.add("isInvoiced");
             return this;
         }
-
+        /**
+         * Usage compute type in SPM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * Usage compute type in SPM.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Usae computation date, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfArrival")
         private java.util.Date timeOfArrival;
 
+        /**
+         * Usae computation date, expressed in RFC 3339 timestamp format.
+         *
+         * @param timeOfArrival the value to set
+         * @return this builder
+         **/
         public Builder timeOfArrival(java.util.Date timeOfArrival) {
             this.timeOfArrival = timeOfArrival;
             this.__explicitlySet__.add("timeOfArrival");
             return this;
         }
-
+        /**
+         * Metered Service date, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
         private java.util.Date timeMeteredOn;
 
+        /**
+         * Metered Service date, expressed in RFC 3339 timestamp format.
+         *
+         * @param timeMeteredOn the value to set
+         * @return this builder
+         **/
         public Builder timeMeteredOn(java.util.Date timeMeteredOn) {
             this.timeMeteredOn = timeMeteredOn;
             this.__explicitlySet__.add("timeMeteredOn");
             return this;
         }
-
+        /**
+         * Net Unit Price for the product in consideration, price actual.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
+        /**
+         * Net Unit Price for the product in consideration, price actual.
+         *
+         * @param netUnitPrice the value to set
+         * @return this builder
+         **/
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = netUnitPrice;
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-
+        /**
+         * Computed Line Amount rounded.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
         private String costRounded;
 
+        /**
+         * Computed Line Amount rounded.
+         *
+         * @param costRounded the value to set
+         * @return this builder
+         **/
         public Builder costRounded(String costRounded) {
             this.costRounded = costRounded;
             this.__explicitlySet__.add("costRounded");
             return this;
         }
-
+        /**
+         * Computed Line Amount not rounded
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cost")
         private String cost;
 
+        /**
+         * Computed Line Amount not rounded
+         *
+         * @param cost the value to set
+         * @return this builder
+         **/
         public Builder cost(String cost) {
             this.cost = cost;
             this.__explicitlySet__.add("cost");
@@ -318,10 +517,19 @@ public final class ComputedUsage {
             this.__explicitlySet__.add("product");
             return this;
         }
-
+        /**
+         * Unit of Messure
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
         private String unitOfMeasure;
 
+        /**
+         * Unit of Messure
+         *
+         * @param unitOfMeasure the value to set
+         * @return this builder
+         **/
         public Builder unitOfMeasure(String unitOfMeasure) {
             this.unitOfMeasure = unitOfMeasure;
             this.__explicitlySet__.add("unitOfMeasure");
@@ -415,6 +623,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Computed Usage created time, expressed in RFC 3339 timestamp format.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -426,6 +639,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Computed Usage updated time, expressed in RFC 3339 timestamp format.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -437,6 +655,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
     private final String parentSubscribedServiceId;
 
+    /**
+     * Subscribed service line parent id
+     *
+     * @return the value
+     **/
     public String getParentSubscribedServiceId() {
         return parentSubscribedServiceId;
     }
@@ -455,6 +678,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
     private final String planNumber;
 
+    /**
+     * Subscription plan number
+     *
+     * @return the value
+     **/
     public String getPlanNumber() {
         return planNumber;
     }
@@ -466,6 +694,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
+    /**
+     * Currency code
+     *
+     * @return the value
+     **/
     public String getCurrencyCode() {
         return currencyCode;
     }
@@ -477,6 +710,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardTierdId")
     private final String rateCardTierdId;
 
+    /**
+     * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
+     *
+     * @return the value
+     **/
     public String getRateCardTierdId() {
         return rateCardTierdId;
     }
@@ -488,6 +726,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
     private final String rateCardId;
 
+    /**
+     * Ratecard Id at subscribed service level
+     *
+     * @return the value
+     **/
     public String getRateCardId() {
         return rateCardId;
     }
@@ -499,6 +742,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("computeSource")
     private final String computeSource;
 
+    /**
+     * SPM Internal compute records source .
+     *
+     * @return the value
+     **/
     public String getComputeSource() {
         return computeSource;
     }
@@ -510,6 +758,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
     private final String dataCenter;
 
+    /**
+     * Data Center Attribute as sent by MQS to SPM.
+     *
+     * @return the value
+     **/
     public String getDataCenter() {
         return dataCenter;
     }
@@ -521,6 +774,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("mqsMessageId")
     private final String mqsMessageId;
 
+    /**
+     * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+     *
+     * @return the value
+     **/
     public String getMqsMessageId() {
         return mqsMessageId;
     }
@@ -532,6 +790,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * SPM Internal computed usage Id , 32 character string
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -543,6 +806,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final String quantity;
 
+    /**
+     * Total Quantity that was used for computation
+     *
+     * @return the value
+     **/
     public String getQuantity() {
         return quantity;
     }
@@ -554,6 +822,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("usageNumber")
     private final String usageNumber;
 
+    /**
+     * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+     *
+     * @return the value
+     **/
     public String getUsageNumber() {
         return usageNumber;
     }
@@ -565,6 +838,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("originalUsageNumber")
     private final String originalUsageNumber;
 
+    /**
+     * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
+     *
+     * @return the value
+     **/
     public String getOriginalUsageNumber() {
         return originalUsageNumber;
     }
@@ -576,6 +854,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("commitmentServiceId")
     private final String commitmentServiceId;
 
+    /**
+     * Subscribed service commitmentId.
+     *
+     * @return the value
+     **/
     public String getCommitmentServiceId() {
         return commitmentServiceId;
     }
@@ -587,6 +870,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("isInvoiced")
     private final Boolean isInvoiced;
 
+    /**
+     * Invoicing status for the aggregated compute usage
+     *
+     * @return the value
+     **/
     public Boolean getIsInvoiced() {
         return isInvoiced;
     }
@@ -658,6 +946,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * Usage compute type in SPM.
+     *
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -669,6 +962,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfArrival")
     private final java.util.Date timeOfArrival;
 
+    /**
+     * Usae computation date, expressed in RFC 3339 timestamp format.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfArrival() {
         return timeOfArrival;
     }
@@ -680,6 +978,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
     private final java.util.Date timeMeteredOn;
 
+    /**
+     * Metered Service date, expressed in RFC 3339 timestamp format.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeMeteredOn() {
         return timeMeteredOn;
     }
@@ -691,6 +994,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
+    /**
+     * Net Unit Price for the product in consideration, price actual.
+     *
+     * @return the value
+     **/
     public String getNetUnitPrice() {
         return netUnitPrice;
     }
@@ -702,6 +1010,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
     private final String costRounded;
 
+    /**
+     * Computed Line Amount rounded.
+     *
+     * @return the value
+     **/
     public String getCostRounded() {
         return costRounded;
     }
@@ -713,6 +1026,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     private final String cost;
 
+    /**
+     * Computed Line Amount not rounded
+     *
+     * @return the value
+     **/
     public String getCost() {
         return cost;
     }
@@ -731,6 +1049,11 @@ public final class ComputedUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
     private final String unitOfMeasure;
 
+    /**
+     * Unit of Messure
+     *
+     * @return the value
+     **/
     public String getUnitOfMeasure() {
         return unitOfMeasure;
     }

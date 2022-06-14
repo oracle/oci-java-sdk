@@ -34,28 +34,51 @@ public final class GitConfigSource extends ConfigSource {
             this.__explicitlySet__.add("workingDirectory");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Git configuration source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
         private String configurationSourceProviderId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Git configuration source.
+         *
+         * @param configurationSourceProviderId the value to set
+         * @return this builder
+         **/
         public Builder configurationSourceProviderId(String configurationSourceProviderId) {
             this.configurationSourceProviderId = configurationSourceProviderId;
             this.__explicitlySet__.add("configurationSourceProviderId");
             return this;
         }
-
+        /**
+         * The URL of the Git repository for the configuration source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
 
+        /**
+         * The URL of the Git repository for the configuration source.
+         * @param repositoryUrl the value to set
+         * @return this builder
+         **/
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             this.__explicitlySet__.add("repositoryUrl");
             return this;
         }
-
+        /**
+         * The name of the branch in the Git repository for the configuration source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("branchName")
         private String branchName;
 
+        /**
+         * The name of the branch in the Git repository for the configuration source.
+         * @param branchName the value to set
+         * @return this builder
+         **/
         public Builder branchName(String branchName) {
             this.branchName = branchName;
             this.__explicitlySet__.add("branchName");
@@ -119,6 +142,11 @@ public final class GitConfigSource extends ConfigSource {
     @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
     private final String configurationSourceProviderId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Git configuration source.
+     *
+     * @return the value
+     **/
     public String getConfigurationSourceProviderId() {
         return configurationSourceProviderId;
     }
@@ -129,6 +157,10 @@ public final class GitConfigSource extends ConfigSource {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
+    /**
+     * The URL of the Git repository for the configuration source.
+     * @return the value
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
@@ -139,6 +171,10 @@ public final class GitConfigSource extends ConfigSource {
     @com.fasterxml.jackson.annotation.JsonProperty("branchName")
     private final String branchName;
 
+    /**
+     * The name of the branch in the Git repository for the configuration source.
+     * @return the value
+     **/
     public String getBranchName() {
         return branchName;
     }

@@ -34,27 +34,49 @@ public final class ApiValidationDetail {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Description of the warning/error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("msg")
         private String msg;
 
+        /**
+         * Description of the warning/error.
+         * @param msg the value to set
+         * @return this builder
+         **/
         public Builder msg(String msg) {
             this.msg = msg;
             this.__explicitlySet__.add("msg");
             return this;
         }
-
+        /**
+         * Severity of the issue.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
+        /**
+         * Severity of the issue.
+         * @param severity the value to set
+         * @return this builder
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-
+        /**
+         * Position of the issue in the specification file (line, column).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("src")
         private java.util.List<java.util.List<java.math.BigDecimal>> src;
 
+        /**
+         * Position of the issue in the specification file (line, column).
+         * @param src the value to set
+         * @return this builder
+         **/
         public Builder src(java.util.List<java.util.List<java.math.BigDecimal>> src) {
             this.src = src;
             this.__explicitlySet__.add("src");
@@ -96,6 +118,10 @@ public final class ApiValidationDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("msg")
     private final String msg;
 
+    /**
+     * Description of the warning/error.
+     * @return the value
+     **/
     public String getMsg() {
         return msg;
     }
@@ -155,6 +181,10 @@ public final class ApiValidationDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
+    /**
+     * Severity of the issue.
+     * @return the value
+     **/
     public Severity getSeverity() {
         return severity;
     }
@@ -165,6 +195,10 @@ public final class ApiValidationDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("src")
     private final java.util.List<java.util.List<java.math.BigDecimal>> src;
 
+    /**
+     * Position of the issue in the specification file (line, column).
+     * @return the value
+     **/
     public java.util.List<java.util.List<java.math.BigDecimal>> getSrc() {
         return src;
     }

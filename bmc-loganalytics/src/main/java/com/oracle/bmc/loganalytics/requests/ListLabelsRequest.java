@@ -17,6 +17,10 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,11 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String labelName;
 
+    /**
+     * The label name used for filtering.  Only items with, or associated with, the
+     * specified label name will be returned.
+     *
+     */
     public String getLabelName() {
         return labelName;
     }
@@ -37,6 +46,11 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String labelDisplayText;
 
+    /**
+     * The label display text used for filtering.  Only labels with the specified name or
+     * description will be returned.
+     *
+     */
     public String getLabelDisplayText() {
         return labelDisplayText;
     }
@@ -88,6 +102,12 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
+     *
+     */
     public IsSystem getIsSystem() {
         return isSystem;
     }
@@ -138,6 +158,11 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The label priority used for filtering.  Only labels with the specified
+     * priority will be returned.
+     *
+     */
     public LabelPriority getLabelPriority() {
         return labelPriority;
     }
@@ -147,6 +172,10 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Boolean isCountPop;
 
+    /**
+     * A flag indicating whether or not to count the label usage per source and per rule.
+     *
+     */
     public Boolean getIsCountPop() {
         return isCountPop;
     }
@@ -156,6 +185,10 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Boolean isAliasPop;
 
+    /**
+     * A flag indicating whether or not return the aliases used by each label.
+     *
+     */
     public Boolean getIsAliasPop() {
         return isAliasPop;
     }
@@ -164,6 +197,9 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -172,6 +208,9 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -218,6 +257,10 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -263,6 +306,9 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The attribute used to sort the returned labels
+     */
     public LabelSortBy getLabelSortBy() {
         return labelSortBy;
     }
@@ -271,6 +317,9 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -282,11 +331,16 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -294,12 +348,18 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The label name used for filtering.  Only items with, or associated with, the
+         * specified label name will be returned.
+         *
+         */
         private String labelName = null;
 
         /**
          * The label name used for filtering.  Only items with, or associated with, the
          * specified label name will be returned.
          *
+         * @param labelName the value to set
          * @return this builder instance
          */
         public Builder labelName(String labelName) {
@@ -307,12 +367,18 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The label display text used for filtering.  Only labels with the specified name or
+         * description will be returned.
+         *
+         */
         private String labelDisplayText = null;
 
         /**
          * The label display text used for filtering.  Only labels with the specified name or
          * description will be returned.
          *
+         * @param labelDisplayText the value to set
          * @return this builder instance
          */
         public Builder labelDisplayText(String labelDisplayText) {
@@ -320,6 +386,12 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The system value used for filtering.  Only items with the specified system value
+         * will be returned.  Valid values are built in, custom (for user defined items), or
+         * all (for all items, regardless of system value).
+         *
+         */
         private IsSystem isSystem = null;
 
         /**
@@ -327,6 +399,7 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * will be returned.  Valid values are built in, custom (for user defined items), or
          * all (for all items, regardless of system value).
          *
+         * @param isSystem the value to set
          * @return this builder instance
          */
         public Builder isSystem(IsSystem isSystem) {
@@ -334,12 +407,18 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The label priority used for filtering.  Only labels with the specified
+         * priority will be returned.
+         *
+         */
         private LabelPriority labelPriority = null;
 
         /**
          * The label priority used for filtering.  Only labels with the specified
          * priority will be returned.
          *
+         * @param labelPriority the value to set
          * @return this builder instance
          */
         public Builder labelPriority(LabelPriority labelPriority) {
@@ -347,11 +426,16 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A flag indicating whether or not to count the label usage per source and per rule.
+         *
+         */
         private Boolean isCountPop = null;
 
         /**
          * A flag indicating whether or not to count the label usage per source and per rule.
          *
+         * @param isCountPop the value to set
          * @return this builder instance
          */
         public Builder isCountPop(Boolean isCountPop) {
@@ -359,11 +443,16 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A flag indicating whether or not return the aliases used by each label.
+         *
+         */
         private Boolean isAliasPop = null;
 
         /**
          * A flag indicating whether or not return the aliases used by each label.
          *
+         * @param isAliasPop the value to set
          * @return this builder instance
          */
         public Builder isAliasPop(Boolean isAliasPop) {
@@ -371,10 +460,14 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -382,10 +475,14 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -393,11 +490,16 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -405,10 +507,14 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The attribute used to sort the returned labels
+         */
         private LabelSortBy labelSortBy = null;
 
         /**
          * The attribute used to sort the returned labels
+         * @param labelSortBy the value to set
          * @return this builder instance
          */
         public Builder labelSortBy(LabelSortBy labelSortBy) {
@@ -416,10 +522,14 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -517,7 +627,8 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -535,6 +646,10 @@ public class ListLabelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

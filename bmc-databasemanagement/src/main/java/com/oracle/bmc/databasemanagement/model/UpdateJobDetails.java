@@ -54,6 +54,10 @@ public class UpdateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the job.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -64,6 +68,10 @@ public class UpdateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
     private final String timeout;
 
+    /**
+     * The job timeout duration, which is expressed like "1h 10m 15s".
+     * @return the value
+     **/
     public String getTimeout() {
         return timeout;
     }

@@ -78,10 +78,17 @@ public final class OutputLink extends FlowPortLink {
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The links from this output link to connect to other links in flow.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toLinks")
         private java.util.List<String> toLinks;
 
+        /**
+         * The links from this output link to connect to other links in flow.
+         * @param toLinks the value to set
+         * @return this builder
+         **/
         public Builder toLinks(java.util.List<String> toLinks) {
             this.toLinks = toLinks;
             this.__explicitlySet__.add("toLinks");
@@ -145,6 +152,10 @@ public final class OutputLink extends FlowPortLink {
     @com.fasterxml.jackson.annotation.JsonProperty("toLinks")
     private final java.util.List<String> toLinks;
 
+    /**
+     * The links from this output link to connect to other links in flow.
+     * @return the value
+     **/
     public java.util.List<String> getToLinks() {
         return toLinks;
     }

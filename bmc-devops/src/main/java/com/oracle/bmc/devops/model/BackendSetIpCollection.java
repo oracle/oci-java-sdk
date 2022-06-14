@@ -29,9 +29,17 @@ public final class BackendSetIpCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The IP address of the backend server. A server could be a compute instance or a load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<String> items;
 
+        /**
+         * The IP address of the backend server. A server could be a compute instance or a load balancer.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<String> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class BackendSetIpCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<String> items;
 
+    /**
+     * The IP address of the backend server. A server could be a compute instance or a load balancer.
+     * @return the value
+     **/
     public java.util.List<String> getItems() {
         return items;
     }

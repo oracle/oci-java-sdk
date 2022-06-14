@@ -19,6 +19,9 @@ public class GetPublicIpByPrivateIpIdRequest
     private com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails
             getPublicIpByPrivateIpIdDetails;
 
+    /**
+     * Private IP details for fetching the public IP.
+     */
     public com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails
             getGetPublicIpByPrivateIpIdDetails() {
         return getPublicIpByPrivateIpIdDetails;
@@ -42,11 +45,15 @@ public class GetPublicIpByPrivateIpIdRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Private IP details for fetching the public IP.
+         */
         private com.oracle.bmc.core.model.GetPublicIpByPrivateIpIdDetails
                 getPublicIpByPrivateIpIdDetails = null;
 
         /**
          * Private IP details for fetching the public IP.
+         * @param getPublicIpByPrivateIpIdDetails the value to set
          * @return this builder instance
          */
         public Builder getPublicIpByPrivateIpIdDetails(
@@ -135,12 +142,17 @@ public class GetPublicIpByPrivateIpIdRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().getPublicIpByPrivateIpIdDetails(getPublicIpByPrivateIpIdDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

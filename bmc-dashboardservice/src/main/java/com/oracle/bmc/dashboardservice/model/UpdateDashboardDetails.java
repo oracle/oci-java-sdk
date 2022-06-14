@@ -53,6 +53,12 @@ public class UpdateDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name for the dashboard. Does not have to be unique, and it can be changed. Avoid entering confidential information.
+     * Leading and trailing spaces and the following special characters are not allowed: <>()=/'"&\\
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -65,6 +71,12 @@ public class UpdateDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A short description of the dashboard. It can be changed. Avoid entering confidential information.
+     * The following special characters are not allowed: <>()=/'"&\\
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -77,6 +89,12 @@ public class UpdateDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -89,6 +107,12 @@ public class UpdateDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

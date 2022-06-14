@@ -42,45 +42,81 @@ public final class TlsConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Status to represent whether the database connection is TLS enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * Status to represent whether the database connection is TLS enabled or not.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The format of the certificate store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateStoreType")
         private CertificateStoreType certificateStoreType;
 
+        /**
+         * The format of the certificate store.
+         * @param certificateStoreType the value to set
+         * @return this builder
+         **/
         public Builder certificateStoreType(CertificateStoreType certificateStoreType) {
             this.certificateStoreType = certificateStoreType;
             this.__explicitlySet__.add("certificateStoreType");
             return this;
         }
-
+        /**
+         * The password to read the trust store and key store files, if they are password protected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storePassword")
         private String storePassword;
 
+        /**
+         * The password to read the trust store and key store files, if they are password protected.
+         * @param storePassword the value to set
+         * @return this builder
+         **/
         public Builder storePassword(String storePassword) {
             this.storePassword = storePassword;
             this.__explicitlySet__.add("storePassword");
             return this;
         }
-
+        /**
+         * Base64 encoded string of trust store file content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStoreContent")
         private String trustStoreContent;
 
+        /**
+         * Base64 encoded string of trust store file content.
+         * @param trustStoreContent the value to set
+         * @return this builder
+         **/
         public Builder trustStoreContent(String trustStoreContent) {
             this.trustStoreContent = trustStoreContent;
             this.__explicitlySet__.add("trustStoreContent");
             return this;
         }
-
+        /**
+         * Base64 encoded string of key store file content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreContent")
         private String keyStoreContent;
 
+        /**
+         * Base64 encoded string of key store file content.
+         * @param keyStoreContent the value to set
+         * @return this builder
+         **/
         public Builder keyStoreContent(String keyStoreContent) {
             this.keyStoreContent = keyStoreContent;
             this.__explicitlySet__.add("keyStoreContent");
@@ -180,6 +216,10 @@ public final class TlsConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * Status to represent whether the database connection is TLS enabled or not.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -237,6 +277,10 @@ public final class TlsConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateStoreType")
     private final CertificateStoreType certificateStoreType;
 
+    /**
+     * The format of the certificate store.
+     * @return the value
+     **/
     public CertificateStoreType getCertificateStoreType() {
         return certificateStoreType;
     }
@@ -247,6 +291,10 @@ public final class TlsConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("storePassword")
     private final String storePassword;
 
+    /**
+     * The password to read the trust store and key store files, if they are password protected.
+     * @return the value
+     **/
     public String getStorePassword() {
         return storePassword;
     }
@@ -257,6 +305,10 @@ public final class TlsConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("trustStoreContent")
     private final String trustStoreContent;
 
+    /**
+     * Base64 encoded string of trust store file content.
+     * @return the value
+     **/
     public String getTrustStoreContent() {
         return trustStoreContent;
     }
@@ -267,6 +319,10 @@ public final class TlsConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreContent")
     private final String keyStoreContent;
 
+    /**
+     * Base64 encoded string of key store file content.
+     * @return the value
+     **/
     public String getKeyStoreContent() {
         return keyStoreContent;
     }

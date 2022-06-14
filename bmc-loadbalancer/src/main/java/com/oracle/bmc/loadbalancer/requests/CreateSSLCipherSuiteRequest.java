@@ -19,6 +19,9 @@ public class CreateSSLCipherSuiteRequest
     private com.oracle.bmc.loadbalancer.model.CreateSSLCipherSuiteDetails
             createSSLCipherSuiteDetails;
 
+    /**
+     * The details of the SSL cipher suite to add.
+     */
     public com.oracle.bmc.loadbalancer.model.CreateSSLCipherSuiteDetails
             getCreateSSLCipherSuiteDetails() {
         return createSSLCipherSuiteDetails;
@@ -29,6 +32,10 @@ public class CreateSSLCipherSuiteRequest
      */
     private String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated load balancer.
+     *
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -39,6 +46,11 @@ public class CreateSSLCipherSuiteRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,6 +64,14 @@ public class CreateSSLCipherSuiteRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -74,11 +94,15 @@ public class CreateSSLCipherSuiteRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details of the SSL cipher suite to add.
+         */
         private com.oracle.bmc.loadbalancer.model.CreateSSLCipherSuiteDetails
                 createSSLCipherSuiteDetails = null;
 
         /**
          * The details of the SSL cipher suite to add.
+         * @param createSSLCipherSuiteDetails the value to set
          * @return this builder instance
          */
         public Builder createSSLCipherSuiteDetails(
@@ -88,11 +112,16 @@ public class CreateSSLCipherSuiteRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated load balancer.
+         *
+         */
         private String loadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated load balancer.
          *
+         * @param loadBalancerId the value to set
          * @return this builder instance
          */
         public Builder loadBalancerId(String loadBalancerId) {
@@ -100,12 +129,18 @@ public class CreateSSLCipherSuiteRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -113,6 +148,14 @@ public class CreateSSLCipherSuiteRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -122,6 +165,7 @@ public class CreateSSLCipherSuiteRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -214,7 +258,8 @@ public class CreateSSLCipherSuiteRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -224,6 +269,10 @@ public class CreateSSLCipherSuiteRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

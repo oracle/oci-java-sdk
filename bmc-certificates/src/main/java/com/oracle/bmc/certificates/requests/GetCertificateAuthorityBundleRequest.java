@@ -17,6 +17,9 @@ public class GetCertificateAuthorityBundleRequest
      */
     private String certificateAuthorityId;
 
+    /**
+     * The OCID of the certificate authority (CA).
+     */
     public String getCertificateAuthorityId() {
         return certificateAuthorityId;
     }
@@ -27,6 +30,11 @@ public class GetCertificateAuthorityBundleRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +43,9 @@ public class GetCertificateAuthorityBundleRequest
      */
     private Long versionNumber;
 
+    /**
+     * The version number of the certificate authority (CA).
+     */
     public Long getVersionNumber() {
         return versionNumber;
     }
@@ -44,6 +55,10 @@ public class GetCertificateAuthorityBundleRequest
      */
     private String certificateAuthorityVersionName;
 
+    /**
+     * The name of the certificate authority (CA). (This might be referred to as the name of the CA version, as every CA consists of at least one version.) Names are unique across versions of a given CA.
+     *
+     */
     public String getCertificateAuthorityVersionName() {
         return certificateAuthorityVersionName;
     }
@@ -91,6 +106,9 @@ public class GetCertificateAuthorityBundleRequest
         }
     };
 
+    /**
+     * The rotation state of the certificate version.
+     */
     public Stage getStage() {
         return stage;
     }
@@ -102,10 +120,14 @@ public class GetCertificateAuthorityBundleRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the certificate authority (CA).
+         */
         private String certificateAuthorityId = null;
 
         /**
          * The OCID of the certificate authority (CA).
+         * @param certificateAuthorityId the value to set
          * @return this builder instance
          */
         public Builder certificateAuthorityId(String certificateAuthorityId) {
@@ -113,12 +135,18 @@ public class GetCertificateAuthorityBundleRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -126,10 +154,14 @@ public class GetCertificateAuthorityBundleRequest
             return this;
         }
 
+        /**
+         * The version number of the certificate authority (CA).
+         */
         private Long versionNumber = null;
 
         /**
          * The version number of the certificate authority (CA).
+         * @param versionNumber the value to set
          * @return this builder instance
          */
         public Builder versionNumber(Long versionNumber) {
@@ -137,11 +169,16 @@ public class GetCertificateAuthorityBundleRequest
             return this;
         }
 
+        /**
+         * The name of the certificate authority (CA). (This might be referred to as the name of the CA version, as every CA consists of at least one version.) Names are unique across versions of a given CA.
+         *
+         */
         private String certificateAuthorityVersionName = null;
 
         /**
          * The name of the certificate authority (CA). (This might be referred to as the name of the CA version, as every CA consists of at least one version.) Names are unique across versions of a given CA.
          *
+         * @param certificateAuthorityVersionName the value to set
          * @return this builder instance
          */
         public Builder certificateAuthorityVersionName(String certificateAuthorityVersionName) {
@@ -149,10 +186,14 @@ public class GetCertificateAuthorityBundleRequest
             return this;
         }
 
+        /**
+         * The rotation state of the certificate version.
+         */
         private Stage stage = null;
 
         /**
          * The rotation state of the certificate version.
+         * @param stage the value to set
          * @return this builder instance
          */
         public Builder stage(Stage stage) {
@@ -237,7 +278,8 @@ public class GetCertificateAuthorityBundleRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -248,6 +290,10 @@ public class GetCertificateAuthorityBundleRequest
                 .stage(stage);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

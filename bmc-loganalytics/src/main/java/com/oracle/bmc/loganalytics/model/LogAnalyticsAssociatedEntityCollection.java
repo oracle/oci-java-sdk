@@ -30,9 +30,17 @@ public final class LogAnalyticsAssociatedEntityCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of entities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsAssociatedEntity> items;
 
+        /**
+         * A list of entities.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsAssociatedEntity> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class LogAnalyticsAssociatedEntityCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsAssociatedEntity> items;
 
+    /**
+     * A list of entities.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsAssociatedEntity> getItems() {
         return items;
     }

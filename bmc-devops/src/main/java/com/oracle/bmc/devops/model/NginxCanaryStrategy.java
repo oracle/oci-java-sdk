@@ -27,18 +27,33 @@ package com.oracle.bmc.devops.model;
 public final class NginxCanaryStrategy extends OkeCanaryStrategy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Canary namespace to be used for Kubernetes canary deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Canary namespace to be used for Kubernetes canary deployment.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * Name of the Ingress resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ingressName")
         private String ingressName;
 
+        /**
+         * Name of the Ingress resource.
+         * @param ingressName the value to set
+         * @return this builder
+         **/
         public Builder ingressName(String ingressName) {
             this.ingressName = ingressName;
             this.__explicitlySet__.add("ingressName");
@@ -87,6 +102,10 @@ public final class NginxCanaryStrategy extends OkeCanaryStrategy {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Canary namespace to be used for Kubernetes canary deployment.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -97,6 +116,10 @@ public final class NginxCanaryStrategy extends OkeCanaryStrategy {
     @com.fasterxml.jackson.annotation.JsonProperty("ingressName")
     private final String ingressName;
 
+    /**
+     * Name of the Ingress resource.
+     * @return the value
+     **/
     public String getIngressName() {
         return ingressName;
     }

@@ -16,6 +16,13 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
      */
     private String opcPrevPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the previous batch of items.
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -26,6 +33,11 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,6 +50,13 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -48,6 +67,10 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
             logAnalyticsLogGroupSummaryCollection;
 
+    /**
+     * The returned LogAnalyticsLogGroupSummaryCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
             getLogAnalyticsLogGroupSummaryCollection() {
         return logAnalyticsLogGroupSummaryCollection;
@@ -82,30 +105,76 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned LogAnalyticsLogGroupSummaryCollection instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
                 logAnalyticsLogGroupSummaryCollection;
 
+        /**
+         * The returned LogAnalyticsLogGroupSummaryCollection instance.
+         * @param logAnalyticsLogGroupSummaryCollection the value to set
+         * @return this builder
+         */
         public Builder logAnalyticsLogGroupSummaryCollection(
                 com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
                         logAnalyticsLogGroupSummaryCollection) {
@@ -127,6 +196,10 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListLogAnalyticsLogGroupsResponse build() {
             return new ListLogAnalyticsLogGroupsResponse(
                     __httpStatusCode__,
@@ -137,6 +210,10 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

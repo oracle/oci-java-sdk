@@ -37,10 +37,17 @@ public final class FixedNumberFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The constant number to be used for masking.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fixedNumber")
         private java.math.BigDecimal fixedNumber;
 
+        /**
+         * The constant number to be used for masking.
+         * @param fixedNumber the value to set
+         * @return this builder
+         **/
         public Builder fixedNumber(java.math.BigDecimal fixedNumber) {
             this.fixedNumber = fixedNumber;
             this.__explicitlySet__.add("fixedNumber");
@@ -89,6 +96,10 @@ public final class FixedNumberFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("fixedNumber")
     private final java.math.BigDecimal fixedNumber;
 
+    /**
+     * The constant number to be used for masking.
+     * @return the value
+     **/
     public java.math.BigDecimal getFixedNumber() {
         return fixedNumber;
     }

@@ -31,6 +31,7 @@ public final class ManagementAgentAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private ManagementAgentAggregationDimensions dimensions;
 
@@ -39,10 +40,17 @@ public final class ManagementAgentAggregation {
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * The number of Management Agents in this group
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The number of Management Agents in this group
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -92,6 +100,10 @@ public final class ManagementAgentAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The number of Management Agents in this group
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

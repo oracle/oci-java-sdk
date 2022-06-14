@@ -47,45 +47,109 @@ public final class UpdateNetworkLoadBalancerDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The user-friendly display name for the network load balancer, which does not have to be unique and can be changed.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_network_load_balancer}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly display name for the network load balancer, which does not have to be unique and can be changed.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_network_load_balancer}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically
+         * enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSourceDestination")
         private Boolean isPreserveSourceDestination;
 
+        /**
+         * This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically
+         * enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
+         *
+         * @param isPreserveSourceDestination the value to set
+         * @return this builder
+         **/
         public Builder isPreserveSourceDestination(Boolean isPreserveSourceDestination) {
             this.isPreserveSourceDestination = isPreserveSourceDestination;
             this.__explicitlySet__.add("isPreserveSourceDestination");
             return this;
         }
-
+        /**
+         * IP version associated with the NLB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nlbIpVersion")
         private NlbIpVersion nlbIpVersion;
 
+        /**
+         * IP version associated with the NLB.
+         * @param nlbIpVersion the value to set
+         * @return this builder
+         **/
         public Builder nlbIpVersion(NlbIpVersion nlbIpVersion) {
             this.nlbIpVersion = nlbIpVersion;
             this.__explicitlySet__.add("nlbIpVersion");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -143,6 +207,14 @@ public final class UpdateNetworkLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly display name for the network load balancer, which does not have to be unique and can be changed.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_network_load_balancer}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -155,6 +227,12 @@ public final class UpdateNetworkLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSourceDestination")
     private final Boolean isPreserveSourceDestination;
 
+    /**
+     * This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically
+     * enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
+     *
+     * @return the value
+     **/
     public Boolean getIsPreserveSourceDestination() {
         return isPreserveSourceDestination;
     }
@@ -165,6 +243,10 @@ public final class UpdateNetworkLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nlbIpVersion")
     private final NlbIpVersion nlbIpVersion;
 
+    /**
+     * IP version associated with the NLB.
+     * @return the value
+     **/
     public NlbIpVersion getNlbIpVersion() {
         return nlbIpVersion;
     }
@@ -179,6 +261,14 @@ public final class UpdateNetworkLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -193,6 +283,14 @@ public final class UpdateNetworkLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

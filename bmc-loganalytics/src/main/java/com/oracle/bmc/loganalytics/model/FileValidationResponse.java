@@ -32,27 +32,49 @@ public final class FileValidationResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Input File Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputFile")
         private String inputFile;
 
+        /**
+         * Input File Name.
+         * @param inputFile the value to set
+         * @return this builder
+         **/
         public Builder inputFile(String inputFile) {
             this.inputFile = inputFile;
             this.__explicitlySet__.add("inputFile");
             return this;
         }
-
+        /**
+         * Object Location where file content is available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectLocation")
         private String objectLocation;
 
+        /**
+         * Object Location where file content is available.
+         * @param objectLocation the value to set
+         * @return this builder
+         **/
         public Builder objectLocation(String objectLocation) {
             this.objectLocation = objectLocation;
             this.__explicitlySet__.add("objectLocation");
             return this;
         }
-
+        /**
+         * List of files inside the given archive file and their corresponding status information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("files")
         private java.util.List<UploadFileStatus> files;
 
+        /**
+         * List of files inside the given archive file and their corresponding status information.
+         * @param files the value to set
+         * @return this builder
+         **/
         public Builder files(java.util.List<UploadFileStatus> files) {
             this.files = files;
             this.__explicitlySet__.add("files");
@@ -98,6 +120,10 @@ public final class FileValidationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("inputFile")
     private final String inputFile;
 
+    /**
+     * Input File Name.
+     * @return the value
+     **/
     public String getInputFile() {
         return inputFile;
     }
@@ -108,6 +134,10 @@ public final class FileValidationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("objectLocation")
     private final String objectLocation;
 
+    /**
+     * Object Location where file content is available.
+     * @return the value
+     **/
     public String getObjectLocation() {
         return objectLocation;
     }
@@ -118,6 +148,10 @@ public final class FileValidationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("files")
     private final java.util.List<UploadFileStatus> files;
 
+    /**
+     * List of files inside the given archive file and their corresponding status information.
+     * @return the value
+     **/
     public java.util.List<UploadFileStatus> getFiles() {
         return files;
     }

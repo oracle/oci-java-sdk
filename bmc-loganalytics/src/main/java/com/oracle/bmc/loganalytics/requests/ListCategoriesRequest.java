@@ -17,6 +17,10 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,11 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String categoryType;
 
+    /**
+     * A comma-separated list of category types used for filtering. Only categories of the
+     * specified types will be returned.
+     *
+     */
     public String getCategoryType() {
         return categoryType;
     }
@@ -37,6 +46,11 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String categoryDisplayText;
 
+    /**
+     * The category display text used for filtering. Only categories matching the specified display
+     * name or description will be returned.
+     *
+     */
     public String getCategoryDisplayText() {
         return categoryDisplayText;
     }
@@ -83,6 +97,10 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -127,6 +145,9 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * The attribute used to sort the returned categories
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -135,6 +156,9 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -143,6 +167,9 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -153,6 +180,11 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String name;
 
+    /**
+     * A filter to return only log analytics entities whose name matches the entire name given. The match
+     * is case-insensitive.
+     *
+     */
     public String getName() {
         return name;
     }
@@ -161,6 +193,9 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -172,11 +207,16 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -184,12 +224,18 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A comma-separated list of category types used for filtering. Only categories of the
+         * specified types will be returned.
+         *
+         */
         private String categoryType = null;
 
         /**
          * A comma-separated list of category types used for filtering. Only categories of the
          * specified types will be returned.
          *
+         * @param categoryType the value to set
          * @return this builder instance
          */
         public Builder categoryType(String categoryType) {
@@ -197,12 +243,18 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The category display text used for filtering. Only categories matching the specified display
+         * name or description will be returned.
+         *
+         */
         private String categoryDisplayText = null;
 
         /**
          * The category display text used for filtering. Only categories matching the specified display
          * name or description will be returned.
          *
+         * @param categoryDisplayText the value to set
          * @return this builder instance
          */
         public Builder categoryDisplayText(String categoryDisplayText) {
@@ -210,11 +262,16 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -222,10 +279,14 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The attribute used to sort the returned categories
+         */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned categories
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -233,10 +294,14 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -244,10 +309,14 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -255,12 +324,18 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A filter to return only log analytics entities whose name matches the entire name given. The match
+         * is case-insensitive.
+         *
+         */
         private String name = null;
 
         /**
          * A filter to return only log analytics entities whose name matches the entire name given. The match
          * is case-insensitive.
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -268,10 +343,14 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -363,7 +442,8 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -378,6 +458,10 @@ public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

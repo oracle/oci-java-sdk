@@ -62,93 +62,222 @@ public final class CreateCrossConnectDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
         private String crossConnectGroupId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
+         *
+         * @param crossConnectGroupId the value to set
+         * @return this builder
+         **/
         public Builder crossConnectGroupId(String crossConnectGroupId) {
             this.crossConnectGroupId = crossConnectGroupId;
             this.__explicitlySet__.add("crossConnectGroupId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * If you already have an existing cross-connect or cross-connect group at this FastConnect
+         * location, and you want this new cross-connect to be on a different router (for the
+         * purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
+         * cross-connect group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("farCrossConnectOrCrossConnectGroupId")
         private String farCrossConnectOrCrossConnectGroupId;
 
+        /**
+         * If you already have an existing cross-connect or cross-connect group at this FastConnect
+         * location, and you want this new cross-connect to be on a different router (for the
+         * purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
+         * cross-connect group.
+         *
+         * @param farCrossConnectOrCrossConnectGroupId the value to set
+         * @return this builder
+         **/
         public Builder farCrossConnectOrCrossConnectGroupId(
                 String farCrossConnectOrCrossConnectGroupId) {
             this.farCrossConnectOrCrossConnectGroupId = farCrossConnectOrCrossConnectGroupId;
             this.__explicitlySet__.add("farCrossConnectOrCrossConnectGroupId");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The name of the FastConnect location where this cross-connect will be installed.
+         * To get a list of the available locations, see
+         * {@link #listCrossConnectLocations(ListCrossConnectLocationsRequest) listCrossConnectLocations}.
+         * <p>
+         * Example: {@code CyrusOne, Chandler, AZ}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locationName")
         private String locationName;
 
+        /**
+         * The name of the FastConnect location where this cross-connect will be installed.
+         * To get a list of the available locations, see
+         * {@link #listCrossConnectLocations(ListCrossConnectLocationsRequest) listCrossConnectLocations}.
+         * <p>
+         * Example: {@code CyrusOne, Chandler, AZ}
+         *
+         * @param locationName the value to set
+         * @return this builder
+         **/
         public Builder locationName(String locationName) {
             this.locationName = locationName;
             this.__explicitlySet__.add("locationName");
             return this;
         }
-
+        /**
+         * If you already have an existing cross-connect or cross-connect group at this FastConnect
+         * location, and you want this new cross-connect to be on the same router, provide the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nearCrossConnectOrCrossConnectGroupId")
         private String nearCrossConnectOrCrossConnectGroupId;
 
+        /**
+         * If you already have an existing cross-connect or cross-connect group at this FastConnect
+         * location, and you want this new cross-connect to be on the same router, provide the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
+         *
+         * @param nearCrossConnectOrCrossConnectGroupId the value to set
+         * @return this builder
+         **/
         public Builder nearCrossConnectOrCrossConnectGroupId(
                 String nearCrossConnectOrCrossConnectGroupId) {
             this.nearCrossConnectOrCrossConnectGroupId = nearCrossConnectOrCrossConnectGroupId;
             this.__explicitlySet__.add("nearCrossConnectOrCrossConnectGroupId");
             return this;
         }
-
+        /**
+         * The port speed for this cross-connect. To get a list of the available port speeds, see
+         * {@link #listCrossconnectPortSpeedShapes(ListCrossconnectPortSpeedShapesRequest) listCrossconnectPortSpeedShapes}.
+         * <p>
+         * Example: {@code 10 Gbps}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
         private String portSpeedShapeName;
 
+        /**
+         * The port speed for this cross-connect. To get a list of the available port speeds, see
+         * {@link #listCrossconnectPortSpeedShapes(ListCrossconnectPortSpeedShapesRequest) listCrossconnectPortSpeedShapes}.
+         * <p>
+         * Example: {@code 10 Gbps}
+         *
+         * @param portSpeedShapeName the value to set
+         * @return this builder
+         **/
         public Builder portSpeedShapeName(String portSpeedShapeName) {
             this.portSpeedShapeName = portSpeedShapeName;
             this.__explicitlySet__.add("portSpeedShapeName");
             return this;
         }
-
+        /**
+         * A reference name or identifier for the physical fiber connection that this cross-connect
+         * uses.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
         private String customerReferenceName;
 
+        /**
+         * A reference name or identifier for the physical fiber connection that this cross-connect
+         * uses.
+         *
+         * @param customerReferenceName the value to set
+         * @return this builder
+         **/
         public Builder customerReferenceName(String customerReferenceName) {
             this.customerReferenceName = customerReferenceName;
             this.__explicitlySet__.add("customerReferenceName");
@@ -224,6 +353,10 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -235,6 +368,11 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
     private final String crossConnectGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
+     *
+     * @return the value
+     **/
     public String getCrossConnectGroupId() {
         return crossConnectGroupId;
     }
@@ -249,6 +387,14 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -261,6 +407,12 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -275,6 +427,14 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("farCrossConnectOrCrossConnectGroupId")
     private final String farCrossConnectOrCrossConnectGroupId;
 
+    /**
+     * If you already have an existing cross-connect or cross-connect group at this FastConnect
+     * location, and you want this new cross-connect to be on a different router (for the
+     * purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
+     * cross-connect group.
+     *
+     * @return the value
+     **/
     public String getFarCrossConnectOrCrossConnectGroupId() {
         return farCrossConnectOrCrossConnectGroupId;
     }
@@ -289,6 +449,14 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -304,6 +472,15 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("locationName")
     private final String locationName;
 
+    /**
+     * The name of the FastConnect location where this cross-connect will be installed.
+     * To get a list of the available locations, see
+     * {@link #listCrossConnectLocations(ListCrossConnectLocationsRequest) listCrossConnectLocations}.
+     * <p>
+     * Example: {@code CyrusOne, Chandler, AZ}
+     *
+     * @return the value
+     **/
     public String getLocationName() {
         return locationName;
     }
@@ -317,6 +494,13 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nearCrossConnectOrCrossConnectGroupId")
     private final String nearCrossConnectOrCrossConnectGroupId;
 
+    /**
+     * If you already have an existing cross-connect or cross-connect group at this FastConnect
+     * location, and you want this new cross-connect to be on the same router, provide the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
+     *
+     * @return the value
+     **/
     public String getNearCrossConnectOrCrossConnectGroupId() {
         return nearCrossConnectOrCrossConnectGroupId;
     }
@@ -331,6 +515,14 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
     private final String portSpeedShapeName;
 
+    /**
+     * The port speed for this cross-connect. To get a list of the available port speeds, see
+     * {@link #listCrossconnectPortSpeedShapes(ListCrossconnectPortSpeedShapesRequest) listCrossconnectPortSpeedShapes}.
+     * <p>
+     * Example: {@code 10 Gbps}
+     *
+     * @return the value
+     **/
     public String getPortSpeedShapeName() {
         return portSpeedShapeName;
     }
@@ -343,6 +535,12 @@ public final class CreateCrossConnectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
     private final String customerReferenceName;
 
+    /**
+     * A reference name or identifier for the physical fiber connection that this cross-connect
+     * uses.
+     *
+     * @return the value
+     **/
     public String getCustomerReferenceName() {
         return customerReferenceName;
     }

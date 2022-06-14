@@ -30,18 +30,33 @@ public final class AuthenticateClientResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The original caller's resolved principal object if the authentication succeeds, null otherwise.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principal")
         private Principal principal;
 
+        /**
+         * The original caller's resolved principal object if the authentication succeeds, null otherwise.
+         * @param principal the value to set
+         * @return this builder
+         **/
         public Builder principal(Principal principal) {
             this.principal = principal;
             this.__explicitlySet__.add("principal");
             return this;
         }
-
+        /**
+         * If the authentication fails for the original caller (not failing authentication of the calling service, in which case we return 401), we return a 200, but with null principal and an error message
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * If the authentication fails for the original caller (not failing authentication of the calling service, in which case we return 401), we return a 200, but with null principal and an error message
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -84,6 +99,10 @@ public final class AuthenticateClientResult {
     @com.fasterxml.jackson.annotation.JsonProperty("principal")
     private final Principal principal;
 
+    /**
+     * The original caller's resolved principal object if the authentication succeeds, null otherwise.
+     * @return the value
+     **/
     public Principal getPrincipal() {
         return principal;
     }
@@ -94,6 +113,10 @@ public final class AuthenticateClientResult {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * If the authentication fails for the original caller (not failing authentication of the calling service, in which case we return 401), we return a 200, but with null principal and an error message
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }

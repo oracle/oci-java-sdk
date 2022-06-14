@@ -16,6 +16,13 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +32,10 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.nosql.model.PreparedStatement preparedStatement;
 
+    /**
+     * The returned PreparedStatement instance.
+     * @return the value
+     */
     public com.oracle.bmc.nosql.model.PreparedStatement getPreparedStatement() {
         return preparedStatement;
     }
@@ -47,15 +58,37 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned PreparedStatement instance.
+         */
         private com.oracle.bmc.nosql.model.PreparedStatement preparedStatement;
 
+        /**
+         * The returned PreparedStatement instance.
+         * @param preparedStatement the value to set
+         * @return this builder
+         */
         public Builder preparedStatement(
                 com.oracle.bmc.nosql.model.PreparedStatement preparedStatement) {
             this.preparedStatement = preparedStatement;
@@ -74,12 +107,20 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public PrepareStatementResponse build() {
             return new PrepareStatementResponse(
                     __httpStatusCode__, opcRequestId, preparedStatement);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -57,6 +57,12 @@ public class HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
+    /**
+     * Collection timestamp
+     * Example: {@code "2020-05-06T00:00:00.000Z"}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCollected() {
         return timeCollected;
     }

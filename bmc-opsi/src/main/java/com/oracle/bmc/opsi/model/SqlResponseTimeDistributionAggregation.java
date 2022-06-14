@@ -30,18 +30,33 @@ public final class SqlResponseTimeDistributionAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Response time bucket id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
         private String bucketId;
 
+        /**
+         * Response time bucket id
+         * @param bucketId the value to set
+         * @return this builder
+         **/
         public Builder bucketId(String bucketId) {
             this.bucketId = bucketId;
             this.__explicitlySet__.add("bucketId");
             return this;
         }
-
+        /**
+         * Total number of SQL executions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
         private Long executionsCount;
 
+        /**
+         * Total number of SQL executions
+         * @param executionsCount the value to set
+         * @return this builder
+         **/
         public Builder executionsCount(Long executionsCount) {
             this.executionsCount = executionsCount;
             this.__explicitlySet__.add("executionsCount");
@@ -85,6 +100,10 @@ public final class SqlResponseTimeDistributionAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
     private final String bucketId;
 
+    /**
+     * Response time bucket id
+     * @return the value
+     **/
     public String getBucketId() {
         return bucketId;
     }
@@ -95,6 +114,10 @@ public final class SqlResponseTimeDistributionAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
     private final Long executionsCount;
 
+    /**
+     * Total number of SQL executions
+     * @return the value
+     **/
     public Long getExecutionsCount() {
         return executionsCount;
     }

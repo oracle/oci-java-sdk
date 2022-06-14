@@ -17,6 +17,9 @@ public class ListMaskingAnalyticsRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,11 @@ public class ListMaskingAnalyticsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -71,6 +79,9 @@ public class ListMaskingAnalyticsRequest
         }
     };
 
+    /**
+     * Attribute by which the masking analytics data should be grouped.
+     */
     public GroupBy getGroupBy() {
         return groupBy;
     }
@@ -79,6 +90,9 @@ public class ListMaskingAnalyticsRequest
      */
     private String targetId;
 
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -87,6 +101,9 @@ public class ListMaskingAnalyticsRequest
      */
     private String maskingPolicyId;
 
+    /**
+     * A filter to return only the resources that match the specified masking policy OCID.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -95,6 +112,9 @@ public class ListMaskingAnalyticsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -103,6 +123,9 @@ public class ListMaskingAnalyticsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -111,6 +134,9 @@ public class ListMaskingAnalyticsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -122,10 +148,14 @@ public class ListMaskingAnalyticsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -133,12 +163,18 @@ public class ListMaskingAnalyticsRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -146,10 +182,14 @@ public class ListMaskingAnalyticsRequest
             return this;
         }
 
+        /**
+         * Attribute by which the masking analytics data should be grouped.
+         */
         private GroupBy groupBy = null;
 
         /**
          * Attribute by which the masking analytics data should be grouped.
+         * @param groupBy the value to set
          * @return this builder instance
          */
         public Builder groupBy(GroupBy groupBy) {
@@ -157,10 +197,14 @@ public class ListMaskingAnalyticsRequest
             return this;
         }
 
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -168,10 +212,14 @@ public class ListMaskingAnalyticsRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that match the specified masking policy OCID.
+         */
         private String maskingPolicyId = null;
 
         /**
          * A filter to return only the resources that match the specified masking policy OCID.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -179,10 +227,14 @@ public class ListMaskingAnalyticsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -190,10 +242,14 @@ public class ListMaskingAnalyticsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -201,10 +257,14 @@ public class ListMaskingAnalyticsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -294,7 +354,8 @@ public class ListMaskingAnalyticsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -308,6 +369,10 @@ public class ListMaskingAnalyticsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

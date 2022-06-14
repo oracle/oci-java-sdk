@@ -60,10 +60,17 @@ public final class ValueInteger extends FieldValue {
             this.__explicitlySet__.add("wordIndexes");
             return this;
         }
-
+        /**
+         * The integer value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
 
+        /**
+         * The integer value.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Integer value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -122,6 +129,10 @@ public final class ValueInteger extends FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Integer value;
 
+    /**
+     * The integer value.
+     * @return the value
+     **/
     public Integer getValue() {
         return value;
     }

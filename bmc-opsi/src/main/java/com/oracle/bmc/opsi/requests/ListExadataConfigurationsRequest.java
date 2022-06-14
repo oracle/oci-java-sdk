@@ -17,6 +17,9 @@ public class ListExadataConfigurationsRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,10 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> exadataInsightId;
 
+    /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
     }
@@ -36,6 +43,11 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> exadataType;
 
+    /**
+     * Filter by one or more Exadata types.
+     * Possible value are DBMACHINE, EXACS, and EXACC.
+     *
+     */
     public java.util.List<String> getExadataType() {
         return exadataType;
     }
@@ -49,6 +61,14 @@ public class ListExadataConfigurationsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -60,6 +80,12 @@ public class ListExadataConfigurationsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -69,6 +95,10 @@ public class ListExadataConfigurationsRequest
      */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -116,6 +146,10 @@ public class ListExadataConfigurationsRequest
         }
     };
 
+    /**
+     * Exadata configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -128,6 +162,13 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> definedTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
@@ -139,6 +180,12 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> freeformTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
@@ -153,6 +200,15 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> definedTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
@@ -165,6 +221,13 @@ public class ListExadataConfigurationsRequest
      */
     private java.util.List<String> freeformTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
@@ -175,6 +238,11 @@ public class ListExadataConfigurationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -186,10 +254,14 @@ public class ListExadataConfigurationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -197,11 +269,16 @@ public class ListExadataConfigurationsRequest
             return this;
         }
 
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private java.util.List<String> exadataInsightId = null;
 
         /**
          * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param exadataInsightId the value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
@@ -212,18 +289,25 @@ public class ListExadataConfigurationsRequest
         /**
          * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(String singularValue) {
             return this.exadataInsightId(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by one or more Exadata types.
+         * Possible value are DBMACHINE, EXACS, and EXACC.
+         *
+         */
         private java.util.List<String> exadataType = null;
 
         /**
          * Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param exadataType the value to set
          * @return this builder instance
          */
         public Builder exadataType(java.util.List<String> exadataType) {
@@ -235,12 +319,21 @@ public class ListExadataConfigurationsRequest
          * Singular setter. Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataType(String singularValue) {
             return this.exadataType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -250,6 +343,7 @@ public class ListExadataConfigurationsRequest
          * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -257,6 +351,12 @@ public class ListExadataConfigurationsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -264,6 +364,7 @@ public class ListExadataConfigurationsRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -271,11 +372,16 @@ public class ListExadataConfigurationsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.opsi.model.SortOrder sortOrder) {
@@ -283,11 +389,16 @@ public class ListExadataConfigurationsRequest
             return this;
         }
 
+        /**
+         * Exadata configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * Exadata configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -295,6 +406,13 @@ public class ListExadataConfigurationsRequest
             return this;
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagEquals = null;
 
         /**
@@ -303,6 +421,7 @@ public class ListExadataConfigurationsRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagEquals the value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(java.util.List<String> definedTagEquals) {
@@ -316,12 +435,19 @@ public class ListExadataConfigurationsRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(String singularValue) {
             return this.definedTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
@@ -329,6 +455,7 @@ public class ListExadataConfigurationsRequest
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagEquals the value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(java.util.List<String> freeformTagEquals) {
@@ -341,12 +468,22 @@ public class ListExadataConfigurationsRequest
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(String singularValue) {
             return this.freeformTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagExists = null;
 
         /**
@@ -357,6 +494,7 @@ public class ListExadataConfigurationsRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagExists the value to set
          * @return this builder instance
          */
         public Builder definedTagExists(java.util.List<String> definedTagExists) {
@@ -372,12 +510,20 @@ public class ListExadataConfigurationsRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagExists(String singularValue) {
             return this.definedTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagExists = null;
 
         /**
@@ -386,6 +532,7 @@ public class ListExadataConfigurationsRequest
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagExists the value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(java.util.List<String> freeformTagExists) {
@@ -399,18 +546,25 @@ public class ListExadataConfigurationsRequest
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(String singularValue) {
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -508,7 +662,8 @@ public class ListExadataConfigurationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -526,6 +681,10 @@ public class ListExadataConfigurationsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

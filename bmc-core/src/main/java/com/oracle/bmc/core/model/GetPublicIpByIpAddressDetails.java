@@ -30,9 +30,21 @@ public final class GetPublicIpByIpAddressDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The public IP address.
+         * Example: 203.0.113.2
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * The public IP address.
+         * Example: 203.0.113.2
+         *
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
@@ -77,6 +89,12 @@ public final class GetPublicIpByIpAddressDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * The public IP address.
+     * Example: 203.0.113.2
+     *
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }

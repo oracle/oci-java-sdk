@@ -43,45 +43,81 @@ public final class ScanDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The SCAN hostname.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The SCAN hostname.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * The SCAN TCPIP port. Default is 1521.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The SCAN TCPIP port. Default is 1521.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The SCAN TCPIP port. Default is 1521.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
         private Integer scanListenerPortTcp;
 
+        /**
+         * The SCAN TCPIP port. Default is 1521.
+         * @param scanListenerPortTcp the value to set
+         * @return this builder
+         **/
         public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
             this.scanListenerPortTcp = scanListenerPortTcp;
             this.__explicitlySet__.add("scanListenerPortTcp");
             return this;
         }
-
+        /**
+         * The SCAN TCPIP SSL port. Default is 2484.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
         private Integer scanListenerPortTcpSsl;
 
+        /**
+         * The SCAN TCPIP SSL port. Default is 2484.
+         * @param scanListenerPortTcpSsl the value to set
+         * @return this builder
+         **/
         public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
             this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             this.__explicitlySet__.add("scanListenerPortTcpSsl");
             return this;
         }
-
+        /**
+         * The list of SCAN IP addresses. Three addresses should be provided.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ips")
         private java.util.List<String> ips;
 
+        /**
+         * The list of SCAN IP addresses. Three addresses should be provided.
+         * @param ips the value to set
+         * @return this builder
+         **/
         public Builder ips(java.util.List<String> ips) {
             this.ips = ips;
             this.__explicitlySet__.add("ips");
@@ -130,6 +166,10 @@ public final class ScanDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The SCAN hostname.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -140,6 +180,10 @@ public final class ScanDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The SCAN TCPIP port. Default is 1521.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -150,6 +194,10 @@ public final class ScanDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
     private final Integer scanListenerPortTcp;
 
+    /**
+     * The SCAN TCPIP port. Default is 1521.
+     * @return the value
+     **/
     public Integer getScanListenerPortTcp() {
         return scanListenerPortTcp;
     }
@@ -160,6 +208,10 @@ public final class ScanDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
     private final Integer scanListenerPortTcpSsl;
 
+    /**
+     * The SCAN TCPIP SSL port. Default is 2484.
+     * @return the value
+     **/
     public Integer getScanListenerPortTcpSsl() {
         return scanListenerPortTcpSsl;
     }
@@ -170,6 +222,10 @@ public final class ScanDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ips")
     private final java.util.List<String> ips;
 
+    /**
+     * The list of SCAN IP addresses. Three addresses should be provided.
+     * @return the value
+     **/
     public java.util.List<String> getIps() {
         return ips;
     }

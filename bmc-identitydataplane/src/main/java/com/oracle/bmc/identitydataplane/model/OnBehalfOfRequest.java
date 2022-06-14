@@ -41,37 +41,66 @@ public final class OnBehalfOfRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The signed headers of the customer call.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
         private java.util.Map<String, java.util.List<String>> requestHeaders;
 
+        /**
+         * The signed headers of the customer call.
+         * @param requestHeaders the value to set
+         * @return this builder
+         **/
         public Builder requestHeaders(
                 java.util.Map<String, java.util.List<String>> requestHeaders) {
             this.requestHeaders = requestHeaders;
             this.__explicitlySet__.add("requestHeaders");
             return this;
         }
-
+        /**
+         * The name of the target service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetServiceName")
         private String targetServiceName;
 
+        /**
+         * The name of the target service.
+         * @param targetServiceName the value to set
+         * @return this builder
+         **/
         public Builder targetServiceName(String targetServiceName) {
             this.targetServiceName = targetServiceName;
             this.__explicitlySet__.add("targetServiceName");
             return this;
         }
-
+        /**
+         * If you have an obo token already, exchange that for a new obo token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oboToken")
         private String oboToken;
 
+        /**
+         * If you have an obo token already, exchange that for a new obo token.
+         * @param oboToken the value to set
+         * @return this builder
+         **/
         public Builder oboToken(String oboToken) {
             this.oboToken = oboToken;
             this.__explicitlySet__.add("oboToken");
             return this;
         }
-
+        /**
+         * A duration for which the obo token is requested to be valid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expiration")
         private String expiration;
 
+        /**
+         * A duration for which the obo token is requested to be valid.
+         * @param expiration the value to set
+         * @return this builder
+         **/
         public Builder expiration(String expiration) {
             this.expiration = expiration;
             this.__explicitlySet__.add("expiration");
@@ -118,6 +147,10 @@ public final class OnBehalfOfRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
     private final java.util.Map<String, java.util.List<String>> requestHeaders;
 
+    /**
+     * The signed headers of the customer call.
+     * @return the value
+     **/
     public java.util.Map<String, java.util.List<String>> getRequestHeaders() {
         return requestHeaders;
     }
@@ -128,6 +161,10 @@ public final class OnBehalfOfRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("targetServiceName")
     private final String targetServiceName;
 
+    /**
+     * The name of the target service.
+     * @return the value
+     **/
     public String getTargetServiceName() {
         return targetServiceName;
     }
@@ -138,6 +175,10 @@ public final class OnBehalfOfRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("oboToken")
     private final String oboToken;
 
+    /**
+     * If you have an obo token already, exchange that for a new obo token.
+     * @return the value
+     **/
     public String getOboToken() {
         return oboToken;
     }
@@ -148,6 +189,10 @@ public final class OnBehalfOfRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("expiration")
     private final String expiration;
 
+    /**
+     * A duration for which the obo token is requested to be valid.
+     * @return the value
+     **/
     public String getExpiration() {
         return expiration;
     }

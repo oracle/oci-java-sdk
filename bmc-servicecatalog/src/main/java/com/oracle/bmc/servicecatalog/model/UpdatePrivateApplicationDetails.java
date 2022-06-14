@@ -47,55 +47,110 @@ public final class UpdatePrivateApplicationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the private application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name of the private application.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A short description of the private application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
         private String shortDescription;
 
+        /**
+         * A short description of the private application.
+         * @param shortDescription the value to set
+         * @return this builder
+         **/
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = shortDescription;
             this.__explicitlySet__.add("shortDescription");
             return this;
         }
-
+        /**
+         * A long description of the private application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
         private String longDescription;
 
+        /**
+         * A long description of the private application.
+         * @param longDescription the value to set
+         * @return this builder
+         **/
         public Builder longDescription(String longDescription) {
             this.longDescription = longDescription;
             this.__explicitlySet__.add("longDescription");
             return this;
         }
-
+        /**
+         * Base64-encoded logo to use as the private application icon.
+         * Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logoFileBase64Encoded")
         private String logoFileBase64Encoded;
 
+        /**
+         * Base64-encoded logo to use as the private application icon.
+         * Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
+         *
+         * @param logoFileBase64Encoded the value to set
+         * @return this builder
+         **/
         public Builder logoFileBase64Encoded(String logoFileBase64Encoded) {
             this.logoFileBase64Encoded = logoFileBase64Encoded;
             this.__explicitlySet__.add("logoFileBase64Encoded");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -150,6 +205,10 @@ public final class UpdatePrivateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name of the private application.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -160,6 +219,10 @@ public final class UpdatePrivateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     private final String shortDescription;
 
+    /**
+     * A short description of the private application.
+     * @return the value
+     **/
     public String getShortDescription() {
         return shortDescription;
     }
@@ -170,6 +233,10 @@ public final class UpdatePrivateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
     private final String longDescription;
 
+    /**
+     * A long description of the private application.
+     * @return the value
+     **/
     public String getLongDescription() {
         return longDescription;
     }
@@ -182,6 +249,12 @@ public final class UpdatePrivateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logoFileBase64Encoded")
     private final String logoFileBase64Encoded;
 
+    /**
+     * Base64-encoded logo to use as the private application icon.
+     * Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
+     *
+     * @return the value
+     **/
     public String getLogoFileBase64Encoded() {
         return logoFileBase64Encoded;
     }
@@ -194,6 +267,12 @@ public final class UpdatePrivateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -206,6 +285,12 @@ public final class UpdatePrivateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }

@@ -31,18 +31,45 @@ public final class SteeringPolicyWeightedRuleCase {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An expression that uses conditions at the time of a DNS query to indicate
+         * whether a case matches. Conditions may include the geographical location, IP
+         * subnet, or ASN the DNS query originated. **Example:** If you have an
+         * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
+         * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
+         * matches queries from that office.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
         private String caseCondition;
 
+        /**
+         * An expression that uses conditions at the time of a DNS query to indicate
+         * whether a case matches. Conditions may include the geographical location, IP
+         * subnet, or ASN the DNS query originated. **Example:** If you have an
+         * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
+         * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
+         * matches queries from that office.
+         *
+         * @param caseCondition the value to set
+         * @return this builder
+         **/
         public Builder caseCondition(String caseCondition) {
             this.caseCondition = caseCondition;
             this.__explicitlySet__.add("caseCondition");
             return this;
         }
-
+        /**
+         * An array of {@code SteeringPolicyWeightedAnswerData} objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("answerData")
         private java.util.List<SteeringPolicyWeightedAnswerData> answerData;
 
+        /**
+         * An array of {@code SteeringPolicyWeightedAnswerData} objects.
+         * @param answerData the value to set
+         * @return this builder
+         **/
         public Builder answerData(java.util.List<SteeringPolicyWeightedAnswerData> answerData) {
             this.answerData = answerData;
             this.__explicitlySet__.add("answerData");
@@ -92,6 +119,16 @@ public final class SteeringPolicyWeightedRuleCase {
     @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
     private final String caseCondition;
 
+    /**
+     * An expression that uses conditions at the time of a DNS query to indicate
+     * whether a case matches. Conditions may include the geographical location, IP
+     * subnet, or ASN the DNS query originated. **Example:** If you have an
+     * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
+     * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
+     * matches queries from that office.
+     *
+     * @return the value
+     **/
     public String getCaseCondition() {
         return caseCondition;
     }
@@ -102,6 +139,10 @@ public final class SteeringPolicyWeightedRuleCase {
     @com.fasterxml.jackson.annotation.JsonProperty("answerData")
     private final java.util.List<SteeringPolicyWeightedAnswerData> answerData;
 
+    /**
+     * An array of {@code SteeringPolicyWeightedAnswerData} objects.
+     * @return the value
+     **/
     public java.util.List<SteeringPolicyWeightedAnswerData> getAnswerData() {
         return answerData;
     }

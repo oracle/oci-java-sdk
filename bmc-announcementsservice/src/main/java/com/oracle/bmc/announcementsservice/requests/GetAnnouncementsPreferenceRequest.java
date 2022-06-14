@@ -17,6 +17,9 @@ public class GetAnnouncementsPreferenceRequest
      */
     private String preferenceId;
 
+    /**
+     * The ID of the preference.
+     */
     public String getPreferenceId() {
         return preferenceId;
     }
@@ -27,6 +30,11 @@ public class GetAnnouncementsPreferenceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,10 +46,14 @@ public class GetAnnouncementsPreferenceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the preference.
+         */
         private String preferenceId = null;
 
         /**
          * The ID of the preference.
+         * @param preferenceId the value to set
          * @return this builder instance
          */
         public Builder preferenceId(String preferenceId) {
@@ -49,12 +61,18 @@ public class GetAnnouncementsPreferenceRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -132,12 +150,17 @@ public class GetAnnouncementsPreferenceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().preferenceId(preferenceId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

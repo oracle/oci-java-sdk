@@ -64,10 +64,21 @@ public final class UpdateNetworkAddressListVcnAddressesDetails
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * A list of private address prefixes, each associated with a particular VCN.
+         * To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnAddresses")
         private java.util.List<PrivateAddresses> vcnAddresses;
 
+        /**
+         * A list of private address prefixes, each associated with a particular VCN.
+         * To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+         *
+         * @param vcnAddresses the value to set
+         * @return this builder
+         **/
         public Builder vcnAddresses(java.util.List<PrivateAddresses> vcnAddresses) {
             this.vcnAddresses = vcnAddresses;
             this.__explicitlySet__.add("vcnAddresses");
@@ -129,6 +140,12 @@ public final class UpdateNetworkAddressListVcnAddressesDetails
     @com.fasterxml.jackson.annotation.JsonProperty("vcnAddresses")
     private final java.util.List<PrivateAddresses> vcnAddresses;
 
+    /**
+     * A list of private address prefixes, each associated with a particular VCN.
+     * To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+     *
+     * @return the value
+     **/
     public java.util.List<PrivateAddresses> getVcnAddresses() {
         return vcnAddresses;
     }

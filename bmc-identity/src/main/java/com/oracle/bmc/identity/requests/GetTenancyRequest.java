@@ -16,6 +16,9 @@ public class GetTenancyRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String tenancyId;
 
+    /**
+     * The OCID of the tenancy.
+     */
     public String getTenancyId() {
         return tenancyId;
     }
@@ -27,10 +30,14 @@ public class GetTenancyRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tenancy.
+         */
         private String tenancyId = null;
 
         /**
          * The OCID of the tenancy.
+         * @param tenancyId the value to set
          * @return this builder instance
          */
         public Builder tenancyId(String tenancyId) {
@@ -106,12 +113,17 @@ public class GetTenancyRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().tenancyId(tenancyId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

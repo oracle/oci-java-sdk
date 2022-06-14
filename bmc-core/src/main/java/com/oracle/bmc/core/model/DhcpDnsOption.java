@@ -28,18 +28,67 @@ package com.oracle.bmc.core.model;
 public final class DhcpDnsOption extends DhcpOption {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * If you set {@code serverType} to {@code CustomDnsServer}, specify the
+         * IP address of at least one DNS server of your choice (three maximum).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customDnsServers")
         private java.util.List<String> customDnsServers;
 
+        /**
+         * If you set {@code serverType} to {@code CustomDnsServer}, specify the
+         * IP address of at least one DNS server of your choice (three maximum).
+         *
+         * @param customDnsServers the value to set
+         * @return this builder
+         **/
         public Builder customDnsServers(java.util.List<String> customDnsServers) {
             this.customDnsServers = customDnsServers;
             this.__explicitlySet__.add("customDnsServers");
             return this;
         }
-
+        /**
+         * * **VcnLocal:** Reserved for future use.
+         * <p>
+         * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver".
+         * Instances can resolve internet hostnames (no internet gateway is required),
+         * and can resolve hostnames of instances in the VCN. This is the default
+         * value in the default set of DHCP options in the VCN. For the Internet and
+         * VCN Resolver to work across the VCN, there must also be a DNS label set for
+         * the VCN, a DNS label set for each subnet, and a hostname for each instance.
+         * The Internet and VCN Resolver also enables reverse DNS lookup, which lets
+         * you determine the hostname corresponding to the private IP address. For more
+         * information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * **CustomDnsServer:** Instances use a DNS server of your choice (three
+         * maximum).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serverType")
         private ServerType serverType;
 
+        /**
+         * * **VcnLocal:** Reserved for future use.
+         * <p>
+         * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver".
+         * Instances can resolve internet hostnames (no internet gateway is required),
+         * and can resolve hostnames of instances in the VCN. This is the default
+         * value in the default set of DHCP options in the VCN. For the Internet and
+         * VCN Resolver to work across the VCN, there must also be a DNS label set for
+         * the VCN, a DNS label set for each subnet, and a hostname for each instance.
+         * The Internet and VCN Resolver also enables reverse DNS lookup, which lets
+         * you determine the hostname corresponding to the private IP address. For more
+         * information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * **CustomDnsServer:** Instances use a DNS server of your choice (three
+         * maximum).
+         *
+         * @param serverType the value to set
+         * @return this builder
+         **/
         public Builder serverType(ServerType serverType) {
             this.serverType = serverType;
             this.__explicitlySet__.add("serverType");
@@ -91,6 +140,12 @@ public final class DhcpDnsOption extends DhcpOption {
     @com.fasterxml.jackson.annotation.JsonProperty("customDnsServers")
     private final java.util.List<String> customDnsServers;
 
+    /**
+     * If you set {@code serverType} to {@code CustomDnsServer}, specify the
+     * IP address of at least one DNS server of your choice (three maximum).
+     *
+     * @return the value
+     **/
     public java.util.List<String> getCustomDnsServers() {
         return customDnsServers;
     }
@@ -180,6 +235,25 @@ public final class DhcpDnsOption extends DhcpOption {
     @com.fasterxml.jackson.annotation.JsonProperty("serverType")
     private final ServerType serverType;
 
+    /**
+     * * **VcnLocal:** Reserved for future use.
+     * <p>
+     * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver".
+     * Instances can resolve internet hostnames (no internet gateway is required),
+     * and can resolve hostnames of instances in the VCN. This is the default
+     * value in the default set of DHCP options in the VCN. For the Internet and
+     * VCN Resolver to work across the VCN, there must also be a DNS label set for
+     * the VCN, a DNS label set for each subnet, and a hostname for each instance.
+     * The Internet and VCN Resolver also enables reverse DNS lookup, which lets
+     * you determine the hostname corresponding to the private IP address. For more
+     * information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * <p>
+     * **CustomDnsServer:** Instances use a DNS server of your choice (three
+     * maximum).
+     *
+     * @return the value
+     **/
     public ServerType getServerType() {
         return serverType;
     }

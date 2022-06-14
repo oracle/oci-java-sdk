@@ -19,6 +19,10 @@ public class RemoveEntityAssociationsRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -28,6 +32,10 @@ public class RemoveEntityAssociationsRequest
      */
     private String logAnalyticsEntityId;
 
+    /**
+     * The log analytics entity OCID.
+     *
+     */
     public String getLogAnalyticsEntityId() {
         return logAnalyticsEntityId;
     }
@@ -37,6 +45,9 @@ public class RemoveEntityAssociationsRequest
     private com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails
             removeEntityAssociationsDetails;
 
+    /**
+     * This parameter specifies the entity OCIDs with which associations are to be deleted.
+     */
     public com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails
             getRemoveEntityAssociationsDetails() {
         return removeEntityAssociationsDetails;
@@ -51,6 +62,14 @@ public class RemoveEntityAssociationsRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -59,6 +78,9 @@ public class RemoveEntityAssociationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -72,6 +94,14 @@ public class RemoveEntityAssociationsRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -99,11 +129,16 @@ public class RemoveEntityAssociationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -111,11 +146,16 @@ public class RemoveEntityAssociationsRequest
             return this;
         }
 
+        /**
+         * The log analytics entity OCID.
+         *
+         */
         private String logAnalyticsEntityId = null;
 
         /**
          * The log analytics entity OCID.
          *
+         * @param logAnalyticsEntityId the value to set
          * @return this builder instance
          */
         public Builder logAnalyticsEntityId(String logAnalyticsEntityId) {
@@ -123,11 +163,15 @@ public class RemoveEntityAssociationsRequest
             return this;
         }
 
+        /**
+         * This parameter specifies the entity OCIDs with which associations are to be deleted.
+         */
         private com.oracle.bmc.loganalytics.model.RemoveEntityAssociationsDetails
                 removeEntityAssociationsDetails = null;
 
         /**
          * This parameter specifies the entity OCIDs with which associations are to be deleted.
+         * @param removeEntityAssociationsDetails the value to set
          * @return this builder instance
          */
         public Builder removeEntityAssociationsDetails(
@@ -137,6 +181,14 @@ public class RemoveEntityAssociationsRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -146,6 +198,7 @@ public class RemoveEntityAssociationsRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -153,10 +206,14 @@ public class RemoveEntityAssociationsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -164,6 +221,14 @@ public class RemoveEntityAssociationsRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -173,6 +238,7 @@ public class RemoveEntityAssociationsRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -270,7 +336,8 @@ public class RemoveEntityAssociationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -282,6 +349,10 @@ public class RemoveEntityAssociationsRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

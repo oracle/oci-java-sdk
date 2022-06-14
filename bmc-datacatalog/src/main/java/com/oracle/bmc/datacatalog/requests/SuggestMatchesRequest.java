@@ -16,6 +16,9 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -25,6 +28,10 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String inputText;
 
+    /**
+     * Text input string used for computing potential matching suggestions.
+     *
+     */
     public String getInputText() {
         return inputText;
     }
@@ -36,6 +43,12 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String timeout;
 
+    /**
+     * A search timeout string (for example, timeout=4000ms), bounding the search request to be executed within the
+     * specified time value and bail with the hits accumulated up to that point when expired.
+     * Defaults to no timeout.
+     *
+     */
     public String getTimeout() {
         return timeout;
     }
@@ -45,6 +58,10 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * Limit for the list of potential matches returned from the Suggest API. If not specified, will default to 10.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -53,6 +70,9 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,10 +84,14 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -75,11 +99,16 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Text input string used for computing potential matching suggestions.
+         *
+         */
         private String inputText = null;
 
         /**
          * Text input string used for computing potential matching suggestions.
          *
+         * @param inputText the value to set
          * @return this builder instance
          */
         public Builder inputText(String inputText) {
@@ -87,6 +116,12 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A search timeout string (for example, timeout=4000ms), bounding the search request to be executed within the
+         * specified time value and bail with the hits accumulated up to that point when expired.
+         * Defaults to no timeout.
+         *
+         */
         private String timeout = null;
 
         /**
@@ -94,6 +129,7 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * specified time value and bail with the hits accumulated up to that point when expired.
          * Defaults to no timeout.
          *
+         * @param timeout the value to set
          * @return this builder instance
          */
         public Builder timeout(String timeout) {
@@ -101,11 +137,16 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Limit for the list of potential matches returned from the Suggest API. If not specified, will default to 10.
+         *
+         */
         private Integer limit = null;
 
         /**
          * Limit for the list of potential matches returned from the Suggest API. If not specified, will default to 10.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -113,10 +154,14 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -200,7 +245,8 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -211,6 +257,10 @@ public class SuggestMatchesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

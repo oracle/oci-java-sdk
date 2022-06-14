@@ -18,6 +18,9 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
      */
     private String networkSecurityGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+     */
     public String getNetworkSecurityGroupId() {
         return networkSecurityGroupId;
     }
@@ -29,6 +32,11 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
     private com.oracle.bmc.core.model.RemoveNetworkSecurityGroupSecurityRulesDetails
             removeNetworkSecurityGroupSecurityRulesDetails;
 
+    /**
+     * Request with one or more security rules associated with the network security group that
+     * will be removed.
+     *
+     */
     public com.oracle.bmc.core.model.RemoveNetworkSecurityGroupSecurityRulesDetails
             getRemoveNetworkSecurityGroupSecurityRulesDetails() {
         return removeNetworkSecurityGroupSecurityRulesDetails;
@@ -52,10 +60,14 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         */
         private String networkSecurityGroupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         * @param networkSecurityGroupId the value to set
          * @return this builder instance
          */
         public Builder networkSecurityGroupId(String networkSecurityGroupId) {
@@ -63,6 +75,11 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
             return this;
         }
 
+        /**
+         * Request with one or more security rules associated with the network security group that
+         * will be removed.
+         *
+         */
         private com.oracle.bmc.core.model.RemoveNetworkSecurityGroupSecurityRulesDetails
                 removeNetworkSecurityGroupSecurityRulesDetails = null;
 
@@ -70,6 +87,7 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
          * Request with one or more security rules associated with the network security group that
          * will be removed.
          *
+         * @param removeNetworkSecurityGroupSecurityRulesDetails the value to set
          * @return this builder instance
          */
         public Builder removeNetworkSecurityGroupSecurityRulesDetails(
@@ -166,7 +184,8 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -175,6 +194,10 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
                         removeNetworkSecurityGroupSecurityRulesDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

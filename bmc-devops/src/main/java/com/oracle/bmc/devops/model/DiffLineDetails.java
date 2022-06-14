@@ -34,36 +34,65 @@ public final class DiffLineDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of a line in the base version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
         private Integer baseLine;
 
+        /**
+         * The number of a line in the base version.
+         * @param baseLine the value to set
+         * @return this builder
+         **/
         public Builder baseLine(Integer baseLine) {
             this.baseLine = baseLine;
             this.__explicitlySet__.add("baseLine");
             return this;
         }
-
+        /**
+         * The number of a line in the target version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetLine")
         private Integer targetLine;
 
+        /**
+         * The number of a line in the target version.
+         * @param targetLine the value to set
+         * @return this builder
+         **/
         public Builder targetLine(Integer targetLine) {
             this.targetLine = targetLine;
             this.__explicitlySet__.add("targetLine");
             return this;
         }
-
+        /**
+         * The contents of a line.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lineContent")
         private String lineContent;
 
+        /**
+         * The contents of a line.
+         * @param lineContent the value to set
+         * @return this builder
+         **/
         public Builder lineContent(String lineContent) {
             this.lineContent = lineContent;
             this.__explicitlySet__.add("lineContent");
             return this;
         }
-
+        /**
+         * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conflictMarker")
         private ConflictMarker conflictMarker;
 
+        /**
+         * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
+         * @param conflictMarker the value to set
+         * @return this builder
+         **/
         public Builder conflictMarker(ConflictMarker conflictMarker) {
             this.conflictMarker = conflictMarker;
             this.__explicitlySet__.add("conflictMarker");
@@ -110,6 +139,10 @@ public final class DiffLineDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("baseLine")
     private final Integer baseLine;
 
+    /**
+     * The number of a line in the base version.
+     * @return the value
+     **/
     public Integer getBaseLine() {
         return baseLine;
     }
@@ -120,6 +153,10 @@ public final class DiffLineDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetLine")
     private final Integer targetLine;
 
+    /**
+     * The number of a line in the target version.
+     * @return the value
+     **/
     public Integer getTargetLine() {
         return targetLine;
     }
@@ -130,6 +167,10 @@ public final class DiffLineDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lineContent")
     private final String lineContent;
 
+    /**
+     * The contents of a line.
+     * @return the value
+     **/
     public String getLineContent() {
         return lineContent;
     }
@@ -190,6 +231,10 @@ public final class DiffLineDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("conflictMarker")
     private final ConflictMarker conflictMarker;
 
+    /**
+     * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
+     * @return the value
+     **/
     public ConflictMarker getConflictMarker() {
         return conflictMarker;
     }

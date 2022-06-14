@@ -34,27 +34,49 @@ public final class CustomTable {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The custom table OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The custom table OCID.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The custom table associated saved report OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
         private String savedReportId;
 
+        /**
+         * The custom table associated saved report OCID.
+         * @param savedReportId the value to set
+         * @return this builder
+         **/
         public Builder savedReportId(String savedReportId) {
             this.savedReportId = savedReportId;
             this.__explicitlySet__.add("savedReportId");
             return this;
         }
-
+        /**
+         * The custom table compartment OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The custom table compartment OCID.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -110,6 +132,10 @@ public final class CustomTable {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The custom table OCID.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -120,6 +146,10 @@ public final class CustomTable {
     @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
     private final String savedReportId;
 
+    /**
+     * The custom table associated saved report OCID.
+     * @return the value
+     **/
     public String getSavedReportId() {
         return savedReportId;
     }
@@ -130,6 +160,10 @@ public final class CustomTable {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The custom table compartment OCID.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

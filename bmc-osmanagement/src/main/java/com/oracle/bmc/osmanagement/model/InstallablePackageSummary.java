@@ -47,54 +47,97 @@ public final class InstallablePackageSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Package name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Package name
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Unique identifier for the package. NOTE - This is not an OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Unique identifier for the package. NOTE - This is not an OCID
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Type of the package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Type of the package
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Version of the package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Version of the package
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The architecture for which this package was built
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
+        /**
+         * The architecture for which this package was built
+         * @param architecture the value to set
+         * @return this builder
+         **/
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-
+        /**
+         * list of software sources that provide the software package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<SoftwareSourceId> softwareSources;
 
+        /**
+         * list of software sources that provide the software package
+         * @param softwareSources the value to set
+         * @return this builder
+         **/
         public Builder softwareSources(java.util.List<SoftwareSourceId> softwareSources) {
             this.softwareSources = softwareSources;
             this.__explicitlySet__.add("softwareSources");
@@ -144,6 +187,10 @@ public final class InstallablePackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Package name
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -154,6 +201,10 @@ public final class InstallablePackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Unique identifier for the package. NOTE - This is not an OCID
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -164,6 +215,10 @@ public final class InstallablePackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Type of the package
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -174,6 +229,10 @@ public final class InstallablePackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Version of the package
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -184,6 +243,10 @@ public final class InstallablePackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
+    /**
+     * The architecture for which this package was built
+     * @return the value
+     **/
     public String getArchitecture() {
         return architecture;
     }
@@ -194,6 +257,10 @@ public final class InstallablePackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<SoftwareSourceId> softwareSources;
 
+    /**
+     * list of software sources that provide the software package
+     * @return the value
+     **/
     public java.util.List<SoftwareSourceId> getSoftwareSources() {
         return softwareSources;
     }

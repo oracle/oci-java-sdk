@@ -29,9 +29,17 @@ public final class DisableAutoAssociationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of information required to disable auto association on a source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DisableAutoAssociationDetail> items;
 
+        /**
+         * A list of information required to disable auto association on a source.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DisableAutoAssociationDetail> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class DisableAutoAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DisableAutoAssociationDetail> items;
 
+    /**
+     * A list of information required to disable auto association on a source.
+     * @return the value
+     **/
     public java.util.List<DisableAutoAssociationDetail> getItems() {
         return items;
     }

@@ -17,6 +17,9 @@ public class GetDbSystemUpgradeHistoryEntryRequest
      */
     private String dbSystemId;
 
+    /**
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -25,6 +28,9 @@ public class GetDbSystemUpgradeHistoryEntryRequest
      */
     private String upgradeHistoryEntryId;
 
+    /**
+     * The database/db system upgrade History [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getUpgradeHistoryEntryId() {
         return upgradeHistoryEntryId;
     }
@@ -34,6 +40,10 @@ public class GetDbSystemUpgradeHistoryEntryRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,10 +55,14 @@ public class GetDbSystemUpgradeHistoryEntryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbSystemId = null;
 
         /**
          * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbSystemId the value to set
          * @return this builder instance
          */
         public Builder dbSystemId(String dbSystemId) {
@@ -56,10 +70,14 @@ public class GetDbSystemUpgradeHistoryEntryRequest
             return this;
         }
 
+        /**
+         * The database/db system upgrade History [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String upgradeHistoryEntryId = null;
 
         /**
          * The database/db system upgrade History [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param upgradeHistoryEntryId the value to set
          * @return this builder instance
          */
         public Builder upgradeHistoryEntryId(String upgradeHistoryEntryId) {
@@ -67,11 +85,16 @@ public class GetDbSystemUpgradeHistoryEntryRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -152,7 +175,8 @@ public class GetDbSystemUpgradeHistoryEntryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -161,6 +185,10 @@ public class GetDbSystemUpgradeHistoryEntryRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

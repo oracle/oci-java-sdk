@@ -27,9 +27,29 @@ public final class UsagePlansPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of context variables specifying where API tokens may be located in a request.
+         * Example locations:
+         *   - "request.headers[token]"
+         *   - "request.query[token]"
+         *   - "request.auth[Token]"
+         *   - "request.path[TOKEN]"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tokenLocations")
         private java.util.List<String> tokenLocations;
 
+        /**
+         * A list of context variables specifying where API tokens may be located in a request.
+         * Example locations:
+         *   - "request.headers[token]"
+         *   - "request.query[token]"
+         *   - "request.auth[Token]"
+         *   - "request.path[TOKEN]"
+         *
+         * @param tokenLocations the value to set
+         * @return this builder
+         **/
         public Builder tokenLocations(java.util.List<String> tokenLocations) {
             this.tokenLocations = tokenLocations;
             this.__explicitlySet__.add("tokenLocations");
@@ -77,6 +97,16 @@ public final class UsagePlansPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("tokenLocations")
     private final java.util.List<String> tokenLocations;
 
+    /**
+     * A list of context variables specifying where API tokens may be located in a request.
+     * Example locations:
+     *   - "request.headers[token]"
+     *   - "request.query[token]"
+     *   - "request.auth[Token]"
+     *   - "request.path[TOKEN]"
+     *
+     * @return the value
+     **/
     public java.util.List<String> getTokenLocations() {
         return tokenLocations;
     }

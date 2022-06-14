@@ -47,36 +47,65 @@ public final class ClusterCreateOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCIDs of the subnets used for Kubernetes services load balancers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceLbSubnetIds")
         private java.util.List<String> serviceLbSubnetIds;
 
+        /**
+         * The OCIDs of the subnets used for Kubernetes services load balancers.
+         * @param serviceLbSubnetIds the value to set
+         * @return this builder
+         **/
         public Builder serviceLbSubnetIds(java.util.List<String> serviceLbSubnetIds) {
             this.serviceLbSubnetIds = serviceLbSubnetIds;
             this.__explicitlySet__.add("serviceLbSubnetIds");
             return this;
         }
-
+        /**
+         * Network configuration for Kubernetes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesNetworkConfig")
         private KubernetesNetworkConfig kubernetesNetworkConfig;
 
+        /**
+         * Network configuration for Kubernetes.
+         * @param kubernetesNetworkConfig the value to set
+         * @return this builder
+         **/
         public Builder kubernetesNetworkConfig(KubernetesNetworkConfig kubernetesNetworkConfig) {
             this.kubernetesNetworkConfig = kubernetesNetworkConfig;
             this.__explicitlySet__.add("kubernetesNetworkConfig");
             return this;
         }
-
+        /**
+         * Configurable cluster add-ons
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addOns")
         private AddOnOptions addOns;
 
+        /**
+         * Configurable cluster add-ons
+         * @param addOns the value to set
+         * @return this builder
+         **/
         public Builder addOns(AddOnOptions addOns) {
             this.addOns = addOns;
             this.__explicitlySet__.add("addOns");
             return this;
         }
-
+        /**
+         * Configurable cluster admission controllers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
         private AdmissionControllerOptions admissionControllerOptions;
 
+        /**
+         * Configurable cluster admission controllers
+         * @param admissionControllerOptions the value to set
+         * @return this builder
+         **/
         public Builder admissionControllerOptions(
                 AdmissionControllerOptions admissionControllerOptions) {
             this.admissionControllerOptions = admissionControllerOptions;
@@ -151,6 +180,10 @@ public final class ClusterCreateOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLbSubnetIds")
     private final java.util.List<String> serviceLbSubnetIds;
 
+    /**
+     * The OCIDs of the subnets used for Kubernetes services load balancers.
+     * @return the value
+     **/
     public java.util.List<String> getServiceLbSubnetIds() {
         return serviceLbSubnetIds;
     }
@@ -161,6 +194,10 @@ public final class ClusterCreateOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesNetworkConfig")
     private final KubernetesNetworkConfig kubernetesNetworkConfig;
 
+    /**
+     * Network configuration for Kubernetes.
+     * @return the value
+     **/
     public KubernetesNetworkConfig getKubernetesNetworkConfig() {
         return kubernetesNetworkConfig;
     }
@@ -171,6 +208,10 @@ public final class ClusterCreateOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("addOns")
     private final AddOnOptions addOns;
 
+    /**
+     * Configurable cluster add-ons
+     * @return the value
+     **/
     public AddOnOptions getAddOns() {
         return addOns;
     }
@@ -181,6 +222,10 @@ public final class ClusterCreateOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
     private final AdmissionControllerOptions admissionControllerOptions;
 
+    /**
+     * Configurable cluster admission controllers
+     * @return the value
+     **/
     public AdmissionControllerOptions getAdmissionControllerOptions() {
         return admissionControllerOptions;
     }

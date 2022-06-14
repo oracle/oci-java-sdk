@@ -99,216 +99,403 @@ public final class ManagementAgent {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * agent identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * agent identifier
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * agent install key identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installKeyId")
         private String installKeyId;
 
+        /**
+         * agent install key identifier
+         * @param installKeyId the value to set
+         * @return this builder
+         **/
         public Builder installKeyId(String installKeyId) {
             this.installKeyId = installKeyId;
             this.__explicitlySet__.add("installKeyId");
             return this;
         }
-
+        /**
+         * Management Agent Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Management Agent Name
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Platform Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformTypes platformType;
 
+        /**
+         * Platform Type
+         * @param platformType the value to set
+         * @return this builder
+         **/
         public Builder platformType(PlatformTypes platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
             return this;
         }
-
+        /**
+         * Platform Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformName")
         private String platformName;
 
+        /**
+         * Platform Name
+         * @param platformName the value to set
+         * @return this builder
+         **/
         public Builder platformName(String platformName) {
             this.platformName = platformName;
             this.__explicitlySet__.add("platformName");
             return this;
         }
-
+        /**
+         * Platform Version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
         private String platformVersion;
 
+        /**
+         * Platform Version
+         * @param platformVersion the value to set
+         * @return this builder
+         **/
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = platformVersion;
             this.__explicitlySet__.add("platformVersion");
             return this;
         }
-
+        /**
+         * Management Agent Version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Management Agent Version
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Version of the deployment artifact instantiated by this Management Agent.
+         * The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes
+         * (whose artifacts are based upon Standalone but can advance independently)
+         * is YYMMDD.HHMM.VVVVVVVVVVVV.
+         * VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceArtifactVersion")
         private String resourceArtifactVersion;
 
+        /**
+         * Version of the deployment artifact instantiated by this Management Agent.
+         * The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes
+         * (whose artifacts are based upon Standalone but can advance independently)
+         * is YYMMDD.HHMM.VVVVVVVVVVVV.
+         * VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
+         *
+         * @param resourceArtifactVersion the value to set
+         * @return this builder
+         **/
         public Builder resourceArtifactVersion(String resourceArtifactVersion) {
             this.resourceArtifactVersion = resourceArtifactVersion;
             this.__explicitlySet__.add("resourceArtifactVersion");
             return this;
         }
-
+        /**
+         * Management Agent host machine name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * Management Agent host machine name
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * Host resource ocid
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostId")
         private String hostId;
 
+        /**
+         * Host resource ocid
+         * @param hostId the value to set
+         * @return this builder
+         **/
         public Builder hostId(String hostId) {
             this.hostId = hostId;
             this.__explicitlySet__.add("hostId");
             return this;
         }
-
+        /**
+         * Path where Management Agent is installed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installPath")
         private String installPath;
 
+        /**
+         * Path where Management Agent is installed
+         * @param installPath the value to set
+         * @return this builder
+         **/
         public Builder installPath(String installPath) {
             this.installPath = installPath;
             this.__explicitlySet__.add("installPath");
             return this;
         }
-
+        /**
+         * list of managementAgentPlugins associated with the agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginList")
         private java.util.List<ManagementAgentPluginDetails> pluginList;
 
+        /**
+         * list of managementAgentPlugins associated with the agent
+         * @param pluginList the value to set
+         * @return this builder
+         **/
         public Builder pluginList(java.util.List<ManagementAgentPluginDetails> pluginList) {
             this.pluginList = pluginList;
             this.__explicitlySet__.add("pluginList");
             return this;
         }
-
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
         private Boolean isAgentAutoUpgradable;
 
+        /**
+         * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
+         * @param isAgentAutoUpgradable the value to set
+         * @return this builder
+         **/
         public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
             this.isAgentAutoUpgradable = isAgentAutoUpgradable;
             this.__explicitlySet__.add("isAgentAutoUpgradable");
             return this;
         }
-
+        /**
+         * The time the Management Agent was created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the Management Agent was created. An RFC3339 formatted datetime string
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the Management Agent was updated. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the Management Agent was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastHeartbeat")
         private java.util.Date timeLastHeartbeat;
 
+        /**
+         * The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
+         * @param timeLastHeartbeat the value to set
+         * @return this builder
+         **/
         public Builder timeLastHeartbeat(java.util.Date timeLastHeartbeat) {
             this.timeLastHeartbeat = timeLastHeartbeat;
             this.__explicitlySet__.add("timeLastHeartbeat");
             return this;
         }
-
+        /**
+         * The current availability status of managementAgent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
         private AvailabilityStatus availabilityStatus;
 
+        /**
+         * The current availability status of managementAgent
+         * @param availabilityStatus the value to set
+         * @return this builder
+         **/
         public Builder availabilityStatus(AvailabilityStatus availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
             this.__explicitlySet__.add("availabilityStatus");
             return this;
         }
-
+        /**
+         * The current state of managementAgent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
+        /**
+         * The current state of managementAgent
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomerDeployed")
         private Boolean isCustomerDeployed;
 
+        /**
+         * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
+         * @param isCustomerDeployed the value to set
+         * @return this builder
+         **/
         public Builder isCustomerDeployed(Boolean isCustomerDeployed) {
             this.isCustomerDeployed = isCustomerDeployed;
             this.__explicitlySet__.add("isCustomerDeployed");
             return this;
         }
-
+        /**
+         * The install type, either AGENT or GATEWAY
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installType")
         private InstallTypes installType;
 
+        /**
+         * The install type, either AGENT or GATEWAY
+         * @param installType the value to set
+         * @return this builder
+         **/
         public Builder installType(InstallTypes installType) {
             this.installType = installType;
             this.__explicitlySet__.add("installType");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -400,6 +587,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * agent identifier
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -410,6 +601,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("installKeyId")
     private final String installKeyId;
 
+    /**
+     * agent install key identifier
+     * @return the value
+     **/
     public String getInstallKeyId() {
         return installKeyId;
     }
@@ -420,6 +615,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Management Agent Name
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -430,6 +629,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformTypes platformType;
 
+    /**
+     * Platform Type
+     * @return the value
+     **/
     public PlatformTypes getPlatformType() {
         return platformType;
     }
@@ -440,6 +643,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("platformName")
     private final String platformName;
 
+    /**
+     * Platform Name
+     * @return the value
+     **/
     public String getPlatformName() {
         return platformName;
     }
@@ -450,6 +657,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
+    /**
+     * Platform Version
+     * @return the value
+     **/
     public String getPlatformVersion() {
         return platformVersion;
     }
@@ -460,6 +671,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Management Agent Version
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -475,6 +690,15 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceArtifactVersion")
     private final String resourceArtifactVersion;
 
+    /**
+     * Version of the deployment artifact instantiated by this Management Agent.
+     * The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes
+     * (whose artifacts are based upon Standalone but can advance independently)
+     * is YYMMDD.HHMM.VVVVVVVVVVVV.
+     * VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
+     *
+     * @return the value
+     **/
     public String getResourceArtifactVersion() {
         return resourceArtifactVersion;
     }
@@ -485,6 +709,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * Management Agent host machine name
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -495,6 +723,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("hostId")
     private final String hostId;
 
+    /**
+     * Host resource ocid
+     * @return the value
+     **/
     public String getHostId() {
         return hostId;
     }
@@ -505,6 +737,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("installPath")
     private final String installPath;
 
+    /**
+     * Path where Management Agent is installed
+     * @return the value
+     **/
     public String getInstallPath() {
         return installPath;
     }
@@ -515,6 +751,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("pluginList")
     private final java.util.List<ManagementAgentPluginDetails> pluginList;
 
+    /**
+     * list of managementAgentPlugins associated with the agent
+     * @return the value
+     **/
     public java.util.List<ManagementAgentPluginDetails> getPluginList() {
         return pluginList;
     }
@@ -525,6 +765,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -535,6 +779,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
     private final Boolean isAgentAutoUpgradable;
 
+    /**
+     * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
+     * @return the value
+     **/
     public Boolean getIsAgentAutoUpgradable() {
         return isAgentAutoUpgradable;
     }
@@ -545,6 +793,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the Management Agent was created. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -555,6 +807,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the Management Agent was updated. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -565,6 +821,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastHeartbeat")
     private final java.util.Date timeLastHeartbeat;
 
+    /**
+     * The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeLastHeartbeat() {
         return timeLastHeartbeat;
     }
@@ -575,6 +835,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
     private final AvailabilityStatus availabilityStatus;
 
+    /**
+     * The current availability status of managementAgent
+     * @return the value
+     **/
     public AvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
     }
@@ -585,6 +849,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
+    /**
+     * The current state of managementAgent
+     * @return the value
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -595,6 +863,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -605,6 +877,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomerDeployed")
     private final Boolean isCustomerDeployed;
 
+    /**
+     * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
+     * @return the value
+     **/
     public Boolean getIsCustomerDeployed() {
         return isCustomerDeployed;
     }
@@ -615,6 +891,10 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("installType")
     private final InstallTypes installType;
 
+    /**
+     * The install type, either AGENT or GATEWAY
+     * @return the value
+     **/
     public InstallTypes getInstallType() {
         return installType;
     }
@@ -627,6 +907,12 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -639,6 +925,12 @@ public final class ManagementAgent {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

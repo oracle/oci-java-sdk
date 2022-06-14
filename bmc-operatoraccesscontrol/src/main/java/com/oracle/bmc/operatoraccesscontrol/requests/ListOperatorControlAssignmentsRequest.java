@@ -17,6 +17,9 @@ public class ListOperatorControlAssignmentsRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListOperatorControlAssignmentsRequest
      */
     private String operatorControlName;
 
+    /**
+     * A filter to return OperatorControl that match the given operatorControlName.
+     */
     public String getOperatorControlName() {
         return operatorControlName;
     }
@@ -33,6 +39,9 @@ public class ListOperatorControlAssignmentsRequest
      */
     private String resourceName;
 
+    /**
+     * A filter to return only resources that match the given ResourceName.
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -41,6 +50,9 @@ public class ListOperatorControlAssignmentsRequest
      */
     private String resourceType;
 
+    /**
+     * A filter to return only lists of resources that match the entire given service type.
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -50,6 +62,9 @@ public class ListOperatorControlAssignmentsRequest
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignmentLifecycleStates
             lifecycleState;
 
+    /**
+     * A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
+     */
     public com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignmentLifecycleStates
             getLifecycleState() {
         return lifecycleState;
@@ -59,6 +74,9 @@ public class ListOperatorControlAssignmentsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -67,6 +85,9 @@ public class ListOperatorControlAssignmentsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -75,6 +96,9 @@ public class ListOperatorControlAssignmentsRequest
      */
     private com.oracle.bmc.operatoraccesscontrol.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.operatoraccesscontrol.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -121,6 +145,10 @@ public class ListOperatorControlAssignmentsRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -129,6 +157,9 @@ public class ListOperatorControlAssignmentsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -140,10 +171,14 @@ public class ListOperatorControlAssignmentsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -151,10 +186,14 @@ public class ListOperatorControlAssignmentsRequest
             return this;
         }
 
+        /**
+         * A filter to return OperatorControl that match the given operatorControlName.
+         */
         private String operatorControlName = null;
 
         /**
          * A filter to return OperatorControl that match the given operatorControlName.
+         * @param operatorControlName the value to set
          * @return this builder instance
          */
         public Builder operatorControlName(String operatorControlName) {
@@ -162,10 +201,14 @@ public class ListOperatorControlAssignmentsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given ResourceName.
+         */
         private String resourceName = null;
 
         /**
          * A filter to return only resources that match the given ResourceName.
+         * @param resourceName the value to set
          * @return this builder instance
          */
         public Builder resourceName(String resourceName) {
@@ -173,10 +216,14 @@ public class ListOperatorControlAssignmentsRequest
             return this;
         }
 
+        /**
+         * A filter to return only lists of resources that match the entire given service type.
+         */
         private String resourceType = null;
 
         /**
          * A filter to return only lists of resources that match the entire given service type.
+         * @param resourceType the value to set
          * @return this builder instance
          */
         public Builder resourceType(String resourceType) {
@@ -184,11 +231,15 @@ public class ListOperatorControlAssignmentsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
+         */
         private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignmentLifecycleStates
                 lifecycleState = null;
 
         /**
          * A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -198,10 +249,14 @@ public class ListOperatorControlAssignmentsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -209,10 +264,14 @@ public class ListOperatorControlAssignmentsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -220,10 +279,14 @@ public class ListOperatorControlAssignmentsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.operatoraccesscontrol.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.operatoraccesscontrol.model.SortOrders sortOrder) {
@@ -231,11 +294,16 @@ public class ListOperatorControlAssignmentsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -243,10 +311,14 @@ public class ListOperatorControlAssignmentsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -341,7 +413,8 @@ public class ListOperatorControlAssignmentsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -357,6 +430,10 @@ public class ListOperatorControlAssignmentsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

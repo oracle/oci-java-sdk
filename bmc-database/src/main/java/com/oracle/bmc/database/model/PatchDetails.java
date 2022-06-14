@@ -32,27 +32,49 @@ public final class PatchDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         * @param patchId the value to set
+         * @return this builder
+         **/
         public Builder patchId(String patchId) {
             this.patchId = patchId;
             this.__explicitlySet__.add("patchId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database software image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database software image.
+         * @param databaseSoftwareImageId the value to set
+         * @return this builder
+         **/
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             this.__explicitlySet__.add("databaseSoftwareImageId");
             return this;
         }
-
+        /**
+         * The action to perform on the patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The action to perform on the patch.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -97,6 +119,10 @@ public final class PatchDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     private final String patchId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+     * @return the value
+     **/
     public String getPatchId() {
         return patchId;
     }
@@ -107,6 +133,10 @@ public final class PatchDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database software image.
+     * @return the value
+     **/
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
     }
@@ -152,6 +182,10 @@ public final class PatchDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The action to perform on the patch.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }

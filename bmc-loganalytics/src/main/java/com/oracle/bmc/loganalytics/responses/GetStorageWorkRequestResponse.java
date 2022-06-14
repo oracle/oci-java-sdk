@@ -14,6 +14,11 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +29,11 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -33,6 +43,10 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private Float retryAfter;
 
+    /**
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+     * @return the value
+     */
     public Float getRetryAfter() {
         return retryAfter;
     }
@@ -42,6 +56,10 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
 
+    /**
+     * The returned StorageWorkRequest instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.StorageWorkRequest getStorageWorkRequest() {
         return storageWorkRequest;
     }
@@ -74,29 +92,65 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         */
         private Float retryAfter;
 
+        /**
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         * @param retryAfter the value to set
+         * @return this builder
+         */
         public Builder retryAfter(Float retryAfter) {
             this.retryAfter = retryAfter;
             return this;
         }
 
+        /**
+         * The returned StorageWorkRequest instance.
+         */
         private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
 
+        /**
+         * The returned StorageWorkRequest instance.
+         * @param storageWorkRequest the value to set
+         * @return this builder
+         */
         public Builder storageWorkRequest(
                 com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest) {
             this.storageWorkRequest = storageWorkRequest;
@@ -117,12 +171,20 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetStorageWorkRequestResponse build() {
             return new GetStorageWorkRequestResponse(
                     __httpStatusCode__, opcRequestId, etag, retryAfter, storageWorkRequest);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

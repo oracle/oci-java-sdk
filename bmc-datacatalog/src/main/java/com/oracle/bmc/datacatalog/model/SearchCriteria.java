@@ -37,36 +37,65 @@ public final class SearchCriteria {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Search query dsl that defines the query components including fields and predicates.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
+        /**
+         * Search query dsl that defines the query components including fields and predicates.
+         * @param query the value to set
+         * @return this builder
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
             return this;
         }
-
+        /**
+         * Query string that a dataObject is to be searched with. Used in the faceted query request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("facetedQuery")
         private String facetedQuery;
 
+        /**
+         * Query string that a dataObject is to be searched with. Used in the faceted query request
+         * @param facetedQuery the value to set
+         * @return this builder
+         **/
         public Builder facetedQuery(String facetedQuery) {
             this.facetedQuery = facetedQuery;
             this.__explicitlySet__.add("facetedQuery");
             return this;
         }
-
+        /**
+         * List of properties of dataObjects that needs to aggregated on for facets.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<String> dimensions;
 
+        /**
+         * List of properties of dataObjects that needs to aggregated on for facets.
+         * @param dimensions the value to set
+         * @return this builder
+         **/
         public Builder dimensions(java.util.List<String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * Array of objects having details about sort field and order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sort")
         private java.util.List<FacetedSearchSortRequest> sort;
 
+        /**
+         * Array of objects having details about sort field and order.
+         * @param sort the value to set
+         * @return this builder
+         **/
         public Builder sort(java.util.List<FacetedSearchSortRequest> sort) {
             this.sort = sort;
             this.__explicitlySet__.add("sort");
@@ -123,6 +152,10 @@ public final class SearchCriteria {
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
+    /**
+     * Search query dsl that defines the query components including fields and predicates.
+     * @return the value
+     **/
     public String getQuery() {
         return query;
     }
@@ -133,6 +166,10 @@ public final class SearchCriteria {
     @com.fasterxml.jackson.annotation.JsonProperty("facetedQuery")
     private final String facetedQuery;
 
+    /**
+     * Query string that a dataObject is to be searched with. Used in the faceted query request
+     * @return the value
+     **/
     public String getFacetedQuery() {
         return facetedQuery;
     }
@@ -143,6 +180,10 @@ public final class SearchCriteria {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<String> dimensions;
 
+    /**
+     * List of properties of dataObjects that needs to aggregated on for facets.
+     * @return the value
+     **/
     public java.util.List<String> getDimensions() {
         return dimensions;
     }
@@ -153,6 +194,10 @@ public final class SearchCriteria {
     @com.fasterxml.jackson.annotation.JsonProperty("sort")
     private final java.util.List<FacetedSearchSortRequest> sort;
 
+    /**
+     * Array of objects having details about sort field and order.
+     * @return the value
+     **/
     public java.util.List<FacetedSearchSortRequest> getSort() {
         return sort;
     }

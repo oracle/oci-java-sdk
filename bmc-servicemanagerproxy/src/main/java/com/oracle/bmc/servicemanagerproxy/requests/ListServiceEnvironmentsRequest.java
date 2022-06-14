@@ -17,6 +17,9 @@ public class ListServiceEnvironmentsRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -28,6 +31,12 @@ public class ListServiceEnvironmentsRequest
      */
     private String serviceEnvironmentId;
 
+    /**
+     * The unique identifier associated with the service environment.
+     * <p>
+     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public String getServiceEnvironmentId() {
         return serviceEnvironmentId;
     }
@@ -38,6 +47,11 @@ public class ListServiceEnvironmentsRequest
      */
     private String serviceEnvironmentType;
 
+    /**
+     * The environment's service definition type.
+     * For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
+     *
+     */
     public String getServiceEnvironmentType() {
         return serviceEnvironmentType;
     }
@@ -48,6 +62,11 @@ public class ListServiceEnvironmentsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,6 +76,10 @@ public class ListServiceEnvironmentsRequest
      */
     private Integer limit;
 
+    /**
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -65,6 +88,9 @@ public class ListServiceEnvironmentsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -110,6 +136,10 @@ public class ListServiceEnvironmentsRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. ID is default ordered as ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -154,6 +184,9 @@ public class ListServiceEnvironmentsRequest
         }
     };
 
+    /**
+     * The sort order to use, either {@code ASC} or {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -162,6 +195,9 @@ public class ListServiceEnvironmentsRequest
      */
     private String displayName;
 
+    /**
+     * The display name of the resource.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -173,10 +209,14 @@ public class ListServiceEnvironmentsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -184,6 +224,12 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
+        /**
+         * The unique identifier associated with the service environment.
+         * <p>
+         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private String serviceEnvironmentId = null;
 
         /**
@@ -191,6 +237,7 @@ public class ListServiceEnvironmentsRequest
          * <p>
          **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          *
+         * @param serviceEnvironmentId the value to set
          * @return this builder instance
          */
         public Builder serviceEnvironmentId(String serviceEnvironmentId) {
@@ -198,12 +245,18 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
+        /**
+         * The environment's service definition type.
+         * For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
+         *
+         */
         private String serviceEnvironmentType = null;
 
         /**
          * The environment's service definition type.
          * For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
          *
+         * @param serviceEnvironmentType the value to set
          * @return this builder instance
          */
         public Builder serviceEnvironmentType(String serviceEnvironmentType) {
@@ -211,12 +264,18 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -224,11 +283,16 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
+        /**
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
+         */
         private Integer limit = null;
 
         /**
          * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -236,10 +300,14 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -247,11 +315,16 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. ID is default ordered as ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. ID is default ordered as ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -259,10 +332,14 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either {@code ASC} or {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either {@code ASC} or {@code DESC}.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -270,10 +347,14 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
+        /**
+         * The display name of the resource.
+         */
         private String displayName = null;
 
         /**
          * The display name of the resource.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -365,7 +446,8 @@ public class ListServiceEnvironmentsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -380,6 +462,10 @@ public class ListServiceEnvironmentsRequest
                 .displayName(displayName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

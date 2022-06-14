@@ -32,27 +32,53 @@ public final class RemoveNodeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * @param clusterAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
-
+        /**
+         * Boolean flag specifying whether or not to force remove node if graceful
+         * removal fails.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isForceRemoveEnabled")
         private Boolean isForceRemoveEnabled;
 
+        /**
+         * Boolean flag specifying whether or not to force remove node if graceful
+         * removal fails.
+         *
+         * @param isForceRemoveEnabled the value to set
+         * @return this builder
+         **/
         public Builder isForceRemoveEnabled(Boolean isForceRemoveEnabled) {
             this.isForceRemoveEnabled = isForceRemoveEnabled;
             this.__explicitlySet__.add("isForceRemoveEnabled");
             return this;
         }
-
+        /**
+         * OCID of the node to be removed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
         private String nodeId;
 
+        /**
+         * OCID of the node to be removed.
+         * @param nodeId the value to set
+         * @return this builder
+         **/
         public Builder nodeId(String nodeId) {
             this.nodeId = nodeId;
             this.__explicitlySet__.add("nodeId");
@@ -98,6 +124,10 @@ public final class RemoveNodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
+    /**
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * @return the value
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
@@ -110,6 +140,12 @@ public final class RemoveNodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isForceRemoveEnabled")
     private final Boolean isForceRemoveEnabled;
 
+    /**
+     * Boolean flag specifying whether or not to force remove node if graceful
+     * removal fails.
+     *
+     * @return the value
+     **/
     public Boolean getIsForceRemoveEnabled() {
         return isForceRemoveEnabled;
     }
@@ -120,6 +156,10 @@ public final class RemoveNodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
     private final String nodeId;
 
+    /**
+     * OCID of the node to be removed.
+     * @return the value
+     **/
     public String getNodeId() {
         return nodeId;
     }

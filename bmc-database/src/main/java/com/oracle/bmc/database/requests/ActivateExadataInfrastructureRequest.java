@@ -18,6 +18,9 @@ public class ActivateExadataInfrastructureRequest
      */
     private String exadataInfrastructureId;
 
+    /**
+     * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
@@ -27,6 +30,9 @@ public class ActivateExadataInfrastructureRequest
     private com.oracle.bmc.database.model.ActivateExadataInfrastructureDetails
             activateExadataInfrastructureDetails;
 
+    /**
+     * The activation details for the Exadata infrastructure and the additional storage servers requested.
+     */
     public com.oracle.bmc.database.model.ActivateExadataInfrastructureDetails
             getActivateExadataInfrastructureDetails() {
         return activateExadataInfrastructureDetails;
@@ -37,6 +43,10 @@ public class ActivateExadataInfrastructureRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +60,14 @@ public class ActivateExadataInfrastructureRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -72,10 +90,14 @@ public class ActivateExadataInfrastructureRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String exadataInfrastructureId = null;
 
         /**
          * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param exadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
@@ -83,11 +105,15 @@ public class ActivateExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * The activation details for the Exadata infrastructure and the additional storage servers requested.
+         */
         private com.oracle.bmc.database.model.ActivateExadataInfrastructureDetails
                 activateExadataInfrastructureDetails = null;
 
         /**
          * The activation details for the Exadata infrastructure and the additional storage servers requested.
+         * @param activateExadataInfrastructureDetails the value to set
          * @return this builder instance
          */
         public Builder activateExadataInfrastructureDetails(
@@ -97,11 +123,16 @@ public class ActivateExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -109,6 +140,14 @@ public class ActivateExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -118,6 +157,7 @@ public class ActivateExadataInfrastructureRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -212,7 +252,8 @@ public class ActivateExadataInfrastructureRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -222,6 +263,10 @@ public class ActivateExadataInfrastructureRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

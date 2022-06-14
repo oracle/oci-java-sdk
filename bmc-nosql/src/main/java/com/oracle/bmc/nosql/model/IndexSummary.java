@@ -34,36 +34,67 @@ public final class IndexSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Index name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Index name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A set of keys for a secondary index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keys")
         private java.util.List<IndexKey> keys;
 
+        /**
+         * A set of keys for a secondary index.
+         * @param keys the value to set
+         * @return this builder
+         **/
         public Builder keys(java.util.List<IndexKey> keys) {
             this.keys = keys;
             this.__explicitlySet__.add("keys");
             return this;
         }
-
+        /**
+         * The state of an index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Index.LifecycleState lifecycleState;
 
+        /**
+         * The state of an index.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(Index.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -110,6 +141,10 @@ public final class IndexSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Index name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -120,6 +155,10 @@ public final class IndexSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("keys")
     private final java.util.List<IndexKey> keys;
 
+    /**
+     * A set of keys for a secondary index.
+     * @return the value
+     **/
     public java.util.List<IndexKey> getKeys() {
         return keys;
     }
@@ -130,6 +169,10 @@ public final class IndexSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Index.LifecycleState lifecycleState;
 
+    /**
+     * The state of an index.
+     * @return the value
+     **/
     public Index.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -141,6 +184,11 @@ public final class IndexSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }

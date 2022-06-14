@@ -18,6 +18,10 @@ public class UpdateTagRequest
      */
     private String tagNamespaceId;
 
+    /**
+     * The OCID of the tag namespace.
+     *
+     */
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
@@ -27,6 +31,10 @@ public class UpdateTagRequest
      */
     private String tagName;
 
+    /**
+     * The name of the tag.
+     *
+     */
     public String getTagName() {
         return tagName;
     }
@@ -35,6 +43,9 @@ public class UpdateTagRequest
      */
     private com.oracle.bmc.identity.model.UpdateTagDetails updateTagDetails;
 
+    /**
+     * Request object for updating a tag.
+     */
     public com.oracle.bmc.identity.model.UpdateTagDetails getUpdateTagDetails() {
         return updateTagDetails;
     }
@@ -46,8 +57,25 @@ public class UpdateTagRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     /**
@@ -67,11 +95,16 @@ public class UpdateTagRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag namespace.
+         *
+         */
         private String tagNamespaceId = null;
 
         /**
          * The OCID of the tag namespace.
          *
+         * @param tagNamespaceId the value to set
          * @return this builder instance
          */
         public Builder tagNamespaceId(String tagNamespaceId) {
@@ -79,11 +112,16 @@ public class UpdateTagRequest
             return this;
         }
 
+        /**
+         * The name of the tag.
+         *
+         */
         private String tagName = null;
 
         /**
          * The name of the tag.
          *
+         * @param tagName the value to set
          * @return this builder instance
          */
         public Builder tagName(String tagName) {
@@ -91,10 +129,14 @@ public class UpdateTagRequest
             return this;
         }
 
+        /**
+         * Request object for updating a tag.
+         */
         private com.oracle.bmc.identity.model.UpdateTagDetails updateTagDetails = null;
 
         /**
          * Request object for updating a tag.
+         * @param updateTagDetails the value to set
          * @return this builder instance
          */
         public Builder updateTagDetails(
@@ -103,6 +145,12 @@ public class UpdateTagRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -110,10 +158,26 @@ public class UpdateTagRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
             this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -149,6 +213,7 @@ public class UpdateTagRequest
             tagName(o.getTagName());
             updateTagDetails(o.getUpdateTagDetails());
             ifMatch(o.getIfMatch());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -196,22 +261,29 @@ public class UpdateTagRequest
             request.tagName = tagName;
             request.updateTagDetails = updateTagDetails;
             request.ifMatch = ifMatch;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new UpdateTagRequest(tagNamespaceId, tagName, updateTagDetails, ifMatch);
+            // new UpdateTagRequest(tagNamespaceId, tagName, updateTagDetails, ifMatch, isLockOverride);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
                 .tagNamespaceId(tagNamespaceId)
                 .tagName(tagName)
                 .updateTagDetails(updateTagDetails)
-                .ifMatch(ifMatch);
+                .ifMatch(ifMatch)
+                .isLockOverride(isLockOverride);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -225,6 +297,7 @@ public class UpdateTagRequest
         sb.append(",tagName=").append(String.valueOf(this.tagName));
         sb.append(",updateTagDetails=").append(String.valueOf(this.updateTagDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -243,7 +316,8 @@ public class UpdateTagRequest
                 && java.util.Objects.equals(this.tagNamespaceId, other.tagNamespaceId)
                 && java.util.Objects.equals(this.tagName, other.tagName)
                 && java.util.Objects.equals(this.updateTagDetails, other.updateTagDetails)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -258,6 +332,9 @@ public class UpdateTagRequest
                 (result * PRIME)
                         + (this.updateTagDetails == null ? 43 : this.updateTagDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

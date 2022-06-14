@@ -27,9 +27,17 @@ package com.oracle.bmc.devops.model;
 public final class ComputeInstanceGroupByIdsSelector extends ComputeInstanceGroupSelector {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Compute instance OCID identifiers that are members of this group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceIds")
         private java.util.List<String> computeInstanceIds;
 
+        /**
+         * Compute instance OCID identifiers that are members of this group.
+         * @param computeInstanceIds the value to set
+         * @return this builder
+         **/
         public Builder computeInstanceIds(java.util.List<String> computeInstanceIds) {
             this.computeInstanceIds = computeInstanceIds;
             this.__explicitlySet__.add("computeInstanceIds");
@@ -78,6 +86,10 @@ public final class ComputeInstanceGroupByIdsSelector extends ComputeInstanceGrou
     @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceIds")
     private final java.util.List<String> computeInstanceIds;
 
+    /**
+     * Compute instance OCID identifiers that are members of this group.
+     * @return the value
+     **/
     public java.util.List<String> getComputeInstanceIds() {
         return computeInstanceIds;
     }

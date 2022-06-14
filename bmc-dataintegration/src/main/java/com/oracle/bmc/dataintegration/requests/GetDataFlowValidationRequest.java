@@ -17,6 +17,9 @@ public class GetDataFlowValidationRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -25,6 +28,9 @@ public class GetDataFlowValidationRequest
      */
     private String dataFlowValidationKey;
 
+    /**
+     * The key of the dataflow validation.
+     */
     public String getDataFlowValidationKey() {
         return dataFlowValidationKey;
     }
@@ -36,6 +42,12 @@ public class GetDataFlowValidationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,10 +59,14 @@ public class GetDataFlowValidationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -58,10 +74,14 @@ public class GetDataFlowValidationRequest
             return this;
         }
 
+        /**
+         * The key of the dataflow validation.
+         */
         private String dataFlowValidationKey = null;
 
         /**
          * The key of the dataflow validation.
+         * @param dataFlowValidationKey the value to set
          * @return this builder instance
          */
         public Builder dataFlowValidationKey(String dataFlowValidationKey) {
@@ -69,6 +89,12 @@ public class GetDataFlowValidationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -76,6 +102,7 @@ public class GetDataFlowValidationRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -155,7 +182,8 @@ public class GetDataFlowValidationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -164,6 +192,10 @@ public class GetDataFlowValidationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -30,9 +30,17 @@ public final class ReinstateDataGuardAssociationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The DB system administrator password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
 
+        /**
+         * The DB system administrator password.
+         * @param databaseAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder databaseAdminPassword(String databaseAdminPassword) {
             this.databaseAdminPassword = databaseAdminPassword;
             this.__explicitlySet__.add("databaseAdminPassword");
@@ -75,6 +83,10 @@ public final class ReinstateDataGuardAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
     private final String databaseAdminPassword;
 
+    /**
+     * The DB system administrator password.
+     * @return the value
+     **/
     public String getDatabaseAdminPassword() {
         return databaseAdminPassword;
     }

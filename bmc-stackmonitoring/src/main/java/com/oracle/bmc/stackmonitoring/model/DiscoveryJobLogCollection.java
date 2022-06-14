@@ -29,9 +29,17 @@ public final class DiscoveryJobLogCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of logs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DiscoveryJobLogSummary> items;
 
+        /**
+         * List of logs
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DiscoveryJobLogSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class DiscoveryJobLogCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DiscoveryJobLogSummary> items;
 
+    /**
+     * List of logs
+     * @return the value
+     **/
     public java.util.List<DiscoveryJobLogSummary> getItems() {
         return items;
     }

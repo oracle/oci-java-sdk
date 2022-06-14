@@ -27,6 +27,7 @@ package com.oracle.bmc.keymanagement.model;
 public final class BackupLocationBucket extends BackupLocation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 

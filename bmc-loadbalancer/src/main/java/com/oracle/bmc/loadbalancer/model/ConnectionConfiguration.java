@@ -31,18 +31,53 @@ public final class ConnectionConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The maximum idle time, in seconds, allowed between two successive receive or two successive send operations
+         * between the client and backend servers. A send operation does not reset the timer for receive operations. A
+         * receive operation does not reset the timer for send operations.
+         * <p>
+         * For more information, see [Connection Configuration](https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+         * <p>
+         * Example: {@code 1200}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idleTimeout")
         private Long idleTimeout;
 
+        /**
+         * The maximum idle time, in seconds, allowed between two successive receive or two successive send operations
+         * between the client and backend servers. A send operation does not reset the timer for receive operations. A
+         * receive operation does not reset the timer for send operations.
+         * <p>
+         * For more information, see [Connection Configuration](https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+         * <p>
+         * Example: {@code 1200}
+         *
+         * @param idleTimeout the value to set
+         * @return this builder
+         **/
         public Builder idleTimeout(Long idleTimeout) {
             this.idleTimeout = idleTimeout;
             this.__explicitlySet__.add("idleTimeout");
             return this;
         }
-
+        /**
+         * The backend TCP Proxy Protocol version.
+         * <p>
+         * Example: {@code 1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolVersion")
         private Integer backendTcpProxyProtocolVersion;
 
+        /**
+         * The backend TCP Proxy Protocol version.
+         * <p>
+         * Example: {@code 1}
+         *
+         * @param backendTcpProxyProtocolVersion the value to set
+         * @return this builder
+         **/
         public Builder backendTcpProxyProtocolVersion(Integer backendTcpProxyProtocolVersion) {
             this.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
             this.__explicitlySet__.add("backendTcpProxyProtocolVersion");
@@ -94,6 +129,17 @@ public final class ConnectionConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("idleTimeout")
     private final Long idleTimeout;
 
+    /**
+     * The maximum idle time, in seconds, allowed between two successive receive or two successive send operations
+     * between the client and backend servers. A send operation does not reset the timer for receive operations. A
+     * receive operation does not reset the timer for send operations.
+     * <p>
+     * For more information, see [Connection Configuration](https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+     * <p>
+     * Example: {@code 1200}
+     *
+     * @return the value
+     **/
     public Long getIdleTimeout() {
         return idleTimeout;
     }
@@ -107,6 +153,13 @@ public final class ConnectionConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolVersion")
     private final Integer backendTcpProxyProtocolVersion;
 
+    /**
+     * The backend TCP Proxy Protocol version.
+     * <p>
+     * Example: {@code 1}
+     *
+     * @return the value
+     **/
     public Integer getBackendTcpProxyProtocolVersion() {
         return backendTcpProxyProtocolVersion;
     }

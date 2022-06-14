@@ -13,6 +13,10 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -22,6 +26,10 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -31,6 +39,10 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.waas.model.ProtectionSettings protectionSettings;
 
+    /**
+     * The returned ProtectionSettings instance.
+     * @return the value
+     */
     public com.oracle.bmc.waas.model.ProtectionSettings getProtectionSettings() {
         return protectionSettings;
     }
@@ -60,22 +72,46 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ProtectionSettings instance.
+         */
         private com.oracle.bmc.waas.model.ProtectionSettings protectionSettings;
 
+        /**
+         * The returned ProtectionSettings instance.
+         * @param protectionSettings the value to set
+         * @return this builder
+         */
         public Builder protectionSettings(
                 com.oracle.bmc.waas.model.ProtectionSettings protectionSettings) {
             this.protectionSettings = protectionSettings;
@@ -95,12 +131,20 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetProtectionSettingsResponse build() {
             return new GetProtectionSettingsResponse(
                     __httpStatusCode__, etag, opcRequestId, protectionSettings);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class SummarizeJobExecutionsStatusesRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,11 @@ public class SummarizeJobExecutionsStatusesRequest
      */
     private String startTime;
 
+    /**
+     * The start time of the time range to retrieve the status summary of job executions
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -37,6 +45,11 @@ public class SummarizeJobExecutionsStatusesRequest
      */
     private String endTime;
 
+    /**
+     * The end time of the time range to retrieve the status summary of job executions
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -45,6 +58,9 @@ public class SummarizeJobExecutionsStatusesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -53,6 +69,9 @@ public class SummarizeJobExecutionsStatusesRequest
      */
     private String id;
 
+    /**
+     * The identifier of the resource.
+     */
     public String getId() {
         return id;
     }
@@ -61,6 +80,9 @@ public class SummarizeJobExecutionsStatusesRequest
      */
     private String managedDatabaseGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+     */
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
@@ -69,6 +91,9 @@ public class SummarizeJobExecutionsStatusesRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -77,6 +102,9 @@ public class SummarizeJobExecutionsStatusesRequest
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire name.
+     */
     public String getName() {
         return name;
     }
@@ -127,6 +155,12 @@ public class SummarizeJobExecutionsStatusesRequest
         }
     };
 
+    /**
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -135,6 +169,9 @@ public class SummarizeJobExecutionsStatusesRequest
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -146,10 +183,14 @@ public class SummarizeJobExecutionsStatusesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -157,12 +198,18 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
+        /**
+         * The start time of the time range to retrieve the status summary of job executions
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
+         */
         private String startTime = null;
 
         /**
          * The start time of the time range to retrieve the status summary of job executions
          * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
+         * @param startTime the value to set
          * @return this builder instance
          */
         public Builder startTime(String startTime) {
@@ -170,12 +217,18 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
+        /**
+         * The end time of the time range to retrieve the status summary of job executions
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
+         */
         private String endTime = null;
 
         /**
          * The end time of the time range to retrieve the status summary of job executions
          * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
+         * @param endTime the value to set
          * @return this builder instance
          */
         public Builder endTime(String endTime) {
@@ -183,10 +236,14 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -194,10 +251,14 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
+        /**
+         * The identifier of the resource.
+         */
         private String id = null;
 
         /**
          * The identifier of the resource.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -205,10 +266,14 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         */
         private String managedDatabaseGroupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         * @param managedDatabaseGroupId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseGroupId(String managedDatabaseGroupId) {
@@ -216,10 +281,14 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -227,10 +296,14 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire name.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -238,6 +311,12 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
+        /**
+         * The field to sort information by. Only one sortOrder can be used. The default sort order
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -245,6 +324,7 @@ public class SummarizeJobExecutionsStatusesRequest
          * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
          * The \u2018NAME\u2019 sort order is case-sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -252,10 +332,14 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -350,7 +434,8 @@ public class SummarizeJobExecutionsStatusesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -366,6 +451,10 @@ public class SummarizeJobExecutionsStatusesRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

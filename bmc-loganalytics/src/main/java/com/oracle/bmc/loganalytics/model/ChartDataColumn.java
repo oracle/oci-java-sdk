@@ -124,19 +124,37 @@ public final class ChartDataColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-
+        /**
+         * Data points for each timestamp for a specific link field un-filtered.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataItems")
         private java.util.List<Object> dataItems;
 
+        /**
+         * Data points for each timestamp for a specific link field un-filtered.
+         *
+         * @param dataItems the value to set
+         * @return this builder
+         **/
         public Builder dataItems(java.util.List<Object> dataItems) {
             this.dataItems = dataItems;
             this.__explicitlySet__.add("dataItems");
             return this;
         }
-
+        /**
+         * Data points filtered by query string. May not contain data points for each timestamp due to filtering.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filteredDataItems")
         private java.util.List<Object> filteredDataItems;
 
+        /**
+         * Data points filtered by query string. May not contain data points for each timestamp due to filtering.
+         *
+         * @param filteredDataItems the value to set
+         * @return this builder
+         **/
         public Builder filteredDataItems(java.util.List<Object> filteredDataItems) {
             this.filteredDataItems = filteredDataItems;
             this.__explicitlySet__.add("filteredDataItems");
@@ -237,6 +255,11 @@ public final class ChartDataColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("dataItems")
     private final java.util.List<Object> dataItems;
 
+    /**
+     * Data points for each timestamp for a specific link field un-filtered.
+     *
+     * @return the value
+     **/
     public java.util.List<Object> getDataItems() {
         return dataItems;
     }
@@ -248,6 +271,11 @@ public final class ChartDataColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("filteredDataItems")
     private final java.util.List<Object> filteredDataItems;
 
+    /**
+     * Data points filtered by query string. May not contain data points for each timestamp due to filtering.
+     *
+     * @return the value
+     **/
     public java.util.List<Object> getFilteredDataItems() {
         return filteredDataItems;
     }

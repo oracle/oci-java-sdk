@@ -15,6 +15,12 @@ public class ListSupportedSkusResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListSupportedSkusResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -36,6 +49,10 @@ public class ListSupportedSkusResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection supportedSkuSummaryCollection;
 
+    /**
+     * The returned SupportedSkuSummaryCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection
             getSupportedSkuSummaryCollection() {
         return supportedSkuSummaryCollection;
@@ -66,23 +83,57 @@ public class ListSupportedSkusResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned SupportedSkuSummaryCollection instance.
+         */
         private com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection
                 supportedSkuSummaryCollection;
 
+        /**
+         * The returned SupportedSkuSummaryCollection instance.
+         * @param supportedSkuSummaryCollection the value to set
+         * @return this builder
+         */
         public Builder supportedSkuSummaryCollection(
                 com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection
                         supportedSkuSummaryCollection) {
@@ -103,12 +154,20 @@ public class ListSupportedSkusResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListSupportedSkusResponse build() {
             return new ListSupportedSkusResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, supportedSkuSummaryCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

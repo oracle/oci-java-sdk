@@ -28,18 +28,33 @@ public final class TableSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
+        /**
+         * Name of the table.
+         * @param tableName the value to set
+         * @return this builder
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-
+        /**
+         * Name of the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
+        /**
+         * Name of the schema.
+         * @param schemaName the value to set
+         * @return this builder
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
@@ -81,6 +96,10 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
+    /**
+     * Name of the table.
+     * @return the value
+     **/
     public String getTableName() {
         return tableName;
     }
@@ -91,6 +110,10 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
+    /**
+     * Name of the schema.
+     * @return the value
+     **/
     public String getSchemaName() {
         return schemaName;
     }

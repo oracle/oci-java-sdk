@@ -14,6 +14,11 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport;
 
+    /**
+     * The returned LabelSummaryReport instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LabelSummaryReport getLabelSummaryReport() {
         return labelSummaryReport;
     }
@@ -45,15 +54,33 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LabelSummaryReport instance.
+         */
         private com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport;
 
+        /**
+         * The returned LabelSummaryReport instance.
+         * @param labelSummaryReport the value to set
+         * @return this builder
+         */
         public Builder labelSummaryReport(
                 com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport) {
             this.labelSummaryReport = labelSummaryReport;
@@ -72,12 +99,20 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetLabelSummaryResponse build() {
             return new GetLabelSummaryResponse(
                     __httpStatusCode__, opcRequestId, labelSummaryReport);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

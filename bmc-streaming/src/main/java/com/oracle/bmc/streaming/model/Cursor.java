@@ -28,9 +28,17 @@ public final class Cursor {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The cursor to pass to the {@code GetMessages} operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The cursor to pass to the {@code GetMessages} operation.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -72,6 +80,10 @@ public final class Cursor {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The cursor to pass to the {@code GetMessages} operation.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

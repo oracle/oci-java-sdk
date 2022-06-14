@@ -29,9 +29,17 @@ public final class EnterpriseManagerBridgeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of Enterprose Manager bridge summary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<EnterpriseManagerBridgeSummary> items;
 
+        /**
+         * Array of Enterprose Manager bridge summary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<EnterpriseManagerBridgeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class EnterpriseManagerBridgeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<EnterpriseManagerBridgeSummary> items;
 
+    /**
+     * Array of Enterprose Manager bridge summary objects.
+     * @return the value
+     **/
     public java.util.List<EnterpriseManagerBridgeSummary> getItems() {
         return items;
     }

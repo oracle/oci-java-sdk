@@ -39,45 +39,91 @@ public final class ExcludedObjectSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Database object owner.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
+        /**
+         * Database object owner.
+         *
+         * @param owner the value to set
+         * @return this builder
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-
+        /**
+         * Database object name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("object")
         private String object;
 
+        /**
+         * Database object name.
+         *
+         * @param object the value to set
+         * @return this builder
+         **/
         public Builder object(String object) {
             this.object = object;
             this.__explicitlySet__.add("object");
             return this;
         }
-
+        /**
+         * Database object type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Database object type.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Reason category for object exclusion.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reasonCategory")
         private ReasonKeywords reasonCategory;
 
+        /**
+         * Reason category for object exclusion.
+         *
+         * @param reasonCategory the value to set
+         * @return this builder
+         **/
         public Builder reasonCategory(ReasonKeywords reasonCategory) {
             this.reasonCategory = reasonCategory;
             this.__explicitlySet__.add("reasonCategory");
             return this;
         }
-
+        /**
+         * Reason for exclusion.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRule")
         private String sourceRule;
 
+        /**
+         * Reason for exclusion.
+         *
+         * @param sourceRule the value to set
+         * @return this builder
+         **/
         public Builder sourceRule(String sourceRule) {
             this.sourceRule = sourceRule;
             this.__explicitlySet__.add("sourceRule");
@@ -126,6 +172,11 @@ public final class ExcludedObjectSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
+    /**
+     * Database object owner.
+     *
+     * @return the value
+     **/
     public String getOwner() {
         return owner;
     }
@@ -137,6 +188,11 @@ public final class ExcludedObjectSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("object")
     private final String object;
 
+    /**
+     * Database object name.
+     *
+     * @return the value
+     **/
     public String getObject() {
         return object;
     }
@@ -148,6 +204,11 @@ public final class ExcludedObjectSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Database object type.
+     *
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -159,6 +220,11 @@ public final class ExcludedObjectSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("reasonCategory")
     private final ReasonKeywords reasonCategory;
 
+    /**
+     * Reason category for object exclusion.
+     *
+     * @return the value
+     **/
     public ReasonKeywords getReasonCategory() {
         return reasonCategory;
     }
@@ -170,6 +236,11 @@ public final class ExcludedObjectSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRule")
     private final String sourceRule;
 
+    /**
+     * Reason for exclusion.
+     *
+     * @return the value
+     **/
     public String getSourceRule() {
         return sourceRule;
     }

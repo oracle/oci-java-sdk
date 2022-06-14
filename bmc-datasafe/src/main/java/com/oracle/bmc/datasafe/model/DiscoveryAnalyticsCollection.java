@@ -29,9 +29,17 @@ public final class DiscoveryAnalyticsCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of discovery analytics summary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DiscoveryAnalyticsSummary> items;
 
+        /**
+         * An array of discovery analytics summary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DiscoveryAnalyticsSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class DiscoveryAnalyticsCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DiscoveryAnalyticsSummary> items;
 
+    /**
+     * An array of discovery analytics summary objects.
+     * @return the value
+     **/
     public java.util.List<DiscoveryAnalyticsSummary> getItems() {
         return items;
     }

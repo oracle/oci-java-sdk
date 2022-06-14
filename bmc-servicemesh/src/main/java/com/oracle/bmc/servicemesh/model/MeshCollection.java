@@ -27,9 +27,17 @@ public final class MeshCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of Mesh objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<MeshSummary> items;
 
+        /**
+         * List of Mesh objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<MeshSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class MeshCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<MeshSummary> items;
 
+    /**
+     * List of Mesh objects.
+     * @return the value
+     **/
     public java.util.List<MeshSummary> getItems() {
         return items;
     }

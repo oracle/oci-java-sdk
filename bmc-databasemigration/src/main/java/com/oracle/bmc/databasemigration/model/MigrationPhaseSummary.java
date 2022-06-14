@@ -35,27 +35,55 @@ public final class MigrationPhaseSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ODMS Job phase name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private OdmsJobPhases name;
 
+        /**
+         * ODMS Job phase name
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(OdmsJobPhases name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Action recommended for this phase. If not included in the response, there is no recommended action for the phase.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendedAction")
         private OdmsPhaseActions recommendedAction;
 
+        /**
+         * Action recommended for this phase. If not included in the response, there is no recommended action for the phase.
+         *
+         * @param recommendedAction the value to set
+         * @return this builder
+         **/
         public Builder recommendedAction(OdmsPhaseActions recommendedAction) {
             this.recommendedAction = recommendedAction;
             this.__explicitlySet__.add("recommendedAction");
             return this;
         }
-
+        /**
+         * Array of actions for the corresponding phase. Empty array would indicate there is no supported action for the phase.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedActions")
         private java.util.List<OdmsPhaseActions> supportedActions;
 
+        /**
+         * Array of actions for the corresponding phase. Empty array would indicate there is no supported action for the phase.
+         *
+         * @param supportedActions the value to set
+         * @return this builder
+         **/
         public Builder supportedActions(java.util.List<OdmsPhaseActions> supportedActions) {
             this.supportedActions = supportedActions;
             this.__explicitlySet__.add("supportedActions");
@@ -102,6 +130,11 @@ public final class MigrationPhaseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final OdmsJobPhases name;
 
+    /**
+     * ODMS Job phase name
+     *
+     * @return the value
+     **/
     public OdmsJobPhases getName() {
         return name;
     }
@@ -113,6 +146,11 @@ public final class MigrationPhaseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedAction")
     private final OdmsPhaseActions recommendedAction;
 
+    /**
+     * Action recommended for this phase. If not included in the response, there is no recommended action for the phase.
+     *
+     * @return the value
+     **/
     public OdmsPhaseActions getRecommendedAction() {
         return recommendedAction;
     }
@@ -124,6 +162,11 @@ public final class MigrationPhaseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("supportedActions")
     private final java.util.List<OdmsPhaseActions> supportedActions;
 
+    /**
+     * Array of actions for the corresponding phase. Empty array would indicate there is no supported action for the phase.
+     *
+     * @return the value
+     **/
     public java.util.List<OdmsPhaseActions> getSupportedActions() {
         return supportedActions;
     }

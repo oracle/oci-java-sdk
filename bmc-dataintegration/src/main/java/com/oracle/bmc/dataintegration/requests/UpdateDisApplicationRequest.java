@@ -18,6 +18,9 @@ public class UpdateDisApplicationRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class UpdateDisApplicationRequest
      */
     private String disApplicationId;
 
+    /**
+     * The OCID of the DIS Application.
+     */
     public String getDisApplicationId() {
         return disApplicationId;
     }
@@ -35,6 +41,9 @@ public class UpdateDisApplicationRequest
     private com.oracle.bmc.dataintegration.model.UpdateDisApplicationDetails
             updateDisApplicationDetails;
 
+    /**
+     * The details needed to update an application.
+     */
     public com.oracle.bmc.dataintegration.model.UpdateDisApplicationDetails
             getUpdateDisApplicationDetails() {
         return updateDisApplicationDetails;
@@ -47,6 +56,12 @@ public class UpdateDisApplicationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,6 +73,12 @@ public class UpdateDisApplicationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -80,10 +101,14 @@ public class UpdateDisApplicationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -91,10 +116,14 @@ public class UpdateDisApplicationRequest
             return this;
         }
 
+        /**
+         * The OCID of the DIS Application.
+         */
         private String disApplicationId = null;
 
         /**
          * The OCID of the DIS Application.
+         * @param disApplicationId the value to set
          * @return this builder instance
          */
         public Builder disApplicationId(String disApplicationId) {
@@ -102,11 +131,15 @@ public class UpdateDisApplicationRequest
             return this;
         }
 
+        /**
+         * The details needed to update an application.
+         */
         private com.oracle.bmc.dataintegration.model.UpdateDisApplicationDetails
                 updateDisApplicationDetails = null;
 
         /**
          * The details needed to update an application.
+         * @param updateDisApplicationDetails the value to set
          * @return this builder instance
          */
         public Builder updateDisApplicationDetails(
@@ -116,6 +149,12 @@ public class UpdateDisApplicationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -123,6 +162,7 @@ public class UpdateDisApplicationRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -130,6 +170,12 @@ public class UpdateDisApplicationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -137,6 +183,7 @@ public class UpdateDisApplicationRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -232,7 +279,8 @@ public class UpdateDisApplicationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -243,6 +291,10 @@ public class UpdateDisApplicationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

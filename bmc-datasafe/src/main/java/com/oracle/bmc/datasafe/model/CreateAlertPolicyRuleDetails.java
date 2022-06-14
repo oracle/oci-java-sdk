@@ -31,18 +31,33 @@ public final class CreateAlertPolicyRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The conditional expression of the alert policy rule which evaluates to boolean value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
+        /**
+         * The conditional expression of the alert policy rule which evaluates to boolean value.
+         * @param expression the value to set
+         * @return this builder
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
-
+        /**
+         * Describes the alert policy rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Describes the alert policy rule.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -85,6 +100,10 @@ public final class CreateAlertPolicyRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
+    /**
+     * The conditional expression of the alert policy rule which evaluates to boolean value.
+     * @return the value
+     **/
     public String getExpression() {
         return expression;
     }
@@ -95,6 +114,10 @@ public final class CreateAlertPolicyRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Describes the alert policy rule.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

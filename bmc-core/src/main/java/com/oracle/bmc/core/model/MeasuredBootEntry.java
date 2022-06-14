@@ -33,27 +33,49 @@ public final class MeasuredBootEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The index of the policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pcrIndex")
         private String pcrIndex;
 
+        /**
+         * The index of the policy.
+         * @param pcrIndex the value to set
+         * @return this builder
+         **/
         public Builder pcrIndex(String pcrIndex) {
             this.pcrIndex = pcrIndex;
             this.__explicitlySet__.add("pcrIndex");
             return this;
         }
-
+        /**
+         * The hashed PCR value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The hashed PCR value.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The type of algorithm used to calculate the hash.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hashAlgorithm")
         private String hashAlgorithm;
 
+        /**
+         * The type of algorithm used to calculate the hash.
+         * @param hashAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder hashAlgorithm(String hashAlgorithm) {
             this.hashAlgorithm = hashAlgorithm;
             this.__explicitlySet__.add("hashAlgorithm");
@@ -98,6 +120,10 @@ public final class MeasuredBootEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("pcrIndex")
     private final String pcrIndex;
 
+    /**
+     * The index of the policy.
+     * @return the value
+     **/
     public String getPcrIndex() {
         return pcrIndex;
     }
@@ -108,6 +134,10 @@ public final class MeasuredBootEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The hashed PCR value.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -118,6 +148,10 @@ public final class MeasuredBootEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("hashAlgorithm")
     private final String hashAlgorithm;
 
+    /**
+     * The type of algorithm used to calculate the hash.
+     * @return the value
+     **/
     public String getHashAlgorithm() {
         return hashAlgorithm;
     }

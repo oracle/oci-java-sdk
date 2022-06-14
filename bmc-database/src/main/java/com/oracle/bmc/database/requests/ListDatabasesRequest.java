@@ -16,6 +16,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String dbHomeId;
 
+    /**
+     * A Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbHomeId() {
         return dbHomeId;
     }
@@ -32,6 +38,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String systemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
+     */
     public String getSystemId() {
         return systemId;
     }
@@ -40,6 +49,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -48,6 +60,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -92,6 +107,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DBNAME is ascending. The DBNAME sort order is case sensitive.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -136,6 +154,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -144,6 +165,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.database.model.DatabaseSummary.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.DatabaseSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -152,6 +176,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String dbName;
 
+    /**
+     * A filter to return only resources that match the entire database name given. The match is not case sensitive.
+     */
     public String getDbName() {
         return dbName;
     }
@@ -163,10 +190,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -174,10 +205,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbHomeId = null;
 
         /**
          * A Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbHomeId the value to set
          * @return this builder instance
          */
         public Builder dbHomeId(String dbHomeId) {
@@ -185,10 +220,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
+         */
         private String systemId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
+         * @param systemId the value to set
          * @return this builder instance
          */
         public Builder systemId(String systemId) {
@@ -196,10 +235,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -207,10 +250,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -218,10 +265,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DBNAME is ascending. The DBNAME sort order is case sensitive.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DBNAME is ascending. The DBNAME sort order is case sensitive.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -229,10 +280,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -240,10 +295,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.DatabaseSummary.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -252,10 +311,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire database name given. The match is not case sensitive.
+         */
         private String dbName = null;
 
         /**
          * A filter to return only resources that match the entire database name given. The match is not case sensitive.
+         * @param dbName the value to set
          * @return this builder instance
          */
         public Builder dbName(String dbName) {
@@ -347,7 +410,8 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -362,6 +426,10 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .dbName(dbName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

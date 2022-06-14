@@ -141,28 +141,49 @@ public final class Lookup extends Operator {
             this.__explicitlySet__.add("lookupCondition");
             return this;
         }
-
+        /**
+         * For the rows for which lookup condition does not satisfy, if set to true - do not return those rows of primary Input source and if set to false - create a row with primary input fields values and lookup field values as NULL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSkipNoMatch")
         private Boolean isSkipNoMatch;
 
+        /**
+         * For the rows for which lookup condition does not satisfy, if set to true - do not return those rows of primary Input source and if set to false - create a row with primary input fields values and lookup field values as NULL.
+         * @param isSkipNoMatch the value to set
+         * @return this builder
+         **/
         public Builder isSkipNoMatch(Boolean isSkipNoMatch) {
             this.isSkipNoMatch = isSkipNoMatch;
             this.__explicitlySet__.add("isSkipNoMatch");
             return this;
         }
-
+        /**
+         * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("multiMatchStrategy")
         private MultiMatchStrategy multiMatchStrategy;
 
+        /**
+         * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
+         * @param multiMatchStrategy the value to set
+         * @return this builder
+         **/
         public Builder multiMatchStrategy(MultiMatchStrategy multiMatchStrategy) {
             this.multiMatchStrategy = multiMatchStrategy;
             this.__explicitlySet__.add("multiMatchStrategy");
             return this;
         }
-
+        /**
+         * this map is used for replacing NULL values in the record. Key is the column name and value is the NULL replacement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nullFillValues")
         private java.util.Map<String, Object> nullFillValues;
 
+        /**
+         * this map is used for replacing NULL values in the record. Key is the column name and value is the NULL replacement.
+         * @param nullFillValues the value to set
+         * @return this builder
+         **/
         public Builder nullFillValues(java.util.Map<String, Object> nullFillValues) {
             this.nullFillValues = nullFillValues;
             this.__explicitlySet__.add("nullFillValues");
@@ -281,6 +302,10 @@ public final class Lookup extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipNoMatch")
     private final Boolean isSkipNoMatch;
 
+    /**
+     * For the rows for which lookup condition does not satisfy, if set to true - do not return those rows of primary Input source and if set to false - create a row with primary input fields values and lookup field values as NULL.
+     * @return the value
+     **/
     public Boolean getIsSkipNoMatch() {
         return isSkipNoMatch;
     }
@@ -342,6 +367,10 @@ public final class Lookup extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("multiMatchStrategy")
     private final MultiMatchStrategy multiMatchStrategy;
 
+    /**
+     * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
+     * @return the value
+     **/
     public MultiMatchStrategy getMultiMatchStrategy() {
         return multiMatchStrategy;
     }
@@ -352,6 +381,10 @@ public final class Lookup extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("nullFillValues")
     private final java.util.Map<String, Object> nullFillValues;
 
+    /**
+     * this map is used for replacing NULL values in the record. Key is the column name and value is the NULL replacement.
+     * @return the value
+     **/
     public java.util.Map<String, Object> getNullFillValues() {
         return nullFillValues;
     }

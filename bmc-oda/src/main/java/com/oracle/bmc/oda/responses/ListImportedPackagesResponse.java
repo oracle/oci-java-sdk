@@ -15,6 +15,12 @@ public class ListImportedPackagesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListImportedPackagesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcNextPage;
 
+    /**
+     * When you are paging through a list, if this header appears in the response,
+     * then there might be additional items still to get. Include this value as the
+     * {@code page} query parameter for the subsequent GET request.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -36,6 +49,10 @@ public class ListImportedPackagesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.oda.model.ImportedPackageSummary> items;
 
+    /**
+     * A list of com.oracle.bmc.oda.model.ImportedPackageSummary instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.oda.model.ImportedPackageSummary> getItems() {
         return items;
     }
@@ -65,22 +82,56 @@ public class ListImportedPackagesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * When you are paging through a list, if this header appears in the response,
+         * then there might be additional items still to get. Include this value as the
+         * {@code page} query parameter for the subsequent GET request.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * When you are paging through a list, if this header appears in the response,
+         * then there might be additional items still to get. Include this value as the
+         * {@code page} query parameter for the subsequent GET request.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.oda.model.ImportedPackageSummary instances.
+         */
         private java.util.List<com.oracle.bmc.oda.model.ImportedPackageSummary> items;
 
+        /**
+         * A list of com.oracle.bmc.oda.model.ImportedPackageSummary instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(
                 java.util.List<com.oracle.bmc.oda.model.ImportedPackageSummary> items) {
             this.items = items;
@@ -100,12 +151,20 @@ public class ListImportedPackagesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListImportedPackagesResponse build() {
             return new ListImportedPackagesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

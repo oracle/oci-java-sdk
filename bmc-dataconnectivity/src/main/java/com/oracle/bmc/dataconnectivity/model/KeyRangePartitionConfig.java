@@ -27,9 +27,17 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class KeyRangePartitionConfig extends PartitionConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The partition number for the key range.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partitionNumber")
         private Integer partitionNumber;
 
+        /**
+         * The partition number for the key range.
+         * @param partitionNumber the value to set
+         * @return this builder
+         **/
         public Builder partitionNumber(Integer partitionNumber) {
             this.partitionNumber = partitionNumber;
             this.__explicitlySet__.add("partitionNumber");
@@ -89,6 +97,10 @@ public final class KeyRangePartitionConfig extends PartitionConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("partitionNumber")
     private final Integer partitionNumber;
 
+    /**
+     * The partition number for the key range.
+     * @return the value
+     **/
     public Integer getPartitionNumber() {
         return partitionNumber;
     }

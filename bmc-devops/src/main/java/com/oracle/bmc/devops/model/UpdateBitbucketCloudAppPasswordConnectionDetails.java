@@ -66,19 +66,33 @@ public final class UpdateBitbucketCloudAppPasswordConnectionDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-
+        /**
+         * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appPassword")
         private String appPassword;
 
+        /**
+         * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         * @param appPassword the value to set
+         * @return this builder
+         **/
         public Builder appPassword(String appPassword) {
             this.appPassword = appPassword;
             this.__explicitlySet__.add("appPassword");
@@ -146,6 +160,10 @@ public final class UpdateBitbucketCloudAppPasswordConnectionDetails
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -156,6 +174,10 @@ public final class UpdateBitbucketCloudAppPasswordConnectionDetails
     @com.fasterxml.jackson.annotation.JsonProperty("appPassword")
     private final String appPassword;
 
+    /**
+     * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * @return the value
+     **/
     public String getAppPassword() {
         return appPassword;
     }

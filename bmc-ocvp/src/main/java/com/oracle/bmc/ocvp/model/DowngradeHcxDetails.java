@@ -31,9 +31,19 @@ public final class DowngradeHcxDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reservingHcxOnPremiseLicenseKeys")
         private java.util.List<String> reservingHcxOnPremiseLicenseKeys;
 
+        /**
+         * The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
+         *
+         * @param reservingHcxOnPremiseLicenseKeys the value to set
+         * @return this builder
+         **/
         public Builder reservingHcxOnPremiseLicenseKeys(
                 java.util.List<String> reservingHcxOnPremiseLicenseKeys) {
             this.reservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
@@ -79,6 +89,11 @@ public final class DowngradeHcxDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reservingHcxOnPremiseLicenseKeys")
     private final java.util.List<String> reservingHcxOnPremiseLicenseKeys;
 
+    /**
+     * The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getReservingHcxOnPremiseLicenseKeys() {
         return reservingHcxOnPremiseLicenseKeys;
     }

@@ -31,18 +31,45 @@ public final class VirtualCircuitBandwidthShape {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The bandwidth in Mbps.
+         * <p>
+         * Example: {@code 10000}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bandwidthInMbps")
         private Integer bandwidthInMbps;
 
+        /**
+         * The bandwidth in Mbps.
+         * <p>
+         * Example: {@code 10000}
+         *
+         * @param bandwidthInMbps the value to set
+         * @return this builder
+         **/
         public Builder bandwidthInMbps(Integer bandwidthInMbps) {
             this.bandwidthInMbps = bandwidthInMbps;
             this.__explicitlySet__.add("bandwidthInMbps");
             return this;
         }
-
+        /**
+         * The name of the bandwidth shape.
+         * <p>
+         * Example: {@code 10 Gbps}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the bandwidth shape.
+         * <p>
+         * Example: {@code 10 Gbps}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -88,6 +115,13 @@ public final class VirtualCircuitBandwidthShape {
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthInMbps")
     private final Integer bandwidthInMbps;
 
+    /**
+     * The bandwidth in Mbps.
+     * <p>
+     * Example: {@code 10000}
+     *
+     * @return the value
+     **/
     public Integer getBandwidthInMbps() {
         return bandwidthInMbps;
     }
@@ -101,6 +135,13 @@ public final class VirtualCircuitBandwidthShape {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the bandwidth shape.
+     * <p>
+     * Example: {@code 10 Gbps}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

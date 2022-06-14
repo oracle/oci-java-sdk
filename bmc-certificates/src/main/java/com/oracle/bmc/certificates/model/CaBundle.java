@@ -30,27 +30,51 @@ public final class CaBundle {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the CA bundle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the CA bundle.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * A user-friendly name for the CA bundle. Names are unique within a compartment. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A user-friendly name for the CA bundle. Names are unique within a compartment. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Certificates (in PEM format) in the CA bundle. Can be of arbitrary length.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caBundlePem")
         private String caBundlePem;
 
+        /**
+         * Certificates (in PEM format) in the CA bundle. Can be of arbitrary length.
+         * @param caBundlePem the value to set
+         * @return this builder
+         **/
         public Builder caBundlePem(String caBundlePem) {
             this.caBundlePem = caBundlePem;
             this.__explicitlySet__.add("caBundlePem");
@@ -92,6 +116,10 @@ public final class CaBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the CA bundle.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -103,6 +131,11 @@ public final class CaBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A user-friendly name for the CA bundle. Names are unique within a compartment. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -113,6 +146,10 @@ public final class CaBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("caBundlePem")
     private final String caBundlePem;
 
+    /**
+     * Certificates (in PEM format) in the CA bundle. Can be of arbitrary length.
+     * @return the value
+     **/
     public String getCaBundlePem() {
         return caBundlePem;
     }

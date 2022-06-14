@@ -28,18 +28,33 @@ public final class AutoLookups {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The canonical link.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canonicalLink")
         private String canonicalLink;
 
+        /**
+         * The canonical link.
+         * @param canonicalLink the value to set
+         * @return this builder
+         **/
         public Builder canonicalLink(String canonicalLink) {
             this.canonicalLink = canonicalLink;
             this.__explicitlySet__.add("canonicalLink");
             return this;
         }
-
+        /**
+         * The total count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
         private Long totalCount;
 
+        /**
+         * The total count.
+         * @param totalCount the value to set
+         * @return this builder
+         **/
         public Builder totalCount(Long totalCount) {
             this.totalCount = totalCount;
             this.__explicitlySet__.add("totalCount");
@@ -82,6 +97,10 @@ public final class AutoLookups {
     @com.fasterxml.jackson.annotation.JsonProperty("canonicalLink")
     private final String canonicalLink;
 
+    /**
+     * The canonical link.
+     * @return the value
+     **/
     public String getCanonicalLink() {
         return canonicalLink;
     }
@@ -92,6 +111,10 @@ public final class AutoLookups {
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
     private final Long totalCount;
 
+    /**
+     * The total count.
+     * @return the value
+     **/
     public Long getTotalCount() {
         return totalCount;
     }

@@ -17,6 +17,9 @@ public class GetInstanceAgentCommandExecutionRequest
      */
     private String instanceAgentCommandId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
+     */
     public String getInstanceAgentCommandId() {
         return instanceAgentCommandId;
     }
@@ -25,6 +28,9 @@ public class GetInstanceAgentCommandExecutionRequest
      */
     private String instanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -35,6 +41,11 @@ public class GetInstanceAgentCommandExecutionRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,10 +57,14 @@ public class GetInstanceAgentCommandExecutionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
+         */
         private String instanceAgentCommandId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
+         * @param instanceAgentCommandId the value to set
          * @return this builder instance
          */
         public Builder instanceAgentCommandId(String instanceAgentCommandId) {
@@ -57,10 +72,14 @@ public class GetInstanceAgentCommandExecutionRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.
+         */
         private String instanceId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.
+         * @param instanceId the value to set
          * @return this builder instance
          */
         public Builder instanceId(String instanceId) {
@@ -68,12 +87,18 @@ public class GetInstanceAgentCommandExecutionRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -154,7 +179,8 @@ public class GetInstanceAgentCommandExecutionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -163,6 +189,10 @@ public class GetInstanceAgentCommandExecutionRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

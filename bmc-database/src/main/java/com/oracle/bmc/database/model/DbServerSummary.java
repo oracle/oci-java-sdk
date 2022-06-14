@@ -82,135 +82,245 @@ public final class DbServerSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The user-friendly name for the Db server. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the Db server. The name does not need to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         * @param exadataInfrastructureId the value to set
+         * @return this builder
+         **/
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = exadataInfrastructureId;
             this.__explicitlySet__.add("exadataInfrastructureId");
             return this;
         }
-
+        /**
+         * The number of CPU cores enabled on the Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
+        /**
+         * The number of CPU cores enabled on the Db server.
+         * @param cpuCoreCount the value to set
+         * @return this builder
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-
+        /**
+         * The allocated memory in GBs on the Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
+        /**
+         * The allocated memory in GBs on the Db server.
+         * @param memorySizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
-
+        /**
+         * The allocated local node storage in GBs on the Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
         private Integer dbNodeStorageSizeInGBs;
 
+        /**
+         * The allocated local node storage in GBs on the Db server.
+         * @param dbNodeStorageSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
             this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
             this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
         private java.util.List<String> vmClusterIds;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
+         *
+         * @param vmClusterIds the value to set
+         * @return this builder
+         **/
         public Builder vmClusterIds(java.util.List<String> vmClusterIds) {
             this.vmClusterIds = vmClusterIds;
             this.__explicitlySet__.add("vmClusterIds");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeIds")
         private java.util.List<String> dbNodeIds;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
+         *
+         * @param dbNodeIds the value to set
+         * @return this builder
+         **/
         public Builder dbNodeIds(java.util.List<String> dbNodeIds) {
             this.dbNodeIds = dbNodeIds;
             this.__explicitlySet__.add("dbNodeIds");
             return this;
         }
-
+        /**
+         * The current state of the Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the Db server.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current lifecycle state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The total number of CPU cores available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCount")
         private Integer maxCpuCount;
 
+        /**
+         * The total number of CPU cores available.
+         * @param maxCpuCount the value to set
+         * @return this builder
+         **/
         public Builder maxCpuCount(Integer maxCpuCount) {
             this.maxCpuCount = maxCpuCount;
             this.__explicitlySet__.add("maxCpuCount");
             return this;
         }
-
+        /**
+         * The total memory available in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInGBs")
         private Integer maxMemoryInGBs;
 
+        /**
+         * The total memory available in GBs.
+         * @param maxMemoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder maxMemoryInGBs(Integer maxMemoryInGBs) {
             this.maxMemoryInGBs = maxMemoryInGBs;
             this.__explicitlySet__.add("maxMemoryInGBs");
             return this;
         }
-
+        /**
+         * The total local node storage available in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxDbNodeStorageInGBs")
         private Integer maxDbNodeStorageInGBs;
 
+        /**
+         * The total local node storage available in GBs.
+         * @param maxDbNodeStorageInGBs the value to set
+         * @return this builder
+         **/
         public Builder maxDbNodeStorageInGBs(Integer maxDbNodeStorageInGBs) {
             this.maxDbNodeStorageInGBs = maxDbNodeStorageInGBs;
             this.__explicitlySet__.add("maxDbNodeStorageInGBs");
             return this;
         }
-
+        /**
+         * The date and time that the Db Server was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time that the Db Server was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -225,19 +335,45 @@ public final class DbServerSummary {
             this.__explicitlySet__.add("dbServerPatchingDetails");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -317,6 +453,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -327,6 +467,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the Db server. The name does not need to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -337,6 +481,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -347,6 +495,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * @return the value
+     **/
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
@@ -357,6 +509,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
+    /**
+     * The number of CPU cores enabled on the Db server.
+     * @return the value
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
@@ -367,6 +523,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
+    /**
+     * The allocated memory in GBs on the Db server.
+     * @return the value
+     **/
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
@@ -377,6 +537,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
     private final Integer dbNodeStorageSizeInGBs;
 
+    /**
+     * The allocated local node storage in GBs on the Db server.
+     * @return the value
+     **/
     public Integer getDbNodeStorageSizeInGBs() {
         return dbNodeStorageSizeInGBs;
     }
@@ -388,6 +552,11 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
     private final java.util.List<String> vmClusterIds;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getVmClusterIds() {
         return vmClusterIds;
     }
@@ -399,6 +568,11 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeIds")
     private final java.util.List<String> dbNodeIds;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getDbNodeIds() {
         return dbNodeIds;
     }
@@ -461,6 +635,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the Db server.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -471,6 +649,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current lifecycle state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -481,6 +663,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCount")
     private final Integer maxCpuCount;
 
+    /**
+     * The total number of CPU cores available.
+     * @return the value
+     **/
     public Integer getMaxCpuCount() {
         return maxCpuCount;
     }
@@ -491,6 +677,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInGBs")
     private final Integer maxMemoryInGBs;
 
+    /**
+     * The total memory available in GBs.
+     * @return the value
+     **/
     public Integer getMaxMemoryInGBs() {
         return maxMemoryInGBs;
     }
@@ -501,6 +691,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("maxDbNodeStorageInGBs")
     private final Integer maxDbNodeStorageInGBs;
 
+    /**
+     * The total local node storage available in GBs.
+     * @return the value
+     **/
     public Integer getMaxDbNodeStorageInGBs() {
         return maxDbNodeStorageInGBs;
     }
@@ -511,6 +705,10 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time that the Db Server was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -532,6 +730,14 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -544,6 +750,12 @@ public final class DbServerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

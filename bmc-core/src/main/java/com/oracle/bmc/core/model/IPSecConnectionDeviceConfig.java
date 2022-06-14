@@ -40,36 +40,65 @@ public final class IPSecConnectionDeviceConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The date and time the IPSec connection was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the IPSec connection was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Two {@link TunnelConfig} objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tunnels")
         private java.util.List<TunnelConfig> tunnels;
 
+        /**
+         * Two {@link TunnelConfig} objects.
+         * @param tunnels the value to set
+         * @return this builder
+         **/
         public Builder tunnels(java.util.List<TunnelConfig> tunnels) {
             this.tunnels = tunnels;
             this.__explicitlySet__.add("tunnels");
@@ -116,6 +145,10 @@ public final class IPSecConnectionDeviceConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -126,6 +159,10 @@ public final class IPSecConnectionDeviceConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -136,6 +173,10 @@ public final class IPSecConnectionDeviceConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the IPSec connection was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -146,6 +187,10 @@ public final class IPSecConnectionDeviceConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("tunnels")
     private final java.util.List<TunnelConfig> tunnels;
 
+    /**
+     * Two {@link TunnelConfig} objects.
+     * @return the value
+     **/
     public java.util.List<TunnelConfig> getTunnels() {
         return tunnels;
     }

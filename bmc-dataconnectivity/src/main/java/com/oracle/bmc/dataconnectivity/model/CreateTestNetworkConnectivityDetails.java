@@ -29,9 +29,17 @@ public final class CreateTestNetworkConnectivityDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Data Asset key
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
+        /**
+         * Data Asset key
+         * @param dataAssetKey the value to set
+         * @return this builder
+         **/
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
@@ -74,6 +82,10 @@ public final class CreateTestNetworkConnectivityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     private final String dataAssetKey;
 
+    /**
+     * Data Asset key
+     * @return the value
+     **/
     public String getDataAssetKey() {
         return dataAssetKey;
     }

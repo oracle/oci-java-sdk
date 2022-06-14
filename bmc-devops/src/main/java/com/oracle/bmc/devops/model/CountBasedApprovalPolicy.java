@@ -27,9 +27,17 @@ package com.oracle.bmc.devops.model;
 public final class CountBasedApprovalPolicy extends ApprovalPolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A minimum number of approvals required for stage to proceed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovalsRequired")
         private Integer numberOfApprovalsRequired;
 
+        /**
+         * A minimum number of approvals required for stage to proceed.
+         * @param numberOfApprovalsRequired the value to set
+         * @return this builder
+         **/
         public Builder numberOfApprovalsRequired(Integer numberOfApprovalsRequired) {
             this.numberOfApprovalsRequired = numberOfApprovalsRequired;
             this.__explicitlySet__.add("numberOfApprovalsRequired");
@@ -78,6 +86,10 @@ public final class CountBasedApprovalPolicy extends ApprovalPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovalsRequired")
     private final Integer numberOfApprovalsRequired;
 
+    /**
+     * A minimum number of approvals required for stage to proceed.
+     * @return the value
+     **/
     public Integer getNumberOfApprovalsRequired() {
         return numberOfApprovalsRequired;
     }

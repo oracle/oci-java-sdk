@@ -30,9 +30,17 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * User provided ADW wallet password for the Operations Insights Warehouse.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseWalletPassword")
         private String operationsInsightsWarehouseWalletPassword;
 
+        /**
+         * User provided ADW wallet password for the Operations Insights Warehouse.
+         * @param operationsInsightsWarehouseWalletPassword the value to set
+         * @return this builder
+         **/
         public Builder operationsInsightsWarehouseWalletPassword(
                 String operationsInsightsWarehouseWalletPassword) {
             this.operationsInsightsWarehouseWalletPassword =
@@ -80,6 +88,10 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseWalletPassword")
     private final String operationsInsightsWarehouseWalletPassword;
 
+    /**
+     * User provided ADW wallet password for the Operations Insights Warehouse.
+     * @return the value
+     **/
     public String getOperationsInsightsWarehouseWalletPassword() {
         return operationsInsightsWarehouseWalletPassword;
     }

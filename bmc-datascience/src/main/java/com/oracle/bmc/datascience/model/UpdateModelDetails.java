@@ -48,55 +48,110 @@ public final class UpdateModelDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
+         *  Example: {@code My Model}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
+         *  Example: {@code My Model}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A short description of the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A short description of the model.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * An array of custom metadata details for the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customMetadataList")
         private java.util.List<Metadata> customMetadataList;
 
+        /**
+         * An array of custom metadata details for the model.
+         * @param customMetadataList the value to set
+         * @return this builder
+         **/
         public Builder customMetadataList(java.util.List<Metadata> customMetadataList) {
             this.customMetadataList = customMetadataList;
             this.__explicitlySet__.add("customMetadataList");
             return this;
         }
-
+        /**
+         * An array of defined metadata details for the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedMetadataList")
         private java.util.List<Metadata> definedMetadataList;
 
+        /**
+         * An array of defined metadata details for the model.
+         * @param definedMetadataList the value to set
+         * @return this builder
+         **/
         public Builder definedMetadataList(java.util.List<Metadata> definedMetadataList) {
             this.definedMetadataList = definedMetadataList;
             this.__explicitlySet__.add("definedMetadataList");
@@ -153,6 +208,12 @@ public final class UpdateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
+     *  Example: {@code My Model}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -163,6 +224,10 @@ public final class UpdateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A short description of the model.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -175,6 +240,12 @@ public final class UpdateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -187,6 +258,12 @@ public final class UpdateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -197,6 +274,10 @@ public final class UpdateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customMetadataList")
     private final java.util.List<Metadata> customMetadataList;
 
+    /**
+     * An array of custom metadata details for the model.
+     * @return the value
+     **/
     public java.util.List<Metadata> getCustomMetadataList() {
         return customMetadataList;
     }
@@ -207,6 +288,10 @@ public final class UpdateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedMetadataList")
     private final java.util.List<Metadata> definedMetadataList;
 
+    /**
+     * An array of defined metadata details for the model.
+     * @return the value
+     **/
     public java.util.List<Metadata> getDefinedMetadataList() {
         return definedMetadataList;
     }

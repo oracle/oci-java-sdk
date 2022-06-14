@@ -169,46 +169,85 @@ public final class SqlJob extends Job {
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlType")
         private SqlType sqlType;
 
+        /**
+         * The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType.
+         * @param sqlType the value to set
+         * @return this builder
+         **/
         public Builder sqlType(SqlType sqlType) {
             this.sqlType = sqlType;
             this.__explicitlySet__.add("sqlType");
             return this;
         }
-
+        /**
+         * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL operationType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
+        /**
+         * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL operationType.
+         * @param sqlText the value to set
+         * @return this builder
+         **/
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
             return this;
         }
-
+        /**
+         * The SQL operation type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
+        /**
+         * The SQL operation type.
+         * @param operationType the value to set
+         * @return this builder
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-
+        /**
+         * The database user name used to execute the SQL job. If the job is being executed on a Managed Database Group,
+         * then the user name should exist on all the databases in the group with the same password.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The database user name used to execute the SQL job. If the job is being executed on a Managed Database Group,
+         * then the user name should exist on all the databases in the group with the same password.
+         *
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
+        /**
+         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+         * @param role the value to set
+         * @return this builder
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -390,6 +429,10 @@ public final class SqlJob extends Job {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlType")
     private final SqlType sqlType;
 
+    /**
+     * The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType.
+     * @return the value
+     **/
     public SqlType getSqlType() {
         return sqlType;
     }
@@ -400,6 +443,10 @@ public final class SqlJob extends Job {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
+    /**
+     * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL operationType.
+     * @return the value
+     **/
     public String getSqlText() {
         return sqlText;
     }
@@ -457,6 +504,10 @@ public final class SqlJob extends Job {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
+    /**
+     * The SQL operation type.
+     * @return the value
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
@@ -469,6 +520,12 @@ public final class SqlJob extends Job {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The database user name used to execute the SQL job. If the job is being executed on a Managed Database Group,
+     * then the user name should exist on all the databases in the group with the same password.
+     *
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -525,6 +582,10 @@ public final class SqlJob extends Job {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
+    /**
+     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+     * @return the value
+     **/
     public Role getRole() {
         return role;
     }

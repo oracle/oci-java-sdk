@@ -16,6 +16,9 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment. Retrieves details of objects in the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,11 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +43,10 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a migration.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -45,6 +57,11 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -55,6 +72,11 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -64,6 +86,10 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private com.oracle.bmc.applicationmigration.model.SortOrders sortOrder;
 
+    /**
+     * The sort order, either {@code ASC} (ascending) or {@code DESC} (descending).
+     *
+     */
     public com.oracle.bmc.applicationmigration.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -114,6 +140,12 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * Specifies the field on which to sort.
+     * By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -122,6 +154,9 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String displayName;
 
+    /**
+     * Display name on which to query.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -130,6 +165,9 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private com.oracle.bmc.applicationmigration.model.MigrationLifecycleStates lifecycleState;
 
+    /**
+     * This field is not supported. Do not use.
+     */
     public com.oracle.bmc.applicationmigration.model.MigrationLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -141,10 +179,14 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment. Retrieves details of objects in the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment. Retrieves details of objects in the specified compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -152,12 +194,18 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -165,11 +213,16 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a migration.
+         *
+         */
         private String id = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a migration.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -177,12 +230,18 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The number of items returned in a paginated {@code List} call. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
          * The number of items returned in a paginated {@code List} call. For information about pagination, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -190,12 +249,18 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+         * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
          * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -203,11 +268,16 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The sort order, either {@code ASC} (ascending) or {@code DESC} (descending).
+         *
+         */
         private com.oracle.bmc.applicationmigration.model.SortOrders sortOrder = null;
 
         /**
          * The sort order, either {@code ASC} (ascending) or {@code DESC} (descending).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.applicationmigration.model.SortOrders sortOrder) {
@@ -215,6 +285,12 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Specifies the field on which to sort.
+         * By default, {@code TIMECREATED} is ordered descending.
+         * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -222,6 +298,7 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * By default, {@code TIMECREATED} is ordered descending.
          * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -229,10 +306,14 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Display name on which to query.
+         */
         private String displayName = null;
 
         /**
          * Display name on which to query.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -240,11 +321,15 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * This field is not supported. Do not use.
+         */
         private com.oracle.bmc.applicationmigration.model.MigrationLifecycleStates lifecycleState =
                 null;
 
         /**
          * This field is not supported. Do not use.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -337,7 +422,8 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -352,6 +438,10 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

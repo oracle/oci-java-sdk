@@ -17,6 +17,9 @@ public class SummarizeAwrDbSnapshotRangesRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -25,6 +28,9 @@ public class SummarizeAwrDbSnapshotRangesRequest
      */
     private String name;
 
+    /**
+     * The optional single value query parameter to filter the entity name.
+     */
     public String getName() {
         return name;
     }
@@ -33,6 +39,9 @@ public class SummarizeAwrDbSnapshotRangesRequest
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
+    /**
+     * The optional greater than or equal to query parameter to filter the timestamp.
+     */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
@@ -41,6 +50,9 @@ public class SummarizeAwrDbSnapshotRangesRequest
      */
     private java.util.Date timeLessThanOrEqualTo;
 
+    /**
+     * The optional less than or equal to query parameter to filter the timestamp.
+     */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
@@ -51,6 +63,11 @@ public class SummarizeAwrDbSnapshotRangesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -59,6 +76,9 @@ public class SummarizeAwrDbSnapshotRangesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -103,6 +123,9 @@ public class SummarizeAwrDbSnapshotRangesRequest
         }
     };
 
+    /**
+     * The option to sort the AWR summary data.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -111,6 +134,9 @@ public class SummarizeAwrDbSnapshotRangesRequest
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -119,6 +145,9 @@ public class SummarizeAwrDbSnapshotRangesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -132,6 +161,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -143,10 +180,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -154,10 +195,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
             return this;
         }
 
+        /**
+         * The optional single value query parameter to filter the entity name.
+         */
         private String name = null;
 
         /**
          * The optional single value query parameter to filter the entity name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -165,10 +210,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
             return this;
         }
 
+        /**
+         * The optional greater than or equal to query parameter to filter the timestamp.
+         */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to query parameter to filter the timestamp.
+         * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeGreaterThanOrEqualTo(java.util.Date timeGreaterThanOrEqualTo) {
@@ -176,10 +225,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
             return this;
         }
 
+        /**
+         * The optional less than or equal to query parameter to filter the timestamp.
+         */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to query parameter to filter the timestamp.
+         * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLessThanOrEqualTo(java.util.Date timeLessThanOrEqualTo) {
@@ -187,12 +240,18 @@ public class SummarizeAwrDbSnapshotRangesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page from where the next set of paginated results
          * are retrieved. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -200,10 +259,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
             return this;
         }
 
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -211,10 +274,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
             return this;
         }
 
+        /**
+         * The option to sort the AWR summary data.
+         */
         private SortBy sortBy = null;
 
         /**
          * The option to sort the AWR summary data.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -222,10 +289,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -233,10 +304,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -244,6 +319,14 @@ public class SummarizeAwrDbSnapshotRangesRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -253,6 +336,7 @@ public class SummarizeAwrDbSnapshotRangesRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -346,7 +430,8 @@ public class SummarizeAwrDbSnapshotRangesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -362,6 +447,10 @@ public class SummarizeAwrDbSnapshotRangesRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

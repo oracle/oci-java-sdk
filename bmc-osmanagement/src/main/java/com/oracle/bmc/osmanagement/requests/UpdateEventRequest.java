@@ -18,6 +18,9 @@ public class UpdateEventRequest
      */
     private String managedInstanceId;
 
+    /**
+     * Instance Oracle Cloud identifier (ocid)
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -26,6 +29,9 @@ public class UpdateEventRequest
      */
     private String eventId;
 
+    /**
+     * Unique Event identifier (OCID)
+     */
     public String getEventId() {
         return eventId;
     }
@@ -34,6 +40,9 @@ public class UpdateEventRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -42,6 +51,9 @@ public class UpdateEventRequest
      */
     private com.oracle.bmc.osmanagement.model.UpdateEventDetails updateEventDetails;
 
+    /**
+     * Details about the event to update
+     */
     public com.oracle.bmc.osmanagement.model.UpdateEventDetails getUpdateEventDetails() {
         return updateEventDetails;
     }
@@ -50,6 +62,9 @@ public class UpdateEventRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,6 +78,14 @@ public class UpdateEventRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -84,10 +107,14 @@ public class UpdateEventRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Instance Oracle Cloud identifier (ocid)
+         */
         private String managedInstanceId = null;
 
         /**
          * Instance Oracle Cloud identifier (ocid)
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -95,10 +122,14 @@ public class UpdateEventRequest
             return this;
         }
 
+        /**
+         * Unique Event identifier (OCID)
+         */
         private String eventId = null;
 
         /**
          * Unique Event identifier (OCID)
+         * @param eventId the value to set
          * @return this builder instance
          */
         public Builder eventId(String eventId) {
@@ -106,10 +137,14 @@ public class UpdateEventRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -117,10 +152,14 @@ public class UpdateEventRequest
             return this;
         }
 
+        /**
+         * Details about the event to update
+         */
         private com.oracle.bmc.osmanagement.model.UpdateEventDetails updateEventDetails = null;
 
         /**
          * Details about the event to update
+         * @param updateEventDetails the value to set
          * @return this builder instance
          */
         public Builder updateEventDetails(
@@ -129,10 +168,14 @@ public class UpdateEventRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -140,6 +183,14 @@ public class UpdateEventRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -149,6 +200,7 @@ public class UpdateEventRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -245,7 +297,8 @@ public class UpdateEventRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -257,6 +310,10 @@ public class UpdateEventRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

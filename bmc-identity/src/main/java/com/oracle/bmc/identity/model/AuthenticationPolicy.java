@@ -33,6 +33,7 @@ public final class AuthenticationPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("passwordPolicy")
         private PasswordPolicy passwordPolicy;
 
@@ -41,10 +42,17 @@ public final class AuthenticationPolicy {
             this.__explicitlySet__.add("passwordPolicy");
             return this;
         }
-
+        /**
+         * Compartment OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment OCID.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -106,6 +114,10 @@ public final class AuthenticationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment OCID.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

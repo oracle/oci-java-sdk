@@ -18,6 +18,9 @@ public class UpdateBackendRequest
      */
     private com.oracle.bmc.loadbalancer.model.UpdateBackendDetails updateBackendDetails;
 
+    /**
+     * Details for updating a backend server.
+     */
     public com.oracle.bmc.loadbalancer.model.UpdateBackendDetails getUpdateBackendDetails() {
         return updateBackendDetails;
     }
@@ -26,6 +29,9 @@ public class UpdateBackendRequest
      */
     private String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and server.
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -37,6 +43,12 @@ public class UpdateBackendRequest
      */
     private String backendSetName;
 
+    /**
+     * The name of the backend set associated with the backend server.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     */
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -48,6 +60,12 @@ public class UpdateBackendRequest
      */
     private String backendName;
 
+    /**
+     * The IP address and port of the backend server to update.
+     * <p>
+     * Example: {@code 10.0.0.3:8080}
+     *
+     */
     public String getBackendName() {
         return backendName;
     }
@@ -58,6 +76,11 @@ public class UpdateBackendRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,6 +94,14 @@ public class UpdateBackendRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -92,10 +123,14 @@ public class UpdateBackendRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for updating a backend server.
+         */
         private com.oracle.bmc.loadbalancer.model.UpdateBackendDetails updateBackendDetails = null;
 
         /**
          * Details for updating a backend server.
+         * @param updateBackendDetails the value to set
          * @return this builder instance
          */
         public Builder updateBackendDetails(
@@ -104,10 +139,14 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and server.
+         */
         private String loadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and server.
+         * @param loadBalancerId the value to set
          * @return this builder instance
          */
         public Builder loadBalancerId(String loadBalancerId) {
@@ -115,6 +154,12 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * The name of the backend set associated with the backend server.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         */
         private String backendSetName = null;
 
         /**
@@ -122,6 +167,7 @@ public class UpdateBackendRequest
          * <p>
          * Example: {@code example_backend_set}
          *
+         * @param backendSetName the value to set
          * @return this builder instance
          */
         public Builder backendSetName(String backendSetName) {
@@ -129,6 +175,12 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * The IP address and port of the backend server to update.
+         * <p>
+         * Example: {@code 10.0.0.3:8080}
+         *
+         */
         private String backendName = null;
 
         /**
@@ -136,6 +188,7 @@ public class UpdateBackendRequest
          * <p>
          * Example: {@code 10.0.0.3:8080}
          *
+         * @param backendName the value to set
          * @return this builder instance
          */
         public Builder backendName(String backendName) {
@@ -143,12 +196,18 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -156,6 +215,14 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -165,6 +232,7 @@ public class UpdateBackendRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -261,7 +329,8 @@ public class UpdateBackendRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -273,6 +342,10 @@ public class UpdateBackendRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

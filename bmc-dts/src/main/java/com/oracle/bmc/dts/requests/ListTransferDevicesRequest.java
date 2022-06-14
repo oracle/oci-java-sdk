@@ -16,6 +16,9 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
@@ -68,6 +71,9 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * filtering by lifecycleState
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -76,6 +82,9 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String displayName;
 
+    /**
+     * filtering by displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -87,10 +96,14 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -98,10 +111,14 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * filtering by lifecycleState
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * filtering by lifecycleState
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState lifecycleState) {
@@ -109,10 +126,14 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * filtering by displayName
+         */
         private String displayName = null;
 
         /**
          * filtering by displayName
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -192,12 +213,17 @@ public class ListTransferDevicesRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().id(id).lifecycleState(lifecycleState).displayName(displayName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

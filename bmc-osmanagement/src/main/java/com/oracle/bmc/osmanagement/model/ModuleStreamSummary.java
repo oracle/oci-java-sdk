@@ -31,27 +31,53 @@ public final class ModuleStreamSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the module that contains the stream.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
+        /**
+         * The name of the module that contains the stream.
+         *
+         * @param moduleName the value to set
+         * @return this builder
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-
+        /**
+         * The name of the stream.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
 
+        /**
+         * The name of the stream.
+         *
+         * @param streamName the value to set
+         * @return this builder
+         **/
         public Builder streamName(String streamName) {
             this.streamName = streamName;
             this.__explicitlySet__.add("streamName");
             return this;
         }
-
+        /**
+         * The OCID of the software source that provides this module stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
+        /**
+         * The OCID of the software source that provides this module stream.
+         * @param softwareSourceId the value to set
+         * @return this builder
+         **/
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = softwareSourceId;
             this.__explicitlySet__.add("softwareSourceId");
@@ -98,6 +124,11 @@ public final class ModuleStreamSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
+    /**
+     * The name of the module that contains the stream.
+     *
+     * @return the value
+     **/
     public String getModuleName() {
         return moduleName;
     }
@@ -109,6 +140,11 @@ public final class ModuleStreamSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
     private final String streamName;
 
+    /**
+     * The name of the stream.
+     *
+     * @return the value
+     **/
     public String getStreamName() {
         return streamName;
     }
@@ -119,6 +155,10 @@ public final class ModuleStreamSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
+    /**
+     * The OCID of the software source that provides this module stream.
+     * @return the value
+     **/
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }

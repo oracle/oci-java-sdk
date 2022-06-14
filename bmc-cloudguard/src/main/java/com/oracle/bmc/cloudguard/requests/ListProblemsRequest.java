@@ -16,6 +16,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timeLastDetectedGreaterThanOrEqualTo;
 
+    /**
+     * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+     */
     public java.util.Date getTimeLastDetectedGreaterThanOrEqualTo() {
         return timeLastDetectedGreaterThanOrEqualTo;
     }
@@ -32,6 +38,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timeLastDetectedLessThanOrEqualTo;
 
+    /**
+     * End time for a filter. If end time is not specified, end time will be set to current time.
+     */
     public java.util.Date getTimeLastDetectedLessThanOrEqualTo() {
         return timeLastDetectedLessThanOrEqualTo;
     }
@@ -40,6 +49,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timeFirstDetectedGreaterThanOrEqualTo;
 
+    /**
+     * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+     */
     public java.util.Date getTimeFirstDetectedGreaterThanOrEqualTo() {
         return timeFirstDetectedGreaterThanOrEqualTo;
     }
@@ -48,6 +60,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timeFirstDetectedLessThanOrEqualTo;
 
+    /**
+     * End time for a filter. If end time is not specified, end time will be set to current time.
+     */
     public java.util.Date getTimeFirstDetectedLessThanOrEqualTo() {
         return timeFirstDetectedLessThanOrEqualTo;
     }
@@ -56,6 +71,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.cloudguard.model.ProblemLifecycleDetail lifecycleDetail;
 
+    /**
+     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     */
     public com.oracle.bmc.cloudguard.model.ProblemLifecycleDetail getLifecycleDetail() {
         return lifecycleDetail;
     }
@@ -64,6 +82,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.cloudguard.model.ProblemLifecycleState lifecycleState;
 
+    /**
+     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     */
     public com.oracle.bmc.cloudguard.model.ProblemLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -72,6 +93,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String region;
 
+    /**
+     * OCI Monitoring region.
+     */
     public String getRegion() {
         return region;
     }
@@ -80,6 +104,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String riskLevel;
 
+    /**
+     * Risk level of the Problem.
+     */
     public String getRiskLevel() {
         return riskLevel;
     }
@@ -88,6 +115,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String resourceType;
 
+    /**
+     * Resource Type associated with the resource.
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -96,6 +126,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String city;
 
+    /**
+     * City of the problem.
+     */
     public String getCity() {
         return city;
     }
@@ -104,6 +137,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String state;
 
+    /**
+     * State of the problem.
+     */
     public String getState() {
         return state;
     }
@@ -112,6 +148,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String country;
 
+    /**
+     * Country of the problem.
+     */
     public String getCountry() {
         return country;
     }
@@ -120,6 +159,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String label;
 
+    /**
+     * Label associated with the Problem.
+     */
     public String getLabel() {
         return label;
     }
@@ -128,6 +170,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> detectorRuleIdList;
 
+    /**
+     * Comma seperated list of detector rule ids to be passed in to match against Problems.
+     */
     public java.util.List<String> getDetectorRuleIdList() {
         return detectorRuleIdList;
     }
@@ -137,6 +182,10 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.cloudguard.model.DetectorEnum detectorType;
 
+    /**
+     * The field to list the Problems by Detector Type. Valid values are IAAS_ACTIVITY_DETECTOR and IAAS_CONFIGURATION_DETECTOR
+     *
+     */
     public com.oracle.bmc.cloudguard.model.DetectorEnum getDetectorType() {
         return detectorType;
     }
@@ -145,6 +194,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String targetId;
 
+    /**
+     * The ID of the target in which to list resources.
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -154,6 +206,10 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.cloudguard.model.ProblemCategoryEnum problemCategory;
 
+    /**
+     * Setting this to {@code SECURITY_ZONE} returns only security-zone related violations.
+     *
+     */
     public com.oracle.bmc.cloudguard.model.ProblemCategoryEnum getProblemCategory() {
         return problemCategory;
     }
@@ -166,6 +222,13 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of {@code accessLevel}.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -220,6 +283,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -228,6 +299,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String resourceId;
 
+    /**
+     * The ID of the resource associated with the problem.
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -236,6 +310,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -244,6 +321,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -252,6 +332,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -299,6 +382,10 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for riskLevel, timeLastDetected and resourceName is descending. Default order for riskLevel and resourceName is ascending. If no value is specified timeLastDetected is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -307,6 +394,9 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -318,10 +408,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -329,10 +423,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         */
         private java.util.Date timeLastDetectedGreaterThanOrEqualTo = null;
 
         /**
          * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         * @param timeLastDetectedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLastDetectedGreaterThanOrEqualTo(
@@ -341,10 +439,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to current time.
+         */
         private java.util.Date timeLastDetectedLessThanOrEqualTo = null;
 
         /**
          * End time for a filter. If end time is not specified, end time will be set to current time.
+         * @param timeLastDetectedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLastDetectedLessThanOrEqualTo(
@@ -353,10 +455,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         */
         private java.util.Date timeFirstDetectedGreaterThanOrEqualTo = null;
 
         /**
          * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         * @param timeFirstDetectedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeFirstDetectedGreaterThanOrEqualTo(
@@ -365,10 +471,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to current time.
+         */
         private java.util.Date timeFirstDetectedLessThanOrEqualTo = null;
 
         /**
          * End time for a filter. If end time is not specified, end time will be set to current time.
+         * @param timeFirstDetectedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeFirstDetectedLessThanOrEqualTo(
@@ -377,10 +487,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
         private com.oracle.bmc.cloudguard.model.ProblemLifecycleDetail lifecycleDetail = null;
 
         /**
          * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param lifecycleDetail the value to set
          * @return this builder instance
          */
         public Builder lifecycleDetail(
@@ -389,10 +503,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
         private com.oracle.bmc.cloudguard.model.ProblemLifecycleState lifecycleState = null;
 
         /**
          * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -401,10 +519,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * OCI Monitoring region.
+         */
         private String region = null;
 
         /**
          * OCI Monitoring region.
+         * @param region the value to set
          * @return this builder instance
          */
         public Builder region(String region) {
@@ -412,10 +534,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Risk level of the Problem.
+         */
         private String riskLevel = null;
 
         /**
          * Risk level of the Problem.
+         * @param riskLevel the value to set
          * @return this builder instance
          */
         public Builder riskLevel(String riskLevel) {
@@ -423,10 +549,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Resource Type associated with the resource.
+         */
         private String resourceType = null;
 
         /**
          * Resource Type associated with the resource.
+         * @param resourceType the value to set
          * @return this builder instance
          */
         public Builder resourceType(String resourceType) {
@@ -434,10 +564,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * City of the problem.
+         */
         private String city = null;
 
         /**
          * City of the problem.
+         * @param city the value to set
          * @return this builder instance
          */
         public Builder city(String city) {
@@ -445,10 +579,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * State of the problem.
+         */
         private String state = null;
 
         /**
          * State of the problem.
+         * @param state the value to set
          * @return this builder instance
          */
         public Builder state(String state) {
@@ -456,10 +594,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Country of the problem.
+         */
         private String country = null;
 
         /**
          * Country of the problem.
+         * @param country the value to set
          * @return this builder instance
          */
         public Builder country(String country) {
@@ -467,10 +609,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Label associated with the Problem.
+         */
         private String label = null;
 
         /**
          * Label associated with the Problem.
+         * @param label the value to set
          * @return this builder instance
          */
         public Builder label(String label) {
@@ -478,10 +624,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Comma seperated list of detector rule ids to be passed in to match against Problems.
+         */
         private java.util.List<String> detectorRuleIdList = null;
 
         /**
          * Comma seperated list of detector rule ids to be passed in to match against Problems.
+         * @param detectorRuleIdList the value to set
          * @return this builder instance
          */
         public Builder detectorRuleIdList(java.util.List<String> detectorRuleIdList) {
@@ -491,17 +641,23 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Singular setter. Comma seperated list of detector rule ids to be passed in to match against Problems.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder detectorRuleIdList(String singularValue) {
             return this.detectorRuleIdList(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The field to list the Problems by Detector Type. Valid values are IAAS_ACTIVITY_DETECTOR and IAAS_CONFIGURATION_DETECTOR
+         *
+         */
         private com.oracle.bmc.cloudguard.model.DetectorEnum detectorType = null;
 
         /**
          * The field to list the Problems by Detector Type. Valid values are IAAS_ACTIVITY_DETECTOR and IAAS_CONFIGURATION_DETECTOR
          *
+         * @param detectorType the value to set
          * @return this builder instance
          */
         public Builder detectorType(com.oracle.bmc.cloudguard.model.DetectorEnum detectorType) {
@@ -509,10 +665,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The ID of the target in which to list resources.
+         */
         private String targetId = null;
 
         /**
          * The ID of the target in which to list resources.
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -520,11 +680,16 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Setting this to {@code SECURITY_ZONE} returns only security-zone related violations.
+         *
+         */
         private com.oracle.bmc.cloudguard.model.ProblemCategoryEnum problemCategory = null;
 
         /**
          * Setting this to {@code SECURITY_ZONE} returns only security-zone related violations.
          *
+         * @param problemCategory the value to set
          * @return this builder instance
          */
         public Builder problemCategory(
@@ -533,6 +698,13 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -541,6 +713,7 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * and all compartments and subcompartments in the tenancy are
          * returned depending on the the setting of {@code accessLevel}.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -548,6 +721,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -557,6 +738,7 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * resource in a subcompartment).
          * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -564,10 +746,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The ID of the resource associated with the problem.
+         */
         private String resourceId = null;
 
         /**
          * The ID of the resource associated with the problem.
+         * @param resourceId the value to set
          * @return this builder instance
          */
         public Builder resourceId(String resourceId) {
@@ -575,10 +761,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -586,10 +776,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -597,10 +791,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.cloudguard.model.SortOrders sortOrder) {
@@ -608,11 +806,16 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for riskLevel, timeLastDetected and resourceName is descending. Default order for riskLevel and resourceName is ascending. If no value is specified timeLastDetected is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for riskLevel, timeLastDetected and resourceName is descending. Default order for riskLevel and resourceName is ascending. If no value is specified timeLastDetected is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -620,10 +823,14 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -749,7 +956,8 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -781,6 +989,10 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

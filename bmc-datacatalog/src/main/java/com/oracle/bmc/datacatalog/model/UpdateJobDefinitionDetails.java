@@ -53,72 +53,143 @@ public final class UpdateJobDefinitionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Specifies if the job definition is incremental or full.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIncremental")
         private Boolean isIncremental;
 
+        /**
+         * Specifies if the job definition is incremental or full.
+         * @param isIncremental the value to set
+         * @return this builder
+         **/
         public Builder isIncremental(Boolean isIncremental) {
             this.isIncremental = isIncremental;
             this.__explicitlySet__.add("isIncremental");
             return this;
         }
-
+        /**
+         * The key of the data asset for which the job is defined.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
+        /**
+         * The key of the data asset for which the job is defined.
+         * @param dataAssetKey the value to set
+         * @return this builder
+         **/
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
             return this;
         }
-
+        /**
+         * Detailed description of the job definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the job definition.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The key of the connection resource to be used for harvest, sampling, profiling jobs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
         private String connectionKey;
 
+        /**
+         * The key of the connection resource to be used for harvest, sampling, profiling jobs.
+         * @param connectionKey the value to set
+         * @return this builder
+         **/
         public Builder connectionKey(String connectionKey) {
             this.connectionKey = connectionKey;
             this.__explicitlySet__.add("connectionKey");
             return this;
         }
-
+        /**
+         * Specify if sample data to be extracted as part of this harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataExtracted")
         private Boolean isSampleDataExtracted;
 
+        /**
+         * Specify if sample data to be extracted as part of this harvest.
+         * @param isSampleDataExtracted the value to set
+         * @return this builder
+         **/
         public Builder isSampleDataExtracted(Boolean isSampleDataExtracted) {
             this.isSampleDataExtracted = isSampleDataExtracted;
             this.__explicitlySet__.add("isSampleDataExtracted");
             return this;
         }
-
+        /**
+         * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleDataSizeInMBs")
         private Integer sampleDataSizeInMBs;
 
+        /**
+         * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
+         * @param sampleDataSizeInMBs the value to set
+         * @return this builder
+         **/
         public Builder sampleDataSizeInMBs(Integer sampleDataSizeInMBs) {
             this.sampleDataSizeInMBs = sampleDataSizeInMBs;
             this.__explicitlySet__.add("sampleDataSizeInMBs");
             return this;
         }
-
+        /**
+         * A map of maps that contains the properties which are specific to the job type. Each job type
+         * definition may define it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * job definitions have required properties within the "default" category.
+         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
+        /**
+         * A map of maps that contains the properties which are specific to the job type. Each job type
+         * definition may define it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * job definitions have required properties within the "default" category.
+         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+         *
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -179,6 +250,12 @@ public final class UpdateJobDefinitionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -189,6 +266,10 @@ public final class UpdateJobDefinitionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isIncremental")
     private final Boolean isIncremental;
 
+    /**
+     * Specifies if the job definition is incremental or full.
+     * @return the value
+     **/
     public Boolean getIsIncremental() {
         return isIncremental;
     }
@@ -199,6 +280,10 @@ public final class UpdateJobDefinitionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     private final String dataAssetKey;
 
+    /**
+     * The key of the data asset for which the job is defined.
+     * @return the value
+     **/
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -209,6 +294,10 @@ public final class UpdateJobDefinitionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the job definition.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -219,6 +308,10 @@ public final class UpdateJobDefinitionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
     private final String connectionKey;
 
+    /**
+     * The key of the connection resource to be used for harvest, sampling, profiling jobs.
+     * @return the value
+     **/
     public String getConnectionKey() {
         return connectionKey;
     }
@@ -229,6 +322,10 @@ public final class UpdateJobDefinitionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataExtracted")
     private final Boolean isSampleDataExtracted;
 
+    /**
+     * Specify if sample data to be extracted as part of this harvest.
+     * @return the value
+     **/
     public Boolean getIsSampleDataExtracted() {
         return isSampleDataExtracted;
     }
@@ -239,6 +336,10 @@ public final class UpdateJobDefinitionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sampleDataSizeInMBs")
     private final Integer sampleDataSizeInMBs;
 
+    /**
+     * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
+     * @return the value
+     **/
     public Integer getSampleDataSizeInMBs() {
         return sampleDataSizeInMBs;
     }
@@ -254,6 +355,15 @@ public final class UpdateJobDefinitionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
+    /**
+     * A map of maps that contains the properties which are specific to the job type. Each job type
+     * definition may define it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * job definitions have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }

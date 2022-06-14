@@ -84,6 +84,10 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the {@code IdentityProvider}.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -94,6 +98,10 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the tenancy containing the {@code IdentityProvider}.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -109,6 +117,15 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name you assign to the {@code IdentityProvider} during creation. The name
+     * must be unique across all {@code IdentityProvider} objects in the tenancy and
+     * cannot be changed. This is the name federated users see when choosing
+     * which identity provider to use when signing in to the Oracle Cloud Infrastructure
+     * Console.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -121,6 +138,12 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description you assign to the {@code IdentityProvider} during creation. Does
+     * not have to be unique, and it's changeable.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -140,6 +163,19 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("productType")
     private final String productType;
 
+    /**
+     * The identity provider service or product.
+     * Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
+     * Active Directory Federation Services (ADFS).
+     * <p>
+     * Allowed values are:
+     * - {@code ADFS}
+     * - {@code IDCS}
+     * <p>
+     * Example: {@code IDCS}
+     *
+     * @return the value
+     **/
     public String getProductType() {
         return productType;
     }
@@ -153,6 +189,13 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time the {@code IdentityProvider} was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -218,6 +261,12 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state. After creating an {@code IdentityProvider}, make sure its
+     * {@code lifecycleState} changes from CREATING to ACTIVE before using it.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -228,6 +277,10 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
+    /**
+     * The detailed status of INACTIVE lifecycleState.
+     * @return the value
+     **/
     public Long getInactiveStatus() {
         return inactiveStatus;
     }
@@ -241,6 +294,13 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -254,6 +314,13 @@ public class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

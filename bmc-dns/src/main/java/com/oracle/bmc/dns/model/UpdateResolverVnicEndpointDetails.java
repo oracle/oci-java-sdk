@@ -30,9 +30,21 @@ package com.oracle.bmc.dns.model;
 public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+         * resolver endpoint is a part of.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+         * resolver endpoint is a part of.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -83,6 +95,12 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+     * resolver endpoint is a part of.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }

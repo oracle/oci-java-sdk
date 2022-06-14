@@ -29,18 +29,45 @@ package com.oracle.bmc.waas.model;
 public final class AddHttpResponseHeaderAction extends HeaderManipulationAction {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A header field name that conforms to RFC 7230.
+         * <p>
+         * Example: {@code example_header_name}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("header")
         private String header;
 
+        /**
+         * A header field name that conforms to RFC 7230.
+         * <p>
+         * Example: {@code example_header_name}
+         *
+         * @param header the value to set
+         * @return this builder
+         **/
         public Builder header(String header) {
             this.header = header;
             this.__explicitlySet__.add("header");
             return this;
         }
-
+        /**
+         * A header field value that conforms to RFC 7230.
+         * <p>
+         * Example: {@code example_value}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * A header field value that conforms to RFC 7230.
+         * <p>
+         * Example: {@code example_value}
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -93,6 +120,13 @@ public final class AddHttpResponseHeaderAction extends HeaderManipulationAction 
     @com.fasterxml.jackson.annotation.JsonProperty("header")
     private final String header;
 
+    /**
+     * A header field name that conforms to RFC 7230.
+     * <p>
+     * Example: {@code example_header_name}
+     *
+     * @return the value
+     **/
     public String getHeader() {
         return header;
     }
@@ -106,6 +140,13 @@ public final class AddHttpResponseHeaderAction extends HeaderManipulationAction 
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * A header field value that conforms to RFC 7230.
+     * <p>
+     * Example: {@code example_value}
+     *
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

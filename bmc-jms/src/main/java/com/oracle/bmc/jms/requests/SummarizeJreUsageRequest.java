@@ -16,6 +16,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String fleetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     */
     public String getFleetId() {
         return fleetId;
     }
@@ -24,6 +27,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String jreVendor;
 
+    /**
+     * The vendor of the Java Runtime.
+     */
     public String getJreVendor() {
         return jreVendor;
     }
@@ -32,6 +38,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String jreDistribution;
 
+    /**
+     * The distribution of the Java Runtime.
+     */
     public String getJreDistribution() {
         return jreDistribution;
     }
@@ -40,6 +49,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String jreVersion;
 
+    /**
+     * The version of the Java Runtime.
+     */
     public String getJreVersion() {
         return jreVersion;
     }
@@ -48,6 +60,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String applicationId;
 
+    /**
+     * The Fleet-unique identifier of the related application.
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -56,6 +71,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String managedInstanceId;
 
+    /**
+     * The Fleet-unique identifier of the related managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -67,6 +85,12 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<com.oracle.bmc.jms.model.SummarizeJreUsageFields> fields;
 
+    /**
+     * Additional fields to include into the returned model on top of the required ones.
+     * This parameter can also include 'approximateApplicationCount', 'approximateInstallationCount' and 'approximateManagedInstanceCount'.
+     * For example 'approximateApplicationCount,approximateManagedInstanceCount'.
+     *
+     */
     public java.util.List<com.oracle.bmc.jms.model.SummarizeJreUsageFields> getFields() {
         return fields;
     }
@@ -75,6 +99,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.Date timeStart;
 
+    /**
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -83,6 +110,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.Date timeEnd;
 
+    /**
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -91,6 +121,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -99,6 +132,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -107,6 +143,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -121,6 +160,15 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.jms.model.JreSortBy sortBy;
 
+    /**
+     * The field to sort JRE usages. Only one sort order may be provided.
+     * Default order for _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**.
+     * Default order for _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
+     * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
+     * Default order for _distribution_, _vendor_, and _osName_ is **ascending**.
+     * If no value is specified _timeLastSeen_ is default.
+     *
+     */
     public com.oracle.bmc.jms.model.JreSortBy getSortBy() {
         return sortBy;
     }
@@ -129,6 +177,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -137,6 +188,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily;
 
+    /**
+     * The operating system type.
+     */
     public java.util.List<com.oracle.bmc.jms.model.OsFamily> getOsFamily() {
         return osFamily;
     }
@@ -145,6 +199,9 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus;
 
+    /**
+     * The security status of the Java Runtime.
+     */
     public com.oracle.bmc.jms.model.JreSecurityStatus getJreSecurityStatus() {
         return jreSecurityStatus;
     }
@@ -156,10 +213,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         */
         private String fleetId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * @param fleetId the value to set
          * @return this builder instance
          */
         public Builder fleetId(String fleetId) {
@@ -167,10 +228,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The vendor of the Java Runtime.
+         */
         private String jreVendor = null;
 
         /**
          * The vendor of the Java Runtime.
+         * @param jreVendor the value to set
          * @return this builder instance
          */
         public Builder jreVendor(String jreVendor) {
@@ -178,10 +243,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The distribution of the Java Runtime.
+         */
         private String jreDistribution = null;
 
         /**
          * The distribution of the Java Runtime.
+         * @param jreDistribution the value to set
          * @return this builder instance
          */
         public Builder jreDistribution(String jreDistribution) {
@@ -189,10 +258,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The version of the Java Runtime.
+         */
         private String jreVersion = null;
 
         /**
          * The version of the Java Runtime.
+         * @param jreVersion the value to set
          * @return this builder instance
          */
         public Builder jreVersion(String jreVersion) {
@@ -200,10 +273,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The Fleet-unique identifier of the related application.
+         */
         private String applicationId = null;
 
         /**
          * The Fleet-unique identifier of the related application.
+         * @param applicationId the value to set
          * @return this builder instance
          */
         public Builder applicationId(String applicationId) {
@@ -211,10 +288,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The Fleet-unique identifier of the related managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
          * The Fleet-unique identifier of the related managed instance.
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -222,6 +303,12 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Additional fields to include into the returned model on top of the required ones.
+         * This parameter can also include 'approximateApplicationCount', 'approximateInstallationCount' and 'approximateManagedInstanceCount'.
+         * For example 'approximateApplicationCount,approximateManagedInstanceCount'.
+         *
+         */
         private java.util.List<com.oracle.bmc.jms.model.SummarizeJreUsageFields> fields = null;
 
         /**
@@ -229,6 +316,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
          * This parameter can also include 'approximateApplicationCount', 'approximateInstallationCount' and 'approximateManagedInstanceCount'.
          * For example 'approximateApplicationCount,approximateManagedInstanceCount'.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(
@@ -242,16 +330,21 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
          * This parameter can also include 'approximateApplicationCount', 'approximateInstallationCount' and 'approximateManagedInstanceCount'.
          * For example 'approximateApplicationCount,approximateManagedInstanceCount'.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(SummarizeJreUsageFields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
         private java.util.Date timeStart = null;
 
         /**
          * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeStart the value to set
          * @return this builder instance
          */
         public Builder timeStart(java.util.Date timeStart) {
@@ -259,10 +352,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
         private java.util.Date timeEnd = null;
 
         /**
          * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeEnd the value to set
          * @return this builder instance
          */
         public Builder timeEnd(java.util.Date timeEnd) {
@@ -270,10 +367,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -281,10 +382,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -292,10 +397,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.jms.model.SortOrder sortOrder) {
@@ -303,6 +412,15 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort JRE usages. Only one sort order may be provided.
+         * Default order for _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**.
+         * Default order for _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
+         * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
+         * Default order for _distribution_, _vendor_, and _osName_ is **ascending**.
+         * If no value is specified _timeLastSeen_ is default.
+         *
+         */
         private com.oracle.bmc.jms.model.JreSortBy sortBy = null;
 
         /**
@@ -313,6 +431,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
          * Default order for _distribution_, _vendor_, and _osName_ is **ascending**.
          * If no value is specified _timeLastSeen_ is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(com.oracle.bmc.jms.model.JreSortBy sortBy) {
@@ -320,10 +439,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -331,10 +454,14 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The operating system type.
+         */
         private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily = null;
 
         /**
          * The operating system type.
+         * @param osFamily the value to set
          * @return this builder instance
          */
         public Builder osFamily(java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily) {
@@ -344,16 +471,21 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. The operating system type.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder osFamily(OsFamily singularValue) {
             return this.osFamily(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The security status of the Java Runtime.
+         */
         private com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus = null;
 
         /**
          * The security status of the Java Runtime.
+         * @param jreSecurityStatus the value to set
          * @return this builder instance
          */
         public Builder jreSecurityStatus(
@@ -460,7 +592,8 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -482,6 +615,10 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
                 .jreSecurityStatus(jreSecurityStatus);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

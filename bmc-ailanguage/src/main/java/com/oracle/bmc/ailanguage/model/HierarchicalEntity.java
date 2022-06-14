@@ -40,54 +40,97 @@ public final class HierarchicalEntity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
 
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         * @param offset the value to set
+         * @return this builder
+         **/
         public Builder offset(Integer offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-
+        /**
+         * Length of entity text
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
+        /**
+         * Length of entity text
+         * @param length the value to set
+         * @return this builder
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-
+        /**
+         * Entity text like name of person, location, and so on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * Entity text like name of person, location, and so on.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-
+        /**
+         * Type of entity text like PER, LOC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Type of entity text like PER, LOC.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Sub-type of entity text like GPE for LOCATION type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subType")
         private String subType;
 
+        /**
+         * Sub-type of entity text like GPE for LOCATION type
+         * @param subType the value to set
+         * @return this builder
+         **/
         public Builder subType(String subType) {
             this.subType = subType;
             this.__explicitlySet__.add("subType");
             return this;
         }
-
+        /**
+         * Score or confidence for detected entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
+        /**
+         * Score or confidence for detected entity.
+         * @param score the value to set
+         * @return this builder
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -136,6 +179,10 @@ public final class HierarchicalEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Integer offset;
 
+    /**
+     * The number of Unicode code points preceding this entity in the submitted text.
+     * @return the value
+     **/
     public Integer getOffset() {
         return offset;
     }
@@ -146,6 +193,10 @@ public final class HierarchicalEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
+    /**
+     * Length of entity text
+     * @return the value
+     **/
     public Integer getLength() {
         return length;
     }
@@ -156,6 +207,10 @@ public final class HierarchicalEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * Entity text like name of person, location, and so on.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }
@@ -166,6 +221,10 @@ public final class HierarchicalEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Type of entity text like PER, LOC.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -176,6 +235,10 @@ public final class HierarchicalEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("subType")
     private final String subType;
 
+    /**
+     * Sub-type of entity text like GPE for LOCATION type
+     * @return the value
+     **/
     public String getSubType() {
         return subType;
     }
@@ -186,6 +249,10 @@ public final class HierarchicalEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
+    /**
+     * Score or confidence for detected entity.
+     * @return the value
+     **/
     public Double getScore() {
         return score;
     }

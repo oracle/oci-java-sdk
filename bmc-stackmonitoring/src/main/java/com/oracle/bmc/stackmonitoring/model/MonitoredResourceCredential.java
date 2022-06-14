@@ -54,6 +54,10 @@ public class MonitoredResourceCredential {
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
+    /**
+     * The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return the value
+     **/
     public String getSource() {
         return source;
     }
@@ -64,6 +68,10 @@ public class MonitoredResourceCredential {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the credential, within the context of the source.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -74,6 +82,10 @@ public class MonitoredResourceCredential {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * The type of the credential ( ex. JMXCreds,DBCreds).
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -84,6 +96,10 @@ public class MonitoredResourceCredential {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The user-specified textual description of the credential.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

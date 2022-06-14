@@ -30,9 +30,17 @@ public final class OperatorControlAssignmentCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * contains OperatorControlAssignmentSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<OperatorControlAssignmentSummary> items;
 
+        /**
+         * contains OperatorControlAssignmentSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<OperatorControlAssignmentSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class OperatorControlAssignmentCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<OperatorControlAssignmentSummary> items;
 
+    /**
+     * contains OperatorControlAssignmentSummary
+     * @return the value
+     **/
     public java.util.List<OperatorControlAssignmentSummary> getItems() {
         return items;
     }

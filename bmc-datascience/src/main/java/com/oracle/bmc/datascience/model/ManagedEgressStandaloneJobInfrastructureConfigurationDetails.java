@@ -28,18 +28,35 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
         extends JobInfrastructureConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape used to launch the job run instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * The shape used to launch the job run instances.
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * The size of the block storage volume to attach to the instance running the job
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
         private Integer blockStorageSizeInGBs;
 
+        /**
+         * The size of the block storage volume to attach to the instance running the job
+         *
+         * @param blockStorageSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder blockStorageSizeInGBs(Integer blockStorageSizeInGBs) {
             this.blockStorageSizeInGBs = blockStorageSizeInGBs;
             this.__explicitlySet__.add("blockStorageSizeInGBs");
@@ -92,6 +109,10 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * The shape used to launch the job run instances.
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -103,6 +124,11 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
     @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
     private final Integer blockStorageSizeInGBs;
 
+    /**
+     * The size of the block storage volume to attach to the instance running the job
+     *
+     * @return the value
+     **/
     public Integer getBlockStorageSizeInGBs() {
         return blockStorageSizeInGBs;
     }

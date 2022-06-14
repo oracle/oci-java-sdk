@@ -29,18 +29,33 @@ public final class Header {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the header.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerName")
         private String headerName;
 
+        /**
+         * Name of the header.
+         * @param headerName the value to set
+         * @return this builder
+         **/
         public Builder headerName(String headerName) {
             this.headerName = headerName;
             this.__explicitlySet__.add("headerName");
             return this;
         }
-
+        /**
+         * Value of the header.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerValue")
         private String headerValue;
 
+        /**
+         * Value of the header.
+         * @param headerValue the value to set
+         * @return this builder
+         **/
         public Builder headerValue(String headerValue) {
             this.headerValue = headerValue;
             this.__explicitlySet__.add("headerValue");
@@ -82,6 +97,10 @@ public final class Header {
     @com.fasterxml.jackson.annotation.JsonProperty("headerName")
     private final String headerName;
 
+    /**
+     * Name of the header.
+     * @return the value
+     **/
     public String getHeaderName() {
         return headerName;
     }
@@ -92,6 +111,10 @@ public final class Header {
     @com.fasterxml.jackson.annotation.JsonProperty("headerValue")
     private final String headerValue;
 
+    /**
+     * Value of the header.
+     * @return the value
+     **/
     public String getHeaderValue() {
         return headerValue;
     }

@@ -16,6 +16,9 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String targetDatabaseId;
 
+    /**
+     * The OCID of the Data Safe target database.
+     */
     public String getTargetDatabaseId() {
         return targetDatabaseId;
     }
@@ -24,6 +27,9 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -48,6 +60,9 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private java.util.List<String> roleName;
 
+    /**
+     * A filter to return only a specific role based on role name.
+     */
     public java.util.List<String> getRoleName() {
         return roleName;
     }
@@ -56,6 +71,9 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Boolean isOracleMaintained;
 
+    /**
+     * A filter to return roles based on whether they are maintained by oracle or not.
+     */
     public Boolean getIsOracleMaintained() {
         return isOracleMaintained;
     }
@@ -64,6 +82,9 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String authenticationType;
 
+    /**
+     * A filter to return roles based on authentication type.
+     */
     public String getAuthenticationType() {
         return authenticationType;
     }
@@ -108,6 +129,9 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -153,6 +177,10 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -161,6 +189,9 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String roleNameContains;
 
+    /**
+     * A filter to return only items if role name contains a specific string.
+     */
     public String getRoleNameContains() {
         return roleNameContains;
     }
@@ -172,10 +203,14 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the Data Safe target database.
+         */
         private String targetDatabaseId = null;
 
         /**
          * The OCID of the Data Safe target database.
+         * @param targetDatabaseId the value to set
          * @return this builder instance
          */
         public Builder targetDatabaseId(String targetDatabaseId) {
@@ -183,10 +218,14 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -194,10 +233,14 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -205,10 +248,14 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -216,10 +263,14 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only a specific role based on role name.
+         */
         private java.util.List<String> roleName = null;
 
         /**
          * A filter to return only a specific role based on role name.
+         * @param roleName the value to set
          * @return this builder instance
          */
         public Builder roleName(java.util.List<String> roleName) {
@@ -229,16 +280,21 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Singular setter. A filter to return only a specific role based on role name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder roleName(String singularValue) {
             return this.roleName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return roles based on whether they are maintained by oracle or not.
+         */
         private Boolean isOracleMaintained = null;
 
         /**
          * A filter to return roles based on whether they are maintained by oracle or not.
+         * @param isOracleMaintained the value to set
          * @return this builder instance
          */
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
@@ -246,10 +302,14 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return roles based on authentication type.
+         */
         private String authenticationType = null;
 
         /**
          * A filter to return roles based on authentication type.
+         * @param authenticationType the value to set
          * @return this builder instance
          */
         public Builder authenticationType(String authenticationType) {
@@ -257,10 +317,14 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -268,11 +332,16 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field used for sorting. Only one sorting order (sortOrder) can be specified.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -280,10 +349,14 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only items if role name contains a specific string.
+         */
         private String roleNameContains = null;
 
         /**
          * A filter to return only items if role name contains a specific string.
+         * @param roleNameContains the value to set
          * @return this builder instance
          */
         public Builder roleNameContains(String roleNameContains) {
@@ -377,7 +450,8 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -393,6 +467,10 @@ public class ListRolesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .roleNameContains(roleNameContains);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

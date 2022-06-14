@@ -45,54 +45,97 @@ public final class VerifyOutput {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Acceleration task identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledTaskId")
         private String scheduledTaskId;
 
+        /**
+         * Acceleration task identifier.
+         * @param scheduledTaskId the value to set
+         * @return this builder
+         **/
         public Builder scheduledTaskId(String scheduledTaskId) {
             this.scheduledTaskId = scheduledTaskId;
             this.__explicitlySet__.add("scheduledTaskId");
             return this;
         }
-
+        /**
+         * Response time in ms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
         private Long responseTimeInMs;
 
+        /**
+         * Response time in ms.
+         * @param responseTimeInMs the value to set
+         * @return this builder
+         **/
         public Builder responseTimeInMs(Long responseTimeInMs) {
             this.responseTimeInMs = responseTimeInMs;
             this.__explicitlySet__.add("responseTimeInMs");
             return this;
         }
-
+        /**
+         * Total match count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMatchedCount")
         private Long totalMatchedCount;
 
+        /**
+         * Total match count.
+         * @param totalMatchedCount the value to set
+         * @return this builder
+         **/
         public Builder totalMatchedCount(Long totalMatchedCount) {
             this.totalMatchedCount = totalMatchedCount;
             this.__explicitlySet__.add("totalMatchedCount");
             return this;
         }
-
+        /**
+         * Total count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
         private Integer totalCount;
 
+        /**
+         * Total count.
+         * @param totalCount the value to set
+         * @return this builder
+         **/
         public Builder totalCount(Integer totalCount) {
             this.totalCount = totalCount;
             this.__explicitlySet__.add("totalCount");
             return this;
         }
-
+        /**
+         * Acceleration result columns, included if requested (shouldIncludeResults).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<ResultColumn> columns;
 
+        /**
+         * Acceleration result columns, included if requested (shouldIncludeResults).
+         * @param columns the value to set
+         * @return this builder
+         **/
         public Builder columns(java.util.List<ResultColumn> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-
+        /**
+         * Acceleration result values, included if requested (shouldIncludeResults).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("results")
         private java.util.List<java.util.Map<String, Object>> results;
 
+        /**
+         * Acceleration result values, included if requested (shouldIncludeResults).
+         * @param results the value to set
+         * @return this builder
+         **/
         public Builder results(java.util.List<java.util.Map<String, Object>> results) {
             this.results = results;
             this.__explicitlySet__.add("results");
@@ -147,6 +190,10 @@ public final class VerifyOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledTaskId")
     private final String scheduledTaskId;
 
+    /**
+     * Acceleration task identifier.
+     * @return the value
+     **/
     public String getScheduledTaskId() {
         return scheduledTaskId;
     }
@@ -157,6 +204,10 @@ public final class VerifyOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
     private final Long responseTimeInMs;
 
+    /**
+     * Response time in ms.
+     * @return the value
+     **/
     public Long getResponseTimeInMs() {
         return responseTimeInMs;
     }
@@ -167,6 +218,10 @@ public final class VerifyOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("totalMatchedCount")
     private final Long totalMatchedCount;
 
+    /**
+     * Total match count.
+     * @return the value
+     **/
     public Long getTotalMatchedCount() {
         return totalMatchedCount;
     }
@@ -177,6 +232,10 @@ public final class VerifyOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
     private final Integer totalCount;
 
+    /**
+     * Total count.
+     * @return the value
+     **/
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -187,6 +246,10 @@ public final class VerifyOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<ResultColumn> columns;
 
+    /**
+     * Acceleration result columns, included if requested (shouldIncludeResults).
+     * @return the value
+     **/
     public java.util.List<ResultColumn> getColumns() {
         return columns;
     }
@@ -197,6 +260,10 @@ public final class VerifyOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("results")
     private final java.util.List<java.util.Map<String, Object>> results;
 
+    /**
+     * Acceleration result values, included if requested (shouldIncludeResults).
+     * @return the value
+     **/
     public java.util.List<java.util.Map<String, Object>> getResults() {
         return results;
     }

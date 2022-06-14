@@ -16,6 +16,9 @@ public class GetDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String dbHomeId;
 
+    /**
+     * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbHomeId() {
         return dbHomeId;
     }
@@ -27,10 +30,14 @@ public class GetDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbHomeId = null;
 
         /**
          * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbHomeId the value to set
          * @return this builder instance
          */
         public Builder dbHomeId(String dbHomeId) {
@@ -106,12 +113,17 @@ public class GetDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dbHomeId(dbHomeId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

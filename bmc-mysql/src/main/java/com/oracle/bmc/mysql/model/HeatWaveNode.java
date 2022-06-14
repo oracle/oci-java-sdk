@@ -35,36 +35,73 @@ public final class HeatWaveNode {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ID of the node within MySQL HeatWave cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
         private String nodeId;
 
+        /**
+         * The ID of the node within MySQL HeatWave cluster.
+         * @param nodeId the value to set
+         * @return this builder
+         **/
         public Builder nodeId(String nodeId) {
             this.nodeId = nodeId;
             this.__explicitlySet__.add("nodeId");
             return this;
         }
-
+        /**
+         * The current state of the MySQL HeatWave node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the MySQL HeatWave node.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the MySQL HeatWave node was created,
+         * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the MySQL HeatWave node was created,
+         * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the MySQL HeatWave node was updated,
+         * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the MySQL HeatWave node was updated,
+         * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -111,6 +148,10 @@ public final class HeatWaveNode {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
     private final String nodeId;
 
+    /**
+     * The ID of the node within MySQL HeatWave cluster.
+     * @return the value
+     **/
     public String getNodeId() {
         return nodeId;
     }
@@ -174,6 +215,10 @@ public final class HeatWaveNode {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the MySQL HeatWave node.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -186,6 +231,12 @@ public final class HeatWaveNode {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the MySQL HeatWave node was created,
+     * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -198,6 +249,12 @@ public final class HeatWaveNode {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the MySQL HeatWave node was updated,
+     * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

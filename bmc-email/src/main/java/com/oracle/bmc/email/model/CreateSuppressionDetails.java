@@ -30,18 +30,39 @@ public final class CreateSuppressionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment to contain the suppression. Since
+         * suppressions are at the customer level, this must be the tenancy
+         * OCID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment to contain the suppression. Since
+         * suppressions are at the customer level, this must be the tenancy
+         * OCID.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The recipient email address of the suppression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
+        /**
+         * The recipient email address of the suppression.
+         * @param emailAddress the value to set
+         * @return this builder
+         **/
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
@@ -88,6 +109,13 @@ public final class CreateSuppressionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment to contain the suppression. Since
+     * suppressions are at the customer level, this must be the tenancy
+     * OCID.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -98,6 +126,10 @@ public final class CreateSuppressionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
+    /**
+     * The recipient email address of the suppression.
+     * @return the value
+     **/
     public String getEmailAddress() {
         return emailAddress;
     }

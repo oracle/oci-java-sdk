@@ -16,6 +16,9 @@ public class GetResourceProfileRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String resourceProfileId;
 
+    /**
+     * OCID of the resource profile.
+     */
     public String getResourceProfileId() {
         return resourceProfileId;
     }
@@ -24,6 +27,9 @@ public class GetResourceProfileRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetResourceProfileRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of the resource profile.
+         */
         private String resourceProfileId = null;
 
         /**
          * OCID of the resource profile.
+         * @param resourceProfileId the value to set
          * @return this builder instance
          */
         public Builder resourceProfileId(String resourceProfileId) {
@@ -46,10 +56,14 @@ public class GetResourceProfileRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetResourceProfileRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().resourceProfileId(resourceProfileId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

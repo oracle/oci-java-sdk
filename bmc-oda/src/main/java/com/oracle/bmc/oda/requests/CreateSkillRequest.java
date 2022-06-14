@@ -17,6 +17,9 @@ public class CreateSkillRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -25,6 +28,9 @@ public class CreateSkillRequest
      */
     private com.oracle.bmc.oda.model.CreateSkillDetails createSkillDetails;
 
+    /**
+     * Property values for creating the Skill.
+     */
     public com.oracle.bmc.oda.model.CreateSkillDetails getCreateSkillDetails() {
         return createSkillDetails;
     }
@@ -33,6 +39,9 @@ public class CreateSkillRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,6 +56,15 @@ public class CreateSkillRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * conflicting operations. For example, if an instance was deleted and purged from the system,
+     * then the service might reject a retry of the original creation request.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -68,10 +86,14 @@ public class CreateSkillRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -79,10 +101,14 @@ public class CreateSkillRequest
             return this;
         }
 
+        /**
+         * Property values for creating the Skill.
+         */
         private com.oracle.bmc.oda.model.CreateSkillDetails createSkillDetails = null;
 
         /**
          * Property values for creating the Skill.
+         * @param createSkillDetails the value to set
          * @return this builder instance
          */
         public Builder createSkillDetails(
@@ -91,10 +117,14 @@ public class CreateSkillRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -102,6 +132,15 @@ public class CreateSkillRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -112,6 +151,7 @@ public class CreateSkillRequest
          * conflicting operations. For example, if an instance was deleted and purged from the system,
          * then the service might reject a retry of the original creation request.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -204,7 +244,8 @@ public class CreateSkillRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -214,6 +255,10 @@ public class CreateSkillRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

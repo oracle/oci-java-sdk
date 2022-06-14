@@ -94,10 +94,17 @@ public final class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecution
             this.__explicitlySet__.add("deployStageExecutionProgressDetails");
             return this;
         }
-
+        /**
+         * The OCID of the environment where traffic is going.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentId")
         private String environmentId;
 
+        /**
+         * The OCID of the environment where traffic is going.
+         * @param environmentId the value to set
+         * @return this builder
+         **/
         public Builder environmentId(String environmentId) {
             this.environmentId = environmentId;
             this.__explicitlySet__.add("environmentId");
@@ -179,6 +186,10 @@ public final class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecution
     @com.fasterxml.jackson.annotation.JsonProperty("environmentId")
     private final String environmentId;
 
+    /**
+     * The OCID of the environment where traffic is going.
+     * @return the value
+     **/
     public String getEnvironmentId() {
         return environmentId;
     }

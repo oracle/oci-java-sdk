@@ -30,18 +30,37 @@ public final class ImportStandardTagsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name of standard tag namespace that will be imported in bulk
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("standardTagNamespaceName")
         private String standardTagNamespaceName;
 
+        /**
+         * The name of standard tag namespace that will be imported in bulk
+         *
+         * @param standardTagNamespaceName the value to set
+         * @return this builder
+         **/
         public Builder standardTagNamespaceName(String standardTagNamespaceName) {
             this.standardTagNamespaceName = standardTagNamespaceName;
             this.__explicitlySet__.add("standardTagNamespaceName");
@@ -87,6 +106,11 @@ public final class ImportStandardTagsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -98,6 +122,11 @@ public final class ImportStandardTagsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("standardTagNamespaceName")
     private final String standardTagNamespaceName;
 
+    /**
+     * The name of standard tag namespace that will be imported in bulk
+     *
+     * @return the value
+     **/
     public String getStandardTagNamespaceName() {
         return standardTagNamespaceName;
     }

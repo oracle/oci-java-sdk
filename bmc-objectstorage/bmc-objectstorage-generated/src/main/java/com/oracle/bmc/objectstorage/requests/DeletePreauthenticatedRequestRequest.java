@@ -17,6 +17,9 @@ public class DeletePreauthenticatedRequestRequest
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +30,11 @@ public class DeletePreauthenticatedRequestRequest
      */
     private String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -37,6 +45,11 @@ public class DeletePreauthenticatedRequestRequest
      */
     private String parId;
 
+    /**
+     * The unique identifier for the pre-authenticated request. This can be used to manage operations against
+     * the pre-authenticated request, such as GET or DELETE.
+     *
+     */
     public String getParId() {
         return parId;
     }
@@ -45,6 +58,9 @@ public class DeletePreauthenticatedRequestRequest
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -56,10 +72,14 @@ public class DeletePreauthenticatedRequestRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -67,12 +87,18 @@ public class DeletePreauthenticatedRequestRequest
             return this;
         }
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         */
         private String bucketName = null;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
          * Example: {@code my-new-bucket1}
          *
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -80,12 +106,18 @@ public class DeletePreauthenticatedRequestRequest
             return this;
         }
 
+        /**
+         * The unique identifier for the pre-authenticated request. This can be used to manage operations against
+         * the pre-authenticated request, such as GET or DELETE.
+         *
+         */
         private String parId = null;
 
         /**
          * The unique identifier for the pre-authenticated request. This can be used to manage operations against
          * the pre-authenticated request, such as GET or DELETE.
          *
+         * @param parId the value to set
          * @return this builder instance
          */
         public Builder parId(String parId) {
@@ -93,10 +125,14 @@ public class DeletePreauthenticatedRequestRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -179,7 +215,8 @@ public class DeletePreauthenticatedRequestRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +226,10 @@ public class DeletePreauthenticatedRequestRequest
                 .opcClientRequestId(opcClientRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

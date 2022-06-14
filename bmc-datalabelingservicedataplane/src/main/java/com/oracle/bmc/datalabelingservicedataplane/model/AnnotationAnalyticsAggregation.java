@@ -47,18 +47,33 @@ public final class AnnotationAnalyticsAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The count of the matching results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private java.math.BigDecimal count;
 
+        /**
+         * The count of the matching results.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(java.math.BigDecimal count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-
+        /**
+         * The OCID of the dataset the annotations belong to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
         private String datasetId;
 
+        /**
+         * The OCID of the dataset the annotations belong to.
+         * @param datasetId the value to set
+         * @return this builder
+         **/
         public Builder datasetId(String datasetId) {
             this.datasetId = datasetId;
             this.__explicitlySet__.add("datasetId");
@@ -73,28 +88,49 @@ public final class AnnotationAnalyticsAggregation {
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * The OCID of the principal which updated the annotation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
+        /**
+         * The OCID of the principal which updated the annotation.
+         * @param updatedBy the value to set
+         * @return this builder
+         **/
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = updatedBy;
             this.__explicitlySet__.add("updatedBy");
             return this;
         }
-
+        /**
+         * The OCID of the compartment containing the annotations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment containing the annotations.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Describes the lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Annotation.LifecycleState lifecycleState;
 
+        /**
+         * Describes the lifecycle state.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(Annotation.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -144,6 +180,10 @@ public final class AnnotationAnalyticsAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final java.math.BigDecimal count;
 
+    /**
+     * The count of the matching results.
+     * @return the value
+     **/
     public java.math.BigDecimal getCount() {
         return count;
     }
@@ -154,6 +194,10 @@ public final class AnnotationAnalyticsAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
     private final String datasetId;
 
+    /**
+     * The OCID of the dataset the annotations belong to.
+     * @return the value
+     **/
     public String getDatasetId() {
         return datasetId;
     }
@@ -171,6 +215,10 @@ public final class AnnotationAnalyticsAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
+    /**
+     * The OCID of the principal which updated the annotation.
+     * @return the value
+     **/
     public String getUpdatedBy() {
         return updatedBy;
     }
@@ -181,6 +229,10 @@ public final class AnnotationAnalyticsAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment containing the annotations.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -191,6 +243,10 @@ public final class AnnotationAnalyticsAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Annotation.LifecycleState lifecycleState;
 
+    /**
+     * Describes the lifecycle state.
+     * @return the value
+     **/
     public Annotation.LifecycleState getLifecycleState() {
         return lifecycleState;
     }

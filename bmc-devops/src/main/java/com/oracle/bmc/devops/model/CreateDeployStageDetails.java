@@ -128,6 +128,10 @@ public class CreateDeployStageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Optional description about the deployment stage.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -138,6 +142,10 @@ public class CreateDeployStageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -148,6 +156,10 @@ public class CreateDeployStageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("deployPipelineId")
     private final String deployPipelineId;
 
+    /**
+     * The OCID of a pipeline.
+     * @return the value
+     **/
     public String getDeployPipelineId() {
         return deployPipelineId;
     }
@@ -165,6 +177,10 @@ public class CreateDeployStageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -175,6 +191,10 @@ public class CreateDeployStageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

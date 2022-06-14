@@ -29,9 +29,29 @@ public final class SteeringPolicyHealthRuleCase {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An expression that uses conditions at the time of a DNS query to indicate
+         * whether a case matches. Conditions may include the geographical location, IP
+         * subnet, or ASN the DNS query originated. **Example:** If you have an
+         * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
+         * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
+         * matches queries from that office.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
         private String caseCondition;
 
+        /**
+         * An expression that uses conditions at the time of a DNS query to indicate
+         * whether a case matches. Conditions may include the geographical location, IP
+         * subnet, or ASN the DNS query originated. **Example:** If you have an
+         * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
+         * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
+         * matches queries from that office.
+         *
+         * @param caseCondition the value to set
+         * @return this builder
+         **/
         public Builder caseCondition(String caseCondition) {
             this.caseCondition = caseCondition;
             this.__explicitlySet__.add("caseCondition");
@@ -80,6 +100,16 @@ public final class SteeringPolicyHealthRuleCase {
     @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
     private final String caseCondition;
 
+    /**
+     * An expression that uses conditions at the time of a DNS query to indicate
+     * whether a case matches. Conditions may include the geographical location, IP
+     * subnet, or ASN the DNS query originated. **Example:** If you have an
+     * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
+     * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
+     * matches queries from that office.
+     *
+     * @return the value
+     **/
     public String getCaseCondition() {
         return caseCondition;
     }

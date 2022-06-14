@@ -197,37 +197,65 @@ public final class TaskFromRestTaskDetails extends Task {
             this.__explicitlySet__.add("endpoint");
             return this;
         }
-
+        /**
+         * The REST method to use. This property is deprecated, use ExecuteRestCallConfig's methodType property instead.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("methodType")
         private MethodType methodType;
 
+        /**
+         * The REST method to use. This property is deprecated, use ExecuteRestCallConfig's methodType property instead.
+         * @param methodType the value to set
+         * @return this builder
+         **/
         public Builder methodType(MethodType methodType) {
             this.methodType = methodType;
             this.__explicitlySet__.add("methodType");
             return this;
         }
-
+        /**
+         * The headers for the REST call. This property is deprecated, use ExecuteRestCallConfig's headers property instead.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private Object headers;
 
+        /**
+         * The headers for the REST call. This property is deprecated, use ExecuteRestCallConfig's headers property instead.
+         * @param headers the value to set
+         * @return this builder
+         **/
         public Builder headers(Object headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
             return this;
         }
-
+        /**
+         * JSON data for payload body. This property is deprecated, use ExecuteRestCallConfig's payload config param instead.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jsonData")
         private String jsonData;
 
+        /**
+         * JSON data for payload body. This property is deprecated, use ExecuteRestCallConfig's payload config param instead.
+         * @param jsonData the value to set
+         * @return this builder
+         **/
         public Builder jsonData(String jsonData) {
             this.jsonData = jsonData;
             this.__explicitlySet__.add("jsonData");
             return this;
         }
-
+        /**
+         * The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apiCallMode")
         private ApiCallMode apiCallMode;
 
+        /**
+         * The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
+         * @param apiCallMode the value to set
+         * @return this builder
+         **/
         public Builder apiCallMode(ApiCallMode apiCallMode) {
             this.apiCallMode = apiCallMode;
             this.__explicitlySet__.add("apiCallMode");
@@ -242,10 +270,17 @@ public final class TaskFromRestTaskDetails extends Task {
             this.__explicitlySet__.add("cancelEndpoint");
             return this;
         }
-
+        /**
+         * The REST method to use for canceling the original request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cancelMethodType")
         private CancelMethodType cancelMethodType;
 
+        /**
+         * The REST method to use for canceling the original request.
+         * @param cancelMethodType the value to set
+         * @return this builder
+         **/
         public Builder cancelMethodType(CancelMethodType cancelMethodType) {
             this.cancelMethodType = cancelMethodType;
             this.__explicitlySet__.add("cancelMethodType");
@@ -278,10 +313,17 @@ public final class TaskFromRestTaskDetails extends Task {
             this.__explicitlySet__.add("pollRestCallConfig");
             return this;
         }
-
+        /**
+         * List of typed expressions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typedExpressions")
         private java.util.List<TypedExpression> typedExpressions;
 
+        /**
+         * List of typed expressions.
+         * @param typedExpressions the value to set
+         * @return this builder
+         **/
         public Builder typedExpressions(java.util.List<TypedExpression> typedExpressions) {
             this.typedExpressions = typedExpressions;
             this.__explicitlySet__.add("typedExpressions");
@@ -517,6 +559,10 @@ public final class TaskFromRestTaskDetails extends Task {
     @com.fasterxml.jackson.annotation.JsonProperty("methodType")
     private final MethodType methodType;
 
+    /**
+     * The REST method to use. This property is deprecated, use ExecuteRestCallConfig's methodType property instead.
+     * @return the value
+     **/
     public MethodType getMethodType() {
         return methodType;
     }
@@ -527,6 +573,10 @@ public final class TaskFromRestTaskDetails extends Task {
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final Object headers;
 
+    /**
+     * The headers for the REST call. This property is deprecated, use ExecuteRestCallConfig's headers property instead.
+     * @return the value
+     **/
     public Object getHeaders() {
         return headers;
     }
@@ -537,6 +587,10 @@ public final class TaskFromRestTaskDetails extends Task {
     @com.fasterxml.jackson.annotation.JsonProperty("jsonData")
     private final String jsonData;
 
+    /**
+     * JSON data for payload body. This property is deprecated, use ExecuteRestCallConfig's payload config param instead.
+     * @return the value
+     **/
     public String getJsonData() {
         return jsonData;
     }
@@ -596,6 +650,10 @@ public final class TaskFromRestTaskDetails extends Task {
     @com.fasterxml.jackson.annotation.JsonProperty("apiCallMode")
     private final ApiCallMode apiCallMode;
 
+    /**
+     * The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
+     * @return the value
+     **/
     public ApiCallMode getApiCallMode() {
         return apiCallMode;
     }
@@ -664,6 +722,10 @@ public final class TaskFromRestTaskDetails extends Task {
     @com.fasterxml.jackson.annotation.JsonProperty("cancelMethodType")
     private final CancelMethodType cancelMethodType;
 
+    /**
+     * The REST method to use for canceling the original request.
+     * @return the value
+     **/
     public CancelMethodType getCancelMethodType() {
         return cancelMethodType;
     }
@@ -695,6 +757,10 @@ public final class TaskFromRestTaskDetails extends Task {
     @com.fasterxml.jackson.annotation.JsonProperty("typedExpressions")
     private final java.util.List<TypedExpression> typedExpressions;
 
+    /**
+     * List of typed expressions.
+     * @return the value
+     **/
     public java.util.List<TypedExpression> getTypedExpressions() {
         return typedExpressions;
     }

@@ -29,9 +29,17 @@ public final class ResponseAccessControl {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<AccessControlRule> rules;
 
+        /**
+         * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
+         * @param rules the value to set
+         * @return this builder
+         **/
         public Builder rules(java.util.List<AccessControlRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -73,6 +81,10 @@ public final class ResponseAccessControl {
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<AccessControlRule> rules;
 
+    /**
+     * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
+     * @return the value
+     **/
     public java.util.List<AccessControlRule> getRules() {
         return rules;
     }

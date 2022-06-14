@@ -17,6 +17,9 @@ public class AttachVnicRequest
      */
     private com.oracle.bmc.core.model.AttachVnicDetails attachVnicDetails;
 
+    /**
+     * Attach VNIC details.
+     */
     public com.oracle.bmc.core.model.AttachVnicDetails getAttachVnicDetails() {
         return attachVnicDetails;
     }
@@ -30,6 +33,14 @@ public class AttachVnicRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -51,10 +62,14 @@ public class AttachVnicRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Attach VNIC details.
+         */
         private com.oracle.bmc.core.model.AttachVnicDetails attachVnicDetails = null;
 
         /**
          * Attach VNIC details.
+         * @param attachVnicDetails the value to set
          * @return this builder instance
          */
         public Builder attachVnicDetails(
@@ -63,6 +78,14 @@ public class AttachVnicRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -72,6 +95,7 @@ public class AttachVnicRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -160,12 +184,17 @@ public class AttachVnicRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().attachVnicDetails(attachVnicDetails).opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

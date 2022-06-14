@@ -30,27 +30,49 @@ public final class ObjectLocation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Object Storage namespace name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
+        /**
+         * Object Storage namespace name.
+         * @param namespaceName the value to set
+         * @return this builder
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-
+        /**
+         * Object Storage bucket name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * Object Storage bucket name.
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-
+        /**
+         * Object Storage object names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectNames")
         private java.util.List<String> objectNames;
 
+        /**
+         * Object Storage object names.
+         * @param objectNames the value to set
+         * @return this builder
+         **/
         public Builder objectNames(java.util.List<String> objectNames) {
             this.objectNames = objectNames;
             this.__explicitlySet__.add("objectNames");
@@ -96,6 +118,10 @@ public final class ObjectLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
+    /**
+     * Object Storage namespace name.
+     * @return the value
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -106,6 +132,10 @@ public final class ObjectLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * Object Storage bucket name.
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }
@@ -116,6 +146,10 @@ public final class ObjectLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("objectNames")
     private final java.util.List<String> objectNames;
 
+    /**
+     * Object Storage object names.
+     * @return the value
+     **/
     public java.util.List<String> getObjectNames() {
         return objectNames;
     }

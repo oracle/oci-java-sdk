@@ -16,6 +16,9 @@ public class GetVnicAttachmentRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String vnicAttachmentId;
 
+    /**
+     * The OCID of the VNIC attachment.
+     */
     public String getVnicAttachmentId() {
         return vnicAttachmentId;
     }
@@ -27,10 +30,14 @@ public class GetVnicAttachmentRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the VNIC attachment.
+         */
         private String vnicAttachmentId = null;
 
         /**
          * The OCID of the VNIC attachment.
+         * @param vnicAttachmentId the value to set
          * @return this builder instance
          */
         public Builder vnicAttachmentId(String vnicAttachmentId) {
@@ -106,12 +113,17 @@ public class GetVnicAttachmentRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().vnicAttachmentId(vnicAttachmentId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,13 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -26,6 +33,11 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages of results remain
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -36,6 +48,11 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcPreviousPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages of results have been previously returned
+     *
+     * @return the value
+     */
     public String getOpcPreviousPage() {
         return opcPreviousPage;
     }
@@ -46,6 +63,10 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
     private com.oracle.bmc.visualbuilder.model.VbInstanceSummaryCollection
             vbInstanceSummaryCollection;
 
+    /**
+     * The returned VbInstanceSummaryCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.visualbuilder.model.VbInstanceSummaryCollection
             getVbInstanceSummaryCollection() {
         return vbInstanceSummaryCollection;
@@ -80,30 +101,72 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results have been previously returned
+         *
+         */
         private String opcPreviousPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results have been previously returned
+         *
+         * @param opcPreviousPage the value to set
+         * @return this builder
+         */
         public Builder opcPreviousPage(String opcPreviousPage) {
             this.opcPreviousPage = opcPreviousPage;
             return this;
         }
 
+        /**
+         * The returned VbInstanceSummaryCollection instance.
+         */
         private com.oracle.bmc.visualbuilder.model.VbInstanceSummaryCollection
                 vbInstanceSummaryCollection;
 
+        /**
+         * The returned VbInstanceSummaryCollection instance.
+         * @param vbInstanceSummaryCollection the value to set
+         * @return this builder
+         */
         public Builder vbInstanceSummaryCollection(
                 com.oracle.bmc.visualbuilder.model.VbInstanceSummaryCollection
                         vbInstanceSummaryCollection) {
@@ -125,6 +188,10 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListVbInstancesResponse build() {
             return new ListVbInstancesResponse(
                     __httpStatusCode__,
@@ -135,6 +202,10 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

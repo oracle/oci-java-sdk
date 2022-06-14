@@ -44,45 +44,81 @@ public final class AvailableSoftwareSourceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * unique identifier that is immutable on creation
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * OCID for the Compartment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID for the Compartment
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * User friendly name for the software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * User friendly name for the software source
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * OCID for the parent software source, if there is one
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
+        /**
+         * OCID for the parent software source, if there is one
+         * @param parentId the value to set
+         * @return this builder
+         **/
         public Builder parentId(String parentId) {
             this.parentId = parentId;
             this.__explicitlySet__.add("parentId");
             return this;
         }
-
+        /**
+         * Display name of the parent software source, if there is one
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentName")
         private String parentName;
 
+        /**
+         * Display name of the parent software source, if there is one
+         * @param parentName the value to set
+         * @return this builder
+         **/
         public Builder parentName(String parentName) {
             this.parentName = parentName;
             this.__explicitlySet__.add("parentName");
@@ -131,6 +167,10 @@ public final class AvailableSoftwareSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * unique identifier that is immutable on creation
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -141,6 +181,10 @@ public final class AvailableSoftwareSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID for the Compartment
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -151,6 +195,10 @@ public final class AvailableSoftwareSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * User friendly name for the software source
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -161,6 +209,10 @@ public final class AvailableSoftwareSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
+    /**
+     * OCID for the parent software source, if there is one
+     * @return the value
+     **/
     public String getParentId() {
         return parentId;
     }
@@ -171,6 +223,10 @@ public final class AvailableSoftwareSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentName")
     private final String parentName;
 
+    /**
+     * Display name of the parent software source, if there is one
+     * @return the value
+     **/
     public String getParentName() {
         return parentName;
     }

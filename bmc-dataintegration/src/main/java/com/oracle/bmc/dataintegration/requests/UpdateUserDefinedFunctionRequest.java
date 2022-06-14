@@ -18,6 +18,9 @@ public class UpdateUserDefinedFunctionRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class UpdateUserDefinedFunctionRequest
      */
     private String userDefinedFunctionKey;
 
+    /**
+     * The user defined function key.
+     */
     public String getUserDefinedFunctionKey() {
         return userDefinedFunctionKey;
     }
@@ -35,6 +41,9 @@ public class UpdateUserDefinedFunctionRequest
     private com.oracle.bmc.dataintegration.model.UpdateUserDefinedFunctionDetails
             updateUserDefinedFunctionDetails;
 
+    /**
+     * The details needed to updated a UserDefinedFunction.
+     */
     public com.oracle.bmc.dataintegration.model.UpdateUserDefinedFunctionDetails
             getUpdateUserDefinedFunctionDetails() {
         return updateUserDefinedFunctionDetails;
@@ -47,6 +56,12 @@ public class UpdateUserDefinedFunctionRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,6 +73,12 @@ public class UpdateUserDefinedFunctionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -80,10 +101,14 @@ public class UpdateUserDefinedFunctionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -91,10 +116,14 @@ public class UpdateUserDefinedFunctionRequest
             return this;
         }
 
+        /**
+         * The user defined function key.
+         */
         private String userDefinedFunctionKey = null;
 
         /**
          * The user defined function key.
+         * @param userDefinedFunctionKey the value to set
          * @return this builder instance
          */
         public Builder userDefinedFunctionKey(String userDefinedFunctionKey) {
@@ -102,11 +131,15 @@ public class UpdateUserDefinedFunctionRequest
             return this;
         }
 
+        /**
+         * The details needed to updated a UserDefinedFunction.
+         */
         private com.oracle.bmc.dataintegration.model.UpdateUserDefinedFunctionDetails
                 updateUserDefinedFunctionDetails = null;
 
         /**
          * The details needed to updated a UserDefinedFunction.
+         * @param updateUserDefinedFunctionDetails the value to set
          * @return this builder instance
          */
         public Builder updateUserDefinedFunctionDetails(
@@ -116,6 +149,12 @@ public class UpdateUserDefinedFunctionRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -123,6 +162,7 @@ public class UpdateUserDefinedFunctionRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -130,6 +170,12 @@ public class UpdateUserDefinedFunctionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -137,6 +183,7 @@ public class UpdateUserDefinedFunctionRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -232,7 +279,8 @@ public class UpdateUserDefinedFunctionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -243,6 +291,10 @@ public class UpdateUserDefinedFunctionRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

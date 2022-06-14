@@ -29,9 +29,17 @@ public final class TaskRunLogSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly log message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * A user-friendly log message.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -73,6 +81,10 @@ public final class TaskRunLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A user-friendly log message.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }

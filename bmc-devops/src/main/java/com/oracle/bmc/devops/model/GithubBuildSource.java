@@ -53,10 +53,17 @@ public final class GithubBuildSource extends BuildSource {
             this.__explicitlySet__.add("branch");
             return this;
         }
-
+        /**
+         * Connection identifier pertinent to GitHub source provider.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
         private String connectionId;
 
+        /**
+         * Connection identifier pertinent to GitHub source provider.
+         * @param connectionId the value to set
+         * @return this builder
+         **/
         public Builder connectionId(String connectionId) {
             this.connectionId = connectionId;
             this.__explicitlySet__.add("connectionId");
@@ -110,6 +117,10 @@ public final class GithubBuildSource extends BuildSource {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
     private final String connectionId;
 
+    /**
+     * Connection identifier pertinent to GitHub source provider.
+     * @return the value
+     **/
     public String getConnectionId() {
         return connectionId;
     }

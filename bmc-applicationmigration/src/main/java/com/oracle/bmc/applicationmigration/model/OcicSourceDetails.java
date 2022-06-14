@@ -28,18 +28,43 @@ package com.oracle.bmc.applicationmigration.model;
 public final class OcicSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Oracle Cloud Infrastructure - Classic region from which you want to migrate your applications. For example, uscom-east-1 or uscom-central-1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * The Oracle Cloud Infrastructure - Classic region from which you want to migrate your applications. For example, uscom-east-1 or uscom-central-1.
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * If you are using an Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
+         * For example, if Compute-567890123 is the account name of your Oracle Cloud Infrastructure Classic Compute service entitlement,
+         * then enter 567890123.
+         * <p>
+         * If you are using a traditional Oracle Cloud Infrastructure - Classic account, enter your identity domain ID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeAccount")
         private String computeAccount;
 
+        /**
+         * If you are using an Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
+         * For example, if Compute-567890123 is the account name of your Oracle Cloud Infrastructure Classic Compute service entitlement,
+         * then enter 567890123.
+         * <p>
+         * If you are using a traditional Oracle Cloud Infrastructure - Classic account, enter your identity domain ID.
+         *
+         * @param computeAccount the value to set
+         * @return this builder
+         **/
         public Builder computeAccount(String computeAccount) {
             this.computeAccount = computeAccount;
             this.__explicitlySet__.add("computeAccount");
@@ -88,6 +113,10 @@ public final class OcicSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * The Oracle Cloud Infrastructure - Classic region from which you want to migrate your applications. For example, uscom-east-1 or uscom-central-1.
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -103,6 +132,15 @@ public final class OcicSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("computeAccount")
     private final String computeAccount;
 
+    /**
+     * If you are using an Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
+     * For example, if Compute-567890123 is the account name of your Oracle Cloud Infrastructure Classic Compute service entitlement,
+     * then enter 567890123.
+     * <p>
+     * If you are using a traditional Oracle Cloud Infrastructure - Classic account, enter your identity domain ID.
+     *
+     * @return the value
+     **/
     public String getComputeAccount() {
         return computeAccount;
     }

@@ -64,108 +64,221 @@ public final class Span {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier (spanId) for the span.  Note that this field is
+         * defined as spanKey in the API and it maps to the spanId in the trace data
+         * in Application Performance Monitoring.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique identifier (spanId) for the span.  Note that this field is
+         * defined as spanKey in the API and it maps to the spanId in the trace data
+         * in Application Performance Monitoring.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Unique parent identifier for the span if one exists. For root spans this will be null.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentSpanKey")
         private String parentSpanKey;
 
+        /**
+         * Unique parent identifier for the span if one exists. For root spans this will be null.
+         *
+         * @param parentSpanKey the value to set
+         * @return this builder
+         **/
         public Builder parentSpanKey(String parentSpanKey) {
             this.parentSpanKey = parentSpanKey;
             this.__explicitlySet__.add("parentSpanKey");
             return this;
         }
-
+        /**
+         * Unique identifier for the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traceKey")
         private String traceKey;
 
+        /**
+         * Unique identifier for the trace.
+         *
+         * @param traceKey the value to set
+         * @return this builder
+         **/
         public Builder traceKey(String traceKey) {
             this.traceKey = traceKey;
             this.__explicitlySet__.add("traceKey");
             return this;
         }
-
+        /**
+         * Span start time.  Timestamp when the span was started.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * Span start time.  Timestamp when the span was started.
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * Span end time.  Timestamp when the span was completed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
+        /**
+         * Span end time.  Timestamp when the span was completed.
+         *
+         * @param timeEnded the value to set
+         * @return this builder
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-
+        /**
+         * Total span duration in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
         private Long durationInMs;
 
+        /**
+         * Total span duration in milliseconds.
+         *
+         * @param durationInMs the value to set
+         * @return this builder
+         **/
         public Builder durationInMs(Long durationInMs) {
             this.durationInMs = durationInMs;
             this.__explicitlySet__.add("durationInMs");
             return this;
         }
-
+        /**
+         * Span name associated with the trace.  This is usually the method or URI of the request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationName")
         private String operationName;
 
+        /**
+         * Span name associated with the trace.  This is usually the method or URI of the request.
+         *
+         * @param operationName the value to set
+         * @return this builder
+         **/
         public Builder operationName(String operationName) {
             this.operationName = operationName;
             this.__explicitlySet__.add("operationName");
             return this;
         }
-
+        /**
+         * Service name associated with the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * Service name associated with the span.
+         *
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-
+        /**
+         * Kind associated with the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kind")
         private String kind;
 
+        /**
+         * Kind associated with the span.
+         *
+         * @param kind the value to set
+         * @return this builder
+         **/
         public Builder kind(String kind) {
             this.kind = kind;
             this.__explicitlySet__.add("kind");
             return this;
         }
-
+        /**
+         * List of tags associated with the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tag> tags;
 
+        /**
+         * List of tags associated with the span.
+         *
+         * @param tags the value to set
+         * @return this builder
+         **/
         public Builder tags(java.util.List<Tag> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
             return this;
         }
-
+        /**
+         * List of logs associated with the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logs")
         private java.util.List<SpanLogCollection> logs;
 
+        /**
+         * List of logs associated with the span.
+         *
+         * @param logs the value to set
+         * @return this builder
+         **/
         public Builder logs(java.util.List<SpanLogCollection> logs) {
             this.logs = logs;
             this.__explicitlySet__.add("logs");
             return this;
         }
-
+        /**
+         * Indicates if the span has an error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isError")
         private Boolean isError;
 
+        /**
+         * Indicates if the span has an error.
+         *
+         * @param isError the value to set
+         * @return this builder
+         **/
         public Builder isError(Boolean isError) {
             this.isError = isError;
             this.__explicitlySet__.add("isError");
@@ -235,6 +348,13 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique identifier (spanId) for the span.  Note that this field is
+     * defined as spanKey in the API and it maps to the spanId in the trace data
+     * in Application Performance Monitoring.
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -246,6 +366,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("parentSpanKey")
     private final String parentSpanKey;
 
+    /**
+     * Unique parent identifier for the span if one exists. For root spans this will be null.
+     *
+     * @return the value
+     **/
     public String getParentSpanKey() {
         return parentSpanKey;
     }
@@ -257,6 +382,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("traceKey")
     private final String traceKey;
 
+    /**
+     * Unique identifier for the trace.
+     *
+     * @return the value
+     **/
     public String getTraceKey() {
         return traceKey;
     }
@@ -268,6 +398,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * Span start time.  Timestamp when the span was started.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -279,6 +414,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
+    /**
+     * Span end time.  Timestamp when the span was completed.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
@@ -290,6 +430,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
     private final Long durationInMs;
 
+    /**
+     * Total span duration in milliseconds.
+     *
+     * @return the value
+     **/
     public Long getDurationInMs() {
         return durationInMs;
     }
@@ -301,6 +446,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
     private final String operationName;
 
+    /**
+     * Span name associated with the trace.  This is usually the method or URI of the request.
+     *
+     * @return the value
+     **/
     public String getOperationName() {
         return operationName;
     }
@@ -312,6 +462,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * Service name associated with the span.
+     *
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }
@@ -323,6 +478,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("kind")
     private final String kind;
 
+    /**
+     * Kind associated with the span.
+     *
+     * @return the value
+     **/
     public String getKind() {
         return kind;
     }
@@ -334,6 +494,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tag> tags;
 
+    /**
+     * List of tags associated with the span.
+     *
+     * @return the value
+     **/
     public java.util.List<Tag> getTags() {
         return tags;
     }
@@ -345,6 +510,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("logs")
     private final java.util.List<SpanLogCollection> logs;
 
+    /**
+     * List of logs associated with the span.
+     *
+     * @return the value
+     **/
     public java.util.List<SpanLogCollection> getLogs() {
         return logs;
     }
@@ -356,6 +526,11 @@ public final class Span {
     @com.fasterxml.jackson.annotation.JsonProperty("isError")
     private final Boolean isError;
 
+    /**
+     * Indicates if the span has an error.
+     *
+     * @return the value
+     **/
     public Boolean getIsError() {
         return isError;
     }

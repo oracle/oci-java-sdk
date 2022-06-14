@@ -34,9 +34,17 @@ public final class DocumentField {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The field type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
         private FieldType fieldType;
 
+        /**
+         * The field type.
+         * @param fieldType the value to set
+         * @return this builder
+         **/
         public Builder fieldType(FieldType fieldType) {
             this.fieldType = fieldType;
             this.__explicitlySet__.add("fieldType");
@@ -160,6 +168,10 @@ public final class DocumentField {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
     private final FieldType fieldType;
 
+    /**
+     * The field type.
+     * @return the value
+     **/
     public FieldType getFieldType() {
         return fieldType;
     }

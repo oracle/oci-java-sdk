@@ -19,6 +19,10 @@ public class UpdateStreamPoolRequest
      */
     private String streamPoolId;
 
+    /**
+     * The OCID of the stream pool.
+     *
+     */
     public String getStreamPoolId() {
         return streamPoolId;
     }
@@ -27,6 +31,9 @@ public class UpdateStreamPoolRequest
      */
     private com.oracle.bmc.streaming.model.UpdateStreamPoolDetails updateStreamPoolDetails;
 
+    /**
+     * The pool is updated with the provided fields.
+     */
     public com.oracle.bmc.streaming.model.UpdateStreamPoolDetails getUpdateStreamPoolDetails() {
         return updateStreamPoolDetails;
     }
@@ -37,6 +44,11 @@ public class UpdateStreamPoolRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,6 +57,9 @@ public class UpdateStreamPoolRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -67,11 +82,16 @@ public class UpdateStreamPoolRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the stream pool.
+         *
+         */
         private String streamPoolId = null;
 
         /**
          * The OCID of the stream pool.
          *
+         * @param streamPoolId the value to set
          * @return this builder instance
          */
         public Builder streamPoolId(String streamPoolId) {
@@ -79,11 +99,15 @@ public class UpdateStreamPoolRequest
             return this;
         }
 
+        /**
+         * The pool is updated with the provided fields.
+         */
         private com.oracle.bmc.streaming.model.UpdateStreamPoolDetails updateStreamPoolDetails =
                 null;
 
         /**
          * The pool is updated with the provided fields.
+         * @param updateStreamPoolDetails the value to set
          * @return this builder instance
          */
         public Builder updateStreamPoolDetails(
@@ -92,12 +116,18 @@ public class UpdateStreamPoolRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -105,10 +135,14 @@ public class UpdateStreamPoolRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -201,7 +235,8 @@ public class UpdateStreamPoolRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -211,6 +246,10 @@ public class UpdateStreamPoolRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

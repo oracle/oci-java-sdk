@@ -64,28 +64,49 @@ public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The app secret for your Facebook app.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appSecret")
         private String appSecret;
 
+        /**
+         * The app secret for your Facebook app.
+         * @param appSecret the value to set
+         * @return this builder
+         **/
         public Builder appSecret(String appSecret) {
             this.appSecret = appSecret;
             this.__explicitlySet__.add("appSecret");
             return this;
         }
-
+        /**
+         * The page access token that you generated for your Facebook page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pageAccessToken")
         private String pageAccessToken;
 
+        /**
+         * The page access token that you generated for your Facebook page.
+         * @param pageAccessToken the value to set
+         * @return this builder
+         **/
         public Builder pageAccessToken(String pageAccessToken) {
             this.pageAccessToken = pageAccessToken;
             this.__explicitlySet__.add("pageAccessToken");
             return this;
         }
-
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         * @param botId the value to set
+         * @return this builder
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -158,6 +179,10 @@ public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("appSecret")
     private final String appSecret;
 
+    /**
+     * The app secret for your Facebook app.
+     * @return the value
+     **/
     public String getAppSecret() {
         return appSecret;
     }
@@ -168,6 +193,10 @@ public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pageAccessToken")
     private final String pageAccessToken;
 
+    /**
+     * The page access token that you generated for your Facebook page.
+     * @return the value
+     **/
     public String getPageAccessToken() {
         return pageAccessToken;
     }
@@ -178,6 +207,10 @@ public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     * @return the value
+     **/
     public String getBotId() {
         return botId;
     }

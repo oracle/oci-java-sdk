@@ -153,19 +153,39 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         * @param platformType the value to set
+         * @return this builder
+         **/
         public Builder platformType(PlatformType platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
@@ -277,6 +297,10 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -343,6 +367,13 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
+    /**
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     *
+     * @return the value
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }

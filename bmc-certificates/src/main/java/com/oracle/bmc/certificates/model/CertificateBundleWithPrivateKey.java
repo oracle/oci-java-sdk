@@ -125,19 +125,33 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
             this.__explicitlySet__.add("revocationStatus");
             return this;
         }
-
+        /**
+         * The private key (in PEM format) for the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPem")
         private String privateKeyPem;
 
+        /**
+         * The private key (in PEM format) for the certificate.
+         * @param privateKeyPem the value to set
+         * @return this builder
+         **/
         public Builder privateKeyPem(String privateKeyPem) {
             this.privateKeyPem = privateKeyPem;
             this.__explicitlySet__.add("privateKeyPem");
             return this;
         }
-
+        /**
+         * An optional passphrase for the private key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPemPassphrase")
         private String privateKeyPemPassphrase;
 
+        /**
+         * An optional passphrase for the private key.
+         * @param privateKeyPemPassphrase the value to set
+         * @return this builder
+         **/
         public Builder privateKeyPemPassphrase(String privateKeyPemPassphrase) {
             this.privateKeyPemPassphrase = privateKeyPemPassphrase;
             this.__explicitlySet__.add("privateKeyPemPassphrase");
@@ -237,6 +251,10 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPem")
     private final String privateKeyPem;
 
+    /**
+     * The private key (in PEM format) for the certificate.
+     * @return the value
+     **/
     public String getPrivateKeyPem() {
         return privateKeyPem;
     }
@@ -247,6 +265,10 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPemPassphrase")
     private final String privateKeyPemPassphrase;
 
+    /**
+     * An optional passphrase for the private key.
+     * @return the value
+     **/
     public String getPrivateKeyPemPassphrase() {
         return privateKeyPemPassphrase;
     }

@@ -16,6 +16,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -32,6 +38,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState;
 
+    /**
+     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     */
     public com.oracle.bmc.cloudguard.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -86,6 +95,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -94,6 +111,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -102,6 +122,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -110,6 +133,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -156,6 +182,10 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -164,6 +194,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -172,6 +205,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.cloudguard.model.DataMaskRuleStatus dataMaskRuleStatus;
 
+    /**
+     * The status of the dataMaskRule.
+     */
     public com.oracle.bmc.cloudguard.model.DataMaskRuleStatus getDataMaskRuleStatus() {
         return dataMaskRuleStatus;
     }
@@ -180,6 +216,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String targetId;
 
+    /**
+     * OCID of target
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -188,6 +227,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String iamGroupId;
 
+    /**
+     * OCID of iamGroup
+     */
     public String getIamGroupId() {
         return iamGroupId;
     }
@@ -196,6 +238,9 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String targetType;
 
+    /**
+     * Type of target
+     */
     public String getTargetType() {
         return targetType;
     }
@@ -207,10 +252,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -218,10 +267,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -229,10 +282,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
         private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState = null;
 
         /**
          * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -241,6 +298,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -250,6 +315,7 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
          * resource in a subcompartment).
          * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -257,10 +323,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -268,10 +338,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -279,10 +353,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.cloudguard.model.SortOrders sortOrder) {
@@ -290,11 +368,16 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -302,10 +385,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -313,10 +400,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The status of the dataMaskRule.
+         */
         private com.oracle.bmc.cloudguard.model.DataMaskRuleStatus dataMaskRuleStatus = null;
 
         /**
          * The status of the dataMaskRule.
+         * @param dataMaskRuleStatus the value to set
          * @return this builder instance
          */
         public Builder dataMaskRuleStatus(
@@ -325,10 +416,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * OCID of target
+         */
         private String targetId = null;
 
         /**
          * OCID of target
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -336,10 +431,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * OCID of iamGroup
+         */
         private String iamGroupId = null;
 
         /**
          * OCID of iamGroup
+         * @param iamGroupId the value to set
          * @return this builder instance
          */
         public Builder iamGroupId(String iamGroupId) {
@@ -347,10 +446,14 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Type of target
+         */
         private String targetType = null;
 
         /**
          * Type of target
+         * @param targetType the value to set
          * @return this builder instance
          */
         public Builder targetType(String targetType) {
@@ -450,7 +553,8 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -469,6 +573,10 @@ public class ListDataMaskRulesRequest extends com.oracle.bmc.requests.BmcRequest
                 .targetType(targetType);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

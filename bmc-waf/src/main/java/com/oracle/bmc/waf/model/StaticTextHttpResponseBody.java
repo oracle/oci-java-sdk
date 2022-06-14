@@ -36,9 +36,17 @@ package com.oracle.bmc.waf.model;
 public final class StaticTextHttpResponseBody extends HttpResponseBody {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Static response body text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * Static response body text.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
@@ -86,6 +94,10 @@ public final class StaticTextHttpResponseBody extends HttpResponseBody {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * Static response body text.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }

@@ -19,6 +19,10 @@ public class UpdateConfigurationSourceProviderRequest
      */
     private String configurationSourceProviderId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
+     *
+     */
     public String getConfigurationSourceProviderId() {
         return configurationSourceProviderId;
     }
@@ -29,6 +33,10 @@ public class UpdateConfigurationSourceProviderRequest
     private com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
             updateConfigurationSourceProviderDetails;
 
+    /**
+     * Updated information provided for the ConfigurationSourceProvider.
+     *
+     */
     public com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
             getUpdateConfigurationSourceProviderDetails() {
         return updateConfigurationSourceProviderDetails;
@@ -40,6 +48,11 @@ public class UpdateConfigurationSourceProviderRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +64,12 @@ public class UpdateConfigurationSourceProviderRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -74,11 +93,16 @@ public class UpdateConfigurationSourceProviderRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
+         *
+         */
         private String configurationSourceProviderId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
          *
+         * @param configurationSourceProviderId the value to set
          * @return this builder instance
          */
         public Builder configurationSourceProviderId(String configurationSourceProviderId) {
@@ -86,12 +110,17 @@ public class UpdateConfigurationSourceProviderRequest
             return this;
         }
 
+        /**
+         * Updated information provided for the ConfigurationSourceProvider.
+         *
+         */
         private com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
                 updateConfigurationSourceProviderDetails = null;
 
         /**
          * Updated information provided for the ConfigurationSourceProvider.
          *
+         * @param updateConfigurationSourceProviderDetails the value to set
          * @return this builder instance
          */
         public Builder updateConfigurationSourceProviderDetails(
@@ -102,12 +131,18 @@ public class UpdateConfigurationSourceProviderRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -115,6 +150,12 @@ public class UpdateConfigurationSourceProviderRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -122,6 +163,7 @@ public class UpdateConfigurationSourceProviderRequest
          * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -219,7 +261,8 @@ public class UpdateConfigurationSourceProviderRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -229,6 +272,10 @@ public class UpdateConfigurationSourceProviderRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

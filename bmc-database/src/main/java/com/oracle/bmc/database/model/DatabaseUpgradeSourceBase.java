@@ -53,6 +53,12 @@ public class DatabaseUpgradeSourceBase {
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final String options;
 
+    /**
+     * Additional upgrade options supported by DBUA(Database Upgrade Assistant).
+     * Example: "-upgradeTimezone false -keepEvents"
+     *
+     * @return the value
+     **/
     public String getOptions() {
         return options;
     }

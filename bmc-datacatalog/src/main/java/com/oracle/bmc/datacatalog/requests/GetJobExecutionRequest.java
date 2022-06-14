@@ -16,6 +16,9 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String jobKey;
 
+    /**
+     * Unique job key.
+     */
     public String getJobKey() {
         return jobKey;
     }
@@ -32,6 +38,9 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String jobExecutionKey;
 
+    /**
+     * The key of the job execution.
+     */
     public String getJobExecutionKey() {
         return jobExecutionKey;
     }
@@ -96,6 +105,10 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * Specifies the fields to return in a job execution response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -104,6 +117,9 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -115,10 +131,14 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -126,10 +146,14 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique job key.
+         */
         private String jobKey = null;
 
         /**
          * Unique job key.
+         * @param jobKey the value to set
          * @return this builder instance
          */
         public Builder jobKey(String jobKey) {
@@ -137,10 +161,14 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The key of the job execution.
+         */
         private String jobExecutionKey = null;
 
         /**
          * The key of the job execution.
+         * @param jobExecutionKey the value to set
          * @return this builder instance
          */
         public Builder jobExecutionKey(String jobExecutionKey) {
@@ -148,11 +176,16 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Specifies the fields to return in a job execution response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in a job execution response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -163,16 +196,21 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Singular setter. Specifies the fields to return in a job execution response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -256,7 +294,8 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -267,6 +306,10 @@ public class GetJobExecutionRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

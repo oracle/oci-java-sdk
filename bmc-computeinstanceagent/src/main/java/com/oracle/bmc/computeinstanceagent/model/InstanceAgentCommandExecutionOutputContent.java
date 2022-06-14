@@ -51,6 +51,10 @@ public class InstanceAgentCommandExecutionOutputContent {
     @com.fasterxml.jackson.annotation.JsonProperty("exitCode")
     private final Integer exitCode;
 
+    /**
+     * The exit code for the command. Exit code {@code 0} indicates success.
+     * @return the value
+     **/
     public Integer getExitCode() {
         return exitCode;
     }
@@ -62,6 +66,11 @@ public class InstanceAgentCommandExecutionOutputContent {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * An optional status message that Oracle Cloud Agent can populate for additional troubleshooting.
+     *
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }

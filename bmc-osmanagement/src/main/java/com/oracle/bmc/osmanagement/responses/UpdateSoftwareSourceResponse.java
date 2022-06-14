@@ -14,6 +14,11 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
+    /**
+     * The returned SoftwareSource instance.
+     * @return the value
+     */
     public com.oracle.bmc.osmanagement.model.SoftwareSource getSoftwareSource() {
         return softwareSource;
     }
@@ -63,22 +78,52 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned SoftwareSource instance.
+         */
         private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
+        /**
+         * The returned SoftwareSource instance.
+         * @param softwareSource the value to set
+         * @return this builder
+         */
         public Builder softwareSource(
                 com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource) {
             this.softwareSource = softwareSource;
@@ -98,12 +143,20 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateSoftwareSourceResponse build() {
             return new UpdateSoftwareSourceResponse(
                     __httpStatusCode__, etag, opcRequestId, softwareSource);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

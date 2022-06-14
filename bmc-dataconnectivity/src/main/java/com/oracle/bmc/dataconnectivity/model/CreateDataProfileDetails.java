@@ -47,6 +47,7 @@ public final class CreateDataProfileDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("readOperationConfig")
         private ReadOperationConfig readOperationConfig;
 

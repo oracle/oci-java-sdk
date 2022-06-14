@@ -19,6 +19,9 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
      */
     private String externalNonContainerDatabaseId;
 
+    /**
+     * The external non-container database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getExternalNonContainerDatabaseId() {
         return externalNonContainerDatabaseId;
     }
@@ -30,6 +33,10 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
                     .EnableExternalNonContainerDatabaseOperationsInsightsDetails
             enableExternalNonContainerDatabaseOperationsInsightsDetails;
 
+    /**
+     * Details to enable Operations Insights on the external non-container database
+     *
+     */
     public com.oracle.bmc.database.model.EnableExternalNonContainerDatabaseOperationsInsightsDetails
             getEnableExternalNonContainerDatabaseOperationsInsightsDetails() {
         return enableExternalNonContainerDatabaseOperationsInsightsDetails;
@@ -44,6 +51,14 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -53,6 +68,10 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,6 +83,12 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -88,10 +113,14 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The external non-container database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String externalNonContainerDatabaseId = null;
 
         /**
          * The external non-container database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param externalNonContainerDatabaseId the value to set
          * @return this builder instance
          */
         public Builder externalNonContainerDatabaseId(String externalNonContainerDatabaseId) {
@@ -99,6 +128,10 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
             return this;
         }
 
+        /**
+         * Details to enable Operations Insights on the external non-container database
+         *
+         */
         private com.oracle.bmc.database.model
                         .EnableExternalNonContainerDatabaseOperationsInsightsDetails
                 enableExternalNonContainerDatabaseOperationsInsightsDetails = null;
@@ -106,6 +139,7 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
         /**
          * Details to enable Operations Insights on the external non-container database
          *
+         * @param enableExternalNonContainerDatabaseOperationsInsightsDetails the value to set
          * @return this builder instance
          */
         public Builder enableExternalNonContainerDatabaseOperationsInsightsDetails(
@@ -117,6 +151,14 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -126,6 +168,7 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -133,11 +176,16 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -145,6 +193,12 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -152,6 +206,7 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -254,7 +309,8 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -266,6 +322,10 @@ public class EnableExternalNonContainerDatabaseOperationsInsightsRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

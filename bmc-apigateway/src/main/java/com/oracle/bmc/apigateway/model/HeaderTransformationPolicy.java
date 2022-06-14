@@ -35,6 +35,7 @@ public final class HeaderTransformationPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("setHeaders")
         private SetHeaderPolicy setHeaders;
 

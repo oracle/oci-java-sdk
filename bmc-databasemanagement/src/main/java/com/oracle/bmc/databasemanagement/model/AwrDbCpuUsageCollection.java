@@ -62,37 +62,65 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
             this.__explicitlySet__.add("dbQueryTimeInSecs");
             return this;
         }
-
+        /**
+         * The number of available CPU cores, which include subcores of multicore and single-core CPUs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numCpuCores")
         private Integer numCpuCores;
 
+        /**
+         * The number of available CPU cores, which include subcores of multicore and single-core CPUs.
+         * @param numCpuCores the value to set
+         * @return this builder
+         **/
         public Builder numCpuCores(Integer numCpuCores) {
             this.numCpuCores = numCpuCores;
             this.__explicitlySet__.add("numCpuCores");
             return this;
         }
-
+        /**
+         * The number of CPUs available for the database to use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
         private Integer cpuCount;
 
+        /**
+         * The number of CPUs available for the database to use.
+         * @param cpuCount the value to set
+         * @return this builder
+         **/
         public Builder cpuCount(Integer cpuCount) {
             this.cpuCount = cpuCount;
             this.__explicitlySet__.add("cpuCount");
             return this;
         }
-
+        /**
+         * The number of available CPUs or processors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numCpus")
         private Double numCpus;
 
+        /**
+         * The number of available CPUs or processors.
+         * @param numCpus the value to set
+         * @return this builder
+         **/
         public Builder numCpus(Double numCpus) {
             this.numCpus = numCpus;
             this.__explicitlySet__.add("numCpus");
             return this;
         }
-
+        /**
+         * A list of AWR CPU usage summary data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AwrDbCpuUsageSummary> items;
 
+        /**
+         * A list of AWR CPU usage summary data.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AwrDbCpuUsageSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -168,6 +196,10 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("numCpuCores")
     private final Integer numCpuCores;
 
+    /**
+     * The number of available CPU cores, which include subcores of multicore and single-core CPUs.
+     * @return the value
+     **/
     public Integer getNumCpuCores() {
         return numCpuCores;
     }
@@ -178,6 +210,10 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
     private final Integer cpuCount;
 
+    /**
+     * The number of CPUs available for the database to use.
+     * @return the value
+     **/
     public Integer getCpuCount() {
         return cpuCount;
     }
@@ -188,6 +224,10 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("numCpus")
     private final Double numCpus;
 
+    /**
+     * The number of available CPUs or processors.
+     * @return the value
+     **/
     public Double getNumCpus() {
         return numCpus;
     }
@@ -198,6 +238,10 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AwrDbCpuUsageSummary> items;
 
+    /**
+     * A list of AWR CPU usage summary data.
+     * @return the value
+     **/
     public java.util.List<AwrDbCpuUsageSummary> getItems() {
         return items;
     }

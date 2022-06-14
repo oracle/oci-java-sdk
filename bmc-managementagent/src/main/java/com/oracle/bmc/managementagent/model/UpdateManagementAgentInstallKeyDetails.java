@@ -30,18 +30,33 @@ public final class UpdateManagementAgentInstallKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * if set to true the install key state would be set to Active and if false to Inactive
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isKeyActive")
         private Boolean isKeyActive;
 
+        /**
+         * if set to true the install key state would be set to Active and if false to Inactive
+         * @param isKeyActive the value to set
+         * @return this builder
+         **/
         public Builder isKeyActive(Boolean isKeyActive) {
             this.isKeyActive = isKeyActive;
             this.__explicitlySet__.add("isKeyActive");
             return this;
         }
-
+        /**
+         * New displayName of Agent install key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * New displayName of Agent install key.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -84,6 +99,10 @@ public final class UpdateManagementAgentInstallKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isKeyActive")
     private final Boolean isKeyActive;
 
+    /**
+     * if set to true the install key state would be set to Active and if false to Inactive
+     * @return the value
+     **/
     public Boolean getIsKeyActive() {
         return isKeyActive;
     }
@@ -94,6 +113,10 @@ public final class UpdateManagementAgentInstallKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * New displayName of Agent install key.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

@@ -33,18 +33,33 @@ public final class CreateAutonomousDatabaseBackupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The user-friendly name for the backup. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the backup. The name does not have to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * @param autonomousDatabaseId the value to set
+         * @return this builder
+         **/
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             this.autonomousDatabaseId = autonomousDatabaseId;
             this.__explicitlySet__.add("autonomousDatabaseId");
@@ -89,6 +104,10 @@ public final class CreateAutonomousDatabaseBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the backup. The name does not have to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -99,6 +118,10 @@ public final class CreateAutonomousDatabaseBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * @return the value
+     **/
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }

@@ -42,36 +42,65 @@ public final class PartitionReservation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The partition for which the reservation applies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partition")
         private String partition;
 
+        /**
+         * The partition for which the reservation applies.
+         * @param partition the value to set
+         * @return this builder
+         **/
         public Builder partition(String partition) {
             this.partition = partition;
             this.__explicitlySet__.add("partition");
             return this;
         }
-
+        /**
+         * The latest offset which has been committed for this partition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("committedOffset")
         private Long committedOffset;
 
+        /**
+         * The latest offset which has been committed for this partition.
+         * @param committedOffset the value to set
+         * @return this builder
+         **/
         public Builder committedOffset(Long committedOffset) {
             this.committedOffset = committedOffset;
             this.__explicitlySet__.add("committedOffset");
             return this;
         }
-
+        /**
+         * The consumer instance which currently has the partition reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reservedInstance")
         private String reservedInstance;
 
+        /**
+         * The consumer instance which currently has the partition reserved.
+         * @param reservedInstance the value to set
+         * @return this builder
+         **/
         public Builder reservedInstance(String reservedInstance) {
             this.reservedInstance = reservedInstance;
             this.__explicitlySet__.add("reservedInstance");
             return this;
         }
-
+        /**
+         * A timestamp when the current reservation expires.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReservedUntil")
         private java.util.Date timeReservedUntil;
 
+        /**
+         * A timestamp when the current reservation expires.
+         * @param timeReservedUntil the value to set
+         * @return this builder
+         **/
         public Builder timeReservedUntil(java.util.Date timeReservedUntil) {
             this.timeReservedUntil = timeReservedUntil;
             this.__explicitlySet__.add("timeReservedUntil");
@@ -119,6 +148,10 @@ public final class PartitionReservation {
     @com.fasterxml.jackson.annotation.JsonProperty("partition")
     private final String partition;
 
+    /**
+     * The partition for which the reservation applies.
+     * @return the value
+     **/
     public String getPartition() {
         return partition;
     }
@@ -129,6 +162,10 @@ public final class PartitionReservation {
     @com.fasterxml.jackson.annotation.JsonProperty("committedOffset")
     private final Long committedOffset;
 
+    /**
+     * The latest offset which has been committed for this partition.
+     * @return the value
+     **/
     public Long getCommittedOffset() {
         return committedOffset;
     }
@@ -139,6 +176,10 @@ public final class PartitionReservation {
     @com.fasterxml.jackson.annotation.JsonProperty("reservedInstance")
     private final String reservedInstance;
 
+    /**
+     * The consumer instance which currently has the partition reserved.
+     * @return the value
+     **/
     public String getReservedInstance() {
         return reservedInstance;
     }
@@ -149,6 +190,10 @@ public final class PartitionReservation {
     @com.fasterxml.jackson.annotation.JsonProperty("timeReservedUntil")
     private final java.util.Date timeReservedUntil;
 
+    /**
+     * A timestamp when the current reservation expires.
+     * @return the value
+     **/
     public java.util.Date getTimeReservedUntil() {
         return timeReservedUntil;
     }

@@ -32,9 +32,17 @@ public final class QueryOpsiDataObjectDataDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique OPSI data object identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataObjectIdentifier")
         private String dataObjectIdentifier;
 
+        /**
+         * Unique OPSI data object identifier.
+         * @param dataObjectIdentifier the value to set
+         * @return this builder
+         **/
         public Builder dataObjectIdentifier(String dataObjectIdentifier) {
             this.dataObjectIdentifier = dataObjectIdentifier;
             this.__explicitlySet__.add("dataObjectIdentifier");
@@ -99,6 +107,10 @@ public final class QueryOpsiDataObjectDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataObjectIdentifier")
     private final String dataObjectIdentifier;
 
+    /**
+     * Unique OPSI data object identifier.
+     * @return the value
+     **/
     public String getDataObjectIdentifier() {
         return dataObjectIdentifier;
     }

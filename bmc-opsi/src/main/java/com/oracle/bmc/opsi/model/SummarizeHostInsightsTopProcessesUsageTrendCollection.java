@@ -35,27 +35,49 @@ public final class SummarizeHostInsightsTopProcessesUsageTrendCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
+        /**
+         * The start timestamp that was passed into the request.
+         * @param timeIntervalStart the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
+        /**
+         * The end timestamp that was passed into the request.
+         * @param timeIntervalEnd the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-
+        /**
+         * Collection of Usage Data with time stamps for top processes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TopProcessesUsageTrendAggregation> items;
 
+        /**
+         * Collection of Usage Data with time stamps for top processes
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TopProcessesUsageTrendAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -102,6 +124,10 @@ public final class SummarizeHostInsightsTopProcessesUsageTrendCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
+    /**
+     * The start timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -112,6 +138,10 @@ public final class SummarizeHostInsightsTopProcessesUsageTrendCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
+    /**
+     * The end timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -122,6 +152,10 @@ public final class SummarizeHostInsightsTopProcessesUsageTrendCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TopProcessesUsageTrendAggregation> items;
 
+    /**
+     * Collection of Usage Data with time stamps for top processes
+     * @return the value
+     **/
     public java.util.List<TopProcessesUsageTrendAggregation> getItems() {
         return items;
     }

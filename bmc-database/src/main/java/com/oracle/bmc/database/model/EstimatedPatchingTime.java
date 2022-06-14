@@ -42,37 +42,66 @@ public final class EstimatedPatchingTime {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The estimated total time required in minutes for all patching operations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalEstimatedPatchingTime")
         private Integer totalEstimatedPatchingTime;
 
+        /**
+         * The estimated total time required in minutes for all patching operations.
+         * @param totalEstimatedPatchingTime the value to set
+         * @return this builder
+         **/
         public Builder totalEstimatedPatchingTime(Integer totalEstimatedPatchingTime) {
             this.totalEstimatedPatchingTime = totalEstimatedPatchingTime;
             this.__explicitlySet__.add("totalEstimatedPatchingTime");
             return this;
         }
-
+        /**
+         * The estimated time required in minutes for database server patching.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedDbServerPatchingTime")
         private Integer estimatedDbServerPatchingTime;
 
+        /**
+         * The estimated time required in minutes for database server patching.
+         * @param estimatedDbServerPatchingTime the value to set
+         * @return this builder
+         **/
         public Builder estimatedDbServerPatchingTime(Integer estimatedDbServerPatchingTime) {
             this.estimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
             this.__explicitlySet__.add("estimatedDbServerPatchingTime");
             return this;
         }
-
+        /**
+         * The estimated time required in minutes for storage server patching.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedStorageServerPatchingTime")
         private Integer estimatedStorageServerPatchingTime;
 
+        /**
+         * The estimated time required in minutes for storage server patching.
+         * @param estimatedStorageServerPatchingTime the value to set
+         * @return this builder
+         **/
         public Builder estimatedStorageServerPatchingTime(
                 Integer estimatedStorageServerPatchingTime) {
             this.estimatedStorageServerPatchingTime = estimatedStorageServerPatchingTime;
             this.__explicitlySet__.add("estimatedStorageServerPatchingTime");
             return this;
         }
-
+        /**
+         * The estimated time required in minutes for network switch patching.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedNetworkSwitchesPatchingTime")
         private Integer estimatedNetworkSwitchesPatchingTime;
 
+        /**
+         * The estimated time required in minutes for network switch patching.
+         * @param estimatedNetworkSwitchesPatchingTime the value to set
+         * @return this builder
+         **/
         public Builder estimatedNetworkSwitchesPatchingTime(
                 Integer estimatedNetworkSwitchesPatchingTime) {
             this.estimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;
@@ -126,6 +155,10 @@ public final class EstimatedPatchingTime {
     @com.fasterxml.jackson.annotation.JsonProperty("totalEstimatedPatchingTime")
     private final Integer totalEstimatedPatchingTime;
 
+    /**
+     * The estimated total time required in minutes for all patching operations.
+     * @return the value
+     **/
     public Integer getTotalEstimatedPatchingTime() {
         return totalEstimatedPatchingTime;
     }
@@ -136,6 +169,10 @@ public final class EstimatedPatchingTime {
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedDbServerPatchingTime")
     private final Integer estimatedDbServerPatchingTime;
 
+    /**
+     * The estimated time required in minutes for database server patching.
+     * @return the value
+     **/
     public Integer getEstimatedDbServerPatchingTime() {
         return estimatedDbServerPatchingTime;
     }
@@ -146,6 +183,10 @@ public final class EstimatedPatchingTime {
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedStorageServerPatchingTime")
     private final Integer estimatedStorageServerPatchingTime;
 
+    /**
+     * The estimated time required in minutes for storage server patching.
+     * @return the value
+     **/
     public Integer getEstimatedStorageServerPatchingTime() {
         return estimatedStorageServerPatchingTime;
     }
@@ -156,6 +197,10 @@ public final class EstimatedPatchingTime {
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedNetworkSwitchesPatchingTime")
     private final Integer estimatedNetworkSwitchesPatchingTime;
 
+    /**
+     * The estimated time required in minutes for network switch patching.
+     * @return the value
+     **/
     public Integer getEstimatedNetworkSwitchesPatchingTime() {
         return estimatedNetworkSwitchesPatchingTime;
     }

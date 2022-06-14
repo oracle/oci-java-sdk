@@ -31,9 +31,17 @@ public final class UpdateResponderRecipeResponderRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ResponderRecipeRule Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
         private String responderRuleId;
 
+        /**
+         * ResponderRecipeRule Identifier
+         * @param responderRuleId the value to set
+         * @return this builder
+         **/
         public Builder responderRuleId(String responderRuleId) {
             this.responderRuleId = responderRuleId;
             this.__explicitlySet__.add("responderRuleId");
@@ -85,6 +93,10 @@ public final class UpdateResponderRecipeResponderRule {
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
     private final String responderRuleId;
 
+    /**
+     * ResponderRecipeRule Identifier
+     * @return the value
+     **/
     public String getResponderRuleId() {
         return responderRuleId;
     }

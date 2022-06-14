@@ -47,54 +47,101 @@ public final class MonitoredInstanceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+         * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+         * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * The current state of the monitored instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private MonitoredInstance.LifecycleState lifecycleState;
 
+        /**
+         * The current state of the monitored instance.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(MonitoredInstance.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Monitoring status. Can be either enabled or disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monitoringState")
         private MonitoredInstance.MonitoringState monitoringState;
 
+        /**
+         * Monitoring status. Can be either enabled or disabled.
+         * @param monitoringState the value to set
+         * @return this builder
+         **/
         public Builder monitoringState(MonitoredInstance.MonitoringState monitoringState) {
             this.monitoringState = monitoringState;
             this.__explicitlySet__.add("monitoringState");
@@ -149,6 +196,10 @@ public final class MonitoredInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -159,6 +210,10 @@ public final class MonitoredInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -171,6 +226,12 @@ public final class MonitoredInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+     * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -181,6 +242,10 @@ public final class MonitoredInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -191,6 +256,10 @@ public final class MonitoredInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MonitoredInstance.LifecycleState lifecycleState;
 
+    /**
+     * The current state of the monitored instance.
+     * @return the value
+     **/
     public MonitoredInstance.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -201,6 +270,10 @@ public final class MonitoredInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("monitoringState")
     private final MonitoredInstance.MonitoringState monitoringState;
 
+    /**
+     * Monitoring status. Can be either enabled or disabled.
+     * @return the value
+     **/
     public MonitoredInstance.MonitoringState getMonitoringState() {
         return monitoringState;
     }

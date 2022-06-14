@@ -14,6 +14,11 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
      */
     private String opcWorkRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -24,6 +29,11 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +44,11 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -43,6 +58,10 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
+    /**
+     * The returned DatabaseRegistration instance.
+     * @return the value
+     */
     public com.oracle.bmc.goldengate.model.DatabaseRegistration getDatabaseRegistration() {
         return databaseRegistration;
     }
@@ -75,29 +94,67 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned DatabaseRegistration instance.
+         */
         private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
+        /**
+         * The returned DatabaseRegistration instance.
+         * @param databaseRegistration the value to set
+         * @return this builder
+         */
         public Builder databaseRegistration(
                 com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration) {
             this.databaseRegistration = databaseRegistration;
@@ -118,12 +175,20 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateDatabaseRegistrationResponse build() {
             return new CreateDatabaseRegistrationResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId, etag, databaseRegistration);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

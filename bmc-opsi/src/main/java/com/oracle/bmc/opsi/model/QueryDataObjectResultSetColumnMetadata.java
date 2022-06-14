@@ -30,18 +30,33 @@ public final class QueryDataObjectResultSetColumnMetadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the column in a data object query result set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the column in a data object query result set.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Type of the column in a data object query result set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
         private DataTypeName dataTypeName;
 
+        /**
+         * Type of the column in a data object query result set.
+         * @param dataTypeName the value to set
+         * @return this builder
+         **/
         public Builder dataTypeName(DataTypeName dataTypeName) {
             this.dataTypeName = dataTypeName;
             this.__explicitlySet__.add("dataTypeName");
@@ -84,6 +99,10 @@ public final class QueryDataObjectResultSetColumnMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the column in a data object query result set.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -143,6 +162,10 @@ public final class QueryDataObjectResultSetColumnMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
     private final DataTypeName dataTypeName;
 
+    /**
+     * Type of the column in a data object query result set.
+     * @return the value
+     **/
     public DataTypeName getDataTypeName() {
         return dataTypeName;
     }

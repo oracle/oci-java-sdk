@@ -27,9 +27,17 @@ package com.oracle.bmc.aivision.model;
 public final class InlineDocumentDetails extends DocumentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Raw document data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("data")
         private byte[] data;
 
+        /**
+         * Raw document data.
+         * @param data the value to set
+         * @return this builder
+         **/
         public Builder data(byte[] data) {
             this.data = data;
             this.__explicitlySet__.add("data");
@@ -77,6 +85,10 @@ public final class InlineDocumentDetails extends DocumentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     private final byte[] data;
 
+    /**
+     * Raw document data.
+     * @return the value
+     **/
     public byte[] getData() {
         return data;
     }

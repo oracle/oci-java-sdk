@@ -16,6 +16,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
@@ -87,6 +99,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The value by which certificate summaries are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeCreated}.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -131,6 +146,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -139,6 +157,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.List<String> id;
 
+    /**
+     * Filter certificates using a list of certificates OCIDs.
+     */
     public java.util.List<String> getId() {
         return id;
     }
@@ -147,6 +168,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.List<String> displayName;
 
+    /**
+     * Filter certificates using a list of display names.
+     */
     public java.util.List<String> getDisplayName() {
         return displayName;
     }
@@ -155,6 +179,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.List<com.oracle.bmc.waas.model.LifecycleStates> lifecycleState;
 
+    /**
+     * Filter certificates using a list of lifecycle states.
+     */
     public java.util.List<com.oracle.bmc.waas.model.LifecycleStates> getLifecycleState() {
         return lifecycleState;
     }
@@ -163,6 +190,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * A filter that matches certificates created on or after the specified date-time.
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -171,6 +201,9 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.Date timeCreatedLessThan;
 
+    /**
+     * A filter that matches certificates created before the specified date-time.
+     */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
@@ -182,10 +215,14 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -193,10 +230,14 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -204,10 +245,14 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -215,10 +260,14 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous paginated call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -226,10 +275,14 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value by which certificate summaries are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeCreated}.
+         */
         private SortBy sortBy = null;
 
         /**
          * The value by which certificate summaries are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeCreated}.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -237,10 +290,14 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -248,10 +305,14 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Filter certificates using a list of certificates OCIDs.
+         */
         private java.util.List<String> id = null;
 
         /**
          * Filter certificates using a list of certificates OCIDs.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(java.util.List<String> id) {
@@ -261,16 +322,21 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. Filter certificates using a list of certificates OCIDs.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder id(String singularValue) {
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter certificates using a list of display names.
+         */
         private java.util.List<String> displayName = null;
 
         /**
          * Filter certificates using a list of display names.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(java.util.List<String> displayName) {
@@ -280,16 +346,21 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. Filter certificates using a list of display names.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder displayName(String singularValue) {
             return this.displayName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter certificates using a list of lifecycle states.
+         */
         private java.util.List<com.oracle.bmc.waas.model.LifecycleStates> lifecycleState = null;
 
         /**
          * Filter certificates using a list of lifecycle states.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -300,16 +371,21 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. Filter certificates using a list of lifecycle states.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleStates singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter that matches certificates created on or after the specified date-time.
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
          * A filter that matches certificates created on or after the specified date-time.
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedGreaterThanOrEqualTo(
@@ -318,10 +394,14 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * A filter that matches certificates created before the specified date-time.
+         */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
          * A filter that matches certificates created before the specified date-time.
+         * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
@@ -417,7 +497,8 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -434,6 +515,10 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
                 .timeCreatedLessThan(timeCreatedLessThan);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

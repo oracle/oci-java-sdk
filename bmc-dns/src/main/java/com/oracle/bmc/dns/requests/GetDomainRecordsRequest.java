@@ -16,6 +16,9 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String zoneNameOrId;
 
+    /**
+     * The name or OCID of the target zone.
+     */
     public String getZoneNameOrId() {
         return zoneNameOrId;
     }
@@ -24,6 +27,9 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String domain;
 
+    /**
+     * The target fully-qualified domain name (FQDN) within the target zone.
+     */
     public String getDomain() {
         return domain;
     }
@@ -36,6 +42,13 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String ifNoneMatch;
 
+    /**
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
+     */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
@@ -48,6 +61,13 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String ifModifiedSince;
 
+    /**
+     * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+     * conditional on the selected representation's modification date being more
+     * recent than the date provided in the field-value.  Transfer of the
+     * selected representation's data is avoided if that data has not changed.
+     *
+     */
     public String getIfModifiedSince() {
         return ifModifiedSince;
     }
@@ -59,6 +79,12 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,6 +94,10 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Long limit;
 
+    /**
+     * The maximum number of items to return in a page of the collection.
+     *
+     */
     public Long getLimit() {
         return limit;
     }
@@ -77,6 +107,10 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -86,6 +120,10 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String zoneVersion;
 
+    /**
+     * The version of the zone for which data is requested.
+     *
+     */
     public String getZoneVersion() {
         return zoneVersion;
     }
@@ -96,6 +134,11 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String rtype;
 
+    /**
+     * Search by record type.
+     * Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+     *
+     */
     public String getRtype() {
         return rtype;
     }
@@ -105,6 +148,10 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -113,6 +160,9 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String viewId;
 
+    /**
+     * The OCID of the view the resource is associated with.
+     */
     public String getViewId() {
         return viewId;
     }
@@ -157,6 +207,9 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The field by which to sort records.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -166,6 +219,10 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
+    /**
+     * The order to sort the resources.
+     *
+     */
     public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -177,6 +234,12 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment the zone belongs to.
+     * <p>
+     * This parameter is deprecated and should be omitted.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -188,10 +251,14 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The name or OCID of the target zone.
+         */
         private String zoneNameOrId = null;
 
         /**
          * The name or OCID of the target zone.
+         * @param zoneNameOrId the value to set
          * @return this builder instance
          */
         public Builder zoneNameOrId(String zoneNameOrId) {
@@ -199,10 +266,14 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The target fully-qualified domain name (FQDN) within the target zone.
+         */
         private String domain = null;
 
         /**
          * The target fully-qualified domain name (FQDN) within the target zone.
+         * @param domain the value to set
          * @return this builder instance
          */
         public Builder domain(String domain) {
@@ -210,6 +281,13 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
+         */
         private String ifNoneMatch = null;
 
         /**
@@ -218,6 +296,7 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
          * the field-value is {@code *}, or having a selected representation with an
          * entity-tag that does not match any of those listed in the field-value.
          *
+         * @param ifNoneMatch the value to set
          * @return this builder instance
          */
         public Builder ifNoneMatch(String ifNoneMatch) {
@@ -225,6 +304,13 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
+         *
+         */
         private String ifModifiedSince = null;
 
         /**
@@ -233,6 +319,7 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
          * recent than the date provided in the field-value.  Transfer of the
          * selected representation's data is avoided if that data has not changed.
          *
+         * @param ifModifiedSince the value to set
          * @return this builder instance
          */
         public Builder ifModifiedSince(String ifModifiedSince) {
@@ -240,6 +327,12 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -247,6 +340,7 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -254,11 +348,16 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a page of the collection.
+         *
+         */
         private Long limit = null;
 
         /**
          * The maximum number of items to return in a page of the collection.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Long limit) {
@@ -266,11 +365,16 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -278,11 +382,16 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The version of the zone for which data is requested.
+         *
+         */
         private String zoneVersion = null;
 
         /**
          * The version of the zone for which data is requested.
          *
+         * @param zoneVersion the value to set
          * @return this builder instance
          */
         public Builder zoneVersion(String zoneVersion) {
@@ -290,12 +399,18 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Search by record type.
+         * Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+         *
+         */
         private String rtype = null;
 
         /**
          * Search by record type.
          * Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
          *
+         * @param rtype the value to set
          * @return this builder instance
          */
         public Builder rtype(String rtype) {
@@ -303,11 +418,16 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -315,10 +435,14 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The OCID of the view the resource is associated with.
+         */
         private String viewId = null;
 
         /**
          * The OCID of the view the resource is associated with.
+         * @param viewId the value to set
          * @return this builder instance
          */
         public Builder viewId(String viewId) {
@@ -326,10 +450,14 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The field by which to sort records.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field by which to sort records.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -337,11 +465,16 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The order to sort the resources.
+         *
+         */
         private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
 
         /**
          * The order to sort the resources.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.dns.model.SortOrder sortOrder) {
@@ -349,6 +482,12 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The OCID of the compartment the zone belongs to.
+         * <p>
+         * This parameter is deprecated and should be omitted.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -356,6 +495,7 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * This parameter is deprecated and should be omitted.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -457,7 +597,8 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -477,6 +618,10 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .compartmentId(compartmentId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

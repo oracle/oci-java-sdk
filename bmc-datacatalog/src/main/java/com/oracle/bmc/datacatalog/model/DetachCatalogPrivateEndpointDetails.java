@@ -29,9 +29,17 @@ public final class DetachCatalogPrivateEndpointDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The identifier of the private endpoint to be detached from catalog resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("catalogPrivateEndpointId")
         private String catalogPrivateEndpointId;
 
+        /**
+         * The identifier of the private endpoint to be detached from catalog resource.
+         * @param catalogPrivateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder catalogPrivateEndpointId(String catalogPrivateEndpointId) {
             this.catalogPrivateEndpointId = catalogPrivateEndpointId;
             this.__explicitlySet__.add("catalogPrivateEndpointId");
@@ -74,6 +82,10 @@ public final class DetachCatalogPrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("catalogPrivateEndpointId")
     private final String catalogPrivateEndpointId;
 
+    /**
+     * The identifier of the private endpoint to be detached from catalog resource.
+     * @return the value
+     **/
     public String getCatalogPrivateEndpointId() {
         return catalogPrivateEndpointId;
     }

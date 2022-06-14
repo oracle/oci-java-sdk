@@ -27,9 +27,17 @@ package com.oracle.bmc.cloudguard.model;
 public final class TargetIdsSelected extends TargetSelected {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Ids of Target
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
+        /**
+         * Ids of Target
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -77,6 +85,10 @@ public final class TargetIdsSelected extends TargetSelected {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
+    /**
+     * Ids of Target
+     * @return the value
+     **/
     public java.util.List<String> getValues() {
         return values;
     }

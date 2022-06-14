@@ -17,6 +17,9 @@ public class UpdateDhcpOptionsRequest
      */
     private String dhcpId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
+     */
     public String getDhcpId() {
         return dhcpId;
     }
@@ -25,6 +28,9 @@ public class UpdateDhcpOptionsRequest
      */
     private com.oracle.bmc.core.model.UpdateDhcpDetails updateDhcpDetails;
 
+    /**
+     * Request object for updating a set of DHCP options.
+     */
     public com.oracle.bmc.core.model.UpdateDhcpDetails getUpdateDhcpDetails() {
         return updateDhcpDetails;
     }
@@ -36,6 +42,12 @@ public class UpdateDhcpOptionsRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -57,10 +69,14 @@ public class UpdateDhcpOptionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
+         */
         private String dhcpId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
+         * @param dhcpId the value to set
          * @return this builder instance
          */
         public Builder dhcpId(String dhcpId) {
@@ -68,10 +84,14 @@ public class UpdateDhcpOptionsRequest
             return this;
         }
 
+        /**
+         * Request object for updating a set of DHCP options.
+         */
         private com.oracle.bmc.core.model.UpdateDhcpDetails updateDhcpDetails = null;
 
         /**
          * Request object for updating a set of DHCP options.
+         * @param updateDhcpDetails the value to set
          * @return this builder instance
          */
         public Builder updateDhcpDetails(
@@ -80,6 +100,12 @@ public class UpdateDhcpOptionsRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -87,6 +113,7 @@ public class UpdateDhcpOptionsRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -177,12 +204,17 @@ public class UpdateDhcpOptionsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dhcpId(dhcpId).updateDhcpDetails(updateDhcpDetails).ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

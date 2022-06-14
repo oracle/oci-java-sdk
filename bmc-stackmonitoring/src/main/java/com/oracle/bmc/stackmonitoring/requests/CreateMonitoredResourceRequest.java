@@ -19,6 +19,9 @@ public class CreateMonitoredResourceRequest
     private com.oracle.bmc.stackmonitoring.model.CreateMonitoredResourceDetails
             createMonitoredResourceDetails;
 
+    /**
+     * Details for the new Resource.
+     */
     public com.oracle.bmc.stackmonitoring.model.CreateMonitoredResourceDetails
             getCreateMonitoredResourceDetails() {
         return createMonitoredResourceDetails;
@@ -33,6 +36,14 @@ public class CreateMonitoredResourceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -43,6 +54,11 @@ public class CreateMonitoredResourceRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -55,6 +71,13 @@ public class CreateMonitoredResourceRequest
      */
     private String externalResourceId;
 
+    /**
+     * Generally used by DBaaS to send the Database OCID stored on the DBaaS.
+     * The same will be passed to resource service to enable Stack Monitoring Service on DBM.
+     * This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource.
+     * If this header is not set as part of the request, then an id will be generated and stored for the resource.
+     *
+     */
     public String getExternalResourceId() {
         return externalResourceId;
     }
@@ -77,11 +100,15 @@ public class CreateMonitoredResourceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new Resource.
+         */
         private com.oracle.bmc.stackmonitoring.model.CreateMonitoredResourceDetails
                 createMonitoredResourceDetails = null;
 
         /**
          * Details for the new Resource.
+         * @param createMonitoredResourceDetails the value to set
          * @return this builder instance
          */
         public Builder createMonitoredResourceDetails(
@@ -91,6 +118,14 @@ public class CreateMonitoredResourceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -100,6 +135,7 @@ public class CreateMonitoredResourceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -107,12 +143,18 @@ public class CreateMonitoredResourceRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -120,6 +162,13 @@ public class CreateMonitoredResourceRequest
             return this;
         }
 
+        /**
+         * Generally used by DBaaS to send the Database OCID stored on the DBaaS.
+         * The same will be passed to resource service to enable Stack Monitoring Service on DBM.
+         * This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource.
+         * If this header is not set as part of the request, then an id will be generated and stored for the resource.
+         *
+         */
         private String externalResourceId = null;
 
         /**
@@ -128,6 +177,7 @@ public class CreateMonitoredResourceRequest
          * This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource.
          * If this header is not set as part of the request, then an id will be generated and stored for the resource.
          *
+         * @param externalResourceId the value to set
          * @return this builder instance
          */
         public Builder externalResourceId(String externalResourceId) {
@@ -221,7 +271,8 @@ public class CreateMonitoredResourceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -231,6 +282,10 @@ public class CreateMonitoredResourceRequest
                 .externalResourceId(externalResourceId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

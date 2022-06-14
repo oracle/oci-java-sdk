@@ -107,10 +107,17 @@ public final class CreateDataAssetFromFusionApp extends CreateDataAssetDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-
+        /**
+         * The generic JDBC host name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
         private String serviceUrl;
 
+        /**
+         * The generic JDBC host name.
+         * @param serviceUrl the value to set
+         * @return this builder
+         **/
         public Builder serviceUrl(String serviceUrl) {
             this.serviceUrl = serviceUrl;
             this.__explicitlySet__.add("serviceUrl");
@@ -250,6 +257,10 @@ public final class CreateDataAssetFromFusionApp extends CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
     private final String serviceUrl;
 
+    /**
+     * The generic JDBC host name.
+     * @return the value
+     **/
     public String getServiceUrl() {
         return serviceUrl;
     }

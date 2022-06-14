@@ -28,18 +28,33 @@ public final class Recurrence {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the interval period for the recurrence
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
         private IntervalType intervalType;
 
+        /**
+         * the interval period for the recurrence
+         * @param intervalType the value to set
+         * @return this builder
+         **/
         public Builder intervalType(IntervalType intervalType) {
             this.intervalType = intervalType;
             this.__explicitlySet__.add("intervalType");
             return this;
         }
-
+        /**
+         * the value for the interval period for the recurrence
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
         private String intervalValue;
 
+        /**
+         * the value for the interval period for the recurrence
+         * @param intervalValue the value to set
+         * @return this builder
+         **/
         public Builder intervalValue(String intervalValue) {
             this.intervalValue = intervalValue;
             this.__explicitlySet__.add("intervalValue");
@@ -119,6 +134,10 @@ public final class Recurrence {
     @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
     private final IntervalType intervalType;
 
+    /**
+     * the interval period for the recurrence
+     * @return the value
+     **/
     public IntervalType getIntervalType() {
         return intervalType;
     }
@@ -129,6 +148,10 @@ public final class Recurrence {
     @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
     private final String intervalValue;
 
+    /**
+     * the value for the interval period for the recurrence
+     * @return the value
+     **/
     public String getIntervalValue() {
         return intervalValue;
     }

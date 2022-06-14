@@ -30,9 +30,31 @@ public final class UpdateMaintenanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The start of the 2 hour maintenance window.
+         * <p>
+         * This string is of the format: "{day-of-week} {time-of-day}".
+         * <p>
+         * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+         * <p>
+         * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
         private String windowStartTime;
 
+        /**
+         * The start of the 2 hour maintenance window.
+         * <p>
+         * This string is of the format: "{day-of-week} {time-of-day}".
+         * <p>
+         * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+         * <p>
+         * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         *
+         * @param windowStartTime the value to set
+         * @return this builder
+         **/
         public Builder windowStartTime(String windowStartTime) {
             this.windowStartTime = windowStartTime;
             this.__explicitlySet__.add("windowStartTime");
@@ -81,6 +103,17 @@ public final class UpdateMaintenanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
     private final String windowStartTime;
 
+    /**
+     * The start of the 2 hour maintenance window.
+     * <p>
+     * This string is of the format: "{day-of-week} {time-of-day}".
+     * <p>
+     * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+     * <p>
+     * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     *
+     * @return the value
+     **/
     public String getWindowStartTime() {
         return windowStartTime;
     }

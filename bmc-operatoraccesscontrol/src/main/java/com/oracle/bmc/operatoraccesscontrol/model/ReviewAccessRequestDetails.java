@@ -29,9 +29,17 @@ public final class ReviewAccessRequestDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Comment by the approver explaining that the access request is in review.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
         private String approverComment;
 
+        /**
+         * Comment by the approver explaining that the access request is in review.
+         * @param approverComment the value to set
+         * @return this builder
+         **/
         public Builder approverComment(String approverComment) {
             this.approverComment = approverComment;
             this.__explicitlySet__.add("approverComment");
@@ -74,6 +82,10 @@ public final class ReviewAccessRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
     private final String approverComment;
 
+    /**
+     * Comment by the approver explaining that the access request is in review.
+     * @return the value
+     **/
     public String getApproverComment() {
         return approverComment;
     }

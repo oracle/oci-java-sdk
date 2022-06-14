@@ -29,9 +29,17 @@ public final class AuditProfileCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of audit profile summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AuditProfileSummary> items;
 
+        /**
+         * Array of audit profile summary.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AuditProfileSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AuditProfileCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AuditProfileSummary> items;
 
+    /**
+     * Array of audit profile summary.
+     * @return the value
+     **/
     public java.util.List<AuditProfileSummary> getItems() {
         return items;
     }

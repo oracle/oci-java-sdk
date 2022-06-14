@@ -35,28 +35,49 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
             this.__explicitlySet__.add("targetResourcePort");
             return this;
         }
-
+        /**
+         * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
         private String targetResourceId;
 
+        /**
+         * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+         * @param targetResourceId the value to set
+         * @return this builder
+         **/
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = targetResourceId;
             this.__explicitlySet__.add("targetResourceId");
             return this;
         }
-
+        /**
+         * The private IP address of the target resource that the session connects to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePrivateIpAddress")
         private String targetResourcePrivateIpAddress;
 
+        /**
+         * The private IP address of the target resource that the session connects to.
+         * @param targetResourcePrivateIpAddress the value to set
+         * @return this builder
+         **/
         public Builder targetResourcePrivateIpAddress(String targetResourcePrivateIpAddress) {
             this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
             this.__explicitlySet__.add("targetResourcePrivateIpAddress");
             return this;
         }
-
+        /**
+         * The display name of the target Compute instance that the session connects to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceDisplayName")
         private String targetResourceDisplayName;
 
+        /**
+         * The display name of the target Compute instance that the session connects to.
+         * @param targetResourceDisplayName the value to set
+         * @return this builder
+         **/
         public Builder targetResourceDisplayName(String targetResourceDisplayName) {
             this.targetResourceDisplayName = targetResourceDisplayName;
             this.__explicitlySet__.add("targetResourceDisplayName");
@@ -119,6 +140,10 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     private final String targetResourceId;
 
+    /**
+     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+     * @return the value
+     **/
     public String getTargetResourceId() {
         return targetResourceId;
     }
@@ -129,6 +154,10 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePrivateIpAddress")
     private final String targetResourcePrivateIpAddress;
 
+    /**
+     * The private IP address of the target resource that the session connects to.
+     * @return the value
+     **/
     public String getTargetResourcePrivateIpAddress() {
         return targetResourcePrivateIpAddress;
     }
@@ -139,6 +168,10 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceDisplayName")
     private final String targetResourceDisplayName;
 
+    /**
+     * The display name of the target Compute instance that the session connects to.
+     * @return the value
+     **/
     public String getTargetResourceDisplayName() {
         return targetResourceDisplayName;
     }

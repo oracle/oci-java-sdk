@@ -45,10 +45,17 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
             this.__explicitlySet__.add("validity");
             return this;
         }
-
+        /**
+         * The algorithm used to sign public key certificates that the CA issues.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
         private SignatureAlgorithm signingAlgorithm;
 
+        /**
+         * The algorithm used to sign public key certificates that the CA issues.
+         * @param signingAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder signingAlgorithm(SignatureAlgorithm signingAlgorithm) {
             this.signingAlgorithm = signingAlgorithm;
             this.__explicitlySet__.add("signingAlgorithm");
@@ -124,6 +131,10 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
     private final SignatureAlgorithm signingAlgorithm;
 
+    /**
+     * The algorithm used to sign public key certificates that the CA issues.
+     * @return the value
+     **/
     public SignatureAlgorithm getSigningAlgorithm() {
         return signingAlgorithm;
     }

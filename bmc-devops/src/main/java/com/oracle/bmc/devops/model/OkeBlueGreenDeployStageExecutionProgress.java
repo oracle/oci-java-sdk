@@ -93,10 +93,17 @@ public final class OkeBlueGreenDeployStageExecutionProgress extends DeployStageE
             this.__explicitlySet__.add("deployStageExecutionProgressDetails");
             return this;
         }
-
+        /**
+         * Namespace either environment A or environment B where artifacts are deployed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Namespace either environment A or environment B where artifacts are deployed.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -177,6 +184,10 @@ public final class OkeBlueGreenDeployStageExecutionProgress extends DeployStageE
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Namespace either environment A or environment B where artifacts are deployed.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }

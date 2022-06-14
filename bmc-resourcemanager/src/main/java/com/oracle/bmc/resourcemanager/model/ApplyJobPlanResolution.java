@@ -33,27 +33,61 @@ public final class ApplyJobPlanResolution {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies the most recently executed plan job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planJobId")
         private String planJobId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies the most recently executed plan job.
+         *
+         * @param planJobId the value to set
+         * @return this builder
+         **/
         public Builder planJobId(String planJobId) {
             this.planJobId = planJobId;
             this.__explicitlySet__.add("planJobId");
             return this;
         }
-
+        /**
+         * Specifies whether to use the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the most recently run plan job.
+         * {@code True} if using the latest job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a plan job that completed successfully.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUseLatestJobId")
         private Boolean isUseLatestJobId;
 
+        /**
+         * Specifies whether to use the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the most recently run plan job.
+         * {@code True} if using the latest job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a plan job that completed successfully.
+         *
+         * @param isUseLatestJobId the value to set
+         * @return this builder
+         **/
         public Builder isUseLatestJobId(Boolean isUseLatestJobId) {
             this.isUseLatestJobId = isUseLatestJobId;
             this.__explicitlySet__.add("isUseLatestJobId");
             return this;
         }
-
+        /**
+         * Specifies whether to use the configuration directly, without reference to a Plan job.
+         * {@code True} if using the configuration directly. Note that it is not necessary
+         * for a Plan job to have run successfully.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproved")
         private Boolean isAutoApproved;
 
+        /**
+         * Specifies whether to use the configuration directly, without reference to a Plan job.
+         * {@code True} if using the configuration directly. Note that it is not necessary
+         * for a Plan job to have run successfully.
+         *
+         * @param isAutoApproved the value to set
+         * @return this builder
+         **/
         public Builder isAutoApproved(Boolean isAutoApproved) {
             this.isAutoApproved = isAutoApproved;
             this.__explicitlySet__.add("isAutoApproved");
@@ -100,6 +134,11 @@ public final class ApplyJobPlanResolution {
     @com.fasterxml.jackson.annotation.JsonProperty("planJobId")
     private final String planJobId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies the most recently executed plan job.
+     *
+     * @return the value
+     **/
     public String getPlanJobId() {
         return planJobId;
     }
@@ -112,6 +151,12 @@ public final class ApplyJobPlanResolution {
     @com.fasterxml.jackson.annotation.JsonProperty("isUseLatestJobId")
     private final Boolean isUseLatestJobId;
 
+    /**
+     * Specifies whether to use the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the most recently run plan job.
+     * {@code True} if using the latest job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a plan job that completed successfully.
+     *
+     * @return the value
+     **/
     public Boolean getIsUseLatestJobId() {
         return isUseLatestJobId;
     }
@@ -125,6 +170,13 @@ public final class ApplyJobPlanResolution {
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproved")
     private final Boolean isAutoApproved;
 
+    /**
+     * Specifies whether to use the configuration directly, without reference to a Plan job.
+     * {@code True} if using the configuration directly. Note that it is not necessary
+     * for a Plan job to have run successfully.
+     *
+     * @return the value
+     **/
     public Boolean getIsAutoApproved() {
         return isAutoApproved;
     }

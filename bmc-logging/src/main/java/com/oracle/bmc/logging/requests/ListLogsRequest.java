@@ -16,6 +16,9 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String logGroupId;
 
+    /**
+     * OCID of a log group to work with.
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -60,6 +63,9 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
 
+    /**
+     * The logType that the log object is for, whether custom or service.
+     */
     public LogType getLogType() {
         return logType;
     }
@@ -68,6 +74,9 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String sourceService;
 
+    /**
+     * Service that created the log object.
+     */
     public String getSourceService() {
         return sourceService;
     }
@@ -76,6 +85,9 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String sourceResource;
 
+    /**
+     * Log object resource.
+     */
     public String getSourceResource() {
         return sourceResource;
     }
@@ -84,6 +96,9 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String displayName;
 
+    /**
+     * Resource name
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -92,6 +107,9 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState;
 
+    /**
+     * Lifecycle state of the log object
+     */
     public com.oracle.bmc.logging.model.LogLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -102,6 +120,11 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -111,6 +134,10 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -159,6 +186,11 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
 
+    /**
+     * The field to sort by (one column only). Default sort order is
+     * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -205,6 +237,10 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
 
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -215,6 +251,11 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -225,10 +266,14 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of a log group to work with.
+         */
         private String logGroupId = null;
 
         /**
          * OCID of a log group to work with.
+         * @param logGroupId the value to set
          * @return this builder instance
          */
         public Builder logGroupId(String logGroupId) {
@@ -236,10 +281,14 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The logType that the log object is for, whether custom or service.
+         */
         private LogType logType = null;
 
         /**
          * The logType that the log object is for, whether custom or service.
+         * @param logType the value to set
          * @return this builder instance
          */
         public Builder logType(LogType logType) {
@@ -247,10 +296,14 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Service that created the log object.
+         */
         private String sourceService = null;
 
         /**
          * Service that created the log object.
+         * @param sourceService the value to set
          * @return this builder instance
          */
         public Builder sourceService(String sourceService) {
@@ -258,10 +311,14 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Log object resource.
+         */
         private String sourceResource = null;
 
         /**
          * Log object resource.
+         * @param sourceResource the value to set
          * @return this builder instance
          */
         public Builder sourceResource(String sourceResource) {
@@ -269,10 +326,14 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Resource name
+         */
         private String displayName = null;
 
         /**
          * Resource name
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -280,10 +341,14 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Lifecycle state of the log object
+         */
         private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState = null;
 
         /**
          * Lifecycle state of the log object
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -292,12 +357,18 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
          * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -305,11 +376,16 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -317,12 +393,18 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The field to sort by (one column only). Default sort order is
+         * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by (one column only). Default sort order is
          * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -330,11 +412,16 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -342,12 +429,18 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -443,7 +536,8 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -460,6 +554,10 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

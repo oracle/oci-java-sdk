@@ -18,6 +18,9 @@ public class UpdateTablespaceRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -26,6 +29,9 @@ public class UpdateTablespaceRequest
      */
     private String tablespaceName;
 
+    /**
+     * The name of the tablespace.
+     */
     public String getTablespaceName() {
         return tablespaceName;
     }
@@ -34,6 +40,9 @@ public class UpdateTablespaceRequest
      */
     private com.oracle.bmc.databasemanagement.model.UpdateTablespaceDetails updateTablespaceDetails;
 
+    /**
+     * The details required to update a tablespace.
+     */
     public com.oracle.bmc.databasemanagement.model.UpdateTablespaceDetails
             getUpdateTablespaceDetails() {
         return updateTablespaceDetails;
@@ -43,6 +52,9 @@ public class UpdateTablespaceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,10 +77,14 @@ public class UpdateTablespaceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -76,10 +92,14 @@ public class UpdateTablespaceRequest
             return this;
         }
 
+        /**
+         * The name of the tablespace.
+         */
         private String tablespaceName = null;
 
         /**
          * The name of the tablespace.
+         * @param tablespaceName the value to set
          * @return this builder instance
          */
         public Builder tablespaceName(String tablespaceName) {
@@ -87,11 +107,15 @@ public class UpdateTablespaceRequest
             return this;
         }
 
+        /**
+         * The details required to update a tablespace.
+         */
         private com.oracle.bmc.databasemanagement.model.UpdateTablespaceDetails
                 updateTablespaceDetails = null;
 
         /**
          * The details required to update a tablespace.
+         * @param updateTablespaceDetails the value to set
          * @return this builder instance
          */
         public Builder updateTablespaceDetails(
@@ -101,10 +125,14 @@ public class UpdateTablespaceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -197,7 +225,8 @@ public class UpdateTablespaceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +236,10 @@ public class UpdateTablespaceRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

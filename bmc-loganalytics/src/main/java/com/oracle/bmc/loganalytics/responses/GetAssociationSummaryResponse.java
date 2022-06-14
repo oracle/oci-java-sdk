@@ -14,6 +14,11 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.loganalytics.model.AssociationSummaryReport associationSummaryReport;
 
+    /**
+     * The returned AssociationSummaryReport instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.AssociationSummaryReport
             getAssociationSummaryReport() {
         return associationSummaryReport;
@@ -50,15 +59,33 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned AssociationSummaryReport instance.
+         */
         private com.oracle.bmc.loganalytics.model.AssociationSummaryReport associationSummaryReport;
 
+        /**
+         * The returned AssociationSummaryReport instance.
+         * @param associationSummaryReport the value to set
+         * @return this builder
+         */
         public Builder associationSummaryReport(
                 com.oracle.bmc.loganalytics.model.AssociationSummaryReport
                         associationSummaryReport) {
@@ -78,12 +105,20 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetAssociationSummaryResponse build() {
             return new GetAssociationSummaryResponse(
                     __httpStatusCode__, opcRequestId, associationSummaryReport);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

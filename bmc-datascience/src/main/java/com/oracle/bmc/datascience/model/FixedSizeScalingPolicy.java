@@ -27,9 +27,17 @@ package com.oracle.bmc.datascience.model;
 public final class FixedSizeScalingPolicy extends ScalingPolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of instances for the model deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
         private Integer instanceCount;
 
+        /**
+         * The number of instances for the model deployment.
+         * @param instanceCount the value to set
+         * @return this builder
+         **/
         public Builder instanceCount(Integer instanceCount) {
             this.instanceCount = instanceCount;
             this.__explicitlySet__.add("instanceCount");
@@ -77,6 +85,10 @@ public final class FixedSizeScalingPolicy extends ScalingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
     private final Integer instanceCount;
 
+    /**
+     * The number of instances for the model deployment.
+     * @return the value
+     **/
     public Integer getInstanceCount() {
         return instanceCount;
     }

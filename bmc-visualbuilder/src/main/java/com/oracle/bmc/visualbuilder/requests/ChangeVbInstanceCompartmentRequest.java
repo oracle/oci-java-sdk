@@ -18,6 +18,9 @@ public class ChangeVbInstanceCompartmentRequest
      */
     private String vbInstanceId;
 
+    /**
+     * Unique Vb Instance identifier.
+     */
     public String getVbInstanceId() {
         return vbInstanceId;
     }
@@ -27,6 +30,9 @@ public class ChangeVbInstanceCompartmentRequest
     private com.oracle.bmc.visualbuilder.model.ChangeVbInstanceCompartmentDetails
             changeVbInstanceCompartmentDetails;
 
+    /**
+     * Details for the update vb instance
+     */
     public com.oracle.bmc.visualbuilder.model.ChangeVbInstanceCompartmentDetails
             getChangeVbInstanceCompartmentDetails() {
         return changeVbInstanceCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeVbInstanceCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeVbInstanceCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,6 +80,15 @@ public class ChangeVbInstanceCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations. For example, if a resource has been
+     * deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -85,10 +111,14 @@ public class ChangeVbInstanceCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Vb Instance identifier.
+         */
         private String vbInstanceId = null;
 
         /**
          * Unique Vb Instance identifier.
+         * @param vbInstanceId the value to set
          * @return this builder instance
          */
         public Builder vbInstanceId(String vbInstanceId) {
@@ -96,11 +126,15 @@ public class ChangeVbInstanceCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for the update vb instance
+         */
         private com.oracle.bmc.visualbuilder.model.ChangeVbInstanceCompartmentDetails
                 changeVbInstanceCompartmentDetails = null;
 
         /**
          * Details for the update vb instance
+         * @param changeVbInstanceCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeVbInstanceCompartmentDetails(
@@ -110,6 +144,14 @@ public class ChangeVbInstanceCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -119,6 +161,7 @@ public class ChangeVbInstanceCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -126,10 +169,14 @@ public class ChangeVbInstanceCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -137,6 +184,15 @@ public class ChangeVbInstanceCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations. For example, if a resource has been
+         * deleted and purged from the system, then a retry of the original creation
+         * request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -147,6 +203,7 @@ public class ChangeVbInstanceCompartmentRequest
          * deleted and purged from the system, then a retry of the original creation
          * request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -242,7 +299,8 @@ public class ChangeVbInstanceCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -253,6 +311,10 @@ public class ChangeVbInstanceCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

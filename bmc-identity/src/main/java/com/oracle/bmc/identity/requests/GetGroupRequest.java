@@ -16,6 +16,9 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String groupId;
 
+    /**
+     * The OCID of the group.
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -26,10 +29,14 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the group.
+         */
         private String groupId = null;
 
         /**
          * The OCID of the group.
+         * @param groupId the value to set
          * @return this builder instance
          */
         public Builder groupId(String groupId) {
@@ -105,12 +112,17 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().groupId(groupId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,9 +29,21 @@ public final class ResponseProtection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array.
+         * ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<ProtectionRule> rules;
 
+        /**
+         * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array.
+         * ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         *
+         * @param rules the value to set
+         * @return this builder
+         **/
         public Builder rules(java.util.List<ProtectionRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -75,6 +87,12 @@ public final class ResponseProtection {
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<ProtectionRule> rules;
 
+    /**
+     * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array.
+     * ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     *
+     * @return the value
+     **/
     public java.util.List<ProtectionRule> getRules() {
         return rules;
     }

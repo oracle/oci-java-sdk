@@ -18,6 +18,9 @@ public class DownloadDiscoveryReportRequest
      */
     private String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -27,6 +30,9 @@ public class DownloadDiscoveryReportRequest
     private com.oracle.bmc.datasafe.model.DownloadDiscoveryReportDetails
             downloadDiscoveryReportDetails;
 
+    /**
+     * Details to download a discovery report.
+     */
     public com.oracle.bmc.datasafe.model.DownloadDiscoveryReportDetails
             getDownloadDiscoveryReportDetails() {
         return downloadDiscoveryReportDetails;
@@ -36,6 +42,9 @@ public class DownloadDiscoveryReportRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,10 +67,14 @@ public class DownloadDiscoveryReportRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
+         * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
@@ -69,11 +82,15 @@ public class DownloadDiscoveryReportRequest
             return this;
         }
 
+        /**
+         * Details to download a discovery report.
+         */
         private com.oracle.bmc.datasafe.model.DownloadDiscoveryReportDetails
                 downloadDiscoveryReportDetails = null;
 
         /**
          * Details to download a discovery report.
+         * @param downloadDiscoveryReportDetails the value to set
          * @return this builder instance
          */
         public Builder downloadDiscoveryReportDetails(
@@ -83,10 +100,14 @@ public class DownloadDiscoveryReportRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -177,7 +198,8 @@ public class DownloadDiscoveryReportRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -186,6 +208,10 @@ public class DownloadDiscoveryReportRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

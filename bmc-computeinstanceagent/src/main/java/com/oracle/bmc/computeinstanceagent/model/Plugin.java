@@ -36,45 +36,81 @@ public final class Plugin {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The plugin name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The plugin name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The plugin version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The plugin version
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The plugin status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * The plugin status
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The last update time of the plugin
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateTime")
         private java.util.Date lastUpdateTime;
 
+        /**
+         * The last update time of the plugin
+         * @param lastUpdateTime the value to set
+         * @return this builder
+         **/
         public Builder lastUpdateTime(java.util.Date lastUpdateTime) {
             this.lastUpdateTime = lastUpdateTime;
             this.__explicitlySet__.add("lastUpdateTime");
             return this;
         }
-
+        /**
+         * The optional message from the agent plugin
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * The optional message from the agent plugin
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -121,6 +157,10 @@ public final class Plugin {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The plugin name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -131,6 +171,10 @@ public final class Plugin {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The plugin version
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -141,6 +185,10 @@ public final class Plugin {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * The plugin status
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }
@@ -151,6 +199,10 @@ public final class Plugin {
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateTime")
     private final java.util.Date lastUpdateTime;
 
+    /**
+     * The last update time of the plugin
+     * @return the value
+     **/
     public java.util.Date getLastUpdateTime() {
         return lastUpdateTime;
     }
@@ -161,6 +213,10 @@ public final class Plugin {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * The optional message from the agent plugin
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }

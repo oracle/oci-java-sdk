@@ -27,9 +27,17 @@ public final class AsmProperty {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the disk group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskGroup")
         private String diskGroup;
 
+        /**
+         * The name of the disk group.
+         * @param diskGroup the value to set
+         * @return this builder
+         **/
         public Builder diskGroup(String diskGroup) {
             this.diskGroup = diskGroup;
             this.__explicitlySet__.add("diskGroup");
@@ -71,6 +79,10 @@ public final class AsmProperty {
     @com.fasterxml.jackson.annotation.JsonProperty("diskGroup")
     private final String diskGroup;
 
+    /**
+     * The name of the disk group.
+     * @return the value
+     **/
     public String getDiskGroup() {
         return diskGroup;
     }

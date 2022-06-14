@@ -57,81 +57,163 @@ public final class OAuth2ClientCredentialSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Allowed scopes for the given oauth credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopes")
         private java.util.List<FullyQualifiedScope> scopes;
 
+        /**
+         * Allowed scopes for the given oauth credential.
+         * @param scopes the value to set
+         * @return this builder
+         **/
         public Builder scopes(java.util.List<FullyQualifiedScope> scopes) {
             this.scopes = scopes;
             this.__explicitlySet__.add("scopes");
             return this;
         }
-
+        /**
+         * The OCID of the user the Oauth credential belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
+        /**
+         * The OCID of the user the Oauth credential belongs to.
+         * @param userId the value to set
+         * @return this builder
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-
+        /**
+         * Date and time when this credential will expire, in the format defined by RFC3339.
+         * Null if it never expires.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expiresOn")
         private java.util.Date expiresOn;
 
+        /**
+         * Date and time when this credential will expire, in the format defined by RFC3339.
+         * Null if it never expires.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param expiresOn the value to set
+         * @return this builder
+         **/
         public Builder expiresOn(java.util.Date expiresOn) {
             this.expiresOn = expiresOn;
             this.__explicitlySet__.add("expiresOn");
             return this;
         }
-
+        /**
+         * The OCID of the Oauth credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the Oauth credential.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment containing the Oauth credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment containing the Oauth credential.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name of the Oauth credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Oauth credential.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The description of the Oauth credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the Oauth credential.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The credential's current state. After creating a Oauth credential, make sure its {@code lifecycleState} changes from
+         * CREATING to ACTIVE before using it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The credential's current state. After creating a Oauth credential, make sure its {@code lifecycleState} changes from
+         * CREATING to ACTIVE before using it.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Date and time the {@code OAuth2ClientCredential} object was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date and time the {@code OAuth2ClientCredential} object was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -192,6 +274,10 @@ public final class OAuth2ClientCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
     private final java.util.List<FullyQualifiedScope> scopes;
 
+    /**
+     * Allowed scopes for the given oauth credential.
+     * @return the value
+     **/
     public java.util.List<FullyQualifiedScope> getScopes() {
         return scopes;
     }
@@ -202,6 +288,10 @@ public final class OAuth2ClientCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
+    /**
+     * The OCID of the user the Oauth credential belongs to.
+     * @return the value
+     **/
     public String getUserId() {
         return userId;
     }
@@ -216,6 +306,14 @@ public final class OAuth2ClientCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("expiresOn")
     private final java.util.Date expiresOn;
 
+    /**
+     * Date and time when this credential will expire, in the format defined by RFC3339.
+     * Null if it never expires.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getExpiresOn() {
         return expiresOn;
     }
@@ -226,6 +324,10 @@ public final class OAuth2ClientCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the Oauth credential.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -236,6 +338,10 @@ public final class OAuth2ClientCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment containing the Oauth credential.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -246,6 +352,10 @@ public final class OAuth2ClientCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Oauth credential.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -256,6 +366,10 @@ public final class OAuth2ClientCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the Oauth credential.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -321,6 +435,12 @@ public final class OAuth2ClientCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The credential's current state. After creating a Oauth credential, make sure its {@code lifecycleState} changes from
+     * CREATING to ACTIVE before using it.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -334,6 +454,13 @@ public final class OAuth2ClientCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time the {@code OAuth2ClientCredential} object was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

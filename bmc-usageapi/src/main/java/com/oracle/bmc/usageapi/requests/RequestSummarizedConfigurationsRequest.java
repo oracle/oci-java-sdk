@@ -17,6 +17,9 @@ public class RequestSummarizedConfigurationsRequest
      */
     private String tenantId;
 
+    /**
+     * tenant id
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -27,6 +30,11 @@ public class RequestSummarizedConfigurationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,10 +46,14 @@ public class RequestSummarizedConfigurationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * tenant id
+         */
         private String tenantId = null;
 
         /**
          * tenant id
+         * @param tenantId the value to set
          * @return this builder instance
          */
         public Builder tenantId(String tenantId) {
@@ -49,12 +61,18 @@ public class RequestSummarizedConfigurationsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -133,12 +151,17 @@ public class RequestSummarizedConfigurationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().tenantId(tenantId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

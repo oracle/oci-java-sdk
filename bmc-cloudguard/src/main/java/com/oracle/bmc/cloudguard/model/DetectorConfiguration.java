@@ -38,45 +38,81 @@ public final class DetectorConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique name of the configuration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
 
+        /**
+         * Unique name of the configuration
+         * @param configKey the value to set
+         * @return this builder
+         **/
         public Builder configKey(String configKey) {
             this.configKey = configKey;
             this.__explicitlySet__.add("configKey");
             return this;
         }
-
+        /**
+         * configuration name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * configuration name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * configuration value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * configuration value
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * configuration data type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * configuration data type
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * List of configuration values
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<ConfigValue> values;
 
+        /**
+         * List of configuration values
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<ConfigValue> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -124,6 +160,10 @@ public final class DetectorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
     private final String configKey;
 
+    /**
+     * Unique name of the configuration
+     * @return the value
+     **/
     public String getConfigKey() {
         return configKey;
     }
@@ -134,6 +174,10 @@ public final class DetectorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * configuration name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -144,6 +188,10 @@ public final class DetectorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * configuration value
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -154,6 +202,10 @@ public final class DetectorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * configuration data type
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -164,6 +216,10 @@ public final class DetectorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<ConfigValue> values;
 
+    /**
+     * List of configuration values
+     * @return the value
+     **/
     public java.util.List<ConfigValue> getValues() {
         return values;
     }

@@ -29,9 +29,27 @@ public final class DimensionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces.
+         * Custom dimension keys are acceptable. Avoid entering confidential information.
+         * Due to use by Service Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
+         * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+         * Example: {@code type}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces.
+         * Custom dimension keys are acceptable. Avoid entering confidential information.
+         * Due to use by Service Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
+         * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+         * Example: {@code type}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -87,6 +105,15 @@ public final class DimensionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces.
+     * Custom dimension keys are acceptable. Avoid entering confidential information.
+     * Due to use by Service Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
+     * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+     * Example: {@code type}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

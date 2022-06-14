@@ -14,6 +14,11 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.loganalytics.model.LogGroupSummaryReport logGroupSummaryReport;
 
+    /**
+     * The returned LogGroupSummaryReport instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LogGroupSummaryReport getLogGroupSummaryReport() {
         return logGroupSummaryReport;
     }
@@ -49,15 +58,33 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LogGroupSummaryReport instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogGroupSummaryReport logGroupSummaryReport;
 
+        /**
+         * The returned LogGroupSummaryReport instance.
+         * @param logGroupSummaryReport the value to set
+         * @return this builder
+         */
         public Builder logGroupSummaryReport(
                 com.oracle.bmc.loganalytics.model.LogGroupSummaryReport logGroupSummaryReport) {
             this.logGroupSummaryReport = logGroupSummaryReport;
@@ -76,12 +103,20 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetLogAnalyticsLogGroupsSummaryResponse build() {
             return new GetLogAnalyticsLogGroupsSummaryResponse(
                     __httpStatusCode__, opcRequestId, logGroupSummaryReport);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

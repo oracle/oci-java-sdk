@@ -28,6 +28,7 @@ package com.oracle.bmc.resourcemanager.model;
 public final class CreateDestroyJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
         private TerraformAdvancedOptions terraformAdvancedOptions;
 
@@ -36,10 +37,23 @@ public final class CreateDestroyJobOperationDetails extends CreateJobOperationDe
             this.__explicitlySet__.add("terraformAdvancedOptions");
             return this;
         }
-
+        /**
+         * Specifies the source of the execution plan to apply.
+         * Currently, only {@code AUTO_APPROVED} is allowed, which indicates that the job
+         * will be run without an execution plan.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
         private DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
+        /**
+         * Specifies the source of the execution plan to apply.
+         * Currently, only {@code AUTO_APPROVED} is allowed, which indicates that the job
+         * will be run without an execution plan.
+         *
+         * @param executionPlanStrategy the value to set
+         * @return this builder
+         **/
         public Builder executionPlanStrategy(
                 DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy) {
             this.executionPlanStrategy = executionPlanStrategy;
@@ -105,6 +119,13 @@ public final class CreateDestroyJobOperationDetails extends CreateJobOperationDe
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
     private final DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
+    /**
+     * Specifies the source of the execution plan to apply.
+     * Currently, only {@code AUTO_APPROVED} is allowed, which indicates that the job
+     * will be run without an execution plan.
+     *
+     * @return the value
+     **/
     public DestroyJobOperationDetails.ExecutionPlanStrategy getExecutionPlanStrategy() {
         return executionPlanStrategy;
     }

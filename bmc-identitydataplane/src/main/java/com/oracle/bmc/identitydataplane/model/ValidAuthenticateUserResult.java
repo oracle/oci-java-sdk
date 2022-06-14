@@ -32,27 +32,49 @@ public final class ValidAuthenticateUserResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The tenant name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantInput")
         private String tenantInput;
 
+        /**
+         * The tenant name.
+         * @param tenantInput the value to set
+         * @return this builder
+         **/
         public Builder tenantInput(String tenantInput) {
             this.tenantInput = tenantInput;
             this.__explicitlySet__.add("tenantInput");
             return this;
         }
-
+        /**
+         * The user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userInput")
         private String userInput;
 
+        /**
+         * The user name.
+         * @param userInput the value to set
+         * @return this builder
+         **/
         public Builder userInput(String userInput) {
             this.userInput = userInput;
             this.__explicitlySet__.add("userInput");
             return this;
         }
-
+        /**
+         * The resolved principal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resolvedPrincipal")
         private AuthenticationPrincipal resolvedPrincipal;
 
+        /**
+         * The resolved principal.
+         * @param resolvedPrincipal the value to set
+         * @return this builder
+         **/
         public Builder resolvedPrincipal(AuthenticationPrincipal resolvedPrincipal) {
             this.resolvedPrincipal = resolvedPrincipal;
             this.__explicitlySet__.add("resolvedPrincipal");
@@ -98,6 +120,10 @@ public final class ValidAuthenticateUserResult {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantInput")
     private final String tenantInput;
 
+    /**
+     * The tenant name.
+     * @return the value
+     **/
     public String getTenantInput() {
         return tenantInput;
     }
@@ -108,6 +134,10 @@ public final class ValidAuthenticateUserResult {
     @com.fasterxml.jackson.annotation.JsonProperty("userInput")
     private final String userInput;
 
+    /**
+     * The user name.
+     * @return the value
+     **/
     public String getUserInput() {
         return userInput;
     }
@@ -118,6 +148,10 @@ public final class ValidAuthenticateUserResult {
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedPrincipal")
     private final AuthenticationPrincipal resolvedPrincipal;
 
+    /**
+     * The resolved principal.
+     * @return the value
+     **/
     public AuthenticationPrincipal getResolvedPrincipal() {
         return resolvedPrincipal;
     }

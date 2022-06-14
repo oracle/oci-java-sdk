@@ -28,28 +28,54 @@ package com.oracle.bmc.integration.model;
 public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Source IP addresses or IP address ranges ingress rules.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpIps")
         private java.util.List<String> allowlistedHttpIps;
 
+        /**
+         * Source IP addresses or IP address ranges ingress rules.
+         *
+         * @param allowlistedHttpIps the value to set
+         * @return this builder
+         **/
         public Builder allowlistedHttpIps(java.util.List<String> allowlistedHttpIps) {
             this.allowlistedHttpIps = allowlistedHttpIps;
             this.__explicitlySet__.add("allowlistedHttpIps");
             return this;
         }
-
+        /**
+         * Virtual Cloud Networks allowed to access this network endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpVcns")
         private java.util.List<VirtualCloudNetwork> allowlistedHttpVcns;
 
+        /**
+         * Virtual Cloud Networks allowed to access this network endpoint.
+         *
+         * @param allowlistedHttpVcns the value to set
+         * @return this builder
+         **/
         public Builder allowlistedHttpVcns(
                 java.util.List<VirtualCloudNetwork> allowlistedHttpVcns) {
             this.allowlistedHttpVcns = allowlistedHttpVcns;
             this.__explicitlySet__.add("allowlistedHttpVcns");
             return this;
         }
-
+        /**
+         * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIntegrationVcnAllowlisted")
         private Boolean isIntegrationVcnAllowlisted;
 
+        /**
+         * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+         * @param isIntegrationVcnAllowlisted the value to set
+         * @return this builder
+         **/
         public Builder isIntegrationVcnAllowlisted(Boolean isIntegrationVcnAllowlisted) {
             this.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
             this.__explicitlySet__.add("isIntegrationVcnAllowlisted");
@@ -108,6 +134,11 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpIps")
     private final java.util.List<String> allowlistedHttpIps;
 
+    /**
+     * Source IP addresses or IP address ranges ingress rules.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getAllowlistedHttpIps() {
         return allowlistedHttpIps;
     }
@@ -119,6 +150,11 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpVcns")
     private final java.util.List<VirtualCloudNetwork> allowlistedHttpVcns;
 
+    /**
+     * Virtual Cloud Networks allowed to access this network endpoint.
+     *
+     * @return the value
+     **/
     public java.util.List<VirtualCloudNetwork> getAllowlistedHttpVcns() {
         return allowlistedHttpVcns;
     }
@@ -129,6 +165,10 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isIntegrationVcnAllowlisted")
     private final Boolean isIntegrationVcnAllowlisted;
 
+    /**
+     * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+     * @return the value
+     **/
     public Boolean getIsIntegrationVcnAllowlisted() {
         return isIntegrationVcnAllowlisted;
     }

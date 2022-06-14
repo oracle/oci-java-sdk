@@ -29,9 +29,17 @@ public final class ValidationResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Boolean value that indicates whether the requested user is valid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isValidUser")
         private Boolean isValidUser;
 
+        /**
+         * Boolean value that indicates whether the requested user is valid.
+         * @param isValidUser the value to set
+         * @return this builder
+         **/
         public Builder isValidUser(Boolean isValidUser) {
             this.isValidUser = isValidUser;
             this.__explicitlySet__.add("isValidUser");
@@ -73,6 +81,10 @@ public final class ValidationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("isValidUser")
     private final Boolean isValidUser;
 
+    /**
+     * Boolean value that indicates whether the requested user is valid.
+     * @return the value
+     **/
     public Boolean getIsValidUser() {
         return isValidUser;
     }

@@ -29,9 +29,17 @@ public final class AssignedSubscriptionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array containing AssignedSubscription items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AssignedSubscriptionSummary> items;
 
+        /**
+         * Array containing AssignedSubscription items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AssignedSubscriptionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AssignedSubscriptionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AssignedSubscriptionSummary> items;
 
+    /**
+     * Array containing AssignedSubscription items.
+     * @return the value
+     **/
     public java.util.List<AssignedSubscriptionSummary> getItems() {
         return items;
     }

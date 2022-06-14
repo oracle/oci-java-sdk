@@ -36,10 +36,17 @@ public final class ComputeInstanceGroupLinearRolloutPolicyByPercentage
             this.__explicitlySet__.add("batchDelayInSeconds");
             return this;
         }
-
+        /**
+         * The percentage that will be used to determine how many instances will be deployed concurrently.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchPercentage")
         private Integer batchPercentage;
 
+        /**
+         * The percentage that will be used to determine how many instances will be deployed concurrently.
+         * @param batchPercentage the value to set
+         * @return this builder
+         **/
         public Builder batchPercentage(Integer batchPercentage) {
             this.batchPercentage = batchPercentage;
             this.__explicitlySet__.add("batchPercentage");
@@ -92,6 +99,10 @@ public final class ComputeInstanceGroupLinearRolloutPolicyByPercentage
     @com.fasterxml.jackson.annotation.JsonProperty("batchPercentage")
     private final Integer batchPercentage;
 
+    /**
+     * The percentage that will be used to determine how many instances will be deployed concurrently.
+     * @return the value
+     **/
     public Integer getBatchPercentage() {
         return batchPercentage;
     }

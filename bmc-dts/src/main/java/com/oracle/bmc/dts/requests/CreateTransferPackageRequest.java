@@ -18,12 +18,13 @@ public class CreateTransferPackageRequest
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
-    /**
-     *
-     */
+
     private String opcRetryToken;
 
     public String getOpcRetryToken() {
@@ -34,6 +35,9 @@ public class CreateTransferPackageRequest
      */
     private com.oracle.bmc.dts.model.CreateTransferPackageDetails createTransferPackageDetails;
 
+    /**
+     * Creates a New Transfer Package
+     */
     public com.oracle.bmc.dts.model.CreateTransferPackageDetails getCreateTransferPackageDetails() {
         return createTransferPackageDetails;
     }
@@ -56,10 +60,14 @@ public class CreateTransferPackageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -71,6 +79,7 @@ public class CreateTransferPackageRequest
 
         /**
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -78,11 +87,15 @@ public class CreateTransferPackageRequest
             return this;
         }
 
+        /**
+         * Creates a New Transfer Package
+         */
         private com.oracle.bmc.dts.model.CreateTransferPackageDetails createTransferPackageDetails =
                 null;
 
         /**
          * Creates a New Transfer Package
+         * @param createTransferPackageDetails the value to set
          * @return this builder instance
          */
         public Builder createTransferPackageDetails(
@@ -175,7 +188,8 @@ public class CreateTransferPackageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -184,6 +198,10 @@ public class CreateTransferPackageRequest
                 .createTransferPackageDetails(createTransferPackageDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

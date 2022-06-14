@@ -29,27 +29,49 @@ public final class Category {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Category name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Category name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Category display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Category display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Parameters the category supports.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<Parameter> parameters;
 
+        /**
+         * Parameters the category supports.
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.List<Parameter> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -92,6 +114,10 @@ public final class Category {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Category name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -102,6 +128,10 @@ public final class Category {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Category display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -112,6 +142,10 @@ public final class Category {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<Parameter> parameters;
 
+    /**
+     * Parameters the category supports.
+     * @return the value
+     **/
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }

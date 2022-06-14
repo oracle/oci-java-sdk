@@ -126,289 +126,530 @@ public final class SearchResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique key of the object returned as part of the search result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique key of the object returned as part of the search result.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the object.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Detailed description of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the object.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The date and time the result object was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the result object was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the result object was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the result object was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Array of the tags associated with this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagSummary")
         private java.util.List<SearchTagSummary> tagSummary;
 
+        /**
+         * Array of the tags associated with this object.
+         * @param tagSummary the value to set
+         * @return this builder
+         **/
         public Builder tagSummary(java.util.List<SearchTagSummary> tagSummary) {
             this.tagSummary = tagSummary;
             this.__explicitlySet__.add("tagSummary");
             return this;
         }
-
+        /**
+         * Array of the terms associated with this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("termSummary")
         private java.util.List<SearchTermSummary> termSummary;
 
+        /**
+         * Array of the terms associated with this object.
+         * @param termSummary the value to set
+         * @return this builder
+         **/
         public Builder termSummary(java.util.List<SearchTermSummary> termSummary) {
             this.termSummary = termSummary;
             this.__explicitlySet__.add("termSummary");
             return this;
         }
-
+        /**
+         * Name of the object type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeName")
         private String typeName;
 
+        /**
+         * Name of the object type.
+         * @param typeName the value to set
+         * @return this builder
+         **/
         public Builder typeName(String typeName) {
             this.typeName = typeName;
             this.__explicitlySet__.add("typeName");
             return this;
         }
-
+        /**
+         * Name of the external object type in the host data asset. For example, column, field, table, view, or file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalTypeName")
         private String externalTypeName;
 
+        /**
+         * Name of the external object type in the host data asset. For example, column, field, table, view, or file.
+         * @param externalTypeName the value to set
+         * @return this builder
+         **/
         public Builder externalTypeName(String externalTypeName) {
             this.externalTypeName = externalTypeName;
             this.__explicitlySet__.add("externalTypeName");
             return this;
         }
-
+        /**
+         * Data type of the object if the object is an attribute. Null otherwise.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalDataType")
         private String externalDataType;
 
+        /**
+         * Data type of the object if the object is an attribute. Null otherwise.
+         * @param externalDataType the value to set
+         * @return this builder
+         **/
         public Builder externalDataType(String externalDataType) {
             this.externalDataType = externalDataType;
             this.__explicitlySet__.add("externalDataType");
             return this;
         }
-
+        /**
+         * Unique key of the data asset that is the root parent of this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
+        /**
+         * Unique key of the data asset that is the root parent of this object.
+         * @param dataAssetKey the value to set
+         * @return this builder
+         **/
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
             return this;
         }
-
+        /**
+         * Type name of the data asset. For example, Oracle, MySQL or Oracle Object Storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetType")
         private String dataAssetType;
 
+        /**
+         * Type name of the data asset. For example, Oracle, MySQL or Oracle Object Storage.
+         * @param dataAssetType the value to set
+         * @return this builder
+         **/
         public Builder dataAssetType(String dataAssetType) {
             this.dataAssetType = dataAssetType;
             this.__explicitlySet__.add("dataAssetType");
             return this;
         }
-
+        /**
+         * Name of the data asset that is the root parent of this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetName")
         private String dataAssetName;
 
+        /**
+         * Name of the data asset that is the root parent of this object.
+         * @param dataAssetName the value to set
+         * @return this builder
+         **/
         public Builder dataAssetName(String dataAssetName) {
             this.dataAssetName = dataAssetName;
             this.__explicitlySet__.add("dataAssetName");
             return this;
         }
-
+        /**
+         * Unique key of the folder object if this object is a sub folder, entity, or attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("folderKey")
         private String folderKey;
 
+        /**
+         * Unique key of the folder object if this object is a sub folder, entity, or attribute.
+         * @param folderKey the value to set
+         * @return this builder
+         **/
         public Builder folderKey(String folderKey) {
             this.folderKey = folderKey;
             this.__explicitlySet__.add("folderKey");
             return this;
         }
-
+        /**
+         * Type name of the folder. For example, schema, directory, or topic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("folderType")
         private String folderType;
 
+        /**
+         * Type name of the folder. For example, schema, directory, or topic.
+         * @param folderType the value to set
+         * @return this builder
+         **/
         public Builder folderType(String folderType) {
             this.folderType = folderType;
             this.__explicitlySet__.add("folderType");
             return this;
         }
-
+        /**
+         * Name of the parent folder object if this object is a sub folder, entity, or attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("folderName")
         private String folderName;
 
+        /**
+         * Name of the parent folder object if this object is a sub folder, entity, or attribute.
+         * @param folderName the value to set
+         * @return this builder
+         **/
         public Builder folderName(String folderName) {
             this.folderName = folderName;
             this.__explicitlySet__.add("folderName");
             return this;
         }
-
+        /**
+         * Unique key of the entity object if this object is an attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entitykey")
         private String entitykey;
 
+        /**
+         * Unique key of the entity object if this object is an attribute.
+         * @param entitykey the value to set
+         * @return this builder
+         **/
         public Builder entitykey(String entitykey) {
             this.entitykey = entitykey;
             this.__explicitlySet__.add("entitykey");
             return this;
         }
-
+        /**
+         * Type name of the entity. For example, table, view, external table, file, or object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * Type name of the entity. For example, table, view, external table, file, or object.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * Name of the parent entity object if this object is an attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
+        /**
+         * Name of the parent entity object if this object is an attribute.
+         * @param entityName the value to set
+         * @return this builder
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-
+        /**
+         * Unique id of the parent glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
         private String glossaryKey;
 
+        /**
+         * Unique id of the parent glossary.
+         * @param glossaryKey the value to set
+         * @return this builder
+         **/
         public Builder glossaryKey(String glossaryKey) {
             this.glossaryKey = glossaryKey;
             this.__explicitlySet__.add("glossaryKey");
             return this;
         }
-
+        /**
+         * Name of the parent glossary if this object is a term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryName")
         private String glossaryName;
 
+        /**
+         * Name of the parent glossary if this object is a term.
+         * @param glossaryName the value to set
+         * @return this builder
+         **/
         public Builder glossaryName(String glossaryName) {
             this.glossaryName = glossaryName;
             this.__explicitlySet__.add("glossaryName");
             return this;
         }
-
+        /**
+         * This terms parent term key. Will be null if the term has no parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
         private String parentTermKey;
 
+        /**
+         * This terms parent term key. Will be null if the term has no parent term.
+         * @param parentTermKey the value to set
+         * @return this builder
+         **/
         public Builder parentTermKey(String parentTermKey) {
             this.parentTermKey = parentTermKey;
             this.__explicitlySet__.add("parentTermKey");
             return this;
         }
-
+        /**
+         * Name of the parent term. Will be null if the term has no parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermName")
         private String parentTermName;
 
+        /**
+         * Name of the parent term. Will be null if the term has no parent term.
+         * @param parentTermName the value to set
+         * @return this builder
+         **/
         public Builder parentTermName(String parentTermName) {
             this.parentTermName = parentTermName;
             this.__explicitlySet__.add("parentTermName");
             return this;
         }
-
+        /**
+         * OCID of the user who created the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdById")
         private String createdById;
 
+        /**
+         * OCID of the user who created the resource.
+         * @param createdById the value to set
+         * @return this builder
+         **/
         public Builder createdById(String createdById) {
             this.createdById = createdById;
             this.__explicitlySet__.add("createdById");
             return this;
         }
-
+        /**
+         * OCID of the user who updated the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
         private String updatedById;
 
+        /**
+         * OCID of the user who updated the resource.
+         * @param updatedById the value to set
+         * @return this builder
+         **/
         public Builder updatedById(String updatedById) {
             this.updatedById = updatedById;
             this.__explicitlySet__.add("updatedById");
             return this;
         }
-
+        /**
+         * Absolute path of this resource, which could be a term, folder, entity etc, usually resolvable to this resource through a namespace hierarchy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Absolute path of this resource, which could be a term, folder, entity etc, usually resolvable to this resource through a namespace hierarchy.
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * Optional user friendly business name of the data object. If set, this supplements the harvested display name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("businessName")
         private String businessName;
 
+        /**
+         * Optional user friendly business name of the data object. If set, this supplements the harvested display name of the object.
+         * @param businessName the value to set
+         * @return this builder
+         **/
         public Builder businessName(String businessName) {
             this.businessName = businessName;
             this.__explicitlySet__.add("businessName");
             return this;
         }
-
+        /**
+         * The current state of the data object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the data object.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Type name of the attribute. For example - complex, primitive, or array.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
         private String attributeType;
 
+        /**
+         * Type name of the attribute. For example - complex, primitive, or array.
+         * @param attributeType the value to set
+         * @return this builder
+         **/
         public Builder attributeType(String attributeType) {
             this.attributeType = attributeType;
             this.__explicitlySet__.add("attributeType");
             return this;
         }
-
+        /**
+         * Expression for logical entities against which names of dataObjects will be matched.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
+        /**
+         * Expression for logical entities against which names of dataObjects will be matched.
+         * @param expression the value to set
+         * @return this builder
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
-
+        /**
+         * Custom properties defined by users.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
         private java.util.List<FacetedSearchCustomProperty> customProperties;
 
+        /**
+         * Custom properties defined by users.
+         * @param customProperties the value to set
+         * @return this builder
+         **/
         public Builder customProperties(
                 java.util.List<FacetedSearchCustomProperty> customProperties) {
             this.customProperties = customProperties;
             this.__explicitlySet__.add("customProperties");
             return this;
         }
-
+        /**
+         * A map of maps that contains the properties which are specific to the element type in the search result.
+         * The map keys are category names and the values are maps of property name to property value. Every property
+         * is contained inside of a category. Most element types have required properties within the "default" category.
+         * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
+        /**
+         * A map of maps that contains the properties which are specific to the element type in the search result.
+         * The map keys are category names and the values are maps of property name to property value. Every property
+         * is contained inside of a category. Most element types have required properties within the "default" category.
+         * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+         *
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -515,6 +756,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique key of the object returned as part of the search result.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -525,6 +770,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the object.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -535,6 +784,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -547,6 +800,12 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the result object was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -559,6 +818,12 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the result object was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -569,6 +834,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("tagSummary")
     private final java.util.List<SearchTagSummary> tagSummary;
 
+    /**
+     * Array of the tags associated with this object.
+     * @return the value
+     **/
     public java.util.List<SearchTagSummary> getTagSummary() {
         return tagSummary;
     }
@@ -579,6 +848,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("termSummary")
     private final java.util.List<SearchTermSummary> termSummary;
 
+    /**
+     * Array of the terms associated with this object.
+     * @return the value
+     **/
     public java.util.List<SearchTermSummary> getTermSummary() {
         return termSummary;
     }
@@ -589,6 +862,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     private final String typeName;
 
+    /**
+     * Name of the object type.
+     * @return the value
+     **/
     public String getTypeName() {
         return typeName;
     }
@@ -599,6 +876,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("externalTypeName")
     private final String externalTypeName;
 
+    /**
+     * Name of the external object type in the host data asset. For example, column, field, table, view, or file.
+     * @return the value
+     **/
     public String getExternalTypeName() {
         return externalTypeName;
     }
@@ -609,6 +890,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("externalDataType")
     private final String externalDataType;
 
+    /**
+     * Data type of the object if the object is an attribute. Null otherwise.
+     * @return the value
+     **/
     public String getExternalDataType() {
         return externalDataType;
     }
@@ -619,6 +904,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     private final String dataAssetKey;
 
+    /**
+     * Unique key of the data asset that is the root parent of this object.
+     * @return the value
+     **/
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -629,6 +918,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetType")
     private final String dataAssetType;
 
+    /**
+     * Type name of the data asset. For example, Oracle, MySQL or Oracle Object Storage.
+     * @return the value
+     **/
     public String getDataAssetType() {
         return dataAssetType;
     }
@@ -639,6 +932,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetName")
     private final String dataAssetName;
 
+    /**
+     * Name of the data asset that is the root parent of this object.
+     * @return the value
+     **/
     public String getDataAssetName() {
         return dataAssetName;
     }
@@ -649,6 +946,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("folderKey")
     private final String folderKey;
 
+    /**
+     * Unique key of the folder object if this object is a sub folder, entity, or attribute.
+     * @return the value
+     **/
     public String getFolderKey() {
         return folderKey;
     }
@@ -659,6 +960,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("folderType")
     private final String folderType;
 
+    /**
+     * Type name of the folder. For example, schema, directory, or topic.
+     * @return the value
+     **/
     public String getFolderType() {
         return folderType;
     }
@@ -669,6 +974,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("folderName")
     private final String folderName;
 
+    /**
+     * Name of the parent folder object if this object is a sub folder, entity, or attribute.
+     * @return the value
+     **/
     public String getFolderName() {
         return folderName;
     }
@@ -679,6 +988,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("entitykey")
     private final String entitykey;
 
+    /**
+     * Unique key of the entity object if this object is an attribute.
+     * @return the value
+     **/
     public String getEntitykey() {
         return entitykey;
     }
@@ -689,6 +1002,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * Type name of the entity. For example, table, view, external table, file, or object.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -699,6 +1016,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
+    /**
+     * Name of the parent entity object if this object is an attribute.
+     * @return the value
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -709,6 +1030,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
     private final String glossaryKey;
 
+    /**
+     * Unique id of the parent glossary.
+     * @return the value
+     **/
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -719,6 +1044,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryName")
     private final String glossaryName;
 
+    /**
+     * Name of the parent glossary if this object is a term.
+     * @return the value
+     **/
     public String getGlossaryName() {
         return glossaryName;
     }
@@ -729,6 +1058,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
     private final String parentTermKey;
 
+    /**
+     * This terms parent term key. Will be null if the term has no parent term.
+     * @return the value
+     **/
     public String getParentTermKey() {
         return parentTermKey;
     }
@@ -739,6 +1072,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermName")
     private final String parentTermName;
 
+    /**
+     * Name of the parent term. Will be null if the term has no parent term.
+     * @return the value
+     **/
     public String getParentTermName() {
         return parentTermName;
     }
@@ -749,6 +1086,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
     private final String createdById;
 
+    /**
+     * OCID of the user who created the resource.
+     * @return the value
+     **/
     public String getCreatedById() {
         return createdById;
     }
@@ -759,6 +1100,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
     private final String updatedById;
 
+    /**
+     * OCID of the user who updated the resource.
+     * @return the value
+     **/
     public String getUpdatedById() {
         return updatedById;
     }
@@ -769,6 +1114,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Absolute path of this resource, which could be a term, folder, entity etc, usually resolvable to this resource through a namespace hierarchy.
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -779,6 +1128,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("businessName")
     private final String businessName;
 
+    /**
+     * Optional user friendly business name of the data object. If set, this supplements the harvested display name of the object.
+     * @return the value
+     **/
     public String getBusinessName() {
         return businessName;
     }
@@ -789,6 +1142,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the data object.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -799,6 +1156,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
     private final String attributeType;
 
+    /**
+     * Type name of the attribute. For example - complex, primitive, or array.
+     * @return the value
+     **/
     public String getAttributeType() {
         return attributeType;
     }
@@ -809,6 +1170,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
+    /**
+     * Expression for logical entities against which names of dataObjects will be matched.
+     * @return the value
+     **/
     public String getExpression() {
         return expression;
     }
@@ -819,6 +1184,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
     private final java.util.List<FacetedSearchCustomProperty> customProperties;
 
+    /**
+     * Custom properties defined by users.
+     * @return the value
+     **/
     public java.util.List<FacetedSearchCustomProperty> getCustomProperties() {
         return customProperties;
     }
@@ -833,6 +1202,14 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
+    /**
+     * A map of maps that contains the properties which are specific to the element type in the search result.
+     * The map keys are category names and the values are maps of property name to property value. Every property
+     * is contained inside of a category. Most element types have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }

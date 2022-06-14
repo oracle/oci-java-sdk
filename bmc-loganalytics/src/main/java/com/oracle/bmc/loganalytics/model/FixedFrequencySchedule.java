@@ -44,19 +44,47 @@ public final class FixedFrequencySchedule extends Schedule {
             this.__explicitlySet__.add("timeOfFirstExecution");
             return this;
         }
-
+        /**
+         * Recurring interval in ISO 8601 extended format as described in
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
+         * The largest supported unit is D, e.g. P14D (not P2W).
+         * The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recurringInterval")
         private String recurringInterval;
 
+        /**
+         * Recurring interval in ISO 8601 extended format as described in
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
+         * The largest supported unit is D, e.g. P14D (not P2W).
+         * The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+         *
+         * @param recurringInterval the value to set
+         * @return this builder
+         **/
         public Builder recurringInterval(String recurringInterval) {
             this.recurringInterval = recurringInterval;
             this.__explicitlySet__.add("recurringInterval");
             return this;
         }
-
+        /**
+         * Number of times (0-based) to execute until auto-stop.
+         * Default value -1 will execute indefinitely.
+         * Value 0 will execute once.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repeatCount")
         private Integer repeatCount;
 
+        /**
+         * Number of times (0-based) to execute until auto-stop.
+         * Default value -1 will execute indefinitely.
+         * Value 0 will execute once.
+         *
+         * @param repeatCount the value to set
+         * @return this builder
+         **/
         public Builder repeatCount(Integer repeatCount) {
             this.repeatCount = repeatCount;
             this.__explicitlySet__.add("repeatCount");
@@ -119,6 +147,14 @@ public final class FixedFrequencySchedule extends Schedule {
     @com.fasterxml.jackson.annotation.JsonProperty("recurringInterval")
     private final String recurringInterval;
 
+    /**
+     * Recurring interval in ISO 8601 extended format as described in
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations.
+     * The largest supported unit is D, e.g. P14D (not P2W).
+     * The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     *
+     * @return the value
+     **/
     public String getRecurringInterval() {
         return recurringInterval;
     }
@@ -132,6 +168,13 @@ public final class FixedFrequencySchedule extends Schedule {
     @com.fasterxml.jackson.annotation.JsonProperty("repeatCount")
     private final Integer repeatCount;
 
+    /**
+     * Number of times (0-based) to execute until auto-stop.
+     * Default value -1 will execute indefinitely.
+     * Value 0 will execute once.
+     *
+     * @return the value
+     **/
     public Integer getRepeatCount() {
         return repeatCount;
     }

@@ -15,6 +15,11 @@ public class GetOperationsInsightsWarehouseUserResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -26,6 +31,12 @@ public class GetOperationsInsightsWarehouseUserResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +47,10 @@ public class GetOperationsInsightsWarehouseUserResponse
     private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
             operationsInsightsWarehouseUser;
 
+    /**
+     * The returned OperationsInsightsWarehouseUser instance.
+     * @return the value
+     */
     public com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
             getOperationsInsightsWarehouseUser() {
         return operationsInsightsWarehouseUser;
@@ -67,23 +82,53 @@ public class GetOperationsInsightsWarehouseUserResponse
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned OperationsInsightsWarehouseUser instance.
+         */
         private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
                 operationsInsightsWarehouseUser;
 
+        /**
+         * The returned OperationsInsightsWarehouseUser instance.
+         * @param operationsInsightsWarehouseUser the value to set
+         * @return this builder
+         */
         public Builder operationsInsightsWarehouseUser(
                 com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
                         operationsInsightsWarehouseUser) {
@@ -104,12 +149,20 @@ public class GetOperationsInsightsWarehouseUserResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetOperationsInsightsWarehouseUserResponse build() {
             return new GetOperationsInsightsWarehouseUserResponse(
                     __httpStatusCode__, etag, opcRequestId, operationsInsightsWarehouseUser);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

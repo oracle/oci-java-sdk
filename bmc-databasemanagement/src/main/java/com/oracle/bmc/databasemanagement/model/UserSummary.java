@@ -51,72 +51,129 @@ public final class UserSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the User.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the User.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The status of the user account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the user account.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The date and time of the expiration of the user account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
         private java.util.Date timeExpiring;
 
+        /**
+         * The date and time of the expiration of the user account.
+         * @param timeExpiring the value to set
+         * @return this builder
+         **/
         public Builder timeExpiring(java.util.Date timeExpiring) {
             this.timeExpiring = timeExpiring;
             this.__explicitlySet__.add("timeExpiring");
             return this;
         }
-
+        /**
+         * The default tablespace for data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultTablespace")
         private String defaultTablespace;
 
+        /**
+         * The default tablespace for data.
+         * @param defaultTablespace the value to set
+         * @return this builder
+         **/
         public Builder defaultTablespace(String defaultTablespace) {
             this.defaultTablespace = defaultTablespace;
             this.__explicitlySet__.add("defaultTablespace");
             return this;
         }
-
+        /**
+         * The name of the default tablespace for temporary tables or the name of a tablespace group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tempTablespace")
         private String tempTablespace;
 
+        /**
+         * The name of the default tablespace for temporary tables or the name of a tablespace group.
+         * @param tempTablespace the value to set
+         * @return this builder
+         **/
         public Builder tempTablespace(String tempTablespace) {
             this.tempTablespace = tempTablespace;
             this.__explicitlySet__.add("tempTablespace");
             return this;
         }
-
+        /**
+         * The date and time the user was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the user was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date the account was locked, if the status of the account is LOCKED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
         private java.util.Date timeLocked;
 
+        /**
+         * The date the account was locked, if the status of the account is LOCKED.
+         * @param timeLocked the value to set
+         * @return this builder
+         **/
         public Builder timeLocked(java.util.Date timeLocked) {
             this.timeLocked = timeLocked;
             this.__explicitlySet__.add("timeLocked");
             return this;
         }
-
+        /**
+         * The profile name of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profile")
         private String profile;
 
+        /**
+         * The profile name of the user.
+         * @param profile the value to set
+         * @return this builder
+         **/
         public Builder profile(String profile) {
             this.profile = profile;
             this.__explicitlySet__.add("profile");
@@ -175,6 +232,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the User.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -245,6 +306,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the user account.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -255,6 +320,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
     private final java.util.Date timeExpiring;
 
+    /**
+     * The date and time of the expiration of the user account.
+     * @return the value
+     **/
     public java.util.Date getTimeExpiring() {
         return timeExpiring;
     }
@@ -265,6 +334,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultTablespace")
     private final String defaultTablespace;
 
+    /**
+     * The default tablespace for data.
+     * @return the value
+     **/
     public String getDefaultTablespace() {
         return defaultTablespace;
     }
@@ -275,6 +348,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tempTablespace")
     private final String tempTablespace;
 
+    /**
+     * The name of the default tablespace for temporary tables or the name of a tablespace group.
+     * @return the value
+     **/
     public String getTempTablespace() {
         return tempTablespace;
     }
@@ -285,6 +362,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the user was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -295,6 +376,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
     private final java.util.Date timeLocked;
 
+    /**
+     * The date the account was locked, if the status of the account is LOCKED.
+     * @return the value
+     **/
     public java.util.Date getTimeLocked() {
         return timeLocked;
     }
@@ -305,6 +390,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
     private final String profile;
 
+    /**
+     * The profile name of the user.
+     * @return the value
+     **/
     public String getProfile() {
         return profile;
     }

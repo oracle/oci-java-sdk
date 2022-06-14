@@ -37,9 +37,45 @@ package com.oracle.bmc.loadbalancer.model;
 public final class RedirectRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The HTTP status code to return when the incoming request is redirected.
+         * <p>
+         * The status line returned with the code is mapped from the standard HTTP specification. Valid response
+         * codes for redirection are:
+         * <p>
+         *  301
+         * *  302
+         * *  303
+         * *  307
+         * *  308
+         * <p>
+         * The default value is {@code 302} (Found).
+         * <p>
+         * Example: {@code 301}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responseCode")
         private Integer responseCode;
 
+        /**
+         * The HTTP status code to return when the incoming request is redirected.
+         * <p>
+         * The status line returned with the code is mapped from the standard HTTP specification. Valid response
+         * codes for redirection are:
+         * <p>
+         *  301
+         * *  302
+         * *  303
+         * *  307
+         * *  308
+         * <p>
+         * The default value is {@code 302} (Found).
+         * <p>
+         * Example: {@code 301}
+         *
+         * @param responseCode the value to set
+         * @return this builder
+         **/
         public Builder responseCode(Integer responseCode) {
             this.responseCode = responseCode;
             this.__explicitlySet__.add("responseCode");
@@ -127,6 +163,24 @@ public final class RedirectRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("responseCode")
     private final Integer responseCode;
 
+    /**
+     * The HTTP status code to return when the incoming request is redirected.
+     * <p>
+     * The status line returned with the code is mapped from the standard HTTP specification. Valid response
+     * codes for redirection are:
+     * <p>
+     *  301
+     * *  302
+     * *  303
+     * *  307
+     * *  308
+     * <p>
+     * The default value is {@code 302} (Found).
+     * <p>
+     * Example: {@code 301}
+     *
+     * @return the value
+     **/
     public Integer getResponseCode() {
         return responseCode;
     }

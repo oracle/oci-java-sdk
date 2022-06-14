@@ -33,27 +33,55 @@ public final class ThreadSnapshot {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Snapshot time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
         private java.util.Date timeStamp;
 
+        /**
+         * Snapshot time.
+         *
+         * @param timeStamp the value to set
+         * @return this builder
+         **/
         public Builder timeStamp(java.util.Date timeStamp) {
             this.timeStamp = timeStamp;
             this.__explicitlySet__.add("timeStamp");
             return this;
         }
-
+        /**
+         * Snapshot details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("threadSnapshotDetails")
         private java.util.List<SnapshotDetail> threadSnapshotDetails;
 
+        /**
+         * Snapshot details.
+         *
+         * @param threadSnapshotDetails the value to set
+         * @return this builder
+         **/
         public Builder threadSnapshotDetails(java.util.List<SnapshotDetail> threadSnapshotDetails) {
             this.threadSnapshotDetails = threadSnapshotDetails;
             this.__explicitlySet__.add("threadSnapshotDetails");
             return this;
         }
-
+        /**
+         * Stack trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stackTrace")
         private java.util.List<StackTraceElement> stackTrace;
 
+        /**
+         * Stack trace.
+         *
+         * @param stackTrace the value to set
+         * @return this builder
+         **/
         public Builder stackTrace(java.util.List<StackTraceElement> stackTrace) {
             this.stackTrace = stackTrace;
             this.__explicitlySet__.add("stackTrace");
@@ -100,6 +128,11 @@ public final class ThreadSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
     private final java.util.Date timeStamp;
 
+    /**
+     * Snapshot time.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStamp() {
         return timeStamp;
     }
@@ -111,6 +144,11 @@ public final class ThreadSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("threadSnapshotDetails")
     private final java.util.List<SnapshotDetail> threadSnapshotDetails;
 
+    /**
+     * Snapshot details.
+     *
+     * @return the value
+     **/
     public java.util.List<SnapshotDetail> getThreadSnapshotDetails() {
         return threadSnapshotDetails;
     }
@@ -122,6 +160,11 @@ public final class ThreadSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("stackTrace")
     private final java.util.List<StackTraceElement> stackTrace;
 
+    /**
+     * Stack trace.
+     *
+     * @return the value
+     **/
     public java.util.List<StackTraceElement> getStackTrace() {
         return stackTrace;
     }

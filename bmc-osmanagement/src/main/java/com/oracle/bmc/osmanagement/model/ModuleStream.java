@@ -51,72 +51,145 @@ public final class ModuleStream {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the module that contains the stream
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
+        /**
+         * The name of the module that contains the stream
+         * @param moduleName the value to set
+         * @return this builder
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-
+        /**
+         * The name of the stream
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
 
+        /**
+         * The name of the stream
+         * @param streamName the value to set
+         * @return this builder
+         **/
         public Builder streamName(String streamName) {
             this.streamName = streamName;
             this.__explicitlySet__.add("streamName");
             return this;
         }
-
+        /**
+         * Indicates if this stream is the default for its module.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Indicates if this stream is the default for its module.
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-
+        /**
+         * The OCID of the software source that provides this module stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
+        /**
+         * The OCID of the software source that provides this module stream.
+         * @param softwareSourceId the value to set
+         * @return this builder
+         **/
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = softwareSourceId;
             this.__explicitlySet__.add("softwareSourceId");
             return this;
         }
-
+        /**
+         * The architecture for which the packages in this module stream were built
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
+        /**
+         * The architecture for which the packages in this module stream were built
+         * @param architecture the value to set
+         * @return this builder
+         **/
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-
+        /**
+         * A description of the contents of the module stream
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the contents of the module stream
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A list of profiles that are part of the stream.  Each element in
+         * the list is the name of a profile.  The name is suitable to use as
+         * an argument to other OS Management APIs that interact directly with
+         * module stream profiles.  However, it is not URL encoded.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profiles")
         private java.util.List<String> profiles;
 
+        /**
+         * A list of profiles that are part of the stream.  Each element in
+         * the list is the name of a profile.  The name is suitable to use as
+         * an argument to other OS Management APIs that interact directly with
+         * module stream profiles.  However, it is not URL encoded.
+         *
+         * @param profiles the value to set
+         * @return this builder
+         **/
         public Builder profiles(java.util.List<String> profiles) {
             this.profiles = profiles;
             this.__explicitlySet__.add("profiles");
             return this;
         }
-
+        /**
+         * A list of packages that are contained by the stream.  Each element
+         * in the list is the name of a package.  The name is suitable to use
+         * as an argument to other OS Management APIs that interact directly
+         * with packages.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packages")
         private java.util.List<String> packages;
 
+        /**
+         * A list of packages that are contained by the stream.  Each element
+         * in the list is the name of a package.  The name is suitable to use
+         * as an argument to other OS Management APIs that interact directly
+         * with packages.
+         *
+         * @param packages the value to set
+         * @return this builder
+         **/
         public Builder packages(java.util.List<String> packages) {
             this.packages = packages;
             this.__explicitlySet__.add("packages");
@@ -175,6 +248,10 @@ public final class ModuleStream {
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
+    /**
+     * The name of the module that contains the stream
+     * @return the value
+     **/
     public String getModuleName() {
         return moduleName;
     }
@@ -185,6 +262,10 @@ public final class ModuleStream {
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
     private final String streamName;
 
+    /**
+     * The name of the stream
+     * @return the value
+     **/
     public String getStreamName() {
         return streamName;
     }
@@ -195,6 +276,10 @@ public final class ModuleStream {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Indicates if this stream is the default for its module.
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -205,6 +290,10 @@ public final class ModuleStream {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
+    /**
+     * The OCID of the software source that provides this module stream.
+     * @return the value
+     **/
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -215,6 +304,10 @@ public final class ModuleStream {
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
+    /**
+     * The architecture for which the packages in this module stream were built
+     * @return the value
+     **/
     public String getArchitecture() {
         return architecture;
     }
@@ -225,6 +318,10 @@ public final class ModuleStream {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the contents of the module stream
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -239,6 +336,14 @@ public final class ModuleStream {
     @com.fasterxml.jackson.annotation.JsonProperty("profiles")
     private final java.util.List<String> profiles;
 
+    /**
+     * A list of profiles that are part of the stream.  Each element in
+     * the list is the name of a profile.  The name is suitable to use as
+     * an argument to other OS Management APIs that interact directly with
+     * module stream profiles.  However, it is not URL encoded.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getProfiles() {
         return profiles;
     }
@@ -253,6 +358,14 @@ public final class ModuleStream {
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
     private final java.util.List<String> packages;
 
+    /**
+     * A list of packages that are contained by the stream.  Each element
+     * in the list is the name of a package.  The name is suitable to use
+     * as an argument to other OS Management APIs that interact directly
+     * with packages.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getPackages() {
         return packages;
     }

@@ -36,36 +36,65 @@ public final class Contact {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the contact person.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactName")
         private String contactName;
 
+        /**
+         * The name of the contact person.
+         * @param contactName the value to set
+         * @return this builder
+         **/
         public Builder contactName(String contactName) {
             this.contactName = contactName;
             this.__explicitlySet__.add("contactName");
             return this;
         }
-
+        /**
+         * The email of the contact person.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
         private String contactEmail;
 
+        /**
+         * The email of the contact person.
+         * @param contactEmail the value to set
+         * @return this builder
+         **/
         public Builder contactEmail(String contactEmail) {
             this.contactEmail = contactEmail;
             this.__explicitlySet__.add("contactEmail");
             return this;
         }
-
+        /**
+         * The phone number of the contact person.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
         private String contactPhone;
 
+        /**
+         * The phone number of the contact person.
+         * @param contactPhone the value to set
+         * @return this builder
+         **/
         public Builder contactPhone(String contactPhone) {
             this.contactPhone = contactPhone;
             this.__explicitlySet__.add("contactPhone");
             return this;
         }
-
+        /**
+         * The type of contact, such as primary or alternate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactType")
         private ContactType contactType;
 
+        /**
+         * The type of contact, such as primary or alternate.
+         * @param contactType the value to set
+         * @return this builder
+         **/
         public Builder contactType(ContactType contactType) {
             this.contactType = contactType;
             this.__explicitlySet__.add("contactType");
@@ -112,6 +141,10 @@ public final class Contact {
     @com.fasterxml.jackson.annotation.JsonProperty("contactName")
     private final String contactName;
 
+    /**
+     * The name of the contact person.
+     * @return the value
+     **/
     public String getContactName() {
         return contactName;
     }
@@ -122,6 +155,10 @@ public final class Contact {
     @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
     private final String contactEmail;
 
+    /**
+     * The email of the contact person.
+     * @return the value
+     **/
     public String getContactEmail() {
         return contactEmail;
     }
@@ -132,6 +169,10 @@ public final class Contact {
     @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
     private final String contactPhone;
 
+    /**
+     * The phone number of the contact person.
+     * @return the value
+     **/
     public String getContactPhone() {
         return contactPhone;
     }
@@ -193,6 +234,10 @@ public final class Contact {
     @com.fasterxml.jackson.annotation.JsonProperty("contactType")
     private final ContactType contactType;
 
+    /**
+     * The type of contact, such as primary or alternate.
+     * @return the value
+     **/
     public ContactType getContactType() {
         return contactType;
     }

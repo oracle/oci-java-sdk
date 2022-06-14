@@ -115,10 +115,19 @@ public final class SortField extends AbstractField {
             this.__explicitlySet__.add("unitType");
             return this;
         }
-
+        /**
+         * Sort order for the field specified in the queryString.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("direction")
         private Direction direction;
 
+        /**
+         * Sort order for the field specified in the queryString.
+         *
+         * @param direction the value to set
+         * @return this builder
+         **/
         public Builder direction(Direction direction) {
             this.direction = direction;
             this.__explicitlySet__.add("direction");
@@ -260,6 +269,11 @@ public final class SortField extends AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("direction")
     private final Direction direction;
 
+    /**
+     * Sort order for the field specified in the queryString.
+     *
+     * @return the value
+     **/
     public Direction getDirection() {
         return direction;
     }

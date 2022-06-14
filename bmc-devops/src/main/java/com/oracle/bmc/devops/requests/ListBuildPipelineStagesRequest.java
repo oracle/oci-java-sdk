@@ -17,6 +17,9 @@ public class ListBuildPipelineStagesRequest
      */
     private String id;
 
+    /**
+     * Unique identifier or OCID for listing a single resource by ID.
+     */
     public String getId() {
         return id;
     }
@@ -25,6 +28,9 @@ public class ListBuildPipelineStagesRequest
      */
     private String buildPipelineId;
 
+    /**
+     * The OCID of the parent build pipeline.
+     */
     public String getBuildPipelineId() {
         return buildPipelineId;
     }
@@ -33,6 +39,9 @@ public class ListBuildPipelineStagesRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -41,6 +50,9 @@ public class ListBuildPipelineStagesRequest
      */
     private com.oracle.bmc.devops.model.BuildPipelineStage.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return the stages that matches the given lifecycle state.
+     */
     public com.oracle.bmc.devops.model.BuildPipelineStage.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -49,6 +61,9 @@ public class ListBuildPipelineStagesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -57,6 +72,9 @@ public class ListBuildPipelineStagesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -65,6 +83,9 @@ public class ListBuildPipelineStagesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -73,6 +94,9 @@ public class ListBuildPipelineStagesRequest
      */
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     public com.oracle.bmc.devops.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -117,6 +141,9 @@ public class ListBuildPipelineStagesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -125,6 +152,9 @@ public class ListBuildPipelineStagesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -136,10 +166,14 @@ public class ListBuildPipelineStagesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique identifier or OCID for listing a single resource by ID.
+         */
         private String id = null;
 
         /**
          * Unique identifier or OCID for listing a single resource by ID.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -147,10 +181,14 @@ public class ListBuildPipelineStagesRequest
             return this;
         }
 
+        /**
+         * The OCID of the parent build pipeline.
+         */
         private String buildPipelineId = null;
 
         /**
          * The OCID of the parent build pipeline.
+         * @param buildPipelineId the value to set
          * @return this builder instance
          */
         public Builder buildPipelineId(String buildPipelineId) {
@@ -158,10 +196,14 @@ public class ListBuildPipelineStagesRequest
             return this;
         }
 
+        /**
+         * The OCID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -169,10 +211,14 @@ public class ListBuildPipelineStagesRequest
             return this;
         }
 
+        /**
+         * A filter to return the stages that matches the given lifecycle state.
+         */
         private com.oracle.bmc.devops.model.BuildPipelineStage.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return the stages that matches the given lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -181,10 +227,14 @@ public class ListBuildPipelineStagesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -192,10 +242,14 @@ public class ListBuildPipelineStagesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -203,10 +257,14 @@ public class ListBuildPipelineStagesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -214,10 +272,14 @@ public class ListBuildPipelineStagesRequest
             return this;
         }
 
+        /**
+         * The sort order to use. Use either ascending or descending.
+         */
         private com.oracle.bmc.devops.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use. Use either ascending or descending.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.devops.model.SortOrder sortOrder) {
@@ -225,10 +287,14 @@ public class ListBuildPipelineStagesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -236,10 +302,14 @@ public class ListBuildPipelineStagesRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -333,7 +403,8 @@ public class ListBuildPipelineStagesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -349,6 +420,10 @@ public class ListBuildPipelineStagesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

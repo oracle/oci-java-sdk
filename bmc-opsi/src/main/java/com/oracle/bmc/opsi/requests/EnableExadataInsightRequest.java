@@ -18,6 +18,9 @@ public class EnableExadataInsightRequest
      */
     private com.oracle.bmc.opsi.model.EnableExadataInsightDetails enableExadataInsightDetails;
 
+    /**
+     * Details for the Exadata system to be enabled in Operations Insights.
+     */
     public com.oracle.bmc.opsi.model.EnableExadataInsightDetails getEnableExadataInsightDetails() {
         return enableExadataInsightDetails;
     }
@@ -26,6 +29,9 @@ public class EnableExadataInsightRequest
      */
     private String exadataInsightId;
 
+    /**
+     * Unique Exadata insight identifier
+     */
     public String getExadataInsightId() {
         return exadataInsightId;
     }
@@ -37,6 +43,12 @@ public class EnableExadataInsightRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +59,11 @@ public class EnableExadataInsightRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +78,15 @@ public class EnableExadataInsightRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * operations, such as a resource being deleted or purged from the system.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -83,11 +109,15 @@ public class EnableExadataInsightRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the Exadata system to be enabled in Operations Insights.
+         */
         private com.oracle.bmc.opsi.model.EnableExadataInsightDetails enableExadataInsightDetails =
                 null;
 
         /**
          * Details for the Exadata system to be enabled in Operations Insights.
+         * @param enableExadataInsightDetails the value to set
          * @return this builder instance
          */
         public Builder enableExadataInsightDetails(
@@ -96,10 +126,14 @@ public class EnableExadataInsightRequest
             return this;
         }
 
+        /**
+         * Unique Exadata insight identifier
+         */
         private String exadataInsightId = null;
 
         /**
          * Unique Exadata insight identifier
+         * @param exadataInsightId the value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(String exadataInsightId) {
@@ -107,6 +141,12 @@ public class EnableExadataInsightRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -114,6 +154,7 @@ public class EnableExadataInsightRequest
          * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -121,12 +162,18 @@ public class EnableExadataInsightRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -134,6 +181,15 @@ public class EnableExadataInsightRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request that can be retried in case of a timeout or
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -144,6 +200,7 @@ public class EnableExadataInsightRequest
          *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
          * operations, such as a resource being deleted or purged from the system.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -238,7 +295,8 @@ public class EnableExadataInsightRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -249,6 +307,10 @@ public class EnableExadataInsightRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class UpdateTransferJobRequest
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
@@ -26,6 +29,9 @@ public class UpdateTransferJobRequest
      */
     private com.oracle.bmc.dts.model.UpdateTransferJobDetails updateTransferJobDetails;
 
+    /**
+     * fields to update
+     */
     public com.oracle.bmc.dts.model.UpdateTransferJobDetails getUpdateTransferJobDetails() {
         return updateTransferJobDetails;
     }
@@ -36,6 +42,11 @@ public class UpdateTransferJobRequest
      */
     private String ifMatch;
 
+    /**
+     * The entity tag to match. Optional, if set, the update will be successful only if the
+     * object's tag matches the tag specified in the request.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -46,6 +57,11 @@ public class UpdateTransferJobRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,10 +83,14 @@ public class UpdateTransferJobRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -78,10 +98,14 @@ public class UpdateTransferJobRequest
             return this;
         }
 
+        /**
+         * fields to update
+         */
         private com.oracle.bmc.dts.model.UpdateTransferJobDetails updateTransferJobDetails = null;
 
         /**
          * fields to update
+         * @param updateTransferJobDetails the value to set
          * @return this builder instance
          */
         public Builder updateTransferJobDetails(
@@ -90,12 +114,18 @@ public class UpdateTransferJobRequest
             return this;
         }
 
+        /**
+         * The entity tag to match. Optional, if set, the update will be successful only if the
+         * object's tag matches the tag specified in the request.
+         *
+         */
         private String ifMatch = null;
 
         /**
          * The entity tag to match. Optional, if set, the update will be successful only if the
          * object's tag matches the tag specified in the request.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -103,12 +133,18 @@ public class UpdateTransferJobRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -201,7 +237,8 @@ public class UpdateTransferJobRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -211,6 +248,10 @@ public class UpdateTransferJobRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,18 +28,33 @@ public final class ValidationResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Error text for validation failure
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMsg")
         private String errorMsg;
 
+        /**
+         * Error text for validation failure
+         * @param errorMsg the value to set
+         * @return this builder
+         **/
         public Builder errorMsg(String errorMsg) {
             this.errorMsg = errorMsg;
             this.__explicitlySet__.add("errorMsg");
             return this;
         }
-
+        /**
+         * Status of the validatio result execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * Status of the validatio result execution
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -81,6 +96,10 @@ public final class ValidationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMsg")
     private final String errorMsg;
 
+    /**
+     * Error text for validation failure
+     * @return the value
+     **/
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -138,6 +157,10 @@ public final class ValidationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * Status of the validatio result execution
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }

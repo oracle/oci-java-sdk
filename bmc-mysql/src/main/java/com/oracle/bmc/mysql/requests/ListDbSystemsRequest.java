@@ -16,6 +16,9 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -39,6 +48,13 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Boolean isAnalyticsClusterAttached;
 
+    /**
+     * DEPRECATED -- please use HeatWave API instead.
+     * If true, return only DB Systems with an Analytics Cluster attached, if false
+     * return only DB Systems with no Analytics Cluster attached. If not
+     * present, return all DB Systems.
+     *
+     */
     public Boolean getIsAnalyticsClusterAttached() {
         return isAnalyticsClusterAttached;
     }
@@ -50,6 +66,12 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Boolean isHeatWaveClusterAttached;
 
+    /**
+     * If true, return only DB Systems with a HeatWave cluster attached, if false
+     * return only DB Systems with no HeatWave cluster attached. If not
+     * present, return all DB Systems.
+     *
+     */
     public Boolean getIsHeatWaveClusterAttached() {
         return isHeatWaveClusterAttached;
     }
@@ -58,6 +80,9 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String dbSystemId;
 
+    /**
+     * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -66,6 +91,9 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String displayName;
 
+    /**
+     * A filter to return only the resource matching the given display name exactly.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -74,6 +102,9 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.mysql.model.DbSystem.LifecycleState lifecycleState;
 
+    /**
+     * DbSystem Lifecycle State
+     */
     public com.oracle.bmc.mysql.model.DbSystem.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -82,6 +113,9 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String configurationId;
 
+    /**
+     * The requested Configuration instance.
+     */
     public String getConfigurationId() {
         return configurationId;
     }
@@ -92,6 +126,11 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Boolean isUpToDate;
 
+    /**
+     * Filter instances if they are using the latest revision of the
+     * Configuration they are associated with.
+     *
+     */
     public Boolean getIsUpToDate() {
         return isUpToDate;
     }
@@ -138,6 +177,10 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending. Display name is default ordered as ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -182,6 +225,9 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * The sort order to use (ASC or DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -192,6 +238,11 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated list call. For information about pagination, see
+     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -203,6 +254,12 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+     * the previous list call. For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -214,10 +271,14 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -225,6 +286,12 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -232,6 +299,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * contact Oracle about a specific request, please provide the request
          * ID that you supplied in this header with the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -239,6 +307,13 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * DEPRECATED -- please use HeatWave API instead.
+         * If true, return only DB Systems with an Analytics Cluster attached, if false
+         * return only DB Systems with no Analytics Cluster attached. If not
+         * present, return all DB Systems.
+         *
+         */
         private Boolean isAnalyticsClusterAttached = null;
 
         /**
@@ -247,6 +322,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * return only DB Systems with no Analytics Cluster attached. If not
          * present, return all DB Systems.
          *
+         * @param isAnalyticsClusterAttached the value to set
          * @return this builder instance
          */
         public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
@@ -254,6 +330,12 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * If true, return only DB Systems with a HeatWave cluster attached, if false
+         * return only DB Systems with no HeatWave cluster attached. If not
+         * present, return all DB Systems.
+         *
+         */
         private Boolean isHeatWaveClusterAttached = null;
 
         /**
@@ -261,6 +343,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * return only DB Systems with no HeatWave cluster attached. If not
          * present, return all DB Systems.
          *
+         * @param isHeatWaveClusterAttached the value to set
          * @return this builder instance
          */
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
@@ -268,10 +351,14 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbSystemId = null;
 
         /**
          * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbSystemId the value to set
          * @return this builder instance
          */
         public Builder dbSystemId(String dbSystemId) {
@@ -279,10 +366,14 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only the resource matching the given display name exactly.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only the resource matching the given display name exactly.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -290,10 +381,14 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * DbSystem Lifecycle State
+         */
         private com.oracle.bmc.mysql.model.DbSystem.LifecycleState lifecycleState = null;
 
         /**
          * DbSystem Lifecycle State
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -302,10 +397,14 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The requested Configuration instance.
+         */
         private String configurationId = null;
 
         /**
          * The requested Configuration instance.
+         * @param configurationId the value to set
          * @return this builder instance
          */
         public Builder configurationId(String configurationId) {
@@ -313,12 +412,18 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Filter instances if they are using the latest revision of the
+         * Configuration they are associated with.
+         *
+         */
         private Boolean isUpToDate = null;
 
         /**
          * Filter instances if they are using the latest revision of the
          * Configuration they are associated with.
          *
+         * @param isUpToDate the value to set
          * @return this builder instance
          */
         public Builder isUpToDate(Boolean isUpToDate) {
@@ -326,11 +431,16 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending. Display name is default ordered as ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending. Display name is default ordered as ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -338,10 +448,14 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The sort order to use (ASC or DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use (ASC or DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -349,12 +463,18 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated list call. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated list call. For information about pagination, see
          * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -362,6 +482,12 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+         * the previous list call. For information about pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         *
+         */
         private String page = null;
 
         /**
@@ -369,6 +495,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * the previous list call. For information about pagination, see [List
          * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -468,7 +595,8 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -487,6 +615,10 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

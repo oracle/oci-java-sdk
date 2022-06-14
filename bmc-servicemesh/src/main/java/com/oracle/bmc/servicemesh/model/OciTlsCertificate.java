@@ -27,9 +27,17 @@ package com.oracle.bmc.servicemesh.model;
 public final class OciTlsCertificate extends TlsCertificate {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the leaf certificate resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
+        /**
+         * The OCID of the leaf certificate resource.
+         * @param certificateId the value to set
+         * @return this builder
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
@@ -77,6 +85,10 @@ public final class OciTlsCertificate extends TlsCertificate {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
+    /**
+     * The OCID of the leaf certificate resource.
+     * @return the value
+     **/
     public String getCertificateId() {
         return certificateId;
     }

@@ -27,9 +27,17 @@ public final class PeerRole {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Peer role names
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
+        /**
+         * Peer role names
+         * @param role the value to set
+         * @return this builder
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -106,6 +114,10 @@ public final class PeerRole {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
+    /**
+     * Peer role names
+     * @return the value
+     **/
     public Role getRole() {
         return role;
     }

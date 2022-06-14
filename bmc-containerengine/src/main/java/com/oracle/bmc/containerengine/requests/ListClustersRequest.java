@@ -16,6 +16,9 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
     private java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
             lifecycleState;
 
+    /**
+     * A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+     */
     public java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
             getLifecycleState() {
         return lifecycleState;
@@ -34,6 +40,9 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String name;
 
+    /**
+     * The name to filter on.
+     */
     public String getName() {
         return name;
     }
@@ -45,6 +54,12 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     * 1 is the minimum, 1000 is the maximum. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -55,6 +70,11 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -63,6 +83,9 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.containerengine.model.SortOrder sortOrder;
 
+    /**
+     * The optional order in which to sort the results.
+     */
     public com.oracle.bmc.containerengine.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -108,6 +131,9 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * The optional field to sort the results by.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -118,6 +144,11 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -129,10 +160,14 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -140,11 +175,15 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+         */
         private java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
                 lifecycleState = null;
 
         /**
          * A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -156,16 +195,21 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Singular setter. A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder lifecycleState(ClusterLifecycleState singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The name to filter on.
+         */
         private String name = null;
 
         /**
          * The name to filter on.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -173,6 +217,12 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         * 1 is the minimum, 1000 is the maximum. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -180,6 +230,7 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
          * 1 is the minimum, 1000 is the maximum. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -187,12 +238,18 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
          * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -200,10 +257,14 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The optional order in which to sort the results.
+         */
         private com.oracle.bmc.containerengine.model.SortOrder sortOrder = null;
 
         /**
          * The optional order in which to sort the results.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.containerengine.model.SortOrder sortOrder) {
@@ -211,10 +272,14 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The optional field to sort the results by.
+         */
         private SortBy sortBy = null;
 
         /**
          * The optional field to sort the results by.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -222,12 +287,18 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -317,7 +388,8 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -331,6 +403,10 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

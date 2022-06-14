@@ -108,235 +108,476 @@ public final class DeploymentSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * An object's Display Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * An object's Display Name.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Metadata about this specific object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Metadata about this specific object.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Possible lifecycle states.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * Possible lifecycle states.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Possible GGS lifecycle sub-states.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
         private LifecycleSubState lifecycleSubState;
 
+        /**
+         * Possible GGS lifecycle sub-states.
+         *
+         * @param lifecycleSubState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleSubState(LifecycleSubState lifecycleSubState) {
             this.lifecycleSubState = lifecycleSubState;
             this.__explicitlySet__.add("lifecycleSubState");
             return this;
         }
-
+        /**
+         * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The Oracle license model that applies to a Deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
+        /**
+         * The Oracle license model that applies to a Deployment.
+         *
+         * @param licenseModel the value to set
+         * @return this builder
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
-
+        /**
+         * A three-label Fully Qualified Domain Name (FQDN) for a resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
         private String fqdn;
 
+        /**
+         * A three-label Fully Qualified Domain Name (FQDN) for a resource.
+         *
+         * @param fqdn the value to set
+         * @return this builder
+         **/
         public Builder fqdn(String fqdn) {
             this.fqdn = fqdn;
             this.__explicitlySet__.add("fqdn");
             return this;
         }
-
+        /**
+         * The Minimum number of OCPUs to be made available for this Deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
+        /**
+         * The Minimum number of OCPUs to be made available for this Deployment.
+         *
+         * @param cpuCoreCount the value to set
+         * @return this builder
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-
+        /**
+         * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
+        /**
+         * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+         *
+         * @param isAutoScalingEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
-
+        /**
+         * True if this object is publicly available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
+        /**
+         * True if this object is publicly available.
+         *
+         * @param isPublic the value to set
+         * @return this builder
+         **/
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
             return this;
         }
-
+        /**
+         * The public IP address representing the access point for the Deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpAddress")
         private String publicIpAddress;
 
+        /**
+         * The public IP address representing the access point for the Deployment.
+         *
+         * @param publicIpAddress the value to set
+         * @return this builder
+         **/
         public Builder publicIpAddress(String publicIpAddress) {
             this.publicIpAddress = publicIpAddress;
             this.__explicitlySet__.add("publicIpAddress");
             return this;
         }
-
+        /**
+         * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIpAddress")
         private String privateIpAddress;
 
+        /**
+         * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
+         *
+         * @param privateIpAddress the value to set
+         * @return this builder
+         **/
         public Builder privateIpAddress(String privateIpAddress) {
             this.privateIpAddress = privateIpAddress;
             this.__explicitlySet__.add("privateIpAddress");
             return this;
         }
-
+        /**
+         * The URL of a resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentUrl")
         private String deploymentUrl;
 
+        /**
+         * The URL of a resource.
+         *
+         * @param deploymentUrl the value to set
+         * @return this builder
+         **/
         public Builder deploymentUrl(String deploymentUrl) {
             this.deploymentUrl = deploymentUrl;
             this.__explicitlySet__.add("deploymentUrl");
             return this;
         }
-
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * Indicates if the resource is the the latest available version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLatestVersion")
         private Boolean isLatestVersion;
 
+        /**
+         * Indicates if the resource is the the latest available version.
+         *
+         * @param isLatestVersion the value to set
+         * @return this builder
+         **/
         public Builder isLatestVersion(Boolean isLatestVersion) {
             this.isLatestVersion = isLatestVersion;
             this.__explicitlySet__.add("isLatestVersion");
             return this;
         }
-
+        /**
+         * The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
         private java.util.Date timeUpgradeRequired;
 
+        /**
+         * The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeUpgradeRequired the value to set
+         * @return this builder
+         **/
         public Builder timeUpgradeRequired(java.util.Date timeUpgradeRequired) {
             this.timeUpgradeRequired = timeUpgradeRequired;
             this.__explicitlySet__.add("timeUpgradeRequired");
             return this;
         }
-
+        /**
+         * The deployment type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
+        /**
+         * The deployment type.
+         *
+         * @param deploymentType the value to set
+         * @return this builder
+         **/
         public Builder deploymentType(DeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-
+        /**
+         * The amount of storage being utilized (in bytes)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUtilizationInBytes")
         private Long storageUtilizationInBytes;
 
+        /**
+         * The amount of storage being utilized (in bytes)
+         *
+         * @param storageUtilizationInBytes the value to set
+         * @return this builder
+         **/
         public Builder storageUtilizationInBytes(Long storageUtilizationInBytes) {
             this.storageUtilizationInBytes = storageUtilizationInBytes;
             this.__explicitlySet__.add("storageUtilizationInBytes");
             return this;
         }
-
+        /**
+         * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
         private Boolean isStorageUtilizationLimitExceeded;
 
+        /**
+         * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+         *
+         * @param isStorageUtilizationLimitExceeded the value to set
+         * @return this builder
+         **/
         public Builder isStorageUtilizationLimitExceeded(
                 Boolean isStorageUtilizationLimitExceeded) {
             this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
@@ -434,6 +675,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -445,6 +691,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * An object's Display Name.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -456,6 +707,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Metadata about this specific object.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -467,6 +723,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -478,6 +739,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -489,6 +755,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -500,6 +771,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * Possible lifecycle states.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -511,6 +787,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
     private final LifecycleSubState lifecycleSubState;
 
+    /**
+     * Possible GGS lifecycle sub-states.
+     *
+     * @return the value
+     **/
     public LifecycleSubState getLifecycleSubState() {
         return lifecycleSubState;
     }
@@ -522,6 +803,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -534,6 +820,12 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -546,6 +838,12 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -557,6 +855,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -568,6 +871,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
+    /**
+     * The Oracle license model that applies to a Deployment.
+     *
+     * @return the value
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
@@ -579,6 +887,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
     private final String fqdn;
 
+    /**
+     * A three-label Fully Qualified Domain Name (FQDN) for a resource.
+     *
+     * @return the value
+     **/
     public String getFqdn() {
         return fqdn;
     }
@@ -590,6 +903,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
+    /**
+     * The Minimum number of OCPUs to be made available for this Deployment.
+     *
+     * @return the value
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
@@ -601,6 +919,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
+    /**
+     * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+     *
+     * @return the value
+     **/
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
     }
@@ -612,6 +935,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     private final Boolean isPublic;
 
+    /**
+     * True if this object is publicly available.
+     *
+     * @return the value
+     **/
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -623,6 +951,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpAddress")
     private final String publicIpAddress;
 
+    /**
+     * The public IP address representing the access point for the Deployment.
+     *
+     * @return the value
+     **/
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -634,6 +967,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpAddress")
     private final String privateIpAddress;
 
+    /**
+     * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
+     *
+     * @return the value
+     **/
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
@@ -645,6 +983,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentUrl")
     private final String deploymentUrl;
 
+    /**
+     * The URL of a resource.
+     *
+     * @return the value
+     **/
     public String getDeploymentUrl() {
         return deploymentUrl;
     }
@@ -657,6 +1000,12 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -668,6 +1017,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isLatestVersion")
     private final Boolean isLatestVersion;
 
+    /**
+     * Indicates if the resource is the the latest available version.
+     *
+     * @return the value
+     **/
     public Boolean getIsLatestVersion() {
         return isLatestVersion;
     }
@@ -679,6 +1033,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
     private final java.util.Date timeUpgradeRequired;
 
+    /**
+     * The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpgradeRequired() {
         return timeUpgradeRequired;
     }
@@ -690,6 +1049,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
+    /**
+     * The deployment type.
+     *
+     * @return the value
+     **/
     public DeploymentType getDeploymentType() {
         return deploymentType;
     }
@@ -701,6 +1065,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("storageUtilizationInBytes")
     private final Long storageUtilizationInBytes;
 
+    /**
+     * The amount of storage being utilized (in bytes)
+     *
+     * @return the value
+     **/
     public Long getStorageUtilizationInBytes() {
         return storageUtilizationInBytes;
     }
@@ -712,6 +1081,11 @@ public final class DeploymentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
     private final Boolean isStorageUtilizationLimitExceeded;
 
+    /**
+     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     *
+     * @return the value
+     **/
     public Boolean getIsStorageUtilizationLimitExceeded() {
         return isStorageUtilizationLimitExceeded;
     }

@@ -59,90 +59,161 @@ public final class ManagedInstanceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * user settable name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * user settable name
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * OCID for the managed instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID for the managed instance
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Time at which the instance last checked in
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastCheckin")
         private String lastCheckin;
 
+        /**
+         * Time at which the instance last checked in
+         * @param lastCheckin the value to set
+         * @return this builder
+         **/
         public Builder lastCheckin(String lastCheckin) {
             this.lastCheckin = lastCheckin;
             this.__explicitlySet__.add("lastCheckin");
             return this;
         }
-
+        /**
+         * Time at which the instance last booted
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastBoot")
         private String lastBoot;
 
+        /**
+         * Time at which the instance last booted
+         * @param lastBoot the value to set
+         * @return this builder
+         **/
         public Builder lastBoot(String lastBoot) {
             this.lastBoot = lastBoot;
             this.__explicitlySet__.add("lastBoot");
             return this;
         }
-
+        /**
+         * Number of updates available to be installed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
         private Integer updatesAvailable;
 
+        /**
+         * Number of updates available to be installed
+         * @param updatesAvailable the value to set
+         * @return this builder
+         **/
         public Builder updatesAvailable(Integer updatesAvailable) {
             this.updatesAvailable = updatesAvailable;
             this.__explicitlySet__.add("updatesAvailable");
             return this;
         }
-
+        /**
+         * OCID for the Compartment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID for the Compartment
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Information specified by the user about the managed instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Information specified by the user about the managed instance
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * status of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * status of the managed instance.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The Operating System type of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamilies osFamily;
 
+        /**
+         * The Operating System type of the managed instance.
+         * @param osFamily the value to set
+         * @return this builder
+         **/
         public Builder osFamily(OsFamilies osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-
+        /**
+         * Indicates whether a reboot is required to complete installation of updates.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
         private Boolean isRebootRequired;
 
+        /**
+         * Indicates whether a reboot is required to complete installation of updates.
+         * @param isRebootRequired the value to set
+         * @return this builder
+         **/
         public Builder isRebootRequired(Boolean isRebootRequired) {
             this.isRebootRequired = isRebootRequired;
             this.__explicitlySet__.add("isRebootRequired");
@@ -205,6 +276,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * user settable name
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -215,6 +290,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID for the managed instance
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -225,6 +304,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lastCheckin")
     private final String lastCheckin;
 
+    /**
+     * Time at which the instance last checked in
+     * @return the value
+     **/
     public String getLastCheckin() {
         return lastCheckin;
     }
@@ -235,6 +318,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lastBoot")
     private final String lastBoot;
 
+    /**
+     * Time at which the instance last booted
+     * @return the value
+     **/
     public String getLastBoot() {
         return lastBoot;
     }
@@ -245,6 +332,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
     private final Integer updatesAvailable;
 
+    /**
+     * Number of updates available to be installed
+     * @return the value
+     **/
     public Integer getUpdatesAvailable() {
         return updatesAvailable;
     }
@@ -255,6 +346,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID for the Compartment
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -265,6 +360,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Information specified by the user about the managed instance
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -324,6 +423,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * status of the managed instance.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -334,6 +437,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamilies osFamily;
 
+    /**
+     * The Operating System type of the managed instance.
+     * @return the value
+     **/
     public OsFamilies getOsFamily() {
         return osFamily;
     }
@@ -344,6 +451,10 @@ public final class ManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
     private final Boolean isRebootRequired;
 
+    /**
+     * Indicates whether a reboot is required to complete installation of updates.
+     * @return the value
+     **/
     public Boolean getIsRebootRequired() {
         return isRebootRequired;
     }

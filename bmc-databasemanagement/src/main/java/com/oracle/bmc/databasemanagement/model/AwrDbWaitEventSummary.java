@@ -47,54 +47,103 @@ public final class AwrDbWaitEventSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the event.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the event.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The begin time of the wait event.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeBegin")
         private java.util.Date timeBegin;
 
+        /**
+         * The begin time of the wait event.
+         * @param timeBegin the value to set
+         * @return this builder
+         **/
         public Builder timeBegin(java.util.Date timeBegin) {
             this.timeBegin = timeBegin;
             this.__explicitlySet__.add("timeBegin");
             return this;
         }
-
+        /**
+         * The end time of the wait event.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
+        /**
+         * The end time of the wait event.
+         * @param timeEnd the value to set
+         * @return this builder
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-
+        /**
+         * The wait count per second.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("waitsPerSec")
         private Double waitsPerSec;
 
+        /**
+         * The wait count per second.
+         * @param waitsPerSec the value to set
+         * @return this builder
+         **/
         public Builder waitsPerSec(Double waitsPerSec) {
             this.waitsPerSec = waitsPerSec;
             this.__explicitlySet__.add("waitsPerSec");
             return this;
         }
-
+        /**
+         * The average wait time per second.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("avgWaitTimePerSec")
         private Double avgWaitTimePerSec;
 
+        /**
+         * The average wait time per second.
+         * @param avgWaitTimePerSec the value to set
+         * @return this builder
+         **/
         public Builder avgWaitTimePerSec(Double avgWaitTimePerSec) {
             this.avgWaitTimePerSec = avgWaitTimePerSec;
             this.__explicitlySet__.add("avgWaitTimePerSec");
             return this;
         }
-
+        /**
+         * The ID of the snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotId")
         private Integer snapshotId;
 
+        /**
+         * The ID of the snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
+         *
+         * @param snapshotId the value to set
+         * @return this builder
+         **/
         public Builder snapshotId(Integer snapshotId) {
             this.snapshotId = snapshotId;
             this.__explicitlySet__.add("snapshotId");
@@ -144,6 +193,10 @@ public final class AwrDbWaitEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the event.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -154,6 +207,10 @@ public final class AwrDbWaitEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeBegin")
     private final java.util.Date timeBegin;
 
+    /**
+     * The begin time of the wait event.
+     * @return the value
+     **/
     public java.util.Date getTimeBegin() {
         return timeBegin;
     }
@@ -164,6 +221,10 @@ public final class AwrDbWaitEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
+    /**
+     * The end time of the wait event.
+     * @return the value
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -174,6 +235,10 @@ public final class AwrDbWaitEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("waitsPerSec")
     private final Double waitsPerSec;
 
+    /**
+     * The wait count per second.
+     * @return the value
+     **/
     public Double getWaitsPerSec() {
         return waitsPerSec;
     }
@@ -184,6 +249,10 @@ public final class AwrDbWaitEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("avgWaitTimePerSec")
     private final Double avgWaitTimePerSec;
 
+    /**
+     * The average wait time per second.
+     * @return the value
+     **/
     public Double getAvgWaitTimePerSec() {
         return avgWaitTimePerSec;
     }
@@ -197,6 +266,13 @@ public final class AwrDbWaitEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotId")
     private final Integer snapshotId;
 
+    /**
+     * The ID of the snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * It can be retrieved from the following endpoint:
+     * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
+     *
+     * @return the value
+     **/
     public Integer getSnapshotId() {
         return snapshotId;
     }

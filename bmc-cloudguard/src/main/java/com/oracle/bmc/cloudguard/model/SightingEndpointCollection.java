@@ -29,9 +29,17 @@ public final class SightingEndpointCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of SightingEndpointSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SightingEndpointSummary> items;
 
+        /**
+         * List of SightingEndpointSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SightingEndpointSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class SightingEndpointCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SightingEndpointSummary> items;
 
+    /**
+     * List of SightingEndpointSummary
+     * @return the value
+     **/
     public java.util.List<SightingEndpointSummary> getItems() {
         return items;
     }

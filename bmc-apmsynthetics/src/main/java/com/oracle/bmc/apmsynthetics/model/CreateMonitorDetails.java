@@ -68,90 +68,193 @@ public final class CreateMonitorDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique name that can be edited. The name should not contain any confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Unique name that can be edited. The name should not contain any confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Type of monitor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monitorType")
         private MonitorTypes monitorType;
 
+        /**
+         * Type of monitor.
+         * @param monitorType the value to set
+         * @return this builder
+         **/
         public Builder monitorType(MonitorTypes monitorType) {
             this.monitorType = monitorType;
             this.__explicitlySet__.add("monitorType");
             return this;
         }
-
+        /**
+         * A list of public and dedicated vantage points from which to execute the monitor.
+         * Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vantagePoints")
         private java.util.List<String> vantagePoints;
 
+        /**
+         * A list of public and dedicated vantage points from which to execute the monitor.
+         * Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+         *
+         * @param vantagePoints the value to set
+         * @return this builder
+         **/
         public Builder vantagePoints(java.util.List<String> vantagePoints) {
             this.vantagePoints = vantagePoints;
             this.__explicitlySet__.add("vantagePoints");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the script.
+         * scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scriptId")
         private String scriptId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the script.
+         * scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
+         *
+         * @param scriptId the value to set
+         * @return this builder
+         **/
         public Builder scriptId(String scriptId) {
             this.scriptId = scriptId;
             this.__explicitlySet__.add("scriptId");
             return this;
         }
-
+        /**
+         * Enables or disables the monitor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private MonitorStatus status;
 
+        /**
+         * Enables or disables the monitor.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(MonitorStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Interval in seconds after the start time when the job should be repeated.
+         * Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repeatIntervalInSeconds")
         private Integer repeatIntervalInSeconds;
 
+        /**
+         * Interval in seconds after the start time when the job should be repeated.
+         * Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
+         *
+         * @param repeatIntervalInSeconds the value to set
+         * @return this builder
+         **/
         public Builder repeatIntervalInSeconds(Integer repeatIntervalInSeconds) {
             this.repeatIntervalInSeconds = repeatIntervalInSeconds;
             this.__explicitlySet__.add("repeatIntervalInSeconds");
             return this;
         }
-
+        /**
+         * If runOnce is enabled, then the monitor will run once.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRunOnce")
         private Boolean isRunOnce;
 
+        /**
+         * If runOnce is enabled, then the monitor will run once.
+         * @param isRunOnce the value to set
+         * @return this builder
+         **/
         public Builder isRunOnce(Boolean isRunOnce) {
             this.isRunOnce = isRunOnce;
             this.__explicitlySet__.add("isRunOnce");
             return this;
         }
-
+        /**
+         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+         * Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
+         * Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
+        /**
+         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+         * Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
+         * Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+         *
+         * @param timeoutInSeconds the value to set
+         * @return this builder
+         **/
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = timeoutInSeconds;
             this.__explicitlySet__.add("timeoutInSeconds");
             return this;
         }
-
+        /**
+         * Specify the endpoint on which to run the monitor.
+         * For BROWSER and REST monitor types, target is mandatory.
+         * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
+         * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private String target;
 
+        /**
+         * Specify the endpoint on which to run the monitor.
+         * For BROWSER and REST monitor types, target is mandatory.
+         * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
+         * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+         *
+         * @param target the value to set
+         * @return this builder
+         **/
         public Builder target(String target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
         }
-
+        /**
+         * List of script parameters in the monitor.
+         * This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
+         * Example: {@code [{"paramName": "userid", "paramValue":"testuser"}]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scriptParameters")
         private java.util.List<MonitorScriptParameter> scriptParameters;
 
+        /**
+         * List of script parameters in the monitor.
+         * This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
+         * Example: {@code [{"paramName": "userid", "paramValue":"testuser"}]}
+         *
+         * @param scriptParameters the value to set
+         * @return this builder
+         **/
         public Builder scriptParameters(java.util.List<MonitorScriptParameter> scriptParameters) {
             this.scriptParameters = scriptParameters;
             this.__explicitlySet__.add("scriptParameters");
@@ -166,19 +269,41 @@ public final class CreateMonitorDetails {
             this.__explicitlySet__.add("configuration");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -248,6 +373,10 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Unique name that can be edited. The name should not contain any confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -258,6 +387,10 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("monitorType")
     private final MonitorTypes monitorType;
 
+    /**
+     * Type of monitor.
+     * @return the value
+     **/
     public MonitorTypes getMonitorType() {
         return monitorType;
     }
@@ -270,6 +403,12 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePoints")
     private final java.util.List<String> vantagePoints;
 
+    /**
+     * A list of public and dedicated vantage points from which to execute the monitor.
+     * Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getVantagePoints() {
         return vantagePoints;
     }
@@ -282,6 +421,12 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scriptId")
     private final String scriptId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the script.
+     * scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
+     *
+     * @return the value
+     **/
     public String getScriptId() {
         return scriptId;
     }
@@ -292,6 +437,10 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final MonitorStatus status;
 
+    /**
+     * Enables or disables the monitor.
+     * @return the value
+     **/
     public MonitorStatus getStatus() {
         return status;
     }
@@ -304,6 +453,12 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("repeatIntervalInSeconds")
     private final Integer repeatIntervalInSeconds;
 
+    /**
+     * Interval in seconds after the start time when the job should be repeated.
+     * Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
+     *
+     * @return the value
+     **/
     public Integer getRepeatIntervalInSeconds() {
         return repeatIntervalInSeconds;
     }
@@ -314,6 +469,10 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isRunOnce")
     private final Boolean isRunOnce;
 
+    /**
+     * If runOnce is enabled, then the monitor will run once.
+     * @return the value
+     **/
     public Boolean getIsRunOnce() {
         return isRunOnce;
     }
@@ -327,6 +486,13 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
+    /**
+     * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+     * Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
+     * Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     *
+     * @return the value
+     **/
     public Integer getTimeoutInSeconds() {
         return timeoutInSeconds;
     }
@@ -341,6 +507,14 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
 
+    /**
+     * Specify the endpoint on which to run the monitor.
+     * For BROWSER and REST monitor types, target is mandatory.
+     * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
+     * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+     *
+     * @return the value
+     **/
     public String getTarget() {
         return target;
     }
@@ -354,6 +528,13 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scriptParameters")
     private final java.util.List<MonitorScriptParameter> scriptParameters;
 
+    /**
+     * List of script parameters in the monitor.
+     * This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
+     * Example: {@code [{"paramName": "userid", "paramValue":"testuser"}]}
+     *
+     * @return the value
+     **/
     public java.util.List<MonitorScriptParameter> getScriptParameters() {
         return scriptParameters;
     }
@@ -373,6 +554,12 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -385,6 +572,12 @@ public final class CreateMonitorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

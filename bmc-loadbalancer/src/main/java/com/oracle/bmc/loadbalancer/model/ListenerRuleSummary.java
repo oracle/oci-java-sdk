@@ -32,18 +32,35 @@ public final class ListenerRuleSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A rule object that applies to the listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rule")
         private Rule rule;
 
+        /**
+         * A rule object that applies to the listener.
+         * @param rule the value to set
+         * @return this builder
+         **/
         public Builder rule(Rule rule) {
             this.rule = rule;
             this.__explicitlySet__.add("rule");
             return this;
         }
-
+        /**
+         * The name of the rule set that the rule belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleSetName")
         private String ruleSetName;
 
+        /**
+         * The name of the rule set that the rule belongs to.
+         *
+         * @param ruleSetName the value to set
+         * @return this builder
+         **/
         public Builder ruleSetName(String ruleSetName) {
             this.ruleSetName = ruleSetName;
             this.__explicitlySet__.add("ruleSetName");
@@ -85,6 +102,10 @@ public final class ListenerRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("rule")
     private final Rule rule;
 
+    /**
+     * A rule object that applies to the listener.
+     * @return the value
+     **/
     public Rule getRule() {
         return rule;
     }
@@ -96,6 +117,11 @@ public final class ListenerRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetName")
     private final String ruleSetName;
 
+    /**
+     * The name of the rule set that the rule belongs to.
+     *
+     * @return the value
+     **/
     public String getRuleSetName() {
         return ruleSetName;
     }

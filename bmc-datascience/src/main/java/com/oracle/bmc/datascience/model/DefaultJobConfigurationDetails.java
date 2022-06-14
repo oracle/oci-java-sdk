@@ -27,27 +27,55 @@ package com.oracle.bmc.datascience.model;
 public final class DefaultJobConfigurationDetails extends JobConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Environment variables to set for the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
         private java.util.Map<String, String> environmentVariables;
 
+        /**
+         * Environment variables to set for the job.
+         *
+         * @param environmentVariables the value to set
+         * @return this builder
+         **/
         public Builder environmentVariables(java.util.Map<String, String> environmentVariables) {
             this.environmentVariables = environmentVariables;
             this.__explicitlySet__.add("environmentVariables");
             return this;
         }
-
+        /**
+         * The arguments to pass to the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commandLineArguments")
         private String commandLineArguments;
 
+        /**
+         * The arguments to pass to the job.
+         *
+         * @param commandLineArguments the value to set
+         * @return this builder
+         **/
         public Builder commandLineArguments(String commandLineArguments) {
             this.commandLineArguments = commandLineArguments;
             this.__explicitlySet__.add("commandLineArguments");
             return this;
         }
-
+        /**
+         * A time bound for the execution of the job. Timer starts when the job becomes active.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumRuntimeInMinutes")
         private Long maximumRuntimeInMinutes;
 
+        /**
+         * A time bound for the execution of the job. Timer starts when the job becomes active.
+         *
+         * @param maximumRuntimeInMinutes the value to set
+         * @return this builder
+         **/
         public Builder maximumRuntimeInMinutes(Long maximumRuntimeInMinutes) {
             this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             this.__explicitlySet__.add("maximumRuntimeInMinutes");
@@ -106,6 +134,11 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
     @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
     private final java.util.Map<String, String> environmentVariables;
 
+    /**
+     * Environment variables to set for the job.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getEnvironmentVariables() {
         return environmentVariables;
     }
@@ -117,6 +150,11 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
     @com.fasterxml.jackson.annotation.JsonProperty("commandLineArguments")
     private final String commandLineArguments;
 
+    /**
+     * The arguments to pass to the job.
+     *
+     * @return the value
+     **/
     public String getCommandLineArguments() {
         return commandLineArguments;
     }
@@ -128,6 +166,11 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
     @com.fasterxml.jackson.annotation.JsonProperty("maximumRuntimeInMinutes")
     private final Long maximumRuntimeInMinutes;
 
+    /**
+     * A time bound for the execution of the job. Timer starts when the job becomes active.
+     *
+     * @return the value
+     **/
     public Long getMaximumRuntimeInMinutes() {
         return maximumRuntimeInMinutes;
     }

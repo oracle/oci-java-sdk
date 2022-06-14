@@ -29,9 +29,17 @@ public final class PipelineSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of pipeline summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PipelineSummary> items;
 
+        /**
+         * The array of pipeline summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<PipelineSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class PipelineSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PipelineSummary> items;
 
+    /**
+     * The array of pipeline summaries.
+     * @return the value
+     **/
     public java.util.List<PipelineSummary> getItems() {
         return items;
     }

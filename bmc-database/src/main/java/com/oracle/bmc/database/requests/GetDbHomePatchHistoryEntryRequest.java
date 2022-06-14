@@ -17,6 +17,9 @@ public class GetDbHomePatchHistoryEntryRequest
      */
     private String dbHomeId;
 
+    /**
+     * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbHomeId() {
         return dbHomeId;
     }
@@ -25,6 +28,9 @@ public class GetDbHomePatchHistoryEntryRequest
      */
     private String patchHistoryEntryId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
+     */
     public String getPatchHistoryEntryId() {
         return patchHistoryEntryId;
     }
@@ -36,10 +42,14 @@ public class GetDbHomePatchHistoryEntryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbHomeId = null;
 
         /**
          * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbHomeId the value to set
          * @return this builder instance
          */
         public Builder dbHomeId(String dbHomeId) {
@@ -47,10 +57,14 @@ public class GetDbHomePatchHistoryEntryRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
+         */
         private String patchHistoryEntryId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
+         * @param patchHistoryEntryId the value to set
          * @return this builder instance
          */
         public Builder patchHistoryEntryId(String patchHistoryEntryId) {
@@ -128,12 +142,17 @@ public class GetDbHomePatchHistoryEntryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dbHomeId(dbHomeId).patchHistoryEntryId(patchHistoryEntryId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

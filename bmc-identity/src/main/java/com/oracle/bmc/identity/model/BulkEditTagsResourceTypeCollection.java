@@ -30,9 +30,17 @@ public final class BulkEditTagsResourceTypeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The collection of resource types that support bulk editing of tags.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<BulkEditTagsResourceType> items;
 
+        /**
+         * The collection of resource types that support bulk editing of tags.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<BulkEditTagsResourceType> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class BulkEditTagsResourceTypeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<BulkEditTagsResourceType> items;
 
+    /**
+     * The collection of resource types that support bulk editing of tags.
+     * @return the value
+     **/
     public java.util.List<BulkEditTagsResourceType> getItems() {
         return items;
     }

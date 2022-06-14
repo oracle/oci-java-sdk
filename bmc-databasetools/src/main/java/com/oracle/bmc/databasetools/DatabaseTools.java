@@ -8,7 +8,7 @@ import com.oracle.bmc.databasetools.requests.*;
 import com.oracle.bmc.databasetools.responses.*;
 
 /**
- * Database Tools APIs to manage Connections and Private Endpoints.
+ * Use the Database Tools API to manage connections, private endpoints, and work requests in the Database Tools service.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
@@ -47,7 +47,7 @@ public interface DatabaseTools extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Moves a DatabaseToolsConnection into a different compartment within the same tenancy.
+     * Moves the specified Database Tools connection to a different compartment in the same tenancy.
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
@@ -63,7 +63,7 @@ public interface DatabaseTools extends AutoCloseable {
             ChangeDatabaseToolsConnectionCompartmentRequest request);
 
     /**
-     * Moves a DatabaseToolsPrivateEndpoint into a different compartment within the same tenancy.
+     * Moves a Database Tools private endpoint into a different compartment in the same tenancy.
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
@@ -80,7 +80,7 @@ public interface DatabaseTools extends AutoCloseable {
                     ChangeDatabaseToolsPrivateEndpointCompartmentRequest request);
 
     /**
-     * Creates a new DatabaseToolsConnection.
+     * Creates a new Database Tools connection.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -94,7 +94,7 @@ public interface DatabaseTools extends AutoCloseable {
             CreateDatabaseToolsConnectionRequest request);
 
     /**
-     * Creates a new DatabaseToolsPrivateEndpoint.
+     * Creates a new Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -108,7 +108,7 @@ public interface DatabaseTools extends AutoCloseable {
             CreateDatabaseToolsPrivateEndpointRequest request);
 
     /**
-     * Deletes a DatabaseToolsConnection resource by identifier
+     * Deletes the specified Database Tools connection resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -121,7 +121,7 @@ public interface DatabaseTools extends AutoCloseable {
             DeleteDatabaseToolsConnectionRequest request);
 
     /**
-     * Deletes a DatabaseToolsPrivateEndpoint resource by identifier
+     * Deletes the specified Database Tools private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -134,11 +134,11 @@ public interface DatabaseTools extends AutoCloseable {
             DeleteDatabaseToolsPrivateEndpointRequest request);
 
     /**
-     * Gets a DatabaseToolsConnection by identifier
+     * Gets details of the specified Database Tools connection.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetDatabaseToolsConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabaseToolsConnection API.
@@ -147,11 +147,11 @@ public interface DatabaseTools extends AutoCloseable {
             GetDatabaseToolsConnectionRequest request);
 
     /**
-     * Gets a DatabaseToolsEndpointService by identifier
+     * Gets details for the specified Database Tools endpoint service.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetDatabaseToolsEndpointServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabaseToolsEndpointService API.
@@ -160,11 +160,11 @@ public interface DatabaseTools extends AutoCloseable {
             GetDatabaseToolsEndpointServiceRequest request);
 
     /**
-     * Gets a DatabaseToolsPrivateEndpoint by identifier
+     * Gets details of a specified Database Tools private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetDatabaseToolsPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabaseToolsPrivateEndpoint API.
@@ -173,11 +173,11 @@ public interface DatabaseTools extends AutoCloseable {
             GetDatabaseToolsPrivateEndpointRequest request);
 
     /**
-     * Gets the status of the work request with the given ID.
+     * Gets the status of the specified work request.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
@@ -185,12 +185,12 @@ public interface DatabaseTools extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Returns a list of DatabaseToolsConnections.
+     * Returns a list of Database Tools connections.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListDatabaseToolsConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabaseToolsConnections API.
@@ -199,12 +199,12 @@ public interface DatabaseTools extends AutoCloseable {
             ListDatabaseToolsConnectionsRequest request);
 
     /**
-     * Returns a list of DatabaseToolsEndpointServices.
+     * Returns a list of Database Tools endpoint services.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListDatabaseToolsEndpointServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabaseToolsEndpointServices API.
@@ -213,12 +213,12 @@ public interface DatabaseTools extends AutoCloseable {
             ListDatabaseToolsEndpointServicesRequest request);
 
     /**
-     * Returns a list of DatabaseToolsPrivateEndpoints.
+     * Returns a list of Database Tools private endpoints.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListDatabaseToolsPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabaseToolsPrivateEndpoints API.
@@ -227,12 +227,12 @@ public interface DatabaseTools extends AutoCloseable {
             ListDatabaseToolsPrivateEndpointsRequest request);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a paginated list of errors for the specified work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
@@ -240,12 +240,12 @@ public interface DatabaseTools extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a paginated list of logs for the specified work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
@@ -258,7 +258,7 @@ public interface DatabaseTools extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
@@ -266,7 +266,7 @@ public interface DatabaseTools extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Updates the DatabaseToolsConnection
+     * Updates the specified Database Tools connection.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -279,7 +279,7 @@ public interface DatabaseTools extends AutoCloseable {
             UpdateDatabaseToolsConnectionRequest request);
 
     /**
-     * Updates the DatabaseToolsPrivateEndpoint
+     * Updates the specified Database Tools private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -292,7 +292,7 @@ public interface DatabaseTools extends AutoCloseable {
             UpdateDatabaseToolsPrivateEndpointRequest request);
 
     /**
-     * Validate the DatabaseToolsConnection information details by establishing a connection to the database.
+     * Validates the Database Tools connection details by establishing a connection to the database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

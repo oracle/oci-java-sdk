@@ -80,28 +80,51 @@ public final class ImagePublicationPackage extends PublicationPackage {
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
-
+        /**
+         * The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
         private String appCatalogListingId;
 
+        /**
+         * The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
+         *
+         * @param appCatalogListingId the value to set
+         * @return this builder
+         **/
         public Builder appCatalogListingId(String appCatalogListingId) {
             this.appCatalogListingId = appCatalogListingId;
             this.__explicitlySet__.add("appCatalogListingId");
             return this;
         }
-
+        /**
+         * The resource version of the listing resource associated with this publication package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingResourceVersion")
         private String appCatalogListingResourceVersion;
 
+        /**
+         * The resource version of the listing resource associated with this publication package.
+         * @param appCatalogListingResourceVersion the value to set
+         * @return this builder
+         **/
         public Builder appCatalogListingResourceVersion(String appCatalogListingResourceVersion) {
             this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
             this.__explicitlySet__.add("appCatalogListingResourceVersion");
             return this;
         }
-
+        /**
+         * The ID of the image that corresponds to the package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The ID of the image that corresponds to the package.
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
@@ -181,6 +204,11 @@ public final class ImagePublicationPackage extends PublicationPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
     private final String appCatalogListingId;
 
+    /**
+     * The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
+     *
+     * @return the value
+     **/
     public String getAppCatalogListingId() {
         return appCatalogListingId;
     }
@@ -191,6 +219,10 @@ public final class ImagePublicationPackage extends PublicationPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingResourceVersion")
     private final String appCatalogListingResourceVersion;
 
+    /**
+     * The resource version of the listing resource associated with this publication package.
+     * @return the value
+     **/
     public String getAppCatalogListingResourceVersion() {
         return appCatalogListingResourceVersion;
     }
@@ -201,6 +233,10 @@ public final class ImagePublicationPackage extends PublicationPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The ID of the image that corresponds to the package.
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }

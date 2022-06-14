@@ -77,146 +77,327 @@ public final class SearchMonitoredResourcesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A filter to return resources that match exact resource name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A filter to return resources that match exact resource name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A filter to return resources that match resource name pattern given. The match is not case sensitive.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nameContains")
         private String nameContains;
 
+        /**
+         * A filter to return resources that match resource name pattern given. The match is not case sensitive.
+         * @param nameContains the value to set
+         * @return this builder
+         **/
         public Builder nameContains(String nameContains) {
             this.nameContains = nameContains;
             this.__explicitlySet__.add("nameContains");
             return this;
         }
-
+        /**
+         * A filter to return resources that match resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * A filter to return resources that match resource type
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * A filter to return resources with host name match
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * A filter to return resources with host name match
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * A filter to return resources with host name pattern
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostNameContains")
         private String hostNameContains;
 
+        /**
+         * A filter to return resources with host name pattern
+         * @param hostNameContains the value to set
+         * @return this builder
+         **/
         public Builder hostNameContains(String hostNameContains) {
             this.hostNameContains = hostNameContains;
             this.__explicitlySet__.add("hostNameContains");
             return this;
         }
-
+        /**
+         * A filter to return resources with matching management agent id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * A filter to return resources with matching management agent id.
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * A filter to return resources with matching lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ResourceLifecycleState lifecycleState;
 
+        /**
+         * A filter to return resources with matching lifecycle state.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(ResourceLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Search for resources that were created within a specific date range,
+         * using this parameter to specify the earliest creation date for the
+         * returned list (inclusive). Specifying this parameter without the
+         * corresponding {@code timeCreatedLessThan} parameter will retrieve resources created from the
+         * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+         * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedGreaterThanOrEqualTo")
         private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+        /**
+         * Search for resources that were created within a specific date range,
+         * using this parameter to specify the earliest creation date for the
+         * returned list (inclusive). Specifying this parameter without the
+         * corresponding {@code timeCreatedLessThan} parameter will retrieve resources created from the
+         * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+         * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
+         * @return this builder
+         **/
         public Builder timeCreatedGreaterThanOrEqualTo(
                 java.util.Date timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             this.__explicitlySet__.add("timeCreatedGreaterThanOrEqualTo");
             return this;
         }
-
+        /**
+         * Search for resources that were created within a specific date range,
+         * using this parameter to specify the latest creation date for the returned
+         * list (exclusive). Specifying this parameter without the corresponding
+         * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all resources created before the
+         * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedLessThan")
         private java.util.Date timeCreatedLessThan;
 
+        /**
+         * Search for resources that were created within a specific date range,
+         * using this parameter to specify the latest creation date for the returned
+         * list (exclusive). Specifying this parameter without the corresponding
+         * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all resources created before the
+         * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @param timeCreatedLessThan the value to set
+         * @return this builder
+         **/
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             this.__explicitlySet__.add("timeCreatedLessThan");
             return this;
         }
-
+        /**
+         * Search for resources that were updated within a specific date range,
+         * using this parameter to specify the earliest update date for the
+         * returned list (inclusive). Specifying this parameter without the
+         * corresponding {@code timeUpdatedLessThan} parameter will retrieve resources updated from the
+         * given {@code timeUpdatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+         * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdatedGreaterThanOrEqualTo")
         private java.util.Date timeUpdatedGreaterThanOrEqualTo;
 
+        /**
+         * Search for resources that were updated within a specific date range,
+         * using this parameter to specify the earliest update date for the
+         * returned list (inclusive). Specifying this parameter without the
+         * corresponding {@code timeUpdatedLessThan} parameter will retrieve resources updated from the
+         * given {@code timeUpdatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+         * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @param timeUpdatedGreaterThanOrEqualTo the value to set
+         * @return this builder
+         **/
         public Builder timeUpdatedGreaterThanOrEqualTo(
                 java.util.Date timeUpdatedGreaterThanOrEqualTo) {
             this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
             this.__explicitlySet__.add("timeUpdatedGreaterThanOrEqualTo");
             return this;
         }
-
+        /**
+         * Search for resources that were updated within a specific date range,
+         * using this parameter to specify the latest creation date for the returned
+         * list (exclusive). Specifying this parameter without the corresponding
+         * {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all resources updated before the
+         * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdatedLessThan")
         private java.util.Date timeUpdatedLessThan;
 
+        /**
+         * Search for resources that were updated within a specific date range,
+         * using this parameter to specify the latest creation date for the returned
+         * list (exclusive). Specifying this parameter without the corresponding
+         * {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all resources updated before the
+         * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @param timeUpdatedLessThan the value to set
+         * @return this builder
+         **/
         public Builder timeUpdatedLessThan(java.util.Date timeUpdatedLessThan) {
             this.timeUpdatedLessThan = timeUpdatedLessThan;
             this.__explicitlySet__.add("timeUpdatedLessThan");
             return this;
         }
-
+        /**
+         * Time zone in the form of tz database canonical zone ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
         private String resourceTimeZone;
 
+        /**
+         * Time zone in the form of tz database canonical zone ID.
+         * @param resourceTimeZone the value to set
+         * @return this builder
+         **/
         public Builder resourceTimeZone(String resourceTimeZone) {
             this.resourceTimeZone = resourceTimeZone;
             this.__explicitlySet__.add("resourceTimeZone");
             return this;
         }
-
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
+         * @return this builder
+         **/
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
             return this;
         }
-
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for timeCreated is descending. Default order for resources is ascending.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private SortBy sortBy;
 
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for timeCreated is descending. Default order for resources is ascending.
+         *
+         * @param sortBy the value to set
+         * @return this builder
+         **/
         public Builder sortBy(SortBy sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
             return this;
         }
-
+        /**
+         * Criteria based on resource property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertyEquals")
         private java.util.Map<String, String> propertyEquals;
 
+        /**
+         * Criteria based on resource property.
+         * @param propertyEquals the value to set
+         * @return this builder
+         **/
         public Builder propertyEquals(java.util.Map<String, String> propertyEquals) {
             this.propertyEquals = propertyEquals;
             this.__explicitlySet__.add("propertyEquals");
@@ -291,6 +472,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -301,6 +486,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A filter to return resources that match exact resource name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -311,6 +500,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nameContains")
     private final String nameContains;
 
+    /**
+     * A filter to return resources that match resource name pattern given. The match is not case sensitive.
+     * @return the value
+     **/
     public String getNameContains() {
         return nameContains;
     }
@@ -321,6 +514,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * A filter to return resources that match resource type
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -331,6 +528,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * A filter to return resources with host name match
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -341,6 +542,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostNameContains")
     private final String hostNameContains;
 
+    /**
+     * A filter to return resources with host name pattern
+     * @return the value
+     **/
     public String getHostNameContains() {
         return hostNameContains;
     }
@@ -351,6 +556,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * A filter to return resources with matching management agent id.
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -361,6 +570,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ResourceLifecycleState lifecycleState;
 
+    /**
+     * A filter to return resources with matching lifecycle state.
+     * @return the value
+     **/
     public ResourceLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -379,6 +592,18 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedGreaterThanOrEqualTo")
     private final java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * Search for resources that were created within a specific date range,
+     * using this parameter to specify the earliest creation date for the
+     * returned list (inclusive). Specifying this parameter without the
+     * corresponding {@code timeCreatedLessThan} parameter will retrieve resources created from the
+     * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+     * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -397,6 +622,18 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedLessThan")
     private final java.util.Date timeCreatedLessThan;
 
+    /**
+     * Search for resources that were created within a specific date range,
+     * using this parameter to specify the latest creation date for the returned
+     * list (exclusive). Specifying this parameter without the corresponding
+     * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all resources created before the
+     * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
@@ -415,6 +652,18 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdatedGreaterThanOrEqualTo")
     private final java.util.Date timeUpdatedGreaterThanOrEqualTo;
 
+    /**
+     * Search for resources that were updated within a specific date range,
+     * using this parameter to specify the earliest update date for the
+     * returned list (inclusive). Specifying this parameter without the
+     * corresponding {@code timeUpdatedLessThan} parameter will retrieve resources updated from the
+     * given {@code timeUpdatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+     * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdatedGreaterThanOrEqualTo() {
         return timeUpdatedGreaterThanOrEqualTo;
     }
@@ -433,6 +682,18 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdatedLessThan")
     private final java.util.Date timeUpdatedLessThan;
 
+    /**
+     * Search for resources that were updated within a specific date range,
+     * using this parameter to specify the latest creation date for the returned
+     * list (exclusive). Specifying this parameter without the corresponding
+     * {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all resources updated before the
+     * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdatedLessThan() {
         return timeUpdatedLessThan;
     }
@@ -443,6 +704,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
     private final String resourceTimeZone;
 
+    /**
+     * Time zone in the form of tz database canonical zone ID.
+     * @return the value
+     **/
     public String getResourceTimeZone() {
         return resourceTimeZone;
     }
@@ -453,6 +718,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     * @return the value
+     **/
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -502,6 +771,12 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final SortBy sortBy;
 
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     * Default order for timeCreated is descending. Default order for resources is ascending.
+     *
+     * @return the value
+     **/
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -512,6 +787,10 @@ public final class SearchMonitoredResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("propertyEquals")
     private final java.util.Map<String, String> propertyEquals;
 
+    /**
+     * Criteria based on resource property.
+     * @return the value
+     **/
     public java.util.Map<String, String> getPropertyEquals() {
         return propertyEquals;
     }

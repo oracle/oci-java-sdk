@@ -18,6 +18,9 @@ public class UpdateComputeCapacityReservationRequest
      */
     private String capacityReservationId;
 
+    /**
+     * The OCID of the compute capacity reservation.
+     */
     public String getCapacityReservationId() {
         return capacityReservationId;
     }
@@ -27,6 +30,9 @@ public class UpdateComputeCapacityReservationRequest
     private com.oracle.bmc.core.model.UpdateComputeCapacityReservationDetails
             updateComputeCapacityReservationDetails;
 
+    /**
+     * Update compute capacity reservation details.
+     */
     public com.oracle.bmc.core.model.UpdateComputeCapacityReservationDetails
             getUpdateComputeCapacityReservationDetails() {
         return updateComputeCapacityReservationDetails;
@@ -39,6 +45,12 @@ public class UpdateComputeCapacityReservationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +61,11 @@ public class UpdateComputeCapacityReservationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateComputeCapacityReservationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compute capacity reservation.
+         */
         private String capacityReservationId = null;
 
         /**
          * The OCID of the compute capacity reservation.
+         * @param capacityReservationId the value to set
          * @return this builder instance
          */
         public Builder capacityReservationId(String capacityReservationId) {
@@ -82,11 +103,15 @@ public class UpdateComputeCapacityReservationRequest
             return this;
         }
 
+        /**
+         * Update compute capacity reservation details.
+         */
         private com.oracle.bmc.core.model.UpdateComputeCapacityReservationDetails
                 updateComputeCapacityReservationDetails = null;
 
         /**
          * Update compute capacity reservation details.
+         * @param updateComputeCapacityReservationDetails the value to set
          * @return this builder instance
          */
         public Builder updateComputeCapacityReservationDetails(
@@ -96,6 +121,12 @@ public class UpdateComputeCapacityReservationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -103,6 +134,7 @@ public class UpdateComputeCapacityReservationRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -110,12 +142,18 @@ public class UpdateComputeCapacityReservationRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -211,7 +249,8 @@ public class UpdateComputeCapacityReservationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -221,6 +260,10 @@ public class UpdateComputeCapacityReservationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

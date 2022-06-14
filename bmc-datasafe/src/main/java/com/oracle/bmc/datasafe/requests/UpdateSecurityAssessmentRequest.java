@@ -18,6 +18,9 @@ public class UpdateSecurityAssessmentRequest
      */
     private String securityAssessmentId;
 
+    /**
+     * The OCID of the security assessment.
+     */
     public String getSecurityAssessmentId() {
         return securityAssessmentId;
     }
@@ -27,6 +30,9 @@ public class UpdateSecurityAssessmentRequest
     private com.oracle.bmc.datasafe.model.UpdateSecurityAssessmentDetails
             updateSecurityAssessmentDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.datasafe.model.UpdateSecurityAssessmentDetails
             getUpdateSecurityAssessmentDetails() {
         return updateSecurityAssessmentDetails;
@@ -36,6 +42,9 @@ public class UpdateSecurityAssessmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +58,14 @@ public class UpdateSecurityAssessmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -71,10 +88,14 @@ public class UpdateSecurityAssessmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the security assessment.
+         */
         private String securityAssessmentId = null;
 
         /**
          * The OCID of the security assessment.
+         * @param securityAssessmentId the value to set
          * @return this builder instance
          */
         public Builder securityAssessmentId(String securityAssessmentId) {
@@ -82,11 +103,15 @@ public class UpdateSecurityAssessmentRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.datasafe.model.UpdateSecurityAssessmentDetails
                 updateSecurityAssessmentDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateSecurityAssessmentDetails the value to set
          * @return this builder instance
          */
         public Builder updateSecurityAssessmentDetails(
@@ -96,10 +121,14 @@ public class UpdateSecurityAssessmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -107,6 +136,14 @@ public class UpdateSecurityAssessmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -116,6 +153,7 @@ public class UpdateSecurityAssessmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -208,7 +246,8 @@ public class UpdateSecurityAssessmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -218,6 +257,10 @@ public class UpdateSecurityAssessmentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

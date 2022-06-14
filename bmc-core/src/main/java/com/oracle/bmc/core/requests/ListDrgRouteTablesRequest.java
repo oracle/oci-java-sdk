@@ -16,6 +16,9 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String drgId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+     */
     public String getDrgId() {
         return drgId;
     }
@@ -29,6 +32,14 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +51,12 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -49,6 +66,10 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -109,6 +130,17 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these "List" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -157,6 +189,11 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -166,6 +203,10 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String importDrgRouteDistributionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution.
+     *
+     */
     public String getImportDrgRouteDistributionId() {
         return importDrgRouteDistributionId;
     }
@@ -176,6 +217,11 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private com.oracle.bmc.core.model.DrgRouteTable.LifecycleState lifecycleState;
 
+    /**
+     * A filter that only returns matches for the specified lifecycle
+     * state. The value is case insensitive.
+     *
+     */
     public com.oracle.bmc.core.model.DrgRouteTable.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -187,10 +233,14 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         */
         private String drgId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         * @param drgId the value to set
          * @return this builder instance
          */
         public Builder drgId(String drgId) {
@@ -198,6 +248,14 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -207,6 +265,7 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -214,6 +273,12 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -221,6 +286,7 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -228,11 +294,16 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the given display name exactly.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -240,6 +311,17 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by availability domain if the scope of the resource type is within a
+         * single availability domain. If you call one of these "List" operations without specifying
+         * an availability domain, the resources are grouped by availability domain, then sorted.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -252,6 +334,7 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
          * single availability domain. If you call one of these "List" operations without specifying
          * an availability domain, the resources are grouped by availability domain, then sorted.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -259,12 +342,18 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
          * is case sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -272,11 +361,16 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution.
+         *
+         */
         private String importDrgRouteDistributionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution.
          *
+         * @param importDrgRouteDistributionId the value to set
          * @return this builder instance
          */
         public Builder importDrgRouteDistributionId(String importDrgRouteDistributionId) {
@@ -284,12 +378,18 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter that only returns matches for the specified lifecycle
+         * state. The value is case insensitive.
+         *
+         */
         private com.oracle.bmc.core.model.DrgRouteTable.LifecycleState lifecycleState = null;
 
         /**
          * A filter that only returns matches for the specified lifecycle
          * state. The value is case insensitive.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -380,7 +480,8 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -394,6 +495,10 @@ public class ListDrgRouteTablesRequest extends com.oracle.bmc.requests.BmcReques
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

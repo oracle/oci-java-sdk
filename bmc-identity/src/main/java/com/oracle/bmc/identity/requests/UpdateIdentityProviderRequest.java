@@ -18,6 +18,9 @@ public class UpdateIdentityProviderRequest
      */
     private String identityProviderId;
 
+    /**
+     * The OCID of the identity provider.
+     */
     public String getIdentityProviderId() {
         return identityProviderId;
     }
@@ -27,6 +30,9 @@ public class UpdateIdentityProviderRequest
     private com.oracle.bmc.identity.model.UpdateIdentityProviderDetails
             updateIdentityProviderDetails;
 
+    /**
+     * Request object for updating a identity provider.
+     */
     public com.oracle.bmc.identity.model.UpdateIdentityProviderDetails
             getUpdateIdentityProviderDetails() {
         return updateIdentityProviderDetails;
@@ -39,6 +45,12 @@ public class UpdateIdentityProviderRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -61,10 +73,14 @@ public class UpdateIdentityProviderRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the identity provider.
+         */
         private String identityProviderId = null;
 
         /**
          * The OCID of the identity provider.
+         * @param identityProviderId the value to set
          * @return this builder instance
          */
         public Builder identityProviderId(String identityProviderId) {
@@ -72,11 +88,15 @@ public class UpdateIdentityProviderRequest
             return this;
         }
 
+        /**
+         * Request object for updating a identity provider.
+         */
         private com.oracle.bmc.identity.model.UpdateIdentityProviderDetails
                 updateIdentityProviderDetails = null;
 
         /**
          * Request object for updating a identity provider.
+         * @param updateIdentityProviderDetails the value to set
          * @return this builder instance
          */
         public Builder updateIdentityProviderDetails(
@@ -86,6 +106,12 @@ public class UpdateIdentityProviderRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -93,6 +119,7 @@ public class UpdateIdentityProviderRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -183,7 +210,8 @@ public class UpdateIdentityProviderRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -192,6 +220,10 @@ public class UpdateIdentityProviderRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

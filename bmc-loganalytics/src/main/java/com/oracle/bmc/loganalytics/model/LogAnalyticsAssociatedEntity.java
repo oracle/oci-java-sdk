@@ -47,54 +47,97 @@ public final class LogAnalyticsAssociatedEntity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The entity unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
+        /**
+         * The entity unique identifier.
+         * @param entityId the value to set
+         * @return this builder
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-
+        /**
+         * The entity name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
+        /**
+         * The entity name.
+         * @param entityName the value to set
+         * @return this builder
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-
+        /**
+         * The entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The entity type.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The entity type display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
         private String entityTypeDisplayName;
 
+        /**
+         * The entity type display name.
+         * @param entityTypeDisplayName the value to set
+         * @return this builder
+         **/
         public Builder entityTypeDisplayName(String entityTypeDisplayName) {
             this.entityTypeDisplayName = entityTypeDisplayName;
             this.__explicitlySet__.add("entityTypeDisplayName");
             return this;
         }
-
+        /**
+         * The host associated with the entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onHost")
         private String onHost;
 
+        /**
+         * The host associated with the entity.
+         * @param onHost the value to set
+         * @return this builder
+         **/
         public Builder onHost(String onHost) {
             this.onHost = onHost;
             this.__explicitlySet__.add("onHost");
             return this;
         }
-
+        /**
+         * The association count for the entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
         private Long associationCount;
 
+        /**
+         * The association count for the entity.
+         * @param associationCount the value to set
+         * @return this builder
+         **/
         public Builder associationCount(Long associationCount) {
             this.associationCount = associationCount;
             this.__explicitlySet__.add("associationCount");
@@ -149,6 +192,10 @@ public final class LogAnalyticsAssociatedEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
+    /**
+     * The entity unique identifier.
+     * @return the value
+     **/
     public String getEntityId() {
         return entityId;
     }
@@ -159,6 +206,10 @@ public final class LogAnalyticsAssociatedEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
+    /**
+     * The entity name.
+     * @return the value
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -169,6 +220,10 @@ public final class LogAnalyticsAssociatedEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The entity type.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -179,6 +234,10 @@ public final class LogAnalyticsAssociatedEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
     private final String entityTypeDisplayName;
 
+    /**
+     * The entity type display name.
+     * @return the value
+     **/
     public String getEntityTypeDisplayName() {
         return entityTypeDisplayName;
     }
@@ -189,6 +248,10 @@ public final class LogAnalyticsAssociatedEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("onHost")
     private final String onHost;
 
+    /**
+     * The host associated with the entity.
+     * @return the value
+     **/
     public String getOnHost() {
         return onHost;
     }
@@ -199,6 +262,10 @@ public final class LogAnalyticsAssociatedEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
     private final Long associationCount;
 
+    /**
+     * The association count for the entity.
+     * @return the value
+     **/
     public Long getAssociationCount() {
         return associationCount;
     }

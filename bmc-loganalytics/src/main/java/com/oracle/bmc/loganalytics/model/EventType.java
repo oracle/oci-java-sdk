@@ -42,45 +42,83 @@ public final class EventType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the event type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventTypeName")
         private String eventTypeName;
 
+        /**
+         * The name of the event type.
+         * @param eventTypeName the value to set
+         * @return this builder
+         **/
         public Builder eventTypeName(String eventTypeName) {
             this.eventTypeName = eventTypeName;
             this.__explicitlySet__.add("eventTypeName");
             return this;
         }
-
+        /**
+         * The version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("specVersion")
         private String specVersion;
 
+        /**
+         * The version.
+         * @param specVersion the value to set
+         * @return this builder
+         **/
         public Builder specVersion(String specVersion) {
             this.specVersion = specVersion;
             this.__explicitlySet__.add("specVersion");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the event type is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * A flag indicating whether or not the event type is enabled.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the event type is user defined.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * A flag indicating whether or not the event type is user defined.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-
+        /**
+         * The last updated time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The last updated time.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -128,6 +166,10 @@ public final class EventType {
     @com.fasterxml.jackson.annotation.JsonProperty("eventTypeName")
     private final String eventTypeName;
 
+    /**
+     * The name of the event type.
+     * @return the value
+     **/
     public String getEventTypeName() {
         return eventTypeName;
     }
@@ -138,6 +180,10 @@ public final class EventType {
     @com.fasterxml.jackson.annotation.JsonProperty("specVersion")
     private final String specVersion;
 
+    /**
+     * The version.
+     * @return the value
+     **/
     public String getSpecVersion() {
         return specVersion;
     }
@@ -148,6 +194,10 @@ public final class EventType {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * A flag indicating whether or not the event type is enabled.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -159,6 +209,11 @@ public final class EventType {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * A flag indicating whether or not the event type is user defined.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -169,6 +224,10 @@ public final class EventType {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The last updated time.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

@@ -30,18 +30,43 @@ public final class ChangeTableCompartmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the table's current compartment.  Required
+         * if the tableNameOrId path parameter is a table name.
+         * Optional if tableNameOrId is an OCID.  If tableNameOrId
+         * is an OCID, and fromCompartmentId is supplied, the latter
+         * must match the identified table's current compartmentId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fromCompartmentId")
         private String fromCompartmentId;
 
+        /**
+         * The OCID of the table's current compartment.  Required
+         * if the tableNameOrId path parameter is a table name.
+         * Optional if tableNameOrId is an OCID.  If tableNameOrId
+         * is an OCID, and fromCompartmentId is supplied, the latter
+         * must match the identified table's current compartmentId.
+         *
+         * @param fromCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder fromCompartmentId(String fromCompartmentId) {
             this.fromCompartmentId = fromCompartmentId;
             this.__explicitlySet__.add("fromCompartmentId");
             return this;
         }
-
+        /**
+         * The OCID of the table's new compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toCompartmentId")
         private String toCompartmentId;
 
+        /**
+         * The OCID of the table's new compartment.
+         * @param toCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder toCompartmentId(String toCompartmentId) {
             this.toCompartmentId = toCompartmentId;
             this.__explicitlySet__.add("toCompartmentId");
@@ -91,6 +116,15 @@ public final class ChangeTableCompartmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fromCompartmentId")
     private final String fromCompartmentId;
 
+    /**
+     * The OCID of the table's current compartment.  Required
+     * if the tableNameOrId path parameter is a table name.
+     * Optional if tableNameOrId is an OCID.  If tableNameOrId
+     * is an OCID, and fromCompartmentId is supplied, the latter
+     * must match the identified table's current compartmentId.
+     *
+     * @return the value
+     **/
     public String getFromCompartmentId() {
         return fromCompartmentId;
     }
@@ -101,6 +135,10 @@ public final class ChangeTableCompartmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("toCompartmentId")
     private final String toCompartmentId;
 
+    /**
+     * The OCID of the table's new compartment.
+     * @return the value
+     **/
     public String getToCompartmentId() {
         return toCompartmentId;
     }

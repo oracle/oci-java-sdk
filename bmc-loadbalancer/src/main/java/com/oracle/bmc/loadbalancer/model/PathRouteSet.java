@@ -32,18 +32,39 @@ public final class PathRouteSet {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique name for this set of path route rules. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_path_route_set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The unique name for this set of path route rules. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_path_route_set}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The set of path route rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pathRoutes")
         private java.util.List<PathRoute> pathRoutes;
 
+        /**
+         * The set of path route rules.
+         * @param pathRoutes the value to set
+         * @return this builder
+         **/
         public Builder pathRoutes(java.util.List<PathRoute> pathRoutes) {
             this.pathRoutes = pathRoutes;
             this.__explicitlySet__.add("pathRoutes");
@@ -88,6 +109,13 @@ public final class PathRouteSet {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The unique name for this set of path route rules. Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_path_route_set}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -98,6 +126,10 @@ public final class PathRouteSet {
     @com.fasterxml.jackson.annotation.JsonProperty("pathRoutes")
     private final java.util.List<PathRoute> pathRoutes;
 
+    /**
+     * The set of path route rules.
+     * @return the value
+     **/
     public java.util.List<PathRoute> getPathRoutes() {
         return pathRoutes;
     }

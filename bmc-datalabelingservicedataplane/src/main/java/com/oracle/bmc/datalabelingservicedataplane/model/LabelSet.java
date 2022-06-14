@@ -28,9 +28,17 @@ public final class LabelSet {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An ordered collection of labels that are unique by name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LabelName> items;
 
+        /**
+         * An ordered collection of labels that are unique by name.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LabelName> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -72,6 +80,10 @@ public final class LabelSet {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LabelName> items;
 
+    /**
+     * An ordered collection of labels that are unique by name.
+     * @return the value
+     **/
     public java.util.List<LabelName> getItems() {
         return items;
     }

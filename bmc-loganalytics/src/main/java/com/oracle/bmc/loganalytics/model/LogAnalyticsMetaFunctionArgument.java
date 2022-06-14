@@ -71,126 +71,225 @@ public final class LogAnalyticsMetaFunctionArgument {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The override output fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverrideOutputFields")
         private Boolean isOverrideOutputFields;
 
+        /**
+         * The override output fields.
+         * @param isOverrideOutputFields the value to set
+         * @return this builder
+         **/
         public Builder isOverrideOutputFields(Boolean isOverrideOutputFields) {
             this.isOverrideOutputFields = isOverrideOutputFields;
             this.__explicitlySet__.add("isOverrideOutputFields");
             return this;
         }
-
+        /**
+         * The argument display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentDisplayName")
         private String argumentDisplayName;
 
+        /**
+         * The argument display name.
+         * @param argumentDisplayName the value to set
+         * @return this builder
+         **/
         public Builder argumentDisplayName(String argumentDisplayName) {
             this.argumentDisplayName = argumentDisplayName;
             this.__explicitlySet__.add("argumentDisplayName");
             return this;
         }
-
+        /**
+         * The argument example.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentExample")
         private String argumentExample;
 
+        /**
+         * The argument example.
+         * @param argumentExample the value to set
+         * @return this builder
+         **/
         public Builder argumentExample(String argumentExample) {
             this.argumentExample = argumentExample;
             this.__explicitlySet__.add("argumentExample");
             return this;
         }
-
+        /**
+         * The argument service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentService")
         private String argumentService;
 
+        /**
+         * The argument service.
+         * @param argumentService the value to set
+         * @return this builder
+         **/
         public Builder argumentService(String argumentService) {
             this.argumentService = argumentService;
             this.__explicitlySet__.add("argumentService");
             return this;
         }
-
+        /**
+         * The argument data type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentDataType")
         private String argumentDataType;
 
+        /**
+         * The argument data type.
+         * @param argumentDataType the value to set
+         * @return this builder
+         **/
         public Builder argumentDataType(String argumentDataType) {
             this.argumentDataType = argumentDataType;
             this.__explicitlySet__.add("argumentDataType");
             return this;
         }
-
+        /**
+         * The argument description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentDescription")
         private String argumentDescription;
 
+        /**
+         * The argument description.
+         * @param argumentDescription the value to set
+         * @return this builder
+         **/
         public Builder argumentDescription(String argumentDescription) {
             this.argumentDescription = argumentDescription;
             this.__explicitlySet__.add("argumentDescription");
             return this;
         }
-
+        /**
+         * The argument name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentName")
         private String argumentName;
 
+        /**
+         * The argument name.
+         * @param argumentName the value to set
+         * @return this builder
+         **/
         public Builder argumentName(String argumentName) {
             this.argumentName = argumentName;
             this.__explicitlySet__.add("argumentName");
             return this;
         }
-
+        /**
+         * The argument order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentOrder")
         private Long argumentOrder;
 
+        /**
+         * The argument order.
+         * @param argumentOrder the value to set
+         * @return this builder
+         **/
         public Builder argumentOrder(Long argumentOrder) {
             this.argumentOrder = argumentOrder;
             this.__explicitlySet__.add("argumentOrder");
             return this;
         }
-
+        /**
+         * The argument type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentType")
         private Long argumentType;
 
+        /**
+         * The argument type.
+         * @param argumentType the value to set
+         * @return this builder
+         **/
         public Builder argumentType(Long argumentType) {
             this.argumentType = argumentType;
             this.__explicitlySet__.add("argumentType");
             return this;
         }
-
+        /**
+         * The argument unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentId")
         private Long argumentId;
 
+        /**
+         * The argument unique identifier.
+         * @param argumentId the value to set
+         * @return this builder
+         **/
         public Builder argumentId(Long argumentId) {
             this.argumentId = argumentId;
             this.__explicitlySet__.add("argumentId");
             return this;
         }
-
+        /**
+         * The lookup column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentLookupColumn")
         private String argumentLookupColumn;
 
+        /**
+         * The lookup column.
+         * @param argumentLookupColumn the value to set
+         * @return this builder
+         **/
         public Builder argumentLookupColumn(String argumentLookupColumn) {
             this.argumentLookupColumn = argumentLookupColumn;
             this.__explicitlySet__.add("argumentLookupColumn");
             return this;
         }
-
+        /**
+         * The lookup column position.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentLookupColumnPosition")
         private Long argumentLookupColumnPosition;
 
+        /**
+         * The lookup column position.
+         * @param argumentLookupColumnPosition the value to set
+         * @return this builder
+         **/
         public Builder argumentLookupColumnPosition(Long argumentLookupColumnPosition) {
             this.argumentLookupColumnPosition = argumentLookupColumnPosition;
             this.__explicitlySet__.add("argumentLookupColumnPosition");
             return this;
         }
-
+        /**
+         * The argument value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentValue")
         private String argumentValue;
 
+        /**
+         * The argument value.
+         * @param argumentValue the value to set
+         * @return this builder
+         **/
         public Builder argumentValue(String argumentValue) {
             this.argumentValue = argumentValue;
             this.__explicitlySet__.add("argumentValue");
             return this;
         }
-
+        /**
+         * The argument unique identifier as a string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("argumentReference")
         private String argumentReference;
 
+        /**
+         * The argument unique identifier as a string.
+         * @param argumentReference the value to set
+         * @return this builder
+         **/
         public Builder argumentReference(String argumentReference) {
             this.argumentReference = argumentReference;
             this.__explicitlySet__.add("argumentReference");
@@ -261,6 +360,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("isOverrideOutputFields")
     private final Boolean isOverrideOutputFields;
 
+    /**
+     * The override output fields.
+     * @return the value
+     **/
     public Boolean getIsOverrideOutputFields() {
         return isOverrideOutputFields;
     }
@@ -271,6 +374,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentDisplayName")
     private final String argumentDisplayName;
 
+    /**
+     * The argument display name.
+     * @return the value
+     **/
     public String getArgumentDisplayName() {
         return argumentDisplayName;
     }
@@ -281,6 +388,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentExample")
     private final String argumentExample;
 
+    /**
+     * The argument example.
+     * @return the value
+     **/
     public String getArgumentExample() {
         return argumentExample;
     }
@@ -291,6 +402,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentService")
     private final String argumentService;
 
+    /**
+     * The argument service.
+     * @return the value
+     **/
     public String getArgumentService() {
         return argumentService;
     }
@@ -301,6 +416,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentDataType")
     private final String argumentDataType;
 
+    /**
+     * The argument data type.
+     * @return the value
+     **/
     public String getArgumentDataType() {
         return argumentDataType;
     }
@@ -311,6 +430,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentDescription")
     private final String argumentDescription;
 
+    /**
+     * The argument description.
+     * @return the value
+     **/
     public String getArgumentDescription() {
         return argumentDescription;
     }
@@ -321,6 +444,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentName")
     private final String argumentName;
 
+    /**
+     * The argument name.
+     * @return the value
+     **/
     public String getArgumentName() {
         return argumentName;
     }
@@ -331,6 +458,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentOrder")
     private final Long argumentOrder;
 
+    /**
+     * The argument order.
+     * @return the value
+     **/
     public Long getArgumentOrder() {
         return argumentOrder;
     }
@@ -341,6 +472,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentType")
     private final Long argumentType;
 
+    /**
+     * The argument type.
+     * @return the value
+     **/
     public Long getArgumentType() {
         return argumentType;
     }
@@ -351,6 +486,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentId")
     private final Long argumentId;
 
+    /**
+     * The argument unique identifier.
+     * @return the value
+     **/
     public Long getArgumentId() {
         return argumentId;
     }
@@ -361,6 +500,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentLookupColumn")
     private final String argumentLookupColumn;
 
+    /**
+     * The lookup column.
+     * @return the value
+     **/
     public String getArgumentLookupColumn() {
         return argumentLookupColumn;
     }
@@ -371,6 +514,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentLookupColumnPosition")
     private final Long argumentLookupColumnPosition;
 
+    /**
+     * The lookup column position.
+     * @return the value
+     **/
     public Long getArgumentLookupColumnPosition() {
         return argumentLookupColumnPosition;
     }
@@ -381,6 +528,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentValue")
     private final String argumentValue;
 
+    /**
+     * The argument value.
+     * @return the value
+     **/
     public String getArgumentValue() {
         return argumentValue;
     }
@@ -391,6 +542,10 @@ public final class LogAnalyticsMetaFunctionArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("argumentReference")
     private final String argumentReference;
 
+    /**
+     * The argument unique identifier as a string.
+     * @return the value
+     **/
     public String getArgumentReference() {
         return argumentReference;
     }

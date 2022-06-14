@@ -28,18 +28,33 @@ public final class Indexes {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The end index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endIndex")
         private Integer endIndex;
 
+        /**
+         * The end index.
+         * @param endIndex the value to set
+         * @return this builder
+         **/
         public Builder endIndex(Integer endIndex) {
             this.endIndex = endIndex;
             this.__explicitlySet__.add("endIndex");
             return this;
         }
-
+        /**
+         * The start index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startIndex")
         private Integer startIndex;
 
+        /**
+         * The start index.
+         * @param startIndex the value to set
+         * @return this builder
+         **/
         public Builder startIndex(Integer startIndex) {
             this.startIndex = startIndex;
             this.__explicitlySet__.add("startIndex");
@@ -81,6 +96,10 @@ public final class Indexes {
     @com.fasterxml.jackson.annotation.JsonProperty("endIndex")
     private final Integer endIndex;
 
+    /**
+     * The end index.
+     * @return the value
+     **/
     public Integer getEndIndex() {
         return endIndex;
     }
@@ -91,6 +110,10 @@ public final class Indexes {
     @com.fasterxml.jackson.annotation.JsonProperty("startIndex")
     private final Integer startIndex;
 
+    /**
+     * The start index.
+     * @return the value
+     **/
     public Integer getStartIndex() {
         return startIndex;
     }

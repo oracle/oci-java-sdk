@@ -44,45 +44,81 @@ public final class ConfigParameterValue {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A string value of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stringValue")
         private String stringValue;
 
+        /**
+         * A string value of the parameter.
+         * @param stringValue the value to set
+         * @return this builder
+         **/
         public Builder stringValue(String stringValue) {
             this.stringValue = stringValue;
             this.__explicitlySet__.add("stringValue");
             return this;
         }
-
+        /**
+         * An integer value of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intValue")
         private Integer intValue;
 
+        /**
+         * An integer value of the parameter.
+         * @param intValue the value to set
+         * @return this builder
+         **/
         public Builder intValue(Integer intValue) {
             this.intValue = intValue;
             this.__explicitlySet__.add("intValue");
             return this;
         }
-
+        /**
+         * An object value of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectValue")
         private Object objectValue;
 
+        /**
+         * An object value of the parameter.
+         * @param objectValue the value to set
+         * @return this builder
+         **/
         public Builder objectValue(Object objectValue) {
             this.objectValue = objectValue;
             this.__explicitlySet__.add("objectValue");
             return this;
         }
-
+        /**
+         * The root object reference value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refValue")
         private Object refValue;
 
+        /**
+         * The root object reference value.
+         * @param refValue the value to set
+         * @return this builder
+         **/
         public Builder refValue(Object refValue) {
             this.refValue = refValue;
             this.__explicitlySet__.add("refValue");
             return this;
         }
-
+        /**
+         * Reference to the parameter by its key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameterValue")
         private String parameterValue;
 
+        /**
+         * Reference to the parameter by its key.
+         * @param parameterValue the value to set
+         * @return this builder
+         **/
         public Builder parameterValue(String parameterValue) {
             this.parameterValue = parameterValue;
             this.__explicitlySet__.add("parameterValue");
@@ -131,6 +167,10 @@ public final class ConfigParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("stringValue")
     private final String stringValue;
 
+    /**
+     * A string value of the parameter.
+     * @return the value
+     **/
     public String getStringValue() {
         return stringValue;
     }
@@ -141,6 +181,10 @@ public final class ConfigParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("intValue")
     private final Integer intValue;
 
+    /**
+     * An integer value of the parameter.
+     * @return the value
+     **/
     public Integer getIntValue() {
         return intValue;
     }
@@ -151,6 +195,10 @@ public final class ConfigParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("objectValue")
     private final Object objectValue;
 
+    /**
+     * An object value of the parameter.
+     * @return the value
+     **/
     public Object getObjectValue() {
         return objectValue;
     }
@@ -161,6 +209,10 @@ public final class ConfigParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("refValue")
     private final Object refValue;
 
+    /**
+     * The root object reference value.
+     * @return the value
+     **/
     public Object getRefValue() {
         return refValue;
     }
@@ -171,6 +223,10 @@ public final class ConfigParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("parameterValue")
     private final String parameterValue;
 
+    /**
+     * Reference to the parameter by its key.
+     * @return the value
+     **/
     public String getParameterValue() {
         return parameterValue;
     }

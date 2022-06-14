@@ -29,9 +29,27 @@ public final class EnableReplicationToRegionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A region to which you want identity domain replication to occur.
+         * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
         private String replicaRegion;
 
+        /**
+         * A region to which you want identity domain replication to occur.
+         * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
+         *
+         * @param replicaRegion the value to set
+         * @return this builder
+         **/
         public Builder replicaRegion(String replicaRegion) {
             this.replicaRegion = replicaRegion;
             this.__explicitlySet__.add("replicaRegion");
@@ -79,6 +97,15 @@ public final class EnableReplicationToRegionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
     private final String replicaRegion;
 
+    /**
+     * A region to which you want identity domain replication to occur.
+     * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+     * for the full list of supported region names.
+     * <p>
+     * Example: {@code us-phoenix-1}
+     *
+     * @return the value
+     **/
     public String getReplicaRegion() {
         return replicaRegion;
     }

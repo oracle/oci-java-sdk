@@ -45,37 +45,65 @@ public final class UpdateCertificateByImportingConfigDetails
             this.__explicitlySet__.add("stage");
             return this;
         }
-
+        /**
+         * The certificate chain (in PEM format) for the imported certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certChainPem")
         private String certChainPem;
 
+        /**
+         * The certificate chain (in PEM format) for the imported certificate.
+         * @param certChainPem the value to set
+         * @return this builder
+         **/
         public Builder certChainPem(String certChainPem) {
             this.certChainPem = certChainPem;
             this.__explicitlySet__.add("certChainPem");
             return this;
         }
-
+        /**
+         * The private key (in PEM format) for the imported certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPem")
         private String privateKeyPem;
 
+        /**
+         * The private key (in PEM format) for the imported certificate.
+         * @param privateKeyPem the value to set
+         * @return this builder
+         **/
         public Builder privateKeyPem(String privateKeyPem) {
             this.privateKeyPem = privateKeyPem;
             this.__explicitlySet__.add("privateKeyPem");
             return this;
         }
-
+        /**
+         * The certificate (in PEM format) for the imported certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificatePem")
         private String certificatePem;
 
+        /**
+         * The certificate (in PEM format) for the imported certificate.
+         * @param certificatePem the value to set
+         * @return this builder
+         **/
         public Builder certificatePem(String certificatePem) {
             this.certificatePem = certificatePem;
             this.__explicitlySet__.add("certificatePem");
             return this;
         }
-
+        /**
+         * An optional passphrase for the private key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPemPassphrase")
         private String privateKeyPemPassphrase;
 
+        /**
+         * An optional passphrase for the private key.
+         * @param privateKeyPemPassphrase the value to set
+         * @return this builder
+         **/
         public Builder privateKeyPemPassphrase(String privateKeyPemPassphrase) {
             this.privateKeyPemPassphrase = privateKeyPemPassphrase;
             this.__explicitlySet__.add("privateKeyPemPassphrase");
@@ -145,6 +173,10 @@ public final class UpdateCertificateByImportingConfigDetails
     @com.fasterxml.jackson.annotation.JsonProperty("certChainPem")
     private final String certChainPem;
 
+    /**
+     * The certificate chain (in PEM format) for the imported certificate.
+     * @return the value
+     **/
     public String getCertChainPem() {
         return certChainPem;
     }
@@ -155,6 +187,10 @@ public final class UpdateCertificateByImportingConfigDetails
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPem")
     private final String privateKeyPem;
 
+    /**
+     * The private key (in PEM format) for the imported certificate.
+     * @return the value
+     **/
     public String getPrivateKeyPem() {
         return privateKeyPem;
     }
@@ -165,6 +201,10 @@ public final class UpdateCertificateByImportingConfigDetails
     @com.fasterxml.jackson.annotation.JsonProperty("certificatePem")
     private final String certificatePem;
 
+    /**
+     * The certificate (in PEM format) for the imported certificate.
+     * @return the value
+     **/
     public String getCertificatePem() {
         return certificatePem;
     }
@@ -175,6 +215,10 @@ public final class UpdateCertificateByImportingConfigDetails
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPemPassphrase")
     private final String privateKeyPemPassphrase;
 
+    /**
+     * An optional passphrase for the private key.
+     * @return the value
+     **/
     public String getPrivateKeyPemPassphrase() {
         return privateKeyPemPassphrase;
     }

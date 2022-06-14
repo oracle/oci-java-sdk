@@ -17,6 +17,10 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String alarmId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+     *
+     */
     public String getAlarmId() {
         return alarmId;
     }
@@ -27,6 +31,11 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -79,6 +88,13 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY).
+     * If not specified, entries of both types are retrieved.
+     * <p>
+     * Example: {@code STATE_HISTORY}
+     *
+     */
     public AlarmHistorytype getAlarmHistorytype() {
         return alarmHistorytype;
     }
@@ -89,6 +105,11 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -103,6 +124,15 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Default: 1000
+     * <p>
+     * Example: 500
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -114,6 +144,12 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private java.util.Date timestampGreaterThanOrEqualTo;
 
+    /**
+     * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2019-01-01T01:00:00.789Z}
+     *
+     */
     public java.util.Date getTimestampGreaterThanOrEqualTo() {
         return timestampGreaterThanOrEqualTo;
     }
@@ -125,6 +161,12 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private java.util.Date timestampLessThan;
 
+    /**
+     * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2019-01-02T01:00:00.789Z}
+     *
+     */
     public java.util.Date getTimestampLessThan() {
         return timestampLessThan;
     }
@@ -136,11 +178,16 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+         *
+         */
         private String alarmId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
          *
+         * @param alarmId the value to set
          * @return this builder instance
          */
         public Builder alarmId(String alarmId) {
@@ -148,12 +195,18 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Customer part of the request identifier token. If you need to contact Oracle about a particular
          * request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -161,6 +214,13 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY).
+         * If not specified, entries of both types are retrieved.
+         * <p>
+         * Example: {@code STATE_HISTORY}
+         *
+         */
         private AlarmHistorytype alarmHistorytype = null;
 
         /**
@@ -169,6 +229,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
          * <p>
          * Example: {@code STATE_HISTORY}
          *
+         * @param alarmHistorytype the value to set
          * @return this builder instance
          */
         public Builder alarmHistorytype(AlarmHistorytype alarmHistorytype) {
@@ -176,12 +237,18 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
          * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -189,6 +256,15 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Default: 1000
+         * <p>
+         * Example: 500
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -199,6 +275,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
          * <p>
          * Example: 500
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -206,6 +283,12 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-01-01T01:00:00.789Z}
+         *
+         */
         private java.util.Date timestampGreaterThanOrEqualTo = null;
 
         /**
@@ -213,6 +296,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
          * <p>
          * Example: {@code 2019-01-01T01:00:00.789Z}
          *
+         * @param timestampGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timestampGreaterThanOrEqualTo(java.util.Date timestampGreaterThanOrEqualTo) {
@@ -220,6 +304,12 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-01-02T01:00:00.789Z}
+         *
+         */
         private java.util.Date timestampLessThan = null;
 
         /**
@@ -227,6 +317,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
          * <p>
          * Example: {@code 2019-01-02T01:00:00.789Z}
          *
+         * @param timestampLessThan the value to set
          * @return this builder instance
          */
         public Builder timestampLessThan(java.util.Date timestampLessThan) {
@@ -314,7 +405,8 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -327,6 +419,10 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .timestampLessThan(timestampLessThan);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

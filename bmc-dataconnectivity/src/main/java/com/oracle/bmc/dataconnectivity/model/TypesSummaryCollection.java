@@ -29,9 +29,17 @@ public final class TypesSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of Type summaries
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TypeSummary> items;
 
+        /**
+         * The array of Type summaries
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TypeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class TypesSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TypeSummary> items;
 
+    /**
+     * The array of Type summaries
+     * @return the value
+     **/
     public java.util.List<TypeSummary> getItems() {
         return items;
     }

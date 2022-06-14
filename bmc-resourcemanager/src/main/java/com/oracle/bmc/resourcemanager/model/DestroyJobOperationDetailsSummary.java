@@ -28,9 +28,23 @@ package com.oracle.bmc.resourcemanager.model;
 public final class DestroyJobOperationDetailsSummary extends JobOperationDetailsSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies the source of the execution plan to apply.
+         * Currently, only {@code AUTO_APPROVED} is allowed, which indicates that the job
+         * will be run without an execution plan.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
         private DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
+        /**
+         * Specifies the source of the execution plan to apply.
+         * Currently, only {@code AUTO_APPROVED} is allowed, which indicates that the job
+         * will be run without an execution plan.
+         *
+         * @param executionPlanStrategy the value to set
+         * @return this builder
+         **/
         public Builder executionPlanStrategy(
                 DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy) {
             this.executionPlanStrategy = executionPlanStrategy;
@@ -84,6 +98,13 @@ public final class DestroyJobOperationDetailsSummary extends JobOperationDetails
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
     private final DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
+    /**
+     * Specifies the source of the execution plan to apply.
+     * Currently, only {@code AUTO_APPROVED} is allowed, which indicates that the job
+     * will be run without an execution plan.
+     *
+     * @return the value
+     **/
     public DestroyJobOperationDetails.ExecutionPlanStrategy getExecutionPlanStrategy() {
         return executionPlanStrategy;
     }

@@ -29,9 +29,17 @@ public final class ConsumerGroupPrivilegeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of consumer group privileges.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ConsumerGroupPrivilegeSummary> items;
 
+        /**
+         * An array of consumer group privileges.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ConsumerGroupPrivilegeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class ConsumerGroupPrivilegeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ConsumerGroupPrivilegeSummary> items;
 
+    /**
+     * An array of consumer group privileges.
+     * @return the value
+     **/
     public java.util.List<ConsumerGroupPrivilegeSummary> getItems() {
         return items;
     }

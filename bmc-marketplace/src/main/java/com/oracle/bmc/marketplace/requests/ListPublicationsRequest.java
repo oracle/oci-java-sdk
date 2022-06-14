@@ -16,6 +16,9 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private com.oracle.bmc.marketplace.model.ListingType listingType;
 
+    /**
+     * The type of the listing.
+     */
     public com.oracle.bmc.marketplace.model.ListingType getListingType() {
         return listingType;
     }
@@ -32,6 +38,9 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.List<String> name;
 
+    /**
+     * The name of the publication.
+     */
     public java.util.List<String> getName() {
         return name;
     }
@@ -40,6 +49,9 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String publicationId;
 
+    /**
+     * The unique identifier for the publication.
+     */
     public String getPublicationId() {
         return publicationId;
     }
@@ -48,6 +60,9 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private java.util.List<String> operatingSystems;
 
+    /**
+     * The operating system of the listing.
+     */
     public java.util.List<String> getOperatingSystems() {
         return operatingSystems;
     }
@@ -97,6 +112,12 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The field to use to sort listed results. You can only specify one field to sort by.
+     * {@code TIMERELEASED} displays results in descending order by default.
+     * You can change your preference by specifying a different sort order.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -141,6 +162,9 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The sort order to use, either {@code ASC} or {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -150,6 +174,10 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -158,6 +186,9 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -168,6 +199,11 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -179,10 +215,14 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -190,10 +230,14 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The type of the listing.
+         */
         private com.oracle.bmc.marketplace.model.ListingType listingType = null;
 
         /**
          * The type of the listing.
+         * @param listingType the value to set
          * @return this builder instance
          */
         public Builder listingType(com.oracle.bmc.marketplace.model.ListingType listingType) {
@@ -201,10 +245,14 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The name of the publication.
+         */
         private java.util.List<String> name = null;
 
         /**
          * The name of the publication.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(java.util.List<String> name) {
@@ -214,16 +262,21 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. The name of the publication.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder name(String singularValue) {
             return this.name(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The unique identifier for the publication.
+         */
         private String publicationId = null;
 
         /**
          * The unique identifier for the publication.
+         * @param publicationId the value to set
          * @return this builder instance
          */
         public Builder publicationId(String publicationId) {
@@ -231,10 +284,14 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The operating system of the listing.
+         */
         private java.util.List<String> operatingSystems = null;
 
         /**
          * The operating system of the listing.
+         * @param operatingSystems the value to set
          * @return this builder instance
          */
         public Builder operatingSystems(java.util.List<String> operatingSystems) {
@@ -244,12 +301,19 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. The operating system of the listing.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder operatingSystems(String singularValue) {
             return this.operatingSystems(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The field to use to sort listed results. You can only specify one field to sort by.
+         * {@code TIMERELEASED} displays results in descending order by default.
+         * You can change your preference by specifying a different sort order.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -257,6 +321,7 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
          * {@code TIMERELEASED} displays results in descending order by default.
          * You can change your preference by specifying a different sort order.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -264,10 +329,14 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The sort order to use, either {@code ASC} or {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either {@code ASC} or {@code DESC}.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -275,11 +344,16 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
+         */
         private Integer limit = null;
 
         /**
          * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -287,10 +361,14 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -298,12 +376,18 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -397,7 +481,8 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -413,6 +498,10 @@ public class ListPublicationsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

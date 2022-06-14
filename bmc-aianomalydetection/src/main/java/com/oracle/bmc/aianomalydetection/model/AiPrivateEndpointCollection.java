@@ -29,9 +29,17 @@ public final class AiPrivateEndpointCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of AI Service PrivateEndpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AiPrivateEndpointSummary> items;
 
+        /**
+         * List of AI Service PrivateEndpoint.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AiPrivateEndpointSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AiPrivateEndpointCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AiPrivateEndpointSummary> items;
 
+    /**
+     * List of AI Service PrivateEndpoint.
+     * @return the value
+     **/
     public java.util.List<AiPrivateEndpointSummary> getItems() {
         return items;
     }

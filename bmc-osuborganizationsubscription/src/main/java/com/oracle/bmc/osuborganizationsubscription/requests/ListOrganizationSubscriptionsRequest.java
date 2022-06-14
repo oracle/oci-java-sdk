@@ -17,6 +17,9 @@ public class ListOrganizationSubscriptionsRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListOrganizationSubscriptionsRequest
      */
     private String subscriptionIds;
 
+    /**
+     * Comma separated list of subscription ids
+     */
     public String getSubscriptionIds() {
         return subscriptionIds;
     }
@@ -36,6 +42,12 @@ public class ListOrganizationSubscriptionsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: {@code 500}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -45,6 +57,10 @@ public class ListOrganizationSubscriptionsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -91,6 +107,10 @@ public class ListOrganizationSubscriptionsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -137,6 +157,10 @@ public class ListOrganizationSubscriptionsRequest
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -146,6 +170,10 @@ public class ListOrganizationSubscriptionsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -155,6 +183,10 @@ public class ListOrganizationSubscriptionsRequest
      */
     private String xOneOriginRegion;
 
+    /**
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+     *
+     */
     public String getXOneOriginRegion() {
         return xOneOriginRegion;
     }
@@ -166,10 +198,14 @@ public class ListOrganizationSubscriptionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -177,10 +213,14 @@ public class ListOrganizationSubscriptionsRequest
             return this;
         }
 
+        /**
+         * Comma separated list of subscription ids
+         */
         private String subscriptionIds = null;
 
         /**
          * Comma separated list of subscription ids
+         * @param subscriptionIds the value to set
          * @return this builder instance
          */
         public Builder subscriptionIds(String subscriptionIds) {
@@ -188,6 +228,12 @@ public class ListOrganizationSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+         * <p>
+         * Example: {@code 500}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -195,6 +241,7 @@ public class ListOrganizationSubscriptionsRequest
          * <p>
          * Example: {@code 500}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -202,11 +249,16 @@ public class ListOrganizationSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -214,11 +266,16 @@ public class ListOrganizationSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -226,11 +283,16 @@ public class ListOrganizationSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}).
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can provide one sort order ({@code sortOrder}).
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -238,11 +300,16 @@ public class ListOrganizationSubscriptionsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -250,11 +317,16 @@ public class ListOrganizationSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+         *
+         */
         private String xOneOriginRegion = null;
 
         /**
          * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
          *
+         * @param xOneOriginRegion the value to set
          * @return this builder instance
          */
         public Builder xOneOriginRegion(String xOneOriginRegion) {
@@ -345,7 +417,8 @@ public class ListOrganizationSubscriptionsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -359,6 +432,10 @@ public class ListOrganizationSubscriptionsRequest
                 .xOneOriginRegion(xOneOriginRegion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

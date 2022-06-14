@@ -82,6 +82,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The key of the object.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -92,6 +96,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The model version of an object.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -109,6 +117,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -119,6 +131,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Details about the operator.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -129,6 +145,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     * @return the value
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -139,6 +159,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("inputPorts")
     private final java.util.List<InputPort> inputPorts;
 
+    /**
+     * An array of input ports.
+     * @return the value
+     **/
     public java.util.List<InputPort> getInputPorts() {
         return inputPorts;
     }
@@ -149,6 +173,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
     private final java.util.List<OutputPort> outputPorts;
 
+    /**
+     * An array of output ports.
+     * @return the value
+     **/
     public java.util.List<OutputPort> getOutputPorts() {
         return outputPorts;
     }
@@ -159,6 +187,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -169,6 +201,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -179,6 +215,10 @@ public class CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<Parameter> parameters;
 
+    /**
+     * An array of parameters used in the data flow.
+     * @return the value
+     **/
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }

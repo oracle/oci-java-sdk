@@ -19,6 +19,9 @@ public class CreateDeploymentBackupRequest
     private com.oracle.bmc.goldengate.model.CreateDeploymentBackupDetails
             createDeploymentBackupDetails;
 
+    /**
+     * Specification of the DeploymentBackup to create.
+     */
     public com.oracle.bmc.goldengate.model.CreateDeploymentBackupDetails
             getCreateDeploymentBackupDetails() {
         return createDeploymentBackupDetails;
@@ -29,6 +32,10 @@ public class CreateDeploymentBackupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -38,6 +45,10 @@ public class CreateDeploymentBackupRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,11 +71,15 @@ public class CreateDeploymentBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Specification of the DeploymentBackup to create.
+         */
         private com.oracle.bmc.goldengate.model.CreateDeploymentBackupDetails
                 createDeploymentBackupDetails = null;
 
         /**
          * Specification of the DeploymentBackup to create.
+         * @param createDeploymentBackupDetails the value to set
          * @return this builder instance
          */
         public Builder createDeploymentBackupDetails(
@@ -74,11 +89,16 @@ public class CreateDeploymentBackupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -86,11 +106,16 @@ public class CreateDeploymentBackupRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -181,7 +206,8 @@ public class CreateDeploymentBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +216,10 @@ public class CreateDeploymentBackupRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

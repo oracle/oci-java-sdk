@@ -60,92 +60,207 @@ public final class UpdateSensitiveDataModelDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The display name of the sensitive data model. The name does not have to be unique, and it's changeable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the sensitive data model. The name does not have to be unique, and it's changeable.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the reference target database to be associated with the sensitive data model. All operations such as
+         * performing data discovery and adding columns manually are done in the context of the associated target database.
+         * Note that updating the targetId attribute does not perform data discovery automatically.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the reference target database to be associated with the sensitive data model. All operations such as
+         * performing data discovery and adding columns manually are done in the context of the associated target database.
+         * Note that updating the targetId attribute does not perform data discovery automatically.
+         *
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appSuiteName")
         private String appSuiteName;
 
+        /**
+         * The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
+         * @param appSuiteName the value to set
+         * @return this builder
+         **/
         public Builder appSuiteName(String appSuiteName) {
             this.appSuiteName = appSuiteName;
             this.__explicitlySet__.add("appSuiteName");
             return this;
         }
-
+        /**
+         * The description of the sensitive data model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the sensitive data model.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The schemas to be used for future data discovery jobs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemasForDiscovery")
         private java.util.List<String> schemasForDiscovery;
 
+        /**
+         * The schemas to be used for future data discovery jobs.
+         * @param schemasForDiscovery the value to set
+         * @return this builder
+         **/
         public Builder schemasForDiscovery(java.util.List<String> schemasForDiscovery) {
             this.schemasForDiscovery = schemasForDiscovery;
             this.__explicitlySet__.add("schemasForDiscovery");
             return this;
         }
-
+        /**
+         * The OCIDs of the sensitive types to be used for future data discovery jobs. If OCID of a sensitive category is
+         * provided, all its child sensitive types are used for data discovery.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
         private java.util.List<String> sensitiveTypeIdsForDiscovery;
 
+        /**
+         * The OCIDs of the sensitive types to be used for future data discovery jobs. If OCID of a sensitive category is
+         * provided, all its child sensitive types are used for data discovery.
+         *
+         * @param sensitiveTypeIdsForDiscovery the value to set
+         * @return this builder
+         **/
         public Builder sensitiveTypeIdsForDiscovery(
                 java.util.List<String> sensitiveTypeIdsForDiscovery) {
             this.sensitiveTypeIdsForDiscovery = sensitiveTypeIdsForDiscovery;
             this.__explicitlySet__.add("sensitiveTypeIdsForDiscovery");
             return this;
         }
-
+        /**
+         * Indicates if data discovery jobs should collect and store sample data values for the discovered columns.
+         * Sample data helps review the discovered columns and ensure that they actually contain sensitive data.
+         * As it collects original data from the target database, it's disabled by default and should be used only
+         * if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data
+         * values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataCollectionEnabled")
         private Boolean isSampleDataCollectionEnabled;
 
+        /**
+         * Indicates if data discovery jobs should collect and store sample data values for the discovered columns.
+         * Sample data helps review the discovered columns and ensure that they actually contain sensitive data.
+         * As it collects original data from the target database, it's disabled by default and should be used only
+         * if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data
+         * values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+         *
+         * @param isSampleDataCollectionEnabled the value to set
+         * @return this builder
+         **/
         public Builder isSampleDataCollectionEnabled(Boolean isSampleDataCollectionEnabled) {
             this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
             this.__explicitlySet__.add("isSampleDataCollectionEnabled");
             return this;
         }
-
+        /**
+         * Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential
+         * relationships between columns. Note that data discovery automatically identifies and adds database-level
+         * (dictionary-defined) relationships. This option helps identify application-level relationships that are not
+         * defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve
+         * referential integrity during data masking. It's disabled by default and should be used only if there is a
+         * need to identify application-level relationships.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAppDefinedRelationDiscoveryEnabled")
         private Boolean isAppDefinedRelationDiscoveryEnabled;
 
+        /**
+         * Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential
+         * relationships between columns. Note that data discovery automatically identifies and adds database-level
+         * (dictionary-defined) relationships. This option helps identify application-level relationships that are not
+         * defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve
+         * referential integrity during data masking. It's disabled by default and should be used only if there is a
+         * need to identify application-level relationships.
+         *
+         * @param isAppDefinedRelationDiscoveryEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAppDefinedRelationDiscoveryEnabled(
                 Boolean isAppDefinedRelationDiscoveryEnabled) {
             this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
             this.__explicitlySet__.add("isAppDefinedRelationDiscoveryEnabled");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -210,6 +325,10 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the sensitive data model. The name does not have to be unique, and it's changeable.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -223,6 +342,13 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the reference target database to be associated with the sensitive data model. All operations such as
+     * performing data discovery and adding columns manually are done in the context of the associated target database.
+     * Note that updating the targetId attribute does not perform data discovery automatically.
+     *
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -233,6 +359,10 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("appSuiteName")
     private final String appSuiteName;
 
+    /**
+     * The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
+     * @return the value
+     **/
     public String getAppSuiteName() {
         return appSuiteName;
     }
@@ -243,6 +373,10 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the sensitive data model.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -253,6 +387,10 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("schemasForDiscovery")
     private final java.util.List<String> schemasForDiscovery;
 
+    /**
+     * The schemas to be used for future data discovery jobs.
+     * @return the value
+     **/
     public java.util.List<String> getSchemasForDiscovery() {
         return schemasForDiscovery;
     }
@@ -265,6 +403,12 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
     private final java.util.List<String> sensitiveTypeIdsForDiscovery;
 
+    /**
+     * The OCIDs of the sensitive types to be used for future data discovery jobs. If OCID of a sensitive category is
+     * provided, all its child sensitive types are used for data discovery.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getSensitiveTypeIdsForDiscovery() {
         return sensitiveTypeIdsForDiscovery;
     }
@@ -280,6 +424,15 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataCollectionEnabled")
     private final Boolean isSampleDataCollectionEnabled;
 
+    /**
+     * Indicates if data discovery jobs should collect and store sample data values for the discovered columns.
+     * Sample data helps review the discovered columns and ensure that they actually contain sensitive data.
+     * As it collects original data from the target database, it's disabled by default and should be used only
+     * if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data
+     * values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+     *
+     * @return the value
+     **/
     public Boolean getIsSampleDataCollectionEnabled() {
         return isSampleDataCollectionEnabled;
     }
@@ -296,6 +449,16 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isAppDefinedRelationDiscoveryEnabled")
     private final Boolean isAppDefinedRelationDiscoveryEnabled;
 
+    /**
+     * Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential
+     * relationships between columns. Note that data discovery automatically identifies and adds database-level
+     * (dictionary-defined) relationships. This option helps identify application-level relationships that are not
+     * defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve
+     * referential integrity during data masking. It's disabled by default and should be used only if there is a
+     * need to identify application-level relationships.
+     *
+     * @return the value
+     **/
     public Boolean getIsAppDefinedRelationDiscoveryEnabled() {
         return isAppDefinedRelationDiscoveryEnabled;
     }
@@ -309,6 +472,13 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -322,6 +492,13 @@ public final class UpdateSensitiveDataModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

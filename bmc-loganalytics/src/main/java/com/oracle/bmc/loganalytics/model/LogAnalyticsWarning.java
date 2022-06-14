@@ -107,234 +107,423 @@ public final class LogAnalyticsWarning {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier of the agent associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
+        /**
+         * The unique identifier of the agent associated with the warning
+         * @param agentId the value to set
+         * @return this builder
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-
+        /**
+         * The host containing the agent associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * The host containing the agent associated with the warning
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * The display name of the rule which triggered the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleDisplayName")
         private String ruleDisplayName;
 
+        /**
+         * The display name of the rule which triggered the warning
+         * @param ruleDisplayName the value to set
+         * @return this builder
+         **/
         public Builder ruleDisplayName(String ruleDisplayName) {
             this.ruleDisplayName = ruleDisplayName;
             this.__explicitlySet__.add("ruleDisplayName");
             return this;
         }
-
+        /**
+         * The name of the source associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
+        /**
+         * The name of the source associated with the warning
+         * @param sourceName the value to set
+         * @return this builder
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-
+        /**
+         * The entity compartment ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The entity compartment ID.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The display name of the source associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
         private String sourceDisplayName;
 
+        /**
+         * The display name of the source associated with the warning
+         * @param sourceDisplayName the value to set
+         * @return this builder
+         **/
         public Builder sourceDisplayName(String sourceDisplayName) {
             this.sourceDisplayName = sourceDisplayName;
             this.__explicitlySet__.add("sourceDisplayName");
             return this;
         }
-
+        /**
+         * The name of the entity associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
+        /**
+         * The name of the entity associated with the warning
+         * @param entityName the value to set
+         * @return this builder
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-
+        /**
+         * The time at which the warning was most recently collected
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
 
+        /**
+         * The time at which the warning was most recently collected
+         * @param timeCollected the value to set
+         * @return this builder
+         **/
         public Builder timeCollected(java.util.Date timeCollected) {
             this.timeCollected = timeCollected;
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * The unique identifier of the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warningId")
         private String warningId;
 
+        /**
+         * The unique identifier of the warning
+         * @param warningId the value to set
+         * @return this builder
+         **/
         public Builder warningId(String warningId) {
             this.warningId = warningId;
             this.__explicitlySet__.add("warningId");
             return this;
         }
-
+        /**
+         * The date at which the warning was initially triggered
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfInitialWarning")
         private java.util.Date timeOfInitialWarning;
 
+        /**
+         * The date at which the warning was initially triggered
+         * @param timeOfInitialWarning the value to set
+         * @return this builder
+         **/
         public Builder timeOfInitialWarning(java.util.Date timeOfInitialWarning) {
             this.timeOfInitialWarning = timeOfInitialWarning;
             this.__explicitlySet__.add("timeOfInitialWarning");
             return this;
         }
-
+        /**
+         * A flag indicating if the warning is currently active
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isActive")
         private Boolean isActive;
 
+        /**
+         * A flag indicating if the warning is currently active
+         * @param isActive the value to set
+         * @return this builder
+         **/
         public Builder isActive(Boolean isActive) {
             this.isActive = isActive;
             this.__explicitlySet__.add("isActive");
             return this;
         }
-
+        /**
+         * A flag indicating if the warning is currently suppressed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSuppressed")
         private Boolean isSuppressed;
 
+        /**
+         * A flag indicating if the warning is currently suppressed
+         * @param isSuppressed the value to set
+         * @return this builder
+         **/
         public Builder isSuppressed(Boolean isSuppressed) {
             this.isSuppressed = isSuppressed;
             this.__explicitlySet__.add("isSuppressed");
             return this;
         }
-
+        /**
+         * The most recent date on which the warning was triggered
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfLatestWarning")
         private java.util.Date timeOfLatestWarning;
 
+        /**
+         * The most recent date on which the warning was triggered
+         * @param timeOfLatestWarning the value to set
+         * @return this builder
+         **/
         public Builder timeOfLatestWarning(java.util.Date timeOfLatestWarning) {
             this.timeOfLatestWarning = timeOfLatestWarning;
             this.__explicitlySet__.add("timeOfLatestWarning");
             return this;
         }
-
+        /**
+         * The warning level - either pattern, rule, or source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warningLevel")
         private String warningLevel;
 
+        /**
+         * The warning level - either pattern, rule, or source.
+         * @param warningLevel the value to set
+         * @return this builder
+         **/
         public Builder warningLevel(String warningLevel) {
             this.warningLevel = warningLevel;
             this.__explicitlySet__.add("warningLevel");
             return this;
         }
-
+        /**
+         * A description of the warning intended for the consumer of the warning.  It will
+         * usually detail the cause of the warning, may suggest a remedy, and can contain any
+         * other relevant information the consumer might find useful
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warningMessage")
         private String warningMessage;
 
+        /**
+         * A description of the warning intended for the consumer of the warning.  It will
+         * usually detail the cause of the warning, may suggest a remedy, and can contain any
+         * other relevant information the consumer might find useful
+         *
+         * @param warningMessage the value to set
+         * @return this builder
+         **/
         public Builder warningMessage(String warningMessage) {
             this.warningMessage = warningMessage;
             this.__explicitlySet__.add("warningMessage");
             return this;
         }
-
+        /**
+         * The unique identifier of the warning pattern
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternId")
         private String patternId;
 
+        /**
+         * The unique identifier of the warning pattern
+         * @param patternId the value to set
+         * @return this builder
+         **/
         public Builder patternId(String patternId) {
             this.patternId = patternId;
             this.__explicitlySet__.add("patternId");
             return this;
         }
-
+        /**
+         * The text of the pattern used by the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternText")
         private String patternText;
 
+        /**
+         * The text of the pattern used by the warning
+         * @param patternText the value to set
+         * @return this builder
+         **/
         public Builder patternText(String patternText) {
             this.patternText = patternText;
             this.__explicitlySet__.add("patternText");
             return this;
         }
-
+        /**
+         * The unique identifier of the rule associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleId")
         private String ruleId;
 
+        /**
+         * The unique identifier of the rule associated with the warning
+         * @param ruleId the value to set
+         * @return this builder
+         **/
         public Builder ruleId(String ruleId) {
             this.ruleId = ruleId;
             this.__explicitlySet__.add("ruleId");
             return this;
         }
-
+        /**
+         * The unique identifier of the source associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
+        /**
+         * The unique identifier of the source associated with the warning
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The user who suppressed the warning, or empty if the warning is not suppressed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suppressedBy")
         private String suppressedBy;
 
+        /**
+         * The user who suppressed the warning, or empty if the warning is not suppressed
+         * @param suppressedBy the value to set
+         * @return this builder
+         **/
         public Builder suppressedBy(String suppressedBy) {
             this.suppressedBy = suppressedBy;
             this.__explicitlySet__.add("suppressedBy");
             return this;
         }
-
+        /**
+         * The unique identifier of the entity associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
+        /**
+         * The unique identifier of the entity associated with the warning
+         * @param entityId the value to set
+         * @return this builder
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-
+        /**
+         * The type of the entity associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The type of the entity associated with the warning
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The display name of the entity type associated with the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
         private String entityTypeDisplayName;
 
+        /**
+         * The display name of the entity type associated with the warning
+         * @param entityTypeDisplayName the value to set
+         * @return this builder
+         **/
         public Builder entityTypeDisplayName(String entityTypeDisplayName) {
             this.entityTypeDisplayName = entityTypeDisplayName;
             this.__explicitlySet__.add("entityTypeDisplayName");
             return this;
         }
-
+        /**
+         * The display name of the warning type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeDisplayName")
         private String typeDisplayName;
 
+        /**
+         * The display name of the warning type
+         * @param typeDisplayName the value to set
+         * @return this builder
+         **/
         public Builder typeDisplayName(String typeDisplayName) {
             this.typeDisplayName = typeDisplayName;
             this.__explicitlySet__.add("typeDisplayName");
             return this;
         }
-
+        /**
+         * The internal name of the warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeName")
         private String typeName;
 
+        /**
+         * The internal name of the warning
+         * @param typeName the value to set
+         * @return this builder
+         **/
         public Builder typeName(String typeName) {
             this.typeName = typeName;
             this.__explicitlySet__.add("typeName");
             return this;
         }
-
+        /**
+         * The warning severity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Integer severity;
 
+        /**
+         * The warning severity
+         * @param severity the value to set
+         * @return this builder
+         **/
         public Builder severity(Integer severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
@@ -429,6 +618,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
+    /**
+     * The unique identifier of the agent associated with the warning
+     * @return the value
+     **/
     public String getAgentId() {
         return agentId;
     }
@@ -439,6 +632,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * The host containing the agent associated with the warning
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -449,6 +646,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleDisplayName")
     private final String ruleDisplayName;
 
+    /**
+     * The display name of the rule which triggered the warning
+     * @return the value
+     **/
     public String getRuleDisplayName() {
         return ruleDisplayName;
     }
@@ -459,6 +660,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * The name of the source associated with the warning
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }
@@ -469,6 +674,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The entity compartment ID.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -479,6 +688,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     private final String sourceDisplayName;
 
+    /**
+     * The display name of the source associated with the warning
+     * @return the value
+     **/
     public String getSourceDisplayName() {
         return sourceDisplayName;
     }
@@ -489,6 +702,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
+    /**
+     * The name of the entity associated with the warning
+     * @return the value
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -499,6 +716,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
+    /**
+     * The time at which the warning was most recently collected
+     * @return the value
+     **/
     public java.util.Date getTimeCollected() {
         return timeCollected;
     }
@@ -509,6 +730,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("warningId")
     private final String warningId;
 
+    /**
+     * The unique identifier of the warning
+     * @return the value
+     **/
     public String getWarningId() {
         return warningId;
     }
@@ -519,6 +744,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfInitialWarning")
     private final java.util.Date timeOfInitialWarning;
 
+    /**
+     * The date at which the warning was initially triggered
+     * @return the value
+     **/
     public java.util.Date getTimeOfInitialWarning() {
         return timeOfInitialWarning;
     }
@@ -529,6 +758,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
     private final Boolean isActive;
 
+    /**
+     * A flag indicating if the warning is currently active
+     * @return the value
+     **/
     public Boolean getIsActive() {
         return isActive;
     }
@@ -539,6 +772,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("isSuppressed")
     private final Boolean isSuppressed;
 
+    /**
+     * A flag indicating if the warning is currently suppressed
+     * @return the value
+     **/
     public Boolean getIsSuppressed() {
         return isSuppressed;
     }
@@ -549,6 +786,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLatestWarning")
     private final java.util.Date timeOfLatestWarning;
 
+    /**
+     * The most recent date on which the warning was triggered
+     * @return the value
+     **/
     public java.util.Date getTimeOfLatestWarning() {
         return timeOfLatestWarning;
     }
@@ -559,6 +800,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("warningLevel")
     private final String warningLevel;
 
+    /**
+     * The warning level - either pattern, rule, or source.
+     * @return the value
+     **/
     public String getWarningLevel() {
         return warningLevel;
     }
@@ -572,6 +817,13 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("warningMessage")
     private final String warningMessage;
 
+    /**
+     * A description of the warning intended for the consumer of the warning.  It will
+     * usually detail the cause of the warning, may suggest a remedy, and can contain any
+     * other relevant information the consumer might find useful
+     *
+     * @return the value
+     **/
     public String getWarningMessage() {
         return warningMessage;
     }
@@ -582,6 +834,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("patternId")
     private final String patternId;
 
+    /**
+     * The unique identifier of the warning pattern
+     * @return the value
+     **/
     public String getPatternId() {
         return patternId;
     }
@@ -592,6 +848,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("patternText")
     private final String patternText;
 
+    /**
+     * The text of the pattern used by the warning
+     * @return the value
+     **/
     public String getPatternText() {
         return patternText;
     }
@@ -602,6 +862,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleId")
     private final String ruleId;
 
+    /**
+     * The unique identifier of the rule associated with the warning
+     * @return the value
+     **/
     public String getRuleId() {
         return ruleId;
     }
@@ -612,6 +876,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
+    /**
+     * The unique identifier of the source associated with the warning
+     * @return the value
+     **/
     public String getSourceId() {
         return sourceId;
     }
@@ -622,6 +890,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("suppressedBy")
     private final String suppressedBy;
 
+    /**
+     * The user who suppressed the warning, or empty if the warning is not suppressed
+     * @return the value
+     **/
     public String getSuppressedBy() {
         return suppressedBy;
     }
@@ -632,6 +904,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
+    /**
+     * The unique identifier of the entity associated with the warning
+     * @return the value
+     **/
     public String getEntityId() {
         return entityId;
     }
@@ -642,6 +918,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The type of the entity associated with the warning
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -652,6 +932,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
     private final String entityTypeDisplayName;
 
+    /**
+     * The display name of the entity type associated with the warning
+     * @return the value
+     **/
     public String getEntityTypeDisplayName() {
         return entityTypeDisplayName;
     }
@@ -662,6 +946,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("typeDisplayName")
     private final String typeDisplayName;
 
+    /**
+     * The display name of the warning type
+     * @return the value
+     **/
     public String getTypeDisplayName() {
         return typeDisplayName;
     }
@@ -672,6 +960,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     private final String typeName;
 
+    /**
+     * The internal name of the warning
+     * @return the value
+     **/
     public String getTypeName() {
         return typeName;
     }
@@ -682,6 +974,10 @@ public final class LogAnalyticsWarning {
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Integer severity;
 
+    /**
+     * The warning severity
+     * @return the value
+     **/
     public Integer getSeverity() {
         return severity;
     }

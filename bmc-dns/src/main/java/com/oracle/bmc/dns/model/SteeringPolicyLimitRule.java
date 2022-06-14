@@ -35,19 +35,57 @@ public final class SteeringPolicyLimitRule extends SteeringPolicyRule {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * An array of {@code caseConditions}. A rule may optionally include a sequence of cases defining alternate
+         * configurations for how it should behave during processing for any given DNS query. When a rule has
+         * no sequence of {@code cases}, it is always evaluated with the same configuration during processing. When
+         * a rule has an empty sequence of {@code cases}, it is always ignored during processing. When a rule has a
+         * non-empty sequence of {@code cases}, its behavior during processing is configured by the first matching
+         * {@code case} in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no
+         * {@code caseCondition} always matches. A rule case with a {@code caseCondition} matches only when that expression
+         * evaluates to true for the given query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cases")
         private java.util.List<SteeringPolicyLimitRuleCase> cases;
 
+        /**
+         * An array of {@code caseConditions}. A rule may optionally include a sequence of cases defining alternate
+         * configurations for how it should behave during processing for any given DNS query. When a rule has
+         * no sequence of {@code cases}, it is always evaluated with the same configuration during processing. When
+         * a rule has an empty sequence of {@code cases}, it is always ignored during processing. When a rule has a
+         * non-empty sequence of {@code cases}, its behavior during processing is configured by the first matching
+         * {@code case} in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no
+         * {@code caseCondition} always matches. A rule case with a {@code caseCondition} matches only when that expression
+         * evaluates to true for the given query.
+         *
+         * @param cases the value to set
+         * @return this builder
+         **/
         public Builder cases(java.util.List<SteeringPolicyLimitRuleCase> cases) {
             this.cases = cases;
             this.__explicitlySet__.add("cases");
             return this;
         }
-
+        /**
+         * Defines a default count if {@code cases} is not defined for the rule or a matching case does
+         * not define {@code count}. {@code defaultCount} is **not** applied if {@code cases} is defined and there
+         * are no matching cases. In this scenario, the next rule will be processed. If no rules
+         * remain to be processed, the answer will be chosen from the remaining list of answers.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultCount")
         private Integer defaultCount;
 
+        /**
+         * Defines a default count if {@code cases} is not defined for the rule or a matching case does
+         * not define {@code count}. {@code defaultCount} is **not** applied if {@code cases} is defined and there
+         * are no matching cases. In this scenario, the next rule will be processed. If no rules
+         * remain to be processed, the answer will be chosen from the remaining list of answers.
+         *
+         * @param defaultCount the value to set
+         * @return this builder
+         **/
         public Builder defaultCount(Integer defaultCount) {
             this.defaultCount = defaultCount;
             this.__explicitlySet__.add("defaultCount");
@@ -111,6 +149,18 @@ public final class SteeringPolicyLimitRule extends SteeringPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("cases")
     private final java.util.List<SteeringPolicyLimitRuleCase> cases;
 
+    /**
+     * An array of {@code caseConditions}. A rule may optionally include a sequence of cases defining alternate
+     * configurations for how it should behave during processing for any given DNS query. When a rule has
+     * no sequence of {@code cases}, it is always evaluated with the same configuration during processing. When
+     * a rule has an empty sequence of {@code cases}, it is always ignored during processing. When a rule has a
+     * non-empty sequence of {@code cases}, its behavior during processing is configured by the first matching
+     * {@code case} in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no
+     * {@code caseCondition} always matches. A rule case with a {@code caseCondition} matches only when that expression
+     * evaluates to true for the given query.
+     *
+     * @return the value
+     **/
     public java.util.List<SteeringPolicyLimitRuleCase> getCases() {
         return cases;
     }
@@ -125,6 +175,14 @@ public final class SteeringPolicyLimitRule extends SteeringPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultCount")
     private final Integer defaultCount;
 
+    /**
+     * Defines a default count if {@code cases} is not defined for the rule or a matching case does
+     * not define {@code count}. {@code defaultCount} is **not** applied if {@code cases} is defined and there
+     * are no matching cases. In this scenario, the next rule will be processed. If no rules
+     * remain to be processed, the answer will be chosen from the remaining list of answers.
+     *
+     * @return the value
+     **/
     public Integer getDefaultCount() {
         return defaultCount;
     }

@@ -61,9 +61,19 @@ public final class ShapePlatformConfigOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of platform being configured.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of platform being configured.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -272,6 +282,11 @@ public final class ShapePlatformConfigOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of platform being configured.
+     *
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }

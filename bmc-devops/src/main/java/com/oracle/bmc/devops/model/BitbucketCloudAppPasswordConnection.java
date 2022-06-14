@@ -128,19 +128,33 @@ public final class BitbucketCloudAppPasswordConnection extends Connection {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * Public Bitbucket Cloud Username in plain text
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * Public Bitbucket Cloud Username in plain text
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-
+        /**
+         * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appPassword")
         private String appPassword;
 
+        /**
+         * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         * @param appPassword the value to set
+         * @return this builder
+         **/
         public Builder appPassword(String appPassword) {
             this.appPassword = appPassword;
             this.__explicitlySet__.add("appPassword");
@@ -240,6 +254,10 @@ public final class BitbucketCloudAppPasswordConnection extends Connection {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * Public Bitbucket Cloud Username in plain text
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -250,6 +268,10 @@ public final class BitbucketCloudAppPasswordConnection extends Connection {
     @com.fasterxml.jackson.annotation.JsonProperty("appPassword")
     private final String appPassword;
 
+    /**
+     * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * @return the value
+     **/
     public String getAppPassword() {
         return appPassword;
     }

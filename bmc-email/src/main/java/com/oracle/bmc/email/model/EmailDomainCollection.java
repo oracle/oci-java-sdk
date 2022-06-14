@@ -29,9 +29,17 @@ public final class EmailDomainCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of email domains.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<EmailDomainSummary> items;
 
+        /**
+         * List of email domains.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<EmailDomainSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class EmailDomainCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<EmailDomainSummary> items;
 
+    /**
+     * List of email domains.
+     * @return the value
+     **/
     public java.util.List<EmailDomainSummary> getItems() {
         return items;
     }

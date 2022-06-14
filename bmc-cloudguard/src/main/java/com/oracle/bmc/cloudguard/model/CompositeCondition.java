@@ -27,6 +27,7 @@ package com.oracle.bmc.cloudguard.model;
 public final class CompositeCondition extends Condition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("leftOperand")
         private Condition leftOperand;
 

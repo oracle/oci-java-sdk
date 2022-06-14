@@ -34,127 +34,225 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Amount of physical memory used in gigabytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryUsedInGB")
         private Double memoryUsedInGB;
 
+        /**
+         * Amount of physical memory used in gigabytes
+         * @param memoryUsedInGB the value to set
+         * @return this builder
+         **/
         public Builder memoryUsedInGB(Double memoryUsedInGB) {
             this.memoryUsedInGB = memoryUsedInGB;
             this.__explicitlySet__.add("memoryUsedInGB");
             return this;
         }
-
+        /**
+         * Amount of physical memory used in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryUtilizationInPercent")
         private Float memoryUtilizationInPercent;
 
+        /**
+         * Amount of physical memory used in percentage
+         * @param memoryUtilizationInPercent the value to set
+         * @return this builder
+         **/
         public Builder memoryUtilizationInPercent(Float memoryUtilizationInPercent) {
             this.memoryUtilizationInPercent = memoryUtilizationInPercent;
             this.__explicitlySet__.add("memoryUtilizationInPercent");
             return this;
         }
-
+        /**
+         * Load on memory in gigabytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryLoadInGB")
         private Double memoryLoadInGB;
 
+        /**
+         * Load on memory in gigabytes
+         * @param memoryLoadInGB the value to set
+         * @return this builder
+         **/
         public Builder memoryLoadInGB(Double memoryLoadInGB) {
             this.memoryLoadInGB = memoryLoadInGB;
             this.__explicitlySet__.add("memoryLoadInGB");
             return this;
         }
-
+        /**
+         * Amount of usable physical memory in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("realMemoryInKB")
         private Double realMemoryInKB;
 
+        /**
+         * Amount of usable physical memory in kilobytes
+         * @param realMemoryInKB the value to set
+         * @return this builder
+         **/
         public Builder realMemoryInKB(Double realMemoryInKB) {
             this.realMemoryInKB = realMemoryInKB;
             this.__explicitlySet__.add("realMemoryInKB");
             return this;
         }
-
+        /**
+         * Amount of available physical memory in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeMemoryInKB")
         private Double freeMemoryInKB;
 
+        /**
+         * Amount of available physical memory in kilobytes
+         * @param freeMemoryInKB the value to set
+         * @return this builder
+         **/
         public Builder freeMemoryInKB(Double freeMemoryInKB) {
             this.freeMemoryInKB = freeMemoryInKB;
             this.__explicitlySet__.add("freeMemoryInKB");
             return this;
         }
-
+        /**
+         * Memory used excluding buffers and cache in gigabytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logicalMemoryUsedInGB")
         private Double logicalMemoryUsedInGB;
 
+        /**
+         * Memory used excluding buffers and cache in gigabytes
+         * @param logicalMemoryUsedInGB the value to set
+         * @return this builder
+         **/
         public Builder logicalMemoryUsedInGB(Double logicalMemoryUsedInGB) {
             this.logicalMemoryUsedInGB = logicalMemoryUsedInGB;
             this.__explicitlySet__.add("logicalMemoryUsedInGB");
             return this;
         }
-
+        /**
+         * Amount of logical memory used in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logicalMemoryUtilizationInPercent")
         private Float logicalMemoryUtilizationInPercent;
 
+        /**
+         * Amount of logical memory used in percentage
+         * @param logicalMemoryUtilizationInPercent the value to set
+         * @return this builder
+         **/
         public Builder logicalMemoryUtilizationInPercent(Float logicalMemoryUtilizationInPercent) {
             this.logicalMemoryUtilizationInPercent = logicalMemoryUtilizationInPercent;
             this.__explicitlySet__.add("logicalMemoryUtilizationInPercent");
             return this;
         }
-
+        /**
+         * Amount of avaiable virtual memory in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeLogicalMemoryInKB")
         private Double freeLogicalMemoryInKB;
 
+        /**
+         * Amount of avaiable virtual memory in kilobytes
+         * @param freeLogicalMemoryInKB the value to set
+         * @return this builder
+         **/
         public Builder freeLogicalMemoryInKB(Double freeLogicalMemoryInKB) {
             this.freeLogicalMemoryInKB = freeLogicalMemoryInKB;
             this.__explicitlySet__.add("freeLogicalMemoryInKB");
             return this;
         }
-
+        /**
+         * Number of major page faults
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("majorPageFaults")
         private Integer majorPageFaults;
 
+        /**
+         * Number of major page faults
+         * @param majorPageFaults the value to set
+         * @return this builder
+         **/
         public Builder majorPageFaults(Integer majorPageFaults) {
             this.majorPageFaults = majorPageFaults;
             this.__explicitlySet__.add("majorPageFaults");
             return this;
         }
-
+        /**
+         * Amount of available swap space in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("swapFreeInKB")
         private Double swapFreeInKB;
 
+        /**
+         * Amount of available swap space in kilobytes
+         * @param swapFreeInKB the value to set
+         * @return this builder
+         **/
         public Builder swapFreeInKB(Double swapFreeInKB) {
             this.swapFreeInKB = swapFreeInKB;
             this.__explicitlySet__.add("swapFreeInKB");
             return this;
         }
-
+        /**
+         * Amount of memory used for anon huge pages in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("anonHugePagesInKB")
         private Double anonHugePagesInKB;
 
+        /**
+         * Amount of memory used for anon huge pages in kilobytes
+         * @param anonHugePagesInKB the value to set
+         * @return this builder
+         **/
         public Builder anonHugePagesInKB(Double anonHugePagesInKB) {
             this.anonHugePagesInKB = anonHugePagesInKB;
             this.__explicitlySet__.add("anonHugePagesInKB");
             return this;
         }
-
+        /**
+         * Number of available huge pages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesFree")
         private Integer hugePagesFree;
 
+        /**
+         * Number of available huge pages
+         * @param hugePagesFree the value to set
+         * @return this builder
+         **/
         public Builder hugePagesFree(Integer hugePagesFree) {
             this.hugePagesFree = hugePagesFree;
             this.__explicitlySet__.add("hugePagesFree");
             return this;
         }
-
+        /**
+         * Number of reserved huge pages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesReserved")
         private Integer hugePagesReserved;
 
+        /**
+         * Number of reserved huge pages
+         * @param hugePagesReserved the value to set
+         * @return this builder
+         **/
         public Builder hugePagesReserved(Integer hugePagesReserved) {
             this.hugePagesReserved = hugePagesReserved;
             this.__explicitlySet__.add("hugePagesReserved");
             return this;
         }
-
+        /**
+         * Number of surplus huge pages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesSurplus")
         private Integer hugePagesSurplus;
 
+        /**
+         * Number of surplus huge pages
+         * @param hugePagesSurplus the value to set
+         * @return this builder
+         **/
         public Builder hugePagesSurplus(Integer hugePagesSurplus) {
             this.hugePagesSurplus = hugePagesSurplus;
             this.__explicitlySet__.add("hugePagesSurplus");
@@ -262,6 +360,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUsedInGB")
     private final Double memoryUsedInGB;
 
+    /**
+     * Amount of physical memory used in gigabytes
+     * @return the value
+     **/
     public Double getMemoryUsedInGB() {
         return memoryUsedInGB;
     }
@@ -272,6 +374,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUtilizationInPercent")
     private final Float memoryUtilizationInPercent;
 
+    /**
+     * Amount of physical memory used in percentage
+     * @return the value
+     **/
     public Float getMemoryUtilizationInPercent() {
         return memoryUtilizationInPercent;
     }
@@ -282,6 +388,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryLoadInGB")
     private final Double memoryLoadInGB;
 
+    /**
+     * Load on memory in gigabytes
+     * @return the value
+     **/
     public Double getMemoryLoadInGB() {
         return memoryLoadInGB;
     }
@@ -292,6 +402,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("realMemoryInKB")
     private final Double realMemoryInKB;
 
+    /**
+     * Amount of usable physical memory in kilobytes
+     * @return the value
+     **/
     public Double getRealMemoryInKB() {
         return realMemoryInKB;
     }
@@ -302,6 +416,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("freeMemoryInKB")
     private final Double freeMemoryInKB;
 
+    /**
+     * Amount of available physical memory in kilobytes
+     * @return the value
+     **/
     public Double getFreeMemoryInKB() {
         return freeMemoryInKB;
     }
@@ -312,6 +430,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("logicalMemoryUsedInGB")
     private final Double logicalMemoryUsedInGB;
 
+    /**
+     * Memory used excluding buffers and cache in gigabytes
+     * @return the value
+     **/
     public Double getLogicalMemoryUsedInGB() {
         return logicalMemoryUsedInGB;
     }
@@ -322,6 +444,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("logicalMemoryUtilizationInPercent")
     private final Float logicalMemoryUtilizationInPercent;
 
+    /**
+     * Amount of logical memory used in percentage
+     * @return the value
+     **/
     public Float getLogicalMemoryUtilizationInPercent() {
         return logicalMemoryUtilizationInPercent;
     }
@@ -332,6 +458,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("freeLogicalMemoryInKB")
     private final Double freeLogicalMemoryInKB;
 
+    /**
+     * Amount of avaiable virtual memory in kilobytes
+     * @return the value
+     **/
     public Double getFreeLogicalMemoryInKB() {
         return freeLogicalMemoryInKB;
     }
@@ -342,6 +472,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("majorPageFaults")
     private final Integer majorPageFaults;
 
+    /**
+     * Number of major page faults
+     * @return the value
+     **/
     public Integer getMajorPageFaults() {
         return majorPageFaults;
     }
@@ -352,6 +486,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("swapFreeInKB")
     private final Double swapFreeInKB;
 
+    /**
+     * Amount of available swap space in kilobytes
+     * @return the value
+     **/
     public Double getSwapFreeInKB() {
         return swapFreeInKB;
     }
@@ -362,6 +500,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("anonHugePagesInKB")
     private final Double anonHugePagesInKB;
 
+    /**
+     * Amount of memory used for anon huge pages in kilobytes
+     * @return the value
+     **/
     public Double getAnonHugePagesInKB() {
         return anonHugePagesInKB;
     }
@@ -372,6 +514,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesFree")
     private final Integer hugePagesFree;
 
+    /**
+     * Number of available huge pages
+     * @return the value
+     **/
     public Integer getHugePagesFree() {
         return hugePagesFree;
     }
@@ -382,6 +528,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesReserved")
     private final Integer hugePagesReserved;
 
+    /**
+     * Number of reserved huge pages
+     * @return the value
+     **/
     public Integer getHugePagesReserved() {
         return hugePagesReserved;
     }
@@ -392,6 +542,10 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesSurplus")
     private final Integer hugePagesSurplus;
 
+    /**
+     * Number of surplus huge pages
+     * @return the value
+     **/
     public Integer getHugePagesSurplus() {
         return hugePagesSurplus;
     }

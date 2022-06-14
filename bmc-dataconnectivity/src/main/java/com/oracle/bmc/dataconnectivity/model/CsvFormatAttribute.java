@@ -27,63 +27,113 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The encoding for the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encoding")
         private String encoding;
 
+        /**
+         * The encoding for the file.
+         * @param encoding the value to set
+         * @return this builder
+         **/
         public Builder encoding(String encoding) {
             this.encoding = encoding;
             this.__explicitlySet__.add("encoding");
             return this;
         }
-
+        /**
+         * The escape character for the CSV format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("escapeCharacter")
         private String escapeCharacter;
 
+        /**
+         * The escape character for the CSV format.
+         * @param escapeCharacter the value to set
+         * @return this builder
+         **/
         public Builder escapeCharacter(String escapeCharacter) {
             this.escapeCharacter = escapeCharacter;
             this.__explicitlySet__.add("escapeCharacter");
             return this;
         }
-
+        /**
+         * The delimiter for the CSV format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("delimiter")
         private String delimiter;
 
+        /**
+         * The delimiter for the CSV format.
+         * @param delimiter the value to set
+         * @return this builder
+         **/
         public Builder delimiter(String delimiter) {
             this.delimiter = delimiter;
             this.__explicitlySet__.add("delimiter");
             return this;
         }
-
+        /**
+         * The quote character for the CSV format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quoteCharacter")
         private String quoteCharacter;
 
+        /**
+         * The quote character for the CSV format.
+         * @param quoteCharacter the value to set
+         * @return this builder
+         **/
         public Builder quoteCharacter(String quoteCharacter) {
             this.quoteCharacter = quoteCharacter;
             this.__explicitlySet__.add("quoteCharacter");
             return this;
         }
-
+        /**
+         * Defines whether the file has a header row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hasHeader")
         private Boolean hasHeader;
 
+        /**
+         * Defines whether the file has a header row.
+         * @param hasHeader the value to set
+         * @return this builder
+         **/
         public Builder hasHeader(Boolean hasHeader) {
             this.hasHeader = hasHeader;
             this.__explicitlySet__.add("hasHeader");
             return this;
         }
-
+        /**
+         * Defines whether a file pattern is supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
         private Boolean isFilePattern;
 
+        /**
+         * Defines whether a file pattern is supported.
+         * @param isFilePattern the value to set
+         * @return this builder
+         **/
         public Builder isFilePattern(Boolean isFilePattern) {
             this.isFilePattern = isFilePattern;
             this.__explicitlySet__.add("isFilePattern");
             return this;
         }
-
+        /**
+         * Format for timestamp information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestampFormat")
         private String timestampFormat;
 
+        /**
+         * Format for timestamp information.
+         * @param timestampFormat the value to set
+         * @return this builder
+         **/
         public Builder timestampFormat(String timestampFormat) {
             this.timestampFormat = timestampFormat;
             this.__explicitlySet__.add("timestampFormat");
@@ -159,6 +209,10 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     private final String encoding;
 
+    /**
+     * The encoding for the file.
+     * @return the value
+     **/
     public String getEncoding() {
         return encoding;
     }
@@ -169,6 +223,10 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("escapeCharacter")
     private final String escapeCharacter;
 
+    /**
+     * The escape character for the CSV format.
+     * @return the value
+     **/
     public String getEscapeCharacter() {
         return escapeCharacter;
     }
@@ -179,6 +237,10 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("delimiter")
     private final String delimiter;
 
+    /**
+     * The delimiter for the CSV format.
+     * @return the value
+     **/
     public String getDelimiter() {
         return delimiter;
     }
@@ -189,6 +251,10 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("quoteCharacter")
     private final String quoteCharacter;
 
+    /**
+     * The quote character for the CSV format.
+     * @return the value
+     **/
     public String getQuoteCharacter() {
         return quoteCharacter;
     }
@@ -199,6 +265,10 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("hasHeader")
     private final Boolean hasHeader;
 
+    /**
+     * Defines whether the file has a header row.
+     * @return the value
+     **/
     public Boolean getHasHeader() {
         return hasHeader;
     }
@@ -209,6 +279,10 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
     private final Boolean isFilePattern;
 
+    /**
+     * Defines whether a file pattern is supported.
+     * @return the value
+     **/
     public Boolean getIsFilePattern() {
         return isFilePattern;
     }
@@ -219,6 +293,10 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("timestampFormat")
     private final String timestampFormat;
 
+    /**
+     * Format for timestamp information.
+     * @return the value
+     **/
     public String getTimestampFormat() {
         return timestampFormat;
     }

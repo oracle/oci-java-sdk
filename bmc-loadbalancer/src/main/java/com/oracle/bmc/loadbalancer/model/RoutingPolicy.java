@@ -35,27 +35,57 @@ public final class RoutingPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique name for this list of routing rules. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_routing_policy}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The unique name for this list of routing rules. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_routing_policy}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The version of the language in which {@code condition} of {@code rules} are composed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
         private ConditionLanguageVersion conditionLanguageVersion;
 
+        /**
+         * The version of the language in which {@code condition} of {@code rules} are composed.
+         *
+         * @param conditionLanguageVersion the value to set
+         * @return this builder
+         **/
         public Builder conditionLanguageVersion(ConditionLanguageVersion conditionLanguageVersion) {
             this.conditionLanguageVersion = conditionLanguageVersion;
             this.__explicitlySet__.add("conditionLanguageVersion");
             return this;
         }
-
+        /**
+         * The ordered list of routing rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<RoutingRule> rules;
 
+        /**
+         * The ordered list of routing rules.
+         * @param rules the value to set
+         * @return this builder
+         **/
         public Builder rules(java.util.List<RoutingRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -103,6 +133,13 @@ public final class RoutingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The unique name for this list of routing rules. Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_routing_policy}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -162,6 +199,11 @@ public final class RoutingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
     private final ConditionLanguageVersion conditionLanguageVersion;
 
+    /**
+     * The version of the language in which {@code condition} of {@code rules} are composed.
+     *
+     * @return the value
+     **/
     public ConditionLanguageVersion getConditionLanguageVersion() {
         return conditionLanguageVersion;
     }
@@ -172,6 +214,10 @@ public final class RoutingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<RoutingRule> rules;
 
+    /**
+     * The ordered list of routing rules.
+     * @return the value
+     **/
     public java.util.List<RoutingRule> getRules() {
         return rules;
     }

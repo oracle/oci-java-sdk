@@ -33,27 +33,59 @@ public final class SetHeaderPolicyItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The case-insensitive name of the header.  This name must be unique across transformation policies.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The case-insensitive name of the header.  This name must be unique across transformation policies.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within
+         * ${} delimiters.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
+        /**
+         * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within
+         * ${} delimiters.
+         *
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
             return this;
         }
-
+        /**
+         * If a header with the same name already exists in the request, OVERWRITE will overwrite the value,
+         * APPEND will append to the existing value, or SKIP will keep the existing value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ifExists")
         private IfExists ifExists;
 
+        /**
+         * If a header with the same name already exists in the request, OVERWRITE will overwrite the value,
+         * APPEND will append to the existing value, or SKIP will keep the existing value.
+         *
+         * @param ifExists the value to set
+         * @return this builder
+         **/
         public Builder ifExists(IfExists ifExists) {
             this.ifExists = ifExists;
             this.__explicitlySet__.add("ifExists");
@@ -97,6 +129,11 @@ public final class SetHeaderPolicyItem {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The case-insensitive name of the header.  This name must be unique across transformation policies.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -109,6 +146,12 @@ public final class SetHeaderPolicyItem {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
+    /**
+     * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within
+     * ${} delimiters.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getValues() {
         return values;
     }
@@ -172,6 +215,12 @@ public final class SetHeaderPolicyItem {
     @com.fasterxml.jackson.annotation.JsonProperty("ifExists")
     private final IfExists ifExists;
 
+    /**
+     * If a header with the same name already exists in the request, OVERWRITE will overwrite the value,
+     * APPEND will append to the existing value, or SKIP will keep the existing value.
+     *
+     * @return the value
+     **/
     public IfExists getIfExists() {
         return ifExists;
     }

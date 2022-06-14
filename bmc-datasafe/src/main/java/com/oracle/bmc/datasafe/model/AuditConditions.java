@@ -39,36 +39,67 @@ public final class AuditConditions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
         private String auditPolicyName;
 
+        /**
+         * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+         *
+         * @param auditPolicyName the value to set
+         * @return this builder
+         **/
         public Builder auditPolicyName(String auditPolicyName) {
             this.auditPolicyName = auditPolicyName;
             this.__explicitlySet__.add("auditPolicyName");
             return this;
         }
-
+        /**
+         * Indicates whether the privileged user list is managed by Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivUsersManagedByDataSafe")
         private Boolean isPrivUsersManagedByDataSafe;
 
+        /**
+         * Indicates whether the privileged user list is managed by Data Safe.
+         * @param isPrivUsersManagedByDataSafe the value to set
+         * @return this builder
+         **/
         public Builder isPrivUsersManagedByDataSafe(Boolean isPrivUsersManagedByDataSafe) {
             this.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
             this.__explicitlySet__.add("isPrivUsersManagedByDataSafe");
             return this;
         }
-
+        /**
+         * Indicates whether the Data Safe user activity on the target database will be audited by the policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDataSafeServiceAccountAudited")
         private Boolean isDataSafeServiceAccountAudited;
 
+        /**
+         * Indicates whether the Data Safe user activity on the target database will be audited by the policy.
+         * @param isDataSafeServiceAccountAudited the value to set
+         * @return this builder
+         **/
         public Builder isDataSafeServiceAccountAudited(Boolean isDataSafeServiceAccountAudited) {
             this.isDataSafeServiceAccountAudited = isDataSafeServiceAccountAudited;
             this.__explicitlySet__.add("isDataSafeServiceAccountAudited");
             return this;
         }
-
+        /**
+         * Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableConditions")
         private java.util.List<EnableConditions> enableConditions;
 
+        /**
+         * Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
+         * @param enableConditions the value to set
+         * @return this builder
+         **/
         public Builder enableConditions(java.util.List<EnableConditions> enableConditions) {
             this.enableConditions = enableConditions;
             this.__explicitlySet__.add("enableConditions");
@@ -120,6 +151,11 @@ public final class AuditConditions {
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
     private final String auditPolicyName;
 
+    /**
+     * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+     *
+     * @return the value
+     **/
     public String getAuditPolicyName() {
         return auditPolicyName;
     }
@@ -130,6 +166,10 @@ public final class AuditConditions {
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivUsersManagedByDataSafe")
     private final Boolean isPrivUsersManagedByDataSafe;
 
+    /**
+     * Indicates whether the privileged user list is managed by Data Safe.
+     * @return the value
+     **/
     public Boolean getIsPrivUsersManagedByDataSafe() {
         return isPrivUsersManagedByDataSafe;
     }
@@ -140,6 +180,10 @@ public final class AuditConditions {
     @com.fasterxml.jackson.annotation.JsonProperty("isDataSafeServiceAccountAudited")
     private final Boolean isDataSafeServiceAccountAudited;
 
+    /**
+     * Indicates whether the Data Safe user activity on the target database will be audited by the policy.
+     * @return the value
+     **/
     public Boolean getIsDataSafeServiceAccountAudited() {
         return isDataSafeServiceAccountAudited;
     }
@@ -150,6 +194,10 @@ public final class AuditConditions {
     @com.fasterxml.jackson.annotation.JsonProperty("enableConditions")
     private final java.util.List<EnableConditions> enableConditions;
 
+    /**
+     * Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
+     * @return the value
+     **/
     public java.util.List<EnableConditions> getEnableConditions() {
         return enableConditions;
     }

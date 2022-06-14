@@ -76,19 +76,37 @@ public final class UpdateGitlabAccessTokenConfigurationSourceProviderDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The Git service endpoint.
+         * Example: {@code https://gitlab.com}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
         private String apiEndpoint;
 
+        /**
+         * The Git service endpoint.
+         * Example: {@code https://gitlab.com}
+         *
+         * @param apiEndpoint the value to set
+         * @return this builder
+         **/
         public Builder apiEndpoint(String apiEndpoint) {
             this.apiEndpoint = apiEndpoint;
             this.__explicitlySet__.add("apiEndpoint");
             return this;
         }
-
+        /**
+         * The personal access token to be configured on the GitLab repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
+        /**
+         * The personal access token to be configured on the GitLab repository.
+         * @param accessToken the value to set
+         * @return this builder
+         **/
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
@@ -161,6 +179,12 @@ public final class UpdateGitlabAccessTokenConfigurationSourceProviderDetails
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
     private final String apiEndpoint;
 
+    /**
+     * The Git service endpoint.
+     * Example: {@code https://gitlab.com}
+     *
+     * @return the value
+     **/
     public String getApiEndpoint() {
         return apiEndpoint;
     }
@@ -171,6 +195,10 @@ public final class UpdateGitlabAccessTokenConfigurationSourceProviderDetails
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
+    /**
+     * The personal access token to be configured on the GitLab repository.
+     * @return the value
+     **/
     public String getAccessToken() {
         return accessToken;
     }

@@ -29,9 +29,17 @@ public final class VirtualDeploymentCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of virtual deployments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<VirtualDeploymentSummary> items;
 
+        /**
+         * List of virtual deployments.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<VirtualDeploymentSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class VirtualDeploymentCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<VirtualDeploymentSummary> items;
 
+    /**
+     * List of virtual deployments.
+     * @return the value
+     **/
     public java.util.List<VirtualDeploymentSummary> getItems() {
         return items;
     }

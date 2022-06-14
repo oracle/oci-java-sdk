@@ -51,72 +51,129 @@ public final class FileDiffResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The path on the base version to the changed object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oldPath")
         private String oldPath;
 
+        /**
+         * The path on the base version to the changed object.
+         * @param oldPath the value to set
+         * @return this builder
+         **/
         public Builder oldPath(String oldPath) {
             this.oldPath = oldPath;
             this.__explicitlySet__.add("oldPath");
             return this;
         }
-
+        /**
+         * The path on the target version to the changed object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newPath")
         private String newPath;
 
+        /**
+         * The path on the target version to the changed object.
+         * @param newPath the value to set
+         * @return this builder
+         **/
         public Builder newPath(String newPath) {
             this.newPath = newPath;
             this.__explicitlySet__.add("newPath");
             return this;
         }
-
+        /**
+         * The ID of the changed object on the base version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oldId")
         private String oldId;
 
+        /**
+         * The ID of the changed object on the base version.
+         * @param oldId the value to set
+         * @return this builder
+         **/
         public Builder oldId(String oldId) {
             this.oldId = oldId;
             this.__explicitlySet__.add("oldId");
             return this;
         }
-
+        /**
+         * The ID of the changed object on the target version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newId")
         private String newId;
 
+        /**
+         * The ID of the changed object on the target version.
+         * @param newId the value to set
+         * @return this builder
+         **/
         public Builder newId(String newId) {
             this.newId = newId;
             this.__explicitlySet__.add("newId");
             return this;
         }
-
+        /**
+         * Indicates whether the changed file contains conflicts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areConflictsInFile")
         private Boolean areConflictsInFile;
 
+        /**
+         * Indicates whether the changed file contains conflicts.
+         * @param areConflictsInFile the value to set
+         * @return this builder
+         **/
         public Builder areConflictsInFile(Boolean areConflictsInFile) {
             this.areConflictsInFile = areConflictsInFile;
             this.__explicitlySet__.add("areConflictsInFile");
             return this;
         }
-
+        /**
+         * Indicates whether the file is large.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLarge")
         private Boolean isLarge;
 
+        /**
+         * Indicates whether the file is large.
+         * @param isLarge the value to set
+         * @return this builder
+         **/
         public Builder isLarge(Boolean isLarge) {
             this.isLarge = isLarge;
             this.__explicitlySet__.add("isLarge");
             return this;
         }
-
+        /**
+         * Indicates whether the file is binary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBinary")
         private Boolean isBinary;
 
+        /**
+         * Indicates whether the file is binary.
+         * @param isBinary the value to set
+         * @return this builder
+         **/
         public Builder isBinary(Boolean isBinary) {
             this.isBinary = isBinary;
             this.__explicitlySet__.add("isBinary");
             return this;
         }
-
+        /**
+         * List of changed section in the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changes")
         private java.util.List<DiffChunk> changes;
 
+        /**
+         * List of changed section in the file.
+         * @param changes the value to set
+         * @return this builder
+         **/
         public Builder changes(java.util.List<DiffChunk> changes) {
             this.changes = changes;
             this.__explicitlySet__.add("changes");
@@ -175,6 +232,10 @@ public final class FileDiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("oldPath")
     private final String oldPath;
 
+    /**
+     * The path on the base version to the changed object.
+     * @return the value
+     **/
     public String getOldPath() {
         return oldPath;
     }
@@ -185,6 +246,10 @@ public final class FileDiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("newPath")
     private final String newPath;
 
+    /**
+     * The path on the target version to the changed object.
+     * @return the value
+     **/
     public String getNewPath() {
         return newPath;
     }
@@ -195,6 +260,10 @@ public final class FileDiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("oldId")
     private final String oldId;
 
+    /**
+     * The ID of the changed object on the base version.
+     * @return the value
+     **/
     public String getOldId() {
         return oldId;
     }
@@ -205,6 +274,10 @@ public final class FileDiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("newId")
     private final String newId;
 
+    /**
+     * The ID of the changed object on the target version.
+     * @return the value
+     **/
     public String getNewId() {
         return newId;
     }
@@ -215,6 +288,10 @@ public final class FileDiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("areConflictsInFile")
     private final Boolean areConflictsInFile;
 
+    /**
+     * Indicates whether the changed file contains conflicts.
+     * @return the value
+     **/
     public Boolean getAreConflictsInFile() {
         return areConflictsInFile;
     }
@@ -225,6 +302,10 @@ public final class FileDiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("isLarge")
     private final Boolean isLarge;
 
+    /**
+     * Indicates whether the file is large.
+     * @return the value
+     **/
     public Boolean getIsLarge() {
         return isLarge;
     }
@@ -235,6 +316,10 @@ public final class FileDiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("isBinary")
     private final Boolean isBinary;
 
+    /**
+     * Indicates whether the file is binary.
+     * @return the value
+     **/
     public Boolean getIsBinary() {
         return isBinary;
     }
@@ -245,6 +330,10 @@ public final class FileDiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("changes")
     private final java.util.List<DiffChunk> changes;
 
+    /**
+     * List of changed section in the file.
+     * @return the value
+     **/
     public java.util.List<DiffChunk> getChanges() {
         return changes;
     }

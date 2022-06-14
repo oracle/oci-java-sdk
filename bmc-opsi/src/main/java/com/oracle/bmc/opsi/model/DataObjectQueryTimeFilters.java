@@ -32,27 +32,67 @@ public final class DataObjectQueryTimeFilters {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timePeriod is specified, then timeStart and timeEnd will be ignored.
+         * Examples: P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePeriod")
         private String timePeriod;
 
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timePeriod is specified, then timeStart and timeEnd will be ignored.
+         * Examples: P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
+         *
+         * @param timePeriod the value to set
+         * @return this builder
+         **/
         public Builder timePeriod(String timePeriod) {
             this.timePeriod = timePeriod;
             this.__explicitlySet__.add("timePeriod");
             return this;
         }
-
+        /**
+         * Start time in UTC in RFC3339 formatted datetime string. Example: 2021-10-30T00:00:00.000Z.
+         * timeStart and timeEnd are used together. If timePeriod is specified, this parameter is ignored.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
+        /**
+         * Start time in UTC in RFC3339 formatted datetime string. Example: 2021-10-30T00:00:00.000Z.
+         * timeStart and timeEnd are used together. If timePeriod is specified, this parameter is ignored.
+         *
+         * @param timeStart the value to set
+         * @return this builder
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-
+        /**
+         * End time in UTC in RFC3339 formatted datetime string. Example: 2021-10-30T00:00:00.000Z.
+         * timeStart and timeEnd are used together. If timePeriod is specified, this parameter is ignored.
+         * If timeEnd is not specified, current time is used as timeEnd.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
+        /**
+         * End time in UTC in RFC3339 formatted datetime string. Example: 2021-10-30T00:00:00.000Z.
+         * timeStart and timeEnd are used together. If timePeriod is specified, this parameter is ignored.
+         * If timeEnd is not specified, current time is used as timeEnd.
+         *
+         * @param timeEnd the value to set
+         * @return this builder
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
@@ -102,6 +142,14 @@ public final class DataObjectQueryTimeFilters {
     @com.fasterxml.jackson.annotation.JsonProperty("timePeriod")
     private final String timePeriod;
 
+    /**
+     * Specify time period in ISO 8601 format with respect to current time.
+     * Default is last 30 days represented by P30D.
+     * If timePeriod is specified, then timeStart and timeEnd will be ignored.
+     * Examples: P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
+     *
+     * @return the value
+     **/
     public String getTimePeriod() {
         return timePeriod;
     }
@@ -114,6 +162,12 @@ public final class DataObjectQueryTimeFilters {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
+    /**
+     * Start time in UTC in RFC3339 formatted datetime string. Example: 2021-10-30T00:00:00.000Z.
+     * timeStart and timeEnd are used together. If timePeriod is specified, this parameter is ignored.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -127,6 +181,13 @@ public final class DataObjectQueryTimeFilters {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
+    /**
+     * End time in UTC in RFC3339 formatted datetime string. Example: 2021-10-30T00:00:00.000Z.
+     * timeStart and timeEnd are used together. If timePeriod is specified, this parameter is ignored.
+     * If timeEnd is not specified, current time is used as timeEnd.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }

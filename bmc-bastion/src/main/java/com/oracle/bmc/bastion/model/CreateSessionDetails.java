@@ -47,18 +47,33 @@ public final class CreateSessionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name of the session.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The unique identifier (OCID) of the bastion on which to create this session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
         private String bastionId;
 
+        /**
+         * The unique identifier (OCID) of the bastion on which to create this session.
+         * @param bastionId the value to set
+         * @return this builder
+         **/
         public Builder bastionId(String bastionId) {
             this.bastionId = bastionId;
             this.__explicitlySet__.add("bastionId");
@@ -74,10 +89,17 @@ public final class CreateSessionDetails {
             this.__explicitlySet__.add("targetResourceDetails");
             return this;
         }
-
+        /**
+         * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyType")
         private KeyType keyType;
 
+        /**
+         * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
+         * @param keyType the value to set
+         * @return this builder
+         **/
         public Builder keyType(KeyType keyType) {
             this.keyType = keyType;
             this.__explicitlySet__.add("keyType");
@@ -92,10 +114,17 @@ public final class CreateSessionDetails {
             this.__explicitlySet__.add("keyDetails");
             return this;
         }
-
+        /**
+         * The amount of time the session can remain active.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
         private Integer sessionTtlInSeconds;
 
+        /**
+         * The amount of time the session can remain active.
+         * @param sessionTtlInSeconds the value to set
+         * @return this builder
+         **/
         public Builder sessionTtlInSeconds(Integer sessionTtlInSeconds) {
             this.sessionTtlInSeconds = sessionTtlInSeconds;
             this.__explicitlySet__.add("sessionTtlInSeconds");
@@ -150,6 +179,10 @@ public final class CreateSessionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name of the session.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -160,6 +193,10 @@ public final class CreateSessionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
     private final String bastionId;
 
+    /**
+     * The unique identifier (OCID) of the bastion on which to create this session.
+     * @return the value
+     **/
     public String getBastionId() {
         return bastionId;
     }
@@ -211,6 +248,10 @@ public final class CreateSessionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyType")
     private final KeyType keyType;
 
+    /**
+     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
+     * @return the value
+     **/
     public KeyType getKeyType() {
         return keyType;
     }
@@ -228,6 +269,10 @@ public final class CreateSessionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
     private final Integer sessionTtlInSeconds;
 
+    /**
+     * The amount of time the session can remain active.
+     * @return the value
+     **/
     public Integer getSessionTtlInSeconds() {
         return sessionTtlInSeconds;
     }

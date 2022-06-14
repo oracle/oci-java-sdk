@@ -45,54 +45,101 @@ public final class GeoSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province.
+         * Only included for locations in the US or Canada. For a list of codes, see Country Codes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminDivCode")
         private String adminDivCode;
 
+        /**
+         * The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province.
+         * Only included for locations in the US or Canada. For a list of codes, see Country Codes.
+         *
+         * @param adminDivCode the value to set
+         * @return this builder
+         **/
         public Builder adminDivCode(String adminDivCode) {
             this.adminDivCode = adminDivCode;
             this.__explicitlySet__.add("adminDivCode");
             return this;
         }
-
+        /**
+         * Common English-language name for the city.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cityName")
         private String cityName;
 
+        /**
+         * Common English-language name for the city.
+         * @param cityName the value to set
+         * @return this builder
+         **/
         public Builder cityName(String cityName) {
             this.cityName = cityName;
             this.__explicitlySet__.add("cityName");
             return this;
         }
-
+        /**
+         * The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
         private String countryCode;
 
+        /**
+         * The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
+         * @param countryCode the value to set
+         * @return this builder
+         **/
         public Builder countryCode(String countryCode) {
             this.countryCode = countryCode;
             this.__explicitlySet__.add("countryCode");
             return this;
         }
-
+        /**
+         * The common English-language name for the country.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryName")
         private String countryName;
 
+        /**
+         * The common English-language name for the country.
+         * @param countryName the value to set
+         * @return this builder
+         **/
         public Builder countryName(String countryName) {
             this.countryName = countryName;
             this.__explicitlySet__.add("countryName");
             return this;
         }
-
+        /**
+         * Degrees north of the Equator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latitude")
         private Double latitude;
 
+        /**
+         * Degrees north of the Equator.
+         * @param latitude the value to set
+         * @return this builder
+         **/
         public Builder latitude(Double latitude) {
             this.latitude = latitude;
             this.__explicitlySet__.add("latitude");
             return this;
         }
-
+        /**
+         * Degrees east of the prime meridian.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("longitude")
         private Double longitude;
 
+        /**
+         * Degrees east of the prime meridian.
+         * @param longitude the value to set
+         * @return this builder
+         **/
         public Builder longitude(Double longitude) {
             this.longitude = longitude;
             this.__explicitlySet__.add("longitude");
@@ -144,6 +191,12 @@ public final class GeoSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("adminDivCode")
     private final String adminDivCode;
 
+    /**
+     * The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province.
+     * Only included for locations in the US or Canada. For a list of codes, see Country Codes.
+     *
+     * @return the value
+     **/
     public String getAdminDivCode() {
         return adminDivCode;
     }
@@ -154,6 +207,10 @@ public final class GeoSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cityName")
     private final String cityName;
 
+    /**
+     * Common English-language name for the city.
+     * @return the value
+     **/
     public String getCityName() {
         return cityName;
     }
@@ -164,6 +221,10 @@ public final class GeoSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
     private final String countryCode;
 
+    /**
+     * The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
+     * @return the value
+     **/
     public String getCountryCode() {
         return countryCode;
     }
@@ -174,6 +235,10 @@ public final class GeoSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("countryName")
     private final String countryName;
 
+    /**
+     * The common English-language name for the country.
+     * @return the value
+     **/
     public String getCountryName() {
         return countryName;
     }
@@ -184,6 +249,10 @@ public final class GeoSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("latitude")
     private final Double latitude;
 
+    /**
+     * Degrees north of the Equator.
+     * @return the value
+     **/
     public Double getLatitude() {
         return latitude;
     }
@@ -194,6 +263,10 @@ public final class GeoSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("longitude")
     private final Double longitude;
 
+    /**
+     * Degrees east of the prime meridian.
+     * @return the value
+     **/
     public Double getLongitude() {
         return longitude;
     }

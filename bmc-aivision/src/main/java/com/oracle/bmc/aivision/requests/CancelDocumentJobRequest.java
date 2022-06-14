@@ -16,6 +16,9 @@ public class CancelDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String documentJobId;
 
+    /**
+     * Document job id.
+     */
     public String getDocumentJobId() {
         return documentJobId;
     }
@@ -29,6 +32,14 @@ public class CancelDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -37,6 +48,9 @@ public class CancelDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,10 +62,14 @@ public class CancelDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Document job id.
+         */
         private String documentJobId = null;
 
         /**
          * Document job id.
+         * @param documentJobId the value to set
          * @return this builder instance
          */
         public Builder documentJobId(String documentJobId) {
@@ -59,6 +77,14 @@ public class CancelDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -68,6 +94,7 @@ public class CancelDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -75,10 +102,14 @@ public class CancelDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -158,7 +189,8 @@ public class CancelDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -167,6 +199,10 @@ public class CancelDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class GetAutoScalingPolicyRequest
      */
     private String autoScalingConfigurationId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+     */
     public String getAutoScalingConfigurationId() {
         return autoScalingConfigurationId;
     }
@@ -25,12 +28,13 @@ public class GetAutoScalingPolicyRequest
      */
     private String autoScalingPolicyId;
 
+    /**
+     * The ID of the autoscaling policy.
+     */
     public String getAutoScalingPolicyId() {
         return autoScalingPolicyId;
     }
-    /**
-     *
-     */
+
     private String opcRequestId;
 
     public String getOpcRequestId() {
@@ -44,10 +48,14 @@ public class GetAutoScalingPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         */
         private String autoScalingConfigurationId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         * @param autoScalingConfigurationId the value to set
          * @return this builder instance
          */
         public Builder autoScalingConfigurationId(String autoScalingConfigurationId) {
@@ -55,10 +63,14 @@ public class GetAutoScalingPolicyRequest
             return this;
         }
 
+        /**
+         * The ID of the autoscaling policy.
+         */
         private String autoScalingPolicyId = null;
 
         /**
          * The ID of the autoscaling policy.
+         * @param autoScalingPolicyId the value to set
          * @return this builder instance
          */
         public Builder autoScalingPolicyId(String autoScalingPolicyId) {
@@ -70,6 +82,7 @@ public class GetAutoScalingPolicyRequest
 
         /**
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -149,7 +162,8 @@ public class GetAutoScalingPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -158,6 +172,10 @@ public class GetAutoScalingPolicyRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

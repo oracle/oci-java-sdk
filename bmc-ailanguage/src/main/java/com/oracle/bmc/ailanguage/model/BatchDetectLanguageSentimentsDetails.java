@@ -29,9 +29,17 @@ public final class BatchDetectLanguageSentimentsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of Documents for detect sentiments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<SentimentsDocument> documents;
 
+        /**
+         * List of Documents for detect sentiments.
+         * @param documents the value to set
+         * @return this builder
+         **/
         public Builder documents(java.util.List<SentimentsDocument> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
@@ -74,6 +82,10 @@ public final class BatchDetectLanguageSentimentsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<SentimentsDocument> documents;
 
+    /**
+     * List of Documents for detect sentiments.
+     * @return the value
+     **/
     public java.util.List<SentimentsDocument> getDocuments() {
         return documents;
     }

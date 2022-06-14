@@ -16,6 +16,9 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String resolverId;
 
+    /**
+     * The OCID of the target resolver.
+     */
     public String getResolverId() {
         return resolverId;
     }
@@ -24,6 +27,9 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String resolverEndpointName;
 
+    /**
+     * The name of the target resolver endpoint.
+     */
     public String getResolverEndpointName() {
         return resolverEndpointName;
     }
@@ -36,6 +42,13 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String ifModifiedSince;
 
+    /**
+     * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+     * conditional on the selected representation's modification date being more
+     * recent than the date provided in the field-value.  Transfer of the
+     * selected representation's data is avoided if that data has not changed.
+     *
+     */
     public String getIfModifiedSince() {
         return ifModifiedSince;
     }
@@ -48,6 +61,13 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String ifNoneMatch;
 
+    /**
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
+     */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
@@ -59,6 +79,12 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,6 +94,10 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -79,10 +109,14 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target resolver.
+         */
         private String resolverId = null;
 
         /**
          * The OCID of the target resolver.
+         * @param resolverId the value to set
          * @return this builder instance
          */
         public Builder resolverId(String resolverId) {
@@ -90,10 +124,14 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The name of the target resolver endpoint.
+         */
         private String resolverEndpointName = null;
 
         /**
          * The name of the target resolver endpoint.
+         * @param resolverEndpointName the value to set
          * @return this builder instance
          */
         public Builder resolverEndpointName(String resolverEndpointName) {
@@ -101,6 +139,13 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
+         *
+         */
         private String ifModifiedSince = null;
 
         /**
@@ -109,6 +154,7 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
          * recent than the date provided in the field-value.  Transfer of the
          * selected representation's data is avoided if that data has not changed.
          *
+         * @param ifModifiedSince the value to set
          * @return this builder instance
          */
         public Builder ifModifiedSince(String ifModifiedSince) {
@@ -116,6 +162,13 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
+         */
         private String ifNoneMatch = null;
 
         /**
@@ -124,6 +177,7 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
          * the field-value is {@code *}, or having a selected representation with an
          * entity-tag that does not match any of those listed in the field-value.
          *
+         * @param ifNoneMatch the value to set
          * @return this builder instance
          */
         public Builder ifNoneMatch(String ifNoneMatch) {
@@ -131,6 +185,12 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -138,6 +198,7 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -145,11 +206,16 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -235,7 +301,8 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -247,6 +314,10 @@ public class GetResolverEndpointRequest extends com.oracle.bmc.requests.BmcReque
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

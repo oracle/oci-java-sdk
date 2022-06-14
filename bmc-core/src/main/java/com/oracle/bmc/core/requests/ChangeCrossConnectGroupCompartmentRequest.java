@@ -18,6 +18,9 @@ public class ChangeCrossConnectGroupCompartmentRequest
      */
     private String crossConnectGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
+     */
     public String getCrossConnectGroupId() {
         return crossConnectGroupId;
     }
@@ -27,6 +30,9 @@ public class ChangeCrossConnectGroupCompartmentRequest
     private com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails
             changeCrossConnectGroupCompartmentDetails;
 
+    /**
+     * Request to change the compartment of a Cross Connect Group.
+     */
     public com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails
             getChangeCrossConnectGroupCompartmentDetails() {
         return changeCrossConnectGroupCompartmentDetails;
@@ -38,6 +44,11 @@ public class ChangeCrossConnectGroupCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +62,14 @@ public class ChangeCrossConnectGroupCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -73,10 +92,14 @@ public class ChangeCrossConnectGroupCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
+         */
         private String crossConnectGroupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
+         * @param crossConnectGroupId the value to set
          * @return this builder instance
          */
         public Builder crossConnectGroupId(String crossConnectGroupId) {
@@ -84,11 +107,15 @@ public class ChangeCrossConnectGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of a Cross Connect Group.
+         */
         private com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails
                 changeCrossConnectGroupCompartmentDetails = null;
 
         /**
          * Request to change the compartment of a Cross Connect Group.
+         * @param changeCrossConnectGroupCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeCrossConnectGroupCompartmentDetails(
@@ -99,12 +126,18 @@ public class ChangeCrossConnectGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -112,6 +145,14 @@ public class ChangeCrossConnectGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -121,6 +162,7 @@ public class ChangeCrossConnectGroupCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -217,7 +259,8 @@ public class ChangeCrossConnectGroupCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -228,6 +271,10 @@ public class ChangeCrossConnectGroupCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

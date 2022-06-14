@@ -53,73 +53,138 @@ public final class CreateOdaInstanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Description of the Digital Assistant instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the Digital Assistant instance.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Identifier of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Identifier of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Shape or size of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private ShapeName shapeName;
 
+        /**
+         * Shape or size of the instance.
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(ShapeName shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
         private Boolean isRoleBasedAccess;
 
+        /**
+         * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+         * @param isRoleBasedAccess the value to set
+         * @return this builder
+         **/
         public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
             this.isRoleBasedAccess = isRoleBasedAccess;
             this.__explicitlySet__.add("isRoleBasedAccess");
             return this;
         }
-
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
         private String identityDomain;
 
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+         * @param identityDomain the value to set
+         * @return this builder
+         **/
         public Builder identityDomain(String identityDomain) {
             this.identityDomain = identityDomain;
             this.__explicitlySet__.add("identityDomain");
@@ -178,6 +243,10 @@ public final class CreateOdaInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -188,6 +257,10 @@ public final class CreateOdaInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the Digital Assistant instance.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -198,6 +271,10 @@ public final class CreateOdaInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Identifier of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -243,6 +320,10 @@ public final class CreateOdaInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final ShapeName shapeName;
 
+    /**
+     * Shape or size of the instance.
+     * @return the value
+     **/
     public ShapeName getShapeName() {
         return shapeName;
     }
@@ -255,6 +336,12 @@ public final class CreateOdaInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -267,6 +354,12 @@ public final class CreateOdaInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -277,6 +370,10 @@ public final class CreateOdaInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
     private final Boolean isRoleBasedAccess;
 
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * @return the value
+     **/
     public Boolean getIsRoleBasedAccess() {
         return isRoleBasedAccess;
     }
@@ -287,6 +384,10 @@ public final class CreateOdaInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
     private final String identityDomain;
 
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * @return the value
+     **/
     public String getIdentityDomain() {
         return identityDomain;
     }

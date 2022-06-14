@@ -18,6 +18,9 @@ public class CreateUserDefinedFunctionValidationRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -27,6 +30,9 @@ public class CreateUserDefinedFunctionValidationRequest
     private com.oracle.bmc.dataintegration.model.CreateUserDefinedFunctionValidationDetails
             createUserDefinedFunctionValidationDetails;
 
+    /**
+     * The information needed to create the UserDefinedFunction validation for the UserDefinedFunction object.
+     */
     public com.oracle.bmc.dataintegration.model.CreateUserDefinedFunctionValidationDetails
             getCreateUserDefinedFunctionValidationDetails() {
         return createUserDefinedFunctionValidationDetails;
@@ -39,6 +45,12 @@ public class CreateUserDefinedFunctionValidationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +60,10 @@ public class CreateUserDefinedFunctionValidationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -72,10 +88,14 @@ public class CreateUserDefinedFunctionValidationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -83,11 +103,15 @@ public class CreateUserDefinedFunctionValidationRequest
             return this;
         }
 
+        /**
+         * The information needed to create the UserDefinedFunction validation for the UserDefinedFunction object.
+         */
         private com.oracle.bmc.dataintegration.model.CreateUserDefinedFunctionValidationDetails
                 createUserDefinedFunctionValidationDetails = null;
 
         /**
          * The information needed to create the UserDefinedFunction validation for the UserDefinedFunction object.
+         * @param createUserDefinedFunctionValidationDetails the value to set
          * @return this builder instance
          */
         public Builder createUserDefinedFunctionValidationDetails(
@@ -98,6 +122,12 @@ public class CreateUserDefinedFunctionValidationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -105,6 +135,7 @@ public class CreateUserDefinedFunctionValidationRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -112,11 +143,16 @@ public class CreateUserDefinedFunctionValidationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -214,7 +250,8 @@ public class CreateUserDefinedFunctionValidationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -225,6 +262,10 @@ public class CreateUserDefinedFunctionValidationRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

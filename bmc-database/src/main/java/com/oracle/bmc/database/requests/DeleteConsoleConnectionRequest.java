@@ -17,6 +17,9 @@ public class DeleteConsoleConnectionRequest
      */
     private String dbNodeId;
 
+    /**
+     * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbNodeId() {
         return dbNodeId;
     }
@@ -25,6 +28,9 @@ public class DeleteConsoleConnectionRequest
      */
     private String consoleConnectionId;
 
+    /**
+     * The OCID of the console connection.
+     */
     public String getConsoleConnectionId() {
         return consoleConnectionId;
     }
@@ -36,6 +42,12 @@ public class DeleteConsoleConnectionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,10 +59,14 @@ public class DeleteConsoleConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbNodeId = null;
 
         /**
          * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbNodeId the value to set
          * @return this builder instance
          */
         public Builder dbNodeId(String dbNodeId) {
@@ -58,10 +74,14 @@ public class DeleteConsoleConnectionRequest
             return this;
         }
 
+        /**
+         * The OCID of the console connection.
+         */
         private String consoleConnectionId = null;
 
         /**
          * The OCID of the console connection.
+         * @param consoleConnectionId the value to set
          * @return this builder instance
          */
         public Builder consoleConnectionId(String consoleConnectionId) {
@@ -69,6 +89,12 @@ public class DeleteConsoleConnectionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -76,6 +102,7 @@ public class DeleteConsoleConnectionRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -155,7 +182,8 @@ public class DeleteConsoleConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -164,6 +192,10 @@ public class DeleteConsoleConnectionRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

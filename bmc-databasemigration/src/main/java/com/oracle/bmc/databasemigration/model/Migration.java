@@ -109,100 +109,202 @@ public final class Migration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the resource
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the resource
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Migration Display Name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Migration Display Name
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * OCID of the compartment
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Migration type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private MigrationTypes type;
 
+        /**
+         * Migration type.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(MigrationTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Name of a migration phase. The Job will wait after executing this
+         * phase until the Resume Job endpoint is called.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("waitAfter")
         private OdmsJobPhases waitAfter;
 
+        /**
+         * Name of a migration phase. The Job will wait after executing this
+         * phase until the Resume Job endpoint is called.
+         *
+         * @param waitAfter the value to set
+         * @return this builder
+         **/
         public Builder waitAfter(OdmsJobPhases waitAfter) {
             this.waitAfter = waitAfter;
             this.__explicitlySet__.add("waitAfter");
             return this;
         }
-
+        /**
+         * The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
+        /**
+         * The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
+         *
+         * @param agentId the value to set
+         * @return this builder
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-
+        /**
+         * OCID of the Secret in the OCI vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialsSecretId")
         private String credentialsSecretId;
 
+        /**
+         * OCID of the Secret in the OCI vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
+         *
+         * @param credentialsSecretId the value to set
+         * @return this builder
+         **/
         public Builder credentialsSecretId(String credentialsSecretId) {
             this.credentialsSecretId = credentialsSecretId;
             this.__explicitlySet__.add("credentialsSecretId");
             return this;
         }
-
+        /**
+         * The OCID of the Source Database Connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseConnectionId")
         private String sourceDatabaseConnectionId;
 
+        /**
+         * The OCID of the Source Database Connection.
+         *
+         * @param sourceDatabaseConnectionId the value to set
+         * @return this builder
+         **/
         public Builder sourceDatabaseConnectionId(String sourceDatabaseConnectionId) {
             this.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
             this.__explicitlySet__.add("sourceDatabaseConnectionId");
             return this;
         }
-
+        /**
+         * The OCID of the Source Container Database Connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
         private String sourceContainerDatabaseConnectionId;
 
+        /**
+         * The OCID of the Source Container Database Connection.
+         *
+         * @param sourceContainerDatabaseConnectionId the value to set
+         * @return this builder
+         **/
         public Builder sourceContainerDatabaseConnectionId(
                 String sourceContainerDatabaseConnectionId) {
             this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
             this.__explicitlySet__.add("sourceContainerDatabaseConnectionId");
             return this;
         }
-
+        /**
+         * The OCID of the Target Database Connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseConnectionId")
         private String targetDatabaseConnectionId;
 
+        /**
+         * The OCID of the Target Database Connection.
+         *
+         * @param targetDatabaseConnectionId the value to set
+         * @return this builder
+         **/
         public Builder targetDatabaseConnectionId(String targetDatabaseConnectionId) {
             this.targetDatabaseConnectionId = targetDatabaseConnectionId;
             this.__explicitlySet__.add("targetDatabaseConnectionId");
             return this;
         }
-
+        /**
+         * OCID of the current ODMS Job in execution for the Migration, if any.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executingJobId")
         private String executingJobId;
 
+        /**
+         * OCID of the current ODMS Job in execution for the Migration, if any.
+         *
+         * @param executingJobId the value to set
+         * @return this builder
+         **/
         public Builder executingJobId(String executingJobId) {
             this.executingJobId = executingJobId;
             this.__explicitlySet__.add("executingJobId");
@@ -245,19 +347,39 @@ public final class Migration {
             this.__explicitlySet__.add("advisorSettings");
             return this;
         }
-
+        /**
+         * Database objects to exclude from migration.
+         * If 'includeObjects' are specified, only exclude object types can be specified with general wildcards (.*) for owner and objectName.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
         private java.util.List<DatabaseObject> excludeObjects;
 
+        /**
+         * Database objects to exclude from migration.
+         * If 'includeObjects' are specified, only exclude object types can be specified with general wildcards (.*) for owner and objectName.
+         *
+         * @param excludeObjects the value to set
+         * @return this builder
+         **/
         public Builder excludeObjects(java.util.List<DatabaseObject> excludeObjects) {
             this.excludeObjects = excludeObjects;
             this.__explicitlySet__.add("excludeObjects");
             return this;
         }
-
+        /**
+         * Database objects to include from migration.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
         private java.util.List<DatabaseObject> includeObjects;
 
+        /**
+         * Database objects to include from migration.
+         *
+         * @param includeObjects the value to set
+         * @return this builder
+         **/
         public Builder includeObjects(java.util.List<DatabaseObject> includeObjects) {
             this.includeObjects = includeObjects;
             this.__explicitlySet__.add("includeObjects");
@@ -281,74 +403,152 @@ public final class Migration {
             this.__explicitlySet__.add("vaultDetails");
             return this;
         }
-
+        /**
+         * The time the Migration was created. An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the Migration was created. An RFC3339 formatted datetime string.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time of the last Migration details update. An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time of the last Migration details update. An RFC3339 formatted datetime string.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The time of last Migration. An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastMigration")
         private java.util.Date timeLastMigration;
 
+        /**
+         * The time of last Migration. An RFC3339 formatted datetime string.
+         *
+         * @param timeLastMigration the value to set
+         * @return this builder
+         **/
         public Builder timeLastMigration(java.util.Date timeLastMigration) {
             this.timeLastMigration = timeLastMigration;
             this.__explicitlySet__.add("timeLastMigration");
             return this;
         }
-
+        /**
+         * The current state of the Migration resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private MigrationLifecycleStates lifecycleState;
 
+        /**
+         * The current state of the Migration resource.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(MigrationLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Additional status related to the execution and current state of the Migration.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private MigrationStatus lifecycleDetails;
 
+        /**
+         * Additional status related to the execution and current state of the Migration.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(MigrationStatus lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -447,6 +647,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the resource
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -458,6 +663,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Migration Display Name
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -469,6 +679,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -480,6 +695,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final MigrationTypes type;
 
+    /**
+     * Migration type.
+     *
+     * @return the value
+     **/
     public MigrationTypes getType() {
         return type;
     }
@@ -492,6 +712,12 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("waitAfter")
     private final OdmsJobPhases waitAfter;
 
+    /**
+     * Name of a migration phase. The Job will wait after executing this
+     * phase until the Resume Job endpoint is called.
+     *
+     * @return the value
+     **/
     public OdmsJobPhases getWaitAfter() {
         return waitAfter;
     }
@@ -503,6 +729,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
+    /**
+     * The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
+     *
+     * @return the value
+     **/
     public String getAgentId() {
         return agentId;
     }
@@ -514,6 +745,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("credentialsSecretId")
     private final String credentialsSecretId;
 
+    /**
+     * OCID of the Secret in the OCI vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
+     *
+     * @return the value
+     **/
     public String getCredentialsSecretId() {
         return credentialsSecretId;
     }
@@ -525,6 +761,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseConnectionId")
     private final String sourceDatabaseConnectionId;
 
+    /**
+     * The OCID of the Source Database Connection.
+     *
+     * @return the value
+     **/
     public String getSourceDatabaseConnectionId() {
         return sourceDatabaseConnectionId;
     }
@@ -536,6 +777,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
     private final String sourceContainerDatabaseConnectionId;
 
+    /**
+     * The OCID of the Source Container Database Connection.
+     *
+     * @return the value
+     **/
     public String getSourceContainerDatabaseConnectionId() {
         return sourceContainerDatabaseConnectionId;
     }
@@ -547,6 +793,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseConnectionId")
     private final String targetDatabaseConnectionId;
 
+    /**
+     * The OCID of the Target Database Connection.
+     *
+     * @return the value
+     **/
     public String getTargetDatabaseConnectionId() {
         return targetDatabaseConnectionId;
     }
@@ -558,6 +809,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("executingJobId")
     private final String executingJobId;
 
+    /**
+     * OCID of the current ODMS Job in execution for the Migration, if any.
+     *
+     * @return the value
+     **/
     public String getExecutingJobId() {
         return executingJobId;
     }
@@ -598,6 +854,12 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
     private final java.util.List<DatabaseObject> excludeObjects;
 
+    /**
+     * Database objects to exclude from migration.
+     * If 'includeObjects' are specified, only exclude object types can be specified with general wildcards (.*) for owner and objectName.
+     *
+     * @return the value
+     **/
     public java.util.List<DatabaseObject> getExcludeObjects() {
         return excludeObjects;
     }
@@ -609,6 +871,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
     private final java.util.List<DatabaseObject> includeObjects;
 
+    /**
+     * Database objects to include from migration.
+     *
+     * @return the value
+     **/
     public java.util.List<DatabaseObject> getIncludeObjects() {
         return includeObjects;
     }
@@ -634,6 +901,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the Migration was created. An RFC3339 formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -645,6 +917,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time of the last Migration details update. An RFC3339 formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -656,6 +933,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastMigration")
     private final java.util.Date timeLastMigration;
 
+    /**
+     * The time of last Migration. An RFC3339 formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeLastMigration() {
         return timeLastMigration;
     }
@@ -667,6 +949,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MigrationLifecycleStates lifecycleState;
 
+    /**
+     * The current state of the Migration resource.
+     *
+     * @return the value
+     **/
     public MigrationLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -678,6 +965,11 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final MigrationStatus lifecycleDetails;
 
+    /**
+     * Additional status related to the execution and current state of the Migration.
+     *
+     * @return the value
+     **/
     public MigrationStatus getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -690,6 +982,12 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -702,6 +1000,12 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -714,6 +1018,12 @@ public final class Migration {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

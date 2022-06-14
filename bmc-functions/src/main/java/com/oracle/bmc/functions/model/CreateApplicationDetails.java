@@ -60,54 +60,127 @@ public final class CreateApplicationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment to create the application within.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment to create the application within.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Application configuration. These values are passed on to the function as environment variables, functions may override application configuration.
+         * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+         * <p>
+         * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+         * <p>
+         * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private java.util.Map<String, String> config;
 
+        /**
+         * Application configuration. These values are passed on to the function as environment variables, functions may override application configuration.
+         * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+         * <p>
+         * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+         * <p>
+         * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
+         *
+         * @param config the value to set
+         * @return this builder
+         **/
         public Builder config(java.util.Map<String, String> config) {
             this.config = config;
             this.__explicitlySet__.add("config");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
+         *
+         * @param subnetIds the value to set
+         * @return this builder
+         **/
         public Builder subnetIds(java.util.List<String> subnetIds) {
             this.subnetIds = subnetIds;
             this.__explicitlySet__.add("subnetIds");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+         *
+         * @param networkSecurityGroupIds the value to set
+         * @return this builder
+         **/
         public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = networkSecurityGroupIds;
             this.__explicitlySet__.add("networkSecurityGroupIds");
             return this;
         }
-
+        /**
+         * A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
+         * The syslog URL must be reachable from all of the subnets configured for the application.
+         * Note: If you enable the OCI Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the OCI Logging service, and not to the syslog URL.
+         * <p>
+         * Example: {@code tcp://logserver.myserver:1234}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
         private String syslogUrl;
 
+        /**
+         * A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
+         * The syslog URL must be reachable from all of the subnets configured for the application.
+         * Note: If you enable the OCI Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the OCI Logging service, and not to the syslog URL.
+         * <p>
+         * Example: {@code tcp://logserver.myserver:1234}
+         *
+         * @param syslogUrl the value to set
+         * @return this builder
+         **/
         public Builder syslogUrl(String syslogUrl) {
             this.syslogUrl = syslogUrl;
             this.__explicitlySet__.add("syslogUrl");
@@ -122,19 +195,47 @@ public final class CreateApplicationDetails {
             this.__explicitlySet__.add("traceConfig");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -208,6 +309,11 @@ public final class CreateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment to create the application within.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -219,6 +325,11 @@ public final class CreateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -235,6 +346,16 @@ public final class CreateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final java.util.Map<String, String> config;
 
+    /**
+     * Application configuration. These values are passed on to the function as environment variables, functions may override application configuration.
+     * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+     * <p>
+     * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+     * <p>
+     * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getConfig() {
         return config;
     }
@@ -246,6 +367,11 @@ public final class CreateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     private final java.util.List<String> subnetIds;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getSubnetIds() {
         return subnetIds;
     }
@@ -257,6 +383,11 @@ public final class CreateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNetworkSecurityGroupIds() {
         return networkSecurityGroupIds;
     }
@@ -272,6 +403,15 @@ public final class CreateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
     private final String syslogUrl;
 
+    /**
+     * A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
+     * The syslog URL must be reachable from all of the subnets configured for the application.
+     * Note: If you enable the OCI Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the OCI Logging service, and not to the syslog URL.
+     * <p>
+     * Example: {@code tcp://logserver.myserver:1234}
+     *
+     * @return the value
+     **/
     public String getSyslogUrl() {
         return syslogUrl;
     }
@@ -293,6 +433,14 @@ public final class CreateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -306,6 +454,13 @@ public final class CreateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

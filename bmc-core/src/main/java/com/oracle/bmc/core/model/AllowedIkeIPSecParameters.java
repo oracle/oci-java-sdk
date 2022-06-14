@@ -41,6 +41,7 @@ public final class AllowedIkeIPSecParameters {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("allowedPhaseOneParameters")
         private AllowedPhaseOneParameters allowedPhaseOneParameters;
 

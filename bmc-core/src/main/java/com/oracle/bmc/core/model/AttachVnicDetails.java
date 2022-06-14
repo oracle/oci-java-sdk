@@ -41,6 +41,7 @@ public final class AttachVnicDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
         private CreateVnicDetails createVnicDetails;
 
@@ -49,28 +50,63 @@ public final class AttachVnicDetails {
             this.__explicitlySet__.add("createVnicDetails");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * The OCID of the instance.
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * Which physical network interface card (NIC) the VNIC will use. Defaults to 0.
+         * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+         * you add a secondary VNIC to one of these instances, you can specify which NIC
+         * the VNIC will use. For more information, see
+         * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
         private Integer nicIndex;
 
+        /**
+         * Which physical network interface card (NIC) the VNIC will use. Defaults to 0.
+         * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+         * you add a secondary VNIC to one of these instances, you can specify which NIC
+         * the VNIC will use. For more information, see
+         * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         *
+         * @param nicIndex the value to set
+         * @return this builder
+         **/
         public Builder nicIndex(Integer nicIndex) {
             this.nicIndex = nicIndex;
             this.__explicitlySet__.add("nicIndex");
@@ -126,6 +162,12 @@ public final class AttachVnicDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -136,6 +178,10 @@ public final class AttachVnicDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The OCID of the instance.
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -151,6 +197,15 @@ public final class AttachVnicDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
     private final Integer nicIndex;
 
+    /**
+     * Which physical network interface card (NIC) the VNIC will use. Defaults to 0.
+     * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+     * you add a secondary VNIC to one of these instances, you can specify which NIC
+     * the VNIC will use. For more information, see
+     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     *
+     * @return the value
+     **/
     public Integer getNicIndex() {
         return nicIndex;
     }

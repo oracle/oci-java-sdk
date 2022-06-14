@@ -36,10 +36,17 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-
+        /**
+         * The OCID of the image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The OCID of the image.
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
@@ -88,6 +95,10 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The OCID of the image.
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }

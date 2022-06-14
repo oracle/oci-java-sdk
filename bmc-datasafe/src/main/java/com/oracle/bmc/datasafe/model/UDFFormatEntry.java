@@ -38,10 +38,21 @@ public final class UDFFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.
+         * It can be a standalone or packaged function, so PACKAGE_NAME is optional.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userDefinedFunction")
         private String userDefinedFunction;
 
+        /**
+         * The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.
+         * It can be a standalone or packaged function, so PACKAGE_NAME is optional.
+         *
+         * @param userDefinedFunction the value to set
+         * @return this builder
+         **/
         public Builder userDefinedFunction(String userDefinedFunction) {
             this.userDefinedFunction = userDefinedFunction;
             this.__explicitlySet__.add("userDefinedFunction");
@@ -92,6 +103,12 @@ public final class UDFFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("userDefinedFunction")
     private final String userDefinedFunction;
 
+    /**
+     * The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.
+     * It can be a standalone or packaged function, so PACKAGE_NAME is optional.
+     *
+     * @return the value
+     **/
     public String getUserDefinedFunction() {
         return userDefinedFunction;
     }

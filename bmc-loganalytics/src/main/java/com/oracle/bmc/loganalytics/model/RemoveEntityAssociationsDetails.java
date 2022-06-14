@@ -30,9 +30,19 @@ public final class RemoveEntityAssociationsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Destination entities OCIDs with which associations are to be deleted
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationEntities")
         private java.util.List<String> associationEntities;
 
+        /**
+         * Destination entities OCIDs with which associations are to be deleted
+         *
+         * @param associationEntities the value to set
+         * @return this builder
+         **/
         public Builder associationEntities(java.util.List<String> associationEntities) {
             this.associationEntities = associationEntities;
             this.__explicitlySet__.add("associationEntities");
@@ -76,6 +86,11 @@ public final class RemoveEntityAssociationsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("associationEntities")
     private final java.util.List<String> associationEntities;
 
+    /**
+     * Destination entities OCIDs with which associations are to be deleted
+     *
+     * @return the value
+     **/
     public java.util.List<String> getAssociationEntities() {
         return associationEntities;
     }

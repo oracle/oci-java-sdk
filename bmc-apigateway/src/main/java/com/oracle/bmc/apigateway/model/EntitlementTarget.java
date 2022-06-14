@@ -30,9 +30,21 @@ public final class EntitlementTarget {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a deployment
+         * resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a deployment
+         * resource.
+         *
+         * @param deploymentId the value to set
+         * @return this builder
+         **/
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = deploymentId;
             this.__explicitlySet__.add("deploymentId");
@@ -76,6 +88,12 @@ public final class EntitlementTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a deployment
+     * resource.
+     *
+     * @return the value
+     **/
     public String getDeploymentId() {
         return deploymentId;
     }

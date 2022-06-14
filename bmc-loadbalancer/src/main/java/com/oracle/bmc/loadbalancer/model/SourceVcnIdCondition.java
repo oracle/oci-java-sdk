@@ -28,9 +28,31 @@ package com.oracle.bmc.loadbalancer.model;
 public final class SourceVcnIdCondition extends RuleCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet
+         * must match.
+         * <p>
+         * You can use this condition in conjunction with {@code SourceVcnIpAddressCondition}.
+         * <p>
+         **NOTE:** If you define this condition for a rule without a {@code SourceVcnIpAddressCondition}, this condition
+         * matches all incoming traffic in the specified VCN.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
         private String attributeValue;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet
+         * must match.
+         * <p>
+         * You can use this condition in conjunction with {@code SourceVcnIpAddressCondition}.
+         * <p>
+         **NOTE:** If you define this condition for a rule without a {@code SourceVcnIpAddressCondition}, this condition
+         * matches all incoming traffic in the specified VCN.
+         *
+         * @param attributeValue the value to set
+         * @return this builder
+         **/
         public Builder attributeValue(String attributeValue) {
             this.attributeValue = attributeValue;
             this.__explicitlySet__.add("attributeValue");
@@ -85,6 +107,17 @@ public final class SourceVcnIdCondition extends RuleCondition {
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
     private final String attributeValue;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet
+     * must match.
+     * <p>
+     * You can use this condition in conjunction with {@code SourceVcnIpAddressCondition}.
+     * <p>
+     **NOTE:** If you define this condition for a rule without a {@code SourceVcnIpAddressCondition}, this condition
+     * matches all incoming traffic in the specified VCN.
+     *
+     * @return the value
+     **/
     public String getAttributeValue() {
         return attributeValue;
     }

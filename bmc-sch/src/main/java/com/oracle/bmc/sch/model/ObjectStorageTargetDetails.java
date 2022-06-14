@@ -30,45 +30,91 @@ package com.oracle.bmc.sch.model;
 public final class ObjectStorageTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The namespace.
+         *
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         *
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-
+        /**
+         * The prefix of the objects. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectNamePrefix")
         private String objectNamePrefix;
 
+        /**
+         * The prefix of the objects. Avoid entering confidential information.
+         *
+         * @param objectNamePrefix the value to set
+         * @return this builder
+         **/
         public Builder objectNamePrefix(String objectNamePrefix) {
             this.objectNamePrefix = objectNamePrefix;
             this.__explicitlySet__.add("objectNamePrefix");
             return this;
         }
-
+        /**
+         * The batch rollover size in megabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverSizeInMBs")
         private Integer batchRolloverSizeInMBs;
 
+        /**
+         * The batch rollover size in megabytes.
+         *
+         * @param batchRolloverSizeInMBs the value to set
+         * @return this builder
+         **/
         public Builder batchRolloverSizeInMBs(Integer batchRolloverSizeInMBs) {
             this.batchRolloverSizeInMBs = batchRolloverSizeInMBs;
             this.__explicitlySet__.add("batchRolloverSizeInMBs");
             return this;
         }
-
+        /**
+         * The batch rollover time in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverTimeInMs")
         private Integer batchRolloverTimeInMs;
 
+        /**
+         * The batch rollover time in milliseconds.
+         *
+         * @param batchRolloverTimeInMs the value to set
+         * @return this builder
+         **/
         public Builder batchRolloverTimeInMs(Integer batchRolloverTimeInMs) {
             this.batchRolloverTimeInMs = batchRolloverTimeInMs;
             this.__explicitlySet__.add("batchRolloverTimeInMs");
@@ -137,6 +183,11 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The namespace.
+     *
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -148,6 +199,11 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }
@@ -159,6 +215,11 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectNamePrefix")
     private final String objectNamePrefix;
 
+    /**
+     * The prefix of the objects. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getObjectNamePrefix() {
         return objectNamePrefix;
     }
@@ -170,6 +231,11 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverSizeInMBs")
     private final Integer batchRolloverSizeInMBs;
 
+    /**
+     * The batch rollover size in megabytes.
+     *
+     * @return the value
+     **/
     public Integer getBatchRolloverSizeInMBs() {
         return batchRolloverSizeInMBs;
     }
@@ -181,6 +247,11 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverTimeInMs")
     private final Integer batchRolloverTimeInMs;
 
+    /**
+     * The batch rollover time in milliseconds.
+     *
+     * @return the value
+     **/
     public Integer getBatchRolloverTimeInMs() {
         return batchRolloverTimeInMs;
     }

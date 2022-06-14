@@ -17,6 +17,9 @@ public class RemoveCloudSqlRequest
      */
     private String bdsInstanceId;
 
+    /**
+     * The OCID of the cluster.
+     */
     public String getBdsInstanceId() {
         return bdsInstanceId;
     }
@@ -25,6 +28,9 @@ public class RemoveCloudSqlRequest
      */
     private com.oracle.bmc.bds.model.RemoveCloudSqlDetails removeCloudSqlDetails;
 
+    /**
+     * Details for the Cloud SQL capability
+     */
     public com.oracle.bmc.bds.model.RemoveCloudSqlDetails getRemoveCloudSqlDetails() {
         return removeCloudSqlDetails;
     }
@@ -33,6 +39,9 @@ public class RemoveCloudSqlRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +55,14 @@ public class RemoveCloudSqlRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -59,6 +76,14 @@ public class RemoveCloudSqlRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error, without risk of executing that same action again. Retry tokens expire after 24
+     * hours but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -80,10 +105,14 @@ public class RemoveCloudSqlRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the cluster.
+         */
         private String bdsInstanceId = null;
 
         /**
          * The OCID of the cluster.
+         * @param bdsInstanceId the value to set
          * @return this builder instance
          */
         public Builder bdsInstanceId(String bdsInstanceId) {
@@ -91,10 +120,14 @@ public class RemoveCloudSqlRequest
             return this;
         }
 
+        /**
+         * Details for the Cloud SQL capability
+         */
         private com.oracle.bmc.bds.model.RemoveCloudSqlDetails removeCloudSqlDetails = null;
 
         /**
          * Details for the Cloud SQL capability
+         * @param removeCloudSqlDetails the value to set
          * @return this builder instance
          */
         public Builder removeCloudSqlDetails(
@@ -103,10 +136,14 @@ public class RemoveCloudSqlRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -114,6 +151,14 @@ public class RemoveCloudSqlRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -123,6 +168,7 @@ public class RemoveCloudSqlRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -130,6 +176,14 @@ public class RemoveCloudSqlRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error, without risk of executing that same action again. Retry tokens expire after 24
+         * hours but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -139,6 +193,7 @@ public class RemoveCloudSqlRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -233,7 +288,8 @@ public class RemoveCloudSqlRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -244,6 +300,10 @@ public class RemoveCloudSqlRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

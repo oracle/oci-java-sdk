@@ -19,6 +19,11 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private String compartmentId;
 
+    /**
+     * Compartment OCID to list resources in. See compartmentIdInSubtree
+     *      for nested compartments traversal.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -28,6 +33,10 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private String logId;
 
+    /**
+     * Custom log OCID to list resources with the log as destination.
+     *
+     */
     public String getLogId() {
         return logId;
     }
@@ -36,6 +45,9 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private Boolean isCompartmentIdInSubtree;
 
+    /**
+     * Specifies whether or not nested compartments should be traversed. Defaults to false.
+     */
     public Boolean getIsCompartmentIdInSubtree() {
         return isCompartmentIdInSubtree;
     }
@@ -44,6 +56,9 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private String groupId;
 
+    /**
+     * The OCID of a group or a dynamic group.
+     */
     public String getGroupId() {
         return groupId;
     }
@@ -52,6 +67,9 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private String displayName;
 
+    /**
+     * Resource name
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -60,6 +78,9 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState;
 
+    /**
+     * Lifecycle state of the log object
+     */
     public com.oracle.bmc.logging.model.LogLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -69,6 +90,10 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -79,6 +104,11 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -127,6 +157,11 @@ public class ListUnifiedAgentConfigurationsRequest
         }
     };
 
+    /**
+     * The field to sort by (one column only). Default sort order is
+     * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -173,6 +208,10 @@ public class ListUnifiedAgentConfigurationsRequest
         }
     };
 
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -183,6 +222,11 @@ public class ListUnifiedAgentConfigurationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -194,12 +238,18 @@ public class ListUnifiedAgentConfigurationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Compartment OCID to list resources in. See compartmentIdInSubtree
+         *      for nested compartments traversal.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * Compartment OCID to list resources in. See compartmentIdInSubtree
          *      for nested compartments traversal.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -207,11 +257,16 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * Custom log OCID to list resources with the log as destination.
+         *
+         */
         private String logId = null;
 
         /**
          * Custom log OCID to list resources with the log as destination.
          *
+         * @param logId the value to set
          * @return this builder instance
          */
         public Builder logId(String logId) {
@@ -219,10 +274,14 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * Specifies whether or not nested compartments should be traversed. Defaults to false.
+         */
         private Boolean isCompartmentIdInSubtree = null;
 
         /**
          * Specifies whether or not nested compartments should be traversed. Defaults to false.
+         * @param isCompartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder isCompartmentIdInSubtree(Boolean isCompartmentIdInSubtree) {
@@ -230,10 +289,14 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * The OCID of a group or a dynamic group.
+         */
         private String groupId = null;
 
         /**
          * The OCID of a group or a dynamic group.
+         * @param groupId the value to set
          * @return this builder instance
          */
         public Builder groupId(String groupId) {
@@ -241,10 +304,14 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * Resource name
+         */
         private String displayName = null;
 
         /**
          * Resource name
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -252,10 +319,14 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * Lifecycle state of the log object
+         */
         private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState = null;
 
         /**
          * Lifecycle state of the log object
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -264,11 +335,16 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -276,12 +352,18 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
          * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -289,12 +371,18 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * The field to sort by (one column only). Default sort order is
+         * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by (one column only). Default sort order is
          * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -302,11 +390,16 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -314,12 +407,18 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -416,7 +515,8 @@ public class ListUnifiedAgentConfigurationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -433,6 +533,10 @@ public class ListUnifiedAgentConfigurationsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

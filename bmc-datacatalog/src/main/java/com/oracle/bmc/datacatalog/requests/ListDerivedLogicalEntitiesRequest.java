@@ -17,6 +17,9 @@ public class ListDerivedLogicalEntitiesRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -25,6 +28,9 @@ public class ListDerivedLogicalEntitiesRequest
      */
     private String patternKey;
 
+    /**
+     * Unique pattern key.
+     */
     public String getPatternKey() {
         return patternKey;
     }
@@ -36,6 +42,12 @@ public class ListDerivedLogicalEntitiesRequest
      */
     private String displayNameContains;
 
+    /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
+     */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
@@ -82,6 +94,10 @@ public class ListDerivedLogicalEntitiesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -126,6 +142,9 @@ public class ListDerivedLogicalEntitiesRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -134,6 +153,9 @@ public class ListDerivedLogicalEntitiesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -142,6 +164,9 @@ public class ListDerivedLogicalEntitiesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -150,6 +175,9 @@ public class ListDerivedLogicalEntitiesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -163,6 +191,14 @@ public class ListDerivedLogicalEntitiesRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -176,6 +212,14 @@ public class ListDerivedLogicalEntitiesRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -187,10 +231,14 @@ public class ListDerivedLogicalEntitiesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -198,10 +246,14 @@ public class ListDerivedLogicalEntitiesRequest
             return this;
         }
 
+        /**
+         * Unique pattern key.
+         */
         private String patternKey = null;
 
         /**
          * Unique pattern key.
+         * @param patternKey the value to set
          * @return this builder instance
          */
         public Builder patternKey(String patternKey) {
@@ -209,6 +261,12 @@ public class ListDerivedLogicalEntitiesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
+         */
         private String displayNameContains = null;
 
         /**
@@ -216,6 +274,7 @@ public class ListDerivedLogicalEntitiesRequest
          * For Example : /folders?displayNameContains=Cu.*
          * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
+         * @param displayNameContains the value to set
          * @return this builder instance
          */
         public Builder displayNameContains(String displayNameContains) {
@@ -223,11 +282,16 @@ public class ListDerivedLogicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -235,10 +299,14 @@ public class ListDerivedLogicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -246,10 +314,14 @@ public class ListDerivedLogicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -257,10 +329,14 @@ public class ListDerivedLogicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -268,10 +344,14 @@ public class ListDerivedLogicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -279,6 +359,14 @@ public class ListDerivedLogicalEntitiesRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -288,6 +376,7 @@ public class ListDerivedLogicalEntitiesRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -295,6 +384,14 @@ public class ListDerivedLogicalEntitiesRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -304,6 +401,7 @@ public class ListDerivedLogicalEntitiesRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -397,7 +495,8 @@ public class ListDerivedLogicalEntitiesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -413,6 +512,10 @@ public class ListDerivedLogicalEntitiesRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

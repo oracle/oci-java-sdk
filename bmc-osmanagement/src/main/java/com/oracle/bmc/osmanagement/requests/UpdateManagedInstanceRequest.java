@@ -18,6 +18,9 @@ public class UpdateManagedInstanceRequest
      */
     private String managedInstanceId;
 
+    /**
+     * OCID for the managed instance
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -27,6 +30,9 @@ public class UpdateManagedInstanceRequest
     private com.oracle.bmc.osmanagement.model.UpdateManagedInstanceDetails
             updateManagedInstanceDetails;
 
+    /**
+     * Details about a Managed Instance to update
+     */
     public com.oracle.bmc.osmanagement.model.UpdateManagedInstanceDetails
             getUpdateManagedInstanceDetails() {
         return updateManagedInstanceDetails;
@@ -36,6 +42,9 @@ public class UpdateManagedInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +58,14 @@ public class UpdateManagedInstanceRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -71,10 +88,14 @@ public class UpdateManagedInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID for the managed instance
+         */
         private String managedInstanceId = null;
 
         /**
          * OCID for the managed instance
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -82,11 +103,15 @@ public class UpdateManagedInstanceRequest
             return this;
         }
 
+        /**
+         * Details about a Managed Instance to update
+         */
         private com.oracle.bmc.osmanagement.model.UpdateManagedInstanceDetails
                 updateManagedInstanceDetails = null;
 
         /**
          * Details about a Managed Instance to update
+         * @param updateManagedInstanceDetails the value to set
          * @return this builder instance
          */
         public Builder updateManagedInstanceDetails(
@@ -96,10 +121,14 @@ public class UpdateManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -107,6 +136,14 @@ public class UpdateManagedInstanceRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -116,6 +153,7 @@ public class UpdateManagedInstanceRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -208,7 +246,8 @@ public class UpdateManagedInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -218,6 +257,10 @@ public class UpdateManagedInstanceRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -35,10 +35,17 @@ public final class DataObjectFrequencyColumnUnit extends DataObjectColumnUnit {
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Frequency unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
+        /**
+         * Frequency unit.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -136,6 +143,10 @@ public final class DataObjectFrequencyColumnUnit extends DataObjectColumnUnit {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
+    /**
+     * Frequency unit.
+     * @return the value
+     **/
     public Unit getUnit() {
         return unit;
     }

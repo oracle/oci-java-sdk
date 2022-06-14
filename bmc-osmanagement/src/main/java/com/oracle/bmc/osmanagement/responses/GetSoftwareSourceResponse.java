@@ -14,6 +14,11 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +47,12 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private Float retryAfter;
 
+    /**
+     * A decimal number representing the number of seconds the client
+     * should wait before polling this endpoint again.
+     *
+     * @return the value
+     */
     public Float getRetryAfter() {
         return retryAfter;
     }
@@ -45,6 +62,10 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
+    /**
+     * The returned SoftwareSource instance.
+     * @return the value
+     */
     public com.oracle.bmc.osmanagement.model.SoftwareSource getSoftwareSource() {
         return softwareSource;
     }
@@ -77,29 +98,71 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * A decimal number representing the number of seconds the client
+         * should wait before polling this endpoint again.
+         *
+         */
         private Float retryAfter;
 
+        /**
+         * A decimal number representing the number of seconds the client
+         * should wait before polling this endpoint again.
+         *
+         * @param retryAfter the value to set
+         * @return this builder
+         */
         public Builder retryAfter(Float retryAfter) {
             this.retryAfter = retryAfter;
             return this;
         }
 
+        /**
+         * The returned SoftwareSource instance.
+         */
         private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
+        /**
+         * The returned SoftwareSource instance.
+         * @param softwareSource the value to set
+         * @return this builder
+         */
         public Builder softwareSource(
                 com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource) {
             this.softwareSource = softwareSource;
@@ -120,12 +183,20 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetSoftwareSourceResponse build() {
             return new GetSoftwareSourceResponse(
                     __httpStatusCode__, etag, opcRequestId, retryAfter, softwareSource);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

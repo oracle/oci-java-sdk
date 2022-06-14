@@ -14,6 +14,11 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
      */
     private Long contentLength;
 
+    /**
+     * The content size of the body in bytes.
+     * @return the value
+     */
     public Long getContentLength() {
         return contentLength;
     }
@@ -43,6 +58,10 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
      */
     private String contentDisposition;
 
+    /**
+     * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+     * @return the value
+     */
     public String getContentDisposition() {
         return contentDisposition;
     }
@@ -52,6 +71,10 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
      */
     private String contentType;
 
+    /**
+     * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.17.
+     * @return the value
+     */
     public String getContentType() {
         return contentType;
     }
@@ -62,6 +85,11 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
      */
     private String cacheControl;
 
+    /**
+     * Cache-control allows us to tell browsers to cache assets, how long to store them, and whether to validate them.
+     *
+     * @return the value
+     */
     public String getCacheControl() {
         return cacheControl;
     }
@@ -71,6 +99,10 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -83,6 +115,13 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
      */
     private boolean isNotModified;
 
+    /**
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
+     * @param true if the object was not modified
+     */
     public boolean isNotModified() {
         return isNotModified;
     }
@@ -127,57 +166,134 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The content size of the body in bytes.
+         */
         private Long contentLength;
 
+        /**
+         * The content size of the body in bytes.
+         * @param contentLength the value to set
+         * @return this builder
+         */
         public Builder contentLength(Long contentLength) {
             this.contentLength = contentLength;
             return this;
         }
 
+        /**
+         * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+         */
         private String contentDisposition;
 
+        /**
+         * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+         * @param contentDisposition the value to set
+         * @return this builder
+         */
         public Builder contentDisposition(String contentDisposition) {
             this.contentDisposition = contentDisposition;
             return this;
         }
 
+        /**
+         * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.17.
+         */
         private String contentType;
 
+        /**
+         * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.17.
+         * @param contentType the value to set
+         * @return this builder
+         */
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             return this;
         }
 
+        /**
+         * Cache-control allows us to tell browsers to cache assets, how long to store them, and whether to validate them.
+         *
+         */
         private String cacheControl;
 
+        /**
+         * Cache-control allows us to tell browsers to cache assets, how long to store them, and whether to validate them.
+         *
+         * @param cacheControl the value to set
+         * @return this builder
+         */
         public Builder cacheControl(String cacheControl) {
             this.cacheControl = cacheControl;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
         }
 
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         */
         private boolean isNotModified;
 
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         * @param true if the object was not modified
+         */
         public Builder isNotModified(boolean isNotModified) {
             this.isNotModified = isNotModified;
             return this;
@@ -200,6 +316,10 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetRecordPreviewContentResponse build() {
             return new GetRecordPreviewContentResponse(
                     __httpStatusCode__,
@@ -214,6 +334,10 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

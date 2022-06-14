@@ -16,6 +16,9 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -24,6 +27,9 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String skillId;
 
+    /**
+     * Unique Skill identifier.
+     */
     public String getSkillId() {
         return skillId;
     }
@@ -32,6 +38,9 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String category;
 
+    /**
+     * List only Bot resources with this category.
+     */
     public String getCategory() {
         return category;
     }
@@ -43,6 +52,12 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String name;
 
+    /**
+     * List only Bot resources with this name. Names are unique and may not change.
+     * <p>
+     * Example: {@code MySkill}
+     *
+     */
     public String getName() {
         return name;
     }
@@ -54,6 +69,12 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String version;
 
+    /**
+     * List only Bot resources with this version. Versions are unique and may not change.
+     * <p>
+     * Example: {@code 1.0}
+     *
+     */
     public String getVersion() {
         return version;
     }
@@ -65,6 +86,12 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String namespace;
 
+    /**
+     * List only Bot resources with this namespace. Namespaces may not change.
+     * <p>
+     * Example: {@code MyNamespace}
+     *
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -74,6 +101,10 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String platformVersion;
 
+    /**
+     * List only Bot resources with this platform version.
+     *
+     */
     public String getPlatformVersion() {
         return platformVersion;
     }
@@ -82,6 +113,9 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private com.oracle.bmc.oda.model.LifecycleState lifecycleState;
 
+    /**
+     * List only the resources that are in this lifecycle state.
+     */
     public com.oracle.bmc.oda.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -91,6 +125,10 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String lifecycleDetails;
 
+    /**
+     * List only Bot resources with this lifecycle details.
+     *
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -99,6 +137,9 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -113,6 +154,15 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String page;
 
+    /**
+     * The page at which to start retrieving results.
+     * <p>
+     * You get this value from the {@code opc-next-page} header in a previous list request.
+     * To retireve the first page, omit this query parameter.
+     * <p>
+     * Example: {@code MToxMA==}
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -157,6 +207,9 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -210,6 +263,13 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
+     * <p>
+     * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending.
+     * For all other sort fields the default sort order is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -218,6 +278,9 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -229,10 +292,14 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -240,10 +307,14 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Unique Skill identifier.
+         */
         private String skillId = null;
 
         /**
          * Unique Skill identifier.
+         * @param skillId the value to set
          * @return this builder instance
          */
         public Builder skillId(String skillId) {
@@ -251,10 +322,14 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * List only Bot resources with this category.
+         */
         private String category = null;
 
         /**
          * List only Bot resources with this category.
+         * @param category the value to set
          * @return this builder instance
          */
         public Builder category(String category) {
@@ -262,6 +337,12 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * List only Bot resources with this name. Names are unique and may not change.
+         * <p>
+         * Example: {@code MySkill}
+         *
+         */
         private String name = null;
 
         /**
@@ -269,6 +350,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * <p>
          * Example: {@code MySkill}
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -276,6 +358,12 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * List only Bot resources with this version. Versions are unique and may not change.
+         * <p>
+         * Example: {@code 1.0}
+         *
+         */
         private String version = null;
 
         /**
@@ -283,6 +371,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * <p>
          * Example: {@code 1.0}
          *
+         * @param version the value to set
          * @return this builder instance
          */
         public Builder version(String version) {
@@ -290,6 +379,12 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * List only Bot resources with this namespace. Namespaces may not change.
+         * <p>
+         * Example: {@code MyNamespace}
+         *
+         */
         private String namespace = null;
 
         /**
@@ -297,6 +392,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * <p>
          * Example: {@code MyNamespace}
          *
+         * @param namespace the value to set
          * @return this builder instance
          */
         public Builder namespace(String namespace) {
@@ -304,11 +400,16 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * List only Bot resources with this platform version.
+         *
+         */
         private String platformVersion = null;
 
         /**
          * List only Bot resources with this platform version.
          *
+         * @param platformVersion the value to set
          * @return this builder instance
          */
         public Builder platformVersion(String platformVersion) {
@@ -316,10 +417,14 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * List only the resources that are in this lifecycle state.
+         */
         private com.oracle.bmc.oda.model.LifecycleState lifecycleState = null;
 
         /**
          * List only the resources that are in this lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(com.oracle.bmc.oda.model.LifecycleState lifecycleState) {
@@ -327,11 +432,16 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * List only Bot resources with this lifecycle details.
+         *
+         */
         private String lifecycleDetails = null;
 
         /**
          * List only Bot resources with this lifecycle details.
          *
+         * @param lifecycleDetails the value to set
          * @return this builder instance
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
@@ -339,10 +449,14 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -350,6 +464,15 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The page at which to start retrieving results.
+         * <p>
+         * You get this value from the {@code opc-next-page} header in a previous list request.
+         * To retireve the first page, omit this query parameter.
+         * <p>
+         * Example: {@code MToxMA==}
+         *
+         */
         private String page = null;
 
         /**
@@ -360,6 +483,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * <p>
          * Example: {@code MToxMA==}
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -367,10 +491,14 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -378,6 +506,13 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
+         * <p>
+         * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending.
+         * For all other sort fields the default sort order is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -386,6 +521,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending.
          * For all other sort fields the default sort order is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -393,10 +529,14 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -498,7 +638,8 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -518,6 +659,10 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

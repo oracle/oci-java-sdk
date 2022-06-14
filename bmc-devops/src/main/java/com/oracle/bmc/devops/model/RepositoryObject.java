@@ -30,36 +30,65 @@ public final class RepositoryObject {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of git object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of git object.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Size in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
+        /**
+         * Size in bytes.
+         * @param sizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-
+        /**
+         * SHA-1 hash of git object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sha")
         private String sha;
 
+        /**
+         * SHA-1 hash of git object.
+         * @param sha the value to set
+         * @return this builder
+         **/
         public Builder sha(String sha) {
             this.sha = sha;
             this.__explicitlySet__.add("sha");
             return this;
         }
-
+        /**
+         * Flag to determine if the object contains binary file content or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBinary")
         private Boolean isBinary;
 
+        /**
+         * Flag to determine if the object contains binary file content or not.
+         * @param isBinary the value to set
+         * @return this builder
+         **/
         public Builder isBinary(Boolean isBinary) {
             this.isBinary = isBinary;
             this.__explicitlySet__.add("isBinary");
@@ -152,6 +181,10 @@ public final class RepositoryObject {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of git object.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -162,6 +195,10 @@ public final class RepositoryObject {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
+    /**
+     * Size in bytes.
+     * @return the value
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
@@ -172,6 +209,10 @@ public final class RepositoryObject {
     @com.fasterxml.jackson.annotation.JsonProperty("sha")
     private final String sha;
 
+    /**
+     * SHA-1 hash of git object.
+     * @return the value
+     **/
     public String getSha() {
         return sha;
     }
@@ -182,6 +223,10 @@ public final class RepositoryObject {
     @com.fasterxml.jackson.annotation.JsonProperty("isBinary")
     private final Boolean isBinary;
 
+    /**
+     * Flag to determine if the object contains binary file content or not.
+     * @return the value
+     **/
     public Boolean getIsBinary() {
         return isBinary;
     }

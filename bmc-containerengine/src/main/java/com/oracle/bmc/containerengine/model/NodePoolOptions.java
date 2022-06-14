@@ -34,36 +34,71 @@ public final class NodePoolOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Available Kubernetes versions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersions")
         private java.util.List<String> kubernetesVersions;
 
+        /**
+         * Available Kubernetes versions.
+         * @param kubernetesVersions the value to set
+         * @return this builder
+         **/
         public Builder kubernetesVersions(java.util.List<String> kubernetesVersions) {
             this.kubernetesVersions = kubernetesVersions;
             this.__explicitlySet__.add("kubernetesVersions");
             return this;
         }
-
+        /**
+         * Available shapes for nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapes")
         private java.util.List<String> shapes;
 
+        /**
+         * Available shapes for nodes.
+         * @param shapes the value to set
+         * @return this builder
+         **/
         public Builder shapes(java.util.List<String> shapes) {
             this.shapes = shapes;
             this.__explicitlySet__.add("shapes");
             return this;
         }
-
+        /**
+         * Deprecated. See sources.
+         * When creating a node pool using the {@code CreateNodePoolDetails} object, only image names contained in this
+         * property can be passed to the {@code nodeImageName} property.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("images")
         private java.util.List<String> images;
 
+        /**
+         * Deprecated. See sources.
+         * When creating a node pool using the {@code CreateNodePoolDetails} object, only image names contained in this
+         * property can be passed to the {@code nodeImageName} property.
+         *
+         * @param images the value to set
+         * @return this builder
+         **/
         public Builder images(java.util.List<String> images) {
             this.images = images;
             this.__explicitlySet__.add("images");
             return this;
         }
-
+        /**
+         * Available source of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sources")
         private java.util.List<NodeSourceOption> sources;
 
+        /**
+         * Available source of the node.
+         * @param sources the value to set
+         * @return this builder
+         **/
         public Builder sources(java.util.List<NodeSourceOption> sources) {
             this.sources = sources;
             this.__explicitlySet__.add("sources");
@@ -110,6 +145,10 @@ public final class NodePoolOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersions")
     private final java.util.List<String> kubernetesVersions;
 
+    /**
+     * Available Kubernetes versions.
+     * @return the value
+     **/
     public java.util.List<String> getKubernetesVersions() {
         return kubernetesVersions;
     }
@@ -120,6 +159,10 @@ public final class NodePoolOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("shapes")
     private final java.util.List<String> shapes;
 
+    /**
+     * Available shapes for nodes.
+     * @return the value
+     **/
     public java.util.List<String> getShapes() {
         return shapes;
     }
@@ -133,6 +176,13 @@ public final class NodePoolOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("images")
     private final java.util.List<String> images;
 
+    /**
+     * Deprecated. See sources.
+     * When creating a node pool using the {@code CreateNodePoolDetails} object, only image names contained in this
+     * property can be passed to the {@code nodeImageName} property.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getImages() {
         return images;
     }
@@ -143,6 +193,10 @@ public final class NodePoolOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
     private final java.util.List<NodeSourceOption> sources;
 
+    /**
+     * Available source of the node.
+     * @return the value
+     **/
     public java.util.List<NodeSourceOption> getSources() {
         return sources;
     }

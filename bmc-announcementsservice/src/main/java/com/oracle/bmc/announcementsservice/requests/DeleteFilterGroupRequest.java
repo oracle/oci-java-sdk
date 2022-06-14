@@ -16,6 +16,9 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String announcementSubscriptionId;
 
+    /**
+     * The OCID of the announcement subscription.
+     */
     public String getAnnouncementSubscriptionId() {
         return announcementSubscriptionId;
     }
@@ -24,6 +27,9 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String filterGroupName;
 
+    /**
+     * The name of the filter group.
+     */
     public String getFilterGroupName() {
         return filterGroupName;
     }
@@ -34,6 +40,11 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -42,6 +53,9 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String ifMatch;
 
+    /**
+     * The locking version, used for optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -53,10 +67,14 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the announcement subscription.
+         */
         private String announcementSubscriptionId = null;
 
         /**
          * The OCID of the announcement subscription.
+         * @param announcementSubscriptionId the value to set
          * @return this builder instance
          */
         public Builder announcementSubscriptionId(String announcementSubscriptionId) {
@@ -64,10 +82,14 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The name of the filter group.
+         */
         private String filterGroupName = null;
 
         /**
          * The name of the filter group.
+         * @param filterGroupName the value to set
          * @return this builder instance
          */
         public Builder filterGroupName(String filterGroupName) {
@@ -75,12 +97,18 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -88,10 +116,14 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The locking version, used for optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * The locking version, used for optimistic concurrency control.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -173,7 +205,8 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -183,6 +216,10 @@ public class DeleteFilterGroupRequest extends com.oracle.bmc.requests.BmcRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

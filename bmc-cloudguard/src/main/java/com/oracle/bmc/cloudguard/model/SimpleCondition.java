@@ -25,36 +25,65 @@ package com.oracle.bmc.cloudguard.model;
 public final class SimpleCondition extends Condition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * parameter Key
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameter")
         private String parameter;
 
+        /**
+         * parameter Key
+         * @param parameter the value to set
+         * @return this builder
+         **/
         public Builder parameter(String parameter) {
             this.parameter = parameter;
             this.__explicitlySet__.add("parameter");
             return this;
         }
-
+        /**
+         * type of operator
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private OperatorType operator;
 
+        /**
+         * type of operator
+         * @param operator the value to set
+         * @return this builder
+         **/
         public Builder operator(OperatorType operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
-
+        /**
+         * type of operator
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * type of operator
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * type of value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ConditionValueType valueType;
 
+        /**
+         * type of value
+         * @param valueType the value to set
+         * @return this builder
+         **/
         public Builder valueType(ConditionValueType valueType) {
             this.valueType = valueType;
             this.__explicitlySet__.add("valueType");
@@ -111,6 +140,10 @@ public final class SimpleCondition extends Condition {
     @com.fasterxml.jackson.annotation.JsonProperty("parameter")
     private final String parameter;
 
+    /**
+     * parameter Key
+     * @return the value
+     **/
     public String getParameter() {
         return parameter;
     }
@@ -121,6 +154,10 @@ public final class SimpleCondition extends Condition {
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final OperatorType operator;
 
+    /**
+     * type of operator
+     * @return the value
+     **/
     public OperatorType getOperator() {
         return operator;
     }
@@ -131,6 +168,10 @@ public final class SimpleCondition extends Condition {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * type of operator
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -141,6 +182,10 @@ public final class SimpleCondition extends Condition {
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ConditionValueType valueType;
 
+    /**
+     * type of value
+     * @return the value
+     **/
     public ConditionValueType getValueType() {
         return valueType;
     }

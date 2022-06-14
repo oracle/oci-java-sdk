@@ -27,9 +27,17 @@ public final class LabelNames {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of label names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelNames")
         private java.util.List<String> labelNames;
 
+        /**
+         * An array of label names.
+         * @param labelNames the value to set
+         * @return this builder
+         **/
         public Builder labelNames(java.util.List<String> labelNames) {
             this.labelNames = labelNames;
             this.__explicitlySet__.add("labelNames");
@@ -71,6 +79,10 @@ public final class LabelNames {
     @com.fasterxml.jackson.annotation.JsonProperty("labelNames")
     private final java.util.List<String> labelNames;
 
+    /**
+     * An array of label names.
+     * @return the value
+     **/
     public java.util.List<String> getLabelNames() {
         return labelNames;
     }

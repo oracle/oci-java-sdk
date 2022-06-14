@@ -16,6 +16,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -32,6 +38,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String entityKey;
 
+    /**
+     * Unique entity key.
+     */
     public String getEntityKey() {
         return entityKey;
     }
@@ -40,6 +49,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String attributeKey;
 
+    /**
+     * Unique attribute key.
+     */
     public String getAttributeKey() {
         return attributeKey;
     }
@@ -48,6 +60,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String name;
 
+    /**
+     * Immutable resource name.
+     */
     public String getName() {
         return name;
     }
@@ -56,6 +71,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+     */
     public com.oracle.bmc.datacatalog.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -64,6 +82,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String termKey;
 
+    /**
+     * Unique key of the related term.
+     */
     public String getTermKey() {
         return termKey;
     }
@@ -72,6 +93,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String termPath;
 
+    /**
+     * Path of the related term.
+     */
     public String getTermPath() {
         return termPath;
     }
@@ -80,6 +104,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.Date timeCreated;
 
+    /**
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -88,6 +115,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String createdById;
 
+    /**
+     * OCID of the user who created the resource.
+     */
     public String getCreatedById() {
         return createdById;
     }
@@ -142,6 +172,10 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * Specifies the fields to return in an entity attribute tag summary response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -188,6 +222,10 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -232,6 +270,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -240,6 +281,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -248,6 +292,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -256,6 +303,9 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -267,10 +317,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -278,10 +332,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -289,10 +347,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique entity key.
+         */
         private String entityKey = null;
 
         /**
          * Unique entity key.
+         * @param entityKey the value to set
          * @return this builder instance
          */
         public Builder entityKey(String entityKey) {
@@ -300,10 +362,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique attribute key.
+         */
         private String attributeKey = null;
 
         /**
          * Unique attribute key.
+         * @param attributeKey the value to set
          * @return this builder instance
          */
         public Builder attributeKey(String attributeKey) {
@@ -311,10 +377,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Immutable resource name.
+         */
         private String name = null;
 
         /**
          * Immutable resource name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -322,10 +392,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         */
         private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -334,10 +408,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique key of the related term.
+         */
         private String termKey = null;
 
         /**
          * Unique key of the related term.
+         * @param termKey the value to set
          * @return this builder instance
          */
         public Builder termKey(String termKey) {
@@ -345,10 +423,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Path of the related term.
+         */
         private String termPath = null;
 
         /**
          * Path of the related term.
+         * @param termPath the value to set
          * @return this builder instance
          */
         public Builder termPath(String termPath) {
@@ -356,10 +438,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
         private java.util.Date timeCreated = null;
 
         /**
          * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeCreated the value to set
          * @return this builder instance
          */
         public Builder timeCreated(java.util.Date timeCreated) {
@@ -367,10 +453,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * OCID of the user who created the resource.
+         */
         private String createdById = null;
 
         /**
          * OCID of the user who created the resource.
+         * @param createdById the value to set
          * @return this builder instance
          */
         public Builder createdById(String createdById) {
@@ -378,11 +468,16 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Specifies the fields to return in an entity attribute tag summary response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in an entity attribute tag summary response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -393,17 +488,23 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Singular setter. Specifies the fields to return in an entity attribute tag summary response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -411,10 +512,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -422,10 +527,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -433,10 +542,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -444,10 +557,14 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -553,7 +670,8 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -575,6 +693,10 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,27 +29,49 @@ public final class UploadData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name used to refer to the uploaded data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name used to refer to the uploaded data.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The content URL of the uploaded data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
         private String contentUrl;
 
+        /**
+         * The content URL of the uploaded data.
+         * @param contentUrl the value to set
+         * @return this builder
+         **/
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = contentUrl;
             this.__explicitlySet__.add("contentUrl");
             return this;
         }
-
+        /**
+         * The MIME type of the uploaded data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private String mimeType;
 
+        /**
+         * The MIME type of the uploaded data.
+         * @param mimeType the value to set
+         * @return this builder
+         **/
         public Builder mimeType(String mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
@@ -94,6 +116,10 @@ public final class UploadData {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name used to refer to the uploaded data.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -104,6 +130,10 @@ public final class UploadData {
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
     private final String contentUrl;
 
+    /**
+     * The content URL of the uploaded data.
+     * @return the value
+     **/
     public String getContentUrl() {
         return contentUrl;
     }
@@ -114,6 +144,10 @@ public final class UploadData {
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final String mimeType;
 
+    /**
+     * The MIME type of the uploaded data.
+     * @return the value
+     **/
     public String getMimeType() {
         return mimeType;
     }

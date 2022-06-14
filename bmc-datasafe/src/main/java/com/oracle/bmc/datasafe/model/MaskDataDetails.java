@@ -51,72 +51,169 @@ public final class MaskDataDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the target database to be masked. If it's not provided, the value of the
+         * targetId attribute in the MaskingPolicy resource is used. The OCID of the target
+         * database to be masked. If it's not provided, the value of the targetId attribute in
+         * the MaskingPolicy resource is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the target database to be masked. If it's not provided, the value of the
+         * targetId attribute in the MaskingPolicy resource is used. The OCID of the target
+         * database to be masked. If it's not provided, the value of the targetId attribute in
+         * the MaskingPolicy resource is used.
+         *
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * Indicates if the masking request is to decrypt the data values previously encrypted using Deterministic Encryption. Note that, to
+         * correctly decrypt the encrypted data values, it requires the same seed value that was provided to encrypt those data values.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDecrypt")
         private Boolean isDecrypt;
 
+        /**
+         * Indicates if the masking request is to decrypt the data values previously encrypted using Deterministic Encryption. Note that, to
+         * correctly decrypt the encrypted data values, it requires the same seed value that was provided to encrypt those data values.
+         *
+         * @param isDecrypt the value to set
+         * @return this builder
+         **/
         public Builder isDecrypt(Boolean isDecrypt) {
             this.isDecrypt = isDecrypt;
             this.__explicitlySet__.add("isDecrypt");
             return this;
         }
-
+        /**
+         * Indicates if the masking request is to rerun the previously failed masking steps. If a masking request is submitted with the
+         * isIgnoreErrorsEnabled attribute set to true, the masking process tracks the failed masking steps. Another masking request can be
+         * submitted with the isRun attribute set to true to rerun those failed masking steps. It helps save time by executing only the failed
+         * masking steps and not doing the whole masking again.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRerun")
         private Boolean isRerun;
 
+        /**
+         * Indicates if the masking request is to rerun the previously failed masking steps. If a masking request is submitted with the
+         * isIgnoreErrorsEnabled attribute set to true, the masking process tracks the failed masking steps. Another masking request can be
+         * submitted with the isRun attribute set to true to rerun those failed masking steps. It helps save time by executing only the failed
+         * masking steps and not doing the whole masking again.
+         *
+         * @param isRerun the value to set
+         * @return this builder
+         **/
         public Builder isRerun(Boolean isRerun) {
             this.isRerun = isRerun;
             this.__explicitlySet__.add("isRerun");
             return this;
         }
-
+        /**
+         * The tablespace that should be used to create the mapping tables, DMASK objects, and other temporary tables for data masking.
+         * If no tablespace is provided, the DEFAULT tablespace is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
         private String tablespace;
 
+        /**
+         * The tablespace that should be used to create the mapping tables, DMASK objects, and other temporary tables for data masking.
+         * If no tablespace is provided, the DEFAULT tablespace is used.
+         *
+         * @param tablespace the value to set
+         * @return this builder
+         **/
         public Builder tablespace(String tablespace) {
             this.tablespace = tablespace;
             this.__explicitlySet__.add("tablespace");
             return this;
         }
-
+        /**
+         * Indicates if the masking process should continue on hitting an error. It provides fault tolerance support and is enabled by
+         * default. In fault-tolerant mode, the masking process saves the failed step and continues. You can then submit another masking
+         * request (with isRerun attribute set to true) to execute only the failed steps.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreErrorsEnabled")
         private Boolean isIgnoreErrorsEnabled;
 
+        /**
+         * Indicates if the masking process should continue on hitting an error. It provides fault tolerance support and is enabled by
+         * default. In fault-tolerant mode, the masking process saves the failed step and continues. You can then submit another masking
+         * request (with isRerun attribute set to true) to execute only the failed steps.
+         *
+         * @param isIgnoreErrorsEnabled the value to set
+         * @return this builder
+         **/
         public Builder isIgnoreErrorsEnabled(Boolean isIgnoreErrorsEnabled) {
             this.isIgnoreErrorsEnabled = isIgnoreErrorsEnabled;
             this.__explicitlySet__.add("isIgnoreErrorsEnabled");
             return this;
         }
-
+        /**
+         * The seed value to be used in case of Deterministic Encryption and Deterministic Substitution masking formats.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("seed")
         private String seed;
 
+        /**
+         * The seed value to be used in case of Deterministic Encryption and Deterministic Substitution masking formats.
+         * @param seed the value to set
+         * @return this builder
+         **/
         public Builder seed(String seed) {
             this.seed = seed;
             this.__explicitlySet__.add("seed");
             return this;
         }
-
+        /**
+         * Indicates if the interim DMASK tables should be moved to the user-specified tablespace. As interim tables can be large in size,
+         * set it to false if moving them causes performance overhead during masking.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMoveInterimTablesEnabled")
         private Boolean isMoveInterimTablesEnabled;
 
+        /**
+         * Indicates if the interim DMASK tables should be moved to the user-specified tablespace. As interim tables can be large in size,
+         * set it to false if moving them causes performance overhead during masking.
+         *
+         * @param isMoveInterimTablesEnabled the value to set
+         * @return this builder
+         **/
         public Builder isMoveInterimTablesEnabled(Boolean isMoveInterimTablesEnabled) {
             this.isMoveInterimTablesEnabled = isMoveInterimTablesEnabled;
             this.__explicitlySet__.add("isMoveInterimTablesEnabled");
             return this;
         }
-
+        /**
+         * Indicates if data masking should be performed using a saved masking script. Setting this attribute to true skips masking script
+         * generation and executes the masking script stored in the Data Safe repository. It helps save time if there are no changes in
+         * the database tables and their dependencies.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isExecuteSavedScriptEnabled")
         private Boolean isExecuteSavedScriptEnabled;
 
+        /**
+         * Indicates if data masking should be performed using a saved masking script. Setting this attribute to true skips masking script
+         * generation and executes the masking script stored in the Data Safe repository. It helps save time if there are no changes in
+         * the database tables and their dependencies.
+         *
+         * @param isExecuteSavedScriptEnabled the value to set
+         * @return this builder
+         **/
         public Builder isExecuteSavedScriptEnabled(Boolean isExecuteSavedScriptEnabled) {
             this.isExecuteSavedScriptEnabled = isExecuteSavedScriptEnabled;
             this.__explicitlySet__.add("isExecuteSavedScriptEnabled");
@@ -179,6 +276,14 @@ public final class MaskDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the target database to be masked. If it's not provided, the value of the
+     * targetId attribute in the MaskingPolicy resource is used. The OCID of the target
+     * database to be masked. If it's not provided, the value of the targetId attribute in
+     * the MaskingPolicy resource is used.
+     *
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -191,6 +296,12 @@ public final class MaskDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isDecrypt")
     private final Boolean isDecrypt;
 
+    /**
+     * Indicates if the masking request is to decrypt the data values previously encrypted using Deterministic Encryption. Note that, to
+     * correctly decrypt the encrypted data values, it requires the same seed value that was provided to encrypt those data values.
+     *
+     * @return the value
+     **/
     public Boolean getIsDecrypt() {
         return isDecrypt;
     }
@@ -205,6 +316,14 @@ public final class MaskDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isRerun")
     private final Boolean isRerun;
 
+    /**
+     * Indicates if the masking request is to rerun the previously failed masking steps. If a masking request is submitted with the
+     * isIgnoreErrorsEnabled attribute set to true, the masking process tracks the failed masking steps. Another masking request can be
+     * submitted with the isRun attribute set to true to rerun those failed masking steps. It helps save time by executing only the failed
+     * masking steps and not doing the whole masking again.
+     *
+     * @return the value
+     **/
     public Boolean getIsRerun() {
         return isRerun;
     }
@@ -217,6 +336,12 @@ public final class MaskDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
     private final String tablespace;
 
+    /**
+     * The tablespace that should be used to create the mapping tables, DMASK objects, and other temporary tables for data masking.
+     * If no tablespace is provided, the DEFAULT tablespace is used.
+     *
+     * @return the value
+     **/
     public String getTablespace() {
         return tablespace;
     }
@@ -230,6 +355,13 @@ public final class MaskDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreErrorsEnabled")
     private final Boolean isIgnoreErrorsEnabled;
 
+    /**
+     * Indicates if the masking process should continue on hitting an error. It provides fault tolerance support and is enabled by
+     * default. In fault-tolerant mode, the masking process saves the failed step and continues. You can then submit another masking
+     * request (with isRerun attribute set to true) to execute only the failed steps.
+     *
+     * @return the value
+     **/
     public Boolean getIsIgnoreErrorsEnabled() {
         return isIgnoreErrorsEnabled;
     }
@@ -240,6 +372,10 @@ public final class MaskDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("seed")
     private final String seed;
 
+    /**
+     * The seed value to be used in case of Deterministic Encryption and Deterministic Substitution masking formats.
+     * @return the value
+     **/
     public String getSeed() {
         return seed;
     }
@@ -252,6 +388,12 @@ public final class MaskDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isMoveInterimTablesEnabled")
     private final Boolean isMoveInterimTablesEnabled;
 
+    /**
+     * Indicates if the interim DMASK tables should be moved to the user-specified tablespace. As interim tables can be large in size,
+     * set it to false if moving them causes performance overhead during masking.
+     *
+     * @return the value
+     **/
     public Boolean getIsMoveInterimTablesEnabled() {
         return isMoveInterimTablesEnabled;
     }
@@ -265,6 +407,13 @@ public final class MaskDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isExecuteSavedScriptEnabled")
     private final Boolean isExecuteSavedScriptEnabled;
 
+    /**
+     * Indicates if data masking should be performed using a saved masking script. Setting this attribute to true skips masking script
+     * generation and executes the masking script stored in the Data Safe repository. It helps save time if there are no changes in
+     * the database tables and their dependencies.
+     *
+     * @return the value
+     **/
     public Boolean getIsExecuteSavedScriptEnabled() {
         return isExecuteSavedScriptEnabled;
     }

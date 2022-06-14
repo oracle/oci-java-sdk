@@ -33,6 +33,7 @@ public final class ConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataAsset")
         private DataAsset dataAsset;
 
@@ -50,10 +51,17 @@ public final class ConfigurationDetails {
             this.__explicitlySet__.add("connection");
             return this;
         }
-
+        /**
+         * The compartment ID of the object store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment ID of the object store.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -123,6 +131,10 @@ public final class ConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment ID of the object store.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

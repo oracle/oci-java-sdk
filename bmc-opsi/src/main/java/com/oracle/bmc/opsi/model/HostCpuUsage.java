@@ -34,82 +34,145 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Percentage of CPU time spent in user mode
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuUserModeInPercent")
         private Float cpuUserModeInPercent;
 
+        /**
+         * Percentage of CPU time spent in user mode
+         * @param cpuUserModeInPercent the value to set
+         * @return this builder
+         **/
         public Builder cpuUserModeInPercent(Float cpuUserModeInPercent) {
             this.cpuUserModeInPercent = cpuUserModeInPercent;
             this.__explicitlySet__.add("cpuUserModeInPercent");
             return this;
         }
-
+        /**
+         * Percentage of CPU time spent in system mode
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuSystemModeInPercent")
         private Float cpuSystemModeInPercent;
 
+        /**
+         * Percentage of CPU time spent in system mode
+         * @param cpuSystemModeInPercent the value to set
+         * @return this builder
+         **/
         public Builder cpuSystemModeInPercent(Float cpuSystemModeInPercent) {
             this.cpuSystemModeInPercent = cpuSystemModeInPercent;
             this.__explicitlySet__.add("cpuSystemModeInPercent");
             return this;
         }
-
+        /**
+         * Amount of CPU Time spent in seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuUsageInSec")
         private Double cpuUsageInSec;
 
+        /**
+         * Amount of CPU Time spent in seconds
+         * @param cpuUsageInSec the value to set
+         * @return this builder
+         **/
         public Builder cpuUsageInSec(Double cpuUsageInSec) {
             this.cpuUsageInSec = cpuUsageInSec;
             this.__explicitlySet__.add("cpuUsageInSec");
             return this;
         }
-
+        /**
+         * Amount of CPU Time spent in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationInPercent")
         private Float cpuUtilizationInPercent;
 
+        /**
+         * Amount of CPU Time spent in percentage
+         * @param cpuUtilizationInPercent the value to set
+         * @return this builder
+         **/
         public Builder cpuUtilizationInPercent(Float cpuUtilizationInPercent) {
             this.cpuUtilizationInPercent = cpuUtilizationInPercent;
             this.__explicitlySet__.add("cpuUtilizationInPercent");
             return this;
         }
-
+        /**
+         * Amount of CPU time stolen in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuStolenInPercent")
         private Float cpuStolenInPercent;
 
+        /**
+         * Amount of CPU time stolen in percentage
+         * @param cpuStolenInPercent the value to set
+         * @return this builder
+         **/
         public Builder cpuStolenInPercent(Float cpuStolenInPercent) {
             this.cpuStolenInPercent = cpuStolenInPercent;
             this.__explicitlySet__.add("cpuStolenInPercent");
             return this;
         }
-
+        /**
+         * Amount of CPU idle time in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuIdleInPercent")
         private Float cpuIdleInPercent;
 
+        /**
+         * Amount of CPU idle time in percentage
+         * @param cpuIdleInPercent the value to set
+         * @return this builder
+         **/
         public Builder cpuIdleInPercent(Float cpuIdleInPercent) {
             this.cpuIdleInPercent = cpuIdleInPercent;
             this.__explicitlySet__.add("cpuIdleInPercent");
             return this;
         }
-
+        /**
+         * Load average in the last 1 minute
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuLoad1min")
         private Float cpuLoad1min;
 
+        /**
+         * Load average in the last 1 minute
+         * @param cpuLoad1min the value to set
+         * @return this builder
+         **/
         public Builder cpuLoad1min(Float cpuLoad1min) {
             this.cpuLoad1min = cpuLoad1min;
             this.__explicitlySet__.add("cpuLoad1min");
             return this;
         }
-
+        /**
+         * Load average in the last 5 minutes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuLoad5min")
         private Float cpuLoad5min;
 
+        /**
+         * Load average in the last 5 minutes
+         * @param cpuLoad5min the value to set
+         * @return this builder
+         **/
         public Builder cpuLoad5min(Float cpuLoad5min) {
             this.cpuLoad5min = cpuLoad5min;
             this.__explicitlySet__.add("cpuLoad5min");
             return this;
         }
-
+        /**
+         * Load average in the last 15 minutes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuLoad15min")
         private Float cpuLoad15min;
 
+        /**
+         * Load average in the last 15 minutes
+         * @param cpuLoad15min the value to set
+         * @return this builder
+         **/
         public Builder cpuLoad15min(Float cpuLoad15min) {
             this.cpuLoad15min = cpuLoad15min;
             this.__explicitlySet__.add("cpuLoad15min");
@@ -196,6 +259,10 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUserModeInPercent")
     private final Float cpuUserModeInPercent;
 
+    /**
+     * Percentage of CPU time spent in user mode
+     * @return the value
+     **/
     public Float getCpuUserModeInPercent() {
         return cpuUserModeInPercent;
     }
@@ -206,6 +273,10 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuSystemModeInPercent")
     private final Float cpuSystemModeInPercent;
 
+    /**
+     * Percentage of CPU time spent in system mode
+     * @return the value
+     **/
     public Float getCpuSystemModeInPercent() {
         return cpuSystemModeInPercent;
     }
@@ -216,6 +287,10 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUsageInSec")
     private final Double cpuUsageInSec;
 
+    /**
+     * Amount of CPU Time spent in seconds
+     * @return the value
+     **/
     public Double getCpuUsageInSec() {
         return cpuUsageInSec;
     }
@@ -226,6 +301,10 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationInPercent")
     private final Float cpuUtilizationInPercent;
 
+    /**
+     * Amount of CPU Time spent in percentage
+     * @return the value
+     **/
     public Float getCpuUtilizationInPercent() {
         return cpuUtilizationInPercent;
     }
@@ -236,6 +315,10 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuStolenInPercent")
     private final Float cpuStolenInPercent;
 
+    /**
+     * Amount of CPU time stolen in percentage
+     * @return the value
+     **/
     public Float getCpuStolenInPercent() {
         return cpuStolenInPercent;
     }
@@ -246,6 +329,10 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuIdleInPercent")
     private final Float cpuIdleInPercent;
 
+    /**
+     * Amount of CPU idle time in percentage
+     * @return the value
+     **/
     public Float getCpuIdleInPercent() {
         return cpuIdleInPercent;
     }
@@ -256,6 +343,10 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuLoad1min")
     private final Float cpuLoad1min;
 
+    /**
+     * Load average in the last 1 minute
+     * @return the value
+     **/
     public Float getCpuLoad1min() {
         return cpuLoad1min;
     }
@@ -266,6 +357,10 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuLoad5min")
     private final Float cpuLoad5min;
 
+    /**
+     * Load average in the last 5 minutes
+     * @return the value
+     **/
     public Float getCpuLoad5min() {
         return cpuLoad5min;
     }
@@ -276,6 +371,10 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuLoad15min")
     private final Float cpuLoad15min;
 
+    /**
+     * Load average in the last 15 minutes
+     * @return the value
+     **/
     public Float getCpuLoad15min() {
         return cpuLoad15min;
     }

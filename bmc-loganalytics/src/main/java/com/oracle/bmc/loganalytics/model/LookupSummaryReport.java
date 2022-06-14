@@ -32,27 +32,49 @@ public final class LookupSummaryReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of user created lookups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userCreatedCount")
         private Integer userCreatedCount;
 
+        /**
+         * The number of user created lookups.
+         * @param userCreatedCount the value to set
+         * @return this builder
+         **/
         public Builder userCreatedCount(Integer userCreatedCount) {
             this.userCreatedCount = userCreatedCount;
             this.__explicitlySet__.add("userCreatedCount");
             return this;
         }
-
+        /**
+         * The number of oracle defined lookups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedCount")
         private Integer oracleDefinedCount;
 
+        /**
+         * The number of oracle defined lookups.
+         * @param oracleDefinedCount the value to set
+         * @return this builder
+         **/
         public Builder oracleDefinedCount(Integer oracleDefinedCount) {
             this.oracleDefinedCount = oracleDefinedCount;
             this.__explicitlySet__.add("oracleDefinedCount");
             return this;
         }
-
+        /**
+         * The total number of lookups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
         private Integer totalCount;
 
+        /**
+         * The total number of lookups.
+         * @param totalCount the value to set
+         * @return this builder
+         **/
         public Builder totalCount(Integer totalCount) {
             this.totalCount = totalCount;
             this.__explicitlySet__.add("totalCount");
@@ -98,6 +120,10 @@ public final class LookupSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("userCreatedCount")
     private final Integer userCreatedCount;
 
+    /**
+     * The number of user created lookups.
+     * @return the value
+     **/
     public Integer getUserCreatedCount() {
         return userCreatedCount;
     }
@@ -108,6 +134,10 @@ public final class LookupSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedCount")
     private final Integer oracleDefinedCount;
 
+    /**
+     * The number of oracle defined lookups.
+     * @return the value
+     **/
     public Integer getOracleDefinedCount() {
         return oracleDefinedCount;
     }
@@ -118,6 +148,10 @@ public final class LookupSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
     private final Integer totalCount;
 
+    /**
+     * The total number of lookups.
+     * @return the value
+     **/
     public Integer getTotalCount() {
         return totalCount;
     }

@@ -17,6 +17,9 @@ public class ListOnPremConnectorsRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListOnPremConnectorsRequest
      */
     private String onPremConnectorId;
 
+    /**
+     * A filter to return only the on-premises connector that matches the specified id.
+     */
     public String getOnPremConnectorId() {
         return onPremConnectorId;
     }
@@ -34,6 +40,10 @@ public class ListOnPremConnectorsRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -43,6 +53,9 @@ public class ListOnPremConnectorsRequest
     private com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState
             onPremConnectorLifecycleState;
 
+    /**
+     * A filter to return only on-premises connector resources that match the specified lifecycle state.
+     */
     public com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState
             getOnPremConnectorLifecycleState() {
         return onPremConnectorLifecycleState;
@@ -52,6 +65,9 @@ public class ListOnPremConnectorsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -60,6 +76,9 @@ public class ListOnPremConnectorsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -104,6 +123,9 @@ public class ListOnPremConnectorsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -154,6 +176,12 @@ public class ListOnPremConnectorsRequest
         }
     };
 
+    /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+     * The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -162,6 +190,9 @@ public class ListOnPremConnectorsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -172,6 +203,11 @@ public class ListOnPremConnectorsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -224,6 +260,13 @@ public class ListOnPremConnectorsRequest
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -235,10 +278,14 @@ public class ListOnPremConnectorsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -246,10 +293,14 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * A filter to return only the on-premises connector that matches the specified id.
+         */
         private String onPremConnectorId = null;
 
         /**
          * A filter to return only the on-premises connector that matches the specified id.
+         * @param onPremConnectorId the value to set
          * @return this builder instance
          */
         public Builder onPremConnectorId(String onPremConnectorId) {
@@ -257,11 +308,16 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the specified display name.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -269,11 +325,15 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * A filter to return only on-premises connector resources that match the specified lifecycle state.
+         */
         private com.oracle.bmc.datasafe.model.OnPremConnectorLifecycleState
                 onPremConnectorLifecycleState = null;
 
         /**
          * A filter to return only on-premises connector resources that match the specified lifecycle state.
+         * @param onPremConnectorLifecycleState the value to set
          * @return this builder instance
          */
         public Builder onPremConnectorLifecycleState(
@@ -283,10 +343,14 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -294,10 +358,14 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -305,10 +373,14 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -316,6 +388,12 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+         * The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -323,6 +401,7 @@ public class ListOnPremConnectorsRequest
          * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
          * The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -330,10 +409,14 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -341,12 +424,18 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -354,6 +443,13 @@ public class ListOnPremConnectorsRequest
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -362,6 +458,7 @@ public class ListOnPremConnectorsRequest
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -457,7 +554,8 @@ public class ListOnPremConnectorsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -474,6 +572,10 @@ public class ListOnPremConnectorsRequest
                 .accessLevel(accessLevel);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

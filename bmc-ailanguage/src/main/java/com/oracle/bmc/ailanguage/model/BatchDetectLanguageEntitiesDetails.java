@@ -29,9 +29,17 @@ public final class BatchDetectLanguageEntitiesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of Documents for detect entities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<EntityDocument> documents;
 
+        /**
+         * List of Documents for detect entities.
+         * @param documents the value to set
+         * @return this builder
+         **/
         public Builder documents(java.util.List<EntityDocument> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
@@ -74,6 +82,10 @@ public final class BatchDetectLanguageEntitiesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<EntityDocument> documents;
 
+    /**
+     * List of Documents for detect entities.
+     * @return the value
+     **/
     public java.util.List<EntityDocument> getDocuments() {
         return documents;
     }

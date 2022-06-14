@@ -29,9 +29,17 @@ public final class ManagedListTypeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of ManagedListTypeSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ManagedListTypeSummary> items;
 
+        /**
+         * List of ManagedListTypeSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ManagedListTypeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ManagedListTypeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ManagedListTypeSummary> items;
 
+    /**
+     * List of ManagedListTypeSummary
+     * @return the value
+     **/
     public java.util.List<ManagedListTypeSummary> getItems() {
         return items;
     }

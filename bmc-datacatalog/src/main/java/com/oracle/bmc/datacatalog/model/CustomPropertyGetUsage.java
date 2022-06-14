@@ -71,126 +71,225 @@ public final class CustomPropertyGetUsage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique Identifier of the attribute which is ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique Identifier of the attribute which is ID
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Display name of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the custom property
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Description of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the custom property
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The custom property value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The custom property value
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The data type of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private CustomPropertyDataType dataType;
 
+        /**
+         * The data type of the custom property
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(CustomPropertyDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * Namespace name of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
+        /**
+         * Namespace name of the custom property
+         * @param namespaceName the value to set
+         * @return this builder
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-
+        /**
+         * Unique namespace key that is immutable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceKey")
         private String namespaceKey;
 
+        /**
+         * Unique namespace key that is immutable
+         * @param namespaceKey the value to set
+         * @return this builder
+         **/
         public Builder namespaceKey(String namespaceKey) {
             this.namespaceKey = namespaceKey;
             this.__explicitlySet__.add("namespaceKey");
             return this;
         }
-
+        /**
+         * If this field allows multiple values to be set
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
         private Boolean isMultiValued;
 
+        /**
+         * If this field allows multiple values to be set
+         * @param isMultiValued the value to set
+         * @return this builder
+         **/
         public Builder isMultiValued(Boolean isMultiValued) {
             this.isMultiValued = isMultiValued;
             this.__explicitlySet__.add("isMultiValued");
             return this;
         }
-
+        /**
+         * If this field is a hidden field
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
+        /**
+         * If this field is a hidden field
+         * @param isHidden the value to set
+         * @return this builder
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-
+        /**
+         * If this field is a editable field
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
         private Boolean isEditable;
 
+        /**
+         * If this field is a editable field
+         * @param isEditable the value to set
+         * @return this builder
+         **/
         public Builder isEditable(Boolean isEditable) {
             this.isEditable = isEditable;
             this.__explicitlySet__.add("isEditable");
             return this;
         }
-
+        /**
+         * If this field is displayed in a list view of applicable objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
         private Boolean isShownInList;
 
+        /**
+         * If this field is displayed in a list view of applicable objects.
+         * @param isShownInList the value to set
+         * @return this builder
+         **/
         public Builder isShownInList(Boolean isShownInList) {
             this.isShownInList = isShownInList;
             this.__explicitlySet__.add("isShownInList");
             return this;
         }
-
+        /**
+         * If an OCI Event will be emitted when the custom property is modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
         private Boolean isEventEnabled;
 
+        /**
+         * If an OCI Event will be emitted when the custom property is modified.
+         * @param isEventEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEventEnabled(Boolean isEventEnabled) {
             this.isEventEnabled = isEventEnabled;
             this.__explicitlySet__.add("isEventEnabled");
             return this;
         }
-
+        /**
+         * Is this property allowed to have list of values
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isListType")
         private Boolean isListType;
 
+        /**
+         * Is this property allowed to have list of values
+         * @param isListType the value to set
+         * @return this builder
+         **/
         public Builder isListType(Boolean isListType) {
             this.isListType = isListType;
             this.__explicitlySet__.add("isListType");
             return this;
         }
-
+        /**
+         * Allowed values for the custom property if any
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<String> allowedValues;
 
+        /**
+         * Allowed values for the custom property if any
+         * @param allowedValues the value to set
+         * @return this builder
+         **/
         public Builder allowedValues(java.util.List<String> allowedValues) {
             this.allowedValues = allowedValues;
             this.__explicitlySet__.add("allowedValues");
@@ -261,6 +360,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique Identifier of the attribute which is ID
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -271,6 +374,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the custom property
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -281,6 +388,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the custom property
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -291,6 +402,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The custom property value
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -301,6 +416,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final CustomPropertyDataType dataType;
 
+    /**
+     * The data type of the custom property
+     * @return the value
+     **/
     public CustomPropertyDataType getDataType() {
         return dataType;
     }
@@ -311,6 +430,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
+    /**
+     * Namespace name of the custom property
+     * @return the value
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -321,6 +444,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceKey")
     private final String namespaceKey;
 
+    /**
+     * Unique namespace key that is immutable
+     * @return the value
+     **/
     public String getNamespaceKey() {
         return namespaceKey;
     }
@@ -331,6 +458,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     private final Boolean isMultiValued;
 
+    /**
+     * If this field allows multiple values to be set
+     * @return the value
+     **/
     public Boolean getIsMultiValued() {
         return isMultiValued;
     }
@@ -341,6 +472,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
+    /**
+     * If this field is a hidden field
+     * @return the value
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
@@ -351,6 +486,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
     private final Boolean isEditable;
 
+    /**
+     * If this field is a editable field
+     * @return the value
+     **/
     public Boolean getIsEditable() {
         return isEditable;
     }
@@ -361,6 +500,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
     private final Boolean isShownInList;
 
+    /**
+     * If this field is displayed in a list view of applicable objects.
+     * @return the value
+     **/
     public Boolean getIsShownInList() {
         return isShownInList;
     }
@@ -371,6 +514,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
     private final Boolean isEventEnabled;
 
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     * @return the value
+     **/
     public Boolean getIsEventEnabled() {
         return isEventEnabled;
     }
@@ -381,6 +528,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("isListType")
     private final Boolean isListType;
 
+    /**
+     * Is this property allowed to have list of values
+     * @return the value
+     **/
     public Boolean getIsListType() {
         return isListType;
     }
@@ -391,6 +542,10 @@ public final class CustomPropertyGetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<String> allowedValues;
 
+    /**
+     * Allowed values for the custom property if any
+     * @return the value
+     **/
     public java.util.List<String> getAllowedValues() {
         return allowedValues;
     }

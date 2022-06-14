@@ -18,6 +18,9 @@ public class UpdateNetworkSourceRequest
      */
     private String networkSourceId;
 
+    /**
+     * The OCID of the network source.
+     */
     public String getNetworkSourceId() {
         return networkSourceId;
     }
@@ -26,6 +29,9 @@ public class UpdateNetworkSourceRequest
      */
     private com.oracle.bmc.identity.model.UpdateNetworkSourceDetails updateNetworkSourceDetails;
 
+    /**
+     * Request object for updating a network source.
+     */
     public com.oracle.bmc.identity.model.UpdateNetworkSourceDetails
             getUpdateNetworkSourceDetails() {
         return updateNetworkSourceDetails;
@@ -38,6 +44,12 @@ public class UpdateNetworkSourceRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -60,10 +72,14 @@ public class UpdateNetworkSourceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the network source.
+         */
         private String networkSourceId = null;
 
         /**
          * The OCID of the network source.
+         * @param networkSourceId the value to set
          * @return this builder instance
          */
         public Builder networkSourceId(String networkSourceId) {
@@ -71,11 +87,15 @@ public class UpdateNetworkSourceRequest
             return this;
         }
 
+        /**
+         * Request object for updating a network source.
+         */
         private com.oracle.bmc.identity.model.UpdateNetworkSourceDetails
                 updateNetworkSourceDetails = null;
 
         /**
          * Request object for updating a network source.
+         * @param updateNetworkSourceDetails the value to set
          * @return this builder instance
          */
         public Builder updateNetworkSourceDetails(
@@ -85,6 +105,12 @@ public class UpdateNetworkSourceRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -92,6 +118,7 @@ public class UpdateNetworkSourceRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -182,7 +209,8 @@ public class UpdateNetworkSourceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +219,10 @@ public class UpdateNetworkSourceRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

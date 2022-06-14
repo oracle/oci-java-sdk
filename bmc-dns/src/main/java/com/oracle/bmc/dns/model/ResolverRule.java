@@ -50,6 +50,12 @@ public class ResolverRule {
     @com.fasterxml.jackson.annotation.JsonProperty("clientAddressConditions")
     private final java.util.List<String> clientAddressConditions;
 
+    /**
+     * A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action
+     * to apply.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getClientAddressConditions() {
         return clientAddressConditions;
     }
@@ -61,6 +67,11 @@ public class ResolverRule {
     @com.fasterxml.jackson.annotation.JsonProperty("qnameCoverConditions")
     private final java.util.List<String> qnameCoverConditions;
 
+    /**
+     * A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getQnameCoverConditions() {
         return qnameCoverConditions;
     }

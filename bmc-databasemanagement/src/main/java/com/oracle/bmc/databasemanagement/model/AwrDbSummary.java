@@ -66,117 +66,233 @@ public final class AwrDbSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("awrDbId")
         private String awrDbId;
 
+        /**
+         * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs
+         *
+         * @param awrDbId the value to set
+         * @return this builder
+         **/
         public Builder awrDbId(String awrDbId) {
             this.awrDbId = awrDbId;
             this.__explicitlySet__.add("awrDbId");
             return this;
         }
-
+        /**
+         * The name of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
+        /**
+         * The name of the database.
+         * @param dbName the value to set
+         * @return this builder
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-
+        /**
+         * The database instance numbers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceList")
         private java.util.List<Integer> instanceList;
 
+        /**
+         * The database instance numbers.
+         * @param instanceList the value to set
+         * @return this builder
+         **/
         public Builder instanceList(java.util.List<Integer> instanceList) {
             this.instanceList = instanceList;
             this.__explicitlySet__.add("instanceList");
             return this;
         }
-
+        /**
+         * The timestamp of the database startup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDbStartup")
         private java.util.Date timeDbStartup;
 
+        /**
+         * The timestamp of the database startup.
+         * @param timeDbStartup the value to set
+         * @return this builder
+         **/
         public Builder timeDbStartup(java.util.Date timeDbStartup) {
             this.timeDbStartup = timeDbStartup;
             this.__explicitlySet__.add("timeDbStartup");
             return this;
         }
-
+        /**
+         * The start time of the earliest snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSnapshotBegin")
         private java.util.Date timeFirstSnapshotBegin;
 
+        /**
+         * The start time of the earliest snapshot.
+         * @param timeFirstSnapshotBegin the value to set
+         * @return this builder
+         **/
         public Builder timeFirstSnapshotBegin(java.util.Date timeFirstSnapshotBegin) {
             this.timeFirstSnapshotBegin = timeFirstSnapshotBegin;
             this.__explicitlySet__.add("timeFirstSnapshotBegin");
             return this;
         }
-
+        /**
+         * The end time of the latest snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLatestSnapshotEnd")
         private java.util.Date timeLatestSnapshotEnd;
 
+        /**
+         * The end time of the latest snapshot.
+         * @param timeLatestSnapshotEnd the value to set
+         * @return this builder
+         **/
         public Builder timeLatestSnapshotEnd(java.util.Date timeLatestSnapshotEnd) {
             this.timeLatestSnapshotEnd = timeLatestSnapshotEnd;
             this.__explicitlySet__.add("timeLatestSnapshotEnd");
             return this;
         }
-
+        /**
+         * The ID of the earliest snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("firstSnapshotId")
         private Integer firstSnapshotId;
 
+        /**
+         * The ID of the earliest snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
+         *
+         * @param firstSnapshotId the value to set
+         * @return this builder
+         **/
         public Builder firstSnapshotId(Integer firstSnapshotId) {
             this.firstSnapshotId = firstSnapshotId;
             this.__explicitlySet__.add("firstSnapshotId");
             return this;
         }
-
+        /**
+         * The ID of the latest snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestSnapshotId")
         private Integer latestSnapshotId;
 
+        /**
+         * The ID of the latest snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
+         *
+         * @param latestSnapshotId the value to set
+         * @return this builder
+         **/
         public Builder latestSnapshotId(Integer latestSnapshotId) {
             this.latestSnapshotId = latestSnapshotId;
             this.__explicitlySet__.add("latestSnapshotId");
             return this;
         }
-
+        /**
+         * The total number of snapshots.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotCount")
         private Long snapshotCount;
 
+        /**
+         * The total number of snapshots.
+         * @param snapshotCount the value to set
+         * @return this builder
+         **/
         public Builder snapshotCount(Long snapshotCount) {
             this.snapshotCount = snapshotCount;
             this.__explicitlySet__.add("snapshotCount");
             return this;
         }
-
+        /**
+         * The interval time between snapshots (in minutes).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalInMin")
         private Integer snapshotIntervalInMin;
 
+        /**
+         * The interval time between snapshots (in minutes).
+         * @param snapshotIntervalInMin the value to set
+         * @return this builder
+         **/
         public Builder snapshotIntervalInMin(Integer snapshotIntervalInMin) {
             this.snapshotIntervalInMin = snapshotIntervalInMin;
             this.__explicitlySet__.add("snapshotIntervalInMin");
             return this;
         }
-
+        /**
+         * ID of the database container. The database container ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerId")
         private Integer containerId;
 
+        /**
+         * ID of the database container. The database container ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+         *
+         * @param containerId the value to set
+         * @return this builder
+         **/
         public Builder containerId(Integer containerId) {
             this.containerId = containerId;
             this.__explicitlySet__.add("containerId");
             return this;
         }
-
+        /**
+         * The version of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
+        /**
+         * The version of the database.
+         * @param dbVersion the value to set
+         * @return this builder
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-
+        /**
+         * The time zone of the snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotTimezone")
         private String snapshotTimezone;
 
+        /**
+         * The time zone of the snapshot.
+         * @param snapshotTimezone the value to set
+         * @return this builder
+         **/
         public Builder snapshotTimezone(String snapshotTimezone) {
             this.snapshotTimezone = snapshotTimezone;
             this.__explicitlySet__.add("snapshotTimezone");
@@ -248,6 +364,13 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("awrDbId")
     private final String awrDbId;
 
+    /**
+     * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * It can be retrieved from the following endpoint:
+     * /managedDatabases/{managedDatabaseId}/awrDbs
+     *
+     * @return the value
+     **/
     public String getAwrDbId() {
         return awrDbId;
     }
@@ -258,6 +381,10 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
+    /**
+     * The name of the database.
+     * @return the value
+     **/
     public String getDbName() {
         return dbName;
     }
@@ -268,6 +395,10 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceList")
     private final java.util.List<Integer> instanceList;
 
+    /**
+     * The database instance numbers.
+     * @return the value
+     **/
     public java.util.List<Integer> getInstanceList() {
         return instanceList;
     }
@@ -278,6 +409,10 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDbStartup")
     private final java.util.Date timeDbStartup;
 
+    /**
+     * The timestamp of the database startup.
+     * @return the value
+     **/
     public java.util.Date getTimeDbStartup() {
         return timeDbStartup;
     }
@@ -288,6 +423,10 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSnapshotBegin")
     private final java.util.Date timeFirstSnapshotBegin;
 
+    /**
+     * The start time of the earliest snapshot.
+     * @return the value
+     **/
     public java.util.Date getTimeFirstSnapshotBegin() {
         return timeFirstSnapshotBegin;
     }
@@ -298,6 +437,10 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestSnapshotEnd")
     private final java.util.Date timeLatestSnapshotEnd;
 
+    /**
+     * The end time of the latest snapshot.
+     * @return the value
+     **/
     public java.util.Date getTimeLatestSnapshotEnd() {
         return timeLatestSnapshotEnd;
     }
@@ -311,6 +454,13 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("firstSnapshotId")
     private final Integer firstSnapshotId;
 
+    /**
+     * The ID of the earliest snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * It can be retrieved from the following endpoint:
+     * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
+     *
+     * @return the value
+     **/
     public Integer getFirstSnapshotId() {
         return firstSnapshotId;
     }
@@ -324,6 +474,13 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("latestSnapshotId")
     private final Integer latestSnapshotId;
 
+    /**
+     * The ID of the latest snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * It can be retrieved from the following endpoint:
+     * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
+     *
+     * @return the value
+     **/
     public Integer getLatestSnapshotId() {
         return latestSnapshotId;
     }
@@ -334,6 +491,10 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotCount")
     private final Long snapshotCount;
 
+    /**
+     * The total number of snapshots.
+     * @return the value
+     **/
     public Long getSnapshotCount() {
         return snapshotCount;
     }
@@ -344,6 +505,10 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalInMin")
     private final Integer snapshotIntervalInMin;
 
+    /**
+     * The interval time between snapshots (in minutes).
+     * @return the value
+     **/
     public Integer getSnapshotIntervalInMin() {
         return snapshotIntervalInMin;
     }
@@ -357,6 +522,13 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("containerId")
     private final Integer containerId;
 
+    /**
+     * ID of the database container. The database container ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * It can be retrieved from the following endpoint:
+     * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+     *
+     * @return the value
+     **/
     public Integer getContainerId() {
         return containerId;
     }
@@ -367,6 +539,10 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
+    /**
+     * The version of the database.
+     * @return the value
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
@@ -377,6 +553,10 @@ public final class AwrDbSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotTimezone")
     private final String snapshotTimezone;
 
+    /**
+     * The time zone of the snapshot.
+     * @return the value
+     **/
     public String getSnapshotTimezone() {
         return snapshotTimezone;
     }

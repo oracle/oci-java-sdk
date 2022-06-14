@@ -30,18 +30,33 @@ public final class ManagementAgentPluginAggregationDimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Management Agent Plugin Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
         private String pluginName;
 
+        /**
+         * Management Agent Plugin Name
+         * @param pluginName the value to set
+         * @return this builder
+         **/
         public Builder pluginName(String pluginName) {
             this.pluginName = pluginName;
             this.__explicitlySet__.add("pluginName");
             return this;
         }
-
+        /**
+         * Management Agent Plugin Display Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
         private String pluginDisplayName;
 
+        /**
+         * Management Agent Plugin Display Name
+         * @param pluginDisplayName the value to set
+         * @return this builder
+         **/
         public Builder pluginDisplayName(String pluginDisplayName) {
             this.pluginDisplayName = pluginDisplayName;
             this.__explicitlySet__.add("pluginDisplayName");
@@ -85,6 +100,10 @@ public final class ManagementAgentPluginAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
     private final String pluginName;
 
+    /**
+     * Management Agent Plugin Name
+     * @return the value
+     **/
     public String getPluginName() {
         return pluginName;
     }
@@ -95,6 +114,10 @@ public final class ManagementAgentPluginAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
     private final String pluginDisplayName;
 
+    /**
+     * Management Agent Plugin Display Name
+     * @return the value
+     **/
     public String getPluginDisplayName() {
         return pluginDisplayName;
     }

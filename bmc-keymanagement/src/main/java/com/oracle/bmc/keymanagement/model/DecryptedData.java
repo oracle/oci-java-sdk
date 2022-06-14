@@ -42,45 +42,93 @@ public final class DecryptedData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The decrypted data, expressed as a base64-encoded value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
         private String plaintext;
 
+        /**
+         * The decrypted data, expressed as a base64-encoded value.
+         * @param plaintext the value to set
+         * @return this builder
+         **/
         public Builder plaintext(String plaintext) {
             this.plaintext = plaintext;
             this.__explicitlySet__.add("plaintext");
             return this;
         }
-
+        /**
+         * The checksum of the decrypted data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
         private String plaintextChecksum;
 
+        /**
+         * The checksum of the decrypted data.
+         * @param plaintextChecksum the value to set
+         * @return this builder
+         **/
         public Builder plaintextChecksum(String plaintextChecksum) {
             this.plaintextChecksum = plaintextChecksum;
             this.__explicitlySet__.add("plaintextChecksum");
             return this;
         }
-
+        /**
+         * The OCID of the key used to encrypt the ciphertext.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
+        /**
+         * The OCID of the key used to encrypt the ciphertext.
+         * @param keyId the value to set
+         * @return this builder
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-
+        /**
+         * The OCID of the key version used to encrypt the ciphertext.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
         private String keyVersionId;
 
+        /**
+         * The OCID of the key version used to encrypt the ciphertext.
+         * @param keyVersionId the value to set
+         * @return this builder
+         **/
         public Builder keyVersionId(String keyVersionId) {
             this.keyVersionId = keyVersionId;
             this.__explicitlySet__.add("keyVersionId");
             return this;
         }
-
+        /**
+         * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key
+         * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+         * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+         * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+         * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+         * and uses OAEP.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
         private EncryptionAlgorithm encryptionAlgorithm;
 
+        /**
+         * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key
+         * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+         * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+         * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+         * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+         * and uses OAEP.
+         *
+         * @param encryptionAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder encryptionAlgorithm(EncryptionAlgorithm encryptionAlgorithm) {
             this.encryptionAlgorithm = encryptionAlgorithm;
             this.__explicitlySet__.add("encryptionAlgorithm");
@@ -129,6 +177,10 @@ public final class DecryptedData {
     @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
     private final String plaintext;
 
+    /**
+     * The decrypted data, expressed as a base64-encoded value.
+     * @return the value
+     **/
     public String getPlaintext() {
         return plaintext;
     }
@@ -139,6 +191,10 @@ public final class DecryptedData {
     @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
     private final String plaintextChecksum;
 
+    /**
+     * The checksum of the decrypted data.
+     * @return the value
+     **/
     public String getPlaintextChecksum() {
         return plaintextChecksum;
     }
@@ -149,6 +205,10 @@ public final class DecryptedData {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
+    /**
+     * The OCID of the key used to encrypt the ciphertext.
+     * @return the value
+     **/
     public String getKeyId() {
         return keyId;
     }
@@ -159,6 +219,10 @@ public final class DecryptedData {
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
     private final String keyVersionId;
 
+    /**
+     * The OCID of the key version used to encrypt the ciphertext.
+     * @return the value
+     **/
     public String getKeyVersionId() {
         return keyVersionId;
     }
@@ -230,6 +294,16 @@ public final class DecryptedData {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     private final EncryptionAlgorithm encryptionAlgorithm;
 
+    /**
+     * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key
+     * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+     * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+     * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+     * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+     * and uses OAEP.
+     *
+     * @return the value
+     **/
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return encryptionAlgorithm;
     }

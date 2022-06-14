@@ -50,63 +50,113 @@ public final class CertificateIssuerName {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
+        /**
+         * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         * @param country the value to set
+         * @return this builder
+         **/
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-
+        /**
+         * The province where the organization is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateProvince")
         private String stateProvince;
 
+        /**
+         * The province where the organization is located.
+         * @param stateProvince the value to set
+         * @return this builder
+         **/
         public Builder stateProvince(String stateProvince) {
             this.stateProvince = stateProvince;
             this.__explicitlySet__.add("stateProvince");
             return this;
         }
-
+        /**
+         * The city in which the organization is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locality")
         private String locality;
 
+        /**
+         * The city in which the organization is located.
+         * @param locality the value to set
+         * @return this builder
+         **/
         public Builder locality(String locality) {
             this.locality = locality;
             this.__explicitlySet__.add("locality");
             return this;
         }
-
+        /**
+         * The organization name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("organization")
         private String organization;
 
+        /**
+         * The organization name.
+         * @param organization the value to set
+         * @return this builder
+         **/
         public Builder organization(String organization) {
             this.organization = organization;
             this.__explicitlySet__.add("organization");
             return this;
         }
-
+        /**
+         * The field to differentiate between divisions within an organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("organizationalUnit")
         private String organizationalUnit;
 
+        /**
+         * The field to differentiate between divisions within an organization.
+         * @param organizationalUnit the value to set
+         * @return this builder
+         **/
         public Builder organizationalUnit(String organizationalUnit) {
             this.organizationalUnit = organizationalUnit;
             this.__explicitlySet__.add("organizationalUnit");
             return this;
         }
-
+        /**
+         * The Certificate Authority (CA) name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commonName")
         private String commonName;
 
+        /**
+         * The Certificate Authority (CA) name.
+         * @param commonName the value to set
+         * @return this builder
+         **/
         public Builder commonName(String commonName) {
             this.commonName = commonName;
             this.__explicitlySet__.add("commonName");
             return this;
         }
-
+        /**
+         * The email address of the server's administrator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
+        /**
+         * The email address of the server's administrator.
+         * @param emailAddress the value to set
+         * @return this builder
+         **/
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
@@ -163,6 +213,10 @@ public final class CertificateIssuerName {
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
+    /**
+     * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     * @return the value
+     **/
     public String getCountry() {
         return country;
     }
@@ -173,6 +227,10 @@ public final class CertificateIssuerName {
     @com.fasterxml.jackson.annotation.JsonProperty("stateProvince")
     private final String stateProvince;
 
+    /**
+     * The province where the organization is located.
+     * @return the value
+     **/
     public String getStateProvince() {
         return stateProvince;
     }
@@ -183,6 +241,10 @@ public final class CertificateIssuerName {
     @com.fasterxml.jackson.annotation.JsonProperty("locality")
     private final String locality;
 
+    /**
+     * The city in which the organization is located.
+     * @return the value
+     **/
     public String getLocality() {
         return locality;
     }
@@ -193,6 +255,10 @@ public final class CertificateIssuerName {
     @com.fasterxml.jackson.annotation.JsonProperty("organization")
     private final String organization;
 
+    /**
+     * The organization name.
+     * @return the value
+     **/
     public String getOrganization() {
         return organization;
     }
@@ -203,6 +269,10 @@ public final class CertificateIssuerName {
     @com.fasterxml.jackson.annotation.JsonProperty("organizationalUnit")
     private final String organizationalUnit;
 
+    /**
+     * The field to differentiate between divisions within an organization.
+     * @return the value
+     **/
     public String getOrganizationalUnit() {
         return organizationalUnit;
     }
@@ -213,6 +283,10 @@ public final class CertificateIssuerName {
     @com.fasterxml.jackson.annotation.JsonProperty("commonName")
     private final String commonName;
 
+    /**
+     * The Certificate Authority (CA) name.
+     * @return the value
+     **/
     public String getCommonName() {
         return commonName;
     }
@@ -223,6 +297,10 @@ public final class CertificateIssuerName {
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
+    /**
+     * The email address of the server's administrator.
+     * @return the value
+     **/
     public String getEmailAddress() {
         return emailAddress;
     }

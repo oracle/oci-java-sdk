@@ -30,18 +30,33 @@ public final class PeComanagedDatabaseHostDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Host IP used for connection requests for Cloud DB resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostIp")
         private String hostIp;
 
+        /**
+         * Host IP used for connection requests for Cloud DB resource.
+         * @param hostIp the value to set
+         * @return this builder
+         **/
         public Builder hostIp(String hostIp) {
             this.hostIp = hostIp;
             this.__explicitlySet__.add("hostIp");
             return this;
         }
-
+        /**
+         * Listener port number used for connection requests for rivate endpoint accessed db resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * Listener port number used for connection requests for rivate endpoint accessed db resource.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -84,6 +99,10 @@ public final class PeComanagedDatabaseHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostIp")
     private final String hostIp;
 
+    /**
+     * Host IP used for connection requests for Cloud DB resource.
+     * @return the value
+     **/
     public String getHostIp() {
         return hostIp;
     }
@@ -94,6 +113,10 @@ public final class PeComanagedDatabaseHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * Listener port number used for connection requests for rivate endpoint accessed db resource.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }

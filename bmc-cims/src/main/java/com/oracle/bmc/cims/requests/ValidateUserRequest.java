@@ -16,6 +16,9 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String csi;
 
+    /**
+     * The Customer Support Identifier number for the support account.
+     */
     public String getCsi() {
         return csi;
     }
@@ -24,6 +27,9 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String ocid;
 
+    /**
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     */
     public String getOcid() {
         return ocid;
     }
@@ -32,6 +38,9 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -40,6 +49,9 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String problemType;
 
+    /**
+     * The kind of support request.
+     */
     public String getProblemType() {
         return problemType;
     }
@@ -48,6 +60,9 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String homeregion;
 
+    /**
+     * The region of the tenancy.
+     */
     public String getHomeregion() {
         return homeregion;
     }
@@ -59,10 +74,14 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Customer Support Identifier number for the support account.
+         */
         private String csi = null;
 
         /**
          * The Customer Support Identifier number for the support account.
+         * @param csi the value to set
          * @return this builder instance
          */
         public Builder csi(String csi) {
@@ -70,10 +89,14 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         */
         private String ocid = null;
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * @param ocid the value to set
          * @return this builder instance
          */
         public Builder ocid(String ocid) {
@@ -81,10 +104,14 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -92,10 +119,14 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The kind of support request.
+         */
         private String problemType = null;
 
         /**
          * The kind of support request.
+         * @param problemType the value to set
          * @return this builder instance
          */
         public Builder problemType(String problemType) {
@@ -103,10 +134,14 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The region of the tenancy.
+         */
         private String homeregion = null;
 
         /**
          * The region of the tenancy.
+         * @param homeregion the value to set
          * @return this builder instance
          */
         public Builder homeregion(String homeregion) {
@@ -190,7 +225,8 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -201,6 +237,10 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .homeregion(homeregion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

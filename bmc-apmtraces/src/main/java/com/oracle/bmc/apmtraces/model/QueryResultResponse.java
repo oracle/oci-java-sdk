@@ -35,6 +35,7 @@ public final class QueryResultResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultMetadataSummary")
         private QueryResultMetadataSummary queryResultMetadataSummary;
 
@@ -44,10 +45,23 @@ public final class QueryResultResponse {
             this.__explicitlySet__.add("queryResultMetadataSummary");
             return this;
         }
-
+        /**
+         * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
+         * returned in this collection correspond to the total number of rows returned by the actual query that is run against
+         * the queried entity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultRows")
         private java.util.List<QueryResultRow> queryResultRows;
 
+        /**
+         * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
+         * returned in this collection correspond to the total number of rows returned by the actual query that is run against
+         * the queried entity.
+         *
+         * @param queryResultRows the value to set
+         * @return this builder
+         **/
         public Builder queryResultRows(java.util.List<QueryResultRow> queryResultRows) {
             this.queryResultRows = queryResultRows;
             this.__explicitlySet__.add("queryResultRows");
@@ -102,6 +116,13 @@ public final class QueryResultResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultRows")
     private final java.util.List<QueryResultRow> queryResultRows;
 
+    /**
+     * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
+     * returned in this collection correspond to the total number of rows returned by the actual query that is run against
+     * the queried entity.
+     *
+     * @return the value
+     **/
     public java.util.List<QueryResultRow> getQueryResultRows() {
         return queryResultRows;
     }

@@ -48,63 +48,113 @@ public final class Attribute {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of of the Attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of of the Attribute.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * True if Attribute is sensitive.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
         private Boolean isSensitive;
 
+        /**
+         * True if Attribute is sensitive.
+         * @param isSensitive the value to set
+         * @return this builder
+         **/
         public Builder isSensitive(Boolean isSensitive) {
             this.isSensitive = isSensitive;
             this.__explicitlySet__.add("isSensitive");
             return this;
         }
-
+        /**
+         * True if Attribute is mandatory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
         private Boolean isMandatory;
 
+        /**
+         * True if Attribute is mandatory.
+         * @param isMandatory the value to set
+         * @return this builder
+         **/
         public Builder isMandatory(Boolean isMandatory) {
             this.isMandatory = isMandatory;
             this.__explicitlySet__.add("isMandatory");
             return this;
         }
-
+        /**
+         * True if Attribute is generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGenerated")
         private Boolean isGenerated;
 
+        /**
+         * True if Attribute is generated.
+         * @param isGenerated the value to set
+         * @return this builder
+         **/
         public Builder isGenerated(Boolean isGenerated) {
             this.isGenerated = isGenerated;
             this.__explicitlySet__.add("isGenerated");
             return this;
         }
-
+        /**
+         * True if Attribute is encoded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBase64Encoded")
         private Boolean isBase64Encoded;
 
+        /**
+         * True if Attribute is encoded.
+         * @param isBase64Encoded the value to set
+         * @return this builder
+         **/
         public Builder isBase64Encoded(Boolean isBase64Encoded) {
             this.isBase64Encoded = isBase64Encoded;
             this.__explicitlySet__.add("isBase64Encoded");
             return this;
         }
-
+        /**
+         * List of valid key list
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validKeyList")
         private java.util.List<String> validKeyList;
 
+        /**
+         * List of valid key list
+         * @param validKeyList the value to set
+         * @return this builder
+         **/
         public Builder validKeyList(java.util.List<String> validKeyList) {
             this.validKeyList = validKeyList;
             this.__explicitlySet__.add("validKeyList");
             return this;
         }
-
+        /**
+         * Attribute type details
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
         private String attributeType;
 
+        /**
+         * Attribute type details
+         * @param attributeType the value to set
+         * @return this builder
+         **/
         public Builder attributeType(String attributeType) {
             this.attributeType = attributeType;
             this.__explicitlySet__.add("attributeType");
@@ -161,6 +211,10 @@ public final class Attribute {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of of the Attribute.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -171,6 +225,10 @@ public final class Attribute {
     @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
     private final Boolean isSensitive;
 
+    /**
+     * True if Attribute is sensitive.
+     * @return the value
+     **/
     public Boolean getIsSensitive() {
         return isSensitive;
     }
@@ -181,6 +239,10 @@ public final class Attribute {
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
     private final Boolean isMandatory;
 
+    /**
+     * True if Attribute is mandatory.
+     * @return the value
+     **/
     public Boolean getIsMandatory() {
         return isMandatory;
     }
@@ -191,6 +253,10 @@ public final class Attribute {
     @com.fasterxml.jackson.annotation.JsonProperty("isGenerated")
     private final Boolean isGenerated;
 
+    /**
+     * True if Attribute is generated.
+     * @return the value
+     **/
     public Boolean getIsGenerated() {
         return isGenerated;
     }
@@ -201,6 +267,10 @@ public final class Attribute {
     @com.fasterxml.jackson.annotation.JsonProperty("isBase64Encoded")
     private final Boolean isBase64Encoded;
 
+    /**
+     * True if Attribute is encoded.
+     * @return the value
+     **/
     public Boolean getIsBase64Encoded() {
         return isBase64Encoded;
     }
@@ -211,6 +281,10 @@ public final class Attribute {
     @com.fasterxml.jackson.annotation.JsonProperty("validKeyList")
     private final java.util.List<String> validKeyList;
 
+    /**
+     * List of valid key list
+     * @return the value
+     **/
     public java.util.List<String> getValidKeyList() {
         return validKeyList;
     }
@@ -221,6 +295,10 @@ public final class Attribute {
     @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
     private final String attributeType;
 
+    /**
+     * Attribute type details
+     * @return the value
+     **/
     public String getAttributeType() {
         return attributeType;
     }

@@ -31,27 +31,49 @@ public final class ReplicationSource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyName")
         private String policyName;
 
+        /**
+         * The name of the policy.
+         * @param policyName the value to set
+         * @return this builder
+         **/
         public Builder policyName(String policyName) {
             this.policyName = policyName;
             this.__explicitlySet__.add("policyName");
             return this;
         }
-
+        /**
+         * The source region replicating data from, for example "us-ashburn-1".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegionName")
         private String sourceRegionName;
 
+        /**
+         * The source region replicating data from, for example "us-ashburn-1".
+         * @param sourceRegionName the value to set
+         * @return this builder
+         **/
         public Builder sourceRegionName(String sourceRegionName) {
             this.sourceRegionName = sourceRegionName;
             this.__explicitlySet__.add("sourceRegionName");
             return this;
         }
-
+        /**
+         * The source bucket replicating data from.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceBucketName")
         private String sourceBucketName;
 
+        /**
+         * The source bucket replicating data from.
+         * @param sourceBucketName the value to set
+         * @return this builder
+         **/
         public Builder sourceBucketName(String sourceBucketName) {
             this.sourceBucketName = sourceBucketName;
             this.__explicitlySet__.add("sourceBucketName");
@@ -97,6 +119,10 @@ public final class ReplicationSource {
     @com.fasterxml.jackson.annotation.JsonProperty("policyName")
     private final String policyName;
 
+    /**
+     * The name of the policy.
+     * @return the value
+     **/
     public String getPolicyName() {
         return policyName;
     }
@@ -107,6 +133,10 @@ public final class ReplicationSource {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegionName")
     private final String sourceRegionName;
 
+    /**
+     * The source region replicating data from, for example "us-ashburn-1".
+     * @return the value
+     **/
     public String getSourceRegionName() {
         return sourceRegionName;
     }
@@ -117,6 +147,10 @@ public final class ReplicationSource {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceBucketName")
     private final String sourceBucketName;
 
+    /**
+     * The source bucket replicating data from.
+     * @return the value
+     **/
     public String getSourceBucketName() {
         return sourceBucketName;
     }

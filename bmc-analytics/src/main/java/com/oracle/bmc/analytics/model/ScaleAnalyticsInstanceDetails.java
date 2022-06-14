@@ -30,6 +30,7 @@ public final class ScaleAnalyticsInstanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Capacity capacity;
 

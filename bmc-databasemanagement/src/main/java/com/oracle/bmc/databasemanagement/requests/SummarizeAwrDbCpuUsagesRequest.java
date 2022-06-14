@@ -17,6 +17,9 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -28,6 +31,12 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private String awrDbId;
 
+    /**
+     * The parameter to filter the database by internal ID.
+     * Note that the internal ID of the database can be retrieved from the following endpoint:
+     * /managedDatabases/{managedDatabaseId}/awrDbs
+     *
+     */
     public String getAwrDbId() {
         return awrDbId;
     }
@@ -36,6 +45,9 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private String instNum;
 
+    /**
+     * The optional single value query parameter to filter the database instance number.
+     */
     public String getInstNum() {
         return instNum;
     }
@@ -44,6 +56,9 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private Integer beginSnIdGreaterThanOrEqualTo;
 
+    /**
+     * The optional greater than or equal to filter on the snapshot ID.
+     */
     public Integer getBeginSnIdGreaterThanOrEqualTo() {
         return beginSnIdGreaterThanOrEqualTo;
     }
@@ -52,6 +67,9 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private Integer endSnIdLessThanOrEqualTo;
 
+    /**
+     * The optional less than or equal to query parameter to filter the snapshot ID.
+     */
     public Integer getEndSnIdLessThanOrEqualTo() {
         return endSnIdLessThanOrEqualTo;
     }
@@ -60,6 +78,9 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
+    /**
+     * The optional greater than or equal to query parameter to filter the timestamp.
+     */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
@@ -68,6 +89,9 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private java.util.Date timeLessThanOrEqualTo;
 
+    /**
+     * The optional less than or equal to query parameter to filter the timestamp.
+     */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
@@ -113,6 +137,9 @@ public class SummarizeAwrDbCpuUsagesRequest
         }
     };
 
+    /**
+     * The optional query parameter to filter ASH activities by FOREGROUND or BACKGROUND.
+     */
     public SessionType getSessionType() {
         return sessionType;
     }
@@ -124,6 +151,12 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private Integer containerId;
 
+    /**
+     * The optional query parameter to filter the database container by an exact ID value.
+     * Note that the database container ID can be retrieved from the following endpoint:
+     * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+     *
+     */
     public Integer getContainerId() {
         return containerId;
     }
@@ -134,6 +167,11 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -142,6 +180,9 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of records returned in large paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -186,6 +227,9 @@ public class SummarizeAwrDbCpuUsagesRequest
         }
     };
 
+    /**
+     * The option to sort the AWR CPU usage summary data.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -194,6 +238,9 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -202,6 +249,9 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -215,6 +265,14 @@ public class SummarizeAwrDbCpuUsagesRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -226,10 +284,14 @@ public class SummarizeAwrDbCpuUsagesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -237,6 +299,12 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The parameter to filter the database by internal ID.
+         * Note that the internal ID of the database can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs
+         *
+         */
         private String awrDbId = null;
 
         /**
@@ -244,6 +312,7 @@ public class SummarizeAwrDbCpuUsagesRequest
          * Note that the internal ID of the database can be retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs
          *
+         * @param awrDbId the value to set
          * @return this builder instance
          */
         public Builder awrDbId(String awrDbId) {
@@ -251,10 +320,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The optional single value query parameter to filter the database instance number.
+         */
         private String instNum = null;
 
         /**
          * The optional single value query parameter to filter the database instance number.
+         * @param instNum the value to set
          * @return this builder instance
          */
         public Builder instNum(String instNum) {
@@ -262,10 +335,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The optional greater than or equal to filter on the snapshot ID.
+         */
         private Integer beginSnIdGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to filter on the snapshot ID.
+         * @param beginSnIdGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder beginSnIdGreaterThanOrEqualTo(Integer beginSnIdGreaterThanOrEqualTo) {
@@ -273,10 +350,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The optional less than or equal to query parameter to filter the snapshot ID.
+         */
         private Integer endSnIdLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to query parameter to filter the snapshot ID.
+         * @param endSnIdLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder endSnIdLessThanOrEqualTo(Integer endSnIdLessThanOrEqualTo) {
@@ -284,10 +365,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The optional greater than or equal to query parameter to filter the timestamp.
+         */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to query parameter to filter the timestamp.
+         * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeGreaterThanOrEqualTo(java.util.Date timeGreaterThanOrEqualTo) {
@@ -295,10 +380,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The optional less than or equal to query parameter to filter the timestamp.
+         */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to query parameter to filter the timestamp.
+         * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLessThanOrEqualTo(java.util.Date timeLessThanOrEqualTo) {
@@ -306,10 +395,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The optional query parameter to filter ASH activities by FOREGROUND or BACKGROUND.
+         */
         private SessionType sessionType = null;
 
         /**
          * The optional query parameter to filter ASH activities by FOREGROUND or BACKGROUND.
+         * @param sessionType the value to set
          * @return this builder instance
          */
         public Builder sessionType(SessionType sessionType) {
@@ -317,6 +410,12 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The optional query parameter to filter the database container by an exact ID value.
+         * Note that the database container ID can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+         *
+         */
         private Integer containerId = null;
 
         /**
@@ -324,6 +423,7 @@ public class SummarizeAwrDbCpuUsagesRequest
          * Note that the database container ID can be retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
          *
+         * @param containerId the value to set
          * @return this builder instance
          */
         public Builder containerId(Integer containerId) {
@@ -331,12 +431,18 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page from where the next set of paginated results
          * are retrieved. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -344,10 +450,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The maximum number of records returned in large paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in large paginated response.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -355,10 +465,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The option to sort the AWR CPU usage summary data.
+         */
         private SortBy sortBy = null;
 
         /**
          * The option to sort the AWR CPU usage summary data.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -366,10 +480,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -377,10 +495,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -388,6 +510,14 @@ public class SummarizeAwrDbCpuUsagesRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -397,6 +527,7 @@ public class SummarizeAwrDbCpuUsagesRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -500,7 +631,8 @@ public class SummarizeAwrDbCpuUsagesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -521,6 +653,10 @@ public class SummarizeAwrDbCpuUsagesRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -55,36 +55,67 @@ public final class SecretBundle {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
+        /**
+         * The OCID of the secret.
+         * @param secretId the value to set
+         * @return this builder
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
             return this;
         }
-
+        /**
+         * The time when the secret bundle was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time when the secret bundle was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The version number of the secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
         private Long versionNumber;
 
+        /**
+         * The version number of the secret.
+         * @param versionNumber the value to set
+         * @return this builder
+         **/
         public Builder versionNumber(Long versionNumber) {
             this.versionNumber = versionNumber;
             this.__explicitlySet__.add("versionNumber");
             return this;
         }
-
+        /**
+         * The name of the secret version. Labels are unique across the different versions of a particular secret.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionName")
         private String versionName;
 
+        /**
+         * The name of the secret version. Labels are unique across the different versions of a particular secret.
+         *
+         * @param versionName the value to set
+         * @return this builder
+         **/
         public Builder versionName(String versionName) {
             this.versionName = versionName;
             this.__explicitlySet__.add("versionName");
@@ -99,37 +130,75 @@ public final class SecretBundle {
             this.__explicitlySet__.add("secretBundleContent");
             return this;
         }
-
+        /**
+         * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
 
+        /**
+         * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfDeletion the value to set
+         * @return this builder
+         **/
         public Builder timeOfDeletion(java.util.Date timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             this.__explicitlySet__.add("timeOfDeletion");
             return this;
         }
-
+        /**
+         * An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiry")
         private java.util.Date timeOfExpiry;
 
+        /**
+         * An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfExpiry the value to set
+         * @return this builder
+         **/
         public Builder timeOfExpiry(java.util.Date timeOfExpiry) {
             this.timeOfExpiry = timeOfExpiry;
             this.__explicitlySet__.add("timeOfExpiry");
             return this;
         }
-
+        /**
+         * A list of possible rotation states for the secret version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stages")
         private java.util.List<Stages> stages;
 
+        /**
+         * A list of possible rotation states for the secret version.
+         * @param stages the value to set
+         * @return this builder
+         **/
         public Builder stages(java.util.List<Stages> stages) {
             this.stages = stages;
             this.__explicitlySet__.add("stages");
             return this;
         }
-
+        /**
+         * Customer-provided contextual metadata for the secret.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, Object> metadata;
 
+        /**
+         * Customer-provided contextual metadata for the secret.
+         *
+         * @param metadata the value to set
+         * @return this builder
+         **/
         public Builder metadata(java.util.Map<String, Object> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -190,6 +259,10 @@ public final class SecretBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
+    /**
+     * The OCID of the secret.
+     * @return the value
+     **/
     public String getSecretId() {
         return secretId;
     }
@@ -200,6 +273,10 @@ public final class SecretBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time when the secret bundle was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -210,6 +287,10 @@ public final class SecretBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
     private final Long versionNumber;
 
+    /**
+     * The version number of the secret.
+     * @return the value
+     **/
     public Long getVersionNumber() {
         return versionNumber;
     }
@@ -221,6 +302,11 @@ public final class SecretBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
+    /**
+     * The name of the secret version. Labels are unique across the different versions of a particular secret.
+     *
+     * @return the value
+     **/
     public String getVersionName() {
         return versionName;
     }
@@ -240,6 +326,12 @@ public final class SecretBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     private final java.util.Date timeOfDeletion;
 
+    /**
+     * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfDeletion() {
         return timeOfDeletion;
     }
@@ -252,6 +344,12 @@ public final class SecretBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiry")
     private final java.util.Date timeOfExpiry;
 
+    /**
+     * An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfExpiry() {
         return timeOfExpiry;
     }
@@ -311,6 +409,10 @@ public final class SecretBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
     private final java.util.List<Stages> stages;
 
+    /**
+     * A list of possible rotation states for the secret version.
+     * @return the value
+     **/
     public java.util.List<Stages> getStages() {
         return stages;
     }
@@ -322,6 +424,11 @@ public final class SecretBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, Object> metadata;
 
+    /**
+     * Customer-provided contextual metadata for the secret.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, Object> getMetadata() {
         return metadata;
     }

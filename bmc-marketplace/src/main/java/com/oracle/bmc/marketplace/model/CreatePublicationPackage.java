@@ -45,6 +45,10 @@ public class CreatePublicationPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     private final String packageVersion;
 
+    /**
+     * The package version.
+     * @return the value
+     **/
     public String getPackageVersion() {
         return packageVersion;
     }
@@ -62,6 +66,10 @@ public class CreatePublicationPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("eula")
     private final java.util.List<Eula> eula;
 
+    /**
+     * The end user license agreeement (EULA) that consumers of this listing must accept.
+     * @return the value
+     **/
     public java.util.List<Eula> getEula() {
         return eula;
     }

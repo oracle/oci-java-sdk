@@ -60,99 +60,195 @@ public final class InstanceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the instance.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The availability domain the instance is running in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain the instance is running in.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the instance.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The fault domain the instance is running in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
+        /**
+         * The fault domain the instance is running in.
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-
+        /**
+         * The OCID of the instance confgiuration used to create the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
         private String instanceConfigurationId;
 
+        /**
+         * The OCID of the instance confgiuration used to create the instance.
+         * @param instanceConfigurationId the value to set
+         * @return this builder
+         **/
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = instanceConfigurationId;
             this.__explicitlySet__.add("instanceConfigurationId");
             return this;
         }
-
+        /**
+         * The region that contains the availability domain the instance is running in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * The region that contains the availability domain the instance is running in.
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
+         * <p>
+         * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
+         * <p>
+         * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
+         *
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The current state of the instance pool instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
+        /**
+         * The current state of the instance pool instance.
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(String state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-
+        /**
+         * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The load balancer backends that are configured for the instance pool instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerBackends")
         private java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends;
 
+        /**
+         * The load balancer backends that are configured for the instance pool instance.
+         *
+         * @param loadBalancerBackends the value to set
+         * @return this builder
+         **/
         public Builder loadBalancerBackends(
                 java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends) {
             this.loadBalancerBackends = loadBalancerBackends;
@@ -218,6 +314,10 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the instance.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -228,6 +328,10 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain the instance is running in.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -238,6 +342,10 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the instance.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -250,6 +358,12 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -260,6 +374,10 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
+    /**
+     * The fault domain the instance is running in.
+     * @return the value
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
@@ -270,6 +388,10 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
     private final String instanceConfigurationId;
 
+    /**
+     * The OCID of the instance confgiuration used to create the instance.
+     * @return the value
+     **/
     public String getInstanceConfigurationId() {
         return instanceConfigurationId;
     }
@@ -280,6 +402,10 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * The region that contains the availability domain the instance is running in.
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -294,6 +420,14 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+     * and other resources allocated to the instance.
+     * <p>
+     * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
+     *
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -304,6 +438,10 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
+    /**
+     * The current state of the instance pool instance.
+     * @return the value
+     **/
     public String getState() {
         return state;
     }
@@ -316,6 +454,12 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -327,6 +471,11 @@ public final class InstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerBackends")
     private final java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends;
 
+    /**
+     * The load balancer backends that are configured for the instance pool instance.
+     *
+     * @return the value
+     **/
     public java.util.List<InstancePoolInstanceLoadBalancerBackend> getLoadBalancerBackends() {
         return loadBalancerBackends;
     }

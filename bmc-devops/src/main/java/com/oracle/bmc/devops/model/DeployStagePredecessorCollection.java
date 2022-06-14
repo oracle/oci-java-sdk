@@ -29,9 +29,17 @@ public final class DeployStagePredecessorCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of stage predecessors for a stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DeployStagePredecessor> items;
 
+        /**
+         * A list of stage predecessors for a stage.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DeployStagePredecessor> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class DeployStagePredecessorCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DeployStagePredecessor> items;
 
+    /**
+     * A list of stage predecessors for a stage.
+     * @return the value
+     **/
     public java.util.List<DeployStagePredecessor> getItems() {
         return items;
     }

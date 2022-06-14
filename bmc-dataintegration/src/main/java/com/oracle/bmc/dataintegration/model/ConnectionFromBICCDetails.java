@@ -135,10 +135,17 @@ public final class ConnectionFromBICCDetails extends ConnectionDetails {
             this.__explicitlySet__.add("metadata");
             return this;
         }
-
+        /**
+         * The user name for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * The user name for the connection.
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
@@ -264,6 +271,10 @@ public final class ConnectionFromBICCDetails extends ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * The user name for the connection.
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }

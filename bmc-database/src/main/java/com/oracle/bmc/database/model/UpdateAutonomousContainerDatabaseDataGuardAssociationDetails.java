@@ -31,9 +31,19 @@ public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails 
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
         private Boolean isAutomaticFailoverEnabled;
 
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         *
+         * @param isAutomaticFailoverEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
             this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             this.__explicitlySet__.add("isAutomaticFailoverEnabled");
@@ -78,6 +88,11 @@ public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
     private final Boolean isAutomaticFailoverEnabled;
 
+    /**
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     *
+     * @return the value
+     **/
     public Boolean getIsAutomaticFailoverEnabled() {
         return isAutomaticFailoverEnabled;
     }

@@ -18,6 +18,9 @@ public class UpdateDatabaseRequest
      */
     private String databaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -26,6 +29,9 @@ public class UpdateDatabaseRequest
      */
     private com.oracle.bmc.database.model.UpdateDatabaseDetails updateDatabaseDetails;
 
+    /**
+     * Request to perform database update.
+     */
     public com.oracle.bmc.database.model.UpdateDatabaseDetails getUpdateDatabaseDetails() {
         return updateDatabaseDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateDatabaseRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,10 +70,14 @@ public class UpdateDatabaseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String databaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(String databaseId) {
@@ -69,10 +85,14 @@ public class UpdateDatabaseRequest
             return this;
         }
 
+        /**
+         * Request to perform database update.
+         */
         private com.oracle.bmc.database.model.UpdateDatabaseDetails updateDatabaseDetails = null;
 
         /**
          * Request to perform database update.
+         * @param updateDatabaseDetails the value to set
          * @return this builder instance
          */
         public Builder updateDatabaseDetails(
@@ -81,6 +101,12 @@ public class UpdateDatabaseRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -88,6 +114,7 @@ public class UpdateDatabaseRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -178,7 +205,8 @@ public class UpdateDatabaseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -187,6 +215,10 @@ public class UpdateDatabaseRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

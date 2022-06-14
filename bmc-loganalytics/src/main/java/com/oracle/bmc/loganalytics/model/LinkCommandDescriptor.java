@@ -72,28 +72,55 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Option to return groups with a null value if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeNulls")
         private Boolean shouldIncludeNulls;
 
+        /**
+         * Option to return groups with a null value if specified.
+         *
+         * @param shouldIncludeNulls the value to set
+         * @return this builder
+         **/
         public Builder shouldIncludeNulls(Boolean shouldIncludeNulls) {
             this.shouldIncludeNulls = shouldIncludeNulls;
             this.__explicitlySet__.add("shouldIncludeNulls");
             return this;
         }
-
+        /**
+         * Option to calculate trends of each group if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeTrends")
         private Boolean shouldIncludeTrends;
 
+        /**
+         * Option to calculate trends of each group if specified.
+         *
+         * @param shouldIncludeTrends the value to set
+         * @return this builder
+         **/
         public Builder shouldIncludeTrends(Boolean shouldIncludeTrends) {
             this.shouldIncludeTrends = shouldIncludeTrends;
             this.__explicitlySet__.add("shouldIncludeTrends");
             return this;
         }
-
+        /**
+         * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private String span;
 
+        /**
+         * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+         *
+         * @param span the value to set
+         * @return this builder
+         **/
         public Builder span(String span) {
             this.span = span;
             this.__explicitlySet__.add("span");
@@ -169,6 +196,11 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeNulls")
     private final Boolean shouldIncludeNulls;
 
+    /**
+     * Option to return groups with a null value if specified.
+     *
+     * @return the value
+     **/
     public Boolean getShouldIncludeNulls() {
         return shouldIncludeNulls;
     }
@@ -180,6 +212,11 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeTrends")
     private final Boolean shouldIncludeTrends;
 
+    /**
+     * Option to calculate trends of each group if specified.
+     *
+     * @return the value
+     **/
     public Boolean getShouldIncludeTrends() {
         return shouldIncludeTrends;
     }
@@ -191,6 +228,11 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final String span;
 
+    /**
+     * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+     *
+     * @return the value
+     **/
     public String getSpan() {
         return span;
     }

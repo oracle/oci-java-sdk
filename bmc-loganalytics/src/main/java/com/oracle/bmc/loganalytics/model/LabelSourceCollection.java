@@ -30,9 +30,17 @@ public final class LabelSourceCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array labels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LabelSourceSummary> items;
 
+        /**
+         * An array labels.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LabelSourceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class LabelSourceCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LabelSourceSummary> items;
 
+    /**
+     * An array labels.
+     * @return the value
+     **/
     public java.util.List<LabelSourceSummary> getItems() {
         return items;
     }

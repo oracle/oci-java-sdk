@@ -29,9 +29,17 @@ public final class NetworkAddressListCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of NetworkAddressListSummary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<NetworkAddressListSummary> items;
 
+        /**
+         * A list of NetworkAddressListSummary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<NetworkAddressListSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class NetworkAddressListCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<NetworkAddressListSummary> items;
 
+    /**
+     * A list of NetworkAddressListSummary objects.
+     * @return the value
+     **/
     public java.util.List<NetworkAddressListSummary> getItems() {
         return items;
     }

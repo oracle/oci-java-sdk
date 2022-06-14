@@ -28,18 +28,33 @@ public final class RequestUsage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Read Units consumed by this operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("readUnitsConsumed")
         private Integer readUnitsConsumed;
 
+        /**
+         * Read Units consumed by this operation.
+         * @param readUnitsConsumed the value to set
+         * @return this builder
+         **/
         public Builder readUnitsConsumed(Integer readUnitsConsumed) {
             this.readUnitsConsumed = readUnitsConsumed;
             this.__explicitlySet__.add("readUnitsConsumed");
             return this;
         }
-
+        /**
+         * Write Units consumed by this operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("writeUnitsConsumed")
         private Integer writeUnitsConsumed;
 
+        /**
+         * Write Units consumed by this operation.
+         * @param writeUnitsConsumed the value to set
+         * @return this builder
+         **/
         public Builder writeUnitsConsumed(Integer writeUnitsConsumed) {
             this.writeUnitsConsumed = writeUnitsConsumed;
             this.__explicitlySet__.add("writeUnitsConsumed");
@@ -83,6 +98,10 @@ public final class RequestUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("readUnitsConsumed")
     private final Integer readUnitsConsumed;
 
+    /**
+     * Read Units consumed by this operation.
+     * @return the value
+     **/
     public Integer getReadUnitsConsumed() {
         return readUnitsConsumed;
     }
@@ -93,6 +112,10 @@ public final class RequestUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("writeUnitsConsumed")
     private final Integer writeUnitsConsumed;
 
+    /**
+     * Write Units consumed by this operation.
+     * @return the value
+     **/
     public Integer getWriteUnitsConsumed() {
         return writeUnitsConsumed;
     }

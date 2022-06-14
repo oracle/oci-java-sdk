@@ -28,9 +28,27 @@ package com.oracle.bmc.mysql.model;
 public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSystemSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage.
+         * Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+         * for information related to PAR creation.
+         * Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR.
+         * Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl")
         private String sourceUrl;
 
+        /**
+         * The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage.
+         * Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+         * for information related to PAR creation.
+         * Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR.
+         * Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+         *
+         * @param sourceUrl the value to set
+         * @return this builder
+         **/
         public Builder sourceUrl(String sourceUrl) {
             this.sourceUrl = sourceUrl;
             this.__explicitlySet__.add("sourceUrl");
@@ -84,6 +102,15 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
     @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl")
     private final String sourceUrl;
 
+    /**
+     * The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage.
+     * Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * for information related to PAR creation.
+     * Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR.
+     * Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+     *
+     * @return the value
+     **/
     public String getSourceUrl() {
         return sourceUrl;
     }

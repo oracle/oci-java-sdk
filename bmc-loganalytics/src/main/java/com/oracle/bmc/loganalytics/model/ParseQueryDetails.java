@@ -31,18 +31,35 @@ public final class ParseQueryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Query to parse.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
 
+        /**
+         * Query to parse.
+         * @param queryString the value to set
+         * @return this builder
+         **/
         public Builder queryString(String queryString) {
             this.queryString = queryString;
             this.__explicitlySet__.add("queryString");
             return this;
         }
-
+        /**
+         * Default subsystem to qualify fields with in the queryString if not specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
         private SubSystemName subSystem;
 
+        /**
+         * Default subsystem to qualify fields with in the queryString if not specified.
+         *
+         * @param subSystem the value to set
+         * @return this builder
+         **/
         public Builder subSystem(SubSystemName subSystem) {
             this.subSystem = subSystem;
             this.__explicitlySet__.add("subSystem");
@@ -84,6 +101,10 @@ public final class ParseQueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     private final String queryString;
 
+    /**
+     * Query to parse.
+     * @return the value
+     **/
     public String getQueryString() {
         return queryString;
     }
@@ -95,6 +116,11 @@ public final class ParseQueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
     private final SubSystemName subSystem;
 
+    /**
+     * Default subsystem to qualify fields with in the queryString if not specified.
+     *
+     * @return the value
+     **/
     public SubSystemName getSubSystem() {
         return subSystem;
     }

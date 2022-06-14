@@ -35,10 +35,17 @@ public final class DailyFrequencyDetails extends AbstractFrequencyDetails {
             this.__explicitlySet__.add("frequency");
             return this;
         }
-
+        /**
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interval")
         private Integer interval;
 
+        /**
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         * @param interval the value to set
+         * @return this builder
+         **/
         public Builder interval(Integer interval) {
             this.interval = interval;
             this.__explicitlySet__.add("interval");
@@ -98,6 +105,10 @@ public final class DailyFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("interval")
     private final Integer interval;
 
+    /**
+     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+     * @return the value
+     **/
     public Integer getInterval() {
         return interval;
     }

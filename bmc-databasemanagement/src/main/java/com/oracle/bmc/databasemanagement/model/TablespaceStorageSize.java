@@ -30,18 +30,37 @@ public final class TablespaceStorageSize {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Storage size number in bytes, kilobytes, megabytes, gigabytes, or terabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private java.math.BigDecimal size;
 
+        /**
+         * Storage size number in bytes, kilobytes, megabytes, gigabytes, or terabytes.
+         *
+         * @param size the value to set
+         * @return this builder
+         **/
         public Builder size(java.math.BigDecimal size) {
             this.size = size;
             this.__explicitlySet__.add("size");
             return this;
         }
-
+        /**
+         * Storage size unit: bytes, kilobytes, megabytes, gigabytes, or terabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
+        /**
+         * Storage size unit: bytes, kilobytes, megabytes, gigabytes, or terabytes.
+         *
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -84,6 +103,11 @@ public final class TablespaceStorageSize {
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final java.math.BigDecimal size;
 
+    /**
+     * Storage size number in bytes, kilobytes, megabytes, gigabytes, or terabytes.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getSize() {
         return size;
     }
@@ -134,6 +158,11 @@ public final class TablespaceStorageSize {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
+    /**
+     * Storage size unit: bytes, kilobytes, megabytes, gigabytes, or terabytes.
+     *
+     * @return the value
+     **/
     public Unit getUnit() {
         return unit;
     }

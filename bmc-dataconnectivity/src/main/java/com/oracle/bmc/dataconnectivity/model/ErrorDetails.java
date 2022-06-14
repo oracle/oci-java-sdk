@@ -28,18 +28,37 @@ public final class ErrorDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A short error code that defines the error, meant for programmatic parsing. See
+         * [API Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
+        /**
+         * A short error code that defines the error, meant for programmatic parsing. See
+         * [API Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+         *
+         * @param code the value to set
+         * @return this builder
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-
+        /**
+         * A user-friendly error message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * A user-friendly error message.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -83,6 +102,12 @@ public final class ErrorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
+    /**
+     * A short error code that defines the error, meant for programmatic parsing. See
+     * [API Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+     *
+     * @return the value
+     **/
     public String getCode() {
         return code;
     }
@@ -93,6 +118,10 @@ public final class ErrorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A user-friendly error message.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }

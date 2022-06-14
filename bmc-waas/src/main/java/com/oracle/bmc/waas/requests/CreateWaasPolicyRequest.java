@@ -18,6 +18,9 @@ public class CreateWaasPolicyRequest
      */
     private com.oracle.bmc.waas.model.CreateWaasPolicyDetails createWaasPolicyDetails;
 
+    /**
+     * The details of the WAAS policy.
+     */
     public com.oracle.bmc.waas.model.CreateWaasPolicyDetails getCreateWaasPolicyDetails() {
         return createWaasPolicyDetails;
     }
@@ -26,6 +29,9 @@ public class CreateWaasPolicyRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +41,10 @@ public class CreateWaasPolicyRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+     * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -56,10 +66,14 @@ public class CreateWaasPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details of the WAAS policy.
+         */
         private com.oracle.bmc.waas.model.CreateWaasPolicyDetails createWaasPolicyDetails = null;
 
         /**
          * The details of the WAAS policy.
+         * @param createWaasPolicyDetails the value to set
          * @return this builder instance
          */
         public Builder createWaasPolicyDetails(
@@ -68,10 +82,14 @@ public class CreateWaasPolicyRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -79,11 +97,16 @@ public class CreateWaasPolicyRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+         * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
          * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -174,7 +197,8 @@ public class CreateWaasPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -183,6 +207,10 @@ public class CreateWaasPolicyRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

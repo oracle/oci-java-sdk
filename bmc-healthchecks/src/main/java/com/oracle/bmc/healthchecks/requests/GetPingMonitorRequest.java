@@ -16,6 +16,9 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String monitorId;
 
+    /**
+     * The OCID of a monitor.
+     */
     public String getMonitorId() {
         return monitorId;
     }
@@ -26,6 +29,11 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,6 +46,13 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String ifNoneMatch;
 
+    /**
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
+     */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
@@ -49,10 +64,14 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of a monitor.
+         */
         private String monitorId = null;
 
         /**
          * The OCID of a monitor.
+         * @param monitorId the value to set
          * @return this builder instance
          */
         public Builder monitorId(String monitorId) {
@@ -60,12 +79,18 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -73,6 +98,13 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
+         */
         private String ifNoneMatch = null;
 
         /**
@@ -81,6 +113,7 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * the field-value is {@code *}, or having a selected representation with an
          * entity-tag that does not match any of those listed in the field-value.
          *
+         * @param ifNoneMatch the value to set
          * @return this builder instance
          */
         public Builder ifNoneMatch(String ifNoneMatch) {
@@ -160,7 +193,8 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -169,6 +203,10 @@ public class GetPingMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .ifNoneMatch(ifNoneMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -32,54 +32,97 @@ public final class JWK {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The modulus.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("n")
         private String n;
 
+        /**
+         * The modulus.
+         * @param n the value to set
+         * @return this builder
+         **/
         public Builder n(String n) {
             this.n = n;
             this.__explicitlySet__.add("n");
             return this;
         }
-
+        /**
+         * The exponent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("e")
         private String e;
 
+        /**
+         * The exponent.
+         * @param e the value to set
+         * @return this builder
+         **/
         public Builder e(String e) {
             this.e = e;
             this.__explicitlySet__.add("e");
             return this;
         }
-
+        /**
+         * The key id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kid")
         private String kid;
 
+        /**
+         * The key id.
+         * @param kid the value to set
+         * @return this builder
+         **/
         public Builder kid(String kid) {
             this.kid = kid;
             this.__explicitlySet__.add("kid");
             return this;
         }
-
+        /**
+         * The key use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("use")
         private String use;
 
+        /**
+         * The key use.
+         * @param use the value to set
+         * @return this builder
+         **/
         public Builder use(String use) {
             this.use = use;
             this.__explicitlySet__.add("use");
             return this;
         }
-
+        /**
+         * The algorithm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alg")
         private String alg;
 
+        /**
+         * The algorithm.
+         * @param alg the value to set
+         * @return this builder
+         **/
         public Builder alg(String alg) {
             this.alg = alg;
             this.__explicitlySet__.add("alg");
             return this;
         }
-
+        /**
+         * The key type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kty")
         private String kty;
 
+        /**
+         * The key type.
+         * @param kty the value to set
+         * @return this builder
+         **/
         public Builder kty(String kty) {
             this.kty = kty;
             this.__explicitlySet__.add("kty");
@@ -127,6 +170,10 @@ public final class JWK {
     @com.fasterxml.jackson.annotation.JsonProperty("n")
     private final String n;
 
+    /**
+     * The modulus.
+     * @return the value
+     **/
     public String getN() {
         return n;
     }
@@ -137,6 +184,10 @@ public final class JWK {
     @com.fasterxml.jackson.annotation.JsonProperty("e")
     private final String e;
 
+    /**
+     * The exponent.
+     * @return the value
+     **/
     public String getE() {
         return e;
     }
@@ -147,6 +198,10 @@ public final class JWK {
     @com.fasterxml.jackson.annotation.JsonProperty("kid")
     private final String kid;
 
+    /**
+     * The key id.
+     * @return the value
+     **/
     public String getKid() {
         return kid;
     }
@@ -157,6 +212,10 @@ public final class JWK {
     @com.fasterxml.jackson.annotation.JsonProperty("use")
     private final String use;
 
+    /**
+     * The key use.
+     * @return the value
+     **/
     public String getUse() {
         return use;
     }
@@ -167,6 +226,10 @@ public final class JWK {
     @com.fasterxml.jackson.annotation.JsonProperty("alg")
     private final String alg;
 
+    /**
+     * The algorithm.
+     * @return the value
+     **/
     public String getAlg() {
         return alg;
     }
@@ -177,6 +240,10 @@ public final class JWK {
     @com.fasterxml.jackson.annotation.JsonProperty("kty")
     private final String kty;
 
+    /**
+     * The key type.
+     * @return the value
+     **/
     public String getKty() {
         return kty;
     }

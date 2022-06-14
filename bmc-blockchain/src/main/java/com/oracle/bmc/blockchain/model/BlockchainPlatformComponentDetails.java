@@ -31,18 +31,33 @@ public final class BlockchainPlatformComponentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of OSNs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osns")
         private java.util.List<Osn> osns;
 
+        /**
+         * List of OSNs
+         * @param osns the value to set
+         * @return this builder
+         **/
         public Builder osns(java.util.List<Osn> osns) {
             this.osns = osns;
             this.__explicitlySet__.add("osns");
             return this;
         }
-
+        /**
+         * List of Peers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peers")
         private java.util.List<Peer> peers;
 
+        /**
+         * List of Peers
+         * @param peers the value to set
+         * @return this builder
+         **/
         public Builder peers(java.util.List<Peer> peers) {
             this.peers = peers;
             this.__explicitlySet__.add("peers");
@@ -85,6 +100,10 @@ public final class BlockchainPlatformComponentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("osns")
     private final java.util.List<Osn> osns;
 
+    /**
+     * List of OSNs
+     * @return the value
+     **/
     public java.util.List<Osn> getOsns() {
         return osns;
     }
@@ -95,6 +114,10 @@ public final class BlockchainPlatformComponentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peers")
     private final java.util.List<Peer> peers;
 
+    /**
+     * List of Peers
+     * @return the value
+     **/
     public java.util.List<Peer> getPeers() {
         return peers;
     }

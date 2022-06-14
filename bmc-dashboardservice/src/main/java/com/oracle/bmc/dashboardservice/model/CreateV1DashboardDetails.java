@@ -75,19 +75,33 @@ public final class CreateV1DashboardDetails extends CreateDashboardDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The layout and widget placement for the dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private Object config;
 
+        /**
+         * The layout and widget placement for the dashboard.
+         * @param config the value to set
+         * @return this builder
+         **/
         public Builder config(Object config) {
             this.config = config;
             this.__explicitlySet__.add("config");
             return this;
         }
-
+        /**
+         * The basic visualization building blocks of a dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("widgets")
         private java.util.List<Object> widgets;
 
+        /**
+         * The basic visualization building blocks of a dashboard.
+         * @param widgets the value to set
+         * @return this builder
+         **/
         public Builder widgets(java.util.List<Object> widgets) {
             this.widgets = widgets;
             this.__explicitlySet__.add("widgets");
@@ -158,6 +172,10 @@ public final class CreateV1DashboardDetails extends CreateDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final Object config;
 
+    /**
+     * The layout and widget placement for the dashboard.
+     * @return the value
+     **/
     public Object getConfig() {
         return config;
     }
@@ -168,6 +186,10 @@ public final class CreateV1DashboardDetails extends CreateDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("widgets")
     private final java.util.List<Object> widgets;
 
+    /**
+     * The basic visualization building blocks of a dashboard.
+     * @return the value
+     **/
     public java.util.List<Object> getWidgets() {
         return widgets;
     }

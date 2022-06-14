@@ -18,6 +18,9 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest
      */
     private String virtualCircuitId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+     */
     public String getVirtualCircuitId() {
         return virtualCircuitId;
     }
@@ -27,6 +30,9 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest
     private com.oracle.bmc.core.model.BulkAddVirtualCircuitPublicPrefixesDetails
             bulkAddVirtualCircuitPublicPrefixesDetails;
 
+    /**
+     * Request with publix prefixes to be added to the virtual circuit
+     */
     public com.oracle.bmc.core.model.BulkAddVirtualCircuitPublicPrefixesDetails
             getBulkAddVirtualCircuitPublicPrefixesDetails() {
         return bulkAddVirtualCircuitPublicPrefixesDetails;
@@ -50,10 +56,14 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+         */
         private String virtualCircuitId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+         * @param virtualCircuitId the value to set
          * @return this builder instance
          */
         public Builder virtualCircuitId(String virtualCircuitId) {
@@ -61,11 +71,15 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest
             return this;
         }
 
+        /**
+         * Request with publix prefixes to be added to the virtual circuit
+         */
         private com.oracle.bmc.core.model.BulkAddVirtualCircuitPublicPrefixesDetails
                 bulkAddVirtualCircuitPublicPrefixesDetails = null;
 
         /**
          * Request with publix prefixes to be added to the virtual circuit
+         * @param bulkAddVirtualCircuitPublicPrefixesDetails the value to set
          * @return this builder instance
          */
         public Builder bulkAddVirtualCircuitPublicPrefixesDetails(
@@ -161,7 +175,8 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -170,6 +185,10 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest
                         bulkAddVirtualCircuitPublicPrefixesDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

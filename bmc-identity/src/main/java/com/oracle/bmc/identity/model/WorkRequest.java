@@ -62,99 +62,197 @@ public final class WorkRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the work request.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * An enum-like description of the type of work the work request is doing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
+        /**
+         * An enum-like description of the type of work the work request is doing.
+         * @param operationType the value to set
+         * @return this builder
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the work request.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The current status of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The current status of the work request.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The resources this work request affects.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
+        /**
+         * The resources this work request affects.
+         *
+         * @param resources the value to set
+         * @return this builder
+         **/
         public Builder resources(java.util.List<WorkRequestResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
             return this;
         }
-
+        /**
+         * The errors for work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
         private java.util.List<WorkRequestError> errors;
 
+        /**
+         * The errors for work request.
+         *
+         * @param errors the value to set
+         * @return this builder
+         **/
         public Builder errors(java.util.List<WorkRequestError> errors) {
             this.errors = errors;
             this.__explicitlySet__.add("errors");
             return this;
         }
-
+        /**
+         * The logs for work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logs")
         private java.util.List<WorkRequestLogEntry> logs;
 
+        /**
+         * The logs for work request.
+         *
+         * @param logs the value to set
+         * @return this builder
+         **/
         public Builder logs(java.util.List<WorkRequestLogEntry> logs) {
             this.logs = logs;
             this.__explicitlySet__.add("logs");
             return this;
         }
-
+        /**
+         * Date and time the work was accepted, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * Date and time the work was accepted, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * Date and time the work started, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * Date and time the work started, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * Date and time the work completed, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * Date and time the work completed, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * How much progress the operation has made.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
+        /**
+         * How much progress the operation has made.
+         *
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
@@ -219,6 +317,10 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the work request.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -277,6 +379,10 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
+    /**
+     * An enum-like description of the type of work the work request is doing.
+     * @return the value
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
@@ -287,6 +393,10 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the work request.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -348,6 +458,10 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The current status of the work request.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -359,6 +473,11 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
+    /**
+     * The resources this work request affects.
+     *
+     * @return the value
+     **/
     public java.util.List<WorkRequestResource> getResources() {
         return resources;
     }
@@ -370,6 +489,11 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     private final java.util.List<WorkRequestError> errors;
 
+    /**
+     * The errors for work request.
+     *
+     * @return the value
+     **/
     public java.util.List<WorkRequestError> getErrors() {
         return errors;
     }
@@ -381,6 +505,11 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("logs")
     private final java.util.List<WorkRequestLogEntry> logs;
 
+    /**
+     * The logs for work request.
+     *
+     * @return the value
+     **/
     public java.util.List<WorkRequestLogEntry> getLogs() {
         return logs;
     }
@@ -393,6 +522,12 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * Date and time the work was accepted, in the format defined by RFC3339.
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -405,6 +540,12 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * Date and time the work started, in the format defined by RFC3339.
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -417,6 +558,12 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * Date and time the work completed, in the format defined by RFC3339.
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -428,6 +575,11 @@ public final class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
+    /**
+     * How much progress the operation has made.
+     *
+     * @return the value
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }

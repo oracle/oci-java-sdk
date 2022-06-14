@@ -28,18 +28,37 @@ package com.oracle.bmc.analytics.model;
 public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Source IP addresses or IP address ranges igress rules.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
         private java.util.List<String> whitelistedIps;
 
+        /**
+         * Source IP addresses or IP address ranges igress rules.
+         *
+         * @param whitelistedIps the value to set
+         * @return this builder
+         **/
         public Builder whitelistedIps(java.util.List<String> whitelistedIps) {
             this.whitelistedIps = whitelistedIps;
             this.__explicitlySet__.add("whitelistedIps");
             return this;
         }
-
+        /**
+         * Virtual Cloud Networks allowed to access this network endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedVcns")
         private java.util.List<VirtualCloudNetwork> whitelistedVcns;
 
+        /**
+         * Virtual Cloud Networks allowed to access this network endpoint.
+         *
+         * @param whitelistedVcns the value to set
+         * @return this builder
+         **/
         public Builder whitelistedVcns(java.util.List<VirtualCloudNetwork> whitelistedVcns) {
             this.whitelistedVcns = whitelistedVcns;
             this.__explicitlySet__.add("whitelistedVcns");
@@ -93,6 +112,11 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     private final java.util.List<String> whitelistedIps;
 
+    /**
+     * Source IP addresses or IP address ranges igress rules.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getWhitelistedIps() {
         return whitelistedIps;
     }
@@ -104,6 +128,11 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedVcns")
     private final java.util.List<VirtualCloudNetwork> whitelistedVcns;
 
+    /**
+     * Virtual Cloud Networks allowed to access this network endpoint.
+     *
+     * @return the value
+     **/
     public java.util.List<VirtualCloudNetwork> getWhitelistedVcns() {
         return whitelistedVcns;
     }

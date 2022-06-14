@@ -16,6 +16,13 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -27,6 +34,12 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +49,10 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.databasemanagement.model.UserCollection userCollection;
 
+    /**
+     * The returned UserCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.databasemanagement.model.UserCollection getUserCollection() {
         return userCollection;
     }
@@ -65,22 +82,56 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned UserCollection instance.
+         */
         private com.oracle.bmc.databasemanagement.model.UserCollection userCollection;
 
+        /**
+         * The returned UserCollection instance.
+         * @param userCollection the value to set
+         * @return this builder
+         */
         public Builder userCollection(
                 com.oracle.bmc.databasemanagement.model.UserCollection userCollection) {
             this.userCollection = userCollection;
@@ -100,12 +151,20 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListUsersResponse build() {
             return new ListUsersResponse(
                     __httpStatusCode__, opcNextPage, opcRequestId, userCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

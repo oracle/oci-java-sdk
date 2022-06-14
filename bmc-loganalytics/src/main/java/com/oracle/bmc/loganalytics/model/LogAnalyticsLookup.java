@@ -77,108 +77,201 @@ public final class LogAnalyticsLookup {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The active edit version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activeEditVersion")
         private Long activeEditVersion;
 
+        /**
+         * The active edit version.
+         * @param activeEditVersion the value to set
+         * @return this builder
+         **/
         public Builder activeEditVersion(Long activeEditVersion) {
             this.activeEditVersion = activeEditVersion;
             this.__explicitlySet__.add("activeEditVersion");
             return this;
         }
-
+        /**
+         * The canonical link.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canonicalLink")
         private String canonicalLink;
 
+        /**
+         * The canonical link.
+         * @param canonicalLink the value to set
+         * @return this builder
+         **/
         public Builder canonicalLink(String canonicalLink) {
             this.canonicalLink = canonicalLink;
             this.__explicitlySet__.add("canonicalLink");
             return this;
         }
-
+        /**
+         * The lookup description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The lookup description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The edit version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
+        /**
+         * The edit version.
+         * @param editVersion the value to set
+         * @return this builder
+         **/
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-
+        /**
+         * The lookup fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<LookupField> fields;
 
+        /**
+         * The lookup fields.
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.List<LookupField> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-
+        /**
+         * The lookup reference as an integer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
         private Long lookupReference;
 
+        /**
+         * The lookup reference as an integer.
+         * @param lookupReference the value to set
+         * @return this builder
+         **/
         public Builder lookupReference(Long lookupReference) {
             this.lookupReference = lookupReference;
             this.__explicitlySet__.add("lookupReference");
             return this;
         }
-
+        /**
+         * The lookup reference as a string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
         private String lookupReferenceString;
 
+        /**
+         * The lookup reference as a string.
+         * @param lookupReferenceString the value to set
+         * @return this builder
+         **/
         public Builder lookupReferenceString(String lookupReferenceString) {
             this.lookupReferenceString = lookupReferenceString;
             this.__explicitlySet__.add("lookupReferenceString");
             return this;
         }
-
+        /**
+         * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The lookup name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The lookup name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A flag indicating if the lookup is custom (user-defined) or
+         * built in.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBuiltIn")
         private Long isBuiltIn;
 
+        /**
+         * A flag indicating if the lookup is custom (user-defined) or
+         * built in.
+         *
+         * @param isBuiltIn the value to set
+         * @return this builder
+         **/
         public Builder isBuiltIn(Long isBuiltIn) {
             this.isBuiltIn = isBuiltIn;
             this.__explicitlySet__.add("isBuiltIn");
             return this;
         }
-
+        /**
+         * A flag indicating if the lookup is hidden or not.  A hidden lookup will
+         * not be returned in list operations by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
+        /**
+         * A flag indicating if the lookup is hidden or not.  A hidden lookup will
+         * not be returned in list operations by default.
+         *
+         * @param isHidden the value to set
+         * @return this builder
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-
+        /**
+         * The lookup display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupDisplayName")
         private String lookupDisplayName;
 
+        /**
+         * The lookup display name.
+         * @param lookupDisplayName the value to set
+         * @return this builder
+         **/
         public Builder lookupDisplayName(String lookupDisplayName) {
             this.lookupDisplayName = lookupDisplayName;
             this.__explicitlySet__.add("lookupDisplayName");
@@ -202,19 +295,37 @@ public final class LogAnalyticsLookup {
             this.__explicitlySet__.add("statusSummary");
             return this;
         }
-
+        /**
+         * The last updated date.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The last updated date.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * An array of categories assigned to this lookup.
+         * The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categories")
         private java.util.List<LogAnalyticsCategory> categories;
 
+        /**
+         * An array of categories assigned to this lookup.
+         * The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+         *
+         * @param categories the value to set
+         * @return this builder
+         **/
         public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
             this.categories = categories;
             this.__explicitlySet__.add("categories");
@@ -289,6 +400,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("activeEditVersion")
     private final Long activeEditVersion;
 
+    /**
+     * The active edit version.
+     * @return the value
+     **/
     public Long getActiveEditVersion() {
         return activeEditVersion;
     }
@@ -299,6 +414,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("canonicalLink")
     private final String canonicalLink;
 
+    /**
+     * The canonical link.
+     * @return the value
+     **/
     public String getCanonicalLink() {
         return canonicalLink;
     }
@@ -309,6 +428,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The lookup description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -319,6 +442,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
+    /**
+     * The edit version.
+     * @return the value
+     **/
     public Long getEditVersion() {
         return editVersion;
     }
@@ -329,6 +456,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<LookupField> fields;
 
+    /**
+     * The lookup fields.
+     * @return the value
+     **/
     public java.util.List<LookupField> getFields() {
         return fields;
     }
@@ -339,6 +470,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
     private final Long lookupReference;
 
+    /**
+     * The lookup reference as an integer.
+     * @return the value
+     **/
     public Long getLookupReference() {
         return lookupReference;
     }
@@ -349,6 +484,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
     private final String lookupReferenceString;
 
+    /**
+     * The lookup reference as a string.
+     * @return the value
+     **/
     public String getLookupReferenceString() {
         return lookupReferenceString;
     }
@@ -405,6 +544,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -415,6 +558,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The lookup name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -427,6 +574,12 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("isBuiltIn")
     private final Long isBuiltIn;
 
+    /**
+     * A flag indicating if the lookup is custom (user-defined) or
+     * built in.
+     *
+     * @return the value
+     **/
     public Long getIsBuiltIn() {
         return isBuiltIn;
     }
@@ -439,6 +592,12 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
+    /**
+     * A flag indicating if the lookup is hidden or not.  A hidden lookup will
+     * not be returned in list operations by default.
+     *
+     * @return the value
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
@@ -449,6 +608,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("lookupDisplayName")
     private final String lookupDisplayName;
 
+    /**
+     * The lookup display name.
+     * @return the value
+     **/
     public String getLookupDisplayName() {
         return lookupDisplayName;
     }
@@ -473,6 +636,10 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The last updated date.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -485,6 +652,12 @@ public final class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     private final java.util.List<LogAnalyticsCategory> categories;
 
+    /**
+     * An array of categories assigned to this lookup.
+     * The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+     *
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsCategory> getCategories() {
         return categories;
     }

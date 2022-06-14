@@ -30,9 +30,19 @@ package com.oracle.bmc.sch.model;
 public final class MonitoringSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of metric namespaces to retrieve data from.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monitoringSources")
         private java.util.List<MonitoringSource> monitoringSources;
 
+        /**
+         * The list of metric namespaces to retrieve data from.
+         *
+         * @param monitoringSources the value to set
+         * @return this builder
+         **/
         public Builder monitoringSources(java.util.List<MonitoringSource> monitoringSources) {
             this.monitoringSources = monitoringSources;
             this.__explicitlySet__.add("monitoringSources");
@@ -81,6 +91,11 @@ public final class MonitoringSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("monitoringSources")
     private final java.util.List<MonitoringSource> monitoringSources;
 
+    /**
+     * The list of metric namespaces to retrieve data from.
+     *
+     * @return the value
+     **/
     public java.util.List<MonitoringSource> getMonitoringSources() {
         return monitoringSources;
     }

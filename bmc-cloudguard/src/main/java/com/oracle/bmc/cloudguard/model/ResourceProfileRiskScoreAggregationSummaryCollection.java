@@ -30,9 +30,17 @@ public final class ResourceProfileRiskScoreAggregationSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of ResourceProfileRiskScoreAggregationSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceProfileRiskScoreAggregationSummary> items;
 
+        /**
+         * List of ResourceProfileRiskScoreAggregationSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ResourceProfileRiskScoreAggregationSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class ResourceProfileRiskScoreAggregationSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceProfileRiskScoreAggregationSummary> items;
 
+    /**
+     * List of ResourceProfileRiskScoreAggregationSummary
+     * @return the value
+     **/
     public java.util.List<ResourceProfileRiskScoreAggregationSummary> getItems() {
         return items;
     }

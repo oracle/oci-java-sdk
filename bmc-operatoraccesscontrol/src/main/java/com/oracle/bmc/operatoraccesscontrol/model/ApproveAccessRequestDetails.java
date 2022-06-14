@@ -41,36 +41,73 @@ public final class ApproveAccessRequestDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Comment by the approver during approval.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
         private String approverComment;
 
+        /**
+         * Comment by the approver during approval.
+         * @param approverComment the value to set
+         * @return this builder
+         **/
         public Builder approverComment(String approverComment) {
             this.approverComment = approverComment;
             this.__explicitlySet__.add("approverComment");
             return this;
         }
-
+        /**
+         * Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.
+         * By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,
+         * in addition to command level logging, key strokes are also logged.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditType")
         private java.util.List<String> auditType;
 
+        /**
+         * Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.
+         * By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,
+         * in addition to command level logging, key strokes are also logged.
+         *
+         * @param auditType the value to set
+         * @return this builder
+         **/
         public Builder auditType(java.util.List<String> auditType) {
             this.auditType = auditType;
             this.__explicitlySet__.add("auditType");
             return this;
         }
-
+        /**
+         * Message that needs to be displayed to the Ops User.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalMessage")
         private String additionalMessage;
 
+        /**
+         * Message that needs to be displayed to the Ops User.
+         * @param additionalMessage the value to set
+         * @return this builder
+         **/
         public Builder additionalMessage(String additionalMessage) {
             this.additionalMessage = additionalMessage;
             this.__explicitlySet__.add("additionalMessage");
             return this;
         }
-
+        /**
+         * The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfUserCreation")
         private java.util.Date timeOfUserCreation;
 
+        /**
+         * The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+         *
+         * @param timeOfUserCreation the value to set
+         * @return this builder
+         **/
         public Builder timeOfUserCreation(java.util.Date timeOfUserCreation) {
             this.timeOfUserCreation = timeOfUserCreation;
             this.__explicitlySet__.add("timeOfUserCreation");
@@ -118,6 +155,10 @@ public final class ApproveAccessRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
     private final String approverComment;
 
+    /**
+     * Comment by the approver during approval.
+     * @return the value
+     **/
     public String getApproverComment() {
         return approverComment;
     }
@@ -131,6 +172,13 @@ public final class ApproveAccessRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("auditType")
     private final java.util.List<String> auditType;
 
+    /**
+     * Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.
+     * By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,
+     * in addition to command level logging, key strokes are also logged.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getAuditType() {
         return auditType;
     }
@@ -141,6 +189,10 @@ public final class ApproveAccessRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("additionalMessage")
     private final String additionalMessage;
 
+    /**
+     * Message that needs to be displayed to the Ops User.
+     * @return the value
+     **/
     public String getAdditionalMessage() {
         return additionalMessage;
     }
@@ -152,6 +204,11 @@ public final class ApproveAccessRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfUserCreation")
     private final java.util.Date timeOfUserCreation;
 
+    /**
+     * The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfUserCreation() {
         return timeOfUserCreation;
     }

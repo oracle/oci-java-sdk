@@ -19,6 +19,10 @@ public class CreateRedeemableUserRequest
      */
     private com.oracle.bmc.usage.model.CreateRedeemableUserDetails createRedeemableUserDetails;
 
+    /**
+     * CreateRedeemableUserDetails inforamtion.
+     *
+     */
     public com.oracle.bmc.usage.model.CreateRedeemableUserDetails getCreateRedeemableUserDetails() {
         return createRedeemableUserDetails;
     }
@@ -27,6 +31,9 @@ public class CreateRedeemableUserRequest
      */
     private String tenancyId;
 
+    /**
+     * The OCID of the tenancy.
+     */
     public String getTenancyId() {
         return tenancyId;
     }
@@ -35,6 +42,9 @@ public class CreateRedeemableUserRequest
      */
     private String subscriptionId;
 
+    /**
+     * The subscription ID for which rewards information is requested for.
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -43,6 +53,9 @@ public class CreateRedeemableUserRequest
      */
     private String userId;
 
+    /**
+     * The user ID of the person to send a copy of an email.
+     */
     public String getUserId() {
         return userId;
     }
@@ -51,6 +64,9 @@ public class CreateRedeemableUserRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,6 +80,14 @@ public class CreateRedeemableUserRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted, only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -77,6 +101,14 @@ public class CreateRedeemableUserRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error, without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -99,12 +131,17 @@ public class CreateRedeemableUserRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * CreateRedeemableUserDetails inforamtion.
+         *
+         */
         private com.oracle.bmc.usage.model.CreateRedeemableUserDetails createRedeemableUserDetails =
                 null;
 
         /**
          * CreateRedeemableUserDetails inforamtion.
          *
+         * @param createRedeemableUserDetails the value to set
          * @return this builder instance
          */
         public Builder createRedeemableUserDetails(
@@ -114,10 +151,14 @@ public class CreateRedeemableUserRequest
             return this;
         }
 
+        /**
+         * The OCID of the tenancy.
+         */
         private String tenancyId = null;
 
         /**
          * The OCID of the tenancy.
+         * @param tenancyId the value to set
          * @return this builder instance
          */
         public Builder tenancyId(String tenancyId) {
@@ -125,10 +166,14 @@ public class CreateRedeemableUserRequest
             return this;
         }
 
+        /**
+         * The subscription ID for which rewards information is requested for.
+         */
         private String subscriptionId = null;
 
         /**
          * The subscription ID for which rewards information is requested for.
+         * @param subscriptionId the value to set
          * @return this builder instance
          */
         public Builder subscriptionId(String subscriptionId) {
@@ -136,10 +181,14 @@ public class CreateRedeemableUserRequest
             return this;
         }
 
+        /**
+         * The user ID of the person to send a copy of an email.
+         */
         private String userId = null;
 
         /**
          * The user ID of the person to send a copy of an email.
+         * @param userId the value to set
          * @return this builder instance
          */
         public Builder userId(String userId) {
@@ -147,10 +196,14 @@ public class CreateRedeemableUserRequest
             return this;
         }
 
+        /**
+         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -158,6 +211,14 @@ public class CreateRedeemableUserRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted, only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -167,6 +228,7 @@ public class CreateRedeemableUserRequest
          * The resource will be updated or deleted, only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -174,6 +236,14 @@ public class CreateRedeemableUserRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error, without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -183,6 +253,7 @@ public class CreateRedeemableUserRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -281,7 +352,8 @@ public class CreateRedeemableUserRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -294,6 +366,10 @@ public class CreateRedeemableUserRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

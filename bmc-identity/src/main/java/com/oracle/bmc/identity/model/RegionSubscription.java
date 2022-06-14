@@ -39,36 +39,81 @@ public final class RegionSubscription {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The region's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported 3-letter region codes.
+         * <p>
+         * Example: {@code PHX}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
         private String regionKey;
 
+        /**
+         * The region's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported 3-letter region codes.
+         * <p>
+         * Example: {@code PHX}
+         *
+         * @param regionKey the value to set
+         * @return this builder
+         **/
         public Builder regionKey(String regionKey) {
             this.regionKey = regionKey;
             this.__explicitlySet__.add("regionKey");
             return this;
         }
-
+        /**
+         * The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionName")
         private String regionName;
 
+        /**
+         * The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
+         *
+         * @param regionName the value to set
+         * @return this builder
+         **/
         public Builder regionName(String regionName) {
             this.regionName = regionName;
             this.__explicitlySet__.add("regionName");
             return this;
         }
-
+        /**
+         * The region subscription status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The region subscription status.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Indicates if the region is the home region or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHomeRegion")
         private Boolean isHomeRegion;
 
+        /**
+         * Indicates if the region is the home region or not.
+         * @param isHomeRegion the value to set
+         * @return this builder
+         **/
         public Builder isHomeRegion(Boolean isHomeRegion) {
             this.isHomeRegion = isHomeRegion;
             this.__explicitlySet__.add("isHomeRegion");
@@ -119,6 +164,14 @@ public final class RegionSubscription {
     @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
     private final String regionKey;
 
+    /**
+     * The region's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+     * for the full list of supported 3-letter region codes.
+     * <p>
+     * Example: {@code PHX}
+     *
+     * @return the value
+     **/
     public String getRegionKey() {
         return regionKey;
     }
@@ -133,6 +186,14 @@ public final class RegionSubscription {
     @com.fasterxml.jackson.annotation.JsonProperty("regionName")
     private final String regionName;
 
+    /**
+     * The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+     * for the full list of supported region names.
+     * <p>
+     * Example: {@code us-phoenix-1}
+     *
+     * @return the value
+     **/
     public String getRegionName() {
         return regionName;
     }
@@ -190,6 +251,10 @@ public final class RegionSubscription {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The region subscription status.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -200,6 +265,10 @@ public final class RegionSubscription {
     @com.fasterxml.jackson.annotation.JsonProperty("isHomeRegion")
     private final Boolean isHomeRegion;
 
+    /**
+     * Indicates if the region is the home region or not.
+     * @return the value
+     **/
     public Boolean getIsHomeRegion() {
         return isHomeRegion;
     }

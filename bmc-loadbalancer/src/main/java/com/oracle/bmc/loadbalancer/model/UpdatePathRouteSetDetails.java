@@ -29,9 +29,17 @@ public final class UpdatePathRouteSetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The set of path route rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pathRoutes")
         private java.util.List<PathRoute> pathRoutes;
 
+        /**
+         * The set of path route rules.
+         * @param pathRoutes the value to set
+         * @return this builder
+         **/
         public Builder pathRoutes(java.util.List<PathRoute> pathRoutes) {
             this.pathRoutes = pathRoutes;
             this.__explicitlySet__.add("pathRoutes");
@@ -73,6 +81,10 @@ public final class UpdatePathRouteSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pathRoutes")
     private final java.util.List<PathRoute> pathRoutes;
 
+    /**
+     * The set of path route rules.
+     * @return the value
+     **/
     public java.util.List<PathRoute> getPathRoutes() {
         return pathRoutes;
     }

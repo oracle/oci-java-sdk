@@ -31,6 +31,7 @@ public final class GoldenGateDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("hub")
         private GoldenGateHub hub;
 

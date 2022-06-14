@@ -18,6 +18,9 @@ public class UpdateCloudVmClusterIormConfigRequest
      */
     private String cloudVmClusterId;
 
+    /**
+     * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCloudVmClusterId() {
         return cloudVmClusterId;
     }
@@ -27,6 +30,9 @@ public class UpdateCloudVmClusterIormConfigRequest
     private com.oracle.bmc.database.model.ExadataIormConfigUpdateDetails
             cloudVmClusterIormConfigUpdateDetails;
 
+    /**
+     * Request to perform database update.
+     */
     public com.oracle.bmc.database.model.ExadataIormConfigUpdateDetails
             getCloudVmClusterIormConfigUpdateDetails() {
         return cloudVmClusterIormConfigUpdateDetails;
@@ -37,6 +43,10 @@ public class UpdateCloudVmClusterIormConfigRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +58,12 @@ public class UpdateCloudVmClusterIormConfigRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -70,10 +86,14 @@ public class UpdateCloudVmClusterIormConfigRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String cloudVmClusterId = null;
 
         /**
          * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param cloudVmClusterId the value to set
          * @return this builder instance
          */
         public Builder cloudVmClusterId(String cloudVmClusterId) {
@@ -81,11 +101,15 @@ public class UpdateCloudVmClusterIormConfigRequest
             return this;
         }
 
+        /**
+         * Request to perform database update.
+         */
         private com.oracle.bmc.database.model.ExadataIormConfigUpdateDetails
                 cloudVmClusterIormConfigUpdateDetails = null;
 
         /**
          * Request to perform database update.
+         * @param cloudVmClusterIormConfigUpdateDetails the value to set
          * @return this builder instance
          */
         public Builder cloudVmClusterIormConfigUpdateDetails(
@@ -95,11 +119,16 @@ public class UpdateCloudVmClusterIormConfigRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -107,6 +136,12 @@ public class UpdateCloudVmClusterIormConfigRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -114,6 +149,7 @@ public class UpdateCloudVmClusterIormConfigRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -207,7 +243,8 @@ public class UpdateCloudVmClusterIormConfigRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +254,10 @@ public class UpdateCloudVmClusterIormConfigRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

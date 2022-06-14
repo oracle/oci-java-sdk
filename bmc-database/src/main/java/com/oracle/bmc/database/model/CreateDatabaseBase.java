@@ -53,6 +53,10 @@ public class CreateDatabaseBase {
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     private final String dbHomeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     * @return the value
+     **/
     public String getDbHomeId() {
         return dbHomeId;
     }
@@ -63,6 +67,10 @@ public class CreateDatabaseBase {
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
+    /**
+     * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     * @return the value
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
@@ -73,6 +81,10 @@ public class CreateDatabaseBase {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -84,6 +96,11 @@ public class CreateDatabaseBase {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     * @return the value
+     **/
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }

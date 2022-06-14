@@ -14,6 +14,11 @@ public class UpdateBootVolumeKmsKeyResponse extends com.oracle.bmc.responses.Bmc
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class UpdateBootVolumeKmsKeyResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class UpdateBootVolumeKmsKeyResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.core.model.BootVolumeKmsKey bootVolumeKmsKey;
 
+    /**
+     * The returned BootVolumeKmsKey instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.BootVolumeKmsKey getBootVolumeKmsKey() {
         return bootVolumeKmsKey;
     }
@@ -63,22 +78,52 @@ public class UpdateBootVolumeKmsKeyResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned BootVolumeKmsKey instance.
+         */
         private com.oracle.bmc.core.model.BootVolumeKmsKey bootVolumeKmsKey;
 
+        /**
+         * The returned BootVolumeKmsKey instance.
+         * @param bootVolumeKmsKey the value to set
+         * @return this builder
+         */
         public Builder bootVolumeKmsKey(
                 com.oracle.bmc.core.model.BootVolumeKmsKey bootVolumeKmsKey) {
             this.bootVolumeKmsKey = bootVolumeKmsKey;
@@ -98,12 +143,20 @@ public class UpdateBootVolumeKmsKeyResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateBootVolumeKmsKeyResponse build() {
             return new UpdateBootVolumeKmsKeyResponse(
                     __httpStatusCode__, etag, opcRequestId, bootVolumeKmsKey);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

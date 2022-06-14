@@ -81,10 +81,17 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
             this.__explicitlySet__.add("buildPipelineStagePredecessors");
             return this;
         }
-
+        /**
+         * Name of Build Runner shape where this Build Stage is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actualBuildRunnerShape")
         private String actualBuildRunnerShape;
 
+        /**
+         * Name of Build Runner shape where this Build Stage is running.
+         * @param actualBuildRunnerShape the value to set
+         * @return this builder
+         **/
         public Builder actualBuildRunnerShape(String actualBuildRunnerShape) {
             this.actualBuildRunnerShape = actualBuildRunnerShape;
             this.__explicitlySet__.add("actualBuildRunnerShape");
@@ -100,28 +107,49 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
             this.__explicitlySet__.add("actualBuildRunnerShapeConfig");
             return this;
         }
-
+        /**
+         * Image name for the Build Environment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("image")
         private Image image;
 
+        /**
+         * Image name for the Build Environment
+         * @param image the value to set
+         * @return this builder
+         **/
         public Builder image(Image image) {
             this.image = image;
             this.__explicitlySet__.add("image");
             return this;
         }
-
+        /**
+         * The path to the build specification file for this Environment. The default location if not specified is build_spec.yaml
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buildSpecFile")
         private String buildSpecFile;
 
+        /**
+         * The path to the build specification file for this Environment. The default location if not specified is build_spec.yaml
+         * @param buildSpecFile the value to set
+         * @return this builder
+         **/
         public Builder buildSpecFile(String buildSpecFile) {
             this.buildSpecFile = buildSpecFile;
             this.__explicitlySet__.add("buildSpecFile");
             return this;
         }
-
+        /**
+         * Timeout for the Build Stage Execution. Value in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stageExecutionTimeoutInSeconds")
         private Integer stageExecutionTimeoutInSeconds;
 
+        /**
+         * Timeout for the Build Stage Execution. Value in seconds.
+         * @param stageExecutionTimeoutInSeconds the value to set
+         * @return this builder
+         **/
         public Builder stageExecutionTimeoutInSeconds(Integer stageExecutionTimeoutInSeconds) {
             this.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
             this.__explicitlySet__.add("stageExecutionTimeoutInSeconds");
@@ -136,19 +164,33 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
             this.__explicitlySet__.add("buildSourceCollection");
             return this;
         }
-
+        /**
+         * Name of the BuildSource in which the build_spec.yml file need to be located. If not specified, the 1st entry in the BuildSource collection will be chosen as Primary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryBuildSource")
         private String primaryBuildSource;
 
+        /**
+         * Name of the BuildSource in which the build_spec.yml file need to be located. If not specified, the 1st entry in the BuildSource collection will be chosen as Primary.
+         * @param primaryBuildSource the value to set
+         * @return this builder
+         **/
         public Builder primaryBuildSource(String primaryBuildSource) {
             this.primaryBuildSource = primaryBuildSource;
             this.__explicitlySet__.add("primaryBuildSource");
             return this;
         }
-
+        /**
+         * The details about all the steps in a Build stage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("steps")
         private java.util.List<BuildStageRunStep> steps;
 
+        /**
+         * The details about all the steps in a Build stage
+         * @param steps the value to set
+         * @return this builder
+         **/
         public Builder steps(java.util.List<BuildStageRunStep> steps) {
             this.steps = steps;
             this.__explicitlySet__.add("steps");
@@ -265,6 +307,10 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("actualBuildRunnerShape")
     private final String actualBuildRunnerShape;
 
+    /**
+     * Name of Build Runner shape where this Build Stage is running.
+     * @return the value
+     **/
     public String getActualBuildRunnerShape() {
         return actualBuildRunnerShape;
     }
@@ -328,6 +374,10 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("image")
     private final Image image;
 
+    /**
+     * Image name for the Build Environment
+     * @return the value
+     **/
     public Image getImage() {
         return image;
     }
@@ -338,6 +388,10 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("buildSpecFile")
     private final String buildSpecFile;
 
+    /**
+     * The path to the build specification file for this Environment. The default location if not specified is build_spec.yaml
+     * @return the value
+     **/
     public String getBuildSpecFile() {
         return buildSpecFile;
     }
@@ -348,6 +402,10 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("stageExecutionTimeoutInSeconds")
     private final Integer stageExecutionTimeoutInSeconds;
 
+    /**
+     * Timeout for the Build Stage Execution. Value in seconds.
+     * @return the value
+     **/
     public Integer getStageExecutionTimeoutInSeconds() {
         return stageExecutionTimeoutInSeconds;
     }
@@ -365,6 +423,10 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("primaryBuildSource")
     private final String primaryBuildSource;
 
+    /**
+     * Name of the BuildSource in which the build_spec.yml file need to be located. If not specified, the 1st entry in the BuildSource collection will be chosen as Primary.
+     * @return the value
+     **/
     public String getPrimaryBuildSource() {
         return primaryBuildSource;
     }
@@ -375,6 +437,10 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     private final java.util.List<BuildStageRunStep> steps;
 
+    /**
+     * The details about all the steps in a Build stage
+     * @return the value
+     **/
     public java.util.List<BuildStageRunStep> getSteps() {
         return steps;
     }

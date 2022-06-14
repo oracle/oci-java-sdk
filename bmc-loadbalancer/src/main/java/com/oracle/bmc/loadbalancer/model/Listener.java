@@ -60,54 +60,137 @@ public final class Listener {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A friendly name for the listener. It must be unique and it cannot be changed.
+         * <p>
+         * Example: {@code example_listener}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A friendly name for the listener. It must be unique and it cannot be changed.
+         * <p>
+         * Example: {@code example_listener}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name of the associated backend set.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
         private String defaultBackendSetName;
 
+        /**
+         * The name of the associated backend set.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         * @param defaultBackendSetName the value to set
+         * @return this builder
+         **/
         public Builder defaultBackendSetName(String defaultBackendSetName) {
             this.defaultBackendSetName = defaultBackendSetName;
             this.__explicitlySet__.add("defaultBackendSetName");
             return this;
         }
-
+        /**
+         * The communication port for the listener.
+         * <p>
+         * Example: {@code 80}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The communication port for the listener.
+         * <p>
+         * Example: {@code 80}
+         *
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The protocol on which the listener accepts connection requests.
+         * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
+         * operation.
+         * <p>
+         * Example: {@code HTTP}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
+        /**
+         * The protocol on which the listener accepts connection requests.
+         * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
+         * operation.
+         * <p>
+         * Example: {@code HTTP}
+         *
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * An array of hostname resource names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
         private java.util.List<String> hostnameNames;
 
+        /**
+         * An array of hostname resource names.
+         * @param hostnameNames the value to set
+         * @return this builder
+         **/
         public Builder hostnameNames(java.util.List<String> hostnameNames) {
             this.hostnameNames = hostnameNames;
             this.__explicitlySet__.add("hostnameNames");
             return this;
         }
-
+        /**
+         * Deprecated. Please use {@code routingPolicies} instead.
+         * <p>
+         * The name of the set of path-based routing rules, {@link PathRouteSet},
+         * applied to this listener's traffic.
+         * <p>
+         * Example: {@code example_path_route_set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
         private String pathRouteSetName;
 
+        /**
+         * Deprecated. Please use {@code routingPolicies} instead.
+         * <p>
+         * The name of the set of path-based routing rules, {@link PathRouteSet},
+         * applied to this listener's traffic.
+         * <p>
+         * Example: {@code example_path_route_set}
+         *
+         * @param pathRouteSetName the value to set
+         * @return this builder
+         **/
         public Builder pathRouteSetName(String pathRouteSetName) {
             this.pathRouteSetName = pathRouteSetName;
             this.__explicitlySet__.add("pathRouteSetName");
@@ -131,19 +214,45 @@ public final class Listener {
             this.__explicitlySet__.add("connectionConfiguration");
             return this;
         }
-
+        /**
+         * The names of the {@link RuleSet} to apply to the listener.
+         * <p>
+         * Example: ["example_rule_set"]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")
         private java.util.List<String> ruleSetNames;
 
+        /**
+         * The names of the {@link RuleSet} to apply to the listener.
+         * <p>
+         * Example: ["example_rule_set"]
+         *
+         * @param ruleSetNames the value to set
+         * @return this builder
+         **/
         public Builder ruleSetNames(java.util.List<String> ruleSetNames) {
             this.ruleSetNames = ruleSetNames;
             this.__explicitlySet__.add("ruleSetNames");
             return this;
         }
-
+        /**
+         * The name of the routing policy applied to this listener's traffic.
+         * <p>
+         * Example: {@code example_routing_policy_name}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")
         private String routingPolicyName;
 
+        /**
+         * The name of the routing policy applied to this listener's traffic.
+         * <p>
+         * Example: {@code example_routing_policy_name}
+         *
+         * @param routingPolicyName the value to set
+         * @return this builder
+         **/
         public Builder routingPolicyName(String routingPolicyName) {
             this.routingPolicyName = routingPolicyName;
             this.__explicitlySet__.add("routingPolicyName");
@@ -209,6 +318,13 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A friendly name for the listener. It must be unique and it cannot be changed.
+     * <p>
+     * Example: {@code example_listener}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -222,6 +338,13 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
     private final String defaultBackendSetName;
 
+    /**
+     * The name of the associated backend set.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     * @return the value
+     **/
     public String getDefaultBackendSetName() {
         return defaultBackendSetName;
     }
@@ -235,6 +358,13 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The communication port for the listener.
+     * <p>
+     * Example: {@code 80}
+     *
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -250,6 +380,15 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final String protocol;
 
+    /**
+     * The protocol on which the listener accepts connection requests.
+     * To get a list of valid protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols}
+     * operation.
+     * <p>
+     * Example: {@code HTTP}
+     *
+     * @return the value
+     **/
     public String getProtocol() {
         return protocol;
     }
@@ -260,6 +399,10 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
     private final java.util.List<String> hostnameNames;
 
+    /**
+     * An array of hostname resource names.
+     * @return the value
+     **/
     public java.util.List<String> getHostnameNames() {
         return hostnameNames;
     }
@@ -276,6 +419,16 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
     private final String pathRouteSetName;
 
+    /**
+     * Deprecated. Please use {@code routingPolicies} instead.
+     * <p>
+     * The name of the set of path-based routing rules, {@link PathRouteSet},
+     * applied to this listener's traffic.
+     * <p>
+     * Example: {@code example_path_route_set}
+     *
+     * @return the value
+     **/
     public String getPathRouteSetName() {
         return pathRouteSetName;
     }
@@ -303,6 +456,13 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")
     private final java.util.List<String> ruleSetNames;
 
+    /**
+     * The names of the {@link RuleSet} to apply to the listener.
+     * <p>
+     * Example: ["example_rule_set"]
+     *
+     * @return the value
+     **/
     public java.util.List<String> getRuleSetNames() {
         return ruleSetNames;
     }
@@ -316,6 +476,13 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicyName")
     private final String routingPolicyName;
 
+    /**
+     * The name of the routing policy applied to this listener's traffic.
+     * <p>
+     * Example: {@code example_routing_policy_name}
+     *
+     * @return the value
+     **/
     public String getRoutingPolicyName() {
         return routingPolicyName;
     }

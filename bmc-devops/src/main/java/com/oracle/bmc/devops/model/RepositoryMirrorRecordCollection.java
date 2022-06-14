@@ -29,9 +29,17 @@ public final class RepositoryMirrorRecordCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of mirror entry objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RepositoryMirrorRecordSummary> items;
 
+        /**
+         * List of mirror entry objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<RepositoryMirrorRecordSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class RepositoryMirrorRecordCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RepositoryMirrorRecordSummary> items;
 
+    /**
+     * List of mirror entry objects.
+     * @return the value
+     **/
     public java.util.List<RepositoryMirrorRecordSummary> getItems() {
         return items;
     }

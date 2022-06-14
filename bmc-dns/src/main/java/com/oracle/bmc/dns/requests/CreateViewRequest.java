@@ -17,6 +17,9 @@ public class CreateViewRequest
      */
     private com.oracle.bmc.dns.model.CreateViewDetails createViewDetails;
 
+    /**
+     * Details for creating a new view.
+     */
     public com.oracle.bmc.dns.model.CreateViewDetails getCreateViewDetails() {
         return createViewDetails;
     }
@@ -31,6 +34,15 @@ public class CreateViewRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations (for example, if a resource has been
+     * deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -42,6 +54,12 @@ public class CreateViewRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +69,10 @@ public class CreateViewRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -72,10 +94,14 @@ public class CreateViewRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for creating a new view.
+         */
         private com.oracle.bmc.dns.model.CreateViewDetails createViewDetails = null;
 
         /**
          * Details for creating a new view.
+         * @param createViewDetails the value to set
          * @return this builder instance
          */
         public Builder createViewDetails(
@@ -84,6 +110,15 @@ public class CreateViewRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been
+         * deleted and purged from the system, then a retry of the original creation
+         * request may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -94,6 +129,7 @@ public class CreateViewRequest
          * deleted and purged from the system, then a retry of the original creation
          * request may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -101,6 +137,12 @@ public class CreateViewRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -108,6 +150,7 @@ public class CreateViewRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -115,11 +158,16 @@ public class CreateViewRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -212,7 +260,8 @@ public class CreateViewRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -222,6 +271,10 @@ public class CreateViewRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -32,18 +32,37 @@ public final class RenameHeaderPolicyItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The original case-insensitive name of the header.  This name must be unique across transformation policies.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("from")
         private String from;
 
+        /**
+         * The original case-insensitive name of the header.  This name must be unique across transformation policies.
+         *
+         * @param from the value to set
+         * @return this builder
+         **/
         public Builder from(String from) {
             this.from = from;
             this.__explicitlySet__.add("from");
             return this;
         }
-
+        /**
+         * The new name of the header.  This name must be unique across transformation policies.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("to")
         private String to;
 
+        /**
+         * The new name of the header.  This name must be unique across transformation policies.
+         *
+         * @param to the value to set
+         * @return this builder
+         **/
         public Builder to(String to) {
             this.to = to;
             this.__explicitlySet__.add("to");
@@ -86,6 +105,11 @@ public final class RenameHeaderPolicyItem {
     @com.fasterxml.jackson.annotation.JsonProperty("from")
     private final String from;
 
+    /**
+     * The original case-insensitive name of the header.  This name must be unique across transformation policies.
+     *
+     * @return the value
+     **/
     public String getFrom() {
         return from;
     }
@@ -97,6 +121,11 @@ public final class RenameHeaderPolicyItem {
     @com.fasterxml.jackson.annotation.JsonProperty("to")
     private final String to;
 
+    /**
+     * The new name of the header.  This name must be unique across transformation policies.
+     *
+     * @return the value
+     **/
     public String getTo() {
         return to;
     }

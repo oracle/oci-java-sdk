@@ -65,108 +65,193 @@ public final class TargetDetectorRecipeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier that is immutable on creation
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * DetectorRecipe Identifier Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * DetectorRecipe Identifier Name
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * DetectorRecipe Description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * DetectorRecipe Description
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Owner of DetectorRecipe
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private OwnerType owner;
 
+        /**
+         * Owner of DetectorRecipe
+         * @param owner the value to set
+         * @return this builder
+         **/
         public Builder owner(OwnerType owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-
+        /**
+         * Unique identifier for Detector Recipe of which this is an extension
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
         private String detectorRecipeId;
 
+        /**
+         * Unique identifier for Detector Recipe of which this is an extension
+         * @param detectorRecipeId the value to set
+         * @return this builder
+         **/
         public Builder detectorRecipeId(String detectorRecipeId) {
             this.detectorRecipeId = detectorRecipeId;
             this.__explicitlySet__.add("detectorRecipeId");
             return this;
         }
-
+        /**
+         * Type of detector
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detector")
         private DetectorEnum detector;
 
+        /**
+         * Type of detector
+         * @param detector the value to set
+         * @return this builder
+         **/
         public Builder detector(DetectorEnum detector) {
             this.detector = detector;
             this.__explicitlySet__.add("detector");
             return this;
         }
-
+        /**
+         * The current state of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the resource.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the target detector recipe was created. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the target detector recipe was created. Format defined by RFC3339.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the target detector recipe was updated. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the target detector recipe was updated. Format defined by RFC3339.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The number of days for which source data is retained
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
         private Integer sourceDataRetention;
 
+        /**
+         * The number of days for which source data is retained
+         * @param sourceDataRetention the value to set
+         * @return this builder
+         **/
         public Builder sourceDataRetention(Integer sourceDataRetention) {
             this.sourceDataRetention = sourceDataRetention;
             this.__explicitlySet__.add("sourceDataRetention");
@@ -233,6 +318,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier that is immutable on creation
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -243,6 +332,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -253,6 +346,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * DetectorRecipe Identifier Name
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -263,6 +360,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * DetectorRecipe Description
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -273,6 +374,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final OwnerType owner;
 
+    /**
+     * Owner of DetectorRecipe
+     * @return the value
+     **/
     public OwnerType getOwner() {
         return owner;
     }
@@ -283,6 +388,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
     private final String detectorRecipeId;
 
+    /**
+     * Unique identifier for Detector Recipe of which this is an extension
+     * @return the value
+     **/
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
@@ -293,6 +402,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
     private final DetectorEnum detector;
 
+    /**
+     * Type of detector
+     * @return the value
+     **/
     public DetectorEnum getDetector() {
         return detector;
     }
@@ -303,6 +416,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the resource.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -313,6 +430,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the target detector recipe was created. Format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -323,6 +444,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the target detector recipe was updated. Format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -333,6 +458,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -343,6 +472,10 @@ public final class TargetDetectorRecipeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
     private final Integer sourceDataRetention;
 
+    /**
+     * The number of days for which source data is retained
+     * @return the value
+     **/
     public Integer getSourceDataRetention() {
         return sourceDataRetention;
     }

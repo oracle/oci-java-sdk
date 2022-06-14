@@ -57,90 +57,161 @@ public final class RoverWorkload {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the Rover Workload
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the Rover Workload
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The OCID of the compartment containing the workload.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment containing the workload.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The Unique Oracle ID (OCID) that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The Unique Oracle ID (OCID) that is immutable on creation.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Size of the workload.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private String size;
 
+        /**
+         * Size of the workload.
+         * @param size the value to set
+         * @return this builder
+         **/
         public Builder size(String size) {
             this.size = size;
             this.__explicitlySet__.add("size");
             return this;
         }
-
+        /**
+         * Number of objects in a workload.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
         private String objectCount;
 
+        /**
+         * Number of objects in a workload.
+         * @param objectCount the value to set
+         * @return this builder
+         **/
         public Builder objectCount(String objectCount) {
             this.objectCount = objectCount;
             this.__explicitlySet__.add("objectCount");
             return this;
         }
-
+        /**
+         * Prefix to filter objects in case it is a bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
+        /**
+         * Prefix to filter objects in case it is a bucket.
+         * @param prefix the value to set
+         * @return this builder
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
             return this;
         }
-
+        /**
+         * Start of the range in a bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rangeStart")
         private String rangeStart;
 
+        /**
+         * Start of the range in a bucket.
+         * @param rangeStart the value to set
+         * @return this builder
+         **/
         public Builder rangeStart(String rangeStart) {
             this.rangeStart = rangeStart;
             this.__explicitlySet__.add("rangeStart");
             return this;
         }
-
+        /**
+         * End of the range in a bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rangeEnd")
         private String rangeEnd;
 
+        /**
+         * End of the range in a bucket.
+         * @param rangeEnd the value to set
+         * @return this builder
+         **/
         public Builder rangeEnd(String rangeEnd) {
             this.rangeEnd = rangeEnd;
             this.__explicitlySet__.add("rangeEnd");
             return this;
         }
-
+        /**
+         * The type of workload
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
         private String workloadType;
 
+        /**
+         * The type of workload
+         * @param workloadType the value to set
+         * @return this builder
+         **/
         public Builder workloadType(String workloadType) {
             this.workloadType = workloadType;
             this.__explicitlySet__.add("workloadType");
             return this;
         }
-
+        /**
+         * The compute work request id to track progress of custom image exports.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
+        /**
+         * The compute work request id to track progress of custom image exports.
+         * @param workRequestId the value to set
+         * @return this builder
+         **/
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
@@ -203,6 +274,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the Rover Workload
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -213,6 +288,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment containing the workload.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -223,6 +302,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The Unique Oracle ID (OCID) that is immutable on creation.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -233,6 +316,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final String size;
 
+    /**
+     * Size of the workload.
+     * @return the value
+     **/
     public String getSize() {
         return size;
     }
@@ -243,6 +330,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
     private final String objectCount;
 
+    /**
+     * Number of objects in a workload.
+     * @return the value
+     **/
     public String getObjectCount() {
         return objectCount;
     }
@@ -253,6 +344,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
+    /**
+     * Prefix to filter objects in case it is a bucket.
+     * @return the value
+     **/
     public String getPrefix() {
         return prefix;
     }
@@ -263,6 +358,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("rangeStart")
     private final String rangeStart;
 
+    /**
+     * Start of the range in a bucket.
+     * @return the value
+     **/
     public String getRangeStart() {
         return rangeStart;
     }
@@ -273,6 +372,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("rangeEnd")
     private final String rangeEnd;
 
+    /**
+     * End of the range in a bucket.
+     * @return the value
+     **/
     public String getRangeEnd() {
         return rangeEnd;
     }
@@ -283,6 +386,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
     private final String workloadType;
 
+    /**
+     * The type of workload
+     * @return the value
+     **/
     public String getWorkloadType() {
         return workloadType;
     }
@@ -293,6 +400,10 @@ public final class RoverWorkload {
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
+    /**
+     * The compute work request id to track progress of custom image exports.
+     * @return the value
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }

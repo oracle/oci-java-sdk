@@ -35,19 +35,159 @@ public final class ReturnHttpResponseAction extends Action {
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Response code.
+         * <p>
+         * The following response codes are valid values for this property:
+         * <p>
+         * 2xx
+         * <p>
+         * 200 OK
+         *   201 Created
+         *   202 Accepted
+         *   206 Partial Content
+         * <p>
+         * 3xx
+         * <p>
+         * 300 Multiple Choices
+         *   301 Moved Permanently
+         *   302 Found
+         *   303 See Other
+         *   307 Temporary Redirect
+         * <p>
+         * 4xx
+         * <p>
+         * 400 Bad Request
+         *   401 Unauthorized
+         *   403 Forbidden
+         *   404 Not Found
+         *   405 Method Not Allowed
+         *   408 Request Timeout
+         *   409 Conflict
+         *   411 Length Required
+         *   412 Precondition Failed
+         *   413 Payload Too Large
+         *   414 URI Too Long
+         *   415 Unsupported Media Type
+         *   416 Range Not Satisfiable
+         *   422 Unprocessable Entity
+         *   429 Too Many Requests
+         *   494 Request Header Too Large
+         *   495 Cert Error
+         *   496 No Cert
+         *   497 HTTP to HTTPS
+         * <p>
+         * 5xx
+         * <p>
+         * 500 Internal Server Error
+         *   501 Not Implemented
+         *   502 Bad Gateway
+         *   503 Service Unavailable
+         *   504 Gateway Timeout
+         *   507 Insufficient Storage
+         * <p>
+         * Example: {@code 200}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private Integer code;
 
+        /**
+         * Response code.
+         * <p>
+         * The following response codes are valid values for this property:
+         * <p>
+         * 2xx
+         * <p>
+         * 200 OK
+         *   201 Created
+         *   202 Accepted
+         *   206 Partial Content
+         * <p>
+         * 3xx
+         * <p>
+         * 300 Multiple Choices
+         *   301 Moved Permanently
+         *   302 Found
+         *   303 See Other
+         *   307 Temporary Redirect
+         * <p>
+         * 4xx
+         * <p>
+         * 400 Bad Request
+         *   401 Unauthorized
+         *   403 Forbidden
+         *   404 Not Found
+         *   405 Method Not Allowed
+         *   408 Request Timeout
+         *   409 Conflict
+         *   411 Length Required
+         *   412 Precondition Failed
+         *   413 Payload Too Large
+         *   414 URI Too Long
+         *   415 Unsupported Media Type
+         *   416 Range Not Satisfiable
+         *   422 Unprocessable Entity
+         *   429 Too Many Requests
+         *   494 Request Header Too Large
+         *   495 Cert Error
+         *   496 No Cert
+         *   497 HTTP to HTTPS
+         * <p>
+         * 5xx
+         * <p>
+         * 500 Internal Server Error
+         *   501 Not Implemented
+         *   502 Bad Gateway
+         *   503 Service Unavailable
+         *   504 Gateway Timeout
+         *   507 Insufficient Storage
+         * <p>
+         * Example: {@code 200}
+         *
+         * @param code the value to set
+         * @return this builder
+         **/
         public Builder code(Integer code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-
+        /**
+         * Adds headers defined in this array for HTTP response.
+         * <p>
+         * Hop-by-hop headers are not allowed to be set:
+         * <p>
+         * Connection
+         * * Keep-Alive
+         * * Proxy-Authenticate
+         * * Proxy-Authorization
+         * * TE
+         * * Trailer
+         * * Transfer-Encoding
+         * * Upgrade
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<ResponseHeader> headers;
 
+        /**
+         * Adds headers defined in this array for HTTP response.
+         * <p>
+         * Hop-by-hop headers are not allowed to be set:
+         * <p>
+         * Connection
+         * * Keep-Alive
+         * * Proxy-Authenticate
+         * * Proxy-Authorization
+         * * TE
+         * * Trailer
+         * * Transfer-Encoding
+         * * Upgrade
+         *
+         * @param headers the value to set
+         * @return this builder
+         **/
         public Builder headers(java.util.List<ResponseHeader> headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
@@ -163,6 +303,61 @@ public final class ReturnHttpResponseAction extends Action {
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final Integer code;
 
+    /**
+     * Response code.
+     * <p>
+     * The following response codes are valid values for this property:
+     * <p>
+     * 2xx
+     * <p>
+     * 200 OK
+     *   201 Created
+     *   202 Accepted
+     *   206 Partial Content
+     * <p>
+     * 3xx
+     * <p>
+     * 300 Multiple Choices
+     *   301 Moved Permanently
+     *   302 Found
+     *   303 See Other
+     *   307 Temporary Redirect
+     * <p>
+     * 4xx
+     * <p>
+     * 400 Bad Request
+     *   401 Unauthorized
+     *   403 Forbidden
+     *   404 Not Found
+     *   405 Method Not Allowed
+     *   408 Request Timeout
+     *   409 Conflict
+     *   411 Length Required
+     *   412 Precondition Failed
+     *   413 Payload Too Large
+     *   414 URI Too Long
+     *   415 Unsupported Media Type
+     *   416 Range Not Satisfiable
+     *   422 Unprocessable Entity
+     *   429 Too Many Requests
+     *   494 Request Header Too Large
+     *   495 Cert Error
+     *   496 No Cert
+     *   497 HTTP to HTTPS
+     * <p>
+     * 5xx
+     * <p>
+     * 500 Internal Server Error
+     *   501 Not Implemented
+     *   502 Bad Gateway
+     *   503 Service Unavailable
+     *   504 Gateway Timeout
+     *   507 Insufficient Storage
+     * <p>
+     * Example: {@code 200}
+     *
+     * @return the value
+     **/
     public Integer getCode() {
         return code;
     }
@@ -185,6 +380,22 @@ public final class ReturnHttpResponseAction extends Action {
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final java.util.List<ResponseHeader> headers;
 
+    /**
+     * Adds headers defined in this array for HTTP response.
+     * <p>
+     * Hop-by-hop headers are not allowed to be set:
+     * <p>
+     * Connection
+     * * Keep-Alive
+     * * Proxy-Authenticate
+     * * Proxy-Authorization
+     * * TE
+     * * Trailer
+     * * Transfer-Encoding
+     * * Upgrade
+     *
+     * @return the value
+     **/
     public java.util.List<ResponseHeader> getHeaders() {
         return headers;
     }

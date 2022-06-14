@@ -154,19 +154,33 @@ public final class OkeBlueGreenDeployStageSummary extends DeployStageSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * Kubernetes cluster environment OCID for deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
         private String okeClusterDeployEnvironmentId;
 
+        /**
+         * Kubernetes cluster environment OCID for deployment.
+         * @param okeClusterDeployEnvironmentId the value to set
+         * @return this builder
+         **/
         public Builder okeClusterDeployEnvironmentId(String okeClusterDeployEnvironmentId) {
             this.okeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
             this.__explicitlySet__.add("okeClusterDeployEnvironmentId");
             return this;
         }
-
+        /**
+         * List of Kubernetes manifest artifact OCIDs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
         private java.util.List<String> kubernetesManifestDeployArtifactIds;
 
+        /**
+         * List of Kubernetes manifest artifact OCIDs.
+         * @param kubernetesManifestDeployArtifactIds the value to set
+         * @return this builder
+         **/
         public Builder kubernetesManifestDeployArtifactIds(
                 java.util.List<String> kubernetesManifestDeployArtifactIds) {
             this.kubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
@@ -294,6 +308,10 @@ public final class OkeBlueGreenDeployStageSummary extends DeployStageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
     private final String okeClusterDeployEnvironmentId;
 
+    /**
+     * Kubernetes cluster environment OCID for deployment.
+     * @return the value
+     **/
     public String getOkeClusterDeployEnvironmentId() {
         return okeClusterDeployEnvironmentId;
     }
@@ -304,6 +322,10 @@ public final class OkeBlueGreenDeployStageSummary extends DeployStageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
     private final java.util.List<String> kubernetesManifestDeployArtifactIds;
 
+    /**
+     * List of Kubernetes manifest artifact OCIDs.
+     * @return the value
+     **/
     public java.util.List<String> getKubernetesManifestDeployArtifactIds() {
         return kubernetesManifestDeployArtifactIds;
     }

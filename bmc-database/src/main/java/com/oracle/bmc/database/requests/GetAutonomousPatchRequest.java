@@ -16,6 +16,9 @@ public class GetAutonomousPatchRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String autonomousPatchId;
 
+    /**
+     * The autonomous patch [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousPatchId() {
         return autonomousPatchId;
     }
@@ -27,10 +30,14 @@ public class GetAutonomousPatchRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The autonomous patch [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousPatchId = null;
 
         /**
          * The autonomous patch [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousPatchId the value to set
          * @return this builder instance
          */
         public Builder autonomousPatchId(String autonomousPatchId) {
@@ -106,12 +113,17 @@ public class GetAutonomousPatchRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().autonomousPatchId(autonomousPatchId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,9 +28,19 @@ public final class NetworkPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Network Source ids
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSourceIds")
         private java.util.List<String> networkSourceIds;
 
+        /**
+         * Network Source ids
+         *
+         * @param networkSourceIds the value to set
+         * @return this builder
+         **/
         public Builder networkSourceIds(java.util.List<String> networkSourceIds) {
             this.networkSourceIds = networkSourceIds;
             this.__explicitlySet__.add("networkSourceIds");
@@ -73,6 +83,11 @@ public final class NetworkPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("networkSourceIds")
     private final java.util.List<String> networkSourceIds;
 
+    /**
+     * Network Source ids
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNetworkSourceIds() {
         return networkSourceIds;
     }

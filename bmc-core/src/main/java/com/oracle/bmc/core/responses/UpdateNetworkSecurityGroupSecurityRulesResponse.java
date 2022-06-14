@@ -16,6 +16,12 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -26,6 +32,10 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
     private com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules
             updatedNetworkSecurityGroupSecurityRules;
 
+    /**
+     * The returned UpdatedNetworkSecurityGroupSecurityRules instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules
             getUpdatedNetworkSecurityGroupSecurityRules() {
         return updatedNetworkSecurityGroupSecurityRules;
@@ -54,16 +64,36 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned UpdatedNetworkSecurityGroupSecurityRules instance.
+         */
         private com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules
                 updatedNetworkSecurityGroupSecurityRules;
 
+        /**
+         * The returned UpdatedNetworkSecurityGroupSecurityRules instance.
+         * @param updatedNetworkSecurityGroupSecurityRules the value to set
+         * @return this builder
+         */
         public Builder updatedNetworkSecurityGroupSecurityRules(
                 com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules
                         updatedNetworkSecurityGroupSecurityRules) {
@@ -85,12 +115,20 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateNetworkSecurityGroupSecurityRulesResponse build() {
             return new UpdateNetworkSecurityGroupSecurityRulesResponse(
                     __httpStatusCode__, opcRequestId, updatedNetworkSecurityGroupSecurityRules);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

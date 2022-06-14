@@ -30,18 +30,33 @@ public final class FilterGroupMembershipResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Return passed-in resolved principal object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principal")
         private Principal principal;
 
+        /**
+         * Return passed-in resolved principal object
+         * @param principal the value to set
+         * @return this builder
+         **/
         public Builder principal(Principal principal) {
             this.principal = principal;
             this.__explicitlySet__.add("principal");
             return this;
         }
-
+        /**
+         * An array of group or dynamic group Ids which present the intersection between the passed-in group/dynamic-group and the actual group/dynamic-group the resovled principal belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupIds")
         private java.util.List<String> groupIds;
 
+        /**
+         * An array of group or dynamic group Ids which present the intersection between the passed-in group/dynamic-group and the actual group/dynamic-group the resovled principal belongs to.
+         * @param groupIds the value to set
+         * @return this builder
+         **/
         public Builder groupIds(java.util.List<String> groupIds) {
             this.groupIds = groupIds;
             this.__explicitlySet__.add("groupIds");
@@ -84,6 +99,10 @@ public final class FilterGroupMembershipResult {
     @com.fasterxml.jackson.annotation.JsonProperty("principal")
     private final Principal principal;
 
+    /**
+     * Return passed-in resolved principal object
+     * @return the value
+     **/
     public Principal getPrincipal() {
         return principal;
     }
@@ -94,6 +113,10 @@ public final class FilterGroupMembershipResult {
     @com.fasterxml.jackson.annotation.JsonProperty("groupIds")
     private final java.util.List<String> groupIds;
 
+    /**
+     * An array of group or dynamic group Ids which present the intersection between the passed-in group/dynamic-group and the actual group/dynamic-group the resovled principal belongs to.
+     * @return the value
+     **/
     public java.util.List<String> getGroupIds() {
         return groupIds;
     }

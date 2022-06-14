@@ -90,37 +90,71 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The unique identifier of the Digital Assistant to extend.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique identifier of the Digital Assistant to extend.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The resource's display name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The resource's display name.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         *
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -212,6 +246,10 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique identifier of the Digital Assistant to extend.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -223,6 +261,11 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -234,6 +277,11 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The resource's display name.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -245,6 +293,11 @@ public final class ExtendDigitalAssistantDetails extends CreateDigitalAssistantD
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+     *
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

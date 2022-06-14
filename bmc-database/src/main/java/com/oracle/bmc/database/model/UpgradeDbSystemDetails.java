@@ -42,36 +42,65 @@ public final class UpgradeDbSystemDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The operating system upgrade action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The operating system upgrade action.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-
+        /**
+         * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotRetentionPeriodInDays")
         private Integer snapshotRetentionPeriodInDays;
 
+        /**
+         * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+         * @param snapshotRetentionPeriodInDays the value to set
+         * @return this builder
+         **/
         public Builder snapshotRetentionPeriodInDays(Integer snapshotRetentionPeriodInDays) {
             this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
             this.__explicitlySet__.add("snapshotRetentionPeriodInDays");
             return this;
         }
-
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newGiVersion")
         private String newGiVersion;
 
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         * @param newGiVersion the value to set
+         * @return this builder
+         **/
         public Builder newGiVersion(String newGiVersion) {
             this.newGiVersion = newGiVersion;
             this.__explicitlySet__.add("newGiVersion");
             return this;
         }
-
+        /**
+         * If true, rollback time is updated even if operating system upgrade history contains errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotRetentionDaysForceUpdated")
         private Boolean isSnapshotRetentionDaysForceUpdated;
 
+        /**
+         * If true, rollback time is updated even if operating system upgrade history contains errors.
+         * @param isSnapshotRetentionDaysForceUpdated the value to set
+         * @return this builder
+         **/
         public Builder isSnapshotRetentionDaysForceUpdated(
                 Boolean isSnapshotRetentionDaysForceUpdated) {
             this.isSnapshotRetentionDaysForceUpdated = isSnapshotRetentionDaysForceUpdated;
@@ -161,6 +190,10 @@ public final class UpgradeDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The operating system upgrade action.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }
@@ -171,6 +204,10 @@ public final class UpgradeDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotRetentionPeriodInDays")
     private final Integer snapshotRetentionPeriodInDays;
 
+    /**
+     * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+     * @return the value
+     **/
     public Integer getSnapshotRetentionPeriodInDays() {
         return snapshotRetentionPeriodInDays;
     }
@@ -181,6 +218,10 @@ public final class UpgradeDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("newGiVersion")
     private final String newGiVersion;
 
+    /**
+     * A valid Oracle Grid Infrastructure (GI) software version.
+     * @return the value
+     **/
     public String getNewGiVersion() {
         return newGiVersion;
     }
@@ -191,6 +232,10 @@ public final class UpgradeDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotRetentionDaysForceUpdated")
     private final Boolean isSnapshotRetentionDaysForceUpdated;
 
+    /**
+     * If true, rollback time is updated even if operating system upgrade history contains errors.
+     * @return the value
+     **/
     public Boolean getIsSnapshotRetentionDaysForceUpdated() {
         return isSnapshotRetentionDaysForceUpdated;
     }

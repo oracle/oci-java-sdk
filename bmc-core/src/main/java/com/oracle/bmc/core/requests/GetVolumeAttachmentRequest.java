@@ -16,6 +16,9 @@ public class GetVolumeAttachmentRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String volumeAttachmentId;
 
+    /**
+     * The OCID of the volume attachment.
+     */
     public String getVolumeAttachmentId() {
         return volumeAttachmentId;
     }
@@ -27,10 +30,14 @@ public class GetVolumeAttachmentRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the volume attachment.
+         */
         private String volumeAttachmentId = null;
 
         /**
          * The OCID of the volume attachment.
+         * @param volumeAttachmentId the value to set
          * @return this builder instance
          */
         public Builder volumeAttachmentId(String volumeAttachmentId) {
@@ -106,12 +113,17 @@ public class GetVolumeAttachmentRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().volumeAttachmentId(volumeAttachmentId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

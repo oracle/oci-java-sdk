@@ -18,6 +18,10 @@ public class GetDeploymentUpgradeRequest
      */
     private String deploymentUpgradeId;
 
+    /**
+     * A unique Deployment Upgrade identifier.
+     *
+     */
     public String getDeploymentUpgradeId() {
         return deploymentUpgradeId;
     }
@@ -27,6 +31,10 @@ public class GetDeploymentUpgradeRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,11 +46,16 @@ public class GetDeploymentUpgradeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A unique Deployment Upgrade identifier.
+         *
+         */
         private String deploymentUpgradeId = null;
 
         /**
          * A unique Deployment Upgrade identifier.
          *
+         * @param deploymentUpgradeId the value to set
          * @return this builder instance
          */
         public Builder deploymentUpgradeId(String deploymentUpgradeId) {
@@ -50,11 +63,16 @@ public class GetDeploymentUpgradeRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -132,12 +150,17 @@ public class GetDeploymentUpgradeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().deploymentUpgradeId(deploymentUpgradeId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

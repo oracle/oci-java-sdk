@@ -29,9 +29,17 @@ public final class PutMessagesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of messages to put into a stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messages")
         private java.util.List<PutMessagesDetailsEntry> messages;
 
+        /**
+         * The array of messages to put into a stream.
+         * @param messages the value to set
+         * @return this builder
+         **/
         public Builder messages(java.util.List<PutMessagesDetailsEntry> messages) {
             this.messages = messages;
             this.__explicitlySet__.add("messages");
@@ -73,6 +81,10 @@ public final class PutMessagesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("messages")
     private final java.util.List<PutMessagesDetailsEntry> messages;
 
+    /**
+     * The array of messages to put into a stream.
+     * @return the value
+     **/
     public java.util.List<PutMessagesDetailsEntry> getMessages() {
         return messages;
     }

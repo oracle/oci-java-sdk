@@ -116,38 +116,67 @@ public final class UpsertLogAnalyticsSourceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of source label conditions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelConditions")
         private java.util.List<LogAnalyticsSourceLabelCondition> labelConditions;
 
+        /**
+         * An array of source label conditions.
+         * @param labelConditions the value to set
+         * @return this builder
+         **/
         public Builder labelConditions(
                 java.util.List<LogAnalyticsSourceLabelCondition> labelConditions) {
             this.labelConditions = labelConditions;
             this.__explicitlySet__.add("labelConditions");
             return this;
         }
-
+        /**
+         * An array of data filter definitions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataFilterDefinitions")
         private java.util.List<LogAnalyticsSourceDataFilter> dataFilterDefinitions;
 
+        /**
+         * An array of data filter definitions.
+         * @param dataFilterDefinitions the value to set
+         * @return this builder
+         **/
         public Builder dataFilterDefinitions(
                 java.util.List<LogAnalyticsSourceDataFilter> dataFilterDefinitions) {
             this.dataFilterDefinitions = dataFilterDefinitions;
             this.__explicitlySet__.add("dataFilterDefinitions");
             return this;
         }
-
+        /**
+         * The database credential name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
         private String databaseCredential;
 
+        /**
+         * The database credential name.
+         * @param databaseCredential the value to set
+         * @return this builder
+         **/
         public Builder databaseCredential(String databaseCredential) {
             this.databaseCredential = databaseCredential;
             this.__explicitlySet__.add("databaseCredential");
             return this;
         }
-
+        /**
+         * An array of extended field definitions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitions")
         private java.util.List<LogAnalyticsSourceExtendedFieldDefinition> extendedFieldDefinitions;
 
+        /**
+         * An array of extended field definitions.
+         * @param extendedFieldDefinitions the value to set
+         * @return this builder
+         **/
         public Builder extendedFieldDefinitions(
                 java.util.List<LogAnalyticsSourceExtendedFieldDefinition>
                         extendedFieldDefinitions) {
@@ -155,228 +184,417 @@ public final class UpsertLogAnalyticsSourceDetails {
             this.__explicitlySet__.add("extendedFieldDefinitions");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not this is a cloud source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isForCloud")
         private Boolean isForCloud;
 
+        /**
+         * A flag indicating whether or not this is a cloud source.
+         *
+         * @param isForCloud the value to set
+         * @return this builder
+         **/
         public Builder isForCloud(Boolean isForCloud) {
             this.isForCloud = isForCloud;
             this.__explicitlySet__.add("isForCloud");
             return this;
         }
-
+        /**
+         * An array of labels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<LogAnalyticsLabelView> labels;
 
+        /**
+         * An array of labels.
+         * @param labels the value to set
+         * @return this builder
+         **/
         public Builder labels(java.util.List<LogAnalyticsLabelView> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
             return this;
         }
-
+        /**
+         * An array of metric definitions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricDefinitions")
         private java.util.List<LogAnalyticsMetric> metricDefinitions;
 
+        /**
+         * An array of metric definitions.
+         * @param metricDefinitions the value to set
+         * @return this builder
+         **/
         public Builder metricDefinitions(java.util.List<LogAnalyticsMetric> metricDefinitions) {
             this.metricDefinitions = metricDefinitions;
             this.__explicitlySet__.add("metricDefinitions");
             return this;
         }
-
+        /**
+         * An array of metrics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<LogAnalyticsSourceMetric> metrics;
 
+        /**
+         * An array of metrics.
+         * @param metrics the value to set
+         * @return this builder
+         **/
         public Builder metrics(java.util.List<LogAnalyticsSourceMetric> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
             return this;
         }
-
+        /**
+         * An array of built in source parsers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oobParsers")
         private java.util.List<LogAnalyticsParser> oobParsers;
 
+        /**
+         * An array of built in source parsers.
+         * @param oobParsers the value to set
+         * @return this builder
+         **/
         public Builder oobParsers(java.util.List<LogAnalyticsParser> oobParsers) {
             this.oobParsers = oobParsers;
             this.__explicitlySet__.add("oobParsers");
             return this;
         }
-
+        /**
+         * An array of parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<LogAnalyticsParameter> parameters;
 
+        /**
+         * An array of parameters.
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.List<LogAnalyticsParameter> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
         }
-
+        /**
+         * An array of patterns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patterns")
         private java.util.List<LogAnalyticsSourcePattern> patterns;
 
+        /**
+         * An array of patterns.
+         * @param patterns the value to set
+         * @return this builder
+         **/
         public Builder patterns(java.util.List<LogAnalyticsSourcePattern> patterns) {
             this.patterns = patterns;
             this.__explicitlySet__.add("patterns");
             return this;
         }
-
+        /**
+         * The source description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The source description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The source display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The source display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The source edit version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
+        /**
+         * The source edit version.
+         * @param editVersion the value to set
+         * @return this builder
+         **/
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-
+        /**
+         * An array of source functions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functions")
         private java.util.List<LogAnalyticsSourceFunction> functions;
 
+        /**
+         * An array of source functions.
+         * @param functions the value to set
+         * @return this builder
+         **/
         public Builder functions(java.util.List<LogAnalyticsSourceFunction> functions) {
             this.functions = functions;
             this.__explicitlySet__.add("functions");
             return this;
         }
-
+        /**
+         * The source unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
+        /**
+         * The source unique identifier.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The source internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The source internal name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the source content is secure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSecureContent")
         private Boolean isSecureContent;
 
+        /**
+         * A flag indicating whether or not the source content is secure.
+         *
+         * @param isSecureContent the value to set
+         * @return this builder
+         **/
         public Builder isSecureContent(Boolean isSecureContent) {
             this.isSecureContent = isSecureContent;
             this.__explicitlySet__.add("isSecureContent");
             return this;
         }
-
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-
+        /**
+         * An array of parser.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parsers")
         private java.util.List<LogAnalyticsParser> parsers;
 
+        /**
+         * An array of parser.
+         * @param parsers the value to set
+         * @return this builder
+         **/
         public Builder parsers(java.util.List<LogAnalyticsParser> parsers) {
             this.parsers = parsers;
             this.__explicitlySet__.add("parsers");
             return this;
         }
-
+        /**
+         * The rule unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleId")
         private Long ruleId;
 
+        /**
+         * The rule unique identifier.
+         * @param ruleId the value to set
+         * @return this builder
+         **/
         public Builder ruleId(Long ruleId) {
             this.ruleId = ruleId;
             this.__explicitlySet__.add("ruleId");
             return this;
         }
-
+        /**
+         * The source type internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeName")
         private String typeName;
 
+        /**
+         * The source type internal name.
+         * @param typeName the value to set
+         * @return this builder
+         **/
         public Builder typeName(String typeName) {
             this.typeName = typeName;
             this.__explicitlySet__.add("typeName");
             return this;
         }
-
+        /**
+         * The source warning configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warningConfig")
         private Long warningConfig;
 
+        /**
+         * The source warning configuration.
+         * @param warningConfig the value to set
+         * @return this builder
+         **/
         public Builder warningConfig(Long warningConfig) {
             this.warningConfig = warningConfig;
             this.__explicitlySet__.add("warningConfig");
             return this;
         }
-
+        /**
+         * An array of source metadata fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataFields")
         private java.util.List<LogAnalyticsSourceMetadataField> metadataFields;
 
+        /**
+         * An array of source metadata fields.
+         * @param metadataFields the value to set
+         * @return this builder
+         **/
         public Builder metadataFields(
                 java.util.List<LogAnalyticsSourceMetadataField> metadataFields) {
             this.metadataFields = metadataFields;
             this.__explicitlySet__.add("metadataFields");
             return this;
         }
-
+        /**
+         * An array of labels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelDefinitions")
         private java.util.List<LogAnalyticsLabelDefinition> labelDefinitions;
 
+        /**
+         * An array of labels.
+         * @param labelDefinitions the value to set
+         * @return this builder
+         **/
         public Builder labelDefinitions(
                 java.util.List<LogAnalyticsLabelDefinition> labelDefinitions) {
             this.labelDefinitions = labelDefinitions;
             this.__explicitlySet__.add("labelDefinitions");
             return this;
         }
-
+        /**
+         * An array of entity types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypes")
         private java.util.List<LogAnalyticsSourceEntityType> entityTypes;
 
+        /**
+         * An array of entity types.
+         * @param entityTypes the value to set
+         * @return this builder
+         **/
         public Builder entityTypes(java.util.List<LogAnalyticsSourceEntityType> entityTypes) {
             this.entityTypes = entityTypes;
             this.__explicitlySet__.add("entityTypes");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the source has a time zone override.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTimezoneOverride")
         private Boolean isTimezoneOverride;
 
+        /**
+         * A flag indicating whether or not the source has a time zone override.
+         *
+         * @param isTimezoneOverride the value to set
+         * @return this builder
+         **/
         public Builder isTimezoneOverride(Boolean isTimezoneOverride) {
             this.isTimezoneOverride = isTimezoneOverride;
             this.__explicitlySet__.add("isTimezoneOverride");
             return this;
         }
-
+        /**
+         * An array of custom parsers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userParsers")
         private java.util.List<LogAnalyticsParser> userParsers;
 
+        /**
+         * An array of custom parsers.
+         * @param userParsers the value to set
+         * @return this builder
+         **/
         public Builder userParsers(java.util.List<LogAnalyticsParser> userParsers) {
             this.userParsers = userParsers;
             this.__explicitlySet__.add("userParsers");
             return this;
         }
-
+        /**
+         * An array of categories to assign to the source. Specifying the name attribute for each category would suffice.
+         * Oracle-defined category assignments cannot be removed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categories")
         private java.util.List<LogAnalyticsCategory> categories;
 
+        /**
+         * An array of categories to assign to the source. Specifying the name attribute for each category would suffice.
+         * Oracle-defined category assignments cannot be removed.
+         *
+         * @param categories the value to set
+         * @return this builder
+         **/
         public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
             this.categories = categories;
             this.__explicitlySet__.add("categories");
@@ -477,6 +695,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("labelConditions")
     private final java.util.List<LogAnalyticsSourceLabelCondition> labelConditions;
 
+    /**
+     * An array of source label conditions.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsSourceLabelCondition> getLabelConditions() {
         return labelConditions;
     }
@@ -487,6 +709,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataFilterDefinitions")
     private final java.util.List<LogAnalyticsSourceDataFilter> dataFilterDefinitions;
 
+    /**
+     * An array of data filter definitions.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsSourceDataFilter> getDataFilterDefinitions() {
         return dataFilterDefinitions;
     }
@@ -497,6 +723,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
     private final String databaseCredential;
 
+    /**
+     * The database credential name.
+     * @return the value
+     **/
     public String getDatabaseCredential() {
         return databaseCredential;
     }
@@ -508,6 +738,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     private final java.util.List<LogAnalyticsSourceExtendedFieldDefinition>
             extendedFieldDefinitions;
 
+    /**
+     * An array of extended field definitions.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsSourceExtendedFieldDefinition> getExtendedFieldDefinitions() {
         return extendedFieldDefinitions;
     }
@@ -519,6 +753,11 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isForCloud")
     private final Boolean isForCloud;
 
+    /**
+     * A flag indicating whether or not this is a cloud source.
+     *
+     * @return the value
+     **/
     public Boolean getIsForCloud() {
         return isForCloud;
     }
@@ -529,6 +768,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<LogAnalyticsLabelView> labels;
 
+    /**
+     * An array of labels.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsLabelView> getLabels() {
         return labels;
     }
@@ -539,6 +782,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metricDefinitions")
     private final java.util.List<LogAnalyticsMetric> metricDefinitions;
 
+    /**
+     * An array of metric definitions.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsMetric> getMetricDefinitions() {
         return metricDefinitions;
     }
@@ -549,6 +796,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<LogAnalyticsSourceMetric> metrics;
 
+    /**
+     * An array of metrics.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsSourceMetric> getMetrics() {
         return metrics;
     }
@@ -559,6 +810,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("oobParsers")
     private final java.util.List<LogAnalyticsParser> oobParsers;
 
+    /**
+     * An array of built in source parsers.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParser> getOobParsers() {
         return oobParsers;
     }
@@ -569,6 +824,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<LogAnalyticsParameter> parameters;
 
+    /**
+     * An array of parameters.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParameter> getParameters() {
         return parameters;
     }
@@ -579,6 +838,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("patterns")
     private final java.util.List<LogAnalyticsSourcePattern> patterns;
 
+    /**
+     * An array of patterns.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsSourcePattern> getPatterns() {
         return patterns;
     }
@@ -589,6 +852,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The source description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -599,6 +866,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The source display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -609,6 +880,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
+    /**
+     * The source edit version.
+     * @return the value
+     **/
     public Long getEditVersion() {
         return editVersion;
     }
@@ -619,6 +894,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
     private final java.util.List<LogAnalyticsSourceFunction> functions;
 
+    /**
+     * An array of source functions.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsSourceFunction> getFunctions() {
         return functions;
     }
@@ -629,6 +908,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
+    /**
+     * The source unique identifier.
+     * @return the value
+     **/
     public Long getSourceId() {
         return sourceId;
     }
@@ -639,6 +922,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The source internal name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -650,6 +937,11 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isSecureContent")
     private final Boolean isSecureContent;
 
+    /**
+     * A flag indicating whether or not the source content is secure.
+     *
+     * @return the value
+     **/
     public Boolean getIsSecureContent() {
         return isSecureContent;
     }
@@ -662,6 +954,12 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -672,6 +970,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parsers")
     private final java.util.List<LogAnalyticsParser> parsers;
 
+    /**
+     * An array of parser.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParser> getParsers() {
         return parsers;
     }
@@ -682,6 +984,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleId")
     private final Long ruleId;
 
+    /**
+     * The rule unique identifier.
+     * @return the value
+     **/
     public Long getRuleId() {
         return ruleId;
     }
@@ -692,6 +998,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     private final String typeName;
 
+    /**
+     * The source type internal name.
+     * @return the value
+     **/
     public String getTypeName() {
         return typeName;
     }
@@ -702,6 +1012,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("warningConfig")
     private final Long warningConfig;
 
+    /**
+     * The source warning configuration.
+     * @return the value
+     **/
     public Long getWarningConfig() {
         return warningConfig;
     }
@@ -712,6 +1026,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metadataFields")
     private final java.util.List<LogAnalyticsSourceMetadataField> metadataFields;
 
+    /**
+     * An array of source metadata fields.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsSourceMetadataField> getMetadataFields() {
         return metadataFields;
     }
@@ -722,6 +1040,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("labelDefinitions")
     private final java.util.List<LogAnalyticsLabelDefinition> labelDefinitions;
 
+    /**
+     * An array of labels.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsLabelDefinition> getLabelDefinitions() {
         return labelDefinitions;
     }
@@ -732,6 +1054,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypes")
     private final java.util.List<LogAnalyticsSourceEntityType> entityTypes;
 
+    /**
+     * An array of entity types.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsSourceEntityType> getEntityTypes() {
         return entityTypes;
     }
@@ -743,6 +1069,11 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isTimezoneOverride")
     private final Boolean isTimezoneOverride;
 
+    /**
+     * A flag indicating whether or not the source has a time zone override.
+     *
+     * @return the value
+     **/
     public Boolean getIsTimezoneOverride() {
         return isTimezoneOverride;
     }
@@ -753,6 +1084,10 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("userParsers")
     private final java.util.List<LogAnalyticsParser> userParsers;
 
+    /**
+     * An array of custom parsers.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParser> getUserParsers() {
         return userParsers;
     }
@@ -765,6 +1100,12 @@ public final class UpsertLogAnalyticsSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     private final java.util.List<LogAnalyticsCategory> categories;
 
+    /**
+     * An array of categories to assign to the source. Specifying the name attribute for each category would suffice.
+     * Oracle-defined category assignments cannot be removed.
+     *
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsCategory> getCategories() {
         return categories;
     }

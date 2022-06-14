@@ -39,19 +39,45 @@ public final class RandomDecimalNumberFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The lower bound of the range within which random decimal numbers should
+         * be generated. It must be less than or equal to the end value. It supports
+         * input of double type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startValue")
         private Double startValue;
 
+        /**
+         * The lower bound of the range within which random decimal numbers should
+         * be generated. It must be less than or equal to the end value. It supports
+         * input of double type.
+         *
+         * @param startValue the value to set
+         * @return this builder
+         **/
         public Builder startValue(Double startValue) {
             this.startValue = startValue;
             this.__explicitlySet__.add("startValue");
             return this;
         }
-
+        /**
+         * The upper bound of the range within which random decimal numbers should be
+         * generated. It must be greater than or equal to the start value. It supports
+         * input of double type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endValue")
         private Double endValue;
 
+        /**
+         * The upper bound of the range within which random decimal numbers should be
+         * generated. It must be greater than or equal to the start value. It supports
+         * input of double type.
+         *
+         * @param endValue the value to set
+         * @return this builder
+         **/
         public Builder endValue(Double endValue) {
             this.endValue = endValue;
             this.__explicitlySet__.add("endValue");
@@ -107,6 +133,13 @@ public final class RandomDecimalNumberFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("startValue")
     private final Double startValue;
 
+    /**
+     * The lower bound of the range within which random decimal numbers should
+     * be generated. It must be less than or equal to the end value. It supports
+     * input of double type.
+     *
+     * @return the value
+     **/
     public Double getStartValue() {
         return startValue;
     }
@@ -120,6 +153,13 @@ public final class RandomDecimalNumberFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("endValue")
     private final Double endValue;
 
+    /**
+     * The upper bound of the range within which random decimal numbers should be
+     * generated. It must be greater than or equal to the start value. It supports
+     * input of double type.
+     *
+     * @return the value
+     **/
     public Double getEndValue() {
         return endValue;
     }

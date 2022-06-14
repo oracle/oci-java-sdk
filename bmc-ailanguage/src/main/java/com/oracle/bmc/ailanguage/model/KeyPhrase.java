@@ -28,18 +28,37 @@ public final class KeyPhrase {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Key phrase exreacted from given text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * Key phrase exreacted from given text.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-
+        /**
+         * Score or confidence of the key phrase.
+         * Example: {@code 0.9999856066867399}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
+        /**
+         * Score or confidence of the key phrase.
+         * Example: {@code 0.9999856066867399}
+         *
+         * @param score the value to set
+         * @return this builder
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -81,6 +100,10 @@ public final class KeyPhrase {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * Key phrase exreacted from given text.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }
@@ -93,6 +116,12 @@ public final class KeyPhrase {
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
+    /**
+     * Score or confidence of the key phrase.
+     * Example: {@code 0.9999856066867399}
+     *
+     * @return the value
+     **/
     public Double getScore() {
         return score;
     }

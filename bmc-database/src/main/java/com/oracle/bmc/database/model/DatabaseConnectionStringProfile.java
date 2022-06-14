@@ -54,72 +54,133 @@ public final class DatabaseConnectionStringProfile {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name for the connection.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Connection string value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * Connection string value.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * Consumer group used by the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumerGroup")
         private ConsumerGroup consumerGroup;
 
+        /**
+         * Consumer group used by the connection.
+         * @param consumerGroup the value to set
+         * @return this builder
+         **/
         public Builder consumerGroup(ConsumerGroup consumerGroup) {
             this.consumerGroup = consumerGroup;
             this.__explicitlySet__.add("consumerGroup");
             return this;
         }
-
+        /**
+         * Protocol used by the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * Protocol used by the connection.
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsAuthentication")
         private TlsAuthentication tlsAuthentication;
 
+        /**
+         * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
+         * @param tlsAuthentication the value to set
+         * @return this builder
+         **/
         public Builder tlsAuthentication(TlsAuthentication tlsAuthentication) {
             this.tlsAuthentication = tlsAuthentication;
             this.__explicitlySet__.add("tlsAuthentication");
             return this;
         }
-
+        /**
+         * Host format used in connection string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostFormat")
         private HostFormat hostFormat;
 
+        /**
+         * Host format used in connection string.
+         * @param hostFormat the value to set
+         * @return this builder
+         **/
         public Builder hostFormat(HostFormat hostFormat) {
             this.hostFormat = hostFormat;
             this.__explicitlySet__.add("hostFormat");
             return this;
         }
-
+        /**
+         * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
         private SessionMode sessionMode;
 
+        /**
+         * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
+         * @param sessionMode the value to set
+         * @return this builder
+         **/
         public Builder sessionMode(SessionMode sessionMode) {
             this.sessionMode = sessionMode;
             this.__explicitlySet__.add("sessionMode");
             return this;
         }
-
+        /**
+         * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
+         * Autonomous Databases on shared Exadata infrastructure always use the long format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntaxFormat")
         private SyntaxFormat syntaxFormat;
 
+        /**
+         * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
+         * Autonomous Databases on shared Exadata infrastructure always use the long format.
+         *
+         * @param syntaxFormat the value to set
+         * @return this builder
+         **/
         public Builder syntaxFormat(SyntaxFormat syntaxFormat) {
             this.syntaxFormat = syntaxFormat;
             this.__explicitlySet__.add("syntaxFormat");
@@ -178,6 +239,10 @@ public final class DatabaseConnectionStringProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name for the connection.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -188,6 +253,10 @@ public final class DatabaseConnectionStringProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * Connection string value.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -249,6 +318,10 @@ public final class DatabaseConnectionStringProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("consumerGroup")
     private final ConsumerGroup consumerGroup;
 
+    /**
+     * Consumer group used by the connection.
+     * @return the value
+     **/
     public ConsumerGroup getConsumerGroup() {
         return consumerGroup;
     }
@@ -307,6 +380,10 @@ public final class DatabaseConnectionStringProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * Protocol used by the connection.
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
@@ -365,6 +442,10 @@ public final class DatabaseConnectionStringProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("tlsAuthentication")
     private final TlsAuthentication tlsAuthentication;
 
+    /**
+     * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
+     * @return the value
+     **/
     public TlsAuthentication getTlsAuthentication() {
         return tlsAuthentication;
     }
@@ -423,6 +504,10 @@ public final class DatabaseConnectionStringProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("hostFormat")
     private final HostFormat hostFormat;
 
+    /**
+     * Host format used in connection string.
+     * @return the value
+     **/
     public HostFormat getHostFormat() {
         return hostFormat;
     }
@@ -481,6 +566,10 @@ public final class DatabaseConnectionStringProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final SessionMode sessionMode;
 
+    /**
+     * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
+     * @return the value
+     **/
     public SessionMode getSessionMode() {
         return sessionMode;
     }
@@ -544,6 +633,12 @@ public final class DatabaseConnectionStringProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("syntaxFormat")
     private final SyntaxFormat syntaxFormat;
 
+    /**
+     * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
+     * Autonomous Databases on shared Exadata infrastructure always use the long format.
+     *
+     * @return the value
+     **/
     public SyntaxFormat getSyntaxFormat() {
         return syntaxFormat;
     }

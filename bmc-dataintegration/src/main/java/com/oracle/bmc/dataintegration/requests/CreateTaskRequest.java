@@ -18,6 +18,9 @@ public class CreateTaskRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class CreateTaskRequest
      */
     private com.oracle.bmc.dataintegration.model.CreateTaskDetails createTaskDetails;
 
+    /**
+     * The details needed to create a new task.
+     */
     public com.oracle.bmc.dataintegration.model.CreateTaskDetails getCreateTaskDetails() {
         return createTaskDetails;
     }
@@ -35,6 +41,10 @@ public class CreateTaskRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -46,6 +56,12 @@ public class CreateTaskRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,10 +83,14 @@ public class CreateTaskRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -78,10 +98,14 @@ public class CreateTaskRequest
             return this;
         }
 
+        /**
+         * The details needed to create a new task.
+         */
         private com.oracle.bmc.dataintegration.model.CreateTaskDetails createTaskDetails = null;
 
         /**
          * The details needed to create a new task.
+         * @param createTaskDetails the value to set
          * @return this builder instance
          */
         public Builder createTaskDetails(
@@ -90,11 +114,16 @@ public class CreateTaskRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -102,6 +131,12 @@ public class CreateTaskRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -109,6 +144,7 @@ public class CreateTaskRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -201,7 +237,8 @@ public class CreateTaskRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -211,6 +248,10 @@ public class CreateTaskRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

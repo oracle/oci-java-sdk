@@ -34,9 +34,25 @@ public final class IngressListenerTlsConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * DISABLED: Connection can only be plaintext.
+         * PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway.
+         * TLS: Connection can only be TLS.
+         * MUTUAL_TLS: Connection can only be MTLS.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
+        /**
+         * DISABLED: Connection can only be plaintext.
+         * PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway.
+         * TLS: Connection can only be TLS.
+         * MUTUAL_TLS: Connection can only be MTLS.
+         *
+         * @param mode the value to set
+         * @return this builder
+         **/
         public Builder mode(Mode mode) {
             this.mode = mode;
             this.__explicitlySet__.add("mode");
@@ -156,6 +172,14 @@ public final class IngressListenerTlsConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
+    /**
+     * DISABLED: Connection can only be plaintext.
+     * PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway.
+     * TLS: Connection can only be TLS.
+     * MUTUAL_TLS: Connection can only be MTLS.
+     *
+     * @return the value
+     **/
     public Mode getMode() {
         return mode;
     }

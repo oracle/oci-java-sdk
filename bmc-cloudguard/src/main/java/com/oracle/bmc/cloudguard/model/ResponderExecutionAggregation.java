@@ -31,18 +31,33 @@ public final class ResponderExecutionAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key-value pairs of dimensions and their names. The key corresponds to the Analytic Dimension(s) chosen, and the value corresponds to the value of the dimension from the data. E.g. if the Analytic Dimension chosen is "RISK_LEVEL", then the value will be like "CRITICAL". If the Analytic Dimensions chosen are "RISK_LEVEL" and "RESOURCE_TYPE", then the map will have two key-value pairs of form {"RISK_LEVEL" &#58; "CRITICAL, "RESOURCE_TYPE" &#58; "LOAD_BALANCER"}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
+        /**
+         * The key-value pairs of dimensions and their names. The key corresponds to the Analytic Dimension(s) chosen, and the value corresponds to the value of the dimension from the data. E.g. if the Analytic Dimension chosen is "RISK_LEVEL", then the value will be like "CRITICAL". If the Analytic Dimensions chosen are "RISK_LEVEL" and "RESOURCE_TYPE", then the map will have two key-value pairs of form {"RISK_LEVEL" &#58; "CRITICAL, "RESOURCE_TYPE" &#58; "LOAD_BALANCER"}
+         * @param dimensionsMap the value to set
+         * @return this builder
+         **/
         public Builder dimensionsMap(java.util.Map<String, String> dimensionsMap) {
             this.dimensionsMap = dimensionsMap;
             this.__explicitlySet__.add("dimensionsMap");
             return this;
         }
-
+        /**
+         * The number of occurences with given dimension(s)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The number of occurences with given dimension(s)
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -85,6 +100,10 @@ public final class ResponderExecutionAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
+    /**
+     * The key-value pairs of dimensions and their names. The key corresponds to the Analytic Dimension(s) chosen, and the value corresponds to the value of the dimension from the data. E.g. if the Analytic Dimension chosen is "RISK_LEVEL", then the value will be like "CRITICAL". If the Analytic Dimensions chosen are "RISK_LEVEL" and "RESOURCE_TYPE", then the map will have two key-value pairs of form {"RISK_LEVEL" &#58; "CRITICAL, "RESOURCE_TYPE" &#58; "LOAD_BALANCER"}
+     * @return the value
+     **/
     public java.util.Map<String, String> getDimensionsMap() {
         return dimensionsMap;
     }
@@ -95,6 +114,10 @@ public final class ResponderExecutionAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The number of occurences with given dimension(s)
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

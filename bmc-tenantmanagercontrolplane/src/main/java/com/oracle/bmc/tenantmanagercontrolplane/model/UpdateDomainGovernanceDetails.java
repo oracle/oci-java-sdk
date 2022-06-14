@@ -41,36 +41,73 @@ public final class UpdateDomainGovernanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The email to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
         private String subscriptionEmail;
 
+        /**
+         * The email to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+         * @param subscriptionEmail the value to set
+         * @return this builder
+         **/
         public Builder subscriptionEmail(String subscriptionEmail) {
             this.subscriptionEmail = subscriptionEmail;
             this.__explicitlySet__.add("subscriptionEmail");
             return this;
         }
-
+        /**
+         * Indicates whether governance is enabled for this domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGovernanceEnabled")
         private Boolean isGovernanceEnabled;
 
+        /**
+         * Indicates whether governance is enabled for this domain.
+         * @param isGovernanceEnabled the value to set
+         * @return this builder
+         **/
         public Builder isGovernanceEnabled(Boolean isGovernanceEnabled) {
             this.isGovernanceEnabled = isGovernanceEnabled;
             this.__explicitlySet__.add("isGovernanceEnabled");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -119,6 +156,10 @@ public final class UpdateDomainGovernanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
     private final String subscriptionEmail;
 
+    /**
+     * The email to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+     * @return the value
+     **/
     public String getSubscriptionEmail() {
         return subscriptionEmail;
     }
@@ -129,6 +170,10 @@ public final class UpdateDomainGovernanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isGovernanceEnabled")
     private final Boolean isGovernanceEnabled;
 
+    /**
+     * Indicates whether governance is enabled for this domain.
+     * @return the value
+     **/
     public Boolean getIsGovernanceEnabled() {
         return isGovernanceEnabled;
     }
@@ -141,6 +186,12 @@ public final class UpdateDomainGovernanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -153,6 +204,12 @@ public final class UpdateDomainGovernanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

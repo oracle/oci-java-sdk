@@ -47,9 +47,17 @@ public final class ActivityTimeSeriesMetrics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date and time the activity metric was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The date and time the activity metric was created.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -144,6 +152,10 @@ public final class ActivityTimeSeriesMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The date and time the activity metric was created.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }

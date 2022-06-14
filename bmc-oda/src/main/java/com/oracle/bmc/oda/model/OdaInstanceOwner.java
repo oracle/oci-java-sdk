@@ -28,18 +28,33 @@ public final class OdaInstanceOwner {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the owner service principal
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ownerServiceName")
         private String ownerServiceName;
 
+        /**
+         * Name of the owner service principal
+         * @param ownerServiceName the value to set
+         * @return this builder
+         **/
         public Builder ownerServiceName(String ownerServiceName) {
             this.ownerServiceName = ownerServiceName;
             this.__explicitlySet__.add("ownerServiceName");
             return this;
         }
-
+        /**
+         * Tenancy OCID of the owner service principal
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ownerServiceTenancy")
         private String ownerServiceTenancy;
 
+        /**
+         * Tenancy OCID of the owner service principal
+         * @param ownerServiceTenancy the value to set
+         * @return this builder
+         **/
         public Builder ownerServiceTenancy(String ownerServiceTenancy) {
             this.ownerServiceTenancy = ownerServiceTenancy;
             this.__explicitlySet__.add("ownerServiceTenancy");
@@ -84,6 +99,10 @@ public final class OdaInstanceOwner {
     @com.fasterxml.jackson.annotation.JsonProperty("ownerServiceName")
     private final String ownerServiceName;
 
+    /**
+     * Name of the owner service principal
+     * @return the value
+     **/
     public String getOwnerServiceName() {
         return ownerServiceName;
     }
@@ -94,6 +113,10 @@ public final class OdaInstanceOwner {
     @com.fasterxml.jackson.annotation.JsonProperty("ownerServiceTenancy")
     private final String ownerServiceTenancy;
 
+    /**
+     * Tenancy OCID of the owner service principal
+     * @return the value
+     **/
     public String getOwnerServiceTenancy() {
         return ownerServiceTenancy;
     }

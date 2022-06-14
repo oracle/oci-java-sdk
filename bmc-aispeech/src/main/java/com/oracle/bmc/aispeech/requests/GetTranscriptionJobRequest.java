@@ -16,6 +16,9 @@ public class GetTranscriptionJobRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String transcriptionJobId;
 
+    /**
+     * Unique Transcription Job identifier.
+     */
     public String getTranscriptionJobId() {
         return transcriptionJobId;
     }
@@ -24,6 +27,9 @@ public class GetTranscriptionJobRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetTranscriptionJobRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Transcription Job identifier.
+         */
         private String transcriptionJobId = null;
 
         /**
          * Unique Transcription Job identifier.
+         * @param transcriptionJobId the value to set
          * @return this builder instance
          */
         public Builder transcriptionJobId(String transcriptionJobId) {
@@ -46,10 +56,14 @@ public class GetTranscriptionJobRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetTranscriptionJobRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().transcriptionJobId(transcriptionJobId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -30,9 +30,17 @@ public final class UpdateEnrollmentStatusDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Cloud Advisor enrollment status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OptimizerEnrollmentStatus status;
 
+        /**
+         * The Cloud Advisor enrollment status.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(OptimizerEnrollmentStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -74,6 +82,10 @@ public final class UpdateEnrollmentStatusDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OptimizerEnrollmentStatus status;
 
+    /**
+     * The Cloud Advisor enrollment status.
+     * @return the value
+     **/
     public OptimizerEnrollmentStatus getStatus() {
         return status;
     }

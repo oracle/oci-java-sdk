@@ -51,63 +51,117 @@ public final class ExternalBackupJob {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
+         * @param backupId the value to set
+         * @return this builder
+         **/
         public Builder backupId(String backupId) {
             this.backupId = backupId;
             this.__explicitlySet__.add("backupId");
             return this;
         }
-
+        /**
+         * An indicator for the provisioning state of the resource. If {@code TRUE}, the resource is still being provisioned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisioning")
         private Boolean provisioning;
 
+        /**
+         * An indicator for the provisioning state of the resource. If {@code TRUE}, the resource is still being provisioned.
+         * @param provisioning the value to set
+         * @return this builder
+         **/
         public Builder provisioning(Boolean provisioning) {
             this.provisioning = provisioning;
             this.__explicitlySet__.add("provisioning");
             return this;
         }
-
+        /**
+         * The Swift path to use as a destination for the standalone backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("swiftPath")
         private String swiftPath;
 
+        /**
+         * The Swift path to use as a destination for the standalone backup.
+         * @param swiftPath the value to set
+         * @return this builder
+         **/
         public Builder swiftPath(String swiftPath) {
             this.swiftPath = swiftPath;
             this.__explicitlySet__.add("swiftPath");
             return this;
         }
-
+        /**
+         * The name of the Swift compartment bucket where the backup should be stored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * The name of the Swift compartment bucket where the backup should be stored.
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-
+        /**
+         * The tag for RMAN to apply to the backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tag")
         private String tag;
 
+        /**
+         * The tag for RMAN to apply to the backup.
+         * @param tag the value to set
+         * @return this builder
+         **/
         public Builder tag(String tag) {
             this.tag = tag;
             this.__explicitlySet__.add("tag");
             return this;
         }
-
+        /**
+         * The Swift user name to use for transferring the standalone backup to the designated Swift compartment bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The Swift user name to use for transferring the standalone backup to the designated Swift compartment bucket.
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
+         * For information about auth tokens, see [Working with Auth Tokens](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")
         private String swiftPassword;
 
+        /**
+         * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
+         * For information about auth tokens, see [Working with Auth Tokens](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two).
+         *
+         * @param swiftPassword the value to set
+         * @return this builder
+         **/
         public Builder swiftPassword(String swiftPassword) {
             this.swiftPassword = swiftPassword;
             this.__explicitlySet__.add("swiftPassword");
@@ -164,6 +218,10 @@ public final class ExternalBackupJob {
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
+     * @return the value
+     **/
     public String getBackupId() {
         return backupId;
     }
@@ -174,6 +232,10 @@ public final class ExternalBackupJob {
     @com.fasterxml.jackson.annotation.JsonProperty("provisioning")
     private final Boolean provisioning;
 
+    /**
+     * An indicator for the provisioning state of the resource. If {@code TRUE}, the resource is still being provisioned.
+     * @return the value
+     **/
     public Boolean getProvisioning() {
         return provisioning;
     }
@@ -184,6 +246,10 @@ public final class ExternalBackupJob {
     @com.fasterxml.jackson.annotation.JsonProperty("swiftPath")
     private final String swiftPath;
 
+    /**
+     * The Swift path to use as a destination for the standalone backup.
+     * @return the value
+     **/
     public String getSwiftPath() {
         return swiftPath;
     }
@@ -194,6 +260,10 @@ public final class ExternalBackupJob {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * The name of the Swift compartment bucket where the backup should be stored.
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }
@@ -204,6 +274,10 @@ public final class ExternalBackupJob {
     @com.fasterxml.jackson.annotation.JsonProperty("tag")
     private final String tag;
 
+    /**
+     * The tag for RMAN to apply to the backup.
+     * @return the value
+     **/
     public String getTag() {
         return tag;
     }
@@ -214,6 +288,10 @@ public final class ExternalBackupJob {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The Swift user name to use for transferring the standalone backup to the designated Swift compartment bucket.
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -226,6 +304,12 @@ public final class ExternalBackupJob {
     @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")
     private final String swiftPassword;
 
+    /**
+     * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
+     * For information about auth tokens, see [Working with Auth Tokens](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two).
+     *
+     * @return the value
+     **/
     public String getSwiftPassword() {
         return swiftPassword;
     }

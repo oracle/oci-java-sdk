@@ -18,6 +18,9 @@ public class CreateGroupRequest
      */
     private com.oracle.bmc.identity.model.CreateGroupDetails createGroupDetails;
 
+    /**
+     * Request object for creating a new group.
+     */
     public com.oracle.bmc.identity.model.CreateGroupDetails getCreateGroupDetails() {
         return createGroupDetails;
     }
@@ -31,6 +34,14 @@ public class CreateGroupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -52,10 +63,14 @@ public class CreateGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request object for creating a new group.
+         */
         private com.oracle.bmc.identity.model.CreateGroupDetails createGroupDetails = null;
 
         /**
          * Request object for creating a new group.
+         * @param createGroupDetails the value to set
          * @return this builder instance
          */
         public Builder createGroupDetails(
@@ -64,6 +79,14 @@ public class CreateGroupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -73,6 +96,7 @@ public class CreateGroupRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -161,12 +185,17 @@ public class CreateGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().createGroupDetails(createGroupDetails).opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

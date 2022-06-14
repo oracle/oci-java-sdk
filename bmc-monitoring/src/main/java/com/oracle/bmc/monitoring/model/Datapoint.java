@@ -30,27 +30,67 @@ public final class Datapoint {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Timestamp for this metric value. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * Timestamp for this metric value. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * Numeric value of the metric.
+         * <p>
+         * Example: {@code 10.23}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Double value;
 
+        /**
+         * Numeric value of the metric.
+         * <p>
+         * Example: {@code 10.23}
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Double value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The number of occurrences of the associated value in the set of data.
+         * <p>
+         * Default is 1. Value must be greater than zero.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The number of occurrences of the associated value in the set of data.
+         * <p>
+         * Default is 1. Value must be greater than zero.
+         *
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -96,6 +136,13 @@ public final class Datapoint {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * Timestamp for this metric value. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2019-02-01T01:02:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -109,6 +156,13 @@ public final class Datapoint {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Double value;
 
+    /**
+     * Numeric value of the metric.
+     * <p>
+     * Example: {@code 10.23}
+     *
+     * @return the value
+     **/
     public Double getValue() {
         return value;
     }
@@ -122,6 +176,13 @@ public final class Datapoint {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The number of occurrences of the associated value in the set of data.
+     * <p>
+     * Default is 1. Value must be greater than zero.
+     *
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

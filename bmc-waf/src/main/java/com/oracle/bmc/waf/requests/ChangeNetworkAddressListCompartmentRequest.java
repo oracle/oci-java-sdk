@@ -18,6 +18,9 @@ public class ChangeNetworkAddressListCompartmentRequest
      */
     private String networkAddressListId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
+     */
     public String getNetworkAddressListId() {
         return networkAddressListId;
     }
@@ -27,6 +30,9 @@ public class ChangeNetworkAddressListCompartmentRequest
     private com.oracle.bmc.waf.model.ChangeNetworkAddressListCompartmentDetails
             changeNetworkAddressListCompartmentDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.waf.model.ChangeNetworkAddressListCompartmentDetails
             getChangeNetworkAddressListCompartmentDetails() {
         return changeNetworkAddressListCompartmentDetails;
@@ -39,6 +45,12 @@ public class ChangeNetworkAddressListCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource,
+     * set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +59,9 @@ public class ChangeNetworkAddressListCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,10 +84,14 @@ public class ChangeNetworkAddressListCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
+         */
         private String networkAddressListId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
+         * @param networkAddressListId the value to set
          * @return this builder instance
          */
         public Builder networkAddressListId(String networkAddressListId) {
@@ -80,11 +99,15 @@ public class ChangeNetworkAddressListCompartmentRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.waf.model.ChangeNetworkAddressListCompartmentDetails
                 changeNetworkAddressListCompartmentDetails = null;
 
         /**
          * The information to be updated.
+         * @param changeNetworkAddressListCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeNetworkAddressListCompartmentDetails(
@@ -95,6 +118,12 @@ public class ChangeNetworkAddressListCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource,
+         * set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -102,6 +131,7 @@ public class ChangeNetworkAddressListCompartmentRequest
          * set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
          * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -109,10 +139,14 @@ public class ChangeNetworkAddressListCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +243,8 @@ public class ChangeNetworkAddressListCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -220,6 +255,10 @@ public class ChangeNetworkAddressListCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

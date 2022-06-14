@@ -73,10 +73,17 @@ public final class UpdateOkeBlueGreenDeployStageDetails extends UpdateDeployStag
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * List of Kubernetes manifest artifact OCIDs, the manifests should not include any job resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
         private java.util.List<String> kubernetesManifestDeployArtifactIds;
 
+        /**
+         * List of Kubernetes manifest artifact OCIDs, the manifests should not include any job resource.
+         * @param kubernetesManifestDeployArtifactIds the value to set
+         * @return this builder
+         **/
         public Builder kubernetesManifestDeployArtifactIds(
                 java.util.List<String> kubernetesManifestDeployArtifactIds) {
             this.kubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
@@ -151,6 +158,10 @@ public final class UpdateOkeBlueGreenDeployStageDetails extends UpdateDeployStag
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
     private final java.util.List<String> kubernetesManifestDeployArtifactIds;
 
+    /**
+     * List of Kubernetes manifest artifact OCIDs, the manifests should not include any job resource.
+     * @return the value
+     **/
     public java.util.List<String> getKubernetesManifestDeployArtifactIds() {
         return kubernetesManifestDeployArtifactIds;
     }

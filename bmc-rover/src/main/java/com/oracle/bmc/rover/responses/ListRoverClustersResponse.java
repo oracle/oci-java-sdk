@@ -15,6 +15,12 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -39,6 +52,13 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcPrevPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the previous batch of items.
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -48,6 +68,10 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.rover.model.RoverClusterCollection roverClusterCollection;
 
+    /**
+     * The returned RoverClusterCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.rover.model.RoverClusterCollection getRoverClusterCollection() {
         return roverClusterCollection;
     }
@@ -80,29 +104,77 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * The returned RoverClusterCollection instance.
+         */
         private com.oracle.bmc.rover.model.RoverClusterCollection roverClusterCollection;
 
+        /**
+         * The returned RoverClusterCollection instance.
+         * @param roverClusterCollection the value to set
+         * @return this builder
+         */
         public Builder roverClusterCollection(
                 com.oracle.bmc.rover.model.RoverClusterCollection roverClusterCollection) {
             this.roverClusterCollection = roverClusterCollection;
@@ -123,6 +195,10 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListRoverClustersResponse build() {
             return new ListRoverClustersResponse(
                     __httpStatusCode__,
@@ -133,6 +209,10 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

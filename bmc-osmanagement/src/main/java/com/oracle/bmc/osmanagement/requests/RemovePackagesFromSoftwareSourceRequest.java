@@ -18,6 +18,9 @@ public class RemovePackagesFromSoftwareSourceRequest
      */
     private String softwareSourceId;
 
+    /**
+     * The OCID of the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -27,6 +30,9 @@ public class RemovePackagesFromSoftwareSourceRequest
     private com.oracle.bmc.osmanagement.model.RemovePackagesFromSoftwareSourceDetails
             removePackagesFromSoftwareSourceDetails;
 
+    /**
+     * A list of package identifiers
+     */
     public com.oracle.bmc.osmanagement.model.RemovePackagesFromSoftwareSourceDetails
             getRemovePackagesFromSoftwareSourceDetails() {
         return removePackagesFromSoftwareSourceDetails;
@@ -36,6 +42,9 @@ public class RemovePackagesFromSoftwareSourceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,10 +67,14 @@ public class RemovePackagesFromSoftwareSourceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
          * The OCID of the software source.
+         * @param softwareSourceId the value to set
          * @return this builder instance
          */
         public Builder softwareSourceId(String softwareSourceId) {
@@ -69,11 +82,15 @@ public class RemovePackagesFromSoftwareSourceRequest
             return this;
         }
 
+        /**
+         * A list of package identifiers
+         */
         private com.oracle.bmc.osmanagement.model.RemovePackagesFromSoftwareSourceDetails
                 removePackagesFromSoftwareSourceDetails = null;
 
         /**
          * A list of package identifiers
+         * @param removePackagesFromSoftwareSourceDetails the value to set
          * @return this builder instance
          */
         public Builder removePackagesFromSoftwareSourceDetails(
@@ -83,10 +100,14 @@ public class RemovePackagesFromSoftwareSourceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -180,7 +201,8 @@ public class RemovePackagesFromSoftwareSourceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +211,10 @@ public class RemovePackagesFromSoftwareSourceRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

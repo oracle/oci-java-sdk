@@ -18,6 +18,9 @@ public class ParseConnectionRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class ParseConnectionRequest
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -34,6 +40,9 @@ public class ParseConnectionRequest
      */
     private com.oracle.bmc.datacatalog.model.ParseConnectionDetails parseConnectionDetails;
 
+    /**
+     * The information used to parse the connections from payload or connection detail.
+     */
     public com.oracle.bmc.datacatalog.model.ParseConnectionDetails getParseConnectionDetails() {
         return parseConnectionDetails;
     }
@@ -42,6 +51,9 @@ public class ParseConnectionRequest
      */
     private String connectionKey;
 
+    /**
+     * Unique connection key.
+     */
     public String getConnectionKey() {
         return connectionKey;
     }
@@ -50,6 +62,9 @@ public class ParseConnectionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,6 +78,14 @@ public class ParseConnectionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -85,10 +108,14 @@ public class ParseConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -96,10 +123,14 @@ public class ParseConnectionRequest
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -107,11 +138,15 @@ public class ParseConnectionRequest
             return this;
         }
 
+        /**
+         * The information used to parse the connections from payload or connection detail.
+         */
         private com.oracle.bmc.datacatalog.model.ParseConnectionDetails parseConnectionDetails =
                 null;
 
         /**
          * The information used to parse the connections from payload or connection detail.
+         * @param parseConnectionDetails the value to set
          * @return this builder instance
          */
         public Builder parseConnectionDetails(
@@ -120,10 +155,14 @@ public class ParseConnectionRequest
             return this;
         }
 
+        /**
+         * Unique connection key.
+         */
         private String connectionKey = null;
 
         /**
          * Unique connection key.
+         * @param connectionKey the value to set
          * @return this builder instance
          */
         public Builder connectionKey(String connectionKey) {
@@ -131,10 +170,14 @@ public class ParseConnectionRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -142,6 +185,14 @@ public class ParseConnectionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -151,6 +202,7 @@ public class ParseConnectionRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -247,7 +299,8 @@ public class ParseConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -259,6 +312,10 @@ public class ParseConnectionRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

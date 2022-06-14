@@ -93,199 +93,424 @@ public final class UserAssessment {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment that contains the user assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the user assessment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The description of the user assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the user assessment.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The display name of the user assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the user assessment.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the user assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the user assessment.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * List containing maps as values.
+         * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ignoredTargets")
         private java.util.List<Object> ignoredTargets;
 
+        /**
+         * List containing maps as values.
+         * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+         *
+         * @param ignoredTargets the value to set
+         * @return this builder
+         **/
         public Builder ignoredTargets(java.util.List<Object> ignoredTargets) {
             this.ignoredTargets = ignoredTargets;
             this.__explicitlySet__.add("ignoredTargets");
             return this;
         }
-
+        /**
+         * List containing maps as values.
+         * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ignoredAssessmentIds")
         private java.util.List<Object> ignoredAssessmentIds;
 
+        /**
+         * List containing maps as values.
+         * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+         *
+         * @param ignoredAssessmentIds the value to set
+         * @return this builder
+         **/
         public Builder ignoredAssessmentIds(java.util.List<Object> ignoredAssessmentIds) {
             this.ignoredAssessmentIds = ignoredAssessmentIds;
             this.__explicitlySet__.add("ignoredAssessmentIds");
             return this;
         }
-
+        /**
+         * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBaseline")
         private Boolean isBaseline;
 
+        /**
+         * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
+         * @param isBaseline the value to set
+         * @return this builder
+         **/
         public Builder isBaseline(Boolean isBaseline) {
             this.isBaseline = isBaseline;
             this.__explicitlySet__.add("isBaseline");
             return this;
         }
-
+        /**
+         * Indicates if the user assessment deviates from the baseline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeviatedFromBaseline")
         private Boolean isDeviatedFromBaseline;
 
+        /**
+         * Indicates if the user assessment deviates from the baseline.
+         * @param isDeviatedFromBaseline the value to set
+         * @return this builder
+         **/
         public Builder isDeviatedFromBaseline(Boolean isDeviatedFromBaseline) {
             this.isDeviatedFromBaseline = isDeviatedFromBaseline;
             this.__explicitlySet__.add("isDeviatedFromBaseline");
             return this;
         }
-
+        /**
+         * The OCID of the last user assessment baseline against which the latest assessment was compared.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastComparedBaselineId")
         private String lastComparedBaselineId;
 
+        /**
+         * The OCID of the last user assessment baseline against which the latest assessment was compared.
+         * @param lastComparedBaselineId the value to set
+         * @return this builder
+         **/
         public Builder lastComparedBaselineId(String lastComparedBaselineId) {
             this.lastComparedBaselineId = lastComparedBaselineId;
             this.__explicitlySet__.add("lastComparedBaselineId");
             return this;
         }
-
+        /**
+         * The current state of the user assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private UserAssessmentLifecycleState lifecycleState;
 
+        /**
+         * The current state of the user assessment.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(UserAssessmentLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Details about the current state of the user assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Details about the current state of the user assessment.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The OCID of the user assessment that is responsible for creating this scheduled save assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleAssessmentId")
         private String scheduleAssessmentId;
 
+        /**
+         * The OCID of the user assessment that is responsible for creating this scheduled save assessment.
+         * @param scheduleAssessmentId the value to set
+         * @return this builder
+         **/
         public Builder scheduleAssessmentId(String scheduleAssessmentId) {
             this.scheduleAssessmentId = scheduleAssessmentId;
             this.__explicitlySet__.add("scheduleAssessmentId");
             return this;
         }
-
+        /**
+         * Schedule of the assessment that runs periodically in this specified format:
+         *   <version-string>;<version-specific-schedule>
+         * <p>
+         * Allowed version strings - "v1"
+         *   v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+         *   Each of the above fields potentially introduce constraints. A workrequest is created only
+         *   when clock time satisfies all the constraints. Constraints introduced:
+         *   1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+         *   2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+         *   3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+         *   <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+         *   4. No constraint introduced when it is '*'. When not, day of week must equal the given value
+         *   <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+         *   5. No constraint introduced when it is '*'. When not, day of month must equal the given value
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedule")
         private String schedule;
 
+        /**
+         * Schedule of the assessment that runs periodically in this specified format:
+         *   <version-string>;<version-specific-schedule>
+         * <p>
+         * Allowed version strings - "v1"
+         *   v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+         *   Each of the above fields potentially introduce constraints. A workrequest is created only
+         *   when clock time satisfies all the constraints. Constraints introduced:
+         *   1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+         *   2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+         *   3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+         *   <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+         *   4. No constraint introduced when it is '*'. When not, day of week must equal the given value
+         *   <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+         *   5. No constraint introduced when it is '*'. When not, day of month must equal the given value
+         *
+         * @param schedule the value to set
+         * @return this builder
+         **/
         public Builder schedule(String schedule) {
             this.schedule = schedule;
             this.__explicitlySet__.add("schedule");
             return this;
         }
-
+        /**
+         * Map that contains maps of values.
+         *  Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statistics")
         private java.util.Map<String, java.util.Map<String, Object>> statistics;
 
+        /**
+         * Map that contains maps of values.
+         *  Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param statistics the value to set
+         * @return this builder
+         **/
         public Builder statistics(java.util.Map<String, java.util.Map<String, Object>> statistics) {
             this.statistics = statistics;
             this.__explicitlySet__.add("statistics");
             return this;
         }
-
+        /**
+         * Array of database target OCIDs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
         private java.util.List<String> targetIds;
 
+        /**
+         * Array of database target OCIDs.
+         * @param targetIds the value to set
+         * @return this builder
+         **/
         public Builder targetIds(java.util.List<String> targetIds) {
             this.targetIds = targetIds;
             this.__explicitlySet__.add("targetIds");
             return this;
         }
-
+        /**
+         * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Indicates whether the user assessment was created by system or user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggeredBy")
         private TriggeredBy triggeredBy;
 
+        /**
+         * Indicates whether the user assessment was created by system or user.
+         * @param triggeredBy the value to set
+         * @return this builder
+         **/
         public Builder triggeredBy(TriggeredBy triggeredBy) {
             this.triggeredBy = triggeredBy;
             this.__explicitlySet__.add("triggeredBy");
             return this;
         }
-
+        /**
+         * Type of user assessment. Type can be:
+         * <p>
+         * LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
+         * SAVED: A saved user assessment. LATEST assessments will always be saved to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
+         * SAVE_SCHEDULE: A schedule to periodically save LATEST assessments.
+         * COMPARTMENT: An automatic managed assessment type that stores all details of targets in one compartment. This will keep an up-to-date status of all database risks in one compartment.
+         *       It is automatically updated once the latest assessment or refresh action is executed, as well as when a target is deleted or move to a different compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * Type of user assessment. Type can be:
+         * <p>
+         * LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
+         * SAVED: A saved user assessment. LATEST assessments will always be saved to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
+         * SAVE_SCHEDULE: A schedule to periodically save LATEST assessments.
+         * COMPARTMENT: An automatic managed assessment type that stores all details of targets in one compartment. This will keep an up-to-date status of all database risks in one compartment.
+         *       It is automatically updated once the latest assessment or refresh action is executed, as well as when a target is deleted or move to a different compartment.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -372,6 +597,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the user assessment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -382,6 +611,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the user assessment.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -392,6 +625,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the user assessment.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -402,6 +639,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the user assessment.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -414,6 +655,12 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("ignoredTargets")
     private final java.util.List<Object> ignoredTargets;
 
+    /**
+     * List containing maps as values.
+     * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     *
+     * @return the value
+     **/
     public java.util.List<Object> getIgnoredTargets() {
         return ignoredTargets;
     }
@@ -426,6 +673,12 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("ignoredAssessmentIds")
     private final java.util.List<Object> ignoredAssessmentIds;
 
+    /**
+     * List containing maps as values.
+     * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     *
+     * @return the value
+     **/
     public java.util.List<Object> getIgnoredAssessmentIds() {
         return ignoredAssessmentIds;
     }
@@ -436,6 +689,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("isBaseline")
     private final Boolean isBaseline;
 
+    /**
+     * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
+     * @return the value
+     **/
     public Boolean getIsBaseline() {
         return isBaseline;
     }
@@ -446,6 +703,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("isDeviatedFromBaseline")
     private final Boolean isDeviatedFromBaseline;
 
+    /**
+     * Indicates if the user assessment deviates from the baseline.
+     * @return the value
+     **/
     public Boolean getIsDeviatedFromBaseline() {
         return isDeviatedFromBaseline;
     }
@@ -456,6 +717,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("lastComparedBaselineId")
     private final String lastComparedBaselineId;
 
+    /**
+     * The OCID of the last user assessment baseline against which the latest assessment was compared.
+     * @return the value
+     **/
     public String getLastComparedBaselineId() {
         return lastComparedBaselineId;
     }
@@ -466,6 +731,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final UserAssessmentLifecycleState lifecycleState;
 
+    /**
+     * The current state of the user assessment.
+     * @return the value
+     **/
     public UserAssessmentLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -476,6 +745,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Details about the current state of the user assessment.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -486,6 +759,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleAssessmentId")
     private final String scheduleAssessmentId;
 
+    /**
+     * The OCID of the user assessment that is responsible for creating this scheduled save assessment.
+     * @return the value
+     **/
     public String getScheduleAssessmentId() {
         return scheduleAssessmentId;
     }
@@ -510,6 +787,24 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("schedule")
     private final String schedule;
 
+    /**
+     * Schedule of the assessment that runs periodically in this specified format:
+     *   <version-string>;<version-specific-schedule>
+     * <p>
+     * Allowed version strings - "v1"
+     *   v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+     *   Each of the above fields potentially introduce constraints. A workrequest is created only
+     *   when clock time satisfies all the constraints. Constraints introduced:
+     *   1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+     *   2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+     *   3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+     *   <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+     *   4. No constraint introduced when it is '*'. When not, day of week must equal the given value
+     *   <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+     *   5. No constraint introduced when it is '*'. When not, day of month must equal the given value
+     *
+     * @return the value
+     **/
     public String getSchedule() {
         return schedule;
     }
@@ -522,6 +817,12 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
     private final java.util.Map<String, java.util.Map<String, Object>> statistics;
 
+    /**
+     * Map that contains maps of values.
+     *  Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getStatistics() {
         return statistics;
     }
@@ -532,6 +833,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
     private final java.util.List<String> targetIds;
 
+    /**
+     * Array of database target OCIDs.
+     * @return the value
+     **/
     public java.util.List<String> getTargetIds() {
         return targetIds;
     }
@@ -542,6 +847,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -552,6 +861,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -610,6 +923,10 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("triggeredBy")
     private final TriggeredBy triggeredBy;
 
+    /**
+     * Indicates whether the user assessment was created by system or user.
+     * @return the value
+     **/
     public TriggeredBy getTriggeredBy() {
         return triggeredBy;
     }
@@ -682,6 +999,17 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * Type of user assessment. Type can be:
+     * <p>
+     * LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
+     * SAVED: A saved user assessment. LATEST assessments will always be saved to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
+     * SAVE_SCHEDULE: A schedule to periodically save LATEST assessments.
+     * COMPARTMENT: An automatic managed assessment type that stores all details of targets in one compartment. This will keep an up-to-date status of all database risks in one compartment.
+     *       It is automatically updated once the latest assessment or refresh action is executed, as well as when a target is deleted or move to a different compartment.
+     *
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -695,6 +1023,13 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -708,6 +1043,13 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -720,6 +1062,12 @@ public final class UserAssessment {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

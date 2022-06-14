@@ -104,225 +104,409 @@ public final class ManagementSavedSearch {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ID of the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * ID of the saved search.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Display name of the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the saved search.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * ID of the service (for example log-analytics) that owns the saved search. Each service has a unique ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerId")
         private String providerId;
 
+        /**
+         * ID of the service (for example log-analytics) that owns the saved search. Each service has a unique ID.
+         * @param providerId the value to set
+         * @return this builder
+         **/
         public Builder providerId(String providerId) {
             this.providerId = providerId;
             this.__explicitlySet__.add("providerId");
             return this;
         }
-
+        /**
+         * Version of the service that owns this saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
         private String providerVersion;
 
+        /**
+         * Version of the service that owns this saved search.
+         * @param providerVersion the value to set
+         * @return this builder
+         **/
         public Builder providerVersion(String providerVersion) {
             this.providerVersion = providerVersion;
             this.__explicitlySet__.add("providerVersion");
             return this;
         }
-
+        /**
+         * Name of the service (for example, Logging Analytics) that owns the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
+        /**
+         * Name of the service (for example, Logging Analytics) that owns the saved search.
+         * @param providerName the value to set
+         * @return this builder
+         **/
         public Builder providerName(String providerName) {
             this.providerName = providerName;
             this.__explicitlySet__.add("providerName");
             return this;
         }
-
+        /**
+         * OCID of the compartment in which the saved search resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment in which the saved search resides.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Determines whether the saved search is an Out-of-the-Box (OOB) saved search. Note that OOB saved searches are only provided by Oracle and cannot be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOobSavedSearch")
         private Boolean isOobSavedSearch;
 
+        /**
+         * Determines whether the saved search is an Out-of-the-Box (OOB) saved search. Note that OOB saved searches are only provided by Oracle and cannot be modified.
+         * @param isOobSavedSearch the value to set
+         * @return this builder
+         **/
         public Builder isOobSavedSearch(Boolean isOobSavedSearch) {
             this.isOobSavedSearch = isOobSavedSearch;
             this.__explicitlySet__.add("isOobSavedSearch");
             return this;
         }
-
+        /**
+         * Description of the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the saved search.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * JSON that contains internationalization options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nls")
         private Object nls;
 
+        /**
+         * JSON that contains internationalization options.
+         * @param nls the value to set
+         * @return this builder
+         **/
         public Builder nls(Object nls) {
             this.nls = nls;
             this.__explicitlySet__.add("nls");
             return this;
         }
-
+        /**
+         * Determines how the saved search is displayed in a dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private SavedSearchTypes type;
 
+        /**
+         * Determines how the saved search is displayed in a dashboard.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(SavedSearchTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * JSON that contains user interface options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
         private Object uiConfig;
 
+        /**
+         * JSON that contains user interface options.
+         * @param uiConfig the value to set
+         * @return this builder
+         **/
         public Builder uiConfig(Object uiConfig) {
             this.uiConfig = uiConfig;
             this.__explicitlySet__.add("uiConfig");
             return this;
         }
-
+        /**
+         * Array of JSON that contain data source options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
         private java.util.List<Object> dataConfig;
 
+        /**
+         * Array of JSON that contain data source options.
+         * @param dataConfig the value to set
+         * @return this builder
+         **/
         public Builder dataConfig(java.util.List<Object> dataConfig) {
             this.dataConfig = dataConfig;
             this.__explicitlySet__.add("dataConfig");
             return this;
         }
-
+        /**
+         * User who created the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
+        /**
+         * User who created the saved search.
+         * @param createdBy the value to set
+         * @return this builder
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-
+        /**
+         * User who updated the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
+        /**
+         * User who updated the saved search.
+         * @param updatedBy the value to set
+         * @return this builder
+         **/
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = updatedBy;
             this.__explicitlySet__.add("updatedBy");
             return this;
         }
-
+        /**
+         * Date and time the saved search was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date and time the saved search was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Date and time the saved search was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Date and time the saved search was updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Screen image of the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
         private String screenImage;
 
+        /**
+         * Screen image of the saved search.
+         * @param screenImage the value to set
+         * @return this builder
+         **/
         public Builder screenImage(String screenImage) {
             this.screenImage = screenImage;
             this.__explicitlySet__.add("screenImage");
             return this;
         }
-
+        /**
+         * Version of the metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
         private String metadataVersion;
 
+        /**
+         * Version of the metadata.
+         * @param metadataVersion the value to set
+         * @return this builder
+         **/
         public Builder metadataVersion(String metadataVersion) {
             this.metadataVersion = metadataVersion;
             this.__explicitlySet__.add("metadataVersion");
             return this;
         }
-
+        /**
+         * Reference to the HTML file of the widget.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("widgetTemplate")
         private String widgetTemplate;
 
+        /**
+         * Reference to the HTML file of the widget.
+         * @param widgetTemplate the value to set
+         * @return this builder
+         **/
         public Builder widgetTemplate(String widgetTemplate) {
             this.widgetTemplate = widgetTemplate;
             this.__explicitlySet__.add("widgetTemplate");
             return this;
         }
-
+        /**
+         * Reference to the view model of the widget.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("widgetVM")
         private String widgetVM;
 
+        /**
+         * Reference to the view model of the widget.
+         * @param widgetVM the value to set
+         * @return this builder
+         **/
         public Builder widgetVM(String widgetVM) {
             this.widgetVM = widgetVM;
             this.__explicitlySet__.add("widgetVM");
             return this;
         }
-
+        /**
+         * State of dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
+        /**
+         * State of dashboard.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Defines parameters for the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
         private java.util.List<Object> parametersConfig;
 
+        /**
+         * Defines parameters for the saved search.
+         * @param parametersConfig the value to set
+         * @return this builder
+         **/
         public Builder parametersConfig(java.util.List<Object> parametersConfig) {
             this.parametersConfig = parametersConfig;
             this.__explicitlySet__.add("parametersConfig");
             return this;
         }
-
+        /**
+         * Drill-down configuration to define the destination of a drill-down action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
         private java.util.List<Object> drilldownConfig;
 
+        /**
+         * Drill-down configuration to define the destination of a drill-down action.
+         * @param drilldownConfig the value to set
+         * @return this builder
+         **/
         public Builder drilldownConfig(java.util.List<Object> drilldownConfig) {
             this.drilldownConfig = drilldownConfig;
             this.__explicitlySet__.add("drilldownConfig");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -416,6 +600,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * ID of the saved search.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -426,6 +614,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the saved search.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -436,6 +628,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("providerId")
     private final String providerId;
 
+    /**
+     * ID of the service (for example log-analytics) that owns the saved search. Each service has a unique ID.
+     * @return the value
+     **/
     public String getProviderId() {
         return providerId;
     }
@@ -446,6 +642,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
     private final String providerVersion;
 
+    /**
+     * Version of the service that owns this saved search.
+     * @return the value
+     **/
     public String getProviderVersion() {
         return providerVersion;
     }
@@ -456,6 +656,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
+    /**
+     * Name of the service (for example, Logging Analytics) that owns the saved search.
+     * @return the value
+     **/
     public String getProviderName() {
         return providerName;
     }
@@ -466,6 +670,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment in which the saved search resides.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -476,6 +684,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("isOobSavedSearch")
     private final Boolean isOobSavedSearch;
 
+    /**
+     * Determines whether the saved search is an Out-of-the-Box (OOB) saved search. Note that OOB saved searches are only provided by Oracle and cannot be modified.
+     * @return the value
+     **/
     public Boolean getIsOobSavedSearch() {
         return isOobSavedSearch;
     }
@@ -486,6 +698,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the saved search.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -496,6 +712,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
     private final Object nls;
 
+    /**
+     * JSON that contains internationalization options.
+     * @return the value
+     **/
     public Object getNls() {
         return nls;
     }
@@ -506,6 +726,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final SavedSearchTypes type;
 
+    /**
+     * Determines how the saved search is displayed in a dashboard.
+     * @return the value
+     **/
     public SavedSearchTypes getType() {
         return type;
     }
@@ -516,6 +740,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     private final Object uiConfig;
 
+    /**
+     * JSON that contains user interface options.
+     * @return the value
+     **/
     public Object getUiConfig() {
         return uiConfig;
     }
@@ -526,6 +754,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     private final java.util.List<Object> dataConfig;
 
+    /**
+     * Array of JSON that contain data source options.
+     * @return the value
+     **/
     public java.util.List<Object> getDataConfig() {
         return dataConfig;
     }
@@ -536,6 +768,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
+    /**
+     * User who created the saved search.
+     * @return the value
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
@@ -546,6 +782,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
+    /**
+     * User who updated the saved search.
+     * @return the value
+     **/
     public String getUpdatedBy() {
         return updatedBy;
     }
@@ -556,6 +796,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time the saved search was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -566,6 +810,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Date and time the saved search was updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -576,6 +824,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
     private final String screenImage;
 
+    /**
+     * Screen image of the saved search.
+     * @return the value
+     **/
     public String getScreenImage() {
         return screenImage;
     }
@@ -586,6 +838,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
     private final String metadataVersion;
 
+    /**
+     * Version of the metadata.
+     * @return the value
+     **/
     public String getMetadataVersion() {
         return metadataVersion;
     }
@@ -596,6 +852,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("widgetTemplate")
     private final String widgetTemplate;
 
+    /**
+     * Reference to the HTML file of the widget.
+     * @return the value
+     **/
     public String getWidgetTemplate() {
         return widgetTemplate;
     }
@@ -606,6 +866,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("widgetVM")
     private final String widgetVM;
 
+    /**
+     * Reference to the view model of the widget.
+     * @return the value
+     **/
     public String getWidgetVM() {
         return widgetVM;
     }
@@ -616,6 +880,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
+    /**
+     * State of dashboard.
+     * @return the value
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -626,6 +894,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
     private final java.util.List<Object> parametersConfig;
 
+    /**
+     * Defines parameters for the saved search.
+     * @return the value
+     **/
     public java.util.List<Object> getParametersConfig() {
         return parametersConfig;
     }
@@ -636,6 +908,10 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
     private final java.util.List<Object> drilldownConfig;
 
+    /**
+     * Drill-down configuration to define the destination of a drill-down action.
+     * @return the value
+     **/
     public java.util.List<Object> getDrilldownConfig() {
         return drilldownConfig;
     }
@@ -648,6 +924,12 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -660,6 +942,12 @@ public final class ManagementSavedSearch {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

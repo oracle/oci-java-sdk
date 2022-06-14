@@ -53,46 +53,81 @@ public final class OtherPaymentDetail extends PaymentDetail {
             this.__explicitlySet__.add("amountPaid");
             return this;
         }
-
+        /**
+         * Last four routing digits of the card
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("echeckRouting")
         private String echeckRouting;
 
+        /**
+         * Last four routing digits of the card
+         * @param echeckRouting the value to set
+         * @return this builder
+         **/
         public Builder echeckRouting(String echeckRouting) {
             this.echeckRouting = echeckRouting;
             this.__explicitlySet__.add("echeckRouting");
             return this;
         }
-
+        /**
+         * Name on the echeck card
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nameOnCard")
         private String nameOnCard;
 
+        /**
+         * Name on the echeck card
+         * @param nameOnCard the value to set
+         * @return this builder
+         **/
         public Builder nameOnCard(String nameOnCard) {
             this.nameOnCard = nameOnCard;
             this.__explicitlySet__.add("nameOnCard");
             return this;
         }
-
+        /**
+         * Echeck card type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("creditCardType")
         private CreditCardType creditCardType;
 
+        /**
+         * Echeck card type
+         * @param creditCardType the value to set
+         * @return this builder
+         **/
         public Builder creditCardType(CreditCardType creditCardType) {
             this.creditCardType = creditCardType;
             this.__explicitlySet__.add("creditCardType");
             return this;
         }
-
+        /**
+         * Last four digits of the card
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastDigits")
         private String lastDigits;
 
+        /**
+         * Last four digits of the card
+         * @param lastDigits the value to set
+         * @return this builder
+         **/
         public Builder lastDigits(String lastDigits) {
             this.lastDigits = lastDigits;
             this.__explicitlySet__.add("lastDigits");
             return this;
         }
-
+        /**
+         * Expired date of the echeck card
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpiration")
         private java.util.Date timeExpiration;
 
+        /**
+         * Expired date of the echeck card
+         * @param timeExpiration the value to set
+         * @return this builder
+         **/
         public Builder timeExpiration(java.util.Date timeExpiration) {
             this.timeExpiration = timeExpiration;
             this.__explicitlySet__.add("timeExpiration");
@@ -169,6 +204,10 @@ public final class OtherPaymentDetail extends PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("echeckRouting")
     private final String echeckRouting;
 
+    /**
+     * Last four routing digits of the card
+     * @return the value
+     **/
     public String getEcheckRouting() {
         return echeckRouting;
     }
@@ -179,6 +218,10 @@ public final class OtherPaymentDetail extends PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("nameOnCard")
     private final String nameOnCard;
 
+    /**
+     * Name on the echeck card
+     * @return the value
+     **/
     public String getNameOnCard() {
         return nameOnCard;
     }
@@ -242,6 +285,10 @@ public final class OtherPaymentDetail extends PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("creditCardType")
     private final CreditCardType creditCardType;
 
+    /**
+     * Echeck card type
+     * @return the value
+     **/
     public CreditCardType getCreditCardType() {
         return creditCardType;
     }
@@ -252,6 +299,10 @@ public final class OtherPaymentDetail extends PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("lastDigits")
     private final String lastDigits;
 
+    /**
+     * Last four digits of the card
+     * @return the value
+     **/
     public String getLastDigits() {
         return lastDigits;
     }
@@ -262,6 +313,10 @@ public final class OtherPaymentDetail extends PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiration")
     private final java.util.Date timeExpiration;
 
+    /**
+     * Expired date of the echeck card
+     * @return the value
+     **/
     public java.util.Date getTimeExpiration() {
         return timeExpiration;
     }

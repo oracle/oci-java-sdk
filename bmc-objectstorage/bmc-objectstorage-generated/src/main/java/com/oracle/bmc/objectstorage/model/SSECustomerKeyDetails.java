@@ -32,27 +32,57 @@ public final class SSECustomerKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies the encryption algorithm. The only supported value is "AES256".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private Algorithm algorithm;
 
+        /**
+         * Specifies the encryption algorithm. The only supported value is "AES256".
+         *
+         * @param algorithm the value to set
+         * @return this builder
+         **/
         public Builder algorithm(Algorithm algorithm) {
             this.algorithm = algorithm;
             this.__explicitlySet__.add("algorithm");
             return this;
         }
-
+        /**
+         * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object data.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object data.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity
+         * of the encryption key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keySha256")
         private String keySha256;
 
+        /**
+         * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity
+         * of the encryption key.
+         *
+         * @param keySha256 the value to set
+         * @return this builder
+         **/
         public Builder keySha256(String keySha256) {
             this.keySha256 = keySha256;
             this.__explicitlySet__.add("keySha256");
@@ -132,6 +162,11 @@ public final class SSECustomerKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     private final Algorithm algorithm;
 
+    /**
+     * Specifies the encryption algorithm. The only supported value is "AES256".
+     *
+     * @return the value
+     **/
     public Algorithm getAlgorithm() {
         return algorithm;
     }
@@ -143,6 +178,11 @@ public final class SSECustomerKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object data.
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -155,6 +195,12 @@ public final class SSECustomerKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keySha256")
     private final String keySha256;
 
+    /**
+     * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity
+     * of the encryption key.
+     *
+     * @return the value
+     **/
     public String getKeySha256() {
         return keySha256;
     }

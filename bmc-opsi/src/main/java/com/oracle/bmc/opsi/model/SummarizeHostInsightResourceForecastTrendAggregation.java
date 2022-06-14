@@ -51,63 +51,117 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
+        /**
+         * The start timestamp that was passed into the request.
+         * @param timeIntervalStart the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
+        /**
+         * The end timestamp that was passed into the request.
+         * @param timeIntervalEnd the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-
+        /**
+         * Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
         private ResourceMetric resourceMetric;
 
+        /**
+         * Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
+         *
+         * @param resourceMetric the value to set
+         * @return this builder
+         **/
         public Builder resourceMetric(ResourceMetric resourceMetric) {
             this.resourceMetric = resourceMetric;
             this.__explicitlySet__.add("resourceMetric");
             return this;
         }
-
+        /**
+         * Displays usage unit (CORES, GB)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
         private UsageUnit usageUnit;
 
+        /**
+         * Displays usage unit (CORES, GB)
+         *
+         * @param usageUnit the value to set
+         * @return this builder
+         **/
         public Builder usageUnit(UsageUnit usageUnit) {
             this.usageUnit = usageUnit;
             this.__explicitlySet__.add("usageUnit");
             return this;
         }
-
+        /**
+         * Time series patterns used in the forecasting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private Pattern pattern;
 
+        /**
+         * Time series patterns used in the forecasting.
+         * @param pattern the value to set
+         * @return this builder
+         **/
         public Builder pattern(Pattern pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
             return this;
         }
-
+        /**
+         * Time series data used for the forecast analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("historicalData")
         private java.util.List<HistoricalDataItem> historicalData;
 
+        /**
+         * Time series data used for the forecast analysis.
+         * @param historicalData the value to set
+         * @return this builder
+         **/
         public Builder historicalData(java.util.List<HistoricalDataItem> historicalData) {
             this.historicalData = historicalData;
             this.__explicitlySet__.add("historicalData");
             return this;
         }
-
+        /**
+         * Time series data result of the forecasting analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectedData")
         private java.util.List<ProjectedDataItem> projectedData;
 
+        /**
+         * Time series data result of the forecasting analysis.
+         * @param projectedData the value to set
+         * @return this builder
+         **/
         public Builder projectedData(java.util.List<ProjectedDataItem> projectedData) {
             this.projectedData = projectedData;
             this.__explicitlySet__.add("projectedData");
@@ -164,6 +218,10 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
+    /**
+     * The start timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -174,6 +232,10 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
+    /**
+     * The end timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -235,6 +297,11 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
     private final ResourceMetric resourceMetric;
 
+    /**
+     * Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
+     *
+     * @return the value
+     **/
     public ResourceMetric getResourceMetric() {
         return resourceMetric;
     }
@@ -246,6 +313,11 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
     private final UsageUnit usageUnit;
 
+    /**
+     * Displays usage unit (CORES, GB)
+     *
+     * @return the value
+     **/
     public UsageUnit getUsageUnit() {
         return usageUnit;
     }
@@ -310,6 +382,10 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final Pattern pattern;
 
+    /**
+     * Time series patterns used in the forecasting.
+     * @return the value
+     **/
     public Pattern getPattern() {
         return pattern;
     }
@@ -320,6 +396,10 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("historicalData")
     private final java.util.List<HistoricalDataItem> historicalData;
 
+    /**
+     * Time series data used for the forecast analysis.
+     * @return the value
+     **/
     public java.util.List<HistoricalDataItem> getHistoricalData() {
         return historicalData;
     }
@@ -330,6 +410,10 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("projectedData")
     private final java.util.List<ProjectedDataItem> projectedData;
 
+    /**
+     * Time series data result of the forecasting analysis.
+     * @return the value
+     **/
     public java.util.List<ProjectedDataItem> getProjectedData() {
         return projectedData;
     }

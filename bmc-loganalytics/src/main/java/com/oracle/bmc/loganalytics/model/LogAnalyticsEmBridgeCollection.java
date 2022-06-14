@@ -30,9 +30,17 @@ public final class LogAnalyticsEmBridgeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of log analytics enterprise manager bridges.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsEmBridgeSummary> items;
 
+        /**
+         * Array of log analytics enterprise manager bridges.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsEmBridgeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class LogAnalyticsEmBridgeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsEmBridgeSummary> items;
 
+    /**
+     * Array of log analytics enterprise manager bridges.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsEmBridgeSummary> getItems() {
         return items;
     }

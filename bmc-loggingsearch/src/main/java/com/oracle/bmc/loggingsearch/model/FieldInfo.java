@@ -28,18 +28,43 @@ public final class FieldInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Field name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * Field name
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * Field type -
+         * * {@code STRING}: A sequence of characters.
+         * * {@code NUMBER}: Numeric type which can be an integer or floating point.
+         * * {@code BOOLEAN}: Either true or false.
+         * * {@code ARRAY}: An ordered collection of values.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
         private FieldType fieldType;
 
+        /**
+         * Field type -
+         * * {@code STRING}: A sequence of characters.
+         * * {@code NUMBER}: Numeric type which can be an integer or floating point.
+         * * {@code BOOLEAN}: Either true or false.
+         * * {@code ARRAY}: An ordered collection of values.
+         *
+         * @param fieldType the value to set
+         * @return this builder
+         **/
         public Builder fieldType(FieldType fieldType) {
             this.fieldType = fieldType;
             this.__explicitlySet__.add("fieldType");
@@ -81,6 +106,10 @@ public final class FieldInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * Field name
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -151,6 +180,15 @@ public final class FieldInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
     private final FieldType fieldType;
 
+    /**
+     * Field type -
+     * * {@code STRING}: A sequence of characters.
+     * * {@code NUMBER}: Numeric type which can be an integer or floating point.
+     * * {@code BOOLEAN}: Either true or false.
+     * * {@code ARRAY}: An ordered collection of values.
+     *
+     * @return the value
+     **/
     public FieldType getFieldType() {
         return fieldType;
     }

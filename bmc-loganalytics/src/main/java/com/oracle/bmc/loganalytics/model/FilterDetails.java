@@ -31,27 +31,53 @@ public final class FilterDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Query to apply edits to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
 
+        /**
+         * Query to apply edits to.
+         * @param queryString the value to set
+         * @return this builder
+         **/
         public Builder queryString(String queryString) {
             this.queryString = queryString;
             this.__explicitlySet__.add("queryString");
             return this;
         }
-
+        /**
+         * Default subsystem to qualify fields with in the queryString if not specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
         private SubSystemName subSystem;
 
+        /**
+         * Default subsystem to qualify fields with in the queryString if not specified.
+         *
+         * @param subSystem the value to set
+         * @return this builder
+         **/
         public Builder subSystem(SubSystemName subSystem) {
             this.subSystem = subSystem;
             this.__explicitlySet__.add("subSystem");
             return this;
         }
-
+        /**
+         * List of edit operations to be applied in the specified order to the specified queryString.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<Filter> filters;
 
+        /**
+         * List of edit operations to be applied in the specified order to the specified queryString.
+         *
+         * @param filters the value to set
+         * @return this builder
+         **/
         public Builder filters(java.util.List<Filter> filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
@@ -96,6 +122,10 @@ public final class FilterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     private final String queryString;
 
+    /**
+     * Query to apply edits to.
+     * @return the value
+     **/
     public String getQueryString() {
         return queryString;
     }
@@ -107,6 +137,11 @@ public final class FilterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
     private final SubSystemName subSystem;
 
+    /**
+     * Default subsystem to qualify fields with in the queryString if not specified.
+     *
+     * @return the value
+     **/
     public SubSystemName getSubSystem() {
         return subSystem;
     }
@@ -118,6 +153,11 @@ public final class FilterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final java.util.List<Filter> filters;
 
+    /**
+     * List of edit operations to be applied in the specified order to the specified queryString.
+     *
+     * @return the value
+     **/
     public java.util.List<Filter> getFilters() {
         return filters;
     }

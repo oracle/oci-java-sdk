@@ -28,18 +28,33 @@ public final class SubCategory {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for the subcategory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
         private String subCategoryKey;
 
+        /**
+         * Unique identifier for the subcategory.
+         * @param subCategoryKey the value to set
+         * @return this builder
+         **/
         public Builder subCategoryKey(String subCategoryKey) {
             this.subCategoryKey = subCategoryKey;
             this.__explicitlySet__.add("subCategoryKey");
             return this;
         }
-
+        /**
+         * The name of the subcategory. For example, {@code Backup Count} or {@code Custom Image Count}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the subcategory. For example, {@code Backup Count} or {@code Custom Image Count}.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -81,6 +96,10 @@ public final class SubCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
     private final String subCategoryKey;
 
+    /**
+     * Unique identifier for the subcategory.
+     * @return the value
+     **/
     public String getSubCategoryKey() {
         return subCategoryKey;
     }
@@ -91,6 +110,10 @@ public final class SubCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the subcategory. For example, {@code Backup Count} or {@code Custom Image Count}.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

@@ -29,9 +29,17 @@ public final class TopUtilizedResourceCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The top utilized resource summary collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TopUtilizedResourceSummary> items;
 
+        /**
+         * The top utilized resource summary collection.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TopUtilizedResourceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class TopUtilizedResourceCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TopUtilizedResourceSummary> items;
 
+    /**
+     * The top utilized resource summary collection.
+     * @return the value
+     **/
     public java.util.List<TopUtilizedResourceSummary> getItems() {
         return items;
     }

@@ -17,6 +17,10 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -26,6 +30,10 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -35,6 +43,10 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String id;
 
+    /**
+     * A filter to only return resources that match the specified OCID exactly.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -44,6 +56,10 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -53,6 +69,10 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String tagDefinitionId;
 
+    /**
+     * The OCID of the tag definition.
+     *
+     */
     public String getTagDefinitionId() {
         return tagDefinitionId;
     }
@@ -62,6 +82,10 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState lifecycleState;
 
+    /**
+     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     *
+     */
     public com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -73,11 +97,16 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -85,11 +114,16 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -97,11 +131,16 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the specified OCID exactly.
+         *
+         */
         private String id = null;
 
         /**
          * A filter to only return resources that match the specified OCID exactly.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -109,11 +148,16 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -121,11 +165,16 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The OCID of the tag definition.
+         *
+         */
         private String tagDefinitionId = null;
 
         /**
          * The OCID of the tag definition.
          *
+         * @param tagDefinitionId the value to set
          * @return this builder instance
          */
         public Builder tagDefinitionId(String tagDefinitionId) {
@@ -133,12 +182,17 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+         *
+         */
         private com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -225,7 +279,8 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -237,6 +292,10 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

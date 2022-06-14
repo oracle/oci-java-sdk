@@ -17,6 +17,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String compareBaselineTime;
 
+    /**
+     * The baseline time for metrics comparison.
+     */
     public String getCompareBaselineTime() {
         return compareBaselineTime;
     }
@@ -25,6 +28,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String compareTargetTime;
 
+    /**
+     * The target time for metrics comparison.
+     */
     public String getCompareTargetTime() {
         return compareTargetTime;
     }
@@ -33,6 +39,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +50,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String managedDatabaseGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+     */
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
@@ -49,6 +61,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -57,6 +72,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private com.oracle.bmc.databasemanagement.model.CompareType compareType;
 
+    /**
+     * The time window used for metrics comparison.
+     */
     public com.oracle.bmc.databasemanagement.model.CompareType getCompareType() {
         return compareType;
     }
@@ -65,6 +83,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String filterByMetricNames;
 
+    /**
+     * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+     */
     public String getFilterByMetricNames() {
         return filterByMetricNames;
     }
@@ -73,6 +94,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String filterByDatabaseType;
 
+    /**
+     * The filter used to filter the databases in the fleet by a specific Oracle Database type.
+     */
     public String getFilterByDatabaseType() {
         return filterByDatabaseType;
     }
@@ -81,6 +105,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String filterByDatabaseSubType;
 
+    /**
+     * The filter used to filter the databases in the fleet by a specific Oracle Database subtype.
+     */
     public String getFilterByDatabaseSubType() {
         return filterByDatabaseSubType;
     }
@@ -89,6 +116,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String filterByDatabaseDeploymentType;
 
+    /**
+     * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
+     */
     public String getFilterByDatabaseDeploymentType() {
         return filterByDatabaseDeploymentType;
     }
@@ -97,6 +127,9 @@ public class GetDatabaseFleetHealthMetricsRequest
      */
     private String filterByDatabaseVersion;
 
+    /**
+     * The filter used to filter the databases in the fleet by a specific Oracle Database version.
+     */
     public String getFilterByDatabaseVersion() {
         return filterByDatabaseVersion;
     }
@@ -108,10 +141,14 @@ public class GetDatabaseFleetHealthMetricsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The baseline time for metrics comparison.
+         */
         private String compareBaselineTime = null;
 
         /**
          * The baseline time for metrics comparison.
+         * @param compareBaselineTime the value to set
          * @return this builder instance
          */
         public Builder compareBaselineTime(String compareBaselineTime) {
@@ -119,10 +156,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The target time for metrics comparison.
+         */
         private String compareTargetTime = null;
 
         /**
          * The target time for metrics comparison.
+         * @param compareTargetTime the value to set
          * @return this builder instance
          */
         public Builder compareTargetTime(String compareTargetTime) {
@@ -130,10 +171,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -141,10 +186,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         */
         private String managedDatabaseGroupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         * @param managedDatabaseGroupId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseGroupId(String managedDatabaseGroupId) {
@@ -152,10 +201,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -163,10 +216,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The time window used for metrics comparison.
+         */
         private com.oracle.bmc.databasemanagement.model.CompareType compareType = null;
 
         /**
          * The time window used for metrics comparison.
+         * @param compareType the value to set
          * @return this builder instance
          */
         public Builder compareType(
@@ -175,10 +232,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+         */
         private String filterByMetricNames = null;
 
         /**
          * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+         * @param filterByMetricNames the value to set
          * @return this builder instance
          */
         public Builder filterByMetricNames(String filterByMetricNames) {
@@ -186,10 +247,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The filter used to filter the databases in the fleet by a specific Oracle Database type.
+         */
         private String filterByDatabaseType = null;
 
         /**
          * The filter used to filter the databases in the fleet by a specific Oracle Database type.
+         * @param filterByDatabaseType the value to set
          * @return this builder instance
          */
         public Builder filterByDatabaseType(String filterByDatabaseType) {
@@ -197,10 +262,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The filter used to filter the databases in the fleet by a specific Oracle Database subtype.
+         */
         private String filterByDatabaseSubType = null;
 
         /**
          * The filter used to filter the databases in the fleet by a specific Oracle Database subtype.
+         * @param filterByDatabaseSubType the value to set
          * @return this builder instance
          */
         public Builder filterByDatabaseSubType(String filterByDatabaseSubType) {
@@ -208,10 +277,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
+         */
         private String filterByDatabaseDeploymentType = null;
 
         /**
          * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
+         * @param filterByDatabaseDeploymentType the value to set
          * @return this builder instance
          */
         public Builder filterByDatabaseDeploymentType(String filterByDatabaseDeploymentType) {
@@ -219,10 +292,14 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
+        /**
+         * The filter used to filter the databases in the fleet by a specific Oracle Database version.
+         */
         private String filterByDatabaseVersion = null;
 
         /**
          * The filter used to filter the databases in the fleet by a specific Oracle Database version.
+         * @param filterByDatabaseVersion the value to set
          * @return this builder instance
          */
         public Builder filterByDatabaseVersion(String filterByDatabaseVersion) {
@@ -319,7 +396,8 @@ public class GetDatabaseFleetHealthMetricsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -336,6 +414,10 @@ public class GetDatabaseFleetHealthMetricsRequest
                 .filterByDatabaseVersion(filterByDatabaseVersion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

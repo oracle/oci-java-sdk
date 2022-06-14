@@ -27,9 +27,17 @@ public final class SddcCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of SDDCs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SddcSummary> items;
 
+        /**
+         * A list of SDDCs.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SddcSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class SddcCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SddcSummary> items;
 
+    /**
+     * A list of SDDCs.
+     * @return the value
+     **/
     public java.util.List<SddcSummary> getItems() {
         return items;
     }

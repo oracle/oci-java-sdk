@@ -58,90 +58,201 @@ public final class Identity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the user or service. This value is the friendly name associated with {@code principalId}.
+         * <p>
+         * Example: {@code ExampleName}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principalName")
         private String principalName;
 
+        /**
+         * The name of the user or service. This value is the friendly name associated with {@code principalId}.
+         * <p>
+         * Example: {@code ExampleName}
+         *
+         * @param principalName the value to set
+         * @return this builder
+         **/
         public Builder principalName(String principalName) {
             this.principalName = principalName;
             this.__explicitlySet__.add("principalName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the principal.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principalId")
         private String principalId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the principal.
+         *
+         * @param principalId the value to set
+         * @return this builder
+         **/
         public Builder principalId(String principalId) {
             this.principalId = principalId;
             this.__explicitlySet__.add("principalId");
             return this;
         }
-
+        /**
+         * The type of authentication used.
+         * <p>
+         * Example: {@code natv}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authType")
         private String authType;
 
+        /**
+         * The type of authentication used.
+         * <p>
+         * Example: {@code natv}
+         *
+         * @param authType the value to set
+         * @return this builder
+         **/
         public Builder authType(String authType) {
             this.authType = authType;
             this.__explicitlySet__.add("authType");
             return this;
         }
-
+        /**
+         * The name of the user or service. This value is the friendly name associated with {@code callerId}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("callerName")
         private String callerName;
 
+        /**
+         * The name of the user or service. This value is the friendly name associated with {@code callerId}.
+         *
+         * @param callerName the value to set
+         * @return this builder
+         **/
         public Builder callerName(String callerName) {
             this.callerName = callerName;
             this.__explicitlySet__.add("callerName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
+         * request on behalf of the prinicpal.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("callerId")
         private String callerId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
+         * request on behalf of the prinicpal.
+         *
+         * @param callerId the value to set
+         * @return this builder
+         **/
         public Builder callerId(String callerId) {
             this.callerId = callerId;
             this.__explicitlySet__.add("callerId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenant.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenant.
+         *
+         * @param tenantId the value to set
+         * @return this builder
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-
+        /**
+         * The IP address of the source of the request.
+         * <p>
+         * Example: {@code 172.24.80.88}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * The IP address of the source of the request.
+         * <p>
+         * Example: {@code 172.24.80.88}
+         *
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-
+        /**
+         * The credential ID of the user. This value is extracted from the HTTP 'Authorization' request
+         * header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentials")
         private String credentials;
 
+        /**
+         * The credential ID of the user. This value is extracted from the HTTP 'Authorization' request
+         * header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
+         *
+         * @param credentials the value to set
+         * @return this builder
+         **/
         public Builder credentials(String credentials) {
             this.credentials = credentials;
             this.__explicitlySet__.add("credentials");
             return this;
         }
-
+        /**
+         * The user agent of the client that made the request.
+         * <p>
+         * Example: {@code Jersey/2.23 (HttpUrlConnection 1.8.0_212)}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userAgent")
         private String userAgent;
 
+        /**
+         * The user agent of the client that made the request.
+         * <p>
+         * Example: {@code Jersey/2.23 (HttpUrlConnection 1.8.0_212)}
+         *
+         * @param userAgent the value to set
+         * @return this builder
+         **/
         public Builder userAgent(String userAgent) {
             this.userAgent = userAgent;
             this.__explicitlySet__.add("userAgent");
             return this;
         }
-
+        /**
+         * This value identifies any Console session associated with this request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consoleSessionId")
         private String consoleSessionId;
 
+        /**
+         * This value identifies any Console session associated with this request.
+         *
+         * @param consoleSessionId the value to set
+         * @return this builder
+         **/
         public Builder consoleSessionId(String consoleSessionId) {
             this.consoleSessionId = consoleSessionId;
             this.__explicitlySet__.add("consoleSessionId");
@@ -207,6 +318,13 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("principalName")
     private final String principalName;
 
+    /**
+     * The name of the user or service. This value is the friendly name associated with {@code principalId}.
+     * <p>
+     * Example: {@code ExampleName}
+     *
+     * @return the value
+     **/
     public String getPrincipalName() {
         return principalName;
     }
@@ -218,6 +336,11 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("principalId")
     private final String principalId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the principal.
+     *
+     * @return the value
+     **/
     public String getPrincipalId() {
         return principalId;
     }
@@ -231,6 +354,13 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("authType")
     private final String authType;
 
+    /**
+     * The type of authentication used.
+     * <p>
+     * Example: {@code natv}
+     *
+     * @return the value
+     **/
     public String getAuthType() {
         return authType;
     }
@@ -242,6 +372,11 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("callerName")
     private final String callerName;
 
+    /**
+     * The name of the user or service. This value is the friendly name associated with {@code callerId}.
+     *
+     * @return the value
+     **/
     public String getCallerName() {
         return callerName;
     }
@@ -254,6 +389,12 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("callerId")
     private final String callerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
+     * request on behalf of the prinicpal.
+     *
+     * @return the value
+     **/
     public String getCallerId() {
         return callerId;
     }
@@ -265,6 +406,11 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenant.
+     *
+     * @return the value
+     **/
     public String getTenantId() {
         return tenantId;
     }
@@ -278,6 +424,13 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * The IP address of the source of the request.
+     * <p>
+     * Example: {@code 172.24.80.88}
+     *
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
@@ -290,6 +443,12 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("credentials")
     private final String credentials;
 
+    /**
+     * The credential ID of the user. This value is extracted from the HTTP 'Authorization' request
+     * header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
+     *
+     * @return the value
+     **/
     public String getCredentials() {
         return credentials;
     }
@@ -303,6 +462,13 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("userAgent")
     private final String userAgent;
 
+    /**
+     * The user agent of the client that made the request.
+     * <p>
+     * Example: {@code Jersey/2.23 (HttpUrlConnection 1.8.0_212)}
+     *
+     * @return the value
+     **/
     public String getUserAgent() {
         return userAgent;
     }
@@ -314,6 +480,11 @@ public final class Identity {
     @com.fasterxml.jackson.annotation.JsonProperty("consoleSessionId")
     private final String consoleSessionId;
 
+    /**
+     * This value identifies any Console session associated with this request.
+     *
+     * @return the value
+     **/
     public String getConsoleSessionId() {
         return consoleSessionId;
     }

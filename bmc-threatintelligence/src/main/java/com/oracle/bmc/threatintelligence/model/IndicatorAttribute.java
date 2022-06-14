@@ -32,27 +32,49 @@ public final class IndicatorAttribute {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the attribute
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the attribute
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The value of the attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The value of the attribute.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The array of attribution data that support this attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attribution")
         private java.util.List<DataAttribution> attribution;
 
+        /**
+         * The array of attribution data that support this attribute.
+         * @param attribution the value to set
+         * @return this builder
+         **/
         public Builder attribution(java.util.List<DataAttribution> attribution) {
             this.attribution = attribution;
             this.__explicitlySet__.add("attribution");
@@ -95,6 +117,10 @@ public final class IndicatorAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the attribute
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -105,6 +131,10 @@ public final class IndicatorAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The value of the attribute.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -115,6 +145,10 @@ public final class IndicatorAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("attribution")
     private final java.util.List<DataAttribution> attribution;
 
+    /**
+     * The array of attribution data that support this attribute.
+     * @return the value
+     **/
     public java.util.List<DataAttribution> getAttribution() {
         return attribution;
     }

@@ -50,63 +50,113 @@ public final class AbstractParserTestResultLogEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Extra information attributes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extraInfoAttributes")
         private java.util.Map<String, String> extraInfoAttributes;
 
+        /**
+         * Extra information attributes.
+         * @param extraInfoAttributes the value to set
+         * @return this builder
+         **/
         public Builder extraInfoAttributes(java.util.Map<String, String> extraInfoAttributes) {
             this.extraInfoAttributes = extraInfoAttributes;
             this.__explicitlySet__.add("extraInfoAttributes");
             return this;
         }
-
+        /**
+         * The field name value map.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldNameValueMap")
         private java.util.Map<String, String> fieldNameValueMap;
 
+        /**
+         * The field name value map.
+         * @param fieldNameValueMap the value to set
+         * @return this builder
+         **/
         public Builder fieldNameValueMap(java.util.Map<String, String> fieldNameValueMap) {
             this.fieldNameValueMap = fieldNameValueMap;
             this.__explicitlySet__.add("fieldNameValueMap");
             return this;
         }
-
+        /**
+         * The field position value map.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldPositionValueMap")
         private java.util.Map<String, String> fieldPositionValueMap;
 
+        /**
+         * The field position value map.
+         * @param fieldPositionValueMap the value to set
+         * @return this builder
+         **/
         public Builder fieldPositionValueMap(java.util.Map<String, String> fieldPositionValueMap) {
             this.fieldPositionValueMap = fieldPositionValueMap;
             this.__explicitlySet__.add("fieldPositionValueMap");
             return this;
         }
-
+        /**
+         * The parser fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.Map<String, String> fields;
 
+        /**
+         * The parser fields.
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.Map<String, String> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-
+        /**
+         * The log entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logEntry")
         private String logEntry;
 
+        /**
+         * The log entry.
+         * @param logEntry the value to set
+         * @return this builder
+         **/
         public Builder logEntry(String logEntry) {
             this.logEntry = logEntry;
             this.__explicitlySet__.add("logEntry");
             return this;
         }
-
+        /**
+         * The match status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
         private String matchStatus;
 
+        /**
+         * The match status.
+         * @param matchStatus the value to set
+         * @return this builder
+         **/
         public Builder matchStatus(String matchStatus) {
             this.matchStatus = matchStatus;
             this.__explicitlySet__.add("matchStatus");
             return this;
         }
-
+        /**
+         * The match status description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchStatusDescription")
         private String matchStatusDescription;
 
+        /**
+         * The match status description.
+         * @param matchStatusDescription the value to set
+         * @return this builder
+         **/
         public Builder matchStatusDescription(String matchStatusDescription) {
             this.matchStatusDescription = matchStatusDescription;
             this.__explicitlySet__.add("matchStatusDescription");
@@ -163,6 +213,10 @@ public final class AbstractParserTestResultLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("extraInfoAttributes")
     private final java.util.Map<String, String> extraInfoAttributes;
 
+    /**
+     * Extra information attributes.
+     * @return the value
+     **/
     public java.util.Map<String, String> getExtraInfoAttributes() {
         return extraInfoAttributes;
     }
@@ -173,6 +227,10 @@ public final class AbstractParserTestResultLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNameValueMap")
     private final java.util.Map<String, String> fieldNameValueMap;
 
+    /**
+     * The field name value map.
+     * @return the value
+     **/
     public java.util.Map<String, String> getFieldNameValueMap() {
         return fieldNameValueMap;
     }
@@ -183,6 +241,10 @@ public final class AbstractParserTestResultLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldPositionValueMap")
     private final java.util.Map<String, String> fieldPositionValueMap;
 
+    /**
+     * The field position value map.
+     * @return the value
+     **/
     public java.util.Map<String, String> getFieldPositionValueMap() {
         return fieldPositionValueMap;
     }
@@ -193,6 +255,10 @@ public final class AbstractParserTestResultLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.Map<String, String> fields;
 
+    /**
+     * The parser fields.
+     * @return the value
+     **/
     public java.util.Map<String, String> getFields() {
         return fields;
     }
@@ -203,6 +269,10 @@ public final class AbstractParserTestResultLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("logEntry")
     private final String logEntry;
 
+    /**
+     * The log entry.
+     * @return the value
+     **/
     public String getLogEntry() {
         return logEntry;
     }
@@ -213,6 +283,10 @@ public final class AbstractParserTestResultLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
     private final String matchStatus;
 
+    /**
+     * The match status.
+     * @return the value
+     **/
     public String getMatchStatus() {
         return matchStatus;
     }
@@ -223,6 +297,10 @@ public final class AbstractParserTestResultLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatusDescription")
     private final String matchStatusDescription;
 
+    /**
+     * The match status description.
+     * @return the value
+     **/
     public String getMatchStatusDescription() {
         return matchStatusDescription;
     }

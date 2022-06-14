@@ -37,28 +37,67 @@ public final class CompartmentConfigSource extends ConfigSource {
             this.__explicitlySet__.add("workingDirectory");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to use
+         * for creating the stack. The new stack will include definitions for supported
+         * resource types in this compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to use
+         * for creating the stack. The new stack will include definitions for supported
+         * resource types in this compartment.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The region to use for creating the stack. The new stack will include definitions for
+         * supported resource types in this region.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * The region to use for creating the stack. The new stack will include definitions for
+         * supported resource types in this region.
+         *
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * Filter for [services to use with Resource Discovery](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+         * For example, "database" limits resource discovery to resource types within the Database service.
+         * The specified services must be in scope of the given compartment OCID (tenancy level for root compartment, compartment level otherwise).
+         * If not specified, then all services at the scope of the given compartment OCID are used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("servicesToDiscover")
         private java.util.List<String> servicesToDiscover;
 
+        /**
+         * Filter for [services to use with Resource Discovery](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+         * For example, "database" limits resource discovery to resource types within the Database service.
+         * The specified services must be in scope of the given compartment OCID (tenancy level for root compartment, compartment level otherwise).
+         * If not specified, then all services at the scope of the given compartment OCID are used.
+         *
+         * @param servicesToDiscover the value to set
+         * @return this builder
+         **/
         public Builder servicesToDiscover(java.util.List<String> servicesToDiscover) {
             this.servicesToDiscover = servicesToDiscover;
             this.__explicitlySet__.add("servicesToDiscover");
@@ -121,6 +160,13 @@ public final class CompartmentConfigSource extends ConfigSource {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to use
+     * for creating the stack. The new stack will include definitions for supported
+     * resource types in this compartment.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -133,6 +179,12 @@ public final class CompartmentConfigSource extends ConfigSource {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * The region to use for creating the stack. The new stack will include definitions for
+     * supported resource types in this region.
+     *
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -147,6 +199,14 @@ public final class CompartmentConfigSource extends ConfigSource {
     @com.fasterxml.jackson.annotation.JsonProperty("servicesToDiscover")
     private final java.util.List<String> servicesToDiscover;
 
+    /**
+     * Filter for [services to use with Resource Discovery](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+     * For example, "database" limits resource discovery to resource types within the Database service.
+     * The specified services must be in scope of the given compartment OCID (tenancy level for root compartment, compartment level otherwise).
+     * If not specified, then all services at the scope of the given compartment OCID are used.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getServicesToDiscover() {
         return servicesToDiscover;
     }

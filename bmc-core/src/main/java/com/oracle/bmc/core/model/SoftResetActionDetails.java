@@ -28,9 +28,19 @@ package com.oracle.bmc.core.model;
 public final class SoftResetActionDetails extends InstancePowerActionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * For instances with a date in the Maintenance reboot field, the flag denoting whether reboot migration is enabled for instances that use the DenseIO shape. The default value is 'false'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowDenseRebootMigration")
         private Boolean allowDenseRebootMigration;
 
+        /**
+         * For instances with a date in the Maintenance reboot field, the flag denoting whether reboot migration is enabled for instances that use the DenseIO shape. The default value is 'false'.
+         *
+         * @param allowDenseRebootMigration the value to set
+         * @return this builder
+         **/
         public Builder allowDenseRebootMigration(Boolean allowDenseRebootMigration) {
             this.allowDenseRebootMigration = allowDenseRebootMigration;
             this.__explicitlySet__.add("allowDenseRebootMigration");
@@ -80,6 +90,11 @@ public final class SoftResetActionDetails extends InstancePowerActionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("allowDenseRebootMigration")
     private final Boolean allowDenseRebootMigration;
 
+    /**
+     * For instances with a date in the Maintenance reboot field, the flag denoting whether reboot migration is enabled for instances that use the DenseIO shape. The default value is 'false'.
+     *
+     * @return the value
+     **/
     public Boolean getAllowDenseRebootMigration() {
         return allowDenseRebootMigration;
     }

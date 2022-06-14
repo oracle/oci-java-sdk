@@ -32,27 +32,49 @@ public final class CreateOAuth2ClientCredentialDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the oauth credential to help user differentiate them.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the oauth credential to help user differentiate them.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Description of the oauth credential to help user differentiate them.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the oauth credential to help user differentiate them.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Allowed scopes for the given oauth credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopes")
         private java.util.List<FullyQualifiedScope> scopes;
 
+        /**
+         * Allowed scopes for the given oauth credential.
+         * @param scopes the value to set
+         * @return this builder
+         **/
         public Builder scopes(java.util.List<FullyQualifiedScope> scopes) {
             this.scopes = scopes;
             this.__explicitlySet__.add("scopes");
@@ -96,6 +118,10 @@ public final class CreateOAuth2ClientCredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the oauth credential to help user differentiate them.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -106,6 +132,10 @@ public final class CreateOAuth2ClientCredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the oauth credential to help user differentiate them.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -116,6 +146,10 @@ public final class CreateOAuth2ClientCredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
     private final java.util.List<FullyQualifiedScope> scopes;
 
+    /**
+     * Allowed scopes for the given oauth credential.
+     * @return the value
+     **/
     public java.util.List<FullyQualifiedScope> getScopes() {
         return scopes;
     }

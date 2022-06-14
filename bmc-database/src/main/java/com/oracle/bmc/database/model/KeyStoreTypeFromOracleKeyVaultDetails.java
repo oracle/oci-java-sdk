@@ -27,36 +27,65 @@ package com.oracle.bmc.database.model;
 public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of Oracle Key Vault connection IP addresses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionIps")
         private java.util.List<String> connectionIps;
 
+        /**
+         * The list of Oracle Key Vault connection IP addresses.
+         * @param connectionIps the value to set
+         * @return this builder
+         **/
         public Builder connectionIps(java.util.List<String> connectionIps) {
             this.connectionIps = connectionIps;
             this.__explicitlySet__.add("connectionIps");
             return this;
         }
-
+        /**
+         * The administrator username to connect to Oracle Key Vault
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
         private String adminUsername;
 
+        /**
+         * The administrator username to connect to Oracle Key Vault
+         * @param adminUsername the value to set
+         * @return this builder
+         **/
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = adminUsername;
             this.__explicitlySet__.add("adminUsername");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param vaultId the value to set
+         * @return this builder
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param secretId the value to set
+         * @return this builder
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
@@ -117,6 +146,10 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
     @com.fasterxml.jackson.annotation.JsonProperty("connectionIps")
     private final java.util.List<String> connectionIps;
 
+    /**
+     * The list of Oracle Key Vault connection IP addresses.
+     * @return the value
+     **/
     public java.util.List<String> getConnectionIps() {
         return connectionIps;
     }
@@ -127,6 +160,10 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
     private final String adminUsername;
 
+    /**
+     * The administrator username to connect to Oracle Key Vault
+     * @return the value
+     **/
     public String getAdminUsername() {
         return adminUsername;
     }
@@ -137,6 +174,10 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
     public String getVaultId() {
         return vaultId;
     }
@@ -147,6 +188,10 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
     public String getSecretId() {
         return secretId;
     }

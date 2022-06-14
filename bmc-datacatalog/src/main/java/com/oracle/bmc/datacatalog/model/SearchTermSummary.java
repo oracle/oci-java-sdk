@@ -48,54 +48,101 @@ public final class SearchTermSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique term key that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique term key that is immutable.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Unique id of the parent glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
         private String glossaryKey;
 
+        /**
+         * Unique id of the parent glossary.
+         * @param glossaryKey the value to set
+         * @return this builder
+         **/
         public Builder glossaryKey(String glossaryKey) {
             this.glossaryKey = glossaryKey;
             this.__explicitlySet__.add("glossaryKey");
             return this;
         }
-
+        /**
+         * Name of the parent glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryName")
         private String glossaryName;
 
+        /**
+         * Name of the parent glossary.
+         * @param glossaryName the value to set
+         * @return this builder
+         **/
         public Builder glossaryName(String glossaryName) {
             this.glossaryName = glossaryName;
             this.__explicitlySet__.add("glossaryName");
             return this;
         }
-
+        /**
+         * This terms parent term key. Will be null if the term has no parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
         private String parentTermKey;
 
+        /**
+         * This terms parent term key. Will be null if the term has no parent term.
+         * @param parentTermKey the value to set
+         * @return this builder
+         **/
         public Builder parentTermKey(String parentTermKey) {
             this.parentTermKey = parentTermKey;
             this.__explicitlySet__.add("parentTermKey");
             return this;
         }
-
+        /**
+         * Name of the parent term key. Will be null if the term has no parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermName")
         private String parentTermName;
 
+        /**
+         * Name of the parent term key. Will be null if the term has no parent term.
+         * @param parentTermName the value to set
+         * @return this builder
+         **/
         public Builder parentTermName(String parentTermName) {
             this.parentTermName = parentTermName;
             this.__explicitlySet__.add("parentTermName");
@@ -150,6 +197,10 @@ public final class SearchTermSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique term key that is immutable.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -162,6 +213,12 @@ public final class SearchTermSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -172,6 +229,10 @@ public final class SearchTermSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
     private final String glossaryKey;
 
+    /**
+     * Unique id of the parent glossary.
+     * @return the value
+     **/
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -182,6 +243,10 @@ public final class SearchTermSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryName")
     private final String glossaryName;
 
+    /**
+     * Name of the parent glossary.
+     * @return the value
+     **/
     public String getGlossaryName() {
         return glossaryName;
     }
@@ -192,6 +257,10 @@ public final class SearchTermSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
     private final String parentTermKey;
 
+    /**
+     * This terms parent term key. Will be null if the term has no parent term.
+     * @return the value
+     **/
     public String getParentTermKey() {
         return parentTermKey;
     }
@@ -202,6 +271,10 @@ public final class SearchTermSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermName")
     private final String parentTermName;
 
+    /**
+     * Name of the parent term key. Will be null if the term has no parent term.
+     * @return the value
+     **/
     public String getParentTermName() {
         return parentTermName;
     }

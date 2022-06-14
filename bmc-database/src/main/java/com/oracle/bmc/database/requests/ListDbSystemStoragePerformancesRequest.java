@@ -20,6 +20,12 @@ public class ListDbSystemStoragePerformancesRequest
      */
     private com.oracle.bmc.database.model.DbSystemOptions.StorageManagement storageManagement;
 
+    /**
+     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
+     * * ASM specifies Oracle Automatic Storage Management
+     * * LVM specifies logical volume manager, sometimes called logical disk manager.
+     *
+     */
     public com.oracle.bmc.database.model.DbSystemOptions.StorageManagement getStorageManagement() {
         return storageManagement;
     }
@@ -28,6 +34,9 @@ public class ListDbSystemStoragePerformancesRequest
      */
     private String shapeType;
 
+    /**
+     * Optional. Filters the performance results by shape type.
+     */
     public String getShapeType() {
         return shapeType;
     }
@@ -37,6 +46,10 @@ public class ListDbSystemStoragePerformancesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +61,12 @@ public class ListDbSystemStoragePerformancesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
+         * * ASM specifies Oracle Automatic Storage Management
+         * * LVM specifies logical volume manager, sometimes called logical disk manager.
+         *
+         */
         private com.oracle.bmc.database.model.DbSystemOptions.StorageManagement storageManagement =
                 null;
 
@@ -56,6 +75,7 @@ public class ListDbSystemStoragePerformancesRequest
          * * ASM specifies Oracle Automatic Storage Management
          * * LVM specifies logical volume manager, sometimes called logical disk manager.
          *
+         * @param storageManagement the value to set
          * @return this builder instance
          */
         public Builder storageManagement(
@@ -64,10 +84,14 @@ public class ListDbSystemStoragePerformancesRequest
             return this;
         }
 
+        /**
+         * Optional. Filters the performance results by shape type.
+         */
         private String shapeType = null;
 
         /**
          * Optional. Filters the performance results by shape type.
+         * @param shapeType the value to set
          * @return this builder instance
          */
         public Builder shapeType(String shapeType) {
@@ -75,11 +99,16 @@ public class ListDbSystemStoragePerformancesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -160,7 +189,8 @@ public class ListDbSystemStoragePerformancesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -169,6 +199,10 @@ public class ListDbSystemStoragePerformancesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

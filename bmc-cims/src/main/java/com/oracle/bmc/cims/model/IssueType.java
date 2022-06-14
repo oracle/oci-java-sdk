@@ -28,18 +28,33 @@ public final class IssueType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for the issue type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issueTypeKey")
         private String issueTypeKey;
 
+        /**
+         * Unique identifier for the issue type.
+         * @param issueTypeKey the value to set
+         * @return this builder
+         **/
         public Builder issueTypeKey(String issueTypeKey) {
             this.issueTypeKey = issueTypeKey;
             this.__explicitlySet__.add("issueTypeKey");
             return this;
         }
-
+        /**
+         * The label for the issue type. For example, {@code Instance Performance}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
+        /**
+         * The label for the issue type. For example, {@code Instance Performance}.
+         * @param label the value to set
+         * @return this builder
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
@@ -81,6 +96,10 @@ public final class IssueType {
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeKey")
     private final String issueTypeKey;
 
+    /**
+     * Unique identifier for the issue type.
+     * @return the value
+     **/
     public String getIssueTypeKey() {
         return issueTypeKey;
     }
@@ -91,6 +110,10 @@ public final class IssueType {
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
+    /**
+     * The label for the issue type. For example, {@code Instance Performance}.
+     * @return the value
+     **/
     public String getLabel() {
         return label;
     }

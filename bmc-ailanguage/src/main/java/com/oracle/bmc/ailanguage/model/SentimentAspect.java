@@ -36,45 +36,85 @@ public final class SentimentAspect {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
 
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         * @param offset the value to set
+         * @return this builder
+         **/
         public Builder offset(Integer offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-
+        /**
+         * Length of aspect text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
+        /**
+         * Length of aspect text.
+         * @param length the value to set
+         * @return this builder
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-
+        /**
+         * Aspect text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * Aspect text.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-
+        /**
+         * The highest-score sentiment for the aspect text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sentiment")
         private String sentiment;
 
+        /**
+         * The highest-score sentiment for the aspect text.
+         * @param sentiment the value to set
+         * @return this builder
+         **/
         public Builder sentiment(String sentiment) {
             this.sentiment = sentiment;
             this.__explicitlySet__.add("sentiment");
             return this;
         }
-
+        /**
+         * Scores or confidences for each sentiment.
+         * Example: {@code {"positive": 1.0, "negative": 0.0}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scores")
         private java.util.Map<String, Double> scores;
 
+        /**
+         * Scores or confidences for each sentiment.
+         * Example: {@code {"positive": 1.0, "negative": 0.0}}
+         *
+         * @param scores the value to set
+         * @return this builder
+         **/
         public Builder scores(java.util.Map<String, Double> scores) {
             this.scores = scores;
             this.__explicitlySet__.add("scores");
@@ -122,6 +162,10 @@ public final class SentimentAspect {
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Integer offset;
 
+    /**
+     * The number of Unicode code points preceding this entity in the submitted text.
+     * @return the value
+     **/
     public Integer getOffset() {
         return offset;
     }
@@ -132,6 +176,10 @@ public final class SentimentAspect {
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
+    /**
+     * Length of aspect text.
+     * @return the value
+     **/
     public Integer getLength() {
         return length;
     }
@@ -142,6 +190,10 @@ public final class SentimentAspect {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * Aspect text.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }
@@ -152,6 +204,10 @@ public final class SentimentAspect {
     @com.fasterxml.jackson.annotation.JsonProperty("sentiment")
     private final String sentiment;
 
+    /**
+     * The highest-score sentiment for the aspect text.
+     * @return the value
+     **/
     public String getSentiment() {
         return sentiment;
     }
@@ -164,6 +220,12 @@ public final class SentimentAspect {
     @com.fasterxml.jackson.annotation.JsonProperty("scores")
     private final java.util.Map<String, Double> scores;
 
+    /**
+     * Scores or confidences for each sentiment.
+     * Example: {@code {"positive": 1.0, "negative": 0.0}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, Double> getScores() {
         return scores;
     }

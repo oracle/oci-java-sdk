@@ -30,18 +30,37 @@ public final class ContainerConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether to create a new container repository when a container is pushed to a new repository path.
+         * Repositories created in this way belong to the root compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRepositoryCreatedOnFirstPush")
         private Boolean isRepositoryCreatedOnFirstPush;
 
+        /**
+         * Whether to create a new container repository when a container is pushed to a new repository path.
+         * Repositories created in this way belong to the root compartment.
+         *
+         * @param isRepositoryCreatedOnFirstPush the value to set
+         * @return this builder
+         **/
         public Builder isRepositoryCreatedOnFirstPush(Boolean isRepositoryCreatedOnFirstPush) {
             this.isRepositoryCreatedOnFirstPush = isRepositoryCreatedOnFirstPush;
             this.__explicitlySet__.add("isRepositoryCreatedOnFirstPush");
             return this;
         }
-
+        /**
+         * The tenancy namespace used in the container repository path.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The tenancy namespace used in the container repository path.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -88,6 +107,12 @@ public final class ContainerConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("isRepositoryCreatedOnFirstPush")
     private final Boolean isRepositoryCreatedOnFirstPush;
 
+    /**
+     * Whether to create a new container repository when a container is pushed to a new repository path.
+     * Repositories created in this way belong to the root compartment.
+     *
+     * @return the value
+     **/
     public Boolean getIsRepositoryCreatedOnFirstPush() {
         return isRepositoryCreatedOnFirstPush;
     }
@@ -98,6 +123,10 @@ public final class ContainerConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The tenancy namespace used in the container repository path.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }

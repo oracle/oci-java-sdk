@@ -13,6 +13,10 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +27,10 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
             templateCategorySummaryCollection;
 
+    /**
+     * The returned TemplateCategorySummaryCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
             getTemplateCategorySummaryCollection() {
         return templateCategorySummaryCollection;
@@ -51,16 +59,32 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique identifier for the request.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned TemplateCategorySummaryCollection instance.
+         */
         private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
                 templateCategorySummaryCollection;
 
+        /**
+         * The returned TemplateCategorySummaryCollection instance.
+         * @param templateCategorySummaryCollection the value to set
+         * @return this builder
+         */
         public Builder templateCategorySummaryCollection(
                 com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
                         templateCategorySummaryCollection) {
@@ -80,12 +104,20 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListTemplateCategoriesResponse build() {
             return new ListTemplateCategoriesResponse(
                     __httpStatusCode__, opcRequestId, templateCategorySummaryCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

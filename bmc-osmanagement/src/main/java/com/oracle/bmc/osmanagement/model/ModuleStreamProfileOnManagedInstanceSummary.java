@@ -44,45 +44,101 @@ public final class ModuleStreamProfileOnManagedInstanceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the module that contains the stream profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
+        /**
+         * The name of the module that contains the stream profile
+         * @param moduleName the value to set
+         * @return this builder
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-
+        /**
+         * The name of the stream that contains the profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
 
+        /**
+         * The name of the stream that contains the profile
+         * @param streamName the value to set
+         * @return this builder
+         **/
         public Builder streamName(String streamName) {
             this.streamName = streamName;
             this.__explicitlySet__.add("streamName");
             return this;
         }
-
+        /**
+         * The name of the profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileName")
         private String profileName;
 
+        /**
+         * The name of the profile
+         * @param profileName the value to set
+         * @return this builder
+         **/
         public Builder profileName(String profileName) {
             this.profileName = profileName;
             this.__explicitlySet__.add("profileName");
             return this;
         }
-
+        /**
+         * The status of the profile.
+         * <p>
+         * A profile with the "INSTALLED" status indicates that the profile has been
+         * installed.
+         * <p>
+         * A profile with the "AVAILABLE" status indicates that the profile is
+         * not installed, but can be.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the profile.
+         * <p>
+         * A profile with the "INSTALLED" status indicates that the profile has been
+         * installed.
+         * <p>
+         * A profile with the "AVAILABLE" status indicates that the profile is
+         * not installed, but can be.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The date and time of the last status change for this profile, as
+         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
+        /**
+         * The date and time of the last status change for this profile, as
+         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         * @param timeModified the value to set
+         * @return this builder
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
@@ -131,6 +187,10 @@ public final class ModuleStreamProfileOnManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
+    /**
+     * The name of the module that contains the stream profile
+     * @return the value
+     **/
     public String getModuleName() {
         return moduleName;
     }
@@ -141,6 +201,10 @@ public final class ModuleStreamProfileOnManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
     private final String streamName;
 
+    /**
+     * The name of the stream that contains the profile
+     * @return the value
+     **/
     public String getStreamName() {
         return streamName;
     }
@@ -151,6 +215,10 @@ public final class ModuleStreamProfileOnManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("profileName")
     private final String profileName;
 
+    /**
+     * The name of the profile
+     * @return the value
+     **/
     public String getProfileName() {
         return profileName;
     }
@@ -222,6 +290,17 @@ public final class ModuleStreamProfileOnManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the profile.
+     * <p>
+     * A profile with the "INSTALLED" status indicates that the profile has been
+     * installed.
+     * <p>
+     * A profile with the "AVAILABLE" status indicates that the profile is
+     * not installed, but can be.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -235,6 +314,13 @@ public final class ModuleStreamProfileOnManagedInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
+    /**
+     * The date and time of the last status change for this profile, as
+     * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+     * section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }

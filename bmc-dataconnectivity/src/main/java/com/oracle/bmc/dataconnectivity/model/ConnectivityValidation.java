@@ -44,45 +44,81 @@ public final class ConnectivityValidation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total number of validation messages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMessageCount")
         private Integer totalMessageCount;
 
+        /**
+         * Total number of validation messages
+         * @param totalMessageCount the value to set
+         * @return this builder
+         **/
         public Builder totalMessageCount(Integer totalMessageCount) {
             this.totalMessageCount = totalMessageCount;
             this.__explicitlySet__.add("totalMessageCount");
             return this;
         }
-
+        /**
+         * Total number of validation error messages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessageCount")
         private Integer errorMessageCount;
 
+        /**
+         * Total number of validation error messages
+         * @param errorMessageCount the value to set
+         * @return this builder
+         **/
         public Builder errorMessageCount(Integer errorMessageCount) {
             this.errorMessageCount = errorMessageCount;
             this.__explicitlySet__.add("errorMessageCount");
             return this;
         }
-
+        /**
+         * Total number of validation warning messages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warnMessageCount")
         private Integer warnMessageCount;
 
+        /**
+         * Total number of validation warning messages
+         * @param warnMessageCount the value to set
+         * @return this builder
+         **/
         public Builder warnMessageCount(Integer warnMessageCount) {
             this.warnMessageCount = warnMessageCount;
             this.__explicitlySet__.add("warnMessageCount");
             return this;
         }
-
+        /**
+         * Total number of validation information messages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("infoMessageCount")
         private Integer infoMessageCount;
 
+        /**
+         * Total number of validation information messages
+         * @param infoMessageCount the value to set
+         * @return this builder
+         **/
         public Builder infoMessageCount(Integer infoMessageCount) {
             this.infoMessageCount = infoMessageCount;
             this.__explicitlySet__.add("infoMessageCount");
             return this;
         }
-
+        /**
+         * Detailed information of the connectivity validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationMessages")
         private java.util.Map<String, java.util.List<ValidationMessage>> validationMessages;
 
+        /**
+         * Detailed information of the connectivity validation.
+         * @param validationMessages the value to set
+         * @return this builder
+         **/
         public Builder validationMessages(
                 java.util.Map<String, java.util.List<ValidationMessage>> validationMessages) {
             this.validationMessages = validationMessages;
@@ -136,6 +172,10 @@ public final class ConnectivityValidation {
     @com.fasterxml.jackson.annotation.JsonProperty("totalMessageCount")
     private final Integer totalMessageCount;
 
+    /**
+     * Total number of validation messages
+     * @return the value
+     **/
     public Integer getTotalMessageCount() {
         return totalMessageCount;
     }
@@ -146,6 +186,10 @@ public final class ConnectivityValidation {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessageCount")
     private final Integer errorMessageCount;
 
+    /**
+     * Total number of validation error messages
+     * @return the value
+     **/
     public Integer getErrorMessageCount() {
         return errorMessageCount;
     }
@@ -156,6 +200,10 @@ public final class ConnectivityValidation {
     @com.fasterxml.jackson.annotation.JsonProperty("warnMessageCount")
     private final Integer warnMessageCount;
 
+    /**
+     * Total number of validation warning messages
+     * @return the value
+     **/
     public Integer getWarnMessageCount() {
         return warnMessageCount;
     }
@@ -166,6 +214,10 @@ public final class ConnectivityValidation {
     @com.fasterxml.jackson.annotation.JsonProperty("infoMessageCount")
     private final Integer infoMessageCount;
 
+    /**
+     * Total number of validation information messages
+     * @return the value
+     **/
     public Integer getInfoMessageCount() {
         return infoMessageCount;
     }
@@ -176,6 +228,10 @@ public final class ConnectivityValidation {
     @com.fasterxml.jackson.annotation.JsonProperty("validationMessages")
     private final java.util.Map<String, java.util.List<ValidationMessage>> validationMessages;
 
+    /**
+     * Detailed information of the connectivity validation.
+     * @return the value
+     **/
     public java.util.Map<String, java.util.List<ValidationMessage>> getValidationMessages() {
         return validationMessages;
     }

@@ -29,18 +29,37 @@ public final class Tag {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Key that specifies the tag name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagName")
         private String tagName;
 
+        /**
+         * Key that specifies the tag name.
+         *
+         * @param tagName the value to set
+         * @return this builder
+         **/
         public Builder tagName(String tagName) {
             this.tagName = tagName;
             this.__explicitlySet__.add("tagName");
             return this;
         }
-
+        /**
+         * Value associated with the tag key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagValue")
         private String tagValue;
 
+        /**
+         * Value associated with the tag key.
+         *
+         * @param tagValue the value to set
+         * @return this builder
+         **/
         public Builder tagValue(String tagValue) {
             this.tagValue = tagValue;
             this.__explicitlySet__.add("tagValue");
@@ -83,6 +102,11 @@ public final class Tag {
     @com.fasterxml.jackson.annotation.JsonProperty("tagName")
     private final String tagName;
 
+    /**
+     * Key that specifies the tag name.
+     *
+     * @return the value
+     **/
     public String getTagName() {
         return tagName;
     }
@@ -94,6 +118,11 @@ public final class Tag {
     @com.fasterxml.jackson.annotation.JsonProperty("tagValue")
     private final String tagValue;
 
+    /**
+     * Value associated with the tag key.
+     *
+     * @return the value
+     **/
     public String getTagValue() {
         return tagValue;
     }

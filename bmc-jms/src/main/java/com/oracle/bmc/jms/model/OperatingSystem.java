@@ -31,36 +31,65 @@ public final class OperatingSystem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The operating system type, such as Windows or Linux
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("family")
         private OsFamily family;
 
+        /**
+         * The operating system type, such as Windows or Linux
+         * @param family the value to set
+         * @return this builder
+         **/
         public Builder family(OsFamily family) {
             this.family = family;
             this.__explicitlySet__.add("family");
             return this;
         }
-
+        /**
+         * The name of the operating system as provided by the Java system property os.name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the operating system as provided by the Java system property os.name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The version of the operating system as provided by the Java system property os.version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of the operating system as provided by the Java system property os.version.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The architecture of the operating system as provided by the Java system property os.arch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
+        /**
+         * The architecture of the operating system as provided by the Java system property os.arch.
+         * @param architecture the value to set
+         * @return this builder
+         **/
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
@@ -106,6 +135,10 @@ public final class OperatingSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("family")
     private final OsFamily family;
 
+    /**
+     * The operating system type, such as Windows or Linux
+     * @return the value
+     **/
     public OsFamily getFamily() {
         return family;
     }
@@ -116,6 +149,10 @@ public final class OperatingSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the operating system as provided by the Java system property os.name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -126,6 +163,10 @@ public final class OperatingSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of the operating system as provided by the Java system property os.version.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -136,6 +177,10 @@ public final class OperatingSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
+    /**
+     * The architecture of the operating system as provided by the Java system property os.arch.
+     * @return the value
+     **/
     public String getArchitecture() {
         return architecture;
     }

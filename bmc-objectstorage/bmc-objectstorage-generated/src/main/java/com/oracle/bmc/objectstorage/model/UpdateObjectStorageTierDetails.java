@@ -37,27 +37,51 @@ public final class UpdateObjectStorageTierDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An object for which the storage tier needs to be changed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * An object for which the storage tier needs to be changed.
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-
+        /**
+         * The storage tier that the object should be moved to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
         private StorageTier storageTier;
 
+        /**
+         * The storage tier that the object should be moved to.
+         * @param storageTier the value to set
+         * @return this builder
+         **/
         public Builder storageTier(StorageTier storageTier) {
             this.storageTier = storageTier;
             this.__explicitlySet__.add("storageTier");
             return this;
         }
-
+        /**
+         * The versionId of the object. Current object version is used by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionId")
         private String versionId;
 
+        /**
+         * The versionId of the object. Current object version is used by default.
+         *
+         * @param versionId the value to set
+         * @return this builder
+         **/
         public Builder versionId(String versionId) {
             this.versionId = versionId;
             this.__explicitlySet__.add("versionId");
@@ -103,6 +127,10 @@ public final class UpdateObjectStorageTierDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * An object for which the storage tier needs to be changed.
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }
@@ -113,6 +141,10 @@ public final class UpdateObjectStorageTierDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
     private final StorageTier storageTier;
 
+    /**
+     * The storage tier that the object should be moved to.
+     * @return the value
+     **/
     public StorageTier getStorageTier() {
         return storageTier;
     }
@@ -124,6 +156,11 @@ public final class UpdateObjectStorageTierDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("versionId")
     private final String versionId;
 
+    /**
+     * The versionId of the object. Current object version is used by default.
+     *
+     * @return the value
+     **/
     public String getVersionId() {
         return versionId;
     }

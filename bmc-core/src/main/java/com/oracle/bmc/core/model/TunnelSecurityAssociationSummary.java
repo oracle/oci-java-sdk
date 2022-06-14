@@ -45,45 +45,83 @@ public final class TunnelSecurityAssociationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The IP address and mask of the partner subnet used in policy based VPNs or static routes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeSubnet")
         private String cpeSubnet;
 
+        /**
+         * The IP address and mask of the partner subnet used in policy based VPNs or static routes.
+         * @param cpeSubnet the value to set
+         * @return this builder
+         **/
         public Builder cpeSubnet(String cpeSubnet) {
             this.cpeSubnet = cpeSubnet;
             this.__explicitlySet__.add("cpeSubnet");
             return this;
         }
-
+        /**
+         * The IP address and mask of the local subnet used in policy based VPNs or static routes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleSubnet")
         private String oracleSubnet;
 
+        /**
+         * The IP address and mask of the local subnet used in policy based VPNs or static routes.
+         * @param oracleSubnet the value to set
+         * @return this builder
+         **/
         public Builder oracleSubnet(String oracleSubnet) {
             this.oracleSubnet = oracleSubnet;
             this.__explicitlySet__.add("oracleSubnet");
             return this;
         }
-
+        /**
+         * The IPSec tunnel's phase one status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaStatus")
         private TunnelSaStatus tunnelSaStatus;
 
+        /**
+         * The IPSec tunnel's phase one status.
+         * @param tunnelSaStatus the value to set
+         * @return this builder
+         **/
         public Builder tunnelSaStatus(TunnelSaStatus tunnelSaStatus) {
             this.tunnelSaStatus = tunnelSaStatus;
             this.__explicitlySet__.add("tunnelSaStatus");
             return this;
         }
-
+        /**
+         * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two details and a possible reason the tunnel is not {@code UP}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaErrorInfo")
         private String tunnelSaErrorInfo;
 
+        /**
+         * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two details and a possible reason the tunnel is not {@code UP}.
+         *
+         * @param tunnelSaErrorInfo the value to set
+         * @return this builder
+         **/
         public Builder tunnelSaErrorInfo(String tunnelSaErrorInfo) {
             this.tunnelSaErrorInfo = tunnelSaErrorInfo;
             this.__explicitlySet__.add("tunnelSaErrorInfo");
             return this;
         }
-
+        /**
+         * Time in the current state, in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("time")
         private String time;
 
+        /**
+         * Time in the current state, in seconds.
+         * @param time the value to set
+         * @return this builder
+         **/
         public Builder time(String time) {
             this.time = time;
             this.__explicitlySet__.add("time");
@@ -132,6 +170,10 @@ public final class TunnelSecurityAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpeSubnet")
     private final String cpeSubnet;
 
+    /**
+     * The IP address and mask of the partner subnet used in policy based VPNs or static routes.
+     * @return the value
+     **/
     public String getCpeSubnet() {
         return cpeSubnet;
     }
@@ -142,6 +184,10 @@ public final class TunnelSecurityAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("oracleSubnet")
     private final String oracleSubnet;
 
+    /**
+     * The IP address and mask of the local subnet used in policy based VPNs or static routes.
+     * @return the value
+     **/
     public String getOracleSubnet() {
         return oracleSubnet;
     }
@@ -204,6 +250,10 @@ public final class TunnelSecurityAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaStatus")
     private final TunnelSaStatus tunnelSaStatus;
 
+    /**
+     * The IPSec tunnel's phase one status.
+     * @return the value
+     **/
     public TunnelSaStatus getTunnelSaStatus() {
         return tunnelSaStatus;
     }
@@ -215,6 +265,11 @@ public final class TunnelSecurityAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaErrorInfo")
     private final String tunnelSaErrorInfo;
 
+    /**
+     * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two details and a possible reason the tunnel is not {@code UP}.
+     *
+     * @return the value
+     **/
     public String getTunnelSaErrorInfo() {
         return tunnelSaErrorInfo;
     }
@@ -225,6 +280,10 @@ public final class TunnelSecurityAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     private final String time;
 
+    /**
+     * Time in the current state, in seconds.
+     * @return the value
+     **/
     public String getTime() {
         return time;
     }

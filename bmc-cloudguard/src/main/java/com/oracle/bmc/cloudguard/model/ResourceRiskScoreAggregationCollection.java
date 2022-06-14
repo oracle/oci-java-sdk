@@ -36,36 +36,65 @@ public final class ResourceRiskScoreAggregationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of filter. Valid Values - problem_id and resource_id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private String filterType;
 
+        /**
+         * Type of filter. Valid Values - problem_id and resource_id
+         * @param filterType the value to set
+         * @return this builder
+         **/
         public Builder filterType(String filterType) {
             this.filterType = filterType;
             this.__explicitlySet__.add("filterType");
             return this;
         }
-
+        /**
+         * Id value on which risk scores are filtered
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterId")
         private String filterId;
 
+        /**
+         * Id value on which risk scores are filtered
+         * @param filterId the value to set
+         * @return this builder
+         **/
         public Builder filterId(String filterId) {
             this.filterId = filterId;
             this.__explicitlySet__.add("filterId");
             return this;
         }
-
+        /**
+         * Risk Score
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
         private Integer riskThreshold;
 
+        /**
+         * Risk Score
+         * @param riskThreshold the value to set
+         * @return this builder
+         **/
         public Builder riskThreshold(Integer riskThreshold) {
             this.riskThreshold = riskThreshold;
             this.__explicitlySet__.add("riskThreshold");
             return this;
         }
-
+        /**
+         * List of ResourceRiskScoreAggregation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceRiskScoreAggregation> items;
 
+        /**
+         * List of ResourceRiskScoreAggregation
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ResourceRiskScoreAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -113,6 +142,10 @@ public final class ResourceRiskScoreAggregationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     private final String filterType;
 
+    /**
+     * Type of filter. Valid Values - problem_id and resource_id
+     * @return the value
+     **/
     public String getFilterType() {
         return filterType;
     }
@@ -123,6 +156,10 @@ public final class ResourceRiskScoreAggregationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
     private final String filterId;
 
+    /**
+     * Id value on which risk scores are filtered
+     * @return the value
+     **/
     public String getFilterId() {
         return filterId;
     }
@@ -133,6 +170,10 @@ public final class ResourceRiskScoreAggregationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
     private final Integer riskThreshold;
 
+    /**
+     * Risk Score
+     * @return the value
+     **/
     public Integer getRiskThreshold() {
         return riskThreshold;
     }
@@ -143,6 +184,10 @@ public final class ResourceRiskScoreAggregationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceRiskScoreAggregation> items;
 
+    /**
+     * List of ResourceRiskScoreAggregation
+     * @return the value
+     **/
     public java.util.List<ResourceRiskScoreAggregation> getItems() {
         return items;
     }

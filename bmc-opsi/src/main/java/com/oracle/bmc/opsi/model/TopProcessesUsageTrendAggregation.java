@@ -31,18 +31,33 @@ public final class TopProcessesUsageTrendAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Command line and arguments used to launch process
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("command")
         private String command;
 
+        /**
+         * Command line and arguments used to launch process
+         * @param command the value to set
+         * @return this builder
+         **/
         public Builder command(String command) {
             this.command = command;
             this.__explicitlySet__.add("command");
             return this;
         }
-
+        /**
+         * List of usage data samples for a top process
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageData")
         private java.util.List<TopProcessesUsageTrend> usageData;
 
+        /**
+         * List of usage data samples for a top process
+         * @param usageData the value to set
+         * @return this builder
+         **/
         public Builder usageData(java.util.List<TopProcessesUsageTrend> usageData) {
             this.usageData = usageData;
             this.__explicitlySet__.add("usageData");
@@ -85,6 +100,10 @@ public final class TopProcessesUsageTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("command")
     private final String command;
 
+    /**
+     * Command line and arguments used to launch process
+     * @return the value
+     **/
     public String getCommand() {
         return command;
     }
@@ -95,6 +114,10 @@ public final class TopProcessesUsageTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("usageData")
     private final java.util.List<TopProcessesUsageTrend> usageData;
 
+    /**
+     * List of usage data samples for a top process
+     * @return the value
+     **/
     public java.util.List<TopProcessesUsageTrend> getUsageData() {
         return usageData;
     }

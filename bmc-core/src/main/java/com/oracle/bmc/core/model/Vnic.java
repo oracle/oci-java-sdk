@@ -99,154 +99,400 @@ public final class Vnic {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The VNIC's availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The VNIC's availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
+         * portion of the primary private IP's fully qualified domain name (FQDN)
+         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * Must be unique across all VNICs in the subnet and comply with
+         * [RFC 952](https://tools.ietf.org/html/rfc952) and
+         * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code bminstance-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
+        /**
+         * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
+         * portion of the primary private IP's fully qualified domain name (FQDN)
+         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * Must be unique across all VNICs in the subnet and comply with
+         * [RFC 952](https://tools.ietf.org/html/rfc952) and
+         * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code bminstance-1}
+         *
+         * @param hostnameLabel the value to set
+         * @return this builder
+         **/
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = hostnameLabel;
             this.__explicitlySet__.add("hostnameLabel");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Whether the VNIC is the primary VNIC (the VNIC that is automatically created
+         * and attached during instance launch).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
+        /**
+         * Whether the VNIC is the primary VNIC (the VNIC that is automatically created
+         * and attached during instance launch).
+         *
+         * @param isPrimary the value to set
+         * @return this builder
+         **/
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
             return this;
         }
-
+        /**
+         * The current state of the VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the VNIC.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The MAC address of the VNIC.
+         * <p>
+         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+         * the MAC address is learned. If the VNIC belongs to a subnet, the
+         * MAC address is a static, Oracle-provided value.
+         * <p>
+         * Example: {@code 00:00:00:00:00:01}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
         private String macAddress;
 
+        /**
+         * The MAC address of the VNIC.
+         * <p>
+         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+         * the MAC address is learned. If the VNIC belongs to a subnet, the
+         * MAC address is a static, Oracle-provided value.
+         * <p>
+         * Example: {@code 00:00:00:00:00:01}
+         *
+         * @param macAddress the value to set
+         * @return this builder
+         **/
         public Builder macAddress(String macAddress) {
             this.macAddress = macAddress;
             this.__explicitlySet__.add("macAddress");
             return this;
         }
-
+        /**
+         * A list of the OCIDs of the network security groups that the VNIC belongs to.
+         * <p>
+         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead, the
+         * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
+         * <p>
+         * For more information about NSGs, see
+         * {@link NetworkSecurityGroup}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * A list of the OCIDs of the network security groups that the VNIC belongs to.
+         * <p>
+         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead, the
+         * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
+         * <p>
+         * For more information about NSGs, see
+         * {@link NetworkSecurityGroup}.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
-
+        /**
+         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
+         * {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
         private String vlanId;
 
+        /**
+         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
+         * {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a value.
+         *
+         * @param vlanId the value to set
+         * @return this builder
+         **/
         public Builder vlanId(String vlanId) {
             this.vlanId = vlanId;
             this.__explicitlySet__.add("vlanId");
             return this;
         }
-
+        /**
+         * The private IP address of the primary {@code privateIp} object on the VNIC.
+         * The address is within the CIDR of the VNIC's subnet.
+         * <p>
+         * Example: {@code 10.0.3.3}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
+        /**
+         * The private IP address of the primary {@code privateIp} object on the VNIC.
+         * The address is within the CIDR of the VNIC's subnet.
+         * <p>
+         * Example: {@code 10.0.3.3}
+         *
+         * @param privateIp the value to set
+         * @return this builder
+         **/
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
             return this;
         }
-
+        /**
+         * The public IP address of the VNIC, if one is assigned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
         private String publicIp;
 
+        /**
+         * The public IP address of the VNIC, if one is assigned.
+         *
+         * @param publicIp the value to set
+         * @return this builder
+         **/
         public Builder publicIp(String publicIp) {
             this.publicIp = publicIp;
             this.__explicitlySet__.add("publicIp");
             return this;
         }
-
+        /**
+         * Whether the source/destination check is disabled on the VNIC.
+         * Defaults to {@code false}, which means the check is performed. For information
+         * about why you would skip the source/destination check, see
+         * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * <p>
+         *
+         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}.
+         * This is because the source/destination check is always disabled for VNICs in a VLAN.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
         private Boolean skipSourceDestCheck;
 
+        /**
+         * Whether the source/destination check is disabled on the VNIC.
+         * Defaults to {@code false}, which means the check is performed. For information
+         * about why you would skip the source/destination check, see
+         * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * <p>
+         *
+         * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}.
+         * This is because the source/destination check is always disabled for VNICs in a VLAN.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param skipSourceDestCheck the value to set
+         * @return this builder
+         **/
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
             this.skipSourceDestCheck = skipSourceDestCheck;
             this.__explicitlySet__.add("skipSourceDestCheck");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -326,6 +572,13 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The VNIC's availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -336,6 +589,10 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -350,6 +607,14 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -362,6 +627,12 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -376,6 +647,14 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -397,6 +676,21 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
+    /**
+     * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
+     * portion of the primary private IP's fully qualified domain name (FQDN)
+     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * Must be unique across all VNICs in the subnet and comply with
+     * [RFC 952](https://tools.ietf.org/html/rfc952) and
+     * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: {@code bminstance-1}
+     *
+     * @return the value
+     **/
     public String getHostnameLabel() {
         return hostnameLabel;
     }
@@ -407,6 +701,10 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -419,6 +717,12 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
+    /**
+     * Whether the VNIC is the primary VNIC (the VNIC that is automatically created
+     * and attached during instance launch).
+     *
+     * @return the value
+     **/
     public Boolean getIsPrimary() {
         return isPrimary;
     }
@@ -479,6 +783,10 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the VNIC.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -496,6 +804,17 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
     private final String macAddress;
 
+    /**
+     * The MAC address of the VNIC.
+     * <p>
+     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+     * the MAC address is learned. If the VNIC belongs to a subnet, the
+     * MAC address is a static, Oracle-provided value.
+     * <p>
+     * Example: {@code 00:00:00:00:00:01}
+     *
+     * @return the value
+     **/
     public String getMacAddress() {
         return macAddress;
     }
@@ -514,6 +833,18 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * A list of the OCIDs of the network security groups that the VNIC belongs to.
+     * <p>
+     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead, the
+     * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
+     * <p>
+     * For more information about NSGs, see
+     * {@link NetworkSecurityGroup}.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -527,6 +858,13 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
 
+    /**
+     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
+     * {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a value.
+     *
+     * @return the value
+     **/
     public String getVlanId() {
         return vlanId;
     }
@@ -541,6 +879,14 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
+    /**
+     * The private IP address of the primary {@code privateIp} object on the VNIC.
+     * The address is within the CIDR of the VNIC's subnet.
+     * <p>
+     * Example: {@code 10.0.3.3}
+     *
+     * @return the value
+     **/
     public String getPrivateIp() {
         return privateIp;
     }
@@ -552,6 +898,11 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
     private final String publicIp;
 
+    /**
+     * The public IP address of the VNIC, if one is assigned.
+     *
+     * @return the value
+     **/
     public String getPublicIp() {
         return publicIp;
     }
@@ -573,6 +924,21 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
     private final Boolean skipSourceDestCheck;
 
+    /**
+     * Whether the source/destination check is disabled on the VNIC.
+     * Defaults to {@code false}, which means the check is performed. For information
+     * about why you would skip the source/destination check, see
+     * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * <p>
+     *
+     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}.
+     * This is because the source/destination check is always disabled for VNICs in a VLAN.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
     public Boolean getSkipSourceDestCheck() {
         return skipSourceDestCheck;
     }
@@ -583,6 +949,10 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -596,6 +966,13 @@ public final class Vnic {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

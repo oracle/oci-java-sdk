@@ -29,9 +29,17 @@ public final class AwrSnapshotCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of AWR snapshot summary data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AwrSnapshotSummary> items;
 
+        /**
+         * A list of AWR snapshot summary data.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AwrSnapshotSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AwrSnapshotCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AwrSnapshotSummary> items;
 
+    /**
+     * A list of AWR snapshot summary data.
+     * @return the value
+     **/
     public java.util.List<AwrSnapshotSummary> getItems() {
         return items;
     }

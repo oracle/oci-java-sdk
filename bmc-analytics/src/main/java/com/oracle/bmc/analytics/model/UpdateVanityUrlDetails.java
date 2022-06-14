@@ -39,36 +39,73 @@ public final class UpdateVanityUrlDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Passphrase for the PEM Private key (if any).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
         private String passphrase;
 
+        /**
+         * Passphrase for the PEM Private key (if any).
+         *
+         * @param passphrase the value to set
+         * @return this builder
+         **/
         public Builder passphrase(String passphrase) {
             this.passphrase = passphrase;
             this.__explicitlySet__.add("passphrase");
             return this;
         }
-
+        /**
+         * PEM Private key for HTTPS connections.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
         private String privateKey;
 
+        /**
+         * PEM Private key for HTTPS connections.
+         *
+         * @param privateKey the value to set
+         * @return this builder
+         **/
         public Builder privateKey(String privateKey) {
             this.privateKey = privateKey;
             this.__explicitlySet__.add("privateKey");
             return this;
         }
-
+        /**
+         * PEM certificate for HTTPS connections.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
         private String publicCertificate;
 
+        /**
+         * PEM certificate for HTTPS connections.
+         *
+         * @param publicCertificate the value to set
+         * @return this builder
+         **/
         public Builder publicCertificate(String publicCertificate) {
             this.publicCertificate = publicCertificate;
             this.__explicitlySet__.add("publicCertificate");
             return this;
         }
-
+        /**
+         * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
+        /**
+         * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+         *
+         * @param caCertificate the value to set
+         * @return this builder
+         **/
         public Builder caCertificate(String caCertificate) {
             this.caCertificate = caCertificate;
             this.__explicitlySet__.add("caCertificate");
@@ -117,6 +154,11 @@ public final class UpdateVanityUrlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
     private final String passphrase;
 
+    /**
+     * Passphrase for the PEM Private key (if any).
+     *
+     * @return the value
+     **/
     public String getPassphrase() {
         return passphrase;
     }
@@ -128,6 +170,11 @@ public final class UpdateVanityUrlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
     private final String privateKey;
 
+    /**
+     * PEM Private key for HTTPS connections.
+     *
+     * @return the value
+     **/
     public String getPrivateKey() {
         return privateKey;
     }
@@ -139,6 +186,11 @@ public final class UpdateVanityUrlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
     private final String publicCertificate;
 
+    /**
+     * PEM certificate for HTTPS connections.
+     *
+     * @return the value
+     **/
     public String getPublicCertificate() {
         return publicCertificate;
     }
@@ -150,6 +202,11 @@ public final class UpdateVanityUrlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
     private final String caCertificate;
 
+    /**
+     * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     *
+     * @return the value
+     **/
     public String getCaCertificate() {
         return caCertificate;
     }

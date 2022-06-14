@@ -36,45 +36,81 @@ public final class IncidentType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for the incident type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier for the incident type.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the incident type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the incident type.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The label associated with the incident type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
+        /**
+         * The label associated with the incident type.
+         * @param label the value to set
+         * @return this builder
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-
+        /**
+         * The description of the incident type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the incident type.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The list of classifiers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classifierList")
         private java.util.List<Classifier> classifierList;
 
+        /**
+         * The list of classifiers.
+         * @param classifierList the value to set
+         * @return this builder
+         **/
         public Builder classifierList(java.util.List<Classifier> classifierList) {
             this.classifierList = classifierList;
             this.__explicitlySet__.add("classifierList");
@@ -122,6 +158,10 @@ public final class IncidentType {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier for the incident type.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -132,6 +172,10 @@ public final class IncidentType {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the incident type.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -142,6 +186,10 @@ public final class IncidentType {
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
+    /**
+     * The label associated with the incident type.
+     * @return the value
+     **/
     public String getLabel() {
         return label;
     }
@@ -152,6 +200,10 @@ public final class IncidentType {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the incident type.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -162,6 +214,10 @@ public final class IncidentType {
     @com.fasterxml.jackson.annotation.JsonProperty("classifierList")
     private final java.util.List<Classifier> classifierList;
 
+    /**
+     * The list of classifiers.
+     * @return the value
+     **/
     public java.util.List<Classifier> getClassifierList() {
         return classifierList;
     }

@@ -30,18 +30,33 @@ public final class GenerateMaskingReportForDownloadDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the masking report for which a downloadable file is to be generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reportId")
         private String reportId;
 
+        /**
+         * The OCID of the masking report for which a downloadable file is to be generated.
+         * @param reportId the value to set
+         * @return this builder
+         **/
         public Builder reportId(String reportId) {
             this.reportId = reportId;
             this.__explicitlySet__.add("reportId");
             return this;
         }
-
+        /**
+         * Format of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
         private ReportFormat reportFormat;
 
+        /**
+         * Format of the report.
+         * @param reportFormat the value to set
+         * @return this builder
+         **/
         public Builder reportFormat(ReportFormat reportFormat) {
             this.reportFormat = reportFormat;
             this.__explicitlySet__.add("reportFormat");
@@ -84,6 +99,10 @@ public final class GenerateMaskingReportForDownloadDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reportId")
     private final String reportId;
 
+    /**
+     * The OCID of the masking report for which a downloadable file is to be generated.
+     * @return the value
+     **/
     public String getReportId() {
         return reportId;
     }
@@ -129,6 +148,10 @@ public final class GenerateMaskingReportForDownloadDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
     private final ReportFormat reportFormat;
 
+    /**
+     * Format of the report.
+     * @return the value
+     **/
     public ReportFormat getReportFormat() {
         return reportFormat;
     }

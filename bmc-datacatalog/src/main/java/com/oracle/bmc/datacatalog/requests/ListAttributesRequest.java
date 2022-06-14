@@ -16,6 +16,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -32,6 +38,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String entityKey;
 
+    /**
+     * Unique entity key.
+     */
     public String getEntityKey() {
         return entityKey;
     }
@@ -40,6 +49,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -48,6 +60,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String businessName;
 
+    /**
+     * A filter to return only resources that match the entire business name given. The match is not case sensitive.
+     */
     public String getBusinessName() {
         return businessName;
     }
@@ -59,6 +74,12 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String displayOrBusinessNameContains;
 
+    /**
+     * A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayOrBusinessNameContains=Cu.*
+     * The above would match all folders with display name or business name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
+     */
     public String getDisplayOrBusinessNameContains() {
         return displayOrBusinessNameContains;
     }
@@ -70,6 +91,12 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String displayNameContains;
 
+    /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
+     */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
@@ -78,6 +105,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+     */
     public com.oracle.bmc.datacatalog.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -86,6 +116,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.Date timeCreated;
 
+    /**
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -94,6 +127,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.Date timeUpdated;
 
+    /**
+     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -102,6 +138,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String createdById;
 
+    /**
+     * OCID of the user who created the resource.
+     */
     public String getCreatedById() {
         return createdById;
     }
@@ -110,6 +149,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String updatedById;
 
+    /**
+     * OCID of the user who updated the resource.
+     */
     public String getUpdatedById() {
         return updatedById;
     }
@@ -118,6 +160,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String externalKey;
 
+    /**
+     * Unique external identifier of this resource in the external source system.
+     */
     public String getExternalKey() {
         return externalKey;
     }
@@ -126,6 +171,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.Date timeExternal;
 
+    /**
+     * Last modified timestamp of this object in the external system.
+     */
     public java.util.Date getTimeExternal() {
         return timeExternal;
     }
@@ -134,6 +182,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String externalTypeName;
 
+    /**
+     * Data type as defined in an external system.
+     */
     public String getExternalTypeName() {
         return externalTypeName;
     }
@@ -142,6 +193,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Boolean isIncrementalData;
 
+    /**
+     * Identifies whether this attribute can be used as a watermark to extract incremental data.
+     */
     public Boolean getIsIncrementalData() {
         return isIncrementalData;
     }
@@ -150,6 +204,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Boolean isNullable;
 
+    /**
+     * Identifies whether this attribute can be assigned null value.
+     */
     public Boolean getIsNullable() {
         return isNullable;
     }
@@ -158,6 +215,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Long length;
 
+    /**
+     * Max allowed length of the attribute value.
+     */
     public Long getLength() {
         return length;
     }
@@ -166,6 +226,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer position;
 
+    /**
+     * Position of the attribute in the record definition.
+     */
     public Integer getPosition() {
         return position;
     }
@@ -174,6 +237,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer precision;
 
+    /**
+     * Precision of the attribute value usually applies to float data type.
+     */
     public Integer getPrecision() {
         return precision;
     }
@@ -182,6 +248,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer scale;
 
+    /**
+     * Scale of the attribute value usually applies to float data type.
+     */
     public Integer getScale() {
         return scale;
     }
@@ -248,6 +317,10 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * Specifies the fields to return in an entity attribute summary response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -295,6 +368,10 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -339,6 +416,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -347,6 +427,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -355,6 +438,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -363,6 +449,9 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -374,10 +463,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -385,10 +478,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -396,10 +493,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique entity key.
+         */
         private String entityKey = null;
 
         /**
          * Unique entity key.
+         * @param entityKey the value to set
          * @return this builder instance
          */
         public Builder entityKey(String entityKey) {
@@ -407,10 +508,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -418,10 +523,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire business name given. The match is not case sensitive.
+         */
         private String businessName = null;
 
         /**
          * A filter to return only resources that match the entire business name given. The match is not case sensitive.
+         * @param businessName the value to set
          * @return this builder instance
          */
         public Builder businessName(String businessName) {
@@ -429,6 +538,12 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayOrBusinessNameContains=Cu.*
+         * The above would match all folders with display name or business name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
+         */
         private String displayOrBusinessNameContains = null;
 
         /**
@@ -436,6 +551,7 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * For Example : /folders?displayOrBusinessNameContains=Cu.*
          * The above would match all folders with display name or business name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
+         * @param displayOrBusinessNameContains the value to set
          * @return this builder instance
          */
         public Builder displayOrBusinessNameContains(String displayOrBusinessNameContains) {
@@ -443,6 +559,12 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
+         */
         private String displayNameContains = null;
 
         /**
@@ -450,6 +572,7 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * For Example : /folders?displayNameContains=Cu.*
          * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
+         * @param displayNameContains the value to set
          * @return this builder instance
          */
         public Builder displayNameContains(String displayNameContains) {
@@ -457,10 +580,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         */
         private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -469,10 +596,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
         private java.util.Date timeCreated = null;
 
         /**
          * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeCreated the value to set
          * @return this builder instance
          */
         public Builder timeCreated(java.util.Date timeCreated) {
@@ -480,10 +611,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
         private java.util.Date timeUpdated = null;
 
         /**
          * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeUpdated the value to set
          * @return this builder instance
          */
         public Builder timeUpdated(java.util.Date timeUpdated) {
@@ -491,10 +626,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * OCID of the user who created the resource.
+         */
         private String createdById = null;
 
         /**
          * OCID of the user who created the resource.
+         * @param createdById the value to set
          * @return this builder instance
          */
         public Builder createdById(String createdById) {
@@ -502,10 +641,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * OCID of the user who updated the resource.
+         */
         private String updatedById = null;
 
         /**
          * OCID of the user who updated the resource.
+         * @param updatedById the value to set
          * @return this builder instance
          */
         public Builder updatedById(String updatedById) {
@@ -513,10 +656,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique external identifier of this resource in the external source system.
+         */
         private String externalKey = null;
 
         /**
          * Unique external identifier of this resource in the external source system.
+         * @param externalKey the value to set
          * @return this builder instance
          */
         public Builder externalKey(String externalKey) {
@@ -524,10 +671,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Last modified timestamp of this object in the external system.
+         */
         private java.util.Date timeExternal = null;
 
         /**
          * Last modified timestamp of this object in the external system.
+         * @param timeExternal the value to set
          * @return this builder instance
          */
         public Builder timeExternal(java.util.Date timeExternal) {
@@ -535,10 +686,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Data type as defined in an external system.
+         */
         private String externalTypeName = null;
 
         /**
          * Data type as defined in an external system.
+         * @param externalTypeName the value to set
          * @return this builder instance
          */
         public Builder externalTypeName(String externalTypeName) {
@@ -546,10 +701,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Identifies whether this attribute can be used as a watermark to extract incremental data.
+         */
         private Boolean isIncrementalData = null;
 
         /**
          * Identifies whether this attribute can be used as a watermark to extract incremental data.
+         * @param isIncrementalData the value to set
          * @return this builder instance
          */
         public Builder isIncrementalData(Boolean isIncrementalData) {
@@ -557,10 +716,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Identifies whether this attribute can be assigned null value.
+         */
         private Boolean isNullable = null;
 
         /**
          * Identifies whether this attribute can be assigned null value.
+         * @param isNullable the value to set
          * @return this builder instance
          */
         public Builder isNullable(Boolean isNullable) {
@@ -568,10 +731,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Max allowed length of the attribute value.
+         */
         private Long length = null;
 
         /**
          * Max allowed length of the attribute value.
+         * @param length the value to set
          * @return this builder instance
          */
         public Builder length(Long length) {
@@ -579,10 +746,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Position of the attribute in the record definition.
+         */
         private Integer position = null;
 
         /**
          * Position of the attribute in the record definition.
+         * @param position the value to set
          * @return this builder instance
          */
         public Builder position(Integer position) {
@@ -590,10 +761,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Precision of the attribute value usually applies to float data type.
+         */
         private Integer precision = null;
 
         /**
          * Precision of the attribute value usually applies to float data type.
+         * @param precision the value to set
          * @return this builder instance
          */
         public Builder precision(Integer precision) {
@@ -601,10 +776,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Scale of the attribute value usually applies to float data type.
+         */
         private Integer scale = null;
 
         /**
          * Scale of the attribute value usually applies to float data type.
+         * @param scale the value to set
          * @return this builder instance
          */
         public Builder scale(Integer scale) {
@@ -612,11 +791,16 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Specifies the fields to return in an entity attribute summary response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in an entity attribute summary response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -627,17 +811,23 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Singular setter. Specifies the fields to return in an entity attribute summary response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -645,10 +835,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -656,10 +850,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -667,10 +865,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -678,10 +880,14 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -809,7 +1015,8 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -842,6 +1049,10 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

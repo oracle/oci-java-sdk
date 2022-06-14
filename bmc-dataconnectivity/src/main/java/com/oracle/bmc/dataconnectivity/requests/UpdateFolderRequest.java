@@ -18,6 +18,9 @@ public class UpdateFolderRequest
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -26,6 +29,9 @@ public class UpdateFolderRequest
      */
     private String folderKey;
 
+    /**
+     * The folder ID.
+     */
     public String getFolderKey() {
         return folderKey;
     }
@@ -34,6 +40,9 @@ public class UpdateFolderRequest
      */
     private com.oracle.bmc.dataconnectivity.model.UpdateFolderDetails updateFolderDetails;
 
+    /**
+     * The information needed to update a folder.
+     */
     public com.oracle.bmc.dataconnectivity.model.UpdateFolderDetails getUpdateFolderDetails() {
         return updateFolderDetails;
     }
@@ -45,6 +54,12 @@ public class UpdateFolderRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -56,6 +71,12 @@ public class UpdateFolderRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -78,10 +99,14 @@ public class UpdateFolderRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -89,10 +114,14 @@ public class UpdateFolderRequest
             return this;
         }
 
+        /**
+         * The folder ID.
+         */
         private String folderKey = null;
 
         /**
          * The folder ID.
+         * @param folderKey the value to set
          * @return this builder instance
          */
         public Builder folderKey(String folderKey) {
@@ -100,11 +129,15 @@ public class UpdateFolderRequest
             return this;
         }
 
+        /**
+         * The information needed to update a folder.
+         */
         private com.oracle.bmc.dataconnectivity.model.UpdateFolderDetails updateFolderDetails =
                 null;
 
         /**
          * The information needed to update a folder.
+         * @param updateFolderDetails the value to set
          * @return this builder instance
          */
         public Builder updateFolderDetails(
@@ -113,6 +146,12 @@ public class UpdateFolderRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -120,6 +159,7 @@ public class UpdateFolderRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,6 +167,12 @@ public class UpdateFolderRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -134,6 +180,7 @@ public class UpdateFolderRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -228,7 +275,8 @@ public class UpdateFolderRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -239,6 +287,10 @@ public class UpdateFolderRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

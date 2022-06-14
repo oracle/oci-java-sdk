@@ -29,9 +29,17 @@ public final class InteractionRequestDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * questions for asking to provide more information to operators.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moreInfoDetails")
         private String moreInfoDetails;
 
+        /**
+         * questions for asking to provide more information to operators.
+         * @param moreInfoDetails the value to set
+         * @return this builder
+         **/
         public Builder moreInfoDetails(String moreInfoDetails) {
             this.moreInfoDetails = moreInfoDetails;
             this.__explicitlySet__.add("moreInfoDetails");
@@ -73,6 +81,10 @@ public final class InteractionRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("moreInfoDetails")
     private final String moreInfoDetails;
 
+    /**
+     * questions for asking to provide more information to operators.
+     * @return the value
+     **/
     public String getMoreInfoDetails() {
         return moreInfoDetails;
     }

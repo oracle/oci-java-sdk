@@ -43,45 +43,95 @@ public final class TraceSnapshot {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+         * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+         * Monitoring.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+         * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+         * Monitoring.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Start time of the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * Start time of the trace.
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * End time of the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
+        /**
+         * End time of the trace.
+         *
+         * @param timeEnded the value to set
+         * @return this builder
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-
+        /**
+         * Trace snapshots properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traceSnapshotDetails")
         private java.util.List<SnapshotDetail> traceSnapshotDetails;
 
+        /**
+         * Trace snapshots properties.
+         *
+         * @param traceSnapshotDetails the value to set
+         * @return this builder
+         **/
         public Builder traceSnapshotDetails(java.util.List<SnapshotDetail> traceSnapshotDetails) {
             this.traceSnapshotDetails = traceSnapshotDetails;
             this.__explicitlySet__.add("traceSnapshotDetails");
             return this;
         }
-
+        /**
+         * List of spans.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spanSnapshots")
         private java.util.List<SpanSnapshot> spanSnapshots;
 
+        /**
+         * List of spans.
+         *
+         * @param spanSnapshots the value to set
+         * @return this builder
+         **/
         public Builder spanSnapshots(java.util.List<SpanSnapshot> spanSnapshots) {
             this.spanSnapshots = spanSnapshots;
             this.__explicitlySet__.add("spanSnapshots");
@@ -133,6 +183,13 @@ public final class TraceSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+     * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+     * Monitoring.
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -144,6 +201,11 @@ public final class TraceSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * Start time of the trace.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -155,6 +217,11 @@ public final class TraceSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
+    /**
+     * End time of the trace.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
@@ -166,6 +233,11 @@ public final class TraceSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("traceSnapshotDetails")
     private final java.util.List<SnapshotDetail> traceSnapshotDetails;
 
+    /**
+     * Trace snapshots properties.
+     *
+     * @return the value
+     **/
     public java.util.List<SnapshotDetail> getTraceSnapshotDetails() {
         return traceSnapshotDetails;
     }
@@ -177,6 +249,11 @@ public final class TraceSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("spanSnapshots")
     private final java.util.List<SpanSnapshot> spanSnapshots;
 
+    /**
+     * List of spans.
+     *
+     * @return the value
+     **/
     public java.util.List<SpanSnapshot> getSpanSnapshots() {
         return spanSnapshots;
     }

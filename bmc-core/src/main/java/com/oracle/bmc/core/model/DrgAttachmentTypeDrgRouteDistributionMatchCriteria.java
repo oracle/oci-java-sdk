@@ -30,9 +30,21 @@ public final class DrgAttachmentTypeDrgRouteDistributionMatchCriteria
         extends DrgRouteDistributionMatchCriteria {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of the network resource to be included in this match. A match for a network type implies that all
+         * DRG attachments of that type insert routes into the table.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
         private AttachmentType attachmentType;
 
+        /**
+         * The type of the network resource to be included in this match. A match for a network type implies that all
+         * DRG attachments of that type insert routes into the table.
+         *
+         * @param attachmentType the value to set
+         * @return this builder
+         **/
         public Builder attachmentType(AttachmentType attachmentType) {
             this.attachmentType = attachmentType;
             this.__explicitlySet__.add("attachmentType");
@@ -135,6 +147,12 @@ public final class DrgAttachmentTypeDrgRouteDistributionMatchCriteria
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
     private final AttachmentType attachmentType;
 
+    /**
+     * The type of the network resource to be included in this match. A match for a network type implies that all
+     * DRG attachments of that type insert routes into the table.
+     *
+     * @return the value
+     **/
     public AttachmentType getAttachmentType() {
         return attachmentType;
     }

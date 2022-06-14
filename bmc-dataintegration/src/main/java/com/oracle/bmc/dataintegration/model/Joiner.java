@@ -132,10 +132,17 @@ public final class Joiner extends Operator {
             this.__explicitlySet__.add("opConfigValues");
             return this;
         }
-
+        /**
+         * joinType
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("joinType")
         private JoinType joinType;
 
+        /**
+         * joinType
+         * @param joinType the value to set
+         * @return this builder
+         **/
         public Builder joinType(JoinType joinType) {
             this.joinType = joinType;
             this.__explicitlySet__.add("joinType");
@@ -298,6 +305,10 @@ public final class Joiner extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("joinType")
     private final JoinType joinType;
 
+    /**
+     * joinType
+     * @return the value
+     **/
     public JoinType getJoinType() {
         return joinType;
     }

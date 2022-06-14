@@ -16,6 +16,13 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -28,6 +35,13 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcPreviousPage;
 
+    /**
+     * For list pagination. When this header appears in the response, previous pages
+     * of results exist. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcPreviousPage() {
         return opcPreviousPage;
     }
@@ -39,6 +53,12 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +69,10 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.logging.model.LogIncludedSearchSummaryCollection
             logIncludedSearchSummaryCollection;
 
+    /**
+     * The returned LogIncludedSearchSummaryCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.logging.model.LogIncludedSearchSummaryCollection
             getLogIncludedSearchSummaryCollection() {
         return logIncludedSearchSummaryCollection;
@@ -83,30 +107,78 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, previous pages
+         * of results exist. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcPreviousPage;
 
+        /**
+         * For list pagination. When this header appears in the response, previous pages
+         * of results exist. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcPreviousPage the value to set
+         * @return this builder
+         */
         public Builder opcPreviousPage(String opcPreviousPage) {
             this.opcPreviousPage = opcPreviousPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LogIncludedSearchSummaryCollection instance.
+         */
         private com.oracle.bmc.logging.model.LogIncludedSearchSummaryCollection
                 logIncludedSearchSummaryCollection;
 
+        /**
+         * The returned LogIncludedSearchSummaryCollection instance.
+         * @param logIncludedSearchSummaryCollection the value to set
+         * @return this builder
+         */
         public Builder logIncludedSearchSummaryCollection(
                 com.oracle.bmc.logging.model.LogIncludedSearchSummaryCollection
                         logIncludedSearchSummaryCollection) {
@@ -128,6 +200,10 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListLogIncludedSearchesResponse build() {
             return new ListLogIncludedSearchesResponse(
                     __httpStatusCode__,
@@ -138,6 +214,10 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

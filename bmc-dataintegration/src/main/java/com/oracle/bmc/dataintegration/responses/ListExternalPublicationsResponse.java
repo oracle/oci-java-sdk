@@ -15,6 +15,12 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
      */
     private String opcNextPage;
 
+    /**
+     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -35,6 +46,11 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
      */
     private String opcPrevPage;
 
+    /**
+     * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -45,6 +61,11 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
      */
     private Integer opcTotalItems;
 
+    /**
+     * Total items in the entire list.
+     *
+     * @return the value
+     */
     public Integer getOpcTotalItems() {
         return opcTotalItems;
     }
@@ -55,6 +76,10 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.dataintegration.model.ExternalPublicationSummaryCollection
             externalPublicationSummaryCollection;
 
+    /**
+     * The returned ExternalPublicationSummaryCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.dataintegration.model.ExternalPublicationSummaryCollection
             getExternalPublicationSummaryCollection() {
         return externalPublicationSummaryCollection;
@@ -92,37 +117,87 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * Total items in the entire list.
+         *
+         */
         private Integer opcTotalItems;
 
+        /**
+         * Total items in the entire list.
+         *
+         * @param opcTotalItems the value to set
+         * @return this builder
+         */
         public Builder opcTotalItems(Integer opcTotalItems) {
             this.opcTotalItems = opcTotalItems;
             return this;
         }
 
+        /**
+         * The returned ExternalPublicationSummaryCollection instance.
+         */
         private com.oracle.bmc.dataintegration.model.ExternalPublicationSummaryCollection
                 externalPublicationSummaryCollection;
 
+        /**
+         * The returned ExternalPublicationSummaryCollection instance.
+         * @param externalPublicationSummaryCollection the value to set
+         * @return this builder
+         */
         public Builder externalPublicationSummaryCollection(
                 com.oracle.bmc.dataintegration.model.ExternalPublicationSummaryCollection
                         externalPublicationSummaryCollection) {
@@ -145,6 +220,10 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListExternalPublicationsResponse build() {
             return new ListExternalPublicationsResponse(
                     __httpStatusCode__,
@@ -156,6 +235,10 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

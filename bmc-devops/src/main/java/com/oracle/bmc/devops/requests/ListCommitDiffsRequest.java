@@ -16,6 +16,9 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String repositoryId;
 
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -24,6 +27,9 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String baseVersion;
 
+    /**
+     * The commit or reference name to compare changes against.
+     */
     public String getBaseVersion() {
         return baseVersion;
     }
@@ -32,6 +38,9 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String targetVersion;
 
+    /**
+     * The commit or reference name where changes are coming from.
+     */
     public String getTargetVersion() {
         return targetVersion;
     }
@@ -40,6 +49,9 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Boolean isComparisonFromMergeBase;
 
+    /**
+     * Boolean value to indicate whether to use merge base or most recent revision.
+     */
     public Boolean getIsComparisonFromMergeBase() {
         return isComparisonFromMergeBase;
     }
@@ -48,6 +60,9 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -56,6 +71,9 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -64,6 +82,9 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -75,10 +96,14 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -86,10 +111,14 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The commit or reference name to compare changes against.
+         */
         private String baseVersion = null;
 
         /**
          * The commit or reference name to compare changes against.
+         * @param baseVersion the value to set
          * @return this builder instance
          */
         public Builder baseVersion(String baseVersion) {
@@ -97,10 +126,14 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The commit or reference name where changes are coming from.
+         */
         private String targetVersion = null;
 
         /**
          * The commit or reference name where changes are coming from.
+         * @param targetVersion the value to set
          * @return this builder instance
          */
         public Builder targetVersion(String targetVersion) {
@@ -108,10 +141,14 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Boolean value to indicate whether to use merge base or most recent revision.
+         */
         private Boolean isComparisonFromMergeBase = null;
 
         /**
          * Boolean value to indicate whether to use merge base or most recent revision.
+         * @param isComparisonFromMergeBase the value to set
          * @return this builder instance
          */
         public Builder isComparisonFromMergeBase(Boolean isComparisonFromMergeBase) {
@@ -119,10 +156,14 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -130,10 +171,14 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -141,10 +186,14 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -232,7 +281,8 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -245,6 +295,10 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

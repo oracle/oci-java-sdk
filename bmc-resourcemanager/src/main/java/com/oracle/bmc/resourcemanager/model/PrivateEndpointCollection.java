@@ -30,9 +30,17 @@ public final class PrivateEndpointCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of private endpoints.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PrivateEndpointSummary> items;
 
+        /**
+         * A list of private endpoints.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<PrivateEndpointSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class PrivateEndpointCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PrivateEndpointSummary> items;
 
+    /**
+     * A list of private endpoints.
+     * @return the value
+     **/
     public java.util.List<PrivateEndpointSummary> getItems() {
         return items;
     }

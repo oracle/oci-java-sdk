@@ -29,9 +29,17 @@ public final class ProxyUserCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of user resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ProxyUserSummary> items;
 
+        /**
+         * An array of user resources.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ProxyUserSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ProxyUserCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ProxyUserSummary> items;
 
+    /**
+     * An array of user resources.
+     * @return the value
+     **/
     public java.util.List<ProxyUserSummary> getItems() {
         return items;
     }

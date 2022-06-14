@@ -31,18 +31,37 @@ public final class UpdateObjectStoreBucket {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Namespace name of the object store bucket.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
+        /**
+         * Namespace name of the object store bucket.
+         *
+         * @param namespaceName the value to set
+         * @return this builder
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-
+        /**
+         * Bucket name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * Bucket name.
+         *
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
@@ -87,6 +106,11 @@ public final class UpdateObjectStoreBucket {
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
+    /**
+     * Namespace name of the object store bucket.
+     *
+     * @return the value
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -98,6 +122,11 @@ public final class UpdateObjectStoreBucket {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * Bucket name.
+     *
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }

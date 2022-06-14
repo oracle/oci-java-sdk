@@ -44,45 +44,89 @@ public final class PhaseOneConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates whether custom configuration is enabled for phase one options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseOneConfig")
         private Boolean isCustomPhaseOneConfig;
 
+        /**
+         * Indicates whether custom configuration is enabled for phase one options.
+         * @param isCustomPhaseOneConfig the value to set
+         * @return this builder
+         **/
         public Builder isCustomPhaseOneConfig(Boolean isCustomPhaseOneConfig) {
             this.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
             this.__explicitlySet__.add("isCustomPhaseOneConfig");
             return this;
         }
-
+        /**
+         * The custom authentication algorithm proposed during phase one tunnel negotiation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
         private AuthenticationAlgorithm authenticationAlgorithm;
 
+        /**
+         * The custom authentication algorithm proposed during phase one tunnel negotiation.
+         *
+         * @param authenticationAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder authenticationAlgorithm(AuthenticationAlgorithm authenticationAlgorithm) {
             this.authenticationAlgorithm = authenticationAlgorithm;
             this.__explicitlySet__.add("authenticationAlgorithm");
             return this;
         }
-
+        /**
+         * The custom encryption algorithm proposed during phase one tunnel negotiation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
         private EncryptionAlgorithm encryptionAlgorithm;
 
+        /**
+         * The custom encryption algorithm proposed during phase one tunnel negotiation.
+         *
+         * @param encryptionAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder encryptionAlgorithm(EncryptionAlgorithm encryptionAlgorithm) {
             this.encryptionAlgorithm = encryptionAlgorithm;
             this.__explicitlySet__.add("encryptionAlgorithm");
             return this;
         }
-
+        /**
+         * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diffieHelmanGroup")
         private DiffieHelmanGroup diffieHelmanGroup;
 
+        /**
+         * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+         *
+         * @param diffieHelmanGroup the value to set
+         * @return this builder
+         **/
         public Builder diffieHelmanGroup(DiffieHelmanGroup diffieHelmanGroup) {
             this.diffieHelmanGroup = diffieHelmanGroup;
             this.__explicitlySet__.add("diffieHelmanGroup");
             return this;
         }
-
+        /**
+         * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
         private Integer lifetimeInSeconds;
 
+        /**
+         * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
+         *
+         * @param lifetimeInSeconds the value to set
+         * @return this builder
+         **/
         public Builder lifetimeInSeconds(Integer lifetimeInSeconds) {
             this.lifetimeInSeconds = lifetimeInSeconds;
             this.__explicitlySet__.add("lifetimeInSeconds");
@@ -135,6 +179,10 @@ public final class PhaseOneConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseOneConfig")
     private final Boolean isCustomPhaseOneConfig;
 
+    /**
+     * Indicates whether custom configuration is enabled for phase one options.
+     * @return the value
+     **/
     public Boolean getIsCustomPhaseOneConfig() {
         return isCustomPhaseOneConfig;
     }
@@ -183,6 +231,11 @@ public final class PhaseOneConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
     private final AuthenticationAlgorithm authenticationAlgorithm;
 
+    /**
+     * The custom authentication algorithm proposed during phase one tunnel negotiation.
+     *
+     * @return the value
+     **/
     public AuthenticationAlgorithm getAuthenticationAlgorithm() {
         return authenticationAlgorithm;
     }
@@ -231,6 +284,11 @@ public final class PhaseOneConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     private final EncryptionAlgorithm encryptionAlgorithm;
 
+    /**
+     * The custom encryption algorithm proposed during phase one tunnel negotiation.
+     *
+     * @return the value
+     **/
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return encryptionAlgorithm;
     }
@@ -282,6 +340,11 @@ public final class PhaseOneConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("diffieHelmanGroup")
     private final DiffieHelmanGroup diffieHelmanGroup;
 
+    /**
+     * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+     *
+     * @return the value
+     **/
     public DiffieHelmanGroup getDiffieHelmanGroup() {
         return diffieHelmanGroup;
     }
@@ -293,6 +356,11 @@ public final class PhaseOneConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
     private final Integer lifetimeInSeconds;
 
+    /**
+     * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
+     *
+     * @return the value
+     **/
     public Integer getLifetimeInSeconds() {
         return lifetimeInSeconds;
     }

@@ -44,45 +44,91 @@ public final class UpdateBastionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The maximum amount of time that any session on the bastion can remain active.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxSessionTtlInSeconds")
         private Integer maxSessionTtlInSeconds;
 
+        /**
+         * The maximum amount of time that any session on the bastion can remain active.
+         * @param maxSessionTtlInSeconds the value to set
+         * @return this builder
+         **/
         public Builder maxSessionTtlInSeconds(Integer maxSessionTtlInSeconds) {
             this.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
             this.__explicitlySet__.add("maxSessionTtlInSeconds");
             return this;
         }
-
+        /**
+         * A list of IP addresses of the hosts that the bastion has access to. Not applicable to {@code standard} bastions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("staticJumpHostIpAddresses")
         private java.util.List<String> staticJumpHostIpAddresses;
 
+        /**
+         * A list of IP addresses of the hosts that the bastion has access to. Not applicable to {@code standard} bastions.
+         *
+         * @param staticJumpHostIpAddresses the value to set
+         * @return this builder
+         **/
         public Builder staticJumpHostIpAddresses(java.util.List<String> staticJumpHostIpAddresses) {
             this.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
             this.__explicitlySet__.add("staticJumpHostIpAddresses");
             return this;
         }
-
+        /**
+         * A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientCidrBlockAllowList")
         private java.util.List<String> clientCidrBlockAllowList;
 
+        /**
+         * A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
+         * @param clientCidrBlockAllowList the value to set
+         * @return this builder
+         **/
         public Builder clientCidrBlockAllowList(java.util.List<String> clientCidrBlockAllowList) {
             this.clientCidrBlockAllowList = clientCidrBlockAllowList;
             this.__explicitlySet__.add("clientCidrBlockAllowList");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -136,6 +182,10 @@ public final class UpdateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxSessionTtlInSeconds")
     private final Integer maxSessionTtlInSeconds;
 
+    /**
+     * The maximum amount of time that any session on the bastion can remain active.
+     * @return the value
+     **/
     public Integer getMaxSessionTtlInSeconds() {
         return maxSessionTtlInSeconds;
     }
@@ -147,6 +197,11 @@ public final class UpdateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("staticJumpHostIpAddresses")
     private final java.util.List<String> staticJumpHostIpAddresses;
 
+    /**
+     * A list of IP addresses of the hosts that the bastion has access to. Not applicable to {@code standard} bastions.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getStaticJumpHostIpAddresses() {
         return staticJumpHostIpAddresses;
     }
@@ -157,6 +212,10 @@ public final class UpdateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clientCidrBlockAllowList")
     private final java.util.List<String> clientCidrBlockAllowList;
 
+    /**
+     * A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
+     * @return the value
+     **/
     public java.util.List<String> getClientCidrBlockAllowList() {
         return clientCidrBlockAllowList;
     }
@@ -169,6 +228,12 @@ public final class UpdateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -181,6 +246,12 @@ public final class UpdateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

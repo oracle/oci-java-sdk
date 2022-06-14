@@ -50,63 +50,119 @@ public final class ResourceStatistics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         * @param usage the value to set
+         * @return this builder
+         **/
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
             return this;
         }
-
+        /**
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
+        /**
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         * @param capacity the value to set
+         * @return this builder
+         **/
         public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
             return this;
         }
-
+        /**
+         * The base allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baseCapacity")
         private Double baseCapacity;
 
+        /**
+         * The base allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         * @param baseCapacity the value to set
+         * @return this builder
+         **/
         public Builder baseCapacity(Double baseCapacity) {
             this.baseCapacity = baseCapacity;
             this.__explicitlySet__.add("baseCapacity");
             return this;
         }
-
+        /**
+         * Indicates if auto scaling feature is enabled or disabled on a database. It will be false for all metrics other than CPU.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
+        /**
+         * Indicates if auto scaling feature is enabled or disabled on a database. It will be false for all metrics other than CPU.
+         * @param isAutoScalingEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
-
+        /**
+         * Resource utilization in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
         private Double utilizationPercent;
 
+        /**
+         * Resource utilization in percentage
+         * @param utilizationPercent the value to set
+         * @return this builder
+         **/
         public Builder utilizationPercent(Double utilizationPercent) {
             this.utilizationPercent = utilizationPercent;
             this.__explicitlySet__.add("utilizationPercent");
             return this;
         }
-
+        /**
+         * Change in resource utilization in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
         private Double usageChangePercent;
 
+        /**
+         * Change in resource utilization in percentage
+         * @param usageChangePercent the value to set
+         * @return this builder
+         **/
         public Builder usageChangePercent(Double usageChangePercent) {
             this.usageChangePercent = usageChangePercent;
             this.__explicitlySet__.add("usageChangePercent");
             return this;
         }
-
+        /**
+         * Array of instance metrics
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceMetrics")
         private java.util.List<InstanceMetrics> instanceMetrics;
 
+        /**
+         * Array of instance metrics
+         * @param instanceMetrics the value to set
+         * @return this builder
+         **/
         public Builder instanceMetrics(java.util.List<InstanceMetrics> instanceMetrics) {
             this.instanceMetrics = instanceMetrics;
             this.__explicitlySet__.add("instanceMetrics");
@@ -164,6 +220,11 @@ public final class ResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
+    /**
+     * Total amount used of the resource metric type (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getUsage() {
         return usage;
     }
@@ -175,6 +236,11 @@ public final class ResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
+    /**
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getCapacity() {
         return capacity;
     }
@@ -186,6 +252,11 @@ public final class ResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("baseCapacity")
     private final Double baseCapacity;
 
+    /**
+     * The base allocated amount of the resource metric type  (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getBaseCapacity() {
         return baseCapacity;
     }
@@ -196,6 +267,10 @@ public final class ResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
+    /**
+     * Indicates if auto scaling feature is enabled or disabled on a database. It will be false for all metrics other than CPU.
+     * @return the value
+     **/
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
     }
@@ -206,6 +281,10 @@ public final class ResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
     private final Double utilizationPercent;
 
+    /**
+     * Resource utilization in percentage
+     * @return the value
+     **/
     public Double getUtilizationPercent() {
         return utilizationPercent;
     }
@@ -216,6 +295,10 @@ public final class ResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
     private final Double usageChangePercent;
 
+    /**
+     * Change in resource utilization in percentage
+     * @return the value
+     **/
     public Double getUsageChangePercent() {
         return usageChangePercent;
     }
@@ -226,6 +309,10 @@ public final class ResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceMetrics")
     private final java.util.List<InstanceMetrics> instanceMetrics;
 
+    /**
+     * Array of instance metrics
+     * @return the value
+     **/
     public java.util.List<InstanceMetrics> getInstanceMetrics() {
         return instanceMetrics;
     }

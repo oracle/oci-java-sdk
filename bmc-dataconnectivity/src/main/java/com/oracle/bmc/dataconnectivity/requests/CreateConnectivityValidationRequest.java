@@ -18,6 +18,9 @@ public class CreateConnectivityValidationRequest
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -27,6 +30,9 @@ public class CreateConnectivityValidationRequest
     private com.oracle.bmc.dataconnectivity.model.CreateConnectivityValidationDetails
             createConnectivityValidationDetails;
 
+    /**
+     * Request body parameters to trigger connectivity validations
+     */
     public com.oracle.bmc.dataconnectivity.model.CreateConnectivityValidationDetails
             getCreateConnectivityValidationDetails() {
         return createConnectivityValidationDetails;
@@ -39,6 +45,12 @@ public class CreateConnectivityValidationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +60,10 @@ public class CreateConnectivityValidationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -56,6 +72,9 @@ public class CreateConnectivityValidationRequest
      */
     private String endpointId;
 
+    /**
+     * Endpoint Id used for getDataAssetFullDetails.
+     */
     public String getEndpointId() {
         return endpointId;
     }
@@ -78,10 +97,14 @@ public class CreateConnectivityValidationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -89,11 +112,15 @@ public class CreateConnectivityValidationRequest
             return this;
         }
 
+        /**
+         * Request body parameters to trigger connectivity validations
+         */
         private com.oracle.bmc.dataconnectivity.model.CreateConnectivityValidationDetails
                 createConnectivityValidationDetails = null;
 
         /**
          * Request body parameters to trigger connectivity validations
+         * @param createConnectivityValidationDetails the value to set
          * @return this builder instance
          */
         public Builder createConnectivityValidationDetails(
@@ -103,6 +130,12 @@ public class CreateConnectivityValidationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -110,6 +143,7 @@ public class CreateConnectivityValidationRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -117,11 +151,16 @@ public class CreateConnectivityValidationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -129,10 +168,14 @@ public class CreateConnectivityValidationRequest
             return this;
         }
 
+        /**
+         * Endpoint Id used for getDataAssetFullDetails.
+         */
         private String endpointId = null;
 
         /**
          * Endpoint Id used for getDataAssetFullDetails.
+         * @param endpointId the value to set
          * @return this builder instance
          */
         public Builder endpointId(String endpointId) {
@@ -228,7 +271,8 @@ public class CreateConnectivityValidationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -239,6 +283,10 @@ public class CreateConnectivityValidationRequest
                 .endpointId(endpointId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

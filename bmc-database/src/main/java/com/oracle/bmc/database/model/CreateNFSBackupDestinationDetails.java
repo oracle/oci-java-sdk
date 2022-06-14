@@ -63,10 +63,21 @@ public final class CreateNFSBackupDestinationDetails extends CreateBackupDestina
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+         * This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
         private String localMountPointPath;
 
+        /**
+         * **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+         * This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
+         *
+         * @param localMountPointPath the value to set
+         * @return this builder
+         **/
         public Builder localMountPointPath(String localMountPointPath) {
             this.localMountPointPath = localMountPointPath;
             this.__explicitlySet__.add("localMountPointPath");
@@ -145,6 +156,12 @@ public final class CreateNFSBackupDestinationDetails extends CreateBackupDestina
     @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
     private final String localMountPointPath;
 
+    /**
+     * **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+     * This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
+     *
+     * @return the value
+     **/
     public String getLocalMountPointPath() {
         return localMountPointPath;
     }

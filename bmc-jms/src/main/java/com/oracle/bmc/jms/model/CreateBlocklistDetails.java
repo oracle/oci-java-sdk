@@ -31,6 +31,7 @@ public final class CreateBlocklistDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private BlocklistTarget target;
 
@@ -39,19 +40,33 @@ public final class CreateBlocklistDetails {
             this.__explicitlySet__.add("target");
             return this;
         }
-
+        /**
+         * The operation type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private OperationType operation;
 
+        /**
+         * The operation type
+         * @param operation the value to set
+         * @return this builder
+         **/
         public Builder operation(OperationType operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-
+        /**
+         * The reason for why the operation is blocklisted
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
+        /**
+         * The reason for why the operation is blocklisted
+         * @param reason the value to set
+         * @return this builder
+         **/
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
@@ -102,6 +117,10 @@ public final class CreateBlocklistDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final OperationType operation;
 
+    /**
+     * The operation type
+     * @return the value
+     **/
     public OperationType getOperation() {
         return operation;
     }
@@ -112,6 +131,10 @@ public final class CreateBlocklistDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
+    /**
+     * The reason for why the operation is blocklisted
+     * @return the value
+     **/
     public String getReason() {
         return reason;
     }

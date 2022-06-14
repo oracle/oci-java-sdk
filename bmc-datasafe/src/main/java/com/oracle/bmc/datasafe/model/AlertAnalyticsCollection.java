@@ -29,9 +29,17 @@ public final class AlertAnalyticsCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The aggregated data point items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AlertAggregationItems> items;
 
+        /**
+         * The aggregated data point items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AlertAggregationItems> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AlertAnalyticsCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AlertAggregationItems> items;
 
+    /**
+     * The aggregated data point items.
+     * @return the value
+     **/
     public java.util.List<AlertAggregationItems> getItems() {
         return items;
     }

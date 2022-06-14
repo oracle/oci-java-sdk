@@ -42,36 +42,83 @@ public final class HealthCheckResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
+         * load balancers that report health check status.
+         * <p>
+         * Example: {@code 10.0.0.7}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
         private String sourceIpAddress;
 
+        /**
+         * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
+         * load balancers that report health check status.
+         * <p>
+         * Example: {@code 10.0.0.7}
+         *
+         * @param sourceIpAddress the value to set
+         * @return this builder
+         **/
         public Builder sourceIpAddress(String sourceIpAddress) {
             this.sourceIpAddress = sourceIpAddress;
             this.__explicitlySet__.add("sourceIpAddress");
             return this;
         }
-
+        /**
+         * The date and time the data was retrieved, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2017-06-02T18:28:11+00:00}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The date and time the data was retrieved, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2017-06-02T18:28:11+00:00}
+         *
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The result of the most recent health check.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
         private HealthCheckStatus healthCheckStatus;
 
+        /**
+         * The result of the most recent health check.
+         *
+         * @param healthCheckStatus the value to set
+         * @return this builder
+         **/
         public Builder healthCheckStatus(HealthCheckStatus healthCheckStatus) {
             this.healthCheckStatus = healthCheckStatus;
             this.__explicitlySet__.add("healthCheckStatus");
@@ -119,6 +166,11 @@ public final class HealthCheckResult {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -133,6 +185,14 @@ public final class HealthCheckResult {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
     private final String sourceIpAddress;
 
+    /**
+     * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
+     * load balancers that report health check status.
+     * <p>
+     * Example: {@code 10.0.0.7}
+     *
+     * @return the value
+     **/
     public String getSourceIpAddress() {
         return sourceIpAddress;
     }
@@ -146,6 +206,13 @@ public final class HealthCheckResult {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The date and time the data was retrieved, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2017-06-02T18:28:11+00:00}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -212,6 +279,11 @@ public final class HealthCheckResult {
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
     private final HealthCheckStatus healthCheckStatus;
 
+    /**
+     * The result of the most recent health check.
+     *
+     * @return the value
+     **/
     public HealthCheckStatus getHealthCheckStatus() {
         return healthCheckStatus;
     }

@@ -53,6 +53,12 @@ public class InstanceConfigurationAttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -63,6 +69,10 @@ public class InstanceConfigurationAttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
     private final Boolean isReadOnly;
 
+    /**
+     * Whether the attachment should be created in read-only mode.
+     * @return the value
+     **/
     public Boolean getIsReadOnly() {
         return isReadOnly;
     }
@@ -73,6 +83,10 @@ public class InstanceConfigurationAttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("device")
     private final String device;
 
+    /**
+     * The device name.
+     * @return the value
+     **/
     public String getDevice() {
         return device;
     }
@@ -87,6 +101,14 @@ public class InstanceConfigurationAttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
     private final Boolean isShareable;
 
+    /**
+     * Whether the attachment should be created in shareable mode. If an attachment
+     * is created in shareable mode, then other instances can attach the same volume, provided
+     * that they also create their attachments in shareable mode. Only certain volume types can
+     * be attached in shareable mode. Defaults to false if not specified.
+     *
+     * @return the value
+     **/
     public Boolean getIsShareable() {
         return isShareable;
     }

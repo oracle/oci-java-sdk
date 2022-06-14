@@ -14,6 +14,11 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
      */
     private Long contentLength;
 
+    /**
+     * The content size of the body in bytes.
+     * @return the value
+     */
     public Long getContentLength() {
         return contentLength;
     }
@@ -43,6 +58,10 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
      */
     private String contentDisposition;
 
+    /**
+     * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+     * @return the value
+     */
     public String getContentDisposition() {
         return contentDisposition;
     }
@@ -57,6 +76,15 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
      */
     private String contentMd5;
 
+    /**
+     * The base-64 encoded MD5 hash of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+     * Unavailable for objects uploaded using multipart upload.
+     * If the {@code content-md5} header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+     * If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+     *
+     * @return the value
+     */
     public String getContentMd5() {
         return contentMd5;
     }
@@ -66,6 +94,10 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
      */
     private java.util.Date lastModified;
 
+    /**
+     * The artifact modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     * @return the value
+     */
     public java.util.Date getLastModified() {
         return lastModified;
     }
@@ -75,6 +107,10 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -116,50 +152,122 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The content size of the body in bytes.
+         */
         private Long contentLength;
 
+        /**
+         * The content size of the body in bytes.
+         * @param contentLength the value to set
+         * @return this builder
+         */
         public Builder contentLength(Long contentLength) {
             this.contentLength = contentLength;
             return this;
         }
 
+        /**
+         * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+         */
         private String contentDisposition;
 
+        /**
+         * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+         * @param contentDisposition the value to set
+         * @return this builder
+         */
         public Builder contentDisposition(String contentDisposition) {
             this.contentDisposition = contentDisposition;
             return this;
         }
 
+        /**
+         * The base-64 encoded MD5 hash of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+         * Unavailable for objects uploaded using multipart upload.
+         * If the {@code content-md5} header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+         * If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+         * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+         *
+         */
         private String contentMd5;
 
+        /**
+         * The base-64 encoded MD5 hash of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+         * Unavailable for objects uploaded using multipart upload.
+         * If the {@code content-md5} header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+         * If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+         * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+         *
+         * @param contentMd5 the value to set
+         * @return this builder
+         */
         public Builder contentMd5(String contentMd5) {
             this.contentMd5 = contentMd5;
             return this;
         }
 
+        /**
+         * The artifact modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+         */
         private java.util.Date lastModified;
 
+        /**
+         * The artifact modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+         * @param lastModified the value to set
+         * @return this builder
+         */
         public Builder lastModified(java.util.Date lastModified) {
             this.lastModified = lastModified;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -182,6 +290,10 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetModelArtifactContentResponse build() {
             return new GetModelArtifactContentResponse(
                     __httpStatusCode__,
@@ -195,6 +307,10 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

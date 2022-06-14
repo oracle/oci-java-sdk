@@ -32,27 +32,71 @@ public final class PrivateEndpointDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * If specified, the stream pool will be private and only accessible from inside that subnet.
+         * Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet.
+         * That value cannot be changed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * If specified, the stream pool will be private and only accessible from inside that subnet.
+         * Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet.
+         * That value cannot be changed.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The optional private IP you want to be associated with your private stream pool.
+         * That parameter can only be specified when the subnetId parameter is set. It cannot be changed.
+         * The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail.
+         * If not specified a random IP inside the subnet will be chosen.
+         * After the stream pool is created, a custom FQDN, pointing to this private IP, is created.
+         * The FQDN is then used to access the service instead of the private IP.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
+        /**
+         * The optional private IP you want to be associated with your private stream pool.
+         * That parameter can only be specified when the subnetId parameter is set. It cannot be changed.
+         * The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail.
+         * If not specified a random IP inside the subnet will be chosen.
+         * After the stream pool is created, a custom FQDN, pointing to this private IP, is created.
+         * The FQDN is then used to access the service instead of the private IP.
+         *
+         * @param privateEndpointIp the value to set
+         * @return this builder
+         **/
         public Builder privateEndpointIp(String privateEndpointIp) {
             this.privateEndpointIp = privateEndpointIp;
             this.__explicitlySet__.add("privateEndpointIp");
             return this;
         }
-
+        /**
+         * The optional list of network security groups to be used with the private endpoint of the stream pool.
+         * That value cannot be changed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * The optional list of network security groups to be used with the private endpoint of the stream pool.
+         * That value cannot be changed.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -101,6 +145,13 @@ public final class PrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * If specified, the stream pool will be private and only accessible from inside that subnet.
+     * Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet.
+     * That value cannot be changed.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -117,6 +168,16 @@ public final class PrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
     private final String privateEndpointIp;
 
+    /**
+     * The optional private IP you want to be associated with your private stream pool.
+     * That parameter can only be specified when the subnetId parameter is set. It cannot be changed.
+     * The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail.
+     * If not specified a random IP inside the subnet will be chosen.
+     * After the stream pool is created, a custom FQDN, pointing to this private IP, is created.
+     * The FQDN is then used to access the service instead of the private IP.
+     *
+     * @return the value
+     **/
     public String getPrivateEndpointIp() {
         return privateEndpointIp;
     }
@@ -129,6 +190,12 @@ public final class PrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * The optional list of network security groups to be used with the private endpoint of the stream pool.
+     * That value cannot be changed.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }

@@ -30,18 +30,33 @@ public final class ConditionMetadataType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name used to identify
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name used to identify
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * collection of Service type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceTypes")
         private java.util.List<ServiceTypeSummary> serviceTypes;
 
+        /**
+         * collection of Service type
+         * @param serviceTypes the value to set
+         * @return this builder
+         **/
         public Builder serviceTypes(java.util.List<ServiceTypeSummary> serviceTypes) {
             this.serviceTypes = serviceTypes;
             this.__explicitlySet__.add("serviceTypes");
@@ -83,6 +98,10 @@ public final class ConditionMetadataType {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name used to identify
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -93,6 +112,10 @@ public final class ConditionMetadataType {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceTypes")
     private final java.util.List<ServiceTypeSummary> serviceTypes;
 
+    /**
+     * collection of Service type
+     * @return the value
+     **/
     public java.util.List<ServiceTypeSummary> getServiceTypes() {
         return serviceTypes;
     }

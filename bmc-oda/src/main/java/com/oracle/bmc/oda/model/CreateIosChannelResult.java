@@ -118,37 +118,69 @@ public final class CreateIosChannelResult extends CreateChannelResult {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The secret key used to verify the authenticity of received messages.
+         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
         private String secretKey;
 
+        /**
+         * The secret key used to verify the authenticity of received messages.
+         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+         *
+         * @param secretKey the value to set
+         * @return this builder
+         **/
         public Builder secretKey(String secretKey) {
             this.secretKey = secretKey;
             this.__explicitlySet__.add("secretKey");
             return this;
         }
-
+        /**
+         * The maximum time until the token expires (in minutes).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokenExpirationTimeInMinutes")
         private Long maxTokenExpirationTimeInMinutes;
 
+        /**
+         * The maximum time until the token expires (in minutes).
+         * @param maxTokenExpirationTimeInMinutes the value to set
+         * @return this builder
+         **/
         public Builder maxTokenExpirationTimeInMinutes(Long maxTokenExpirationTimeInMinutes) {
             this.maxTokenExpirationTimeInMinutes = maxTokenExpirationTimeInMinutes;
             this.__explicitlySet__.add("maxTokenExpirationTimeInMinutes");
             return this;
         }
-
+        /**
+         * Whether client authentication is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isClientAuthenticationEnabled")
         private Boolean isClientAuthenticationEnabled;
 
+        /**
+         * Whether client authentication is enabled or not.
+         * @param isClientAuthenticationEnabled the value to set
+         * @return this builder
+         **/
         public Builder isClientAuthenticationEnabled(Boolean isClientAuthenticationEnabled) {
             this.isClientAuthenticationEnabled = isClientAuthenticationEnabled;
             this.__explicitlySet__.add("isClientAuthenticationEnabled");
             return this;
         }
-
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         * @param botId the value to set
+         * @return this builder
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -255,6 +287,12 @@ public final class CreateIosChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
     private final String secretKey;
 
+    /**
+     * The secret key used to verify the authenticity of received messages.
+     * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+     *
+     * @return the value
+     **/
     public String getSecretKey() {
         return secretKey;
     }
@@ -265,6 +303,10 @@ public final class CreateIosChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokenExpirationTimeInMinutes")
     private final Long maxTokenExpirationTimeInMinutes;
 
+    /**
+     * The maximum time until the token expires (in minutes).
+     * @return the value
+     **/
     public Long getMaxTokenExpirationTimeInMinutes() {
         return maxTokenExpirationTimeInMinutes;
     }
@@ -275,6 +317,10 @@ public final class CreateIosChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("isClientAuthenticationEnabled")
     private final Boolean isClientAuthenticationEnabled;
 
+    /**
+     * Whether client authentication is enabled or not.
+     * @return the value
+     **/
     public Boolean getIsClientAuthenticationEnabled() {
         return isClientAuthenticationEnabled;
     }
@@ -285,6 +331,10 @@ public final class CreateIosChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     * @return the value
+     **/
     public String getBotId() {
         return botId;
     }

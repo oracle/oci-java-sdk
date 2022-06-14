@@ -17,6 +17,10 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -25,6 +29,9 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String workRequestId;
 
+    /**
+     * Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -33,6 +40,9 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -41,6 +51,9 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -49,6 +62,9 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,6 +73,9 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Boolean shouldIncludeColumns;
 
+    /**
+     * Include columns in response
+     */
     public Boolean getShouldIncludeColumns() {
         return shouldIncludeColumns;
     }
@@ -65,6 +84,9 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Boolean shouldIncludeFields;
 
+    /**
+     * Include fields in response
+     */
     public Boolean getShouldIncludeFields() {
         return shouldIncludeFields;
     }
@@ -108,6 +130,9 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * Specifies the format for the returned results.
+     */
     public OutputMode getOutputMode() {
         return outputMode;
     }
@@ -119,11 +144,16 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -131,10 +161,14 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+         */
         private String workRequestId = null;
 
         /**
          * Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -142,10 +176,14 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -153,10 +191,14 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
+         */
         private Integer limit = null;
 
         /**
          * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -164,10 +206,14 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -175,10 +221,14 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Include columns in response
+         */
         private Boolean shouldIncludeColumns = null;
 
         /**
          * Include columns in response
+         * @param shouldIncludeColumns the value to set
          * @return this builder instance
          */
         public Builder shouldIncludeColumns(Boolean shouldIncludeColumns) {
@@ -186,10 +236,14 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Include fields in response
+         */
         private Boolean shouldIncludeFields = null;
 
         /**
          * Include fields in response
+         * @param shouldIncludeFields the value to set
          * @return this builder instance
          */
         public Builder shouldIncludeFields(Boolean shouldIncludeFields) {
@@ -197,10 +251,14 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Specifies the format for the returned results.
+         */
         private OutputMode outputMode = null;
 
         /**
          * Specifies the format for the returned results.
+         * @param outputMode the value to set
          * @return this builder instance
          */
         public Builder outputMode(OutputMode outputMode) {
@@ -290,7 +348,8 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -304,6 +363,10 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .outputMode(outputMode);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

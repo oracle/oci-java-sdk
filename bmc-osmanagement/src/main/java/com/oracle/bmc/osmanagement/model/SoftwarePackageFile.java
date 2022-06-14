@@ -47,54 +47,101 @@ public final class SoftwarePackageFile {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * file path
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * file path
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * type of the file
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * type of the file
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The date and time of the last modification to this file, as described
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
+        /**
+         * The date and time of the last modification to this file, as described
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         * @param timeModified the value to set
+         * @return this builder
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
             return this;
         }
-
+        /**
+         * checksum of the file
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksum")
         private String checksum;
 
+        /**
+         * checksum of the file
+         * @param checksum the value to set
+         * @return this builder
+         **/
         public Builder checksum(String checksum) {
             this.checksum = checksum;
             this.__explicitlySet__.add("checksum");
             return this;
         }
-
+        /**
+         * type of the checksum
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
         private String checksumType;
 
+        /**
+         * type of the checksum
+         * @param checksumType the value to set
+         * @return this builder
+         **/
         public Builder checksumType(String checksumType) {
             this.checksumType = checksumType;
             this.__explicitlySet__.add("checksumType");
             return this;
         }
-
+        /**
+         * size of the file in bytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
+        /**
+         * size of the file in bytes
+         * @param sizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
@@ -144,6 +191,10 @@ public final class SoftwarePackageFile {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * file path
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -154,6 +205,10 @@ public final class SoftwarePackageFile {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * type of the file
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -166,6 +221,12 @@ public final class SoftwarePackageFile {
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
+    /**
+     * The date and time of the last modification to this file, as described
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }
@@ -176,6 +237,10 @@ public final class SoftwarePackageFile {
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
     private final String checksum;
 
+    /**
+     * checksum of the file
+     * @return the value
+     **/
     public String getChecksum() {
         return checksum;
     }
@@ -186,6 +251,10 @@ public final class SoftwarePackageFile {
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
     private final String checksumType;
 
+    /**
+     * type of the checksum
+     * @return the value
+     **/
     public String getChecksumType() {
         return checksumType;
     }
@@ -196,6 +265,10 @@ public final class SoftwarePackageFile {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
+    /**
+     * size of the file in bytes
+     * @return the value
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }

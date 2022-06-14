@@ -124,19 +124,33 @@ public final class KernelCrashEvent extends Event {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * reason of the crash
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
+        /**
+         * reason of the crash
+         * @param reason the value to set
+         * @return this builder
+         **/
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
             return this;
         }
-
+        /**
+         * First occurrence time of the event
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
         private java.util.Date timeFirstOccurred;
 
+        /**
+         * First occurrence time of the event
+         * @param timeFirstOccurred the value to set
+         * @return this builder
+         **/
         public Builder timeFirstOccurred(java.util.Date timeFirstOccurred) {
             this.timeFirstOccurred = timeFirstOccurred;
             this.__explicitlySet__.add("timeFirstOccurred");
@@ -275,6 +289,10 @@ public final class KernelCrashEvent extends Event {
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
+    /**
+     * reason of the crash
+     * @return the value
+     **/
     public String getReason() {
         return reason;
     }
@@ -285,6 +303,10 @@ public final class KernelCrashEvent extends Event {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
     private final java.util.Date timeFirstOccurred;
 
+    /**
+     * First occurrence time of the event
+     * @return the value
+     **/
     public java.util.Date getTimeFirstOccurred() {
         return timeFirstOccurred;
     }

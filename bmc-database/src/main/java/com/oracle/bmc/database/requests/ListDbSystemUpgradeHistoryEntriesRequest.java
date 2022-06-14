@@ -17,6 +17,9 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
      */
     private String dbSystemId;
 
+    /**
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -25,6 +28,9 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -33,6 +39,9 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -77,6 +86,9 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -122,6 +134,10 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
         }
     };
 
+    /**
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -130,6 +146,9 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
      */
     private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.Action upgradeAction;
 
+    /**
+     * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+     */
     public com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.Action
             getUpgradeAction() {
         return upgradeAction;
@@ -140,6 +159,9 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
     private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.LifecycleState
             lifecycleState;
 
+    /**
+     * A filter to return only upgrade history entries that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -150,6 +172,10 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -161,10 +187,14 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbSystemId = null;
 
         /**
          * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbSystemId the value to set
          * @return this builder instance
          */
         public Builder dbSystemId(String dbSystemId) {
@@ -172,10 +202,14 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -183,10 +217,14 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -194,10 +232,14 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -205,11 +247,16 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -217,11 +264,15 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+         */
         private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.Action
                 upgradeAction = null;
 
         /**
          * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+         * @param upgradeAction the value to set
          * @return this builder instance
          */
         public Builder upgradeAction(
@@ -231,11 +282,15 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * A filter to return only upgrade history entries that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary.LifecycleState
                 lifecycleState = null;
 
         /**
          * A filter to return only upgrade history entries that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -245,11 +300,16 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -340,7 +400,8 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -354,6 +415,10 @@ public class ListDbSystemUpgradeHistoryEntriesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

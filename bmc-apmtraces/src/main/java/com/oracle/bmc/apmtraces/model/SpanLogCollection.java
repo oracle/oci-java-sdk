@@ -31,18 +31,37 @@ public final class SpanLogCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Timestamp at which the log is created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Timestamp at which the log is created.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * List of logs associated with the span at the given timestamp.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spanLogs")
         private java.util.List<SpanLog> spanLogs;
 
+        /**
+         * List of logs associated with the span at the given timestamp.
+         *
+         * @param spanLogs the value to set
+         * @return this builder
+         **/
         public Builder spanLogs(java.util.List<SpanLog> spanLogs) {
             this.spanLogs = spanLogs;
             this.__explicitlySet__.add("spanLogs");
@@ -85,6 +104,11 @@ public final class SpanLogCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Timestamp at which the log is created.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -96,6 +120,11 @@ public final class SpanLogCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("spanLogs")
     private final java.util.List<SpanLog> spanLogs;
 
+    /**
+     * List of logs associated with the span at the given timestamp.
+     *
+     * @return the value
+     **/
     public java.util.List<SpanLog> getSpanLogs() {
         return spanLogs;
     }

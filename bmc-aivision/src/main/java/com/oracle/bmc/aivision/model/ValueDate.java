@@ -60,10 +60,17 @@ public final class ValueDate extends FieldValue {
             this.__explicitlySet__.add("wordIndexes");
             return this;
         }
-
+        /**
+         * The date field value as yyyy-mm-dd.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private java.util.Date value;
 
+        /**
+         * The date field value as yyyy-mm-dd.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(java.util.Date value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -122,6 +129,10 @@ public final class ValueDate extends FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final java.util.Date value;
 
+    /**
+     * The date field value as yyyy-mm-dd.
+     * @return the value
+     **/
     public java.util.Date getValue() {
         return value;
     }

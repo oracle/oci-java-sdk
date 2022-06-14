@@ -29,18 +29,39 @@ public final class ShapeConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of OCPUs used for the driver or executors.
+         * See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private java.math.BigDecimal ocpus;
 
+        /**
+         * The total number of OCPUs used for the driver or executors.
+         * See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         *
+         * @param ocpus the value to set
+         * @return this builder
+         **/
         public Builder ocpus(java.math.BigDecimal ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-
+        /**
+         * The amount of memory used for the driver or executors.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private java.math.BigDecimal memoryInGBs;
 
+        /**
+         * The amount of memory used for the driver or executors.
+         *
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(java.math.BigDecimal memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
@@ -84,6 +105,12 @@ public final class ShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final java.math.BigDecimal ocpus;
 
+    /**
+     * The total number of OCPUs used for the driver or executors.
+     * See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getOcpus() {
         return ocpus;
     }
@@ -95,6 +122,11 @@ public final class ShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final java.math.BigDecimal memoryInGBs;
 
+    /**
+     * The amount of memory used for the driver or executors.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getMemoryInGBs() {
         return memoryInGBs;
     }

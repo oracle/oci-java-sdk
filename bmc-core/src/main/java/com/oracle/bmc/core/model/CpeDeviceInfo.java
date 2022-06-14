@@ -28,18 +28,33 @@ public final class CpeDeviceInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The vendor that makes the CPE device.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendor")
         private String vendor;
 
+        /**
+         * The vendor that makes the CPE device.
+         * @param vendor the value to set
+         * @return this builder
+         **/
         public Builder vendor(String vendor) {
             this.vendor = vendor;
             this.__explicitlySet__.add("vendor");
             return this;
         }
-
+        /**
+         * The platform or software version of the CPE device.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformSoftwareVersion")
         private String platformSoftwareVersion;
 
+        /**
+         * The platform or software version of the CPE device.
+         * @param platformSoftwareVersion the value to set
+         * @return this builder
+         **/
         public Builder platformSoftwareVersion(String platformSoftwareVersion) {
             this.platformSoftwareVersion = platformSoftwareVersion;
             this.__explicitlySet__.add("platformSoftwareVersion");
@@ -82,6 +97,10 @@ public final class CpeDeviceInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("vendor")
     private final String vendor;
 
+    /**
+     * The vendor that makes the CPE device.
+     * @return the value
+     **/
     public String getVendor() {
         return vendor;
     }
@@ -92,6 +111,10 @@ public final class CpeDeviceInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("platformSoftwareVersion")
     private final String platformSoftwareVersion;
 
+    /**
+     * The platform or software version of the CPE device.
+     * @return the value
+     **/
     public String getPlatformSoftwareVersion() {
         return platformSoftwareVersion;
     }

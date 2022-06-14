@@ -14,6 +14,11 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.core.model.PrivateIp privateIp;
 
+    /**
+     * The returned PrivateIp instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.PrivateIp getPrivateIp() {
         return privateIp;
     }
@@ -58,22 +73,52 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned PrivateIp instance.
+         */
         private com.oracle.bmc.core.model.PrivateIp privateIp;
 
+        /**
+         * The returned PrivateIp instance.
+         * @param privateIp the value to set
+         * @return this builder
+         */
         public Builder privateIp(com.oracle.bmc.core.model.PrivateIp privateIp) {
             this.privateIp = privateIp;
             return this;
@@ -92,11 +137,19 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdatePrivateIpResponse build() {
             return new UpdatePrivateIpResponse(__httpStatusCode__, etag, opcRequestId, privateIp);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

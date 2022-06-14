@@ -18,6 +18,9 @@ public class ChangeTsigKeyCompartmentRequest
      */
     private String tsigKeyId;
 
+    /**
+     * The OCID of the target TSIG key.
+     */
     public String getTsigKeyId() {
         return tsigKeyId;
     }
@@ -27,6 +30,9 @@ public class ChangeTsigKeyCompartmentRequest
     private com.oracle.bmc.dns.model.ChangeTsigKeyCompartmentDetails
             changeTsigKeyCompartmentDetails;
 
+    /**
+     * Details for moving a TSIG key into a different compartment.
+     */
     public com.oracle.bmc.dns.model.ChangeTsigKeyCompartmentDetails
             getChangeTsigKeyCompartmentDetails() {
         return changeTsigKeyCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeTsigKeyCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * The {@code If-Match} header field makes the request method conditional on the
+     * existence of at least one current representation of the target resource,
+     * when the field-value is {@code *}, or having a current representation of the
+     * target resource that has an entity-tag matching a member of the list of
+     * entity-tags provided in the field-value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -55,6 +69,15 @@ public class ChangeTsigKeyCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations (for example, if a resource has been
+     * deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -66,6 +89,12 @@ public class ChangeTsigKeyCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -75,6 +104,10 @@ public class ChangeTsigKeyCompartmentRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -97,10 +130,14 @@ public class ChangeTsigKeyCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target TSIG key.
+         */
         private String tsigKeyId = null;
 
         /**
          * The OCID of the target TSIG key.
+         * @param tsigKeyId the value to set
          * @return this builder instance
          */
         public Builder tsigKeyId(String tsigKeyId) {
@@ -108,11 +145,15 @@ public class ChangeTsigKeyCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for moving a TSIG key into a different compartment.
+         */
         private com.oracle.bmc.dns.model.ChangeTsigKeyCompartmentDetails
                 changeTsigKeyCompartmentDetails = null;
 
         /**
          * Details for moving a TSIG key into a different compartment.
+         * @param changeTsigKeyCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeTsigKeyCompartmentDetails(
@@ -122,6 +163,14 @@ public class ChangeTsigKeyCompartmentRequest
             return this;
         }
 
+        /**
+         * The {@code If-Match} header field makes the request method conditional on the
+         * existence of at least one current representation of the target resource,
+         * when the field-value is {@code *}, or having a current representation of the
+         * target resource that has an entity-tag matching a member of the list of
+         * entity-tags provided in the field-value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -131,6 +180,7 @@ public class ChangeTsigKeyCompartmentRequest
          * target resource that has an entity-tag matching a member of the list of
          * entity-tags provided in the field-value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -138,6 +188,15 @@ public class ChangeTsigKeyCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been
+         * deleted and purged from the system, then a retry of the original creation
+         * request may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -148,6 +207,7 @@ public class ChangeTsigKeyCompartmentRequest
          * deleted and purged from the system, then a retry of the original creation
          * request may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -155,6 +215,12 @@ public class ChangeTsigKeyCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -162,6 +228,7 @@ public class ChangeTsigKeyCompartmentRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -169,11 +236,16 @@ public class ChangeTsigKeyCompartmentRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -270,7 +342,8 @@ public class ChangeTsigKeyCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -282,6 +355,10 @@ public class ChangeTsigKeyCompartmentRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

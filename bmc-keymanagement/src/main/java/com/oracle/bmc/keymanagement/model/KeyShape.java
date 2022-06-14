@@ -29,27 +29,57 @@ public final class KeyShape {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The algorithm used by a key's key versions to encrypt or decrypt.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private Algorithm algorithm;
 
+        /**
+         * The algorithm used by a key's key versions to encrypt or decrypt.
+         * @param algorithm the value to set
+         * @return this builder
+         **/
         public Builder algorithm(Algorithm algorithm) {
             this.algorithm = algorithm;
             this.__explicitlySet__.add("algorithm");
             return this;
         }
-
+        /**
+         * The length of the key in bytes, expressed as an integer. Supported values include the following:
+         *   - AES: 16, 24, or 32
+         *   - RSA: 256, 384, or 512
+         *   - ECDSA: 32, 48, or 66
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
+        /**
+         * The length of the key in bytes, expressed as an integer. Supported values include the following:
+         *   - AES: 16, 24, or 32
+         *   - RSA: 256, 384, or 512
+         *   - ECDSA: 32, 48, or 66
+         *
+         * @param length the value to set
+         * @return this builder
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-
+        /**
+         * Supported curve IDs for ECDSA keys.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("curveId")
         private CurveId curveId;
 
+        /**
+         * Supported curve IDs for ECDSA keys.
+         * @param curveId the value to set
+         * @return this builder
+         **/
         public Builder curveId(CurveId curveId) {
             this.curveId = curveId;
             this.__explicitlySet__.add("curveId");
@@ -141,6 +171,10 @@ public final class KeyShape {
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     private final Algorithm algorithm;
 
+    /**
+     * The algorithm used by a key's key versions to encrypt or decrypt.
+     * @return the value
+     **/
     public Algorithm getAlgorithm() {
         return algorithm;
     }
@@ -155,6 +189,14 @@ public final class KeyShape {
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
+    /**
+     * The length of the key in bytes, expressed as an integer. Supported values include the following:
+     *   - AES: 16, 24, or 32
+     *   - RSA: 256, 384, or 512
+     *   - ECDSA: 32, 48, or 66
+     *
+     * @return the value
+     **/
     public Integer getLength() {
         return length;
     }
@@ -214,6 +256,10 @@ public final class KeyShape {
     @com.fasterxml.jackson.annotation.JsonProperty("curveId")
     private final CurveId curveId;
 
+    /**
+     * Supported curve IDs for ECDSA keys.
+     * @return the value
+     **/
     public CurveId getCurveId() {
         return curveId;
     }

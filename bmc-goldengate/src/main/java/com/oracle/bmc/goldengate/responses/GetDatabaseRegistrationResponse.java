@@ -14,6 +14,11 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
+    /**
+     * The returned DatabaseRegistration instance.
+     * @return the value
+     */
     public com.oracle.bmc.goldengate.model.DatabaseRegistration getDatabaseRegistration() {
         return databaseRegistration;
     }
@@ -62,22 +76,50 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DatabaseRegistration instance.
+         */
         private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
+        /**
+         * The returned DatabaseRegistration instance.
+         * @param databaseRegistration the value to set
+         * @return this builder
+         */
         public Builder databaseRegistration(
                 com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration) {
             this.databaseRegistration = databaseRegistration;
@@ -97,12 +139,20 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetDatabaseRegistrationResponse build() {
             return new GetDatabaseRegistrationResponse(
                     __httpStatusCode__, etag, opcRequestId, databaseRegistration);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

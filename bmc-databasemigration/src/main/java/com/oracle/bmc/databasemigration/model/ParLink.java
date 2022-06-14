@@ -28,9 +28,19 @@ public final class ParLink {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Pre-Authenticated Request URI.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parLink")
         private String parLink;
 
+        /**
+         * Pre-Authenticated Request URI.
+         *
+         * @param parLink the value to set
+         * @return this builder
+         **/
         public Builder parLink(String parLink) {
             this.parLink = parLink;
             this.__explicitlySet__.add("parLink");
@@ -73,6 +83,11 @@ public final class ParLink {
     @com.fasterxml.jackson.annotation.JsonProperty("parLink")
     private final String parLink;
 
+    /**
+     * Pre-Authenticated Request URI.
+     *
+     * @return the value
+     **/
     public String getParLink() {
         return parLink;
     }

@@ -59,81 +59,147 @@ public final class VmClusterUpdate {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Details of the maintenance update package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Details of the maintenance update package.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The update action performed most recently using this maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
         private LastAction lastAction;
 
+        /**
+         * The update action performed most recently using this maintenance update.
+         * @param lastAction the value to set
+         * @return this builder
+         **/
         public Builder lastAction(LastAction lastAction) {
             this.lastAction = lastAction;
             this.__explicitlySet__.add("lastAction");
             return this;
         }
-
+        /**
+         * The possible actions that can be performed using this maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
         private java.util.List<AvailableActions> availableActions;
 
+        /**
+         * The possible actions that can be performed using this maintenance update.
+         * @param availableActions the value to set
+         * @return this builder
+         **/
         public Builder availableActions(java.util.List<AvailableActions> availableActions) {
             this.availableActions = availableActions;
             this.__explicitlySet__.add("availableActions");
             return this;
         }
-
+        /**
+         * The type of VM cluster maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateType updateType;
 
+        /**
+         * The type of VM cluster maintenance update.
+         * @param updateType the value to set
+         * @return this builder
+         **/
         public Builder updateType(UpdateType updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-
+        /**
+         * Descriptive text providing additional details about the lifecycle state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Descriptive text providing additional details about the lifecycle state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The current state of the maintenance update. Dependent on value of {@code lastAction}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the maintenance update. Dependent on value of {@code lastAction}.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the maintenance update was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
+        /**
+         * The date and time the maintenance update was released.
+         * @param timeReleased the value to set
+         * @return this builder
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-
+        /**
+         * The version of the maintenance update package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of the maintenance update package.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -194,6 +260,10 @@ public final class VmClusterUpdate {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -204,6 +274,10 @@ public final class VmClusterUpdate {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Details of the maintenance update package.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -263,6 +337,10 @@ public final class VmClusterUpdate {
     @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
     private final LastAction lastAction;
 
+    /**
+     * The update action performed most recently using this maintenance update.
+     * @return the value
+     **/
     public LastAction getLastAction() {
         return lastAction;
     }
@@ -321,6 +399,10 @@ public final class VmClusterUpdate {
     @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
     private final java.util.List<AvailableActions> availableActions;
 
+    /**
+     * The possible actions that can be performed using this maintenance update.
+     * @return the value
+     **/
     public java.util.List<AvailableActions> getAvailableActions() {
         return availableActions;
     }
@@ -380,6 +462,10 @@ public final class VmClusterUpdate {
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateType updateType;
 
+    /**
+     * The type of VM cluster maintenance update.
+     * @return the value
+     **/
     public UpdateType getUpdateType() {
         return updateType;
     }
@@ -391,6 +477,11 @@ public final class VmClusterUpdate {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Descriptive text providing additional details about the lifecycle state.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -451,6 +542,10 @@ public final class VmClusterUpdate {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the maintenance update. Dependent on value of {@code lastAction}.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -461,6 +556,10 @@ public final class VmClusterUpdate {
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
+    /**
+     * The date and time the maintenance update was released.
+     * @return the value
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
@@ -471,6 +570,10 @@ public final class VmClusterUpdate {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of the maintenance update package.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

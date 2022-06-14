@@ -31,27 +31,93 @@ public final class UpdateExportSetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My export set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My export set}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Controls the maximum {@code tbytes}, {@code fbytes}, and {@code abytes}
+         * values reported by {@code NFS FSSTAT} calls through any associated
+         * mount targets. This is an advanced feature. For most
+         * applications, use the default value. The
+         * {@code tbytes} value reported by {@code FSSTAT} will be
+         * {@code maxFsStatBytes}. The value of {@code fbytes} and {@code abytes} will be
+         * {@code maxFsStatBytes} minus the metered size of the file
+         * system. If the metered size is larger than {@code maxFsStatBytes},
+         * then {@code fbytes} and {@code abytes} will both be '0'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatBytes")
         private Long maxFsStatBytes;
 
+        /**
+         * Controls the maximum {@code tbytes}, {@code fbytes}, and {@code abytes}
+         * values reported by {@code NFS FSSTAT} calls through any associated
+         * mount targets. This is an advanced feature. For most
+         * applications, use the default value. The
+         * {@code tbytes} value reported by {@code FSSTAT} will be
+         * {@code maxFsStatBytes}. The value of {@code fbytes} and {@code abytes} will be
+         * {@code maxFsStatBytes} minus the metered size of the file
+         * system. If the metered size is larger than {@code maxFsStatBytes},
+         * then {@code fbytes} and {@code abytes} will both be '0'.
+         *
+         * @param maxFsStatBytes the value to set
+         * @return this builder
+         **/
         public Builder maxFsStatBytes(Long maxFsStatBytes) {
             this.maxFsStatBytes = maxFsStatBytes;
             this.__explicitlySet__.add("maxFsStatBytes");
             return this;
         }
-
+        /**
+         * Controls the maximum {@code ffiles}, {@code ffiles}, and {@code afiles}
+         * values reported by {@code NFS FSSTAT} calls through any associated
+         * mount targets. This is an advanced feature. For most
+         * applications, use the default value. The
+         * {@code tfiles} value reported by {@code FSSTAT} will be
+         * {@code maxFsStatFiles}. The value of {@code ffiles} and {@code afiles} will be
+         * {@code maxFsStatFiles} minus the metered size of the file
+         * system. If the metered size is larger than {@code maxFsStatFiles},
+         * then {@code ffiles} and {@code afiles} will both be '0'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatFiles")
         private Long maxFsStatFiles;
 
+        /**
+         * Controls the maximum {@code ffiles}, {@code ffiles}, and {@code afiles}
+         * values reported by {@code NFS FSSTAT} calls through any associated
+         * mount targets. This is an advanced feature. For most
+         * applications, use the default value. The
+         * {@code tfiles} value reported by {@code FSSTAT} will be
+         * {@code maxFsStatFiles}. The value of {@code ffiles} and {@code afiles} will be
+         * {@code maxFsStatFiles} minus the metered size of the file
+         * system. If the metered size is larger than {@code maxFsStatFiles},
+         * then {@code ffiles} and {@code afiles} will both be '0'.
+         *
+         * @param maxFsStatFiles the value to set
+         * @return this builder
+         **/
         public Builder maxFsStatFiles(Long maxFsStatFiles) {
             this.maxFsStatFiles = maxFsStatFiles;
             this.__explicitlySet__.add("maxFsStatFiles");
@@ -101,6 +167,14 @@ public final class UpdateExportSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My export set}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -120,6 +194,19 @@ public final class UpdateExportSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatBytes")
     private final Long maxFsStatBytes;
 
+    /**
+     * Controls the maximum {@code tbytes}, {@code fbytes}, and {@code abytes}
+     * values reported by {@code NFS FSSTAT} calls through any associated
+     * mount targets. This is an advanced feature. For most
+     * applications, use the default value. The
+     * {@code tbytes} value reported by {@code FSSTAT} will be
+     * {@code maxFsStatBytes}. The value of {@code fbytes} and {@code abytes} will be
+     * {@code maxFsStatBytes} minus the metered size of the file
+     * system. If the metered size is larger than {@code maxFsStatBytes},
+     * then {@code fbytes} and {@code abytes} will both be '0'.
+     *
+     * @return the value
+     **/
     public Long getMaxFsStatBytes() {
         return maxFsStatBytes;
     }
@@ -139,6 +226,19 @@ public final class UpdateExportSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatFiles")
     private final Long maxFsStatFiles;
 
+    /**
+     * Controls the maximum {@code ffiles}, {@code ffiles}, and {@code afiles}
+     * values reported by {@code NFS FSSTAT} calls through any associated
+     * mount targets. This is an advanced feature. For most
+     * applications, use the default value. The
+     * {@code tfiles} value reported by {@code FSSTAT} will be
+     * {@code maxFsStatFiles}. The value of {@code ffiles} and {@code afiles} will be
+     * {@code maxFsStatFiles} minus the metered size of the file
+     * system. If the metered size is larger than {@code maxFsStatFiles},
+     * then {@code ffiles} and {@code afiles} will both be '0'.
+     *
+     * @return the value
+     **/
     public Long getMaxFsStatFiles() {
         return maxFsStatFiles;
     }

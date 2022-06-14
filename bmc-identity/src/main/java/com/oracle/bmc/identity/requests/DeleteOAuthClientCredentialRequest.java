@@ -17,6 +17,9 @@ public class DeleteOAuthClientCredentialRequest
      */
     private String userId;
 
+    /**
+     * The OCID of the user.
+     */
     public String getUserId() {
         return userId;
     }
@@ -25,6 +28,9 @@ public class DeleteOAuthClientCredentialRequest
      */
     private String oauth2ClientCredentialId;
 
+    /**
+     * The ID of the Oauth credential.
+     */
     public String getOauth2ClientCredentialId() {
         return oauth2ClientCredentialId;
     }
@@ -36,6 +42,12 @@ public class DeleteOAuthClientCredentialRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,10 +59,14 @@ public class DeleteOAuthClientCredentialRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the user.
+         */
         private String userId = null;
 
         /**
          * The OCID of the user.
+         * @param userId the value to set
          * @return this builder instance
          */
         public Builder userId(String userId) {
@@ -58,10 +74,14 @@ public class DeleteOAuthClientCredentialRequest
             return this;
         }
 
+        /**
+         * The ID of the Oauth credential.
+         */
         private String oauth2ClientCredentialId = null;
 
         /**
          * The ID of the Oauth credential.
+         * @param oauth2ClientCredentialId the value to set
          * @return this builder instance
          */
         public Builder oauth2ClientCredentialId(String oauth2ClientCredentialId) {
@@ -69,6 +89,12 @@ public class DeleteOAuthClientCredentialRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -76,6 +102,7 @@ public class DeleteOAuthClientCredentialRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -155,7 +182,8 @@ public class DeleteOAuthClientCredentialRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -164,6 +192,10 @@ public class DeleteOAuthClientCredentialRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

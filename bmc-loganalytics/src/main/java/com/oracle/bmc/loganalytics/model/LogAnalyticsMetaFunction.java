@@ -50,64 +50,114 @@ public final class LogAnalyticsMetaFunction {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of meta function arguments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionArgument")
         private java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument;
 
+        /**
+         * An array of meta function arguments.
+         * @param metaFunctionArgument the value to set
+         * @return this builder
+         **/
         public Builder metaFunctionArgument(
                 java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument) {
             this.metaFunctionArgument = metaFunctionArgument;
             this.__explicitlySet__.add("metaFunctionArgument");
             return this;
         }
-
+        /**
+         * The component.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("component")
         private String component;
 
+        /**
+         * The component.
+         * @param component the value to set
+         * @return this builder
+         **/
         public Builder component(String component) {
             this.component = component;
             this.__explicitlySet__.add("component");
             return this;
         }
-
+        /**
+         * The description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The edit version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
+        /**
+         * The edit version.
+         * @param editVersion the value to set
+         * @return this builder
+         **/
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-
+        /**
+         * The meta function unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionId")
         private Long metaFunctionId;
 
+        /**
+         * The meta function unique identifier.
+         * @param metaFunctionId the value to set
+         * @return this builder
+         **/
         public Builder metaFunctionId(Long metaFunctionId) {
             this.metaFunctionId = metaFunctionId;
             this.__explicitlySet__.add("metaFunctionId");
             return this;
         }
-
+        /**
+         * The java class name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("javaClassName")
         private String javaClassName;
 
+        /**
+         * The java class name.
+         * @param javaClassName the value to set
+         * @return this builder
+         **/
         public Builder javaClassName(String javaClassName) {
             this.javaClassName = javaClassName;
             this.__explicitlySet__.add("javaClassName");
             return this;
         }
-
+        /**
+         * The meta function name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The meta function name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -164,6 +214,10 @@ public final class LogAnalyticsMetaFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionArgument")
     private final java.util.List<LogAnalyticsMetaFunctionArgument> metaFunctionArgument;
 
+    /**
+     * An array of meta function arguments.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsMetaFunctionArgument> getMetaFunctionArgument() {
         return metaFunctionArgument;
     }
@@ -174,6 +228,10 @@ public final class LogAnalyticsMetaFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("component")
     private final String component;
 
+    /**
+     * The component.
+     * @return the value
+     **/
     public String getComponent() {
         return component;
     }
@@ -184,6 +242,10 @@ public final class LogAnalyticsMetaFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -194,6 +256,10 @@ public final class LogAnalyticsMetaFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
+    /**
+     * The edit version.
+     * @return the value
+     **/
     public Long getEditVersion() {
         return editVersion;
     }
@@ -204,6 +270,10 @@ public final class LogAnalyticsMetaFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("metaFunctionId")
     private final Long metaFunctionId;
 
+    /**
+     * The meta function unique identifier.
+     * @return the value
+     **/
     public Long getMetaFunctionId() {
         return metaFunctionId;
     }
@@ -214,6 +284,10 @@ public final class LogAnalyticsMetaFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("javaClassName")
     private final String javaClassName;
 
+    /**
+     * The java class name.
+     * @return the value
+     **/
     public String getJavaClassName() {
         return javaClassName;
     }
@@ -224,6 +298,10 @@ public final class LogAnalyticsMetaFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The meta function name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

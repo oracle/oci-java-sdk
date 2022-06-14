@@ -18,6 +18,9 @@ public class DownloadMaskingLogRequest
      */
     private String maskingPolicyId;
 
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -26,6 +29,9 @@ public class DownloadMaskingLogRequest
      */
     private com.oracle.bmc.datasafe.model.DownloadMaskingLogDetails downloadMaskingLogDetails;
 
+    /**
+     * Details to download masking log.
+     */
     public com.oracle.bmc.datasafe.model.DownloadMaskingLogDetails getDownloadMaskingLogDetails() {
         return downloadMaskingLogDetails;
     }
@@ -34,6 +40,9 @@ public class DownloadMaskingLogRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -56,10 +65,14 @@ public class DownloadMaskingLogRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -67,11 +80,15 @@ public class DownloadMaskingLogRequest
             return this;
         }
 
+        /**
+         * Details to download masking log.
+         */
         private com.oracle.bmc.datasafe.model.DownloadMaskingLogDetails downloadMaskingLogDetails =
                 null;
 
         /**
          * Details to download masking log.
+         * @param downloadMaskingLogDetails the value to set
          * @return this builder instance
          */
         public Builder downloadMaskingLogDetails(
@@ -80,10 +97,14 @@ public class DownloadMaskingLogRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -174,7 +195,8 @@ public class DownloadMaskingLogRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -183,6 +205,10 @@ public class DownloadMaskingLogRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

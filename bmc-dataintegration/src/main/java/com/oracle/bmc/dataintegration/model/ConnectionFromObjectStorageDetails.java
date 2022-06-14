@@ -135,37 +135,65 @@ public final class ConnectionFromObjectStorageDetails extends ConnectionDetails 
             this.__explicitlySet__.add("metadata");
             return this;
         }
-
+        /**
+         * The credential file content from an Oracle Object Storage wallet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
         private String credentialFileContent;
 
+        /**
+         * The credential file content from an Oracle Object Storage wallet.
+         * @param credentialFileContent the value to set
+         * @return this builder
+         **/
         public Builder credentialFileContent(String credentialFileContent) {
             this.credentialFileContent = credentialFileContent;
             this.__explicitlySet__.add("credentialFileContent");
             return this;
         }
-
+        /**
+         * The OCI user OCID for the user to connect to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
+        /**
+         * The OCI user OCID for the user to connect to.
+         * @param userId the value to set
+         * @return this builder
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-
+        /**
+         * The fingerprint for the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fingerPrint")
         private String fingerPrint;
 
+        /**
+         * The fingerprint for the user.
+         * @param fingerPrint the value to set
+         * @return this builder
+         **/
         public Builder fingerPrint(String fingerPrint) {
             this.fingerPrint = fingerPrint;
             this.__explicitlySet__.add("fingerPrint");
             return this;
         }
-
+        /**
+         * The passphrase for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passPhrase")
         private String passPhrase;
 
+        /**
+         * The passphrase for the connection.
+         * @param passPhrase the value to set
+         * @return this builder
+         **/
         public Builder passPhrase(String passPhrase) {
             this.passPhrase = passPhrase;
             this.__explicitlySet__.add("passPhrase");
@@ -277,6 +305,10 @@ public final class ConnectionFromObjectStorageDetails extends ConnectionDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
     private final String credentialFileContent;
 
+    /**
+     * The credential file content from an Oracle Object Storage wallet.
+     * @return the value
+     **/
     public String getCredentialFileContent() {
         return credentialFileContent;
     }
@@ -287,6 +319,10 @@ public final class ConnectionFromObjectStorageDetails extends ConnectionDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
+    /**
+     * The OCI user OCID for the user to connect to.
+     * @return the value
+     **/
     public String getUserId() {
         return userId;
     }
@@ -297,6 +333,10 @@ public final class ConnectionFromObjectStorageDetails extends ConnectionDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("fingerPrint")
     private final String fingerPrint;
 
+    /**
+     * The fingerprint for the user.
+     * @return the value
+     **/
     public String getFingerPrint() {
         return fingerPrint;
     }
@@ -307,6 +347,10 @@ public final class ConnectionFromObjectStorageDetails extends ConnectionDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("passPhrase")
     private final String passPhrase;
 
+    /**
+     * The passphrase for the connection.
+     * @return the value
+     **/
     public String getPassPhrase() {
         return passPhrase;
     }

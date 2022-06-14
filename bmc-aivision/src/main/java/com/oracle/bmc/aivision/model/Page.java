@@ -51,9 +51,17 @@ public final class Page {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The document page number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pageNumber")
         private Integer pageNumber;
 
+        /**
+         * The document page number.
+         * @param pageNumber the value to set
+         * @return this builder
+         **/
         public Builder pageNumber(Integer pageNumber) {
             this.pageNumber = pageNumber;
             this.__explicitlySet__.add("pageNumber");
@@ -68,56 +76,98 @@ public final class Page {
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * An array of detected document types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectedDocumentTypes")
         private java.util.List<DetectedDocumentType> detectedDocumentTypes;
 
+        /**
+         * An array of detected document types.
+         * @param detectedDocumentTypes the value to set
+         * @return this builder
+         **/
         public Builder detectedDocumentTypes(
                 java.util.List<DetectedDocumentType> detectedDocumentTypes) {
             this.detectedDocumentTypes = detectedDocumentTypes;
             this.__explicitlySet__.add("detectedDocumentTypes");
             return this;
         }
-
+        /**
+         * An array of detected languages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectedLanguages")
         private java.util.List<DetectedLanguage> detectedLanguages;
 
+        /**
+         * An array of detected languages.
+         * @param detectedLanguages the value to set
+         * @return this builder
+         **/
         public Builder detectedLanguages(java.util.List<DetectedLanguage> detectedLanguages) {
             this.detectedLanguages = detectedLanguages;
             this.__explicitlySet__.add("detectedLanguages");
             return this;
         }
-
+        /**
+         * The words detected on the page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("words")
         private java.util.List<Word> words;
 
+        /**
+         * The words detected on the page.
+         * @param words the value to set
+         * @return this builder
+         **/
         public Builder words(java.util.List<Word> words) {
             this.words = words;
             this.__explicitlySet__.add("words");
             return this;
         }
-
+        /**
+         * The lines of text detected on the page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lines")
         private java.util.List<Line> lines;
 
+        /**
+         * The lines of text detected on the page.
+         * @param lines the value to set
+         * @return this builder
+         **/
         public Builder lines(java.util.List<Line> lines) {
             this.lines = lines;
             this.__explicitlySet__.add("lines");
             return this;
         }
-
+        /**
+         * The tables detected on the page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tables")
         private java.util.List<Table> tables;
 
+        /**
+         * The tables detected on the page.
+         * @param tables the value to set
+         * @return this builder
+         **/
         public Builder tables(java.util.List<Table> tables) {
             this.tables = tables;
             this.__explicitlySet__.add("tables");
             return this;
         }
-
+        /**
+         * The form fields detected on the page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentFields")
         private java.util.List<DocumentField> documentFields;
 
+        /**
+         * The form fields detected on the page.
+         * @param documentFields the value to set
+         * @return this builder
+         **/
         public Builder documentFields(java.util.List<DocumentField> documentFields) {
             this.documentFields = documentFields;
             this.__explicitlySet__.add("documentFields");
@@ -176,6 +226,10 @@ public final class Page {
     @com.fasterxml.jackson.annotation.JsonProperty("pageNumber")
     private final Integer pageNumber;
 
+    /**
+     * The document page number.
+     * @return the value
+     **/
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -193,6 +247,10 @@ public final class Page {
     @com.fasterxml.jackson.annotation.JsonProperty("detectedDocumentTypes")
     private final java.util.List<DetectedDocumentType> detectedDocumentTypes;
 
+    /**
+     * An array of detected document types.
+     * @return the value
+     **/
     public java.util.List<DetectedDocumentType> getDetectedDocumentTypes() {
         return detectedDocumentTypes;
     }
@@ -203,6 +261,10 @@ public final class Page {
     @com.fasterxml.jackson.annotation.JsonProperty("detectedLanguages")
     private final java.util.List<DetectedLanguage> detectedLanguages;
 
+    /**
+     * An array of detected languages.
+     * @return the value
+     **/
     public java.util.List<DetectedLanguage> getDetectedLanguages() {
         return detectedLanguages;
     }
@@ -213,6 +275,10 @@ public final class Page {
     @com.fasterxml.jackson.annotation.JsonProperty("words")
     private final java.util.List<Word> words;
 
+    /**
+     * The words detected on the page.
+     * @return the value
+     **/
     public java.util.List<Word> getWords() {
         return words;
     }
@@ -223,6 +289,10 @@ public final class Page {
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     private final java.util.List<Line> lines;
 
+    /**
+     * The lines of text detected on the page.
+     * @return the value
+     **/
     public java.util.List<Line> getLines() {
         return lines;
     }
@@ -233,6 +303,10 @@ public final class Page {
     @com.fasterxml.jackson.annotation.JsonProperty("tables")
     private final java.util.List<Table> tables;
 
+    /**
+     * The tables detected on the page.
+     * @return the value
+     **/
     public java.util.List<Table> getTables() {
         return tables;
     }
@@ -243,6 +317,10 @@ public final class Page {
     @com.fasterxml.jackson.annotation.JsonProperty("documentFields")
     private final java.util.List<DocumentField> documentFields;
 
+    /**
+     * The form fields detected on the page.
+     * @return the value
+     **/
     public java.util.List<DocumentField> getDocumentFields() {
         return documentFields;
     }

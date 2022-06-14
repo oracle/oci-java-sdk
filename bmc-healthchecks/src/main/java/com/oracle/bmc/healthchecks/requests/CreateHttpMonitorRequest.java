@@ -18,6 +18,9 @@ public class CreateHttpMonitorRequest
      */
     private com.oracle.bmc.healthchecks.model.CreateHttpMonitorDetails createHttpMonitorDetails;
 
+    /**
+     * The configuration details for creating an HTTP monitor.
+     */
     public com.oracle.bmc.healthchecks.model.CreateHttpMonitorDetails
             getCreateHttpMonitorDetails() {
         return createHttpMonitorDetails;
@@ -29,6 +32,11 @@ public class CreateHttpMonitorRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,6 +51,15 @@ public class CreateHttpMonitorRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * operations, such as a resource being deleted or purged from the system.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -65,11 +82,15 @@ public class CreateHttpMonitorRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The configuration details for creating an HTTP monitor.
+         */
         private com.oracle.bmc.healthchecks.model.CreateHttpMonitorDetails
                 createHttpMonitorDetails = null;
 
         /**
          * The configuration details for creating an HTTP monitor.
+         * @param createHttpMonitorDetails the value to set
          * @return this builder instance
          */
         public Builder createHttpMonitorDetails(
@@ -79,12 +100,18 @@ public class CreateHttpMonitorRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -92,6 +119,15 @@ public class CreateHttpMonitorRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request that can be retried in case of a timeout or
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -102,6 +138,7 @@ public class CreateHttpMonitorRequest
          *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
          * operations, such as a resource being deleted or purged from the system.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -192,7 +229,8 @@ public class CreateHttpMonitorRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -201,6 +239,10 @@ public class CreateHttpMonitorRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

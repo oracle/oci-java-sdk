@@ -31,27 +31,57 @@ public final class DatabaseParameterUpdateStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of the parameter update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the parameter update.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * An error code that defines the failure or {@code null} if the parameter
+         * was updated successfully.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private String errorCode;
 
+        /**
+         * An error code that defines the failure or {@code null} if the parameter
+         * was updated successfully.
+         *
+         * @param errorCode the value to set
+         * @return this builder
+         **/
         public Builder errorCode(String errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
-
+        /**
+         * The error message indicating the reason for failure or {@code null} if
+         * the parameter was updated successfully.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * The error message indicating the reason for failure or {@code null} if
+         * the parameter was updated successfully.
+         *
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -144,6 +174,10 @@ public final class DatabaseParameterUpdateStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the parameter update.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -156,6 +190,12 @@ public final class DatabaseParameterUpdateStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final String errorCode;
 
+    /**
+     * An error code that defines the failure or {@code null} if the parameter
+     * was updated successfully.
+     *
+     * @return the value
+     **/
     public String getErrorCode() {
         return errorCode;
     }
@@ -168,6 +208,12 @@ public final class DatabaseParameterUpdateStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * The error message indicating the reason for failure or {@code null} if
+     * the parameter was updated successfully.
+     *
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }

@@ -30,9 +30,17 @@ public final class ImportableAgentEntitySummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of importable agent entity objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ImportableAgentEntitySummary> items;
 
+        /**
+         * Array of importable agent entity objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ImportableAgentEntitySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class ImportableAgentEntitySummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ImportableAgentEntitySummary> items;
 
+    /**
+     * Array of importable agent entity objects.
+     * @return the value
+     **/
     public java.util.List<ImportableAgentEntitySummary> getItems() {
         return items;
     }

@@ -51,72 +51,129 @@ public final class ColumnSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
+        /**
+         * Name of the column.
+         * @param columnName the value to set
+         * @return this builder
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
             return this;
         }
-
+        /**
+         * Data type of the column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * Data type of the column.
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * Length of the data represented by the column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Long length;
 
+        /**
+         * Length of the data represented by the column.
+         * @param length the value to set
+         * @return this builder
+         **/
         public Builder length(Long length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-
+        /**
+         * Precision of the column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("precision")
         private Integer precision;
 
+        /**
+         * Precision of the column.
+         * @param precision the value to set
+         * @return this builder
+         **/
         public Builder precision(Integer precision) {
             this.precision = precision;
             this.__explicitlySet__.add("precision");
             return this;
         }
-
+        /**
+         * Scale of the column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scale")
         private Integer scale;
 
+        /**
+         * Scale of the column.
+         * @param scale the value to set
+         * @return this builder
+         **/
         public Builder scale(Integer scale) {
             this.scale = scale;
             this.__explicitlySet__.add("scale");
             return this;
         }
-
+        /**
+         * Character length.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("characterLength")
         private Integer characterLength;
 
+        /**
+         * Character length.
+         * @param characterLength the value to set
+         * @return this builder
+         **/
         public Builder characterLength(Integer characterLength) {
             this.characterLength = characterLength;
             this.__explicitlySet__.add("characterLength");
             return this;
         }
-
+        /**
+         * Name of the table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
+        /**
+         * Name of the table.
+         * @param tableName the value to set
+         * @return this builder
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-
+        /**
+         * Name of the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
+        /**
+         * Name of the schema.
+         * @param schemaName the value to set
+         * @return this builder
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
@@ -175,6 +232,10 @@ public final class ColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
+    /**
+     * Name of the column.
+     * @return the value
+     **/
     public String getColumnName() {
         return columnName;
     }
@@ -185,6 +246,10 @@ public final class ColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * Data type of the column.
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -195,6 +260,10 @@ public final class ColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Long length;
 
+    /**
+     * Length of the data represented by the column.
+     * @return the value
+     **/
     public Long getLength() {
         return length;
     }
@@ -205,6 +274,10 @@ public final class ColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("precision")
     private final Integer precision;
 
+    /**
+     * Precision of the column.
+     * @return the value
+     **/
     public Integer getPrecision() {
         return precision;
     }
@@ -215,6 +288,10 @@ public final class ColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("scale")
     private final Integer scale;
 
+    /**
+     * Scale of the column.
+     * @return the value
+     **/
     public Integer getScale() {
         return scale;
     }
@@ -225,6 +302,10 @@ public final class ColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("characterLength")
     private final Integer characterLength;
 
+    /**
+     * Character length.
+     * @return the value
+     **/
     public Integer getCharacterLength() {
         return characterLength;
     }
@@ -235,6 +316,10 @@ public final class ColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
+    /**
+     * Name of the table.
+     * @return the value
+     **/
     public String getTableName() {
         return tableName;
     }
@@ -245,6 +330,10 @@ public final class ColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
+    /**
+     * Name of the schema.
+     * @return the value
+     **/
     public String getSchemaName() {
         return schemaName;
     }

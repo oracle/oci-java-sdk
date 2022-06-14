@@ -18,6 +18,9 @@ public class CreateDataGuardAssociationRequest
      */
     private String databaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -27,6 +30,9 @@ public class CreateDataGuardAssociationRequest
     private com.oracle.bmc.database.model.CreateDataGuardAssociationDetails
             createDataGuardAssociationDetails;
 
+    /**
+     * A request to create a Data Guard association.
+     */
     public com.oracle.bmc.database.model.CreateDataGuardAssociationDetails
             getCreateDataGuardAssociationDetails() {
         return createDataGuardAssociationDetails;
@@ -41,6 +47,14 @@ public class CreateDataGuardAssociationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -63,10 +77,14 @@ public class CreateDataGuardAssociationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String databaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(String databaseId) {
@@ -74,11 +92,15 @@ public class CreateDataGuardAssociationRequest
             return this;
         }
 
+        /**
+         * A request to create a Data Guard association.
+         */
         private com.oracle.bmc.database.model.CreateDataGuardAssociationDetails
                 createDataGuardAssociationDetails = null;
 
         /**
          * A request to create a Data Guard association.
+         * @param createDataGuardAssociationDetails the value to set
          * @return this builder instance
          */
         public Builder createDataGuardAssociationDetails(
@@ -88,6 +110,14 @@ public class CreateDataGuardAssociationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -97,6 +127,7 @@ public class CreateDataGuardAssociationRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -187,7 +218,8 @@ public class CreateDataGuardAssociationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -196,6 +228,10 @@ public class CreateDataGuardAssociationRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

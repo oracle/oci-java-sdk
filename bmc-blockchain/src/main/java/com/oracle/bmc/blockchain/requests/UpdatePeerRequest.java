@@ -18,6 +18,9 @@ public class UpdatePeerRequest
      */
     private String blockchainPlatformId;
 
+    /**
+     * Unique service identifier.
+     */
     public String getBlockchainPlatformId() {
         return blockchainPlatformId;
     }
@@ -26,6 +29,9 @@ public class UpdatePeerRequest
      */
     private String peerId;
 
+    /**
+     * Peer identifier.
+     */
     public String getPeerId() {
         return peerId;
     }
@@ -35,6 +41,10 @@ public class UpdatePeerRequest
      */
     private com.oracle.bmc.blockchain.model.UpdatePeerDetails updatePeerDetails;
 
+    /**
+     * Input payload to update a blockchain platform peer. The payload cannot be empty.
+     *
+     */
     public com.oracle.bmc.blockchain.model.UpdatePeerDetails getUpdatePeerDetails() {
         return updatePeerDetails;
     }
@@ -48,6 +58,14 @@ public class UpdatePeerRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -56,6 +74,9 @@ public class UpdatePeerRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,6 +90,14 @@ public class UpdatePeerRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -90,10 +119,14 @@ public class UpdatePeerRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique service identifier.
+         */
         private String blockchainPlatformId = null;
 
         /**
          * Unique service identifier.
+         * @param blockchainPlatformId the value to set
          * @return this builder instance
          */
         public Builder blockchainPlatformId(String blockchainPlatformId) {
@@ -101,10 +134,14 @@ public class UpdatePeerRequest
             return this;
         }
 
+        /**
+         * Peer identifier.
+         */
         private String peerId = null;
 
         /**
          * Peer identifier.
+         * @param peerId the value to set
          * @return this builder instance
          */
         public Builder peerId(String peerId) {
@@ -112,11 +149,16 @@ public class UpdatePeerRequest
             return this;
         }
 
+        /**
+         * Input payload to update a blockchain platform peer. The payload cannot be empty.
+         *
+         */
         private com.oracle.bmc.blockchain.model.UpdatePeerDetails updatePeerDetails = null;
 
         /**
          * Input payload to update a blockchain platform peer. The payload cannot be empty.
          *
+         * @param updatePeerDetails the value to set
          * @return this builder instance
          */
         public Builder updatePeerDetails(
@@ -125,6 +167,14 @@ public class UpdatePeerRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -134,6 +184,7 @@ public class UpdatePeerRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -141,10 +192,14 @@ public class UpdatePeerRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -152,6 +207,14 @@ public class UpdatePeerRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -161,6 +224,7 @@ public class UpdatePeerRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -257,7 +321,8 @@ public class UpdatePeerRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -269,6 +334,10 @@ public class UpdatePeerRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

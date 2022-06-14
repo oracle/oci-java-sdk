@@ -18,6 +18,9 @@ public class UpdateSteeringPolicyAttachmentRequest
      */
     private String steeringPolicyAttachmentId;
 
+    /**
+     * The OCID of the target steering policy attachment.
+     */
     public String getSteeringPolicyAttachmentId() {
         return steeringPolicyAttachmentId;
     }
@@ -27,6 +30,9 @@ public class UpdateSteeringPolicyAttachmentRequest
     private com.oracle.bmc.dns.model.UpdateSteeringPolicyAttachmentDetails
             updateSteeringPolicyAttachmentDetails;
 
+    /**
+     * New data for the steering policy attachment.
+     */
     public com.oracle.bmc.dns.model.UpdateSteeringPolicyAttachmentDetails
             getUpdateSteeringPolicyAttachmentDetails() {
         return updateSteeringPolicyAttachmentDetails;
@@ -41,6 +47,14 @@ public class UpdateSteeringPolicyAttachmentRequest
      */
     private String ifMatch;
 
+    /**
+     * The {@code If-Match} header field makes the request method conditional on the
+     * existence of at least one current representation of the target resource,
+     * when the field-value is {@code *}, or having a current representation of the
+     * target resource that has an entity-tag matching a member of the list of
+     * entity-tags provided in the field-value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -54,6 +68,14 @@ public class UpdateSteeringPolicyAttachmentRequest
      */
     private String ifUnmodifiedSince;
 
+    /**
+     * The {@code If-Unmodified-Since} header field makes the request method
+     * conditional on the selected representation's last modification date being
+     * earlier than or equal to the date provided in the field-value.  This
+     * field accomplishes the same purpose as If-Match for cases where the user
+     * agent does not have an entity-tag for the representation.
+     *
+     */
     public String getIfUnmodifiedSince() {
         return ifUnmodifiedSince;
     }
@@ -65,6 +87,12 @@ public class UpdateSteeringPolicyAttachmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -74,6 +102,10 @@ public class UpdateSteeringPolicyAttachmentRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -96,10 +128,14 @@ public class UpdateSteeringPolicyAttachmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target steering policy attachment.
+         */
         private String steeringPolicyAttachmentId = null;
 
         /**
          * The OCID of the target steering policy attachment.
+         * @param steeringPolicyAttachmentId the value to set
          * @return this builder instance
          */
         public Builder steeringPolicyAttachmentId(String steeringPolicyAttachmentId) {
@@ -107,11 +143,15 @@ public class UpdateSteeringPolicyAttachmentRequest
             return this;
         }
 
+        /**
+         * New data for the steering policy attachment.
+         */
         private com.oracle.bmc.dns.model.UpdateSteeringPolicyAttachmentDetails
                 updateSteeringPolicyAttachmentDetails = null;
 
         /**
          * New data for the steering policy attachment.
+         * @param updateSteeringPolicyAttachmentDetails the value to set
          * @return this builder instance
          */
         public Builder updateSteeringPolicyAttachmentDetails(
@@ -121,6 +161,14 @@ public class UpdateSteeringPolicyAttachmentRequest
             return this;
         }
 
+        /**
+         * The {@code If-Match} header field makes the request method conditional on the
+         * existence of at least one current representation of the target resource,
+         * when the field-value is {@code *}, or having a current representation of the
+         * target resource that has an entity-tag matching a member of the list of
+         * entity-tags provided in the field-value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -130,6 +178,7 @@ public class UpdateSteeringPolicyAttachmentRequest
          * target resource that has an entity-tag matching a member of the list of
          * entity-tags provided in the field-value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -137,6 +186,14 @@ public class UpdateSteeringPolicyAttachmentRequest
             return this;
         }
 
+        /**
+         * The {@code If-Unmodified-Since} header field makes the request method
+         * conditional on the selected representation's last modification date being
+         * earlier than or equal to the date provided in the field-value.  This
+         * field accomplishes the same purpose as If-Match for cases where the user
+         * agent does not have an entity-tag for the representation.
+         *
+         */
         private String ifUnmodifiedSince = null;
 
         /**
@@ -146,6 +203,7 @@ public class UpdateSteeringPolicyAttachmentRequest
          * field accomplishes the same purpose as If-Match for cases where the user
          * agent does not have an entity-tag for the representation.
          *
+         * @param ifUnmodifiedSince the value to set
          * @return this builder instance
          */
         public Builder ifUnmodifiedSince(String ifUnmodifiedSince) {
@@ -153,6 +211,12 @@ public class UpdateSteeringPolicyAttachmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -160,6 +224,7 @@ public class UpdateSteeringPolicyAttachmentRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -167,11 +232,16 @@ public class UpdateSteeringPolicyAttachmentRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -269,7 +339,8 @@ public class UpdateSteeringPolicyAttachmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -281,6 +352,10 @@ public class UpdateSteeringPolicyAttachmentRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

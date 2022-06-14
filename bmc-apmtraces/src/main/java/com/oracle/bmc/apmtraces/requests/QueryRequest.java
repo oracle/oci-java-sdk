@@ -18,6 +18,10 @@ public class QueryRequest
      */
     private String apmDomainId;
 
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -27,6 +31,10 @@ public class QueryRequest
      */
     private java.util.Date timeSpanStartedGreaterThanOrEqualTo;
 
+    /**
+     * Include spans that have a {@code spanStartTime} equal to or greater than this value.
+     *
+     */
     public java.util.Date getTimeSpanStartedGreaterThanOrEqualTo() {
         return timeSpanStartedGreaterThanOrEqualTo;
     }
@@ -36,6 +44,10 @@ public class QueryRequest
      */
     private java.util.Date timeSpanStartedLessThan;
 
+    /**
+     * Include spans that have a {@code spanStartTime}less than this value.
+     *
+     */
     public java.util.Date getTimeSpanStartedLessThan() {
         return timeSpanStartedLessThan;
     }
@@ -46,6 +58,11 @@ public class QueryRequest
      */
     private com.oracle.bmc.apmtraces.model.QueryDetails queryDetails;
 
+    /**
+     * Request body containing the query to be run against the trace data and to filter and
+     * retrieve trace data results.
+     *
+     */
     public com.oracle.bmc.apmtraces.model.QueryDetails getQueryDetails() {
         return queryDetails;
     }
@@ -56,6 +73,11 @@ public class QueryRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,6 +87,10 @@ public class QueryRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -75,6 +101,11 @@ public class QueryRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results.
+     * This is usually retrieved from a previous response.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -96,11 +127,16 @@ public class QueryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM Domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -108,11 +144,16 @@ public class QueryRequest
             return this;
         }
 
+        /**
+         * Include spans that have a {@code spanStartTime} equal to or greater than this value.
+         *
+         */
         private java.util.Date timeSpanStartedGreaterThanOrEqualTo = null;
 
         /**
          * Include spans that have a {@code spanStartTime} equal to or greater than this value.
          *
+         * @param timeSpanStartedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeSpanStartedGreaterThanOrEqualTo(
@@ -121,11 +162,16 @@ public class QueryRequest
             return this;
         }
 
+        /**
+         * Include spans that have a {@code spanStartTime}less than this value.
+         *
+         */
         private java.util.Date timeSpanStartedLessThan = null;
 
         /**
          * Include spans that have a {@code spanStartTime}less than this value.
          *
+         * @param timeSpanStartedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeSpanStartedLessThan(java.util.Date timeSpanStartedLessThan) {
@@ -133,12 +179,18 @@ public class QueryRequest
             return this;
         }
 
+        /**
+         * Request body containing the query to be run against the trace data and to filter and
+         * retrieve trace data results.
+         *
+         */
         private com.oracle.bmc.apmtraces.model.QueryDetails queryDetails = null;
 
         /**
          * Request body containing the query to be run against the trace data and to filter and
          * retrieve trace data results.
          *
+         * @param queryDetails the value to set
          * @return this builder instance
          */
         public Builder queryDetails(com.oracle.bmc.apmtraces.model.QueryDetails queryDetails) {
@@ -146,12 +198,18 @@ public class QueryRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -159,11 +217,16 @@ public class QueryRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -171,12 +234,18 @@ public class QueryRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results.
+         * This is usually retrieved from a previous response.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results.
          * This is usually retrieved from a previous response.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -275,7 +344,8 @@ public class QueryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -288,6 +358,10 @@ public class QueryRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

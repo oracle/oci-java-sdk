@@ -31,27 +31,49 @@ public final class Certificate_publicKeyInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The algorithm identifier and parameters for the public key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private String algorithm;
 
+        /**
+         * The algorithm identifier and parameters for the public key.
+         * @param algorithm the value to set
+         * @return this builder
+         **/
         public Builder algorithm(String algorithm) {
             this.algorithm = algorithm;
             this.__explicitlySet__.add("algorithm");
             return this;
         }
-
+        /**
+         * The private key exponent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exponent")
         private Integer exponent;
 
+        /**
+         * The private key exponent.
+         * @param exponent the value to set
+         * @return this builder
+         **/
         public Builder exponent(Integer exponent) {
             this.exponent = exponent;
             this.__explicitlySet__.add("exponent");
             return this;
         }
-
+        /**
+         * The number of bits in a key used by a cryptographic algorithm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keySize")
         private Integer keySize;
 
+        /**
+         * The number of bits in a key used by a cryptographic algorithm.
+         * @param keySize the value to set
+         * @return this builder
+         **/
         public Builder keySize(Integer keySize) {
             this.keySize = keySize;
             this.__explicitlySet__.add("keySize");
@@ -95,6 +117,10 @@ public final class Certificate_publicKeyInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     private final String algorithm;
 
+    /**
+     * The algorithm identifier and parameters for the public key.
+     * @return the value
+     **/
     public String getAlgorithm() {
         return algorithm;
     }
@@ -105,6 +131,10 @@ public final class Certificate_publicKeyInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("exponent")
     private final Integer exponent;
 
+    /**
+     * The private key exponent.
+     * @return the value
+     **/
     public Integer getExponent() {
         return exponent;
     }
@@ -115,6 +145,10 @@ public final class Certificate_publicKeyInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("keySize")
     private final Integer keySize;
 
+    /**
+     * The number of bits in a key used by a cryptographic algorithm.
+     * @return the value
+     **/
     public Integer getKeySize() {
         return keySize;
     }

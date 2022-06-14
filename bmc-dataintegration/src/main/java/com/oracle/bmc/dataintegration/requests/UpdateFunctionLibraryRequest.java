@@ -18,6 +18,9 @@ public class UpdateFunctionLibraryRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class UpdateFunctionLibraryRequest
      */
     private String functionLibraryKey;
 
+    /**
+     * The functionLibrary key.
+     */
     public String getFunctionLibraryKey() {
         return functionLibraryKey;
     }
@@ -35,6 +41,9 @@ public class UpdateFunctionLibraryRequest
     private com.oracle.bmc.dataintegration.model.UpdateFunctionLibraryDetails
             updateFunctionLibraryDetails;
 
+    /**
+     * The details needed to update a FunctionL ibrary.
+     */
     public com.oracle.bmc.dataintegration.model.UpdateFunctionLibraryDetails
             getUpdateFunctionLibraryDetails() {
         return updateFunctionLibraryDetails;
@@ -47,6 +56,12 @@ public class UpdateFunctionLibraryRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,6 +73,12 @@ public class UpdateFunctionLibraryRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -80,10 +101,14 @@ public class UpdateFunctionLibraryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -91,10 +116,14 @@ public class UpdateFunctionLibraryRequest
             return this;
         }
 
+        /**
+         * The functionLibrary key.
+         */
         private String functionLibraryKey = null;
 
         /**
          * The functionLibrary key.
+         * @param functionLibraryKey the value to set
          * @return this builder instance
          */
         public Builder functionLibraryKey(String functionLibraryKey) {
@@ -102,11 +131,15 @@ public class UpdateFunctionLibraryRequest
             return this;
         }
 
+        /**
+         * The details needed to update a FunctionL ibrary.
+         */
         private com.oracle.bmc.dataintegration.model.UpdateFunctionLibraryDetails
                 updateFunctionLibraryDetails = null;
 
         /**
          * The details needed to update a FunctionL ibrary.
+         * @param updateFunctionLibraryDetails the value to set
          * @return this builder instance
          */
         public Builder updateFunctionLibraryDetails(
@@ -116,6 +149,12 @@ public class UpdateFunctionLibraryRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -123,6 +162,7 @@ public class UpdateFunctionLibraryRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -130,6 +170,12 @@ public class UpdateFunctionLibraryRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -137,6 +183,7 @@ public class UpdateFunctionLibraryRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -232,7 +279,8 @@ public class UpdateFunctionLibraryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -243,6 +291,10 @@ public class UpdateFunctionLibraryRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

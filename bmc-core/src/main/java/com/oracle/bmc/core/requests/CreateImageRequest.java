@@ -17,6 +17,9 @@ public class CreateImageRequest
      */
     private com.oracle.bmc.core.model.CreateImageDetails createImageDetails;
 
+    /**
+     * Image creation details
+     */
     public com.oracle.bmc.core.model.CreateImageDetails getCreateImageDetails() {
         return createImageDetails;
     }
@@ -30,6 +33,14 @@ public class CreateImageRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -51,10 +62,14 @@ public class CreateImageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Image creation details
+         */
         private com.oracle.bmc.core.model.CreateImageDetails createImageDetails = null;
 
         /**
          * Image creation details
+         * @param createImageDetails the value to set
          * @return this builder instance
          */
         public Builder createImageDetails(
@@ -63,6 +78,14 @@ public class CreateImageRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -72,6 +95,7 @@ public class CreateImageRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -160,12 +184,17 @@ public class CreateImageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().createImageDetails(createImageDetails).opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

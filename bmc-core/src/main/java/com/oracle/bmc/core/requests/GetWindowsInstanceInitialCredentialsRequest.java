@@ -17,6 +17,9 @@ public class GetWindowsInstanceInitialCredentialsRequest
      */
     private String instanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -28,10 +31,14 @@ public class GetWindowsInstanceInitialCredentialsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         */
         private String instanceId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         * @param instanceId the value to set
          * @return this builder instance
          */
         public Builder instanceId(String instanceId) {
@@ -108,12 +115,17 @@ public class GetWindowsInstanceInitialCredentialsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().instanceId(instanceId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

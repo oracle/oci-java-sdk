@@ -29,9 +29,17 @@ public final class SourceMappingResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Parsed representation of the log file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parsedResponse")
         private java.util.List<ParsedContent> parsedResponse;
 
+        /**
+         * Parsed representation of the log file.
+         * @param parsedResponse the value to set
+         * @return this builder
+         **/
         public Builder parsedResponse(java.util.List<ParsedContent> parsedResponse) {
             this.parsedResponse = parsedResponse;
             this.__explicitlySet__.add("parsedResponse");
@@ -73,6 +81,10 @@ public final class SourceMappingResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("parsedResponse")
     private final java.util.List<ParsedContent> parsedResponse;
 
+    /**
+     * Parsed representation of the log file.
+     * @return the value
+     **/
     public java.util.List<ParsedContent> getParsedResponse() {
         return parsedResponse;
     }

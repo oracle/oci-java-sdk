@@ -18,6 +18,9 @@ public class CreateClusterNetworkRequest
      */
     private com.oracle.bmc.core.model.CreateClusterNetworkDetails createClusterNetworkDetails;
 
+    /**
+     * Cluster network creation details
+     */
     public com.oracle.bmc.core.model.CreateClusterNetworkDetails getCreateClusterNetworkDetails() {
         return createClusterNetworkDetails;
     }
@@ -31,6 +34,14 @@ public class CreateClusterNetworkRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -53,11 +64,15 @@ public class CreateClusterNetworkRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Cluster network creation details
+         */
         private com.oracle.bmc.core.model.CreateClusterNetworkDetails createClusterNetworkDetails =
                 null;
 
         /**
          * Cluster network creation details
+         * @param createClusterNetworkDetails the value to set
          * @return this builder instance
          */
         public Builder createClusterNetworkDetails(
@@ -66,6 +81,14 @@ public class CreateClusterNetworkRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -75,6 +98,7 @@ public class CreateClusterNetworkRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -163,7 +187,8 @@ public class CreateClusterNetworkRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -171,6 +196,10 @@ public class CreateClusterNetworkRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

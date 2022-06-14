@@ -39,27 +39,63 @@ public final class MaskingFormat {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A condition that must be true for applying the masking format. It can be any valid
+         * SQL construct that can be used in a SQL predicate. It enables you to do
+         * <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
+         * so that you can mask the column data values differently using different masking
+         * formats and the associated conditions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
 
+        /**
+         * A condition that must be true for applying the masking format. It can be any valid
+         * SQL construct that can be used in a SQL predicate. It enables you to do
+         * <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
+         * so that you can mask the column data values differently using different masking
+         * formats and the associated conditions.
+         *
+         * @param condition the value to set
+         * @return this builder
+         **/
         public Builder condition(String condition) {
             this.condition = condition;
             this.__explicitlySet__.add("condition");
             return this;
         }
-
+        /**
+         * The description of the masking format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the masking format.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * An array of format entries. The combined output of all the format entries is
+         * used for masking the column data values.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formatEntries")
         private java.util.List<FormatEntry> formatEntries;
 
+        /**
+         * An array of format entries. The combined output of all the format entries is
+         * used for masking the column data values.
+         *
+         * @param formatEntries the value to set
+         * @return this builder
+         **/
         public Builder formatEntries(java.util.List<FormatEntry> formatEntries) {
             this.formatEntries = formatEntries;
             this.__explicitlySet__.add("formatEntries");
@@ -109,6 +145,15 @@ public final class MaskingFormat {
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
+    /**
+     * A condition that must be true for applying the masking format. It can be any valid
+     * SQL construct that can be used in a SQL predicate. It enables you to do
+     * <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
+     * so that you can mask the column data values differently using different masking
+     * formats and the associated conditions.
+     *
+     * @return the value
+     **/
     public String getCondition() {
         return condition;
     }
@@ -119,6 +164,10 @@ public final class MaskingFormat {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the masking format.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -131,6 +180,12 @@ public final class MaskingFormat {
     @com.fasterxml.jackson.annotation.JsonProperty("formatEntries")
     private final java.util.List<FormatEntry> formatEntries;
 
+    /**
+     * An array of format entries. The combined output of all the format entries is
+     * used for masking the column data values.
+     *
+     * @return the value
+     **/
     public java.util.List<FormatEntry> getFormatEntries() {
         return formatEntries;
     }

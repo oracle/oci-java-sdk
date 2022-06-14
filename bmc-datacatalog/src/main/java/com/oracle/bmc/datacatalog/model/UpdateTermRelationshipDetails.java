@@ -30,18 +30,37 @@ public final class UpdateTermRelationshipDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+         * must be unique. Avoid entering confidential information. This is the same as 'relationshipType' for 'termRelationship'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+         * must be unique. Avoid entering confidential information. This is the same as 'relationshipType' for 'termRelationship'.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Detailed description of the term relationship usually defined at the time of creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the term relationship usually defined at the time of creation.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -86,6 +105,12 @@ public final class UpdateTermRelationshipDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+     * must be unique. Avoid entering confidential information. This is the same as 'relationshipType' for 'termRelationship'.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -96,6 +121,10 @@ public final class UpdateTermRelationshipDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the term relationship usually defined at the time of creation.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

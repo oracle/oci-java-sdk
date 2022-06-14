@@ -18,6 +18,9 @@ public class ImportGlossaryRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class ImportGlossaryRequest
      */
     private String glossaryKey;
 
+    /**
+     * Unique glossary key.
+     */
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -34,6 +40,9 @@ public class ImportGlossaryRequest
      */
     private com.oracle.bmc.datacatalog.model.ImportGlossaryDetails importGlossaryDetails;
 
+    /**
+     * The file contents to import the glossary.
+     */
     public com.oracle.bmc.datacatalog.model.ImportGlossaryDetails getImportGlossaryDetails() {
         return importGlossaryDetails;
     }
@@ -42,6 +51,9 @@ public class ImportGlossaryRequest
      */
     private Boolean isRelationshipImported;
 
+    /**
+     * Specify if the relationship metadata is imported for the glossary.
+     */
     public Boolean getIsRelationshipImported() {
         return isRelationshipImported;
     }
@@ -50,6 +62,9 @@ public class ImportGlossaryRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,6 +78,14 @@ public class ImportGlossaryRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,10 +107,14 @@ public class ImportGlossaryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -95,10 +122,14 @@ public class ImportGlossaryRequest
             return this;
         }
 
+        /**
+         * Unique glossary key.
+         */
         private String glossaryKey = null;
 
         /**
          * Unique glossary key.
+         * @param glossaryKey the value to set
          * @return this builder instance
          */
         public Builder glossaryKey(String glossaryKey) {
@@ -106,10 +137,14 @@ public class ImportGlossaryRequest
             return this;
         }
 
+        /**
+         * The file contents to import the glossary.
+         */
         private com.oracle.bmc.datacatalog.model.ImportGlossaryDetails importGlossaryDetails = null;
 
         /**
          * The file contents to import the glossary.
+         * @param importGlossaryDetails the value to set
          * @return this builder instance
          */
         public Builder importGlossaryDetails(
@@ -118,10 +153,14 @@ public class ImportGlossaryRequest
             return this;
         }
 
+        /**
+         * Specify if the relationship metadata is imported for the glossary.
+         */
         private Boolean isRelationshipImported = null;
 
         /**
          * Specify if the relationship metadata is imported for the glossary.
+         * @param isRelationshipImported the value to set
          * @return this builder instance
          */
         public Builder isRelationshipImported(Boolean isRelationshipImported) {
@@ -129,10 +168,14 @@ public class ImportGlossaryRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -140,6 +183,14 @@ public class ImportGlossaryRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -149,6 +200,7 @@ public class ImportGlossaryRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -245,7 +297,8 @@ public class ImportGlossaryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -257,6 +310,10 @@ public class ImportGlossaryRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class UpdateTaskRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class UpdateTaskRequest
      */
     private String taskKey;
 
+    /**
+     * The task key.
+     */
     public String getTaskKey() {
         return taskKey;
     }
@@ -34,6 +40,9 @@ public class UpdateTaskRequest
      */
     private com.oracle.bmc.dataintegration.model.UpdateTaskDetails updateTaskDetails;
 
+    /**
+     * The details needed to update a task.
+     */
     public com.oracle.bmc.dataintegration.model.UpdateTaskDetails getUpdateTaskDetails() {
         return updateTaskDetails;
     }
@@ -45,6 +54,12 @@ public class UpdateTaskRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -56,6 +71,12 @@ public class UpdateTaskRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -77,10 +98,14 @@ public class UpdateTaskRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -88,10 +113,14 @@ public class UpdateTaskRequest
             return this;
         }
 
+        /**
+         * The task key.
+         */
         private String taskKey = null;
 
         /**
          * The task key.
+         * @param taskKey the value to set
          * @return this builder instance
          */
         public Builder taskKey(String taskKey) {
@@ -99,10 +128,14 @@ public class UpdateTaskRequest
             return this;
         }
 
+        /**
+         * The details needed to update a task.
+         */
         private com.oracle.bmc.dataintegration.model.UpdateTaskDetails updateTaskDetails = null;
 
         /**
          * The details needed to update a task.
+         * @param updateTaskDetails the value to set
          * @return this builder instance
          */
         public Builder updateTaskDetails(
@@ -111,6 +144,12 @@ public class UpdateTaskRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -118,6 +157,7 @@ public class UpdateTaskRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -125,6 +165,12 @@ public class UpdateTaskRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -132,6 +178,7 @@ public class UpdateTaskRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -226,7 +273,8 @@ public class UpdateTaskRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -237,6 +285,10 @@ public class UpdateTaskRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

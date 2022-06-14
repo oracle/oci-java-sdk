@@ -35,18 +35,33 @@ public final class UpdateIPSecTunnelEncryptionDomainDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleTrafficSelector")
         private java.util.List<String> oracleTrafficSelector;
 
+        /**
+         * Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
+         * @param oracleTrafficSelector the value to set
+         * @return this builder
+         **/
         public Builder oracleTrafficSelector(java.util.List<String> oracleTrafficSelector) {
             this.oracleTrafficSelector = oracleTrafficSelector;
             this.__explicitlySet__.add("oracleTrafficSelector");
             return this;
         }
-
+        /**
+         * Lists IPv4 or IPv6-enabled subnets in your on-premises network.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeTrafficSelector")
         private java.util.List<String> cpeTrafficSelector;
 
+        /**
+         * Lists IPv4 or IPv6-enabled subnets in your on-premises network.
+         * @param cpeTrafficSelector the value to set
+         * @return this builder
+         **/
         public Builder cpeTrafficSelector(java.util.List<String> cpeTrafficSelector) {
             this.cpeTrafficSelector = cpeTrafficSelector;
             this.__explicitlySet__.add("cpeTrafficSelector");
@@ -92,6 +107,10 @@ public final class UpdateIPSecTunnelEncryptionDomainDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("oracleTrafficSelector")
     private final java.util.List<String> oracleTrafficSelector;
 
+    /**
+     * Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
+     * @return the value
+     **/
     public java.util.List<String> getOracleTrafficSelector() {
         return oracleTrafficSelector;
     }
@@ -102,6 +121,10 @@ public final class UpdateIPSecTunnelEncryptionDomainDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cpeTrafficSelector")
     private final java.util.List<String> cpeTrafficSelector;
 
+    /**
+     * Lists IPv4 or IPv6-enabled subnets in your on-premises network.
+     * @return the value
+     **/
     public java.util.List<String> getCpeTrafficSelector() {
         return cpeTrafficSelector;
     }

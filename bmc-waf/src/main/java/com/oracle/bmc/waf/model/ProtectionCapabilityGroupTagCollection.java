@@ -30,9 +30,17 @@ public final class ProtectionCapabilityGroupTagCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of protection capabilities group tags.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ProtectionCapabilityGroupTagSummary> items;
 
+        /**
+         * List of protection capabilities group tags.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ProtectionCapabilityGroupTagSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class ProtectionCapabilityGroupTagCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ProtectionCapabilityGroupTagSummary> items;
 
+    /**
+     * List of protection capabilities group tags.
+     * @return the value
+     **/
     public java.util.List<ProtectionCapabilityGroupTagSummary> getItems() {
         return items;
     }

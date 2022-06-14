@@ -38,27 +38,55 @@ public final class RowReductionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A boolean value to indicate if row reduction is applied
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReductionEnabled")
         private Boolean isReductionEnabled;
 
+        /**
+         * A boolean value to indicate if row reduction is applied
+         * @param isReductionEnabled the value to set
+         * @return this builder
+         **/
         public Builder isReductionEnabled(Boolean isReductionEnabled) {
             this.isReductionEnabled = isReductionEnabled;
             this.__explicitlySet__.add("isReductionEnabled");
             return this;
         }
-
+        /**
+         * A percentage to reduce data size down to on top of original data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reductionPercentage")
         private Double reductionPercentage;
 
+        /**
+         * A percentage to reduce data size down to on top of original data
+         * @param reductionPercentage the value to set
+         * @return this builder
+         **/
         public Builder reductionPercentage(Double reductionPercentage) {
             this.reductionPercentage = reductionPercentage;
             this.__explicitlySet__.add("reductionPercentage");
             return this;
         }
-
+        /**
+         * Method for row reduction:
+         *   * DELETE_ROW - delete rows with equal intervals
+         *   * AVERAGE_ROW - average multiple rows to one row
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reductionMethod")
         private ReductionMethod reductionMethod;
 
+        /**
+         * Method for row reduction:
+         *   * DELETE_ROW - delete rows with equal intervals
+         *   * AVERAGE_ROW - average multiple rows to one row
+         *
+         * @param reductionMethod the value to set
+         * @return this builder
+         **/
         public Builder reductionMethod(ReductionMethod reductionMethod) {
             this.reductionMethod = reductionMethod;
             this.__explicitlySet__.add("reductionMethod");
@@ -105,6 +133,10 @@ public final class RowReductionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isReductionEnabled")
     private final Boolean isReductionEnabled;
 
+    /**
+     * A boolean value to indicate if row reduction is applied
+     * @return the value
+     **/
     public Boolean getIsReductionEnabled() {
         return isReductionEnabled;
     }
@@ -115,6 +147,10 @@ public final class RowReductionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reductionPercentage")
     private final Double reductionPercentage;
 
+    /**
+     * A percentage to reduce data size down to on top of original data
+     * @return the value
+     **/
     public Double getReductionPercentage() {
         return reductionPercentage;
     }
@@ -179,6 +215,13 @@ public final class RowReductionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reductionMethod")
     private final ReductionMethod reductionMethod;
 
+    /**
+     * Method for row reduction:
+     *   * DELETE_ROW - delete rows with equal intervals
+     *   * AVERAGE_ROW - average multiple rows to one row
+     *
+     * @return the value
+     **/
     public ReductionMethod getReductionMethod() {
         return reductionMethod;
     }

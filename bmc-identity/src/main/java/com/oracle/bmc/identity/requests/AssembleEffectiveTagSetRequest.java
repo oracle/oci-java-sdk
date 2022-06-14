@@ -18,6 +18,10 @@ public class AssembleEffectiveTagSetRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +31,10 @@ public class AssembleEffectiveTagSetRequest
      */
     private com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState lifecycleState;
 
+    /**
+     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     *
+     */
     public com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -38,11 +46,16 @@ public class AssembleEffectiveTagSetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -50,12 +63,17 @@ public class AssembleEffectiveTagSetRequest
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+         *
+         */
         private com.oracle.bmc.identity.model.TagDefaultSummary.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -134,12 +152,17 @@ public class AssembleEffectiveTagSetRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().compartmentId(compartmentId).lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

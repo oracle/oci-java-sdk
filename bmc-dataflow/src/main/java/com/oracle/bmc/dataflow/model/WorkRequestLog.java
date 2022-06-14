@@ -31,36 +31,69 @@ public final class WorkRequestLog {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The id of a work request log.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
+        /**
+         * The id of a work request log.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(Long id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * A human readable log message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * A human readable log message.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * The time the log message was written. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The time the log message was written. An RFC3339 formatted datetime string.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The OCID of a work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestid")
         private String workRequestid;
 
+        /**
+         * The OCID of a work request.
+         *
+         * @param workRequestid the value to set
+         * @return this builder
+         **/
         public Builder workRequestid(String workRequestid) {
             this.workRequestid = workRequestid;
             this.__explicitlySet__.add("workRequestid");
@@ -107,6 +140,11 @@ public final class WorkRequestLog {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
+    /**
+     * The id of a work request log.
+     *
+     * @return the value
+     **/
     public Long getId() {
         return id;
     }
@@ -117,6 +155,10 @@ public final class WorkRequestLog {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A human readable log message.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -127,6 +169,10 @@ public final class WorkRequestLog {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The time the log message was written. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -138,6 +184,11 @@ public final class WorkRequestLog {
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestid")
     private final String workRequestid;
 
+    /**
+     * The OCID of a work request.
+     *
+     * @return the value
+     **/
     public String getWorkRequestid() {
         return workRequestid;
     }

@@ -45,10 +45,17 @@ public final class TablespaceAdminPasswordCredentialDetails
             this.__explicitlySet__.add("role");
             return this;
         }
-
+        /**
+         * The database user's password encoded using BASE64 scheme.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * The database user's password encoded using BASE64 scheme.
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -98,6 +105,10 @@ public final class TablespaceAdminPasswordCredentialDetails
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * The database user's password encoded using BASE64 scheme.
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }

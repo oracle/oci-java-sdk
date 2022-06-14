@@ -48,9 +48,17 @@ public final class CreateIncident {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the tenancy.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -65,37 +73,65 @@ public final class CreateIncident {
             this.__explicitlySet__.add("ticket");
             return this;
         }
-
+        /**
+         * The Customer Support Identifier number for the support account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
+        /**
+         * The Customer Support Identifier number for the support account.
+         * @param csi the value to set
+         * @return this builder
+         **/
         public Builder csi(String csi) {
             this.csi = csi;
             this.__explicitlySet__.add("csi");
             return this;
         }
-
+        /**
+         * The kind of support ticket, such as a technical issue request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
+        /**
+         * The kind of support ticket, such as a technical issue request.
+         * @param problemType the value to set
+         * @return this builder
+         **/
         public Builder problemType(ProblemType problemType) {
             this.problemType = problemType;
             this.__explicitlySet__.add("problemType");
             return this;
         }
-
+        /**
+         * The list of contacts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contacts")
         private java.util.List<Contact> contacts;
 
+        /**
+         * The list of contacts.
+         * @param contacts the value to set
+         * @return this builder
+         **/
         public Builder contacts(java.util.List<Contact> contacts) {
             this.contacts = contacts;
             this.__explicitlySet__.add("contacts");
             return this;
         }
-
+        /**
+         * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referrer")
         private String referrer;
 
+        /**
+         * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+         * @param referrer the value to set
+         * @return this builder
+         **/
         public Builder referrer(String referrer) {
             this.referrer = referrer;
             this.__explicitlySet__.add("referrer");
@@ -144,6 +180,10 @@ public final class CreateIncident {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the tenancy.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -161,6 +201,10 @@ public final class CreateIncident {
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
+    /**
+     * The Customer Support Identifier number for the support account.
+     * @return the value
+     **/
     public String getCsi() {
         return csi;
     }
@@ -171,6 +215,10 @@ public final class CreateIncident {
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
+    /**
+     * The kind of support ticket, such as a technical issue request.
+     * @return the value
+     **/
     public ProblemType getProblemType() {
         return problemType;
     }
@@ -181,6 +229,10 @@ public final class CreateIncident {
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     private final java.util.List<Contact> contacts;
 
+    /**
+     * The list of contacts.
+     * @return the value
+     **/
     public java.util.List<Contact> getContacts() {
         return contacts;
     }
@@ -191,6 +243,10 @@ public final class CreateIncident {
     @com.fasterxml.jackson.annotation.JsonProperty("referrer")
     private final String referrer;
 
+    /**
+     * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+     * @return the value
+     **/
     public String getReferrer() {
         return referrer;
     }

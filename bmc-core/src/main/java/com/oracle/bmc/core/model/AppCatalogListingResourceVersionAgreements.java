@@ -47,54 +47,103 @@ public final class AppCatalogListingResourceVersionAgreements {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the listing associated with these agreements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
+        /**
+         * The OCID of the listing associated with these agreements.
+         * @param listingId the value to set
+         * @return this builder
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-
+        /**
+         * Listing resource version associated with these agreements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
         private String listingResourceVersion;
 
+        /**
+         * Listing resource version associated with these agreements.
+         * @param listingResourceVersion the value to set
+         * @return this builder
+         **/
         public Builder listingResourceVersion(String listingResourceVersion) {
             this.listingResourceVersion = listingResourceVersion;
             this.__explicitlySet__.add("listingResourceVersion");
             return this;
         }
-
+        /**
+         * Oracle TOU link
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleTermsOfUseLink")
         private String oracleTermsOfUseLink;
 
+        /**
+         * Oracle TOU link
+         * @param oracleTermsOfUseLink the value to set
+         * @return this builder
+         **/
         public Builder oracleTermsOfUseLink(String oracleTermsOfUseLink) {
             this.oracleTermsOfUseLink = oracleTermsOfUseLink;
             this.__explicitlySet__.add("oracleTermsOfUseLink");
             return this;
         }
-
+        /**
+         * EULA link
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eulaLink")
         private String eulaLink;
 
+        /**
+         * EULA link
+         * @param eulaLink the value to set
+         * @return this builder
+         **/
         public Builder eulaLink(String eulaLink) {
             this.eulaLink = eulaLink;
             this.__explicitlySet__.add("eulaLink");
             return this;
         }
-
+        /**
+         * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+         * Example: {@code 2018-03-20T12:32:53.532Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRetrieved")
         private java.util.Date timeRetrieved;
 
+        /**
+         * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+         * Example: {@code 2018-03-20T12:32:53.532Z}
+         *
+         * @param timeRetrieved the value to set
+         * @return this builder
+         **/
         public Builder timeRetrieved(java.util.Date timeRetrieved) {
             this.timeRetrieved = timeRetrieved;
             this.__explicitlySet__.add("timeRetrieved");
             return this;
         }
-
+        /**
+         * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signature")
         private String signature;
 
+        /**
+         * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+         *
+         * @param signature the value to set
+         * @return this builder
+         **/
         public Builder signature(String signature) {
             this.signature = signature;
             this.__explicitlySet__.add("signature");
@@ -149,6 +198,10 @@ public final class AppCatalogListingResourceVersionAgreements {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * The OCID of the listing associated with these agreements.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -159,6 +212,10 @@ public final class AppCatalogListingResourceVersionAgreements {
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
     private final String listingResourceVersion;
 
+    /**
+     * Listing resource version associated with these agreements.
+     * @return the value
+     **/
     public String getListingResourceVersion() {
         return listingResourceVersion;
     }
@@ -169,6 +226,10 @@ public final class AppCatalogListingResourceVersionAgreements {
     @com.fasterxml.jackson.annotation.JsonProperty("oracleTermsOfUseLink")
     private final String oracleTermsOfUseLink;
 
+    /**
+     * Oracle TOU link
+     * @return the value
+     **/
     public String getOracleTermsOfUseLink() {
         return oracleTermsOfUseLink;
     }
@@ -179,6 +240,10 @@ public final class AppCatalogListingResourceVersionAgreements {
     @com.fasterxml.jackson.annotation.JsonProperty("eulaLink")
     private final String eulaLink;
 
+    /**
+     * EULA link
+     * @return the value
+     **/
     public String getEulaLink() {
         return eulaLink;
     }
@@ -191,6 +256,12 @@ public final class AppCatalogListingResourceVersionAgreements {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRetrieved")
     private final java.util.Date timeRetrieved;
 
+    /**
+     * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+     * Example: {@code 2018-03-20T12:32:53.532Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeRetrieved() {
         return timeRetrieved;
     }
@@ -202,6 +273,11 @@ public final class AppCatalogListingResourceVersionAgreements {
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
     private final String signature;
 
+    /**
+     * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+     *
+     * @return the value
+     **/
     public String getSignature() {
         return signature;
     }

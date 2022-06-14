@@ -47,54 +47,97 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Numerical representation of the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexHashValue")
         private Long indexHashValue;
 
+        /**
+         * Numerical representation of the index.
+         * @param indexHashValue the value to set
+         * @return this builder
+         **/
         public Builder indexHashValue(Long indexHashValue) {
             this.indexHashValue = indexHashValue;
             this.__explicitlySet__.add("indexHashValue");
             return this;
         }
-
+        /**
+         * Name of the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexName")
         private String indexName;
 
+        /**
+         * Name of the index.
+         * @param indexName the value to set
+         * @return this builder
+         **/
         public Builder indexName(String indexName) {
             this.indexName = indexName;
             this.__explicitlySet__.add("indexName");
             return this;
         }
-
+        /**
+         * Table's name related to the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
+        /**
+         * Table's name related to the index.
+         * @param tableName the value to set
+         * @return this builder
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-
+        /**
+         * Schema related to the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schema")
         private String schema;
 
+        /**
+         * Schema related to the index.
+         * @param schema the value to set
+         * @return this builder
+         **/
         public Builder schema(String schema) {
             this.schema = schema;
             this.__explicitlySet__.add("schema");
             return this;
         }
-
+        /**
+         * The number of times the index is referenced within the SQL Tuning advisor task findings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
         private Integer referenceCount;
 
+        /**
+         * The number of times the index is referenced within the SQL Tuning advisor task findings.
+         * @param referenceCount the value to set
+         * @return this builder
+         **/
         public Builder referenceCount(Integer referenceCount) {
             this.referenceCount = referenceCount;
             this.__explicitlySet__.add("referenceCount");
             return this;
         }
-
+        /**
+         * Columns of the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexColumns")
         private java.util.List<String> indexColumns;
 
+        /**
+         * Columns of the index.
+         * @param indexColumns the value to set
+         * @return this builder
+         **/
         public Builder indexColumns(java.util.List<String> indexColumns) {
             this.indexColumns = indexColumns;
             this.__explicitlySet__.add("indexColumns");
@@ -149,6 +192,10 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("indexHashValue")
     private final Long indexHashValue;
 
+    /**
+     * Numerical representation of the index.
+     * @return the value
+     **/
     public Long getIndexHashValue() {
         return indexHashValue;
     }
@@ -159,6 +206,10 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("indexName")
     private final String indexName;
 
+    /**
+     * Name of the index.
+     * @return the value
+     **/
     public String getIndexName() {
         return indexName;
     }
@@ -169,6 +220,10 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
+    /**
+     * Table's name related to the index.
+     * @return the value
+     **/
     public String getTableName() {
         return tableName;
     }
@@ -179,6 +234,10 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
     private final String schema;
 
+    /**
+     * Schema related to the index.
+     * @return the value
+     **/
     public String getSchema() {
         return schema;
     }
@@ -189,6 +248,10 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
     private final Integer referenceCount;
 
+    /**
+     * The number of times the index is referenced within the SQL Tuning advisor task findings.
+     * @return the value
+     **/
     public Integer getReferenceCount() {
         return referenceCount;
     }
@@ -199,6 +262,10 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("indexColumns")
     private final java.util.List<String> indexColumns;
 
+    /**
+     * Columns of the index.
+     * @return the value
+     **/
     public java.util.List<String> getIndexColumns() {
         return indexColumns;
     }

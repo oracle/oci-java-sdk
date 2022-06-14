@@ -105,10 +105,17 @@ public final class MacroField extends TypedObject {
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
         private Boolean isUseSourceType;
 
+        /**
+         * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+         * @param isUseSourceType the value to set
+         * @return this builder
+         **/
         public Builder isUseSourceType(Boolean isUseSourceType) {
             this.isUseSourceType = isUseSourceType;
             this.__explicitlySet__.add("isUseSourceType");
@@ -123,10 +130,17 @@ public final class MacroField extends TypedObject {
             this.__explicitlySet__.add("useType");
             return this;
         }
-
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
+         * @param labels the value to set
+         * @return this builder
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -229,6 +243,10 @@ public final class MacroField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
     private final Boolean isUseSourceType;
 
+    /**
+     * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+     * @return the value
+     **/
     public Boolean getIsUseSourceType() {
         return isUseSourceType;
     }
@@ -246,6 +264,10 @@ public final class MacroField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
+    /**
+     * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
+     * @return the value
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }

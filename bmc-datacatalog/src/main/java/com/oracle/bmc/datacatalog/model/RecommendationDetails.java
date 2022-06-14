@@ -63,99 +63,197 @@ public final class RecommendationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier of the recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
         private String recommendationKey;
 
+        /**
+         * Unique identifier of the recommendation.
+         * @param recommendationKey the value to set
+         * @return this builder
+         **/
         public Builder recommendationKey(String recommendationKey) {
             this.recommendationKey = recommendationKey;
             this.__explicitlySet__.add("recommendationKey");
             return this;
         }
-
+        /**
+         * Type of recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationType")
         private RecommendationType recommendationType;
 
+        /**
+         * Type of recommendation.
+         * @param recommendationType the value to set
+         * @return this builder
+         **/
         public Builder recommendationType(RecommendationType recommendationType) {
             this.recommendationType = recommendationType;
             this.__explicitlySet__.add("recommendationType");
             return this;
         }
-
+        /**
+         * Status of a recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationStatus")
         private RecommendationStatus recommendationStatus;
 
+        /**
+         * Status of a recommendation.
+         * @param recommendationStatus the value to set
+         * @return this builder
+         **/
         public Builder recommendationStatus(RecommendationStatus recommendationStatus) {
             this.recommendationStatus = recommendationStatus;
             this.__explicitlySet__.add("recommendationStatus");
             return this;
         }
-
+        /**
+         * Level of confidence, on a scale between 0 and 1, that the recommendation is applicable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidenceScore")
         private Float confidenceScore;
 
+        /**
+         * Level of confidence, on a scale between 0 and 1, that the recommendation is applicable.
+         * @param confidenceScore the value to set
+         * @return this builder
+         **/
         public Builder confidenceScore(Float confidenceScore) {
             this.confidenceScore = confidenceScore;
             this.__explicitlySet__.add("confidenceScore");
             return this;
         }
-
+        /**
+         * Unique identifier of the source object; the one for which a recommendation is made.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectKey")
         private String sourceObjectKey;
 
+        /**
+         * Unique identifier of the source object; the one for which a recommendation is made.
+         * @param sourceObjectKey the value to set
+         * @return this builder
+         **/
         public Builder sourceObjectKey(String sourceObjectKey) {
             this.sourceObjectKey = sourceObjectKey;
             this.__explicitlySet__.add("sourceObjectKey");
             return this;
         }
-
+        /**
+         * Name of the source object; the one for which a recommendation is made.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectName")
         private String sourceObjectName;
 
+        /**
+         * Name of the source object; the one for which a recommendation is made.
+         * @param sourceObjectName the value to set
+         * @return this builder
+         **/
         public Builder sourceObjectName(String sourceObjectName) {
             this.sourceObjectName = sourceObjectName;
             this.__explicitlySet__.add("sourceObjectName");
             return this;
         }
-
+        /**
+         * Type of the source object; the one for which a recommendation is made.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectType")
         private RecommendationResourceType sourceObjectType;
 
+        /**
+         * Type of the source object; the one for which a recommendation is made.
+         * @param sourceObjectType the value to set
+         * @return this builder
+         **/
         public Builder sourceObjectType(RecommendationResourceType sourceObjectType) {
             this.sourceObjectType = sourceObjectType;
             this.__explicitlySet__.add("sourceObjectType");
             return this;
         }
-
+        /**
+         * Unique identifier of the target object; the one which has been recommended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetObjectKey")
         private String targetObjectKey;
 
+        /**
+         * Unique identifier of the target object; the one which has been recommended.
+         * @param targetObjectKey the value to set
+         * @return this builder
+         **/
         public Builder targetObjectKey(String targetObjectKey) {
             this.targetObjectKey = targetObjectKey;
             this.__explicitlySet__.add("targetObjectKey");
             return this;
         }
-
+        /**
+         * Name of the target object; the one which has been recommended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetObjectName")
         private String targetObjectName;
 
+        /**
+         * Name of the target object; the one which has been recommended.
+         * @param targetObjectName the value to set
+         * @return this builder
+         **/
         public Builder targetObjectName(String targetObjectName) {
             this.targetObjectName = targetObjectName;
             this.__explicitlySet__.add("targetObjectName");
             return this;
         }
-
+        /**
+         * Type of the target object; the one which has been recommended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetObjectType")
         private RecommendationResourceType targetObjectType;
 
+        /**
+         * Type of the target object; the one which has been recommended.
+         * @param targetObjectType the value to set
+         * @return this builder
+         **/
         public Builder targetObjectType(RecommendationResourceType targetObjectType) {
             this.targetObjectType = targetObjectType;
             this.__explicitlySet__.add("targetObjectType");
             return this;
         }
-
+        /**
+         * A map of maps that contains additional properties which are specific to the associated objects.
+         * Each associated object defines it's set of required and optional properties.
+         * Example: {@code {
+         *             "DataEntity": {
+         *               "parentId": "entityId"
+         *             },
+         *             "Term": {
+         *               "parentId": "glossaryId"
+         *             }
+         *           }}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
+        /**
+         * A map of maps that contains additional properties which are specific to the associated objects.
+         * Each associated object defines it's set of required and optional properties.
+         * Example: {@code {
+         *             "DataEntity": {
+         *               "parentId": "entityId"
+         *             },
+         *             "Term": {
+         *               "parentId": "glossaryId"
+         *             }
+         *           }}
+         *
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -220,6 +318,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
     private final String recommendationKey;
 
+    /**
+     * Unique identifier of the recommendation.
+     * @return the value
+     **/
     public String getRecommendationKey() {
         return recommendationKey;
     }
@@ -230,6 +332,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationType")
     private final RecommendationType recommendationType;
 
+    /**
+     * Type of recommendation.
+     * @return the value
+     **/
     public RecommendationType getRecommendationType() {
         return recommendationType;
     }
@@ -240,6 +346,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationStatus")
     private final RecommendationStatus recommendationStatus;
 
+    /**
+     * Status of a recommendation.
+     * @return the value
+     **/
     public RecommendationStatus getRecommendationStatus() {
         return recommendationStatus;
     }
@@ -250,6 +360,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("confidenceScore")
     private final Float confidenceScore;
 
+    /**
+     * Level of confidence, on a scale between 0 and 1, that the recommendation is applicable.
+     * @return the value
+     **/
     public Float getConfidenceScore() {
         return confidenceScore;
     }
@@ -260,6 +374,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectKey")
     private final String sourceObjectKey;
 
+    /**
+     * Unique identifier of the source object; the one for which a recommendation is made.
+     * @return the value
+     **/
     public String getSourceObjectKey() {
         return sourceObjectKey;
     }
@@ -270,6 +388,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectName")
     private final String sourceObjectName;
 
+    /**
+     * Name of the source object; the one for which a recommendation is made.
+     * @return the value
+     **/
     public String getSourceObjectName() {
         return sourceObjectName;
     }
@@ -280,6 +402,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectType")
     private final RecommendationResourceType sourceObjectType;
 
+    /**
+     * Type of the source object; the one for which a recommendation is made.
+     * @return the value
+     **/
     public RecommendationResourceType getSourceObjectType() {
         return sourceObjectType;
     }
@@ -290,6 +416,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetObjectKey")
     private final String targetObjectKey;
 
+    /**
+     * Unique identifier of the target object; the one which has been recommended.
+     * @return the value
+     **/
     public String getTargetObjectKey() {
         return targetObjectKey;
     }
@@ -300,6 +430,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetObjectName")
     private final String targetObjectName;
 
+    /**
+     * Name of the target object; the one which has been recommended.
+     * @return the value
+     **/
     public String getTargetObjectName() {
         return targetObjectName;
     }
@@ -310,6 +444,10 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetObjectType")
     private final RecommendationResourceType targetObjectType;
 
+    /**
+     * Type of the target object; the one which has been recommended.
+     * @return the value
+     **/
     public RecommendationResourceType getTargetObjectType() {
         return targetObjectType;
     }
@@ -330,6 +468,20 @@ public final class RecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
+    /**
+     * A map of maps that contains additional properties which are specific to the associated objects.
+     * Each associated object defines it's set of required and optional properties.
+     * Example: {@code {
+     *             "DataEntity": {
+     *               "parentId": "entityId"
+     *             },
+     *             "Term": {
+     *               "parentId": "glossaryId"
+     *             }
+     *           }}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }

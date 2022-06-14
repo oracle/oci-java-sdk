@@ -42,36 +42,65 @@ public final class DbServerPatchingDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Estimated time, in minutes, to patch one database server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedPatchDuration")
         private Integer estimatedPatchDuration;
 
+        /**
+         * Estimated time, in minutes, to patch one database server.
+         * @param estimatedPatchDuration the value to set
+         * @return this builder
+         **/
         public Builder estimatedPatchDuration(Integer estimatedPatchDuration) {
             this.estimatedPatchDuration = estimatedPatchDuration;
             this.__explicitlySet__.add("estimatedPatchDuration");
             return this;
         }
-
+        /**
+         * The status of the patching operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
         private PatchingStatus patchingStatus;
 
+        /**
+         * The status of the patching operation.
+         * @param patchingStatus the value to set
+         * @return this builder
+         **/
         public Builder patchingStatus(PatchingStatus patchingStatus) {
             this.patchingStatus = patchingStatus;
             this.__explicitlySet__.add("patchingStatus");
             return this;
         }
-
+        /**
+         * The time when the patching operation started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePatchingStarted")
         private java.util.Date timePatchingStarted;
 
+        /**
+         * The time when the patching operation started.
+         * @param timePatchingStarted the value to set
+         * @return this builder
+         **/
         public Builder timePatchingStarted(java.util.Date timePatchingStarted) {
             this.timePatchingStarted = timePatchingStarted;
             this.__explicitlySet__.add("timePatchingStarted");
             return this;
         }
-
+        /**
+         * The time when the patching operation ended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePatchingEnded")
         private java.util.Date timePatchingEnded;
 
+        /**
+         * The time when the patching operation ended.
+         * @param timePatchingEnded the value to set
+         * @return this builder
+         **/
         public Builder timePatchingEnded(java.util.Date timePatchingEnded) {
             this.timePatchingEnded = timePatchingEnded;
             this.__explicitlySet__.add("timePatchingEnded");
@@ -122,6 +151,10 @@ public final class DbServerPatchingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedPatchDuration")
     private final Integer estimatedPatchDuration;
 
+    /**
+     * Estimated time, in minutes, to patch one database server.
+     * @return the value
+     **/
     public Integer getEstimatedPatchDuration() {
         return estimatedPatchDuration;
     }
@@ -182,6 +215,10 @@ public final class DbServerPatchingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
     private final PatchingStatus patchingStatus;
 
+    /**
+     * The status of the patching operation.
+     * @return the value
+     **/
     public PatchingStatus getPatchingStatus() {
         return patchingStatus;
     }
@@ -192,6 +229,10 @@ public final class DbServerPatchingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timePatchingStarted")
     private final java.util.Date timePatchingStarted;
 
+    /**
+     * The time when the patching operation started.
+     * @return the value
+     **/
     public java.util.Date getTimePatchingStarted() {
         return timePatchingStarted;
     }
@@ -202,6 +243,10 @@ public final class DbServerPatchingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timePatchingEnded")
     private final java.util.Date timePatchingEnded;
 
+    /**
+     * The time when the patching operation ended.
+     * @return the value
+     **/
     public java.util.Date getTimePatchingEnded() {
         return timePatchingEnded;
     }

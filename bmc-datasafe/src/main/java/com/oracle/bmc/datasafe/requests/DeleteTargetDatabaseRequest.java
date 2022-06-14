@@ -17,6 +17,9 @@ public class DeleteTargetDatabaseRequest
      */
     private String targetDatabaseId;
 
+    /**
+     * The OCID of the Data Safe target database.
+     */
     public String getTargetDatabaseId() {
         return targetDatabaseId;
     }
@@ -30,6 +33,14 @@ public class DeleteTargetDatabaseRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -38,6 +49,9 @@ public class DeleteTargetDatabaseRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,10 +63,14 @@ public class DeleteTargetDatabaseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the Data Safe target database.
+         */
         private String targetDatabaseId = null;
 
         /**
          * The OCID of the Data Safe target database.
+         * @param targetDatabaseId the value to set
          * @return this builder instance
          */
         public Builder targetDatabaseId(String targetDatabaseId) {
@@ -60,6 +78,14 @@ public class DeleteTargetDatabaseRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -69,6 +95,7 @@ public class DeleteTargetDatabaseRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -76,10 +103,14 @@ public class DeleteTargetDatabaseRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -159,7 +190,8 @@ public class DeleteTargetDatabaseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -168,6 +200,10 @@ public class DeleteTargetDatabaseRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

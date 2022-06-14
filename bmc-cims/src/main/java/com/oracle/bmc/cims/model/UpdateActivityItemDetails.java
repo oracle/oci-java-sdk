@@ -30,18 +30,33 @@ package com.oracle.bmc.cims.model;
 public final class UpdateActivityItemDetails extends UpdateItemDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Comments updated at the time that the activity occurs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comments")
         private String comments;
 
+        /**
+         * Comments updated at the time that the activity occurs.
+         * @param comments the value to set
+         * @return this builder
+         **/
         public Builder comments(String comments) {
             this.comments = comments;
             this.__explicitlySet__.add("comments");
             return this;
         }
-
+        /**
+         * The type of activity occurring.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activityType")
         private ActivityType activityType;
 
+        /**
+         * The type of activity occurring.
+         * @param activityType the value to set
+         * @return this builder
+         **/
         public Builder activityType(ActivityType activityType) {
             this.activityType = activityType;
             this.__explicitlySet__.add("activityType");
@@ -91,6 +106,10 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("comments")
     private final String comments;
 
+    /**
+     * Comments updated at the time that the activity occurs.
+     * @return the value
+     **/
     public String getComments() {
         return comments;
     }
@@ -138,6 +157,10 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("activityType")
     private final ActivityType activityType;
 
+    /**
+     * The type of activity occurring.
+     * @return the value
+     **/
     public ActivityType getActivityType() {
         return activityType;
     }

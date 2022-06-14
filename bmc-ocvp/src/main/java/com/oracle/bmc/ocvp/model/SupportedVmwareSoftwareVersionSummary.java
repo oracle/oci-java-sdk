@@ -32,18 +32,35 @@ public final class SupportedVmwareSoftwareVersionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A short, unique string that identifies the version of bundled software.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * A short, unique string that identifies the version of bundled software.
+         *
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * A description of the software in the bundle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the software in the bundle.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -87,6 +104,11 @@ public final class SupportedVmwareSoftwareVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * A short, unique string that identifies the version of bundled software.
+     *
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -97,6 +119,10 @@ public final class SupportedVmwareSoftwareVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the software in the bundle.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

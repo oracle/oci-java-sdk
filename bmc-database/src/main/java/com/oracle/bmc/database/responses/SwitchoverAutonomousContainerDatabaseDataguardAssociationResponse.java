@@ -14,6 +14,10 @@ public class SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +29,12 @@ public class SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+     * a particular request, then provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +45,11 @@ public class SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
      */
     private String opcWorkRequestId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -45,6 +60,10 @@ public class SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
     private com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
             autonomousContainerDatabaseDataguardAssociation;
 
+    /**
+     * The returned AutonomousContainerDatabaseDataguardAssociation instance.
+     * @return the value
+     */
     public com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
             getAutonomousContainerDatabaseDataguardAssociation() {
         return autonomousContainerDatabaseDataguardAssociation;
@@ -80,30 +99,68 @@ public class SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+         * a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+         * a particular request, then provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * The returned AutonomousContainerDatabaseDataguardAssociation instance.
+         */
         private com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
                 autonomousContainerDatabaseDataguardAssociation;
 
+        /**
+         * The returned AutonomousContainerDatabaseDataguardAssociation instance.
+         * @param autonomousContainerDatabaseDataguardAssociation the value to set
+         * @return this builder
+         */
         public Builder autonomousContainerDatabaseDataguardAssociation(
                 com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
                         autonomousContainerDatabaseDataguardAssociation) {
@@ -127,6 +184,10 @@ public class SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse build() {
             return new SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse(
                     __httpStatusCode__,
@@ -137,6 +198,10 @@ public class SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

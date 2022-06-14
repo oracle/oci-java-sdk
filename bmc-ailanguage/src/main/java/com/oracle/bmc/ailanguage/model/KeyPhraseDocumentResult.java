@@ -32,27 +32,49 @@ public final class KeyPhraseDocumentResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Document Unique Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Document Unique Identifier.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * List of detected keyPhrases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyPhrases")
         private java.util.List<KeyPhrase> keyPhrases;
 
+        /**
+         * List of detected keyPhrases.
+         * @param keyPhrases the value to set
+         * @return this builder
+         **/
         public Builder keyPhrases(java.util.List<KeyPhrase> keyPhrases) {
             this.keyPhrases = keyPhrases;
             this.__explicitlySet__.add("keyPhrases");
             return this;
         }
-
+        /**
+         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
+        /**
+         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * @param languageCode the value to set
+         * @return this builder
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -96,6 +118,10 @@ public final class KeyPhraseDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Document Unique Identifier.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -106,6 +132,10 @@ public final class KeyPhraseDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("keyPhrases")
     private final java.util.List<KeyPhrase> keyPhrases;
 
+    /**
+     * List of detected keyPhrases.
+     * @return the value
+     **/
     public java.util.List<KeyPhrase> getKeyPhrases() {
         return keyPhrases;
     }
@@ -116,6 +146,10 @@ public final class KeyPhraseDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
+    /**
+     * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * @return the value
+     **/
     public String getLanguageCode() {
         return languageCode;
     }

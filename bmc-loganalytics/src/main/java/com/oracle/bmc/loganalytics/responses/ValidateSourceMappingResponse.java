@@ -14,6 +14,11 @@ public class ValidateSourceMappingResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class ValidateSourceMappingResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.loganalytics.model.SourceMappingResponse sourceMappingResponse;
 
+    /**
+     * The returned SourceMappingResponse instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.SourceMappingResponse getSourceMappingResponse() {
         return sourceMappingResponse;
     }
@@ -49,15 +58,33 @@ public class ValidateSourceMappingResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned SourceMappingResponse instance.
+         */
         private com.oracle.bmc.loganalytics.model.SourceMappingResponse sourceMappingResponse;
 
+        /**
+         * The returned SourceMappingResponse instance.
+         * @param sourceMappingResponse the value to set
+         * @return this builder
+         */
         public Builder sourceMappingResponse(
                 com.oracle.bmc.loganalytics.model.SourceMappingResponse sourceMappingResponse) {
             this.sourceMappingResponse = sourceMappingResponse;
@@ -76,12 +103,20 @@ public class ValidateSourceMappingResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ValidateSourceMappingResponse build() {
             return new ValidateSourceMappingResponse(
                     __httpStatusCode__, opcRequestId, sourceMappingResponse);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

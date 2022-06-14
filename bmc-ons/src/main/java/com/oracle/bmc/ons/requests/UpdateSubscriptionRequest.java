@@ -19,6 +19,10 @@ public class UpdateSubscriptionRequest
      */
     private String subscriptionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to update.
+     *
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -28,6 +32,10 @@ public class UpdateSubscriptionRequest
      */
     private com.oracle.bmc.ons.model.UpdateSubscriptionDetails updateSubscriptionDetails;
 
+    /**
+     * The configuration details for updating the subscription.
+     *
+     */
     public com.oracle.bmc.ons.model.UpdateSubscriptionDetails getUpdateSubscriptionDetails() {
         return updateSubscriptionDetails;
     }
@@ -38,6 +46,11 @@ public class UpdateSubscriptionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +62,12 @@ public class UpdateSubscriptionRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -70,11 +89,16 @@ public class UpdateSubscriptionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to update.
+         *
+         */
         private String subscriptionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to update.
          *
+         * @param subscriptionId the value to set
          * @return this builder instance
          */
         public Builder subscriptionId(String subscriptionId) {
@@ -82,11 +106,16 @@ public class UpdateSubscriptionRequest
             return this;
         }
 
+        /**
+         * The configuration details for updating the subscription.
+         *
+         */
         private com.oracle.bmc.ons.model.UpdateSubscriptionDetails updateSubscriptionDetails = null;
 
         /**
          * The configuration details for updating the subscription.
          *
+         * @param updateSubscriptionDetails the value to set
          * @return this builder instance
          */
         public Builder updateSubscriptionDetails(
@@ -95,12 +124,18 @@ public class UpdateSubscriptionRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -108,6 +143,12 @@ public class UpdateSubscriptionRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -115,6 +156,7 @@ public class UpdateSubscriptionRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -207,7 +249,8 @@ public class UpdateSubscriptionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +260,10 @@ public class UpdateSubscriptionRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

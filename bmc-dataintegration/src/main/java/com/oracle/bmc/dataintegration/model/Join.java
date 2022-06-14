@@ -25,18 +25,33 @@ package com.oracle.bmc.dataintegration.model;
 public final class Join extends PushDownOperation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The join condition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
 
+        /**
+         * The join condition.
+         * @param condition the value to set
+         * @return this builder
+         **/
         public Builder condition(String condition) {
             this.condition = condition;
             this.__explicitlySet__.add("condition");
             return this;
         }
-
+        /**
+         * The type of join.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private Policy policy;
 
+        /**
+         * The type of join.
+         * @param policy the value to set
+         * @return this builder
+         **/
         public Builder policy(Policy policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
@@ -85,6 +100,10 @@ public final class Join extends PushDownOperation {
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
+    /**
+     * The join condition.
+     * @return the value
+     **/
     public String getCondition() {
         return condition;
     }
@@ -144,6 +163,10 @@ public final class Join extends PushDownOperation {
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final Policy policy;
 
+    /**
+     * The type of join.
+     * @return the value
+     **/
     public Policy getPolicy() {
         return policy;
     }

@@ -29,9 +29,17 @@ public final class DataAccessContainerCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of container resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DataAccessContainerSummary> items;
 
+        /**
+         * An array of container resources.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DataAccessContainerSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class DataAccessContainerCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DataAccessContainerSummary> items;
 
+    /**
+     * An array of container resources.
+     * @return the value
+     **/
     public java.util.List<DataAccessContainerSummary> getItems() {
         return items;
     }

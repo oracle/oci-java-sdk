@@ -18,6 +18,9 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
      */
     private String auditArchiveRetrievalId;
 
+    /**
+     * OCID of the archive retrieval.
+     */
     public String getAuditArchiveRetrievalId() {
         return auditArchiveRetrievalId;
     }
@@ -27,6 +30,9 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
     private com.oracle.bmc.datasafe.model.ChangeAuditArchiveRetrievalCompartmentDetails
             changeAuditArchiveRetrievalCompartmentDetails;
 
+    /**
+     * The details used to change the compartment of a archive retrieval.
+     */
     public com.oracle.bmc.datasafe.model.ChangeAuditArchiveRetrievalCompartmentDetails
             getChangeAuditArchiveRetrievalCompartmentDetails() {
         return changeAuditArchiveRetrievalCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +78,13 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -83,10 +107,14 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of the archive retrieval.
+         */
         private String auditArchiveRetrievalId = null;
 
         /**
          * OCID of the archive retrieval.
+         * @param auditArchiveRetrievalId the value to set
          * @return this builder instance
          */
         public Builder auditArchiveRetrievalId(String auditArchiveRetrievalId) {
@@ -94,11 +122,15 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
             return this;
         }
 
+        /**
+         * The details used to change the compartment of a archive retrieval.
+         */
         private com.oracle.bmc.datasafe.model.ChangeAuditArchiveRetrievalCompartmentDetails
                 changeAuditArchiveRetrievalCompartmentDetails = null;
 
         /**
          * The details used to change the compartment of a archive retrieval.
+         * @param changeAuditArchiveRetrievalCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeAuditArchiveRetrievalCompartmentDetails(
@@ -109,6 +141,14 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +158,7 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -125,10 +166,14 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +181,13 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -144,6 +196,7 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -243,7 +296,8 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -255,6 +309,10 @@ public class ChangeAuditArchiveRetrievalCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

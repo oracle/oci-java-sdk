@@ -34,9 +34,17 @@ public final class QueryDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The query display name. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The query display name. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -60,10 +68,17 @@ public final class QueryDefinition {
             this.__explicitlySet__.add("costAnalysisUI");
             return this;
         }
-
+        /**
+         * The saved query version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private java.math.BigDecimal version;
 
+        /**
+         * The saved query version.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(java.math.BigDecimal version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -110,6 +125,10 @@ public final class QueryDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The query display name. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -134,6 +153,10 @@ public final class QueryDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final java.math.BigDecimal version;
 
+    /**
+     * The saved query version.
+     * @return the value
+     **/
     public java.math.BigDecimal getVersion() {
         return version;
     }

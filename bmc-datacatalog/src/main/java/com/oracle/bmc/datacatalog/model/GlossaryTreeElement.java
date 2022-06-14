@@ -68,117 +68,217 @@ public final class GlossaryTreeElement {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of child terms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("childTerms")
         private java.util.List<GlossaryTreeElement> childTerms;
 
+        /**
+         * An array of child terms.
+         * @param childTerms the value to set
+         * @return this builder
+         **/
         public Builder childTerms(java.util.List<GlossaryTreeElement> childTerms) {
             this.childTerms = childTerms;
             this.__explicitlySet__.add("childTerms");
             return this;
         }
-
+        /**
+         * Unique term key that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique term key that is immutable.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Detailed description of the term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the term.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Unique id of the parent glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
         private String glossaryKey;
 
+        /**
+         * Unique id of the parent glossary.
+         * @param glossaryKey the value to set
+         * @return this builder
+         **/
         public Builder glossaryKey(String glossaryKey) {
             this.glossaryKey = glossaryKey;
             this.__explicitlySet__.add("glossaryKey");
             return this;
         }
-
+        /**
+         * URI to the term instance in the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
+        /**
+         * URI to the term instance in the API.
+         * @param uri the value to set
+         * @return this builder
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-
+        /**
+         * This terms parent term key. Will be null if the term has no parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
         private String parentTermKey;
 
+        /**
+         * This terms parent term key. Will be null if the term has no parent term.
+         * @param parentTermKey the value to set
+         * @return this builder
+         **/
         public Builder parentTermKey(String parentTermKey) {
             this.parentTermKey = parentTermKey;
             this.__explicitlySet__.add("parentTermKey");
             return this;
         }
-
+        /**
+         * Indicates whether a term may contain child terms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAllowedToHaveChildTerms")
         private Boolean isAllowedToHaveChildTerms;
 
+        /**
+         * Indicates whether a term may contain child terms.
+         * @param isAllowedToHaveChildTerms the value to set
+         * @return this builder
+         **/
         public Builder isAllowedToHaveChildTerms(Boolean isAllowedToHaveChildTerms) {
             this.isAllowedToHaveChildTerms = isAllowedToHaveChildTerms;
             this.__explicitlySet__.add("isAllowedToHaveChildTerms");
             return this;
         }
-
+        /**
+         * Absolute path of the term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Absolute path of the term.
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * The date and time the term was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the term was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Status of the approval process workflow for this business term in the glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
         private TermWorkflowStatus workflowStatus;
 
+        /**
+         * Status of the approval process workflow for this business term in the glossary.
+         * @param workflowStatus the value to set
+         * @return this builder
+         **/
         public Builder workflowStatus(TermWorkflowStatus workflowStatus) {
             this.workflowStatus = workflowStatus;
             this.__explicitlySet__.add("workflowStatus");
             return this;
         }
-
+        /**
+         * The number of objects tagged with this term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedObjectCount")
         private Integer associatedObjectCount;
 
+        /**
+         * The number of objects tagged with this term.
+         * @param associatedObjectCount the value to set
+         * @return this builder
+         **/
         public Builder associatedObjectCount(Integer associatedObjectCount) {
             this.associatedObjectCount = associatedObjectCount;
             this.__explicitlySet__.add("associatedObjectCount");
             return this;
         }
-
+        /**
+         * State of the term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * State of the term.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -247,6 +347,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("childTerms")
     private final java.util.List<GlossaryTreeElement> childTerms;
 
+    /**
+     * An array of child terms.
+     * @return the value
+     **/
     public java.util.List<GlossaryTreeElement> getChildTerms() {
         return childTerms;
     }
@@ -257,6 +361,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique term key that is immutable.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -269,6 +377,12 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -279,6 +393,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the term.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -289,6 +407,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
     private final String glossaryKey;
 
+    /**
+     * Unique id of the parent glossary.
+     * @return the value
+     **/
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -299,6 +421,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
+    /**
+     * URI to the term instance in the API.
+     * @return the value
+     **/
     public String getUri() {
         return uri;
     }
@@ -309,6 +435,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
     private final String parentTermKey;
 
+    /**
+     * This terms parent term key. Will be null if the term has no parent term.
+     * @return the value
+     **/
     public String getParentTermKey() {
         return parentTermKey;
     }
@@ -319,6 +449,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("isAllowedToHaveChildTerms")
     private final Boolean isAllowedToHaveChildTerms;
 
+    /**
+     * Indicates whether a term may contain child terms.
+     * @return the value
+     **/
     public Boolean getIsAllowedToHaveChildTerms() {
         return isAllowedToHaveChildTerms;
     }
@@ -329,6 +463,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Absolute path of the term.
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -341,6 +479,12 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the term was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -351,6 +495,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
     private final TermWorkflowStatus workflowStatus;
 
+    /**
+     * Status of the approval process workflow for this business term in the glossary.
+     * @return the value
+     **/
     public TermWorkflowStatus getWorkflowStatus() {
         return workflowStatus;
     }
@@ -361,6 +509,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("associatedObjectCount")
     private final Integer associatedObjectCount;
 
+    /**
+     * The number of objects tagged with this term.
+     * @return the value
+     **/
     public Integer getAssociatedObjectCount() {
         return associatedObjectCount;
     }
@@ -371,6 +523,10 @@ public final class GlossaryTreeElement {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * State of the term.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }

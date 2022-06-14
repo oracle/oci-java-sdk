@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Possible related resource entity type
+ * The related Oracle Database type, either an Autonomous Database, a container database (CDB), or a pluggable database (PDB).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum RelatedResourceEntityType {

@@ -13,6 +13,10 @@ public class UpdateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String etag;
 
+    /**
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +28,12 @@ public class UpdateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class UpdateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.oda.model.Channel channel;
 
+    /**
+     * The returned Channel instance.
+     * @return the value
+     */
     public com.oracle.bmc.oda.model.Channel getChannel() {
         return channel;
     }
@@ -57,22 +71,50 @@ public class UpdateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         */
         private String etag;
 
+        /**
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Channel instance.
+         */
         private com.oracle.bmc.oda.model.Channel channel;
 
+        /**
+         * The returned Channel instance.
+         * @param channel the value to set
+         * @return this builder
+         */
         public Builder channel(com.oracle.bmc.oda.model.Channel channel) {
             this.channel = channel;
             return this;
@@ -91,11 +133,19 @@ public class UpdateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateChannelResponse build() {
             return new UpdateChannelResponse(__httpStatusCode__, etag, opcRequestId, channel);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

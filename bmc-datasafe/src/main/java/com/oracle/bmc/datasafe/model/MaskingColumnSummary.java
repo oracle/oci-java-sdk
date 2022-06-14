@@ -77,144 +77,271 @@ public final class MaskingColumnSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique key that identifies a masking column. The key is numeric and unique within a masking policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The unique key that identifies a masking column. The key is numeric and unique within a masking policy.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The OCID of the masking policy that contains the masking column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingPolicyId")
         private String maskingPolicyId;
 
+        /**
+         * The OCID of the masking policy that contains the masking column.
+         * @param maskingPolicyId the value to set
+         * @return this builder
+         **/
         public Builder maskingPolicyId(String maskingPolicyId) {
             this.maskingPolicyId = maskingPolicyId;
             this.__explicitlySet__.add("maskingPolicyId");
             return this;
         }
-
+        /**
+         * The current state of the masking column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private MaskingColumnLifecycleState lifecycleState;
 
+        /**
+         * The current state of the masking column.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(MaskingColumnLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Details about the current state of the masking column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Details about the current state of the masking column.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The name of the schema that contains the database column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
+        /**
+         * The name of the schema that contains the database column.
+         * @param schemaName the value to set
+         * @return this builder
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-
+        /**
+         * The name of the object (table or editioning view) that contains the database column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * The name of the object (table or editioning view) that contains the database column.
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-
+        /**
+         * The type of the object that contains the database column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private ObjectType objectType;
 
+        /**
+         * The type of the object that contains the database column.
+         * @param objectType the value to set
+         * @return this builder
+         **/
         public Builder objectType(ObjectType objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-
+        /**
+         * The name of the database column. Note that the same name is used for the masking column.
+         * There is no separate displayName attribute for the masking column.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
+        /**
+         * The name of the database column. Note that the same name is used for the masking column.
+         * There is no separate displayName attribute for the masking column.
+         *
+         * @param columnName the value to set
+         * @return this builder
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
             return this;
         }
-
+        /**
+         * An array of child columns that are in referential relationship with the masking column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("childColumns")
         private java.util.List<String> childColumns;
 
+        /**
+         * An array of child columns that are in referential relationship with the masking column.
+         * @param childColumns the value to set
+         * @return this builder
+         **/
         public Builder childColumns(java.util.List<String> childColumns) {
             this.childColumns = childColumns;
             this.__explicitlySet__.add("childColumns");
             return this;
         }
-
+        /**
+         * The group of the masking column. All the columns in a group are masked together to ensure
+         * that the masked data across these columns continue
+         * to retain the same logical relationship. For more details, check <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingColumnGroup")
         private String maskingColumnGroup;
 
+        /**
+         * The group of the masking column. All the columns in a group are masked together to ensure
+         * that the masked data across these columns continue
+         * to retain the same logical relationship. For more details, check <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
+         *
+         * @param maskingColumnGroup the value to set
+         * @return this builder
+         **/
         public Builder maskingColumnGroup(String maskingColumnGroup) {
             this.maskingColumnGroup = maskingColumnGroup;
             this.__explicitlySet__.add("maskingColumnGroup");
             return this;
         }
-
+        /**
+         * The OCID of the sensitive type associated with the masking column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
         private String sensitiveTypeId;
 
+        /**
+         * The OCID of the sensitive type associated with the masking column.
+         * @param sensitiveTypeId the value to set
+         * @return this builder
+         **/
         public Builder sensitiveTypeId(String sensitiveTypeId) {
             this.sensitiveTypeId = sensitiveTypeId;
             this.__explicitlySet__.add("sensitiveTypeId");
             return this;
         }
-
+        /**
+         * Indicates if data masking is enabled for the masking column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMaskingEnabled")
         private Boolean isMaskingEnabled;
 
+        /**
+         * Indicates if data masking is enabled for the masking column.
+         * @param isMaskingEnabled the value to set
+         * @return this builder
+         **/
         public Builder isMaskingEnabled(Boolean isMaskingEnabled) {
             this.isMaskingEnabled = isMaskingEnabled;
             this.__explicitlySet__.add("isMaskingEnabled");
             return this;
         }
-
+        /**
+         * The data type of the masking column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * The data type of the masking column.
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * An array of masking formats assigned to the masking column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
         private java.util.List<MaskingFormat> maskingFormats;
 
+        /**
+         * An array of masking formats assigned to the masking column.
+         * @param maskingFormats the value to set
+         * @return this builder
+         **/
         public Builder maskingFormats(java.util.List<MaskingFormat> maskingFormats) {
             this.maskingFormats = maskingFormats;
             this.__explicitlySet__.add("maskingFormats");
@@ -289,6 +416,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The unique key that identifies a masking column. The key is numeric and unique within a masking policy.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -299,6 +430,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("maskingPolicyId")
     private final String maskingPolicyId;
 
+    /**
+     * The OCID of the masking policy that contains the masking column.
+     * @return the value
+     **/
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -309,6 +444,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MaskingColumnLifecycleState lifecycleState;
 
+    /**
+     * The current state of the masking column.
+     * @return the value
+     **/
     public MaskingColumnLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -319,6 +458,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Details about the current state of the masking column.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -330,6 +473,11 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -341,6 +489,11 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -351,6 +504,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
+    /**
+     * The name of the schema that contains the database column.
+     * @return the value
+     **/
     public String getSchemaName() {
         return schemaName;
     }
@@ -361,6 +518,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * The name of the object (table or editioning view) that contains the database column.
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }
@@ -371,6 +532,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final ObjectType objectType;
 
+    /**
+     * The type of the object that contains the database column.
+     * @return the value
+     **/
     public ObjectType getObjectType() {
         return objectType;
     }
@@ -383,6 +548,12 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
+    /**
+     * The name of the database column. Note that the same name is used for the masking column.
+     * There is no separate displayName attribute for the masking column.
+     *
+     * @return the value
+     **/
     public String getColumnName() {
         return columnName;
     }
@@ -393,6 +564,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("childColumns")
     private final java.util.List<String> childColumns;
 
+    /**
+     * An array of child columns that are in referential relationship with the masking column.
+     * @return the value
+     **/
     public java.util.List<String> getChildColumns() {
         return childColumns;
     }
@@ -406,6 +581,13 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("maskingColumnGroup")
     private final String maskingColumnGroup;
 
+    /**
+     * The group of the masking column. All the columns in a group are masked together to ensure
+     * that the masked data across these columns continue
+     * to retain the same logical relationship. For more details, check <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
+     *
+     * @return the value
+     **/
     public String getMaskingColumnGroup() {
         return maskingColumnGroup;
     }
@@ -416,6 +598,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
     private final String sensitiveTypeId;
 
+    /**
+     * The OCID of the sensitive type associated with the masking column.
+     * @return the value
+     **/
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
@@ -426,6 +612,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isMaskingEnabled")
     private final Boolean isMaskingEnabled;
 
+    /**
+     * Indicates if data masking is enabled for the masking column.
+     * @return the value
+     **/
     public Boolean getIsMaskingEnabled() {
         return isMaskingEnabled;
     }
@@ -436,6 +626,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * The data type of the masking column.
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -446,6 +640,10 @@ public final class MaskingColumnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
     private final java.util.List<MaskingFormat> maskingFormats;
 
+    /**
+     * An array of masking formats assigned to the masking column.
+     * @return the value
+     **/
     public java.util.List<MaskingFormat> getMaskingFormats() {
         return maskingFormats;
     }

@@ -44,6 +44,10 @@ public class AuthConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Generated key that can be used in API calls to identify this object.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -54,6 +58,10 @@ public class AuthConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The model version of an object.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }

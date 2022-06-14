@@ -18,6 +18,9 @@ public class CreateAlertRuleRequest
      */
     private String budgetId;
 
+    /**
+     * The unique budget OCID.
+     */
     public String getBudgetId() {
         return budgetId;
     }
@@ -26,6 +29,9 @@ public class CreateAlertRuleRequest
      */
     private com.oracle.bmc.budget.model.CreateAlertRuleDetails createAlertRuleDetails;
 
+    /**
+     * Details for the new Alert Rule.
+     */
     public com.oracle.bmc.budget.model.CreateAlertRuleDetails getCreateAlertRuleDetails() {
         return createAlertRuleDetails;
     }
@@ -39,6 +45,14 @@ public class CreateAlertRuleRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or
+     * server error, without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -47,6 +61,9 @@ public class CreateAlertRuleRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,10 +85,14 @@ public class CreateAlertRuleRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique budget OCID.
+         */
         private String budgetId = null;
 
         /**
          * The unique budget OCID.
+         * @param budgetId the value to set
          * @return this builder instance
          */
         public Builder budgetId(String budgetId) {
@@ -79,10 +100,14 @@ public class CreateAlertRuleRequest
             return this;
         }
 
+        /**
+         * Details for the new Alert Rule.
+         */
         private com.oracle.bmc.budget.model.CreateAlertRuleDetails createAlertRuleDetails = null;
 
         /**
          * Details for the new Alert Rule.
+         * @param createAlertRuleDetails the value to set
          * @return this builder instance
          */
         public Builder createAlertRuleDetails(
@@ -91,6 +116,14 @@ public class CreateAlertRuleRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or
+         * server error, without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -100,6 +133,7 @@ public class CreateAlertRuleRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -107,10 +141,14 @@ public class CreateAlertRuleRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -203,7 +241,8 @@ public class CreateAlertRuleRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -213,6 +252,10 @@ public class CreateAlertRuleRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

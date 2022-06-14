@@ -47,54 +47,101 @@ public final class LogAnalyticsLabelAlias {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The alias.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
+        /**
+         * The alias.
+         * @param alias the value to set
+         * @return this builder
+         **/
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
             return this;
         }
-
+        /**
+         * The alias display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aliasDisplayName")
         private String aliasDisplayName;
 
+        /**
+         * The alias display name.
+         * @param aliasDisplayName the value to set
+         * @return this builder
+         **/
         public Builder aliasDisplayName(String aliasDisplayName) {
             this.aliasDisplayName = aliasDisplayName;
             this.__explicitlySet__.add("aliasDisplayName");
             return this;
         }
-
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-
+        /**
+         * The label display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The label display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The label name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The label name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The label priority. Default value is NONE.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Priority priority;
 
+        /**
+         * The label priority. Default value is NONE.
+         * @param priority the value to set
+         * @return this builder
+         **/
         public Builder priority(Priority priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
@@ -144,6 +191,10 @@ public final class LogAnalyticsLabelAlias {
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
+    /**
+     * The alias.
+     * @return the value
+     **/
     public String getAlias() {
         return alias;
     }
@@ -154,6 +205,10 @@ public final class LogAnalyticsLabelAlias {
     @com.fasterxml.jackson.annotation.JsonProperty("aliasDisplayName")
     private final String aliasDisplayName;
 
+    /**
+     * The alias display name.
+     * @return the value
+     **/
     public String getAliasDisplayName() {
         return aliasDisplayName;
     }
@@ -166,6 +221,12 @@ public final class LogAnalyticsLabelAlias {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -176,6 +237,10 @@ public final class LogAnalyticsLabelAlias {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The label display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -186,6 +251,10 @@ public final class LogAnalyticsLabelAlias {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The label name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -246,6 +315,10 @@ public final class LogAnalyticsLabelAlias {
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Priority priority;
 
+    /**
+     * The label priority. Default value is NONE.
+     * @return the value
+     **/
     public Priority getPriority() {
         return priority;
     }

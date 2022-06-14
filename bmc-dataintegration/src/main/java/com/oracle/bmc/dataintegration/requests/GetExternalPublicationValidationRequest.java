@@ -17,6 +17,9 @@ public class GetExternalPublicationValidationRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -25,6 +28,9 @@ public class GetExternalPublicationValidationRequest
      */
     private String taskKey;
 
+    /**
+     * The task key.
+     */
     public String getTaskKey() {
         return taskKey;
     }
@@ -33,6 +39,9 @@ public class GetExternalPublicationValidationRequest
      */
     private String externalPublicationValidationKey;
 
+    /**
+     * The external published object key.
+     */
     public String getExternalPublicationValidationKey() {
         return externalPublicationValidationKey;
     }
@@ -44,6 +53,12 @@ public class GetExternalPublicationValidationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -55,10 +70,14 @@ public class GetExternalPublicationValidationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -66,10 +85,14 @@ public class GetExternalPublicationValidationRequest
             return this;
         }
 
+        /**
+         * The task key.
+         */
         private String taskKey = null;
 
         /**
          * The task key.
+         * @param taskKey the value to set
          * @return this builder instance
          */
         public Builder taskKey(String taskKey) {
@@ -77,10 +100,14 @@ public class GetExternalPublicationValidationRequest
             return this;
         }
 
+        /**
+         * The external published object key.
+         */
         private String externalPublicationValidationKey = null;
 
         /**
          * The external published object key.
+         * @param externalPublicationValidationKey the value to set
          * @return this builder instance
          */
         public Builder externalPublicationValidationKey(String externalPublicationValidationKey) {
@@ -88,6 +115,12 @@ public class GetExternalPublicationValidationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -95,6 +128,7 @@ public class GetExternalPublicationValidationRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -177,7 +211,8 @@ public class GetExternalPublicationValidationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -187,6 +222,10 @@ public class GetExternalPublicationValidationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

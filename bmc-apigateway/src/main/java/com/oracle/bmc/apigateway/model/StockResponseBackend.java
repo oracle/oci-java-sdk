@@ -28,27 +28,49 @@ package com.oracle.bmc.apigateway.model;
 public final class StockResponseBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The body of the stock response from the mock backend.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("body")
         private String body;
 
+        /**
+         * The body of the stock response from the mock backend.
+         * @param body the value to set
+         * @return this builder
+         **/
         public Builder body(String body) {
             this.body = body;
             this.__explicitlySet__.add("body");
             return this;
         }
-
+        /**
+         * The status code of the stock response from the mock backend.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Integer status;
 
+        /**
+         * The status code of the stock response from the mock backend.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Integer status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The headers of the stock response from the mock backend.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<HeaderFieldSpecification> headers;
 
+        /**
+         * The headers of the stock response from the mock backend.
+         * @param headers the value to set
+         * @return this builder
+         **/
         public Builder headers(java.util.List<HeaderFieldSpecification> headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
@@ -99,6 +121,10 @@ public final class StockResponseBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.annotation.JsonProperty("body")
     private final String body;
 
+    /**
+     * The body of the stock response from the mock backend.
+     * @return the value
+     **/
     public String getBody() {
         return body;
     }
@@ -109,6 +135,10 @@ public final class StockResponseBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Integer status;
 
+    /**
+     * The status code of the stock response from the mock backend.
+     * @return the value
+     **/
     public Integer getStatus() {
         return status;
     }
@@ -119,6 +149,10 @@ public final class StockResponseBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final java.util.List<HeaderFieldSpecification> headers;
 
+    /**
+     * The headers of the stock response from the mock backend.
+     * @return the value
+     **/
     public java.util.List<HeaderFieldSpecification> getHeaders() {
         return headers;
     }

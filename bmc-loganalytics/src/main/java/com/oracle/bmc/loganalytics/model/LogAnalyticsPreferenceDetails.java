@@ -29,9 +29,17 @@ public final class LogAnalyticsPreferenceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of tenant preference details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsPreference> items;
 
+        /**
+         * An array of tenant preference details.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsPreference> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class LogAnalyticsPreferenceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsPreference> items;
 
+    /**
+     * An array of tenant preference details.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsPreference> getItems() {
         return items;
     }

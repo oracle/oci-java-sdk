@@ -47,54 +47,109 @@ public final class FastLaunchJobConfigSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the fast launch job config
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the fast launch job config
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name of the fast launch job shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * The name of the fast launch job shape.
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * The number of cores associated with this fast launch job shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
         private Integer coreCount;
 
+        /**
+         * The number of cores associated with this fast launch job shape.
+         *
+         * @param coreCount the value to set
+         * @return this builder
+         **/
         public Builder coreCount(Integer coreCount) {
             this.coreCount = coreCount;
             this.__explicitlySet__.add("coreCount");
             return this;
         }
-
+        /**
+         * The number of cores associated with this fast launch job shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
+        /**
+         * The number of cores associated with this fast launch job shape.
+         *
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Integer memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-
+        /**
+         * The family that the compute shape belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
         private ShapeSeries shapeSeries;
 
+        /**
+         * The family that the compute shape belongs to.
+         *
+         * @param shapeSeries the value to set
+         * @return this builder
+         **/
         public Builder shapeSeries(ShapeSeries shapeSeries) {
             this.shapeSeries = shapeSeries;
             this.__explicitlySet__.add("shapeSeries");
             return this;
         }
-
+        /**
+         * The managed egress support
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedEgressSupport")
         private ManagedEgressSupport managedEgressSupport;
 
+        /**
+         * The managed egress support
+         *
+         * @param managedEgressSupport the value to set
+         * @return this builder
+         **/
         public Builder managedEgressSupport(ManagedEgressSupport managedEgressSupport) {
             this.managedEgressSupport = managedEgressSupport;
             this.__explicitlySet__.add("managedEgressSupport");
@@ -150,6 +205,11 @@ public final class FastLaunchJobConfigSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the fast launch job config
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -161,6 +221,11 @@ public final class FastLaunchJobConfigSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * The name of the fast launch job shape.
+     *
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -172,6 +237,11 @@ public final class FastLaunchJobConfigSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
     private final Integer coreCount;
 
+    /**
+     * The number of cores associated with this fast launch job shape.
+     *
+     * @return the value
+     **/
     public Integer getCoreCount() {
         return coreCount;
     }
@@ -183,6 +253,11 @@ public final class FastLaunchJobConfigSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
+    /**
+     * The number of cores associated with this fast launch job shape.
+     *
+     * @return the value
+     **/
     public Integer getMemoryInGBs() {
         return memoryInGBs;
     }
@@ -245,6 +320,11 @@ public final class FastLaunchJobConfigSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
     private final ShapeSeries shapeSeries;
 
+    /**
+     * The family that the compute shape belongs to.
+     *
+     * @return the value
+     **/
     public ShapeSeries getShapeSeries() {
         return shapeSeries;
     }
@@ -306,6 +386,11 @@ public final class FastLaunchJobConfigSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("managedEgressSupport")
     private final ManagedEgressSupport managedEgressSupport;
 
+    /**
+     * The managed egress support
+     *
+     * @return the value
+     **/
     public ManagedEgressSupport getManagedEgressSupport() {
         return managedEgressSupport;
     }

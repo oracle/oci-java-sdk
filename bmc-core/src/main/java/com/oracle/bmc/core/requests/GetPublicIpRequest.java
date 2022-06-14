@@ -16,6 +16,9 @@ public class GetPublicIpRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String publicIpId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP.
+     */
     public String getPublicIpId() {
         return publicIpId;
     }
@@ -27,10 +30,14 @@ public class GetPublicIpRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP.
+         */
         private String publicIpId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP.
+         * @param publicIpId the value to set
          * @return this builder instance
          */
         public Builder publicIpId(String publicIpId) {
@@ -106,12 +113,17 @@ public class GetPublicIpRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().publicIpId(publicIpId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

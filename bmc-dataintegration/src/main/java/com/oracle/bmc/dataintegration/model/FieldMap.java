@@ -66,6 +66,10 @@ public class FieldMap {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description for the object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

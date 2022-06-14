@@ -44,45 +44,81 @@ public final class ImportableEnterpriseManagerEntity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Enterprise Manager Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
         private String enterpriseManagerIdentifier;
 
+        /**
+         * Enterprise Manager Unique Identifier
+         * @param enterpriseManagerIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
             this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             this.__explicitlySet__.add("enterpriseManagerIdentifier");
             return this;
         }
-
+        /**
+         * Enterprise Manager Entity Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityName")
         private String enterpriseManagerEntityName;
 
+        /**
+         * Enterprise Manager Entity Name
+         * @param enterpriseManagerEntityName the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
             this.enterpriseManagerEntityName = enterpriseManagerEntityName;
             this.__explicitlySet__.add("enterpriseManagerEntityName");
             return this;
         }
-
+        /**
+         * Enterprise Manager Entity Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityType")
         private String enterpriseManagerEntityType;
 
+        /**
+         * Enterprise Manager Entity Type
+         * @param enterpriseManagerEntityType the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
             this.enterpriseManagerEntityType = enterpriseManagerEntityType;
             this.__explicitlySet__.add("enterpriseManagerEntityType");
             return this;
         }
-
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
         private String enterpriseManagerEntityIdentifier;
 
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         * @param enterpriseManagerEntityIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
             this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             this.__explicitlySet__.add("enterpriseManagerEntityIdentifier");
             return this;
         }
-
+        /**
+         * Operations Insights internal representation of the resource type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opsiEntityType")
         private String opsiEntityType;
 
+        /**
+         * Operations Insights internal representation of the resource type.
+         * @param opsiEntityType the value to set
+         * @return this builder
+         **/
         public Builder opsiEntityType(String opsiEntityType) {
             this.opsiEntityType = opsiEntityType;
             this.__explicitlySet__.add("opsiEntityType");
@@ -136,6 +172,10 @@ public final class ImportableEnterpriseManagerEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
     private final String enterpriseManagerIdentifier;
 
+    /**
+     * Enterprise Manager Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerIdentifier() {
         return enterpriseManagerIdentifier;
     }
@@ -146,6 +186,10 @@ public final class ImportableEnterpriseManagerEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityName")
     private final String enterpriseManagerEntityName;
 
+    /**
+     * Enterprise Manager Entity Name
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityName() {
         return enterpriseManagerEntityName;
     }
@@ -156,6 +200,10 @@ public final class ImportableEnterpriseManagerEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityType")
     private final String enterpriseManagerEntityType;
 
+    /**
+     * Enterprise Manager Entity Type
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityType() {
         return enterpriseManagerEntityType;
     }
@@ -166,6 +214,10 @@ public final class ImportableEnterpriseManagerEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
     private final String enterpriseManagerEntityIdentifier;
 
+    /**
+     * Enterprise Manager Entity Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityIdentifier() {
         return enterpriseManagerEntityIdentifier;
     }
@@ -176,6 +228,10 @@ public final class ImportableEnterpriseManagerEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("opsiEntityType")
     private final String opsiEntityType;
 
+    /**
+     * Operations Insights internal representation of the resource type.
+     * @return the value
+     **/
     public String getOpsiEntityType() {
         return opsiEntityType;
     }

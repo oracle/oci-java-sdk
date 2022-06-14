@@ -29,9 +29,17 @@ public final class PipelineValidationSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of validation summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PipelineValidationSummary> items;
 
+        /**
+         * The array of validation summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<PipelineValidationSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class PipelineValidationSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PipelineValidationSummary> items;
 
+    /**
+     * The array of validation summaries.
+     * @return the value
+     **/
     public java.util.List<PipelineValidationSummary> getItems() {
         return items;
     }

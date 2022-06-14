@@ -31,18 +31,37 @@ public final class PrivateSourceDnsZone {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZone")
         private String dnsZone;
 
+        /**
+         * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         *
+         * @param dnsZone the value to set
+         * @return this builder
+         **/
         public Builder dnsZone(String dnsZone) {
             this.dnsZone = dnsZone;
             this.__explicitlySet__.add("dnsZone");
             return this;
         }
-
+        /**
+         * Description of private source dns zone.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of private source dns zone.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -85,6 +104,11 @@ public final class PrivateSourceDnsZone {
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZone")
     private final String dnsZone;
 
+    /**
+     * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+     *
+     * @return the value
+     **/
     public String getDnsZone() {
         return dnsZone;
     }
@@ -96,6 +120,11 @@ public final class PrivateSourceDnsZone {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of private source dns zone.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

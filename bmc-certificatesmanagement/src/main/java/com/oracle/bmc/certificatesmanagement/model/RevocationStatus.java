@@ -28,18 +28,37 @@ public final class RevocationStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfRevocation")
         private java.util.Date timeOfRevocation;
 
+        /**
+         * The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfRevocation the value to set
+         * @return this builder
+         **/
         public Builder timeOfRevocation(java.util.Date timeOfRevocation) {
             this.timeOfRevocation = timeOfRevocation;
             this.__explicitlySet__.add("timeOfRevocation");
             return this;
         }
-
+        /**
+         * The reason the certificate or certificate authority (CA) was revoked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
         private RevocationReason revocationReason;
 
+        /**
+         * The reason the certificate or certificate authority (CA) was revoked.
+         * @param revocationReason the value to set
+         * @return this builder
+         **/
         public Builder revocationReason(RevocationReason revocationReason) {
             this.revocationReason = revocationReason;
             this.__explicitlySet__.add("revocationReason");
@@ -86,6 +105,12 @@ public final class RevocationStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfRevocation")
     private final java.util.Date timeOfRevocation;
 
+    /**
+     * The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfRevocation() {
         return timeOfRevocation;
     }
@@ -96,6 +121,10 @@ public final class RevocationStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
     private final RevocationReason revocationReason;
 
+    /**
+     * The reason the certificate or certificate authority (CA) was revoked.
+     * @return the value
+     **/
     public RevocationReason getRevocationReason() {
         return revocationReason;
     }

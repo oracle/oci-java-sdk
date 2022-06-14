@@ -38,19 +38,33 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
             this.__explicitlySet__.add("modelId");
             return this;
         }
-
+        /**
+         * List of signal names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signalNames")
         private java.util.List<String> signalNames;
 
+        /**
+         * List of signal names.
+         * @param signalNames the value to set
+         * @return this builder
+         **/
         public Builder signalNames(java.util.List<String> signalNames) {
             this.signalNames = signalNames;
             this.__explicitlySet__.add("signalNames");
             return this;
         }
-
+        /**
+         * Array containing data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("data")
         private java.util.List<DataItem> data;
 
+        /**
+         * Array containing data.
+         * @param data the value to set
+         * @return this builder
+         **/
         public Builder data(java.util.List<DataItem> data) {
             this.data = data;
             this.__explicitlySet__.add("data");
@@ -102,6 +116,10 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("signalNames")
     private final java.util.List<String> signalNames;
 
+    /**
+     * List of signal names.
+     * @return the value
+     **/
     public java.util.List<String> getSignalNames() {
         return signalNames;
     }
@@ -112,6 +130,10 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     private final java.util.List<DataItem> data;
 
+    /**
+     * Array containing data.
+     * @return the value
+     **/
     public java.util.List<DataItem> getData() {
         return data;
     }

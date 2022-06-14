@@ -56,81 +56,161 @@ public final class WorkRequestSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private WorkRequestOperationType operationType;
 
+        /**
+         * The type of work request.
+         * @param operationType the value to set
+         * @return this builder
+         **/
         public Builder operationType(WorkRequestOperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-
+        /**
+         * The status of the current work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private WorkRequestStatus status;
 
+        /**
+         * The status of the current work request.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(WorkRequestStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The ID of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The ID of the work request.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects.
+         * If the work request affects multiple resources that are not in the same compartment then the system picks the primary resource whose compartment should be used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects.
+         * If the work request affects multiple resources that are not in the same compartment then the system picks the primary resource whose compartment should be used.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The completed percentage of the operation tracked by the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
+        /**
+         * The completed percentage of the operation tracked by the work request.
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-
+        /**
+         * The date and time the work request was accepted, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * The precision for this time object is in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * The date and time the work request was accepted, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * The precision for this time object is in milliseconds.
+         *
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for this time object is in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for this time object is in milliseconds.
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The date and time the work request reached a terminal state, either FAILED or SUCCEEDED, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * The precision for this time object is in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The date and time the work request reached a terminal state, either FAILED or SUCCEEDED, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * The precision for this time object is in milliseconds.
+         *
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * The resources affected by this work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
+        /**
+         * The resources affected by this work request.
+         * @param resources the value to set
+         * @return this builder
+         **/
         public Builder resources(java.util.List<WorkRequestResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
@@ -191,6 +271,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final WorkRequestOperationType operationType;
 
+    /**
+     * The type of work request.
+     * @return the value
+     **/
     public WorkRequestOperationType getOperationType() {
         return operationType;
     }
@@ -201,6 +285,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final WorkRequestStatus status;
 
+    /**
+     * The status of the current work request.
+     * @return the value
+     **/
     public WorkRequestStatus getStatus() {
         return status;
     }
@@ -211,6 +299,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The ID of the work request.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -223,6 +315,12 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects.
+     * If the work request affects multiple resources that are not in the same compartment then the system picks the primary resource whose compartment should be used.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -233,6 +331,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
+    /**
+     * The completed percentage of the operation tracked by the work request.
+     * @return the value
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
@@ -246,6 +348,13 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * The date and time the work request was accepted, as described in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The precision for this time object is in milliseconds.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -257,6 +366,11 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for this time object is in milliseconds.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -269,6 +383,12 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The date and time the work request reached a terminal state, either FAILED or SUCCEEDED, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The precision for this time object is in milliseconds.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -279,6 +399,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
+    /**
+     * The resources affected by this work request.
+     * @return the value
+     **/
     public java.util.List<WorkRequestResource> getResources() {
         return resources;
     }

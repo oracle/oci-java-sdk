@@ -30,27 +30,51 @@ public final class Configuration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The reporting region value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reportingRegion")
         private String reportingRegion;
 
+        /**
+         * The reporting region value
+         * @param reportingRegion the value to set
+         * @return this builder
+         **/
         public Builder reportingRegion(String reportingRegion) {
             this.reportingRegion = reportingRegion;
             this.__explicitlySet__.add("reportingRegion");
             return this;
         }
-
+        /**
+         * Status of Cloud Guard Tenant
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private CloudGuardStatus status;
 
+        /**
+         * Status of Cloud Guard Tenant
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(CloudGuardStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Identifies if Oracle managed resources were created by customers
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("selfManageResources")
         private Boolean selfManageResources;
 
+        /**
+         * Identifies if Oracle managed resources were created by customers
+         *
+         * @param selfManageResources the value to set
+         * @return this builder
+         **/
         public Builder selfManageResources(Boolean selfManageResources) {
             this.selfManageResources = selfManageResources;
             this.__explicitlySet__.add("selfManageResources");
@@ -96,6 +120,10 @@ public final class Configuration {
     @com.fasterxml.jackson.annotation.JsonProperty("reportingRegion")
     private final String reportingRegion;
 
+    /**
+     * The reporting region value
+     * @return the value
+     **/
     public String getReportingRegion() {
         return reportingRegion;
     }
@@ -106,6 +134,10 @@ public final class Configuration {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final CloudGuardStatus status;
 
+    /**
+     * Status of Cloud Guard Tenant
+     * @return the value
+     **/
     public CloudGuardStatus getStatus() {
         return status;
     }
@@ -117,6 +149,11 @@ public final class Configuration {
     @com.fasterxml.jackson.annotation.JsonProperty("selfManageResources")
     private final Boolean selfManageResources;
 
+    /**
+     * Identifies if Oracle managed resources were created by customers
+     *
+     * @return the value
+     **/
     public Boolean getSelfManageResources() {
         return selfManageResources;
     }

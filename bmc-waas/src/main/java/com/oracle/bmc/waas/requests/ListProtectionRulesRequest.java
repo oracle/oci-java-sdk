@@ -16,6 +16,9 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String waasPolicyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     */
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
@@ -24,6 +27,9 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
@@ -48,6 +60,9 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private java.util.List<String> modSecurityRuleId;
 
+    /**
+     * Filter rules using a list of ModSecurity rule IDs.
+     */
     public java.util.List<String> getModSecurityRuleId() {
         return modSecurityRuleId;
     }
@@ -93,6 +108,9 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * Filter rules using a list of actions.
+     */
     public java.util.List<Action> getAction() {
         return action;
     }
@@ -104,10 +122,14 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         */
         private String waasPolicyId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         * @param waasPolicyId the value to set
          * @return this builder instance
          */
         public Builder waasPolicyId(String waasPolicyId) {
@@ -115,10 +137,14 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -126,10 +152,14 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -137,10 +167,14 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous paginated call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -148,10 +182,14 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Filter rules using a list of ModSecurity rule IDs.
+         */
         private java.util.List<String> modSecurityRuleId = null;
 
         /**
          * Filter rules using a list of ModSecurity rule IDs.
+         * @param modSecurityRuleId the value to set
          * @return this builder instance
          */
         public Builder modSecurityRuleId(java.util.List<String> modSecurityRuleId) {
@@ -161,16 +199,21 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Singular setter. Filter rules using a list of ModSecurity rule IDs.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder modSecurityRuleId(String singularValue) {
             return this.modSecurityRuleId(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter rules using a list of actions.
+         */
         private java.util.List<Action> action = null;
 
         /**
          * Filter rules using a list of actions.
+         * @param action the value to set
          * @return this builder instance
          */
         public Builder action(java.util.List<Action> action) {
@@ -180,6 +223,7 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Singular setter. Filter rules using a list of actions.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder action(Action singularValue) {
@@ -264,7 +308,8 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -276,6 +321,10 @@ public class ListProtectionRulesRequest extends com.oracle.bmc.requests.BmcReque
                 .action(action);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

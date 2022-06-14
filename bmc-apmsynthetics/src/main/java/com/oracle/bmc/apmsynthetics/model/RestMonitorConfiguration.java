@@ -35,37 +35,65 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("isFailureRetried");
             return this;
         }
-
+        /**
+         * If redirection enabled, then redirects will be allowed while accessing target URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRedirectionEnabled")
         private Boolean isRedirectionEnabled;
 
+        /**
+         * If redirection enabled, then redirects will be allowed while accessing target URL.
+         * @param isRedirectionEnabled the value to set
+         * @return this builder
+         **/
         public Builder isRedirectionEnabled(Boolean isRedirectionEnabled) {
             this.isRedirectionEnabled = isRedirectionEnabled;
             this.__explicitlySet__.add("isRedirectionEnabled");
             return this;
         }
-
+        /**
+         * If certificate validation enabled, then call will fail for certificate errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
         private Boolean isCertificateValidationEnabled;
 
+        /**
+         * If certificate validation enabled, then call will fail for certificate errors.
+         * @param isCertificateValidationEnabled the value to set
+         * @return this builder
+         **/
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = isCertificateValidationEnabled;
             this.__explicitlySet__.add("isCertificateValidationEnabled");
             return this;
         }
-
+        /**
+         * Request HTTP method.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestMethod")
         private RequestMethods requestMethod;
 
+        /**
+         * Request HTTP method.
+         * @param requestMethod the value to set
+         * @return this builder
+         **/
         public Builder requestMethod(RequestMethods requestMethod) {
             this.requestMethod = requestMethod;
             this.__explicitlySet__.add("requestMethod");
             return this;
         }
-
+        /**
+         * Request http authentication scheme.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationScheme")
         private RequestAuthenticationSchemes reqAuthenticationScheme;
 
+        /**
+         * Request http authentication scheme.
+         * @param reqAuthenticationScheme the value to set
+         * @return this builder
+         **/
         public Builder reqAuthenticationScheme(
                 RequestAuthenticationSchemes reqAuthenticationScheme) {
             this.reqAuthenticationScheme = reqAuthenticationScheme;
@@ -82,46 +110,91 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("reqAuthenticationDetails");
             return this;
         }
-
+        /**
+         * List of request headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
         private java.util.List<Header> requestHeaders;
 
+        /**
+         * List of request headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
+         *
+         * @param requestHeaders the value to set
+         * @return this builder
+         **/
         public Builder requestHeaders(java.util.List<Header> requestHeaders) {
             this.requestHeaders = requestHeaders;
             this.__explicitlySet__.add("requestHeaders");
             return this;
         }
-
+        /**
+         * List of request query params. Example: {@code [{"paramName": "sortOrder", "paramValue": "asc"}]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestQueryParams")
         private java.util.List<RequestQueryParam> requestQueryParams;
 
+        /**
+         * List of request query params. Example: {@code [{"paramName": "sortOrder", "paramValue": "asc"}]}
+         *
+         * @param requestQueryParams the value to set
+         * @return this builder
+         **/
         public Builder requestQueryParams(java.util.List<RequestQueryParam> requestQueryParams) {
             this.requestQueryParams = requestQueryParams;
             this.__explicitlySet__.add("requestQueryParams");
             return this;
         }
-
+        /**
+         * Request post body content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestPostBody")
         private String requestPostBody;
 
+        /**
+         * Request post body content.
+         * @param requestPostBody the value to set
+         * @return this builder
+         **/
         public Builder requestPostBody(String requestPostBody) {
             this.requestPostBody = requestPostBody;
             this.__explicitlySet__.add("requestPostBody");
             return this;
         }
-
+        /**
+         * Verify response content against regular expression based string.
+         * If response content does not match the verifyResponseContent value, then it will be considered a failure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseContent")
         private String verifyResponseContent;
 
+        /**
+         * Verify response content against regular expression based string.
+         * If response content does not match the verifyResponseContent value, then it will be considered a failure.
+         *
+         * @param verifyResponseContent the value to set
+         * @return this builder
+         **/
         public Builder verifyResponseContent(String verifyResponseContent) {
             this.verifyResponseContent = verifyResponseContent;
             this.__explicitlySet__.add("verifyResponseContent");
             return this;
         }
-
+        /**
+         * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
         private java.util.List<String> verifyResponseCodes;
 
+        /**
+         * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+         *
+         * @param verifyResponseCodes the value to set
+         * @return this builder
+         **/
         public Builder verifyResponseCodes(java.util.List<String> verifyResponseCodes) {
             this.verifyResponseCodes = verifyResponseCodes;
             this.__explicitlySet__.add("verifyResponseCodes");
@@ -225,6 +298,10 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("isRedirectionEnabled")
     private final Boolean isRedirectionEnabled;
 
+    /**
+     * If redirection enabled, then redirects will be allowed while accessing target URL.
+     * @return the value
+     **/
     public Boolean getIsRedirectionEnabled() {
         return isRedirectionEnabled;
     }
@@ -235,6 +312,10 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
     private final Boolean isCertificateValidationEnabled;
 
+    /**
+     * If certificate validation enabled, then call will fail for certificate errors.
+     * @return the value
+     **/
     public Boolean getIsCertificateValidationEnabled() {
         return isCertificateValidationEnabled;
     }
@@ -245,6 +326,10 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("requestMethod")
     private final RequestMethods requestMethod;
 
+    /**
+     * Request HTTP method.
+     * @return the value
+     **/
     public RequestMethods getRequestMethod() {
         return requestMethod;
     }
@@ -255,6 +340,10 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationScheme")
     private final RequestAuthenticationSchemes reqAuthenticationScheme;
 
+    /**
+     * Request http authentication scheme.
+     * @return the value
+     **/
     public RequestAuthenticationSchemes getReqAuthenticationScheme() {
         return reqAuthenticationScheme;
     }
@@ -273,6 +362,11 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
     private final java.util.List<Header> requestHeaders;
 
+    /**
+     * List of request headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
+     *
+     * @return the value
+     **/
     public java.util.List<Header> getRequestHeaders() {
         return requestHeaders;
     }
@@ -284,6 +378,11 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("requestQueryParams")
     private final java.util.List<RequestQueryParam> requestQueryParams;
 
+    /**
+     * List of request query params. Example: {@code [{"paramName": "sortOrder", "paramValue": "asc"}]}
+     *
+     * @return the value
+     **/
     public java.util.List<RequestQueryParam> getRequestQueryParams() {
         return requestQueryParams;
     }
@@ -294,6 +393,10 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("requestPostBody")
     private final String requestPostBody;
 
+    /**
+     * Request post body content.
+     * @return the value
+     **/
     public String getRequestPostBody() {
         return requestPostBody;
     }
@@ -306,6 +409,12 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseContent")
     private final String verifyResponseContent;
 
+    /**
+     * Verify response content against regular expression based string.
+     * If response content does not match the verifyResponseContent value, then it will be considered a failure.
+     *
+     * @return the value
+     **/
     public String getVerifyResponseContent() {
         return verifyResponseContent;
     }
@@ -317,6 +426,11 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
     private final java.util.List<String> verifyResponseCodes;
 
+    /**
+     * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getVerifyResponseCodes() {
         return verifyResponseCodes;
     }

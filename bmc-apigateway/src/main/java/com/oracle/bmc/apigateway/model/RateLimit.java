@@ -29,18 +29,39 @@ public final class RateLimit {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of requests that can be made per time period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
 
+        /**
+         * The number of requests that can be made per time period.
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Integer value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The unit of time over which rate limits are calculated.
+         * Example: {@code SECOND}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
+        /**
+         * The unit of time over which rate limits are calculated.
+         * Example: {@code SECOND}
+         *
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -83,6 +104,11 @@ public final class RateLimit {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Integer value;
 
+    /**
+     * The number of requests that can be made per time period.
+     *
+     * @return the value
+     **/
     public Integer getValue() {
         return value;
     }
@@ -142,6 +168,12 @@ public final class RateLimit {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
+    /**
+     * The unit of time over which rate limits are calculated.
+     * Example: {@code SECOND}
+     *
+     * @return the value
+     **/
     public Unit getUnit() {
         return unit;
     }

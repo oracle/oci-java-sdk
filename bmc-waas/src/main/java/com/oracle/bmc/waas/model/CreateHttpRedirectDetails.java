@@ -51,63 +51,129 @@ public final class CreateHttpRedirectDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The domain from which traffic will be redirected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
+        /**
+         * The domain from which traffic will be redirected.
+         * @param domain the value to set
+         * @return this builder
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
-
+        /**
+         * The redirect target object including all the redirect data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private HttpRedirectTarget target;
 
+        /**
+         * The redirect target object including all the redirect data.
+         * @param target the value to set
+         * @return this builder
+         **/
         public Builder target(HttpRedirectTarget target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
         }
-
+        /**
+         * The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responseCode")
         private Integer responseCode;
 
+        /**
+         * The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
+         * @param responseCode the value to set
+         * @return this builder
+         **/
         public Builder responseCode(Integer responseCode) {
             this.responseCode = responseCode;
             this.__explicitlySet__.add("responseCode");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -165,6 +231,10 @@ public final class CreateHttpRedirectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -175,6 +245,10 @@ public final class CreateHttpRedirectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -185,6 +259,10 @@ public final class CreateHttpRedirectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
+    /**
+     * The domain from which traffic will be redirected.
+     * @return the value
+     **/
     public String getDomain() {
         return domain;
     }
@@ -195,6 +273,10 @@ public final class CreateHttpRedirectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final HttpRedirectTarget target;
 
+    /**
+     * The redirect target object including all the redirect data.
+     * @return the value
+     **/
     public HttpRedirectTarget getTarget() {
         return target;
     }
@@ -205,6 +287,10 @@ public final class CreateHttpRedirectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("responseCode")
     private final Integer responseCode;
 
+    /**
+     * The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
+     * @return the value
+     **/
     public Integer getResponseCode() {
         return responseCode;
     }
@@ -219,6 +305,14 @@ public final class CreateHttpRedirectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -233,6 +327,14 @@ public final class CreateHttpRedirectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

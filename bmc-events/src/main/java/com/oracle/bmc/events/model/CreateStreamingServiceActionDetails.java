@@ -44,10 +44,19 @@ public final class CreateStreamingServiceActionDetails extends ActionDetails {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamId")
         private String streamId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+         *
+         * @param streamId the value to set
+         * @return this builder
+         **/
         public Builder streamId(String streamId) {
             this.streamId = streamId;
             this.__explicitlySet__.add("streamId");
@@ -101,6 +110,11 @@ public final class CreateStreamingServiceActionDetails extends ActionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("streamId")
     private final String streamId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+     *
+     * @return the value
+     **/
     public String getStreamId() {
         return streamId;
     }

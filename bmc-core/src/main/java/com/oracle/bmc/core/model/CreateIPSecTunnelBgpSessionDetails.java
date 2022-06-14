@@ -44,45 +44,193 @@ public final class CreateIPSecTunnelBgpSessionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The IP address for the Oracle end of the inside tunnel interface.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this IP address
+         * is required and used for the tunnel's BGP session.
+         * <p>
+         * If {@code routing} is instead set to {@code STATIC}, this IP address is optional. You can set this IP
+         * address to troubleshoot or monitor the tunnel.
+         * <p>
+         * The value must be a /30 or /31.
+         * <p>
+         * Example: {@code 10.0.0.4/31}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIp")
         private String oracleInterfaceIp;
 
+        /**
+         * The IP address for the Oracle end of the inside tunnel interface.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this IP address
+         * is required and used for the tunnel's BGP session.
+         * <p>
+         * If {@code routing} is instead set to {@code STATIC}, this IP address is optional. You can set this IP
+         * address to troubleshoot or monitor the tunnel.
+         * <p>
+         * The value must be a /30 or /31.
+         * <p>
+         * Example: {@code 10.0.0.4/31}
+         *
+         * @param oracleInterfaceIp the value to set
+         * @return this builder
+         **/
         public Builder oracleInterfaceIp(String oracleInterfaceIp) {
             this.oracleInterfaceIp = oracleInterfaceIp;
             this.__explicitlySet__.add("oracleInterfaceIp");
             return this;
         }
-
+        /**
+         * The IP address for the CPE end of the inside tunnel interface.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this IP address
+         * is required and used for the tunnel's BGP session.
+         * <p>
+         * If {@code routing} is instead set to {@code STATIC}, this IP address is optional. You can set this IP
+         * address to troubleshoot or monitor the tunnel.
+         * <p>
+         * The value must be a /30 or /31.
+         * <p>
+         * Example: {@code 10.0.0.5/31}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIp")
         private String customerInterfaceIp;
 
+        /**
+         * The IP address for the CPE end of the inside tunnel interface.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this IP address
+         * is required and used for the tunnel's BGP session.
+         * <p>
+         * If {@code routing} is instead set to {@code STATIC}, this IP address is optional. You can set this IP
+         * address to troubleshoot or monitor the tunnel.
+         * <p>
+         * The value must be a /30 or /31.
+         * <p>
+         * Example: {@code 10.0.0.5/31}
+         *
+         * @param customerInterfaceIp the value to set
+         * @return this builder
+         **/
         public Builder customerInterfaceIp(String customerInterfaceIp) {
             this.customerInterfaceIp = customerInterfaceIp;
             this.__explicitlySet__.add("customerInterfaceIp");
             return this;
         }
-
+        /**
+         * The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this IP address
+         * is used for the tunnel's BGP session.
+         * <p>
+         * If {@code routing} is instead set to {@code STATIC}, you can set this IP
+         * address to troubleshoot or monitor the tunnel.
+         * <p>
+         * Only subnet masks from /64 up to /127 are allowed.
+         * <p>
+         * Example: {@code 2001:db8::1/64}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIpv6")
         private String oracleInterfaceIpv6;
 
+        /**
+         * The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this IP address
+         * is used for the tunnel's BGP session.
+         * <p>
+         * If {@code routing} is instead set to {@code STATIC}, you can set this IP
+         * address to troubleshoot or monitor the tunnel.
+         * <p>
+         * Only subnet masks from /64 up to /127 are allowed.
+         * <p>
+         * Example: {@code 2001:db8::1/64}
+         *
+         * @param oracleInterfaceIpv6 the value to set
+         * @return this builder
+         **/
         public Builder oracleInterfaceIpv6(String oracleInterfaceIpv6) {
             this.oracleInterfaceIpv6 = oracleInterfaceIpv6;
             this.__explicitlySet__.add("oracleInterfaceIpv6");
             return this;
         }
-
+        /**
+         * The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this IP address
+         * is used for the tunnel's BGP session.
+         * <p>
+         * If {@code routing} is instead set to {@code STATIC}, you can set this IP
+         * address to troubleshoot or monitor the tunnel.
+         * <p>
+         * Only subnet masks from /64 up to /127 are allowed.
+         * <p>
+         * Example: {@code 2001:db8::1/64}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIpv6")
         private String customerInterfaceIpv6;
 
+        /**
+         * The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this IP address
+         * is used for the tunnel's BGP session.
+         * <p>
+         * If {@code routing} is instead set to {@code STATIC}, you can set this IP
+         * address to troubleshoot or monitor the tunnel.
+         * <p>
+         * Only subnet masks from /64 up to /127 are allowed.
+         * <p>
+         * Example: {@code 2001:db8::1/64}
+         *
+         * @param customerInterfaceIpv6 the value to set
+         * @return this builder
+         **/
         public Builder customerInterfaceIpv6(String customerInterfaceIpv6) {
             this.customerInterfaceIpv6 = customerInterfaceIpv6;
             this.__explicitlySet__.add("customerInterfaceIpv6");
             return this;
         }
-
+        /**
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this ASN
+         * is required and used for the tunnel's BGP session. This is the ASN of the network on the
+         * CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code STATIC}, the {@code customerBgpAsn} must be null.
+         * <p>
+         * Example: {@code 12345} (2-byte) or {@code 1587232876} (4-byte)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private String customerBgpAsn;
 
+        /**
+         * If the tunnel's {@code routing} attribute is set to {@code BGP}
+         * (see {@link IPSecConnectionTunnel}), this ASN
+         * is required and used for the tunnel's BGP session. This is the ASN of the network on the
+         * CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+         * <p>
+         * If the tunnel's {@code routing} attribute is set to {@code STATIC}, the {@code customerBgpAsn} must be null.
+         * <p>
+         * Example: {@code 12345} (2-byte) or {@code 1587232876} (4-byte)
+         *
+         * @param customerBgpAsn the value to set
+         * @return this builder
+         **/
         public Builder customerBgpAsn(String customerBgpAsn) {
             this.customerBgpAsn = customerBgpAsn;
             this.__explicitlySet__.add("customerBgpAsn");
@@ -147,6 +295,22 @@ public final class CreateIPSecTunnelBgpSessionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIp")
     private final String oracleInterfaceIp;
 
+    /**
+     * The IP address for the Oracle end of the inside tunnel interface.
+     * <p>
+     * If the tunnel's {@code routing} attribute is set to {@code BGP}
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is required and used for the tunnel's BGP session.
+     * <p>
+     * If {@code routing} is instead set to {@code STATIC}, this IP address is optional. You can set this IP
+     * address to troubleshoot or monitor the tunnel.
+     * <p>
+     * The value must be a /30 or /31.
+     * <p>
+     * Example: {@code 10.0.0.4/31}
+     *
+     * @return the value
+     **/
     public String getOracleInterfaceIp() {
         return oracleInterfaceIp;
     }
@@ -169,6 +333,22 @@ public final class CreateIPSecTunnelBgpSessionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIp")
     private final String customerInterfaceIp;
 
+    /**
+     * The IP address for the CPE end of the inside tunnel interface.
+     * <p>
+     * If the tunnel's {@code routing} attribute is set to {@code BGP}
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is required and used for the tunnel's BGP session.
+     * <p>
+     * If {@code routing} is instead set to {@code STATIC}, this IP address is optional. You can set this IP
+     * address to troubleshoot or monitor the tunnel.
+     * <p>
+     * The value must be a /30 or /31.
+     * <p>
+     * Example: {@code 10.0.0.5/31}
+     *
+     * @return the value
+     **/
     public String getCustomerInterfaceIp() {
         return customerInterfaceIp;
     }
@@ -191,6 +371,22 @@ public final class CreateIPSecTunnelBgpSessionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIpv6")
     private final String oracleInterfaceIpv6;
 
+    /**
+     * The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+     * <p>
+     * If the tunnel's {@code routing} attribute is set to {@code BGP}
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is used for the tunnel's BGP session.
+     * <p>
+     * If {@code routing} is instead set to {@code STATIC}, you can set this IP
+     * address to troubleshoot or monitor the tunnel.
+     * <p>
+     * Only subnet masks from /64 up to /127 are allowed.
+     * <p>
+     * Example: {@code 2001:db8::1/64}
+     *
+     * @return the value
+     **/
     public String getOracleInterfaceIpv6() {
         return oracleInterfaceIpv6;
     }
@@ -213,6 +409,22 @@ public final class CreateIPSecTunnelBgpSessionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIpv6")
     private final String customerInterfaceIpv6;
 
+    /**
+     * The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+     * <p>
+     * If the tunnel's {@code routing} attribute is set to {@code BGP}
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is used for the tunnel's BGP session.
+     * <p>
+     * If {@code routing} is instead set to {@code STATIC}, you can set this IP
+     * address to troubleshoot or monitor the tunnel.
+     * <p>
+     * Only subnet masks from /64 up to /127 are allowed.
+     * <p>
+     * Example: {@code 2001:db8::1/64}
+     *
+     * @return the value
+     **/
     public String getCustomerInterfaceIpv6() {
         return customerInterfaceIpv6;
     }
@@ -231,6 +443,18 @@ public final class CreateIPSecTunnelBgpSessionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
     private final String customerBgpAsn;
 
+    /**
+     * If the tunnel's {@code routing} attribute is set to {@code BGP}
+     * (see {@link IPSecConnectionTunnel}), this ASN
+     * is required and used for the tunnel's BGP session. This is the ASN of the network on the
+     * CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+     * <p>
+     * If the tunnel's {@code routing} attribute is set to {@code STATIC}, the {@code customerBgpAsn} must be null.
+     * <p>
+     * Example: {@code 12345} (2-byte) or {@code 1587232876} (4-byte)
+     *
+     * @return the value
+     **/
     public String getCustomerBgpAsn() {
         return customerBgpAsn;
     }

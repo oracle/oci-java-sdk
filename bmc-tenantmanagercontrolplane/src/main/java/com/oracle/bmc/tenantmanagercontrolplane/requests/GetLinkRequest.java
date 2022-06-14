@@ -16,6 +16,9 @@ public class GetLinkRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String linkId;
 
+    /**
+     * OCID of the link to retrieve.
+     */
     public String getLinkId() {
         return linkId;
     }
@@ -24,6 +27,9 @@ public class GetLinkRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,10 +40,14 @@ public class GetLinkRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of the link to retrieve.
+         */
         private String linkId = null;
 
         /**
          * OCID of the link to retrieve.
+         * @param linkId the value to set
          * @return this builder instance
          */
         public Builder linkId(String linkId) {
@@ -45,10 +55,14 @@ public class GetLinkRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -126,12 +140,17 @@ public class GetLinkRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().linkId(linkId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

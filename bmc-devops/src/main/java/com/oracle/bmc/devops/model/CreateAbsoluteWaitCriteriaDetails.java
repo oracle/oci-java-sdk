@@ -27,9 +27,23 @@ package com.oracle.bmc.devops.model;
 public final class CreateAbsoluteWaitCriteriaDetails extends CreateWaitCriteriaDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The absolute wait duration.
+         * Minimum wait duration must be 5 seconds.
+         * Maximum wait duration can be up to 2 days.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("waitDuration")
         private String waitDuration;
 
+        /**
+         * The absolute wait duration.
+         * Minimum wait duration must be 5 seconds.
+         * Maximum wait duration can be up to 2 days.
+         *
+         * @param waitDuration the value to set
+         * @return this builder
+         **/
         public Builder waitDuration(String waitDuration) {
             this.waitDuration = waitDuration;
             this.__explicitlySet__.add("waitDuration");
@@ -81,6 +95,13 @@ public final class CreateAbsoluteWaitCriteriaDetails extends CreateWaitCriteriaD
     @com.fasterxml.jackson.annotation.JsonProperty("waitDuration")
     private final String waitDuration;
 
+    /**
+     * The absolute wait duration.
+     * Minimum wait duration must be 5 seconds.
+     * Maximum wait duration can be up to 2 days.
+     *
+     * @return the value
+     **/
     public String getWaitDuration() {
         return waitDuration;
     }

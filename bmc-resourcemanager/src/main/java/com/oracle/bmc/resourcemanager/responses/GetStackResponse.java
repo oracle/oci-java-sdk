@@ -13,6 +13,10 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -31,6 +39,10 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.resourcemanager.model.Stack stack;
 
+    /**
+     * The returned Stack instance.
+     * @return the value
+     */
     public com.oracle.bmc.resourcemanager.model.Stack getStack() {
         return stack;
     }
@@ -55,22 +67,46 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique identifier for the request.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned Stack instance.
+         */
         private com.oracle.bmc.resourcemanager.model.Stack stack;
 
+        /**
+         * The returned Stack instance.
+         * @param stack the value to set
+         * @return this builder
+         */
         public Builder stack(com.oracle.bmc.resourcemanager.model.Stack stack) {
             this.stack = stack;
             return this;
@@ -89,11 +125,19 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetStackResponse build() {
             return new GetStackResponse(__httpStatusCode__, opcRequestId, etag, stack);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

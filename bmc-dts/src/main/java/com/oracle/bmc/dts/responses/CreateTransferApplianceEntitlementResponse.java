@@ -14,6 +14,10 @@ public class CreateTransferApplianceEntitlementResponse
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +27,10 @@ public class CreateTransferApplianceEntitlementResponse
      */
     private String etag;
 
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -32,6 +40,10 @@ public class CreateTransferApplianceEntitlementResponse
      */
     private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
+    /**
+     * The returned TransferApplianceEntitlement instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.TransferApplianceEntitlement getTransferApplianceEntitlement() {
         return transferApplianceEntitlement;
     }
@@ -61,22 +73,46 @@ public class CreateTransferApplianceEntitlementResponse
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         *
+         */
         private String etag;
 
+        /**
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned TransferApplianceEntitlement instance.
+         */
         private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
+        /**
+         * The returned TransferApplianceEntitlement instance.
+         * @param transferApplianceEntitlement the value to set
+         * @return this builder
+         */
         public Builder transferApplianceEntitlement(
                 com.oracle.bmc.dts.model.TransferApplianceEntitlement
                         transferApplianceEntitlement) {
@@ -97,12 +133,20 @@ public class CreateTransferApplianceEntitlementResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateTransferApplianceEntitlementResponse build() {
             return new CreateTransferApplianceEntitlementResponse(
                     __httpStatusCode__, opcRequestId, etag, transferApplianceEntitlement);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

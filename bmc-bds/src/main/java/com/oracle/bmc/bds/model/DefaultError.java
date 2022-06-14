@@ -28,18 +28,33 @@ public final class DefaultError {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A short error code that defines the error, meant for programmatic parsing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
+        /**
+         * A short error code that defines the error, meant for programmatic parsing.
+         * @param code the value to set
+         * @return this builder
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-
+        /**
+         * A human-readable error string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * A human-readable error string.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -81,6 +96,10 @@ public final class DefaultError {
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
+    /**
+     * A short error code that defines the error, meant for programmatic parsing.
+     * @return the value
+     **/
     public String getCode() {
         return code;
     }
@@ -91,6 +110,10 @@ public final class DefaultError {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A human-readable error string.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }

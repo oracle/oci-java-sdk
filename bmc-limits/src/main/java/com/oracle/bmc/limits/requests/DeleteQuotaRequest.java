@@ -16,6 +16,9 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String quotaId;
 
+    /**
+     * The OCID of the quota.
+     */
     public String getQuotaId() {
         return quotaId;
     }
@@ -26,6 +29,11 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,8 +45,25 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * is updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     public static class Builder
@@ -48,10 +73,14 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the quota.
+         */
         private String quotaId = null;
 
         /**
          * The OCID of the quota.
+         * @param quotaId the value to set
          * @return this builder instance
          */
         public Builder quotaId(String quotaId) {
@@ -59,12 +88,18 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -72,6 +107,12 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * is updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -79,10 +120,26 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * is updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
             this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -117,6 +174,7 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
             quotaId(o.getQuotaId());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -152,18 +210,28 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.quotaId = quotaId;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new DeleteQuotaRequest(quotaId, opcRequestId, ifMatch);
+            // new DeleteQuotaRequest(quotaId, opcRequestId, ifMatch, isLockOverride);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().quotaId(quotaId).opcRequestId(opcRequestId).ifMatch(ifMatch);
+        return new Builder()
+                .quotaId(quotaId)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch)
+                .isLockOverride(isLockOverride);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,6 +244,7 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",quotaId=").append(String.valueOf(this.quotaId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +262,8 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return super.equals(o)
                 && java.util.Objects.equals(this.quotaId, other.quotaId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -203,6 +273,9 @@ public class DeleteQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.quotaId == null ? 43 : this.quotaId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

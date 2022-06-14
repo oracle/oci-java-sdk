@@ -30,27 +30,55 @@ public final class Currency {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Currency name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Currency name
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Currency Code
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isoCode")
         private String isoCode;
 
+        /**
+         * Currency Code
+         *
+         * @param isoCode the value to set
+         * @return this builder
+         **/
         public Builder isoCode(String isoCode) {
             this.isoCode = isoCode;
             this.__explicitlySet__.add("isoCode");
             return this;
         }
-
+        /**
+         * Standard Precision of the Currency
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stdPrecision")
         private Long stdPrecision;
 
+        /**
+         * Standard Precision of the Currency
+         *
+         * @param stdPrecision the value to set
+         * @return this builder
+         **/
         public Builder stdPrecision(Long stdPrecision) {
             this.stdPrecision = stdPrecision;
             this.__explicitlySet__.add("stdPrecision");
@@ -94,6 +122,11 @@ public final class Currency {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Currency name
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -105,6 +138,11 @@ public final class Currency {
     @com.fasterxml.jackson.annotation.JsonProperty("isoCode")
     private final String isoCode;
 
+    /**
+     * Currency Code
+     *
+     * @return the value
+     **/
     public String getIsoCode() {
         return isoCode;
     }
@@ -116,6 +154,11 @@ public final class Currency {
     @com.fasterxml.jackson.annotation.JsonProperty("stdPrecision")
     private final Long stdPrecision;
 
+    /**
+     * Standard Precision of the Currency
+     *
+     * @return the value
+     **/
     public Long getStdPrecision() {
         return stdPrecision;
     }

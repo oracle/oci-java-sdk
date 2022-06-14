@@ -154,37 +154,65 @@ public final class InvokeFunctionDeployStage extends DeployStage {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * Function environment OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
         private String functionDeployEnvironmentId;
 
+        /**
+         * Function environment OCID.
+         * @param functionDeployEnvironmentId the value to set
+         * @return this builder
+         **/
         public Builder functionDeployEnvironmentId(String functionDeployEnvironmentId) {
             this.functionDeployEnvironmentId = functionDeployEnvironmentId;
             this.__explicitlySet__.add("functionDeployEnvironmentId");
             return this;
         }
-
+        /**
+         * Optional binary artifact OCID user may provide to this stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
         private String deployArtifactId;
 
+        /**
+         * Optional binary artifact OCID user may provide to this stage.
+         * @param deployArtifactId the value to set
+         * @return this builder
+         **/
         public Builder deployArtifactId(String deployArtifactId) {
             this.deployArtifactId = deployArtifactId;
             this.__explicitlySet__.add("deployArtifactId");
             return this;
         }
-
+        /**
+         * A boolean flag specifies whether this stage executes asynchronously.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAsync")
         private Boolean isAsync;
 
+        /**
+         * A boolean flag specifies whether this stage executes asynchronously.
+         * @param isAsync the value to set
+         * @return this builder
+         **/
         public Builder isAsync(Boolean isAsync) {
             this.isAsync = isAsync;
             this.__explicitlySet__.add("isAsync");
             return this;
         }
-
+        /**
+         * A boolean flag specifies whether the invoked function must be validated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isValidationEnabled")
         private Boolean isValidationEnabled;
 
+        /**
+         * A boolean flag specifies whether the invoked function must be validated.
+         * @param isValidationEnabled the value to set
+         * @return this builder
+         **/
         public Builder isValidationEnabled(Boolean isValidationEnabled) {
             this.isValidationEnabled = isValidationEnabled;
             this.__explicitlySet__.add("isValidationEnabled");
@@ -305,6 +333,10 @@ public final class InvokeFunctionDeployStage extends DeployStage {
     @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
     private final String functionDeployEnvironmentId;
 
+    /**
+     * Function environment OCID.
+     * @return the value
+     **/
     public String getFunctionDeployEnvironmentId() {
         return functionDeployEnvironmentId;
     }
@@ -315,6 +347,10 @@ public final class InvokeFunctionDeployStage extends DeployStage {
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
     private final String deployArtifactId;
 
+    /**
+     * Optional binary artifact OCID user may provide to this stage.
+     * @return the value
+     **/
     public String getDeployArtifactId() {
         return deployArtifactId;
     }
@@ -325,6 +361,10 @@ public final class InvokeFunctionDeployStage extends DeployStage {
     @com.fasterxml.jackson.annotation.JsonProperty("isAsync")
     private final Boolean isAsync;
 
+    /**
+     * A boolean flag specifies whether this stage executes asynchronously.
+     * @return the value
+     **/
     public Boolean getIsAsync() {
         return isAsync;
     }
@@ -335,6 +375,10 @@ public final class InvokeFunctionDeployStage extends DeployStage {
     @com.fasterxml.jackson.annotation.JsonProperty("isValidationEnabled")
     private final Boolean isValidationEnabled;
 
+    /**
+     * A boolean flag specifies whether the invoked function must be validated.
+     * @return the value
+     **/
     public Boolean getIsValidationEnabled() {
         return isValidationEnabled;
     }

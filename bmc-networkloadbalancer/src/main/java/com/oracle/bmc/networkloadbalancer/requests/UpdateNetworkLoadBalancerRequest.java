@@ -18,6 +18,9 @@ public class UpdateNetworkLoadBalancerRequest
      */
     private String networkLoadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
@@ -27,6 +30,9 @@ public class UpdateNetworkLoadBalancerRequest
     private com.oracle.bmc.networkloadbalancer.model.UpdateNetworkLoadBalancerDetails
             updateNetworkLoadBalancerDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.networkloadbalancer.model.UpdateNetworkLoadBalancerDetails
             getUpdateNetworkLoadBalancerDetails() {
         return updateNetworkLoadBalancerDetails;
@@ -41,6 +47,14 @@ public class UpdateNetworkLoadBalancerRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the current etag value of the resource.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -51,6 +65,11 @@ public class UpdateNetworkLoadBalancerRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,10 +92,14 @@ public class UpdateNetworkLoadBalancerRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         */
         private String networkLoadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
@@ -84,11 +107,15 @@ public class UpdateNetworkLoadBalancerRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.networkloadbalancer.model.UpdateNetworkLoadBalancerDetails
                 updateNetworkLoadBalancerDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateNetworkLoadBalancerDetails the value to set
          * @return this builder instance
          */
         public Builder updateNetworkLoadBalancerDetails(
@@ -98,6 +125,14 @@ public class UpdateNetworkLoadBalancerRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the current etag value of the resource.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -107,6 +142,7 @@ public class UpdateNetworkLoadBalancerRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the current etag value of the resource.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -114,12 +150,18 @@ public class UpdateNetworkLoadBalancerRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -213,7 +255,8 @@ public class UpdateNetworkLoadBalancerRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -223,6 +266,10 @@ public class UpdateNetworkLoadBalancerRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

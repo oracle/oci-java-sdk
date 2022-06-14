@@ -29,9 +29,17 @@ public final class DeliverArtifactCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DeliverArtifact> items;
 
+        /**
+         * Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DeliverArtifact> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class DeliverArtifactCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DeliverArtifact> items;
 
+    /**
+     * Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * @return the value
+     **/
     public java.util.List<DeliverArtifact> getItems() {
         return items;
     }

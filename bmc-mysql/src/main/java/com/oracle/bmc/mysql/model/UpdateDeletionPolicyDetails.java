@@ -39,27 +39,59 @@ public final class UpdateDeletionPolicyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("automaticBackupRetention")
         private AutomaticBackupRetention automaticBackupRetention;
 
+        /**
+         * Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
+         *
+         * @param automaticBackupRetention the value to set
+         * @return this builder
+         **/
         public Builder automaticBackupRetention(AutomaticBackupRetention automaticBackupRetention) {
             this.automaticBackupRetention = automaticBackupRetention;
             this.__explicitlySet__.add("automaticBackupRetention");
             return this;
         }
-
+        /**
+         * Specifies whether or not a backup is taken when the DB System is deleted.
+         *   REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted.
+         *   SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("finalBackup")
         private FinalBackup finalBackup;
 
+        /**
+         * Specifies whether or not a backup is taken when the DB System is deleted.
+         *   REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted.
+         *   SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
+         *
+         * @param finalBackup the value to set
+         * @return this builder
+         **/
         public Builder finalBackup(FinalBackup finalBackup) {
             this.finalBackup = finalBackup;
             this.__explicitlySet__.add("finalBackup");
             return this;
         }
-
+        /**
+         * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtected")
         private Boolean isDeleteProtected;
 
+        /**
+         * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
+         *
+         * @param isDeleteProtected the value to set
+         * @return this builder
+         **/
         public Builder isDeleteProtected(Boolean isDeleteProtected) {
             this.isDeleteProtected = isDeleteProtected;
             this.__explicitlySet__.add("isDeleteProtected");
@@ -143,6 +175,11 @@ public final class UpdateDeletionPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("automaticBackupRetention")
     private final AutomaticBackupRetention automaticBackupRetention;
 
+    /**
+     * Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
+     *
+     * @return the value
+     **/
     public AutomaticBackupRetention getAutomaticBackupRetention() {
         return automaticBackupRetention;
     }
@@ -194,6 +231,13 @@ public final class UpdateDeletionPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("finalBackup")
     private final FinalBackup finalBackup;
 
+    /**
+     * Specifies whether or not a backup is taken when the DB System is deleted.
+     *   REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted.
+     *   SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
+     *
+     * @return the value
+     **/
     public FinalBackup getFinalBackup() {
         return finalBackup;
     }
@@ -205,6 +249,11 @@ public final class UpdateDeletionPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtected")
     private final Boolean isDeleteProtected;
 
+    /**
+     * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
+     *
+     * @return the value
+     **/
     public Boolean getIsDeleteProtected() {
         return isDeleteProtected;
     }

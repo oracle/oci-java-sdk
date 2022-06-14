@@ -17,6 +17,9 @@ public class ListOdaInstanceAttachmentsRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -25,6 +28,9 @@ public class ListOdaInstanceAttachmentsRequest
      */
     private Boolean includeOwnerMetadata;
 
+    /**
+     * Whether to send attachment owner info during get/list call.
+     */
     public Boolean getIncludeOwnerMetadata() {
         return includeOwnerMetadata;
     }
@@ -33,6 +39,9 @@ public class ListOdaInstanceAttachmentsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -47,6 +56,15 @@ public class ListOdaInstanceAttachmentsRequest
      */
     private String page;
 
+    /**
+     * The page at which to start retrieving results.
+     * <p>
+     * You get this value from the {@code opc-next-page} header in a previous list request.
+     * To retireve the first page, omit this query parameter.
+     * <p>
+     * Example: {@code MToxMA==}
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -94,6 +112,9 @@ public class ListOdaInstanceAttachmentsRequest
         }
     };
 
+    /**
+     * List only the ODA instance attachments that are in this lifecycle state.
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -138,6 +159,9 @@ public class ListOdaInstanceAttachmentsRequest
         }
     };
 
+    /**
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -185,6 +209,11 @@ public class ListOdaInstanceAttachmentsRequest
         }
     };
 
+    /**
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
+     * The default sort order for {@code TIMECREATED} is descending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -193,6 +222,9 @@ public class ListOdaInstanceAttachmentsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -204,10 +236,14 @@ public class ListOdaInstanceAttachmentsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -215,10 +251,14 @@ public class ListOdaInstanceAttachmentsRequest
             return this;
         }
 
+        /**
+         * Whether to send attachment owner info during get/list call.
+         */
         private Boolean includeOwnerMetadata = null;
 
         /**
          * Whether to send attachment owner info during get/list call.
+         * @param includeOwnerMetadata the value to set
          * @return this builder instance
          */
         public Builder includeOwnerMetadata(Boolean includeOwnerMetadata) {
@@ -226,10 +266,14 @@ public class ListOdaInstanceAttachmentsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -237,6 +281,15 @@ public class ListOdaInstanceAttachmentsRequest
             return this;
         }
 
+        /**
+         * The page at which to start retrieving results.
+         * <p>
+         * You get this value from the {@code opc-next-page} header in a previous list request.
+         * To retireve the first page, omit this query parameter.
+         * <p>
+         * Example: {@code MToxMA==}
+         *
+         */
         private String page = null;
 
         /**
@@ -247,6 +300,7 @@ public class ListOdaInstanceAttachmentsRequest
          * <p>
          * Example: {@code MToxMA==}
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -254,10 +308,14 @@ public class ListOdaInstanceAttachmentsRequest
             return this;
         }
 
+        /**
+         * List only the ODA instance attachments that are in this lifecycle state.
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * List only the ODA instance attachments that are in this lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState lifecycleState) {
@@ -265,10 +323,14 @@ public class ListOdaInstanceAttachmentsRequest
             return this;
         }
 
+        /**
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -276,12 +338,18 @@ public class ListOdaInstanceAttachmentsRequest
             return this;
         }
 
+        /**
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
+         * The default sort order for {@code TIMECREATED} is descending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
          * The default sort order for {@code TIMECREATED} is descending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -289,10 +357,14 @@ public class ListOdaInstanceAttachmentsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -382,7 +454,8 @@ public class ListOdaInstanceAttachmentsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -396,6 +469,10 @@ public class ListOdaInstanceAttachmentsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

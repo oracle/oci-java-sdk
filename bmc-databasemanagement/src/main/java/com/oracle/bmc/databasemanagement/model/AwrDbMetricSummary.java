@@ -38,45 +38,81 @@ public final class AwrDbMetricSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the metric.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The time of the sampling.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The time of the sampling.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The average value of the sampling period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
         private Double avgValue;
 
+        /**
+         * The average value of the sampling period.
+         * @param avgValue the value to set
+         * @return this builder
+         **/
         public Builder avgValue(Double avgValue) {
             this.avgValue = avgValue;
             this.__explicitlySet__.add("avgValue");
             return this;
         }
-
+        /**
+         * The minimum value of the sampling period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minValue")
         private Double minValue;
 
+        /**
+         * The minimum value of the sampling period.
+         * @param minValue the value to set
+         * @return this builder
+         **/
         public Builder minValue(Double minValue) {
             this.minValue = minValue;
             this.__explicitlySet__.add("minValue");
             return this;
         }
-
+        /**
+         * The maximum value of the sampling period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
         private Double maxValue;
 
+        /**
+         * The maximum value of the sampling period.
+         * @param maxValue the value to set
+         * @return this builder
+         **/
         public Builder maxValue(Double maxValue) {
             this.maxValue = maxValue;
             this.__explicitlySet__.add("maxValue");
@@ -124,6 +160,10 @@ public final class AwrDbMetricSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the metric.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -134,6 +174,10 @@ public final class AwrDbMetricSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The time of the sampling.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -144,6 +188,10 @@ public final class AwrDbMetricSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
     private final Double avgValue;
 
+    /**
+     * The average value of the sampling period.
+     * @return the value
+     **/
     public Double getAvgValue() {
         return avgValue;
     }
@@ -154,6 +202,10 @@ public final class AwrDbMetricSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("minValue")
     private final Double minValue;
 
+    /**
+     * The minimum value of the sampling period.
+     * @return the value
+     **/
     public Double getMinValue() {
         return minValue;
     }
@@ -164,6 +216,10 @@ public final class AwrDbMetricSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
     private final Double maxValue;
 
+    /**
+     * The maximum value of the sampling period.
+     * @return the value
+     **/
     public Double getMaxValue() {
         return maxValue;
     }

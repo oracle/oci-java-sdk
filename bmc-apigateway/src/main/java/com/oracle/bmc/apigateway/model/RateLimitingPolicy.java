@@ -30,18 +30,33 @@ public final class RateLimitingPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The maximum number of requests per second to allow.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rateInRequestsPerSecond")
         private Integer rateInRequestsPerSecond;
 
+        /**
+         * The maximum number of requests per second to allow.
+         * @param rateInRequestsPerSecond the value to set
+         * @return this builder
+         **/
         public Builder rateInRequestsPerSecond(Integer rateInRequestsPerSecond) {
             this.rateInRequestsPerSecond = rateInRequestsPerSecond;
             this.__explicitlySet__.add("rateInRequestsPerSecond");
             return this;
         }
-
+        /**
+         * The key used to group requests together.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rateKey")
         private RateKey rateKey;
 
+        /**
+         * The key used to group requests together.
+         * @param rateKey the value to set
+         * @return this builder
+         **/
         public Builder rateKey(RateKey rateKey) {
             this.rateKey = rateKey;
             this.__explicitlySet__.add("rateKey");
@@ -85,6 +100,10 @@ public final class RateLimitingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("rateInRequestsPerSecond")
     private final Integer rateInRequestsPerSecond;
 
+    /**
+     * The maximum number of requests per second to allow.
+     * @return the value
+     **/
     public Integer getRateInRequestsPerSecond() {
         return rateInRequestsPerSecond;
     }
@@ -143,6 +162,10 @@ public final class RateLimitingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("rateKey")
     private final RateKey rateKey;
 
+    /**
+     * The key used to group requests together.
+     * @return the value
+     **/
     public RateKey getRateKey() {
         return rateKey;
     }

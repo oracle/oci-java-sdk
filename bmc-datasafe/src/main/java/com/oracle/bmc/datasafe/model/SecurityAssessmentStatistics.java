@@ -56,9 +56,17 @@ public final class SecurityAssessmentStatistics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of targets in this security assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
         private Integer targetsCount;
 
+        /**
+         * The total number of targets in this security assessment.
+         * @param targetsCount the value to set
+         * @return this builder
+         **/
         public Builder targetsCount(Integer targetsCount) {
             this.targetsCount = targetsCount;
             this.__explicitlySet__.add("targetsCount");
@@ -163,6 +171,10 @@ public final class SecurityAssessmentStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
     private final Integer targetsCount;
 
+    /**
+     * The total number of targets in this security assessment.
+     * @return the value
+     **/
     public Integer getTargetsCount() {
         return targetsCount;
     }

@@ -64,19 +64,33 @@ public final class UpdateApplicationChannelDetails extends UpdateChannelDetails 
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The URL to send response and error messages to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
         private String outboundUrl;
 
+        /**
+         * The URL to send response and error messages to.
+         * @param outboundUrl the value to set
+         * @return this builder
+         **/
         public Builder outboundUrl(String outboundUrl) {
             this.outboundUrl = outboundUrl;
             this.__explicitlySet__.add("outboundUrl");
             return this;
         }
-
+        /**
+         * True if the user id in the AIC message should be treated as an authenticated user id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAuthenticatedUserId")
         private Boolean isAuthenticatedUserId;
 
+        /**
+         * True if the user id in the AIC message should be treated as an authenticated user id.
+         * @param isAuthenticatedUserId the value to set
+         * @return this builder
+         **/
         public Builder isAuthenticatedUserId(Boolean isAuthenticatedUserId) {
             this.isAuthenticatedUserId = isAuthenticatedUserId;
             this.__explicitlySet__.add("isAuthenticatedUserId");
@@ -145,6 +159,10 @@ public final class UpdateApplicationChannelDetails extends UpdateChannelDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
     private final String outboundUrl;
 
+    /**
+     * The URL to send response and error messages to.
+     * @return the value
+     **/
     public String getOutboundUrl() {
         return outboundUrl;
     }
@@ -155,6 +173,10 @@ public final class UpdateApplicationChannelDetails extends UpdateChannelDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("isAuthenticatedUserId")
     private final Boolean isAuthenticatedUserId;
 
+    /**
+     * True if the user id in the AIC message should be treated as an authenticated user id.
+     * @return the value
+     **/
     public Boolean getIsAuthenticatedUserId() {
         return isAuthenticatedUserId;
     }

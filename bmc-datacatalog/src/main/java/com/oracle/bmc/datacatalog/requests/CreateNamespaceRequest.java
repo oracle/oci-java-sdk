@@ -18,6 +18,9 @@ public class CreateNamespaceRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -27,6 +30,10 @@ public class CreateNamespaceRequest
      */
     private com.oracle.bmc.datacatalog.model.CreateNamespaceDetails createNamespaceDetails;
 
+    /**
+     * The information used to create the Namespace.
+     *
+     */
     public com.oracle.bmc.datacatalog.model.CreateNamespaceDetails getCreateNamespaceDetails() {
         return createNamespaceDetails;
     }
@@ -35,6 +42,9 @@ public class CreateNamespaceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +58,14 @@ public class CreateNamespaceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -70,10 +88,14 @@ public class CreateNamespaceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -81,12 +103,17 @@ public class CreateNamespaceRequest
             return this;
         }
 
+        /**
+         * The information used to create the Namespace.
+         *
+         */
         private com.oracle.bmc.datacatalog.model.CreateNamespaceDetails createNamespaceDetails =
                 null;
 
         /**
          * The information used to create the Namespace.
          *
+         * @param createNamespaceDetails the value to set
          * @return this builder instance
          */
         public Builder createNamespaceDetails(
@@ -95,10 +122,14 @@ public class CreateNamespaceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -106,6 +137,14 @@ public class CreateNamespaceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -115,6 +154,7 @@ public class CreateNamespaceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -207,7 +247,8 @@ public class CreateNamespaceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +258,10 @@ public class CreateNamespaceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

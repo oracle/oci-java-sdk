@@ -29,6 +29,7 @@ public final class UpdateDomainRecordsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RecordDetails> items;
 

@@ -146,10 +146,21 @@ public final class ExternalMacsConnectorSummary extends ExternalDatabaseConnecto
             this.__explicitlySet__.add("connectionCredentials");
             return this;
         }
-
+        /**
+         * The ID of the agent used for the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorAgentId")
         private String connectorAgentId;
 
+        /**
+         * The ID of the agent used for the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         * @param connectorAgentId the value to set
+         * @return this builder
+         **/
         public Builder connectorAgentId(String connectorAgentId) {
             this.connectorAgentId = connectorAgentId;
             this.__explicitlySet__.add("connectorAgentId");
@@ -269,6 +280,12 @@ public final class ExternalMacsConnectorSummary extends ExternalDatabaseConnecto
     @com.fasterxml.jackson.annotation.JsonProperty("connectorAgentId")
     private final String connectorAgentId;
 
+    /**
+     * The ID of the agent used for the
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+     *
+     * @return the value
+     **/
     public String getConnectorAgentId() {
         return connectorAgentId;
     }

@@ -30,9 +30,17 @@ public final class LogSavedSearchSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Saved Seach Summaries
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogSavedSearchSummary> items;
 
+        /**
+         * The Saved Seach Summaries
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogSavedSearchSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class LogSavedSearchSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogSavedSearchSummary> items;
 
+    /**
+     * The Saved Seach Summaries
+     * @return the value
+     **/
     public java.util.List<LogSavedSearchSummary> getItems() {
         return items;
     }

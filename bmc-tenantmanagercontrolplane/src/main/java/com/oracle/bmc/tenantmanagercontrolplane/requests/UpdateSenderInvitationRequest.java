@@ -18,6 +18,9 @@ public class UpdateSenderInvitationRequest
      */
     private String senderInvitationId;
 
+    /**
+     * OCID of the sender invitation to update.
+     */
     public String getSenderInvitationId() {
         return senderInvitationId;
     }
@@ -27,6 +30,9 @@ public class UpdateSenderInvitationRequest
     private com.oracle.bmc.tenantmanagercontrolplane.model.UpdateSenderInvitationDetails
             updateSenderInvitationDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.UpdateSenderInvitationDetails
             getUpdateSenderInvitationDetails() {
         return updateSenderInvitationDetails;
@@ -41,6 +47,14 @@ public class UpdateSenderInvitationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class UpdateSenderInvitationRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateSenderInvitationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of the sender invitation to update.
+         */
         private String senderInvitationId = null;
 
         /**
          * OCID of the sender invitation to update.
+         * @param senderInvitationId the value to set
          * @return this builder instance
          */
         public Builder senderInvitationId(String senderInvitationId) {
@@ -82,11 +103,15 @@ public class UpdateSenderInvitationRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.UpdateSenderInvitationDetails
                 updateSenderInvitationDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateSenderInvitationDetails the value to set
          * @return this builder instance
          */
         public Builder updateSenderInvitationDetails(
@@ -96,6 +121,14 @@ public class UpdateSenderInvitationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -105,6 +138,7 @@ public class UpdateSenderInvitationRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -112,10 +146,14 @@ public class UpdateSenderInvitationRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +247,8 @@ public class UpdateSenderInvitationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +258,10 @@ public class UpdateSenderInvitationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

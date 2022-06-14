@@ -29,9 +29,17 @@ public final class CancelDeploymentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The reason for canceling the deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
+        /**
+         * The reason for canceling the deployment.
+         * @param reason the value to set
+         * @return this builder
+         **/
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
@@ -73,6 +81,10 @@ public final class CancelDeploymentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
+    /**
+     * The reason for canceling the deployment.
+     * @return the value
+     **/
     public String getReason() {
         return reason;
     }

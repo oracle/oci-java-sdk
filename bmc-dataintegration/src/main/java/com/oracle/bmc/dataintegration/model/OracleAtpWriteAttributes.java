@@ -27,6 +27,7 @@ package com.oracle.bmc.dataintegration.model;
 public final class OracleAtpWriteAttributes extends AbstractWriteAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("bucketSchema")
         private Schema bucketSchema;
 
@@ -35,10 +36,17 @@ public final class OracleAtpWriteAttributes extends AbstractWriteAttribute {
             this.__explicitlySet__.add("bucketSchema");
             return this;
         }
-
+        /**
+         * The file name for the attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stagingFileName")
         private String stagingFileName;
 
+        /**
+         * The file name for the attribute.
+         * @param stagingFileName the value to set
+         * @return this builder
+         **/
         public Builder stagingFileName(String stagingFileName) {
             this.stagingFileName = stagingFileName;
             this.__explicitlySet__.add("stagingFileName");
@@ -124,6 +132,10 @@ public final class OracleAtpWriteAttributes extends AbstractWriteAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("stagingFileName")
     private final String stagingFileName;
 
+    /**
+     * The file name for the attribute.
+     * @return the value
+     **/
     public String getStagingFileName() {
         return stagingFileName;
     }

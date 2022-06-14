@@ -44,45 +44,85 @@ public final class UpdateGlossaryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Detailed description of the glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the glossary.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * OCID of the user who is the owner of the glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
+        /**
+         * OCID of the user who is the owner of the glossary.
+         * @param owner the value to set
+         * @return this builder
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-
+        /**
+         * Status of the approval process workflow for this business glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
         private TermWorkflowStatus workflowStatus;
 
+        /**
+         * Status of the approval process workflow for this business glossary.
+         * @param workflowStatus the value to set
+         * @return this builder
+         **/
         public Builder workflowStatus(TermWorkflowStatus workflowStatus) {
             this.workflowStatus = workflowStatus;
             this.__explicitlySet__.add("workflowStatus");
             return this;
         }
-
+        /**
+         * The list of customized properties along with the values for this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
         private java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+        /**
+         * The list of customized properties along with the values for this object
+         * @param customPropertyMembers the value to set
+         * @return this builder
+         **/
         public Builder customPropertyMembers(
                 java.util.List<CustomPropertySetUsage> customPropertyMembers) {
             this.customPropertyMembers = customPropertyMembers;
@@ -134,6 +174,12 @@ public final class UpdateGlossaryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -144,6 +190,10 @@ public final class UpdateGlossaryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the glossary.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -154,6 +204,10 @@ public final class UpdateGlossaryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
+    /**
+     * OCID of the user who is the owner of the glossary.
+     * @return the value
+     **/
     public String getOwner() {
         return owner;
     }
@@ -164,6 +218,10 @@ public final class UpdateGlossaryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
     private final TermWorkflowStatus workflowStatus;
 
+    /**
+     * Status of the approval process workflow for this business glossary.
+     * @return the value
+     **/
     public TermWorkflowStatus getWorkflowStatus() {
         return workflowStatus;
     }
@@ -174,6 +232,10 @@ public final class UpdateGlossaryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
     private final java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+    /**
+     * The list of customized properties along with the values for this object
+     * @return the value
+     **/
     public java.util.List<CustomPropertySetUsage> getCustomPropertyMembers() {
         return customPropertyMembers;
     }

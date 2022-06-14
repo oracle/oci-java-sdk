@@ -18,6 +18,9 @@ public class CreateDigitalAssistantRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -26,6 +29,9 @@ public class CreateDigitalAssistantRequest
      */
     private com.oracle.bmc.oda.model.CreateDigitalAssistantDetails createDigitalAssistantDetails;
 
+    /**
+     * Property values for creating the new Digital Assistant.
+     */
     public com.oracle.bmc.oda.model.CreateDigitalAssistantDetails
             getCreateDigitalAssistantDetails() {
         return createDigitalAssistantDetails;
@@ -35,6 +41,9 @@ public class CreateDigitalAssistantRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +58,15 @@ public class CreateDigitalAssistantRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * conflicting operations. For example, if an instance was deleted and purged from the system,
+     * then the service might reject a retry of the original creation request.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -71,10 +89,14 @@ public class CreateDigitalAssistantRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -82,11 +104,15 @@ public class CreateDigitalAssistantRequest
             return this;
         }
 
+        /**
+         * Property values for creating the new Digital Assistant.
+         */
         private com.oracle.bmc.oda.model.CreateDigitalAssistantDetails
                 createDigitalAssistantDetails = null;
 
         /**
          * Property values for creating the new Digital Assistant.
+         * @param createDigitalAssistantDetails the value to set
          * @return this builder instance
          */
         public Builder createDigitalAssistantDetails(
@@ -96,10 +122,14 @@ public class CreateDigitalAssistantRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -107,6 +137,15 @@ public class CreateDigitalAssistantRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -117,6 +156,7 @@ public class CreateDigitalAssistantRequest
          * conflicting operations. For example, if an instance was deleted and purged from the system,
          * then the service might reject a retry of the original creation request.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -209,7 +249,8 @@ public class CreateDigitalAssistantRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +260,10 @@ public class CreateDigitalAssistantRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

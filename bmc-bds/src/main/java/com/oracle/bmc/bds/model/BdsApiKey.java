@@ -54,81 +54,153 @@ public final class BdsApiKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Identifier of the user's API key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Identifier of the user's API key.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The user OCID for which this API key was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
+        /**
+         * The user OCID for which this API key was created.
+         * @param userId the value to set
+         * @return this builder
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-
+        /**
+         * User friendly identifier used to uniquely differentiate between different API keys.
+         * Only ASCII alphanumeric characters with no spaces allowed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyAlias")
         private String keyAlias;
 
+        /**
+         * User friendly identifier used to uniquely differentiate between different API keys.
+         * Only ASCII alphanumeric characters with no spaces allowed.
+         *
+         * @param keyAlias the value to set
+         * @return this builder
+         **/
         public Builder keyAlias(String keyAlias) {
             this.keyAlias = keyAlias;
             this.__explicitlySet__.add("keyAlias");
             return this;
         }
-
+        /**
+         * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultRegion")
         private String defaultRegion;
 
+        /**
+         * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
+         * @param defaultRegion the value to set
+         * @return this builder
+         **/
         public Builder defaultRegion(String defaultRegion) {
             this.defaultRegion = defaultRegion;
             this.__explicitlySet__.add("defaultRegion");
             return this;
         }
-
+        /**
+         * The OCID of your tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
+        /**
+         * The OCID of your tenancy.
+         * @param tenantId the value to set
+         * @return this builder
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-
+        /**
+         * The fingerprint that corresponds to the public API key requested.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
         private String fingerprint;
 
+        /**
+         * The fingerprint that corresponds to the public API key requested.
+         * @param fingerprint the value to set
+         * @return this builder
+         **/
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = fingerprint;
             this.__explicitlySet__.add("fingerprint");
             return this;
         }
-
+        /**
+         * The full path and file name of the private key used for authentication. This location will be automatically selected
+         * on the BDS local file system.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pemfilepath")
         private String pemfilepath;
 
+        /**
+         * The full path and file name of the private key used for authentication. This location will be automatically selected
+         * on the BDS local file system.
+         *
+         * @param pemfilepath the value to set
+         * @return this builder
+         **/
         public Builder pemfilepath(String pemfilepath) {
             this.pemfilepath = pemfilepath;
             this.__explicitlySet__.add("pemfilepath");
             return this;
         }
-
+        /**
+         * The time the API key was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the API key was created, shown as an RFC 3339 formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The state of the key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The state of the key.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -189,6 +261,10 @@ public final class BdsApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Identifier of the user's API key.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -199,6 +275,10 @@ public final class BdsApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
+    /**
+     * The user OCID for which this API key was created.
+     * @return the value
+     **/
     public String getUserId() {
         return userId;
     }
@@ -211,6 +291,12 @@ public final class BdsApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("keyAlias")
     private final String keyAlias;
 
+    /**
+     * User friendly identifier used to uniquely differentiate between different API keys.
+     * Only ASCII alphanumeric characters with no spaces allowed.
+     *
+     * @return the value
+     **/
     public String getKeyAlias() {
         return keyAlias;
     }
@@ -221,6 +307,10 @@ public final class BdsApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRegion")
     private final String defaultRegion;
 
+    /**
+     * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
+     * @return the value
+     **/
     public String getDefaultRegion() {
         return defaultRegion;
     }
@@ -231,6 +321,10 @@ public final class BdsApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
+    /**
+     * The OCID of your tenancy.
+     * @return the value
+     **/
     public String getTenantId() {
         return tenantId;
     }
@@ -241,6 +335,10 @@ public final class BdsApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     private final String fingerprint;
 
+    /**
+     * The fingerprint that corresponds to the public API key requested.
+     * @return the value
+     **/
     public String getFingerprint() {
         return fingerprint;
     }
@@ -253,6 +351,12 @@ public final class BdsApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("pemfilepath")
     private final String pemfilepath;
 
+    /**
+     * The full path and file name of the private key used for authentication. This location will be automatically selected
+     * on the BDS local file system.
+     *
+     * @return the value
+     **/
     public String getPemfilepath() {
         return pemfilepath;
     }
@@ -263,6 +367,10 @@ public final class BdsApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the API key was created, shown as an RFC 3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -324,6 +432,10 @@ public final class BdsApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The state of the key.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }

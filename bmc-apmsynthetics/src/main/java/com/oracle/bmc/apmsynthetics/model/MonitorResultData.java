@@ -33,36 +33,79 @@ public final class MonitorResultData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the data.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Data content in byte format.
+         * Example: Zip or Screenshot.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("byteContent")
         private byte[] byteContent;
 
+        /**
+         * Data content in byte format.
+         * Example: Zip or Screenshot.
+         *
+         * @param byteContent the value to set
+         * @return this builder
+         **/
         public Builder byteContent(byte[] byteContent) {
             this.byteContent = byteContent;
             this.__explicitlySet__.add("byteContent");
             return this;
         }
-
+        /**
+         * Data content in string format.
+         * Example: HAR.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stringContent")
         private String stringContent;
 
+        /**
+         * Data content in string format.
+         * Example: HAR.
+         *
+         * @param stringContent the value to set
+         * @return this builder
+         **/
         public Builder stringContent(String stringContent) {
             this.stringContent = stringContent;
             this.__explicitlySet__.add("stringContent");
             return this;
         }
-
+        /**
+         * The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-13T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-13T22:47:12.613Z}
+         *
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -109,6 +152,10 @@ public final class MonitorResultData {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the data.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -121,6 +168,12 @@ public final class MonitorResultData {
     @com.fasterxml.jackson.annotation.JsonProperty("byteContent")
     private final byte[] byteContent;
 
+    /**
+     * Data content in byte format.
+     * Example: Zip or Screenshot.
+     *
+     * @return the value
+     **/
     public byte[] getByteContent() {
         return byteContent;
     }
@@ -133,6 +186,12 @@ public final class MonitorResultData {
     @com.fasterxml.jackson.annotation.JsonProperty("stringContent")
     private final String stringContent;
 
+    /**
+     * Data content in string format.
+     * Example: HAR.
+     *
+     * @return the value
+     **/
     public String getStringContent() {
         return stringContent;
     }
@@ -146,6 +205,13 @@ public final class MonitorResultData {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-13T22:47:12.613Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }

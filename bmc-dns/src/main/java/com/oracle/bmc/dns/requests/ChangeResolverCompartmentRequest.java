@@ -18,6 +18,9 @@ public class ChangeResolverCompartmentRequest
      */
     private String resolverId;
 
+    /**
+     * The OCID of the target resolver.
+     */
     public String getResolverId() {
         return resolverId;
     }
@@ -29,6 +32,11 @@ public class ChangeResolverCompartmentRequest
     private com.oracle.bmc.dns.model.ChangeResolverCompartmentDetails
             changeResolverCompartmentDetails;
 
+    /**
+     * Details for moving a resolver, along with its protected default view and endpoints, into a
+     * different compartment.
+     *
+     */
     public com.oracle.bmc.dns.model.ChangeResolverCompartmentDetails
             getChangeResolverCompartmentDetails() {
         return changeResolverCompartmentDetails;
@@ -43,6 +51,14 @@ public class ChangeResolverCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * The {@code If-Match} header field makes the request method conditional on the
+     * existence of at least one current representation of the target resource,
+     * when the field-value is {@code *}, or having a current representation of the
+     * target resource that has an entity-tag matching a member of the list of
+     * entity-tags provided in the field-value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -57,6 +73,15 @@ public class ChangeResolverCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations (for example, if a resource has been
+     * deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -68,6 +93,12 @@ public class ChangeResolverCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -77,6 +108,10 @@ public class ChangeResolverCompartmentRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -99,10 +134,14 @@ public class ChangeResolverCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target resolver.
+         */
         private String resolverId = null;
 
         /**
          * The OCID of the target resolver.
+         * @param resolverId the value to set
          * @return this builder instance
          */
         public Builder resolverId(String resolverId) {
@@ -110,6 +149,11 @@ public class ChangeResolverCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for moving a resolver, along with its protected default view and endpoints, into a
+         * different compartment.
+         *
+         */
         private com.oracle.bmc.dns.model.ChangeResolverCompartmentDetails
                 changeResolverCompartmentDetails = null;
 
@@ -117,6 +161,7 @@ public class ChangeResolverCompartmentRequest
          * Details for moving a resolver, along with its protected default view and endpoints, into a
          * different compartment.
          *
+         * @param changeResolverCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeResolverCompartmentDetails(
@@ -126,6 +171,14 @@ public class ChangeResolverCompartmentRequest
             return this;
         }
 
+        /**
+         * The {@code If-Match} header field makes the request method conditional on the
+         * existence of at least one current representation of the target resource,
+         * when the field-value is {@code *}, or having a current representation of the
+         * target resource that has an entity-tag matching a member of the list of
+         * entity-tags provided in the field-value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -135,6 +188,7 @@ public class ChangeResolverCompartmentRequest
          * target resource that has an entity-tag matching a member of the list of
          * entity-tags provided in the field-value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -142,6 +196,15 @@ public class ChangeResolverCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been
+         * deleted and purged from the system, then a retry of the original creation
+         * request may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -152,6 +215,7 @@ public class ChangeResolverCompartmentRequest
          * deleted and purged from the system, then a retry of the original creation
          * request may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -159,6 +223,12 @@ public class ChangeResolverCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -166,6 +236,7 @@ public class ChangeResolverCompartmentRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -173,11 +244,16 @@ public class ChangeResolverCompartmentRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -274,7 +350,8 @@ public class ChangeResolverCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -286,6 +363,10 @@ public class ChangeResolverCompartmentRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

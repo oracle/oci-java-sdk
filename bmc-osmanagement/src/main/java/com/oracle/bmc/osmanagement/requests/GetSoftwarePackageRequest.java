@@ -16,6 +16,9 @@ public class GetSoftwarePackageRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String softwareSourceId;
 
+    /**
+     * The OCID of the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -24,6 +27,9 @@ public class GetSoftwarePackageRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String softwarePackageName;
 
+    /**
+     * The id of the software package.
+     */
     public String getSoftwarePackageName() {
         return softwarePackageName;
     }
@@ -32,6 +38,9 @@ public class GetSoftwarePackageRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,10 +52,14 @@ public class GetSoftwarePackageRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
          * The OCID of the software source.
+         * @param softwareSourceId the value to set
          * @return this builder instance
          */
         public Builder softwareSourceId(String softwareSourceId) {
@@ -54,10 +67,14 @@ public class GetSoftwarePackageRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The id of the software package.
+         */
         private String softwarePackageName = null;
 
         /**
          * The id of the software package.
+         * @param softwarePackageName the value to set
          * @return this builder instance
          */
         public Builder softwarePackageName(String softwarePackageName) {
@@ -65,10 +82,14 @@ public class GetSoftwarePackageRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -148,7 +169,8 @@ public class GetSoftwarePackageRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -157,6 +179,10 @@ public class GetSoftwarePackageRequest extends com.oracle.bmc.requests.BmcReques
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

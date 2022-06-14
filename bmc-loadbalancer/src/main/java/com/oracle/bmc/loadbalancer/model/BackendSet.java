@@ -58,18 +58,53 @@ public final class BackendSet {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A friendly name for the backend set. It must be unique and it cannot be changed.
+         * <p>
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
+         * contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A friendly name for the backend set. It must be unique and it cannot be changed.
+         * <p>
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
+         * contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+         * <p>
+         * Example: {@code LEAST_CONNECTIONS}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
 
+        /**
+         * The load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+         * <p>
+         * Example: {@code LEAST_CONNECTIONS}
+         *
+         * @param policy the value to set
+         * @return this builder
+         **/
         public Builder policy(String policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
@@ -182,6 +217,16 @@ public final class BackendSet {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A friendly name for the backend set. It must be unique and it cannot be changed.
+     * <p>
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
+     * contain spaces. Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -196,6 +241,14 @@ public final class BackendSet {
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final String policy;
 
+    /**
+     * The load balancer policy for the backend set. To get a list of available policies, use the
+     * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+     * <p>
+     * Example: {@code LEAST_CONNECTIONS}
+     *
+     * @return the value
+     **/
     public String getPolicy() {
         return policy;
     }

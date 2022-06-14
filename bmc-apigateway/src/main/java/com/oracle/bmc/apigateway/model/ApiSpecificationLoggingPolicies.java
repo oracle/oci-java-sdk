@@ -32,6 +32,7 @@ public final class ApiSpecificationLoggingPolicies {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("accessLog")
         private AccessLogPolicy accessLog;
 

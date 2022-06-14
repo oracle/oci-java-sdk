@@ -29,27 +29,49 @@ public final class Principal {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The user's OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
         private String subjectId;
 
+        /**
+         * The user's OCID.
+         * @param subjectId the value to set
+         * @return this builder
+         **/
         public Builder subjectId(String subjectId) {
             this.subjectId = subjectId;
             this.__explicitlySet__.add("subjectId");
             return this;
         }
-
+        /**
+         * The tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
+        /**
+         * The tenancy OCID.
+         * @param tenantId the value to set
+         * @return this builder
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-
+        /**
+         * The set of claims for this principal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("claims")
         private java.util.List<Claim> claims;
 
+        /**
+         * The set of claims for this principal.
+         * @param claims the value to set
+         * @return this builder
+         **/
         public Builder claims(java.util.List<Claim> claims) {
             this.claims = claims;
             this.__explicitlySet__.add("claims");
@@ -92,6 +114,10 @@ public final class Principal {
     @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
     private final String subjectId;
 
+    /**
+     * The user's OCID.
+     * @return the value
+     **/
     public String getSubjectId() {
         return subjectId;
     }
@@ -102,6 +128,10 @@ public final class Principal {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
+    /**
+     * The tenancy OCID.
+     * @return the value
+     **/
     public String getTenantId() {
         return tenantId;
     }
@@ -112,6 +142,10 @@ public final class Principal {
     @com.fasterxml.jackson.annotation.JsonProperty("claims")
     private final java.util.List<Claim> claims;
 
+    /**
+     * The set of claims for this principal.
+     * @return the value
+     **/
     public java.util.List<Claim> getClaims() {
         return claims;
     }

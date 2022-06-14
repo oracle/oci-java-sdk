@@ -18,6 +18,10 @@ public class ListLogAnalyticsEmBridgesRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class ListLogAnalyticsEmBridgesRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -36,6 +43,11 @@ public class ListLogAnalyticsEmBridgesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only log analytics enterprise manager bridge name whose name matches the entire name given. The match
+     * is case-insensitive.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -46,6 +58,10 @@ public class ListLogAnalyticsEmBridgesRequest
     private java.util.List<com.oracle.bmc.loganalytics.model.EmBridgeLifecycleStates>
             lifecycleState;
 
+    /**
+     * A filter to return only log analytics enterprise manager bridges matching all the lifecycle states specified for this parameter.
+     *
+     */
     public java.util.List<com.oracle.bmc.loganalytics.model.EmBridgeLifecycleStates>
             getLifecycleState() {
         return lifecycleState;
@@ -56,6 +72,10 @@ public class ListLogAnalyticsEmBridgesRequest
      */
     private String lifecycleDetailsContains;
 
+    /**
+     * A filter to return only log analytics enterprise manager bridges whose lifecycleDetails contains the specified string.
+     *
+     */
     public String getLifecycleDetailsContains() {
         return lifecycleDetailsContains;
     }
@@ -66,6 +86,10 @@ public class ListLogAnalyticsEmBridgesRequest
     private java.util.List<com.oracle.bmc.loganalytics.model.EmBridgeLatestImportProcessingStatus>
             importStatus;
 
+    /**
+     * Filter by the processing status of the latest upload from enterprise manager.
+     *
+     */
     public java.util.List<com.oracle.bmc.loganalytics.model.EmBridgeLatestImportProcessingStatus>
             getImportStatus() {
         return importStatus;
@@ -75,6 +99,9 @@ public class ListLogAnalyticsEmBridgesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -83,6 +110,9 @@ public class ListLogAnalyticsEmBridgesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -129,6 +159,10 @@ public class ListLogAnalyticsEmBridgesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -178,6 +212,11 @@ public class ListLogAnalyticsEmBridgesRequest
         }
     };
 
+    /**
+     * The field to sort enterprise manager bridges by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
+     * is descending. Default order for enterprise manager name is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -186,6 +225,9 @@ public class ListLogAnalyticsEmBridgesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -197,11 +239,16 @@ public class ListLogAnalyticsEmBridgesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -209,10 +256,14 @@ public class ListLogAnalyticsEmBridgesRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -220,12 +271,18 @@ public class ListLogAnalyticsEmBridgesRequest
             return this;
         }
 
+        /**
+         * A filter to return only log analytics enterprise manager bridge name whose name matches the entire name given. The match
+         * is case-insensitive.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only log analytics enterprise manager bridge name whose name matches the entire name given. The match
          * is case-insensitive.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -233,12 +290,17 @@ public class ListLogAnalyticsEmBridgesRequest
             return this;
         }
 
+        /**
+         * A filter to return only log analytics enterprise manager bridges matching all the lifecycle states specified for this parameter.
+         *
+         */
         private java.util.List<com.oracle.bmc.loganalytics.model.EmBridgeLifecycleStates>
                 lifecycleState = null;
 
         /**
          * A filter to return only log analytics enterprise manager bridges matching all the lifecycle states specified for this parameter.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -251,17 +313,23 @@ public class ListLogAnalyticsEmBridgesRequest
         /**
          * Singular setter. A filter to return only log analytics enterprise manager bridges matching all the lifecycle states specified for this parameter.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder lifecycleState(EmBridgeLifecycleStates singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only log analytics enterprise manager bridges whose lifecycleDetails contains the specified string.
+         *
+         */
         private String lifecycleDetailsContains = null;
 
         /**
          * A filter to return only log analytics enterprise manager bridges whose lifecycleDetails contains the specified string.
          *
+         * @param lifecycleDetailsContains the value to set
          * @return this builder instance
          */
         public Builder lifecycleDetailsContains(String lifecycleDetailsContains) {
@@ -269,6 +337,10 @@ public class ListLogAnalyticsEmBridgesRequest
             return this;
         }
 
+        /**
+         * Filter by the processing status of the latest upload from enterprise manager.
+         *
+         */
         private java.util.List<
                         com.oracle.bmc.loganalytics.model.EmBridgeLatestImportProcessingStatus>
                 importStatus = null;
@@ -276,6 +348,7 @@ public class ListLogAnalyticsEmBridgesRequest
         /**
          * Filter by the processing status of the latest upload from enterprise manager.
          *
+         * @param importStatus the value to set
          * @return this builder instance
          */
         public Builder importStatus(
@@ -290,16 +363,21 @@ public class ListLogAnalyticsEmBridgesRequest
         /**
          * Singular setter. Filter by the processing status of the latest upload from enterprise manager.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder importStatus(EmBridgeLatestImportProcessingStatus singularValue) {
             return this.importStatus(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -307,10 +385,14 @@ public class ListLogAnalyticsEmBridgesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -318,11 +400,16 @@ public class ListLogAnalyticsEmBridgesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -330,12 +417,18 @@ public class ListLogAnalyticsEmBridgesRequest
             return this;
         }
 
+        /**
+         * The field to sort enterprise manager bridges by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
+         * is descending. Default order for enterprise manager name is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort enterprise manager bridges by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
          * is descending. Default order for enterprise manager name is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -343,10 +436,14 @@ public class ListLogAnalyticsEmBridgesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -442,7 +539,8 @@ public class ListLogAnalyticsEmBridgesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -459,6 +557,10 @@ public class ListLogAnalyticsEmBridgesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

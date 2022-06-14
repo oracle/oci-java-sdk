@@ -108,6 +108,12 @@ public class ImageSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceImageType")
     private final SourceImageType sourceImageType;
 
+    /**
+     * The format of the image to be imported. Only monolithic
+     * images are supported. This attribute is not used for exported Oracle images with the OCI image format.
+     *
+     * @return the value
+     **/
     public SourceImageType getSourceImageType() {
         return sourceImageType;
     }

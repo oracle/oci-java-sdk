@@ -42,6 +42,10 @@ public class AbstractCallAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
     private final Integer fetchSize;
 
+    /**
+     * The fetch size for reading.
+     * @return the value
+     **/
     public Integer getFetchSize() {
         return fetchSize;
     }

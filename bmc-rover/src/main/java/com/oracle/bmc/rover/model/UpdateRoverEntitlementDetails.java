@@ -59,91 +59,180 @@ public final class UpdateRoverEntitlementDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * tenant Id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
+        /**
+         * tenant Id.
+         * @param tenantId the value to set
+         * @return this builder
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-
+        /**
+         * Requestor name for the entitlement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestorName")
         private String requestorName;
 
+        /**
+         * Requestor name for the entitlement.
+         * @param requestorName the value to set
+         * @return this builder
+         **/
         public Builder requestorName(String requestorName) {
             this.requestorName = requestorName;
             this.__explicitlySet__.add("requestorName");
             return this;
         }
-
+        /**
+         * Requestor email for the entitlement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestorEmail")
         private String requestorEmail;
 
+        /**
+         * Requestor email for the entitlement.
+         * @param requestorEmail the value to set
+         * @return this builder
+         **/
         public Builder requestorEmail(String requestorEmail) {
             this.requestorEmail = requestorEmail;
             this.__explicitlySet__.add("requestorEmail");
             return this;
         }
-
+        /**
+         * Details about the entitlement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entitlementDetails")
         private String entitlementDetails;
 
+        /**
+         * Details about the entitlement.
+         * @param entitlementDetails the value to set
+         * @return this builder
+         **/
         public Builder entitlementDetails(String entitlementDetails) {
             this.entitlementDetails = entitlementDetails;
             this.__explicitlySet__.add("entitlementDetails");
             return this;
         }
-
+        /**
+         * The current state of the RoverNode.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the RoverNode.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A property that can contain details on the lifecycle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
         private String lifecycleStateDetails;
 
+        /**
+         * A property that can contain details on the lifecycle.
+         * @param lifecycleStateDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
             this.lifecycleStateDetails = lifecycleStateDetails;
             this.__explicitlySet__.add("lifecycleStateDetails");
             return this;
         }
-
+        /**
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -206,6 +295,10 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -216,6 +309,10 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
+    /**
+     * tenant Id.
+     * @return the value
+     **/
     public String getTenantId() {
         return tenantId;
     }
@@ -226,6 +323,10 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("requestorName")
     private final String requestorName;
 
+    /**
+     * Requestor name for the entitlement.
+     * @return the value
+     **/
     public String getRequestorName() {
         return requestorName;
     }
@@ -236,6 +337,10 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("requestorEmail")
     private final String requestorEmail;
 
+    /**
+     * Requestor email for the entitlement.
+     * @return the value
+     **/
     public String getRequestorEmail() {
         return requestorEmail;
     }
@@ -246,6 +351,10 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("entitlementDetails")
     private final String entitlementDetails;
 
+    /**
+     * Details about the entitlement.
+     * @return the value
+     **/
     public String getEntitlementDetails() {
         return entitlementDetails;
     }
@@ -256,6 +365,10 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the RoverNode.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -266,6 +379,10 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
     private final String lifecycleStateDetails;
 
+    /**
+     * A property that can contain details on the lifecycle.
+     * @return the value
+     **/
     public String getLifecycleStateDetails() {
         return lifecycleStateDetails;
     }
@@ -279,6 +396,13 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -292,6 +416,13 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -305,6 +436,13 @@ public final class UpdateRoverEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

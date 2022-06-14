@@ -25,27 +25,49 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
 public final class ImageMetadata extends RecordMetadata {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Height of the image record.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("height")
         private Integer height;
 
+        /**
+         * Height of the image record.
+         * @param height the value to set
+         * @return this builder
+         **/
         public Builder height(Integer height) {
             this.height = height;
             this.__explicitlySet__.add("height");
             return this;
         }
-
+        /**
+         * Width of the image record.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("width")
         private Integer width;
 
+        /**
+         * Width of the image record.
+         * @param width the value to set
+         * @return this builder
+         **/
         public Builder width(Integer width) {
             this.width = width;
             this.__explicitlySet__.add("width");
             return this;
         }
-
+        /**
+         * Depth of the image record.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("depth")
         private Integer depth;
 
+        /**
+         * Depth of the image record.
+         * @param depth the value to set
+         * @return this builder
+         **/
         public Builder depth(Integer depth) {
             this.depth = depth;
             this.__explicitlySet__.add("depth");
@@ -95,6 +117,10 @@ public final class ImageMetadata extends RecordMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("height")
     private final Integer height;
 
+    /**
+     * Height of the image record.
+     * @return the value
+     **/
     public Integer getHeight() {
         return height;
     }
@@ -105,6 +131,10 @@ public final class ImageMetadata extends RecordMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("width")
     private final Integer width;
 
+    /**
+     * Width of the image record.
+     * @return the value
+     **/
     public Integer getWidth() {
         return width;
     }
@@ -115,6 +145,10 @@ public final class ImageMetadata extends RecordMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("depth")
     private final Integer depth;
 
+    /**
+     * Depth of the image record.
+     * @return the value
+     **/
     public Integer getDepth() {
         return depth;
     }

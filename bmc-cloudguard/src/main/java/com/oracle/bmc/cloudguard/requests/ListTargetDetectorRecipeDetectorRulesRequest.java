@@ -17,6 +17,9 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
      */
     private String targetId;
 
+    /**
+     * OCID of target
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -25,6 +28,9 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
      */
     private String targetDetectorRecipeId;
 
+    /**
+     * OCID of TargetDetectorRecipe
+     */
     public String getTargetDetectorRecipeId() {
         return targetDetectorRecipeId;
     }
@@ -33,6 +39,9 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -41,6 +50,9 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -49,6 +61,9 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
      */
     private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState;
 
+    /**
+     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     */
     public com.oracle.bmc.cloudguard.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -57,6 +72,9 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -65,6 +83,9 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -73,6 +94,9 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -119,6 +143,10 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for displayName is ascending. If no value is specified displayName is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -127,6 +155,9 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -138,10 +169,14 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of target
+         */
         private String targetId = null;
 
         /**
          * OCID of target
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -149,10 +184,14 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
             return this;
         }
 
+        /**
+         * OCID of TargetDetectorRecipe
+         */
         private String targetDetectorRecipeId = null;
 
         /**
          * OCID of TargetDetectorRecipe
+         * @param targetDetectorRecipeId the value to set
          * @return this builder instance
          */
         public Builder targetDetectorRecipeId(String targetDetectorRecipeId) {
@@ -160,10 +199,14 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -171,10 +214,14 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -182,10 +229,14 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
             return this;
         }
 
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
         private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState = null;
 
         /**
          * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -194,10 +245,14 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -205,10 +260,14 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -216,10 +275,14 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.cloudguard.model.SortOrders sortOrder) {
@@ -227,11 +290,16 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for displayName is ascending. If no value is specified displayName is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for displayName is ascending. If no value is specified displayName is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -239,10 +307,14 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -337,7 +409,8 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -353,6 +426,10 @@ public class ListTargetDetectorRecipeDetectorRulesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

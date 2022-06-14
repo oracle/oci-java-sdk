@@ -15,6 +15,12 @@ public class CreateOAuthClientCredentialResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class CreateOAuthClientCredentialResponse extends com.oracle.bmc.response
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -33,6 +43,10 @@ public class CreateOAuthClientCredentialResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.identity.model.OAuth2ClientCredential oAuth2ClientCredential;
 
+    /**
+     * The returned OAuth2ClientCredential instance.
+     * @return the value
+     */
     public com.oracle.bmc.identity.model.OAuth2ClientCredential getOAuth2ClientCredential() {
         return oAuth2ClientCredential;
     }
@@ -62,22 +76,50 @@ public class CreateOAuthClientCredentialResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned OAuth2ClientCredential instance.
+         */
         private com.oracle.bmc.identity.model.OAuth2ClientCredential oAuth2ClientCredential;
 
+        /**
+         * The returned OAuth2ClientCredential instance.
+         * @param oAuth2ClientCredential the value to set
+         * @return this builder
+         */
         public Builder oAuth2ClientCredential(
                 com.oracle.bmc.identity.model.OAuth2ClientCredential oAuth2ClientCredential) {
             this.oAuth2ClientCredential = oAuth2ClientCredential;
@@ -97,12 +139,20 @@ public class CreateOAuthClientCredentialResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateOAuthClientCredentialResponse build() {
             return new CreateOAuthClientCredentialResponse(
                     __httpStatusCode__, opcRequestId, etag, oAuth2ClientCredential);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,9 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String endpointId;
 
+    /**
+     * DCMS Endpoint id
+     */
     public String getEndpointId() {
         return endpointId;
     }
@@ -24,6 +27,9 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String registryId;
 
+    /**
+     * DCMS registry id
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -35,6 +41,12 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,10 +58,14 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * DCMS Endpoint id
+         */
         private String endpointId = null;
 
         /**
          * DCMS Endpoint id
+         * @param endpointId the value to set
          * @return this builder instance
          */
         public Builder endpointId(String endpointId) {
@@ -57,10 +73,14 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * DCMS registry id
+         */
         private String registryId = null;
 
         /**
          * DCMS registry id
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -68,6 +88,12 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -75,6 +101,7 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -154,7 +181,8 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -163,6 +191,10 @@ public class GetEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

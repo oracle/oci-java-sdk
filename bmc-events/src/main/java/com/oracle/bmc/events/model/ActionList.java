@@ -28,9 +28,19 @@ public final class ActionList {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of one or more Action objects.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actions")
         private java.util.List<Action> actions;
 
+        /**
+         * A list of one or more Action objects.
+         *
+         * @param actions the value to set
+         * @return this builder
+         **/
         public Builder actions(java.util.List<Action> actions) {
             this.actions = actions;
             this.__explicitlySet__.add("actions");
@@ -73,6 +83,11 @@ public final class ActionList {
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     private final java.util.List<Action> actions;
 
+    /**
+     * A list of one or more Action objects.
+     *
+     * @return the value
+     **/
     public java.util.List<Action> getActions() {
         return actions;
     }

@@ -48,27 +48,49 @@ public final class Peer {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * peer identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerKey")
         private String peerKey;
 
+        /**
+         * peer identifier
+         * @param peerKey the value to set
+         * @return this builder
+         **/
         public Builder peerKey(String peerKey) {
             this.peerKey = peerKey;
             this.__explicitlySet__.add("peerKey");
             return this;
         }
-
+        /**
+         * Peer role
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private PeerRole.Role role;
 
+        /**
+         * Peer role
+         * @param role the value to set
+         * @return this builder
+         **/
         public Builder role(PeerRole.Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
-
+        /**
+         * peer alias
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
+        /**
+         * peer alias
+         * @param alias the value to set
+         * @return this builder
+         **/
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
@@ -83,28 +105,49 @@ public final class Peer {
             this.__explicitlySet__.add("ocpuAllocationParam");
             return this;
         }
-
+        /**
+         * Host on which the Peer exists
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * Host on which the Peer exists
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * Availability Domain of peer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ad")
         private AvailabilityDomain.Ads ad;
 
+        /**
+         * Availability Domain of peer
+         * @param ad the value to set
+         * @return this builder
+         **/
         public Builder ad(AvailabilityDomain.Ads ad) {
             this.ad = ad;
             this.__explicitlySet__.add("ad");
             return this;
         }
-
+        /**
+         * The current state of the peer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the peer.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -154,6 +197,10 @@ public final class Peer {
     @com.fasterxml.jackson.annotation.JsonProperty("peerKey")
     private final String peerKey;
 
+    /**
+     * peer identifier
+     * @return the value
+     **/
     public String getPeerKey() {
         return peerKey;
     }
@@ -164,6 +211,10 @@ public final class Peer {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final PeerRole.Role role;
 
+    /**
+     * Peer role
+     * @return the value
+     **/
     public PeerRole.Role getRole() {
         return role;
     }
@@ -174,6 +225,10 @@ public final class Peer {
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
+    /**
+     * peer alias
+     * @return the value
+     **/
     public String getAlias() {
         return alias;
     }
@@ -191,6 +246,10 @@ public final class Peer {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * Host on which the Peer exists
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -201,6 +260,10 @@ public final class Peer {
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
     private final AvailabilityDomain.Ads ad;
 
+    /**
+     * Availability Domain of peer
+     * @return the value
+     **/
     public AvailabilityDomain.Ads getAd() {
         return ad;
     }
@@ -260,6 +323,10 @@ public final class Peer {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the peer.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }

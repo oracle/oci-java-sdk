@@ -31,18 +31,33 @@ public final class CertificateSubjectAlternativeName {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The subject alternative name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The subject alternative name.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -131,6 +146,10 @@ public final class CertificateSubjectAlternativeName {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -141,6 +160,10 @@ public final class CertificateSubjectAlternativeName {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The subject alternative name.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

@@ -132,19 +132,33 @@ public final class Union extends Operator {
             this.__explicitlySet__.add("opConfigValues");
             return this;
         }
-
+        /**
+         * unionType
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unionType")
         private UnionType unionType;
 
+        /**
+         * unionType
+         * @param unionType the value to set
+         * @return this builder
+         **/
         public Builder unionType(UnionType unionType) {
             this.unionType = unionType;
             this.__explicitlySet__.add("unionType");
             return this;
         }
-
+        /**
+         * The information about the union all.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAll")
         private Boolean isAll;
 
+        /**
+         * The information about the union all.
+         * @param isAll the value to set
+         * @return this builder
+         **/
         public Builder isAll(Boolean isAll) {
             this.isAll = isAll;
             this.__explicitlySet__.add("isAll");
@@ -296,6 +310,10 @@ public final class Union extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("unionType")
     private final UnionType unionType;
 
+    /**
+     * unionType
+     * @return the value
+     **/
     public UnionType getUnionType() {
         return unionType;
     }
@@ -306,6 +324,10 @@ public final class Union extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("isAll")
     private final Boolean isAll;
 
+    /**
+     * The information about the union all.
+     * @return the value
+     **/
     public Boolean getIsAll() {
         return isAll;
     }

@@ -16,6 +16,9 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String compartmentId;
 
+    /**
+     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,10 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String id;
 
+    /**
+     * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -33,6 +40,9 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String jobId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+     */
     public String getJobId() {
         return jobId;
     }
@@ -41,6 +51,9 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String createdBy;
 
+    /**
+     * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+     */
     public String getCreatedBy() {
         return createdBy;
     }
@@ -49,6 +62,9 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String displayName;
 
+    /**
+     * <b>Filter</b> results by its user-friendly name.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -58,6 +74,10 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -72,6 +92,15 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page,
+     * or items to return in a paginated "List" call.
+     * 1 is the minimum, 1000 is the maximum.
+     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 500}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -84,6 +113,13 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
+     * <p>
+     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -130,6 +166,10 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -182,6 +222,13 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Specifies the field to sort by. Accepts only one field.
+     * By default, when you sort by {@code timeCreated}, the results are shown
+     * in descending order. When you sort by {@code displayName}, the results are
+     * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -192,6 +239,11 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.datascience.model.JobRunLifecycleState lifecycleState;
 
+    /**
+     * <b>Filter</b> results by the specified lifecycle state. Must be a valid
+     * state for the resource type.
+     *
+     */
     public com.oracle.bmc.datascience.model.JobRunLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -203,10 +255,14 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -214,11 +270,16 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+         *
+         */
         private String id = null;
 
         /**
          * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -226,10 +287,14 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         */
         private String jobId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         * @param jobId the value to set
          * @return this builder instance
          */
         public Builder jobId(String jobId) {
@@ -237,10 +302,14 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+         */
         private String createdBy = null;
 
         /**
          * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+         * @param createdBy the value to set
          * @return this builder instance
          */
         public Builder createdBy(String createdBy) {
@@ -248,10 +317,14 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * <b>Filter</b> results by its user-friendly name.
+         */
         private String displayName = null;
 
         /**
          * <b>Filter</b> results by its user-friendly name.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -259,11 +332,16 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -271,6 +349,15 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page,
+         * or items to return in a paginated "List" call.
+         * 1 is the minimum, 1000 is the maximum.
+         * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 500}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -281,6 +368,7 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * <p>
          * Example: {@code 500}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -288,6 +376,13 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response
+         * header from the previous "List" call.
+         * <p>
+         * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -296,6 +391,7 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * <p>
          * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -303,11 +399,16 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -315,6 +416,13 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Specifies the field to sort by. Accepts only one field.
+         * By default, when you sort by {@code timeCreated}, the results are shown
+         * in descending order. When you sort by {@code displayName}, the results are
+         * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -323,6 +431,7 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * in descending order. When you sort by {@code displayName}, the results are
          * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -330,12 +439,18 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * <b>Filter</b> results by the specified lifecycle state. Must be a valid
+         * state for the resource type.
+         *
+         */
         private com.oracle.bmc.datascience.model.JobRunLifecycleState lifecycleState = null;
 
         /**
          * <b>Filter</b> results by the specified lifecycle state. Must be a valid
          * state for the resource type.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -432,7 +547,8 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -449,6 +565,10 @@ public class ListJobRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

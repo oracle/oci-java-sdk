@@ -16,6 +16,9 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String instanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -27,6 +30,12 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -37,6 +46,11 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean preserveBootVolume;
 
+    /**
+     * Specifies whether to delete or preserve the boot volume when terminating an instance.
+     * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
+     *
+     */
     public Boolean getPreserveBootVolume() {
         return preserveBootVolume;
     }
@@ -47,6 +61,11 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean preserveDataVolumes;
 
+    /**
+     * Specifies whether to delete or preserve the data volumes when terminating an instance.
+     * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
+     *
+     */
     public Boolean getPreserveDataVolumes() {
         return preserveDataVolumes;
     }
@@ -58,10 +77,14 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         */
         private String instanceId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         * @param instanceId the value to set
          * @return this builder instance
          */
         public Builder instanceId(String instanceId) {
@@ -69,6 +92,12 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -76,6 +105,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -83,12 +113,18 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Specifies whether to delete or preserve the boot volume when terminating an instance.
+         * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
+         *
+         */
         private Boolean preserveBootVolume = null;
 
         /**
          * Specifies whether to delete or preserve the boot volume when terminating an instance.
          * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
          *
+         * @param preserveBootVolume the value to set
          * @return this builder instance
          */
         public Builder preserveBootVolume(Boolean preserveBootVolume) {
@@ -96,12 +132,18 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Specifies whether to delete or preserve the data volumes when terminating an instance.
+         * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
+         *
+         */
         private Boolean preserveDataVolumes = null;
 
         /**
          * Specifies whether to delete or preserve the data volumes when terminating an instance.
          * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
          *
+         * @param preserveDataVolumes the value to set
          * @return this builder instance
          */
         public Builder preserveDataVolumes(Boolean preserveDataVolumes) {
@@ -183,7 +225,8 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -193,6 +236,10 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
                 .preserveDataVolumes(preserveDataVolumes);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

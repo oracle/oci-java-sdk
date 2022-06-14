@@ -29,9 +29,17 @@ public final class SystemPrivilegeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of system privileges.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SystemPrivilegeSummary> items;
 
+        /**
+         * An array of system privileges.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SystemPrivilegeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class SystemPrivilegeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SystemPrivilegeSummary> items;
 
+    /**
+     * An array of system privileges.
+     * @return the value
+     **/
     public java.util.List<SystemPrivilegeSummary> getItems() {
         return items;
     }

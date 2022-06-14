@@ -47,54 +47,97 @@ public final class StandardTagDefinitionTemplate {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The default description of the tag namespace that users can use to create the tag definition
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The default description of the tag namespace that users can use to create the tag definition
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The name of this standard tag definition
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
         private String tagDefinitionName;
 
+        /**
+         * The name of this standard tag definition
+         * @param tagDefinitionName the value to set
+         * @return this builder
+         **/
         public Builder tagDefinitionName(String tagDefinitionName) {
             this.tagDefinitionName = tagDefinitionName;
             this.__explicitlySet__.add("tagDefinitionName");
             return this;
         }
-
+        /**
+         * The type of tag definition. Enum or string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of tag definition. Enum or string.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * List of possible values. An optional parameter that will be present if the type of definition is enum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
         private java.util.List<String> possibleValues;
 
+        /**
+         * List of possible values. An optional parameter that will be present if the type of definition is enum.
+         * @param possibleValues the value to set
+         * @return this builder
+         **/
         public Builder possibleValues(java.util.List<String> possibleValues) {
             this.possibleValues = possibleValues;
             this.__explicitlySet__.add("possibleValues");
             return this;
         }
-
+        /**
+         * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
         private Boolean isCostTracking;
 
+        /**
+         * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
+         * @param isCostTracking the value to set
+         * @return this builder
+         **/
         public Builder isCostTracking(Boolean isCostTracking) {
             this.isCostTracking = isCostTracking;
             this.__explicitlySet__.add("isCostTracking");
             return this;
         }
-
+        /**
+         * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enumMutability")
         private EnumMutability enumMutability;
 
+        /**
+         * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
+         * @param enumMutability the value to set
+         * @return this builder
+         **/
         public Builder enumMutability(EnumMutability enumMutability) {
             this.enumMutability = enumMutability;
             this.__explicitlySet__.add("enumMutability");
@@ -149,6 +192,10 @@ public final class StandardTagDefinitionTemplate {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The default description of the tag namespace that users can use to create the tag definition
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -159,6 +206,10 @@ public final class StandardTagDefinitionTemplate {
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
     private final String tagDefinitionName;
 
+    /**
+     * The name of this standard tag definition
+     * @return the value
+     **/
     public String getTagDefinitionName() {
         return tagDefinitionName;
     }
@@ -215,6 +266,10 @@ public final class StandardTagDefinitionTemplate {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of tag definition. Enum or string.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -225,6 +280,10 @@ public final class StandardTagDefinitionTemplate {
     @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
     private final java.util.List<String> possibleValues;
 
+    /**
+     * List of possible values. An optional parameter that will be present if the type of definition is enum.
+     * @return the value
+     **/
     public java.util.List<String> getPossibleValues() {
         return possibleValues;
     }
@@ -235,6 +294,10 @@ public final class StandardTagDefinitionTemplate {
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
     private final Boolean isCostTracking;
 
+    /**
+     * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
+     * @return the value
+     **/
     public Boolean getIsCostTracking() {
         return isCostTracking;
     }
@@ -294,6 +357,10 @@ public final class StandardTagDefinitionTemplate {
     @com.fasterxml.jackson.annotation.JsonProperty("enumMutability")
     private final EnumMutability enumMutability;
 
+    /**
+     * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
+     * @return the value
+     **/
     public EnumMutability getEnumMutability() {
         return enumMutability;
     }

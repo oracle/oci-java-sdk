@@ -41,19 +41,39 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The pattern that should be used to search for data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
         private String regularExpression;
 
+        /**
+         * The pattern that should be used to search for data.
+         * @param regularExpression the value to set
+         * @return this builder
+         **/
         public Builder regularExpression(String regularExpression) {
             this.regularExpression = regularExpression;
             this.__explicitlySet__.add("regularExpression");
             return this;
         }
-
+        /**
+         * The value that should be used to replace the data matching the regular
+         * expression. It can be a fixed string, fixed number, null value, or
+         * SQL expression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replaceWith")
         private String replaceWith;
 
+        /**
+         * The value that should be used to replace the data matching the regular
+         * expression. It can be a fixed string, fixed number, null value, or
+         * SQL expression.
+         *
+         * @param replaceWith the value to set
+         * @return this builder
+         **/
         public Builder replaceWith(String replaceWith) {
             this.replaceWith = replaceWith;
             this.__explicitlySet__.add("replaceWith");
@@ -107,6 +127,10 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
     private final String regularExpression;
 
+    /**
+     * The pattern that should be used to search for data.
+     * @return the value
+     **/
     public String getRegularExpression() {
         return regularExpression;
     }
@@ -120,6 +144,13 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("replaceWith")
     private final String replaceWith;
 
+    /**
+     * The value that should be used to replace the data matching the regular
+     * expression. It can be a fixed string, fixed number, null value, or
+     * SQL expression.
+     *
+     * @return the value
+     **/
     public String getReplaceWith() {
         return replaceWith;
     }

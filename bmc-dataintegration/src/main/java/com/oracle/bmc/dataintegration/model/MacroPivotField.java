@@ -42,9 +42,17 @@ public final class MacroPivotField {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
         private Boolean isUseSourceType;
 
+        /**
+         * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+         * @param isUseSourceType the value to set
+         * @return this builder
+         **/
         public Builder isUseSourceType(Boolean isUseSourceType) {
             this.isUseSourceType = isUseSourceType;
             this.__explicitlySet__.add("isUseSourceType");
@@ -77,10 +85,17 @@ public final class MacroPivotField {
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * column name pattern can be used to generate the name structure of the generated columns. By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to the column name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnNamePattern")
         private String columnNamePattern;
 
+        /**
+         * column name pattern can be used to generate the name structure of the generated columns. By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to the column name.
+         * @param columnNamePattern the value to set
+         * @return this builder
+         **/
         public Builder columnNamePattern(String columnNamePattern) {
             this.columnNamePattern = columnNamePattern;
             this.__explicitlySet__.add("columnNamePattern");
@@ -128,6 +143,10 @@ public final class MacroPivotField {
     @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
     private final Boolean isUseSourceType;
 
+    /**
+     * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+     * @return the value
+     **/
     public Boolean getIsUseSourceType() {
         return isUseSourceType;
     }
@@ -159,6 +178,10 @@ public final class MacroPivotField {
     @com.fasterxml.jackson.annotation.JsonProperty("columnNamePattern")
     private final String columnNamePattern;
 
+    /**
+     * column name pattern can be used to generate the name structure of the generated columns. By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to the column name.
+     * @return the value
+     **/
     public String getColumnNamePattern() {
         return columnNamePattern;
     }

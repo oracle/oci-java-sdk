@@ -41,36 +41,65 @@ public final class FlattenProjectionPreferences {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Property defining whether to create array indexes in flattened result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createArrayIndex")
         private CreateArrayIndex createArrayIndex;
 
+        /**
+         * Property defining whether to create array indexes in flattened result.
+         * @param createArrayIndex the value to set
+         * @return this builder
+         **/
         public Builder createArrayIndex(CreateArrayIndex createArrayIndex) {
             this.createArrayIndex = createArrayIndex;
             this.__explicitlySet__.add("createArrayIndex");
             return this;
         }
-
+        /**
+         * Property defining whether to retain all attributes in flattened result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retainAllAttributes")
         private RetainAllAttributes retainAllAttributes;
 
+        /**
+         * Property defining whether to retain all attributes in flattened result.
+         * @param retainAllAttributes the value to set
+         * @return this builder
+         **/
         public Builder retainAllAttributes(RetainAllAttributes retainAllAttributes) {
             this.retainAllAttributes = retainAllAttributes;
             this.__explicitlySet__.add("retainAllAttributes");
             return this;
         }
-
+        /**
+         * Property defining whether to ignore null values in flattened result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ignoreNullValues")
         private IgnoreNullValues ignoreNullValues;
 
+        /**
+         * Property defining whether to ignore null values in flattened result.
+         * @param ignoreNullValues the value to set
+         * @return this builder
+         **/
         public Builder ignoreNullValues(IgnoreNullValues ignoreNullValues) {
             this.ignoreNullValues = ignoreNullValues;
             this.__explicitlySet__.add("ignoreNullValues");
             return this;
         }
-
+        /**
+         * Property defining whether to retain parent name lineage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retainParentNameLineage")
         private RetainParentNameLineage retainParentNameLineage;
 
+        /**
+         * Property defining whether to retain parent name lineage.
+         * @param retainParentNameLineage the value to set
+         * @return this builder
+         **/
         public Builder retainParentNameLineage(RetainParentNameLineage retainParentNameLineage) {
             this.retainParentNameLineage = retainParentNameLineage;
             this.__explicitlySet__.add("retainParentNameLineage");
@@ -169,6 +198,10 @@ public final class FlattenProjectionPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("createArrayIndex")
     private final CreateArrayIndex createArrayIndex;
 
+    /**
+     * Property defining whether to create array indexes in flattened result.
+     * @return the value
+     **/
     public CreateArrayIndex getCreateArrayIndex() {
         return createArrayIndex;
     }
@@ -227,6 +260,10 @@ public final class FlattenProjectionPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("retainAllAttributes")
     private final RetainAllAttributes retainAllAttributes;
 
+    /**
+     * Property defining whether to retain all attributes in flattened result.
+     * @return the value
+     **/
     public RetainAllAttributes getRetainAllAttributes() {
         return retainAllAttributes;
     }
@@ -285,6 +322,10 @@ public final class FlattenProjectionPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("ignoreNullValues")
     private final IgnoreNullValues ignoreNullValues;
 
+    /**
+     * Property defining whether to ignore null values in flattened result.
+     * @return the value
+     **/
     public IgnoreNullValues getIgnoreNullValues() {
         return ignoreNullValues;
     }
@@ -343,6 +384,10 @@ public final class FlattenProjectionPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("retainParentNameLineage")
     private final RetainParentNameLineage retainParentNameLineage;
 
+    /**
+     * Property defining whether to retain parent name lineage.
+     * @return the value
+     **/
     public RetainParentNameLineage getRetainParentNameLineage() {
         return retainParentNameLineage;
     }

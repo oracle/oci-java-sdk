@@ -45,54 +45,97 @@ public final class ImportManifest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the version of the export tool that was used to generate the manifest
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * the version of the export tool that was used to generate the manifest
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * the type of application that the export tool was executed against to generate this manifest
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportType")
         private String exportType;
 
+        /**
+         * the type of application that the export tool was executed against to generate this manifest
+         * @param exportType the value to set
+         * @return this builder
+         **/
         public Builder exportType(String exportType) {
             this.exportType = exportType;
             this.__explicitlySet__.add("exportType");
             return this;
         }
-
+        /**
+         * application specific details as parsed from various sources of the application that was exported
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportDetails")
         private Object exportDetails;
 
+        /**
+         * application specific details as parsed from various sources of the application that was exported
+         * @param exportDetails the value to set
+         * @return this builder
+         **/
         public Builder exportDetails(Object exportDetails) {
             this.exportDetails = exportDetails;
             this.__explicitlySet__.add("exportDetails");
             return this;
         }
-
+        /**
+         * when this manifest was generated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * when this manifest was generated
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * the MD5 hash of the export artifact archive that was produced by the export tool and should be used with this manifest
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("md5")
         private String md5;
 
+        /**
+         * the MD5 hash of the export artifact archive that was produced by the export tool and should be used with this manifest
+         * @param md5 the value to set
+         * @return this builder
+         **/
         public Builder md5(String md5) {
             this.md5 = md5;
             this.__explicitlySet__.add("md5");
             return this;
         }
-
+        /**
+         * a sha1 hash of all the fields of this manifest (excluding the signature)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signature")
         private String signature;
 
+        /**
+         * a sha1 hash of all the fields of this manifest (excluding the signature)
+         * @param signature the value to set
+         * @return this builder
+         **/
         public Builder signature(String signature) {
             this.signature = signature;
             this.__explicitlySet__.add("signature");
@@ -142,6 +185,10 @@ public final class ImportManifest {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * the version of the export tool that was used to generate the manifest
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -152,6 +199,10 @@ public final class ImportManifest {
     @com.fasterxml.jackson.annotation.JsonProperty("exportType")
     private final String exportType;
 
+    /**
+     * the type of application that the export tool was executed against to generate this manifest
+     * @return the value
+     **/
     public String getExportType() {
         return exportType;
     }
@@ -162,6 +213,10 @@ public final class ImportManifest {
     @com.fasterxml.jackson.annotation.JsonProperty("exportDetails")
     private final Object exportDetails;
 
+    /**
+     * application specific details as parsed from various sources of the application that was exported
+     * @return the value
+     **/
     public Object getExportDetails() {
         return exportDetails;
     }
@@ -172,6 +227,10 @@ public final class ImportManifest {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * when this manifest was generated
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -182,6 +241,10 @@ public final class ImportManifest {
     @com.fasterxml.jackson.annotation.JsonProperty("md5")
     private final String md5;
 
+    /**
+     * the MD5 hash of the export artifact archive that was produced by the export tool and should be used with this manifest
+     * @return the value
+     **/
     public String getMd5() {
         return md5;
     }
@@ -192,6 +255,10 @@ public final class ImportManifest {
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
     private final String signature;
 
+    /**
+     * a sha1 hash of all the fields of this manifest (excluding the signature)
+     * @return the value
+     **/
     public String getSignature() {
         return signature;
     }

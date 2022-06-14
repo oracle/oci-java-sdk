@@ -27,27 +27,49 @@ package com.oracle.bmc.usageapi.model;
 public final class ObjectStorageLocation extends ResultLocation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The destination Object Store Region specified by customer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * The destination Object Store Region specified by customer
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * The namespace needed to determine object storage bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The namespace needed to determine object storage bucket.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * The bucket name where usage/cost CSVs will be uploaded
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * The bucket name where usage/cost CSVs will be uploaded
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
@@ -99,6 +121,10 @@ public final class ObjectStorageLocation extends ResultLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * The destination Object Store Region specified by customer
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -109,6 +135,10 @@ public final class ObjectStorageLocation extends ResultLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The namespace needed to determine object storage bucket.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -119,6 +149,10 @@ public final class ObjectStorageLocation extends ResultLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * The bucket name where usage/cost CSVs will be uploaded
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }

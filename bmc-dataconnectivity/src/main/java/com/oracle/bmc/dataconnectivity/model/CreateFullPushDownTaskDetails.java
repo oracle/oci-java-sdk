@@ -31,9 +31,17 @@ public final class CreateFullPushDownTaskDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of of FullPushDownTask.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
+        /**
+         * The type of of FullPushDownTask.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
@@ -95,6 +103,10 @@ public final class CreateFullPushDownTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
+    /**
+     * The type of of FullPushDownTask.
+     * @return the value
+     **/
     public String getModelType() {
         return modelType;
     }

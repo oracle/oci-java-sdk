@@ -16,6 +16,9 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire name given. The match is not case sensitive.
+     */
     public String getName() {
         return name;
     }
@@ -68,6 +74,9 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -113,6 +122,10 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for NAME is ascending. The NAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -121,6 +134,9 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -129,6 +145,9 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -140,10 +159,14 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -151,10 +174,14 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -162,10 +189,14 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -173,11 +204,16 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for NAME is ascending. The NAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for NAME is ascending. The NAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -185,10 +221,14 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -196,10 +236,14 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -285,7 +329,8 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -297,6 +342,10 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

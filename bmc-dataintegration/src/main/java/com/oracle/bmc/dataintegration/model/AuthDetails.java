@@ -31,18 +31,33 @@ public final class AuthDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Generated key that can be used in API calls to identify data flow. On scenarios where reference to the data flow is needed, a value can be passed in create.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Generated key that can be used in API calls to identify data flow. On scenarios where reference to the data flow is needed, a value can be passed in create.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The model version of an object.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -57,10 +72,17 @@ public final class AuthDetails {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * The authentication mode to be used for Generic REST invocation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private ModelType modelType;
 
+        /**
+         * The authentication mode to be used for Generic REST invocation.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(ModelType modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
@@ -106,6 +128,10 @@ public final class AuthDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Generated key that can be used in API calls to identify data flow. On scenarios where reference to the data flow is needed, a value can be passed in create.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -116,6 +142,10 @@ public final class AuthDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The model version of an object.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -181,6 +211,10 @@ public final class AuthDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final ModelType modelType;
 
+    /**
+     * The authentication mode to be used for Generic REST invocation.
+     * @return the value
+     **/
     public ModelType getModelType() {
         return modelType;
     }

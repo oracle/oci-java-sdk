@@ -18,12 +18,13 @@ public class CreateTransferJobRequest
      */
     private com.oracle.bmc.dts.model.CreateTransferJobDetails createTransferJobDetails;
 
+    /**
+     * Creates a New Transfer Job
+     */
     public com.oracle.bmc.dts.model.CreateTransferJobDetails getCreateTransferJobDetails() {
         return createTransferJobDetails;
     }
-    /**
-     *
-     */
+
     private String opcRetryToken;
 
     public String getOpcRetryToken() {
@@ -36,6 +37,11 @@ public class CreateTransferJobRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,10 +63,14 @@ public class CreateTransferJobRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Creates a New Transfer Job
+         */
         private com.oracle.bmc.dts.model.CreateTransferJobDetails createTransferJobDetails = null;
 
         /**
          * Creates a New Transfer Job
+         * @param createTransferJobDetails the value to set
          * @return this builder instance
          */
         public Builder createTransferJobDetails(
@@ -73,6 +83,7 @@ public class CreateTransferJobRequest
 
         /**
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -80,12 +91,18 @@ public class CreateTransferJobRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -176,7 +193,8 @@ public class CreateTransferJobRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -185,6 +203,10 @@ public class CreateTransferJobRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class ChangeSecurityZoneCompartmentRequest
      */
     private String securityZoneId;
 
+    /**
+     * The unique identifier of the security zone ({@code SecurityZone})
+     */
     public String getSecurityZoneId() {
         return securityZoneId;
     }
@@ -27,6 +30,9 @@ public class ChangeSecurityZoneCompartmentRequest
     private com.oracle.bmc.cloudguard.model.ChangeSecurityZoneCompartmentDetails
             changeSecurityZoneCompartmentDetails;
 
+    /**
+     * The compartment to which you want to move the security zone.
+     */
     public com.oracle.bmc.cloudguard.model.ChangeSecurityZoneCompartmentDetails
             getChangeSecurityZoneCompartmentDetails() {
         return changeSecurityZoneCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeSecurityZoneCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeSecurityZoneCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,14 @@ public class ChangeSecurityZoneCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,10 +109,14 @@ public class ChangeSecurityZoneCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier of the security zone ({@code SecurityZone})
+         */
         private String securityZoneId = null;
 
         /**
          * The unique identifier of the security zone ({@code SecurityZone})
+         * @param securityZoneId the value to set
          * @return this builder instance
          */
         public Builder securityZoneId(String securityZoneId) {
@@ -95,11 +124,15 @@ public class ChangeSecurityZoneCompartmentRequest
             return this;
         }
 
+        /**
+         * The compartment to which you want to move the security zone.
+         */
         private com.oracle.bmc.cloudguard.model.ChangeSecurityZoneCompartmentDetails
                 changeSecurityZoneCompartmentDetails = null;
 
         /**
          * The compartment to which you want to move the security zone.
+         * @param changeSecurityZoneCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeSecurityZoneCompartmentDetails(
@@ -109,6 +142,14 @@ public class ChangeSecurityZoneCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +159,7 @@ public class ChangeSecurityZoneCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -125,10 +167,14 @@ public class ChangeSecurityZoneCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +182,14 @@ public class ChangeSecurityZoneCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -145,6 +199,7 @@ public class ChangeSecurityZoneCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -241,7 +296,8 @@ public class ChangeSecurityZoneCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -252,6 +308,10 @@ public class ChangeSecurityZoneCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

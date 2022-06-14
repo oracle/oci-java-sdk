@@ -45,36 +45,65 @@ public final class Cell {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The text recognized in the cell.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * The text recognized in the cell.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-
+        /**
+         * The index of the cell inside the row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowIndex")
         private Integer rowIndex;
 
+        /**
+         * The index of the cell inside the row.
+         * @param rowIndex the value to set
+         * @return this builder
+         **/
         public Builder rowIndex(Integer rowIndex) {
             this.rowIndex = rowIndex;
             this.__explicitlySet__.add("rowIndex");
             return this;
         }
-
+        /**
+         * The index of the cell inside the column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnIndex")
         private Integer columnIndex;
 
+        /**
+         * The index of the cell inside the column.
+         * @param columnIndex the value to set
+         * @return this builder
+         **/
         public Builder columnIndex(Integer columnIndex) {
             this.columnIndex = columnIndex;
             this.__explicitlySet__.add("columnIndex");
             return this;
         }
-
+        /**
+         * The confidence score between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
+        /**
+         * The confidence score between 0 and 1.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -89,10 +118,17 @@ public final class Cell {
             this.__explicitlySet__.add("boundingPolygon");
             return this;
         }
-
+        /**
+         * The words detected in the cell.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
         private java.util.List<Integer> wordIndexes;
 
+        /**
+         * The words detected in the cell.
+         * @param wordIndexes the value to set
+         * @return this builder
+         **/
         public Builder wordIndexes(java.util.List<Integer> wordIndexes) {
             this.wordIndexes = wordIndexes;
             this.__explicitlySet__.add("wordIndexes");
@@ -141,6 +177,10 @@ public final class Cell {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * The text recognized in the cell.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }
@@ -151,6 +191,10 @@ public final class Cell {
     @com.fasterxml.jackson.annotation.JsonProperty("rowIndex")
     private final Integer rowIndex;
 
+    /**
+     * The index of the cell inside the row.
+     * @return the value
+     **/
     public Integer getRowIndex() {
         return rowIndex;
     }
@@ -161,6 +205,10 @@ public final class Cell {
     @com.fasterxml.jackson.annotation.JsonProperty("columnIndex")
     private final Integer columnIndex;
 
+    /**
+     * The index of the cell inside the column.
+     * @return the value
+     **/
     public Integer getColumnIndex() {
         return columnIndex;
     }
@@ -171,6 +219,10 @@ public final class Cell {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
+    /**
+     * The confidence score between 0 and 1.
+     * @return the value
+     **/
     public Float getConfidence() {
         return confidence;
     }
@@ -188,6 +240,10 @@ public final class Cell {
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     private final java.util.List<Integer> wordIndexes;
 
+    /**
+     * The words detected in the cell.
+     * @return the value
+     **/
     public java.util.List<Integer> getWordIndexes() {
         return wordIndexes;
     }

@@ -29,9 +29,17 @@ public final class FolderSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of folder summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<FolderSummary> items;
 
+        /**
+         * The array of folder summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<FolderSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class FolderSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<FolderSummary> items;
 
+    /**
+     * The array of folder summaries.
+     * @return the value
+     **/
     public java.util.List<FolderSummary> getItems() {
         return items;
     }

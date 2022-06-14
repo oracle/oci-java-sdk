@@ -53,10 +53,17 @@ public final class CreateImagePublicationPackage extends CreatePublicationPackag
             this.__explicitlySet__.add("eula");
             return this;
         }
-
+        /**
+         * The unique identifier for the base image of the publication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The unique identifier for the base image of the publication.
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
@@ -114,6 +121,10 @@ public final class CreateImagePublicationPackage extends CreatePublicationPackag
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The unique identifier for the base image of the publication.
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }

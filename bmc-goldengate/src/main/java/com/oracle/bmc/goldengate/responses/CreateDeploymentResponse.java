@@ -14,6 +14,11 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcWorkRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -24,6 +29,11 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +44,11 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -43,6 +58,10 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.goldengate.model.Deployment deployment;
 
+    /**
+     * The returned Deployment instance.
+     * @return the value
+     */
     public com.oracle.bmc.goldengate.model.Deployment getDeployment() {
         return deployment;
     }
@@ -75,29 +94,67 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned Deployment instance.
+         */
         private com.oracle.bmc.goldengate.model.Deployment deployment;
 
+        /**
+         * The returned Deployment instance.
+         * @param deployment the value to set
+         * @return this builder
+         */
         public Builder deployment(com.oracle.bmc.goldengate.model.Deployment deployment) {
             this.deployment = deployment;
             return this;
@@ -117,12 +174,20 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateDeploymentResponse build() {
             return new CreateDeploymentResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId, etag, deployment);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

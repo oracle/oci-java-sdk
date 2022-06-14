@@ -72,10 +72,19 @@ public final class MultiSearchCommandDescriptor extends AbstractCommandDescripto
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * List of sub-searches specified in query string as multisearch command arguments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subQueries")
         private java.util.List<ParseQueryOutput> subQueries;
 
+        /**
+         * List of sub-searches specified in query string as multisearch command arguments.
+         *
+         * @param subQueries the value to set
+         * @return this builder
+         **/
         public Builder subQueries(java.util.List<ParseQueryOutput> subQueries) {
             this.subQueries = subQueries;
             this.__explicitlySet__.add("subQueries");
@@ -143,6 +152,11 @@ public final class MultiSearchCommandDescriptor extends AbstractCommandDescripto
     @com.fasterxml.jackson.annotation.JsonProperty("subQueries")
     private final java.util.List<ParseQueryOutput> subQueries;
 
+    /**
+     * List of sub-searches specified in query string as multisearch command arguments.
+     *
+     * @return the value
+     **/
     public java.util.List<ParseQueryOutput> getSubQueries() {
         return subQueries;
     }

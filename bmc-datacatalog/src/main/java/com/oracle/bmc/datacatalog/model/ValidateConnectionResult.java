@@ -30,18 +30,33 @@ public final class ValidateConnectionResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The message from the connection validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * The message from the connection validation.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * The status returned from the connection validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ConnectionResult status;
 
+        /**
+         * The status returned from the connection validation.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(ConnectionResult status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -83,6 +98,10 @@ public final class ValidateConnectionResult {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * The message from the connection validation.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -93,6 +112,10 @@ public final class ValidateConnectionResult {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ConnectionResult status;
 
+    /**
+     * The status returned from the connection validation.
+     * @return the value
+     **/
     public ConnectionResult getStatus() {
         return status;
     }

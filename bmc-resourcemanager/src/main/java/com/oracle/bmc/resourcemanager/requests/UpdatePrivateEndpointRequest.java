@@ -18,6 +18,9 @@ public class UpdatePrivateEndpointRequest
      */
     private String privateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     */
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -27,6 +30,9 @@ public class UpdatePrivateEndpointRequest
     private com.oracle.bmc.resourcemanager.model.UpdatePrivateEndpointDetails
             updatePrivateEndpointDetails;
 
+    /**
+     * Update details for a private endpoint.
+     */
     public com.oracle.bmc.resourcemanager.model.UpdatePrivateEndpointDetails
             getUpdatePrivateEndpointDetails() {
         return updatePrivateEndpointDetails;
@@ -38,6 +44,11 @@ public class UpdatePrivateEndpointRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +60,12 @@ public class UpdatePrivateEndpointRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -71,10 +88,14 @@ public class UpdatePrivateEndpointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
         private String privateEndpointId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         * @param privateEndpointId the value to set
          * @return this builder instance
          */
         public Builder privateEndpointId(String privateEndpointId) {
@@ -82,11 +103,15 @@ public class UpdatePrivateEndpointRequest
             return this;
         }
 
+        /**
+         * Update details for a private endpoint.
+         */
         private com.oracle.bmc.resourcemanager.model.UpdatePrivateEndpointDetails
                 updatePrivateEndpointDetails = null;
 
         /**
          * Update details for a private endpoint.
+         * @param updatePrivateEndpointDetails the value to set
          * @return this builder instance
          */
         public Builder updatePrivateEndpointDetails(
@@ -96,12 +121,18 @@ public class UpdatePrivateEndpointRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -109,6 +140,12 @@ public class UpdatePrivateEndpointRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -116,6 +153,7 @@ public class UpdatePrivateEndpointRequest
          * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -209,7 +247,8 @@ public class UpdatePrivateEndpointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +258,10 @@ public class UpdatePrivateEndpointRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

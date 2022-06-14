@@ -92,6 +92,11 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -106,6 +111,14 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name that is changeable and that does not have to be unique.
+     * Format: a leading alphanumeric, followed by zero or more
+     * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
+     * No trailing spaces allowed.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -116,6 +129,10 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     private final TaskType taskType;
 
+    /**
+     * Task type.
+     * @return the value
+     **/
     public TaskType getTaskType() {
         return taskType;
     }
@@ -126,6 +143,10 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
     private final java.util.List<Schedule> schedules;
 
+    /**
+     * Schedules.
+     * @return the value
+     **/
     public java.util.List<Schedule> getSchedules() {
         return schedules;
     }
@@ -193,6 +214,10 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
     private final TaskStatus taskStatus;
 
+    /**
+     * Status of the scheduled task.
+     * @return the value
+     **/
     public TaskStatus getTaskStatus() {
         return taskStatus;
     }
@@ -256,6 +281,10 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("pauseReason")
     private final PauseReason pauseReason;
 
+    /**
+     * reason for taskStatus PAUSED.
+     * @return the value
+     **/
     public PauseReason getPauseReason() {
         return pauseReason;
     }
@@ -266,6 +295,10 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
+    /**
+     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * @return the value
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -276,6 +309,10 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("numOccurrences")
     private final Long numOccurrences;
 
+    /**
+     * Number of execution occurrences.
+     * @return the value
+     **/
     public Long getNumOccurrences() {
         return numOccurrences;
     }
@@ -286,6 +323,10 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -297,6 +338,11 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the scheduled task was created, in the format defined by RFC3339.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -308,6 +354,11 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the scheduled task was last updated, in the format defined by RFC3339.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -320,6 +371,12 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextExecution")
     private final java.util.Date timeOfNextExecution;
 
+    /**
+     * The date and time the scheduled task will execute next,
+     * in the format defined by RFC3339.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfNextExecution() {
         return timeOfNextExecution;
     }
@@ -378,6 +435,10 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the scheduled task.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -390,6 +451,12 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -402,6 +469,12 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -30,27 +30,51 @@ public final class BulkEditResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique OCID of the resource.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The type of resource. See {@link #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest) listBulkEditTagsResourceTypes}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The type of resource. See {@link #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest) listBulkEditTagsResourceTypes}.
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * Additional information that identifies the resource for bulk editing of tags. This information is provided in the resource's API documentation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
+        /**
+         * Additional information that identifies the resource for bulk editing of tags. This information is provided in the resource's API documentation.
+         *
+         * @param metadata the value to set
+         * @return this builder
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -93,6 +117,10 @@ public final class BulkEditResource {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique OCID of the resource.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -103,6 +131,10 @@ public final class BulkEditResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The type of resource. See {@link #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest) listBulkEditTagsResourceTypes}.
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -114,6 +146,11 @@ public final class BulkEditResource {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
+    /**
+     * Additional information that identifies the resource for bulk editing of tags. This information is provided in the resource's API documentation.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }

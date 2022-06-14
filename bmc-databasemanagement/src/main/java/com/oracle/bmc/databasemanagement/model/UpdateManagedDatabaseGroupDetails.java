@@ -29,9 +29,17 @@ public final class UpdateManagedDatabaseGroupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The information specified by the user about the Managed Database Group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The information specified by the user about the Managed Database Group.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -74,6 +82,10 @@ public final class UpdateManagedDatabaseGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The information specified by the user about the Managed Database Group.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

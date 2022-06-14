@@ -57,81 +57,177 @@ public final class StackResourceDriftSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stackId")
         private String stackId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+         * @param stackId the value to set
+         * @return this builder
+         **/
         public Builder stackId(String stackId) {
             this.stackId = stackId;
             this.__explicitlySet__.add("stackId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the stack is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the stack is located.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name of the resource as defined in the stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * The name of the resource as defined in the stack.
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource provisioned by Terraform.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource provisioned by Terraform.
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * The provider resource type.
+         * Must be supported by the [Oracle Cloud Infrastructure provider](https://www.terraform.io/docs/providers/oci/index.html).
+         * Example: {@code oci_core_instance}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The provider resource type.
+         * Must be supported by the [Oracle Cloud Infrastructure provider](https://www.terraform.io/docs/providers/oci/index.html).
+         * Example: {@code oci_core_instance}
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The drift status of the resource.
+         * A drift status value indicates whether or not the actual state of the resource differs from the expected (defined) state for that resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceDriftStatus")
         private ResourceDriftStatus resourceDriftStatus;
 
+        /**
+         * The drift status of the resource.
+         * A drift status value indicates whether or not the actual state of the resource differs from the expected (defined) state for that resource.
+         *
+         * @param resourceDriftStatus the value to set
+         * @return this builder
+         **/
         public Builder resourceDriftStatus(ResourceDriftStatus resourceDriftStatus) {
             this.resourceDriftStatus = resourceDriftStatus;
             this.__explicitlySet__.add("resourceDriftStatus");
             return this;
         }
-
+        /**
+         * Actual values of properties that the stack defines for the indicated resource.
+         * Each property and value is provided as a key-value pair.
+         * The following example shows actual values for the resource's display name and server type:
+         * {@code {"display_name": "tf-default-dhcp-options-new", "options.0.server_type": "VcnLocalPlusInternet"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actualProperties")
         private java.util.Map<String, String> actualProperties;
 
+        /**
+         * Actual values of properties that the stack defines for the indicated resource.
+         * Each property and value is provided as a key-value pair.
+         * The following example shows actual values for the resource's display name and server type:
+         * {@code {"display_name": "tf-default-dhcp-options-new", "options.0.server_type": "VcnLocalPlusInternet"}}
+         *
+         * @param actualProperties the value to set
+         * @return this builder
+         **/
         public Builder actualProperties(java.util.Map<String, String> actualProperties) {
             this.actualProperties = actualProperties;
             this.__explicitlySet__.add("actualProperties");
             return this;
         }
-
+        /**
+         * Expected values of properties that the stack defines for the indicated resource.
+         * Each property and value is provided as a key-value pair.
+         * The following example shows expected (defined) values for the resource's display name and server type:
+         * {@code {"display_name": "tf-default-dhcp-options", "options.0.server_type": "VcnLocalPlusInternet"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expectedProperties")
         private java.util.Map<String, String> expectedProperties;
 
+        /**
+         * Expected values of properties that the stack defines for the indicated resource.
+         * Each property and value is provided as a key-value pair.
+         * The following example shows expected (defined) values for the resource's display name and server type:
+         * {@code {"display_name": "tf-default-dhcp-options", "options.0.server_type": "VcnLocalPlusInternet"}}
+         *
+         * @param expectedProperties the value to set
+         * @return this builder
+         **/
         public Builder expectedProperties(java.util.Map<String, String> expectedProperties) {
             this.expectedProperties = expectedProperties;
             this.__explicitlySet__.add("expectedProperties");
             return this;
         }
-
+        /**
+         * The date and time when the drift detection was executed.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDriftChecked")
         private java.util.Date timeDriftChecked;
 
+        /**
+         * The date and time when the drift detection was executed.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeDriftChecked the value to set
+         * @return this builder
+         **/
         public Builder timeDriftChecked(java.util.Date timeDriftChecked) {
             this.timeDriftChecked = timeDriftChecked;
             this.__explicitlySet__.add("timeDriftChecked");
@@ -192,6 +288,10 @@ public final class StackResourceDriftSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("stackId")
     private final String stackId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+     * @return the value
+     **/
     public String getStackId() {
         return stackId;
     }
@@ -202,6 +302,10 @@ public final class StackResourceDriftSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the stack is located.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -212,6 +316,10 @@ public final class StackResourceDriftSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * The name of the resource as defined in the stack.
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -222,6 +330,10 @@ public final class StackResourceDriftSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource provisioned by Terraform.
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -235,6 +347,13 @@ public final class StackResourceDriftSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The provider resource type.
+     * Must be supported by the [Oracle Cloud Infrastructure provider](https://www.terraform.io/docs/providers/oci/index.html).
+     * Example: {@code oci_core_instance}
+     *
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -299,6 +418,12 @@ public final class StackResourceDriftSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceDriftStatus")
     private final ResourceDriftStatus resourceDriftStatus;
 
+    /**
+     * The drift status of the resource.
+     * A drift status value indicates whether or not the actual state of the resource differs from the expected (defined) state for that resource.
+     *
+     * @return the value
+     **/
     public ResourceDriftStatus getResourceDriftStatus() {
         return resourceDriftStatus;
     }
@@ -313,6 +438,14 @@ public final class StackResourceDriftSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("actualProperties")
     private final java.util.Map<String, String> actualProperties;
 
+    /**
+     * Actual values of properties that the stack defines for the indicated resource.
+     * Each property and value is provided as a key-value pair.
+     * The following example shows actual values for the resource's display name and server type:
+     * {@code {"display_name": "tf-default-dhcp-options-new", "options.0.server_type": "VcnLocalPlusInternet"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getActualProperties() {
         return actualProperties;
     }
@@ -327,6 +460,14 @@ public final class StackResourceDriftSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("expectedProperties")
     private final java.util.Map<String, String> expectedProperties;
 
+    /**
+     * Expected values of properties that the stack defines for the indicated resource.
+     * Each property and value is provided as a key-value pair.
+     * The following example shows expected (defined) values for the resource's display name and server type:
+     * {@code {"display_name": "tf-default-dhcp-options", "options.0.server_type": "VcnLocalPlusInternet"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getExpectedProperties() {
         return expectedProperties;
     }
@@ -340,6 +481,13 @@ public final class StackResourceDriftSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDriftChecked")
     private final java.util.Date timeDriftChecked;
 
+    /**
+     * The date and time when the drift detection was executed.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeDriftChecked() {
         return timeDriftChecked;
     }

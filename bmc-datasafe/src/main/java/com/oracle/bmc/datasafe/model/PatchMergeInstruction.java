@@ -35,10 +35,17 @@ public final class PatchMergeInstruction extends PatchInstruction {
             this.__explicitlySet__.add("selection");
             return this;
         }
-
+        /**
+         * A value to be merged into the target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Object value;
 
+        /**
+         * A value to be merged into the target.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Object value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -86,6 +93,10 @@ public final class PatchMergeInstruction extends PatchInstruction {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Object value;
 
+    /**
+     * A value to be merged into the target.
+     * @return the value
+     **/
     public Object getValue() {
         return value;
     }

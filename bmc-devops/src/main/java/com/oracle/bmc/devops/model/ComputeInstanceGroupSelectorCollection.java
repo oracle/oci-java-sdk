@@ -30,9 +30,17 @@ public final class ComputeInstanceGroupSelectorCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of selectors for the instance group. Union operator is used for combining the instances selected by each selector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ComputeInstanceGroupSelector> items;
 
+        /**
+         * A list of selectors for the instance group. Union operator is used for combining the instances selected by each selector.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ComputeInstanceGroupSelector> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class ComputeInstanceGroupSelectorCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ComputeInstanceGroupSelector> items;
 
+    /**
+     * A list of selectors for the instance group. Union operator is used for combining the instances selected by each selector.
+     * @return the value
+     **/
     public java.util.List<ComputeInstanceGroupSelector> getItems() {
         return items;
     }

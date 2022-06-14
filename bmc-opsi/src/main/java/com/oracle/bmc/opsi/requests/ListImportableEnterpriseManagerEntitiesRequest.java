@@ -17,6 +17,9 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private String enterpriseManagerBridgeId;
 
+    /**
+     * Unique Enterprise Manager bridge identifier
+     */
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
@@ -30,6 +33,14 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -41,6 +52,12 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -50,6 +67,10 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private java.util.List<String> enterpriseManagerEntityType;
 
+    /**
+     * Filter by one or more Enterprise Manager entity types. Currently, the supported types are "oracle_pdb", "oracle_database", "host", "oracle_dbmachine", "oracle_exa_cloud_service", and "oracle_oci_exadata_cloud_service". If this parameter is not specified, targets of all supported entity types are returned by default.
+     *
+     */
     public java.util.List<String> getEnterpriseManagerEntityType() {
         return enterpriseManagerEntityType;
     }
@@ -59,6 +80,10 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private String enterpriseManagerIdentifier;
 
+    /**
+     * Used in combination with enterpriseManagerParentEntityIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular Enterprise Manager parent entity.
+     *
+     */
     public String getEnterpriseManagerIdentifier() {
         return enterpriseManagerIdentifier;
     }
@@ -68,6 +93,10 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private String enterpriseManagerParentEntityIdentifier;
 
+    /**
+     * Used in combination with enterpriseManagerIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular  Enterprise Manager parent entity.
+     *
+     */
     public String getEnterpriseManagerParentEntityIdentifier() {
         return enterpriseManagerParentEntityIdentifier;
     }
@@ -78,6 +107,11 @@ public class ListImportableEnterpriseManagerEntitiesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -89,10 +123,14 @@ public class ListImportableEnterpriseManagerEntitiesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Enterprise Manager bridge identifier
+         */
         private String enterpriseManagerBridgeId = null;
 
         /**
          * Unique Enterprise Manager bridge identifier
+         * @param enterpriseManagerBridgeId the value to set
          * @return this builder instance
          */
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
@@ -100,6 +138,14 @@ public class ListImportableEnterpriseManagerEntitiesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -109,6 +155,7 @@ public class ListImportableEnterpriseManagerEntitiesRequest
          * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -116,6 +163,12 @@ public class ListImportableEnterpriseManagerEntitiesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -123,6 +176,7 @@ public class ListImportableEnterpriseManagerEntitiesRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -130,11 +184,16 @@ public class ListImportableEnterpriseManagerEntitiesRequest
             return this;
         }
 
+        /**
+         * Filter by one or more Enterprise Manager entity types. Currently, the supported types are "oracle_pdb", "oracle_database", "host", "oracle_dbmachine", "oracle_exa_cloud_service", and "oracle_oci_exadata_cloud_service". If this parameter is not specified, targets of all supported entity types are returned by default.
+         *
+         */
         private java.util.List<String> enterpriseManagerEntityType = null;
 
         /**
          * Filter by one or more Enterprise Manager entity types. Currently, the supported types are "oracle_pdb", "oracle_database", "host", "oracle_dbmachine", "oracle_exa_cloud_service", and "oracle_oci_exadata_cloud_service". If this parameter is not specified, targets of all supported entity types are returned by default.
          *
+         * @param enterpriseManagerEntityType the value to set
          * @return this builder instance
          */
         public Builder enterpriseManagerEntityType(
@@ -146,17 +205,23 @@ public class ListImportableEnterpriseManagerEntitiesRequest
         /**
          * Singular setter. Filter by one or more Enterprise Manager entity types. Currently, the supported types are "oracle_pdb", "oracle_database", "host", "oracle_dbmachine", "oracle_exa_cloud_service", and "oracle_oci_exadata_cloud_service". If this parameter is not specified, targets of all supported entity types are returned by default.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder enterpriseManagerEntityType(String singularValue) {
             return this.enterpriseManagerEntityType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Used in combination with enterpriseManagerParentEntityIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular Enterprise Manager parent entity.
+         *
+         */
         private String enterpriseManagerIdentifier = null;
 
         /**
          * Used in combination with enterpriseManagerParentEntityIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular Enterprise Manager parent entity.
          *
+         * @param enterpriseManagerIdentifier the value to set
          * @return this builder instance
          */
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
@@ -164,11 +229,16 @@ public class ListImportableEnterpriseManagerEntitiesRequest
             return this;
         }
 
+        /**
+         * Used in combination with enterpriseManagerIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular  Enterprise Manager parent entity.
+         *
+         */
         private String enterpriseManagerParentEntityIdentifier = null;
 
         /**
          * Used in combination with enterpriseManagerIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular  Enterprise Manager parent entity.
          *
+         * @param enterpriseManagerParentEntityIdentifier the value to set
          * @return this builder instance
          */
         public Builder enterpriseManagerParentEntityIdentifier(
@@ -177,12 +247,18 @@ public class ListImportableEnterpriseManagerEntitiesRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -273,7 +349,8 @@ public class ListImportableEnterpriseManagerEntitiesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -286,6 +363,10 @@ public class ListImportableEnterpriseManagerEntitiesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

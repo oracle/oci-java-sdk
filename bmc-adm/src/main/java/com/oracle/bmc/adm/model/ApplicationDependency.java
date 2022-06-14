@@ -32,27 +32,49 @@ public final class ApplicationDependency {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gav")
         private String gav;
 
+        /**
+         * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
+         * @param gav the value to set
+         * @return this builder
+         **/
         public Builder gav(String gav) {
             this.gav = gav;
             this.__explicitlySet__.add("gav");
             return this;
         }
-
+        /**
+         * Unique identifier of an Application Dependency node, e.g. nodeId1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
         private String nodeId;
 
+        /**
+         * Unique identifier of an Application Dependency node, e.g. nodeId1.
+         * @param nodeId the value to set
+         * @return this builder
+         **/
         public Builder nodeId(String nodeId) {
             this.nodeId = nodeId;
             this.__explicitlySet__.add("nodeId");
             return this;
         }
-
+        /**
+         * List of (Application Dependencies) node identifiers on which this node depends.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationDependencyNodeIds")
         private java.util.List<String> applicationDependencyNodeIds;
 
+        /**
+         * List of (Application Dependencies) node identifiers on which this node depends.
+         * @param applicationDependencyNodeIds the value to set
+         * @return this builder
+         **/
         public Builder applicationDependencyNodeIds(
                 java.util.List<String> applicationDependencyNodeIds) {
             this.applicationDependencyNodeIds = applicationDependencyNodeIds;
@@ -99,6 +121,10 @@ public final class ApplicationDependency {
     @com.fasterxml.jackson.annotation.JsonProperty("gav")
     private final String gav;
 
+    /**
+     * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
+     * @return the value
+     **/
     public String getGav() {
         return gav;
     }
@@ -109,6 +135,10 @@ public final class ApplicationDependency {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
     private final String nodeId;
 
+    /**
+     * Unique identifier of an Application Dependency node, e.g. nodeId1.
+     * @return the value
+     **/
     public String getNodeId() {
         return nodeId;
     }
@@ -119,6 +149,10 @@ public final class ApplicationDependency {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationDependencyNodeIds")
     private final java.util.List<String> applicationDependencyNodeIds;
 
+    /**
+     * List of (Application Dependencies) node identifiers on which this node depends.
+     * @return the value
+     **/
     public java.util.List<String> getApplicationDependencyNodeIds() {
         return applicationDependencyNodeIds;
     }

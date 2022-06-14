@@ -30,18 +30,33 @@ public final class RecordAggregationDimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether or not the record has been labeled and has associated annotations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
         private Boolean isLabeled;
 
+        /**
+         * Whether or not the record has been labeled and has associated annotations.
+         * @param isLabeled the value to set
+         * @return this builder
+         **/
         public Builder isLabeled(Boolean isLabeled) {
             this.isLabeled = isLabeled;
             this.__explicitlySet__.add("isLabeled");
             return this;
         }
-
+        /**
+         * Whether or not the annotation contains a label.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("annotationLabelContains")
         private String annotationLabelContains;
 
+        /**
+         * Whether or not the annotation contains a label.
+         * @param annotationLabelContains the value to set
+         * @return this builder
+         **/
         public Builder annotationLabelContains(String annotationLabelContains) {
             this.annotationLabelContains = annotationLabelContains;
             this.__explicitlySet__.add("annotationLabelContains");
@@ -86,6 +101,10 @@ public final class RecordAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
     private final Boolean isLabeled;
 
+    /**
+     * Whether or not the record has been labeled and has associated annotations.
+     * @return the value
+     **/
     public Boolean getIsLabeled() {
         return isLabeled;
     }
@@ -96,6 +115,10 @@ public final class RecordAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("annotationLabelContains")
     private final String annotationLabelContains;
 
+    /**
+     * Whether or not the annotation contains a label.
+     * @return the value
+     **/
     public String getAnnotationLabelContains() {
         return annotationLabelContains;
     }

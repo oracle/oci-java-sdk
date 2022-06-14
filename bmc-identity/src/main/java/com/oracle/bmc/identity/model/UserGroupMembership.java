@@ -52,63 +52,123 @@ public final class UserGroupMembership {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the membership.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the membership.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the tenancy containing the user, group, and membership object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the tenancy containing the user, group, and membership object.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The OCID of the group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
+        /**
+         * The OCID of the group.
+         * @param groupId the value to set
+         * @return this builder
+         **/
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             this.__explicitlySet__.add("groupId");
             return this;
         }
-
+        /**
+         * The OCID of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
+        /**
+         * The OCID of the user.
+         * @param userId the value to set
+         * @return this builder
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-
+        /**
+         * Date and time the membership was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date and time the membership was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The membership's current state.  After creating a membership object, make sure its {@code lifecycleState} changes
+         * from CREATING to ACTIVE before using it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The membership's current state.  After creating a membership object, make sure its {@code lifecycleState} changes
+         * from CREATING to ACTIVE before using it.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The detailed status of INACTIVE lifecycleState.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
+        /**
+         * The detailed status of INACTIVE lifecycleState.
+         * @param inactiveStatus the value to set
+         * @return this builder
+         **/
         public Builder inactiveStatus(Long inactiveStatus) {
             this.inactiveStatus = inactiveStatus;
             this.__explicitlySet__.add("inactiveStatus");
@@ -165,6 +225,10 @@ public final class UserGroupMembership {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the membership.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -175,6 +239,10 @@ public final class UserGroupMembership {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the tenancy containing the user, group, and membership object.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -185,6 +253,10 @@ public final class UserGroupMembership {
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
 
+    /**
+     * The OCID of the group.
+     * @return the value
+     **/
     public String getGroupId() {
         return groupId;
     }
@@ -195,6 +267,10 @@ public final class UserGroupMembership {
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
+    /**
+     * The OCID of the user.
+     * @return the value
+     **/
     public String getUserId() {
         return userId;
     }
@@ -208,6 +284,13 @@ public final class UserGroupMembership {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time the membership was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -273,6 +356,12 @@ public final class UserGroupMembership {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The membership's current state.  After creating a membership object, make sure its {@code lifecycleState} changes
+     * from CREATING to ACTIVE before using it.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -283,6 +372,10 @@ public final class UserGroupMembership {
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
+    /**
+     * The detailed status of INACTIVE lifecycleState.
+     * @return the value
+     **/
     public Long getInactiveStatus() {
         return inactiveStatus;
     }

@@ -132,10 +132,17 @@ public final class Split extends Operator {
             this.__explicitlySet__.add("opConfigValues");
             return this;
         }
-
+        /**
+         * Specify how to handle data that matches a split condition. Either data that matches the first condition should be removed from further processing by other conditions, or all matched data should be evaluated for all conditions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataRoutingStrategy")
         private DataRoutingStrategy dataRoutingStrategy;
 
+        /**
+         * Specify how to handle data that matches a split condition. Either data that matches the first condition should be removed from further processing by other conditions, or all matched data should be evaluated for all conditions.
+         * @param dataRoutingStrategy the value to set
+         * @return this builder
+         **/
         public Builder dataRoutingStrategy(DataRoutingStrategy dataRoutingStrategy) {
             this.dataRoutingStrategy = dataRoutingStrategy;
             this.__explicitlySet__.add("dataRoutingStrategy");
@@ -283,6 +290,10 @@ public final class Split extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("dataRoutingStrategy")
     private final DataRoutingStrategy dataRoutingStrategy;
 
+    /**
+     * Specify how to handle data that matches a split condition. Either data that matches the first condition should be removed from further processing by other conditions, or all matched data should be evaluated for all conditions.
+     * @return the value
+     **/
     public DataRoutingStrategy getDataRoutingStrategy() {
         return dataRoutingStrategy;
     }

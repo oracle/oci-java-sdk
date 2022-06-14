@@ -35,27 +35,55 @@ public final class Replicat {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Number of threads used to read trail files (valid for Parallel Replicat)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mapParallelism")
         private Integer mapParallelism;
 
+        /**
+         * Number of threads used to read trail files (valid for Parallel Replicat)
+         *
+         * @param mapParallelism the value to set
+         * @return this builder
+         **/
         public Builder mapParallelism(Integer mapParallelism) {
             this.mapParallelism = mapParallelism;
             this.__explicitlySet__.add("mapParallelism");
             return this;
         }
-
+        /**
+         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minApplyParallelism")
         private Integer minApplyParallelism;
 
+        /**
+         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+         *
+         * @param minApplyParallelism the value to set
+         * @return this builder
+         **/
         public Builder minApplyParallelism(Integer minApplyParallelism) {
             this.minApplyParallelism = minApplyParallelism;
             this.__explicitlySet__.add("minApplyParallelism");
             return this;
         }
-
+        /**
+         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxApplyParallelism")
         private Integer maxApplyParallelism;
 
+        /**
+         * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+         *
+         * @param maxApplyParallelism the value to set
+         * @return this builder
+         **/
         public Builder maxApplyParallelism(Integer maxApplyParallelism) {
             this.maxApplyParallelism = maxApplyParallelism;
             this.__explicitlySet__.add("maxApplyParallelism");
@@ -102,6 +130,11 @@ public final class Replicat {
     @com.fasterxml.jackson.annotation.JsonProperty("mapParallelism")
     private final Integer mapParallelism;
 
+    /**
+     * Number of threads used to read trail files (valid for Parallel Replicat)
+     *
+     * @return the value
+     **/
     public Integer getMapParallelism() {
         return mapParallelism;
     }
@@ -113,6 +146,11 @@ public final class Replicat {
     @com.fasterxml.jackson.annotation.JsonProperty("minApplyParallelism")
     private final Integer minApplyParallelism;
 
+    /**
+     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+     *
+     * @return the value
+     **/
     public Integer getMinApplyParallelism() {
         return minApplyParallelism;
     }
@@ -124,6 +162,11 @@ public final class Replicat {
     @com.fasterxml.jackson.annotation.JsonProperty("maxApplyParallelism")
     private final Integer maxApplyParallelism;
 
+    /**
+     * Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+     *
+     * @return the value
+     **/
     public Integer getMaxApplyParallelism() {
         return maxApplyParallelism;
     }

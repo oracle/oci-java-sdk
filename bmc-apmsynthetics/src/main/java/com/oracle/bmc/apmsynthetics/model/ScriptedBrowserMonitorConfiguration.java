@@ -35,10 +35,17 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
             this.__explicitlySet__.add("isFailureRetried");
             return this;
         }
-
+        /**
+         * If certificate validation is enabled, then the call will fail in case of certification errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
         private Boolean isCertificateValidationEnabled;
 
+        /**
+         * If certificate validation is enabled, then the call will fail in case of certification errors.
+         * @param isCertificateValidationEnabled the value to set
+         * @return this builder
+         **/
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = isCertificateValidationEnabled;
             this.__explicitlySet__.add("isCertificateValidationEnabled");
@@ -104,6 +111,10 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
     @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
     private final Boolean isCertificateValidationEnabled;
 
+    /**
+     * If certificate validation is enabled, then the call will fail in case of certification errors.
+     * @return the value
+     **/
     public Boolean getIsCertificateValidationEnabled() {
         return isCertificateValidationEnabled;
     }

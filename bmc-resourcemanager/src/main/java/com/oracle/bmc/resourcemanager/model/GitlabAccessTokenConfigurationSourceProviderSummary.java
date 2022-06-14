@@ -112,10 +112,21 @@ public final class GitlabAccessTokenConfigurationSourceProviderSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The Git service endpoint.
+         * Example: {@code https://gitlab.com}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
         private String apiEndpoint;
 
+        /**
+         * The Git service endpoint.
+         * Example: {@code https://gitlab.com}
+         *
+         * @param apiEndpoint the value to set
+         * @return this builder
+         **/
         public Builder apiEndpoint(String apiEndpoint) {
             this.apiEndpoint = apiEndpoint;
             this.__explicitlySet__.add("apiEndpoint");
@@ -205,6 +216,12 @@ public final class GitlabAccessTokenConfigurationSourceProviderSummary
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
     private final String apiEndpoint;
 
+    /**
+     * The Git service endpoint.
+     * Example: {@code https://gitlab.com}
+     *
+     * @return the value
+     **/
     public String getApiEndpoint() {
         return apiEndpoint;
     }

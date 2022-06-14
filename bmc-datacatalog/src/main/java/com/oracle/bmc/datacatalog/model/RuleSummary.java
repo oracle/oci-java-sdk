@@ -80,153 +80,291 @@ public final class RuleSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Immutable unique key of a rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Immutable unique key of a rule.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Detailed description of a rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of a rule.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Type of a rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
         private RuleType ruleType;
 
+        /**
+         * Type of a rule.
+         * @param ruleType the value to set
+         * @return this builder
+         **/
         public Builder ruleType(RuleType ruleType) {
             this.ruleType = ruleType;
             this.__explicitlySet__.add("ruleType");
             return this;
         }
-
+        /**
+         * External URI that can be used to reference the object. Format will differ based on the type of object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
+        /**
+         * External URI that can be used to reference the object. Format will differ based on the type of object.
+         *
+         * @param externalKey the value to set
+         * @return this builder
+         **/
         public Builder externalKey(String externalKey) {
             this.externalKey = externalKey;
             this.__explicitlySet__.add("externalKey");
             return this;
         }
-
+        /**
+         * Attributes associated with a rule.
+         * A UNIQUEKEY rule would contain (at least) one attribute, for the local table column(s) on which uniqueness is defined.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private java.util.List<RuleAttribute> attributes;
 
+        /**
+         * Attributes associated with a rule.
+         * A UNIQUEKEY rule would contain (at least) one attribute, for the local table column(s) on which uniqueness is defined.
+         *
+         * @param attributes the value to set
+         * @return this builder
+         **/
         public Builder attributes(java.util.List<RuleAttribute> attributes) {
             this.attributes = attributes;
             this.__explicitlySet__.add("attributes");
             return this;
         }
-
+        /**
+         * Folder key that represents the referenced folder, applicable only when rule type FOREIGNKEY.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referencedFolderKey")
         private String referencedFolderKey;
 
+        /**
+         * Folder key that represents the referenced folder, applicable only when rule type FOREIGNKEY.
+         * @param referencedFolderKey the value to set
+         * @return this builder
+         **/
         public Builder referencedFolderKey(String referencedFolderKey) {
             this.referencedFolderKey = referencedFolderKey;
             this.__explicitlySet__.add("referencedFolderKey");
             return this;
         }
-
+        /**
+         * Folder name that represents the referenced folder, applicable only when rule type FOREIGNKEY.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referencedFolderName")
         private String referencedFolderName;
 
+        /**
+         * Folder name that represents the referenced folder, applicable only when rule type FOREIGNKEY.
+         * @param referencedFolderName the value to set
+         * @return this builder
+         **/
         public Builder referencedFolderName(String referencedFolderName) {
             this.referencedFolderName = referencedFolderName;
             this.__explicitlySet__.add("referencedFolderName");
             return this;
         }
-
+        /**
+         * Entity key that represents the referenced entity, applicable only when rule type is FOREIGNKEY.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referencedEntityKey")
         private String referencedEntityKey;
 
+        /**
+         * Entity key that represents the referenced entity, applicable only when rule type is FOREIGNKEY.
+         * @param referencedEntityKey the value to set
+         * @return this builder
+         **/
         public Builder referencedEntityKey(String referencedEntityKey) {
             this.referencedEntityKey = referencedEntityKey;
             this.__explicitlySet__.add("referencedEntityKey");
             return this;
         }
-
+        /**
+         * Entity name that represents the referenced entity, applicable only when rule type is FOREIGNKEY.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referencedEntityName")
         private String referencedEntityName;
 
+        /**
+         * Entity name that represents the referenced entity, applicable only when rule type is FOREIGNKEY.
+         * @param referencedEntityName the value to set
+         * @return this builder
+         **/
         public Builder referencedEntityName(String referencedEntityName) {
             this.referencedEntityName = referencedEntityName;
             this.__explicitlySet__.add("referencedEntityName");
             return this;
         }
-
+        /**
+         * Rule key that represents the referenced rule, applicable only when rule type is FOREIGNKEY.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referencedRuleKey")
         private String referencedRuleKey;
 
+        /**
+         * Rule key that represents the referenced rule, applicable only when rule type is FOREIGNKEY.
+         * @param referencedRuleKey the value to set
+         * @return this builder
+         **/
         public Builder referencedRuleKey(String referencedRuleKey) {
             this.referencedRuleKey = referencedRuleKey;
             this.__explicitlySet__.add("referencedRuleKey");
             return this;
         }
-
+        /**
+         * Rule name that represents the referenced rule, applicable only when rule type is FOREIGNKEY.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referencedRuleName")
         private String referencedRuleName;
 
+        /**
+         * Rule name that represents the referenced rule, applicable only when rule type is FOREIGNKEY.
+         * @param referencedRuleName the value to set
+         * @return this builder
+         **/
         public Builder referencedRuleName(String referencedRuleName) {
             this.referencedRuleName = referencedRuleName;
             this.__explicitlySet__.add("referencedRuleName");
             return this;
         }
-
+        /**
+         * Attributes associated with referenced rule, applicable only when rule type is FOREIGNKEY.
+         * A FOREIGNKEY rule would contain (at least) one attribute, for the local table column(s), and (at least) one referencedAttribute for referenced table column(s).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referencedAttributes")
         private java.util.List<RuleAttribute> referencedAttributes;
 
+        /**
+         * Attributes associated with referenced rule, applicable only when rule type is FOREIGNKEY.
+         * A FOREIGNKEY rule would contain (at least) one attribute, for the local table column(s), and (at least) one referencedAttribute for referenced table column(s).
+         *
+         * @param referencedAttributes the value to set
+         * @return this builder
+         **/
         public Builder referencedAttributes(java.util.List<RuleAttribute> referencedAttributes) {
             this.referencedAttributes = referencedAttributes;
             this.__explicitlySet__.add("referencedAttributes");
             return this;
         }
-
+        /**
+         * Origin type of the rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originType")
         private RuleOriginType originType;
 
+        /**
+         * Origin type of the rule.
+         * @param originType the value to set
+         * @return this builder
+         **/
         public Builder originType(RuleOriginType originType) {
             this.originType = originType;
             this.__explicitlySet__.add("originType");
             return this;
         }
-
+        /**
+         * URI to the rule instance in the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
+        /**
+         * URI to the rule instance in the API.
+         * @param uri the value to set
+         * @return this builder
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-
+        /**
+         * The date and time the rule was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the rule was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * State of the rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * State of the rule.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -303,6 +441,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Immutable unique key of a rule.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -315,6 +457,12 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -325,6 +473,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of a rule.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -335,6 +487,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
     private final RuleType ruleType;
 
+    /**
+     * Type of a rule.
+     * @return the value
+     **/
     public RuleType getRuleType() {
         return ruleType;
     }
@@ -346,6 +502,11 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
+    /**
+     * External URI that can be used to reference the object. Format will differ based on the type of object.
+     *
+     * @return the value
+     **/
     public String getExternalKey() {
         return externalKey;
     }
@@ -358,6 +519,12 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
     private final java.util.List<RuleAttribute> attributes;
 
+    /**
+     * Attributes associated with a rule.
+     * A UNIQUEKEY rule would contain (at least) one attribute, for the local table column(s) on which uniqueness is defined.
+     *
+     * @return the value
+     **/
     public java.util.List<RuleAttribute> getAttributes() {
         return attributes;
     }
@@ -368,6 +535,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("referencedFolderKey")
     private final String referencedFolderKey;
 
+    /**
+     * Folder key that represents the referenced folder, applicable only when rule type FOREIGNKEY.
+     * @return the value
+     **/
     public String getReferencedFolderKey() {
         return referencedFolderKey;
     }
@@ -378,6 +549,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("referencedFolderName")
     private final String referencedFolderName;
 
+    /**
+     * Folder name that represents the referenced folder, applicable only when rule type FOREIGNKEY.
+     * @return the value
+     **/
     public String getReferencedFolderName() {
         return referencedFolderName;
     }
@@ -388,6 +563,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("referencedEntityKey")
     private final String referencedEntityKey;
 
+    /**
+     * Entity key that represents the referenced entity, applicable only when rule type is FOREIGNKEY.
+     * @return the value
+     **/
     public String getReferencedEntityKey() {
         return referencedEntityKey;
     }
@@ -398,6 +577,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("referencedEntityName")
     private final String referencedEntityName;
 
+    /**
+     * Entity name that represents the referenced entity, applicable only when rule type is FOREIGNKEY.
+     * @return the value
+     **/
     public String getReferencedEntityName() {
         return referencedEntityName;
     }
@@ -408,6 +591,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("referencedRuleKey")
     private final String referencedRuleKey;
 
+    /**
+     * Rule key that represents the referenced rule, applicable only when rule type is FOREIGNKEY.
+     * @return the value
+     **/
     public String getReferencedRuleKey() {
         return referencedRuleKey;
     }
@@ -418,6 +605,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("referencedRuleName")
     private final String referencedRuleName;
 
+    /**
+     * Rule name that represents the referenced rule, applicable only when rule type is FOREIGNKEY.
+     * @return the value
+     **/
     public String getReferencedRuleName() {
         return referencedRuleName;
     }
@@ -430,6 +621,12 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("referencedAttributes")
     private final java.util.List<RuleAttribute> referencedAttributes;
 
+    /**
+     * Attributes associated with referenced rule, applicable only when rule type is FOREIGNKEY.
+     * A FOREIGNKEY rule would contain (at least) one attribute, for the local table column(s), and (at least) one referencedAttribute for referenced table column(s).
+     *
+     * @return the value
+     **/
     public java.util.List<RuleAttribute> getReferencedAttributes() {
         return referencedAttributes;
     }
@@ -440,6 +637,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("originType")
     private final RuleOriginType originType;
 
+    /**
+     * Origin type of the rule.
+     * @return the value
+     **/
     public RuleOriginType getOriginType() {
         return originType;
     }
@@ -450,6 +651,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
+    /**
+     * URI to the rule instance in the API.
+     * @return the value
+     **/
     public String getUri() {
         return uri;
     }
@@ -462,6 +667,12 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the rule was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -472,6 +683,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * State of the rule.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }

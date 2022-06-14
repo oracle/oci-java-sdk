@@ -27,9 +27,17 @@ public final class PurgeCache {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: {@code /path/to/resource}) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: {@code example.com/path/to/resource}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<String> resources;
 
+        /**
+         * A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: {@code /path/to/resource}) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: {@code example.com/path/to/resource}).
+         * @param resources the value to set
+         * @return this builder
+         **/
         public Builder resources(java.util.List<String> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
@@ -71,6 +79,10 @@ public final class PurgeCache {
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<String> resources;
 
+    /**
+     * A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: {@code /path/to/resource}) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: {@code example.com/path/to/resource}).
+     * @return the value
+     **/
     public java.util.List<String> getResources() {
         return resources;
     }

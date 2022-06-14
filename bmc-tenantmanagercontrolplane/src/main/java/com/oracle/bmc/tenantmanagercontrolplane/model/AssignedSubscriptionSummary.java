@@ -62,99 +62,177 @@ public final class AssignedSubscriptionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID of the subscription.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * OCID of the compartment. Always a tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment. Always a tenancy OCID.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Subscription ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
         private String classicSubscriptionId;
 
+        /**
+         * Subscription ID.
+         * @param classicSubscriptionId the value to set
+         * @return this builder
+         **/
         public Builder classicSubscriptionId(String classicSubscriptionId) {
             this.classicSubscriptionId = classicSubscriptionId;
             this.__explicitlySet__.add("classicSubscriptionId");
             return this;
         }
-
+        /**
+         * The type of subscription, such as 'CLOUDCM', 'SAAS', 'ERP', or 'CRM'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * The type of subscription, such as 'CLOUDCM', 'SAAS', 'ERP', or 'CRM'.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-
+        /**
+         * Denotes if the subscription is legacy or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isClassicSubscription")
         private Boolean isClassicSubscription;
 
+        /**
+         * Denotes if the subscription is legacy or not.
+         * @param isClassicSubscription the value to set
+         * @return this builder
+         **/
         public Builder isClassicSubscription(Boolean isClassicSubscription) {
             this.isClassicSubscription = isClassicSubscription;
             this.__explicitlySet__.add("isClassicSubscription");
             return this;
         }
-
+        /**
+         * Region for the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionAssignment")
         private String regionAssignment;
 
+        /**
+         * Region for the subscription.
+         * @param regionAssignment the value to set
+         * @return this builder
+         **/
         public Builder regionAssignment(String regionAssignment) {
             this.regionAssignment = regionAssignment;
             this.__explicitlySet__.add("regionAssignment");
             return this;
         }
-
+        /**
+         * Lifecycle state of the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SubscriptionLifecycleState lifecycleState;
 
+        /**
+         * Lifecycle state of the subscription.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(SubscriptionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Subscription start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startDate")
         private java.util.Date startDate;
 
+        /**
+         * Subscription start time.
+         * @param startDate the value to set
+         * @return this builder
+         **/
         public Builder startDate(java.util.Date startDate) {
             this.startDate = startDate;
             this.__explicitlySet__.add("startDate");
             return this;
         }
-
+        /**
+         * Subscription end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endDate")
         private java.util.Date endDate;
 
+        /**
+         * Subscription end time.
+         * @param endDate the value to set
+         * @return this builder
+         **/
         public Builder endDate(java.util.Date endDate) {
             this.endDate = endDate;
             this.__explicitlySet__.add("endDate");
             return this;
         }
-
+        /**
+         * Date-time when subscription is updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Date-time when subscription is updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Date-time when subscription is created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date-time when subscription is created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -219,6 +297,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID of the subscription.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -229,6 +311,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment. Always a tenancy OCID.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -239,6 +325,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
     private final String classicSubscriptionId;
 
+    /**
+     * Subscription ID.
+     * @return the value
+     **/
     public String getClassicSubscriptionId() {
         return classicSubscriptionId;
     }
@@ -249,6 +339,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * The type of subscription, such as 'CLOUDCM', 'SAAS', 'ERP', or 'CRM'.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }
@@ -259,6 +353,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isClassicSubscription")
     private final Boolean isClassicSubscription;
 
+    /**
+     * Denotes if the subscription is legacy or not.
+     * @return the value
+     **/
     public Boolean getIsClassicSubscription() {
         return isClassicSubscription;
     }
@@ -269,6 +367,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("regionAssignment")
     private final String regionAssignment;
 
+    /**
+     * Region for the subscription.
+     * @return the value
+     **/
     public String getRegionAssignment() {
         return regionAssignment;
     }
@@ -279,6 +381,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SubscriptionLifecycleState lifecycleState;
 
+    /**
+     * Lifecycle state of the subscription.
+     * @return the value
+     **/
     public SubscriptionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -289,6 +395,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
     private final java.util.Date startDate;
 
+    /**
+     * Subscription start time.
+     * @return the value
+     **/
     public java.util.Date getStartDate() {
         return startDate;
     }
@@ -299,6 +409,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
     private final java.util.Date endDate;
 
+    /**
+     * Subscription end time.
+     * @return the value
+     **/
     public java.util.Date getEndDate() {
         return endDate;
     }
@@ -309,6 +423,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Date-time when subscription is updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -319,6 +437,10 @@ public final class AssignedSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date-time when subscription is created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

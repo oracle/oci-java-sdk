@@ -29,9 +29,19 @@ public final class DisableAutoAssociationDetail {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A flag indicating whether or not to delete all the existing associations of the log source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deleteExistingAssociations")
         private Boolean deleteExistingAssociations;
 
+        /**
+         * A flag indicating whether or not to delete all the existing associations of the log source.
+         *
+         * @param deleteExistingAssociations the value to set
+         * @return this builder
+         **/
         public Builder deleteExistingAssociations(Boolean deleteExistingAssociations) {
             this.deleteExistingAssociations = deleteExistingAssociations;
             this.__explicitlySet__.add("deleteExistingAssociations");
@@ -75,6 +85,11 @@ public final class DisableAutoAssociationDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("deleteExistingAssociations")
     private final Boolean deleteExistingAssociations;
 
+    /**
+     * A flag indicating whether or not to delete all the existing associations of the log source.
+     *
+     * @return the value
+     **/
     public Boolean getDeleteExistingAssociations() {
         return deleteExistingAssociations;
     }

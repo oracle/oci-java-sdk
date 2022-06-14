@@ -21,6 +21,12 @@ public class RemoveContainerVersionRequest
      */
     private String imageId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
+     * <p>
+     * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+     *
+     */
     public String getImageId() {
         return imageId;
     }
@@ -30,6 +36,9 @@ public class RemoveContainerVersionRequest
     private com.oracle.bmc.artifacts.model.RemoveContainerVersionDetails
             removeContainerVersionDetails;
 
+    /**
+     * Remove version details.
+     */
     public com.oracle.bmc.artifacts.model.RemoveContainerVersionDetails
             getRemoveContainerVersionDetails() {
         return removeContainerVersionDetails;
@@ -42,6 +51,12 @@ public class RemoveContainerVersionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -52,6 +67,11 @@ public class RemoveContainerVersionRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,6 +85,14 @@ public class RemoveContainerVersionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -87,6 +115,12 @@ public class RemoveContainerVersionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
+         * <p>
+         * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+         *
+         */
         private String imageId = null;
 
         /**
@@ -94,6 +128,7 @@ public class RemoveContainerVersionRequest
          * <p>
          * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
          *
+         * @param imageId the value to set
          * @return this builder instance
          */
         public Builder imageId(String imageId) {
@@ -101,11 +136,15 @@ public class RemoveContainerVersionRequest
             return this;
         }
 
+        /**
+         * Remove version details.
+         */
         private com.oracle.bmc.artifacts.model.RemoveContainerVersionDetails
                 removeContainerVersionDetails = null;
 
         /**
          * Remove version details.
+         * @param removeContainerVersionDetails the value to set
          * @return this builder instance
          */
         public Builder removeContainerVersionDetails(
@@ -115,6 +154,12 @@ public class RemoveContainerVersionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -122,6 +167,7 @@ public class RemoveContainerVersionRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -129,12 +175,18 @@ public class RemoveContainerVersionRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -142,6 +194,14 @@ public class RemoveContainerVersionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -151,6 +211,7 @@ public class RemoveContainerVersionRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -245,7 +306,8 @@ public class RemoveContainerVersionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -256,6 +318,10 @@ public class RemoveContainerVersionRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -50,63 +50,123 @@ public final class InstancePoolLoadBalancerAttachment {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instancePoolId")
         private String instancePoolId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
+         *
+         * @param instancePoolId the value to set
+         * @return this builder
+         **/
         public Builder instancePoolId(String instancePoolId) {
             this.instancePoolId = instancePoolId;
             this.__explicitlySet__.add("instancePoolId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
+         *
+         * @param loadBalancerId the value to set
+         * @return this builder
+         **/
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
-
+        /**
+         * The name of the backend set on the load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
         private String backendSetName;
 
+        /**
+         * The name of the backend set on the load balancer.
+         * @param backendSetName the value to set
+         * @return this builder
+         **/
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = backendSetName;
             this.__explicitlySet__.add("backendSetName");
             return this;
         }
-
+        /**
+         * The port value used for the backends.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The port value used for the backends.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer.
+         * Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration
+         * that is associated with the instance pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicSelection")
         private String vnicSelection;
 
+        /**
+         * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer.
+         * Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration
+         * that is associated with the instance pool.
+         *
+         * @param vnicSelection the value to set
+         * @return this builder
+         **/
         public Builder vnicSelection(String vnicSelection) {
             this.vnicSelection = vnicSelection;
             this.__explicitlySet__.add("vnicSelection");
             return this;
         }
-
+        /**
+         * The status of the interaction between the instance pool and the load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The status of the interaction between the instance pool and the load balancer.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -163,6 +223,10 @@ public final class InstancePoolLoadBalancerAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -174,6 +238,11 @@ public final class InstancePoolLoadBalancerAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("instancePoolId")
     private final String instancePoolId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
+     *
+     * @return the value
+     **/
     public String getInstancePoolId() {
         return instancePoolId;
     }
@@ -185,6 +254,11 @@ public final class InstancePoolLoadBalancerAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
+     *
+     * @return the value
+     **/
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -195,6 +269,10 @@ public final class InstancePoolLoadBalancerAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
     private final String backendSetName;
 
+    /**
+     * The name of the backend set on the load balancer.
+     * @return the value
+     **/
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -205,6 +283,10 @@ public final class InstancePoolLoadBalancerAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The port value used for the backends.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -218,6 +300,13 @@ public final class InstancePoolLoadBalancerAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("vnicSelection")
     private final String vnicSelection;
 
+    /**
+     * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer.
+     * Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration
+     * that is associated with the instance pool.
+     *
+     * @return the value
+     **/
     public String getVnicSelection() {
         return vnicSelection;
     }
@@ -278,6 +367,10 @@ public final class InstancePoolLoadBalancerAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The status of the interaction between the instance pool and the load balancer.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }

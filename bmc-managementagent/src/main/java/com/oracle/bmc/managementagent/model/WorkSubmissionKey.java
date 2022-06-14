@@ -29,9 +29,17 @@ public final class WorkSubmissionKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Work Submission Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workSubmissionKey")
         private String workSubmissionKey;
 
+        /**
+         * Work Submission Identifier
+         * @param workSubmissionKey the value to set
+         * @return this builder
+         **/
         public Builder workSubmissionKey(String workSubmissionKey) {
             this.workSubmissionKey = workSubmissionKey;
             this.__explicitlySet__.add("workSubmissionKey");
@@ -73,6 +81,10 @@ public final class WorkSubmissionKey {
     @com.fasterxml.jackson.annotation.JsonProperty("workSubmissionKey")
     private final String workSubmissionKey;
 
+    /**
+     * Work Submission Identifier
+     * @return the value
+     **/
     public String getWorkSubmissionKey() {
         return workSubmissionKey;
     }

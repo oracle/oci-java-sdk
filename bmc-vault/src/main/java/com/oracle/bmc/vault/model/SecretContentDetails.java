@@ -43,6 +43,10 @@ public class SecretContentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -98,6 +102,15 @@ public class SecretContentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("stage")
     private final Stage stage;
 
+    /**
+     * The rotation state of the secret content. The default is {@code CURRENT}, meaning that the secret is currently in use. A secret version
+     * that you mark as {@code PENDING} is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
+     * you might create or update a secret and mark its rotation state as {@code PENDING} if you haven't yet updated the secret on the target system.
+     * When creating a secret, only the value {@code CURRENT} is applicable, although the value {@code LATEST} is also automatically applied. When updating
+     * a secret, you can specify a version's rotation state as either {@code CURRENT} or {@code PENDING}.
+     *
+     * @return the value
+     **/
     public Stage getStage() {
         return stage;
     }

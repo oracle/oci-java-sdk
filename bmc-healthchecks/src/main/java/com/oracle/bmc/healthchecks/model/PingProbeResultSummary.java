@@ -80,81 +80,183 @@ public final class PingProbeResultSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A value identifying this specific probe result. The key is only unique within
+         * the results of its probe configuration. The key may be reused after 90 days.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * A value identifying this specific probe result. The key is only unique within
+         * the results of its probe configuration. The key may be reused after 90 days.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The OCID of the monitor or on-demand probe responsible for creating this result.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("probeConfigurationId")
         private String probeConfigurationId;
 
+        /**
+         * The OCID of the monitor or on-demand probe responsible for creating this result.
+         *
+         * @param probeConfigurationId the value to set
+         * @return this builder
+         **/
         public Builder probeConfigurationId(String probeConfigurationId) {
             this.probeConfigurationId = probeConfigurationId;
             this.__explicitlySet__.add("probeConfigurationId");
             return this;
         }
-
+        /**
+         * The date and time the probe was executed, expressed in milliseconds since the
+         * POSIX epoch. This field is defined by the PerformanceResourceTiming interface
+         * of the W3C Resource Timing specification. For more information, see
+         * [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private Double startTime;
 
+        /**
+         * The date and time the probe was executed, expressed in milliseconds since the
+         * POSIX epoch. This field is defined by the PerformanceResourceTiming interface
+         * of the W3C Resource Timing specification. For more information, see
+         * [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
+         *
+         * @param startTime the value to set
+         * @return this builder
+         **/
         public Builder startTime(Double startTime) {
             this.startTime = startTime;
             this.__explicitlySet__.add("startTime");
             return this;
         }
-
+        /**
+         * The target hostname or IP address of the probe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private String target;
 
+        /**
+         * The target hostname or IP address of the probe.
+         * @param target the value to set
+         * @return this builder
+         **/
         public Builder target(String target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
         }
-
+        /**
+         * The name of the vantage point that executed the probe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vantagePointName")
         private String vantagePointName;
 
+        /**
+         * The name of the vantage point that executed the probe.
+         * @param vantagePointName the value to set
+         * @return this builder
+         **/
         public Builder vantagePointName(String vantagePointName) {
             this.vantagePointName = vantagePointName;
             this.__explicitlySet__.add("vantagePointName");
             return this;
         }
-
+        /**
+         * True if the probe did not complete before the configured {@code timeoutInSeconds} value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTimedOut")
         private Boolean isTimedOut;
 
+        /**
+         * True if the probe did not complete before the configured {@code timeoutInSeconds} value.
+         *
+         * @param isTimedOut the value to set
+         * @return this builder
+         **/
         public Builder isTimedOut(Boolean isTimedOut) {
             this.isTimedOut = isTimedOut;
             this.__explicitlySet__.add("isTimedOut");
             return this;
         }
-
+        /**
+         * True if the probe result is determined to be healthy based on probe
+         * type-specific criteria.  For HTTP probes, a probe result is considered
+         * healthy if the HTTP response code is greater than or equal to 200 and
+         * less than 300.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHealthy")
         private Boolean isHealthy;
 
+        /**
+         * True if the probe result is determined to be healthy based on probe
+         * type-specific criteria.  For HTTP probes, a probe result is considered
+         * healthy if the HTTP response code is greater than or equal to 200 and
+         * less than 300.
+         *
+         * @param isHealthy the value to set
+         * @return this builder
+         **/
         public Builder isHealthy(Boolean isHealthy) {
             this.isHealthy = isHealthy;
             this.__explicitlySet__.add("isHealthy");
             return this;
         }
-
+        /**
+         * The category of error if an error occurs executing the probe.
+         * The {@code errorMessage} field provides a message with the error details.
+         * * NONE - No error
+         * * DNS - DNS errors
+         * * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
+         * * NETWORK - Network-related errors, for example a "network unreachable" error.
+         * * SYSTEM - Internal system errors.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCategory")
         private ErrorCategory errorCategory;
 
+        /**
+         * The category of error if an error occurs executing the probe.
+         * The {@code errorMessage} field provides a message with the error details.
+         * * NONE - No error
+         * * DNS - DNS errors
+         * * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
+         * * NETWORK - Network-related errors, for example a "network unreachable" error.
+         * * SYSTEM - Internal system errors.
+         *
+         * @param errorCategory the value to set
+         * @return this builder
+         **/
         public Builder errorCategory(ErrorCategory errorCategory) {
             this.errorCategory = errorCategory;
             this.__explicitlySet__.add("errorCategory");
             return this;
         }
-
+        /**
+         * The error information indicating why a probe execution failed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * The error information indicating why a probe execution failed.
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -187,37 +289,81 @@ public final class PingProbeResultSummary {
             this.__explicitlySet__.add("dns");
             return this;
         }
-
+        /**
+         * The time immediately before the vantage point starts the domain name lookup for
+         * the resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainLookupStart")
         private Double domainLookupStart;
 
+        /**
+         * The time immediately before the vantage point starts the domain name lookup for
+         * the resource.
+         *
+         * @param domainLookupStart the value to set
+         * @return this builder
+         **/
         public Builder domainLookupStart(Double domainLookupStart) {
             this.domainLookupStart = domainLookupStart;
             this.__explicitlySet__.add("domainLookupStart");
             return this;
         }
-
+        /**
+         * The time immediately before the vantage point finishes the domain name lookup for
+         * the resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainLookupEnd")
         private Double domainLookupEnd;
 
+        /**
+         * The time immediately before the vantage point finishes the domain name lookup for
+         * the resource.
+         *
+         * @param domainLookupEnd the value to set
+         * @return this builder
+         **/
         public Builder domainLookupEnd(Double domainLookupEnd) {
             this.domainLookupEnd = domainLookupEnd;
             this.__explicitlySet__.add("domainLookupEnd");
             return this;
         }
-
+        /**
+         * The latency of the probe execution, in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latencyInMs")
         private Double latencyInMs;
 
+        /**
+         * The latency of the probe execution, in milliseconds.
+         *
+         * @param latencyInMs the value to set
+         * @return this builder
+         **/
         public Builder latencyInMs(Double latencyInMs) {
             this.latencyInMs = latencyInMs;
             this.__explicitlySet__.add("latencyInMs");
             return this;
         }
-
+        /**
+         * The ICMP code of the response message.  This field is not used when the protocol
+         * is set to TCP.  For more information on ICMP codes, see
+         * [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("icmpCode")
         private Integer icmpCode;
 
+        /**
+         * The ICMP code of the response message.  This field is not used when the protocol
+         * is set to TCP.  For more information on ICMP codes, see
+         * [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
+         *
+         * @param icmpCode the value to set
+         * @return this builder
+         **/
         public Builder icmpCode(Integer icmpCode) {
             this.icmpCode = icmpCode;
             this.__explicitlySet__.add("icmpCode");
@@ -294,6 +440,12 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * A value identifying this specific probe result. The key is only unique within
+     * the results of its probe configuration. The key may be reused after 90 days.
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -305,6 +457,11 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("probeConfigurationId")
     private final String probeConfigurationId;
 
+    /**
+     * The OCID of the monitor or on-demand probe responsible for creating this result.
+     *
+     * @return the value
+     **/
     public String getProbeConfigurationId() {
         return probeConfigurationId;
     }
@@ -319,6 +476,14 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
     private final Double startTime;
 
+    /**
+     * The date and time the probe was executed, expressed in milliseconds since the
+     * POSIX epoch. This field is defined by the PerformanceResourceTiming interface
+     * of the W3C Resource Timing specification. For more information, see
+     * [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
+     *
+     * @return the value
+     **/
     public Double getStartTime() {
         return startTime;
     }
@@ -329,6 +494,10 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
 
+    /**
+     * The target hostname or IP address of the probe.
+     * @return the value
+     **/
     public String getTarget() {
         return target;
     }
@@ -339,6 +508,10 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePointName")
     private final String vantagePointName;
 
+    /**
+     * The name of the vantage point that executed the probe.
+     * @return the value
+     **/
     public String getVantagePointName() {
         return vantagePointName;
     }
@@ -350,6 +523,11 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isTimedOut")
     private final Boolean isTimedOut;
 
+    /**
+     * True if the probe did not complete before the configured {@code timeoutInSeconds} value.
+     *
+     * @return the value
+     **/
     public Boolean getIsTimedOut() {
         return isTimedOut;
     }
@@ -364,6 +542,14 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isHealthy")
     private final Boolean isHealthy;
 
+    /**
+     * True if the probe result is determined to be healthy based on probe
+     * type-specific criteria.  For HTTP probes, a probe result is considered
+     * healthy if the HTTP response code is greater than or equal to 200 and
+     * less than 300.
+     *
+     * @return the value
+     **/
     public Boolean getIsHealthy() {
         return isHealthy;
     }
@@ -439,6 +625,17 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("errorCategory")
     private final ErrorCategory errorCategory;
 
+    /**
+     * The category of error if an error occurs executing the probe.
+     * The {@code errorMessage} field provides a message with the error details.
+     * * NONE - No error
+     * * DNS - DNS errors
+     * * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
+     * * NETWORK - Network-related errors, for example a "network unreachable" error.
+     * * SYSTEM - Internal system errors.
+     *
+     * @return the value
+     **/
     public ErrorCategory getErrorCategory() {
         return errorCategory;
     }
@@ -449,6 +646,10 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * The error information indicating why a probe execution failed.
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -482,6 +683,12 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("domainLookupStart")
     private final Double domainLookupStart;
 
+    /**
+     * The time immediately before the vantage point starts the domain name lookup for
+     * the resource.
+     *
+     * @return the value
+     **/
     public Double getDomainLookupStart() {
         return domainLookupStart;
     }
@@ -494,6 +701,12 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("domainLookupEnd")
     private final Double domainLookupEnd;
 
+    /**
+     * The time immediately before the vantage point finishes the domain name lookup for
+     * the resource.
+     *
+     * @return the value
+     **/
     public Double getDomainLookupEnd() {
         return domainLookupEnd;
     }
@@ -505,6 +718,11 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("latencyInMs")
     private final Double latencyInMs;
 
+    /**
+     * The latency of the probe execution, in milliseconds.
+     *
+     * @return the value
+     **/
     public Double getLatencyInMs() {
         return latencyInMs;
     }
@@ -518,6 +736,13 @@ public final class PingProbeResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("icmpCode")
     private final Integer icmpCode;
 
+    /**
+     * The ICMP code of the response message.  This field is not used when the protocol
+     * is set to TCP.  For more information on ICMP codes, see
+     * [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
+     *
+     * @return the value
+     **/
     public Integer getIcmpCode() {
         return icmpCode;
     }

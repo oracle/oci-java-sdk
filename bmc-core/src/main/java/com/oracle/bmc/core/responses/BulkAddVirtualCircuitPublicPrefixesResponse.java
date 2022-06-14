@@ -33,11 +33,19 @@ public class BulkAddVirtualCircuitPublicPrefixesResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public BulkAddVirtualCircuitPublicPrefixesResponse build() {
             return new BulkAddVirtualCircuitPublicPrefixesResponse(__httpStatusCode__);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

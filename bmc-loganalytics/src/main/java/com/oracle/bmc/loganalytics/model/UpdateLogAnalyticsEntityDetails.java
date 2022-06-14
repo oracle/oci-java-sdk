@@ -51,63 +51,135 @@ public final class UpdateLogAnalyticsEntityDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Log analytics entity name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Log analytics entity name.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The OCID of the Management Agent.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * The OCID of the Management Agent.
+         *
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * The timezone region of the log analytics entity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timezoneRegion")
         private String timezoneRegion;
 
+        /**
+         * The timezone region of the log analytics entity.
+         *
+         * @param timezoneRegion the value to set
+         * @return this builder
+         **/
         public Builder timezoneRegion(String timezoneRegion) {
             this.timezoneRegion = timezoneRegion;
             this.__explicitlySet__.add("timezoneRegion");
             return this;
         }
-
+        /**
+         * The hostname where the entity represented here is actually present. This would be the output one would get if
+         * they run {@code echo $HOSTNAME} on Linux or an equivalent OS command. This may be different from
+         * management agents host since logs may be collected remotely.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The hostname where the entity represented here is actually present. This would be the output one would get if
+         * they run {@code echo $HOSTNAME} on Linux or an equivalent OS command. This may be different from
+         * management agents host since logs may be collected remotely.
+         *
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * The name/value pairs for parameter values to be used in file patterns specified in log sources.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, String> properties;
 
+        /**
+         * The name/value pairs for parameter values to be used in file patterns specified in log sources.
+         *
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.Map<String, String> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -166,6 +238,11 @@ public final class UpdateLogAnalyticsEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Log analytics entity name.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -177,6 +254,11 @@ public final class UpdateLogAnalyticsEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * The OCID of the Management Agent.
+     *
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -188,6 +270,11 @@ public final class UpdateLogAnalyticsEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timezoneRegion")
     private final String timezoneRegion;
 
+    /**
+     * The timezone region of the log analytics entity.
+     *
+     * @return the value
+     **/
     public String getTimezoneRegion() {
         return timezoneRegion;
     }
@@ -201,6 +288,13 @@ public final class UpdateLogAnalyticsEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The hostname where the entity represented here is actually present. This would be the output one would get if
+     * they run {@code echo $HOSTNAME} on Linux or an equivalent OS command. This may be different from
+     * management agents host since logs may be collected remotely.
+     *
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -212,6 +306,11 @@ public final class UpdateLogAnalyticsEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, String> properties;
 
+    /**
+     * The name/value pairs for parameter values to be used in file patterns specified in log sources.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getProperties() {
         return properties;
     }
@@ -224,6 +323,12 @@ public final class UpdateLogAnalyticsEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -236,6 +341,12 @@ public final class UpdateLogAnalyticsEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

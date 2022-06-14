@@ -17,6 +17,9 @@ public class GetBlockVolumeReplicaRequest
      */
     private String blockVolumeReplicaId;
 
+    /**
+     * The OCID of the block volume replica.
+     */
     public String getBlockVolumeReplicaId() {
         return blockVolumeReplicaId;
     }
@@ -28,10 +31,14 @@ public class GetBlockVolumeReplicaRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the block volume replica.
+         */
         private String blockVolumeReplicaId = null;
 
         /**
          * The OCID of the block volume replica.
+         * @param blockVolumeReplicaId the value to set
          * @return this builder instance
          */
         public Builder blockVolumeReplicaId(String blockVolumeReplicaId) {
@@ -107,12 +114,17 @@ public class GetBlockVolumeReplicaRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().blockVolumeReplicaId(blockVolumeReplicaId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

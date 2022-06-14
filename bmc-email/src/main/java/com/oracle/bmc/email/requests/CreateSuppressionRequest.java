@@ -19,6 +19,10 @@ public class CreateSuppressionRequest
      */
     private com.oracle.bmc.email.model.CreateSuppressionDetails createSuppressionDetails;
 
+    /**
+     * Adds a single email address to the suppression list for a compartment's tenancy.
+     *
+     */
     public com.oracle.bmc.email.model.CreateSuppressionDetails getCreateSuppressionDetails() {
         return createSuppressionDetails;
     }
@@ -27,6 +31,9 @@ public class CreateSuppressionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,11 +55,16 @@ public class CreateSuppressionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Adds a single email address to the suppression list for a compartment's tenancy.
+         *
+         */
         private com.oracle.bmc.email.model.CreateSuppressionDetails createSuppressionDetails = null;
 
         /**
          * Adds a single email address to the suppression list for a compartment's tenancy.
          *
+         * @param createSuppressionDetails the value to set
          * @return this builder instance
          */
         public Builder createSuppressionDetails(
@@ -61,10 +73,14 @@ public class CreateSuppressionRequest
             return this;
         }
 
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -153,7 +169,8 @@ public class CreateSuppressionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -161,6 +178,10 @@ public class CreateSuppressionRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

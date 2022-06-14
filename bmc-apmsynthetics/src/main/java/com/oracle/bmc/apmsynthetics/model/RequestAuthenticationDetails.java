@@ -53,72 +53,131 @@ public final class RequestAuthenticationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Request http oauth scheme.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oauthScheme")
         private OAuthSchemes oauthScheme;
 
+        /**
+         * Request http oauth scheme.
+         * @param oauthScheme the value to set
+         * @return this builder
+         **/
         public Builder oauthScheme(OAuthSchemes oauthScheme) {
             this.oauthScheme = oauthScheme;
             this.__explicitlySet__.add("oauthScheme");
             return this;
         }
-
+        /**
+         * Username for authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authUserName")
         private String authUserName;
 
+        /**
+         * Username for authentication.
+         * @param authUserName the value to set
+         * @return this builder
+         **/
         public Builder authUserName(String authUserName) {
             this.authUserName = authUserName;
             this.__explicitlySet__.add("authUserName");
             return this;
         }
-
+        /**
+         * User password for authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authUserPassword")
         private String authUserPassword;
 
+        /**
+         * User password for authentication.
+         * @param authUserPassword the value to set
+         * @return this builder
+         **/
         public Builder authUserPassword(String authUserPassword) {
             this.authUserPassword = authUserPassword;
             this.__explicitlySet__.add("authUserPassword");
             return this;
         }
-
+        /**
+         * Authentication token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authToken")
         private String authToken;
 
+        /**
+         * Authentication token.
+         * @param authToken the value to set
+         * @return this builder
+         **/
         public Builder authToken(String authToken) {
             this.authToken = authToken;
             this.__explicitlySet__.add("authToken");
             return this;
         }
-
+        /**
+         * URL to get authetication token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authUrl")
         private String authUrl;
 
+        /**
+         * URL to get authetication token.
+         * @param authUrl the value to set
+         * @return this builder
+         **/
         public Builder authUrl(String authUrl) {
             this.authUrl = authUrl;
             this.__explicitlySet__.add("authUrl");
             return this;
         }
-
+        /**
+         * List of authentication headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authHeaders")
         private java.util.List<Header> authHeaders;
 
+        /**
+         * List of authentication headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
+         *
+         * @param authHeaders the value to set
+         * @return this builder
+         **/
         public Builder authHeaders(java.util.List<Header> authHeaders) {
             this.authHeaders = authHeaders;
             this.__explicitlySet__.add("authHeaders");
             return this;
         }
-
+        /**
+         * Request method.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authRequestMethod")
         private RequestMethods authRequestMethod;
 
+        /**
+         * Request method.
+         * @param authRequestMethod the value to set
+         * @return this builder
+         **/
         public Builder authRequestMethod(RequestMethods authRequestMethod) {
             this.authRequestMethod = authRequestMethod;
             this.__explicitlySet__.add("authRequestMethod");
             return this;
         }
-
+        /**
+         * Request post body.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authRequestPostBody")
         private String authRequestPostBody;
 
+        /**
+         * Request post body.
+         * @param authRequestPostBody the value to set
+         * @return this builder
+         **/
         public Builder authRequestPostBody(String authRequestPostBody) {
             this.authRequestPostBody = authRequestPostBody;
             this.__explicitlySet__.add("authRequestPostBody");
@@ -177,6 +236,10 @@ public final class RequestAuthenticationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("oauthScheme")
     private final OAuthSchemes oauthScheme;
 
+    /**
+     * Request http oauth scheme.
+     * @return the value
+     **/
     public OAuthSchemes getOauthScheme() {
         return oauthScheme;
     }
@@ -187,6 +250,10 @@ public final class RequestAuthenticationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authUserName")
     private final String authUserName;
 
+    /**
+     * Username for authentication.
+     * @return the value
+     **/
     public String getAuthUserName() {
         return authUserName;
     }
@@ -197,6 +264,10 @@ public final class RequestAuthenticationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authUserPassword")
     private final String authUserPassword;
 
+    /**
+     * User password for authentication.
+     * @return the value
+     **/
     public String getAuthUserPassword() {
         return authUserPassword;
     }
@@ -207,6 +278,10 @@ public final class RequestAuthenticationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
     private final String authToken;
 
+    /**
+     * Authentication token.
+     * @return the value
+     **/
     public String getAuthToken() {
         return authToken;
     }
@@ -217,6 +292,10 @@ public final class RequestAuthenticationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authUrl")
     private final String authUrl;
 
+    /**
+     * URL to get authetication token.
+     * @return the value
+     **/
     public String getAuthUrl() {
         return authUrl;
     }
@@ -228,6 +307,11 @@ public final class RequestAuthenticationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authHeaders")
     private final java.util.List<Header> authHeaders;
 
+    /**
+     * List of authentication headers. Example: {@code [{"headerName": "content-type", "headerValue":"json"}]}
+     *
+     * @return the value
+     **/
     public java.util.List<Header> getAuthHeaders() {
         return authHeaders;
     }
@@ -238,6 +322,10 @@ public final class RequestAuthenticationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authRequestMethod")
     private final RequestMethods authRequestMethod;
 
+    /**
+     * Request method.
+     * @return the value
+     **/
     public RequestMethods getAuthRequestMethod() {
         return authRequestMethod;
     }
@@ -248,6 +336,10 @@ public final class RequestAuthenticationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authRequestPostBody")
     private final String authRequestPostBody;
 
+    /**
+     * Request post body.
+     * @return the value
+     **/
     public String getAuthRequestPostBody() {
         return authRequestPostBody;
     }

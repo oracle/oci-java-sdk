@@ -15,6 +15,11 @@ public class GenerateOnPremConnectorConfigurationResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +29,10 @@ public class GenerateOnPremConnectorConfigurationResponse
      */
     private Long contentLength;
 
+    /**
+     * Size of the file.
+     * @return the value
+     */
     public Long getContentLength() {
         return contentLength;
     }
@@ -33,6 +42,10 @@ public class GenerateOnPremConnectorConfigurationResponse
      */
     private java.util.Date lastModified;
 
+    /**
+     * The date and time the on-premises connector configuration was last modified, in the format defined by HTTP-date.
+     * @return the value
+     */
     public java.util.Date getLastModified() {
         return lastModified;
     }
@@ -42,6 +55,10 @@ public class GenerateOnPremConnectorConfigurationResponse
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -74,29 +91,63 @@ public class GenerateOnPremConnectorConfigurationResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Size of the file.
+         */
         private Long contentLength;
 
+        /**
+         * Size of the file.
+         * @param contentLength the value to set
+         * @return this builder
+         */
         public Builder contentLength(Long contentLength) {
             this.contentLength = contentLength;
             return this;
         }
 
+        /**
+         * The date and time the on-premises connector configuration was last modified, in the format defined by HTTP-date.
+         */
         private java.util.Date lastModified;
 
+        /**
+         * The date and time the on-premises connector configuration was last modified, in the format defined by HTTP-date.
+         * @param lastModified the value to set
+         * @return this builder
+         */
         public Builder lastModified(java.util.Date lastModified) {
             this.lastModified = lastModified;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -116,12 +167,20 @@ public class GenerateOnPremConnectorConfigurationResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GenerateOnPremConnectorConfigurationResponse build() {
             return new GenerateOnPremConnectorConfigurationResponse(
                     __httpStatusCode__, opcRequestId, contentLength, lastModified, inputStream);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

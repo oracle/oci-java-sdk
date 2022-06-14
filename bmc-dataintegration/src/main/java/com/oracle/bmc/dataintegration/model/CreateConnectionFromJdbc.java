@@ -108,19 +108,33 @@ public final class CreateConnectionFromJdbc extends CreateConnectionDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-
+        /**
+         * The user name for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * The user name for the connection.
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-
+        /**
+         * The password for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * The password for the connection.
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -225,6 +239,10 @@ public final class CreateConnectionFromJdbc extends CreateConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * The user name for the connection.
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -235,6 +253,10 @@ public final class CreateConnectionFromJdbc extends CreateConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * The password for the connection.
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }

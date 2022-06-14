@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * List of DatabaseToolsConnectionSummary items.
+ * List of {@code DatabaseToolsConnectionSummary} items.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,9 +29,17 @@ public final class DatabaseToolsConnectionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of {@code DatabaseToolsConnectionSummary} items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DatabaseToolsConnectionSummary> items;
 
+        /**
+         * Array of {@code DatabaseToolsConnectionSummary} items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DatabaseToolsConnectionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -69,11 +77,15 @@ public final class DatabaseToolsConnectionCollection {
     }
 
     /**
-     * Array of DatabaseToolsConnectionSummary.
+     * Array of {@code DatabaseToolsConnectionSummary} items.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DatabaseToolsConnectionSummary> items;
 
+    /**
+     * Array of {@code DatabaseToolsConnectionSummary} items.
+     * @return the value
+     **/
     public java.util.List<DatabaseToolsConnectionSummary> getItems() {
         return items;
     }

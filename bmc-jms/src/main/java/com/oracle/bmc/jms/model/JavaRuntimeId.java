@@ -30,36 +30,65 @@ public final class JavaRuntimeId {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The version of the Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of the Java Runtime.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The vendor of the Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendor")
         private String vendor;
 
+        /**
+         * The vendor of the Java Runtime.
+         * @param vendor the value to set
+         * @return this builder
+         **/
         public Builder vendor(String vendor) {
             this.vendor = vendor;
             this.__explicitlySet__.add("vendor");
             return this;
         }
-
+        /**
+         * The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("distribution")
         private String distribution;
 
+        /**
+         * The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+         * @param distribution the value to set
+         * @return this builder
+         **/
         public Builder distribution(String distribution) {
             this.distribution = distribution;
             this.__explicitlySet__.add("distribution");
             return this;
         }
-
+        /**
+         * The unique identifier for a Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jreKey")
         private String jreKey;
 
+        /**
+         * The unique identifier for a Java Runtime.
+         * @param jreKey the value to set
+         * @return this builder
+         **/
         public Builder jreKey(String jreKey) {
             this.jreKey = jreKey;
             this.__explicitlySet__.add("jreKey");
@@ -105,6 +134,10 @@ public final class JavaRuntimeId {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of the Java Runtime.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -115,6 +148,10 @@ public final class JavaRuntimeId {
     @com.fasterxml.jackson.annotation.JsonProperty("vendor")
     private final String vendor;
 
+    /**
+     * The vendor of the Java Runtime.
+     * @return the value
+     **/
     public String getVendor() {
         return vendor;
     }
@@ -125,6 +162,10 @@ public final class JavaRuntimeId {
     @com.fasterxml.jackson.annotation.JsonProperty("distribution")
     private final String distribution;
 
+    /**
+     * The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+     * @return the value
+     **/
     public String getDistribution() {
         return distribution;
     }
@@ -135,6 +176,10 @@ public final class JavaRuntimeId {
     @com.fasterxml.jackson.annotation.JsonProperty("jreKey")
     private final String jreKey;
 
+    /**
+     * The unique identifier for a Java Runtime.
+     * @return the value
+     **/
     public String getJreKey() {
         return jreKey;
     }

@@ -41,18 +41,33 @@ public final class SnapshotDatasetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether annotations are to be included in the export dataset digest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areAnnotationsIncluded")
         private Boolean areAnnotationsIncluded;
 
+        /**
+         * Whether annotations are to be included in the export dataset digest.
+         * @param areAnnotationsIncluded the value to set
+         * @return this builder
+         **/
         public Builder areAnnotationsIncluded(Boolean areAnnotationsIncluded) {
             this.areAnnotationsIncluded = areAnnotationsIncluded;
             this.__explicitlySet__.add("areAnnotationsIncluded");
             return this;
         }
-
+        /**
+         * Whether to include records that have yet to be annotated in the export dataset digest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areUnannotatedRecordsIncluded")
         private Boolean areUnannotatedRecordsIncluded;
 
+        /**
+         * Whether to include records that have yet to be annotated in the export dataset digest.
+         * @param areUnannotatedRecordsIncluded the value to set
+         * @return this builder
+         **/
         public Builder areUnannotatedRecordsIncluded(Boolean areUnannotatedRecordsIncluded) {
             this.areUnannotatedRecordsIncluded = areUnannotatedRecordsIncluded;
             this.__explicitlySet__.add("areUnannotatedRecordsIncluded");
@@ -121,6 +136,10 @@ public final class SnapshotDatasetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("areAnnotationsIncluded")
     private final Boolean areAnnotationsIncluded;
 
+    /**
+     * Whether annotations are to be included in the export dataset digest.
+     * @return the value
+     **/
     public Boolean getAreAnnotationsIncluded() {
         return areAnnotationsIncluded;
     }
@@ -131,6 +150,10 @@ public final class SnapshotDatasetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("areUnannotatedRecordsIncluded")
     private final Boolean areUnannotatedRecordsIncluded;
 
+    /**
+     * Whether to include records that have yet to be annotated in the export dataset digest.
+     * @return the value
+     **/
     public Boolean getAreUnannotatedRecordsIncluded() {
         return areUnannotatedRecordsIncluded;
     }

@@ -58,63 +58,127 @@ public final class ApiKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An Oracle-assigned identifier for the key, in this format:
+         * TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
+        /**
+         * An Oracle-assigned identifier for the key, in this format:
+         * TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
+         *
+         * @param keyId the value to set
+         * @return this builder
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-
+        /**
+         * The key's value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyValue")
         private String keyValue;
 
+        /**
+         * The key's value.
+         * @param keyValue the value to set
+         * @return this builder
+         **/
         public Builder keyValue(String keyValue) {
             this.keyValue = keyValue;
             this.__explicitlySet__.add("keyValue");
             return this;
         }
-
+        /**
+         * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
         private String fingerprint;
 
+        /**
+         * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
+         * @param fingerprint the value to set
+         * @return this builder
+         **/
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = fingerprint;
             this.__explicitlySet__.add("fingerprint");
             return this;
         }
-
+        /**
+         * The OCID of the user the key belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
+        /**
+         * The OCID of the user the key belongs to.
+         * @param userId the value to set
+         * @return this builder
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-
+        /**
+         * Date and time the {@code ApiKey} object was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date and time the {@code ApiKey} object was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code lifecycleState} changes from
+         * CREATING to ACTIVE before using it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code lifecycleState} changes from
+         * CREATING to ACTIVE before using it.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The detailed status of INACTIVE lifecycleState.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
+        /**
+         * The detailed status of INACTIVE lifecycleState.
+         * @param inactiveStatus the value to set
+         * @return this builder
+         **/
         public Builder inactiveStatus(Long inactiveStatus) {
             this.inactiveStatus = inactiveStatus;
             this.__explicitlySet__.add("inactiveStatus");
@@ -173,6 +237,12 @@ public final class ApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
+    /**
+     * An Oracle-assigned identifier for the key, in this format:
+     * TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
+     *
+     * @return the value
+     **/
     public String getKeyId() {
         return keyId;
     }
@@ -183,6 +253,10 @@ public final class ApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("keyValue")
     private final String keyValue;
 
+    /**
+     * The key's value.
+     * @return the value
+     **/
     public String getKeyValue() {
         return keyValue;
     }
@@ -193,6 +267,10 @@ public final class ApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     private final String fingerprint;
 
+    /**
+     * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
+     * @return the value
+     **/
     public String getFingerprint() {
         return fingerprint;
     }
@@ -203,6 +281,10 @@ public final class ApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
+    /**
+     * The OCID of the user the key belongs to.
+     * @return the value
+     **/
     public String getUserId() {
         return userId;
     }
@@ -216,6 +298,13 @@ public final class ApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time the {@code ApiKey} object was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -281,6 +370,12 @@ public final class ApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The API key's current state. After creating an {@code ApiKey} object, make sure its {@code lifecycleState} changes from
+     * CREATING to ACTIVE before using it.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -291,6 +386,10 @@ public final class ApiKey {
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
+    /**
+     * The detailed status of INACTIVE lifecycleState.
+     * @return the value
+     **/
     public Long getInactiveStatus() {
         return inactiveStatus;
     }

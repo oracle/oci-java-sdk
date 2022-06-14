@@ -68,118 +68,222 @@ public final class SenderInvitationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the sender invitation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID of the sender invitation.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * OCID of the sender tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the sender tenancy.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A user-created name to describe the invitation. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-created name to describe the invitation. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * OCID of the corresponding recipient invitation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recipientInvitationId")
         private String recipientInvitationId;
 
+        /**
+         * OCID of the corresponding recipient invitation.
+         * @param recipientInvitationId the value to set
+         * @return this builder
+         **/
         public Builder recipientInvitationId(String recipientInvitationId) {
             this.recipientInvitationId = recipientInvitationId;
             this.__explicitlySet__.add("recipientInvitationId");
             return this;
         }
-
+        /**
+         * OCID of the recipient tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recipientTenancyId")
         private String recipientTenancyId;
 
+        /**
+         * OCID of the recipient tenancy.
+         * @param recipientTenancyId the value to set
+         * @return this builder
+         **/
         public Builder recipientTenancyId(String recipientTenancyId) {
             this.recipientTenancyId = recipientTenancyId;
             this.__explicitlySet__.add("recipientTenancyId");
             return this;
         }
-
+        /**
+         * Lifecycle state of the sender invitation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * Lifecycle state of the sender invitation.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Status of the sender invitation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private SenderInvitationStatus status;
 
+        /**
+         * Status of the sender invitation.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(SenderInvitationStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Date-time when this sender invitation was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date-time when this sender invitation was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Date-time when this sender invitation was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Date-time when this sender invitation was last updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Email address of the recipient.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recipientEmailAddress")
         private String recipientEmailAddress;
 
+        /**
+         * Email address of the recipient.
+         * @param recipientEmailAddress the value to set
+         * @return this builder
+         **/
         public Builder recipientEmailAddress(String recipientEmailAddress) {
             this.recipientEmailAddress = recipientEmailAddress;
             this.__explicitlySet__.add("recipientEmailAddress");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -248,6 +352,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID of the sender invitation.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -258,6 +366,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the sender tenancy.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -268,6 +380,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-created name to describe the invitation. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -278,6 +394,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recipientInvitationId")
     private final String recipientInvitationId;
 
+    /**
+     * OCID of the corresponding recipient invitation.
+     * @return the value
+     **/
     public String getRecipientInvitationId() {
         return recipientInvitationId;
     }
@@ -288,6 +408,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recipientTenancyId")
     private final String recipientTenancyId;
 
+    /**
+     * OCID of the recipient tenancy.
+     * @return the value
+     **/
     public String getRecipientTenancyId() {
         return recipientTenancyId;
     }
@@ -298,6 +422,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * Lifecycle state of the sender invitation.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -308,6 +436,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final SenderInvitationStatus status;
 
+    /**
+     * Status of the sender invitation.
+     * @return the value
+     **/
     public SenderInvitationStatus getStatus() {
         return status;
     }
@@ -318,6 +450,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date-time when this sender invitation was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -328,6 +464,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Date-time when this sender invitation was last updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -338,6 +478,10 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recipientEmailAddress")
     private final String recipientEmailAddress;
 
+    /**
+     * Email address of the recipient.
+     * @return the value
+     **/
     public String getRecipientEmailAddress() {
         return recipientEmailAddress;
     }
@@ -350,6 +494,12 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -362,6 +512,12 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -374,6 +530,12 @@ public final class SenderInvitationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

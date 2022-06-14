@@ -15,6 +15,12 @@ public class CreateDataProfileResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class CreateDataProfileResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.dataconnectivity.model.DataProfile dataProfile;
 
+    /**
+     * The returned DataProfile instance.
+     * @return the value
+     */
     public com.oracle.bmc.dataconnectivity.model.DataProfile getDataProfile() {
         return dataProfile;
     }
@@ -46,15 +56,35 @@ public class CreateDataProfileResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DataProfile instance.
+         */
         private com.oracle.bmc.dataconnectivity.model.DataProfile dataProfile;
 
+        /**
+         * The returned DataProfile instance.
+         * @param dataProfile the value to set
+         * @return this builder
+         */
         public Builder dataProfile(com.oracle.bmc.dataconnectivity.model.DataProfile dataProfile) {
             this.dataProfile = dataProfile;
             return this;
@@ -72,11 +102,19 @@ public class CreateDataProfileResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateDataProfileResponse build() {
             return new CreateDataProfileResponse(__httpStatusCode__, opcRequestId, dataProfile);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

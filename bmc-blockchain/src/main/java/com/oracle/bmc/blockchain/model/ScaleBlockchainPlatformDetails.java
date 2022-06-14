@@ -63,9 +63,17 @@ public final class ScaleBlockchainPlatformDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * new OSNs to add
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addOsns")
         private java.util.List<CreateOsnDetails> addOsns;
 
+        /**
+         * new OSNs to add
+         * @param addOsns the value to set
+         * @return this builder
+         **/
         public Builder addOsns(java.util.List<CreateOsnDetails> addOsns) {
             this.addOsns = addOsns;
             this.__explicitlySet__.add("addOsns");
@@ -80,10 +88,17 @@ public final class ScaleBlockchainPlatformDetails {
             this.__explicitlySet__.add("addReplicas");
             return this;
         }
-
+        /**
+         * new Peers to add
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addPeers")
         private java.util.List<CreatePeerDetails> addPeers;
 
+        /**
+         * new Peers to add
+         * @param addPeers the value to set
+         * @return this builder
+         **/
         public Builder addPeers(java.util.List<CreatePeerDetails> addPeers) {
             this.addPeers = addPeers;
             this.__explicitlySet__.add("addPeers");
@@ -98,10 +113,17 @@ public final class ScaleBlockchainPlatformDetails {
             this.__explicitlySet__.add("addStorage");
             return this;
         }
-
+        /**
+         * modify ocpu allocation to existing Peers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modifyPeers")
         private java.util.List<ModifyPeerDetails> modifyPeers;
 
+        /**
+         * modify ocpu allocation to existing Peers
+         * @param modifyPeers the value to set
+         * @return this builder
+         **/
         public Builder modifyPeers(java.util.List<ModifyPeerDetails> modifyPeers) {
             this.modifyPeers = modifyPeers;
             this.__explicitlySet__.add("modifyPeers");
@@ -116,19 +138,33 @@ public final class ScaleBlockchainPlatformDetails {
             this.__explicitlySet__.add("removeReplicas");
             return this;
         }
-
+        /**
+         * OSN id list to remove
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("removeOsns")
         private java.util.List<String> removeOsns;
 
+        /**
+         * OSN id list to remove
+         * @param removeOsns the value to set
+         * @return this builder
+         **/
         public Builder removeOsns(java.util.List<String> removeOsns) {
             this.removeOsns = removeOsns;
             this.__explicitlySet__.add("removeOsns");
             return this;
         }
-
+        /**
+         * Peer id list to remove
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("removePeers")
         private java.util.List<String> removePeers;
 
+        /**
+         * Peer id list to remove
+         * @param removePeers the value to set
+         * @return this builder
+         **/
         public Builder removePeers(java.util.List<String> removePeers) {
             this.removePeers = removePeers;
             this.__explicitlySet__.add("removePeers");
@@ -187,6 +223,10 @@ public final class ScaleBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("addOsns")
     private final java.util.List<CreateOsnDetails> addOsns;
 
+    /**
+     * new OSNs to add
+     * @return the value
+     **/
     public java.util.List<CreateOsnDetails> getAddOsns() {
         return addOsns;
     }
@@ -204,6 +244,10 @@ public final class ScaleBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("addPeers")
     private final java.util.List<CreatePeerDetails> addPeers;
 
+    /**
+     * new Peers to add
+     * @return the value
+     **/
     public java.util.List<CreatePeerDetails> getAddPeers() {
         return addPeers;
     }
@@ -221,6 +265,10 @@ public final class ScaleBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modifyPeers")
     private final java.util.List<ModifyPeerDetails> modifyPeers;
 
+    /**
+     * modify ocpu allocation to existing Peers
+     * @return the value
+     **/
     public java.util.List<ModifyPeerDetails> getModifyPeers() {
         return modifyPeers;
     }
@@ -238,6 +286,10 @@ public final class ScaleBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("removeOsns")
     private final java.util.List<String> removeOsns;
 
+    /**
+     * OSN id list to remove
+     * @return the value
+     **/
     public java.util.List<String> getRemoveOsns() {
         return removeOsns;
     }
@@ -248,6 +300,10 @@ public final class ScaleBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("removePeers")
     private final java.util.List<String> removePeers;
 
+    /**
+     * Peer id list to remove
+     * @return the value
+     **/
     public java.util.List<String> getRemovePeers() {
         return removePeers;
     }

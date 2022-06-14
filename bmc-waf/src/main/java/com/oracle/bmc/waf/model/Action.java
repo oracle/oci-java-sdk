@@ -47,6 +47,10 @@ public class Action {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Action name. Can be used to reference the action.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

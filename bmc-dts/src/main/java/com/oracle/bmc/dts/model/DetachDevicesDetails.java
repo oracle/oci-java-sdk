@@ -29,9 +29,17 @@ public final class DetachDevicesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of TransferDeviceLabel's
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deviceLabels")
         private java.util.List<String> deviceLabels;
 
+        /**
+         * List of TransferDeviceLabel's
+         * @param deviceLabels the value to set
+         * @return this builder
+         **/
         public Builder deviceLabels(java.util.List<String> deviceLabels) {
             this.deviceLabels = deviceLabels;
             this.__explicitlySet__.add("deviceLabels");
@@ -73,6 +81,10 @@ public final class DetachDevicesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("deviceLabels")
     private final java.util.List<String> deviceLabels;
 
+    /**
+     * List of TransferDeviceLabel's
+     * @return the value
+     **/
     public java.util.List<String> getDeviceLabels() {
         return deviceLabels;
     }

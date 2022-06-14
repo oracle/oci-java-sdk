@@ -32,18 +32,33 @@ public final class CreateCustomTableDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The compartment OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment OCID.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The associated saved report OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
         private String savedReportId;
 
+        /**
+         * The associated saved report OCID.
+         * @param savedReportId the value to set
+         * @return this builder
+         **/
         public Builder savedReportId(String savedReportId) {
             this.savedReportId = savedReportId;
             this.__explicitlySet__.add("savedReportId");
@@ -98,6 +113,10 @@ public final class CreateCustomTableDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment OCID.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -108,6 +127,10 @@ public final class CreateCustomTableDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
     private final String savedReportId;
 
+    /**
+     * The associated saved report OCID.
+     * @return the value
+     **/
     public String getSavedReportId() {
         return savedReportId;
     }

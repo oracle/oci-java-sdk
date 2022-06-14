@@ -18,6 +18,10 @@ public class ListSourceAssociationsRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class ListSourceAssociationsRequest
      */
     private String sourceName;
 
+    /**
+     * The souce name used for filtering associations.
+     */
     public String getSourceName() {
         return sourceName;
     }
@@ -34,6 +41,9 @@ public class ListSourceAssociationsRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -43,6 +53,10 @@ public class ListSourceAssociationsRequest
      */
     private String entityId;
 
+    /**
+     * The entity OCID.
+     *
+     */
     public String getEntityId() {
         return entityId;
     }
@@ -94,6 +108,11 @@ public class ListSourceAssociationsRequest
         }
     };
 
+    /**
+     * The life cycle state used for filtering.  Only associations with the specified
+     * life cycle state will be returned.
+     *
+     */
     public LifeCycleState getLifeCycleState() {
         return lifeCycleState;
     }
@@ -102,6 +121,9 @@ public class ListSourceAssociationsRequest
      */
     private Boolean isShowTotal;
 
+    /**
+     * A flag indicating whether or not to return the total number of items returned.
+     */
     public Boolean getIsShowTotal() {
         return isShowTotal;
     }
@@ -110,6 +132,9 @@ public class ListSourceAssociationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -118,6 +143,9 @@ public class ListSourceAssociationsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -126,6 +154,9 @@ public class ListSourceAssociationsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -172,6 +203,10 @@ public class ListSourceAssociationsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -217,6 +252,9 @@ public class ListSourceAssociationsRequest
         }
     };
 
+    /**
+     * The attribute used to sort the returned associations
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -228,11 +266,16 @@ public class ListSourceAssociationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -240,10 +283,14 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * The souce name used for filtering associations.
+         */
         private String sourceName = null;
 
         /**
          * The souce name used for filtering associations.
+         * @param sourceName the value to set
          * @return this builder instance
          */
         public Builder sourceName(String sourceName) {
@@ -251,10 +298,14 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -262,11 +313,16 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * The entity OCID.
+         *
+         */
         private String entityId = null;
 
         /**
          * The entity OCID.
          *
+         * @param entityId the value to set
          * @return this builder instance
          */
         public Builder entityId(String entityId) {
@@ -274,12 +330,18 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * The life cycle state used for filtering.  Only associations with the specified
+         * life cycle state will be returned.
+         *
+         */
         private LifeCycleState lifeCycleState = null;
 
         /**
          * The life cycle state used for filtering.  Only associations with the specified
          * life cycle state will be returned.
          *
+         * @param lifeCycleState the value to set
          * @return this builder instance
          */
         public Builder lifeCycleState(LifeCycleState lifeCycleState) {
@@ -287,10 +349,14 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * A flag indicating whether or not to return the total number of items returned.
+         */
         private Boolean isShowTotal = null;
 
         /**
          * A flag indicating whether or not to return the total number of items returned.
+         * @param isShowTotal the value to set
          * @return this builder instance
          */
         public Builder isShowTotal(Boolean isShowTotal) {
@@ -298,10 +364,14 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -309,10 +379,14 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -320,10 +394,14 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -331,11 +409,16 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -343,10 +426,14 @@ public class ListSourceAssociationsRequest
             return this;
         }
 
+        /**
+         * The attribute used to sort the returned associations
+         */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned associations
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -442,7 +529,8 @@ public class ListSourceAssociationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -459,6 +547,10 @@ public class ListSourceAssociationsRequest
                 .sortBy(sortBy);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -50,63 +50,121 @@ public final class QueryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Compartment OCID, to provide context for a table name in
+         * the given statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment OCID, to provide context for a table name in
+         * the given statement.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A NoSQL SQL query statement; or a Base64-encoded prepared statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statement")
         private String statement;
 
+        /**
+         * A NoSQL SQL query statement; or a Base64-encoded prepared statement.
+         *
+         * @param statement the value to set
+         * @return this builder
+         **/
         public Builder statement(String statement) {
             this.statement = statement;
             this.__explicitlySet__.add("statement");
             return this;
         }
-
+        /**
+         * If true, the statement is a prepared statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrepared")
         private Boolean isPrepared;
 
+        /**
+         * If true, the statement is a prepared statement.
+         * @param isPrepared the value to set
+         * @return this builder
+         **/
         public Builder isPrepared(Boolean isPrepared) {
             this.isPrepared = isPrepared;
             this.__explicitlySet__.add("isPrepared");
             return this;
         }
-
+        /**
+         * Consistency requirement for a read operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consistency")
         private Consistency consistency;
 
+        /**
+         * Consistency requirement for a read operation.
+         * @param consistency the value to set
+         * @return this builder
+         **/
         public Builder consistency(Consistency consistency) {
             this.consistency = consistency;
             this.__explicitlySet__.add("consistency");
             return this;
         }
-
+        /**
+         * A limit on the total amount of data read during this operation, in KB.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxReadInKBs")
         private Integer maxReadInKBs;
 
+        /**
+         * A limit on the total amount of data read during this operation, in KB.
+         *
+         * @param maxReadInKBs the value to set
+         * @return this builder
+         **/
         public Builder maxReadInKBs(Integer maxReadInKBs) {
             this.maxReadInKBs = maxReadInKBs;
             this.__explicitlySet__.add("maxReadInKBs");
             return this;
         }
-
+        /**
+         * A map of prepared statement variables to values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private java.util.Map<String, Object> variables;
 
+        /**
+         * A map of prepared statement variables to values.
+         * @param variables the value to set
+         * @return this builder
+         **/
         public Builder variables(java.util.Map<String, Object> variables) {
             this.variables = variables;
             this.__explicitlySet__.add("variables");
             return this;
         }
-
+        /**
+         * Timeout setting for the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMs")
         private Integer timeoutInMs;
 
+        /**
+         * Timeout setting for the query.
+         * @param timeoutInMs the value to set
+         * @return this builder
+         **/
         public Builder timeoutInMs(Integer timeoutInMs) {
             this.timeoutInMs = timeoutInMs;
             this.__explicitlySet__.add("timeoutInMs");
@@ -165,6 +223,12 @@ public final class QueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment OCID, to provide context for a table name in
+     * the given statement.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -176,6 +240,11 @@ public final class QueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("statement")
     private final String statement;
 
+    /**
+     * A NoSQL SQL query statement; or a Base64-encoded prepared statement.
+     *
+     * @return the value
+     **/
     public String getStatement() {
         return statement;
     }
@@ -186,6 +255,10 @@ public final class QueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPrepared")
     private final Boolean isPrepared;
 
+    /**
+     * If true, the statement is a prepared statement.
+     * @return the value
+     **/
     public Boolean getIsPrepared() {
         return isPrepared;
     }
@@ -231,6 +304,10 @@ public final class QueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("consistency")
     private final Consistency consistency;
 
+    /**
+     * Consistency requirement for a read operation.
+     * @return the value
+     **/
     public Consistency getConsistency() {
         return consistency;
     }
@@ -242,6 +319,11 @@ public final class QueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxReadInKBs")
     private final Integer maxReadInKBs;
 
+    /**
+     * A limit on the total amount of data read during this operation, in KB.
+     *
+     * @return the value
+     **/
     public Integer getMaxReadInKBs() {
         return maxReadInKBs;
     }
@@ -252,6 +334,10 @@ public final class QueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final java.util.Map<String, Object> variables;
 
+    /**
+     * A map of prepared statement variables to values.
+     * @return the value
+     **/
     public java.util.Map<String, Object> getVariables() {
         return variables;
     }
@@ -262,6 +348,10 @@ public final class QueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMs")
     private final Integer timeoutInMs;
 
+    /**
+     * Timeout setting for the query.
+     * @return the value
+     **/
     public Integer getTimeoutInMs() {
         return timeoutInMs;
     }

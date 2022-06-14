@@ -19,6 +19,10 @@ public class CreateConfigRequest
      */
     private String apmDomainId;
 
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -27,6 +31,9 @@ public class CreateConfigRequest
      */
     private com.oracle.bmc.apmconfig.model.CreateConfigDetails createConfigDetails;
 
+    /**
+     * The configuration details of the new item.
+     */
     public com.oracle.bmc.apmconfig.model.CreateConfigDetails getCreateConfigDetails() {
         return createConfigDetails;
     }
@@ -40,6 +47,14 @@ public class CreateConfigRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -50,6 +65,11 @@ public class CreateConfigRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,6 +80,11 @@ public class CreateConfigRequest
      */
     private String opcDryRun;
 
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+     * configuration item details and is used only to perform validation on the submitted data.
+     *
+     */
     public String getOpcDryRun() {
         return opcDryRun;
     }
@@ -81,11 +106,16 @@ public class CreateConfigRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM Domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -93,10 +123,14 @@ public class CreateConfigRequest
             return this;
         }
 
+        /**
+         * The configuration details of the new item.
+         */
         private com.oracle.bmc.apmconfig.model.CreateConfigDetails createConfigDetails = null;
 
         /**
          * The configuration details of the new item.
+         * @param createConfigDetails the value to set
          * @return this builder instance
          */
         public Builder createConfigDetails(
@@ -105,6 +139,14 @@ public class CreateConfigRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -114,6 +156,7 @@ public class CreateConfigRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -121,12 +164,18 @@ public class CreateConfigRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -134,12 +183,18 @@ public class CreateConfigRequest
             return this;
         }
 
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+         * configuration item details and is used only to perform validation on the submitted data.
+         *
+         */
         private String opcDryRun = null;
 
         /**
          * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
          * configuration item details and is used only to perform validation on the submitted data.
          *
+         * @param opcDryRun the value to set
          * @return this builder instance
          */
         public Builder opcDryRun(String opcDryRun) {
@@ -234,7 +289,8 @@ public class CreateConfigRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -245,6 +301,10 @@ public class CreateConfigRequest
                 .opcDryRun(opcDryRun);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

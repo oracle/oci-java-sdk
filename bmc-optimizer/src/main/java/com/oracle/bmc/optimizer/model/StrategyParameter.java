@@ -48,54 +48,97 @@ public final class StrategyParameter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the strategy parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the strategy parameter.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The type of strategy parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private StrategyParameterType type;
 
+        /**
+         * The type of strategy parameter.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(StrategyParameterType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Text describing the strategy parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Text describing the strategy parameter.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Whether this parameter is required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
+        /**
+         * Whether this parameter is required.
+         * @param isRequired the value to set
+         * @return this builder
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
             return this;
         }
-
+        /**
+         * A default value used for the strategy parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private Object defaultValue;
 
+        /**
+         * A default value used for the strategy parameter.
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(Object defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-
+        /**
+         * The list of possible values used for these strategy parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
         private java.util.List<Object> possibleValues;
 
+        /**
+         * The list of possible values used for these strategy parameters.
+         * @param possibleValues the value to set
+         * @return this builder
+         **/
         public Builder possibleValues(java.util.List<Object> possibleValues) {
             this.possibleValues = possibleValues;
             this.__explicitlySet__.add("possibleValues");
@@ -145,6 +188,10 @@ public final class StrategyParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the strategy parameter.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -155,6 +202,10 @@ public final class StrategyParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final StrategyParameterType type;
 
+    /**
+     * The type of strategy parameter.
+     * @return the value
+     **/
     public StrategyParameterType getType() {
         return type;
     }
@@ -165,6 +216,10 @@ public final class StrategyParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Text describing the strategy parameter.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -175,6 +230,10 @@ public final class StrategyParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
+    /**
+     * Whether this parameter is required.
+     * @return the value
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }
@@ -185,6 +244,10 @@ public final class StrategyParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final Object defaultValue;
 
+    /**
+     * A default value used for the strategy parameter.
+     * @return the value
+     **/
     public Object getDefaultValue() {
         return defaultValue;
     }
@@ -195,6 +258,10 @@ public final class StrategyParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
     private final java.util.List<Object> possibleValues;
 
+    /**
+     * The list of possible values used for these strategy parameters.
+     * @return the value
+     **/
     public java.util.List<Object> getPossibleValues() {
         return possibleValues;
     }

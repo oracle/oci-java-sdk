@@ -18,12 +18,13 @@ public class CreateTransferApplianceRequest
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
-    /**
-     *
-     */
+
     private String opcRetryToken;
 
     public String getOpcRetryToken() {
@@ -34,6 +35,9 @@ public class CreateTransferApplianceRequest
      */
     private com.oracle.bmc.dts.model.CreateTransferApplianceDetails createTransferApplianceDetails;
 
+    /**
+     * Creates a New Transfer Appliance
+     */
     public com.oracle.bmc.dts.model.CreateTransferApplianceDetails
             getCreateTransferApplianceDetails() {
         return createTransferApplianceDetails;
@@ -57,10 +61,14 @@ public class CreateTransferApplianceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -72,6 +80,7 @@ public class CreateTransferApplianceRequest
 
         /**
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -79,11 +88,15 @@ public class CreateTransferApplianceRequest
             return this;
         }
 
+        /**
+         * Creates a New Transfer Appliance
+         */
         private com.oracle.bmc.dts.model.CreateTransferApplianceDetails
                 createTransferApplianceDetails = null;
 
         /**
          * Creates a New Transfer Appliance
+         * @param createTransferApplianceDetails the value to set
          * @return this builder instance
          */
         public Builder createTransferApplianceDetails(
@@ -176,7 +189,8 @@ public class CreateTransferApplianceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -185,6 +199,10 @@ public class CreateTransferApplianceRequest
                 .createTransferApplianceDetails(createTransferApplianceDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

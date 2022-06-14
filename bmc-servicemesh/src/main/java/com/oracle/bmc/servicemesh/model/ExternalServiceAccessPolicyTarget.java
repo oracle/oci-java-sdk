@@ -27,36 +27,79 @@ package com.oracle.bmc.servicemesh.model;
 public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The hostnames of the external service. Only applicable for HTTP and HTTPS protocols.
+         * Wildcard hostnames are supported in the prefix form.
+         * Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*".
+         * Hostname "*" can be used to allow all hosts.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
         private java.util.List<String> hostnames;
 
+        /**
+         * The hostnames of the external service. Only applicable for HTTP and HTTPS protocols.
+         * Wildcard hostnames are supported in the prefix form.
+         * Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*".
+         * Hostname "*" can be used to allow all hosts.
+         *
+         * @param hostnames the value to set
+         * @return this builder
+         **/
         public Builder hostnames(java.util.List<String> hostnames) {
             this.hostnames = hostnames;
             this.__explicitlySet__.add("hostnames");
             return this;
         }
-
+        /**
+         * The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol.
+         * All requests matching the given CIDR notation will pass through.
+         * In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
         private java.util.List<String> ipAddresses;
 
+        /**
+         * The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol.
+         * All requests matching the given CIDR notation will pass through.
+         * In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+         *
+         * @param ipAddresses the value to set
+         * @return this builder
+         **/
         public Builder ipAddresses(java.util.List<String> ipAddresses) {
             this.ipAddresses = ipAddresses;
             this.__explicitlySet__.add("ipAddresses");
             return this;
         }
-
+        /**
+         * Ports exposed by an external service. If left empty all ports will be allowed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ports")
         private java.util.List<Integer> ports;
 
+        /**
+         * Ports exposed by an external service. If left empty all ports will be allowed.
+         * @param ports the value to set
+         * @return this builder
+         **/
         public Builder ports(java.util.List<Integer> ports) {
             this.ports = ports;
             this.__explicitlySet__.add("ports");
             return this;
         }
-
+        /**
+         * Protocol of the external service
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * Protocol of the external service
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
@@ -120,6 +163,14 @@ public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget 
     @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
     private final java.util.List<String> hostnames;
 
+    /**
+     * The hostnames of the external service. Only applicable for HTTP and HTTPS protocols.
+     * Wildcard hostnames are supported in the prefix form.
+     * Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*".
+     * Hostname "*" can be used to allow all hosts.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getHostnames() {
         return hostnames;
     }
@@ -133,6 +184,13 @@ public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget 
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
     private final java.util.List<String> ipAddresses;
 
+    /**
+     * The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol.
+     * All requests matching the given CIDR notation will pass through.
+     * In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getIpAddresses() {
         return ipAddresses;
     }
@@ -143,6 +201,10 @@ public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget 
     @com.fasterxml.jackson.annotation.JsonProperty("ports")
     private final java.util.List<Integer> ports;
 
+    /**
+     * Ports exposed by an external service. If left empty all ports will be allowed.
+     * @return the value
+     **/
     public java.util.List<Integer> getPorts() {
         return ports;
     }
@@ -202,6 +264,10 @@ public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget 
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * Protocol of the external service
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }

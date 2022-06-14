@@ -31,36 +31,67 @@ public final class UsageStatusItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The field data type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * The field data type.
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the field is multi-valued.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
         private Boolean isMultiValued;
 
+        /**
+         * A flag indicating whether or not the field is multi-valued.
+         *
+         * @param isMultiValued the value to set
+         * @return this builder
+         **/
         public Builder isMultiValued(Boolean isMultiValued) {
             this.isMultiValued = isMultiValued;
             this.__explicitlySet__.add("isMultiValued");
             return this;
         }
-
+        /**
+         * The current usage of the field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
         private Long currentUsage;
 
+        /**
+         * The current usage of the field.
+         * @param currentUsage the value to set
+         * @return this builder
+         **/
         public Builder currentUsage(Long currentUsage) {
             this.currentUsage = currentUsage;
             this.__explicitlySet__.add("currentUsage");
             return this;
         }
-
+        /**
+         * The maximum availability of the field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxAvailable")
         private Integer maxAvailable;
 
+        /**
+         * The maximum availability of the field.
+         * @param maxAvailable the value to set
+         * @return this builder
+         **/
         public Builder maxAvailable(Integer maxAvailable) {
             this.maxAvailable = maxAvailable;
             this.__explicitlySet__.add("maxAvailable");
@@ -107,6 +138,10 @@ public final class UsageStatusItem {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * The field data type.
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -118,6 +153,11 @@ public final class UsageStatusItem {
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     private final Boolean isMultiValued;
 
+    /**
+     * A flag indicating whether or not the field is multi-valued.
+     *
+     * @return the value
+     **/
     public Boolean getIsMultiValued() {
         return isMultiValued;
     }
@@ -128,6 +168,10 @@ public final class UsageStatusItem {
     @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
     private final Long currentUsage;
 
+    /**
+     * The current usage of the field.
+     * @return the value
+     **/
     public Long getCurrentUsage() {
         return currentUsage;
     }
@@ -138,6 +182,10 @@ public final class UsageStatusItem {
     @com.fasterxml.jackson.annotation.JsonProperty("maxAvailable")
     private final Integer maxAvailable;
 
+    /**
+     * The maximum availability of the field.
+     * @return the value
+     **/
     public Integer getMaxAvailable() {
         return maxAvailable;
     }

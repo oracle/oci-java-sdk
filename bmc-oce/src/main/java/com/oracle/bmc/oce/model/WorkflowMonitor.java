@@ -30,27 +30,49 @@ public final class WorkflowMonitor {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * workflow name for this work request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workflowName")
         private String workflowName;
 
+        /**
+         * workflow name for this work request
+         * @param workflowName the value to set
+         * @return this builder
+         **/
         public Builder workflowName(String workflowName) {
             this.workflowName = workflowName;
             this.__explicitlySet__.add("workflowName");
             return this;
         }
-
+        /**
+         * resource name for this work request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * resource name for this work request
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * Workflow step of workflow monitor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workflowSteps")
         private java.util.List<WorkflowStep> workflowSteps;
 
+        /**
+         * Workflow step of workflow monitor.
+         * @param workflowSteps the value to set
+         * @return this builder
+         **/
         public Builder workflowSteps(java.util.List<WorkflowStep> workflowSteps) {
             this.workflowSteps = workflowSteps;
             this.__explicitlySet__.add("workflowSteps");
@@ -96,6 +118,10 @@ public final class WorkflowMonitor {
     @com.fasterxml.jackson.annotation.JsonProperty("workflowName")
     private final String workflowName;
 
+    /**
+     * workflow name for this work request
+     * @return the value
+     **/
     public String getWorkflowName() {
         return workflowName;
     }
@@ -106,6 +132,10 @@ public final class WorkflowMonitor {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * resource name for this work request
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -116,6 +146,10 @@ public final class WorkflowMonitor {
     @com.fasterxml.jackson.annotation.JsonProperty("workflowSteps")
     private final java.util.List<WorkflowStep> workflowSteps;
 
+    /**
+     * Workflow step of workflow monitor.
+     * @return the value
+     **/
     public java.util.List<WorkflowStep> getWorkflowSteps() {
         return workflowSteps;
     }

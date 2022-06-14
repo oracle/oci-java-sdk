@@ -29,9 +29,17 @@ public final class LevelsConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of configuration levels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LevelConfiguration> items;
 
+        /**
+         * The array of configuration levels.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LevelConfiguration> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class LevelsConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LevelConfiguration> items;
 
+    /**
+     * The array of configuration levels.
+     * @return the value
+     **/
     public java.util.List<LevelConfiguration> getItems() {
         return items;
     }

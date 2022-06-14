@@ -14,6 +14,11 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcObjectId;
 
+    /**
+     * Unique Oracle-assigned identifier for log data.
+     * @return the value
+     */
     public String getOpcObjectId() {
         return opcObjectId;
     }
@@ -32,6 +41,10 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.Date timeCreated;
 
+    /**
+     * The time the upload was created, in the format defined by RFC3339
+     * @return the value
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -61,22 +74,48 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for log data.
+         */
         private String opcObjectId;
 
+        /**
+         * Unique Oracle-assigned identifier for log data.
+         * @param opcObjectId the value to set
+         * @return this builder
+         */
         public Builder opcObjectId(String opcObjectId) {
             this.opcObjectId = opcObjectId;
             return this;
         }
 
+        /**
+         * The time the upload was created, in the format defined by RFC3339
+         */
         private java.util.Date timeCreated;
 
+        /**
+         * The time the upload was created, in the format defined by RFC3339
+         * @param timeCreated the value to set
+         * @return this builder
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             return this;
@@ -95,12 +134,20 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UploadLogEventsFileResponse build() {
             return new UploadLogEventsFileResponse(
                     __httpStatusCode__, opcRequestId, opcObjectId, timeCreated);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

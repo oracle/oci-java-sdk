@@ -35,10 +35,17 @@ public final class DataObjectDataSizeColumnUnit extends DataObjectColumnUnit {
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Data size unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
+        /**
+         * Data size unit.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -143,6 +150,10 @@ public final class DataObjectDataSizeColumnUnit extends DataObjectColumnUnit {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
+    /**
+     * Data size unit.
+     * @return the value
+     **/
     public Unit getUnit() {
         return unit;
     }

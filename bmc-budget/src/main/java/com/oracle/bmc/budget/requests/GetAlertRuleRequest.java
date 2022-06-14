@@ -16,6 +16,9 @@ public class GetAlertRuleRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String budgetId;
 
+    /**
+     * The unique budget OCID.
+     */
     public String getBudgetId() {
         return budgetId;
     }
@@ -24,6 +27,9 @@ public class GetAlertRuleRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String alertRuleId;
 
+    /**
+     * The unique Alert Rule OCID.
+     */
     public String getAlertRuleId() {
         return alertRuleId;
     }
@@ -32,6 +38,9 @@ public class GetAlertRuleRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,10 +52,14 @@ public class GetAlertRuleRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique budget OCID.
+         */
         private String budgetId = null;
 
         /**
          * The unique budget OCID.
+         * @param budgetId the value to set
          * @return this builder instance
          */
         public Builder budgetId(String budgetId) {
@@ -54,10 +67,14 @@ public class GetAlertRuleRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The unique Alert Rule OCID.
+         */
         private String alertRuleId = null;
 
         /**
          * The unique Alert Rule OCID.
+         * @param alertRuleId the value to set
          * @return this builder instance
          */
         public Builder alertRuleId(String alertRuleId) {
@@ -65,10 +82,14 @@ public class GetAlertRuleRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -148,12 +169,17 @@ public class GetAlertRuleRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().budgetId(budgetId).alertRuleId(alertRuleId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

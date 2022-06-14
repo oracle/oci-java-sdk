@@ -36,9 +36,17 @@ public final class CompatibleFormatsForDataTypes {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of lists of basic masking formats compatible with the supported data types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formatsForDataType")
         private java.util.List<FormatsForDataType> formatsForDataType;
 
+        /**
+         * An array of lists of basic masking formats compatible with the supported data types.
+         * @param formatsForDataType the value to set
+         * @return this builder
+         **/
         public Builder formatsForDataType(java.util.List<FormatsForDataType> formatsForDataType) {
             this.formatsForDataType = formatsForDataType;
             this.__explicitlySet__.add("formatsForDataType");
@@ -81,6 +89,10 @@ public final class CompatibleFormatsForDataTypes {
     @com.fasterxml.jackson.annotation.JsonProperty("formatsForDataType")
     private final java.util.List<FormatsForDataType> formatsForDataType;
 
+    /**
+     * An array of lists of basic masking formats compatible with the supported data types.
+     * @return the value
+     **/
     public java.util.List<FormatsForDataType> getFormatsForDataType() {
         return formatsForDataType;
     }

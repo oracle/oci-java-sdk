@@ -36,6 +36,7 @@ public final class TransferApplianceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 

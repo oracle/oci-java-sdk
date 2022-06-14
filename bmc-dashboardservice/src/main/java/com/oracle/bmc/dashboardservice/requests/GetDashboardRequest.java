@@ -16,6 +16,9 @@ public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String dashboardId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+     */
     public String getDashboardId() {
         return dashboardId;
     }
@@ -24,6 +27,9 @@ public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +43,14 @@ public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcCrossRegion;
 
+    /**
+     * To identify if the call is cross-regional. In CRUD calls for a resource, to
+     * identify that the call originates from different region, set the
+     * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
+     * The call will be served from a Replicated bucket.
+     * For same-region calls, the value is unassigned.
+     *
+     */
     public String getOpcCrossRegion() {
         return opcCrossRegion;
     }
@@ -48,10 +62,14 @@ public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+         */
         private String dashboardId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+         * @param dashboardId the value to set
          * @return this builder instance
          */
         public Builder dashboardId(String dashboardId) {
@@ -59,10 +77,14 @@ public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -70,6 +92,14 @@ public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * To identify if the call is cross-regional. In CRUD calls for a resource, to
+         * identify that the call originates from different region, set the
+         * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
+         * The call will be served from a Replicated bucket.
+         * For same-region calls, the value is unassigned.
+         *
+         */
         private String opcCrossRegion = null;
 
         /**
@@ -79,6 +109,7 @@ public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java
          * The call will be served from a Replicated bucket.
          * For same-region calls, the value is unassigned.
          *
+         * @param opcCrossRegion the value to set
          * @return this builder instance
          */
         public Builder opcCrossRegion(String opcCrossRegion) {
@@ -158,7 +189,8 @@ public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -167,6 +199,10 @@ public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcCrossRegion(opcCrossRegion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

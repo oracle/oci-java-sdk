@@ -18,6 +18,9 @@ public class UpdatePrivateIpRequest
      */
     private String privateIpId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP or IPv6.
+     */
     public String getPrivateIpId() {
         return privateIpId;
     }
@@ -26,6 +29,9 @@ public class UpdatePrivateIpRequest
      */
     private com.oracle.bmc.core.model.UpdatePrivateIpDetails updatePrivateIpDetails;
 
+    /**
+     * Private IP details.
+     */
     public com.oracle.bmc.core.model.UpdatePrivateIpDetails getUpdatePrivateIpDetails() {
         return updatePrivateIpDetails;
     }
@@ -37,6 +43,12 @@ public class UpdatePrivateIpRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,10 +70,14 @@ public class UpdatePrivateIpRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP or IPv6.
+         */
         private String privateIpId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP or IPv6.
+         * @param privateIpId the value to set
          * @return this builder instance
          */
         public Builder privateIpId(String privateIpId) {
@@ -69,10 +85,14 @@ public class UpdatePrivateIpRequest
             return this;
         }
 
+        /**
+         * Private IP details.
+         */
         private com.oracle.bmc.core.model.UpdatePrivateIpDetails updatePrivateIpDetails = null;
 
         /**
          * Private IP details.
+         * @param updatePrivateIpDetails the value to set
          * @return this builder instance
          */
         public Builder updatePrivateIpDetails(
@@ -81,6 +101,12 @@ public class UpdatePrivateIpRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -88,6 +114,7 @@ public class UpdatePrivateIpRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -178,7 +205,8 @@ public class UpdatePrivateIpRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -187,6 +215,10 @@ public class UpdatePrivateIpRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

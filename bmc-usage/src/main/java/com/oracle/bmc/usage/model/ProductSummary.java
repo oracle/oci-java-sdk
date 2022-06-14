@@ -42,45 +42,81 @@ public final class ProductSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The rate card product number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productNumber")
         private String productNumber;
 
+        /**
+         * The rate card product number.
+         * @param productNumber the value to set
+         * @return this builder
+         **/
         public Builder productNumber(String productNumber) {
             this.productNumber = productNumber;
             this.__explicitlySet__.add("productNumber");
             return this;
         }
-
+        /**
+         * The rate card product name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
+        /**
+         * The rate card product name.
+         * @param productName the value to set
+         * @return this builder
+         **/
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-
+        /**
+         * The rate card product usage amount.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageAmount")
         private Double usageAmount;
 
+        /**
+         * The rate card product usage amount.
+         * @param usageAmount the value to set
+         * @return this builder
+         **/
         public Builder usageAmount(Double usageAmount) {
             this.usageAmount = usageAmount;
             this.__explicitlySet__.add("usageAmount");
             return this;
         }
-
+        /**
+         * The earned rewards for the product.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("earnedRewards")
         private Float earnedRewards;
 
+        /**
+         * The earned rewards for the product.
+         * @param earnedRewards the value to set
+         * @return this builder
+         **/
         public Builder earnedRewards(Float earnedRewards) {
             this.earnedRewards = earnedRewards;
             this.__explicitlySet__.add("earnedRewards");
             return this;
         }
-
+        /**
+         * The boolean parameter to indicate if the product is eligible to earn rewards.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEligibleToEarnRewards")
         private Boolean isEligibleToEarnRewards;
 
+        /**
+         * The boolean parameter to indicate if the product is eligible to earn rewards.
+         * @param isEligibleToEarnRewards the value to set
+         * @return this builder
+         **/
         public Builder isEligibleToEarnRewards(Boolean isEligibleToEarnRewards) {
             this.isEligibleToEarnRewards = isEligibleToEarnRewards;
             this.__explicitlySet__.add("isEligibleToEarnRewards");
@@ -133,6 +169,10 @@ public final class ProductSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("productNumber")
     private final String productNumber;
 
+    /**
+     * The rate card product number.
+     * @return the value
+     **/
     public String getProductNumber() {
         return productNumber;
     }
@@ -143,6 +183,10 @@ public final class ProductSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
+    /**
+     * The rate card product name.
+     * @return the value
+     **/
     public String getProductName() {
         return productName;
     }
@@ -153,6 +197,10 @@ public final class ProductSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("usageAmount")
     private final Double usageAmount;
 
+    /**
+     * The rate card product usage amount.
+     * @return the value
+     **/
     public Double getUsageAmount() {
         return usageAmount;
     }
@@ -163,6 +211,10 @@ public final class ProductSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("earnedRewards")
     private final Float earnedRewards;
 
+    /**
+     * The earned rewards for the product.
+     * @return the value
+     **/
     public Float getEarnedRewards() {
         return earnedRewards;
     }
@@ -173,6 +225,10 @@ public final class ProductSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isEligibleToEarnRewards")
     private final Boolean isEligibleToEarnRewards;
 
+    /**
+     * The boolean parameter to indicate if the product is eligible to earn rewards.
+     * @return the value
+     **/
     public Boolean getIsEligibleToEarnRewards() {
         return isEligibleToEarnRewards;
     }

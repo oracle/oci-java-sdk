@@ -18,6 +18,9 @@ public class ExportKeyRequest
      */
     private com.oracle.bmc.keymanagement.model.ExportKeyDetails exportKeyDetails;
 
+    /**
+     * ExportKeyDetails
+     */
     public com.oracle.bmc.keymanagement.model.ExportKeyDetails getExportKeyDetails() {
         return exportKeyDetails;
     }
@@ -39,10 +42,14 @@ public class ExportKeyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ExportKeyDetails
+         */
         private com.oracle.bmc.keymanagement.model.ExportKeyDetails exportKeyDetails = null;
 
         /**
          * ExportKeyDetails
+         * @param exportKeyDetails the value to set
          * @return this builder instance
          */
         public Builder exportKeyDetails(
@@ -130,12 +137,17 @@ public class ExportKeyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().exportKeyDetails(exportKeyDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

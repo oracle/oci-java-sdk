@@ -387,6 +387,54 @@ public class QuotasAsyncClient implements QuotasAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddQuotaLockResponse> addQuotaLock(
+            AddQuotaLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<AddQuotaLockRequest, AddQuotaLockResponse>
+                    handler) {
+        LOG.trace("Called async addQuotaLock");
+        final AddQuotaLockRequest interceptedRequest =
+                AddQuotaLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddQuotaLockConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddQuotaLockResponse>
+                transformer = AddQuotaLockConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "AddQuotaLock",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/AddQuotaLock");
+
+        com.oracle.bmc.responses.AsyncHandler<AddQuotaLockRequest, AddQuotaLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddQuotaLockRequest, AddQuotaLockResponse>,
+                        java.util.concurrent.Future<AddQuotaLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddQuotaLockRequest, AddQuotaLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateQuotaResponse> createQuota(
             CreateQuotaRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateQuotaRequest, CreateQuotaResponse>
@@ -549,6 +597,55 @@ public class QuotasAsyncClient implements QuotasAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListQuotasRequest, ListQuotasResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveQuotaLockResponse> removeQuotaLock(
+            RemoveQuotaLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveQuotaLockRequest, RemoveQuotaLockResponse>
+                    handler) {
+        LOG.trace("Called async removeQuotaLock");
+        final RemoveQuotaLockRequest interceptedRequest =
+                RemoveQuotaLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveQuotaLockConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveQuotaLockResponse>
+                transformer = RemoveQuotaLockConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "RemoveQuotaLock",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/RemoveQuotaLock");
+
+        com.oracle.bmc.responses.AsyncHandler<RemoveQuotaLockRequest, RemoveQuotaLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveQuotaLockRequest, RemoveQuotaLockResponse>,
+                        java.util.concurrent.Future<RemoveQuotaLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveQuotaLockRequest, RemoveQuotaLockResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

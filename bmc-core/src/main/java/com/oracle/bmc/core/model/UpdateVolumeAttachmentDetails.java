@@ -29,9 +29,21 @@ public final class UpdateVolumeAttachmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The iscsi login state of the volume attachment. For a multipath volume attachment,
+         * all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("iscsiLoginState")
         private IscsiLoginState iscsiLoginState;
 
+        /**
+         * The iscsi login state of the volume attachment. For a multipath volume attachment,
+         * all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+         *
+         * @param iscsiLoginState the value to set
+         * @return this builder
+         **/
         public Builder iscsiLoginState(IscsiLoginState iscsiLoginState) {
             this.iscsiLoginState = iscsiLoginState;
             this.__explicitlySet__.add("iscsiLoginState");
@@ -118,6 +130,12 @@ public final class UpdateVolumeAttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("iscsiLoginState")
     private final IscsiLoginState iscsiLoginState;
 
+    /**
+     * The iscsi login state of the volume attachment. For a multipath volume attachment,
+     * all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+     *
+     * @return the value
+     **/
     public IscsiLoginState getIscsiLoginState() {
         return iscsiLoginState;
     }

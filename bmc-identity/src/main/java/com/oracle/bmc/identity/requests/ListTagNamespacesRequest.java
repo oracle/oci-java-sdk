@@ -17,6 +17,10 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +30,10 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -35,6 +43,10 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -45,6 +57,11 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean includeSubcompartments;
 
+    /**
+     * An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this
+     * parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
+     *
+     */
     public Boolean getIncludeSubcompartments() {
         return includeSubcompartments;
     }
@@ -54,6 +71,10 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.identity.model.TagNamespace.LifecycleState lifecycleState;
 
+    /**
+     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     *
+     */
     public com.oracle.bmc.identity.model.TagNamespace.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -65,11 +86,16 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -77,11 +103,16 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -89,11 +120,16 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -101,12 +137,18 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this
+         * parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
+         *
+         */
         private Boolean includeSubcompartments = null;
 
         /**
          * An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this
          * parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
          *
+         * @param includeSubcompartments the value to set
          * @return this builder instance
          */
         public Builder includeSubcompartments(Boolean includeSubcompartments) {
@@ -114,11 +156,16 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+         *
+         */
         private com.oracle.bmc.identity.model.TagNamespace.LifecycleState lifecycleState = null;
 
         /**
          * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -203,7 +250,8 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -214,6 +262,10 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

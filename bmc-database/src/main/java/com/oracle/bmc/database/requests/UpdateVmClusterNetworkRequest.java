@@ -18,6 +18,9 @@ public class UpdateVmClusterNetworkRequest
      */
     private String exadataInfrastructureId;
 
+    /**
+     * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
@@ -26,6 +29,9 @@ public class UpdateVmClusterNetworkRequest
      */
     private String vmClusterNetworkId;
 
+    /**
+     * The VM cluster network [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getVmClusterNetworkId() {
         return vmClusterNetworkId;
     }
@@ -35,6 +41,9 @@ public class UpdateVmClusterNetworkRequest
     private com.oracle.bmc.database.model.UpdateVmClusterNetworkDetails
             updateVmClusterNetworkDetails;
 
+    /**
+     * Request to update the properties of a VM cluster network.
+     */
     public com.oracle.bmc.database.model.UpdateVmClusterNetworkDetails
             getUpdateVmClusterNetworkDetails() {
         return updateVmClusterNetworkDetails;
@@ -47,6 +56,12 @@ public class UpdateVmClusterNetworkRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -56,6 +71,10 @@ public class UpdateVmClusterNetworkRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -78,10 +97,14 @@ public class UpdateVmClusterNetworkRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String exadataInfrastructureId = null;
 
         /**
          * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param exadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
@@ -89,10 +112,14 @@ public class UpdateVmClusterNetworkRequest
             return this;
         }
 
+        /**
+         * The VM cluster network [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String vmClusterNetworkId = null;
 
         /**
          * The VM cluster network [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param vmClusterNetworkId the value to set
          * @return this builder instance
          */
         public Builder vmClusterNetworkId(String vmClusterNetworkId) {
@@ -100,11 +127,15 @@ public class UpdateVmClusterNetworkRequest
             return this;
         }
 
+        /**
+         * Request to update the properties of a VM cluster network.
+         */
         private com.oracle.bmc.database.model.UpdateVmClusterNetworkDetails
                 updateVmClusterNetworkDetails = null;
 
         /**
          * Request to update the properties of a VM cluster network.
+         * @param updateVmClusterNetworkDetails the value to set
          * @return this builder instance
          */
         public Builder updateVmClusterNetworkDetails(
@@ -114,6 +145,12 @@ public class UpdateVmClusterNetworkRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -121,6 +158,7 @@ public class UpdateVmClusterNetworkRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -128,11 +166,16 @@ public class UpdateVmClusterNetworkRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -227,7 +270,8 @@ public class UpdateVmClusterNetworkRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -238,6 +282,10 @@ public class UpdateVmClusterNetworkRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -27,18 +27,33 @@ package com.oracle.bmc.devops.model;
 public final class OcirDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies OCIR image path - optionally include tag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageUri")
         private String imageUri;
 
+        /**
+         * Specifies OCIR image path - optionally include tag.
+         * @param imageUri the value to set
+         * @return this builder
+         **/
         public Builder imageUri(String imageUri) {
             this.imageUri = imageUri;
             this.__explicitlySet__.add("imageUri");
             return this;
         }
-
+        /**
+         * Specifies image digest for the version of the image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
         private String imageDigest;
 
+        /**
+         * Specifies image digest for the version of the image.
+         * @param imageDigest the value to set
+         * @return this builder
+         **/
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = imageDigest;
             this.__explicitlySet__.add("imageDigest");
@@ -88,6 +103,10 @@ public final class OcirDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.annotation.JsonProperty("imageUri")
     private final String imageUri;
 
+    /**
+     * Specifies OCIR image path - optionally include tag.
+     * @return the value
+     **/
     public String getImageUri() {
         return imageUri;
     }
@@ -98,6 +117,10 @@ public final class OcirDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
     private final String imageDigest;
 
+    /**
+     * Specifies image digest for the version of the image.
+     * @return the value
+     **/
     public String getImageDigest() {
         return imageDigest;
     }

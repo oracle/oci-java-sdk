@@ -16,6 +16,9 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -24,6 +27,9 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String skillId;
 
+    /**
+     * Unique Skill identifier.
+     */
     public String getSkillId() {
         return skillId;
     }
@@ -32,6 +38,9 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -42,10 +51,14 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -53,10 +66,14 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Unique Skill identifier.
+         */
         private String skillId = null;
 
         /**
          * Unique Skill identifier.
+         * @param skillId the value to set
          * @return this builder instance
          */
         public Builder skillId(String skillId) {
@@ -64,10 +81,14 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -147,7 +168,8 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -156,6 +178,10 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

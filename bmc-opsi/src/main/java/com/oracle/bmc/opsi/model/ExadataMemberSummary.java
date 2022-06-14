@@ -31,27 +31,49 @@ public final class ExadataMemberSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of exadata member target
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of exadata member target
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Display Name of exadata member target
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display Name of exadata member target
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Entity type of exadata member target
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private EntityType entityType;
 
+        /**
+         * Entity type of exadata member target
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(EntityType entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -95,6 +117,10 @@ public final class ExadataMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of exadata member target
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -105,6 +131,10 @@ public final class ExadataMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display Name of exadata member target
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -169,6 +199,10 @@ public final class ExadataMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
+    /**
+     * Entity type of exadata member target
+     * @return the value
+     **/
     public EntityType getEntityType() {
         return entityType;
     }

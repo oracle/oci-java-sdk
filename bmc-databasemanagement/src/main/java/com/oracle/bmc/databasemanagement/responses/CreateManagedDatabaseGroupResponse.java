@@ -13,6 +13,10 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
      */
     private String location;
 
+    /**
+     * A link to the newly created Managed Database Group.
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -24,6 +28,12 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +44,11 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -43,6 +58,10 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
+    /**
+     * The returned ManagedDatabaseGroup instance.
+     * @return the value
+     */
     public com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup getManagedDatabaseGroup() {
         return managedDatabaseGroup;
     }
@@ -75,29 +94,67 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * A link to the newly created Managed Database Group.
+         */
         private String location;
 
+        /**
+         * A link to the newly created Managed Database Group.
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned ManagedDatabaseGroup instance.
+         */
         private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
+        /**
+         * The returned ManagedDatabaseGroup instance.
+         * @param managedDatabaseGroup the value to set
+         * @return this builder
+         */
         public Builder managedDatabaseGroup(
                 com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup) {
             this.managedDatabaseGroup = managedDatabaseGroup;
@@ -118,12 +175,20 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateManagedDatabaseGroupResponse build() {
             return new CreateManagedDatabaseGroupResponse(
                     __httpStatusCode__, location, opcRequestId, etag, managedDatabaseGroup);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

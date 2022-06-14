@@ -31,18 +31,33 @@ public final class ResourceTypeDefaultParameterValues {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of resource to which these resourceType-specific parameter values apply
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The type of resource to which these resourceType-specific parameter values apply
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * A list of parameter values used to import the package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameterValues")
         private java.util.Map<String, String> parameterValues;
 
+        /**
+         * A list of parameter values used to import the package.
+         * @param parameterValues the value to set
+         * @return this builder
+         **/
         public Builder parameterValues(java.util.Map<String, String> parameterValues) {
             this.parameterValues = parameterValues;
             this.__explicitlySet__.add("parameterValues");
@@ -86,6 +101,10 @@ public final class ResourceTypeDefaultParameterValues {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The type of resource to which these resourceType-specific parameter values apply
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -96,6 +115,10 @@ public final class ResourceTypeDefaultParameterValues {
     @com.fasterxml.jackson.annotation.JsonProperty("parameterValues")
     private final java.util.Map<String, String> parameterValues;
 
+    /**
+     * A list of parameter values used to import the package.
+     * @return the value
+     **/
     public java.util.Map<String, String> getParameterValues() {
         return parameterValues;
     }

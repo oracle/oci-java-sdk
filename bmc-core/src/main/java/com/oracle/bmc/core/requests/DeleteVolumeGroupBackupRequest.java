@@ -18,6 +18,10 @@ public class DeleteVolumeGroupBackupRequest
      */
     private String volumeGroupBackupId;
 
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+     *
+     */
     public String getVolumeGroupBackupId() {
         return volumeGroupBackupId;
     }
@@ -29,6 +33,12 @@ public class DeleteVolumeGroupBackupRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -40,11 +50,16 @@ public class DeleteVolumeGroupBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+         *
+         */
         private String volumeGroupBackupId = null;
 
         /**
          * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
          *
+         * @param volumeGroupBackupId the value to set
          * @return this builder instance
          */
         public Builder volumeGroupBackupId(String volumeGroupBackupId) {
@@ -52,6 +67,12 @@ public class DeleteVolumeGroupBackupRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -59,6 +80,7 @@ public class DeleteVolumeGroupBackupRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -136,12 +158,17 @@ public class DeleteVolumeGroupBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().volumeGroupBackupId(volumeGroupBackupId).ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

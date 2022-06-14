@@ -48,63 +48,113 @@ public final class LinkSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the link.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID of the link.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * OCID of the parent tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTenancyId")
         private String parentTenancyId;
 
+        /**
+         * OCID of the parent tenancy.
+         * @param parentTenancyId the value to set
+         * @return this builder
+         **/
         public Builder parentTenancyId(String parentTenancyId) {
             this.parentTenancyId = parentTenancyId;
             this.__explicitlySet__.add("parentTenancyId");
             return this;
         }
-
+        /**
+         * OCID of the child tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("childTenancyId")
         private String childTenancyId;
 
+        /**
+         * OCID of the child tenancy.
+         * @param childTenancyId the value to set
+         * @return this builder
+         **/
         public Builder childTenancyId(String childTenancyId) {
             this.childTenancyId = childTenancyId;
             this.__explicitlySet__.add("childTenancyId");
             return this;
         }
-
+        /**
+         * Lifecycle state of the link.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * Lifecycle state of the link.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Date-time when this link was created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date-time when this link was created
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Date-time when this link was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Date-time when this link was last updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Date-time when this link was terminated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeTerminated")
         private java.util.Date timeTerminated;
 
+        /**
+         * Date-time when this link was terminated.
+         * @param timeTerminated the value to set
+         * @return this builder
+         **/
         public Builder timeTerminated(java.util.Date timeTerminated) {
             this.timeTerminated = timeTerminated;
             this.__explicitlySet__.add("timeTerminated");
@@ -161,6 +211,10 @@ public final class LinkSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID of the link.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -171,6 +225,10 @@ public final class LinkSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentTenancyId")
     private final String parentTenancyId;
 
+    /**
+     * OCID of the parent tenancy.
+     * @return the value
+     **/
     public String getParentTenancyId() {
         return parentTenancyId;
     }
@@ -181,6 +239,10 @@ public final class LinkSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("childTenancyId")
     private final String childTenancyId;
 
+    /**
+     * OCID of the child tenancy.
+     * @return the value
+     **/
     public String getChildTenancyId() {
         return childTenancyId;
     }
@@ -191,6 +253,10 @@ public final class LinkSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * Lifecycle state of the link.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -201,6 +267,10 @@ public final class LinkSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date-time when this link was created
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -211,6 +281,10 @@ public final class LinkSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Date-time when this link was last updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -221,6 +295,10 @@ public final class LinkSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeTerminated")
     private final java.util.Date timeTerminated;
 
+    /**
+     * Date-time when this link was terminated.
+     * @return the value
+     **/
     public java.util.Date getTimeTerminated() {
         return timeTerminated;
     }

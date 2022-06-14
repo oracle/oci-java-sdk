@@ -45,45 +45,93 @@ public final class QueryResultRowTypeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Datatype of the query result row element.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * Datatype of the query result row element.
+         *
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * Granular unit in which the query result row element's data is represented.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
+        /**
+         * Granular unit in which the query result row element's data is represented.
+         *
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-
+        /**
+         * Alias name if an alias is used for the query result row element or an assigned display name from the query language
+         * in some default cases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Alias name if an alias is used for the query result row element or an assigned display name from the query language
+         * in some default cases.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Actual show expression in the user typed query that produced this column.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
+        /**
+         * Actual show expression in the user typed query that produced this column.
+         *
+         * @param expression the value to set
+         * @return this builder
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
-
+        /**
+         * A query result row type summary object that represents a nested table structure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowTypeSummaries")
         private java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries;
 
+        /**
+         * A query result row type summary object that represents a nested table structure.
+         *
+         * @param queryResultRowTypeSummaries the value to set
+         * @return this builder
+         **/
         public Builder queryResultRowTypeSummaries(
                 java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries) {
             this.queryResultRowTypeSummaries = queryResultRowTypeSummaries;
@@ -134,6 +182,11 @@ public final class QueryResultRowTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * Datatype of the query result row element.
+     *
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -145,6 +198,11 @@ public final class QueryResultRowTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
+    /**
+     * Granular unit in which the query result row element's data is represented.
+     *
+     * @return the value
+     **/
     public String getUnit() {
         return unit;
     }
@@ -157,6 +215,12 @@ public final class QueryResultRowTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Alias name if an alias is used for the query result row element or an assigned display name from the query language
+     * in some default cases.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -168,6 +232,11 @@ public final class QueryResultRowTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
+    /**
+     * Actual show expression in the user typed query that produced this column.
+     *
+     * @return the value
+     **/
     public String getExpression() {
         return expression;
     }
@@ -179,6 +248,11 @@ public final class QueryResultRowTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultRowTypeSummaries")
     private final java.util.List<QueryResultRowTypeSummary> queryResultRowTypeSummaries;
 
+    /**
+     * A query result row type summary object that represents a nested table structure.
+     *
+     * @return the value
+     **/
     public java.util.List<QueryResultRowTypeSummary> getQueryResultRowTypeSummaries() {
         return queryResultRowTypeSummaries;
     }

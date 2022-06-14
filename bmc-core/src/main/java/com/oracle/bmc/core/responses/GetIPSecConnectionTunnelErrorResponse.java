@@ -15,6 +15,12 @@ public class GetIPSecConnectionTunnelErrorResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class GetIPSecConnectionTunnelErrorResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.core.model.IPSecConnectionTunnelErrorDetails
             iPSecConnectionTunnelErrorDetails;
 
+    /**
+     * The returned IPSecConnectionTunnelErrorDetails instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.IPSecConnectionTunnelErrorDetails
             getIPSecConnectionTunnelErrorDetails() {
         return iPSecConnectionTunnelErrorDetails;
@@ -53,16 +63,36 @@ public class GetIPSecConnectionTunnelErrorResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned IPSecConnectionTunnelErrorDetails instance.
+         */
         private com.oracle.bmc.core.model.IPSecConnectionTunnelErrorDetails
                 iPSecConnectionTunnelErrorDetails;
 
+        /**
+         * The returned IPSecConnectionTunnelErrorDetails instance.
+         * @param iPSecConnectionTunnelErrorDetails the value to set
+         * @return this builder
+         */
         public Builder iPSecConnectionTunnelErrorDetails(
                 com.oracle.bmc.core.model.IPSecConnectionTunnelErrorDetails
                         iPSecConnectionTunnelErrorDetails) {
@@ -82,12 +112,20 @@ public class GetIPSecConnectionTunnelErrorResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetIPSecConnectionTunnelErrorResponse build() {
             return new GetIPSecConnectionTunnelErrorResponse(
                     __httpStatusCode__, opcRequestId, iPSecConnectionTunnelErrorDetails);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

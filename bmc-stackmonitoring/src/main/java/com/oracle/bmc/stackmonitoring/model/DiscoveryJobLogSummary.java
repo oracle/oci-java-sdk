@@ -33,36 +33,65 @@ public final class DiscoveryJobLogSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of Discovery job
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of Discovery job
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Type of log (INFO, WARNING, ERROR or SUCCESS)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logType")
         private LogType logType;
 
+        /**
+         * Type of log (INFO, WARNING, ERROR or SUCCESS)
+         * @param logType the value to set
+         * @return this builder
+         **/
         public Builder logType(LogType logType) {
             this.logType = logType;
             this.__explicitlySet__.add("logType");
             return this;
         }
-
+        /**
+         * Log message
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logMessage")
         private String logMessage;
 
+        /**
+         * Log message
+         * @param logMessage the value to set
+         * @return this builder
+         **/
         public Builder logMessage(String logMessage) {
             this.logMessage = logMessage;
             this.__explicitlySet__.add("logMessage");
             return this;
         }
-
+        /**
+         * Time the Job log was created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Time the Job log was created
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -109,6 +138,10 @@ public final class DiscoveryJobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of Discovery job
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -169,6 +202,10 @@ public final class DiscoveryJobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("logType")
     private final LogType logType;
 
+    /**
+     * Type of log (INFO, WARNING, ERROR or SUCCESS)
+     * @return the value
+     **/
     public LogType getLogType() {
         return logType;
     }
@@ -179,6 +216,10 @@ public final class DiscoveryJobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("logMessage")
     private final String logMessage;
 
+    /**
+     * Log message
+     * @return the value
+     **/
     public String getLogMessage() {
         return logMessage;
     }
@@ -189,6 +230,10 @@ public final class DiscoveryJobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Time the Job log was created
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

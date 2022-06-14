@@ -32,9 +32,39 @@ public final class UpdateNetworkSecurityGroupsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the load
+         * balancer.
+         * <p>
+         * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+         * <p>
+         * The benefits of associating the load balancer with NSGs include:
+         * <p>
+         *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * <p>
+         *  The network security rules of other resources can reference the NSGs associated with the load balancer
+         *    to ensure access.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
+        /**
+         * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the load
+         * balancer.
+         * <p>
+         * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+         * <p>
+         * The benefits of associating the load balancer with NSGs include:
+         * <p>
+         *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * <p>
+         *  The network security rules of other resources can reference the NSGs associated with the load balancer
+         *    to ensure access.
+         *
+         * @param networkSecurityGroupIds the value to set
+         * @return this builder
+         **/
         public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = networkSecurityGroupIds;
             this.__explicitlySet__.add("networkSecurityGroupIds");
@@ -88,6 +118,21 @@ public final class UpdateNetworkSecurityGroupsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
+    /**
+     * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the load
+     * balancer.
+     * <p>
+     * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+     * <p>
+     * The benefits of associating the load balancer with NSGs include:
+     * <p>
+     *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * <p>
+     *  The network security rules of other resources can reference the NSGs associated with the load balancer
+     *    to ensure access.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNetworkSecurityGroupIds() {
         return networkSecurityGroupIds;
     }

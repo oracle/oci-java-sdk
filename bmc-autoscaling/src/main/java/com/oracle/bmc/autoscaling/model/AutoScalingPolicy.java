@@ -64,6 +64,10 @@ public class AutoScalingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Capacity capacity;
 
+    /**
+     * The capacity requirements of the autoscaling policy.
+     * @return the value
+     **/
     public Capacity getCapacity() {
         return capacity;
     }
@@ -74,6 +78,10 @@ public class AutoScalingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The ID of the autoscaling policy that is assigned after creation.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -85,6 +93,11 @@ public class AutoScalingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -98,6 +111,13 @@ public class AutoScalingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the autoscaling configuration was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -108,6 +128,10 @@ public class AutoScalingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether the autoscaling policy is enabled.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }

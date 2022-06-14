@@ -17,6 +17,9 @@ public class GetBdsMetastoreConfigurationRequest
      */
     private String bdsInstanceId;
 
+    /**
+     * The OCID of the cluster.
+     */
     public String getBdsInstanceId() {
         return bdsInstanceId;
     }
@@ -25,6 +28,9 @@ public class GetBdsMetastoreConfigurationRequest
      */
     private String metastoreConfigId;
 
+    /**
+     * The metastore configuration ID
+     */
     public String getMetastoreConfigId() {
         return metastoreConfigId;
     }
@@ -33,6 +39,9 @@ public class GetBdsMetastoreConfigurationRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,10 +53,14 @@ public class GetBdsMetastoreConfigurationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the cluster.
+         */
         private String bdsInstanceId = null;
 
         /**
          * The OCID of the cluster.
+         * @param bdsInstanceId the value to set
          * @return this builder instance
          */
         public Builder bdsInstanceId(String bdsInstanceId) {
@@ -55,10 +68,14 @@ public class GetBdsMetastoreConfigurationRequest
             return this;
         }
 
+        /**
+         * The metastore configuration ID
+         */
         private String metastoreConfigId = null;
 
         /**
          * The metastore configuration ID
+         * @param metastoreConfigId the value to set
          * @return this builder instance
          */
         public Builder metastoreConfigId(String metastoreConfigId) {
@@ -66,10 +83,14 @@ public class GetBdsMetastoreConfigurationRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -149,7 +170,8 @@ public class GetBdsMetastoreConfigurationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -158,6 +180,10 @@ public class GetBdsMetastoreConfigurationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

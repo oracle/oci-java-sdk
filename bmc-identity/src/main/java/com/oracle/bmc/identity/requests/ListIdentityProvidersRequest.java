@@ -17,6 +17,9 @@ public class ListIdentityProvidersRequest
      */
     private String protocol;
 
+    /**
+     * The protocol used for federation.
+     */
     public String getProtocol() {
         return protocol;
     }
@@ -26,6 +29,10 @@ public class ListIdentityProvidersRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -35,6 +42,10 @@ public class ListIdentityProvidersRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -44,6 +55,10 @@ public class ListIdentityProvidersRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -53,6 +68,10 @@ public class ListIdentityProvidersRequest
      */
     private String name;
 
+    /**
+     * A filter to only return resources that match the given name exactly.
+     *
+     */
     public String getName() {
         return name;
     }
@@ -113,6 +132,17 @@ public class ListIdentityProvidersRequest
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for NAME is ascending. The NAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by Availability Domain if the scope of the resource type is within a
+     * single Availability Domain. If you call one of these "List" operations without specifying
+     * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -161,6 +191,11 @@ public class ListIdentityProvidersRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
+     * is case sensitive.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -170,6 +205,10 @@ public class ListIdentityProvidersRequest
      */
     private com.oracle.bmc.identity.model.IdentityProvider.LifecycleState lifecycleState;
 
+    /**
+     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     *
+     */
     public com.oracle.bmc.identity.model.IdentityProvider.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -181,10 +220,14 @@ public class ListIdentityProvidersRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The protocol used for federation.
+         */
         private String protocol = null;
 
         /**
          * The protocol used for federation.
+         * @param protocol the value to set
          * @return this builder instance
          */
         public Builder protocol(String protocol) {
@@ -192,11 +235,16 @@ public class ListIdentityProvidersRequest
             return this;
         }
 
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -204,11 +252,16 @@ public class ListIdentityProvidersRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -216,11 +269,16 @@ public class ListIdentityProvidersRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -228,11 +286,16 @@ public class ListIdentityProvidersRequest
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given name exactly.
+         *
+         */
         private String name = null;
 
         /**
          * A filter to only return resources that match the given name exactly.
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -240,6 +303,17 @@ public class ListIdentityProvidersRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for NAME is ascending. The NAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by Availability Domain if the scope of the resource type is within a
+         * single Availability Domain. If you call one of these "List" operations without specifying
+         * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -252,6 +326,7 @@ public class ListIdentityProvidersRequest
          * single Availability Domain. If you call one of these "List" operations without specifying
          * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -259,12 +334,18 @@ public class ListIdentityProvidersRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
+         * is case sensitive.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
          * is case sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -272,11 +353,16 @@ public class ListIdentityProvidersRequest
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+         *
+         */
         private com.oracle.bmc.identity.model.IdentityProvider.LifecycleState lifecycleState = null;
 
         /**
          * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -367,7 +453,8 @@ public class ListIdentityProvidersRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -381,6 +468,10 @@ public class ListIdentityProvidersRequest
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

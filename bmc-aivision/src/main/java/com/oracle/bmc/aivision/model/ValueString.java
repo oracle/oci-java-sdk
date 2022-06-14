@@ -60,10 +60,17 @@ public final class ValueString extends FieldValue {
             this.__explicitlySet__.add("wordIndexes");
             return this;
         }
-
+        /**
+         * The string text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The string text.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -122,6 +129,10 @@ public final class ValueString extends FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The string text.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

@@ -30,9 +30,25 @@ public final class InstanceConfigurationAvailabilityConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
+         * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+         * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryAction")
         private RecoveryAction recoveryAction;
 
+        /**
+         * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
+         * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+         * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+         *
+         * @param recoveryAction the value to set
+         * @return this builder
+         **/
         public Builder recoveryAction(RecoveryAction recoveryAction) {
             this.recoveryAction = recoveryAction;
             this.__explicitlySet__.add("recoveryAction");
@@ -131,6 +147,14 @@ public final class InstanceConfigurationAvailabilityConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryAction")
     private final RecoveryAction recoveryAction;
 
+    /**
+     * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+     * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
+     * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+     * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+     *
+     * @return the value
+     **/
     public RecoveryAction getRecoveryAction() {
         return recoveryAction;
     }

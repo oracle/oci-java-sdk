@@ -17,6 +17,9 @@ public class UpdateSubnetRequest
      */
     private String subnetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -25,6 +28,9 @@ public class UpdateSubnetRequest
      */
     private com.oracle.bmc.core.model.UpdateSubnetDetails updateSubnetDetails;
 
+    /**
+     * Details object for updating a subnet.
+     */
     public com.oracle.bmc.core.model.UpdateSubnetDetails getUpdateSubnetDetails() {
         return updateSubnetDetails;
     }
@@ -36,6 +42,12 @@ public class UpdateSubnetRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -57,10 +69,14 @@ public class UpdateSubnetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         */
         private String subnetId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         * @param subnetId the value to set
          * @return this builder instance
          */
         public Builder subnetId(String subnetId) {
@@ -68,10 +84,14 @@ public class UpdateSubnetRequest
             return this;
         }
 
+        /**
+         * Details object for updating a subnet.
+         */
         private com.oracle.bmc.core.model.UpdateSubnetDetails updateSubnetDetails = null;
 
         /**
          * Details object for updating a subnet.
+         * @param updateSubnetDetails the value to set
          * @return this builder instance
          */
         public Builder updateSubnetDetails(
@@ -80,6 +100,12 @@ public class UpdateSubnetRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -87,6 +113,7 @@ public class UpdateSubnetRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -177,7 +204,8 @@ public class UpdateSubnetRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -186,6 +214,10 @@ public class UpdateSubnetRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

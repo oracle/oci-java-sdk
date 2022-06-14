@@ -106,6 +106,38 @@ public interface ConfigAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse> handler);
 
     /**
+     * Returns all metrics associated with the specified namespace.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RetrieveNamespaceMetricsResponse> retrieveNamespaceMetrics(
+            RetrieveNamespaceMetricsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RetrieveNamespaceMetricsRequest, RetrieveNamespaceMetricsResponse>
+                    handler);
+
+    /**
+     * Returns all namespaces available in APM.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RetrieveNamespacesResponse> retrieveNamespaces(
+            RetrieveNamespacesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RetrieveNamespacesRequest, RetrieveNamespacesResponse>
+                    handler);
+
+    /**
      * Updates the details of the configuration item identified by the OCID.
      *
      * @param request The request object containing the details to send
@@ -118,5 +150,23 @@ public interface ConfigAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateConfigResponse> updateConfig(
             UpdateConfigRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
+                    handler);
+
+    /**
+     * Validates the Span Filter pattern (filterText) for syntactic correctness.
+     * Returns 204 on success, 422 when validation fails.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidateSpanFilterPatternResponse> validateSpanFilterPattern(
+            ValidateSpanFilterPatternRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ValidateSpanFilterPatternRequest, ValidateSpanFilterPatternResponse>
                     handler);
 }

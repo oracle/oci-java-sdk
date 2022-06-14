@@ -35,27 +35,55 @@ public final class FilterOutput {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Modified user visible query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
 
+        /**
+         * Modified user visible query string.
+         *
+         * @param displayQueryString the value to set
+         * @return this builder
+         **/
         public Builder displayQueryString(String displayQueryString) {
             this.displayQueryString = displayQueryString;
             this.__explicitlySet__.add("displayQueryString");
             return this;
         }
-
+        /**
+         * Modified localization agnostic query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
         private String internalQueryString;
 
+        /**
+         * Modified localization agnostic query string.
+         *
+         * @param internalQueryString the value to set
+         * @return this builder
+         **/
         public Builder internalQueryString(String internalQueryString) {
             this.internalQueryString = internalQueryString;
             this.__explicitlySet__.add("internalQueryString");
             return this;
         }
-
+        /**
+         * Operation response time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
         private Long responseTimeInMs;
 
+        /**
+         * Operation response time.
+         *
+         * @param responseTimeInMs the value to set
+         * @return this builder
+         **/
         public Builder responseTimeInMs(Long responseTimeInMs) {
             this.responseTimeInMs = responseTimeInMs;
             this.__explicitlySet__.add("responseTimeInMs");
@@ -102,6 +130,11 @@ public final class FilterOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
     private final String displayQueryString;
 
+    /**
+     * Modified user visible query string.
+     *
+     * @return the value
+     **/
     public String getDisplayQueryString() {
         return displayQueryString;
     }
@@ -113,6 +146,11 @@ public final class FilterOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
     private final String internalQueryString;
 
+    /**
+     * Modified localization agnostic query string.
+     *
+     * @return the value
+     **/
     public String getInternalQueryString() {
         return internalQueryString;
     }
@@ -124,6 +162,11 @@ public final class FilterOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
     private final Long responseTimeInMs;
 
+    /**
+     * Operation response time.
+     *
+     * @return the value
+     **/
     public Long getResponseTimeInMs() {
         return responseTimeInMs;
     }

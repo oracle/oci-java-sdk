@@ -17,6 +17,9 @@ public class GetConsoleHistoryContentRequest
      */
     private String instanceConsoleHistoryId;
 
+    /**
+     * The OCID of the console history.
+     */
     public String getInstanceConsoleHistoryId() {
         return instanceConsoleHistoryId;
     }
@@ -25,6 +28,9 @@ public class GetConsoleHistoryContentRequest
      */
     private Integer offset;
 
+    /**
+     * Offset of the snapshot data to retrieve.
+     */
     public Integer getOffset() {
         return offset;
     }
@@ -33,6 +39,9 @@ public class GetConsoleHistoryContentRequest
      */
     private Integer length;
 
+    /**
+     * Length of the snapshot data to retrieve.
+     */
     public Integer getLength() {
         return length;
     }
@@ -44,10 +53,14 @@ public class GetConsoleHistoryContentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the console history.
+         */
         private String instanceConsoleHistoryId = null;
 
         /**
          * The OCID of the console history.
+         * @param instanceConsoleHistoryId the value to set
          * @return this builder instance
          */
         public Builder instanceConsoleHistoryId(String instanceConsoleHistoryId) {
@@ -55,10 +68,14 @@ public class GetConsoleHistoryContentRequest
             return this;
         }
 
+        /**
+         * Offset of the snapshot data to retrieve.
+         */
         private Integer offset = null;
 
         /**
          * Offset of the snapshot data to retrieve.
+         * @param offset the value to set
          * @return this builder instance
          */
         public Builder offset(Integer offset) {
@@ -66,10 +83,14 @@ public class GetConsoleHistoryContentRequest
             return this;
         }
 
+        /**
+         * Length of the snapshot data to retrieve.
+         */
         private Integer length = null;
 
         /**
          * Length of the snapshot data to retrieve.
+         * @param length the value to set
          * @return this builder instance
          */
         public Builder length(Integer length) {
@@ -149,7 +170,8 @@ public class GetConsoleHistoryContentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -158,6 +180,10 @@ public class GetConsoleHistoryContentRequest
                 .length(length);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

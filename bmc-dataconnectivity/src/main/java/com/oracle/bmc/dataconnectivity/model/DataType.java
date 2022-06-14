@@ -78,19 +78,33 @@ public final class DataType extends BaseType {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The data type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dtType")
         private DtType dtType;
 
+        /**
+         * The data type.
+         * @param dtType the value to set
+         * @return this builder
+         **/
         public Builder dtType(DtType dtType) {
             this.dtType = dtType;
             this.__explicitlySet__.add("dtType");
             return this;
         }
-
+        /**
+         * The data type system name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeSystemName")
         private String typeSystemName;
 
+        /**
+         * The data type system name.
+         * @param typeSystemName the value to set
+         * @return this builder
+         **/
         public Builder typeSystemName(String typeSystemName) {
             this.typeSystemName = typeSystemName;
             this.__explicitlySet__.add("typeSystemName");
@@ -224,6 +238,10 @@ public final class DataType extends BaseType {
     @com.fasterxml.jackson.annotation.JsonProperty("dtType")
     private final DtType dtType;
 
+    /**
+     * The data type.
+     * @return the value
+     **/
     public DtType getDtType() {
         return dtType;
     }
@@ -234,6 +252,10 @@ public final class DataType extends BaseType {
     @com.fasterxml.jackson.annotation.JsonProperty("typeSystemName")
     private final String typeSystemName;
 
+    /**
+     * The data type system name.
+     * @return the value
+     **/
     public String getTypeSystemName() {
         return typeSystemName;
     }

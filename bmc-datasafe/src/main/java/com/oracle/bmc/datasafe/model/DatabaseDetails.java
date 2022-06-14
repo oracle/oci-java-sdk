@@ -53,6 +53,10 @@ public class DatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
     private final InfrastructureType infrastructureType;
 
+    /**
+     * The infrastructure type the database is running on.
+     * @return the value
+     **/
     public InfrastructureType getInfrastructureType() {
         return infrastructureType;
     }

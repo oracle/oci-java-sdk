@@ -31,18 +31,33 @@ public final class ScimClientCredentials {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The client identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
+        /**
+         * The client identifier.
+         * @param clientId the value to set
+         * @return this builder
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
-
+        /**
+         * The client secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
         private String clientSecret;
 
+        /**
+         * The client secret.
+         * @param clientSecret the value to set
+         * @return this builder
+         **/
         public Builder clientSecret(String clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
@@ -84,6 +99,10 @@ public final class ScimClientCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
+    /**
+     * The client identifier.
+     * @return the value
+     **/
     public String getClientId() {
         return clientId;
     }
@@ -94,6 +113,10 @@ public final class ScimClientCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
     private final String clientSecret;
 
+    /**
+     * The client secret.
+     * @return the value
+     **/
     public String getClientSecret() {
         return clientSecret;
     }

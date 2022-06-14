@@ -16,6 +16,9 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String tableNameOrId;
 
+    /**
+     * A table name within the compartment, or a table OCID.
+     */
     public String getTableNameOrId() {
         return tableNameOrId;
     }
@@ -27,6 +30,12 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String compartmentId;
 
+    /**
+     * The ID of a table's compartment. When a table is identified
+     * by name, the compartmentId is often needed to provide
+     * context for interpreting the name.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -35,6 +44,9 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Boolean isIfExists;
 
+    /**
+     * Set as true to select "if exists" behavior.
+     */
     public Boolean getIsIfExists() {
         return isIfExists;
     }
@@ -48,6 +60,14 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -56,6 +76,9 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,10 +90,14 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A table name within the compartment, or a table OCID.
+         */
         private String tableNameOrId = null;
 
         /**
          * A table name within the compartment, or a table OCID.
+         * @param tableNameOrId the value to set
          * @return this builder instance
          */
         public Builder tableNameOrId(String tableNameOrId) {
@@ -78,6 +105,12 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The ID of a table's compartment. When a table is identified
+         * by name, the compartmentId is often needed to provide
+         * context for interpreting the name.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -85,6 +118,7 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * by name, the compartmentId is often needed to provide
          * context for interpreting the name.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -92,10 +126,14 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Set as true to select "if exists" behavior.
+         */
         private Boolean isIfExists = null;
 
         /**
          * Set as true to select "if exists" behavior.
+         * @param isIfExists the value to set
          * @return this builder instance
          */
         public Builder isIfExists(Boolean isIfExists) {
@@ -103,6 +141,14 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -112,6 +158,7 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -119,10 +166,14 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -206,7 +257,8 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +269,10 @@ public class DeleteTableRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

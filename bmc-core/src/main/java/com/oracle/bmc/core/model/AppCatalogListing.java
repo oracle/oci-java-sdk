@@ -53,72 +53,137 @@ public final class AppCatalogListing {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Listing's contact URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactUrl")
         private String contactUrl;
 
+        /**
+         * Listing's contact URL.
+         * @param contactUrl the value to set
+         * @return this builder
+         **/
         public Builder contactUrl(String contactUrl) {
             this.contactUrl = contactUrl;
             this.__explicitlySet__.add("contactUrl");
             return this;
         }
-
+        /**
+         * Description of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the listing.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The OCID of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
+        /**
+         * The OCID of the listing.
+         * @param listingId the value to set
+         * @return this builder
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+         * Example: {@code 2018-03-20T12:32:53.532Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
         private java.util.Date timePublished;
 
+        /**
+         * Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+         * Example: {@code 2018-03-20T12:32:53.532Z}
+         *
+         * @param timePublished the value to set
+         * @return this builder
+         **/
         public Builder timePublished(java.util.Date timePublished) {
             this.timePublished = timePublished;
             this.__explicitlySet__.add("timePublished");
             return this;
         }
-
+        /**
+         * Publisher's logo URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisherLogoUrl")
         private String publisherLogoUrl;
 
+        /**
+         * Publisher's logo URL.
+         * @param publisherLogoUrl the value to set
+         * @return this builder
+         **/
         public Builder publisherLogoUrl(String publisherLogoUrl) {
             this.publisherLogoUrl = publisherLogoUrl;
             this.__explicitlySet__.add("publisherLogoUrl");
             return this;
         }
-
+        /**
+         * Name of the publisher who published this listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
         private String publisherName;
 
+        /**
+         * Name of the publisher who published this listing.
+         * @param publisherName the value to set
+         * @return this builder
+         **/
         public Builder publisherName(String publisherName) {
             this.publisherName = publisherName;
             this.__explicitlySet__.add("publisherName");
             return this;
         }
-
+        /**
+         * Summary of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
+        /**
+         * Summary of the listing.
+         * @param summary the value to set
+         * @return this builder
+         **/
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
@@ -177,6 +242,10 @@ public final class AppCatalogListing {
     @com.fasterxml.jackson.annotation.JsonProperty("contactUrl")
     private final String contactUrl;
 
+    /**
+     * Listing's contact URL.
+     * @return the value
+     **/
     public String getContactUrl() {
         return contactUrl;
     }
@@ -187,6 +256,10 @@ public final class AppCatalogListing {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the listing.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -197,6 +270,10 @@ public final class AppCatalogListing {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * The OCID of the listing.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -209,6 +286,12 @@ public final class AppCatalogListing {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -221,6 +304,12 @@ public final class AppCatalogListing {
     @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
     private final java.util.Date timePublished;
 
+    /**
+     * Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+     * Example: {@code 2018-03-20T12:32:53.532Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimePublished() {
         return timePublished;
     }
@@ -231,6 +320,10 @@ public final class AppCatalogListing {
     @com.fasterxml.jackson.annotation.JsonProperty("publisherLogoUrl")
     private final String publisherLogoUrl;
 
+    /**
+     * Publisher's logo URL.
+     * @return the value
+     **/
     public String getPublisherLogoUrl() {
         return publisherLogoUrl;
     }
@@ -241,6 +334,10 @@ public final class AppCatalogListing {
     @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
     private final String publisherName;
 
+    /**
+     * Name of the publisher who published this listing.
+     * @return the value
+     **/
     public String getPublisherName() {
         return publisherName;
     }
@@ -251,6 +348,10 @@ public final class AppCatalogListing {
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
+    /**
+     * Summary of the listing.
+     * @return the value
+     **/
     public String getSummary() {
         return summary;
     }

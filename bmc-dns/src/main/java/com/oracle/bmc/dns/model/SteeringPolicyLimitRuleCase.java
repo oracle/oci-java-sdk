@@ -30,18 +30,53 @@ public final class SteeringPolicyLimitRuleCase {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An expression that uses conditions at the time of a DNS query to indicate
+         * whether a case matches. Conditions may include the geographical location, IP
+         * subnet, or ASN the DNS query originated. **Example:** If you have an
+         * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
+         * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
+         * matches queries from that office.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
         private String caseCondition;
 
+        /**
+         * An expression that uses conditions at the time of a DNS query to indicate
+         * whether a case matches. Conditions may include the geographical location, IP
+         * subnet, or ASN the DNS query originated. **Example:** If you have an
+         * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
+         * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
+         * matches queries from that office.
+         *
+         * @param caseCondition the value to set
+         * @return this builder
+         **/
         public Builder caseCondition(String caseCondition) {
             this.caseCondition = caseCondition;
             this.__explicitlySet__.add("caseCondition");
             return this;
         }
-
+        /**
+         * The number of answers allowed to remain after the limit rule has been processed, keeping only the
+         * first of the remaining answers in the list. Example: If the {@code count} property is set to {@code 2} and
+         * four answers remain before the limit rule is processed, only the first two answers in the list will
+         * remain after the limit rule has been processed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The number of answers allowed to remain after the limit rule has been processed, keeping only the
+         * first of the remaining answers in the list. Example: If the {@code count} property is set to {@code 2} and
+         * four answers remain before the limit rule is processed, only the first two answers in the list will
+         * remain after the limit rule has been processed.
+         *
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -90,6 +125,16 @@ public final class SteeringPolicyLimitRuleCase {
     @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
     private final String caseCondition;
 
+    /**
+     * An expression that uses conditions at the time of a DNS query to indicate
+     * whether a case matches. Conditions may include the geographical location, IP
+     * subnet, or ASN the DNS query originated. **Example:** If you have an
+     * office that uses the subnet {@code 192.0.2.0/24} you could use a {@code caseCondition}
+     * expression {@code query.client.address in ('192.0.2.0/24')} to define a case that
+     * matches queries from that office.
+     *
+     * @return the value
+     **/
     public String getCaseCondition() {
         return caseCondition;
     }
@@ -104,6 +149,14 @@ public final class SteeringPolicyLimitRuleCase {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The number of answers allowed to remain after the limit rule has been processed, keeping only the
+     * first of the remaining answers in the list. Example: If the {@code count} property is set to {@code 2} and
+     * four answers remain before the limit rule is processed, only the first two answers in the list will
+     * remain after the limit rule has been processed.
+     *
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

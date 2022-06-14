@@ -15,6 +15,12 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.oda.model.PackageItem packageItem;
 
+    /**
+     * The returned PackageItem instance.
+     * @return the value
+     */
     public com.oracle.bmc.oda.model.PackageItem getPackageItem() {
         return packageItem;
     }
@@ -46,15 +56,35 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned PackageItem instance.
+         */
         private com.oracle.bmc.oda.model.PackageItem packageItem;
 
+        /**
+         * The returned PackageItem instance.
+         * @param packageItem the value to set
+         * @return this builder
+         */
         public Builder packageItem(com.oracle.bmc.oda.model.PackageItem packageItem) {
             this.packageItem = packageItem;
             return this;
@@ -72,11 +102,19 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetPackageResponse build() {
             return new GetPackageResponse(__httpStatusCode__, opcRequestId, packageItem);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

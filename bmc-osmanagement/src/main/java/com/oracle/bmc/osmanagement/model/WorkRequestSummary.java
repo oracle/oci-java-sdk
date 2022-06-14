@@ -56,81 +56,157 @@ public final class WorkRequestSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the type of operation this Work Request performs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationTypes operationType;
 
+        /**
+         * the type of operation this Work Request performs
+         * @param operationType the value to set
+         * @return this builder
+         **/
         public Builder operationType(OperationTypes operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-
+        /**
+         * status of current work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
+        /**
+         * status of current work request.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(OperationStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The id of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The id of the work request.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The ocid of the compartment that contains the work request. Work requests should be scoped to
+         * the same compartment as the resource the work request affects. If the work request affects multiple resources,
+         * and those resources are not in the same compartment, it is up to the service team to pick the primary
+         * resource whose compartment should be used
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The ocid of the compartment that contains the work request. Work requests should be scoped to
+         * the same compartment as the resource the work request affects. If the work request affects multiple resources,
+         * and those resources are not in the same compartment, it is up to the service team to pick the primary
+         * resource whose compartment should be used
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Description of the type of work.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the type of work.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A progress or error message, if there is any.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * A progress or error message, if there is any.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * Percentage of the request completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
+        /**
+         * Percentage of the request completed.
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-
+        /**
+         * The date and time the request was created, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * The date and time the request was created, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * The Operating System type of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamilies osFamily;
 
+        /**
+         * The Operating System type of the managed instance.
+         * @param osFamily the value to set
+         * @return this builder
+         **/
         public Builder osFamily(OsFamilies osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
@@ -191,6 +267,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationTypes operationType;
 
+    /**
+     * the type of operation this Work Request performs
+     * @return the value
+     **/
     public OperationTypes getOperationType() {
         return operationType;
     }
@@ -201,6 +281,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
+    /**
+     * status of current work request.
+     * @return the value
+     **/
     public OperationStatus getStatus() {
         return status;
     }
@@ -211,6 +295,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The id of the work request.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -225,6 +313,14 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The ocid of the compartment that contains the work request. Work requests should be scoped to
+     * the same compartment as the resource the work request affects. If the work request affects multiple resources,
+     * and those resources are not in the same compartment, it is up to the service team to pick the primary
+     * resource whose compartment should be used
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -235,6 +331,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the type of work.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -245,6 +345,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A progress or error message, if there is any.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -255,6 +359,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
+    /**
+     * Percentage of the request completed.
+     * @return the value
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
@@ -267,6 +375,12 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * The date and time the request was created, as described in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -277,6 +391,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamilies osFamily;
 
+    /**
+     * The Operating System type of the managed instance.
+     * @return the value
+     **/
     public OsFamilies getOsFamily() {
         return osFamily;
     }

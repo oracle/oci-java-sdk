@@ -29,9 +29,17 @@ public final class TargetDetectorRecipeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of TargetDetectorRecipeSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TargetDetectorRecipeSummary> items;
 
+        /**
+         * List of TargetDetectorRecipeSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TargetDetectorRecipeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class TargetDetectorRecipeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TargetDetectorRecipeSummary> items;
 
+    /**
+     * List of TargetDetectorRecipeSummary
+     * @return the value
+     **/
     public java.util.List<TargetDetectorRecipeSummary> getItems() {
         return items;
     }

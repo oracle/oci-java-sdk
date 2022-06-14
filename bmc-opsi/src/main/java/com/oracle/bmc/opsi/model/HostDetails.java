@@ -45,54 +45,103 @@ public final class HostDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * The user-friendly name for the host. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostDisplayName")
         private String hostDisplayName;
 
+        /**
+         * The user-friendly name for the host. The name does not have to be unique.
+         * @param hostDisplayName the value to set
+         * @return this builder
+         **/
         public Builder hostDisplayName(String hostDisplayName) {
             this.hostDisplayName = hostDisplayName;
             this.__explicitlySet__.add("hostDisplayName");
             return this;
         }
-
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         * @param platformType the value to set
+         * @return this builder
+         **/
         public Builder platformType(PlatformType platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
             return this;
         }
-
+        /**
+         * The identifier of the agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentIdentifier")
         private String agentIdentifier;
 
+        /**
+         * The identifier of the agent.
+         * @param agentIdentifier the value to set
+         * @return this builder
+         **/
         public Builder agentIdentifier(String agentIdentifier) {
             this.agentIdentifier = agentIdentifier;
             this.__explicitlySet__.add("agentIdentifier");
@@ -147,6 +196,10 @@ public final class HostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -157,6 +210,10 @@ public final class HostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -167,6 +224,10 @@ public final class HostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * The host name. The host name is unique amongst the hosts managed by the same management agent.
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -177,6 +238,10 @@ public final class HostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostDisplayName")
     private final String hostDisplayName;
 
+    /**
+     * The user-friendly name for the host. The name does not have to be unique.
+     * @return the value
+     **/
     public String getHostDisplayName() {
         return hostDisplayName;
     }
@@ -243,6 +308,13 @@ public final class HostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
+    /**
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     *
+     * @return the value
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }
@@ -253,6 +325,10 @@ public final class HostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("agentIdentifier")
     private final String agentIdentifier;
 
+    /**
+     * The identifier of the agent.
+     * @return the value
+     **/
     public String getAgentIdentifier() {
         return agentIdentifier;
     }

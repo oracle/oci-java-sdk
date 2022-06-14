@@ -14,6 +14,11 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage privateApplicationPackage;
 
+    /**
+     * The returned PrivateApplicationPackage instance.
+     * @return the value
+     */
     public com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage
             getPrivateApplicationPackage() {
         return privateApplicationPackage;
@@ -65,23 +80,53 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned PrivateApplicationPackage instance.
+         */
         private com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage
                 privateApplicationPackage;
 
+        /**
+         * The returned PrivateApplicationPackage instance.
+         * @param privateApplicationPackage the value to set
+         * @return this builder
+         */
         public Builder privateApplicationPackage(
                 com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage
                         privateApplicationPackage) {
@@ -102,12 +147,20 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetPrivateApplicationPackageResponse build() {
             return new GetPrivateApplicationPackageResponse(
                     __httpStatusCode__, etag, opcRequestId, privateApplicationPackage);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

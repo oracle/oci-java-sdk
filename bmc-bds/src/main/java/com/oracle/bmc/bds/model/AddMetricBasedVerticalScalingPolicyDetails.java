@@ -30,6 +30,7 @@ package com.oracle.bmc.bds.model;
 public final class AddMetricBasedVerticalScalingPolicyDetails extends AddAutoScalePolicyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("scaleUpConfig")
         private MetricBasedVerticalScaleUpConfig scaleUpConfig;
 

@@ -34,36 +34,69 @@ public final class PropertyOverride {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Match Type. Accepted values are: contains.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchType")
         private String matchType;
 
+        /**
+         * Match Type. Accepted values are: contains.
+         *
+         * @param matchType the value to set
+         * @return this builder
+         **/
         public Builder matchType(String matchType) {
             this.matchType = matchType;
             this.__explicitlySet__.add("matchType");
             return this;
         }
-
+        /**
+         * Match Value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchValue")
         private String matchValue;
 
+        /**
+         * Match Value.
+         * @param matchValue the value to set
+         * @return this builder
+         **/
         public Builder matchValue(String matchValue) {
             this.matchValue = matchValue;
             this.__explicitlySet__.add("matchValue");
             return this;
         }
-
+        /**
+         * Property to override. Accepted values are: logSourceName, charEncoding.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertyName")
         private String propertyName;
 
+        /**
+         * Property to override. Accepted values are: logSourceName, charEncoding.
+         *
+         * @param propertyName the value to set
+         * @return this builder
+         **/
         public Builder propertyName(String propertyName) {
             this.propertyName = propertyName;
             this.__explicitlySet__.add("propertyName");
             return this;
         }
-
+        /**
+         * Value of the property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertyValue")
         private String propertyValue;
 
+        /**
+         * Value of the property.
+         * @param propertyValue the value to set
+         * @return this builder
+         **/
         public Builder propertyValue(String propertyValue) {
             this.propertyValue = propertyValue;
             this.__explicitlySet__.add("propertyValue");
@@ -111,6 +144,11 @@ public final class PropertyOverride {
     @com.fasterxml.jackson.annotation.JsonProperty("matchType")
     private final String matchType;
 
+    /**
+     * Match Type. Accepted values are: contains.
+     *
+     * @return the value
+     **/
     public String getMatchType() {
         return matchType;
     }
@@ -121,6 +159,10 @@ public final class PropertyOverride {
     @com.fasterxml.jackson.annotation.JsonProperty("matchValue")
     private final String matchValue;
 
+    /**
+     * Match Value.
+     * @return the value
+     **/
     public String getMatchValue() {
         return matchValue;
     }
@@ -132,6 +174,11 @@ public final class PropertyOverride {
     @com.fasterxml.jackson.annotation.JsonProperty("propertyName")
     private final String propertyName;
 
+    /**
+     * Property to override. Accepted values are: logSourceName, charEncoding.
+     *
+     * @return the value
+     **/
     public String getPropertyName() {
         return propertyName;
     }
@@ -142,6 +189,10 @@ public final class PropertyOverride {
     @com.fasterxml.jackson.annotation.JsonProperty("propertyValue")
     private final String propertyValue;
 
+    /**
+     * Value of the property.
+     * @return the value
+     **/
     public String getPropertyValue() {
         return propertyValue;
     }

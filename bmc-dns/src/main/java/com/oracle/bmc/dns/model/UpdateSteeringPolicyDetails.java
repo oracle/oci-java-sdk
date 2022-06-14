@@ -58,73 +58,274 @@ public final class UpdateSteeringPolicyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name for the steering policy. Does not have to be unique and can be changed.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name for the steering policy. Does not have to be unique and can be changed.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The Time To Live (TTL) for responses from the steering policy, in seconds.
+         * If not specified during creation, a value of 30 seconds will be used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ttl")
         private Integer ttl;
 
+        /**
+         * The Time To Live (TTL) for responses from the steering policy, in seconds.
+         * If not specified during creation, a value of 30 seconds will be used.
+         *
+         * @param ttl the value to set
+         * @return this builder
+         **/
         public Builder ttl(Integer ttl) {
             this.ttl = ttl;
             this.__explicitlySet__.add("ttl");
             return this;
         }
-
+        /**
+         * The OCID of the health check monitor providing health data about the answers of the
+         * steering policy. A steering policy answer with {@code rdata} matching a monitored endpoint
+         * will use the health data of that endpoint. A steering policy answer with {@code rdata} not
+         * matching any monitored endpoint will be assumed healthy.
+         * <p>
+         *
+         * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
+         * must be created using the Health Checks service first. For more information on how to
+         * create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckMonitorId")
         private String healthCheckMonitorId;
 
+        /**
+         * The OCID of the health check monitor providing health data about the answers of the
+         * steering policy. A steering policy answer with {@code rdata} matching a monitored endpoint
+         * will use the health data of that endpoint. A steering policy answer with {@code rdata} not
+         * matching any monitored endpoint will be assumed healthy.
+         * <p>
+         *
+         * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
+         * must be created using the Health Checks service first. For more information on how to
+         * create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
+         *
+         * @param healthCheckMonitorId the value to set
+         * @return this builder
+         **/
         public Builder healthCheckMonitorId(String healthCheckMonitorId) {
             this.healthCheckMonitorId = healthCheckMonitorId;
             this.__explicitlySet__.add("healthCheckMonitorId");
             return this;
         }
-
+        /**
+         * A set of predefined rules based on the desired purpose of the steering policy. Each
+         * template utilizes Traffic Management's rules in a different order to produce the desired
+         * results when answering DNS queries.
+         * <p>
+         *
+         * **Example:** The {@code FAILOVER} template determines answers by filtering the policy's answers
+         * using the {@code FILTER} rule first, then the following rules in succession: {@code HEALTH}, {@code PRIORITY},
+         * and {@code LIMIT}. This gives the domain dynamic failover capability.
+         * <p>
+         *
+         * It is **strongly recommended** to use a template other than {@code CUSTOM} when creating
+         * a steering policy.
+         * <p>
+         *
+         * All templates require the rule order to begin with an unconditional {@code FILTER} rule that keeps
+         * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
+         * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
+         * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
+         * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+         * <p>
+         **Template Types**
+         * <p>
+         * {@code FAILOVER} - Uses health check information on your endpoints to determine which DNS answers
+         * to serve. If an endpoint fails a health check, the answer for that endpoint will be removed
+         * from the list of available answers until the endpoint is detected as healthy.
+         * <p>
+         *
+         * * {@code LOAD_BALANCE} - Distributes web traffic to specified endpoints based on defined weights.
+         * <p>
+         *
+         * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
+         * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+         * <p>
+         *
+         * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
+         * <p>
+         *
+         * * {@code ROUTE_BY_IP} - Answers DNS queries based on the query's IP address.
+         * <p>
+         *
+         * * {@code CUSTOM} - Allows a customized configuration of rules.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("template")
         private Template template;
 
+        /**
+         * A set of predefined rules based on the desired purpose of the steering policy. Each
+         * template utilizes Traffic Management's rules in a different order to produce the desired
+         * results when answering DNS queries.
+         * <p>
+         *
+         * **Example:** The {@code FAILOVER} template determines answers by filtering the policy's answers
+         * using the {@code FILTER} rule first, then the following rules in succession: {@code HEALTH}, {@code PRIORITY},
+         * and {@code LIMIT}. This gives the domain dynamic failover capability.
+         * <p>
+         *
+         * It is **strongly recommended** to use a template other than {@code CUSTOM} when creating
+         * a steering policy.
+         * <p>
+         *
+         * All templates require the rule order to begin with an unconditional {@code FILTER} rule that keeps
+         * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
+         * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
+         * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
+         * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+         * <p>
+         **Template Types**
+         * <p>
+         * {@code FAILOVER} - Uses health check information on your endpoints to determine which DNS answers
+         * to serve. If an endpoint fails a health check, the answer for that endpoint will be removed
+         * from the list of available answers until the endpoint is detected as healthy.
+         * <p>
+         *
+         * * {@code LOAD_BALANCE} - Distributes web traffic to specified endpoints based on defined weights.
+         * <p>
+         *
+         * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
+         * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+         * <p>
+         *
+         * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
+         * <p>
+         *
+         * * {@code ROUTE_BY_IP} - Answers DNS queries based on the query's IP address.
+         * <p>
+         *
+         * * {@code CUSTOM} - Allows a customized configuration of rules.
+         *
+         * @param template the value to set
+         * @return this builder
+         **/
         public Builder template(Template template) {
             this.template = template;
             this.__explicitlySet__.add("template");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         *
+         * **Example:** {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         *
+         * **Example:** {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         *
+         * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         *
+         * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The set of all answers that can potentially issue from the steering policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("answers")
         private java.util.List<SteeringPolicyAnswer> answers;
 
+        /**
+         * The set of all answers that can potentially issue from the steering policy.
+         *
+         * @param answers the value to set
+         * @return this builder
+         **/
         public Builder answers(java.util.List<SteeringPolicyAnswer> answers) {
             this.answers = answers;
             this.__explicitlySet__.add("answers");
             return this;
         }
-
+        /**
+         * The series of rules that will be processed in sequence to reduce the pool of answers
+         * to a response for any given request.
+         * <p>
+         *
+         * The first rule receives a shuffled list of all answers, and every other rule receives
+         * the list of answers emitted by the one preceding it. The last rule populates the
+         * response.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<SteeringPolicyRule> rules;
 
+        /**
+         * The series of rules that will be processed in sequence to reduce the pool of answers
+         * to a response for any given request.
+         * <p>
+         *
+         * The first rule receives a shuffled list of all answers, and every other rule receives
+         * the list of answers emitted by the one preceding it. The last rule populates the
+         * response.
+         *
+         * @param rules the value to set
+         * @return this builder
+         **/
         public Builder rules(java.util.List<SteeringPolicyRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -185,6 +386,12 @@ public final class UpdateSteeringPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name for the steering policy. Does not have to be unique and can be changed.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -197,6 +404,12 @@ public final class UpdateSteeringPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
     private final Integer ttl;
 
+    /**
+     * The Time To Live (TTL) for responses from the steering policy, in seconds.
+     * If not specified during creation, a value of 30 seconds will be used.
+     *
+     * @return the value
+     **/
     public Integer getTtl() {
         return ttl;
     }
@@ -216,6 +429,19 @@ public final class UpdateSteeringPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckMonitorId")
     private final String healthCheckMonitorId;
 
+    /**
+     * The OCID of the health check monitor providing health data about the answers of the
+     * steering policy. A steering policy answer with {@code rdata} matching a monitored endpoint
+     * will use the health data of that endpoint. A steering policy answer with {@code rdata} not
+     * matching any monitored endpoint will be assumed healthy.
+     * <p>
+     *
+     * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
+     * must be created using the Health Checks service first. For more information on how to
+     * create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
+     *
+     * @return the value
+     **/
     public String getHealthCheckMonitorId() {
         return healthCheckMonitorId;
     }
@@ -347,6 +573,51 @@ public final class UpdateSteeringPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("template")
     private final Template template;
 
+    /**
+     * A set of predefined rules based on the desired purpose of the steering policy. Each
+     * template utilizes Traffic Management's rules in a different order to produce the desired
+     * results when answering DNS queries.
+     * <p>
+     *
+     * **Example:** The {@code FAILOVER} template determines answers by filtering the policy's answers
+     * using the {@code FILTER} rule first, then the following rules in succession: {@code HEALTH}, {@code PRIORITY},
+     * and {@code LIMIT}. This gives the domain dynamic failover capability.
+     * <p>
+     *
+     * It is **strongly recommended** to use a template other than {@code CUSTOM} when creating
+     * a steering policy.
+     * <p>
+     *
+     * All templates require the rule order to begin with an unconditional {@code FILTER} rule that keeps
+     * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
+     * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
+     * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
+     * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * <p>
+     **Template Types**
+     * <p>
+     * {@code FAILOVER} - Uses health check information on your endpoints to determine which DNS answers
+     * to serve. If an endpoint fails a health check, the answer for that endpoint will be removed
+     * from the list of available answers until the endpoint is detected as healthy.
+     * <p>
+     *
+     * * {@code LOAD_BALANCE} - Distributes web traffic to specified endpoints based on defined weights.
+     * <p>
+     *
+     * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
+     * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+     * <p>
+     *
+     * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
+     * <p>
+     *
+     * * {@code ROUTE_BY_IP} - Answers DNS queries based on the query's IP address.
+     * <p>
+     *
+     * * {@code CUSTOM} - Allows a customized configuration of rules.
+     *
+     * @return the value
+     **/
     public Template getTemplate() {
         return template;
     }
@@ -362,6 +633,15 @@ public final class UpdateSteeringPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     *
+     * **Example:** {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -377,6 +657,15 @@ public final class UpdateSteeringPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     *
+     * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -388,6 +677,11 @@ public final class UpdateSteeringPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("answers")
     private final java.util.List<SteeringPolicyAnswer> answers;
 
+    /**
+     * The set of all answers that can potentially issue from the steering policy.
+     *
+     * @return the value
+     **/
     public java.util.List<SteeringPolicyAnswer> getAnswers() {
         return answers;
     }
@@ -405,6 +699,17 @@ public final class UpdateSteeringPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<SteeringPolicyRule> rules;
 
+    /**
+     * The series of rules that will be processed in sequence to reduce the pool of answers
+     * to a response for any given request.
+     * <p>
+     *
+     * The first rule receives a shuffled list of all answers, and every other rule receives
+     * the list of answers emitted by the one preceding it. The last rule populates the
+     * response.
+     *
+     * @return the value
+     **/
     public java.util.List<SteeringPolicyRule> getRules() {
         return rules;
     }

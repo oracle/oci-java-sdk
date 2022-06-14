@@ -13,6 +13,10 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +29,13 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -37,6 +48,13 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcPrevPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the previous batch of items.
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -46,6 +64,10 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.rover.model.RoverEntitlementCollection roverEntitlementCollection;
 
+    /**
+     * The returned RoverEntitlementCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.rover.model.RoverEntitlementCollection getRoverEntitlementCollection() {
         return roverEntitlementCollection;
     }
@@ -78,29 +100,73 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * The returned RoverEntitlementCollection instance.
+         */
         private com.oracle.bmc.rover.model.RoverEntitlementCollection roverEntitlementCollection;
 
+        /**
+         * The returned RoverEntitlementCollection instance.
+         * @param roverEntitlementCollection the value to set
+         * @return this builder
+         */
         public Builder roverEntitlementCollection(
                 com.oracle.bmc.rover.model.RoverEntitlementCollection roverEntitlementCollection) {
             this.roverEntitlementCollection = roverEntitlementCollection;
@@ -121,6 +187,10 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListRoverEntitlementsResponse build() {
             return new ListRoverEntitlementsResponse(
                     __httpStatusCode__,
@@ -131,6 +201,10 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

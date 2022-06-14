@@ -18,6 +18,9 @@ public class UpdateBackendRequest
      */
     private String networkLoadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
@@ -26,6 +29,9 @@ public class UpdateBackendRequest
      */
     private com.oracle.bmc.networkloadbalancer.model.UpdateBackendDetails updateBackendDetails;
 
+    /**
+     * Details for updating a backend server.
+     */
     public com.oracle.bmc.networkloadbalancer.model.UpdateBackendDetails getUpdateBackendDetails() {
         return updateBackendDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateBackendRequest
      */
     private String backendSetName;
 
+    /**
+     * The name of the backend set associated with the backend server.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     */
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -51,6 +63,15 @@ public class UpdateBackendRequest
      */
     private String backendName;
 
+    /**
+     * The name of the backend server to update.
+     * If the backend was created with an explicitly specified name, that name should be used here.
+     * If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
+     * If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
+     * <p>
+     * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
+     *
+     */
     public String getBackendName() {
         return backendName;
     }
@@ -61,6 +82,11 @@ public class UpdateBackendRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -74,6 +100,14 @@ public class UpdateBackendRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+     * server error without risk of rerunning that same action. Retry tokens expire after 24
+     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -87,6 +121,14 @@ public class UpdateBackendRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the current etag value of the resource.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -109,10 +151,14 @@ public class UpdateBackendRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         */
         private String networkLoadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
@@ -120,11 +166,15 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * Details for updating a backend server.
+         */
         private com.oracle.bmc.networkloadbalancer.model.UpdateBackendDetails updateBackendDetails =
                 null;
 
         /**
          * Details for updating a backend server.
+         * @param updateBackendDetails the value to set
          * @return this builder instance
          */
         public Builder updateBackendDetails(
@@ -134,6 +184,12 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * The name of the backend set associated with the backend server.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         */
         private String backendSetName = null;
 
         /**
@@ -141,6 +197,7 @@ public class UpdateBackendRequest
          * <p>
          * Example: {@code example_backend_set}
          *
+         * @param backendSetName the value to set
          * @return this builder instance
          */
         public Builder backendSetName(String backendSetName) {
@@ -148,6 +205,15 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * The name of the backend server to update.
+         * If the backend was created with an explicitly specified name, that name should be used here.
+         * If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
+         * If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
+         * <p>
+         * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
+         *
+         */
         private String backendName = null;
 
         /**
@@ -158,6 +224,7 @@ public class UpdateBackendRequest
          * <p>
          * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
          *
+         * @param backendName the value to set
          * @return this builder instance
          */
         public Builder backendName(String backendName) {
@@ -165,12 +232,18 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -178,6 +251,14 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+         * server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -187,6 +268,7 @@ public class UpdateBackendRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -194,6 +276,14 @@ public class UpdateBackendRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the current etag value of the resource.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -203,6 +293,7 @@ public class UpdateBackendRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the current etag value of the resource.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -301,7 +392,8 @@ public class UpdateBackendRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -314,6 +406,10 @@ public class UpdateBackendRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

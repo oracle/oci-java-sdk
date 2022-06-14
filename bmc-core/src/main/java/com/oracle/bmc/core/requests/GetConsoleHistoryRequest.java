@@ -16,6 +16,9 @@ public class GetConsoleHistoryRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String instanceConsoleHistoryId;
 
+    /**
+     * The OCID of the console history.
+     */
     public String getInstanceConsoleHistoryId() {
         return instanceConsoleHistoryId;
     }
@@ -27,10 +30,14 @@ public class GetConsoleHistoryRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the console history.
+         */
         private String instanceConsoleHistoryId = null;
 
         /**
          * The OCID of the console history.
+         * @param instanceConsoleHistoryId the value to set
          * @return this builder instance
          */
         public Builder instanceConsoleHistoryId(String instanceConsoleHistoryId) {
@@ -106,12 +113,17 @@ public class GetConsoleHistoryRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().instanceConsoleHistoryId(instanceConsoleHistoryId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

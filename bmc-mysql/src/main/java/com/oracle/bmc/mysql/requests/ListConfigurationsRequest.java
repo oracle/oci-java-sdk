@@ -16,6 +16,9 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +44,9 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String configurationId;
 
+    /**
+     * The requested Configuration instance.
+     */
     public String getConfigurationId() {
         return configurationId;
     }
@@ -43,6 +55,9 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private com.oracle.bmc.mysql.model.Configuration.LifecycleState lifecycleState;
 
+    /**
+     * Configuration Lifecycle State
+     */
     public com.oracle.bmc.mysql.model.Configuration.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -87,6 +102,9 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The requested Configuration types.
+     */
     public java.util.List<Type> getType() {
         return type;
     }
@@ -95,6 +113,9 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String displayName;
 
+    /**
+     * A filter to return only the resource matching the given display name exactly.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -103,6 +124,9 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String shapeName;
 
+    /**
+     * The requested Shape name.
+     */
     public String getShapeName() {
         return shapeName;
     }
@@ -151,6 +175,10 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending. Display name is default ordered as ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -195,6 +223,9 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The sort order to use (ASC or DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -205,6 +236,11 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated list call. For information about pagination, see
+     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -216,6 +252,12 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+     * the previous list call. For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -227,10 +269,14 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -238,6 +284,12 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -245,6 +297,7 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
          * contact Oracle about a specific request, please provide the request
          * ID that you supplied in this header with the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -252,10 +305,14 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The requested Configuration instance.
+         */
         private String configurationId = null;
 
         /**
          * The requested Configuration instance.
+         * @param configurationId the value to set
          * @return this builder instance
          */
         public Builder configurationId(String configurationId) {
@@ -263,10 +320,14 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Configuration Lifecycle State
+         */
         private com.oracle.bmc.mysql.model.Configuration.LifecycleState lifecycleState = null;
 
         /**
          * Configuration Lifecycle State
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -275,10 +336,14 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The requested Configuration types.
+         */
         private java.util.List<Type> type = null;
 
         /**
          * The requested Configuration types.
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(java.util.List<Type> type) {
@@ -288,16 +353,21 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Singular setter. The requested Configuration types.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder type(Type singularValue) {
             return this.type(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only the resource matching the given display name exactly.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only the resource matching the given display name exactly.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -305,10 +375,14 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The requested Shape name.
+         */
         private String shapeName = null;
 
         /**
          * The requested Shape name.
+         * @param shapeName the value to set
          * @return this builder instance
          */
         public Builder shapeName(String shapeName) {
@@ -316,11 +390,16 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending. Display name is default ordered as ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending. Display name is default ordered as ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -328,10 +407,14 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The sort order to use (ASC or DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use (ASC or DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -339,12 +422,18 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated list call. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated list call. For information about pagination, see
          * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -352,6 +441,12 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+         * the previous list call. For information about pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         *
+         */
         private String page = null;
 
         /**
@@ -359,6 +454,7 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
          * the previous list call. For information about pagination, see [List
          * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -454,7 +550,8 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -471,6 +568,10 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

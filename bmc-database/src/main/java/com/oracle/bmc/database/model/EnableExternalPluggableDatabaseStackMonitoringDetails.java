@@ -30,9 +30,21 @@ public final class EnableExternalPluggableDatabaseStackMonitoringDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseConnectorId")
         private String externalDatabaseConnectorId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         * @param externalDatabaseConnectorId the value to set
+         * @return this builder
+         **/
         public Builder externalDatabaseConnectorId(String externalDatabaseConnectorId) {
             this.externalDatabaseConnectorId = externalDatabaseConnectorId;
             this.__explicitlySet__.add("externalDatabaseConnectorId");
@@ -78,6 +90,12 @@ public final class EnableExternalPluggableDatabaseStackMonitoringDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseConnectorId")
     private final String externalDatabaseConnectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+     *
+     * @return the value
+     **/
     public String getExternalDatabaseConnectorId() {
         return externalDatabaseConnectorId;
     }

@@ -17,6 +17,9 @@ public class GetResponderExecutionRequest
      */
     private String responderExecutionId;
 
+    /**
+     * The identifier of the responder execution.
+     */
     public String getResponderExecutionId() {
         return responderExecutionId;
     }
@@ -25,6 +28,9 @@ public class GetResponderExecutionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,10 +42,14 @@ public class GetResponderExecutionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The identifier of the responder execution.
+         */
         private String responderExecutionId = null;
 
         /**
          * The identifier of the responder execution.
+         * @param responderExecutionId the value to set
          * @return this builder instance
          */
         public Builder responderExecutionId(String responderExecutionId) {
@@ -47,10 +57,14 @@ public class GetResponderExecutionRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,12 +142,17 @@ public class GetResponderExecutionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().responderExecutionId(responderExecutionId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

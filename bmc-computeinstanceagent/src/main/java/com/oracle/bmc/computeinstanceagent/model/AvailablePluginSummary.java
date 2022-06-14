@@ -33,36 +33,65 @@ public final class AvailablePluginSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The plugin name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The plugin name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A brief description of the plugin functionality
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
+        /**
+         * A brief description of the plugin functionality
+         * @param summary the value to set
+         * @return this builder
+         **/
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-
+        /**
+         * Is the plugin supported or not
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSupported")
         private Boolean isSupported;
 
+        /**
+         * Is the plugin supported or not
+         * @param isSupported the value to set
+         * @return this builder
+         **/
         public Builder isSupported(Boolean isSupported) {
             this.isSupported = isSupported;
             this.__explicitlySet__.add("isSupported");
             return this;
         }
-
+        /**
+         * Is the plugin enabled or disabled by default
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabledByDefault")
         private Boolean isEnabledByDefault;
 
+        /**
+         * Is the plugin enabled or disabled by default
+         * @param isEnabledByDefault the value to set
+         * @return this builder
+         **/
         public Builder isEnabledByDefault(Boolean isEnabledByDefault) {
             this.isEnabledByDefault = isEnabledByDefault;
             this.__explicitlySet__.add("isEnabledByDefault");
@@ -109,6 +138,10 @@ public final class AvailablePluginSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The plugin name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -119,6 +152,10 @@ public final class AvailablePluginSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
+    /**
+     * A brief description of the plugin functionality
+     * @return the value
+     **/
     public String getSummary() {
         return summary;
     }
@@ -129,6 +166,10 @@ public final class AvailablePluginSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSupported")
     private final Boolean isSupported;
 
+    /**
+     * Is the plugin supported or not
+     * @return the value
+     **/
     public Boolean getIsSupported() {
         return isSupported;
     }
@@ -139,6 +180,10 @@ public final class AvailablePluginSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabledByDefault")
     private final Boolean isEnabledByDefault;
 
+    /**
+     * Is the plugin enabled or disabled by default
+     * @return the value
+     **/
     public Boolean getIsEnabledByDefault() {
         return isEnabledByDefault;
     }

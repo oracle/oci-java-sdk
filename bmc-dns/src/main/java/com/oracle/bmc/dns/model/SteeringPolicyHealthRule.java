@@ -35,10 +35,33 @@ public final class SteeringPolicyHealthRule extends SteeringPolicyRule {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * An array of {@code caseConditions}. A rule may optionally include a sequence of cases defining alternate
+         * configurations for how it should behave during processing for any given DNS query. When a rule has
+         * no sequence of {@code cases}, it is always evaluated with the same configuration during processing. When
+         * a rule has an empty sequence of {@code cases}, it is always ignored during processing. When a rule has a
+         * non-empty sequence of {@code cases}, its behavior during processing is configured by the first matching
+         * {@code case} in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no
+         * {@code caseCondition} always matches. A rule case with a {@code caseCondition} matches only when that expression
+         * evaluates to true for the given query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cases")
         private java.util.List<SteeringPolicyHealthRuleCase> cases;
 
+        /**
+         * An array of {@code caseConditions}. A rule may optionally include a sequence of cases defining alternate
+         * configurations for how it should behave during processing for any given DNS query. When a rule has
+         * no sequence of {@code cases}, it is always evaluated with the same configuration during processing. When
+         * a rule has an empty sequence of {@code cases}, it is always ignored during processing. When a rule has a
+         * non-empty sequence of {@code cases}, its behavior during processing is configured by the first matching
+         * {@code case} in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no
+         * {@code caseCondition} always matches. A rule case with a {@code caseCondition} matches only when that expression
+         * evaluates to true for the given query.
+         *
+         * @param cases the value to set
+         * @return this builder
+         **/
         public Builder cases(java.util.List<SteeringPolicyHealthRuleCase> cases) {
             this.cases = cases;
             this.__explicitlySet__.add("cases");
@@ -96,6 +119,18 @@ public final class SteeringPolicyHealthRule extends SteeringPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("cases")
     private final java.util.List<SteeringPolicyHealthRuleCase> cases;
 
+    /**
+     * An array of {@code caseConditions}. A rule may optionally include a sequence of cases defining alternate
+     * configurations for how it should behave during processing for any given DNS query. When a rule has
+     * no sequence of {@code cases}, it is always evaluated with the same configuration during processing. When
+     * a rule has an empty sequence of {@code cases}, it is always ignored during processing. When a rule has a
+     * non-empty sequence of {@code cases}, its behavior during processing is configured by the first matching
+     * {@code case} in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no
+     * {@code caseCondition} always matches. A rule case with a {@code caseCondition} matches only when that expression
+     * evaluates to true for the given query.
+     *
+     * @return the value
+     **/
     public java.util.List<SteeringPolicyHealthRuleCase> getCases() {
         return cases;
     }

@@ -30,18 +30,33 @@ public final class SetAutoUpgradableConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Tenancy identifier i.e, Root compartment identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Tenancy identifier i.e, Root compartment identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * true if the agents can be upgraded automatically; false if they must be upgraded manually.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
         private Boolean isAgentAutoUpgradable;
 
+        /**
+         * true if the agents can be upgraded automatically; false if they must be upgraded manually.
+         * @param isAgentAutoUpgradable the value to set
+         * @return this builder
+         **/
         public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
             this.isAgentAutoUpgradable = isAgentAutoUpgradable;
             this.__explicitlySet__.add("isAgentAutoUpgradable");
@@ -86,6 +101,10 @@ public final class SetAutoUpgradableConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Tenancy identifier i.e, Root compartment identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -96,6 +115,10 @@ public final class SetAutoUpgradableConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
     private final Boolean isAgentAutoUpgradable;
 
+    /**
+     * true if the agents can be upgraded automatically; false if they must be upgraded manually.
+     * @return the value
+     **/
     public Boolean getIsAgentAutoUpgradable() {
         return isAgentAutoUpgradable;
     }

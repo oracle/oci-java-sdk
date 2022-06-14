@@ -18,6 +18,10 @@ public class ListTopUtilizedResourcesRequest
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +30,9 @@ public class ListTopUtilizedResourcesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -34,6 +41,9 @@ public class ListTopUtilizedResourcesRequest
      */
     private String page;
 
+    /**
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     */
     public String getPage() {
         return page;
     }
@@ -44,6 +54,11 @@ public class ListTopUtilizedResourcesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,6 +67,9 @@ public class ListTopUtilizedResourcesRequest
      */
     private Boolean isCompartmentIdInSubtree;
 
+    /**
+     * Indicates if the given compartment is the root compartment.
+     */
     public Boolean getIsCompartmentIdInSubtree() {
         return isCompartmentIdInSubtree;
     }
@@ -60,6 +78,9 @@ public class ListTopUtilizedResourcesRequest
      */
     private com.oracle.bmc.licensemanager.model.ResourceUnit resourceUnitType;
 
+    /**
+     * A filter to return only resources whose unit matches the given resource unit.
+     */
     public com.oracle.bmc.licensemanager.model.ResourceUnit getResourceUnitType() {
         return resourceUnitType;
     }
@@ -104,6 +125,9 @@ public class ListTopUtilizedResourcesRequest
         }
     };
 
+    /**
+     * The sort order to use, whether {@code ASC} or {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -157,6 +181,14 @@ public class ListTopUtilizedResourcesRequest
         }
     };
 
+    /**
+     * Specifies the attribute with which to sort the rules.
+     * <p>
+     * Default: {@code totalUnits}
+     * <p>
+     * **totalUnits:** Sorts by totalUnits consumed by resource.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -168,11 +200,16 @@ public class ListTopUtilizedResourcesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -180,10 +217,14 @@ public class ListTopUtilizedResourcesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -191,10 +232,14 @@ public class ListTopUtilizedResourcesRequest
             return this;
         }
 
+        /**
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         */
         private String page = null;
 
         /**
          * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -202,12 +247,18 @@ public class ListTopUtilizedResourcesRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -215,10 +266,14 @@ public class ListTopUtilizedResourcesRequest
             return this;
         }
 
+        /**
+         * Indicates if the given compartment is the root compartment.
+         */
         private Boolean isCompartmentIdInSubtree = null;
 
         /**
          * Indicates if the given compartment is the root compartment.
+         * @param isCompartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder isCompartmentIdInSubtree(Boolean isCompartmentIdInSubtree) {
@@ -226,10 +281,14 @@ public class ListTopUtilizedResourcesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources whose unit matches the given resource unit.
+         */
         private com.oracle.bmc.licensemanager.model.ResourceUnit resourceUnitType = null;
 
         /**
          * A filter to return only resources whose unit matches the given resource unit.
+         * @param resourceUnitType the value to set
          * @return this builder instance
          */
         public Builder resourceUnitType(
@@ -238,10 +297,14 @@ public class ListTopUtilizedResourcesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, whether {@code ASC} or {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether {@code ASC} or {@code DESC}.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -249,6 +312,14 @@ public class ListTopUtilizedResourcesRequest
             return this;
         }
 
+        /**
+         * Specifies the attribute with which to sort the rules.
+         * <p>
+         * Default: {@code totalUnits}
+         * <p>
+         * **totalUnits:** Sorts by totalUnits consumed by resource.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -258,6 +329,7 @@ public class ListTopUtilizedResourcesRequest
          * <p>
          * **totalUnits:** Sorts by totalUnits consumed by resource.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -347,7 +419,8 @@ public class ListTopUtilizedResourcesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -361,6 +434,10 @@ public class ListTopUtilizedResourcesRequest
                 .sortBy(sortBy);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

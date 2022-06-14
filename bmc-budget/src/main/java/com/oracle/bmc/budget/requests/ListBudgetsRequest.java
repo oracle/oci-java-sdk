@@ -16,6 +16,9 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -32,6 +38,9 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -40,6 +49,9 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.budget.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.budget.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -51,6 +63,12 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.budget.model.SortBy sortBy;
 
+    /**
+     * The field to sort by. If not specified, the default is timeCreated.
+     * The default sort order for timeCreated is DESC.
+     * The default sort order for displayName is ASC in alphanumeric order.
+     *
+     */
     public com.oracle.bmc.budget.model.SortBy getSortBy() {
         return sortBy;
     }
@@ -59,6 +77,9 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.budget.model.LifecycleState lifecycleState;
 
+    /**
+     * The current state of the resource to filter by.
+     */
     public com.oracle.bmc.budget.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -70,6 +91,12 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String displayName;
 
+    /**
+     * A user-friendly name. This does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -123,6 +150,13 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The type of target to filter by:
+     *   * ALL - List all budgets
+     *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
+     *   * TAG - List all budgets with targetType == "TAG"
+     *
+     */
     public TargetType getTargetType() {
         return targetType;
     }
@@ -131,6 +165,9 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -142,10 +179,14 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -153,10 +194,14 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -164,10 +209,14 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -175,10 +224,14 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.budget.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.budget.model.SortOrder sortOrder) {
@@ -186,6 +239,12 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The field to sort by. If not specified, the default is timeCreated.
+         * The default sort order for timeCreated is DESC.
+         * The default sort order for displayName is ASC in alphanumeric order.
+         *
+         */
         private com.oracle.bmc.budget.model.SortBy sortBy = null;
 
         /**
@@ -193,6 +252,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * The default sort order for timeCreated is DESC.
          * The default sort order for displayName is ASC in alphanumeric order.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(com.oracle.bmc.budget.model.SortBy sortBy) {
@@ -200,10 +260,14 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The current state of the resource to filter by.
+         */
         private com.oracle.bmc.budget.model.LifecycleState lifecycleState = null;
 
         /**
          * The current state of the resource to filter by.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(com.oracle.bmc.budget.model.LifecycleState lifecycleState) {
@@ -211,6 +275,12 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A user-friendly name. This does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -218,6 +288,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * <p>
          * Example: {@code My new resource}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -225,6 +296,13 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The type of target to filter by:
+         *   * ALL - List all budgets
+         *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
+         *   * TAG - List all budgets with targetType == "TAG"
+         *
+         */
         private TargetType targetType = null;
 
         /**
@@ -233,6 +311,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
          *   * TAG - List all budgets with targetType == "TAG"
          *
+         * @param targetType the value to set
          * @return this builder instance
          */
         public Builder targetType(TargetType targetType) {
@@ -240,10 +319,14 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -335,7 +418,8 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -350,6 +434,10 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

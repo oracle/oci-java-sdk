@@ -41,36 +41,65 @@ public final class InstancePoolInstanceLoadBalancerBackend {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the load balancer attached to the instance pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
+        /**
+         * The OCID of the load balancer attached to the instance pool.
+         * @param loadBalancerId the value to set
+         * @return this builder
+         **/
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
-
+        /**
+         * The name of the backend set on the load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
         private String backendSetName;
 
+        /**
+         * The name of the backend set on the load balancer.
+         * @param backendSetName the value to set
+         * @return this builder
+         **/
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = backendSetName;
             this.__explicitlySet__.add("backendSetName");
             return this;
         }
-
+        /**
+         * The name of the backend in the backend set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendName")
         private String backendName;
 
+        /**
+         * The name of the backend in the backend set.
+         * @param backendName the value to set
+         * @return this builder
+         **/
         public Builder backendName(String backendName) {
             this.backendName = backendName;
             this.__explicitlySet__.add("backendName");
             return this;
         }
-
+        /**
+         * The health of the backend as observed by the load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendHealthStatus")
         private BackendHealthStatus backendHealthStatus;
 
+        /**
+         * The health of the backend as observed by the load balancer.
+         * @param backendHealthStatus the value to set
+         * @return this builder
+         **/
         public Builder backendHealthStatus(BackendHealthStatus backendHealthStatus) {
             this.backendHealthStatus = backendHealthStatus;
             this.__explicitlySet__.add("backendHealthStatus");
@@ -118,6 +147,10 @@ public final class InstancePoolInstanceLoadBalancerBackend {
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
+    /**
+     * The OCID of the load balancer attached to the instance pool.
+     * @return the value
+     **/
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -128,6 +161,10 @@ public final class InstancePoolInstanceLoadBalancerBackend {
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
     private final String backendSetName;
 
+    /**
+     * The name of the backend set on the load balancer.
+     * @return the value
+     **/
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -138,6 +175,10 @@ public final class InstancePoolInstanceLoadBalancerBackend {
     @com.fasterxml.jackson.annotation.JsonProperty("backendName")
     private final String backendName;
 
+    /**
+     * The name of the backend in the backend set.
+     * @return the value
+     **/
     public String getBackendName() {
         return backendName;
     }
@@ -198,6 +239,10 @@ public final class InstancePoolInstanceLoadBalancerBackend {
     @com.fasterxml.jackson.annotation.JsonProperty("backendHealthStatus")
     private final BackendHealthStatus backendHealthStatus;
 
+    /**
+     * The health of the backend as observed by the load balancer.
+     * @return the value
+     **/
     public BackendHealthStatus getBackendHealthStatus() {
         return backendHealthStatus;
     }

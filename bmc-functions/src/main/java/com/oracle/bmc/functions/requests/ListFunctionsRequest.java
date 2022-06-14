@@ -17,6 +17,10 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String applicationId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
+     *
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -28,6 +32,12 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * <p>
+     * Default: 10
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -37,6 +47,10 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    /**
+     * The pagination token for a list query returned by a previous operation
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -47,6 +61,11 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,6 +76,11 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.functions.model.Function.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only functions that match the lifecycle state in this parameter.
+     * Example: {@code Creating}
+     *
+     */
     public com.oracle.bmc.functions.model.Function.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -66,6 +90,10 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String displayName;
 
+    /**
+     * A filter to return only functions with display names that match the display name string. Matching is exact.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -75,6 +103,10 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String id;
 
+    /**
+     * A filter to return only functions with the specified OCID.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -127,6 +159,13 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -186,6 +225,16 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * Specifies the attribute with which to sort the rules.
+     * <p>
+     * Default: {@code displayName}
+     * <p>
+     * **timeCreated:** Sorts by timeCreated.
+     * * **displayName:** Sorts by displayName.
+     * * **id:** Sorts by id.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -197,11 +246,16 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
+         *
+         */
         private String applicationId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
          *
+         * @param applicationId the value to set
          * @return this builder instance
          */
         public Builder applicationId(String applicationId) {
@@ -209,6 +263,12 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+         * <p>
+         * Default: 10
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -216,6 +276,7 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * <p>
          * Default: 10
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -223,11 +284,16 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The pagination token for a list query returned by a previous operation
+         *
+         */
         private String page = null;
 
         /**
          * The pagination token for a list query returned by a previous operation
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -235,12 +301,18 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -248,12 +320,18 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only functions that match the lifecycle state in this parameter.
+         * Example: {@code Creating}
+         *
+         */
         private com.oracle.bmc.functions.model.Function.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only functions that match the lifecycle state in this parameter.
          * Example: {@code Creating}
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -262,11 +340,16 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only functions with display names that match the display name string. Matching is exact.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only functions with display names that match the display name string. Matching is exact.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -274,11 +357,16 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only functions with the specified OCID.
+         *
+         */
         private String id = null;
 
         /**
          * A filter to return only functions with the specified OCID.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -286,6 +374,13 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Specifies sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -294,6 +389,7 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * **ASC:** Ascending sort order.
          * * **DESC:** Descending sort order.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -301,6 +397,16 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Specifies the attribute with which to sort the rules.
+         * <p>
+         * Default: {@code displayName}
+         * <p>
+         * **timeCreated:** Sorts by timeCreated.
+         * * **displayName:** Sorts by displayName.
+         * * **id:** Sorts by id.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -312,6 +418,7 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * * **displayName:** Sorts by displayName.
          * * **id:** Sorts by id.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -403,7 +510,8 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -418,6 +526,10 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .sortBy(sortBy);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

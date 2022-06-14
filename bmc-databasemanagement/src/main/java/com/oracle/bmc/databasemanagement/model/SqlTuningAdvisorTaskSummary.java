@@ -65,108 +65,193 @@ public final class SqlTuningAdvisorTaskSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
         private Long sqlTuningAdvisorTaskId;
 
+        /**
+         * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlTuningAdvisorTaskId the value to set
+         * @return this builder
+         **/
         public Builder sqlTuningAdvisorTaskId(Long sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             this.__explicitlySet__.add("sqlTuningAdvisorTaskId");
             return this;
         }
-
+        /**
+         * The instance ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private Integer instanceId;
 
+        /**
+         * The instance ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(Integer instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * The name of the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the SQL Tuning Advisor task.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The description of the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the SQL Tuning Advisor task.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The owner of the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
+        /**
+         * The owner of the SQL Tuning Advisor task.
+         * @param owner the value to set
+         * @return this builder
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-
+        /**
+         * The Creation date of the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The Creation date of the SQL Tuning Advisor task.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The status of the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
         private SqlTuningTaskStatusTypes taskStatus;
 
+        /**
+         * The status of the SQL Tuning Advisor task.
+         * @param taskStatus the value to set
+         * @return this builder
+         **/
         public Builder taskStatus(SqlTuningTaskStatusTypes taskStatus) {
             this.taskStatus = taskStatus;
             this.__explicitlySet__.add("taskStatus");
             return this;
         }
-
+        /**
+         * The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("daysToExpire")
         private Integer daysToExpire;
 
+        /**
+         * The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
+         * @param daysToExpire the value to set
+         * @return this builder
+         **/
         public Builder daysToExpire(Integer daysToExpire) {
             this.daysToExpire = daysToExpire;
             this.__explicitlySet__.add("daysToExpire");
             return this;
         }
-
+        /**
+         * The start time of the task execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExecutionStarted")
         private java.util.Date timeExecutionStarted;
 
+        /**
+         * The start time of the task execution.
+         * @param timeExecutionStarted the value to set
+         * @return this builder
+         **/
         public Builder timeExecutionStarted(java.util.Date timeExecutionStarted) {
             this.timeExecutionStarted = timeExecutionStarted;
             this.__explicitlySet__.add("timeExecutionStarted");
             return this;
         }
-
+        /**
+         * The end time of the task execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExecutionEnded")
         private java.util.Date timeExecutionEnded;
 
+        /**
+         * The end time of the task execution.
+         * @param timeExecutionEnded the value to set
+         * @return this builder
+         **/
         public Builder timeExecutionEnded(java.util.Date timeExecutionEnded) {
             this.timeExecutionEnded = timeExecutionEnded;
             this.__explicitlySet__.add("timeExecutionEnded");
             return this;
         }
-
+        /**
+         * The total number of SQL statements related to the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSqlStatements")
         private Integer totalSqlStatements;
 
+        /**
+         * The total number of SQL statements related to the SQL Tuning Advisor task.
+         * @param totalSqlStatements the value to set
+         * @return this builder
+         **/
         public Builder totalSqlStatements(Integer totalSqlStatements) {
             this.totalSqlStatements = totalSqlStatements;
             this.__explicitlySet__.add("totalSqlStatements");
             return this;
         }
-
+        /**
+         * The number of recommendations provided for the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationCount")
         private Integer recommendationCount;
 
+        /**
+         * The number of recommendations provided for the SQL Tuning Advisor task.
+         * @param recommendationCount the value to set
+         * @return this builder
+         **/
         public Builder recommendationCount(Integer recommendationCount) {
             this.recommendationCount = recommendationCount;
             this.__explicitlySet__.add("recommendationCount");
@@ -233,6 +318,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
     private final Long sqlTuningAdvisorTaskId;
 
+    /**
+     * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public Long getSqlTuningAdvisorTaskId() {
         return sqlTuningAdvisorTaskId;
     }
@@ -243,6 +332,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final Integer instanceId;
 
+    /**
+     * The instance ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public Integer getInstanceId() {
         return instanceId;
     }
@@ -253,6 +346,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the SQL Tuning Advisor task.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -263,6 +360,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the SQL Tuning Advisor task.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -273,6 +374,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
+    /**
+     * The owner of the SQL Tuning Advisor task.
+     * @return the value
+     **/
     public String getOwner() {
         return owner;
     }
@@ -283,6 +388,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The Creation date of the SQL Tuning Advisor task.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -293,6 +402,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
     private final SqlTuningTaskStatusTypes taskStatus;
 
+    /**
+     * The status of the SQL Tuning Advisor task.
+     * @return the value
+     **/
     public SqlTuningTaskStatusTypes getTaskStatus() {
         return taskStatus;
     }
@@ -303,6 +416,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("daysToExpire")
     private final Integer daysToExpire;
 
+    /**
+     * The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
+     * @return the value
+     **/
     public Integer getDaysToExpire() {
         return daysToExpire;
     }
@@ -313,6 +430,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExecutionStarted")
     private final java.util.Date timeExecutionStarted;
 
+    /**
+     * The start time of the task execution.
+     * @return the value
+     **/
     public java.util.Date getTimeExecutionStarted() {
         return timeExecutionStarted;
     }
@@ -323,6 +444,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExecutionEnded")
     private final java.util.Date timeExecutionEnded;
 
+    /**
+     * The end time of the task execution.
+     * @return the value
+     **/
     public java.util.Date getTimeExecutionEnded() {
         return timeExecutionEnded;
     }
@@ -333,6 +458,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("totalSqlStatements")
     private final Integer totalSqlStatements;
 
+    /**
+     * The total number of SQL statements related to the SQL Tuning Advisor task.
+     * @return the value
+     **/
     public Integer getTotalSqlStatements() {
         return totalSqlStatements;
     }
@@ -343,6 +472,10 @@ public final class SqlTuningAdvisorTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationCount")
     private final Integer recommendationCount;
 
+    /**
+     * The number of recommendations provided for the SQL Tuning Advisor task.
+     * @return the value
+     **/
     public Integer getRecommendationCount() {
         return recommendationCount;
     }

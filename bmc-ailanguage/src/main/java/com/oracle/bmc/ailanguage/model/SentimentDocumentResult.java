@@ -47,54 +47,101 @@ public final class SentimentDocumentResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Document Unique Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Document Unique Identifier.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Document level sentiment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentSentiment")
         private String documentSentiment;
 
+        /**
+         * Document level sentiment.
+         * @param documentSentiment the value to set
+         * @return this builder
+         **/
         public Builder documentSentiment(String documentSentiment) {
             this.documentSentiment = documentSentiment;
             this.__explicitlySet__.add("documentSentiment");
             return this;
         }
-
+        /**
+         * Scores for each sentiment.
+         * Example: {"positive": 1.0, "negative": 0.0}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentScores")
         private java.util.Map<String, Double> documentScores;
 
+        /**
+         * Scores for each sentiment.
+         * Example: {"positive": 1.0, "negative": 0.0}
+         *
+         * @param documentScores the value to set
+         * @return this builder
+         **/
         public Builder documentScores(java.util.Map<String, Double> documentScores) {
             this.documentScores = documentScores;
             this.__explicitlySet__.add("documentScores");
             return this;
         }
-
+        /**
+         * List of detected aspects sentiment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aspects")
         private java.util.List<SentimentAspect> aspects;
 
+        /**
+         * List of detected aspects sentiment.
+         * @param aspects the value to set
+         * @return this builder
+         **/
         public Builder aspects(java.util.List<SentimentAspect> aspects) {
             this.aspects = aspects;
             this.__explicitlySet__.add("aspects");
             return this;
         }
-
+        /**
+         * List of detected sentences sentiment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sentences")
         private java.util.List<SentimentSentence> sentences;
 
+        /**
+         * List of detected sentences sentiment.
+         * @param sentences the value to set
+         * @return this builder
+         **/
         public Builder sentences(java.util.List<SentimentSentence> sentences) {
             this.sentences = sentences;
             this.__explicitlySet__.add("sentences");
             return this;
         }
-
+        /**
+         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
+        /**
+         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * @param languageCode the value to set
+         * @return this builder
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -149,6 +196,10 @@ public final class SentimentDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Document Unique Identifier.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -159,6 +210,10 @@ public final class SentimentDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("documentSentiment")
     private final String documentSentiment;
 
+    /**
+     * Document level sentiment.
+     * @return the value
+     **/
     public String getDocumentSentiment() {
         return documentSentiment;
     }
@@ -171,6 +226,12 @@ public final class SentimentDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("documentScores")
     private final java.util.Map<String, Double> documentScores;
 
+    /**
+     * Scores for each sentiment.
+     * Example: {"positive": 1.0, "negative": 0.0}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, Double> getDocumentScores() {
         return documentScores;
     }
@@ -181,6 +242,10 @@ public final class SentimentDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("aspects")
     private final java.util.List<SentimentAspect> aspects;
 
+    /**
+     * List of detected aspects sentiment.
+     * @return the value
+     **/
     public java.util.List<SentimentAspect> getAspects() {
         return aspects;
     }
@@ -191,6 +256,10 @@ public final class SentimentDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("sentences")
     private final java.util.List<SentimentSentence> sentences;
 
+    /**
+     * List of detected sentences sentiment.
+     * @return the value
+     **/
     public java.util.List<SentimentSentence> getSentences() {
         return sentences;
     }
@@ -201,6 +270,10 @@ public final class SentimentDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
+    /**
+     * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * @return the value
+     **/
     public String getLanguageCode() {
         return languageCode;
     }

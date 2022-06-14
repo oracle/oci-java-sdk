@@ -50,63 +50,113 @@ public final class OrganizationTenancySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
+        /**
+         * OCID of the tenancy.
+         * @param tenancyId the value to set
+         * @return this builder
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-
+        /**
+         * Name of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the tenancy.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Lifecycle state of the OrganizationTenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OrganizationTenancyLifecycleState lifecycleState;
 
+        /**
+         * Lifecycle state of the OrganizationTenancy.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(OrganizationTenancyLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Role of the OrganizationTenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private OrganizationTenancyRole role;
 
+        /**
+         * Role of the OrganizationTenancy.
+         * @param role the value to set
+         * @return this builder
+         **/
         public Builder role(OrganizationTenancyRole role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
-
+        /**
+         * Date-time when this tenancy joined the organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeJoined")
         private java.util.Date timeJoined;
 
+        /**
+         * Date-time when this tenancy joined the organization.
+         * @param timeJoined the value to set
+         * @return this builder
+         **/
         public Builder timeJoined(java.util.Date timeJoined) {
             this.timeJoined = timeJoined;
             this.__explicitlySet__.add("timeJoined");
             return this;
         }
-
+        /**
+         * Date-time when this tenancy left the organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLeft")
         private java.util.Date timeLeft;
 
+        /**
+         * Date-time when this tenancy left the organization.
+         * @param timeLeft the value to set
+         * @return this builder
+         **/
         public Builder timeLeft(java.util.Date timeLeft) {
             this.timeLeft = timeLeft;
             this.__explicitlySet__.add("timeLeft");
             return this;
         }
-
+        /**
+         * Flag to indicate the tenancy is approved for transfer to another organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isApprovedForTransfer")
         private Boolean isApprovedForTransfer;
 
+        /**
+         * Flag to indicate the tenancy is approved for transfer to another organization.
+         * @param isApprovedForTransfer the value to set
+         * @return this builder
+         **/
         public Builder isApprovedForTransfer(Boolean isApprovedForTransfer) {
             this.isApprovedForTransfer = isApprovedForTransfer;
             this.__explicitlySet__.add("isApprovedForTransfer");
@@ -163,6 +213,10 @@ public final class OrganizationTenancySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
+    /**
+     * OCID of the tenancy.
+     * @return the value
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
@@ -173,6 +227,10 @@ public final class OrganizationTenancySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the tenancy.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -183,6 +241,10 @@ public final class OrganizationTenancySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OrganizationTenancyLifecycleState lifecycleState;
 
+    /**
+     * Lifecycle state of the OrganizationTenancy.
+     * @return the value
+     **/
     public OrganizationTenancyLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -193,6 +255,10 @@ public final class OrganizationTenancySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final OrganizationTenancyRole role;
 
+    /**
+     * Role of the OrganizationTenancy.
+     * @return the value
+     **/
     public OrganizationTenancyRole getRole() {
         return role;
     }
@@ -203,6 +269,10 @@ public final class OrganizationTenancySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeJoined")
     private final java.util.Date timeJoined;
 
+    /**
+     * Date-time when this tenancy joined the organization.
+     * @return the value
+     **/
     public java.util.Date getTimeJoined() {
         return timeJoined;
     }
@@ -213,6 +283,10 @@ public final class OrganizationTenancySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLeft")
     private final java.util.Date timeLeft;
 
+    /**
+     * Date-time when this tenancy left the organization.
+     * @return the value
+     **/
     public java.util.Date getTimeLeft() {
         return timeLeft;
     }
@@ -223,6 +297,10 @@ public final class OrganizationTenancySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isApprovedForTransfer")
     private final Boolean isApprovedForTransfer;
 
+    /**
+     * Flag to indicate the tenancy is approved for transfer to another organization.
+     * @return the value
+     **/
     public Boolean getIsApprovedForTransfer() {
         return isApprovedForTransfer;
     }

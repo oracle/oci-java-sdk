@@ -30,9 +30,17 @@ public final class RegisterAutonomousDatabaseDataSafeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The admin password provided during the creation of the database. This password is between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
         private String pdbAdminPassword;
 
+        /**
+         * The admin password provided during the creation of the database. This password is between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+         * @param pdbAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder pdbAdminPassword(String pdbAdminPassword) {
             this.pdbAdminPassword = pdbAdminPassword;
             this.__explicitlySet__.add("pdbAdminPassword");
@@ -75,6 +83,10 @@ public final class RegisterAutonomousDatabaseDataSafeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
     private final String pdbAdminPassword;
 
+    /**
+     * The admin password provided during the creation of the database. This password is between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+     * @return the value
+     **/
     public String getPdbAdminPassword() {
         return pdbAdminPassword;
     }

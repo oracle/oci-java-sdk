@@ -64,19 +64,33 @@ public final class UpdateAppEventChannelDetails extends UpdateChannelDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The URL for sending errors and responses to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
         private String outboundUrl;
 
+        /**
+         * The URL for sending errors and responses to.
+         * @param outboundUrl the value to set
+         * @return this builder
+         **/
         public Builder outboundUrl(String outboundUrl) {
             this.outboundUrl = outboundUrl;
             this.__explicitlySet__.add("outboundUrl");
             return this;
         }
-
+        /**
+         * The IDs of the Skills and Digital Assistants that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventSinkBotIds")
         private java.util.List<String> eventSinkBotIds;
 
+        /**
+         * The IDs of the Skills and Digital Assistants that the Channel is routed to.
+         * @param eventSinkBotIds the value to set
+         * @return this builder
+         **/
         public Builder eventSinkBotIds(java.util.List<String> eventSinkBotIds) {
             this.eventSinkBotIds = eventSinkBotIds;
             this.__explicitlySet__.add("eventSinkBotIds");
@@ -145,6 +159,10 @@ public final class UpdateAppEventChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
     private final String outboundUrl;
 
+    /**
+     * The URL for sending errors and responses to.
+     * @return the value
+     **/
     public String getOutboundUrl() {
         return outboundUrl;
     }
@@ -155,6 +173,10 @@ public final class UpdateAppEventChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("eventSinkBotIds")
     private final java.util.List<String> eventSinkBotIds;
 
+    /**
+     * The IDs of the Skills and Digital Assistants that the Channel is routed to.
+     * @return the value
+     **/
     public java.util.List<String> getEventSinkBotIds() {
         return eventSinkBotIds;
     }

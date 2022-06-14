@@ -15,6 +15,12 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.usageapi.model.ConfigurationAggregation configurationAggregation;
 
+    /**
+     * The returned ConfigurationAggregation instance.
+     * @return the value
+     */
     public com.oracle.bmc.usageapi.model.ConfigurationAggregation getConfigurationAggregation() {
         return configurationAggregation;
     }
@@ -50,15 +60,35 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ConfigurationAggregation instance.
+         */
         private com.oracle.bmc.usageapi.model.ConfigurationAggregation configurationAggregation;
 
+        /**
+         * The returned ConfigurationAggregation instance.
+         * @param configurationAggregation the value to set
+         * @return this builder
+         */
         public Builder configurationAggregation(
                 com.oracle.bmc.usageapi.model.ConfigurationAggregation configurationAggregation) {
             this.configurationAggregation = configurationAggregation;
@@ -77,12 +107,20 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public RequestSummarizedConfigurationsResponse build() {
             return new RequestSummarizedConfigurationsResponse(
                     __httpStatusCode__, opcRequestId, configurationAggregation);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -63,6 +63,7 @@ public final class ShippingAddress {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("addressee")
         private String addressee;
 

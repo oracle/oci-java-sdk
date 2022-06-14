@@ -28,18 +28,33 @@ public final class DeliverArtifact {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the artifact specified in the build_spec.yaml file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifactName")
         private String artifactName;
 
+        /**
+         * Name of the artifact specified in the build_spec.yaml file.
+         * @param artifactName the value to set
+         * @return this builder
+         **/
         public Builder artifactName(String artifactName) {
             this.artifactName = artifactName;
             this.__explicitlySet__.add("artifactName");
             return this;
         }
-
+        /**
+         * Artifact identifier that contains the artifact definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifactId")
         private String artifactId;
 
+        /**
+         * Artifact identifier that contains the artifact definition.
+         * @param artifactId the value to set
+         * @return this builder
+         **/
         public Builder artifactId(String artifactId) {
             this.artifactId = artifactId;
             this.__explicitlySet__.add("artifactId");
@@ -81,6 +96,10 @@ public final class DeliverArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("artifactName")
     private final String artifactName;
 
+    /**
+     * Name of the artifact specified in the build_spec.yaml file.
+     * @return the value
+     **/
     public String getArtifactName() {
         return artifactName;
     }
@@ -91,6 +110,10 @@ public final class DeliverArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("artifactId")
     private final String artifactId;
 
+    /**
+     * Artifact identifier that contains the artifact definition.
+     * @return the value
+     **/
     public String getArtifactId() {
         return artifactId;
     }

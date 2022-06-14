@@ -72,136 +72,258 @@ public final class Node {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compute instance backing this node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the compute instance backing this node.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the node.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The version of Kubernetes this node is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
         private String kubernetesVersion;
 
+        /**
+         * The version of Kubernetes this node is running.
+         * @param kubernetesVersion the value to set
+         * @return this builder
+         **/
         public Builder kubernetesVersion(String kubernetesVersion) {
             this.kubernetesVersion = kubernetesVersion;
             this.__explicitlySet__.add("kubernetesVersion");
             return this;
         }
-
+        /**
+         * The name of the availability domain in which this node is placed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The name of the availability domain in which this node is placed.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The OCID of the subnet in which this node is placed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of the subnet in which this node is placed.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The OCID of the node pool to which this node belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodePoolId")
         private String nodePoolId;
 
+        /**
+         * The OCID of the node pool to which this node belongs.
+         * @param nodePoolId the value to set
+         * @return this builder
+         **/
         public Builder nodePoolId(String nodePoolId) {
             this.nodePoolId = nodePoolId;
             this.__explicitlySet__.add("nodePoolId");
             return this;
         }
-
+        /**
+         * The fault domain of this node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
+        /**
+         * The fault domain of this node.
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-
+        /**
+         * The private IP address of this node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
+        /**
+         * The private IP address of this node.
+         * @param privateIp the value to set
+         * @return this builder
+         **/
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
             return this;
         }
-
+        /**
+         * The public IP address of this node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
         private String publicIp;
 
+        /**
+         * The public IP address of this node.
+         * @param publicIp the value to set
+         * @return this builder
+         **/
         public Builder publicIp(String publicIp) {
             this.publicIp = publicIp;
             this.__explicitlySet__.add("publicIp");
             return this;
         }
-
+        /**
+         * An error that may be associated with the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeError")
         private NodeError nodeError;
 
+        /**
+         * An error that may be associated with the node.
+         * @param nodeError the value to set
+         * @return this builder
+         **/
         public Builder nodeError(NodeError nodeError) {
             this.nodeError = nodeError;
             this.__explicitlySet__.add("nodeError");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * The state of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The state of the node.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Details about the state of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Details about the state of the node.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -274,6 +396,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the compute instance backing this node.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -284,6 +410,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the node.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -294,6 +424,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
     private final String kubernetesVersion;
 
+    /**
+     * The version of Kubernetes this node is running.
+     * @return the value
+     **/
     public String getKubernetesVersion() {
         return kubernetesVersion;
     }
@@ -304,6 +438,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The name of the availability domain in which this node is placed.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -314,6 +452,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of the subnet in which this node is placed.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -324,6 +466,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("nodePoolId")
     private final String nodePoolId;
 
+    /**
+     * The OCID of the node pool to which this node belongs.
+     * @return the value
+     **/
     public String getNodePoolId() {
         return nodePoolId;
     }
@@ -334,6 +480,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
+    /**
+     * The fault domain of this node.
+     * @return the value
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
@@ -344,6 +494,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
+    /**
+     * The private IP address of this node.
+     * @return the value
+     **/
     public String getPrivateIp() {
         return privateIp;
     }
@@ -354,6 +508,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
     private final String publicIp;
 
+    /**
+     * The public IP address of this node.
+     * @return the value
+     **/
     public String getPublicIp() {
         return publicIp;
     }
@@ -364,6 +522,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeError")
     private final NodeError nodeError;
 
+    /**
+     * An error that may be associated with the node.
+     * @return the value
+     **/
     public NodeError getNodeError() {
         return nodeError;
     }
@@ -377,6 +539,13 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -390,6 +559,13 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -402,6 +578,12 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -465,6 +647,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The state of the node.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -475,6 +661,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Details about the state of the node.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }

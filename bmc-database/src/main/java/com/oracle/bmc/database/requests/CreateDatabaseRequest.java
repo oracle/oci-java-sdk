@@ -18,6 +18,9 @@ public class CreateDatabaseRequest
      */
     private com.oracle.bmc.database.model.CreateDatabaseBase createNewDatabaseDetails;
 
+    /**
+     * Request to create a new database.
+     */
     public com.oracle.bmc.database.model.CreateDatabaseBase getCreateNewDatabaseDetails() {
         return createNewDatabaseDetails;
     }
@@ -31,6 +34,14 @@ public class CreateDatabaseRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -40,6 +51,10 @@ public class CreateDatabaseRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,10 +76,14 @@ public class CreateDatabaseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to create a new database.
+         */
         private com.oracle.bmc.database.model.CreateDatabaseBase createNewDatabaseDetails = null;
 
         /**
          * Request to create a new database.
+         * @param createNewDatabaseDetails the value to set
          * @return this builder instance
          */
         public Builder createNewDatabaseDetails(
@@ -73,6 +92,14 @@ public class CreateDatabaseRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -82,6 +109,7 @@ public class CreateDatabaseRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -89,11 +117,16 @@ public class CreateDatabaseRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -184,7 +217,8 @@ public class CreateDatabaseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -193,6 +227,10 @@ public class CreateDatabaseRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

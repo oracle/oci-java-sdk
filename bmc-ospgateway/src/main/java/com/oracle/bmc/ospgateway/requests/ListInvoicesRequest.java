@@ -17,6 +17,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String ospHomeRegion;
 
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     public String getOspHomeRegion() {
         return ospHomeRegion;
     }
@@ -26,6 +30,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -36,6 +44,11 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,6 +57,9 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String invoiceId;
 
+    /**
+     * The invoice query param (not unique).
+     */
     public String getInvoiceId() {
         return invoiceId;
     }
@@ -96,6 +112,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * A filter to only return resources that match the given type exactly.
+     *
+     */
     public java.util.List<Type> getType() {
         return type;
     }
@@ -108,6 +128,13 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String searchText;
 
+    /**
+     * A filter to only return resources that match the given value.
+     * Looking for partial matches in the following fileds:
+     * Invoice No., Reference No. (plan number), Payment Ref, Total Amount(plan number), Balance Due(plan number)
+     * and Party/Customer Name
+     *
+     */
     public String getSearchText() {
         return searchText;
     }
@@ -117,6 +144,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timeInvoiceStart;
 
+    /**
+     * description: Start time (UTC) of the target invoice date range for which to fetch invoice data (inclusive).
+     *
+     */
     public java.util.Date getTimeInvoiceStart() {
         return timeInvoiceStart;
     }
@@ -126,6 +157,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timeInvoiceEnd;
 
+    /**
+     * description: End time (UTC) of the target invoice date range for which to fetch invoice data (exclusive).
+     *
+     */
     public java.util.Date getTimeInvoiceEnd() {
         return timeInvoiceEnd;
     }
@@ -135,6 +170,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timePaymentStart;
 
+    /**
+     * description: Start time (UTC) of the target payment date range for which to fetch invoice data (inclusive).
+     *
+     */
     public java.util.Date getTimePaymentStart() {
         return timePaymentStart;
     }
@@ -144,6 +183,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timePaymentEnd;
 
+    /**
+     * description: End time (UTC) of the target payment date range for which to fetch invoice data (exclusive).
+     *
+     */
     public java.util.Date getTimePaymentEnd() {
         return timePaymentEnd;
     }
@@ -192,6 +235,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * A filter to only return resources that match one of the status elements.
+     *
+     */
     public java.util.List<Status> getStatus() {
         return status;
     }
@@ -201,6 +248,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -210,6 +261,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -263,6 +318,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * The field to sort by. Only one field can be selected for sorting.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -309,6 +368,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * The sort order to use (ascending or descending).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -320,11 +383,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The home region's public name of the logged in user.
+         *
+         */
         private String ospHomeRegion = null;
 
         /**
          * The home region's public name of the logged in user.
          *
+         * @param ospHomeRegion the value to set
          * @return this builder instance
          */
         public Builder ospHomeRegion(String ospHomeRegion) {
@@ -332,11 +400,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -344,12 +417,18 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -357,10 +436,14 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The invoice query param (not unique).
+         */
         private String invoiceId = null;
 
         /**
          * The invoice query param (not unique).
+         * @param invoiceId the value to set
          * @return this builder instance
          */
         public Builder invoiceId(String invoiceId) {
@@ -368,11 +451,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given type exactly.
+         *
+         */
         private java.util.List<Type> type = null;
 
         /**
          * A filter to only return resources that match the given type exactly.
          *
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(java.util.List<Type> type) {
@@ -383,12 +471,20 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Singular setter. A filter to only return resources that match the given type exactly.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder type(Type singularValue) {
             return this.type(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to only return resources that match the given value.
+         * Looking for partial matches in the following fileds:
+         * Invoice No., Reference No. (plan number), Payment Ref, Total Amount(plan number), Balance Due(plan number)
+         * and Party/Customer Name
+         *
+         */
         private String searchText = null;
 
         /**
@@ -397,6 +493,7 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Invoice No., Reference No. (plan number), Payment Ref, Total Amount(plan number), Balance Due(plan number)
          * and Party/Customer Name
          *
+         * @param searchText the value to set
          * @return this builder instance
          */
         public Builder searchText(String searchText) {
@@ -404,11 +501,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * description: Start time (UTC) of the target invoice date range for which to fetch invoice data (inclusive).
+         *
+         */
         private java.util.Date timeInvoiceStart = null;
 
         /**
          * description: Start time (UTC) of the target invoice date range for which to fetch invoice data (inclusive).
          *
+         * @param timeInvoiceStart the value to set
          * @return this builder instance
          */
         public Builder timeInvoiceStart(java.util.Date timeInvoiceStart) {
@@ -416,11 +518,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * description: End time (UTC) of the target invoice date range for which to fetch invoice data (exclusive).
+         *
+         */
         private java.util.Date timeInvoiceEnd = null;
 
         /**
          * description: End time (UTC) of the target invoice date range for which to fetch invoice data (exclusive).
          *
+         * @param timeInvoiceEnd the value to set
          * @return this builder instance
          */
         public Builder timeInvoiceEnd(java.util.Date timeInvoiceEnd) {
@@ -428,11 +535,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * description: Start time (UTC) of the target payment date range for which to fetch invoice data (inclusive).
+         *
+         */
         private java.util.Date timePaymentStart = null;
 
         /**
          * description: Start time (UTC) of the target payment date range for which to fetch invoice data (inclusive).
          *
+         * @param timePaymentStart the value to set
          * @return this builder instance
          */
         public Builder timePaymentStart(java.util.Date timePaymentStart) {
@@ -440,11 +552,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * description: End time (UTC) of the target payment date range for which to fetch invoice data (exclusive).
+         *
+         */
         private java.util.Date timePaymentEnd = null;
 
         /**
          * description: End time (UTC) of the target payment date range for which to fetch invoice data (exclusive).
          *
+         * @param timePaymentEnd the value to set
          * @return this builder instance
          */
         public Builder timePaymentEnd(java.util.Date timePaymentEnd) {
@@ -452,11 +569,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A filter to only return resources that match one of the status elements.
+         *
+         */
         private java.util.List<Status> status = null;
 
         /**
          * A filter to only return resources that match one of the status elements.
          *
+         * @param status the value to set
          * @return this builder instance
          */
         public Builder status(java.util.List<Status> status) {
@@ -467,17 +589,23 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Singular setter. A filter to only return resources that match one of the status elements.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder status(Status singularValue) {
             return this.status(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the opc-next-page response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -485,11 +613,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -497,11 +630,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The field to sort by. Only one field can be selected for sorting.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one field can be selected for sorting.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -509,11 +647,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The sort order to use (ascending or descending).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use (ascending or descending).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -617,7 +760,8 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -638,6 +782,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

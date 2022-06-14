@@ -27,9 +27,17 @@ public final class ShapeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of shapeSummary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ShapeSummary> items;
 
+        /**
+         * List of shapeSummary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ShapeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class ShapeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ShapeSummary> items;
 
+    /**
+     * List of shapeSummary objects.
+     * @return the value
+     **/
     public java.util.List<ShapeSummary> getItems() {
         return items;
     }

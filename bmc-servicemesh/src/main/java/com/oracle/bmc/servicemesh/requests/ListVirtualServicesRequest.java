@@ -16,6 +16,9 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire name given.
+     */
     public String getName() {
         return name;
     }
@@ -32,6 +38,9 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     */
     public String getPage() {
         return page;
     }
@@ -48,6 +60,9 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.servicemesh.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.servicemesh.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -95,6 +110,10 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for 'timeCreated' is descending. Default order for 'name' is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -103,6 +122,9 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -111,6 +133,9 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String meshId;
 
+    /**
+     * Unique Mesh identifier.
+     */
     public String getMeshId() {
         return meshId;
     }
@@ -119,6 +144,9 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String id;
 
+    /**
+     * Unique VirtualService identifier.
+     */
     public String getId() {
         return id;
     }
@@ -127,6 +155,9 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String lifecycleState;
 
+    /**
+     * A filter to return only resources that match the life cycle state given.
+     */
     public String getLifecycleState() {
         return lifecycleState;
     }
@@ -138,10 +169,14 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -149,10 +184,14 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name given.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -160,10 +199,14 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -171,10 +214,14 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         */
         private String page = null;
 
         /**
          * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -182,10 +229,14 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.servicemesh.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.servicemesh.model.SortOrder sortOrder) {
@@ -193,11 +244,16 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for 'timeCreated' is descending. Default order for 'name' is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for 'timeCreated' is descending. Default order for 'name' is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -205,10 +261,14 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -216,10 +276,14 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique Mesh identifier.
+         */
         private String meshId = null;
 
         /**
          * Unique Mesh identifier.
+         * @param meshId the value to set
          * @return this builder instance
          */
         public Builder meshId(String meshId) {
@@ -227,10 +291,14 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique VirtualService identifier.
+         */
         private String id = null;
 
         /**
          * Unique VirtualService identifier.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -238,10 +306,14 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the life cycle state given.
+         */
         private String lifecycleState = null;
 
         /**
          * A filter to return only resources that match the life cycle state given.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(String lifecycleState) {
@@ -335,7 +407,8 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -351,6 +424,10 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

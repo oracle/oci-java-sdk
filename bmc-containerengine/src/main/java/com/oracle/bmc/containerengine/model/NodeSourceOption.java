@@ -43,6 +43,11 @@ public class NodeSourceOption {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * The user-friendly name of the entity corresponding to the OCID.
+     *
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }

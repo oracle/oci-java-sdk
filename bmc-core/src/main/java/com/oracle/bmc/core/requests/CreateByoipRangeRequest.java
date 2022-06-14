@@ -18,6 +18,9 @@ public class CreateByoipRangeRequest
      */
     private com.oracle.bmc.core.model.CreateByoipRangeDetails createByoipRangeDetails;
 
+    /**
+     * Details needed to create a BYOIP CIDR block subrange.
+     */
     public com.oracle.bmc.core.model.CreateByoipRangeDetails getCreateByoipRangeDetails() {
         return createByoipRangeDetails;
     }
@@ -28,6 +31,11 @@ public class CreateByoipRangeRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +49,14 @@ public class CreateByoipRangeRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -62,10 +78,14 @@ public class CreateByoipRangeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details needed to create a BYOIP CIDR block subrange.
+         */
         private com.oracle.bmc.core.model.CreateByoipRangeDetails createByoipRangeDetails = null;
 
         /**
          * Details needed to create a BYOIP CIDR block subrange.
+         * @param createByoipRangeDetails the value to set
          * @return this builder instance
          */
         public Builder createByoipRangeDetails(
@@ -74,12 +94,18 @@ public class CreateByoipRangeRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -87,6 +113,14 @@ public class CreateByoipRangeRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -96,6 +130,7 @@ public class CreateByoipRangeRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -186,7 +221,8 @@ public class CreateByoipRangeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -195,6 +231,10 @@ public class CreateByoipRangeRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

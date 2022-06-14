@@ -18,6 +18,10 @@ public class CreateTagRequest
      */
     private String tagNamespaceId;
 
+    /**
+     * The OCID of the tag namespace.
+     *
+     */
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
@@ -26,6 +30,9 @@ public class CreateTagRequest
      */
     private com.oracle.bmc.identity.model.CreateTagDetails createTagDetails;
 
+    /**
+     * Request object for creating a new tag in the specified tag namespace.
+     */
     public com.oracle.bmc.identity.model.CreateTagDetails getCreateTagDetails() {
         return createTagDetails;
     }
@@ -39,8 +46,27 @@ public class CreateTagRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     /**
@@ -60,11 +86,16 @@ public class CreateTagRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag namespace.
+         *
+         */
         private String tagNamespaceId = null;
 
         /**
          * The OCID of the tag namespace.
          *
+         * @param tagNamespaceId the value to set
          * @return this builder instance
          */
         public Builder tagNamespaceId(String tagNamespaceId) {
@@ -72,10 +103,14 @@ public class CreateTagRequest
             return this;
         }
 
+        /**
+         * Request object for creating a new tag in the specified tag namespace.
+         */
         private com.oracle.bmc.identity.model.CreateTagDetails createTagDetails = null;
 
         /**
          * Request object for creating a new tag in the specified tag namespace.
+         * @param createTagDetails the value to set
          * @return this builder instance
          */
         public Builder createTagDetails(
@@ -84,6 +119,14 @@ public class CreateTagRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -93,10 +136,26 @@ public class CreateTagRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
             this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -131,6 +190,7 @@ public class CreateTagRequest
             tagNamespaceId(o.getTagNamespaceId());
             createTagDetails(o.getCreateTagDetails());
             opcRetryToken(o.getOpcRetryToken());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -177,21 +237,28 @@ public class CreateTagRequest
             request.tagNamespaceId = tagNamespaceId;
             request.createTagDetails = createTagDetails;
             request.opcRetryToken = opcRetryToken;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new CreateTagRequest(tagNamespaceId, createTagDetails, opcRetryToken);
+            // new CreateTagRequest(tagNamespaceId, createTagDetails, opcRetryToken, isLockOverride);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
                 .tagNamespaceId(tagNamespaceId)
                 .createTagDetails(createTagDetails)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .isLockOverride(isLockOverride);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -204,6 +271,7 @@ public class CreateTagRequest
         sb.append(",tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
         sb.append(",createTagDetails=").append(String.valueOf(this.createTagDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -221,7 +289,8 @@ public class CreateTagRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.tagNamespaceId, other.tagNamespaceId)
                 && java.util.Objects.equals(this.createTagDetails, other.createTagDetails)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -237,6 +306,9 @@ public class CreateTagRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

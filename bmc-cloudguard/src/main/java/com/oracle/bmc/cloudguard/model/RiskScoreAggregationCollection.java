@@ -29,9 +29,17 @@ public final class RiskScoreAggregationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The items consist of all the RiskScoreAggregation objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RiskScoreAggregation> items;
 
+        /**
+         * The items consist of all the RiskScoreAggregation objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<RiskScoreAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class RiskScoreAggregationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RiskScoreAggregation> items;
 
+    /**
+     * The items consist of all the RiskScoreAggregation objects.
+     * @return the value
+     **/
     public java.util.List<RiskScoreAggregation> getItems() {
         return items;
     }

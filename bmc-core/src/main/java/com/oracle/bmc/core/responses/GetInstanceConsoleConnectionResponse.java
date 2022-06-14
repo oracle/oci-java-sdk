@@ -15,6 +15,12 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection;
 
+    /**
+     * The returned InstanceConsoleConnection instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.InstanceConsoleConnection getInstanceConsoleConnection() {
         return instanceConsoleConnection;
     }
@@ -50,15 +60,35 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned InstanceConsoleConnection instance.
+         */
         private com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection;
 
+        /**
+         * The returned InstanceConsoleConnection instance.
+         * @param instanceConsoleConnection the value to set
+         * @return this builder
+         */
         public Builder instanceConsoleConnection(
                 com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection) {
             this.instanceConsoleConnection = instanceConsoleConnection;
@@ -77,12 +107,20 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetInstanceConsoleConnectionResponse build() {
             return new GetInstanceConsoleConnectionResponse(
                     __httpStatusCode__, opcRequestId, instanceConsoleConnection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

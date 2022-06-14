@@ -16,6 +16,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -35,6 +44,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String managedInstanceId;
 
+    /**
+     * The ID of the managed instance for which to list resources.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -43,6 +55,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String managedInstanceGroupId;
 
+    /**
+     * The ID of the managed instace group for which to list resources.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
@@ -51,6 +66,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.osmanagement.model.OperationTypes operationType;
 
+    /**
+     * The operation type for which to list resources
+     */
     public com.oracle.bmc.osmanagement.model.OperationTypes getOperationType() {
         return operationType;
     }
@@ -59,6 +77,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -67,6 +88,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -111,6 +135,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -157,6 +184,10 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -165,6 +196,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.osmanagement.model.LifecycleStates lifecycleState;
 
+    /**
+     * The current lifecycle state for the object.
+     */
     public com.oracle.bmc.osmanagement.model.LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -173,6 +207,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -181,6 +218,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.osmanagement.model.OsFamilies osFamily;
 
+    /**
+     * The OS family for which to list resources.
+     */
     public com.oracle.bmc.osmanagement.model.OsFamilies getOsFamily() {
         return osFamily;
     }
@@ -189,6 +229,9 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean isRestricted;
 
+    /**
+     * If true, will only filter out restricted Autonomous Linux Scheduled Job
+     */
     public Boolean getIsRestricted() {
         return isRestricted;
     }
@@ -200,10 +243,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -211,6 +258,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -218,6 +271,7 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          * Example: {@code My new resource}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -225,10 +279,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The ID of the managed instance for which to list resources.
+         */
         private String managedInstanceId = null;
 
         /**
          * The ID of the managed instance for which to list resources.
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -236,10 +294,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The ID of the managed instace group for which to list resources.
+         */
         private String managedInstanceGroupId = null;
 
         /**
          * The ID of the managed instace group for which to list resources.
+         * @param managedInstanceGroupId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceGroupId(String managedInstanceGroupId) {
@@ -247,10 +309,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The operation type for which to list resources
+         */
         private com.oracle.bmc.osmanagement.model.OperationTypes operationType = null;
 
         /**
          * The operation type for which to list resources
+         * @param operationType the value to set
          * @return this builder instance
          */
         public Builder operationType(
@@ -259,10 +325,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -270,10 +340,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -281,10 +355,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -292,11 +370,16 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -304,10 +387,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The current lifecycle state for the object.
+         */
         private com.oracle.bmc.osmanagement.model.LifecycleStates lifecycleState = null;
 
         /**
          * The current lifecycle state for the object.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -316,10 +403,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -327,10 +418,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The OS family for which to list resources.
+         */
         private com.oracle.bmc.osmanagement.model.OsFamilies osFamily = null;
 
         /**
          * The OS family for which to list resources.
+         * @param osFamily the value to set
          * @return this builder instance
          */
         public Builder osFamily(com.oracle.bmc.osmanagement.model.OsFamilies osFamily) {
@@ -338,10 +433,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * If true, will only filter out restricted Autonomous Linux Scheduled Job
+         */
         private Boolean isRestricted = null;
 
         /**
          * If true, will only filter out restricted Autonomous Linux Scheduled Job
+         * @param isRestricted the value to set
          * @return this builder instance
          */
         public Builder isRestricted(Boolean isRestricted) {
@@ -441,7 +540,8 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -460,6 +560,10 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 .isRestricted(isRestricted);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class GetAutonomousDatabaseDataguardAssociationRequest
      */
     private String autonomousDatabaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
@@ -25,6 +28,9 @@ public class GetAutonomousDatabaseDataguardAssociationRequest
      */
     private String autonomousDatabaseDataguardAssociationId;
 
+    /**
+     * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousDatabaseDataguardAssociationId() {
         return autonomousDatabaseDataguardAssociationId;
     }
@@ -34,6 +40,10 @@ public class GetAutonomousDatabaseDataguardAssociationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,10 +55,14 @@ public class GetAutonomousDatabaseDataguardAssociationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousDatabaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousDatabaseId the value to set
          * @return this builder instance
          */
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
@@ -56,10 +70,14 @@ public class GetAutonomousDatabaseDataguardAssociationRequest
             return this;
         }
 
+        /**
+         * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousDatabaseDataguardAssociationId = null;
 
         /**
          * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousDatabaseDataguardAssociationId the value to set
          * @return this builder instance
          */
         public Builder autonomousDatabaseDataguardAssociationId(
@@ -69,11 +87,16 @@ public class GetAutonomousDatabaseDataguardAssociationRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -157,7 +180,8 @@ public class GetAutonomousDatabaseDataguardAssociationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -166,6 +190,10 @@ public class GetAutonomousDatabaseDataguardAssociationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

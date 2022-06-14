@@ -27,9 +27,17 @@ package com.oracle.bmc.datasafe.model;
 public final class ColumnSourceFromSdmDetails extends ColumnSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the sensitive data model that's used as the source of masking columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
         private String sensitiveDataModelId;
 
+        /**
+         * The OCID of the sensitive data model that's used as the source of masking columns.
+         * @param sensitiveDataModelId the value to set
+         * @return this builder
+         **/
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = sensitiveDataModelId;
             this.__explicitlySet__.add("sensitiveDataModelId");
@@ -78,6 +86,10 @@ public final class ColumnSourceFromSdmDetails extends ColumnSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
     private final String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model that's used as the source of masking columns.
+     * @return the value
+     **/
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }

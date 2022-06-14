@@ -32,27 +32,55 @@ public final class PercentageOfCoresEnabledOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The minimum allowed percentage of cores enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Integer min;
 
+        /**
+         * The minimum allowed percentage of cores enabled.
+         *
+         * @param min the value to set
+         * @return this builder
+         **/
         public Builder min(Integer min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-
+        /**
+         * The maximum allowed percentage of cores enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Integer max;
 
+        /**
+         * The maximum allowed percentage of cores enabled.
+         *
+         * @param max the value to set
+         * @return this builder
+         **/
         public Builder max(Integer max) {
             this.max = max;
             this.__explicitlySet__.add("max");
             return this;
         }
-
+        /**
+         * The default percentage of cores enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private Integer defaultValue;
 
+        /**
+         * The default percentage of cores enabled.
+         *
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(Integer defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -97,6 +125,11 @@ public final class PercentageOfCoresEnabledOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Integer min;
 
+    /**
+     * The minimum allowed percentage of cores enabled.
+     *
+     * @return the value
+     **/
     public Integer getMin() {
         return min;
     }
@@ -108,6 +141,11 @@ public final class PercentageOfCoresEnabledOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Integer max;
 
+    /**
+     * The maximum allowed percentage of cores enabled.
+     *
+     * @return the value
+     **/
     public Integer getMax() {
         return max;
     }
@@ -119,6 +157,11 @@ public final class PercentageOfCoresEnabledOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final Integer defaultValue;
 
+    /**
+     * The default percentage of cores enabled.
+     *
+     * @return the value
+     **/
     public Integer getDefaultValue() {
         return defaultValue;
     }

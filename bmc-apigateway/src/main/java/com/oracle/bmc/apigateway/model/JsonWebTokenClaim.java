@@ -31,27 +31,61 @@ public final class JsonWebTokenClaim {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the claim.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Name of the claim.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The list of acceptable values for a given claim.
+         * If this value is "null" or empty and "isRequired" set to "true", then
+         * the presence of this claim in the JWT is validated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
+        /**
+         * The list of acceptable values for a given claim.
+         * If this value is "null" or empty and "isRequired" set to "true", then
+         * the presence of this claim in the JWT is validated.
+         *
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
             return this;
         }
-
+        /**
+         * Whether the claim is required to be present in the JWT or not. If set
+         * to "false", the claim values will be matched only if the claim is
+         * present in the JWT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
+        /**
+         * Whether the claim is required to be present in the JWT or not. If set
+         * to "false", the claim values will be matched only if the claim is
+         * present in the JWT.
+         *
+         * @param isRequired the value to set
+         * @return this builder
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
@@ -94,6 +128,10 @@ public final class JsonWebTokenClaim {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Name of the claim.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -107,6 +145,13 @@ public final class JsonWebTokenClaim {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
+    /**
+     * The list of acceptable values for a given claim.
+     * If this value is "null" or empty and "isRequired" set to "true", then
+     * the presence of this claim in the JWT is validated.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getValues() {
         return values;
     }
@@ -120,6 +165,13 @@ public final class JsonWebTokenClaim {
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
+    /**
+     * Whether the claim is required to be present in the JWT or not. If set
+     * to "false", the claim values will be matched only if the claim is
+     * present in the JWT.
+     *
+     * @return the value
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }

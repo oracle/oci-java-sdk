@@ -17,6 +17,13 @@ public class GetVolumeBackupPolicyAssetAssignmentResponse
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -28,6 +35,12 @@ public class GetVolumeBackupPolicyAssetAssignmentResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +50,10 @@ public class GetVolumeBackupPolicyAssetAssignmentResponse
      */
     private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment> items;
 
+    /**
+     * A list of com.oracle.bmc.core.model.VolumeBackupPolicyAssignment instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment> getItems() {
         return items;
     }
@@ -66,22 +83,56 @@ public class GetVolumeBackupPolicyAssetAssignmentResponse
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.core.model.VolumeBackupPolicyAssignment instances.
+         */
         private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment> items;
 
+        /**
+         * A list of com.oracle.bmc.core.model.VolumeBackupPolicyAssignment instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(
                 java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment> items) {
             this.items = items;
@@ -101,12 +152,20 @@ public class GetVolumeBackupPolicyAssetAssignmentResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetVolumeBackupPolicyAssetAssignmentResponse build() {
             return new GetVolumeBackupPolicyAssetAssignmentResponse(
                     __httpStatusCode__, opcNextPage, opcRequestId, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

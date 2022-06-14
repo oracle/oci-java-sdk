@@ -36,27 +36,49 @@ public final class RequestRateLimitingConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Evaluation period in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("periodInSeconds")
         private Integer periodInSeconds;
 
+        /**
+         * Evaluation period in seconds.
+         * @param periodInSeconds the value to set
+         * @return this builder
+         **/
         public Builder periodInSeconds(Integer periodInSeconds) {
             this.periodInSeconds = periodInSeconds;
             this.__explicitlySet__.add("periodInSeconds");
             return this;
         }
-
+        /**
+         * Requests allowed per evaluation period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestsLimit")
         private Integer requestsLimit;
 
+        /**
+         * Requests allowed per evaluation period.
+         * @param requestsLimit the value to set
+         * @return this builder
+         **/
         public Builder requestsLimit(Integer requestsLimit) {
             this.requestsLimit = requestsLimit;
             this.__explicitlySet__.add("requestsLimit");
             return this;
         }
-
+        /**
+         * Duration of block action application in seconds when {@code requestsLimit} is reached. Optional and can be 0 (no block duration).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionDurationInSeconds")
         private Integer actionDurationInSeconds;
 
+        /**
+         * Duration of block action application in seconds when {@code requestsLimit} is reached. Optional and can be 0 (no block duration).
+         * @param actionDurationInSeconds the value to set
+         * @return this builder
+         **/
         public Builder actionDurationInSeconds(Integer actionDurationInSeconds) {
             this.actionDurationInSeconds = actionDurationInSeconds;
             this.__explicitlySet__.add("actionDurationInSeconds");
@@ -103,6 +125,10 @@ public final class RequestRateLimitingConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("periodInSeconds")
     private final Integer periodInSeconds;
 
+    /**
+     * Evaluation period in seconds.
+     * @return the value
+     **/
     public Integer getPeriodInSeconds() {
         return periodInSeconds;
     }
@@ -113,6 +139,10 @@ public final class RequestRateLimitingConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("requestsLimit")
     private final Integer requestsLimit;
 
+    /**
+     * Requests allowed per evaluation period.
+     * @return the value
+     **/
     public Integer getRequestsLimit() {
         return requestsLimit;
     }
@@ -123,6 +153,10 @@ public final class RequestRateLimitingConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("actionDurationInSeconds")
     private final Integer actionDurationInSeconds;
 
+    /**
+     * Duration of block action application in seconds when {@code requestsLimit} is reached. Optional and can be 0 (no block duration).
+     * @return the value
+     **/
     public Integer getActionDurationInSeconds() {
         return actionDurationInSeconds;
     }

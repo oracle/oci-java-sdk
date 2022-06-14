@@ -18,6 +18,9 @@ public class UpdateAutonomousVmClusterRequest
      */
     private String autonomousVmClusterId;
 
+    /**
+     * The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousVmClusterId() {
         return autonomousVmClusterId;
     }
@@ -27,6 +30,9 @@ public class UpdateAutonomousVmClusterRequest
     private com.oracle.bmc.database.model.UpdateAutonomousVmClusterDetails
             updateAutonomousVmClusterDetails;
 
+    /**
+     * Request to update the attributes of an Autonomous VM cluster.
+     */
     public com.oracle.bmc.database.model.UpdateAutonomousVmClusterDetails
             getUpdateAutonomousVmClusterDetails() {
         return updateAutonomousVmClusterDetails;
@@ -39,6 +45,12 @@ public class UpdateAutonomousVmClusterRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +60,10 @@ public class UpdateAutonomousVmClusterRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,10 +86,14 @@ public class UpdateAutonomousVmClusterRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousVmClusterId = null;
 
         /**
          * The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousVmClusterId the value to set
          * @return this builder instance
          */
         public Builder autonomousVmClusterId(String autonomousVmClusterId) {
@@ -81,11 +101,15 @@ public class UpdateAutonomousVmClusterRequest
             return this;
         }
 
+        /**
+         * Request to update the attributes of an Autonomous VM cluster.
+         */
         private com.oracle.bmc.database.model.UpdateAutonomousVmClusterDetails
                 updateAutonomousVmClusterDetails = null;
 
         /**
          * Request to update the attributes of an Autonomous VM cluster.
+         * @param updateAutonomousVmClusterDetails the value to set
          * @return this builder instance
          */
         public Builder updateAutonomousVmClusterDetails(
@@ -95,6 +119,12 @@ public class UpdateAutonomousVmClusterRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -102,6 +132,7 @@ public class UpdateAutonomousVmClusterRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -109,11 +140,16 @@ public class UpdateAutonomousVmClusterRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -206,7 +242,8 @@ public class UpdateAutonomousVmClusterRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -216,6 +253,10 @@ public class UpdateAutonomousVmClusterRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

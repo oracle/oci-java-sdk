@@ -28,18 +28,33 @@ public final class PrivateAddresses {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-
+        /**
+         * A private IP address or CIDR IP address range.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addresses")
         private String addresses;
 
+        /**
+         * A private IP address or CIDR IP address range.
+         * @param addresses the value to set
+         * @return this builder
+         **/
         public Builder addresses(String addresses) {
             this.addresses = addresses;
             this.__explicitlySet__.add("addresses");
@@ -81,6 +96,10 @@ public final class PrivateAddresses {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }
@@ -91,6 +110,10 @@ public final class PrivateAddresses {
     @com.fasterxml.jackson.annotation.JsonProperty("addresses")
     private final String addresses;
 
+    /**
+     * A private IP address or CIDR IP address range.
+     * @return the value
+     **/
     public String getAddresses() {
         return addresses;
     }

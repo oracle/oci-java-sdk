@@ -30,9 +30,17 @@ public final class AutoScalePolicyMetricRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Allowed value is CPU_UTILIZATION.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricType")
         private MetricType metricType;
 
+        /**
+         * Allowed value is CPU_UTILIZATION.
+         * @param metricType the value to set
+         * @return this builder
+         **/
         public Builder metricType(MetricType metricType) {
             this.metricType = metricType;
             this.__explicitlySet__.add("metricType");
@@ -131,6 +139,10 @@ public final class AutoScalePolicyMetricRule {
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
     private final MetricType metricType;
 
+    /**
+     * Allowed value is CPU_UTILIZATION.
+     * @return the value
+     **/
     public MetricType getMetricType() {
         return metricType;
     }

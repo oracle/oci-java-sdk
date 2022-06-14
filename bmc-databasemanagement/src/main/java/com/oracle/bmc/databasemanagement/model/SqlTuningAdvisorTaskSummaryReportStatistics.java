@@ -34,6 +34,7 @@ public final class SqlTuningAdvisorTaskSummaryReportStatistics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("statementCounts")
         private SqlTuningAdvisorTaskSummaryReportStatementCounts statementCounts;
 

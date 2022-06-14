@@ -16,6 +16,9 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment the resource belongs to.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +45,10 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Long limit;
 
+    /**
+     * The maximum number of items to return in a page of the collection.
+     *
+     */
     public Long getLimit() {
         return limit;
     }
@@ -45,6 +58,10 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -53,6 +70,9 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String id;
 
+    /**
+     * The OCID of a resource.
+     */
     public String getId() {
         return id;
     }
@@ -61,6 +81,9 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String name;
 
+    /**
+     * The name of a resource.
+     */
     public String getName() {
         return name;
     }
@@ -69,6 +92,9 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.dns.model.TsigKeySummary.LifecycleState lifecycleState;
 
+    /**
+     * The state of a resource.
+     */
     public com.oracle.bmc.dns.model.TsigKeySummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -113,6 +139,9 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -122,6 +151,10 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
+    /**
+     * The order to sort the resources.
+     *
+     */
     public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -131,6 +164,10 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -142,10 +179,14 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment the resource belongs to.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the resource belongs to.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -153,6 +194,12 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -160,6 +207,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -167,11 +215,16 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a page of the collection.
+         *
+         */
         private Long limit = null;
 
         /**
          * The maximum number of items to return in a page of the collection.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Long limit) {
@@ -179,11 +232,16 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -191,10 +249,14 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The OCID of a resource.
+         */
         private String id = null;
 
         /**
          * The OCID of a resource.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -202,10 +264,14 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The name of a resource.
+         */
         private String name = null;
 
         /**
          * The name of a resource.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -213,10 +279,14 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The state of a resource.
+         */
         private com.oracle.bmc.dns.model.TsigKeySummary.LifecycleState lifecycleState = null;
 
         /**
          * The state of a resource.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -225,10 +295,14 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -236,11 +310,16 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The order to sort the resources.
+         *
+         */
         private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
 
         /**
          * The order to sort the resources.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.dns.model.SortOrder sortOrder) {
@@ -248,11 +327,16 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -346,7 +430,8 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -362,6 +447,10 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

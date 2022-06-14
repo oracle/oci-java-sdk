@@ -104,6 +104,13 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain of an instance.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -114,6 +121,10 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -124,6 +135,10 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("device")
     private final String device;
 
+    /**
+     * The device name.
+     * @return the value
+     **/
     public String getDevice() {
         return device;
     }
@@ -136,6 +151,12 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -146,6 +167,10 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the volume attachment.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -156,6 +181,10 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The OCID of the instance the volume is attached to.
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -166,6 +195,10 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
     private final Boolean isReadOnly;
 
+    /**
+     * Whether the attachment was created in read-only mode.
+     * @return the value
+     **/
     public Boolean getIsReadOnly() {
         return isReadOnly;
     }
@@ -180,6 +213,14 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
     private final Boolean isShareable;
 
+    /**
+     * Whether the attachment should be created in shareable mode. If an attachment
+     * is created in shareable mode, then other instances can attach the same volume, provided
+     * that they also create their attachments in shareable mode. Only certain volume types can
+     * be attached in shareable mode. Defaults to false if not specified.
+     *
+     * @return the value
+     **/
     public Boolean getIsShareable() {
         return isShareable;
     }
@@ -240,6 +281,10 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the volume attachment.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -253,6 +298,13 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -263,6 +315,10 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
+    /**
+     * The OCID of the volume.
+     * @return the value
+     **/
     public String getVolumeId() {
         return volumeId;
     }
@@ -274,6 +330,11 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
+    /**
+     * Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+     *
+     * @return the value
+     **/
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
     }
@@ -284,6 +345,10 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("isMultipath")
     private final Boolean isMultipath;
 
+    /**
+     * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
+     * @return the value
+     **/
     public Boolean getIsMultipath() {
         return isMultipath;
     }
@@ -351,6 +416,12 @@ public class VolumeAttachment {
     @com.fasterxml.jackson.annotation.JsonProperty("iscsiLoginState")
     private final IscsiLoginState iscsiLoginState;
 
+    /**
+     * The iscsi login state of the volume attachment. For a Iscsi volume attachment,
+     * all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+     *
+     * @return the value
+     **/
     public IscsiLoginState getIscsiLoginState() {
         return iscsiLoginState;
     }

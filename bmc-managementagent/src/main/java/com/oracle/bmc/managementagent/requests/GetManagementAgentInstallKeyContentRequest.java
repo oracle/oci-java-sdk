@@ -17,6 +17,9 @@ public class GetManagementAgentInstallKeyContentRequest
      */
     private String managementAgentInstallKeyId;
 
+    /**
+     * Unique Management Agent Install Key identifier
+     */
     public String getManagementAgentInstallKeyId() {
         return managementAgentInstallKeyId;
     }
@@ -25,6 +28,9 @@ public class GetManagementAgentInstallKeyContentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +39,9 @@ public class GetManagementAgentInstallKeyContentRequest
      */
     private java.util.List<String> pluginName;
 
+    /**
+     * Filter to return input plugin names uncommented in the output.
+     */
     public java.util.List<String> getPluginName() {
         return pluginName;
     }
@@ -44,10 +53,14 @@ public class GetManagementAgentInstallKeyContentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Management Agent Install Key identifier
+         */
         private String managementAgentInstallKeyId = null;
 
         /**
          * Unique Management Agent Install Key identifier
+         * @param managementAgentInstallKeyId the value to set
          * @return this builder instance
          */
         public Builder managementAgentInstallKeyId(String managementAgentInstallKeyId) {
@@ -55,10 +68,14 @@ public class GetManagementAgentInstallKeyContentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -66,10 +83,14 @@ public class GetManagementAgentInstallKeyContentRequest
             return this;
         }
 
+        /**
+         * Filter to return input plugin names uncommented in the output.
+         */
         private java.util.List<String> pluginName = null;
 
         /**
          * Filter to return input plugin names uncommented in the output.
+         * @param pluginName the value to set
          * @return this builder instance
          */
         public Builder pluginName(java.util.List<String> pluginName) {
@@ -79,6 +100,7 @@ public class GetManagementAgentInstallKeyContentRequest
 
         /**
          * Singular setter. Filter to return input plugin names uncommented in the output.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder pluginName(String singularValue) {
@@ -158,7 +180,8 @@ public class GetManagementAgentInstallKeyContentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -167,6 +190,10 @@ public class GetManagementAgentInstallKeyContentRequest
                 .pluginName(pluginName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

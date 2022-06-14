@@ -30,18 +30,33 @@ public final class GeographicalLocation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Latitude
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latitude")
         private Double latitude;
 
+        /**
+         * Latitude
+         * @param latitude the value to set
+         * @return this builder
+         **/
         public Builder latitude(Double latitude) {
             this.latitude = latitude;
             this.__explicitlySet__.add("latitude");
             return this;
         }
-
+        /**
+         * Longitude
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("longitude")
         private Double longitude;
 
+        /**
+         * Longitude
+         * @param longitude the value to set
+         * @return this builder
+         **/
         public Builder longitude(Double longitude) {
             this.longitude = longitude;
             this.__explicitlySet__.add("longitude");
@@ -83,6 +98,10 @@ public final class GeographicalLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("latitude")
     private final Double latitude;
 
+    /**
+     * Latitude
+     * @return the value
+     **/
     public Double getLatitude() {
         return latitude;
     }
@@ -93,6 +112,10 @@ public final class GeographicalLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("longitude")
     private final Double longitude;
 
+    /**
+     * Longitude
+     * @return the value
+     **/
     public Double getLongitude() {
         return longitude;
     }

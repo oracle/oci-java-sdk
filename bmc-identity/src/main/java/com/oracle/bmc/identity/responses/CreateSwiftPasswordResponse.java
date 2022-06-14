@@ -15,6 +15,12 @@ public class CreateSwiftPasswordResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class CreateSwiftPasswordResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -33,6 +43,10 @@ public class CreateSwiftPasswordResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.identity.model.SwiftPassword swiftPassword;
 
+    /**
+     * The returned SwiftPassword instance.
+     * @return the value
+     */
     public com.oracle.bmc.identity.model.SwiftPassword getSwiftPassword() {
         return swiftPassword;
     }
@@ -62,22 +76,50 @@ public class CreateSwiftPasswordResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned SwiftPassword instance.
+         */
         private com.oracle.bmc.identity.model.SwiftPassword swiftPassword;
 
+        /**
+         * The returned SwiftPassword instance.
+         * @param swiftPassword the value to set
+         * @return this builder
+         */
         public Builder swiftPassword(com.oracle.bmc.identity.model.SwiftPassword swiftPassword) {
             this.swiftPassword = swiftPassword;
             return this;
@@ -96,12 +138,20 @@ public class CreateSwiftPasswordResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateSwiftPasswordResponse build() {
             return new CreateSwiftPasswordResponse(
                     __httpStatusCode__, opcRequestId, etag, swiftPassword);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

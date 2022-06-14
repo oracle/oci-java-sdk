@@ -29,9 +29,17 @@ public final class DeploymentCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of deployment summary items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DeploymentSummary> items;
 
+        /**
+         * Array of deployment summary items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DeploymentSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class DeploymentCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DeploymentSummary> items;
 
+    /**
+     * Array of deployment summary items.
+     * @return the value
+     **/
     public java.util.List<DeploymentSummary> getItems() {
         return items;
     }

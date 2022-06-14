@@ -16,6 +16,9 @@ public class ListDataKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String apmDomainId;
 
+    /**
+     * The OCID of the APM domain.
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -24,6 +27,9 @@ public class ListDataKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.apmcontrolplane.model.DataKeyTypes dataKeyType;
 
+    /**
+     * Data key type.
+     */
     public com.oracle.bmc.apmcontrolplane.model.DataKeyTypes getDataKeyType() {
         return dataKeyType;
     }
@@ -32,6 +38,9 @@ public class ListDataKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,10 +52,14 @@ public class ListDataKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the APM domain.
+         */
         private String apmDomainId = null;
 
         /**
          * The OCID of the APM domain.
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -54,10 +67,14 @@ public class ListDataKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Data key type.
+         */
         private com.oracle.bmc.apmcontrolplane.model.DataKeyTypes dataKeyType = null;
 
         /**
          * Data key type.
+         * @param dataKeyType the value to set
          * @return this builder instance
          */
         public Builder dataKeyType(com.oracle.bmc.apmcontrolplane.model.DataKeyTypes dataKeyType) {
@@ -65,10 +82,14 @@ public class ListDataKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -148,7 +169,8 @@ public class ListDataKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -157,6 +179,10 @@ public class ListDataKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

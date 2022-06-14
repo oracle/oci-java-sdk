@@ -32,27 +32,55 @@ public final class UnsupportedDatabaseObject {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of unsupported object
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * Type of unsupported object
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Owner of the object (regular expression is allowed)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
+        /**
+         * Owner of the object (regular expression is allowed)
+         *
+         * @param owner the value to set
+         * @return this builder
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-
+        /**
+         * Name of the object (regular expression is allowed)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * Name of the object (regular expression is allowed)
+         *
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
@@ -143,6 +171,11 @@ public final class UnsupportedDatabaseObject {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * Type of unsupported object
+     *
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -154,6 +187,11 @@ public final class UnsupportedDatabaseObject {
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
+    /**
+     * Owner of the object (regular expression is allowed)
+     *
+     * @return the value
+     **/
     public String getOwner() {
         return owner;
     }
@@ -165,6 +203,11 @@ public final class UnsupportedDatabaseObject {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * Name of the object (regular expression is allowed)
+     *
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }

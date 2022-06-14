@@ -17,6 +17,9 @@ public class ListSenderInvitationsRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListSenderInvitationsRequest
      */
     private String recipientTenancyId;
 
+    /**
+     * The tenancy that the invitation is addressed to.
+     */
     public String getRecipientTenancyId() {
         return recipientTenancyId;
     }
@@ -33,6 +39,9 @@ public class ListSenderInvitationsRequest
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState;
 
+    /**
+     * The lifecycle state of the resource.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -41,6 +50,9 @@ public class ListSenderInvitationsRequest
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitationStatus status;
 
+    /**
+     * The status of the sender invitation.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitationStatus getStatus() {
         return status;
     }
@@ -49,6 +61,9 @@ public class ListSenderInvitationsRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -57,6 +72,9 @@ public class ListSenderInvitationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,6 +83,9 @@ public class ListSenderInvitationsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -73,6 +94,9 @@ public class ListSenderInvitationsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -125,6 +149,13 @@ public class ListSenderInvitationsRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order can be provided.
+     * * The default order for timeCreated is descending.
+     * * The default order for displayName is ascending.
+     * * If no value is specified, timeCreated is the default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -133,6 +164,9 @@ public class ListSenderInvitationsRequest
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -144,10 +178,14 @@ public class ListSenderInvitationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -155,10 +193,14 @@ public class ListSenderInvitationsRequest
             return this;
         }
 
+        /**
+         * The tenancy that the invitation is addressed to.
+         */
         private String recipientTenancyId = null;
 
         /**
          * The tenancy that the invitation is addressed to.
+         * @param recipientTenancyId the value to set
          * @return this builder instance
          */
         public Builder recipientTenancyId(String recipientTenancyId) {
@@ -166,10 +208,14 @@ public class ListSenderInvitationsRequest
             return this;
         }
 
+        /**
+         * The lifecycle state of the resource.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState = null;
 
         /**
          * The lifecycle state of the resource.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -178,10 +224,14 @@ public class ListSenderInvitationsRequest
             return this;
         }
 
+        /**
+         * The status of the sender invitation.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitationStatus status = null;
 
         /**
          * The status of the sender invitation.
+         * @param status the value to set
          * @return this builder instance
          */
         public Builder status(
@@ -190,10 +240,14 @@ public class ListSenderInvitationsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -201,10 +255,14 @@ public class ListSenderInvitationsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -212,10 +270,14 @@ public class ListSenderInvitationsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -223,10 +285,14 @@ public class ListSenderInvitationsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -234,6 +300,13 @@ public class ListSenderInvitationsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order can be provided.
+         * * The default order for timeCreated is descending.
+         * * The default order for displayName is ascending.
+         * * If no value is specified, timeCreated is the default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -242,6 +315,7 @@ public class ListSenderInvitationsRequest
          * * The default order for displayName is ascending.
          * * If no value is specified, timeCreated is the default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -249,10 +323,14 @@ public class ListSenderInvitationsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(
@@ -347,7 +425,8 @@ public class ListSenderInvitationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -363,6 +442,10 @@ public class ListSenderInvitationsRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

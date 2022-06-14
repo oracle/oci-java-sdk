@@ -44,46 +44,102 @@ public final class CreateDataAssetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Detailed description of the data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the data asset.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The key of the data asset type. This can be obtained via the '/types' endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
         private String typeKey;
 
+        /**
+         * The key of the data asset type. This can be obtained via the '/types' endpoint.
+         * @param typeKey the value to set
+         * @return this builder
+         **/
         public Builder typeKey(String typeKey) {
             this.typeKey = typeKey;
             this.__explicitlySet__.add("typeKey");
             return this;
         }
-
+        /**
+         * The list of customized properties along with the values for this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
         private java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+        /**
+         * The list of customized properties along with the values for this object
+         * @param customPropertyMembers the value to set
+         * @return this builder
+         **/
         public Builder customPropertyMembers(
                 java.util.List<CustomPropertySetUsage> customPropertyMembers) {
             this.customPropertyMembers = customPropertyMembers;
             this.__explicitlySet__.add("customPropertyMembers");
             return this;
         }
-
+        /**
+         * A map of maps that contains the properties which are specific to the data asset type. Each data asset type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * data assets have required properties within the "default" category. To determine the set of optional and
+         * required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a
+         * collection of all data asset types. The appropriate data asset type, which includes definitions of all of
+         * it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
+        /**
+         * A map of maps that contains the properties which are specific to the data asset type. Each data asset type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * data assets have required properties within the "default" category. To determine the set of optional and
+         * required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a
+         * collection of all data asset types. The appropriate data asset type, which includes definitions of all of
+         * it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+         *
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -134,6 +190,12 @@ public final class CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -144,6 +206,10 @@ public final class CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the data asset.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -154,6 +220,10 @@ public final class CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
     private final String typeKey;
 
+    /**
+     * The key of the data asset type. This can be obtained via the '/types' endpoint.
+     * @return the value
+     **/
     public String getTypeKey() {
         return typeKey;
     }
@@ -164,6 +234,10 @@ public final class CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
     private final java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+    /**
+     * The list of customized properties along with the values for this object
+     * @return the value
+     **/
     public java.util.List<CustomPropertySetUsage> getCustomPropertyMembers() {
         return customPropertyMembers;
     }
@@ -182,6 +256,18 @@ public final class CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
+    /**
+     * A map of maps that contains the properties which are specific to the data asset type. Each data asset type
+     * definition defines it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * data assets have required properties within the "default" category. To determine the set of optional and
+     * required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a
+     * collection of all data asset types. The appropriate data asset type, which includes definitions of all of
+     * it's properties, can be identified from this collection.
+     * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }

@@ -28,18 +28,65 @@ package com.oracle.bmc.loadbalancer.model;
 public final class PathMatchCondition extends RuleCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The path string that the redirection rule applies to.
+         * <p>
+         * Example: {@code /example}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
         private String attributeValue;
 
+        /**
+         * The path string that the redirection rule applies to.
+         * <p>
+         * Example: {@code /example}
+         *
+         * @param attributeValue the value to set
+         * @return this builder
+         **/
         public Builder attributeValue(String attributeValue) {
             this.attributeValue = attributeValue;
             this.__explicitlySet__.add("attributeValue");
             return this;
         }
-
+        /**
+         * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
+         * incoming URI.
+         * <p>
+         *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
+         * <p>
+         *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
+         *    longest match of the beginning portion of the incoming URI path.
+         * <p>
+         *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
+         *    {@code attributeValue} string.
+         * <p>
+         *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
+         *    string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
+        /**
+         * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
+         * incoming URI.
+         * <p>
+         *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
+         * <p>
+         *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
+         *    longest match of the beginning portion of the incoming URI path.
+         * <p>
+         *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
+         *    {@code attributeValue} string.
+         * <p>
+         *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
+         *    string.
+         *
+         * @param operator the value to set
+         * @return this builder
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
@@ -91,6 +138,13 @@ public final class PathMatchCondition extends RuleCondition {
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
     private final String attributeValue;
 
+    /**
+     * The path string that the redirection rule applies to.
+     * <p>
+     * Example: {@code /example}
+     *
+     * @return the value
+     **/
     public String getAttributeValue() {
         return attributeValue;
     }
@@ -177,6 +231,23 @@ public final class PathMatchCondition extends RuleCondition {
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
+    /**
+     * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
+     * incoming URI.
+     * <p>
+     *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
+     * <p>
+     *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
+     *    longest match of the beginning portion of the incoming URI path.
+     * <p>
+     *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
+     *    {@code attributeValue} string.
+     * <p>
+     *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
+     *    string.
+     *
+     * @return the value
+     **/
     public Operator getOperator() {
         return operator;
     }

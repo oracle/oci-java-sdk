@@ -18,6 +18,9 @@ public class QueryOpsiDataObjectDataRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,9 @@ public class QueryOpsiDataObjectDataRequest
      */
     private com.oracle.bmc.opsi.model.QueryOpsiDataObjectDataDetails queryOpsiDataObjectDataDetails;
 
+    /**
+     * The information to be used for querying an OPSI data object.
+     */
     public com.oracle.bmc.opsi.model.QueryOpsiDataObjectDataDetails
             getQueryOpsiDataObjectDataDetails() {
         return queryOpsiDataObjectDataDetails;
@@ -40,6 +46,14 @@ public class QueryOpsiDataObjectDataRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -51,6 +65,12 @@ public class QueryOpsiDataObjectDataRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -61,6 +81,11 @@ public class QueryOpsiDataObjectDataRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -83,10 +108,14 @@ public class QueryOpsiDataObjectDataRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -94,11 +123,15 @@ public class QueryOpsiDataObjectDataRequest
             return this;
         }
 
+        /**
+         * The information to be used for querying an OPSI data object.
+         */
         private com.oracle.bmc.opsi.model.QueryOpsiDataObjectDataDetails
                 queryOpsiDataObjectDataDetails = null;
 
         /**
          * The information to be used for querying an OPSI data object.
+         * @param queryOpsiDataObjectDataDetails the value to set
          * @return this builder instance
          */
         public Builder queryOpsiDataObjectDataDetails(
@@ -108,6 +141,14 @@ public class QueryOpsiDataObjectDataRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -117,6 +158,7 @@ public class QueryOpsiDataObjectDataRequest
          * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -124,6 +166,12 @@ public class QueryOpsiDataObjectDataRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -131,6 +179,7 @@ public class QueryOpsiDataObjectDataRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -138,12 +187,18 @@ public class QueryOpsiDataObjectDataRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -238,7 +293,8 @@ public class QueryOpsiDataObjectDataRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -249,6 +305,10 @@ public class QueryOpsiDataObjectDataRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -19,6 +19,9 @@ public class CreateConsoleConnectionRequest
     private com.oracle.bmc.database.model.CreateConsoleConnectionDetails
             createConsoleConnectionDetails;
 
+    /**
+     * Request object for creating an CreateConsoleConnection
+     */
     public com.oracle.bmc.database.model.CreateConsoleConnectionDetails
             getCreateConsoleConnectionDetails() {
         return createConsoleConnectionDetails;
@@ -28,6 +31,9 @@ public class CreateConsoleConnectionRequest
      */
     private String dbNodeId;
 
+    /**
+     * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbNodeId() {
         return dbNodeId;
     }
@@ -41,6 +47,14 @@ public class CreateConsoleConnectionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -63,11 +77,15 @@ public class CreateConsoleConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request object for creating an CreateConsoleConnection
+         */
         private com.oracle.bmc.database.model.CreateConsoleConnectionDetails
                 createConsoleConnectionDetails = null;
 
         /**
          * Request object for creating an CreateConsoleConnection
+         * @param createConsoleConnectionDetails the value to set
          * @return this builder instance
          */
         public Builder createConsoleConnectionDetails(
@@ -77,10 +95,14 @@ public class CreateConsoleConnectionRequest
             return this;
         }
 
+        /**
+         * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbNodeId = null;
 
         /**
          * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbNodeId the value to set
          * @return this builder instance
          */
         public Builder dbNodeId(String dbNodeId) {
@@ -88,6 +110,14 @@ public class CreateConsoleConnectionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -97,6 +127,7 @@ public class CreateConsoleConnectionRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -187,7 +218,8 @@ public class CreateConsoleConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -196,6 +228,10 @@ public class CreateConsoleConnectionRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

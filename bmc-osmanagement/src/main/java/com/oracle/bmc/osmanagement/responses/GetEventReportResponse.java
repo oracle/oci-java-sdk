@@ -13,6 +13,10 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * identifier for the request
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.osmanagement.model.EventReport eventReport;
 
+    /**
+     * The returned EventReport instance.
+     * @return the value
+     */
     public com.oracle.bmc.osmanagement.model.EventReport getEventReport() {
         return eventReport;
     }
@@ -44,15 +52,31 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * identifier for the request
+         */
         private String opcRequestId;
 
+        /**
+         * identifier for the request
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned EventReport instance.
+         */
         private com.oracle.bmc.osmanagement.model.EventReport eventReport;
 
+        /**
+         * The returned EventReport instance.
+         * @param eventReport the value to set
+         * @return this builder
+         */
         public Builder eventReport(com.oracle.bmc.osmanagement.model.EventReport eventReport) {
             this.eventReport = eventReport;
             return this;
@@ -70,11 +94,19 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetEventReportResponse build() {
             return new GetEventReportResponse(__httpStatusCode__, opcRequestId, eventReport);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

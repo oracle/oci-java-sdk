@@ -31,18 +31,33 @@ public final class AccessibleCompartmentRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The authorization request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
         private AuthorizationRequest authorizationRequest;
 
+        /**
+         * The authorization request.
+         * @param authorizationRequest the value to set
+         * @return this builder
+         **/
         public Builder authorizationRequest(AuthorizationRequest authorizationRequest) {
             this.authorizationRequest = authorizationRequest;
             this.__explicitlySet__.add("authorizationRequest");
             return this;
         }
-
+        /**
+         * The list of compartment ids.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIds")
         private java.util.List<String> compartmentIds;
 
+        /**
+         * The list of compartment ids.
+         * @param compartmentIds the value to set
+         * @return this builder
+         **/
         public Builder compartmentIds(java.util.List<String> compartmentIds) {
             this.compartmentIds = compartmentIds;
             this.__explicitlySet__.add("compartmentIds");
@@ -87,6 +102,10 @@ public final class AccessibleCompartmentRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
     private final AuthorizationRequest authorizationRequest;
 
+    /**
+     * The authorization request.
+     * @return the value
+     **/
     public AuthorizationRequest getAuthorizationRequest() {
         return authorizationRequest;
     }
@@ -97,6 +116,10 @@ public final class AccessibleCompartmentRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIds")
     private final java.util.List<String> compartmentIds;
 
+    /**
+     * The list of compartment ids.
+     * @return the value
+     **/
     public java.util.List<String> getCompartmentIds() {
         return compartmentIds;
     }

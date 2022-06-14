@@ -32,6 +32,7 @@ public final class CertificateRevocationListDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageConfig")
         private ObjectStorageBucketConfigDetails objectStorageConfig;
 
@@ -40,10 +41,19 @@ public final class CertificateRevocationListDetails {
             this.__explicitlySet__.add("objectStorageConfig");
             return this;
         }
-
+        /**
+         * Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customFormattedUrls")
         private java.util.List<String> customFormattedUrls;
 
+        /**
+         * Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+         *
+         * @param customFormattedUrls the value to set
+         * @return this builder
+         **/
         public Builder customFormattedUrls(java.util.List<String> customFormattedUrls) {
             this.customFormattedUrls = customFormattedUrls;
             this.__explicitlySet__.add("customFormattedUrls");
@@ -96,6 +106,11 @@ public final class CertificateRevocationListDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customFormattedUrls")
     private final java.util.List<String> customFormattedUrls;
 
+    /**
+     * Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getCustomFormattedUrls() {
         return customFormattedUrls;
     }

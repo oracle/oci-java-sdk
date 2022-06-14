@@ -41,37 +41,66 @@ public final class LogAnalyticsParserMetaPlugin {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of plugin parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metaPluginParameters")
         private java.util.List<LogAnalyticsParserMetaPluginParameter> metaPluginParameters;
 
+        /**
+         * An array of plugin parameters.
+         * @param metaPluginParameters the value to set
+         * @return this builder
+         **/
         public Builder metaPluginParameters(
                 java.util.List<LogAnalyticsParserMetaPluginParameter> metaPluginParameters) {
             this.metaPluginParameters = metaPluginParameters;
             this.__explicitlySet__.add("metaPluginParameters");
             return this;
         }
-
+        /**
+         * The plugin description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The plugin description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The plugin display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The plugin display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The plugin internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The plugin internal name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -119,6 +148,10 @@ public final class LogAnalyticsParserMetaPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("metaPluginParameters")
     private final java.util.List<LogAnalyticsParserMetaPluginParameter> metaPluginParameters;
 
+    /**
+     * An array of plugin parameters.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParserMetaPluginParameter> getMetaPluginParameters() {
         return metaPluginParameters;
     }
@@ -129,6 +162,10 @@ public final class LogAnalyticsParserMetaPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The plugin description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -139,6 +176,10 @@ public final class LogAnalyticsParserMetaPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The plugin display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -149,6 +190,10 @@ public final class LogAnalyticsParserMetaPlugin {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The plugin internal name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

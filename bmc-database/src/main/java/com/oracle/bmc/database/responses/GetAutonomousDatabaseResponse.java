@@ -13,6 +13,10 @@ public class GetAutonomousDatabaseResponse extends com.oracle.bmc.responses.BmcR
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +28,12 @@ public class GetAutonomousDatabaseResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class GetAutonomousDatabaseResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
+    /**
+     * The returned AutonomousDatabase instance.
+     * @return the value
+     */
     public com.oracle.bmc.database.model.AutonomousDatabase getAutonomousDatabase() {
         return autonomousDatabase;
     }
@@ -62,22 +76,50 @@ public class GetAutonomousDatabaseResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned AutonomousDatabase instance.
+         */
         private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
+        /**
+         * The returned AutonomousDatabase instance.
+         * @param autonomousDatabase the value to set
+         * @return this builder
+         */
         public Builder autonomousDatabase(
                 com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase) {
             this.autonomousDatabase = autonomousDatabase;
@@ -97,12 +139,20 @@ public class GetAutonomousDatabaseResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetAutonomousDatabaseResponse build() {
             return new GetAutonomousDatabaseResponse(
                     __httpStatusCode__, etag, opcRequestId, autonomousDatabase);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

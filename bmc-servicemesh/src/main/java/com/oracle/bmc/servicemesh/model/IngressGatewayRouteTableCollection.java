@@ -30,9 +30,17 @@ public final class IngressGatewayRouteTableCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of ingress gateway route tables.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<IngressGatewayRouteTableSummary> items;
 
+        /**
+         * List of ingress gateway route tables.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<IngressGatewayRouteTableSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class IngressGatewayRouteTableCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<IngressGatewayRouteTableSummary> items;
 
+    /**
+     * List of ingress gateway route tables.
+     * @return the value
+     **/
     public java.util.List<IngressGatewayRouteTableSummary> getItems() {
         return items;
     }

@@ -31,10 +31,18 @@ public final class DefaultParameterValues {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of resource type specific default parameter values, one set for each resource type listed in the package definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypesDefaultParameterValues")
         private java.util.List<ResourceTypeDefaultParameterValues>
                 resourceTypesDefaultParameterValues;
 
+        /**
+         * A list of resource type specific default parameter values, one set for each resource type listed in the package definition.
+         * @param resourceTypesDefaultParameterValues the value to set
+         * @return this builder
+         **/
         public Builder resourceTypesDefaultParameterValues(
                 java.util.List<ResourceTypeDefaultParameterValues>
                         resourceTypesDefaultParameterValues) {
@@ -81,6 +89,10 @@ public final class DefaultParameterValues {
     private final java.util.List<ResourceTypeDefaultParameterValues>
             resourceTypesDefaultParameterValues;
 
+    /**
+     * A list of resource type specific default parameter values, one set for each resource type listed in the package definition.
+     * @return the value
+     **/
     public java.util.List<ResourceTypeDefaultParameterValues>
             getResourceTypesDefaultParameterValues() {
         return resourceTypesDefaultParameterValues;

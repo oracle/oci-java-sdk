@@ -29,9 +29,17 @@ public final class UpdateConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of email IDs associated with the configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailIds")
         private java.util.List<String> emailIds;
 
+        /**
+         * List of email IDs associated with the configuration.
+         * @param emailIds the value to set
+         * @return this builder
+         **/
         public Builder emailIds(java.util.List<String> emailIds) {
             this.emailIds = emailIds;
             this.__explicitlySet__.add("emailIds");
@@ -73,6 +81,10 @@ public final class UpdateConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("emailIds")
     private final java.util.List<String> emailIds;
 
+    /**
+     * List of email IDs associated with the configuration.
+     * @return the value
+     **/
     public java.util.List<String> getEmailIds() {
         return emailIds;
     }

@@ -19,6 +19,10 @@ public class UpdateConnectionRequest
      */
     private String connectionId;
 
+    /**
+     * The OCID of the database connection
+     *
+     */
     public String getConnectionId() {
         return connectionId;
     }
@@ -28,6 +32,10 @@ public class UpdateConnectionRequest
      */
     private com.oracle.bmc.databasemigration.model.UpdateConnectionDetails updateConnectionDetails;
 
+    /**
+     * Database Connection properties.
+     *
+     */
     public com.oracle.bmc.databasemigration.model.UpdateConnectionDetails
             getUpdateConnectionDetails() {
         return updateConnectionDetails;
@@ -39,6 +47,11 @@ public class UpdateConnectionRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,6 +65,14 @@ public class UpdateConnectionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -74,11 +95,16 @@ public class UpdateConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the database connection
+         *
+         */
         private String connectionId = null;
 
         /**
          * The OCID of the database connection
          *
+         * @param connectionId the value to set
          * @return this builder instance
          */
         public Builder connectionId(String connectionId) {
@@ -86,12 +112,17 @@ public class UpdateConnectionRequest
             return this;
         }
 
+        /**
+         * Database Connection properties.
+         *
+         */
         private com.oracle.bmc.databasemigration.model.UpdateConnectionDetails
                 updateConnectionDetails = null;
 
         /**
          * Database Connection properties.
          *
+         * @param updateConnectionDetails the value to set
          * @return this builder instance
          */
         public Builder updateConnectionDetails(
@@ -101,12 +132,18 @@ public class UpdateConnectionRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -114,6 +151,14 @@ public class UpdateConnectionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -123,6 +168,7 @@ public class UpdateConnectionRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -215,7 +261,8 @@ public class UpdateConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -225,6 +272,10 @@ public class UpdateConnectionRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

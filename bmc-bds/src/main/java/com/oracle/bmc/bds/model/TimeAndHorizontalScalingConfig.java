@@ -30,18 +30,35 @@ public final class TimeAndHorizontalScalingConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRecurrence")
         private String timeRecurrence;
 
+        /**
+         * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+         *
+         * @param timeRecurrence the value to set
+         * @return this builder
+         **/
         public Builder timeRecurrence(String timeRecurrence) {
             this.timeRecurrence = timeRecurrence;
             this.__explicitlySet__.add("timeRecurrence");
             return this;
         }
-
+        /**
+         * This value is the desired number of nodes in the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetNodeCount")
         private Integer targetNodeCount;
 
+        /**
+         * This value is the desired number of nodes in the cluster.
+         * @param targetNodeCount the value to set
+         * @return this builder
+         **/
         public Builder targetNodeCount(Integer targetNodeCount) {
             this.targetNodeCount = targetNodeCount;
             this.__explicitlySet__.add("targetNodeCount");
@@ -86,6 +103,11 @@ public final class TimeAndHorizontalScalingConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRecurrence")
     private final String timeRecurrence;
 
+    /**
+     * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+     *
+     * @return the value
+     **/
     public String getTimeRecurrence() {
         return timeRecurrence;
     }
@@ -96,6 +118,10 @@ public final class TimeAndHorizontalScalingConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("targetNodeCount")
     private final Integer targetNodeCount;
 
+    /**
+     * This value is the desired number of nodes in the cluster.
+     * @return the value
+     **/
     public Integer getTargetNodeCount() {
         return targetNodeCount;
     }

@@ -18,6 +18,9 @@ public class ChangeAiPrivateEndpointCompartmentRequest
      */
     private String aiPrivateEndpointId;
 
+    /**
+     * Unique private reverse connection identifier.
+     */
     public String getAiPrivateEndpointId() {
         return aiPrivateEndpointId;
     }
@@ -27,6 +30,9 @@ public class ChangeAiPrivateEndpointCompartmentRequest
     private com.oracle.bmc.aianomalydetection.model.ChangeAiPrivateEndpointCompartmentDetails
             changeAiPrivateEndpointCompartmentDetails;
 
+    /**
+     * Details for the target compartment.
+     */
     public com.oracle.bmc.aianomalydetection.model.ChangeAiPrivateEndpointCompartmentDetails
             getChangeAiPrivateEndpointCompartmentDetails() {
         return changeAiPrivateEndpointCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeAiPrivateEndpointCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeAiPrivateEndpointCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,14 @@ public class ChangeAiPrivateEndpointCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -86,10 +111,14 @@ public class ChangeAiPrivateEndpointCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique private reverse connection identifier.
+         */
         private String aiPrivateEndpointId = null;
 
         /**
          * Unique private reverse connection identifier.
+         * @param aiPrivateEndpointId the value to set
          * @return this builder instance
          */
         public Builder aiPrivateEndpointId(String aiPrivateEndpointId) {
@@ -97,11 +126,15 @@ public class ChangeAiPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for the target compartment.
+         */
         private com.oracle.bmc.aianomalydetection.model.ChangeAiPrivateEndpointCompartmentDetails
                 changeAiPrivateEndpointCompartmentDetails = null;
 
         /**
          * Details for the target compartment.
+         * @param changeAiPrivateEndpointCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeAiPrivateEndpointCompartmentDetails(
@@ -112,6 +145,14 @@ public class ChangeAiPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -121,6 +162,7 @@ public class ChangeAiPrivateEndpointCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -128,10 +170,14 @@ public class ChangeAiPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -139,6 +185,14 @@ public class ChangeAiPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -148,6 +202,7 @@ public class ChangeAiPrivateEndpointCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -247,7 +302,8 @@ public class ChangeAiPrivateEndpointCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -259,6 +315,10 @@ public class ChangeAiPrivateEndpointCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

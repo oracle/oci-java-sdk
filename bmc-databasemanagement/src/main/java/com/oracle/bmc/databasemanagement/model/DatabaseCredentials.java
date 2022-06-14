@@ -32,36 +32,69 @@ public final class DatabaseCredentials {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The database user name used to perform management activity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The database user name used to perform management activity.
+         *
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The password for the database user name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * The password for the database user name.
+         *
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * @param secretId the value to set
+         * @return this builder
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
             return this;
         }
-
+        /**
+         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
+        /**
+         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+         * @param role the value to set
+         * @return this builder
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -109,6 +142,11 @@ public final class DatabaseCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The database user name used to perform management activity.
+     *
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -120,6 +158,11 @@ public final class DatabaseCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * The password for the database user name.
+     *
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }
@@ -130,6 +173,10 @@ public final class DatabaseCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * @return the value
+     **/
     public String getSecretId() {
         return secretId;
     }
@@ -175,6 +222,10 @@ public final class DatabaseCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
+    /**
+     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+     * @return the value
+     **/
     public Role getRole() {
         return role;
     }

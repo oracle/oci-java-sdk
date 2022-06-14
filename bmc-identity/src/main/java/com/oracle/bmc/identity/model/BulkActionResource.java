@@ -33,27 +33,105 @@ public final class BulkActionResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resource OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * The resource OCID.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * The resource-type. To get the list of supported resource-types use
+         * {@link #listBulkActionResourceTypes(ListBulkActionResourceTypesRequest) listBulkActionResourceTypes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The resource-type. To get the list of supported resource-types use
+         * {@link #listBulkActionResourceTypes(ListBulkActionResourceTypesRequest) listBulkActionResourceTypes}.
+         *
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * Additional information that helps to identity the resource for bulk action.
+         * <p>
+         * The APIs to delete and move most resource types only require the resource identifier (ocid).
+         * But some resource-types require additional identifying information.
+         * <p>
+         * This information is provided in the resource's public API document. It is also
+         * available through the
+         * {@link #listBulkActionResourceTypes(ListBulkActionResourceTypesRequest) listBulkActionResourceTypes}.
+         * <p>
+         **Example**:
+         * The APIs to delete or move the {@code buckets} resource-type require {@code namespaceName} and {@code bucketName} to identify the resource, as
+         * shown in the APIs, {@link #deleteBucket(DeleteBucketRequest) deleteBucket} and
+         * {@link #updateBucket(UpdateBucketRequest) updateBucket}.
+         * <p>
+         * To add a bucket for bulk actions, specify {@code namespaceName} and {@code bucketName} in
+         * the metadata property as shown in this example
+         * <p>
+         * {
+         *       "identifier": "<OCID_of_bucket>"
+         *       "entityType": "bucket",
+         *       "metadata":
+         *       {
+         *         "namespaceName": "sampleNamespace",
+         *         "bucketName": "sampleBucket"
+         *       }
+         *     }
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
+        /**
+         * Additional information that helps to identity the resource for bulk action.
+         * <p>
+         * The APIs to delete and move most resource types only require the resource identifier (ocid).
+         * But some resource-types require additional identifying information.
+         * <p>
+         * This information is provided in the resource's public API document. It is also
+         * available through the
+         * {@link #listBulkActionResourceTypes(ListBulkActionResourceTypesRequest) listBulkActionResourceTypes}.
+         * <p>
+         **Example**:
+         * The APIs to delete or move the {@code buckets} resource-type require {@code namespaceName} and {@code bucketName} to identify the resource, as
+         * shown in the APIs, {@link #deleteBucket(DeleteBucketRequest) deleteBucket} and
+         * {@link #updateBucket(UpdateBucketRequest) updateBucket}.
+         * <p>
+         * To add a bucket for bulk actions, specify {@code namespaceName} and {@code bucketName} in
+         * the metadata property as shown in this example
+         * <p>
+         * {
+         *       "identifier": "<OCID_of_bucket>"
+         *       "entityType": "bucket",
+         *       "metadata":
+         *       {
+         *         "namespaceName": "sampleNamespace",
+         *         "bucketName": "sampleBucket"
+         *       }
+         *     }
+         *
+         * @param metadata the value to set
+         * @return this builder
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -99,6 +177,10 @@ public final class BulkActionResource {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * The resource OCID.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -111,6 +193,12 @@ public final class BulkActionResource {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The resource-type. To get the list of supported resource-types use
+     * {@link #listBulkActionResourceTypes(ListBulkActionResourceTypesRequest) listBulkActionResourceTypes}.
+     *
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -147,6 +235,36 @@ public final class BulkActionResource {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
+    /**
+     * Additional information that helps to identity the resource for bulk action.
+     * <p>
+     * The APIs to delete and move most resource types only require the resource identifier (ocid).
+     * But some resource-types require additional identifying information.
+     * <p>
+     * This information is provided in the resource's public API document. It is also
+     * available through the
+     * {@link #listBulkActionResourceTypes(ListBulkActionResourceTypesRequest) listBulkActionResourceTypes}.
+     * <p>
+     **Example**:
+     * The APIs to delete or move the {@code buckets} resource-type require {@code namespaceName} and {@code bucketName} to identify the resource, as
+     * shown in the APIs, {@link #deleteBucket(DeleteBucketRequest) deleteBucket} and
+     * {@link #updateBucket(UpdateBucketRequest) updateBucket}.
+     * <p>
+     * To add a bucket for bulk actions, specify {@code namespaceName} and {@code bucketName} in
+     * the metadata property as shown in this example
+     * <p>
+     * {
+     *       "identifier": "<OCID_of_bucket>"
+     *       "entityType": "bucket",
+     *       "metadata":
+     *       {
+     *         "namespaceName": "sampleNamespace",
+     *         "bucketName": "sampleBucket"
+     *       }
+     *     }
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }

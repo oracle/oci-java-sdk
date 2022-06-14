@@ -31,27 +31,53 @@ public final class BuildPipelineParameter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+         * Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+         * Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Default value of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
+        /**
+         * Default value of the parameter.
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-
+        /**
+         * Description of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the parameter.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -99,6 +125,12 @@ public final class BuildPipelineParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+     * Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -109,6 +141,10 @@ public final class BuildPipelineParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
+    /**
+     * Default value of the parameter.
+     * @return the value
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -119,6 +155,10 @@ public final class BuildPipelineParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the parameter.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

@@ -29,9 +29,17 @@ public final class UpdateResponderRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Identifies state for ResponderRule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Identifies state for ResponderRule
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -73,6 +81,10 @@ public final class UpdateResponderRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Identifies state for ResponderRule
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }

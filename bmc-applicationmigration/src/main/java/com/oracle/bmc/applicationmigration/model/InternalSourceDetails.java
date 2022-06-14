@@ -28,9 +28,17 @@ package com.oracle.bmc.applicationmigration.model;
 public final class InternalSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The identity domain ID of your traditional Oracle Cloud Infrastructure - Classic account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountName")
         private String accountName;
 
+        /**
+         * The identity domain ID of your traditional Oracle Cloud Infrastructure - Classic account.
+         * @param accountName the value to set
+         * @return this builder
+         **/
         public Builder accountName(String accountName) {
             this.accountName = accountName;
             this.__explicitlySet__.add("accountName");
@@ -78,6 +86,10 @@ public final class InternalSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("accountName")
     private final String accountName;
 
+    /**
+     * The identity domain ID of your traditional Oracle Cloud Infrastructure - Classic account.
+     * @return the value
+     **/
     public String getAccountName() {
         return accountName;
     }

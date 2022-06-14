@@ -27,9 +27,17 @@ public final class ExadataInsights {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Exadata Insights Object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsights")
         private Object exadataInsights;
 
+        /**
+         * Exadata Insights Object.
+         * @param exadataInsights the value to set
+         * @return this builder
+         **/
         public Builder exadataInsights(Object exadataInsights) {
             this.exadataInsights = exadataInsights;
             this.__explicitlySet__.add("exadataInsights");
@@ -71,6 +79,10 @@ public final class ExadataInsights {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsights")
     private final Object exadataInsights;
 
+    /**
+     * Exadata Insights Object.
+     * @return the value
+     **/
     public Object getExadataInsights() {
         return exadataInsights;
     }

@@ -28,18 +28,33 @@ public final class ParameterValue {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A simple value for the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("simpleValue")
         private Object simpleValue;
 
+        /**
+         * A simple value for the parameter.
+         * @param simpleValue the value to set
+         * @return this builder
+         **/
         public Builder simpleValue(Object simpleValue) {
             this.simpleValue = simpleValue;
             this.__explicitlySet__.add("simpleValue");
             return this;
         }
-
+        /**
+         * This can be any object such as a file entity, a schema, or a table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rootObjectValue")
         private Object rootObjectValue;
 
+        /**
+         * This can be any object such as a file entity, a schema, or a table.
+         * @param rootObjectValue the value to set
+         * @return this builder
+         **/
         public Builder rootObjectValue(Object rootObjectValue) {
             this.rootObjectValue = rootObjectValue;
             this.__explicitlySet__.add("rootObjectValue");
@@ -82,6 +97,10 @@ public final class ParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("simpleValue")
     private final Object simpleValue;
 
+    /**
+     * A simple value for the parameter.
+     * @return the value
+     **/
     public Object getSimpleValue() {
         return simpleValue;
     }
@@ -92,6 +111,10 @@ public final class ParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("rootObjectValue")
     private final Object rootObjectValue;
 
+    /**
+     * This can be any object such as a file entity, a schema, or a table.
+     * @return the value
+     **/
     public Object getRootObjectValue() {
         return rootObjectValue;
     }

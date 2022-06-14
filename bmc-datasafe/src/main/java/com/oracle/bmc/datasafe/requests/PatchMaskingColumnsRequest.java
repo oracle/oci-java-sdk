@@ -18,6 +18,9 @@ public class PatchMaskingColumnsRequest
      */
     private String maskingPolicyId;
 
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -26,6 +29,9 @@ public class PatchMaskingColumnsRequest
      */
     private com.oracle.bmc.datasafe.model.PatchMaskingColumnsDetails patchMaskingColumnsDetails;
 
+    /**
+     * Details to patch masking columns.
+     */
     public com.oracle.bmc.datasafe.model.PatchMaskingColumnsDetails
             getPatchMaskingColumnsDetails() {
         return patchMaskingColumnsDetails;
@@ -35,6 +41,9 @@ public class PatchMaskingColumnsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +57,14 @@ public class PatchMaskingColumnsRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -70,10 +87,14 @@ public class PatchMaskingColumnsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -81,11 +102,15 @@ public class PatchMaskingColumnsRequest
             return this;
         }
 
+        /**
+         * Details to patch masking columns.
+         */
         private com.oracle.bmc.datasafe.model.PatchMaskingColumnsDetails
                 patchMaskingColumnsDetails = null;
 
         /**
          * Details to patch masking columns.
+         * @param patchMaskingColumnsDetails the value to set
          * @return this builder instance
          */
         public Builder patchMaskingColumnsDetails(
@@ -95,10 +120,14 @@ public class PatchMaskingColumnsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -106,6 +135,14 @@ public class PatchMaskingColumnsRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -115,6 +152,7 @@ public class PatchMaskingColumnsRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -207,7 +245,8 @@ public class PatchMaskingColumnsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +256,10 @@ public class PatchMaskingColumnsRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

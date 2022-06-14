@@ -17,6 +17,9 @@ public class GetTargetDetectorRecipeRequest
      */
     private String targetId;
 
+    /**
+     * OCID of target
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -25,6 +28,9 @@ public class GetTargetDetectorRecipeRequest
      */
     private String targetDetectorRecipeId;
 
+    /**
+     * OCID of TargetDetectorRecipe
+     */
     public String getTargetDetectorRecipeId() {
         return targetDetectorRecipeId;
     }
@@ -33,6 +39,9 @@ public class GetTargetDetectorRecipeRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,10 +53,14 @@ public class GetTargetDetectorRecipeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of target
+         */
         private String targetId = null;
 
         /**
          * OCID of target
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -55,10 +68,14 @@ public class GetTargetDetectorRecipeRequest
             return this;
         }
 
+        /**
+         * OCID of TargetDetectorRecipe
+         */
         private String targetDetectorRecipeId = null;
 
         /**
          * OCID of TargetDetectorRecipe
+         * @param targetDetectorRecipeId the value to set
          * @return this builder instance
          */
         public Builder targetDetectorRecipeId(String targetDetectorRecipeId) {
@@ -66,10 +83,14 @@ public class GetTargetDetectorRecipeRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -149,7 +170,8 @@ public class GetTargetDetectorRecipeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -158,6 +180,10 @@ public class GetTargetDetectorRecipeRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

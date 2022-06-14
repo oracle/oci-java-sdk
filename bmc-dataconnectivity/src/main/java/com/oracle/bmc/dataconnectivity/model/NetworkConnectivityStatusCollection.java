@@ -30,9 +30,17 @@ public final class NetworkConnectivityStatusCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of NetworkConnectivityStatus.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkConnectivityStatusList")
         private java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList;
 
+        /**
+         * The array of NetworkConnectivityStatus.
+         * @param networkConnectivityStatusList the value to set
+         * @return this builder
+         **/
         public Builder networkConnectivityStatusList(
                 java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList) {
             this.networkConnectivityStatusList = networkConnectivityStatusList;
@@ -77,6 +85,10 @@ public final class NetworkConnectivityStatusCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("networkConnectivityStatusList")
     private final java.util.List<NetworkConnectivityStatus> networkConnectivityStatusList;
 
+    /**
+     * The array of NetworkConnectivityStatus.
+     * @return the value
+     **/
     public java.util.List<NetworkConnectivityStatus> getNetworkConnectivityStatusList() {
         return networkConnectivityStatusList;
     }

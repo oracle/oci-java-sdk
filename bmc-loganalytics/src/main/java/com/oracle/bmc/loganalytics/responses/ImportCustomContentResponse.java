@@ -14,6 +14,11 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +29,10 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
     private com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
             logAnalyticsImportCustomContent;
 
+    /**
+     * The returned LogAnalyticsImportCustomContent instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
             getLogAnalyticsImportCustomContent() {
         return logAnalyticsImportCustomContent;
@@ -52,16 +61,34 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LogAnalyticsImportCustomContent instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
                 logAnalyticsImportCustomContent;
 
+        /**
+         * The returned LogAnalyticsImportCustomContent instance.
+         * @param logAnalyticsImportCustomContent the value to set
+         * @return this builder
+         */
         public Builder logAnalyticsImportCustomContent(
                 com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
                         logAnalyticsImportCustomContent) {
@@ -81,12 +108,20 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ImportCustomContentResponse build() {
             return new ImportCustomContentResponse(
                     __httpStatusCode__, opcRequestId, logAnalyticsImportCustomContent);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

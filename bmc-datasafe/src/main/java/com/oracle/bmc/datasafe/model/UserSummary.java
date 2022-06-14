@@ -66,108 +66,207 @@ public final class UserSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The database user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The database user name.
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The user category based on the privileges and other details of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userCategory")
         private UserCategory userCategory;
 
+        /**
+         * The user category based on the privileges and other details of the user.
+         * @param userCategory the value to set
+         * @return this builder
+         **/
         public Builder userCategory(UserCategory userCategory) {
             this.userCategory = userCategory;
             this.__explicitlySet__.add("userCategory");
             return this;
         }
-
+        /**
+         * The user account status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountStatus")
         private AccountStatus accountStatus;
 
+        /**
+         * The user account status.
+         * @param accountStatus the value to set
+         * @return this builder
+         **/
         public Builder accountStatus(AccountStatus accountStatus) {
             this.accountStatus = accountStatus;
             this.__explicitlySet__.add("accountStatus");
             return this;
         }
-
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the target database.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
         private java.util.Date timeLastLogin;
 
+        /**
+         * The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeLastLogin the value to set
+         * @return this builder
+         **/
         public Builder timeLastLogin(java.util.Date timeLastLogin) {
             this.timeLastLogin = timeLastLogin;
             this.__explicitlySet__.add("timeLastLogin");
             return this;
         }
-
+        /**
+         * The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUserCreated")
         private java.util.Date timeUserCreated;
 
+        /**
+         * The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeUserCreated the value to set
+         * @return this builder
+         **/
         public Builder timeUserCreated(java.util.Date timeUserCreated) {
             this.timeUserCreated = timeUserCreated;
             this.__explicitlySet__.add("timeUserCreated");
             return this;
         }
-
+        /**
+         * The user authentication method.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AuthenticationType authenticationType;
 
+        /**
+         * The user authentication method.
+         * @param authenticationType the value to set
+         * @return this builder
+         **/
         public Builder authenticationType(AuthenticationType authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
             return this;
         }
-
+        /**
+         * The user profile name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userProfile")
         private String userProfile;
 
+        /**
+         * The user profile name.
+         * @param userProfile the value to set
+         * @return this builder
+         **/
         public Builder userProfile(String userProfile) {
             this.userProfile = userProfile;
             this.__explicitlySet__.add("userProfile");
             return this;
         }
-
+        /**
+         * The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
         private java.util.Date timePasswordChanged;
 
+        /**
+         * The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timePasswordChanged the value to set
+         * @return this builder
+         **/
         public Builder timePasswordChanged(java.util.Date timePasswordChanged) {
             this.timePasswordChanged = timePasswordChanged;
             this.__explicitlySet__.add("timePasswordChanged");
             return this;
         }
-
+        /**
+         * The user type, which can be a combination of the following:
+         * <p>
+         * 'Admin Privileged': The user has administrative privileges.
+         * 'Application': The user is an Oracle E-Business Suite Applications (EBS) or Fusion Applications (FA) user.
+         * 'Privileged': The user is a privileged user.
+         * 'Schema': The user is EXPIRED & LOCKED / EXPIRED / LOCKED, or a schema-only account (authentication type is NONE).
+         * 'Non-privileged': The user is a non-privileged user.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userTypes")
         private java.util.List<UserTypes> userTypes;
 
+        /**
+         * The user type, which can be a combination of the following:
+         * <p>
+         * 'Admin Privileged': The user has administrative privileges.
+         * 'Application': The user is an Oracle E-Business Suite Applications (EBS) or Fusion Applications (FA) user.
+         * 'Privileged': The user is a privileged user.
+         * 'Schema': The user is EXPIRED & LOCKED / EXPIRED / LOCKED, or a schema-only account (authentication type is NONE).
+         * 'Non-privileged': The user is a non-privileged user.
+         *
+         * @param userTypes the value to set
+         * @return this builder
+         **/
         public Builder userTypes(java.util.List<UserTypes> userTypes) {
             this.userTypes = userTypes;
             this.__explicitlySet__.add("userTypes");
             return this;
         }
-
+        /**
+         * The admin roles granted to the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminRoles")
         private java.util.List<AdminRoles> adminRoles;
 
+        /**
+         * The admin roles granted to the user.
+         * @param adminRoles the value to set
+         * @return this builder
+         **/
         public Builder adminRoles(java.util.List<AdminRoles> adminRoles) {
             this.adminRoles = adminRoles;
             this.__explicitlySet__.add("adminRoles");
@@ -234,6 +333,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -244,6 +347,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The database user name.
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -304,6 +411,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userCategory")
     private final UserCategory userCategory;
 
+    /**
+     * The user category based on the privileges and other details of the user.
+     * @return the value
+     **/
     public UserCategory getUserCategory() {
         return userCategory;
     }
@@ -365,6 +476,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("accountStatus")
     private final AccountStatus accountStatus;
 
+    /**
+     * The user account status.
+     * @return the value
+     **/
     public AccountStatus getAccountStatus() {
         return accountStatus;
     }
@@ -375,6 +490,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the target database.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -385,6 +504,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
     private final java.util.Date timeLastLogin;
 
+    /**
+     * The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeLastLogin() {
         return timeLastLogin;
     }
@@ -395,6 +518,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUserCreated")
     private final java.util.Date timeUserCreated;
 
+    /**
+     * The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeUserCreated() {
         return timeUserCreated;
     }
@@ -453,6 +580,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final AuthenticationType authenticationType;
 
+    /**
+     * The user authentication method.
+     * @return the value
+     **/
     public AuthenticationType getAuthenticationType() {
         return authenticationType;
     }
@@ -463,6 +594,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userProfile")
     private final String userProfile;
 
+    /**
+     * The user profile name.
+     * @return the value
+     **/
     public String getUserProfile() {
         return userProfile;
     }
@@ -473,6 +608,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
     private final java.util.Date timePasswordChanged;
 
+    /**
+     * The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimePasswordChanged() {
         return timePasswordChanged;
     }
@@ -540,6 +679,17 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userTypes")
     private final java.util.List<UserTypes> userTypes;
 
+    /**
+     * The user type, which can be a combination of the following:
+     * <p>
+     * 'Admin Privileged': The user has administrative privileges.
+     * 'Application': The user is an Oracle E-Business Suite Applications (EBS) or Fusion Applications (FA) user.
+     * 'Privileged': The user is a privileged user.
+     * 'Schema': The user is EXPIRED & LOCKED / EXPIRED / LOCKED, or a schema-only account (authentication type is NONE).
+     * 'Non-privileged': The user is a non-privileged user.
+     *
+     * @return the value
+     **/
     public java.util.List<UserTypes> getUserTypes() {
         return userTypes;
     }
@@ -599,6 +749,10 @@ public final class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("adminRoles")
     private final java.util.List<AdminRoles> adminRoles;
 
+    /**
+     * The admin roles granted to the user.
+     * @return the value
+     **/
     public java.util.List<AdminRoles> getAdminRoles() {
         return adminRoles;
     }

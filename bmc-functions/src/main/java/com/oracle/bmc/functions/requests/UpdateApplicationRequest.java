@@ -19,6 +19,10 @@ public class UpdateApplicationRequest
      */
     private String applicationId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
+     *
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -27,6 +31,9 @@ public class UpdateApplicationRequest
      */
     private com.oracle.bmc.functions.model.UpdateApplicationDetails updateApplicationDetails;
 
+    /**
+     * The new application spec to apply
+     */
     public com.oracle.bmc.functions.model.UpdateApplicationDetails getUpdateApplicationDetails() {
         return updateApplicationDetails;
     }
@@ -38,6 +45,12 @@ public class UpdateApplicationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +61,11 @@ public class UpdateApplicationRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,11 +88,16 @@ public class UpdateApplicationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
+         *
+         */
         private String applicationId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
          *
+         * @param applicationId the value to set
          * @return this builder instance
          */
         public Builder applicationId(String applicationId) {
@@ -82,11 +105,15 @@ public class UpdateApplicationRequest
             return this;
         }
 
+        /**
+         * The new application spec to apply
+         */
         private com.oracle.bmc.functions.model.UpdateApplicationDetails updateApplicationDetails =
                 null;
 
         /**
          * The new application spec to apply
+         * @param updateApplicationDetails the value to set
          * @return this builder instance
          */
         public Builder updateApplicationDetails(
@@ -95,6 +122,12 @@ public class UpdateApplicationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -102,6 +135,7 @@ public class UpdateApplicationRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -109,12 +143,18 @@ public class UpdateApplicationRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -207,7 +247,8 @@ public class UpdateApplicationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +258,10 @@ public class UpdateApplicationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

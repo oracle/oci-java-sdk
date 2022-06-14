@@ -78,154 +78,274 @@ public final class Node {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * The name of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name of the node.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The state of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The state of the node.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Cluster node type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
         private NodeType nodeType;
 
+        /**
+         * Cluster node type.
+         * @param nodeType the value to set
+         * @return this builder
+         **/
         public Builder nodeType(NodeType nodeType) {
             this.nodeType = nodeType;
             this.__explicitlySet__.add("nodeType");
             return this;
         }
-
+        /**
+         * Shape of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * Shape of the node.
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The list of block volumes attached to a given node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachedBlockVolumes")
         private java.util.List<VolumeAttachmentDetail> attachedBlockVolumes;
 
+        /**
+         * The list of block volumes attached to a given node.
+         * @param attachedBlockVolumes the value to set
+         * @return this builder
+         **/
         public Builder attachedBlockVolumes(
                 java.util.List<VolumeAttachmentDetail> attachedBlockVolumes) {
             this.attachedBlockVolumes = attachedBlockVolumes;
             this.__explicitlySet__.add("attachedBlockVolumes");
             return this;
         }
-
+        /**
+         * The OCID of the subnet in which the node is to be created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of the subnet in which the node is to be created.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * IP address of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * IP address of the node.
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-
+        /**
+         * The fully-qualified hostname (FQDN) of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The fully-qualified hostname (FQDN) of the node.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * The OCID of the image from which the node was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The OCID of the image from which the node was created.
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-
+        /**
+         * The fingerprint of the SSH key used for node access.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshFingerprint")
         private String sshFingerprint;
 
+        /**
+         * The fingerprint of the SSH key used for node access.
+         * @param sshFingerprint the value to set
+         * @return this builder
+         **/
         public Builder sshFingerprint(String sshFingerprint) {
             this.sshFingerprint = sshFingerprint;
             this.__explicitlySet__.add("sshFingerprint");
             return this;
         }
-
+        /**
+         * The name of the availability domain in which the node is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The name of the availability domain in which the node is running.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The name of the fault domain in which the node is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
+        /**
+         * The name of the fault domain in which the node is running.
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-
+        /**
+         * The time the node was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the node was created, shown as an RFC 3339 formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The total number of OCPUs available to the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Integer ocpus;
 
+        /**
+         * The total number of OCPUs available to the node.
+         * @param ocpus the value to set
+         * @return this builder
+         **/
         public Builder ocpus(Integer ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Integer memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
@@ -302,6 +422,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -312,6 +436,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name of the node.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -375,6 +503,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The state of the node.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -438,6 +570,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     private final NodeType nodeType;
 
+    /**
+     * Cluster node type.
+     * @return the value
+     **/
     public NodeType getNodeType() {
         return nodeType;
     }
@@ -448,6 +584,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * Shape of the node.
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -458,6 +598,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("attachedBlockVolumes")
     private final java.util.List<VolumeAttachmentDetail> attachedBlockVolumes;
 
+    /**
+     * The list of block volumes attached to a given node.
+     * @return the value
+     **/
     public java.util.List<VolumeAttachmentDetail> getAttachedBlockVolumes() {
         return attachedBlockVolumes;
     }
@@ -468,6 +612,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of the subnet in which the node is to be created.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -478,6 +626,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * IP address of the node.
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
@@ -488,6 +640,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The fully-qualified hostname (FQDN) of the node.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -498,6 +654,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The OCID of the image from which the node was created.
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }
@@ -508,6 +668,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("sshFingerprint")
     private final String sshFingerprint;
 
+    /**
+     * The fingerprint of the SSH key used for node access.
+     * @return the value
+     **/
     public String getSshFingerprint() {
         return sshFingerprint;
     }
@@ -518,6 +682,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The name of the availability domain in which the node is running.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -528,6 +696,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
+    /**
+     * The name of the fault domain in which the node is running.
+     * @return the value
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
@@ -538,6 +710,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the node was created, shown as an RFC 3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -548,6 +724,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -558,6 +738,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Integer ocpus;
 
+    /**
+     * The total number of OCPUs available to the node.
+     * @return the value
+     **/
     public Integer getOcpus() {
         return ocpus;
     }
@@ -568,6 +752,10 @@ public final class Node {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
+    /**
+     * The total amount of memory available to the node, in gigabytes.
+     * @return the value
+     **/
     public Integer getMemoryInGBs() {
         return memoryInGBs;
     }

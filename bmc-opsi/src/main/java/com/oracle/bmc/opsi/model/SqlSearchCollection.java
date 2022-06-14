@@ -45,45 +45,85 @@ public final class SqlSearchCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         * @param sqlIdentifier the value to set
+         * @return this builder
+         **/
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
             return this;
         }
-
+        /**
+         * SQL Statement Text
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
+        /**
+         * SQL Statement Text
+         *
+         * @param sqlText the value to set
+         * @return this builder
+         **/
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
             return this;
         }
-
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
+        /**
+         * The start timestamp that was passed into the request.
+         * @param timeIntervalStart the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
+        /**
+         * The end timestamp that was passed into the request.
+         * @param timeIntervalEnd the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-
+        /**
+         * List of Databases executing the sql.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SqlSearchSummary> items;
 
+        /**
+         * List of Databases executing the sql.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SqlSearchSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -133,6 +173,11 @@ public final class SqlSearchCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
+    /**
+     * Unique SQL_ID for a SQL Statement.
+     *
+     * @return the value
+     **/
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
@@ -144,6 +189,11 @@ public final class SqlSearchCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
+    /**
+     * SQL Statement Text
+     *
+     * @return the value
+     **/
     public String getSqlText() {
         return sqlText;
     }
@@ -154,6 +204,10 @@ public final class SqlSearchCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
+    /**
+     * The start timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -164,6 +218,10 @@ public final class SqlSearchCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
+    /**
+     * The end timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -174,6 +232,10 @@ public final class SqlSearchCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SqlSearchSummary> items;
 
+    /**
+     * List of Databases executing the sql.
+     * @return the value
+     **/
     public java.util.List<SqlSearchSummary> getItems() {
         return items;
     }

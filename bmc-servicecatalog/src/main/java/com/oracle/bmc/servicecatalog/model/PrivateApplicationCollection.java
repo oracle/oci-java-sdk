@@ -29,9 +29,17 @@ public final class PrivateApplicationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PrivateApplicationSummary> items;
 
+        /**
+         * Collection of items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<PrivateApplicationSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class PrivateApplicationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PrivateApplicationSummary> items;
 
+    /**
+     * Collection of items.
+     * @return the value
+     **/
     public java.util.List<PrivateApplicationSummary> getItems() {
         return items;
     }

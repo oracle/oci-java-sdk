@@ -53,6 +53,7 @@ public final class CreateDocumentJobDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
         private InputLocation inputLocation;
 
@@ -61,10 +62,17 @@ public final class CreateDocumentJobDetails {
             this.__explicitlySet__.add("inputLocation");
             return this;
         }
-
+        /**
+         * The list of requested document analysis types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<DocumentFeature> features;
 
+        /**
+         * The list of requested document analysis types.
+         * @param features the value to set
+         * @return this builder
+         **/
         public Builder features(java.util.List<DocumentFeature> features) {
             this.features = features;
             this.__explicitlySet__.add("features");
@@ -79,46 +87,81 @@ public final class CreateDocumentJobDetails {
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-
+        /**
+         * The compartment identifier from the requester.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment identifier from the requester.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The document job display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The document job display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The language of the document, abbreviated according to ISO 639-2.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("language")
         private DocumentLanguage language;
 
+        /**
+         * The language of the document, abbreviated according to ISO 639-2.
+         * @param language the value to set
+         * @return this builder
+         **/
         public Builder language(DocumentLanguage language) {
             this.language = language;
             this.__explicitlySet__.add("language");
             return this;
         }
-
+        /**
+         * The type of documents.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentType")
         private DocumentType documentType;
 
+        /**
+         * The type of documents.
+         * @param documentType the value to set
+         * @return this builder
+         **/
         public Builder documentType(DocumentType documentType) {
             this.documentType = documentType;
             this.__explicitlySet__.add("documentType");
             return this;
         }
-
+        /**
+         * Whether or not to generate a ZIP file containing the results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
         private Boolean isZipOutputEnabled;
 
+        /**
+         * Whether or not to generate a ZIP file containing the results.
+         * @param isZipOutputEnabled the value to set
+         * @return this builder
+         **/
         public Builder isZipOutputEnabled(Boolean isZipOutputEnabled) {
             this.isZipOutputEnabled = isZipOutputEnabled;
             this.__explicitlySet__.add("isZipOutputEnabled");
@@ -184,6 +227,10 @@ public final class CreateDocumentJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     private final java.util.List<DocumentFeature> features;
 
+    /**
+     * The list of requested document analysis types.
+     * @return the value
+     **/
     public java.util.List<DocumentFeature> getFeatures() {
         return features;
     }
@@ -201,6 +248,10 @@ public final class CreateDocumentJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment identifier from the requester.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -211,6 +262,10 @@ public final class CreateDocumentJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The document job display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -221,6 +276,10 @@ public final class CreateDocumentJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     private final DocumentLanguage language;
 
+    /**
+     * The language of the document, abbreviated according to ISO 639-2.
+     * @return the value
+     **/
     public DocumentLanguage getLanguage() {
         return language;
     }
@@ -231,6 +290,10 @@ public final class CreateDocumentJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     private final DocumentType documentType;
 
+    /**
+     * The type of documents.
+     * @return the value
+     **/
     public DocumentType getDocumentType() {
         return documentType;
     }
@@ -241,6 +304,10 @@ public final class CreateDocumentJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
     private final Boolean isZipOutputEnabled;
 
+    /**
+     * Whether or not to generate a ZIP file containing the results.
+     * @return the value
+     **/
     public Boolean getIsZipOutputEnabled() {
         return isZipOutputEnabled;
     }

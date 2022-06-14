@@ -32,27 +32,49 @@ public final class StandardTagNamespaceTemplateSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The default description of the tag namespace that users can use to create the tag namespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The default description of the tag namespace that users can use to create the tag namespace
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The reserved name of this standard tag namespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("standardTagNamespaceName")
         private String standardTagNamespaceName;
 
+        /**
+         * The reserved name of this standard tag namespace
+         * @param standardTagNamespaceName the value to set
+         * @return this builder
+         **/
         public Builder standardTagNamespaceName(String standardTagNamespaceName) {
             this.standardTagNamespaceName = standardTagNamespaceName;
             this.__explicitlySet__.add("standardTagNamespaceName");
             return this;
         }
-
+        /**
+         * The status of the standard tag namespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * The status of the standard tag namespace
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -99,6 +121,10 @@ public final class StandardTagNamespaceTemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The default description of the tag namespace that users can use to create the tag namespace
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -109,6 +135,10 @@ public final class StandardTagNamespaceTemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("standardTagNamespaceName")
     private final String standardTagNamespaceName;
 
+    /**
+     * The reserved name of this standard tag namespace
+     * @return the value
+     **/
     public String getStandardTagNamespaceName() {
         return standardTagNamespaceName;
     }
@@ -119,6 +149,10 @@ public final class StandardTagNamespaceTemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * The status of the standard tag namespace
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }

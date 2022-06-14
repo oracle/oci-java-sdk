@@ -67,100 +67,204 @@ public final class CopyObjectDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the object to be copied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectName")
         private String sourceObjectName;
 
+        /**
+         * The name of the object to be copied.
+         * @param sourceObjectName the value to set
+         * @return this builder
+         **/
         public Builder sourceObjectName(String sourceObjectName) {
             this.sourceObjectName = sourceObjectName;
             this.__explicitlySet__.add("sourceObjectName");
             return this;
         }
-
+        /**
+         * The entity tag (ETag) to match against that of the source object. Used to confirm that the source object
+         * with a given name is the version of that object storing a specified ETag.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectIfMatchETag")
         private String sourceObjectIfMatchETag;
 
+        /**
+         * The entity tag (ETag) to match against that of the source object. Used to confirm that the source object
+         * with a given name is the version of that object storing a specified ETag.
+         *
+         * @param sourceObjectIfMatchETag the value to set
+         * @return this builder
+         **/
         public Builder sourceObjectIfMatchETag(String sourceObjectIfMatchETag) {
             this.sourceObjectIfMatchETag = sourceObjectIfMatchETag;
             this.__explicitlySet__.add("sourceObjectIfMatchETag");
             return this;
         }
-
+        /**
+         * VersionId of the object to copy. If not provided then current version is copied by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceVersionId")
         private String sourceVersionId;
 
+        /**
+         * VersionId of the object to copy. If not provided then current version is copied by default.
+         * @param sourceVersionId the value to set
+         * @return this builder
+         **/
         public Builder sourceVersionId(String sourceVersionId) {
             this.sourceVersionId = sourceVersionId;
             this.__explicitlySet__.add("sourceVersionId");
             return this;
         }
-
+        /**
+         * The destination region the object will be copied to, for example "us-ashburn-1".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
         private String destinationRegion;
 
+        /**
+         * The destination region the object will be copied to, for example "us-ashburn-1".
+         * @param destinationRegion the value to set
+         * @return this builder
+         **/
         public Builder destinationRegion(String destinationRegion) {
             this.destinationRegion = destinationRegion;
             this.__explicitlySet__.add("destinationRegion");
             return this;
         }
-
+        /**
+         * The destination Object Storage namespace the object will be copied to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationNamespace")
         private String destinationNamespace;
 
+        /**
+         * The destination Object Storage namespace the object will be copied to.
+         * @param destinationNamespace the value to set
+         * @return this builder
+         **/
         public Builder destinationNamespace(String destinationNamespace) {
             this.destinationNamespace = destinationNamespace;
             this.__explicitlySet__.add("destinationNamespace");
             return this;
         }
-
+        /**
+         * The destination bucket the object will be copied to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBucket")
         private String destinationBucket;
 
+        /**
+         * The destination bucket the object will be copied to.
+         * @param destinationBucket the value to set
+         * @return this builder
+         **/
         public Builder destinationBucket(String destinationBucket) {
             this.destinationBucket = destinationBucket;
             this.__explicitlySet__.add("destinationBucket");
             return this;
         }
-
+        /**
+         * The name of the destination object resulting from the copy operation. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectName")
         private String destinationObjectName;
 
+        /**
+         * The name of the destination object resulting from the copy operation. Avoid entering confidential information.
+         * @param destinationObjectName the value to set
+         * @return this builder
+         **/
         public Builder destinationObjectName(String destinationObjectName) {
             this.destinationObjectName = destinationObjectName;
             this.__explicitlySet__.add("destinationObjectName");
             return this;
         }
-
+        /**
+         * The entity tag (ETag) to match against that of the destination object (an object intended to be overwritten).
+         * Used to confirm that the destination object stored under a given name is the version of that object
+         * storing a specified entity tag.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectIfMatchETag")
         private String destinationObjectIfMatchETag;
 
+        /**
+         * The entity tag (ETag) to match against that of the destination object (an object intended to be overwritten).
+         * Used to confirm that the destination object stored under a given name is the version of that object
+         * storing a specified entity tag.
+         *
+         * @param destinationObjectIfMatchETag the value to set
+         * @return this builder
+         **/
         public Builder destinationObjectIfMatchETag(String destinationObjectIfMatchETag) {
             this.destinationObjectIfMatchETag = destinationObjectIfMatchETag;
             this.__explicitlySet__.add("destinationObjectIfMatchETag");
             return this;
         }
-
+        /**
+         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail
+         * if the object already exists in the destination bucket.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectIfNoneMatchETag")
         private String destinationObjectIfNoneMatchETag;
 
+        /**
+         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail
+         * if the object already exists in the destination bucket.
+         *
+         * @param destinationObjectIfNoneMatchETag the value to set
+         * @return this builder
+         **/
         public Builder destinationObjectIfNoneMatchETag(String destinationObjectIfNoneMatchETag) {
             this.destinationObjectIfNoneMatchETag = destinationObjectIfNoneMatchETag;
             this.__explicitlySet__.add("destinationObjectIfNoneMatchETag");
             return this;
         }
-
+        /**
+         * Arbitrary string keys and values for the user-defined metadata for the object. Keys must be in
+         * "opc-meta-*" format. Avoid entering confidential information. Metadata key-value pairs entered
+         * in this field are assigned to the destination object. If you enter no metadata values, the destination
+         * object will inherit any existing metadata values associated with the source object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectMetadata")
         private java.util.Map<String, String> destinationObjectMetadata;
 
+        /**
+         * Arbitrary string keys and values for the user-defined metadata for the object. Keys must be in
+         * "opc-meta-*" format. Avoid entering confidential information. Metadata key-value pairs entered
+         * in this field are assigned to the destination object. If you enter no metadata values, the destination
+         * object will inherit any existing metadata values associated with the source object.
+         *
+         * @param destinationObjectMetadata the value to set
+         * @return this builder
+         **/
         public Builder destinationObjectMetadata(
                 java.util.Map<String, String> destinationObjectMetadata) {
             this.destinationObjectMetadata = destinationObjectMetadata;
             this.__explicitlySet__.add("destinationObjectMetadata");
             return this;
         }
-
+        /**
+         * The storage tier that the object should be stored in. If not specified, the object will be stored in
+         * the same storage tier as the bucket.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectStorageTier")
         private StorageTier destinationObjectStorageTier;
 
+        /**
+         * The storage tier that the object should be stored in. If not specified, the object will be stored in
+         * the same storage tier as the bucket.
+         *
+         * @param destinationObjectStorageTier the value to set
+         * @return this builder
+         **/
         public Builder destinationObjectStorageTier(StorageTier destinationObjectStorageTier) {
             this.destinationObjectStorageTier = destinationObjectStorageTier;
             this.__explicitlySet__.add("destinationObjectStorageTier");
@@ -226,6 +330,10 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectName")
     private final String sourceObjectName;
 
+    /**
+     * The name of the object to be copied.
+     * @return the value
+     **/
     public String getSourceObjectName() {
         return sourceObjectName;
     }
@@ -238,6 +346,12 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectIfMatchETag")
     private final String sourceObjectIfMatchETag;
 
+    /**
+     * The entity tag (ETag) to match against that of the source object. Used to confirm that the source object
+     * with a given name is the version of that object storing a specified ETag.
+     *
+     * @return the value
+     **/
     public String getSourceObjectIfMatchETag() {
         return sourceObjectIfMatchETag;
     }
@@ -248,6 +362,10 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVersionId")
     private final String sourceVersionId;
 
+    /**
+     * VersionId of the object to copy. If not provided then current version is copied by default.
+     * @return the value
+     **/
     public String getSourceVersionId() {
         return sourceVersionId;
     }
@@ -258,6 +376,10 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
     private final String destinationRegion;
 
+    /**
+     * The destination region the object will be copied to, for example "us-ashburn-1".
+     * @return the value
+     **/
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -268,6 +390,10 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationNamespace")
     private final String destinationNamespace;
 
+    /**
+     * The destination Object Storage namespace the object will be copied to.
+     * @return the value
+     **/
     public String getDestinationNamespace() {
         return destinationNamespace;
     }
@@ -278,6 +404,10 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucket")
     private final String destinationBucket;
 
+    /**
+     * The destination bucket the object will be copied to.
+     * @return the value
+     **/
     public String getDestinationBucket() {
         return destinationBucket;
     }
@@ -288,6 +418,10 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectName")
     private final String destinationObjectName;
 
+    /**
+     * The name of the destination object resulting from the copy operation. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDestinationObjectName() {
         return destinationObjectName;
     }
@@ -301,6 +435,13 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectIfMatchETag")
     private final String destinationObjectIfMatchETag;
 
+    /**
+     * The entity tag (ETag) to match against that of the destination object (an object intended to be overwritten).
+     * Used to confirm that the destination object stored under a given name is the version of that object
+     * storing a specified entity tag.
+     *
+     * @return the value
+     **/
     public String getDestinationObjectIfMatchETag() {
         return destinationObjectIfMatchETag;
     }
@@ -313,6 +454,12 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectIfNoneMatchETag")
     private final String destinationObjectIfNoneMatchETag;
 
+    /**
+     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail
+     * if the object already exists in the destination bucket.
+     *
+     * @return the value
+     **/
     public String getDestinationObjectIfNoneMatchETag() {
         return destinationObjectIfNoneMatchETag;
     }
@@ -327,6 +474,14 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectMetadata")
     private final java.util.Map<String, String> destinationObjectMetadata;
 
+    /**
+     * Arbitrary string keys and values for the user-defined metadata for the object. Keys must be in
+     * "opc-meta-*" format. Avoid entering confidential information. Metadata key-value pairs entered
+     * in this field are assigned to the destination object. If you enter no metadata values, the destination
+     * object will inherit any existing metadata values associated with the source object.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getDestinationObjectMetadata() {
         return destinationObjectMetadata;
     }
@@ -339,6 +494,12 @@ public final class CopyObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectStorageTier")
     private final StorageTier destinationObjectStorageTier;
 
+    /**
+     * The storage tier that the object should be stored in. If not specified, the object will be stored in
+     * the same storage tier as the bucket.
+     *
+     * @return the value
+     **/
     public StorageTier getDestinationObjectStorageTier() {
         return destinationObjectStorageTier;
     }

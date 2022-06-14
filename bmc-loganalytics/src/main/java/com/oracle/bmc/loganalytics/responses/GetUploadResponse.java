@@ -14,6 +14,11 @@ public class GetUploadResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class GetUploadResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class GetUploadResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.Upload upload;
 
+    /**
+     * The returned Upload instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.Upload getUpload() {
         return upload;
     }
@@ -57,22 +71,50 @@ public class GetUploadResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Upload instance.
+         */
         private com.oracle.bmc.loganalytics.model.Upload upload;
 
+        /**
+         * The returned Upload instance.
+         * @param upload the value to set
+         * @return this builder
+         */
         public Builder upload(com.oracle.bmc.loganalytics.model.Upload upload) {
             this.upload = upload;
             return this;
@@ -91,11 +133,19 @@ public class GetUploadResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetUploadResponse build() {
             return new GetUploadResponse(__httpStatusCode__, etag, opcRequestId, upload);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

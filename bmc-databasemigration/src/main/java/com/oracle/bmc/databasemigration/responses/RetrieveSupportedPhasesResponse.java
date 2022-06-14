@@ -15,6 +15,12 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
             migrationPhaseCollection;
 
+    /**
+     * The returned MigrationPhaseCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
             getMigrationPhaseCollection() {
         return migrationPhaseCollection;
@@ -53,16 +63,36 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned MigrationPhaseCollection instance.
+         */
         private com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
                 migrationPhaseCollection;
 
+        /**
+         * The returned MigrationPhaseCollection instance.
+         * @param migrationPhaseCollection the value to set
+         * @return this builder
+         */
         public Builder migrationPhaseCollection(
                 com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
                         migrationPhaseCollection) {
@@ -82,12 +112,20 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public RetrieveSupportedPhasesResponse build() {
             return new RetrieveSupportedPhasesResponse(
                     __httpStatusCode__, opcRequestId, migrationPhaseCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

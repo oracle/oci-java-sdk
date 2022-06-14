@@ -15,6 +15,12 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey;
 
+    /**
+     * The returned GeneratedKey instance.
+     * @return the value
+     */
     public com.oracle.bmc.keymanagement.model.GeneratedKey getGeneratedKey() {
         return generatedKey;
     }
@@ -46,15 +56,35 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned GeneratedKey instance.
+         */
         private com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey;
 
+        /**
+         * The returned GeneratedKey instance.
+         * @param generatedKey the value to set
+         * @return this builder
+         */
         public Builder generatedKey(com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey) {
             this.generatedKey = generatedKey;
             return this;
@@ -72,12 +102,20 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GenerateDataEncryptionKeyResponse build() {
             return new GenerateDataEncryptionKeyResponse(
                     __httpStatusCode__, opcRequestId, generatedKey);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

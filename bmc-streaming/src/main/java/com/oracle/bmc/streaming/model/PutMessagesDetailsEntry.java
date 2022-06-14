@@ -30,18 +30,35 @@ public final class PutMessagesDetailsEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with the same key are stored in the same partition.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private byte[] key;
 
+        /**
+         * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with the same key are stored in the same partition.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(byte[] key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The message, expressed as a byte array up to 1 MiB in size.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private byte[] value;
 
+        /**
+         * The message, expressed as a byte array up to 1 MiB in size.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(byte[] value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -84,6 +101,11 @@ public final class PutMessagesDetailsEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final byte[] key;
 
+    /**
+     * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with the same key are stored in the same partition.
+     *
+     * @return the value
+     **/
     public byte[] getKey() {
         return key;
     }
@@ -94,6 +116,10 @@ public final class PutMessagesDetailsEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final byte[] value;
 
+    /**
+     * The message, expressed as a byte array up to 1 MiB in size.
+     * @return the value
+     **/
     public byte[] getValue() {
         return value;
     }

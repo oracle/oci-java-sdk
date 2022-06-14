@@ -41,6 +41,7 @@ public final class DropTablespaceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
         private TablespaceAdminCredentialDetails credentialDetails;
 
@@ -49,28 +50,55 @@ public final class DropTablespaceDetails {
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
-
+        /**
+         * Specifies whether all the contents of the tablespace being dropped should be dropped.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludingContents")
         private Boolean isIncludingContents;
 
+        /**
+         * Specifies whether all the contents of the tablespace being dropped should be dropped.
+         *
+         * @param isIncludingContents the value to set
+         * @return this builder
+         **/
         public Builder isIncludingContents(Boolean isIncludingContents) {
             this.isIncludingContents = isIncludingContents;
             this.__explicitlySet__.add("isIncludingContents");
             return this;
         }
-
+        /**
+         * Specifies whether all the associated data files of the tablespace being dropped should be dropped.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDroppingDataFiles")
         private Boolean isDroppingDataFiles;
 
+        /**
+         * Specifies whether all the associated data files of the tablespace being dropped should be dropped.
+         *
+         * @param isDroppingDataFiles the value to set
+         * @return this builder
+         **/
         public Builder isDroppingDataFiles(Boolean isDroppingDataFiles) {
             this.isDroppingDataFiles = isDroppingDataFiles;
             this.__explicitlySet__.add("isDroppingDataFiles");
             return this;
         }
-
+        /**
+         * Specifies whether all the constraints on the tablespace being dropped should be dropped.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCascadeConstraints")
         private Boolean isCascadeConstraints;
 
+        /**
+         * Specifies whether all the constraints on the tablespace being dropped should be dropped.
+         *
+         * @param isCascadeConstraints the value to set
+         * @return this builder
+         **/
         public Builder isCascadeConstraints(Boolean isCascadeConstraints) {
             this.isCascadeConstraints = isCascadeConstraints;
             this.__explicitlySet__.add("isCascadeConstraints");
@@ -129,6 +157,11 @@ public final class DropTablespaceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludingContents")
     private final Boolean isIncludingContents;
 
+    /**
+     * Specifies whether all the contents of the tablespace being dropped should be dropped.
+     *
+     * @return the value
+     **/
     public Boolean getIsIncludingContents() {
         return isIncludingContents;
     }
@@ -140,6 +173,11 @@ public final class DropTablespaceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isDroppingDataFiles")
     private final Boolean isDroppingDataFiles;
 
+    /**
+     * Specifies whether all the associated data files of the tablespace being dropped should be dropped.
+     *
+     * @return the value
+     **/
     public Boolean getIsDroppingDataFiles() {
         return isDroppingDataFiles;
     }
@@ -151,6 +189,11 @@ public final class DropTablespaceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isCascadeConstraints")
     private final Boolean isCascadeConstraints;
 
+    /**
+     * Specifies whether all the constraints on the tablespace being dropped should be dropped.
+     *
+     * @return the value
+     **/
     public Boolean getIsCascadeConstraints() {
         return isCascadeConstraints;
     }

@@ -14,6 +14,11 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -26,6 +31,13 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -38,6 +50,13 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcPrevPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the previous batch of items.
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -47,6 +66,10 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.RecalledDataCollection recalledDataCollection;
 
+    /**
+     * The returned RecalledDataCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.RecalledDataCollection getRecalledDataCollection() {
         return recalledDataCollection;
     }
@@ -79,29 +102,75 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * The returned RecalledDataCollection instance.
+         */
         private com.oracle.bmc.loganalytics.model.RecalledDataCollection recalledDataCollection;
 
+        /**
+         * The returned RecalledDataCollection instance.
+         * @param recalledDataCollection the value to set
+         * @return this builder
+         */
         public Builder recalledDataCollection(
                 com.oracle.bmc.loganalytics.model.RecalledDataCollection recalledDataCollection) {
             this.recalledDataCollection = recalledDataCollection;
@@ -122,6 +191,10 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListRecalledDataResponse build() {
             return new ListRecalledDataResponse(
                     __httpStatusCode__,
@@ -132,6 +205,10 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

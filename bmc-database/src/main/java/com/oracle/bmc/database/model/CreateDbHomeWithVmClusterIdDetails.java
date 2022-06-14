@@ -91,19 +91,33 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             this.__explicitlySet__.add("isDesupportedVersion");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * @param vmClusterId the value to set
+         * @return this builder
+         **/
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = vmClusterId;
             this.__explicitlySet__.add("vmClusterId");
             return this;
         }
-
+        /**
+         * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
+        /**
+         * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         * @param dbVersion the value to set
+         * @return this builder
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
@@ -200,6 +214,10 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * @return the value
+     **/
     public String getVmClusterId() {
         return vmClusterId;
     }
@@ -210,6 +228,10 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
+    /**
+     * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     * @return the value
+     **/
     public String getDbVersion() {
         return dbVersion;
     }

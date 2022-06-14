@@ -31,9 +31,19 @@ public final class UpdateDrgRouteDistributionStatementsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The route distribution statements to update, and the details to be updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statements")
         private java.util.List<UpdateDrgRouteDistributionStatementDetails> statements;
 
+        /**
+         * The route distribution statements to update, and the details to be updated.
+         *
+         * @param statements the value to set
+         * @return this builder
+         **/
         public Builder statements(
                 java.util.List<UpdateDrgRouteDistributionStatementDetails> statements) {
             this.statements = statements;
@@ -78,6 +88,11 @@ public final class UpdateDrgRouteDistributionStatementsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("statements")
     private final java.util.List<UpdateDrgRouteDistributionStatementDetails> statements;
 
+    /**
+     * The route distribution statements to update, and the details to be updated.
+     *
+     * @return the value
+     **/
     public java.util.List<UpdateDrgRouteDistributionStatementDetails> getStatements() {
         return statements;
     }

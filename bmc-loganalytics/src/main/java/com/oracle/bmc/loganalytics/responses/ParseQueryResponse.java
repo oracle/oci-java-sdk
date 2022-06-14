@@ -14,6 +14,11 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput;
 
+    /**
+     * The returned ParseQueryOutput instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.ParseQueryOutput getParseQueryOutput() {
         return parseQueryOutput;
     }
@@ -45,15 +54,33 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ParseQueryOutput instance.
+         */
         private com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput;
 
+        /**
+         * The returned ParseQueryOutput instance.
+         * @param parseQueryOutput the value to set
+         * @return this builder
+         */
         public Builder parseQueryOutput(
                 com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput) {
             this.parseQueryOutput = parseQueryOutput;
@@ -72,11 +99,19 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ParseQueryResponse build() {
             return new ParseQueryResponse(__httpStatusCode__, opcRequestId, parseQueryOutput);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

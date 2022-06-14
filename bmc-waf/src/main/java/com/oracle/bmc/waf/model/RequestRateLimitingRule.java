@@ -66,10 +66,21 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
             this.__explicitlySet__.add("actionName");
             return this;
         }
-
+        /**
+         * Rate Limiting Configurations.
+         * Each configuration counts requests towards its own {@code requestsLimit}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<RequestRateLimitingConfiguration> configurations;
 
+        /**
+         * Rate Limiting Configurations.
+         * Each configuration counts requests towards its own {@code requestsLimit}.
+         *
+         * @param configurations the value to set
+         * @return this builder
+         **/
         public Builder configurations(
                 java.util.List<RequestRateLimitingConfiguration> configurations) {
             this.configurations = configurations;
@@ -132,6 +143,12 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<RequestRateLimitingConfiguration> configurations;
 
+    /**
+     * Rate Limiting Configurations.
+     * Each configuration counts requests towards its own {@code requestsLimit}.
+     *
+     * @return the value
+     **/
     public java.util.List<RequestRateLimitingConfiguration> getConfigurations() {
         return configurations;
     }

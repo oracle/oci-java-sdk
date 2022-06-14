@@ -15,6 +15,12 @@ public class SummarizeMetricsDataResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class SummarizeMetricsDataResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.monitoring.model.MetricData> items;
 
+    /**
+     * A list of com.oracle.bmc.monitoring.model.MetricData instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.monitoring.model.MetricData> getItems() {
         return items;
     }
@@ -46,15 +56,35 @@ public class SummarizeMetricsDataResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.monitoring.model.MetricData instances.
+         */
         private java.util.List<com.oracle.bmc.monitoring.model.MetricData> items;
 
+        /**
+         * A list of com.oracle.bmc.monitoring.model.MetricData instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(java.util.List<com.oracle.bmc.monitoring.model.MetricData> items) {
             this.items = items;
             return this;
@@ -72,11 +102,19 @@ public class SummarizeMetricsDataResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public SummarizeMetricsDataResponse build() {
             return new SummarizeMetricsDataResponse(__httpStatusCode__, opcRequestId, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

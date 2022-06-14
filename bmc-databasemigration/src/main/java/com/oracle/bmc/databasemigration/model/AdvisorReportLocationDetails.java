@@ -32,6 +32,7 @@ public final class AdvisorReportLocationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageDetails")
         private AdvisorReportBucketDetails objectStorageDetails;
 
@@ -40,10 +41,19 @@ public final class AdvisorReportLocationDetails {
             this.__explicitlySet__.add("objectStorageDetails");
             return this;
         }
-
+        /**
+         * Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locationInSource")
         private String locationInSource;
 
+        /**
+         * Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+         *
+         * @param locationInSource the value to set
+         * @return this builder
+         **/
         public Builder locationInSource(String locationInSource) {
             this.locationInSource = locationInSource;
             this.__explicitlySet__.add("locationInSource");
@@ -96,6 +106,11 @@ public final class AdvisorReportLocationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("locationInSource")
     private final String locationInSource;
 
+    /**
+     * Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+     *
+     * @return the value
+     **/
     public String getLocationInSource() {
         return locationInSource;
     }

@@ -29,18 +29,33 @@ public final class VersionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A descriptive summary of a group of versions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionFamily")
         private String versionFamily;
 
+        /**
+         * A descriptive summary of a group of versions.
+         * @param versionFamily the value to set
+         * @return this builder
+         **/
         public Builder versionFamily(String versionFamily) {
             this.versionFamily = versionFamily;
             this.__explicitlySet__.add("versionFamily");
             return this;
         }
-
+        /**
+         * The list of supported MySQL Versions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versions")
         private java.util.List<Version> versions;
 
+        /**
+         * The list of supported MySQL Versions.
+         * @param versions the value to set
+         * @return this builder
+         **/
         public Builder versions(java.util.List<Version> versions) {
             this.versions = versions;
             this.__explicitlySet__.add("versions");
@@ -82,6 +97,10 @@ public final class VersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("versionFamily")
     private final String versionFamily;
 
+    /**
+     * A descriptive summary of a group of versions.
+     * @return the value
+     **/
     public String getVersionFamily() {
         return versionFamily;
     }
@@ -92,6 +111,10 @@ public final class VersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("versions")
     private final java.util.List<Version> versions;
 
+    /**
+     * The list of supported MySQL Versions.
+     * @return the value
+     **/
     public java.util.List<Version> getVersions() {
         return versions;
     }

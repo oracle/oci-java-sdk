@@ -17,6 +17,9 @@ public class ListAvailabilityHistoriesRequest
      */
     private String managementAgentId;
 
+    /**
+     * Unique Management Agent identifier
+     */
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -25,6 +28,9 @@ public class ListAvailabilityHistoriesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +42,12 @@ public class ListAvailabilityHistoriesRequest
      */
     private java.util.Date timeAvailabilityStatusEndedGreaterThan;
 
+    /**
+     * Filter to limit the availability history results to that of time after the input time including the boundary record.
+     * Defaulted to current date minus one year.
+     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
+     */
     public java.util.Date getTimeAvailabilityStatusEndedGreaterThan() {
         return timeAvailabilityStatusEndedGreaterThan;
     }
@@ -47,6 +59,12 @@ public class ListAvailabilityHistoriesRequest
      */
     private java.util.Date timeAvailabilityStatusStartedLessThan;
 
+    /**
+     * Filter to limit the availability history results to that of time before the input time including the boundary record
+     * Defaulted to current date.
+     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
+     */
     public java.util.Date getTimeAvailabilityStatusStartedLessThan() {
         return timeAvailabilityStatusStartedLessThan;
     }
@@ -55,6 +73,9 @@ public class ListAvailabilityHistoriesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -63,6 +84,9 @@ public class ListAvailabilityHistoriesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -107,6 +131,9 @@ public class ListAvailabilityHistoriesRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -152,6 +179,10 @@ public class ListAvailabilityHistoriesRequest
         }
     };
 
+    /**
+     * The field to sort by. Default order for timeAvailabilityStatusStarted is descending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -163,10 +194,14 @@ public class ListAvailabilityHistoriesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Management Agent identifier
+         */
         private String managementAgentId = null;
 
         /**
          * Unique Management Agent identifier
+         * @param managementAgentId the value to set
          * @return this builder instance
          */
         public Builder managementAgentId(String managementAgentId) {
@@ -174,10 +209,14 @@ public class ListAvailabilityHistoriesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -185,6 +224,12 @@ public class ListAvailabilityHistoriesRequest
             return this;
         }
 
+        /**
+         * Filter to limit the availability history results to that of time after the input time including the boundary record.
+         * Defaulted to current date minus one year.
+         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         */
         private java.util.Date timeAvailabilityStatusEndedGreaterThan = null;
 
         /**
@@ -192,6 +237,7 @@ public class ListAvailabilityHistoriesRequest
          * Defaulted to current date minus one year.
          * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          *
+         * @param timeAvailabilityStatusEndedGreaterThan the value to set
          * @return this builder instance
          */
         public Builder timeAvailabilityStatusEndedGreaterThan(
@@ -200,6 +246,12 @@ public class ListAvailabilityHistoriesRequest
             return this;
         }
 
+        /**
+         * Filter to limit the availability history results to that of time before the input time including the boundary record
+         * Defaulted to current date.
+         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         */
         private java.util.Date timeAvailabilityStatusStartedLessThan = null;
 
         /**
@@ -207,6 +259,7 @@ public class ListAvailabilityHistoriesRequest
          * Defaulted to current date.
          * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          *
+         * @param timeAvailabilityStatusStartedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeAvailabilityStatusStartedLessThan(
@@ -215,10 +268,14 @@ public class ListAvailabilityHistoriesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -226,10 +283,14 @@ public class ListAvailabilityHistoriesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -237,10 +298,14 @@ public class ListAvailabilityHistoriesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -248,11 +313,16 @@ public class ListAvailabilityHistoriesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Default order for timeAvailabilityStatusStarted is descending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Default order for timeAvailabilityStatusStarted is descending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -342,7 +412,8 @@ public class ListAvailabilityHistoriesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -356,6 +427,10 @@ public class ListAvailabilityHistoriesRequest
                 .sortBy(sortBy);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -30,27 +30,55 @@ public final class Filter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Field filter references when inserting filter into the query string. Field must be a valid logging analytics out-of-the-box field, virtual field calculated in the query or a user defined field.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * Field filter references when inserting filter into the query string. Field must be a valid logging analytics out-of-the-box field, virtual field calculated in the query or a user defined field.
+         *
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * Field values that will be inserted into the query string for the specified fieldName. Please note all values should reflect the fields data type otherwise the insert is subject to fail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<Object> values;
 
+        /**
+         * Field values that will be inserted into the query string for the specified fieldName. Please note all values should reflect the fields data type otherwise the insert is subject to fail.
+         *
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<Object> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
             return this;
         }
-
+        /**
+         * Operator to apply when editing the query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
+        /**
+         * Operator to apply when editing the query string.
+         *
+         * @param operator the value to set
+         * @return this builder
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
@@ -94,6 +122,11 @@ public final class Filter {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * Field filter references when inserting filter into the query string. Field must be a valid logging analytics out-of-the-box field, virtual field calculated in the query or a user defined field.
+     *
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -105,6 +138,11 @@ public final class Filter {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<Object> values;
 
+    /**
+     * Field values that will be inserted into the query string for the specified fieldName. Please note all values should reflect the fields data type otherwise the insert is subject to fail.
+     *
+     * @return the value
+     **/
     public java.util.List<Object> getValues() {
         return values;
     }
@@ -168,6 +206,11 @@ public final class Filter {
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
+    /**
+     * Operator to apply when editing the query string.
+     *
+     * @return the value
+     **/
     public Operator getOperator() {
         return operator;
     }

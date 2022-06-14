@@ -31,18 +31,33 @@ public final class UpdateModuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of a module
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
+        /**
+         * The name of a module
+         * @param moduleName the value to set
+         * @return this builder
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-
+        /**
+         * The streams of the module
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streams")
         private java.util.List<UpdateModuleStreamDetails> streams;
 
+        /**
+         * The streams of the module
+         * @param streams the value to set
+         * @return this builder
+         **/
         public Builder streams(java.util.List<UpdateModuleStreamDetails> streams) {
             this.streams = streams;
             this.__explicitlySet__.add("streams");
@@ -84,6 +99,10 @@ public final class UpdateModuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
+    /**
+     * The name of a module
+     * @return the value
+     **/
     public String getModuleName() {
         return moduleName;
     }
@@ -94,6 +113,10 @@ public final class UpdateModuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("streams")
     private final java.util.List<UpdateModuleStreamDetails> streams;
 
+    /**
+     * The streams of the module
+     * @return the value
+     **/
     public java.util.List<UpdateModuleStreamDetails> getStreams() {
         return streams;
     }

@@ -46,6 +46,21 @@ public interface QuotasAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddQuotaLockResponse> addQuotaLock(
+            AddQuotaLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddQuotaLockRequest, AddQuotaLockResponse>
+                    handler);
+
+    /**
      * Creates a new quota with the details supplied.
      *
      * @param request The request object containing the details to send
@@ -100,6 +115,21 @@ public interface QuotasAsync extends AutoCloseable {
     java.util.concurrent.Future<ListQuotasResponse> listQuotas(
             ListQuotasRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListQuotasRequest, ListQuotasResponse> handler);
+
+    /**
+     * Remove a lock from a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveQuotaLockResponse> removeQuotaLock(
+            RemoveQuotaLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveQuotaLockRequest, RemoveQuotaLockResponse>
+                    handler);
 
     /**
      * Updates the quota corresponding to given OCID with the details supplied.

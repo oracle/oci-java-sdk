@@ -31,18 +31,37 @@ public final class ModifyVcnCidrDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The CIDR IP address to update.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originalCidrBlock")
         private String originalCidrBlock;
 
+        /**
+         * The CIDR IP address to update.
+         *
+         * @param originalCidrBlock the value to set
+         * @return this builder
+         **/
         public Builder originalCidrBlock(String originalCidrBlock) {
             this.originalCidrBlock = originalCidrBlock;
             this.__explicitlySet__.add("originalCidrBlock");
             return this;
         }
-
+        /**
+         * The new CIDR IP address.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newCidrBlock")
         private String newCidrBlock;
 
+        /**
+         * The new CIDR IP address.
+         *
+         * @param newCidrBlock the value to set
+         * @return this builder
+         **/
         public Builder newCidrBlock(String newCidrBlock) {
             this.newCidrBlock = newCidrBlock;
             this.__explicitlySet__.add("newCidrBlock");
@@ -87,6 +106,11 @@ public final class ModifyVcnCidrDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("originalCidrBlock")
     private final String originalCidrBlock;
 
+    /**
+     * The CIDR IP address to update.
+     *
+     * @return the value
+     **/
     public String getOriginalCidrBlock() {
         return originalCidrBlock;
     }
@@ -98,6 +122,11 @@ public final class ModifyVcnCidrDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("newCidrBlock")
     private final String newCidrBlock;
 
+    /**
+     * The new CIDR IP address.
+     *
+     * @return the value
+     **/
     public String getNewCidrBlock() {
         return newCidrBlock;
     }

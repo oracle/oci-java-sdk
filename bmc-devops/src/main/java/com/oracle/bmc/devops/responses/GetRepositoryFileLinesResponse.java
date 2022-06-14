@@ -13,6 +13,10 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -31,6 +39,10 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
      */
     private String sunset;
 
+    /**
+     * This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT. Please use "/repositories/{repositoryId}/file/lines"
+     * @return the value
+     */
     public String getSunset() {
         return sunset;
     }
@@ -40,6 +52,10 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines;
 
+    /**
+     * The returned RepositoryFileLines instance.
+     * @return the value
+     */
     public com.oracle.bmc.devops.model.RepositoryFileLines getRepositoryFileLines() {
         return repositoryFileLines;
     }
@@ -72,29 +88,61 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT. Please use "/repositories/{repositoryId}/file/lines"
+         */
         private String sunset;
 
+        /**
+         * This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT. Please use "/repositories/{repositoryId}/file/lines"
+         * @param sunset the value to set
+         * @return this builder
+         */
         public Builder sunset(String sunset) {
             this.sunset = sunset;
             return this;
         }
 
+        /**
+         * The returned RepositoryFileLines instance.
+         */
         private com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines;
 
+        /**
+         * The returned RepositoryFileLines instance.
+         * @param repositoryFileLines the value to set
+         * @return this builder
+         */
         public Builder repositoryFileLines(
                 com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines) {
             this.repositoryFileLines = repositoryFileLines;
@@ -115,12 +163,20 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetRepositoryFileLinesResponse build() {
             return new GetRepositoryFileLinesResponse(
                     __httpStatusCode__, opcRequestId, etag, sunset, repositoryFileLines);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

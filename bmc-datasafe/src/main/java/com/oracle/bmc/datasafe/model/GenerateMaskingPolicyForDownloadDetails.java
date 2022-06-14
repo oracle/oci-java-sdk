@@ -29,9 +29,17 @@ public final class GenerateMaskingPolicyForDownloadDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The format of the masking policy file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyFormat")
         private PolicyFormat policyFormat;
 
+        /**
+         * The format of the masking policy file.
+         * @param policyFormat the value to set
+         * @return this builder
+         **/
         public Builder policyFormat(PolicyFormat policyFormat) {
             this.policyFormat = policyFormat;
             this.__explicitlySet__.add("policyFormat");
@@ -74,6 +82,10 @@ public final class GenerateMaskingPolicyForDownloadDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("policyFormat")
     private final PolicyFormat policyFormat;
 
+    /**
+     * The format of the masking policy file.
+     * @return the value
+     **/
     public PolicyFormat getPolicyFormat() {
         return policyFormat;
     }

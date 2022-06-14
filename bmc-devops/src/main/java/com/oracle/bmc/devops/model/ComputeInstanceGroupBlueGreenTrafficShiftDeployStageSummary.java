@@ -155,11 +155,18 @@ public final class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "computeInstanceGroupBlueGreenDeploymentDeployStageId")
         private String computeInstanceGroupBlueGreenDeploymentDeployStageId;
 
+        /**
+         * The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
+         * @param computeInstanceGroupBlueGreenDeploymentDeployStageId the value to set
+         * @return this builder
+         **/
         public Builder computeInstanceGroupBlueGreenDeploymentDeployStageId(
                 String computeInstanceGroupBlueGreenDeploymentDeployStageId) {
             this.computeInstanceGroupBlueGreenDeploymentDeployStageId =
@@ -273,6 +280,10 @@ public final class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageSummary
             "computeInstanceGroupBlueGreenDeploymentDeployStageId")
     private final String computeInstanceGroupBlueGreenDeploymentDeployStageId;
 
+    /**
+     * The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
+     * @return the value
+     **/
     public String getComputeInstanceGroupBlueGreenDeploymentDeployStageId() {
         return computeInstanceGroupBlueGreenDeploymentDeployStageId;
     }

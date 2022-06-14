@@ -35,10 +35,17 @@ public final class CustomFrequencyDetails extends AbstractFrequencyDetails {
             this.__explicitlySet__.add("frequency");
             return this;
         }
-
+        /**
+         * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customExpression")
         private String customExpression;
 
+        /**
+         * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+         * @param customExpression the value to set
+         * @return this builder
+         **/
         public Builder customExpression(String customExpression) {
             this.customExpression = customExpression;
             this.__explicitlySet__.add("customExpression");
@@ -88,6 +95,10 @@ public final class CustomFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customExpression")
     private final String customExpression;
 
+    /**
+     * This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+     * @return the value
+     **/
     public String getCustomExpression() {
         return customExpression;
     }

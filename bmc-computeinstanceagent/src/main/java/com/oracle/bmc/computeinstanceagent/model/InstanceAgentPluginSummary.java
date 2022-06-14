@@ -32,27 +32,49 @@ public final class InstanceAgentPluginSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The plugin name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The plugin name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The last update time of the plugin in UTC
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdatedUtc")
         private java.util.Date timeLastUpdatedUtc;
 
+        /**
+         * The last update time of the plugin in UTC
+         * @param timeLastUpdatedUtc the value to set
+         * @return this builder
+         **/
         public Builder timeLastUpdatedUtc(java.util.Date timeLastUpdatedUtc) {
             this.timeLastUpdatedUtc = timeLastUpdatedUtc;
             this.__explicitlySet__.add("timeLastUpdatedUtc");
@@ -98,6 +120,10 @@ public final class InstanceAgentPluginSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The plugin name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -157,6 +183,10 @@ public final class InstanceAgentPluginSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -167,6 +197,10 @@ public final class InstanceAgentPluginSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdatedUtc")
     private final java.util.Date timeLastUpdatedUtc;
 
+    /**
+     * The last update time of the plugin in UTC
+     * @return the value
+     **/
     public java.util.Date getTimeLastUpdatedUtc() {
         return timeLastUpdatedUtc;
     }

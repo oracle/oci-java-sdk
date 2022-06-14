@@ -16,6 +16,9 @@ public class GetDynamicGroupRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String dynamicGroupId;
 
+    /**
+     * The OCID of the dynamic group.
+     */
     public String getDynamicGroupId() {
         return dynamicGroupId;
     }
@@ -27,10 +30,14 @@ public class GetDynamicGroupRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the dynamic group.
+         */
         private String dynamicGroupId = null;
 
         /**
          * The OCID of the dynamic group.
+         * @param dynamicGroupId the value to set
          * @return this builder instance
          */
         public Builder dynamicGroupId(String dynamicGroupId) {
@@ -106,12 +113,17 @@ public class GetDynamicGroupRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dynamicGroupId(dynamicGroupId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

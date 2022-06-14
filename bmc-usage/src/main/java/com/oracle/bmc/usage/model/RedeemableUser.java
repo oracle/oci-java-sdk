@@ -27,9 +27,17 @@ public final class RedeemableUser {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The email ID for a user that can redeem rewards.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailId")
         private String emailId;
 
+        /**
+         * The email ID for a user that can redeem rewards.
+         * @param emailId the value to set
+         * @return this builder
+         **/
         public Builder emailId(String emailId) {
             this.emailId = emailId;
             this.__explicitlySet__.add("emailId");
@@ -71,6 +79,10 @@ public final class RedeemableUser {
     @com.fasterxml.jackson.annotation.JsonProperty("emailId")
     private final String emailId;
 
+    /**
+     * The email ID for a user that can redeem rewards.
+     * @return the value
+     **/
     public String getEmailId() {
         return emailId;
     }

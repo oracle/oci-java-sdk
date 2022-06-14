@@ -111,6 +111,10 @@ public class UnifiedAgentParser {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
     private final String fieldTimeKey;
 
+    /**
+     * Specify time field for the event time. If the event doesn't have this field, the current time is used.
+     * @return the value
+     **/
     public String getFieldTimeKey() {
         return fieldTimeKey;
     }
@@ -121,6 +125,10 @@ public class UnifiedAgentParser {
     @com.fasterxml.jackson.annotation.JsonProperty("types")
     private final java.util.Map<String, String> types;
 
+    /**
+     * Specify types for converting a field into another type.
+     * @return the value
+     **/
     public java.util.Map<String, String> getTypes() {
         return types;
     }
@@ -131,6 +139,10 @@ public class UnifiedAgentParser {
     @com.fasterxml.jackson.annotation.JsonProperty("nullValuePattern")
     private final String nullValuePattern;
 
+    /**
+     * Specify the null value pattern.
+     * @return the value
+     **/
     public String getNullValuePattern() {
         return nullValuePattern;
     }
@@ -141,6 +153,10 @@ public class UnifiedAgentParser {
     @com.fasterxml.jackson.annotation.JsonProperty("isNullEmptyString")
     private final Boolean isNullEmptyString;
 
+    /**
+     * If true, an empty string field is replaced with nil.
+     * @return the value
+     **/
     public Boolean getIsNullEmptyString() {
         return isNullEmptyString;
     }
@@ -151,6 +167,10 @@ public class UnifiedAgentParser {
     @com.fasterxml.jackson.annotation.JsonProperty("isEstimateCurrentEvent")
     private final Boolean isEstimateCurrentEvent;
 
+    /**
+     * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * @return the value
+     **/
     public Boolean getIsEstimateCurrentEvent() {
         return isEstimateCurrentEvent;
     }
@@ -161,6 +181,10 @@ public class UnifiedAgentParser {
     @com.fasterxml.jackson.annotation.JsonProperty("isKeepTimeKey")
     private final Boolean isKeepTimeKey;
 
+    /**
+     * If true, keep time field in the record.
+     * @return the value
+     **/
     public Boolean getIsKeepTimeKey() {
         return isKeepTimeKey;
     }
@@ -171,6 +195,10 @@ public class UnifiedAgentParser {
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMilliseconds")
     private final Integer timeoutInMilliseconds;
 
+    /**
+     * Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+     * @return the value
+     **/
     public Integer getTimeoutInMilliseconds() {
         return timeoutInMilliseconds;
     }

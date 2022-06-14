@@ -150,10 +150,17 @@ public final class NumericAttribute extends AttributeProfileResult {
             this.__explicitlySet__.add("histogram");
             return this;
         }
-
+        /**
+         * Pattern frequencies for the column as described already in profile config.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternFrequencies")
         private java.util.List<ObjectFreqStat> patternFrequencies;
 
+        /**
+         * Pattern frequencies for the column as described already in profile config.
+         * @param patternFrequencies the value to set
+         * @return this builder
+         **/
         public Builder patternFrequencies(java.util.List<ObjectFreqStat> patternFrequencies) {
             this.patternFrequencies = patternFrequencies;
             this.__explicitlySet__.add("patternFrequencies");
@@ -303,6 +310,10 @@ public final class NumericAttribute extends AttributeProfileResult {
     @com.fasterxml.jackson.annotation.JsonProperty("patternFrequencies")
     private final java.util.List<ObjectFreqStat> patternFrequencies;
 
+    /**
+     * Pattern frequencies for the column as described already in profile config.
+     * @return the value
+     **/
     public java.util.List<ObjectFreqStat> getPatternFrequencies() {
         return patternFrequencies;
     }

@@ -17,6 +17,9 @@ public class ListCertificateAuthorityBundleVersionsRequest
      */
     private String certificateAuthorityId;
 
+    /**
+     * The OCID of the certificate authority (CA).
+     */
     public String getCertificateAuthorityId() {
         return certificateAuthorityId;
     }
@@ -27,6 +30,11 @@ public class ListCertificateAuthorityBundleVersionsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -74,6 +82,11 @@ public class ListCertificateAuthorityBundleVersionsRequest
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order. The default
+     * order for {@code VERSION_NUMBER} is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -120,6 +133,10 @@ public class ListCertificateAuthorityBundleVersionsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -131,10 +148,14 @@ public class ListCertificateAuthorityBundleVersionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the certificate authority (CA).
+         */
         private String certificateAuthorityId = null;
 
         /**
          * The OCID of the certificate authority (CA).
+         * @param certificateAuthorityId the value to set
          * @return this builder instance
          */
         public Builder certificateAuthorityId(String certificateAuthorityId) {
@@ -142,12 +163,18 @@ public class ListCertificateAuthorityBundleVersionsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -155,12 +182,18 @@ public class ListCertificateAuthorityBundleVersionsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order. The default
+         * order for {@code VERSION_NUMBER} is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can specify only one sort order. The default
          * order for {@code VERSION_NUMBER} is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -168,11 +201,16 @@ public class ListCertificateAuthorityBundleVersionsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -256,7 +294,8 @@ public class ListCertificateAuthorityBundleVersionsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -266,6 +305,10 @@ public class ListCertificateAuthorityBundleVersionsRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

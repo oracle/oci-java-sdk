@@ -67,112 +67,231 @@ public final class FastConnectProviderService {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The location of the provider's website or portal. This portal is where you can get information
+         * about the provider service, create a virtual circuit connection from the provider to Oracle
+         * Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
+         * <p>
+         * Example: {@code https://example.com}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The location of the provider's website or portal. This portal is where you can get information
+         * about the provider service, create a virtual circuit connection from the provider to Oracle
+         * Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
+         * <p>
+         * Example: {@code https://example.com}
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Who is responsible for managing the private peering BGP information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privatePeeringBgpManagement")
         private PrivatePeeringBgpManagement privatePeeringBgpManagement;
 
+        /**
+         * Who is responsible for managing the private peering BGP information.
+         *
+         * @param privatePeeringBgpManagement the value to set
+         * @return this builder
+         **/
         public Builder privatePeeringBgpManagement(
                 PrivatePeeringBgpManagement privatePeeringBgpManagement) {
             this.privatePeeringBgpManagement = privatePeeringBgpManagement;
             this.__explicitlySet__.add("privatePeeringBgpManagement");
             return this;
         }
-
+        /**
+         * The name of the provider.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
+        /**
+         * The name of the provider.
+         *
+         * @param providerName the value to set
+         * @return this builder
+         **/
         public Builder providerName(String providerName) {
             this.providerName = providerName;
             this.__explicitlySet__.add("providerName");
             return this;
         }
-
+        /**
+         * The name of the service offered by the provider.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
 
+        /**
+         * The name of the service offered by the provider.
+         *
+         * @param providerServiceName the value to set
+         * @return this builder
+         **/
         public Builder providerServiceName(String providerServiceName) {
             this.providerServiceName = providerServiceName;
             this.__explicitlySet__.add("providerServiceName");
             return this;
         }
-
+        /**
+         * Who is responsible for managing the public peering BGP information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicPeeringBgpManagement")
         private PublicPeeringBgpManagement publicPeeringBgpManagement;
 
+        /**
+         * Who is responsible for managing the public peering BGP information.
+         *
+         * @param publicPeeringBgpManagement the value to set
+         * @return this builder
+         **/
         public Builder publicPeeringBgpManagement(
                 PublicPeeringBgpManagement publicPeeringBgpManagement) {
             this.publicPeeringBgpManagement = publicPeeringBgpManagement;
             this.__explicitlySet__.add("publicPeeringBgpManagement");
             return this;
         }
-
+        /**
+         * An array of virtual circuit types supported by this service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedVirtualCircuitTypes")
         private java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes;
 
+        /**
+         * An array of virtual circuit types supported by this service.
+         *
+         * @param supportedVirtualCircuitTypes the value to set
+         * @return this builder
+         **/
         public Builder supportedVirtualCircuitTypes(
                 java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes) {
             this.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
             this.__explicitlySet__.add("supportedVirtualCircuitTypes");
             return this;
         }
-
+        /**
+         * Who is responsible for managing the ASN information for the network at the other end
+         * of the connection from Oracle.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerAsnManagement")
         private CustomerAsnManagement customerAsnManagement;
 
+        /**
+         * Who is responsible for managing the ASN information for the network at the other end
+         * of the connection from Oracle.
+         *
+         * @param customerAsnManagement the value to set
+         * @return this builder
+         **/
         public Builder customerAsnManagement(CustomerAsnManagement customerAsnManagement) {
             this.customerAsnManagement = customerAsnManagement;
             this.__explicitlySet__.add("customerAsnManagement");
             return this;
         }
-
+        /**
+         * Who is responsible for managing the provider service key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyManagement")
         private ProviderServiceKeyManagement providerServiceKeyManagement;
 
+        /**
+         * Who is responsible for managing the provider service key.
+         *
+         * @param providerServiceKeyManagement the value to set
+         * @return this builder
+         **/
         public Builder providerServiceKeyManagement(
                 ProviderServiceKeyManagement providerServiceKeyManagement) {
             this.providerServiceKeyManagement = providerServiceKeyManagement;
             this.__explicitlySet__.add("providerServiceKeyManagement");
             return this;
         }
-
+        /**
+         * Who is responsible for managing the virtual circuit bandwidth.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bandwithShapeManagement")
         private BandwithShapeManagement bandwithShapeManagement;
 
+        /**
+         * Who is responsible for managing the virtual circuit bandwidth.
+         *
+         * @param bandwithShapeManagement the value to set
+         * @return this builder
+         **/
         public Builder bandwithShapeManagement(BandwithShapeManagement bandwithShapeManagement) {
             this.bandwithShapeManagement = bandwithShapeManagement;
             this.__explicitlySet__.add("bandwithShapeManagement");
             return this;
         }
-
+        /**
+         * Total number of cross-connect or cross-connect groups required for the virtual circuit.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requiredTotalCrossConnects")
         private Integer requiredTotalCrossConnects;
 
+        /**
+         * Total number of cross-connect or cross-connect groups required for the virtual circuit.
+         *
+         * @param requiredTotalCrossConnects the value to set
+         * @return this builder
+         **/
         public Builder requiredTotalCrossConnects(Integer requiredTotalCrossConnects) {
             this.requiredTotalCrossConnects = requiredTotalCrossConnects;
             this.__explicitlySet__.add("requiredTotalCrossConnects");
             return this;
         }
-
+        /**
+         * Provider service type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * Provider service type.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -244,6 +363,15 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The location of the provider's website or portal. This portal is where you can get information
+     * about the provider service, create a virtual circuit connection from the provider to Oracle
+     * Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
+     * <p>
+     * Example: {@code https://example.com}
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -255,6 +383,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -316,6 +449,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("privatePeeringBgpManagement")
     private final PrivatePeeringBgpManagement privatePeeringBgpManagement;
 
+    /**
+     * Who is responsible for managing the private peering BGP information.
+     *
+     * @return the value
+     **/
     public PrivatePeeringBgpManagement getPrivatePeeringBgpManagement() {
         return privatePeeringBgpManagement;
     }
@@ -327,6 +465,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
+    /**
+     * The name of the provider.
+     *
+     * @return the value
+     **/
     public String getProviderName() {
         return providerName;
     }
@@ -338,6 +481,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
     private final String providerServiceName;
 
+    /**
+     * The name of the service offered by the provider.
+     *
+     * @return the value
+     **/
     public String getProviderServiceName() {
         return providerServiceName;
     }
@@ -399,6 +547,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("publicPeeringBgpManagement")
     private final PublicPeeringBgpManagement publicPeeringBgpManagement;
 
+    /**
+     * Who is responsible for managing the public peering BGP information.
+     *
+     * @return the value
+     **/
     public PublicPeeringBgpManagement getPublicPeeringBgpManagement() {
         return publicPeeringBgpManagement;
     }
@@ -457,6 +610,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("supportedVirtualCircuitTypes")
     private final java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes;
 
+    /**
+     * An array of virtual circuit types supported by this service.
+     *
+     * @return the value
+     **/
     public java.util.List<SupportedVirtualCircuitTypes> getSupportedVirtualCircuitTypes() {
         return supportedVirtualCircuitTypes;
     }
@@ -520,6 +678,12 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("customerAsnManagement")
     private final CustomerAsnManagement customerAsnManagement;
 
+    /**
+     * Who is responsible for managing the ASN information for the network at the other end
+     * of the connection from Oracle.
+     *
+     * @return the value
+     **/
     public CustomerAsnManagement getCustomerAsnManagement() {
         return customerAsnManagement;
     }
@@ -581,6 +745,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyManagement")
     private final ProviderServiceKeyManagement providerServiceKeyManagement;
 
+    /**
+     * Who is responsible for managing the provider service key.
+     *
+     * @return the value
+     **/
     public ProviderServiceKeyManagement getProviderServiceKeyManagement() {
         return providerServiceKeyManagement;
     }
@@ -642,6 +811,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("bandwithShapeManagement")
     private final BandwithShapeManagement bandwithShapeManagement;
 
+    /**
+     * Who is responsible for managing the virtual circuit bandwidth.
+     *
+     * @return the value
+     **/
     public BandwithShapeManagement getBandwithShapeManagement() {
         return bandwithShapeManagement;
     }
@@ -653,6 +827,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("requiredTotalCrossConnects")
     private final Integer requiredTotalCrossConnects;
 
+    /**
+     * Total number of cross-connect or cross-connect groups required for the virtual circuit.
+     *
+     * @return the value
+     **/
     public Integer getRequiredTotalCrossConnects() {
         return requiredTotalCrossConnects;
     }
@@ -711,6 +890,11 @@ public final class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * Provider service type.
+     *
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }

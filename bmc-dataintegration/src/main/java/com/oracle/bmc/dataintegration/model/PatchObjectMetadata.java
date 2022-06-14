@@ -50,63 +50,113 @@ public final class PatchObjectMetadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The key of the object.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The fully qualified path of the published object, which would include its project and folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namePath")
         private String namePath;
 
+        /**
+         * The fully qualified path of the published object, which would include its project and folder.
+         * @param namePath the value to set
+         * @return this builder
+         **/
         public Builder namePath(String namePath) {
             this.namePath = namePath;
             this.__explicitlySet__.add("namePath");
             return this;
         }
-
+        /**
+         * The type of the object in patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of the object in patch.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The object version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
+        /**
+         * The object version.
+         * @param objectVersion the value to set
+         * @return this builder
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
-
+        /**
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * The patch action indicating if object was created, updated, or deleted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The patch action indicating if object was created, updated, or deleted.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -157,6 +207,10 @@ public final class PatchObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The key of the object.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -167,6 +221,10 @@ public final class PatchObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -177,6 +235,10 @@ public final class PatchObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("namePath")
     private final String namePath;
 
+    /**
+     * The fully qualified path of the published object, which would include its project and folder.
+     * @return the value
+     **/
     public String getNamePath() {
         return namePath;
     }
@@ -237,6 +299,10 @@ public final class PatchObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of the object in patch.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -247,6 +313,10 @@ public final class PatchObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
+    /**
+     * The object version.
+     * @return the value
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -257,6 +327,10 @@ public final class PatchObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -315,6 +389,10 @@ public final class PatchObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The patch action indicating if object was created, updated, or deleted.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }

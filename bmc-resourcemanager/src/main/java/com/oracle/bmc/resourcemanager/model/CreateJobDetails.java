@@ -49,27 +49,49 @@ public final class CreateJobDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the current job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stackId")
         private String stackId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the current job.
+         * @param stackId the value to set
+         * @return this builder
+         **/
         public Builder stackId(String stackId) {
             this.stackId = stackId;
             this.__explicitlySet__.add("stackId");
             return this;
         }
-
+        /**
+         * Description of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Description of the job.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Terraform-specific operation to execute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Job.Operation operation;
 
+        /**
+         * Terraform-specific operation to execute.
+         * @param operation the value to set
+         * @return this builder
+         **/
         public Builder operation(Job.Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
@@ -93,19 +115,45 @@ public final class CreateJobDetails {
             this.__explicitlySet__.add("applyJobPlanResolution");
             return this;
         }
-
+        /**
+         * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -163,6 +211,10 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("stackId")
     private final String stackId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the current job.
+     * @return the value
+     **/
     public String getStackId() {
         return stackId;
     }
@@ -173,6 +225,10 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Description of the job.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -183,6 +239,10 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final Job.Operation operation;
 
+    /**
+     * Terraform-specific operation to execute.
+     * @return the value
+     **/
     public Job.Operation getOperation() {
         return operation;
     }
@@ -210,6 +270,13 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -223,6 +290,13 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

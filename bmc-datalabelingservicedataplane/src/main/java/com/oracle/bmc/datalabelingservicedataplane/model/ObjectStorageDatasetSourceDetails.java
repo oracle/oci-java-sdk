@@ -28,27 +28,49 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
 public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The namespace of the bucket that contains the dataset data source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The namespace of the bucket that contains the dataset data source.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * The object storage bucket that contains the dataset data source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
+        /**
+         * The object storage bucket that contains the dataset data source.
+         * @param bucket the value to set
+         * @return this builder
+         **/
         public Builder bucket(String bucket) {
             this.bucket = bucket;
             this.__explicitlySet__.add("bucket");
             return this;
         }
-
+        /**
+         * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
+        /**
+         * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * @param prefix the value to set
+         * @return this builder
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
@@ -100,6 +122,10 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The namespace of the bucket that contains the dataset data source.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -110,6 +136,10 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
+    /**
+     * The object storage bucket that contains the dataset data source.
+     * @return the value
+     **/
     public String getBucket() {
         return bucket;
     }
@@ -120,6 +150,10 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
+    /**
+     * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+     * @return the value
+     **/
     public String getPrefix() {
         return prefix;
     }

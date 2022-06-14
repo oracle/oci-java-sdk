@@ -17,6 +17,10 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -30,6 +34,14 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Boolean isMatchAll;
 
+    /**
+     * A flag indicating how to handle filtering when multiple filter criteria are specified.
+     * A value of true will always result in the most expansive list of items being returned.
+     * For example, if two field lists are supplies as filter criteria, a value of true will
+     * result in any item matching a field in either list being returned, while a value of
+     * false will result in a list of items which only have fields contained in both input lists.
+     *
+     */
     public Boolean getIsMatchAll() {
         return isMatchAll;
     }
@@ -80,6 +92,11 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The source type used for filtering.  Only parsers associated with a source of the
+     * specified type will be returned.
+     *
+     */
     public SourceType getSourceType() {
         return sourceType;
     }
@@ -89,6 +106,10 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String parserName;
 
+    /**
+     * The parser name used for filtering.
+     *
+     */
     public String getParserName() {
         return parserName;
     }
@@ -99,6 +120,11 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String parserDisplayText;
 
+    /**
+     * The parser display text used for filtering.  Only parsers with the specified name
+     * or description will be returned.
+     *
+     */
     public String getParserDisplayText() {
         return parserDisplayText;
     }
@@ -151,6 +177,11 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The parser type used for filtering.  Only items with, or associated with, parsers
+     * of the specified type will be returned.
+     *
+     */
     public ParserType getParserType() {
         return parserType;
     }
@@ -159,6 +190,9 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String categories;
 
+    /**
+     * A comma-separated list of categories used for filtering
+     */
     public String getCategories() {
         return categories;
     }
@@ -210,6 +244,12 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
+     *
+     */
     public IsSystem getIsSystem() {
         return isSystem;
     }
@@ -218,6 +258,9 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -226,6 +269,9 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -272,6 +318,10 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -318,6 +368,9 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The attribute used to sort the returned parsers
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -326,6 +379,9 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -337,11 +393,16 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -349,6 +410,14 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A flag indicating how to handle filtering when multiple filter criteria are specified.
+         * A value of true will always result in the most expansive list of items being returned.
+         * For example, if two field lists are supplies as filter criteria, a value of true will
+         * result in any item matching a field in either list being returned, while a value of
+         * false will result in a list of items which only have fields contained in both input lists.
+         *
+         */
         private Boolean isMatchAll = null;
 
         /**
@@ -358,6 +427,7 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * result in any item matching a field in either list being returned, while a value of
          * false will result in a list of items which only have fields contained in both input lists.
          *
+         * @param isMatchAll the value to set
          * @return this builder instance
          */
         public Builder isMatchAll(Boolean isMatchAll) {
@@ -365,12 +435,18 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The source type used for filtering.  Only parsers associated with a source of the
+         * specified type will be returned.
+         *
+         */
         private SourceType sourceType = null;
 
         /**
          * The source type used for filtering.  Only parsers associated with a source of the
          * specified type will be returned.
          *
+         * @param sourceType the value to set
          * @return this builder instance
          */
         public Builder sourceType(SourceType sourceType) {
@@ -378,11 +454,16 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The parser name used for filtering.
+         *
+         */
         private String parserName = null;
 
         /**
          * The parser name used for filtering.
          *
+         * @param parserName the value to set
          * @return this builder instance
          */
         public Builder parserName(String parserName) {
@@ -390,12 +471,18 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The parser display text used for filtering.  Only parsers with the specified name
+         * or description will be returned.
+         *
+         */
         private String parserDisplayText = null;
 
         /**
          * The parser display text used for filtering.  Only parsers with the specified name
          * or description will be returned.
          *
+         * @param parserDisplayText the value to set
          * @return this builder instance
          */
         public Builder parserDisplayText(String parserDisplayText) {
@@ -403,12 +490,18 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The parser type used for filtering.  Only items with, or associated with, parsers
+         * of the specified type will be returned.
+         *
+         */
         private ParserType parserType = null;
 
         /**
          * The parser type used for filtering.  Only items with, or associated with, parsers
          * of the specified type will be returned.
          *
+         * @param parserType the value to set
          * @return this builder instance
          */
         public Builder parserType(ParserType parserType) {
@@ -416,10 +509,14 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A comma-separated list of categories used for filtering
+         */
         private String categories = null;
 
         /**
          * A comma-separated list of categories used for filtering
+         * @param categories the value to set
          * @return this builder instance
          */
         public Builder categories(String categories) {
@@ -427,6 +524,12 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The system value used for filtering.  Only items with the specified system value
+         * will be returned.  Valid values are built in, custom (for user defined items), or
+         * all (for all items, regardless of system value).
+         *
+         */
         private IsSystem isSystem = null;
 
         /**
@@ -434,6 +537,7 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * will be returned.  Valid values are built in, custom (for user defined items), or
          * all (for all items, regardless of system value).
          *
+         * @param isSystem the value to set
          * @return this builder instance
          */
         public Builder isSystem(IsSystem isSystem) {
@@ -441,10 +545,14 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -452,10 +560,14 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -463,11 +575,16 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -475,10 +592,14 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The attribute used to sort the returned parsers
+         */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned parsers
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -486,10 +607,14 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -589,7 +714,8 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -608,6 +734,10 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

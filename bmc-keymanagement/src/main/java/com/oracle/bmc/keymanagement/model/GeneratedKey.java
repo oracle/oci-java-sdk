@@ -29,27 +29,61 @@ public final class GeneratedKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The encrypted data encryption key generated from a master encryption key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
         private String ciphertext;
 
+        /**
+         * The encrypted data encryption key generated from a master encryption key.
+         * @param ciphertext the value to set
+         * @return this builder
+         **/
         public Builder ciphertext(String ciphertext) {
             this.ciphertext = ciphertext;
             this.__explicitlySet__.add("ciphertext");
             return this;
         }
-
+        /**
+         * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
+         * included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
         private String plaintext;
 
+        /**
+         * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
+         * included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
+         *
+         * @param plaintext the value to set
+         * @return this builder
+         **/
         public Builder plaintext(String plaintext) {
             this.plaintext = plaintext;
             this.__explicitlySet__.add("plaintext");
             return this;
         }
-
+        /**
+         * The checksum of the plaintext data encryption key, which is included if the
+         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
         private String plaintextChecksum;
 
+        /**
+         * The checksum of the plaintext data encryption key, which is included if the
+         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
+         *
+         * @param plaintextChecksum the value to set
+         * @return this builder
+         **/
         public Builder plaintextChecksum(String plaintextChecksum) {
             this.plaintextChecksum = plaintextChecksum;
             this.__explicitlySet__.add("plaintextChecksum");
@@ -94,6 +128,10 @@ public final class GeneratedKey {
     @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
     private final String ciphertext;
 
+    /**
+     * The encrypted data encryption key generated from a master encryption key.
+     * @return the value
+     **/
     public String getCiphertext() {
         return ciphertext;
     }
@@ -107,6 +145,13 @@ public final class GeneratedKey {
     @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
     private final String plaintext;
 
+    /**
+     * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
+     * included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
+     *
+     * @return the value
+     **/
     public String getPlaintext() {
         return plaintext;
     }
@@ -120,6 +165,13 @@ public final class GeneratedKey {
     @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
     private final String plaintextChecksum;
 
+    /**
+     * The checksum of the plaintext data encryption key, which is included if the
+     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
+     *
+     * @return the value
+     **/
     public String getPlaintextChecksum() {
         return plaintextChecksum;
     }

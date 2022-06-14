@@ -31,27 +31,49 @@ public final class Certificate_extensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The certificate extension name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The certificate extension name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCritical")
         private Boolean isCritical;
 
+        /**
+         * The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
+         * @param isCritical the value to set
+         * @return this builder
+         **/
         public Builder isCritical(Boolean isCritical) {
             this.isCritical = isCritical;
             this.__explicitlySet__.add("isCritical");
             return this;
         }
-
+        /**
+         * The certificate extension value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The certificate extension value.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -95,6 +117,10 @@ public final class Certificate_extensions {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The certificate extension name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -105,6 +131,10 @@ public final class Certificate_extensions {
     @com.fasterxml.jackson.annotation.JsonProperty("isCritical")
     private final Boolean isCritical;
 
+    /**
+     * The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
+     * @return the value
+     **/
     public Boolean getIsCritical() {
         return isCritical;
     }
@@ -115,6 +145,10 @@ public final class Certificate_extensions {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The certificate extension value.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

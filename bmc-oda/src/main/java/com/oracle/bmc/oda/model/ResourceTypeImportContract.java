@@ -31,18 +31,33 @@ public final class ResourceTypeImportContract {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of resource to which this resourceType-specific contract applies
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The type of resource to which this resourceType-specific contract applies
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * A list of definitions for parameters that are required to import this package into a target instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<ParameterDefinition> parameters;
 
+        /**
+         * A list of definitions for parameters that are required to import this package into a target instance.
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.List<ParameterDefinition> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -85,6 +100,10 @@ public final class ResourceTypeImportContract {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The type of resource to which this resourceType-specific contract applies
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -95,6 +114,10 @@ public final class ResourceTypeImportContract {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<ParameterDefinition> parameters;
 
+    /**
+     * A list of definitions for parameters that are required to import this package into a target instance.
+     * @return the value
+     **/
     public java.util.List<ParameterDefinition> getParameters() {
         return parameters;
     }

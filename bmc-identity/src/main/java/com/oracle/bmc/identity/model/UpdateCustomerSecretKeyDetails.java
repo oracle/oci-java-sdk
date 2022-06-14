@@ -29,9 +29,23 @@ public final class UpdateCustomerSecretKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The description you assign to the secret key. Does not have to be unique, and it's changeable.
+         * <p>
+         * (For tenancies that support identity domains) You can have an empty description.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The description you assign to the secret key. Does not have to be unique, and it's changeable.
+         * <p>
+         * (For tenancies that support identity domains) You can have an empty description.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -77,6 +91,13 @@ public final class UpdateCustomerSecretKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The description you assign to the secret key. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

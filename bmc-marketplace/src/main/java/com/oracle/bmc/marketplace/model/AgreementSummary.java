@@ -30,36 +30,65 @@ public final class AgreementSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier for the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique identifier for the agreement.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The content URL of the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
         private String contentUrl;
 
+        /**
+         * The content URL of the agreement.
+         * @param contentUrl the value to set
+         * @return this builder
+         **/
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = contentUrl;
             this.__explicitlySet__.add("contentUrl");
             return this;
         }
-
+        /**
+         * Who authored the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("author")
         private Author author;
 
+        /**
+         * Who authored the agreement.
+         * @param author the value to set
+         * @return this builder
+         **/
         public Builder author(Author author) {
             this.author = author;
             this.__explicitlySet__.add("author");
             return this;
         }
-
+        /**
+         * Textual prompt to read and accept the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prompt")
         private String prompt;
 
+        /**
+         * Textual prompt to read and accept the agreement.
+         * @param prompt the value to set
+         * @return this builder
+         **/
         public Builder prompt(String prompt) {
             this.prompt = prompt;
             this.__explicitlySet__.add("prompt");
@@ -105,6 +134,10 @@ public final class AgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique identifier for the agreement.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -115,6 +148,10 @@ public final class AgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
     private final String contentUrl;
 
+    /**
+     * The content URL of the agreement.
+     * @return the value
+     **/
     public String getContentUrl() {
         return contentUrl;
     }
@@ -173,6 +210,10 @@ public final class AgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("author")
     private final Author author;
 
+    /**
+     * Who authored the agreement.
+     * @return the value
+     **/
     public Author getAuthor() {
         return author;
     }
@@ -183,6 +224,10 @@ public final class AgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("prompt")
     private final String prompt;
 
+    /**
+     * Textual prompt to read and accept the agreement.
+     * @return the value
+     **/
     public String getPrompt() {
         return prompt;
     }

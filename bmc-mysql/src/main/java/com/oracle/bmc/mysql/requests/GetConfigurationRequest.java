@@ -16,6 +16,9 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String configurationId;
 
+    /**
+     * The OCID of the Configuration.
+     */
     public String getConfigurationId() {
         return configurationId;
     }
@@ -27,6 +30,12 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -40,6 +49,14 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String ifNoneMatch;
 
+    /**
+     * For conditional requests. In the GET call for a resource, set the
+     * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+     * POST or PUT) response for that resource. The server will return with
+     * either a 304 Not Modified response if the resource has not changed, or a
+     * 200 OK response with the updated representation.
+     *
+     */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
@@ -51,10 +68,14 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the Configuration.
+         */
         private String configurationId = null;
 
         /**
          * The OCID of the Configuration.
+         * @param configurationId the value to set
          * @return this builder instance
          */
         public Builder configurationId(String configurationId) {
@@ -62,6 +83,12 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -69,6 +96,7 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
          * contact Oracle about a specific request, please provide the request
          * ID that you supplied in this header with the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -76,6 +104,14 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * For conditional requests. In the GET call for a resource, set the
+         * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+         * POST or PUT) response for that resource. The server will return with
+         * either a 304 Not Modified response if the resource has not changed, or a
+         * 200 OK response with the updated representation.
+         *
+         */
         private String ifNoneMatch = null;
 
         /**
@@ -85,6 +121,7 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
          * either a 304 Not Modified response if the resource has not changed, or a
          * 200 OK response with the updated representation.
          *
+         * @param ifNoneMatch the value to set
          * @return this builder instance
          */
         public Builder ifNoneMatch(String ifNoneMatch) {
@@ -164,7 +201,8 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -173,6 +211,10 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
                 .ifNoneMatch(ifNoneMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

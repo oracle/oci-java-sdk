@@ -29,18 +29,39 @@ public final class Capacity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The capacity model to use.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityType")
         private CapacityType capacityType;
 
+        /**
+         * The capacity model to use.
+         *
+         * @param capacityType the value to set
+         * @return this builder
+         **/
         public Builder capacityType(CapacityType capacityType) {
             this.capacityType = capacityType;
             this.__explicitlySet__.add("capacityType");
             return this;
         }
-
+        /**
+         * The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the
+         * number of CPUs, amount of memory or other resources allocated to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
         private Integer capacityValue;
 
+        /**
+         * The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the
+         * number of CPUs, amount of memory or other resources allocated to the instance.
+         *
+         * @param capacityValue the value to set
+         * @return this builder
+         **/
         public Builder capacityValue(Integer capacityValue) {
             this.capacityValue = capacityValue;
             this.__explicitlySet__.add("capacityValue");
@@ -84,6 +105,11 @@ public final class Capacity {
     @com.fasterxml.jackson.annotation.JsonProperty("capacityType")
     private final CapacityType capacityType;
 
+    /**
+     * The capacity model to use.
+     *
+     * @return the value
+     **/
     public CapacityType getCapacityType() {
         return capacityType;
     }
@@ -96,6 +122,12 @@ public final class Capacity {
     @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
     private final Integer capacityValue;
 
+    /**
+     * The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the
+     * number of CPUs, amount of memory or other resources allocated to the instance.
+     *
+     * @return the value
+     **/
     public Integer getCapacityValue() {
         return capacityValue;
     }

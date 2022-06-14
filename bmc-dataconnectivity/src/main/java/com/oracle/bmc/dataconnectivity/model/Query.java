@@ -25,9 +25,17 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class Query extends PushDownOperation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A query string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
+        /**
+         * A query string.
+         * @param query the value to set
+         * @return this builder
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
@@ -75,6 +83,10 @@ public final class Query extends PushDownOperation {
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
+    /**
+     * A query string.
+     * @return the value
+     **/
     public String getQuery() {
         return query;
     }

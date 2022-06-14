@@ -32,18 +32,33 @@ public final class UpdateTargetDetectorRecipe {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Identifier for DetectorRecipe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipeId")
         private String targetDetectorRecipeId;
 
+        /**
+         * Identifier for DetectorRecipe.
+         * @param targetDetectorRecipeId the value to set
+         * @return this builder
+         **/
         public Builder targetDetectorRecipeId(String targetDetectorRecipeId) {
             this.targetDetectorRecipeId = targetDetectorRecipeId;
             this.__explicitlySet__.add("targetDetectorRecipeId");
             return this;
         }
-
+        /**
+         * Updates to be applied to Detector Rule associated with the target
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
+        /**
+         * Updates to be applied to Detector Rule associated with the target
+         * @param detectorRules the value to set
+         * @return this builder
+         **/
         public Builder detectorRules(
                 java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules) {
             this.detectorRules = detectorRules;
@@ -89,6 +104,10 @@ public final class UpdateTargetDetectorRecipe {
     @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipeId")
     private final String targetDetectorRecipeId;
 
+    /**
+     * Identifier for DetectorRecipe.
+     * @return the value
+     **/
     public String getTargetDetectorRecipeId() {
         return targetDetectorRecipeId;
     }
@@ -99,6 +118,10 @@ public final class UpdateTargetDetectorRecipe {
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
+    /**
+     * Updates to be applied to Detector Rule associated with the target
+     * @return the value
+     **/
     public java.util.List<UpdateTargetRecipeDetectorRuleDetails> getDetectorRules() {
         return detectorRules;
     }

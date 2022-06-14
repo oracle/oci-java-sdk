@@ -18,6 +18,9 @@ public class UpdateApiRequest
      */
     private String apiId;
 
+    /**
+     * The ocid of the API.
+     */
     public String getApiId() {
         return apiId;
     }
@@ -26,6 +29,9 @@ public class UpdateApiRequest
      */
     private com.oracle.bmc.apigateway.model.UpdateApiDetails updateApiDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.apigateway.model.UpdateApiDetails getUpdateApiDetails() {
         return updateApiDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateApiRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +61,9 @@ public class UpdateApiRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request id for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,10 +85,14 @@ public class UpdateApiRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ocid of the API.
+         */
         private String apiId = null;
 
         /**
          * The ocid of the API.
+         * @param apiId the value to set
          * @return this builder instance
          */
         public Builder apiId(String apiId) {
@@ -79,10 +100,14 @@ public class UpdateApiRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.apigateway.model.UpdateApiDetails updateApiDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateApiDetails the value to set
          * @return this builder instance
          */
         public Builder updateApiDetails(
@@ -91,6 +116,14 @@ public class UpdateApiRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -100,6 +133,7 @@ public class UpdateApiRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -107,10 +141,14 @@ public class UpdateApiRequest
             return this;
         }
 
+        /**
+         * The client request id for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request id for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -203,7 +241,8 @@ public class UpdateApiRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -213,6 +252,10 @@ public class UpdateApiRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

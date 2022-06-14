@@ -42,6 +42,7 @@ public final class EnableDatabaseManagementDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
         private DatabaseCredentialDetails credentialDetails;
 
@@ -50,28 +51,51 @@ public final class EnableDatabaseManagementDetails {
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointId")
         private String privateEndPointId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         *
+         * @param privateEndPointId the value to set
+         * @return this builder
+         **/
         public Builder privateEndPointId(String privateEndPointId) {
             this.privateEndPointId = privateEndPointId;
             this.__explicitlySet__.add("privateEndPointId");
             return this;
         }
-
+        /**
+         * The Database Management type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementType")
         private ManagementType managementType;
 
+        /**
+         * The Database Management type.
+         * @param managementType the value to set
+         * @return this builder
+         **/
         public Builder managementType(ManagementType managementType) {
             this.managementType = managementType;
             this.__explicitlySet__.add("managementType");
             return this;
         }
-
+        /**
+         * The name of the Oracle Database service that will be used to connect to the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * The name of the Oracle Database service that will be used to connect to the database.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
@@ -127,6 +151,11 @@ public final class EnableDatabaseManagementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointId")
     private final String privateEndPointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     *
+     * @return the value
+     **/
     public String getPrivateEndPointId() {
         return privateEndPointId;
     }
@@ -172,6 +201,10 @@ public final class EnableDatabaseManagementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("managementType")
     private final ManagementType managementType;
 
+    /**
+     * The Database Management type.
+     * @return the value
+     **/
     public ManagementType getManagementType() {
         return managementType;
     }
@@ -182,6 +215,10 @@ public final class EnableDatabaseManagementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * The name of the Oracle Database service that will be used to connect to the database.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }

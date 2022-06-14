@@ -15,6 +15,12 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For the pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -36,6 +49,10 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datalabelingservice.model.DatasetCollection datasetCollection;
 
+    /**
+     * The returned DatasetCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.datalabelingservice.model.DatasetCollection getDatasetCollection() {
         return datasetCollection;
     }
@@ -65,22 +82,56 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For the pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For the pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned DatasetCollection instance.
+         */
         private com.oracle.bmc.datalabelingservice.model.DatasetCollection datasetCollection;
 
+        /**
+         * The returned DatasetCollection instance.
+         * @param datasetCollection the value to set
+         * @return this builder
+         */
         public Builder datasetCollection(
                 com.oracle.bmc.datalabelingservice.model.DatasetCollection datasetCollection) {
             this.datasetCollection = datasetCollection;
@@ -100,12 +151,20 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListDatasetsResponse build() {
             return new ListDatasetsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, datasetCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

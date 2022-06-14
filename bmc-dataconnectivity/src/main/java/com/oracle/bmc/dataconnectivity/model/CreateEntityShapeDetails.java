@@ -109,6 +109,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The object key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -119,6 +123,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The object's model version.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -136,6 +144,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -146,6 +158,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     * @return the value
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -156,6 +172,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
+    /**
+     * The external key for the object.
+     * @return the value
+     **/
     public String getExternalKey() {
         return externalKey;
     }
@@ -173,6 +193,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
     private final String shapeId;
 
+    /**
+     * The shape ID.
+     * @return the value
+     **/
     public String getShapeId() {
         return shapeId;
     }
@@ -220,6 +244,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
+    /**
+     * The entity type.
+     * @return the value
+     **/
     public EntityType getEntityType() {
         return entityType;
     }
@@ -230,6 +258,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("otherTypeLabel")
     private final String otherTypeLabel;
 
+    /**
+     * Specifies other type label.
+     * @return the value
+     **/
     public String getOtherTypeLabel() {
         return otherTypeLabel;
     }
@@ -240,6 +272,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueKeys")
     private final java.util.List<UniqueKey> uniqueKeys;
 
+    /**
+     * An array of unique keys.
+     * @return the value
+     **/
     public java.util.List<UniqueKey> getUniqueKeys() {
         return uniqueKeys;
     }
@@ -250,6 +286,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("foreignKeys")
     private final java.util.List<ForeignKey> foreignKeys;
 
+    /**
+     * An array of foreign keys.
+     * @return the value
+     **/
     public java.util.List<ForeignKey> getForeignKeys() {
         return foreignKeys;
     }
@@ -260,6 +300,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * The resource name.
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -270,6 +314,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -280,6 +328,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -297,6 +349,10 @@ public class CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("entityProperties")
     private final java.util.Map<String, String> entityProperties;
 
+    /**
+     * Map<String, String> for entity properties
+     * @return the value
+     **/
     public java.util.Map<String, String> getEntityProperties() {
         return entityProperties;
     }

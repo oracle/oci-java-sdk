@@ -17,6 +17,9 @@ public class GetFastConnectProviderServiceKeyRequest
      */
     private String providerServiceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+     */
     public String getProviderServiceId() {
         return providerServiceId;
     }
@@ -29,6 +32,13 @@ public class GetFastConnectProviderServiceKeyRequest
      */
     private String providerServiceKeyName;
 
+    /**
+     * The provider service key that the provider gives you when you set up a virtual circuit connection
+     * from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your
+     * provider service key at the provider's website or portal. For the portal location, see the {@code description}
+     * attribute of the {@link FastConnectProviderService}.
+     *
+     */
     public String getProviderServiceKeyName() {
         return providerServiceKeyName;
     }
@@ -40,10 +50,14 @@ public class GetFastConnectProviderServiceKeyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+         */
         private String providerServiceId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+         * @param providerServiceId the value to set
          * @return this builder instance
          */
         public Builder providerServiceId(String providerServiceId) {
@@ -51,6 +65,13 @@ public class GetFastConnectProviderServiceKeyRequest
             return this;
         }
 
+        /**
+         * The provider service key that the provider gives you when you set up a virtual circuit connection
+         * from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your
+         * provider service key at the provider's website or portal. For the portal location, see the {@code description}
+         * attribute of the {@link FastConnectProviderService}.
+         *
+         */
         private String providerServiceKeyName = null;
 
         /**
@@ -59,6 +80,7 @@ public class GetFastConnectProviderServiceKeyRequest
          * provider service key at the provider's website or portal. For the portal location, see the {@code description}
          * attribute of the {@link FastConnectProviderService}.
          *
+         * @param providerServiceKeyName the value to set
          * @return this builder instance
          */
         public Builder providerServiceKeyName(String providerServiceKeyName) {
@@ -137,7 +159,8 @@ public class GetFastConnectProviderServiceKeyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -145,6 +168,10 @@ public class GetFastConnectProviderServiceKeyRequest
                 .providerServiceKeyName(providerServiceKeyName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

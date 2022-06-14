@@ -31,27 +31,55 @@ public final class RestoreDatabaseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Restores using the backup with the System Change Number (SCN) specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
         private String databaseSCN;
 
+        /**
+         * Restores using the backup with the System Change Number (SCN) specified.
+         *
+         * @param databaseSCN the value to set
+         * @return this builder
+         **/
         public Builder databaseSCN(String databaseSCN) {
             this.databaseSCN = databaseSCN;
             this.__explicitlySet__.add("databaseSCN");
             return this;
         }
-
+        /**
+         * Restores to the timestamp specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * Restores to the timestamp specified.
+         *
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * Restores to the last known good state with the least possible data loss.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latest")
         private Boolean latest;
 
+        /**
+         * Restores to the last known good state with the least possible data loss.
+         *
+         * @param latest the value to set
+         * @return this builder
+         **/
         public Builder latest(Boolean latest) {
             this.latest = latest;
             this.__explicitlySet__.add("latest");
@@ -98,6 +126,11 @@ public final class RestoreDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
     private final String databaseSCN;
 
+    /**
+     * Restores using the backup with the System Change Number (SCN) specified.
+     *
+     * @return the value
+     **/
     public String getDatabaseSCN() {
         return databaseSCN;
     }
@@ -109,6 +142,11 @@ public final class RestoreDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * Restores to the timestamp specified.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -120,6 +158,11 @@ public final class RestoreDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("latest")
     private final Boolean latest;
 
+    /**
+     * Restores to the last known good state with the least possible data loss.
+     *
+     * @return the value
+     **/
     public Boolean getLatest() {
         return latest;
     }

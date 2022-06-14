@@ -116,46 +116,85 @@ public final class SlackChannel extends Channel {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The Slack Client Id for the Slack app.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
+        /**
+         * The Slack Client Id for the Slack app.
+         * @param clientId the value to set
+         * @return this builder
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
-
+        /**
+         * The URL to redirect to when authentication is successful.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authSuccessUrl")
         private String authSuccessUrl;
 
+        /**
+         * The URL to redirect to when authentication is successful.
+         * @param authSuccessUrl the value to set
+         * @return this builder
+         **/
         public Builder authSuccessUrl(String authSuccessUrl) {
             this.authSuccessUrl = authSuccessUrl;
             this.__explicitlySet__.add("authSuccessUrl");
             return this;
         }
-
+        /**
+         * The URL to redirect to when authentication is unsuccessful.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authErrorUrl")
         private String authErrorUrl;
 
+        /**
+         * The URL to redirect to when authentication is unsuccessful.
+         * @param authErrorUrl the value to set
+         * @return this builder
+         **/
         public Builder authErrorUrl(String authErrorUrl) {
             this.authErrorUrl = authErrorUrl;
             this.__explicitlySet__.add("authErrorUrl");
             return this;
         }
-
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         * @param botId the value to set
+         * @return this builder
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
             return this;
         }
-
+        /**
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
         private String webhookUrl;
 
+        /**
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         *
+         * @param webhookUrl the value to set
+         * @return this builder
+         **/
         public Builder webhookUrl(String webhookUrl) {
             this.webhookUrl = webhookUrl;
             this.__explicitlySet__.add("webhookUrl");
@@ -264,6 +303,10 @@ public final class SlackChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
+    /**
+     * The Slack Client Id for the Slack app.
+     * @return the value
+     **/
     public String getClientId() {
         return clientId;
     }
@@ -274,6 +317,10 @@ public final class SlackChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("authSuccessUrl")
     private final String authSuccessUrl;
 
+    /**
+     * The URL to redirect to when authentication is successful.
+     * @return the value
+     **/
     public String getAuthSuccessUrl() {
         return authSuccessUrl;
     }
@@ -284,6 +331,10 @@ public final class SlackChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("authErrorUrl")
     private final String authErrorUrl;
 
+    /**
+     * The URL to redirect to when authentication is unsuccessful.
+     * @return the value
+     **/
     public String getAuthErrorUrl() {
         return authErrorUrl;
     }
@@ -294,6 +345,10 @@ public final class SlackChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     * @return the value
+     **/
     public String getBotId() {
         return botId;
     }
@@ -306,6 +361,12 @@ public final class SlackChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
     private final String webhookUrl;
 
+    /**
+     * The URL to use to send messages to this channel.
+     * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+     *
+     * @return the value
+     **/
     public String getWebhookUrl() {
         return webhookUrl;
     }

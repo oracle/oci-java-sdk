@@ -90,190 +90,360 @@ public final class ProductLicense {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The current product license status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The current product license status.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Status description for the current product license status.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
         private String statusDescription;
 
+        /**
+         * Status description for the current product license status.
+         *
+         * @param statusDescription the value to set
+         * @return this builder
+         **/
         public Builder statusDescription(String statusDescription) {
             this.statusDescription = statusDescription;
             this.__explicitlySet__.add("statusDescription");
             return this;
         }
-
+        /**
+         * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalActiveLicenseUnitCount")
         private Integer totalActiveLicenseUnitCount;
 
+        /**
+         * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
+         * @param totalActiveLicenseUnitCount the value to set
+         * @return this builder
+         **/
         public Builder totalActiveLicenseUnitCount(Integer totalActiveLicenseUnitCount) {
             this.totalActiveLicenseUnitCount = totalActiveLicenseUnitCount;
             this.__explicitlySet__.add("totalActiveLicenseUnitCount");
             return this;
         }
-
+        /**
+         * The current product license state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifeCycleState lifecycleState;
 
+        /**
+         * The current product license state.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifeCycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The number of license units consumed. Updated after each allocation run.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalLicenseUnitsConsumed")
         private Double totalLicenseUnitsConsumed;
 
+        /**
+         * The number of license units consumed. Updated after each allocation run.
+         *
+         * @param totalLicenseUnitsConsumed the value to set
+         * @return this builder
+         **/
         public Builder totalLicenseUnitsConsumed(Double totalLicenseUnitsConsumed) {
             this.totalLicenseUnitsConsumed = totalLicenseUnitsConsumed;
             this.__explicitlySet__.add("totalLicenseUnitsConsumed");
             return this;
         }
-
+        /**
+         * The number of license records associated with the product license.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalLicenseRecordCount")
         private Integer totalLicenseRecordCount;
 
+        /**
+         * The number of license records associated with the product license.
+         *
+         * @param totalLicenseRecordCount the value to set
+         * @return this builder
+         **/
         public Builder totalLicenseRecordCount(Integer totalLicenseRecordCount) {
             this.totalLicenseRecordCount = totalLicenseRecordCount;
             this.__explicitlySet__.add("totalLicenseRecordCount");
             return this;
         }
-
+        /**
+         * The number of active license records associated with the product license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activeLicenseRecordCount")
         private Integer activeLicenseRecordCount;
 
+        /**
+         * The number of active license records associated with the product license.
+         * @param activeLicenseRecordCount the value to set
+         * @return this builder
+         **/
         public Builder activeLicenseRecordCount(Integer activeLicenseRecordCount) {
             this.activeLicenseRecordCount = activeLicenseRecordCount;
             this.__explicitlySet__.add("activeLicenseRecordCount");
             return this;
         }
-
+        /**
+         * The product license unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseUnit")
         private LicenseUnit licenseUnit;
 
+        /**
+         * The product license unit.
+         * @param licenseUnit the value to set
+         * @return this builder
+         **/
         public Builder licenseUnit(LicenseUnit licenseUnit) {
             this.licenseUnit = licenseUnit;
             this.__explicitlySet__.add("licenseUnit");
             return this;
         }
-
+        /**
+         * Specifies whether the vendor is Oracle or a third party.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isVendorOracle")
         private Boolean isVendorOracle;
 
+        /**
+         * Specifies whether the vendor is Oracle or a third party.
+         * @param isVendorOracle the value to set
+         * @return this builder
+         **/
         public Builder isVendorOracle(Boolean isVendorOracle) {
             this.isVendorOracle = isVendorOracle;
             this.__explicitlySet__.add("isVendorOracle");
             return this;
         }
-
+        /**
+         * Specifies whether or not the product license is oversubscribed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverSubscribed")
         private Boolean isOverSubscribed;
 
+        /**
+         * Specifies whether or not the product license is oversubscribed.
+         * @param isOverSubscribed the value to set
+         * @return this builder
+         **/
         public Builder isOverSubscribed(Boolean isOverSubscribed) {
             this.isOverSubscribed = isOverSubscribed;
             this.__explicitlySet__.add("isOverSubscribed");
             return this;
         }
-
+        /**
+         * Specifies if the license unit count is unlimited.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
         private Boolean isUnlimited;
 
+        /**
+         * Specifies if the license unit count is unlimited.
+         * @param isUnlimited the value to set
+         * @return this builder
+         **/
         public Builder isUnlimited(Boolean isUnlimited) {
             this.isUnlimited = isUnlimited;
             this.__explicitlySet__.add("isUnlimited");
             return this;
         }
-
+        /**
+         * License record name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * License record name
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The vendor of the ProductLicense
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private String vendorName;
 
+        /**
+         * The vendor of the ProductLicense
+         *
+         * @param vendorName the value to set
+         * @return this builder
+         **/
         public Builder vendorName(String vendorName) {
             this.vendorName = vendorName;
             this.__explicitlySet__.add("vendorName");
             return this;
         }
-
+        /**
+         * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The images associated with the product license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("images")
         private java.util.List<ImageResponse> images;
 
+        /**
+         * The images associated with the product license.
+         * @param images the value to set
+         * @return this builder
+         **/
         public Builder images(java.util.List<ImageResponse> images) {
             this.images = images;
             this.__explicitlySet__.add("images");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -358,6 +528,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -368,6 +542,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -378,6 +556,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The current product license status.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -389,6 +571,11 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
     private final String statusDescription;
 
+    /**
+     * Status description for the current product license status.
+     *
+     * @return the value
+     **/
     public String getStatusDescription() {
         return statusDescription;
     }
@@ -399,6 +586,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("totalActiveLicenseUnitCount")
     private final Integer totalActiveLicenseUnitCount;
 
+    /**
+     * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
+     * @return the value
+     **/
     public Integer getTotalActiveLicenseUnitCount() {
         return totalActiveLicenseUnitCount;
     }
@@ -409,6 +600,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifeCycleState lifecycleState;
 
+    /**
+     * The current product license state.
+     * @return the value
+     **/
     public LifeCycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -420,6 +615,11 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("totalLicenseUnitsConsumed")
     private final Double totalLicenseUnitsConsumed;
 
+    /**
+     * The number of license units consumed. Updated after each allocation run.
+     *
+     * @return the value
+     **/
     public Double getTotalLicenseUnitsConsumed() {
         return totalLicenseUnitsConsumed;
     }
@@ -431,6 +631,11 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("totalLicenseRecordCount")
     private final Integer totalLicenseRecordCount;
 
+    /**
+     * The number of license records associated with the product license.
+     *
+     * @return the value
+     **/
     public Integer getTotalLicenseRecordCount() {
         return totalLicenseRecordCount;
     }
@@ -441,6 +646,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("activeLicenseRecordCount")
     private final Integer activeLicenseRecordCount;
 
+    /**
+     * The number of active license records associated with the product license.
+     * @return the value
+     **/
     public Integer getActiveLicenseRecordCount() {
         return activeLicenseRecordCount;
     }
@@ -451,6 +660,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseUnit")
     private final LicenseUnit licenseUnit;
 
+    /**
+     * The product license unit.
+     * @return the value
+     **/
     public LicenseUnit getLicenseUnit() {
         return licenseUnit;
     }
@@ -461,6 +674,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("isVendorOracle")
     private final Boolean isVendorOracle;
 
+    /**
+     * Specifies whether the vendor is Oracle or a third party.
+     * @return the value
+     **/
     public Boolean getIsVendorOracle() {
         return isVendorOracle;
     }
@@ -471,6 +688,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("isOverSubscribed")
     private final Boolean isOverSubscribed;
 
+    /**
+     * Specifies whether or not the product license is oversubscribed.
+     * @return the value
+     **/
     public Boolean getIsOverSubscribed() {
         return isOverSubscribed;
     }
@@ -481,6 +702,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
     private final Boolean isUnlimited;
 
+    /**
+     * Specifies if the license unit count is unlimited.
+     * @return the value
+     **/
     public Boolean getIsUnlimited() {
         return isUnlimited;
     }
@@ -492,6 +717,11 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * License record name
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -503,6 +733,11 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final String vendorName;
 
+    /**
+     * The vendor of the ProductLicense
+     *
+     * @return the value
+     **/
     public String getVendorName() {
         return vendorName;
     }
@@ -513,6 +748,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -523,6 +762,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -533,6 +776,10 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("images")
     private final java.util.List<ImageResponse> images;
 
+    /**
+     * The images associated with the product license.
+     * @return the value
+     **/
     public java.util.List<ImageResponse> getImages() {
         return images;
     }
@@ -545,6 +792,12 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -557,6 +810,12 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -569,6 +828,12 @@ public final class ProductLicense {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

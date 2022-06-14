@@ -84,171 +84,305 @@ public final class Sighting {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for sighting event
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier for sighting event
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Description of the sighting event
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the sighting event
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Problem Id to which the Sighting is associated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
+        /**
+         * Problem Id to which the Sighting is associated
+         * @param problemId the value to set
+         * @return this builder
+         **/
         public Builder problemId(String problemId) {
             this.problemId = problemId;
             this.__explicitlySet__.add("problemId");
             return this;
         }
-
+        /**
+         * Compartment Id where the resource is created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Id where the resource is created
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Unique identifier for principal actor
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalId")
         private String actorPrincipalId;
 
+        /**
+         * Unique identifier for principal actor
+         * @param actorPrincipalId the value to set
+         * @return this builder
+         **/
         public Builder actorPrincipalId(String actorPrincipalId) {
             this.actorPrincipalId = actorPrincipalId;
             this.__explicitlySet__.add("actorPrincipalId");
             return this;
         }
-
+        /**
+         * Name of the principal actor
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalName")
         private String actorPrincipalName;
 
+        /**
+         * Name of the principal actor
+         * @param actorPrincipalName the value to set
+         * @return this builder
+         **/
         public Builder actorPrincipalName(String actorPrincipalName) {
             this.actorPrincipalName = actorPrincipalName;
             this.__explicitlySet__.add("actorPrincipalName");
             return this;
         }
-
+        /**
+         * Type of the principal actor
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalType")
         private String actorPrincipalType;
 
+        /**
+         * Type of the principal actor
+         * @param actorPrincipalType the value to set
+         * @return this builder
+         **/
         public Builder actorPrincipalType(String actorPrincipalType) {
             this.actorPrincipalType = actorPrincipalType;
             this.__explicitlySet__.add("actorPrincipalType");
             return this;
         }
-
+        /**
+         * ClassificationStatus of the sighting event
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
         private ClassificationStatus classificationStatus;
 
+        /**
+         * ClassificationStatus of the sighting event
+         * @param classificationStatus the value to set
+         * @return this builder
+         **/
         public Builder classificationStatus(ClassificationStatus classificationStatus) {
             this.classificationStatus = classificationStatus;
             this.__explicitlySet__.add("classificationStatus");
             return this;
         }
-
+        /**
+         * Identifier for the sighting type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
         private String sightingType;
 
+        /**
+         * Identifier for the sighting type
+         * @param sightingType the value to set
+         * @return this builder
+         **/
         public Builder sightingType(String sightingType) {
             this.sightingType = sightingType;
             this.__explicitlySet__.add("sightingType");
             return this;
         }
-
+        /**
+         * Display name of the sighting type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
         private String sightingTypeDisplayName;
 
+        /**
+         * Display name of the sighting type
+         * @param sightingTypeDisplayName the value to set
+         * @return this builder
+         **/
         public Builder sightingTypeDisplayName(String sightingTypeDisplayName) {
             this.sightingTypeDisplayName = sightingTypeDisplayName;
             this.__explicitlySet__.add("sightingTypeDisplayName");
             return this;
         }
-
+        /**
+         * Name of the Mitre att&ck tactic
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
         private String tacticName;
 
+        /**
+         * Name of the Mitre att&ck tactic
+         * @param tacticName the value to set
+         * @return this builder
+         **/
         public Builder tacticName(String tacticName) {
             this.tacticName = tacticName;
             this.__explicitlySet__.add("tacticName");
             return this;
         }
-
+        /**
+         * Name of the Mitre att&ck technique
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
         private String techniqueName;
 
+        /**
+         * Name of the Mitre att&ck technique
+         * @param techniqueName the value to set
+         * @return this builder
+         **/
         public Builder techniqueName(String techniqueName) {
             this.techniqueName = techniqueName;
             this.__explicitlySet__.add("techniqueName");
             return this;
         }
-
+        /**
+         * Score for the sighting
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingScore")
         private Integer sightingScore;
 
+        /**
+         * Score for the sighting
+         * @param sightingScore the value to set
+         * @return this builder
+         **/
         public Builder sightingScore(Integer sightingScore) {
             this.sightingScore = sightingScore;
             this.__explicitlySet__.add("sightingScore");
             return this;
         }
-
+        /**
+         * Severity of the sighting
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
+        /**
+         * Severity of the sighting
+         * @param severity the value to set
+         * @return this builder
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-
+        /**
+         * Confidence of the sighting
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Confidence confidence;
 
+        /**
+         * Confidence of the sighting
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Confidence confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-
+        /**
+         * The date and time the sighting was first detected. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
         private java.util.Date timeFirstDetected;
 
+        /**
+         * The date and time the sighting was first detected. Format defined by RFC3339.
+         * @param timeFirstDetected the value to set
+         * @return this builder
+         **/
         public Builder timeFirstDetected(java.util.Date timeFirstDetected) {
             this.timeFirstDetected = timeFirstDetected;
             this.__explicitlySet__.add("timeFirstDetected");
             return this;
         }
-
+        /**
+         * The date and time the sighting was last detected. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
         private java.util.Date timeLastDetected;
 
+        /**
+         * The date and time the sighting was last detected. Format defined by RFC3339.
+         * @param timeLastDetected the value to set
+         * @return this builder
+         **/
         public Builder timeLastDetected(java.util.Date timeLastDetected) {
             this.timeLastDetected = timeLastDetected;
             this.__explicitlySet__.add("timeLastDetected");
             return this;
         }
-
+        /**
+         * regions involved in the sighting
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
+        /**
+         * regions involved in the sighting
+         * @param regions the value to set
+         * @return this builder
+         **/
         public Builder regions(java.util.List<String> regions) {
             this.regions = regions;
             this.__explicitlySet__.add("regions");
             return this;
         }
-
+        /**
+         * The additional details of the Sighting
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
         private java.util.Map<String, String> additionalDetails;
 
+        /**
+         * The additional details of the Sighting
+         * @param additionalDetails the value to set
+         * @return this builder
+         **/
         public Builder additionalDetails(java.util.Map<String, String> additionalDetails) {
             this.additionalDetails = additionalDetails;
             this.__explicitlySet__.add("additionalDetails");
@@ -329,6 +463,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier for sighting event
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -339,6 +477,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the sighting event
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -349,6 +491,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
+    /**
+     * Problem Id to which the Sighting is associated
+     * @return the value
+     **/
     public String getProblemId() {
         return problemId;
     }
@@ -359,6 +505,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Id where the resource is created
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -369,6 +519,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalId")
     private final String actorPrincipalId;
 
+    /**
+     * Unique identifier for principal actor
+     * @return the value
+     **/
     public String getActorPrincipalId() {
         return actorPrincipalId;
     }
@@ -379,6 +533,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalName")
     private final String actorPrincipalName;
 
+    /**
+     * Name of the principal actor
+     * @return the value
+     **/
     public String getActorPrincipalName() {
         return actorPrincipalName;
     }
@@ -389,6 +547,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalType")
     private final String actorPrincipalType;
 
+    /**
+     * Type of the principal actor
+     * @return the value
+     **/
     public String getActorPrincipalType() {
         return actorPrincipalType;
     }
@@ -399,6 +561,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
     private final ClassificationStatus classificationStatus;
 
+    /**
+     * ClassificationStatus of the sighting event
+     * @return the value
+     **/
     public ClassificationStatus getClassificationStatus() {
         return classificationStatus;
     }
@@ -409,6 +575,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
     private final String sightingType;
 
+    /**
+     * Identifier for the sighting type
+     * @return the value
+     **/
     public String getSightingType() {
         return sightingType;
     }
@@ -419,6 +589,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
     private final String sightingTypeDisplayName;
 
+    /**
+     * Display name of the sighting type
+     * @return the value
+     **/
     public String getSightingTypeDisplayName() {
         return sightingTypeDisplayName;
     }
@@ -429,6 +603,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
     private final String tacticName;
 
+    /**
+     * Name of the Mitre att&ck tactic
+     * @return the value
+     **/
     public String getTacticName() {
         return tacticName;
     }
@@ -439,6 +617,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
     private final String techniqueName;
 
+    /**
+     * Name of the Mitre att&ck technique
+     * @return the value
+     **/
     public String getTechniqueName() {
         return techniqueName;
     }
@@ -449,6 +631,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("sightingScore")
     private final Integer sightingScore;
 
+    /**
+     * Score for the sighting
+     * @return the value
+     **/
     public Integer getSightingScore() {
         return sightingScore;
     }
@@ -459,6 +645,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
+    /**
+     * Severity of the sighting
+     * @return the value
+     **/
     public Severity getSeverity() {
         return severity;
     }
@@ -469,6 +659,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Confidence confidence;
 
+    /**
+     * Confidence of the sighting
+     * @return the value
+     **/
     public Confidence getConfidence() {
         return confidence;
     }
@@ -479,6 +673,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
     private final java.util.Date timeFirstDetected;
 
+    /**
+     * The date and time the sighting was first detected. Format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeFirstDetected() {
         return timeFirstDetected;
     }
@@ -489,6 +687,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
     private final java.util.Date timeLastDetected;
 
+    /**
+     * The date and time the sighting was last detected. Format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeLastDetected() {
         return timeLastDetected;
     }
@@ -499,6 +701,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
+    /**
+     * regions involved in the sighting
+     * @return the value
+     **/
     public java.util.List<String> getRegions() {
         return regions;
     }
@@ -509,6 +715,10 @@ public final class Sighting {
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     private final java.util.Map<String, String> additionalDetails;
 
+    /**
+     * The additional details of the Sighting
+     * @return the value
+     **/
     public java.util.Map<String, String> getAdditionalDetails() {
         return additionalDetails;
     }

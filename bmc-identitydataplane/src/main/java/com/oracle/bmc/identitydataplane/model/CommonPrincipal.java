@@ -28,18 +28,33 @@ public final class CommonPrincipal {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The tenant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenant")
         private Tenant tenant;
 
+        /**
+         * The tenant.
+         * @param tenant the value to set
+         * @return this builder
+         **/
         public Builder tenant(Tenant tenant) {
             this.tenant = tenant;
             this.__explicitlySet__.add("tenant");
             return this;
         }
-
+        /**
+         * The user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("user")
         private User user;
 
+        /**
+         * The user.
+         * @param user the value to set
+         * @return this builder
+         **/
         public Builder user(User user) {
             this.user = user;
             this.__explicitlySet__.add("user");
@@ -81,6 +96,10 @@ public final class CommonPrincipal {
     @com.fasterxml.jackson.annotation.JsonProperty("tenant")
     private final Tenant tenant;
 
+    /**
+     * The tenant.
+     * @return the value
+     **/
     public Tenant getTenant() {
         return tenant;
     }
@@ -91,6 +110,10 @@ public final class CommonPrincipal {
     @com.fasterxml.jackson.annotation.JsonProperty("user")
     private final User user;
 
+    /**
+     * The user.
+     * @return the value
+     **/
     public User getUser() {
         return user;
     }

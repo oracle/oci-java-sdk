@@ -28,9 +28,19 @@ package com.oracle.bmc.apigateway.model;
 public final class FixedTTLResponseCacheStorePolicy extends ResponseCacheStorePolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeToLiveInSeconds")
         private Integer timeToLiveInSeconds;
 
+        /**
+         * Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
+         *
+         * @param timeToLiveInSeconds the value to set
+         * @return this builder
+         **/
         public Builder timeToLiveInSeconds(Integer timeToLiveInSeconds) {
             this.timeToLiveInSeconds = timeToLiveInSeconds;
             this.__explicitlySet__.add("timeToLiveInSeconds");
@@ -80,6 +90,11 @@ public final class FixedTTLResponseCacheStorePolicy extends ResponseCacheStorePo
     @com.fasterxml.jackson.annotation.JsonProperty("timeToLiveInSeconds")
     private final Integer timeToLiveInSeconds;
 
+    /**
+     * Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
+     *
+     * @return the value
+     **/
     public Integer getTimeToLiveInSeconds() {
         return timeToLiveInSeconds;
     }

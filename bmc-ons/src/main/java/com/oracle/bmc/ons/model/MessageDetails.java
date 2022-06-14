@@ -29,18 +29,37 @@ public final class MessageDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The title of the message to be published. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
+        /**
+         * The title of the message to be published. Avoid entering confidential information.
+         * @param title the value to set
+         * @return this builder
+         **/
         public Builder title(String title) {
             this.title = title;
             this.__explicitlySet__.add("title");
             return this;
         }
-
+        /**
+         * The body of the message to be published.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("body")
         private String body;
 
+        /**
+         * The body of the message to be published.
+         * Avoid entering confidential information.
+         *
+         * @param body the value to set
+         * @return this builder
+         **/
         public Builder body(String body) {
             this.body = body;
             this.__explicitlySet__.add("body");
@@ -82,6 +101,10 @@ public final class MessageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
+    /**
+     * The title of the message to be published. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getTitle() {
         return title;
     }
@@ -94,6 +117,12 @@ public final class MessageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("body")
     private final String body;
 
+    /**
+     * The body of the message to be published.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getBody() {
         return body;
     }

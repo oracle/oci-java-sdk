@@ -18,6 +18,9 @@ public class UpdateLibraryMaskingFormatRequest
      */
     private String libraryMaskingFormatId;
 
+    /**
+     * The OCID of the library masking format.
+     */
     public String getLibraryMaskingFormatId() {
         return libraryMaskingFormatId;
     }
@@ -27,6 +30,9 @@ public class UpdateLibraryMaskingFormatRequest
     private com.oracle.bmc.datasafe.model.UpdateLibraryMaskingFormatDetails
             updateLibraryMaskingFormatDetails;
 
+    /**
+     * Details to update a library masking format.
+     */
     public com.oracle.bmc.datasafe.model.UpdateLibraryMaskingFormatDetails
             getUpdateLibraryMaskingFormatDetails() {
         return updateLibraryMaskingFormatDetails;
@@ -41,6 +47,14 @@ public class UpdateLibraryMaskingFormatRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class UpdateLibraryMaskingFormatRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateLibraryMaskingFormatRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the library masking format.
+         */
         private String libraryMaskingFormatId = null;
 
         /**
          * The OCID of the library masking format.
+         * @param libraryMaskingFormatId the value to set
          * @return this builder instance
          */
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
@@ -82,11 +103,15 @@ public class UpdateLibraryMaskingFormatRequest
             return this;
         }
 
+        /**
+         * Details to update a library masking format.
+         */
         private com.oracle.bmc.datasafe.model.UpdateLibraryMaskingFormatDetails
                 updateLibraryMaskingFormatDetails = null;
 
         /**
          * Details to update a library masking format.
+         * @param updateLibraryMaskingFormatDetails the value to set
          * @return this builder instance
          */
         public Builder updateLibraryMaskingFormatDetails(
@@ -96,6 +121,14 @@ public class UpdateLibraryMaskingFormatRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -105,6 +138,7 @@ public class UpdateLibraryMaskingFormatRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -112,10 +146,14 @@ public class UpdateLibraryMaskingFormatRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -208,7 +246,8 @@ public class UpdateLibraryMaskingFormatRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -218,6 +257,10 @@ public class UpdateLibraryMaskingFormatRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

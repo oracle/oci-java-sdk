@@ -30,9 +30,17 @@ public final class DigitalAssistantParameterCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Digital Assistant Parameter summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DigitalAssistantParameterSummary> items;
 
+        /**
+         * The Digital Assistant Parameter summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DigitalAssistantParameterSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class DigitalAssistantParameterCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DigitalAssistantParameterSummary> items;
 
+    /**
+     * The Digital Assistant Parameter summaries.
+     * @return the value
+     **/
     public java.util.List<DigitalAssistantParameterSummary> getItems() {
         return items;
     }

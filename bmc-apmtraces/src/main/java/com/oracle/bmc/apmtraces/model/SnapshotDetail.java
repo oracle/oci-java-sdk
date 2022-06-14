@@ -29,18 +29,37 @@ public final class SnapshotDetail {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the property.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Name of the property.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Value of the property.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Object value;
 
+        /**
+         * Value of the property.
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Object value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -83,6 +102,11 @@ public final class SnapshotDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Name of the property.
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -94,6 +118,11 @@ public final class SnapshotDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Object value;
 
+    /**
+     * Value of the property.
+     *
+     * @return the value
+     **/
     public Object getValue() {
         return value;
     }

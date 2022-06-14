@@ -28,9 +28,19 @@ package com.oracle.bmc.core.model;
 public final class TerminatePreemptionAction extends PreemptionAction {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preserveBootVolume")
         private Boolean preserveBootVolume;
 
+        /**
+         * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+         *
+         * @param preserveBootVolume the value to set
+         * @return this builder
+         **/
         public Builder preserveBootVolume(Boolean preserveBootVolume) {
             this.preserveBootVolume = preserveBootVolume;
             this.__explicitlySet__.add("preserveBootVolume");
@@ -80,6 +90,11 @@ public final class TerminatePreemptionAction extends PreemptionAction {
     @com.fasterxml.jackson.annotation.JsonProperty("preserveBootVolume")
     private final Boolean preserveBootVolume;
 
+    /**
+     * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+     *
+     * @return the value
+     **/
     public Boolean getPreserveBootVolume() {
         return preserveBootVolume;
     }

@@ -15,6 +15,12 @@ public class GetFastConnectProviderServiceResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetFastConnectProviderServiceResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.core.model.FastConnectProviderService fastConnectProviderService;
 
+    /**
+     * The returned FastConnectProviderService instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.FastConnectProviderService getFastConnectProviderService() {
         return fastConnectProviderService;
     }
@@ -50,15 +60,35 @@ public class GetFastConnectProviderServiceResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned FastConnectProviderService instance.
+         */
         private com.oracle.bmc.core.model.FastConnectProviderService fastConnectProviderService;
 
+        /**
+         * The returned FastConnectProviderService instance.
+         * @param fastConnectProviderService the value to set
+         * @return this builder
+         */
         public Builder fastConnectProviderService(
                 com.oracle.bmc.core.model.FastConnectProviderService fastConnectProviderService) {
             this.fastConnectProviderService = fastConnectProviderService;
@@ -77,12 +107,20 @@ public class GetFastConnectProviderServiceResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetFastConnectProviderServiceResponse build() {
             return new GetFastConnectProviderServiceResponse(
                     __httpStatusCode__, opcRequestId, fastConnectProviderService);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

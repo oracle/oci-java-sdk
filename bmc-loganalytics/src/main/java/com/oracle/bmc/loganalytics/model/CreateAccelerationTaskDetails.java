@@ -66,10 +66,17 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The ManagementSavedSearch id [OCID] to be accelerated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
         private String savedSearchId;
 
+        /**
+         * The ManagementSavedSearch id [OCID] to be accelerated.
+         * @param savedSearchId the value to set
+         * @return this builder
+         **/
         public Builder savedSearchId(String savedSearchId) {
             this.savedSearchId = savedSearchId;
             this.__explicitlySet__.add("savedSearchId");
@@ -129,6 +136,10 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
     private final String savedSearchId;
 
+    /**
+     * The ManagementSavedSearch id [OCID] to be accelerated.
+     * @return the value
+     **/
     public String getSavedSearchId() {
         return savedSearchId;
     }

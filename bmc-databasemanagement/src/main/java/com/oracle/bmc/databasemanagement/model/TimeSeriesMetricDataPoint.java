@@ -36,36 +36,65 @@ public final class TimeSeriesMetricDataPoint {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date and time the metric was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The date and time the metric was created.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Double value;
 
+        /**
+         * The value of the metric.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Double value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The unit of the metric value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
+        /**
+         * The unit of the metric value.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-
+        /**
+         * The dimensions of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<MetricDimensionDefinition> dimensions;
 
+        /**
+         * The dimensions of the metric.
+         * @param dimensions the value to set
+         * @return this builder
+         **/
         public Builder dimensions(java.util.List<MetricDimensionDefinition> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -112,6 +141,10 @@ public final class TimeSeriesMetricDataPoint {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The date and time the metric was created.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -122,6 +155,10 @@ public final class TimeSeriesMetricDataPoint {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Double value;
 
+    /**
+     * The value of the metric.
+     * @return the value
+     **/
     public Double getValue() {
         return value;
     }
@@ -132,6 +169,10 @@ public final class TimeSeriesMetricDataPoint {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
+    /**
+     * The unit of the metric value.
+     * @return the value
+     **/
     public String getUnit() {
         return unit;
     }
@@ -142,6 +183,10 @@ public final class TimeSeriesMetricDataPoint {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<MetricDimensionDefinition> dimensions;
 
+    /**
+     * The dimensions of the metric.
+     * @return the value
+     **/
     public java.util.List<MetricDimensionDefinition> getDimensions() {
         return dimensions;
     }

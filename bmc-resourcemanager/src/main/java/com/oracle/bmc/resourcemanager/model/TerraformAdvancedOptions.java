@@ -33,27 +33,65 @@ public final class TerraformAdvancedOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies whether to refresh the state for each resource before running the job (operation).
+         * Refreshing the state can affect performance. Consider setting to {@code false} if the configuration includes several resources.
+         * Used with the following operations: {@code PLAN}, {@code APPLY}, {@code DESTROY}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRefreshRequired")
         private Boolean isRefreshRequired;
 
+        /**
+         * Specifies whether to refresh the state for each resource before running the job (operation).
+         * Refreshing the state can affect performance. Consider setting to {@code false} if the configuration includes several resources.
+         * Used with the following operations: {@code PLAN}, {@code APPLY}, {@code DESTROY}.
+         *
+         * @param isRefreshRequired the value to set
+         * @return this builder
+         **/
         public Builder isRefreshRequired(Boolean isRefreshRequired) {
             this.isRefreshRequired = isRefreshRequired;
             this.__explicitlySet__.add("isRefreshRequired");
             return this;
         }
-
+        /**
+         * Limits the number of concurrent Terraform operations when [walking the graph](https://www.terraform.io/docs/internals/graph.html#walking-the-graph).
+         * Use this parameter to help debug Terraform issues or to accomplish certain special use cases.
+         * A higher value might cause resources to be throttled.
+         * Used with the following operations: {@code PLAN}, {@code APPLY}, {@code DESTROY}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parallelism")
         private Integer parallelism;
 
+        /**
+         * Limits the number of concurrent Terraform operations when [walking the graph](https://www.terraform.io/docs/internals/graph.html#walking-the-graph).
+         * Use this parameter to help debug Terraform issues or to accomplish certain special use cases.
+         * A higher value might cause resources to be throttled.
+         * Used with the following operations: {@code PLAN}, {@code APPLY}, {@code DESTROY}.
+         *
+         * @param parallelism the value to set
+         * @return this builder
+         **/
         public Builder parallelism(Integer parallelism) {
             this.parallelism = parallelism;
             this.__explicitlySet__.add("parallelism");
             return this;
         }
-
+        /**
+         * Enables detailed logs at the specified verbosity for running the job (operation).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detailedLogLevel")
         private DetailedLogLevel detailedLogLevel;
 
+        /**
+         * Enables detailed logs at the specified verbosity for running the job (operation).
+         *
+         * @param detailedLogLevel the value to set
+         * @return this builder
+         **/
         public Builder detailedLogLevel(DetailedLogLevel detailedLogLevel) {
             this.detailedLogLevel = detailedLogLevel;
             this.__explicitlySet__.add("detailedLogLevel");
@@ -102,6 +140,13 @@ public final class TerraformAdvancedOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("isRefreshRequired")
     private final Boolean isRefreshRequired;
 
+    /**
+     * Specifies whether to refresh the state for each resource before running the job (operation).
+     * Refreshing the state can affect performance. Consider setting to {@code false} if the configuration includes several resources.
+     * Used with the following operations: {@code PLAN}, {@code APPLY}, {@code DESTROY}.
+     *
+     * @return the value
+     **/
     public Boolean getIsRefreshRequired() {
         return isRefreshRequired;
     }
@@ -116,6 +161,14 @@ public final class TerraformAdvancedOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("parallelism")
     private final Integer parallelism;
 
+    /**
+     * Limits the number of concurrent Terraform operations when [walking the graph](https://www.terraform.io/docs/internals/graph.html#walking-the-graph).
+     * Use this parameter to help debug Terraform issues or to accomplish certain special use cases.
+     * A higher value might cause resources to be throttled.
+     * Used with the following operations: {@code PLAN}, {@code APPLY}, {@code DESTROY}.
+     *
+     * @return the value
+     **/
     public Integer getParallelism() {
         return parallelism;
     }
@@ -179,6 +232,11 @@ public final class TerraformAdvancedOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("detailedLogLevel")
     private final DetailedLogLevel detailedLogLevel;
 
+    /**
+     * Enables detailed logs at the specified verbosity for running the job (operation).
+     *
+     * @return the value
+     **/
     public DetailedLogLevel getDetailedLogLevel() {
         return detailedLogLevel;
     }

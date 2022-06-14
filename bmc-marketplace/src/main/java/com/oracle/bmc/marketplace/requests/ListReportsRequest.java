@@ -16,6 +16,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String reportType;
 
+    /**
+     * The type of the report.
+     */
     public String getReportType() {
         return reportType;
     }
@@ -25,6 +28,10 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.Date date;
 
+    /**
+     * Date, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The service only interprets the year, month, and day parts in the input value, and ignores the hour, minute, and second parts.
+     *
+     */
     public java.util.Date getDate() {
         return date;
     }
@@ -33,6 +40,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String compartmentId;
 
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -43,6 +53,11 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +66,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -62,10 +80,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The type of the report.
+         */
         private String reportType = null;
 
         /**
          * The type of the report.
+         * @param reportType the value to set
          * @return this builder instance
          */
         public Builder reportType(String reportType) {
@@ -73,11 +95,16 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Date, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The service only interprets the year, month, and day parts in the input value, and ignores the hour, minute, and second parts.
+         *
+         */
         private java.util.Date date = null;
 
         /**
          * Date, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The service only interprets the year, month, and day parts in the input value, and ignores the hour, minute, and second parts.
          *
+         * @param date the value to set
          * @return this builder instance
          */
         public Builder date(java.util.Date date) {
@@ -85,10 +112,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -96,12 +127,18 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -109,10 +146,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -196,7 +237,8 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +249,10 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

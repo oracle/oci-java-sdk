@@ -30,9 +30,17 @@ public final class AuditTrailAnalyticCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of audit trail aggregration data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AuditTrailAggregationItems> items;
 
+        /**
+         * Array of audit trail aggregration data.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AuditTrailAggregationItems> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class AuditTrailAnalyticCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AuditTrailAggregationItems> items;
 
+    /**
+     * Array of audit trail aggregration data.
+     * @return the value
+     **/
     public java.util.List<AuditTrailAggregationItems> getItems() {
         return items;
     }

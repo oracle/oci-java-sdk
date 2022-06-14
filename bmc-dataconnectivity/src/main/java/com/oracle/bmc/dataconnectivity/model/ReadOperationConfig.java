@@ -27,18 +27,33 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class ReadOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The object key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The object's model version.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -53,10 +68,17 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * An array of operations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operations")
         private java.util.List<PushDownOperation> operations;
 
+        /**
+         * An array of operations.
+         * @param operations the value to set
+         * @return this builder
+         **/
         public Builder operations(java.util.List<PushDownOperation> operations) {
             this.operations = operations;
             this.__explicitlySet__.add("operations");
@@ -89,19 +111,33 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
             this.__explicitlySet__.add("readAttribute");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-
+        /**
+         * Specifies if this readOperationConfig operation should trigger raw data preview flow.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("readRawData")
         private Boolean readRawData;
 
+        /**
+         * Specifies if this readOperationConfig operation should trigger raw data preview flow.
+         * @param readRawData the value to set
+         * @return this builder
+         **/
         public Builder readRawData(Boolean readRawData) {
             this.readRawData = readRawData;
             this.__explicitlySet__.add("readRawData");
@@ -185,6 +221,10 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The object key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -195,6 +235,10 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The object's model version.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -212,6 +256,10 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("operations")
     private final java.util.List<PushDownOperation> operations;
 
+    /**
+     * An array of operations.
+     * @return the value
+     **/
     public java.util.List<PushDownOperation> getOperations() {
         return operations;
     }
@@ -243,6 +291,10 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -253,6 +305,10 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("readRawData")
     private final Boolean readRawData;
 
+    /**
+     * Specifies if this readOperationConfig operation should trigger raw data preview flow.
+     * @return the value
+     **/
     public Boolean getReadRawData() {
         return readRawData;
     }

@@ -15,6 +15,12 @@ public class GetSteeringPolicyAttachmentResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class GetSteeringPolicyAttachmentResponse extends com.oracle.bmc.response
      */
     private String eTag;
 
+    /**
+     * The current version of the resource, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
+     *
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -36,6 +49,10 @@ public class GetSteeringPolicyAttachmentResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
+    /**
+     * The returned SteeringPolicyAttachment instance, or null if {@link #isNotModified()} is true.
+     * @return the value
+     */
     public com.oracle.bmc.dns.model.SteeringPolicyAttachment getSteeringPolicyAttachment() {
         return steeringPolicyAttachment;
     }
@@ -48,6 +65,13 @@ public class GetSteeringPolicyAttachmentResponse extends com.oracle.bmc.response
      */
     private boolean isNotModified;
 
+    /**
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
+     * @param true if the object was not modified
+     */
     public boolean isNotModified() {
         return isNotModified;
     }
@@ -80,30 +104,77 @@ public class GetSteeringPolicyAttachmentResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         */
         private String eTag;
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
         }
 
+        /**
+         * The returned SteeringPolicyAttachment instance, or null if {@link #isNotModified()} is true.
+         */
         private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
+        /**
+         * The returned SteeringPolicyAttachment instance, or null if {@link #isNotModified()} is true.
+         * @param steeringPolicyAttachment the value to set
+         * @return this builder
+         */
         public Builder steeringPolicyAttachment(
                 com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment) {
             this.steeringPolicyAttachment = steeringPolicyAttachment;
             return this;
         }
 
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         */
         private boolean isNotModified;
 
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         * @param true if the object was not modified
+         */
         public Builder isNotModified(boolean isNotModified) {
             this.isNotModified = isNotModified;
             return this;
@@ -122,6 +193,10 @@ public class GetSteeringPolicyAttachmentResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetSteeringPolicyAttachmentResponse build() {
             return new GetSteeringPolicyAttachmentResponse(
                     __httpStatusCode__,
@@ -132,6 +207,10 @@ public class GetSteeringPolicyAttachmentResponse extends com.oracle.bmc.response
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

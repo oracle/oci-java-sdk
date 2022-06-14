@@ -30,18 +30,33 @@ public final class ClusterMigrateToNativeVcnStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date and time the non-native VCN is due to be decommissioned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDecommissionScheduled")
         private java.util.Date timeDecommissionScheduled;
 
+        /**
+         * The date and time the non-native VCN is due to be decommissioned.
+         * @param timeDecommissionScheduled the value to set
+         * @return this builder
+         **/
         public Builder timeDecommissionScheduled(java.util.Date timeDecommissionScheduled) {
             this.timeDecommissionScheduled = timeDecommissionScheduled;
             this.__explicitlySet__.add("timeDecommissionScheduled");
             return this;
         }
-
+        /**
+         * The current migration status of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
+        /**
+         * The current migration status of the cluster.
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -85,6 +100,10 @@ public final class ClusterMigrateToNativeVcnStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDecommissionScheduled")
     private final java.util.Date timeDecommissionScheduled;
 
+    /**
+     * The date and time the non-native VCN is due to be decommissioned.
+     * @return the value
+     **/
     public java.util.Date getTimeDecommissionScheduled() {
         return timeDecommissionScheduled;
     }
@@ -145,6 +164,10 @@ public final class ClusterMigrateToNativeVcnStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
+    /**
+     * The current migration status of the cluster.
+     * @return the value
+     **/
     public State getState() {
         return state;
     }

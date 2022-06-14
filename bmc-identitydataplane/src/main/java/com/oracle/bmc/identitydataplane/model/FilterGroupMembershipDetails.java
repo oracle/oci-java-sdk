@@ -30,18 +30,33 @@ public final class FilterGroupMembershipDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A resolved principal object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principal")
         private Principal principal;
 
+        /**
+         * A resolved principal object
+         * @param principal the value to set
+         * @return this builder
+         **/
         public Builder principal(Principal principal) {
             this.principal = principal;
             this.__explicitlySet__.add("principal");
             return this;
         }
-
+        /**
+         * An array of group or dynamic group Ids the resolved principal potentially belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupIds")
         private java.util.List<String> groupIds;
 
+        /**
+         * An array of group or dynamic group Ids the resolved principal potentially belongs to.
+         * @param groupIds the value to set
+         * @return this builder
+         **/
         public Builder groupIds(java.util.List<String> groupIds) {
             this.groupIds = groupIds;
             this.__explicitlySet__.add("groupIds");
@@ -84,6 +99,10 @@ public final class FilterGroupMembershipDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("principal")
     private final Principal principal;
 
+    /**
+     * A resolved principal object
+     * @return the value
+     **/
     public Principal getPrincipal() {
         return principal;
     }
@@ -94,6 +113,10 @@ public final class FilterGroupMembershipDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("groupIds")
     private final java.util.List<String> groupIds;
 
+    /**
+     * An array of group or dynamic group Ids the resolved principal potentially belongs to.
+     * @return the value
+     **/
     public java.util.List<String> getGroupIds() {
         return groupIds;
     }

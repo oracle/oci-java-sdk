@@ -42,6 +42,7 @@ public final class UpdateDataTransferMediumDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseLinkDetails")
         private UpdateDatabaseLinkDetails databaseLinkDetails;
 

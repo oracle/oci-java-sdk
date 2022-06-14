@@ -34,27 +34,49 @@ public final class DeployPluginsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Plugin Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginIds")
         private java.util.List<String> pluginIds;
 
+        /**
+         * Plugin Id
+         * @param pluginIds the value to set
+         * @return this builder
+         **/
         public Builder pluginIds(java.util.List<String> pluginIds) {
             this.pluginIds = pluginIds;
             this.__explicitlySet__.add("pluginIds");
             return this;
         }
-
+        /**
+         * Management Agent Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentCompartmentId")
         private String agentCompartmentId;
 
+        /**
+         * Management Agent Compartment Identifier
+         * @param agentCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder agentCompartmentId(String agentCompartmentId) {
             this.agentCompartmentId = agentCompartmentId;
             this.__explicitlySet__.add("agentCompartmentId");
             return this;
         }
-
+        /**
+         * List of Agent identifiers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentIds")
         private java.util.List<String> agentIds;
 
+        /**
+         * List of Agent identifiers
+         * @param agentIds the value to set
+         * @return this builder
+         **/
         public Builder agentIds(java.util.List<String> agentIds) {
             this.agentIds = agentIds;
             this.__explicitlySet__.add("agentIds");
@@ -100,6 +122,10 @@ public final class DeployPluginsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pluginIds")
     private final java.util.List<String> pluginIds;
 
+    /**
+     * Plugin Id
+     * @return the value
+     **/
     public java.util.List<String> getPluginIds() {
         return pluginIds;
     }
@@ -110,6 +136,10 @@ public final class DeployPluginsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("agentCompartmentId")
     private final String agentCompartmentId;
 
+    /**
+     * Management Agent Compartment Identifier
+     * @return the value
+     **/
     public String getAgentCompartmentId() {
         return agentCompartmentId;
     }
@@ -120,6 +150,10 @@ public final class DeployPluginsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("agentIds")
     private final java.util.List<String> agentIds;
 
+    /**
+     * List of Agent identifiers
+     * @return the value
+     **/
     public java.util.List<String> getAgentIds() {
         return agentIds;
     }

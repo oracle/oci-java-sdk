@@ -37,36 +37,67 @@ public final class SqlPlanCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         * @param sqlIdentifier the value to set
+         * @return this builder
+         **/
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         * @param databaseId the value to set
+         * @return this builder
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-
+        /**
+         * array of SQL Plans.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SqlPlanSummary> items;
 
+        /**
+         * array of SQL Plans.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SqlPlanSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -114,6 +145,11 @@ public final class SqlPlanCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
+    /**
+     * Unique SQL_ID for a SQL Statement.
+     *
+     * @return the value
+     **/
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
@@ -124,6 +160,10 @@ public final class SqlPlanCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -134,6 +174,10 @@ public final class SqlPlanCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * @return the value
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
@@ -144,6 +188,10 @@ public final class SqlPlanCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SqlPlanSummary> items;
 
+    /**
+     * array of SQL Plans.
+     * @return the value
+     **/
     public java.util.List<SqlPlanSummary> getItems() {
         return items;
     }

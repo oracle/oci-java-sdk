@@ -36,36 +36,65 @@ public final class DeployStageExecutionProgressDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * Group for the target environment for example, the batch number for an Instance Group deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetGroup")
         private String targetGroup;
 
+        /**
+         * Group for the target environment for example, the batch number for an Instance Group deployment.
+         * @param targetGroup the value to set
+         * @return this builder
+         **/
         public Builder targetGroup(String targetGroup) {
             this.targetGroup = targetGroup;
             this.__explicitlySet__.add("targetGroup");
             return this;
         }
-
+        /**
+         * Details about all the steps for one target environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("steps")
         private java.util.List<DeployStageExecutionStep> steps;
 
+        /**
+         * Details about all the steps for one target environment.
+         * @param steps the value to set
+         * @return this builder
+         **/
         public Builder steps(java.util.List<DeployStageExecutionStep> steps) {
             this.steps = steps;
             this.__explicitlySet__.add("steps");
             return this;
         }
-
+        /**
+         * Details about all the rollback steps for one target environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rollbackSteps")
         private java.util.List<DeployStageExecutionStep> rollbackSteps;
 
+        /**
+         * Details about all the rollback steps for one target environment.
+         * @param rollbackSteps the value to set
+         * @return this builder
+         **/
         public Builder rollbackSteps(java.util.List<DeployStageExecutionStep> rollbackSteps) {
             this.rollbackSteps = rollbackSteps;
             this.__explicitlySet__.add("rollbackSteps");
@@ -113,6 +142,10 @@ public final class DeployStageExecutionProgressDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -123,6 +156,10 @@ public final class DeployStageExecutionProgressDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetGroup")
     private final String targetGroup;
 
+    /**
+     * Group for the target environment for example, the batch number for an Instance Group deployment.
+     * @return the value
+     **/
     public String getTargetGroup() {
         return targetGroup;
     }
@@ -133,6 +170,10 @@ public final class DeployStageExecutionProgressDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     private final java.util.List<DeployStageExecutionStep> steps;
 
+    /**
+     * Details about all the steps for one target environment.
+     * @return the value
+     **/
     public java.util.List<DeployStageExecutionStep> getSteps() {
         return steps;
     }
@@ -143,6 +184,10 @@ public final class DeployStageExecutionProgressDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("rollbackSteps")
     private final java.util.List<DeployStageExecutionStep> rollbackSteps;
 
+    /**
+     * Details about all the rollback steps for one target environment.
+     * @return the value
+     **/
     public java.util.List<DeployStageExecutionStep> getRollbackSteps() {
         return rollbackSteps;
     }

@@ -28,18 +28,33 @@ public final class QueryDataObjectJsonResultSetRowsCollection
         extends QueryDataObjectResultSetRowsCollection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of result set rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<Object> items;
 
+        /**
+         * Array of result set rows.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<Object> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-
+        /**
+         * Array of QueryDataObjectResultSetColumnMetadata objects that describe the result set columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("itemsMetadata")
         private java.util.List<QueryDataObjectResultSetColumnMetadata> itemsMetadata;
 
+        /**
+         * Array of QueryDataObjectResultSetColumnMetadata objects that describe the result set columns.
+         * @param itemsMetadata the value to set
+         * @return this builder
+         **/
         public Builder itemsMetadata(
                 java.util.List<QueryDataObjectResultSetColumnMetadata> itemsMetadata) {
             this.itemsMetadata = itemsMetadata;
@@ -92,6 +107,10 @@ public final class QueryDataObjectJsonResultSetRowsCollection
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<Object> items;
 
+    /**
+     * Array of result set rows.
+     * @return the value
+     **/
     public java.util.List<Object> getItems() {
         return items;
     }
@@ -102,6 +121,10 @@ public final class QueryDataObjectJsonResultSetRowsCollection
     @com.fasterxml.jackson.annotation.JsonProperty("itemsMetadata")
     private final java.util.List<QueryDataObjectResultSetColumnMetadata> itemsMetadata;
 
+    /**
+     * Array of QueryDataObjectResultSetColumnMetadata objects that describe the result set columns.
+     * @return the value
+     **/
     public java.util.List<QueryDataObjectResultSetColumnMetadata> getItemsMetadata() {
         return itemsMetadata;
     }

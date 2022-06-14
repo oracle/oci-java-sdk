@@ -116,64 +116,129 @@ public final class OsvcChannel extends Channel {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The host.
+         *
+         * For OSVC, you can derive these values from the URL that you use to launch the Agent Browser User Interface
+         * or the chat launch page. For example, if the URL is https://sitename.exampledomain.com/app/chat/chat_launch,
+         * then the host is sitename.exampledomain.com.
+         *
+         * For FUSION, this is the host portion of your Oracle Applications Cloud (Fusion) instance's URL.
+         * For example: sitename.exampledomain.com.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * The host.
+         *
+         * For OSVC, you can derive these values from the URL that you use to launch the Agent Browser User Interface
+         * or the chat launch page. For example, if the URL is https://sitename.exampledomain.com/app/chat/chat_launch,
+         * then the host is sitename.exampledomain.com.
+         *
+         * For FUSION, this is the host portion of your Oracle Applications Cloud (Fusion) instance's URL.
+         * For example: sitename.exampledomain.com.
+         *
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * The port.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
+        /**
+         * The port.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(String port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The user name for the digital-assistant agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The user name for the digital-assistant agent.
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The total session count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSessionCount")
         private Integer totalSessionCount;
 
+        /**
+         * The total session count.
+         * @param totalSessionCount the value to set
+         * @return this builder
+         **/
         public Builder totalSessionCount(Integer totalSessionCount) {
             this.totalSessionCount = totalSessionCount;
             this.__explicitlySet__.add("totalSessionCount");
             return this;
         }
-
+        /**
+         * The type of OSVC service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("channelService")
         private OsvcServiceType channelService;
 
+        /**
+         * The type of OSVC service.
+         * @param channelService the value to set
+         * @return this builder
+         **/
         public Builder channelService(OsvcServiceType channelService) {
             this.channelService = channelService;
             this.__explicitlySet__.add("channelService");
             return this;
         }
-
+        /**
+         * The name of the Authentication Provider to use to authenticate the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationProviderName")
         private String authenticationProviderName;
 
+        /**
+         * The name of the Authentication Provider to use to authenticate the user.
+         * @param authenticationProviderName the value to set
+         * @return this builder
+         **/
         public Builder authenticationProviderName(String authenticationProviderName) {
             this.authenticationProviderName = authenticationProviderName;
             this.__explicitlySet__.add("authenticationProviderName");
             return this;
         }
-
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         * @param botId the value to set
+         * @return this builder
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -298,6 +363,18 @@ public final class OsvcChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * The host.
+     *
+     * For OSVC, you can derive these values from the URL that you use to launch the Agent Browser User Interface
+     * or the chat launch page. For example, if the URL is https://sitename.exampledomain.com/app/chat/chat_launch,
+     * then the host is sitename.exampledomain.com.
+     *
+     * For FUSION, this is the host portion of your Oracle Applications Cloud (Fusion) instance's URL.
+     * For example: sitename.exampledomain.com.
+     *
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -308,6 +385,10 @@ public final class OsvcChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
+    /**
+     * The port.
+     * @return the value
+     **/
     public String getPort() {
         return port;
     }
@@ -318,6 +399,10 @@ public final class OsvcChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The user name for the digital-assistant agent.
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -328,6 +413,10 @@ public final class OsvcChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("totalSessionCount")
     private final Integer totalSessionCount;
 
+    /**
+     * The total session count.
+     * @return the value
+     **/
     public Integer getTotalSessionCount() {
         return totalSessionCount;
     }
@@ -338,6 +427,10 @@ public final class OsvcChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("channelService")
     private final OsvcServiceType channelService;
 
+    /**
+     * The type of OSVC service.
+     * @return the value
+     **/
     public OsvcServiceType getChannelService() {
         return channelService;
     }
@@ -348,6 +441,10 @@ public final class OsvcChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationProviderName")
     private final String authenticationProviderName;
 
+    /**
+     * The name of the Authentication Provider to use to authenticate the user.
+     * @return the value
+     **/
     public String getAuthenticationProviderName() {
         return authenticationProviderName;
     }
@@ -358,6 +455,10 @@ public final class OsvcChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     * @return the value
+     **/
     public String getBotId() {
         return botId;
     }

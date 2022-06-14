@@ -27,9 +27,17 @@ public final class EventReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * count of events currently registered on the system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * count of events currently registered on the system.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -71,6 +79,10 @@ public final class EventReport {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * count of events currently registered on the system.
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

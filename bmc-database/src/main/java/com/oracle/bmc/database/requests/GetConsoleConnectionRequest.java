@@ -17,6 +17,9 @@ public class GetConsoleConnectionRequest
      */
     private String dbNodeId;
 
+    /**
+     * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbNodeId() {
         return dbNodeId;
     }
@@ -25,6 +28,9 @@ public class GetConsoleConnectionRequest
      */
     private String consoleConnectionId;
 
+    /**
+     * The OCID of the console connection.
+     */
     public String getConsoleConnectionId() {
         return consoleConnectionId;
     }
@@ -36,10 +42,14 @@ public class GetConsoleConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbNodeId = null;
 
         /**
          * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbNodeId the value to set
          * @return this builder instance
          */
         public Builder dbNodeId(String dbNodeId) {
@@ -47,10 +57,14 @@ public class GetConsoleConnectionRequest
             return this;
         }
 
+        /**
+         * The OCID of the console connection.
+         */
         private String consoleConnectionId = null;
 
         /**
          * The OCID of the console connection.
+         * @param consoleConnectionId the value to set
          * @return this builder instance
          */
         public Builder consoleConnectionId(String consoleConnectionId) {
@@ -128,12 +142,17 @@ public class GetConsoleConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dbNodeId(dbNodeId).consoleConnectionId(consoleConnectionId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

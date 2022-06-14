@@ -38,45 +38,191 @@ public final class SteeringPolicyAnswer {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name for the answer, unique within the steering policy.
+         * An answer's {@code name} property can be referenced in {@code answerCondition} properties
+         * of rules using {@code answer.name}.
+         * <p>
+         **Example:**
+         * <p>
+         * "rules": [
+         *     {
+         *       "ruleType": "FILTER",
+         *       "defaultAnswerData":  [
+         *         {
+         *           "answerCondition": "answer.name == 'server 1'",
+         *           "shouldKeep": true
+         *         }
+         *       ]
+         *     }
+         *   ]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A user-friendly name for the answer, unique within the steering policy.
+         * An answer's {@code name} property can be referenced in {@code answerCondition} properties
+         * of rules using {@code answer.name}.
+         * <p>
+         **Example:**
+         * <p>
+         * "rules": [
+         *     {
+         *       "ruleType": "FILTER",
+         *       "defaultAnswerData":  [
+         *         {
+         *           "answerCondition": "answer.name == 'server 1'",
+         *           "shouldKeep": true
+         *         }
+         *       ]
+         *     }
+         *   ]
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more
+         * information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rtype")
         private String rtype;
 
+        /**
+         * The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more
+         * information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+         *
+         * @param rtype the value to set
+         * @return this builder
+         **/
         public Builder rtype(String rtype) {
             this.rtype = rtype;
             this.__explicitlySet__.add("rtype");
             return this;
         }
-
+        /**
+         * The record's data, as whitespace-delimited tokens in
+         * type-specific presentation format. All RDATA is normalized and the
+         * returned presentation of your RDATA may differ from its initial input.
+         * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rdata")
         private String rdata;
 
+        /**
+         * The record's data, as whitespace-delimited tokens in
+         * type-specific presentation format. All RDATA is normalized and the
+         * returned presentation of your RDATA may differ from its initial input.
+         * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+         *
+         * @param rdata the value to set
+         * @return this builder
+         **/
         public Builder rdata(String rdata) {
             this.rdata = rdata;
             this.__explicitlySet__.add("rdata");
             return this;
         }
-
+        /**
+         * The freeform name of a group of one or more records in which this record is included,
+         * such as "LAX data center". An answer's {@code pool} property can be referenced in {@code answerCondition}
+         * properties of rules using {@code answer.pool}.
+         * <p>
+         **Example:**
+         * <p>
+         * "rules": [
+         *     {
+         *       "ruleType": "FILTER",
+         *       "defaultAnswerData":  [
+         *         {
+         *           "answerCondition": "answer.pool == 'US East Servers'",
+         *           "shouldKeep": true
+         *         }
+         *       ]
+         *     }
+         *   ]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pool")
         private String pool;
 
+        /**
+         * The freeform name of a group of one or more records in which this record is included,
+         * such as "LAX data center". An answer's {@code pool} property can be referenced in {@code answerCondition}
+         * properties of rules using {@code answer.pool}.
+         * <p>
+         **Example:**
+         * <p>
+         * "rules": [
+         *     {
+         *       "ruleType": "FILTER",
+         *       "defaultAnswerData":  [
+         *         {
+         *           "answerCondition": "answer.pool == 'US East Servers'",
+         *           "shouldKeep": true
+         *         }
+         *       ]
+         *     }
+         *   ]
+         *
+         * @param pool the value to set
+         * @return this builder
+         **/
         public Builder pool(String pool) {
             this.pool = pool;
             this.__explicitlySet__.add("pool");
             return this;
         }
-
+        /**
+         * Set this property to {@code true} to indicate that the answer is administratively disabled,
+         * such as when the corresponding server is down for maintenance. An answer's {@code isDisabled}
+         * property can be referenced in {@code answerCondition} properties in rules using {@code answer.isDisabled}.
+         * <p>
+         **Example:**
+         *   "rules": [
+         *     {
+         *       "ruleType": "FILTER",
+         *       "defaultAnswerData": [
+         *         {
+         *           "answerCondition": "answer.isDisabled != true",
+         *           "shouldKeep": true
+         *         }
+         *       ]
+         *     },
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDisabled")
         private Boolean isDisabled;
 
+        /**
+         * Set this property to {@code true} to indicate that the answer is administratively disabled,
+         * such as when the corresponding server is down for maintenance. An answer's {@code isDisabled}
+         * property can be referenced in {@code answerCondition} properties in rules using {@code answer.isDisabled}.
+         * <p>
+         **Example:**
+         *   "rules": [
+         *     {
+         *       "ruleType": "FILTER",
+         *       "defaultAnswerData": [
+         *         {
+         *           "answerCondition": "answer.isDisabled != true",
+         *           "shouldKeep": true
+         *         }
+         *       ]
+         *     },
+         *
+         * @param isDisabled the value to set
+         * @return this builder
+         **/
         public Builder isDisabled(Boolean isDisabled) {
             this.isDisabled = isDisabled;
             this.__explicitlySet__.add("isDisabled");
@@ -141,6 +287,27 @@ public final class SteeringPolicyAnswer {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A user-friendly name for the answer, unique within the steering policy.
+     * An answer's {@code name} property can be referenced in {@code answerCondition} properties
+     * of rules using {@code answer.name}.
+     * <p>
+     **Example:**
+     * <p>
+     * "rules": [
+     *     {
+     *       "ruleType": "FILTER",
+     *       "defaultAnswerData":  [
+     *         {
+     *           "answerCondition": "answer.name == 'server 1'",
+     *           "shouldKeep": true
+     *         }
+     *       ]
+     *     }
+     *   ]
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -153,6 +320,12 @@ public final class SteeringPolicyAnswer {
     @com.fasterxml.jackson.annotation.JsonProperty("rtype")
     private final String rtype;
 
+    /**
+     * The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more
+     * information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+     *
+     * @return the value
+     **/
     public String getRtype() {
         return rtype;
     }
@@ -167,6 +340,14 @@ public final class SteeringPolicyAnswer {
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
     private final String rdata;
 
+    /**
+     * The record's data, as whitespace-delimited tokens in
+     * type-specific presentation format. All RDATA is normalized and the
+     * returned presentation of your RDATA may differ from its initial input.
+     * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+     *
+     * @return the value
+     **/
     public String getRdata() {
         return rdata;
     }
@@ -194,6 +375,27 @@ public final class SteeringPolicyAnswer {
     @com.fasterxml.jackson.annotation.JsonProperty("pool")
     private final String pool;
 
+    /**
+     * The freeform name of a group of one or more records in which this record is included,
+     * such as "LAX data center". An answer's {@code pool} property can be referenced in {@code answerCondition}
+     * properties of rules using {@code answer.pool}.
+     * <p>
+     **Example:**
+     * <p>
+     * "rules": [
+     *     {
+     *       "ruleType": "FILTER",
+     *       "defaultAnswerData":  [
+     *         {
+     *           "answerCondition": "answer.pool == 'US East Servers'",
+     *           "shouldKeep": true
+     *         }
+     *       ]
+     *     }
+     *   ]
+     *
+     * @return the value
+     **/
     public String getPool() {
         return pool;
     }
@@ -219,6 +421,25 @@ public final class SteeringPolicyAnswer {
     @com.fasterxml.jackson.annotation.JsonProperty("isDisabled")
     private final Boolean isDisabled;
 
+    /**
+     * Set this property to {@code true} to indicate that the answer is administratively disabled,
+     * such as when the corresponding server is down for maintenance. An answer's {@code isDisabled}
+     * property can be referenced in {@code answerCondition} properties in rules using {@code answer.isDisabled}.
+     * <p>
+     **Example:**
+     *   "rules": [
+     *     {
+     *       "ruleType": "FILTER",
+     *       "defaultAnswerData": [
+     *         {
+     *           "answerCondition": "answer.isDisabled != true",
+     *           "shouldKeep": true
+     *         }
+     *       ]
+     *     },
+     *
+     * @return the value
+     **/
     public Boolean getIsDisabled() {
         return isDisabled;
     }

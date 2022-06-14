@@ -16,6 +16,9 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String repositoryId;
 
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -24,6 +27,9 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String sha;
 
+    /**
+     * The SHA of a blob or tree.
+     */
     public String getSha() {
         return sha;
     }
@@ -32,6 +38,9 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String filePath;
 
+    /**
+     * A filter to return only commits that affect any of the specified paths.
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -40,6 +49,9 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,10 +63,14 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -62,10 +78,14 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The SHA of a blob or tree.
+         */
         private String sha = null;
 
         /**
          * The SHA of a blob or tree.
+         * @param sha the value to set
          * @return this builder instance
          */
         public Builder sha(String sha) {
@@ -73,10 +93,14 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * A filter to return only commits that affect any of the specified paths.
+         */
         private String filePath = null;
 
         /**
          * A filter to return only commits that affect any of the specified paths.
+         * @param filePath the value to set
          * @return this builder instance
          */
         public Builder filePath(String filePath) {
@@ -84,10 +108,14 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -169,7 +197,8 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -179,6 +208,10 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

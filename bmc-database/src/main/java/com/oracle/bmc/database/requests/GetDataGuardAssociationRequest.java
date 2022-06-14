@@ -17,6 +17,9 @@ public class GetDataGuardAssociationRequest
      */
     private String databaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -25,6 +28,9 @@ public class GetDataGuardAssociationRequest
      */
     private String dataGuardAssociationId;
 
+    /**
+     * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDataGuardAssociationId() {
         return dataGuardAssociationId;
     }
@@ -36,10 +42,14 @@ public class GetDataGuardAssociationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String databaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(String databaseId) {
@@ -47,10 +57,14 @@ public class GetDataGuardAssociationRequest
             return this;
         }
 
+        /**
+         * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dataGuardAssociationId = null;
 
         /**
          * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dataGuardAssociationId the value to set
          * @return this builder instance
          */
         public Builder dataGuardAssociationId(String dataGuardAssociationId) {
@@ -128,12 +142,17 @@ public class GetDataGuardAssociationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().databaseId(databaseId).dataGuardAssociationId(dataGuardAssociationId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

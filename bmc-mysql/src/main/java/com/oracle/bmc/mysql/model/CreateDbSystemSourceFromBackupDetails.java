@@ -28,9 +28,19 @@ package com.oracle.bmc.mysql.model;
 public final class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the backup to be used as the source for the new DB System.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
+        /**
+         * The OCID of the backup to be used as the source for the new DB System.
+         *
+         * @param backupId the value to set
+         * @return this builder
+         **/
         public Builder backupId(String backupId) {
             this.backupId = backupId;
             this.__explicitlySet__.add("backupId");
@@ -80,6 +90,11 @@ public final class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemS
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
+    /**
+     * The OCID of the backup to be used as the source for the new DB System.
+     *
+     * @return the value
+     **/
     public String getBackupId() {
         return backupId;
     }

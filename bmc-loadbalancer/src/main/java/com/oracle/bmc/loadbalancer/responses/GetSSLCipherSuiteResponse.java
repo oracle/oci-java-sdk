@@ -15,6 +15,12 @@ public class GetSSLCipherSuiteResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetSSLCipherSuiteResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.loadbalancer.model.SSLCipherSuite sSLCipherSuite;
 
+    /**
+     * The returned SSLCipherSuite instance.
+     * @return the value
+     */
     public com.oracle.bmc.loadbalancer.model.SSLCipherSuite getSSLCipherSuite() {
         return sSLCipherSuite;
     }
@@ -46,15 +56,35 @@ public class GetSSLCipherSuiteResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned SSLCipherSuite instance.
+         */
         private com.oracle.bmc.loadbalancer.model.SSLCipherSuite sSLCipherSuite;
 
+        /**
+         * The returned SSLCipherSuite instance.
+         * @param sSLCipherSuite the value to set
+         * @return this builder
+         */
         public Builder sSLCipherSuite(
                 com.oracle.bmc.loadbalancer.model.SSLCipherSuite sSLCipherSuite) {
             this.sSLCipherSuite = sSLCipherSuite;
@@ -73,11 +103,19 @@ public class GetSSLCipherSuiteResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetSSLCipherSuiteResponse build() {
             return new GetSSLCipherSuiteResponse(__httpStatusCode__, opcRequestId, sSLCipherSuite);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

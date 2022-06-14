@@ -16,6 +16,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -35,6 +41,12 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String displayNameContains;
 
+    /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
+     */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
@@ -43,6 +55,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private com.oracle.bmc.datacatalog.model.JobLifecycleState lifecycleState;
 
+    /**
+     * Job lifecycle state.
+     */
     public com.oracle.bmc.datacatalog.model.JobLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -51,6 +66,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private java.util.Date timeCreated;
 
+    /**
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -59,6 +77,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private java.util.Date timeUpdated;
 
+    /**
+     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -67,6 +88,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String createdById;
 
+    /**
+     * OCID of the user who created the resource.
+     */
     public String getCreatedById() {
         return createdById;
     }
@@ -75,6 +99,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String updatedById;
 
+    /**
+     * OCID of the user who updated the resource.
+     */
     public String getUpdatedById() {
         return updatedById;
     }
@@ -83,6 +110,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private com.oracle.bmc.datacatalog.model.JobType jobType;
 
+    /**
+     * Job type.
+     */
     public com.oracle.bmc.datacatalog.model.JobType getJobType() {
         return jobType;
     }
@@ -91,6 +121,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String jobDefinitionKey;
 
+    /**
+     * Unique job definition key.
+     */
     public String getJobDefinitionKey() {
         return jobDefinitionKey;
     }
@@ -99,6 +132,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -109,6 +145,11 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String scheduleCronExpression;
 
+    /**
+     * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
+     * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+     *
+     */
     public String getScheduleCronExpression() {
         return scheduleCronExpression;
     }
@@ -117,6 +158,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private java.util.Date timeScheduleBegin;
 
+    /**
+     * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     */
     public java.util.Date getTimeScheduleBegin() {
         return timeScheduleBegin;
     }
@@ -125,6 +169,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private java.util.Date timeScheduleEnd;
 
+    /**
+     * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     */
     public java.util.Date getTimeScheduleEnd() {
         return timeScheduleEnd;
     }
@@ -133,6 +180,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private com.oracle.bmc.datacatalog.model.JobScheduleType scheduleType;
 
+    /**
+     * Type of the job schedule.
+     */
     public com.oracle.bmc.datacatalog.model.JobScheduleType getScheduleType() {
         return scheduleType;
     }
@@ -141,6 +191,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String connectionKey;
 
+    /**
+     * Unique connection key.
+     */
     public String getConnectionKey() {
         return connectionKey;
     }
@@ -206,6 +259,10 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
 
+    /**
+     * Specifies the fields to return in a job summary response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -215,6 +272,10 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private Integer executionCount;
 
+    /**
+     * The total number of executions for this job schedule.
+     *
+     */
     public Integer getExecutionCount() {
         return executionCount;
     }
@@ -225,6 +286,11 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private java.util.Date timeOfLatestExecution;
 
+    /**
+     * The date and time the most recent execution for this job ,in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     */
     public java.util.Date getTimeOfLatestExecution() {
         return timeOfLatestExecution;
     }
@@ -271,6 +337,10 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -315,6 +385,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -323,6 +396,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -331,6 +407,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -339,6 +418,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -349,10 +431,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -360,10 +446,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -371,6 +461,12 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
+         */
         private String displayNameContains = null;
 
         /**
@@ -378,6 +474,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
          * For Example : /folders?displayNameContains=Cu.*
          * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
+         * @param displayNameContains the value to set
          * @return this builder instance
          */
         public Builder displayNameContains(String displayNameContains) {
@@ -385,10 +482,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Job lifecycle state.
+         */
         private com.oracle.bmc.datacatalog.model.JobLifecycleState lifecycleState = null;
 
         /**
          * Job lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -397,10 +498,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
         private java.util.Date timeCreated = null;
 
         /**
          * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeCreated the value to set
          * @return this builder instance
          */
         public Builder timeCreated(java.util.Date timeCreated) {
@@ -408,10 +513,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
         private java.util.Date timeUpdated = null;
 
         /**
          * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeUpdated the value to set
          * @return this builder instance
          */
         public Builder timeUpdated(java.util.Date timeUpdated) {
@@ -419,10 +528,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * OCID of the user who created the resource.
+         */
         private String createdById = null;
 
         /**
          * OCID of the user who created the resource.
+         * @param createdById the value to set
          * @return this builder instance
          */
         public Builder createdById(String createdById) {
@@ -430,10 +543,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * OCID of the user who updated the resource.
+         */
         private String updatedById = null;
 
         /**
          * OCID of the user who updated the resource.
+         * @param updatedById the value to set
          * @return this builder instance
          */
         public Builder updatedById(String updatedById) {
@@ -441,10 +558,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Job type.
+         */
         private com.oracle.bmc.datacatalog.model.JobType jobType = null;
 
         /**
          * Job type.
+         * @param jobType the value to set
          * @return this builder instance
          */
         public Builder jobType(com.oracle.bmc.datacatalog.model.JobType jobType) {
@@ -452,10 +573,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Unique job definition key.
+         */
         private String jobDefinitionKey = null;
 
         /**
          * Unique job definition key.
+         * @param jobDefinitionKey the value to set
          * @return this builder instance
          */
         public Builder jobDefinitionKey(String jobDefinitionKey) {
@@ -463,10 +588,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -474,12 +603,18 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
+         * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+         *
+         */
         private String scheduleCronExpression = null;
 
         /**
          * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
          * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
          *
+         * @param scheduleCronExpression the value to set
          * @return this builder instance
          */
         public Builder scheduleCronExpression(String scheduleCronExpression) {
@@ -487,10 +622,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
         private java.util.Date timeScheduleBegin = null;
 
         /**
          * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeScheduleBegin the value to set
          * @return this builder instance
          */
         public Builder timeScheduleBegin(java.util.Date timeScheduleBegin) {
@@ -498,10 +637,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
         private java.util.Date timeScheduleEnd = null;
 
         /**
          * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeScheduleEnd the value to set
          * @return this builder instance
          */
         public Builder timeScheduleEnd(java.util.Date timeScheduleEnd) {
@@ -509,10 +652,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Type of the job schedule.
+         */
         private com.oracle.bmc.datacatalog.model.JobScheduleType scheduleType = null;
 
         /**
          * Type of the job schedule.
+         * @param scheduleType the value to set
          * @return this builder instance
          */
         public Builder scheduleType(com.oracle.bmc.datacatalog.model.JobScheduleType scheduleType) {
@@ -520,10 +667,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Unique connection key.
+         */
         private String connectionKey = null;
 
         /**
          * Unique connection key.
+         * @param connectionKey the value to set
          * @return this builder instance
          */
         public Builder connectionKey(String connectionKey) {
@@ -531,11 +682,16 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Specifies the fields to return in a job summary response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in a job summary response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -546,17 +702,23 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Singular setter. Specifies the fields to return in a job summary response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The total number of executions for this job schedule.
+         *
+         */
         private Integer executionCount = null;
 
         /**
          * The total number of executions for this job schedule.
          *
+         * @param executionCount the value to set
          * @return this builder instance
          */
         public Builder executionCount(Integer executionCount) {
@@ -564,12 +726,18 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The date and time the most recent execution for this job ,in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         */
         private java.util.Date timeOfLatestExecution = null;
 
         /**
          * The date and time the most recent execution for this job ,in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2019-03-25T21:10:29.600Z}
          *
+         * @param timeOfLatestExecution the value to set
          * @return this builder instance
          */
         public Builder timeOfLatestExecution(java.util.Date timeOfLatestExecution) {
@@ -577,11 +745,16 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -589,10 +762,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -600,10 +777,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -611,10 +792,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -622,10 +807,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -747,7 +936,8 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -777,6 +967,10 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

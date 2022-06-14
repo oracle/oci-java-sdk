@@ -41,9 +41,17 @@ public final class ModelConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the model you want to deploy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
+        /**
+         * The OCID of the model you want to deploy.
+         * @param modelId the value to set
+         * @return this builder
+         **/
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
@@ -67,10 +75,17 @@ public final class ModelConfigurationDetails {
             this.__explicitlySet__.add("scalingPolicy");
             return this;
         }
-
+        /**
+         * The network bandwidth for the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bandwidthMbps")
         private Integer bandwidthMbps;
 
+        /**
+         * The network bandwidth for the model.
+         * @param bandwidthMbps the value to set
+         * @return this builder
+         **/
         public Builder bandwidthMbps(Integer bandwidthMbps) {
             this.bandwidthMbps = bandwidthMbps;
             this.__explicitlySet__.add("bandwidthMbps");
@@ -118,6 +133,10 @@ public final class ModelConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
+    /**
+     * The OCID of the model you want to deploy.
+     * @return the value
+     **/
     public String getModelId() {
         return modelId;
     }
@@ -142,6 +161,10 @@ public final class ModelConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthMbps")
     private final Integer bandwidthMbps;
 
+    /**
+     * The network bandwidth for the model.
+     * @return the value
+     **/
     public Integer getBandwidthMbps() {
         return bandwidthMbps;
     }

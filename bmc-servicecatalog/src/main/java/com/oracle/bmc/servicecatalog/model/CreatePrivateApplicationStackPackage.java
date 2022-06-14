@@ -35,10 +35,17 @@ public final class CreatePrivateApplicationStackPackage extends CreatePrivateApp
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Base-64 payload of the Terraform zip package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("zipFileBase64Encoded")
         private String zipFileBase64Encoded;
 
+        /**
+         * Base-64 payload of the Terraform zip package.
+         * @param zipFileBase64Encoded the value to set
+         * @return this builder
+         **/
         public Builder zipFileBase64Encoded(String zipFileBase64Encoded) {
             this.zipFileBase64Encoded = zipFileBase64Encoded;
             this.__explicitlySet__.add("zipFileBase64Encoded");
@@ -88,6 +95,10 @@ public final class CreatePrivateApplicationStackPackage extends CreatePrivateApp
     @com.fasterxml.jackson.annotation.JsonProperty("zipFileBase64Encoded")
     private final String zipFileBase64Encoded;
 
+    /**
+     * Base-64 payload of the Terraform zip package.
+     * @return the value
+     **/
     public String getZipFileBase64Encoded() {
         return zipFileBase64Encoded;
     }

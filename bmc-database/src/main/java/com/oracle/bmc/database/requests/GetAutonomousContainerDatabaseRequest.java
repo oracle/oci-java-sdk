@@ -17,6 +17,9 @@ public class GetAutonomousContainerDatabaseRequest
      */
     private String autonomousContainerDatabaseId;
 
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
     }
@@ -28,10 +31,14 @@ public class GetAutonomousContainerDatabaseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousContainerDatabaseId = null;
 
         /**
          * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousContainerDatabaseId the value to set
          * @return this builder instance
          */
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
@@ -108,12 +115,17 @@ public class GetAutonomousContainerDatabaseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().autonomousContainerDatabaseId(autonomousContainerDatabaseId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -134,6 +134,10 @@ public class FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the format entry.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

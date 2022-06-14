@@ -31,9 +31,17 @@ public final class ClusterCacheMetric {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of cluster cache metrics for a specific Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterCacheMetrics")
         private java.util.List<TimeSeriesMetricDefinition> clusterCacheMetrics;
 
+        /**
+         * A list of cluster cache metrics for a specific Managed Database.
+         * @param clusterCacheMetrics the value to set
+         * @return this builder
+         **/
         public Builder clusterCacheMetrics(
                 java.util.List<TimeSeriesMetricDefinition> clusterCacheMetrics) {
             this.clusterCacheMetrics = clusterCacheMetrics;
@@ -76,6 +84,10 @@ public final class ClusterCacheMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterCacheMetrics")
     private final java.util.List<TimeSeriesMetricDefinition> clusterCacheMetrics;
 
+    /**
+     * A list of cluster cache metrics for a specific Managed Database.
+     * @return the value
+     **/
     public java.util.List<TimeSeriesMetricDefinition> getClusterCacheMetrics() {
         return clusterCacheMetrics;
     }

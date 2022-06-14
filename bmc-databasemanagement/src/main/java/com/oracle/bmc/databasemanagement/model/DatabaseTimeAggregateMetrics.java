@@ -38,6 +38,7 @@ public final class DatabaseTimeAggregateMetrics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
         private MetricDataPoint cpuCount;
 

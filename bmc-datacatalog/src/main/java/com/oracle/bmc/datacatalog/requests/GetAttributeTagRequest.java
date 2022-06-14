@@ -16,6 +16,9 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -32,6 +38,9 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String entityKey;
 
+    /**
+     * Unique entity key.
+     */
     public String getEntityKey() {
         return entityKey;
     }
@@ -40,6 +49,9 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String attributeKey;
 
+    /**
+     * Unique attribute key.
+     */
     public String getAttributeKey() {
         return attributeKey;
     }
@@ -48,6 +60,9 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String tagKey;
 
+    /**
+     * Unique tag key.
+     */
     public String getTagKey() {
         return tagKey;
     }
@@ -102,6 +117,10 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * Specifies the fields to return in an entity attribute tag response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -110,6 +129,9 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -121,10 +143,14 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -132,10 +158,14 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -143,10 +173,14 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique entity key.
+         */
         private String entityKey = null;
 
         /**
          * Unique entity key.
+         * @param entityKey the value to set
          * @return this builder instance
          */
         public Builder entityKey(String entityKey) {
@@ -154,10 +188,14 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique attribute key.
+         */
         private String attributeKey = null;
 
         /**
          * Unique attribute key.
+         * @param attributeKey the value to set
          * @return this builder instance
          */
         public Builder attributeKey(String attributeKey) {
@@ -165,10 +203,14 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique tag key.
+         */
         private String tagKey = null;
 
         /**
          * Unique tag key.
+         * @param tagKey the value to set
          * @return this builder instance
          */
         public Builder tagKey(String tagKey) {
@@ -176,11 +218,16 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Specifies the fields to return in an entity attribute tag response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in an entity attribute tag response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -191,16 +238,21 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Singular setter. Specifies the fields to return in an entity attribute tag response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -288,7 +340,8 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -301,6 +354,10 @@ public class GetAttributeTagRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

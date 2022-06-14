@@ -28,27 +28,59 @@ package com.oracle.bmc.waas.model;
 public final class StickyCookieLoadBalancingMethod extends LoadBalancingMethod {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the cookie used to track the persistence.
+         * Can contain any US-ASCII character except separator or control character.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the cookie used to track the persistence.
+         * Can contain any US-ASCII character except separator or control character.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The domain for which the cookie is set, defaults to WAAS policy domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
+        /**
+         * The domain for which the cookie is set, defaults to WAAS policy domain.
+         *
+         * @param domain the value to set
+         * @return this builder
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
-
+        /**
+         * The time for which a browser should keep the cookie in seconds.
+         * Empty value will cause the cookie to expire at the end of a browser session.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expirationTimeInSeconds")
         private Integer expirationTimeInSeconds;
 
+        /**
+         * The time for which a browser should keep the cookie in seconds.
+         * Empty value will cause the cookie to expire at the end of a browser session.
+         *
+         * @param expirationTimeInSeconds the value to set
+         * @return this builder
+         **/
         public Builder expirationTimeInSeconds(Integer expirationTimeInSeconds) {
             this.expirationTimeInSeconds = expirationTimeInSeconds;
             this.__explicitlySet__.add("expirationTimeInSeconds");
@@ -105,6 +137,12 @@ public final class StickyCookieLoadBalancingMethod extends LoadBalancingMethod {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the cookie used to track the persistence.
+     * Can contain any US-ASCII character except separator or control character.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -116,6 +154,11 @@ public final class StickyCookieLoadBalancingMethod extends LoadBalancingMethod {
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
+    /**
+     * The domain for which the cookie is set, defaults to WAAS policy domain.
+     *
+     * @return the value
+     **/
     public String getDomain() {
         return domain;
     }
@@ -128,6 +171,12 @@ public final class StickyCookieLoadBalancingMethod extends LoadBalancingMethod {
     @com.fasterxml.jackson.annotation.JsonProperty("expirationTimeInSeconds")
     private final Integer expirationTimeInSeconds;
 
+    /**
+     * The time for which a browser should keep the cookie in seconds.
+     * Empty value will cause the cookie to expire at the end of a browser session.
+     *
+     * @return the value
+     **/
     public Integer getExpirationTimeInSeconds() {
         return expirationTimeInSeconds;
     }

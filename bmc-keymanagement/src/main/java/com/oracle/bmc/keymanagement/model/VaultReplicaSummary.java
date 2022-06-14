@@ -33,27 +33,55 @@ public final class VaultReplicaSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The vault replica's crypto endpoint
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
         private String cryptoEndpoint;
 
+        /**
+         * The vault replica's crypto endpoint
+         *
+         * @param cryptoEndpoint the value to set
+         * @return this builder
+         **/
         public Builder cryptoEndpoint(String cryptoEndpoint) {
             this.cryptoEndpoint = cryptoEndpoint;
             this.__explicitlySet__.add("cryptoEndpoint");
             return this;
         }
-
+        /**
+         * The vault replica's management endpoint
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementEndpoint")
         private String managementEndpoint;
 
+        /**
+         * The vault replica's management endpoint
+         *
+         * @param managementEndpoint the value to set
+         * @return this builder
+         **/
         public Builder managementEndpoint(String managementEndpoint) {
             this.managementEndpoint = managementEndpoint;
             this.__explicitlySet__.add("managementEndpoint");
             return this;
         }
-
+        /**
+         * Region to which vault is replicated to
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * Region to which vault is replicated to
+         *
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
@@ -110,6 +138,11 @@ public final class VaultReplicaSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
     private final String cryptoEndpoint;
 
+    /**
+     * The vault replica's crypto endpoint
+     *
+     * @return the value
+     **/
     public String getCryptoEndpoint() {
         return cryptoEndpoint;
     }
@@ -121,6 +154,11 @@ public final class VaultReplicaSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("managementEndpoint")
     private final String managementEndpoint;
 
+    /**
+     * The vault replica's management endpoint
+     *
+     * @return the value
+     **/
     public String getManagementEndpoint() {
         return managementEndpoint;
     }
@@ -132,6 +170,11 @@ public final class VaultReplicaSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * Region to which vault is replicated to
+     *
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }

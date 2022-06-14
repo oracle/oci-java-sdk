@@ -35,19 +35,33 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
             this.__explicitlySet__.add("metadata");
             return this;
         }
-
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The object key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The object's model version.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -62,37 +76,65 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Detailed description for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description for the object.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         * @param objectVersion the value to set
+         * @return this builder
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
-
+        /**
+         * The external key for the object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
+        /**
+         * The external key for the object
+         * @param externalKey the value to set
+         * @return this builder
+         **/
         public Builder externalKey(String externalKey) {
             this.externalKey = externalKey;
             this.__explicitlySet__.add("externalKey");
@@ -107,10 +149,17 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The shape ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
         private String shapeId;
 
+        /**
+         * The shape ID.
+         * @param shapeId the value to set
+         * @return this builder
+         **/
         public Builder shapeId(String shapeId) {
             this.shapeId = shapeId;
             this.__explicitlySet__.add("shapeId");
@@ -125,109 +174,193 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
             this.__explicitlySet__.add("types");
             return this;
         }
-
+        /**
+         * The entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private EntityType entityType;
 
+        /**
+         * The entity type.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(EntityType entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * Specifies other type label.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("otherTypeLabel")
         private String otherTypeLabel;
 
+        /**
+         * Specifies other type label.
+         * @param otherTypeLabel the value to set
+         * @return this builder
+         **/
         public Builder otherTypeLabel(String otherTypeLabel) {
             this.otherTypeLabel = otherTypeLabel;
             this.__explicitlySet__.add("otherTypeLabel");
             return this;
         }
-
+        /**
+         * An array of unique keys.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uniqueKeys")
         private java.util.List<UniqueKey> uniqueKeys;
 
+        /**
+         * An array of unique keys.
+         * @param uniqueKeys the value to set
+         * @return this builder
+         **/
         public Builder uniqueKeys(java.util.List<UniqueKey> uniqueKeys) {
             this.uniqueKeys = uniqueKeys;
             this.__explicitlySet__.add("uniqueKeys");
             return this;
         }
-
+        /**
+         * An array of foreign keys.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("foreignKeys")
         private java.util.List<ForeignKey> foreignKeys;
 
+        /**
+         * An array of foreign keys.
+         * @param foreignKeys the value to set
+         * @return this builder
+         **/
         public Builder foreignKeys(java.util.List<ForeignKey> foreignKeys) {
             this.foreignKeys = foreignKeys;
             this.__explicitlySet__.add("foreignKeys");
             return this;
         }
-
+        /**
+         * The resource name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * The resource name.
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-
+        /**
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * Query filter for the extract. It can be Null.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private String filters;
 
+        /**
+         * Query filter for the extract. It can be Null.
+         * @param filters the value to set
+         * @return this builder
+         **/
         public Builder filters(String filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
             return this;
         }
-
+        /**
+         * It shows whether or not effective date is disabled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEffectiveDateDisabled")
         private Boolean isEffectiveDateDisabled;
 
+        /**
+         * It shows whether or not effective date is disabled
+         * @param isEffectiveDateDisabled the value to set
+         * @return this builder
+         **/
         public Builder isEffectiveDateDisabled(Boolean isEffectiveDateDisabled) {
             this.isEffectiveDateDisabled = isEffectiveDateDisabled;
             this.__explicitlySet__.add("isEffectiveDateDisabled");
             return this;
         }
-
+        /**
+         * Is Flex data store. Metadata csv will be generated for flex data store
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlexDataStore")
         private Boolean isFlexDataStore;
 
+        /**
+         * Is Flex data store. Metadata csv will be generated for flex data store
+         * @param isFlexDataStore the value to set
+         * @return this builder
+         **/
         public Builder isFlexDataStore(Boolean isFlexDataStore) {
             this.isFlexDataStore = isFlexDataStore;
             this.__explicitlySet__.add("isFlexDataStore");
             return this;
         }
-
+        /**
+         * Should the VO failure fail the whole batch?
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSilentError")
         private Boolean isSilentError;
 
+        /**
+         * Should the VO failure fail the whole batch?
+         * @param isSilentError the value to set
+         * @return this builder
+         **/
         public Builder isSilentError(Boolean isSilentError) {
             this.isSilentError = isSilentError;
             this.__explicitlySet__.add("isSilentError");
             return this;
         }
-
+        /**
+         * It shows whether the datastore supports Incremental Extract or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportsIncremental")
         private Boolean supportsIncremental;
 
+        /**
+         * It shows whether the datastore supports Incremental Extract or not.
+         * @param supportsIncremental the value to set
+         * @return this builder
+         **/
         public Builder supportsIncremental(Boolean supportsIncremental) {
             this.supportsIncremental = supportsIncremental;
             this.__explicitlySet__.add("supportsIncremental");
@@ -366,6 +499,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The object key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -376,6 +513,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The object's model version.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -393,6 +534,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -403,6 +548,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description for the object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -413,6 +562,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     * @return the value
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -423,6 +576,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
+    /**
+     * The external key for the object
+     * @return the value
+     **/
     public String getExternalKey() {
         return externalKey;
     }
@@ -440,6 +597,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
     private final String shapeId;
 
+    /**
+     * The shape ID.
+     * @return the value
+     **/
     public String getShapeId() {
         return shapeId;
     }
@@ -510,6 +671,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
+    /**
+     * The entity type.
+     * @return the value
+     **/
     public EntityType getEntityType() {
         return entityType;
     }
@@ -520,6 +685,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("otherTypeLabel")
     private final String otherTypeLabel;
 
+    /**
+     * Specifies other type label.
+     * @return the value
+     **/
     public String getOtherTypeLabel() {
         return otherTypeLabel;
     }
@@ -530,6 +699,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueKeys")
     private final java.util.List<UniqueKey> uniqueKeys;
 
+    /**
+     * An array of unique keys.
+     * @return the value
+     **/
     public java.util.List<UniqueKey> getUniqueKeys() {
         return uniqueKeys;
     }
@@ -540,6 +713,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("foreignKeys")
     private final java.util.List<ForeignKey> foreignKeys;
 
+    /**
+     * An array of foreign keys.
+     * @return the value
+     **/
     public java.util.List<ForeignKey> getForeignKeys() {
         return foreignKeys;
     }
@@ -550,6 +727,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * The resource name.
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -560,6 +741,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -570,6 +755,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -580,6 +769,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final String filters;
 
+    /**
+     * Query filter for the extract. It can be Null.
+     * @return the value
+     **/
     public String getFilters() {
         return filters;
     }
@@ -590,6 +783,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isEffectiveDateDisabled")
     private final Boolean isEffectiveDateDisabled;
 
+    /**
+     * It shows whether or not effective date is disabled
+     * @return the value
+     **/
     public Boolean getIsEffectiveDateDisabled() {
         return isEffectiveDateDisabled;
     }
@@ -600,6 +797,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexDataStore")
     private final Boolean isFlexDataStore;
 
+    /**
+     * Is Flex data store. Metadata csv will be generated for flex data store
+     * @return the value
+     **/
     public Boolean getIsFlexDataStore() {
         return isFlexDataStore;
     }
@@ -610,6 +811,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSilentError")
     private final Boolean isSilentError;
 
+    /**
+     * Should the VO failure fail the whole batch?
+     * @return the value
+     **/
     public Boolean getIsSilentError() {
         return isSilentError;
     }
@@ -620,6 +825,10 @@ public final class DataEntitySummaryFromDataStore extends DataEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("supportsIncremental")
     private final Boolean supportsIncremental;
 
+    /**
+     * It shows whether the datastore supports Incremental Extract or not.
+     * @return the value
+     **/
     public Boolean getSupportsIncremental() {
         return supportsIncremental;
     }

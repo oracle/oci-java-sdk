@@ -15,6 +15,11 @@ public class UpdateComputeImageCapabilitySchemaResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -26,6 +31,12 @@ public class UpdateComputeImageCapabilitySchemaResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +46,10 @@ public class UpdateComputeImageCapabilitySchemaResponse
      */
     private com.oracle.bmc.core.model.ComputeImageCapabilitySchema computeImageCapabilitySchema;
 
+    /**
+     * The returned ComputeImageCapabilitySchema instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.ComputeImageCapabilitySchema
             getComputeImageCapabilitySchema() {
         return computeImageCapabilitySchema;
@@ -65,22 +80,52 @@ public class UpdateComputeImageCapabilitySchemaResponse
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ComputeImageCapabilitySchema instance.
+         */
         private com.oracle.bmc.core.model.ComputeImageCapabilitySchema computeImageCapabilitySchema;
 
+        /**
+         * The returned ComputeImageCapabilitySchema instance.
+         * @param computeImageCapabilitySchema the value to set
+         * @return this builder
+         */
         public Builder computeImageCapabilitySchema(
                 com.oracle.bmc.core.model.ComputeImageCapabilitySchema
                         computeImageCapabilitySchema) {
@@ -101,12 +146,20 @@ public class UpdateComputeImageCapabilitySchemaResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateComputeImageCapabilitySchemaResponse build() {
             return new UpdateComputeImageCapabilitySchemaResponse(
                     __httpStatusCode__, etag, opcRequestId, computeImageCapabilitySchema);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

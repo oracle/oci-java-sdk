@@ -44,46 +44,104 @@ public final class CreatePreauthenticatedRequestDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests.
+         * Avoid entering confidential information.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
+         * Deny: Prevents the user from performing a list operation.
+         * ListObjects: Authorizes the user to perform a list operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketListingAction")
         private PreauthenticatedRequest.BucketListingAction bucketListingAction;
 
+        /**
+         * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
+         * Deny: Prevents the user from performing a list operation.
+         * ListObjects: Authorizes the user to perform a list operation.
+         *
+         * @param bucketListingAction the value to set
+         * @return this builder
+         **/
         public Builder bucketListingAction(
                 PreauthenticatedRequest.BucketListingAction bucketListingAction) {
             this.bucketListingAction = bucketListingAction;
             this.__explicitlySet__.add("bucketListingAction");
             return this;
         }
-
+        /**
+         * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
+         * information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket
+         * if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request
+         * grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
+         * information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket
+         * if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request
+         * grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
+         *
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-
+        /**
+         * The operation that can be performed on this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessType")
         private AccessType accessType;
 
+        /**
+         * The operation that can be performed on this resource.
+         * @param accessType the value to set
+         * @return this builder
+         **/
         public Builder accessType(AccessType accessType) {
             this.accessType = accessType;
             this.__explicitlySet__.add("accessType");
             return this;
         }
-
+        /**
+         * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * After this date the pre-authenticated request will no longer be valid.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
+        /**
+         * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * After this date the pre-authenticated request will no longer be valid.
+         *
+         * @param timeExpires the value to set
+         * @return this builder
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
@@ -134,6 +192,12 @@ public final class CreatePreauthenticatedRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -147,6 +211,13 @@ public final class CreatePreauthenticatedRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketListingAction")
     private final PreauthenticatedRequest.BucketListingAction bucketListingAction;
 
+    /**
+     * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
+     * Deny: Prevents the user from performing a list operation.
+     * ListObjects: Authorizes the user to perform a list operation.
+     *
+     * @return the value
+     **/
     public PreauthenticatedRequest.BucketListingAction getBucketListingAction() {
         return bucketListingAction;
     }
@@ -161,6 +232,14 @@ public final class CreatePreauthenticatedRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
+     * information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket
+     * if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request
+     * grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
+     *
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }
@@ -210,6 +289,10 @@ public final class CreatePreauthenticatedRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("accessType")
     private final AccessType accessType;
 
+    /**
+     * The operation that can be performed on this resource.
+     * @return the value
+     **/
     public AccessType getAccessType() {
         return accessType;
     }
@@ -222,6 +305,12 @@ public final class CreatePreauthenticatedRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
+    /**
+     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * After this date the pre-authenticated request will no longer be valid.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }

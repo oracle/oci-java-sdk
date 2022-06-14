@@ -13,6 +13,10 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
      */
     private String contentType;
 
+    /**
+     * Content type refers to content of a file which is transferred via HTTP
+     * @return the value
+     */
     public String getContentType() {
         return contentType;
     }
@@ -31,6 +39,10 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
      */
     private String contentDisposition;
 
+    /**
+     * The Content-Disposition response-header field has been proposed as a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.
+     * @return the value
+     */
     public String getContentDisposition() {
         return contentDisposition;
     }
@@ -40,6 +52,10 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -72,29 +88,61 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Content type refers to content of a file which is transferred via HTTP
+         */
         private String contentType;
 
+        /**
+         * Content type refers to content of a file which is transferred via HTTP
+         * @param contentType the value to set
+         * @return this builder
+         */
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             return this;
         }
 
+        /**
+         * The Content-Disposition response-header field has been proposed as a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.
+         */
         private String contentDisposition;
 
+        /**
+         * The Content-Disposition response-header field has been proposed as a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.
+         * @param contentDisposition the value to set
+         * @return this builder
+         */
         public Builder contentDisposition(String contentDisposition) {
             this.contentDisposition = contentDisposition;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -114,12 +162,20 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetRepositoryArchiveContentResponse build() {
             return new GetRepositoryArchiveContentResponse(
                     __httpStatusCode__, opcRequestId, contentType, contentDisposition, inputStream);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

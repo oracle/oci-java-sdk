@@ -48,9 +48,21 @@ public final class UpdateDataPumpSettings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Data Pump job mode.
+         * Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
         private DataPumpJobMode jobMode;
 
+        /**
+         * Data Pump job mode.
+         * Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
+         *
+         * @param jobMode the value to set
+         * @return this builder
+         **/
         public Builder jobMode(DataPumpJobMode jobMode) {
             this.jobMode = jobMode;
             this.__explicitlySet__.add("jobMode");
@@ -65,10 +77,23 @@ public final class UpdateDataPumpSettings {
             this.__explicitlySet__.add("dataPumpParameters");
             return this;
         }
-
+        /**
+         * Defines remappings to be applied to objects as they are processed.
+         * Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
+         * If specified, the list will be replaced entirely. Empty list will remove stored Metadata Remap details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataRemaps")
         private java.util.List<MetadataRemap> metadataRemaps;
 
+        /**
+         * Defines remappings to be applied to objects as they are processed.
+         * Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
+         * If specified, the list will be replaced entirely. Empty list will remove stored Metadata Remap details.
+         *
+         * @param metadataRemaps the value to set
+         * @return this builder
+         **/
         public Builder metadataRemaps(java.util.List<MetadataRemap> metadataRemaps) {
             this.metadataRemaps = metadataRemaps;
             this.__explicitlySet__.add("metadataRemaps");
@@ -152,6 +177,12 @@ public final class UpdateDataPumpSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
     private final DataPumpJobMode jobMode;
 
+    /**
+     * Data Pump job mode.
+     * Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
+     *
+     * @return the value
+     **/
     public DataPumpJobMode getJobMode() {
         return jobMode;
     }
@@ -172,6 +203,13 @@ public final class UpdateDataPumpSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("metadataRemaps")
     private final java.util.List<MetadataRemap> metadataRemaps;
 
+    /**
+     * Defines remappings to be applied to objects as they are processed.
+     * Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
+     * If specified, the list will be replaced entirely. Empty list will remove stored Metadata Remap details.
+     *
+     * @return the value
+     **/
     public java.util.List<MetadataRemap> getMetadataRemaps() {
         return metadataRemaps;
     }

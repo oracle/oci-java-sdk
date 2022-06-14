@@ -15,6 +15,12 @@ public class BatchDetectDominantLanguageResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class BatchDetectDominantLanguageResponse extends com.oracle.bmc.response
     private com.oracle.bmc.ailanguage.model.BatchDetectDominantLanguageResult
             batchDetectDominantLanguageResult;
 
+    /**
+     * The returned BatchDetectDominantLanguageResult instance.
+     * @return the value
+     */
     public com.oracle.bmc.ailanguage.model.BatchDetectDominantLanguageResult
             getBatchDetectDominantLanguageResult() {
         return batchDetectDominantLanguageResult;
@@ -53,16 +63,36 @@ public class BatchDetectDominantLanguageResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned BatchDetectDominantLanguageResult instance.
+         */
         private com.oracle.bmc.ailanguage.model.BatchDetectDominantLanguageResult
                 batchDetectDominantLanguageResult;
 
+        /**
+         * The returned BatchDetectDominantLanguageResult instance.
+         * @param batchDetectDominantLanguageResult the value to set
+         * @return this builder
+         */
         public Builder batchDetectDominantLanguageResult(
                 com.oracle.bmc.ailanguage.model.BatchDetectDominantLanguageResult
                         batchDetectDominantLanguageResult) {
@@ -82,12 +112,20 @@ public class BatchDetectDominantLanguageResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public BatchDetectDominantLanguageResponse build() {
             return new BatchDetectDominantLanguageResponse(
                     __httpStatusCode__, opcRequestId, batchDetectDominantLanguageResult);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

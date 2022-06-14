@@ -58,6 +58,10 @@ public class FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * The detected text of a field.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }
@@ -68,6 +72,10 @@ public class FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
+    /**
+     * The confidence score between 0 and 1.
+     * @return the value
+     **/
     public Float getConfidence() {
         return confidence;
     }
@@ -85,6 +93,10 @@ public class FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     private final java.util.List<Integer> wordIndexes;
 
+    /**
+     * The indexes of the words in the field value.
+     * @return the value
+     **/
     public java.util.List<Integer> getWordIndexes() {
         return wordIndexes;
     }

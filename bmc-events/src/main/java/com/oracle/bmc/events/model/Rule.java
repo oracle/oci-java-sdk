@@ -65,72 +65,211 @@ public final class Rule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering
+         * confidential information.
+         * <p>
+         * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering
+         * confidential information.
+         * <p>
+         * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering
+         * confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering
+         * confidential information.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The current state of the rule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the rule.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A filter that specifies the event that will trigger actions associated with this rule. A few
+         * important things to remember about filters:
+         * <p>
+         * Fields not mentioned in the condition are ignored. You can create a valid filter that matches
+         * all events with two curly brackets: {@code {}}
+         * <p>
+         * For more examples, see
+         * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+         * * For a condition with fields to match an event, the event must contain all the field names
+         * listed in the condition. Field names must appear in the condition with the same nesting
+         * structure used in the event.
+         * <p>
+         * For a list of reference events, see
+         * [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+         * * Rules apply to events in the compartment in which you create them and any child compartments.
+         * This means that a condition specified by a rule only matches events emitted from resources in
+         * the compartment or any of its child compartments.
+         * * Wildcard matching is supported with the asterisk (*) character.
+         * <p>
+         * For examples of wildcard matching, see
+         * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+         * <p>
+         * Example: {@code \\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
 
+        /**
+         * A filter that specifies the event that will trigger actions associated with this rule. A few
+         * important things to remember about filters:
+         * <p>
+         * Fields not mentioned in the condition are ignored. You can create a valid filter that matches
+         * all events with two curly brackets: {@code {}}
+         * <p>
+         * For more examples, see
+         * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+         * * For a condition with fields to match an event, the event must contain all the field names
+         * listed in the condition. Field names must appear in the condition with the same nesting
+         * structure used in the event.
+         * <p>
+         * For a list of reference events, see
+         * [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+         * * Rules apply to events in the compartment in which you create them and any child compartments.
+         * This means that a condition specified by a rule only matches events emitted from resources in
+         * the compartment or any of its child compartments.
+         * * Wildcard matching is supported with the asterisk (*) character.
+         * <p>
+         * For examples of wildcard matching, see
+         * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+         * <p>
+         * Example: {@code \\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"}
+         *
+         * @param condition the value to set
+         * @return this builder
+         **/
         public Builder condition(String condition) {
             this.condition = condition;
             this.__explicitlySet__.add("condition");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Whether or not this rule is currently enabled.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Whether or not this rule is currently enabled.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -146,28 +285,61 @@ public final class Rule {
             this.__explicitlySet__.add("actions");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * <p>
+         * Example: {@code 2018-09-12T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * <p>
+         * Example: {@code 2018-09-12T22:47:12.613Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * A message generated by the Events service about the current state of this rule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleMessage")
         private String lifecycleMessage;
 
+        /**
+         * A message generated by the Events service about the current state of this rule.
+         *
+         * @param lifecycleMessage the value to set
+         * @return this builder
+         **/
         public Builder lifecycleMessage(String lifecycleMessage) {
             this.lifecycleMessage = lifecycleMessage;
             this.__explicitlySet__.add("lifecycleMessage");
@@ -238,6 +410,14 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering
+     * confidential information.
+     * <p>
+     * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -250,6 +430,12 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering
+     * confidential information.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -315,6 +501,11 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the rule.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -348,6 +539,33 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
+    /**
+     * A filter that specifies the event that will trigger actions associated with this rule. A few
+     * important things to remember about filters:
+     * <p>
+     * Fields not mentioned in the condition are ignored. You can create a valid filter that matches
+     * all events with two curly brackets: {@code {}}
+     * <p>
+     * For more examples, see
+     * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+     * * For a condition with fields to match an event, the event must contain all the field names
+     * listed in the condition. Field names must appear in the condition with the same nesting
+     * structure used in the event.
+     * <p>
+     * For a list of reference events, see
+     * [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+     * * Rules apply to events in the compartment in which you create them and any child compartments.
+     * This means that a condition specified by a rule only matches events emitted from resources in
+     * the compartment or any of its child compartments.
+     * * Wildcard matching is supported with the asterisk (*) character.
+     * <p>
+     * For examples of wildcard matching, see
+     * [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+     * <p>
+     * Example: {@code \\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"}
+     *
+     * @return the value
+     **/
     public String getCondition() {
         return condition;
     }
@@ -359,6 +577,11 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -372,6 +595,13 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether or not this rule is currently enabled.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -386,6 +616,14 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -399,6 +637,13 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -417,6 +662,11 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -431,6 +681,14 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2018-09-12T22:47:12.613Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -442,6 +700,11 @@ public final class Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleMessage")
     private final String lifecycleMessage;
 
+    /**
+     * A message generated by the Events service about the current state of this rule.
+     *
+     * @return the value
+     **/
     public String getLifecycleMessage() {
         return lifecycleMessage;
     }

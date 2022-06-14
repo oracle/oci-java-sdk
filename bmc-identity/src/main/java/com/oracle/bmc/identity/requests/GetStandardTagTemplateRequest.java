@@ -18,6 +18,10 @@ public class GetStandardTagTemplateRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +31,10 @@ public class GetStandardTagTemplateRequest
      */
     private String standardTagNamespaceName;
 
+    /**
+     * The name of the standard tag namespace tempate that is requested
+     *
+     */
     public String getStandardTagNamespaceName() {
         return standardTagNamespaceName;
     }
@@ -38,11 +46,16 @@ public class GetStandardTagTemplateRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -50,11 +63,16 @@ public class GetStandardTagTemplateRequest
             return this;
         }
 
+        /**
+         * The name of the standard tag namespace tempate that is requested
+         *
+         */
         private String standardTagNamespaceName = null;
 
         /**
          * The name of the standard tag namespace tempate that is requested
          *
+         * @param standardTagNamespaceName the value to set
          * @return this builder instance
          */
         public Builder standardTagNamespaceName(String standardTagNamespaceName) {
@@ -132,7 +150,8 @@ public class GetStandardTagTemplateRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -140,6 +159,10 @@ public class GetStandardTagTemplateRequest
                 .standardTagNamespaceName(standardTagNamespaceName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

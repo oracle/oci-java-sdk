@@ -75,6 +75,13 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the job. Valid characters are uppercase or lowercase letters,
+     * numbers, and "_". The name of the job cannot be modified. It must be unique
+     * in the compartment and must begin with an alphabetic character.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -85,6 +92,10 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the job.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -95,6 +106,10 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the job resides.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -105,6 +120,10 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
     private final String managedDatabaseGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the job has to be executed.
+     * @return the value
+     **/
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
@@ -115,6 +134,10 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
     private final String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database where the job has to be executed.
+     * @return the value
+     **/
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -125,6 +148,10 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     private final DatabaseSubType databaseSubType;
 
+    /**
+     * The subtype of the Oracle Database where the job has to be executed. Only applicable when managedDatabaseGroupId is provided.
+     * @return the value
+     **/
     public DatabaseSubType getDatabaseSubType() {
         return databaseSubType;
     }
@@ -135,6 +162,10 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     private final Job.ScheduleType scheduleType;
 
+    /**
+     * The schedule type of the job.
+     * @return the value
+     **/
     public Job.ScheduleType getScheduleType() {
         return scheduleType;
     }
@@ -145,6 +176,10 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
     private final String timeout;
 
+    /**
+     * The job timeout duration, which is expressed like "1h 10m 15s".
+     * @return the value
+     **/
     public String getTimeout() {
         return timeout;
     }

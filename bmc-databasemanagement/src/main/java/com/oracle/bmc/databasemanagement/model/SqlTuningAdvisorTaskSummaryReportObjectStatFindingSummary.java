@@ -47,54 +47,97 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Numerical representation of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectHashValue")
         private Long objectHashValue;
 
+        /**
+         * Numerical representation of the object.
+         * @param objectHashValue the value to set
+         * @return this builder
+         **/
         public Builder objectHashValue(Long objectHashValue) {
             this.objectHashValue = objectHashValue;
             this.__explicitlySet__.add("objectHashValue");
             return this;
         }
-
+        /**
+         * Name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * Name of the object.
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-
+        /**
+         * Type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private String objectType;
 
+        /**
+         * Type of the object.
+         * @param objectType the value to set
+         * @return this builder
+         **/
         public Builder objectType(String objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-
+        /**
+         * Schema of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schema")
         private String schema;
 
+        /**
+         * Schema of the object.
+         * @param schema the value to set
+         * @return this builder
+         **/
         public Builder schema(String schema) {
             this.schema = schema;
             this.__explicitlySet__.add("schema");
             return this;
         }
-
+        /**
+         * Type of statistics problem related to the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
+        /**
+         * Type of statistics problem related to the object.
+         * @param problemType the value to set
+         * @return this builder
+         **/
         public Builder problemType(ProblemType problemType) {
             this.problemType = problemType;
             this.__explicitlySet__.add("problemType");
             return this;
         }
-
+        /**
+         * The number of the times the object is referenced within the SQL Tuning advisor task findings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
         private Integer referenceCount;
 
+        /**
+         * The number of the times the object is referenced within the SQL Tuning advisor task findings.
+         * @param referenceCount the value to set
+         * @return this builder
+         **/
         public Builder referenceCount(Integer referenceCount) {
             this.referenceCount = referenceCount;
             this.__explicitlySet__.add("referenceCount");
@@ -149,6 +192,10 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectHashValue")
     private final Long objectHashValue;
 
+    /**
+     * Numerical representation of the object.
+     * @return the value
+     **/
     public Long getObjectHashValue() {
         return objectHashValue;
     }
@@ -159,6 +206,10 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * Name of the object.
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }
@@ -169,6 +220,10 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final String objectType;
 
+    /**
+     * Type of the object.
+     * @return the value
+     **/
     public String getObjectType() {
         return objectType;
     }
@@ -179,6 +234,10 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
     private final String schema;
 
+    /**
+     * Schema of the object.
+     * @return the value
+     **/
     public String getSchema() {
         return schema;
     }
@@ -237,6 +296,10 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
+    /**
+     * Type of statistics problem related to the object.
+     * @return the value
+     **/
     public ProblemType getProblemType() {
         return problemType;
     }
@@ -247,6 +310,10 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
     private final Integer referenceCount;
 
+    /**
+     * The number of the times the object is referenced within the SQL Tuning advisor task findings.
+     * @return the value
+     **/
     public Integer getReferenceCount() {
         return referenceCount;
     }

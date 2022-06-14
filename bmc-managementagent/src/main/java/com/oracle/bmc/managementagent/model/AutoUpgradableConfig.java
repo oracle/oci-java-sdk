@@ -29,9 +29,17 @@ public final class AutoUpgradableConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * true if the agents can be upgraded automatically; false if they must be upgraded manually.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
         private Boolean isAgentAutoUpgradable;
 
+        /**
+         * true if the agents can be upgraded automatically; false if they must be upgraded manually.
+         * @param isAgentAutoUpgradable the value to set
+         * @return this builder
+         **/
         public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
             this.isAgentAutoUpgradable = isAgentAutoUpgradable;
             this.__explicitlySet__.add("isAgentAutoUpgradable");
@@ -73,6 +81,10 @@ public final class AutoUpgradableConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
     private final Boolean isAgentAutoUpgradable;
 
+    /**
+     * true if the agents can be upgraded automatically; false if they must be upgraded manually.
+     * @return the value
+     **/
     public Boolean getIsAgentAutoUpgradable() {
         return isAgentAutoUpgradable;
     }

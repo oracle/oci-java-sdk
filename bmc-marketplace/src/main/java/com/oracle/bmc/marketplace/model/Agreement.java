@@ -45,54 +45,101 @@ public final class Agreement {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier for the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique identifier for the agreement.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The content URL of the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
         private String contentUrl;
 
+        /**
+         * The content URL of the agreement.
+         * @param contentUrl the value to set
+         * @return this builder
+         **/
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = contentUrl;
             this.__explicitlySet__.add("contentUrl");
             return this;
         }
-
+        /**
+         * A time-based signature that can be used to accept an agreement or remove a
+         * previously accepted agreement from the list that Marketplace checks before a deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signature")
         private String signature;
 
+        /**
+         * A time-based signature that can be used to accept an agreement or remove a
+         * previously accepted agreement from the list that Marketplace checks before a deployment.
+         *
+         * @param signature the value to set
+         * @return this builder
+         **/
         public Builder signature(String signature) {
             this.signature = signature;
             this.__explicitlySet__.add("signature");
             return this;
         }
-
+        /**
+         * The unique identifier for the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The unique identifier for the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Who authored the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("author")
         private Author author;
 
+        /**
+         * Who authored the agreement.
+         * @param author the value to set
+         * @return this builder
+         **/
         public Builder author(Author author) {
             this.author = author;
             this.__explicitlySet__.add("author");
             return this;
         }
-
+        /**
+         * Textual prompt to read and accept the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prompt")
         private String prompt;
 
+        /**
+         * Textual prompt to read and accept the agreement.
+         * @param prompt the value to set
+         * @return this builder
+         **/
         public Builder prompt(String prompt) {
             this.prompt = prompt;
             this.__explicitlySet__.add("prompt");
@@ -141,6 +188,10 @@ public final class Agreement {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique identifier for the agreement.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -151,6 +202,10 @@ public final class Agreement {
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
     private final String contentUrl;
 
+    /**
+     * The content URL of the agreement.
+     * @return the value
+     **/
     public String getContentUrl() {
         return contentUrl;
     }
@@ -163,6 +218,12 @@ public final class Agreement {
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
     private final String signature;
 
+    /**
+     * A time-based signature that can be used to accept an agreement or remove a
+     * previously accepted agreement from the list that Marketplace checks before a deployment.
+     *
+     * @return the value
+     **/
     public String getSignature() {
         return signature;
     }
@@ -173,6 +234,10 @@ public final class Agreement {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The unique identifier for the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -230,6 +295,10 @@ public final class Agreement {
     @com.fasterxml.jackson.annotation.JsonProperty("author")
     private final Author author;
 
+    /**
+     * Who authored the agreement.
+     * @return the value
+     **/
     public Author getAuthor() {
         return author;
     }
@@ -240,6 +309,10 @@ public final class Agreement {
     @com.fasterxml.jackson.annotation.JsonProperty("prompt")
     private final String prompt;
 
+    /**
+     * Textual prompt to read and accept the agreement.
+     * @return the value
+     **/
     public String getPrompt() {
         return prompt;
     }

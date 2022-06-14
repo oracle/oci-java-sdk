@@ -45,54 +45,101 @@ public final class InstanceMetrics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The hostname of the database insight resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * The hostname of the database insight resource.
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * The instance name of the database insight resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
         private String instanceName;
 
+        /**
+         * The instance name of the database insight resource.
+         * @param instanceName the value to set
+         * @return this builder
+         **/
         public Builder instanceName(String instanceName) {
             this.instanceName = instanceName;
             this.__explicitlySet__.add("instanceName");
             return this;
         }
-
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         * @param usage the value to set
+         * @return this builder
+         **/
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
             return this;
         }
-
+        /**
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
+        /**
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         * @param capacity the value to set
+         * @return this builder
+         **/
         public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
             return this;
         }
-
+        /**
+         * Resource utilization in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
         private Double utilizationPercent;
 
+        /**
+         * Resource utilization in percentage
+         * @param utilizationPercent the value to set
+         * @return this builder
+         **/
         public Builder utilizationPercent(Double utilizationPercent) {
             this.utilizationPercent = utilizationPercent;
             this.__explicitlySet__.add("utilizationPercent");
             return this;
         }
-
+        /**
+         * Change in resource utilization in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
         private Double usageChangePercent;
 
+        /**
+         * Change in resource utilization in percentage
+         * @param usageChangePercent the value to set
+         * @return this builder
+         **/
         public Builder usageChangePercent(Double usageChangePercent) {
             this.usageChangePercent = usageChangePercent;
             this.__explicitlySet__.add("usageChangePercent");
@@ -147,6 +194,10 @@ public final class InstanceMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * The hostname of the database insight resource.
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -157,6 +208,10 @@ public final class InstanceMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
     private final String instanceName;
 
+    /**
+     * The instance name of the database insight resource.
+     * @return the value
+     **/
     public String getInstanceName() {
         return instanceName;
     }
@@ -168,6 +223,11 @@ public final class InstanceMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
+    /**
+     * Total amount used of the resource metric type (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getUsage() {
         return usage;
     }
@@ -179,6 +239,11 @@ public final class InstanceMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
+    /**
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getCapacity() {
         return capacity;
     }
@@ -189,6 +254,10 @@ public final class InstanceMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
     private final Double utilizationPercent;
 
+    /**
+     * Resource utilization in percentage
+     * @return the value
+     **/
     public Double getUtilizationPercent() {
         return utilizationPercent;
     }
@@ -199,6 +268,10 @@ public final class InstanceMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
     private final Double usageChangePercent;
 
+    /**
+     * Change in resource utilization in percentage
+     * @return the value
+     **/
     public Double getUsageChangePercent() {
         return usageChangePercent;
     }

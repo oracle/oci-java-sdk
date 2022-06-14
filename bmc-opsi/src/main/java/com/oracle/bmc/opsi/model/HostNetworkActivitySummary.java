@@ -36,28 +36,49 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * All network interfaces read rate in Mbps
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkReadInMbps")
         private Double allNetworkReadInMbps;
 
+        /**
+         * All network interfaces read rate in Mbps
+         * @param allNetworkReadInMbps the value to set
+         * @return this builder
+         **/
         public Builder allNetworkReadInMbps(Double allNetworkReadInMbps) {
             this.allNetworkReadInMbps = allNetworkReadInMbps;
             this.__explicitlySet__.add("allNetworkReadInMbps");
             return this;
         }
-
+        /**
+         * All network interfaces write rate in Mbps
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkWriteInMbps")
         private Double allNetworkWriteInMbps;
 
+        /**
+         * All network interfaces write rate in Mbps
+         * @param allNetworkWriteInMbps the value to set
+         * @return this builder
+         **/
         public Builder allNetworkWriteInMbps(Double allNetworkWriteInMbps) {
             this.allNetworkWriteInMbps = allNetworkWriteInMbps;
             this.__explicitlySet__.add("allNetworkWriteInMbps");
             return this;
         }
-
+        /**
+         * All network interfaces IO rate in Mbps
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkIoInMbps")
         private Double allNetworkIoInMbps;
 
+        /**
+         * All network interfaces IO rate in Mbps
+         * @param allNetworkIoInMbps the value to set
+         * @return this builder
+         **/
         public Builder allNetworkIoInMbps(Double allNetworkIoInMbps) {
             this.allNetworkIoInMbps = allNetworkIoInMbps;
             this.__explicitlySet__.add("allNetworkIoInMbps");
@@ -120,6 +141,10 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("allNetworkReadInMbps")
     private final Double allNetworkReadInMbps;
 
+    /**
+     * All network interfaces read rate in Mbps
+     * @return the value
+     **/
     public Double getAllNetworkReadInMbps() {
         return allNetworkReadInMbps;
     }
@@ -130,6 +155,10 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("allNetworkWriteInMbps")
     private final Double allNetworkWriteInMbps;
 
+    /**
+     * All network interfaces write rate in Mbps
+     * @return the value
+     **/
     public Double getAllNetworkWriteInMbps() {
         return allNetworkWriteInMbps;
     }
@@ -140,6 +169,10 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("allNetworkIoInMbps")
     private final Double allNetworkIoInMbps;
 
+    /**
+     * All network interfaces IO rate in Mbps
+     * @return the value
+     **/
     public Double getAllNetworkIoInMbps() {
         return allNetworkIoInMbps;
     }

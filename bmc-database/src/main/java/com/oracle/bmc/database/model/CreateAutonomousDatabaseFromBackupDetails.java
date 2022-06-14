@@ -374,19 +374,33 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
         private String autonomousDatabaseBackupId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
+         * @param autonomousDatabaseBackupId the value to set
+         * @return this builder
+         **/
         public Builder autonomousDatabaseBackupId(String autonomousDatabaseBackupId) {
             this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
             this.__explicitlySet__.add("autonomousDatabaseBackupId");
             return this;
         }
-
+        /**
+         * The Autonomous Database clone type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
         private CloneType cloneType;
 
+        /**
+         * The Autonomous Database clone type.
+         * @param cloneType the value to set
+         * @return this builder
+         **/
         public Builder cloneType(CloneType cloneType) {
             this.cloneType = cloneType;
             this.__explicitlySet__.add("cloneType");
@@ -596,6 +610,10 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
     private final String autonomousDatabaseBackupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
+     * @return the value
+     **/
     public String getAutonomousDatabaseBackupId() {
         return autonomousDatabaseBackupId;
     }
@@ -641,6 +659,10 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
     @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
     private final CloneType cloneType;
 
+    /**
+     * The Autonomous Database clone type.
+     * @return the value
+     **/
     public CloneType getCloneType() {
         return cloneType;
     }

@@ -33,36 +33,65 @@ public final class CustomPropertyTypeUsage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique type key identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeId")
         private String typeId;
 
+        /**
+         * Unique type key identifier
+         * @param typeId the value to set
+         * @return this builder
+         **/
         public Builder typeId(String typeId) {
             this.typeId = typeId;
             this.__explicitlySet__.add("typeId");
             return this;
         }
-
+        /**
+         * Name of the type associated with
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeName")
         private String typeName;
 
+        /**
+         * Name of the type associated with
+         * @param typeName the value to set
+         * @return this builder
+         **/
         public Builder typeName(String typeName) {
             this.typeName = typeName;
             this.__explicitlySet__.add("typeName");
             return this;
         }
-
+        /**
+         * Number of objects associated with this type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * Number of objects associated with this type
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-
+        /**
+         * If an OCI Event will be emitted when the custom property is modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
         private Boolean isEventEnabled;
 
+        /**
+         * If an OCI Event will be emitted when the custom property is modified.
+         * @param isEventEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEventEnabled(Boolean isEventEnabled) {
             this.isEventEnabled = isEventEnabled;
             this.__explicitlySet__.add("isEventEnabled");
@@ -109,6 +138,10 @@ public final class CustomPropertyTypeUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("typeId")
     private final String typeId;
 
+    /**
+     * Unique type key identifier
+     * @return the value
+     **/
     public String getTypeId() {
         return typeId;
     }
@@ -119,6 +152,10 @@ public final class CustomPropertyTypeUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     private final String typeName;
 
+    /**
+     * Name of the type associated with
+     * @return the value
+     **/
     public String getTypeName() {
         return typeName;
     }
@@ -129,6 +166,10 @@ public final class CustomPropertyTypeUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * Number of objects associated with this type
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }
@@ -139,6 +180,10 @@ public final class CustomPropertyTypeUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
     private final Boolean isEventEnabled;
 
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     * @return the value
+     **/
     public Boolean getIsEventEnabled() {
         return isEventEnabled;
     }

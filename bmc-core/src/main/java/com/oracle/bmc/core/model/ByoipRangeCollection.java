@@ -29,9 +29,17 @@ public final class ByoipRangeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of {@code ByoipRange} resource summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ByoipRangeSummary> items;
 
+        /**
+         * A list of {@code ByoipRange} resource summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ByoipRangeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ByoipRangeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ByoipRangeSummary> items;
 
+    /**
+     * A list of {@code ByoipRange} resource summaries.
+     * @return the value
+     **/
     public java.util.List<ByoipRangeSummary> getItems() {
         return items;
     }

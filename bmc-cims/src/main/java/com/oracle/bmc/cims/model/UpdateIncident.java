@@ -27,6 +27,7 @@ public final class UpdateIncident {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("ticket")
         private UpdateTicketDetails ticket;
 

@@ -16,6 +16,9 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String jobId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+     */
     public String getJobId() {
         return jobId;
     }
@@ -29,6 +32,14 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -38,6 +49,10 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +61,9 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Boolean deleteRelatedJobRuns;
 
+    /**
+     * Delete all JobRuns associated with this job.
+     */
     public Boolean getDeleteRelatedJobRuns() {
         return deleteRelatedJobRuns;
     }
@@ -57,10 +75,14 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         */
         private String jobId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         * @param jobId the value to set
          * @return this builder instance
          */
         public Builder jobId(String jobId) {
@@ -68,6 +90,14 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -77,6 +107,7 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -84,11 +115,16 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -96,10 +132,14 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Delete all JobRuns associated with this job.
+         */
         private Boolean deleteRelatedJobRuns = null;
 
         /**
          * Delete all JobRuns associated with this job.
+         * @param deleteRelatedJobRuns the value to set
          * @return this builder instance
          */
         public Builder deleteRelatedJobRuns(Boolean deleteRelatedJobRuns) {
@@ -181,7 +221,8 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +232,10 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .deleteRelatedJobRuns(deleteRelatedJobRuns);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

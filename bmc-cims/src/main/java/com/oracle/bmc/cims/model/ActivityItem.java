@@ -69,46 +69,81 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("issueType");
             return this;
         }
-
+        /**
+         * Comments added with the activity on the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comments")
         private String comments;
 
+        /**
+         * Comments added with the activity on the support ticket.
+         * @param comments the value to set
+         * @return this builder
+         **/
         public Builder comments(String comments) {
             this.comments = comments;
             this.__explicitlySet__.add("comments");
             return this;
         }
-
+        /**
+         * The time when the activity was created, in milliseconds since epoch time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private Integer timeCreated;
 
+        /**
+         * The time when the activity was created, in milliseconds since epoch time.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(Integer timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time when the activity was updated, in milliseconds since epoch time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private Integer timeUpdated;
 
+        /**
+         * The time when the activity was updated, in milliseconds since epoch time.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(Integer timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The type of activity occuring on the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activityType")
         private ActivityType activityType;
 
+        /**
+         * The type of activity occuring on the support ticket.
+         * @param activityType the value to set
+         * @return this builder
+         **/
         public Builder activityType(ActivityType activityType) {
             this.activityType = activityType;
             this.__explicitlySet__.add("activityType");
             return this;
         }
-
+        /**
+         * The person who updates the activity on the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activityAuthor")
         private ActivityAuthor activityAuthor;
 
+        /**
+         * The person who updates the activity on the support ticket.
+         * @param activityAuthor the value to set
+         * @return this builder
+         **/
         public Builder activityAuthor(ActivityAuthor activityAuthor) {
             this.activityAuthor = activityAuthor;
             this.__explicitlySet__.add("activityAuthor");
@@ -191,6 +226,10 @@ public final class ActivityItem extends Item {
     @com.fasterxml.jackson.annotation.JsonProperty("comments")
     private final String comments;
 
+    /**
+     * Comments added with the activity on the support ticket.
+     * @return the value
+     **/
     public String getComments() {
         return comments;
     }
@@ -201,6 +240,10 @@ public final class ActivityItem extends Item {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final Integer timeCreated;
 
+    /**
+     * The time when the activity was created, in milliseconds since epoch time.
+     * @return the value
+     **/
     public Integer getTimeCreated() {
         return timeCreated;
     }
@@ -211,6 +254,10 @@ public final class ActivityItem extends Item {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final Integer timeUpdated;
 
+    /**
+     * The time when the activity was updated, in milliseconds since epoch time.
+     * @return the value
+     **/
     public Integer getTimeUpdated() {
         return timeUpdated;
     }
@@ -271,6 +318,10 @@ public final class ActivityItem extends Item {
     @com.fasterxml.jackson.annotation.JsonProperty("activityType")
     private final ActivityType activityType;
 
+    /**
+     * The type of activity occuring on the support ticket.
+     * @return the value
+     **/
     public ActivityType getActivityType() {
         return activityType;
     }
@@ -329,6 +380,10 @@ public final class ActivityItem extends Item {
     @com.fasterxml.jackson.annotation.JsonProperty("activityAuthor")
     private final ActivityAuthor activityAuthor;
 
+    /**
+     * The person who updates the activity on the support ticket.
+     * @return the value
+     **/
     public ActivityAuthor getActivityAuthor() {
         return activityAuthor;
     }

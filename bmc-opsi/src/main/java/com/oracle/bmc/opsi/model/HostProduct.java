@@ -34,28 +34,49 @@ public final class HostProduct extends HostConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Vendor of the product
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendor")
         private String vendor;
 
+        /**
+         * Vendor of the product
+         * @param vendor the value to set
+         * @return this builder
+         **/
         public Builder vendor(String vendor) {
             this.vendor = vendor;
             this.__explicitlySet__.add("vendor");
             return this;
         }
-
+        /**
+         * Name of the product
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the product
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Version of the product
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Version of the product
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -109,6 +130,10 @@ public final class HostProduct extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("vendor")
     private final String vendor;
 
+    /**
+     * Vendor of the product
+     * @return the value
+     **/
     public String getVendor() {
         return vendor;
     }
@@ -119,6 +144,10 @@ public final class HostProduct extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the product
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -129,6 +158,10 @@ public final class HostProduct extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Version of the product
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

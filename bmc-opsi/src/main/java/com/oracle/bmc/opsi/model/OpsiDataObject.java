@@ -62,6 +62,10 @@ public class OpsiDataObject {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * Unique identifier of OPSI data object.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -72,6 +76,10 @@ public class OpsiDataObject {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * User-friendly name of OPSI data object.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -82,6 +90,10 @@ public class OpsiDataObject {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of OPSI data object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -92,6 +104,10 @@ public class OpsiDataObject {
     @com.fasterxml.jackson.annotation.JsonProperty("columnsMetadata")
     private final java.util.List<DataObjectColumnMetadata> columnsMetadata;
 
+    /**
+     * Metadata of columns in a data object.
+     * @return the value
+     **/
     public java.util.List<DataObjectColumnMetadata> getColumnsMetadata() {
         return columnsMetadata;
     }

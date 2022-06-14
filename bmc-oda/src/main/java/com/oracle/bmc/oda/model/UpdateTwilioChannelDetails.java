@@ -64,55 +64,97 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The Account SID for the Twilio number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountSID")
         private String accountSID;
 
+        /**
+         * The Account SID for the Twilio number.
+         * @param accountSID the value to set
+         * @return this builder
+         **/
         public Builder accountSID(String accountSID) {
             this.accountSID = accountSID;
             this.__explicitlySet__.add("accountSID");
             return this;
         }
-
+        /**
+         * The Twilio phone number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
         private String phoneNumber;
 
+        /**
+         * The Twilio phone number.
+         * @param phoneNumber the value to set
+         * @return this builder
+         **/
         public Builder phoneNumber(String phoneNumber) {
             this.phoneNumber = phoneNumber;
             this.__explicitlySet__.add("phoneNumber");
             return this;
         }
-
+        /**
+         * The Auth Token for the Twilio number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authToken")
         private String authToken;
 
+        /**
+         * The Auth Token for the Twilio number.
+         * @param authToken the value to set
+         * @return this builder
+         **/
         public Builder authToken(String authToken) {
             this.authToken = authToken;
             this.__explicitlySet__.add("authToken");
             return this;
         }
-
+        /**
+         * Whether MMS is enabled for this channel or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMmsEnabled")
         private Boolean isMmsEnabled;
 
+        /**
+         * Whether MMS is enabled for this channel or not.
+         * @param isMmsEnabled the value to set
+         * @return this builder
+         **/
         public Builder isMmsEnabled(Boolean isMmsEnabled) {
             this.isMmsEnabled = isMmsEnabled;
             this.__explicitlySet__.add("isMmsEnabled");
             return this;
         }
-
+        /**
+         * The original connectors URL (used for backward compatibility).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originalConnectorsUrl")
         private String originalConnectorsUrl;
 
+        /**
+         * The original connectors URL (used for backward compatibility).
+         * @param originalConnectorsUrl the value to set
+         * @return this builder
+         **/
         public Builder originalConnectorsUrl(String originalConnectorsUrl) {
             this.originalConnectorsUrl = originalConnectorsUrl;
             this.__explicitlySet__.add("originalConnectorsUrl");
             return this;
         }
-
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         * @param botId the value to set
+         * @return this builder
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -197,6 +239,10 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("accountSID")
     private final String accountSID;
 
+    /**
+     * The Account SID for the Twilio number.
+     * @return the value
+     **/
     public String getAccountSID() {
         return accountSID;
     }
@@ -207,6 +253,10 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
     private final String phoneNumber;
 
+    /**
+     * The Twilio phone number.
+     * @return the value
+     **/
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -217,6 +267,10 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
     private final String authToken;
 
+    /**
+     * The Auth Token for the Twilio number.
+     * @return the value
+     **/
     public String getAuthToken() {
         return authToken;
     }
@@ -227,6 +281,10 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isMmsEnabled")
     private final Boolean isMmsEnabled;
 
+    /**
+     * Whether MMS is enabled for this channel or not.
+     * @return the value
+     **/
     public Boolean getIsMmsEnabled() {
         return isMmsEnabled;
     }
@@ -237,6 +295,10 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("originalConnectorsUrl")
     private final String originalConnectorsUrl;
 
+    /**
+     * The original connectors URL (used for backward compatibility).
+     * @return the value
+     **/
     public String getOriginalConnectorsUrl() {
         return originalConnectorsUrl;
     }
@@ -247,6 +309,10 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     * @return the value
+     **/
     public String getBotId() {
         return botId;
     }

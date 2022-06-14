@@ -27,18 +27,33 @@ package com.oracle.bmc.devops.model;
 public final class PrivateEndpointChannel extends NetworkChannel {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the subnet where VNIC resources will be created for private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of the subnet where VNIC resources will be created for private endpoint.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * An array of network security group OCIDs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * An array of network security group OCIDs.
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -87,6 +102,10 @@ public final class PrivateEndpointChannel extends NetworkChannel {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of the subnet where VNIC resources will be created for private endpoint.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -97,6 +116,10 @@ public final class PrivateEndpointChannel extends NetworkChannel {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * An array of network security group OCIDs.
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }

@@ -17,6 +17,9 @@ public class SummarizeAnnotationAnalyticsRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class SummarizeAnnotationAnalyticsRequest
      */
     private String datasetId;
 
+    /**
+     * Filter the results by the OCID of the dataset.
+     */
     public String getDatasetId() {
         return datasetId;
     }
@@ -34,6 +40,9 @@ public class SummarizeAnnotationAnalyticsRequest
     private com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
             lifecycleState;
 
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -43,6 +52,9 @@ public class SummarizeAnnotationAnalyticsRequest
      */
     private String label;
 
+    /**
+     * It summarizes annotations with the specified label.
+     */
     public String getLabel() {
         return label;
     }
@@ -51,6 +63,9 @@ public class SummarizeAnnotationAnalyticsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -59,6 +74,9 @@ public class SummarizeAnnotationAnalyticsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -67,6 +85,9 @@ public class SummarizeAnnotationAnalyticsRequest
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.datalabelingservicedataplane.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -112,6 +133,9 @@ public class SummarizeAnnotationAnalyticsRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, updatedBy is used by default.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -156,6 +180,9 @@ public class SummarizeAnnotationAnalyticsRequest
         }
     };
 
+    /**
+     * The field to group by. If no value is specified, updatedBy is used by default.
+     */
     public AnnotationGroupBy getAnnotationGroupBy() {
         return annotationGroupBy;
     }
@@ -164,6 +191,9 @@ public class SummarizeAnnotationAnalyticsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -175,10 +205,14 @@ public class SummarizeAnnotationAnalyticsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -186,10 +220,14 @@ public class SummarizeAnnotationAnalyticsRequest
             return this;
         }
 
+        /**
+         * Filter the results by the OCID of the dataset.
+         */
         private String datasetId = null;
 
         /**
          * Filter the results by the OCID of the dataset.
+         * @param datasetId the value to set
          * @return this builder instance
          */
         public Builder datasetId(String datasetId) {
@@ -197,11 +235,15 @@ public class SummarizeAnnotationAnalyticsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         */
         private com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
                 lifecycleState = null;
 
         /**
          * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -211,10 +253,14 @@ public class SummarizeAnnotationAnalyticsRequest
             return this;
         }
 
+        /**
+         * It summarizes annotations with the specified label.
+         */
         private String label = null;
 
         /**
          * It summarizes annotations with the specified label.
+         * @param label the value to set
          * @return this builder instance
          */
         public Builder label(String label) {
@@ -222,10 +268,14 @@ public class SummarizeAnnotationAnalyticsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -233,10 +283,14 @@ public class SummarizeAnnotationAnalyticsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -244,10 +298,14 @@ public class SummarizeAnnotationAnalyticsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(
@@ -256,10 +314,14 @@ public class SummarizeAnnotationAnalyticsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, updatedBy is used by default.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, updatedBy is used by default.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -267,10 +329,14 @@ public class SummarizeAnnotationAnalyticsRequest
             return this;
         }
 
+        /**
+         * The field to group by. If no value is specified, updatedBy is used by default.
+         */
         private AnnotationGroupBy annotationGroupBy = null;
 
         /**
          * The field to group by. If no value is specified, updatedBy is used by default.
+         * @param annotationGroupBy the value to set
          * @return this builder instance
          */
         public Builder annotationGroupBy(AnnotationGroupBy annotationGroupBy) {
@@ -278,10 +344,14 @@ public class SummarizeAnnotationAnalyticsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -375,7 +445,8 @@ public class SummarizeAnnotationAnalyticsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -391,6 +462,10 @@ public class SummarizeAnnotationAnalyticsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

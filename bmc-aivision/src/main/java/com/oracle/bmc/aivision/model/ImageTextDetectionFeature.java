@@ -27,9 +27,17 @@ package com.oracle.bmc.aivision.model;
 public final class ImageTextDetectionFeature extends ImageFeature {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The language of the document image, abbreviated according to ISO 639-2.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("language")
         private DocumentLanguage language;
 
+        /**
+         * The language of the document image, abbreviated according to ISO 639-2.
+         * @param language the value to set
+         * @return this builder
+         **/
         public Builder language(DocumentLanguage language) {
             this.language = language;
             this.__explicitlySet__.add("language");
@@ -77,6 +85,10 @@ public final class ImageTextDetectionFeature extends ImageFeature {
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     private final DocumentLanguage language;
 
+    /**
+     * The language of the document image, abbreviated according to ISO 639-2.
+     * @return the value
+     **/
     public DocumentLanguage getLanguage() {
         return language;
     }

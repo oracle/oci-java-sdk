@@ -29,9 +29,17 @@ public final class CrossConnectMappingDetailsCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * CrossConnectMappingDetails items
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<CrossConnectMappingDetails> items;
 
+        /**
+         * CrossConnectMappingDetails items
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<CrossConnectMappingDetails> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class CrossConnectMappingDetailsCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<CrossConnectMappingDetails> items;
 
+    /**
+     * CrossConnectMappingDetails items
+     * @return the value
+     **/
     public java.util.List<CrossConnectMappingDetails> getItems() {
         return items;
     }

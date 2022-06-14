@@ -50,64 +50,160 @@ public final class CreatePublicIpDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs,
+         * you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs,
+         * you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defines when the public IP is deleted and released back to the Oracle Cloud
+         * Infrastructure public IP pool. For more information, see
+         * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
         private Lifetime lifetime;
 
+        /**
+         * Defines when the public IP is deleted and released back to the Oracle Cloud
+         * Infrastructure public IP pool. For more information, see
+         * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         *
+         * @param lifetime the value to set
+         * @return this builder
+         **/
         public Builder lifetime(Lifetime lifetime) {
             this.lifetime = lifetime;
             this.__explicitlySet__.add("lifetime");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
+         * <p>
+         * Required for an ephemeral public IP because it must always be assigned to a private IP
+         * (specifically a *primary* private IP).
+         * <p>
+         * Optional for a reserved public IP. If you don't provide it, the public IP is created but not
+         * assigned to a private IP. You can later assign the public IP with
+         * {@link #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
         private String privateIpId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
+         * <p>
+         * Required for an ephemeral public IP because it must always be assigned to a private IP
+         * (specifically a *primary* private IP).
+         * <p>
+         * Optional for a reserved public IP. If you don't provide it, the public IP is created but not
+         * assigned to a private IP. You can later assign the public IP with
+         * {@link #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
+         *
+         * @param privateIpId the value to set
+         * @return this builder
+         **/
         public Builder privateIpId(String privateIpId) {
             this.privateIpId = privateIpId;
             this.__explicitlySet__.add("privateIpId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
         private String publicIpPoolId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         * @param publicIpPoolId the value to set
+         * @return this builder
+         **/
         public Builder publicIpPoolId(String publicIpPoolId) {
             this.publicIpPoolId = publicIpPoolId;
             this.__explicitlySet__.add("publicIpPoolId");
@@ -166,6 +262,12 @@ public final class CreatePublicIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs,
+     * you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -180,6 +282,14 @@ public final class CreatePublicIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -192,6 +302,12 @@ public final class CreatePublicIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -206,6 +322,14 @@ public final class CreatePublicIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -257,6 +381,13 @@ public final class CreatePublicIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
     private final Lifetime lifetime;
 
+    /**
+     * Defines when the public IP is deleted and released back to the Oracle Cloud
+     * Infrastructure public IP pool. For more information, see
+     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     *
+     * @return the value
+     **/
     public Lifetime getLifetime() {
         return lifetime;
     }
@@ -275,6 +406,18 @@ public final class CreatePublicIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
     private final String privateIpId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
+     * <p>
+     * Required for an ephemeral public IP because it must always be assigned to a private IP
+     * (specifically a *primary* private IP).
+     * <p>
+     * Optional for a reserved public IP. If you don't provide it, the public IP is created but not
+     * assigned to a private IP. You can later assign the public IP with
+     * {@link #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
+     *
+     * @return the value
+     **/
     public String getPrivateIpId() {
         return privateIpId;
     }
@@ -285,6 +428,10 @@ public final class CreatePublicIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     private final String publicIpPoolId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+     * @return the value
+     **/
     public String getPublicIpPoolId() {
         return publicIpPoolId;
     }

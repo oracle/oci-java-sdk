@@ -42,45 +42,81 @@ public final class Order {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Immutable and unique order number holding customer subscription information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
         private String orderNumber;
 
+        /**
+         * Immutable and unique order number holding customer subscription information.
+         * @param orderNumber the value to set
+         * @return this builder
+         **/
         public Builder orderNumber(String orderNumber) {
             this.orderNumber = orderNumber;
             this.__explicitlySet__.add("orderNumber");
             return this;
         }
-
+        /**
+         * Order's data center region.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenterRegion")
         private String dataCenterRegion;
 
+        /**
+         * Order's data center region.
+         * @param dataCenterRegion the value to set
+         * @return this builder
+         **/
         public Builder dataCenterRegion(String dataCenterRegion) {
             this.dataCenterRegion = dataCenterRegion;
             this.__explicitlySet__.add("dataCenterRegion");
             return this;
         }
-
+        /**
+         * Administrator email owning the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
         private String adminEmail;
 
+        /**
+         * Administrator email owning the subscription.
+         * @param adminEmail the value to set
+         * @return this builder
+         **/
         public Builder adminEmail(String adminEmail) {
             this.adminEmail = adminEmail;
             this.__explicitlySet__.add("adminEmail");
             return this;
         }
-
+        /**
+         * State of the order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("orderState")
         private String orderState;
 
+        /**
+         * State of the order.
+         * @param orderState the value to set
+         * @return this builder
+         **/
         public Builder orderState(String orderState) {
             this.orderState = orderState;
             this.__explicitlySet__.add("orderState");
             return this;
         }
-
+        /**
+         * Array of subscriptions associated with the order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptions")
         private java.util.List<SubscriptionInfo> subscriptions;
 
+        /**
+         * Array of subscriptions associated with the order.
+         * @param subscriptions the value to set
+         * @return this builder
+         **/
         public Builder subscriptions(java.util.List<SubscriptionInfo> subscriptions) {
             this.subscriptions = subscriptions;
             this.__explicitlySet__.add("subscriptions");
@@ -128,6 +164,10 @@ public final class Order {
     @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
     private final String orderNumber;
 
+    /**
+     * Immutable and unique order number holding customer subscription information.
+     * @return the value
+     **/
     public String getOrderNumber() {
         return orderNumber;
     }
@@ -138,6 +178,10 @@ public final class Order {
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenterRegion")
     private final String dataCenterRegion;
 
+    /**
+     * Order's data center region.
+     * @return the value
+     **/
     public String getDataCenterRegion() {
         return dataCenterRegion;
     }
@@ -148,6 +192,10 @@ public final class Order {
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     private final String adminEmail;
 
+    /**
+     * Administrator email owning the subscription.
+     * @return the value
+     **/
     public String getAdminEmail() {
         return adminEmail;
     }
@@ -158,6 +206,10 @@ public final class Order {
     @com.fasterxml.jackson.annotation.JsonProperty("orderState")
     private final String orderState;
 
+    /**
+     * State of the order.
+     * @return the value
+     **/
     public String getOrderState() {
         return orderState;
     }
@@ -168,6 +220,10 @@ public final class Order {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptions")
     private final java.util.List<SubscriptionInfo> subscriptions;
 
+    /**
+     * Array of subscriptions associated with the order.
+     * @return the value
+     **/
     public java.util.List<SubscriptionInfo> getSubscriptions() {
         return subscriptions;
     }

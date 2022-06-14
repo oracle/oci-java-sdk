@@ -50,54 +50,97 @@ public final class LogAnalyticsParserFunctionParameter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The parser function unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
         private Long parserFunctionId;
 
+        /**
+         * The parser function unique identifier.
+         * @param parserFunctionId the value to set
+         * @return this builder
+         **/
         public Builder parserFunctionId(Long parserFunctionId) {
             this.parserFunctionId = parserFunctionId;
             this.__explicitlySet__.add("parserFunctionId");
             return this;
         }
-
+        /**
+         * The internal name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterName")
         private String parserFunctionParameterName;
 
+        /**
+         * The internal name
+         * @param parserFunctionParameterName the value to set
+         * @return this builder
+         **/
         public Builder parserFunctionParameterName(String parserFunctionParameterName) {
             this.parserFunctionParameterName = parserFunctionParameterName;
             this.__explicitlySet__.add("parserFunctionParameterName");
             return this;
         }
-
+        /**
+         * The parameter unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterId")
         private Long parserFunctionParameterId;
 
+        /**
+         * The parameter unique identifier.
+         * @param parserFunctionParameterId the value to set
+         * @return this builder
+         **/
         public Builder parserFunctionParameterId(Long parserFunctionParameterId) {
             this.parserFunctionParameterId = parserFunctionParameterId;
             this.__explicitlySet__.add("parserFunctionParameterId");
             return this;
         }
-
+        /**
+         * The parameter internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterName")
         private String parserMetaPluginParameterName;
 
+        /**
+         * The parameter internal name.
+         * @param parserMetaPluginParameterName the value to set
+         * @return this builder
+         **/
         public Builder parserMetaPluginParameterName(String parserMetaPluginParameterName) {
             this.parserMetaPluginParameterName = parserMetaPluginParameterName;
             this.__explicitlySet__.add("parserMetaPluginParameterName");
             return this;
         }
-
+        /**
+         * The parameter value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterValue")
         private String parserMetaPluginParameterValue;
 
+        /**
+         * The parameter value.
+         * @param parserMetaPluginParameterValue the value to set
+         * @return this builder
+         **/
         public Builder parserMetaPluginParameterValue(String parserMetaPluginParameterValue) {
             this.parserMetaPluginParameterValue = parserMetaPluginParameterValue;
             this.__explicitlySet__.add("parserMetaPluginParameterValue");
             return this;
         }
-
+        /**
+         * The parser internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserName")
         private String parserName;
 
+        /**
+         * The parser internal name.
+         * @param parserName the value to set
+         * @return this builder
+         **/
         public Builder parserName(String parserName) {
             this.parserName = parserName;
             this.__explicitlySet__.add("parserName");
@@ -164,6 +207,10 @@ public final class LogAnalyticsParserFunctionParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
     private final Long parserFunctionId;
 
+    /**
+     * The parser function unique identifier.
+     * @return the value
+     **/
     public Long getParserFunctionId() {
         return parserFunctionId;
     }
@@ -174,6 +221,10 @@ public final class LogAnalyticsParserFunctionParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterName")
     private final String parserFunctionParameterName;
 
+    /**
+     * The internal name
+     * @return the value
+     **/
     public String getParserFunctionParameterName() {
         return parserFunctionParameterName;
     }
@@ -184,6 +235,10 @@ public final class LogAnalyticsParserFunctionParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterId")
     private final Long parserFunctionParameterId;
 
+    /**
+     * The parameter unique identifier.
+     * @return the value
+     **/
     public Long getParserFunctionParameterId() {
         return parserFunctionParameterId;
     }
@@ -194,6 +249,10 @@ public final class LogAnalyticsParserFunctionParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterName")
     private final String parserMetaPluginParameterName;
 
+    /**
+     * The parameter internal name.
+     * @return the value
+     **/
     public String getParserMetaPluginParameterName() {
         return parserMetaPluginParameterName;
     }
@@ -204,6 +263,10 @@ public final class LogAnalyticsParserFunctionParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterValue")
     private final String parserMetaPluginParameterValue;
 
+    /**
+     * The parameter value.
+     * @return the value
+     **/
     public String getParserMetaPluginParameterValue() {
         return parserMetaPluginParameterValue;
     }
@@ -214,6 +277,10 @@ public final class LogAnalyticsParserFunctionParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
     private final String parserName;
 
+    /**
+     * The parser internal name.
+     * @return the value
+     **/
     public String getParserName() {
         return parserName;
     }

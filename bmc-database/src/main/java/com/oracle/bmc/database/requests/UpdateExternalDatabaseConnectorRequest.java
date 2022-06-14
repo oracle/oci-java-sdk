@@ -20,6 +20,11 @@ public class UpdateExternalDatabaseConnectorRequest
      */
     private String externalDatabaseConnectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * external database connector resource ({@code ExternalDatabaseConnectorId}).
+     *
+     */
     public String getExternalDatabaseConnectorId() {
         return externalDatabaseConnectorId;
     }
@@ -29,6 +34,9 @@ public class UpdateExternalDatabaseConnectorRequest
     private com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails
             updateExternalDatabaseConnectorDetails;
 
+    /**
+     * Request to update the properties of an external database connector.
+     */
     public com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails
             getUpdateExternalDatabaseConnectorDetails() {
         return updateExternalDatabaseConnectorDetails;
@@ -41,6 +49,12 @@ public class UpdateExternalDatabaseConnectorRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +64,10 @@ public class UpdateExternalDatabaseConnectorRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -72,12 +90,18 @@ public class UpdateExternalDatabaseConnectorRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * external database connector resource ({@code ExternalDatabaseConnectorId}).
+         *
+         */
         private String externalDatabaseConnectorId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * external database connector resource ({@code ExternalDatabaseConnectorId}).
          *
+         * @param externalDatabaseConnectorId the value to set
          * @return this builder instance
          */
         public Builder externalDatabaseConnectorId(String externalDatabaseConnectorId) {
@@ -85,11 +109,15 @@ public class UpdateExternalDatabaseConnectorRequest
             return this;
         }
 
+        /**
+         * Request to update the properties of an external database connector.
+         */
         private com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails
                 updateExternalDatabaseConnectorDetails = null;
 
         /**
          * Request to update the properties of an external database connector.
+         * @param updateExternalDatabaseConnectorDetails the value to set
          * @return this builder instance
          */
         public Builder updateExternalDatabaseConnectorDetails(
@@ -99,6 +127,12 @@ public class UpdateExternalDatabaseConnectorRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -106,6 +140,7 @@ public class UpdateExternalDatabaseConnectorRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -113,11 +148,16 @@ public class UpdateExternalDatabaseConnectorRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -212,7 +252,8 @@ public class UpdateExternalDatabaseConnectorRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -222,6 +263,10 @@ public class UpdateExternalDatabaseConnectorRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

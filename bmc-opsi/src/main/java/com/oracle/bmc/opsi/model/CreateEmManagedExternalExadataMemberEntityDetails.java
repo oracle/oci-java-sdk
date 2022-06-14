@@ -31,18 +31,33 @@ public final class CreateEmManagedExternalExadataMemberEntityDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
         private String enterpriseManagerEntityIdentifier;
 
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         * @param enterpriseManagerEntityIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
             this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             this.__explicitlySet__.add("enterpriseManagerEntityIdentifier");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -88,6 +103,10 @@ public final class CreateEmManagedExternalExadataMemberEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
     private final String enterpriseManagerEntityIdentifier;
 
+    /**
+     * Enterprise Manager Entity Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityIdentifier() {
         return enterpriseManagerEntityIdentifier;
     }
@@ -98,6 +117,10 @@ public final class CreateEmManagedExternalExadataMemberEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

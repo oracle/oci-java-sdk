@@ -98,28 +98,49 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * An array of input ports.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputPorts")
         private java.util.List<InputPort> inputPorts;
 
+        /**
+         * An array of input ports.
+         * @param inputPorts the value to set
+         * @return this builder
+         **/
         public Builder inputPorts(java.util.List<InputPort> inputPorts) {
             this.inputPorts = inputPorts;
             this.__explicitlySet__.add("inputPorts");
             return this;
         }
-
+        /**
+         * An array of output ports.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
         private java.util.List<OutputPort> outputPorts;
 
+        /**
+         * An array of output ports.
+         * @param outputPorts the value to set
+         * @return this builder
+         **/
         public Builder outputPorts(java.util.List<OutputPort> outputPorts) {
             this.outputPorts = outputPorts;
             this.__explicitlySet__.add("outputPorts");
             return this;
         }
-
+        /**
+         * An array of parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<Parameter> parameters;
 
+        /**
+         * An array of parameters.
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.List<Parameter> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -162,19 +183,33 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
             this.__explicitlySet__.add("conditionalCompositeFieldMap");
             return this;
         }
-
+        /**
+         * If true, defines a singular load.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSingleLoad")
         private Boolean isSingleLoad;
 
+        /**
+         * If true, defines a singular load.
+         * @param isSingleLoad the value to set
+         * @return this builder
+         **/
         public Builder isSingleLoad(Boolean isSingleLoad) {
             this.isSingleLoad = isSingleLoad;
             this.__explicitlySet__.add("isSingleLoad");
             return this;
         }
-
+        /**
+         * If not a singular load, this defines the number of entities being loaded in parallel at a time for a Data Loader task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parallelLoadLimit")
         private Integer parallelLoadLimit;
 
+        /**
+         * If not a singular load, this defines the number of entities being loaded in parallel at a time for a Data Loader task.
+         * @param parallelLoadLimit the value to set
+         * @return this builder
+         **/
         public Builder parallelLoadLimit(Integer parallelLoadLimit) {
             this.parallelLoadLimit = parallelLoadLimit;
             this.__explicitlySet__.add("parallelLoadLimit");
@@ -290,6 +325,10 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("inputPorts")
     private final java.util.List<InputPort> inputPorts;
 
+    /**
+     * An array of input ports.
+     * @return the value
+     **/
     public java.util.List<InputPort> getInputPorts() {
         return inputPorts;
     }
@@ -300,6 +339,10 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
     private final java.util.List<OutputPort> outputPorts;
 
+    /**
+     * An array of output ports.
+     * @return the value
+     **/
     public java.util.List<OutputPort> getOutputPorts() {
         return outputPorts;
     }
@@ -310,6 +353,10 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<Parameter> parameters;
 
+    /**
+     * An array of parameters.
+     * @return the value
+     **/
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }
@@ -348,6 +395,10 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleLoad")
     private final Boolean isSingleLoad;
 
+    /**
+     * If true, defines a singular load.
+     * @return the value
+     **/
     public Boolean getIsSingleLoad() {
         return isSingleLoad;
     }
@@ -358,6 +409,10 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("parallelLoadLimit")
     private final Integer parallelLoadLimit;
 
+    /**
+     * If not a singular load, this defines the number of entities being loaded in parallel at a time for a Data Loader task.
+     * @return the value
+     **/
     public Integer getParallelLoadLimit() {
         return parallelLoadLimit;
     }

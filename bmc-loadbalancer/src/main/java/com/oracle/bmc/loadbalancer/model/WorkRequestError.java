@@ -28,6 +28,7 @@ public final class WorkRequestError {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private ErrorCode errorCode;
 
@@ -36,10 +37,17 @@ public final class WorkRequestError {
             this.__explicitlySet__.add("errorCode");
             return this;
         }
-
+        /**
+         * A human-readable error string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * A human-readable error string.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -136,6 +144,10 @@ public final class WorkRequestError {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A human-readable error string.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }

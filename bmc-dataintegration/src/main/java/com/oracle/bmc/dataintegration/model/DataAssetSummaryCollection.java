@@ -29,9 +29,17 @@ public final class DataAssetSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of data asset summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DataAssetSummary> items;
 
+        /**
+         * The array of data asset summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DataAssetSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class DataAssetSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DataAssetSummary> items;
 
+    /**
+     * The array of data asset summaries.
+     * @return the value
+     **/
     public java.util.List<DataAssetSummary> getItems() {
         return items;
     }

@@ -30,18 +30,47 @@ public final class BulkEditTagsResourceType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique name of the resource type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The unique name of the resource type.
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The metadata keys required to identify the resource.
+         * <p>
+         * For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName", "bucketName"].
+         * This information will match the API documentation.
+         * See [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
+         * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
         private java.util.List<String> metadataKeys;
 
+        /**
+         * The metadata keys required to identify the resource.
+         * <p>
+         * For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName", "bucketName"].
+         * This information will match the API documentation.
+         * See [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
+         * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+         *
+         * @param metadataKeys the value to set
+         * @return this builder
+         **/
         public Builder metadataKeys(java.util.List<String> metadataKeys) {
             this.metadataKeys = metadataKeys;
             this.__explicitlySet__.add("metadataKeys");
@@ -86,6 +115,11 @@ public final class BulkEditTagsResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The unique name of the resource type.
+     *
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -102,6 +136,16 @@ public final class BulkEditTagsResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
     private final java.util.List<String> metadataKeys;
 
+    /**
+     * The metadata keys required to identify the resource.
+     * <p>
+     * For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName", "bucketName"].
+     * This information will match the API documentation.
+     * See [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
+     * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+     *
+     * @return the value
+     **/
     public java.util.List<String> getMetadataKeys() {
         return metadataKeys;
     }

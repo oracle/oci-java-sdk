@@ -16,6 +16,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -24,6 +27,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String applicationKey;
 
+    /**
+     * The application key.
+     */
     public String getApplicationKey() {
         return applicationKey;
     }
@@ -32,6 +38,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<String> key;
 
+    /**
+     * Used to filter by the key of the object.
+     */
     public java.util.List<String> getKey() {
         return key;
     }
@@ -40,6 +49,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String name;
 
+    /**
+     * Used to filter by the name of the object.
+     */
     public String getName() {
         return name;
     }
@@ -48,6 +60,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<String> identifier;
 
+    /**
+     * Used to filter by the identifier of the object.
+     */
     public java.util.List<String> getIdentifier() {
         return identifier;
     }
@@ -56,6 +71,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<String> type;
 
+    /**
+     * Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+     */
     public java.util.List<String> getType() {
         return type;
     }
@@ -64,6 +82,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -72,6 +93,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -116,6 +140,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -160,6 +187,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -171,6 +201,12 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -179,6 +215,9 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean isEnabled;
 
+    /**
+     * This filter parameter can be used to filter task schedule by its state.
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -190,10 +229,14 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -201,10 +244,14 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The application key.
+         */
         private String applicationKey = null;
 
         /**
          * The application key.
+         * @param applicationKey the value to set
          * @return this builder instance
          */
         public Builder applicationKey(String applicationKey) {
@@ -212,10 +259,14 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Used to filter by the key of the object.
+         */
         private java.util.List<String> key = null;
 
         /**
          * Used to filter by the key of the object.
+         * @param key the value to set
          * @return this builder instance
          */
         public Builder key(java.util.List<String> key) {
@@ -225,16 +276,21 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. Used to filter by the key of the object.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder key(String singularValue) {
             return this.key(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Used to filter by the name of the object.
+         */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -242,10 +298,14 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Used to filter by the identifier of the object.
+         */
         private java.util.List<String> identifier = null;
 
         /**
          * Used to filter by the identifier of the object.
+         * @param identifier the value to set
          * @return this builder instance
          */
         public Builder identifier(java.util.List<String> identifier) {
@@ -255,16 +315,21 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. Used to filter by the identifier of the object.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder identifier(String singularValue) {
             return this.identifier(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+         */
         private java.util.List<String> type = null;
 
         /**
          * Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(java.util.List<String> type) {
@@ -274,16 +339,21 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder type(String singularValue) {
             return this.type(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -291,10 +361,14 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -302,10 +376,14 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         */
         private SortBy sortBy = null;
 
         /**
          * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -313,10 +391,14 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -324,6 +406,12 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -331,6 +419,7 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -338,10 +427,14 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * This filter parameter can be used to filter task schedule by its state.
+         */
         private Boolean isEnabled = null;
 
         /**
          * This filter parameter can be used to filter task schedule by its state.
+         * @param isEnabled the value to set
          * @return this builder instance
          */
         public Builder isEnabled(Boolean isEnabled) {
@@ -439,7 +532,8 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -457,6 +551,10 @@ public class ListTaskSchedulesRequest extends com.oracle.bmc.requests.BmcRequest
                 .isEnabled(isEnabled);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

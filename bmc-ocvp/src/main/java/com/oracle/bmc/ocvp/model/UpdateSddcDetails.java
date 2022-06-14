@@ -81,135 +81,323 @@ public final class UpdateSddcDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
+         * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
+         * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The version of bundled VMware software that the Oracle Cloud VMware Solution will
+         * install on any new ESXi hosts that you add to this SDDC in the future.
+         * <p>
+         * For the list of versions supported by the Oracle Cloud VMware Solution, see
+         * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
         private String vmwareSoftwareVersion;
 
+        /**
+         * The version of bundled VMware software that the Oracle Cloud VMware Solution will
+         * install on any new ESXi hosts that you add to this SDDC in the future.
+         * <p>
+         * For the list of versions supported by the Oracle Cloud VMware Solution, see
+         * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}).
+         *
+         * @param vmwareSoftwareVersion the value to set
+         * @return this builder
+         **/
         public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
             this.vmwareSoftwareVersion = vmwareSoftwareVersion;
             this.__explicitlySet__.add("vmwareSoftwareVersion");
             return this;
         }
-
+        /**
+         * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
+         * the default user on each ESXi host, only when adding new ESXi hosts to this SDDC.
+         * Use a newline character to separate multiple keys.
+         * The SSH keys must be in the format required for the {@code authorized_keys} file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
         private String sshAuthorizedKeys;
 
+        /**
+         * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
+         * the default user on each ESXi host, only when adding new ESXi hosts to this SDDC.
+         * Use a newline character to separate multiple keys.
+         * The SSH keys must be in the format required for the {@code authorized_keys} file.
+         *
+         * @param sshAuthorizedKeys the value to set
+         * @return this builder
+         **/
         public Builder sshAuthorizedKeys(String sshAuthorizedKeys) {
             this.sshAuthorizedKeys = sshAuthorizedKeys;
             this.__explicitlySet__.add("sshAuthorizedKeys");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the vSphere component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vsphereVlanId")
         private String vsphereVlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the vSphere component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         * @param vsphereVlanId the value to set
+         * @return this builder
+         **/
         public Builder vsphereVlanId(String vsphereVlanId) {
             this.vsphereVlanId = vsphereVlanId;
             this.__explicitlySet__.add("vsphereVlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the vMotion component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmotionVlanId")
         private String vmotionVlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the vMotion component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         * @param vmotionVlanId the value to set
+         * @return this builder
+         **/
         public Builder vmotionVlanId(String vmotionVlanId) {
             this.vmotionVlanId = vmotionVlanId;
             this.__explicitlySet__.add("vmotionVlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the vSAN component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vsanVlanId")
         private String vsanVlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the vSAN component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         * @param vsanVlanId the value to set
+         * @return this builder
+         **/
         public Builder vsanVlanId(String vsanVlanId) {
             this.vsanVlanId = vsanVlanId;
             this.__explicitlySet__.add("vsanVlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the NSX VTEP component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsxVTepVlanId")
         private String nsxVTepVlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the NSX VTEP component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         * @param nsxVTepVlanId the value to set
+         * @return this builder
+         **/
         public Builder nsxVTepVlanId(String nsxVTepVlanId) {
             this.nsxVTepVlanId = nsxVTepVlanId;
             this.__explicitlySet__.add("nsxVTepVlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the NSX Edge VTEP component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeVTepVlanId")
         private String nsxEdgeVTepVlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the NSX Edge VTEP component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         * @param nsxEdgeVTepVlanId the value to set
+         * @return this builder
+         **/
         public Builder nsxEdgeVTepVlanId(String nsxEdgeVTepVlanId) {
             this.nsxEdgeVTepVlanId = nsxEdgeVTepVlanId;
             this.__explicitlySet__.add("nsxEdgeVTepVlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the NSX Edge Uplink 1 component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink1VlanId")
         private String nsxEdgeUplink1VlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the NSX Edge Uplink 1 component of the VMware environment when adding new ESXi hosts to the SDDC.
+         *
+         * @param nsxEdgeUplink1VlanId the value to set
+         * @return this builder
+         **/
         public Builder nsxEdgeUplink1VlanId(String nsxEdgeUplink1VlanId) {
             this.nsxEdgeUplink1VlanId = nsxEdgeUplink1VlanId;
             this.__explicitlySet__.add("nsxEdgeUplink1VlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the NSX Edge Uplink 2 component of the VMware environment when adding new ESXi hosts to the SDDC.
+         * <p>
+         **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink2VlanId")
         private String nsxEdgeUplink2VlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+         * the NSX Edge Uplink 2 component of the VMware environment when adding new ESXi hosts to the SDDC.
+         * <p>
+         **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+         *
+         * @param nsxEdgeUplink2VlanId the value to set
+         * @return this builder
+         **/
         public Builder nsxEdgeUplink2VlanId(String nsxEdgeUplink2VlanId) {
             this.nsxEdgeUplink2VlanId = nsxEdgeUplink2VlanId;
             this.__explicitlySet__.add("nsxEdgeUplink2VlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * for the vSphere Replication component of the VMware environment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
         private String replicationVlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * for the vSphere Replication component of the VMware environment.
+         *
+         * @param replicationVlanId the value to set
+         * @return this builder
+         **/
         public Builder replicationVlanId(String replicationVlanId) {
             this.replicationVlanId = replicationVlanId;
             this.__explicitlySet__.add("replicationVlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * for the Provisioning component of the VMware environment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
         private String provisioningVlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * for the Provisioning component of the VMware environment.
+         *
+         * @param provisioningVlanId the value to set
+         * @return this builder
+         **/
         public Builder provisioningVlanId(String provisioningVlanId) {
             this.provisioningVlanId = provisioningVlanId;
             this.__explicitlySet__.add("provisioningVlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX
+         * component of the VMware environment when adding new ESXi hosts to the SDDC. This value can be updated only when {@code isHcxEnabled} is true.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
         private String hcxVlanId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX
+         * component of the VMware environment when adding new ESXi hosts to the SDDC. This value can be updated only when {@code isHcxEnabled} is true.
+         *
+         * @param hcxVlanId the value to set
+         * @return this builder
+         **/
         public Builder hcxVlanId(String hcxVlanId) {
             this.hcxVlanId = hcxVlanId;
             this.__explicitlySet__.add("hcxVlanId");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -285,6 +473,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
+     * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -300,6 +494,15 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
     private final String vmwareSoftwareVersion;
 
+    /**
+     * The version of bundled VMware software that the Oracle Cloud VMware Solution will
+     * install on any new ESXi hosts that you add to this SDDC in the future.
+     * <p>
+     * For the list of versions supported by the Oracle Cloud VMware Solution, see
+     * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}).
+     *
+     * @return the value
+     **/
     public String getVmwareSoftwareVersion() {
         return vmwareSoftwareVersion;
     }
@@ -314,6 +517,14 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
     private final String sshAuthorizedKeys;
 
+    /**
+     * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
+     * the default user on each ESXi host, only when adding new ESXi hosts to this SDDC.
+     * Use a newline character to separate multiple keys.
+     * The SSH keys must be in the format required for the {@code authorized_keys} file.
+     *
+     * @return the value
+     **/
     public String getSshAuthorizedKeys() {
         return sshAuthorizedKeys;
     }
@@ -326,6 +537,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vsphereVlanId")
     private final String vsphereVlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+     * the vSphere component of the VMware environment when adding new ESXi hosts to the SDDC.
+     *
+     * @return the value
+     **/
     public String getVsphereVlanId() {
         return vsphereVlanId;
     }
@@ -338,6 +555,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vmotionVlanId")
     private final String vmotionVlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+     * the vMotion component of the VMware environment when adding new ESXi hosts to the SDDC.
+     *
+     * @return the value
+     **/
     public String getVmotionVlanId() {
         return vmotionVlanId;
     }
@@ -350,6 +573,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vsanVlanId")
     private final String vsanVlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+     * the vSAN component of the VMware environment when adding new ESXi hosts to the SDDC.
+     *
+     * @return the value
+     **/
     public String getVsanVlanId() {
         return vsanVlanId;
     }
@@ -362,6 +591,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nsxVTepVlanId")
     private final String nsxVTepVlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+     * the NSX VTEP component of the VMware environment when adding new ESXi hosts to the SDDC.
+     *
+     * @return the value
+     **/
     public String getNsxVTepVlanId() {
         return nsxVTepVlanId;
     }
@@ -374,6 +609,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeVTepVlanId")
     private final String nsxEdgeVTepVlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+     * the NSX Edge VTEP component of the VMware environment when adding new ESXi hosts to the SDDC.
+     *
+     * @return the value
+     **/
     public String getNsxEdgeVTepVlanId() {
         return nsxEdgeVTepVlanId;
     }
@@ -386,6 +627,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink1VlanId")
     private final String nsxEdgeUplink1VlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+     * the NSX Edge Uplink 1 component of the VMware environment when adding new ESXi hosts to the SDDC.
+     *
+     * @return the value
+     **/
     public String getNsxEdgeUplink1VlanId() {
         return nsxEdgeUplink1VlanId;
     }
@@ -400,6 +647,14 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink2VlanId")
     private final String nsxEdgeUplink2VlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for
+     * the NSX Edge Uplink 2 component of the VMware environment when adding new ESXi hosts to the SDDC.
+     * <p>
+     **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+     *
+     * @return the value
+     **/
     public String getNsxEdgeUplink2VlanId() {
         return nsxEdgeUplink2VlanId;
     }
@@ -412,6 +667,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("replicationVlanId")
     private final String replicationVlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * for the vSphere Replication component of the VMware environment.
+     *
+     * @return the value
+     **/
     public String getReplicationVlanId() {
         return replicationVlanId;
     }
@@ -424,6 +685,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
     private final String provisioningVlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * for the Provisioning component of the VMware environment.
+     *
+     * @return the value
+     **/
     public String getProvisioningVlanId() {
         return provisioningVlanId;
     }
@@ -436,6 +703,12 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
     private final String hcxVlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX
+     * component of the VMware environment when adding new ESXi hosts to the SDDC. This value can be updated only when {@code isHcxEnabled} is true.
+     *
+     * @return the value
+     **/
     public String getHcxVlanId() {
         return hcxVlanId;
     }
@@ -450,6 +723,14 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -464,6 +745,14 @@ public final class UpdateSddcDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

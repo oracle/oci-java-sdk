@@ -30,36 +30,81 @@ package com.oracle.bmc.sch.model;
 public final class MonitoringTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The namespace of the metric.
+         * <p>
+         * Example: {@code oci_computeagent}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricNamespace")
         private String metricNamespace;
 
+        /**
+         * The namespace of the metric.
+         * <p>
+         * Example: {@code oci_computeagent}
+         *
+         * @param metricNamespace the value to set
+         * @return this builder
+         **/
         public Builder metricNamespace(String metricNamespace) {
             this.metricNamespace = metricNamespace;
             this.__explicitlySet__.add("metricNamespace");
             return this;
         }
-
+        /**
+         * The name of the metric.
+         * <p>
+         * Example: {@code CpuUtilization}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metric")
         private String metric;
 
+        /**
+         * The name of the metric.
+         * <p>
+         * Example: {@code CpuUtilization}
+         *
+         * @param metric the value to set
+         * @return this builder
+         **/
         public Builder metric(String metric) {
             this.metric = metric;
             this.__explicitlySet__.add("metric");
             return this;
         }
-
+        /**
+         * List of dimension names and values.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<DimensionDetails> dimensions;
 
+        /**
+         * List of dimension names and values.
+         *
+         * @param dimensions the value to set
+         * @return this builder
+         **/
         public Builder dimensions(java.util.List<DimensionDetails> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -120,6 +165,11 @@ public final class MonitoringTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -133,6 +183,13 @@ public final class MonitoringTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metricNamespace")
     private final String metricNamespace;
 
+    /**
+     * The namespace of the metric.
+     * <p>
+     * Example: {@code oci_computeagent}
+     *
+     * @return the value
+     **/
     public String getMetricNamespace() {
         return metricNamespace;
     }
@@ -146,6 +203,13 @@ public final class MonitoringTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metric")
     private final String metric;
 
+    /**
+     * The name of the metric.
+     * <p>
+     * Example: {@code CpuUtilization}
+     *
+     * @return the value
+     **/
     public String getMetric() {
         return metric;
     }
@@ -157,6 +221,11 @@ public final class MonitoringTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<DimensionDetails> dimensions;
 
+    /**
+     * List of dimension names and values.
+     *
+     * @return the value
+     **/
     public java.util.List<DimensionDetails> getDimensions() {
         return dimensions;
     }

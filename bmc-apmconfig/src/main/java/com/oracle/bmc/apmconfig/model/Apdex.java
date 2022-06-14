@@ -64,63 +64,139 @@ public final class Apdex {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The string that defines the Span Filter expression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterText")
         private String filterText;
 
+        /**
+         * The string that defines the Span Filter expression.
+         *
+         * @param filterText the value to set
+         * @return this builder
+         **/
         public Builder filterText(String filterText) {
             this.filterText = filterText;
             this.__explicitlySet__.add("filterText");
             return this;
         }
-
+        /**
+         * The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher
+         * priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are
+         * ignored. Rules within the same rule set cannot have the same priority.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
+        /**
+         * The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher
+         * priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are
+         * ignored. Rules within the same rule set cannot have the same priority.
+         *
+         * @param priority the value to set
+         * @return this builder
+         **/
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
             return this;
         }
-
+        /**
+         * Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable
+         * Apdex score for spans that do not need or require it. The default is "true".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable
+         * Apdex score for spans that do not need or require it. The default is "true".
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The maximum response time in milliseconds that is considered "satisfactory" for the end user.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("satisfiedResponseTime")
         private Integer satisfiedResponseTime;
 
+        /**
+         * The maximum response time in milliseconds that is considered "satisfactory" for the end user.
+         *
+         * @param satisfiedResponseTime the value to set
+         * @return this builder
+         **/
         public Builder satisfiedResponseTime(Integer satisfiedResponseTime) {
             this.satisfiedResponseTime = satisfiedResponseTime;
             this.__explicitlySet__.add("satisfiedResponseTime");
             return this;
         }
-
+        /**
+         * The maximum response time in milliseconds that is considered "tolerable" for the end user. A response
+         * time beyond this threshold is considered "frustrating".
+         * This value cannot be lower than "satisfiedResponseTime".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toleratingResponseTime")
         private Integer toleratingResponseTime;
 
+        /**
+         * The maximum response time in milliseconds that is considered "tolerable" for the end user. A response
+         * time beyond this threshold is considered "frustrating".
+         * This value cannot be lower than "satisfiedResponseTime".
+         *
+         * @param toleratingResponseTime the value to set
+         * @return this builder
+         **/
         public Builder toleratingResponseTime(Integer toleratingResponseTime) {
             this.toleratingResponseTime = toleratingResponseTime;
             this.__explicitlySet__.add("toleratingResponseTime");
             return this;
         }
-
+        /**
+         * Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex
+         * score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex
+         * score to "frustrating" regardless of the configured thresholds. The default is "false".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isApplyToErrorSpans")
         private Boolean isApplyToErrorSpans;
 
+        /**
+         * Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex
+         * score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex
+         * score to "frustrating" regardless of the configured thresholds. The default is "false".
+         *
+         * @param isApplyToErrorSpans the value to set
+         * @return this builder
+         **/
         public Builder isApplyToErrorSpans(Boolean isApplyToErrorSpans) {
             this.isApplyToErrorSpans = isApplyToErrorSpans;
             this.__explicitlySet__.add("isApplyToErrorSpans");
             return this;
         }
-
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -178,6 +254,11 @@ public final class Apdex {
     @com.fasterxml.jackson.annotation.JsonProperty("filterText")
     private final String filterText;
 
+    /**
+     * The string that defines the Span Filter expression.
+     *
+     * @return the value
+     **/
     public String getFilterText() {
         return filterText;
     }
@@ -191,6 +272,13 @@ public final class Apdex {
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
+    /**
+     * The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher
+     * priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are
+     * ignored. Rules within the same rule set cannot have the same priority.
+     *
+     * @return the value
+     **/
     public Integer getPriority() {
         return priority;
     }
@@ -203,6 +291,12 @@ public final class Apdex {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable
+     * Apdex score for spans that do not need or require it. The default is "true".
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -214,6 +308,11 @@ public final class Apdex {
     @com.fasterxml.jackson.annotation.JsonProperty("satisfiedResponseTime")
     private final Integer satisfiedResponseTime;
 
+    /**
+     * The maximum response time in milliseconds that is considered "satisfactory" for the end user.
+     *
+     * @return the value
+     **/
     public Integer getSatisfiedResponseTime() {
         return satisfiedResponseTime;
     }
@@ -227,6 +326,13 @@ public final class Apdex {
     @com.fasterxml.jackson.annotation.JsonProperty("toleratingResponseTime")
     private final Integer toleratingResponseTime;
 
+    /**
+     * The maximum response time in milliseconds that is considered "tolerable" for the end user. A response
+     * time beyond this threshold is considered "frustrating".
+     * This value cannot be lower than "satisfiedResponseTime".
+     *
+     * @return the value
+     **/
     public Integer getToleratingResponseTime() {
         return toleratingResponseTime;
     }
@@ -240,16 +346,27 @@ public final class Apdex {
     @com.fasterxml.jackson.annotation.JsonProperty("isApplyToErrorSpans")
     private final Boolean isApplyToErrorSpans;
 
+    /**
+     * Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex
+     * score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex
+     * score to "frustrating" regardless of the configured thresholds. The default is "false".
+     *
+     * @return the value
+     **/
     public Boolean getIsApplyToErrorSpans() {
         return isApplyToErrorSpans;
     }
 
     /**
-     * A user-friendly name that provides a short description of this rule.
+     * The name by which a configuration entity is displayed to the end user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name by which a configuration entity is displayed to the end user.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

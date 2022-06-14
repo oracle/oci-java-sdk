@@ -14,6 +14,11 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +29,11 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -33,6 +43,10 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.Namespace namespace;
 
+    /**
+     * The returned Namespace instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.Namespace getNamespace() {
         return namespace;
     }
@@ -57,22 +71,50 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned Namespace instance.
+         */
         private com.oracle.bmc.loganalytics.model.Namespace namespace;
 
+        /**
+         * The returned Namespace instance.
+         * @param namespace the value to set
+         * @return this builder
+         */
         public Builder namespace(com.oracle.bmc.loganalytics.model.Namespace namespace) {
             this.namespace = namespace;
             return this;
@@ -91,11 +133,19 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetNamespaceResponse build() {
             return new GetNamespaceResponse(__httpStatusCode__, opcRequestId, etag, namespace);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

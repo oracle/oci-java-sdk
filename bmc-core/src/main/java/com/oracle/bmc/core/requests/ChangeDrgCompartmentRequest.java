@@ -18,6 +18,9 @@ public class ChangeDrgCompartmentRequest
      */
     private String drgId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+     */
     public String getDrgId() {
         return drgId;
     }
@@ -26,6 +29,9 @@ public class ChangeDrgCompartmentRequest
      */
     private com.oracle.bmc.core.model.ChangeDrgCompartmentDetails changeDrgCompartmentDetails;
 
+    /**
+     * Request to change the compartment of a DRG.
+     */
     public com.oracle.bmc.core.model.ChangeDrgCompartmentDetails getChangeDrgCompartmentDetails() {
         return changeDrgCompartmentDetails;
     }
@@ -36,6 +42,11 @@ public class ChangeDrgCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +60,14 @@ public class ChangeDrgCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -71,10 +90,14 @@ public class ChangeDrgCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         */
         private String drgId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         * @param drgId the value to set
          * @return this builder instance
          */
         public Builder drgId(String drgId) {
@@ -82,11 +105,15 @@ public class ChangeDrgCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of a DRG.
+         */
         private com.oracle.bmc.core.model.ChangeDrgCompartmentDetails changeDrgCompartmentDetails =
                 null;
 
         /**
          * Request to change the compartment of a DRG.
+         * @param changeDrgCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeDrgCompartmentDetails(
@@ -95,12 +122,18 @@ public class ChangeDrgCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -108,6 +141,14 @@ public class ChangeDrgCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -117,6 +158,7 @@ public class ChangeDrgCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -209,7 +251,8 @@ public class ChangeDrgCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +262,10 @@ public class ChangeDrgCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

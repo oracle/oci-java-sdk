@@ -63,10 +63,19 @@ public final class InstanceConfigurationIscsiAttachVolumeDetails
             this.__explicitlySet__.add("isShareable");
             return this;
         }
-
+        /**
+         * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("useChap")
         private Boolean useChap;
 
+        /**
+         * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+         *
+         * @param useChap the value to set
+         * @return this builder
+         **/
         public Builder useChap(Boolean useChap) {
             this.useChap = useChap;
             this.__explicitlySet__.add("useChap");
@@ -127,6 +136,11 @@ public final class InstanceConfigurationIscsiAttachVolumeDetails
     @com.fasterxml.jackson.annotation.JsonProperty("useChap")
     private final Boolean useChap;
 
+    /**
+     * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+     *
+     * @return the value
+     **/
     public Boolean getUseChap() {
         return useChap;
     }

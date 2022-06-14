@@ -29,18 +29,33 @@ public final class SqlPlanSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Plan hash value for the SQL Execution Plan
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planHash")
         private Long planHash;
 
+        /**
+         * Plan hash value for the SQL Execution Plan
+         * @param planHash the value to set
+         * @return this builder
+         **/
         public Builder planHash(Long planHash) {
             this.planHash = planHash;
             this.__explicitlySet__.add("planHash");
             return this;
         }
-
+        /**
+         * Plan XML Content
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planContent")
         private String planContent;
 
+        /**
+         * Plan XML Content
+         * @param planContent the value to set
+         * @return this builder
+         **/
         public Builder planContent(String planContent) {
             this.planContent = planContent;
             this.__explicitlySet__.add("planContent");
@@ -82,6 +97,10 @@ public final class SqlPlanSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
     private final Long planHash;
 
+    /**
+     * Plan hash value for the SQL Execution Plan
+     * @return the value
+     **/
     public Long getPlanHash() {
         return planHash;
     }
@@ -92,6 +111,10 @@ public final class SqlPlanSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("planContent")
     private final String planContent;
 
+    /**
+     * Plan XML Content
+     * @return the value
+     **/
     public String getPlanContent() {
         return planContent;
     }

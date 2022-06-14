@@ -30,9 +30,17 @@ public final class SupportedLevels {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of supported levels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SupportedLevel> items;
 
+        /**
+         * The list of supported levels.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SupportedLevel> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class SupportedLevels {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SupportedLevel> items;
 
+    /**
+     * The list of supported levels.
+     * @return the value
+     **/
     public java.util.List<SupportedLevel> getItems() {
         return items;
     }

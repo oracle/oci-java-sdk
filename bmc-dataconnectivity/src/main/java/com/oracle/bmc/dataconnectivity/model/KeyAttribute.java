@@ -28,9 +28,17 @@ public final class KeyAttribute {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The position of the attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
+        /**
+         * The position of the attribute.
+         * @param position the value to set
+         * @return this builder
+         **/
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
@@ -81,6 +89,10 @@ public final class KeyAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
+    /**
+     * The position of the attribute.
+     * @return the value
+     **/
     public Integer getPosition() {
         return position;
     }

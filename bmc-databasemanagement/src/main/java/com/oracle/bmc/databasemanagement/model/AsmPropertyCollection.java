@@ -29,9 +29,17 @@ public final class AsmPropertyCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of AsmPropertySummary resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AsmPropertySummary> items;
 
+        /**
+         * An array of AsmPropertySummary resources.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AsmPropertySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AsmPropertyCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AsmPropertySummary> items;
 
+    /**
+     * An array of AsmPropertySummary resources.
+     * @return the value
+     **/
     public java.util.List<AsmPropertySummary> getItems() {
         return items;
     }

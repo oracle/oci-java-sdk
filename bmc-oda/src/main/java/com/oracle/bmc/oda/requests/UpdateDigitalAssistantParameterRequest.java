@@ -18,6 +18,9 @@ public class UpdateDigitalAssistantParameterRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -26,6 +29,9 @@ public class UpdateDigitalAssistantParameterRequest
      */
     private String digitalAssistantId;
 
+    /**
+     * Unique Digital Assistant identifier.
+     */
     public String getDigitalAssistantId() {
         return digitalAssistantId;
     }
@@ -34,6 +40,9 @@ public class UpdateDigitalAssistantParameterRequest
      */
     private String parameterName;
 
+    /**
+     * The name of a Digital Assistant Parameter.  This is unique with the Digital Assistant.
+     */
     public String getParameterName() {
         return parameterName;
     }
@@ -43,6 +52,9 @@ public class UpdateDigitalAssistantParameterRequest
     private com.oracle.bmc.oda.model.UpdateDigitalAssistantParameterDetails
             updateDigitalAssistantParameterDetails;
 
+    /**
+     * Property values to update the Digital Assistant Parameter.
+     */
     public com.oracle.bmc.oda.model.UpdateDigitalAssistantParameterDetails
             getUpdateDigitalAssistantParameterDetails() {
         return updateDigitalAssistantParameterDetails;
@@ -58,6 +70,15 @@ public class UpdateDigitalAssistantParameterRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -66,6 +87,9 @@ public class UpdateDigitalAssistantParameterRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -88,10 +112,14 @@ public class UpdateDigitalAssistantParameterRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -99,10 +127,14 @@ public class UpdateDigitalAssistantParameterRequest
             return this;
         }
 
+        /**
+         * Unique Digital Assistant identifier.
+         */
         private String digitalAssistantId = null;
 
         /**
          * Unique Digital Assistant identifier.
+         * @param digitalAssistantId the value to set
          * @return this builder instance
          */
         public Builder digitalAssistantId(String digitalAssistantId) {
@@ -110,10 +142,14 @@ public class UpdateDigitalAssistantParameterRequest
             return this;
         }
 
+        /**
+         * The name of a Digital Assistant Parameter.  This is unique with the Digital Assistant.
+         */
         private String parameterName = null;
 
         /**
          * The name of a Digital Assistant Parameter.  This is unique with the Digital Assistant.
+         * @param parameterName the value to set
          * @return this builder instance
          */
         public Builder parameterName(String parameterName) {
@@ -121,11 +157,15 @@ public class UpdateDigitalAssistantParameterRequest
             return this;
         }
 
+        /**
+         * Property values to update the Digital Assistant Parameter.
+         */
         private com.oracle.bmc.oda.model.UpdateDigitalAssistantParameterDetails
                 updateDigitalAssistantParameterDetails = null;
 
         /**
          * Property values to update the Digital Assistant Parameter.
+         * @param updateDigitalAssistantParameterDetails the value to set
          * @return this builder instance
          */
         public Builder updateDigitalAssistantParameterDetails(
@@ -135,6 +175,15 @@ public class UpdateDigitalAssistantParameterRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -145,6 +194,7 @@ public class UpdateDigitalAssistantParameterRequest
          * instance only if the etag that you provide matches the instance's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -152,10 +202,14 @@ public class UpdateDigitalAssistantParameterRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -253,7 +307,8 @@ public class UpdateDigitalAssistantParameterRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -265,6 +320,10 @@ public class UpdateDigitalAssistantParameterRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

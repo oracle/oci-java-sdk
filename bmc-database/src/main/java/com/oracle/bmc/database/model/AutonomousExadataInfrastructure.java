@@ -89,117 +89,233 @@ public final class AutonomousExadataInfrastructure {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the Autonomous Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the Autonomous Exadata Infrastructure.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The user-friendly name for the Autonomous Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the Autonomous Exadata Infrastructure.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
+         * <p>
+         **Subnet Restrictions:**
+         * - For Autonomous Databases with Autonomous Exadata Infrastructure, do not use a subnet that overlaps with 192.168.128.0/20
+         * <p>
+         * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+         * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+         * This restriction applies to both the client subnet and backup subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
+         * <p>
+         **Subnet Restrictions:**
+         * - For Autonomous Databases with Autonomous Exadata Infrastructure, do not use a subnet that overlaps with 192.168.128.0/20
+         * <p>
+         * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+         * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+         * This restriction applies to both the client subnet and backup subnet.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
-
+        /**
+         * The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The host name for the Autonomous Exadata Infrastructure node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The host name for the Autonomous Exadata Infrastructure node.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * The domain name for the Autonomous Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
+        /**
+         * The domain name for the Autonomous Exadata Infrastructure.
+         * @param domain the value to set
+         * @return this builder
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
-
+        /**
+         * The current lifecycle state of the Autonomous Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current lifecycle state of the Autonomous Exadata Infrastructure.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The Oracle license model that applies to all databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
+        /**
+         * The Oracle license model that applies to all databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         *
+         * @param licenseModel the value to set
+         * @return this builder
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
-
+        /**
+         * The date and time the Autonomous Exadata Infrastructure was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the Autonomous Exadata Infrastructure was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -214,56 +330,114 @@ public final class AutonomousExadataInfrastructure {
             this.__explicitlySet__.add("maintenanceWindow");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
         private String lastMaintenanceRunId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+         * @param lastMaintenanceRunId the value to set
+         * @return this builder
+         **/
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
             this.lastMaintenanceRunId = lastMaintenanceRunId;
             this.__explicitlySet__.add("lastMaintenanceRunId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
         private String nextMaintenanceRunId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+         * @param nextMaintenanceRunId the value to set
+         * @return this builder
+         **/
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             this.nextMaintenanceRunId = nextMaintenanceRunId;
             this.__explicitlySet__.add("nextMaintenanceRunId");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
         private String scanDnsName;
 
+        /**
+         * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
+         *
+         * @param scanDnsName the value to set
+         * @return this builder
+         **/
         public Builder scanDnsName(String scanDnsName) {
             this.scanDnsName = scanDnsName;
             this.__explicitlySet__.add("scanDnsName");
             return this;
         }
-
+        /**
+         * The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
         private String zoneId;
 
+        /**
+         * The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
+         *
+         * @param zoneId the value to set
+         * @return this builder
+         **/
         public Builder zoneId(String zoneId) {
             this.zoneId = zoneId;
             this.__explicitlySet__.add("zoneId");
@@ -346,6 +520,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the Autonomous Exadata Infrastructure.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -356,6 +534,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -366,6 +548,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the Autonomous Exadata Infrastructure.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -376,6 +562,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -394,6 +584,18 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
+     * <p>
+     **Subnet Restrictions:**
+     * - For Autonomous Databases with Autonomous Exadata Infrastructure, do not use a subnet that overlaps with 192.168.128.0/20
+     * <p>
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+     * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+     * This restriction applies to both the client subnet and backup subnet.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -407,6 +609,13 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -417,6 +626,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -427,6 +640,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The host name for the Autonomous Exadata Infrastructure node.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -437,6 +654,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
+    /**
+     * The domain name for the Autonomous Exadata Infrastructure.
+     * @return the value
+     **/
     public String getDomain() {
         return domain;
     }
@@ -500,6 +721,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the Autonomous Exadata Infrastructure.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -510,6 +735,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -570,6 +799,11 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
+    /**
+     * The Oracle license model that applies to all databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+     *
+     * @return the value
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
@@ -580,6 +814,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the Autonomous Exadata Infrastructure was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -597,6 +835,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
     private final String lastMaintenanceRunId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+     * @return the value
+     **/
     public String getLastMaintenanceRunId() {
         return lastMaintenanceRunId;
     }
@@ -607,6 +849,10 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
     private final String nextMaintenanceRunId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+     * @return the value
+     **/
     public String getNextMaintenanceRunId() {
         return nextMaintenanceRunId;
     }
@@ -621,6 +867,14 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -633,6 +887,12 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -644,6 +904,11 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
     private final String scanDnsName;
 
+    /**
+     * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
+     *
+     * @return the value
+     **/
     public String getScanDnsName() {
         return scanDnsName;
     }
@@ -655,6 +920,11 @@ public final class AutonomousExadataInfrastructure {
     @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
     private final String zoneId;
 
+    /**
+     * The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
+     *
+     * @return the value
+     **/
     public String getZoneId() {
         return zoneId;
     }

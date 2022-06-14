@@ -36,36 +36,65 @@ public final class AuditTrailDimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("location")
         private String location;
 
+        /**
+         * The location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+         * @param location the value to set
+         * @return this builder
+         **/
         public Builder location(String location) {
             this.location = location;
             this.__explicitlySet__.add("location");
             return this;
         }
-
+        /**
+         * The current state of the audit trail.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AuditTrailLifecycleState lifecycleState;
 
+        /**
+         * The current state of the audit trail.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(AuditTrailLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The current sub-state of the audit trail..
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * The current sub-state of the audit trail..
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The OCID of the Data Safe target for which the audit trail is created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the Data Safe target for which the audit trail is created.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
@@ -112,6 +141,10 @@ public final class AuditTrailDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("location")
     private final String location;
 
+    /**
+     * The location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+     * @return the value
+     **/
     public String getLocation() {
         return location;
     }
@@ -122,6 +155,10 @@ public final class AuditTrailDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AuditTrailLifecycleState lifecycleState;
 
+    /**
+     * The current state of the audit trail.
+     * @return the value
+     **/
     public AuditTrailLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -132,6 +169,10 @@ public final class AuditTrailDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * The current sub-state of the audit trail..
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }
@@ -142,6 +183,10 @@ public final class AuditTrailDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the Data Safe target for which the audit trail is created.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }

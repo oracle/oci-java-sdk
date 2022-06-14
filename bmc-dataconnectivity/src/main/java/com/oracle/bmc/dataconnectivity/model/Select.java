@@ -25,18 +25,33 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class Select extends PushDownOperation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies whether the object is distinct.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDistinct")
         private Boolean isDistinct;
 
+        /**
+         * Specifies whether the object is distinct.
+         * @param isDistinct the value to set
+         * @return this builder
+         **/
         public Builder isDistinct(Boolean isDistinct) {
             this.isDistinct = isDistinct;
             this.__explicitlySet__.add("isDistinct");
             return this;
         }
-
+        /**
+         * An array of selected columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("selectColumns")
         private java.util.List<ShapeField> selectColumns;
 
+        /**
+         * An array of selected columns.
+         * @param selectColumns the value to set
+         * @return this builder
+         **/
         public Builder selectColumns(java.util.List<ShapeField> selectColumns) {
             this.selectColumns = selectColumns;
             this.__explicitlySet__.add("selectColumns");
@@ -86,6 +101,10 @@ public final class Select extends PushDownOperation {
     @com.fasterxml.jackson.annotation.JsonProperty("isDistinct")
     private final Boolean isDistinct;
 
+    /**
+     * Specifies whether the object is distinct.
+     * @return the value
+     **/
     public Boolean getIsDistinct() {
         return isDistinct;
     }
@@ -96,6 +115,10 @@ public final class Select extends PushDownOperation {
     @com.fasterxml.jackson.annotation.JsonProperty("selectColumns")
     private final java.util.List<ShapeField> selectColumns;
 
+    /**
+     * An array of selected columns.
+     * @return the value
+     **/
     public java.util.List<ShapeField> getSelectColumns() {
         return selectColumns;
     }

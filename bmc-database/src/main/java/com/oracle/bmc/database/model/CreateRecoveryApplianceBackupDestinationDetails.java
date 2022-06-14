@@ -64,19 +64,33 @@ public final class CreateRecoveryApplianceBackupDestinationDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The connection string for connecting to the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
+        /**
+         * The connection string for connecting to the Recovery Appliance.
+         * @param connectionString the value to set
+         * @return this builder
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-
+        /**
+         * The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcUsers")
         private java.util.List<String> vpcUsers;
 
+        /**
+         * The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+         * @param vpcUsers the value to set
+         * @return this builder
+         **/
         public Builder vpcUsers(java.util.List<String> vpcUsers) {
             this.vpcUsers = vpcUsers;
             this.__explicitlySet__.add("vpcUsers");
@@ -144,6 +158,10 @@ public final class CreateRecoveryApplianceBackupDestinationDetails
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
+    /**
+     * The connection string for connecting to the Recovery Appliance.
+     * @return the value
+     **/
     public String getConnectionString() {
         return connectionString;
     }
@@ -154,6 +172,10 @@ public final class CreateRecoveryApplianceBackupDestinationDetails
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUsers")
     private final java.util.List<String> vpcUsers;
 
+    /**
+     * The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+     * @return the value
+     **/
     public java.util.List<String> getVpcUsers() {
         return vpcUsers;
     }

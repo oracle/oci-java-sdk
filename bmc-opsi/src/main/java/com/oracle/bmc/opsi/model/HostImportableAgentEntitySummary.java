@@ -44,19 +44,39 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
             this.__explicitlySet__.add("managementAgentDisplayName");
             return this;
         }
-
+        /**
+         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         * @param platformType the value to set
+         * @return this builder
+         **/
         public Builder platformType(PlatformType platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
@@ -115,6 +135,10 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * The host name. The host name is unique amongst the hosts managed by the same management agent.
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -181,6 +205,13 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
+    /**
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     *
+     * @return the value
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }

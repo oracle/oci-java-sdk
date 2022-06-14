@@ -29,9 +29,17 @@ public final class SenderInvitationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array containing SenderInvitationSummary items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SenderInvitationSummary> items;
 
+        /**
+         * Array containing SenderInvitationSummary items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SenderInvitationSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class SenderInvitationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SenderInvitationSummary> items;
 
+    /**
+     * Array containing SenderInvitationSummary items.
+     * @return the value
+     **/
     public java.util.List<SenderInvitationSummary> getItems() {
         return items;
     }

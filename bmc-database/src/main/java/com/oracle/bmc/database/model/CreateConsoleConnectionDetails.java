@@ -31,9 +31,17 @@ public final class CreateConsoleConnectionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The SSH public key used to authenticate the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
+        /**
+         * The SSH public key used to authenticate the console connection.
+         * @param publicKey the value to set
+         * @return this builder
+         **/
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
@@ -76,6 +84,10 @@ public final class CreateConsoleConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
+    /**
+     * The SSH public key used to authenticate the console connection.
+     * @return the value
+     **/
     public String getPublicKey() {
         return publicKey;
     }

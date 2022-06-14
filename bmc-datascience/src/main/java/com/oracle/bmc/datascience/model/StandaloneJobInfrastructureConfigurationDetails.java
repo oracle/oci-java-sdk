@@ -28,27 +28,53 @@ public final class StandaloneJobInfrastructureConfigurationDetails
         extends JobInfrastructureConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape used to launch the job run instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * The shape used to launch the job run instances.
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The size of the block storage volume to attach to the instance running the job
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
         private Integer blockStorageSizeInGBs;
 
+        /**
+         * The size of the block storage volume to attach to the instance running the job
+         *
+         * @param blockStorageSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder blockStorageSizeInGBs(Integer blockStorageSizeInGBs) {
             this.blockStorageSizeInGBs = blockStorageSizeInGBs;
             this.__explicitlySet__.add("blockStorageSizeInGBs");
@@ -104,6 +130,10 @@ public final class StandaloneJobInfrastructureConfigurationDetails
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * The shape used to launch the job run instances.
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -115,6 +145,11 @@ public final class StandaloneJobInfrastructureConfigurationDetails
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The subnet to create a secondary vnic in to attach to the instance running the job
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -126,6 +161,11 @@ public final class StandaloneJobInfrastructureConfigurationDetails
     @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
     private final Integer blockStorageSizeInGBs;
 
+    /**
+     * The size of the block storage volume to attach to the instance running the job
+     *
+     * @return the value
+     **/
     public Integer getBlockStorageSizeInGBs() {
         return blockStorageSizeInGBs;
     }

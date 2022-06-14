@@ -111,6 +111,10 @@ public class AutoScalePolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("triggerType")
     private final TriggerType triggerType;
 
+    /**
+     * The type of autoscaling trigger.
+     * @return the value
+     **/
     public TriggerType getTriggerType() {
         return triggerType;
     }
@@ -169,6 +173,10 @@ public class AutoScalePolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
+    /**
+     * The type of autoscaling action to take.
+     * @return the value
+     **/
     public ActionType getActionType() {
         return actionType;
     }

@@ -42,37 +42,72 @@ public final class LogAnalyticsEntitySummaryReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total number of ACTIVE entities
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activeEntitiesCount")
         private Integer activeEntitiesCount;
 
+        /**
+         * Total number of ACTIVE entities
+         *
+         * @param activeEntitiesCount the value to set
+         * @return this builder
+         **/
         public Builder activeEntitiesCount(Integer activeEntitiesCount) {
             this.activeEntitiesCount = activeEntitiesCount;
             this.__explicitlySet__.add("activeEntitiesCount");
             return this;
         }
-
+        /**
+         * Entities with log collection enabled
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entitiesWithHasLogsCollectedCount")
         private Integer entitiesWithHasLogsCollectedCount;
 
+        /**
+         * Entities with log collection enabled
+         *
+         * @param entitiesWithHasLogsCollectedCount the value to set
+         * @return this builder
+         **/
         public Builder entitiesWithHasLogsCollectedCount(
                 Integer entitiesWithHasLogsCollectedCount) {
             this.entitiesWithHasLogsCollectedCount = entitiesWithHasLogsCollectedCount;
             this.__explicitlySet__.add("entitiesWithHasLogsCollectedCount");
             return this;
         }
-
+        /**
+         * Entities with management agent
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entitiesWithManagementAgentCount")
         private Integer entitiesWithManagementAgentCount;
 
+        /**
+         * Entities with management agent
+         *
+         * @param entitiesWithManagementAgentCount the value to set
+         * @return this builder
+         **/
         public Builder entitiesWithManagementAgentCount(Integer entitiesWithManagementAgentCount) {
             this.entitiesWithManagementAgentCount = entitiesWithManagementAgentCount;
             this.__explicitlySet__.add("entitiesWithManagementAgentCount");
             return this;
         }
-
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -126,6 +161,11 @@ public final class LogAnalyticsEntitySummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("activeEntitiesCount")
     private final Integer activeEntitiesCount;
 
+    /**
+     * Total number of ACTIVE entities
+     *
+     * @return the value
+     **/
     public Integer getActiveEntitiesCount() {
         return activeEntitiesCount;
     }
@@ -137,6 +177,11 @@ public final class LogAnalyticsEntitySummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("entitiesWithHasLogsCollectedCount")
     private final Integer entitiesWithHasLogsCollectedCount;
 
+    /**
+     * Entities with log collection enabled
+     *
+     * @return the value
+     **/
     public Integer getEntitiesWithHasLogsCollectedCount() {
         return entitiesWithHasLogsCollectedCount;
     }
@@ -148,6 +193,11 @@ public final class LogAnalyticsEntitySummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("entitiesWithManagementAgentCount")
     private final Integer entitiesWithManagementAgentCount;
 
+    /**
+     * Entities with management agent
+     *
+     * @return the value
+     **/
     public Integer getEntitiesWithManagementAgentCount() {
         return entitiesWithManagementAgentCount;
     }
@@ -158,6 +208,10 @@ public final class LogAnalyticsEntitySummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

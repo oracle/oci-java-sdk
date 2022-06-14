@@ -31,9 +31,17 @@ public final class LogAnalyticsEntityTopologyLinkCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of log analytics entity relationship links.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsEntityTopologyLink> items;
 
+        /**
+         * Array of log analytics entity relationship links.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsEntityTopologyLink> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -76,6 +84,10 @@ public final class LogAnalyticsEntityTopologyLinkCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsEntityTopologyLink> items;
 
+    /**
+     * Array of log analytics entity relationship links.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsEntityTopologyLink> getItems() {
         return items;
     }

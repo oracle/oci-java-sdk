@@ -33,18 +33,43 @@ public final class VirtualCircuitPublicPrefix {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Publix IP prefix (CIDR) that the customer specified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        /**
+         * Publix IP prefix (CIDR) that the customer specified.
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
-
+        /**
+         * Oracle must verify that the customer owns the public IP prefix before traffic
+         * for that prefix can flow across the virtual circuit. Verification can take a
+         * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
+         * means verification succeeded. {@code FAILED} means verification failed and traffic for
+         * this prefix will not flow across the connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verificationState")
         private VerificationState verificationState;
 
+        /**
+         * Oracle must verify that the customer owns the public IP prefix before traffic
+         * for that prefix can flow across the virtual circuit. Verification can take a
+         * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
+         * means verification succeeded. {@code FAILED} means verification failed and traffic for
+         * this prefix will not flow across the connection.
+         *
+         * @param verificationState the value to set
+         * @return this builder
+         **/
         public Builder verificationState(VerificationState verificationState) {
             this.verificationState = verificationState;
             this.__explicitlySet__.add("verificationState");
@@ -88,6 +113,10 @@ public final class VirtualCircuitPublicPrefix {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
+    /**
+     * Publix IP prefix (CIDR) that the customer specified.
+     * @return the value
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }
@@ -157,6 +186,15 @@ public final class VirtualCircuitPublicPrefix {
     @com.fasterxml.jackson.annotation.JsonProperty("verificationState")
     private final VerificationState verificationState;
 
+    /**
+     * Oracle must verify that the customer owns the public IP prefix before traffic
+     * for that prefix can flow across the virtual circuit. Verification can take a
+     * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
+     * means verification succeeded. {@code FAILED} means verification failed and traffic for
+     * this prefix will not flow across the connection.
+     *
+     * @return the value
+     **/
     public VerificationState getVerificationState() {
         return verificationState;
     }

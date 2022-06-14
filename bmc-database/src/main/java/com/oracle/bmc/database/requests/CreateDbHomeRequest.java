@@ -17,6 +17,9 @@ public class CreateDbHomeRequest
      */
     private com.oracle.bmc.database.model.CreateDbHomeBase createDbHomeWithDbSystemIdDetails;
 
+    /**
+     * Request to create a new Database Home.
+     */
     public com.oracle.bmc.database.model.CreateDbHomeBase getCreateDbHomeWithDbSystemIdDetails() {
         return createDbHomeWithDbSystemIdDetails;
     }
@@ -30,6 +33,14 @@ public class CreateDbHomeRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -51,11 +62,15 @@ public class CreateDbHomeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to create a new Database Home.
+         */
         private com.oracle.bmc.database.model.CreateDbHomeBase createDbHomeWithDbSystemIdDetails =
                 null;
 
         /**
          * Request to create a new Database Home.
+         * @param createDbHomeWithDbSystemIdDetails the value to set
          * @return this builder instance
          */
         public Builder createDbHomeWithDbSystemIdDetails(
@@ -64,6 +79,14 @@ public class CreateDbHomeRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -73,6 +96,7 @@ public class CreateDbHomeRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -161,7 +185,8 @@ public class CreateDbHomeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -169,6 +194,10 @@ public class CreateDbHomeRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

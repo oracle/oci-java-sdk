@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * List of DatabaseToolsEndpointServiceSummary items.
+ * List of {@code DatabaseToolsEndpointServiceSummary} items.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -30,9 +30,17 @@ public final class DatabaseToolsEndpointServiceCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of {@code DatabaseToolsEndpointServiceSummary} items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DatabaseToolsEndpointServiceSummary> items;
 
+        /**
+         * Array of {@code DatabaseToolsEndpointServiceSummary} items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DatabaseToolsEndpointServiceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -70,11 +78,15 @@ public final class DatabaseToolsEndpointServiceCollection {
     }
 
     /**
-     * Array of DatabaseToolsEndpointServiceSummary.
+     * Array of {@code DatabaseToolsEndpointServiceSummary} items.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DatabaseToolsEndpointServiceSummary> items;
 
+    /**
+     * Array of {@code DatabaseToolsEndpointServiceSummary} items.
+     * @return the value
+     **/
     public java.util.List<DatabaseToolsEndpointServiceSummary> getItems() {
         return items;
     }

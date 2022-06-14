@@ -36,27 +36,49 @@ public final class BuildRunProgress {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * Map of stage OCIDs to build pipeline stage run progress model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineStageRunProgress")
         private java.util.Map<String, BuildPipelineStageRunProgress> buildPipelineStageRunProgress;
 
+        /**
+         * Map of stage OCIDs to build pipeline stage run progress model.
+         * @param buildPipelineStageRunProgress the value to set
+         * @return this builder
+         **/
         public Builder buildPipelineStageRunProgress(
                 java.util.Map<String, BuildPipelineStageRunProgress>
                         buildPipelineStageRunProgress) {
@@ -104,6 +126,10 @@ public final class BuildRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -114,6 +140,10 @@ public final class BuildRunProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -125,6 +155,10 @@ public final class BuildRunProgress {
     private final java.util.Map<String, BuildPipelineStageRunProgress>
             buildPipelineStageRunProgress;
 
+    /**
+     * Map of stage OCIDs to build pipeline stage run progress model.
+     * @return the value
+     **/
     public java.util.Map<String, BuildPipelineStageRunProgress> getBuildPipelineStageRunProgress() {
         return buildPipelineStageRunProgress;
     }

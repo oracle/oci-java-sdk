@@ -31,27 +31,51 @@ public final class DomainReplicationStates {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
 
+        /**
+         * The OCID of the identity domain.
+         * @param domainId the value to set
+         * @return this builder
+         **/
         public Builder domainId(String domainId) {
             this.domainId = domainId;
             this.__explicitlySet__.add("domainId");
             return this;
         }
-
+        /**
+         * The IDCS-replicated region state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
+        /**
+         * The IDCS-replicated region state.
+         *
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-
+        /**
+         * The replica region for the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
         private String replicaRegion;
 
+        /**
+         * The replica region for the identity domain.
+         * @param replicaRegion the value to set
+         * @return this builder
+         **/
         public Builder replicaRegion(String replicaRegion) {
             this.replicaRegion = replicaRegion;
             this.__explicitlySet__.add("replicaRegion");
@@ -97,6 +121,10 @@ public final class DomainReplicationStates {
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     private final String domainId;
 
+    /**
+     * The OCID of the identity domain.
+     * @return the value
+     **/
     public String getDomainId() {
         return domainId;
     }
@@ -147,6 +175,11 @@ public final class DomainReplicationStates {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
+    /**
+     * The IDCS-replicated region state.
+     *
+     * @return the value
+     **/
     public State getState() {
         return state;
     }
@@ -157,6 +190,10 @@ public final class DomainReplicationStates {
     @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
     private final String replicaRegion;
 
+    /**
+     * The replica region for the identity domain.
+     * @return the value
+     **/
     public String getReplicaRegion() {
         return replicaRegion;
     }

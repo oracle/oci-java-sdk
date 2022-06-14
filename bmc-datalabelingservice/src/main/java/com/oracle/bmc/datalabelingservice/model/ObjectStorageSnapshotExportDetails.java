@@ -27,27 +27,49 @@ package com.oracle.bmc.datalabelingservice.model;
 public final class ObjectStorageSnapshotExportDetails extends SnapshotExportDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Bucket namespace name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Bucket namespace name
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * Bucket name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
+        /**
+         * Bucket name
+         * @param bucket the value to set
+         * @return this builder
+         **/
         public Builder bucket(String bucket) {
             this.bucket = bucket;
             this.__explicitlySet__.add("bucket");
             return this;
         }
-
+        /**
+         * Object path prefix to put snapshot file(s)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
+        /**
+         * Object path prefix to put snapshot file(s)
+         * @param prefix the value to set
+         * @return this builder
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
@@ -99,6 +121,10 @@ public final class ObjectStorageSnapshotExportDetails extends SnapshotExportDeta
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Bucket namespace name
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -109,6 +135,10 @@ public final class ObjectStorageSnapshotExportDetails extends SnapshotExportDeta
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
+    /**
+     * Bucket name
+     * @return the value
+     **/
     public String getBucket() {
         return bucket;
     }
@@ -119,6 +149,10 @@ public final class ObjectStorageSnapshotExportDetails extends SnapshotExportDeta
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
+    /**
+     * Object path prefix to put snapshot file(s)
+     * @return the value
+     **/
     public String getPrefix() {
         return prefix;
     }

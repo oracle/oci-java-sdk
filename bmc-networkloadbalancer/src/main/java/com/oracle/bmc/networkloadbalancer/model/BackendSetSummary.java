@@ -52,45 +52,107 @@ public final class BackendSetSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name for the backend set that must be unique and cannot be changed.
+         * <p>
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
+         * contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A user-friendly name for the backend set that must be unique and cannot be changed.
+         * <p>
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
+         * contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The network load balancer policy for the backend set.
+         * <p>
+         * Example: {@code FIVE_TUPLE}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private NetworkLoadBalancingPolicy policy;
 
+        /**
+         * The network load balancer policy for the backend set.
+         * <p>
+         * Example: {@code FIVE_TUPLE}
+         *
+         * @param policy the value to set
+         * @return this builder
+         **/
         public Builder policy(NetworkLoadBalancingPolicy policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
             return this;
         }
-
+        /**
+         * If this parameter is enabled, the network load balancer preserves the source IP of the packet forwarded to the backend servers.
+         * Backend servers see the original source IP. If the {@code isPreserveSourceDestination} parameter is enabled for the network load balancer resource, this parameter cannot be disabled.
+         * The value is true by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
         private Boolean isPreserveSource;
 
+        /**
+         * If this parameter is enabled, the network load balancer preserves the source IP of the packet forwarded to the backend servers.
+         * Backend servers see the original source IP. If the {@code isPreserveSourceDestination} parameter is enabled for the network load balancer resource, this parameter cannot be disabled.
+         * The value is true by default.
+         *
+         * @param isPreserveSource the value to set
+         * @return this builder
+         **/
         public Builder isPreserveSource(Boolean isPreserveSource) {
             this.isPreserveSource = isPreserveSource;
             this.__explicitlySet__.add("isPreserveSource");
             return this;
         }
-
+        /**
+         * IP version associated with the backend set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
         private IpVersion ipVersion;
 
+        /**
+         * IP version associated with the backend set.
+         * @param ipVersion the value to set
+         * @return this builder
+         **/
         public Builder ipVersion(IpVersion ipVersion) {
             this.ipVersion = ipVersion;
             this.__explicitlySet__.add("ipVersion");
             return this;
         }
-
+        /**
+         * An array of backends.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backends")
         private java.util.List<Backend> backends;
 
+        /**
+         * An array of backends.
+         *
+         * @param backends the value to set
+         * @return this builder
+         **/
         public Builder backends(java.util.List<Backend> backends) {
             this.backends = backends;
             this.__explicitlySet__.add("backends");
@@ -155,6 +217,16 @@ public final class BackendSetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A user-friendly name for the backend set that must be unique and cannot be changed.
+     * <p>
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
+     * contain spaces. Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -168,6 +240,13 @@ public final class BackendSetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final NetworkLoadBalancingPolicy policy;
 
+    /**
+     * The network load balancer policy for the backend set.
+     * <p>
+     * Example: {@code FIVE_TUPLE}
+     *
+     * @return the value
+     **/
     public NetworkLoadBalancingPolicy getPolicy() {
         return policy;
     }
@@ -181,6 +260,13 @@ public final class BackendSetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
     private final Boolean isPreserveSource;
 
+    /**
+     * If this parameter is enabled, the network load balancer preserves the source IP of the packet forwarded to the backend servers.
+     * Backend servers see the original source IP. If the {@code isPreserveSourceDestination} parameter is enabled for the network load balancer resource, this parameter cannot be disabled.
+     * The value is true by default.
+     *
+     * @return the value
+     **/
     public Boolean getIsPreserveSource() {
         return isPreserveSource;
     }
@@ -191,6 +277,10 @@ public final class BackendSetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
     private final IpVersion ipVersion;
 
+    /**
+     * IP version associated with the backend set.
+     * @return the value
+     **/
     public IpVersion getIpVersion() {
         return ipVersion;
     }
@@ -202,6 +292,11 @@ public final class BackendSetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("backends")
     private final java.util.List<Backend> backends;
 
+    /**
+     * An array of backends.
+     *
+     * @return the value
+     **/
     public java.util.List<Backend> getBackends() {
         return backends;
     }

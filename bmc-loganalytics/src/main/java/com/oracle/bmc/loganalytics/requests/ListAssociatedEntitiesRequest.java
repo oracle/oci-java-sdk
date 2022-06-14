@@ -18,6 +18,10 @@ public class ListAssociatedEntitiesRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class ListAssociatedEntitiesRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -35,6 +42,10 @@ public class ListAssociatedEntitiesRequest
      */
     private String entityId;
 
+    /**
+     * The entity OCID.
+     *
+     */
     public String getEntityId() {
         return entityId;
     }
@@ -45,6 +56,11 @@ public class ListAssociatedEntitiesRequest
      */
     private String entityType;
 
+    /**
+     * The entity type used for filtering.  Only associations on an entity with the
+     * specified type will be returned.
+     *
+     */
     public String getEntityType() {
         return entityType;
     }
@@ -55,6 +71,11 @@ public class ListAssociatedEntitiesRequest
      */
     private String entityTypeDisplayName;
 
+    /**
+     * The entity type display name used for filtering.  Only items associated with the entity
+     * with the specified type display name will be returned.
+     *
+     */
     public String getEntityTypeDisplayName() {
         return entityTypeDisplayName;
     }
@@ -63,6 +84,9 @@ public class ListAssociatedEntitiesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -71,6 +95,9 @@ public class ListAssociatedEntitiesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -117,6 +144,10 @@ public class ListAssociatedEntitiesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -162,6 +193,9 @@ public class ListAssociatedEntitiesRequest
         }
     };
 
+    /**
+     * The attribute used to sort the returned entities
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -170,6 +204,9 @@ public class ListAssociatedEntitiesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -181,11 +218,16 @@ public class ListAssociatedEntitiesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -193,10 +235,14 @@ public class ListAssociatedEntitiesRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -204,11 +250,16 @@ public class ListAssociatedEntitiesRequest
             return this;
         }
 
+        /**
+         * The entity OCID.
+         *
+         */
         private String entityId = null;
 
         /**
          * The entity OCID.
          *
+         * @param entityId the value to set
          * @return this builder instance
          */
         public Builder entityId(String entityId) {
@@ -216,12 +267,18 @@ public class ListAssociatedEntitiesRequest
             return this;
         }
 
+        /**
+         * The entity type used for filtering.  Only associations on an entity with the
+         * specified type will be returned.
+         *
+         */
         private String entityType = null;
 
         /**
          * The entity type used for filtering.  Only associations on an entity with the
          * specified type will be returned.
          *
+         * @param entityType the value to set
          * @return this builder instance
          */
         public Builder entityType(String entityType) {
@@ -229,12 +286,18 @@ public class ListAssociatedEntitiesRequest
             return this;
         }
 
+        /**
+         * The entity type display name used for filtering.  Only items associated with the entity
+         * with the specified type display name will be returned.
+         *
+         */
         private String entityTypeDisplayName = null;
 
         /**
          * The entity type display name used for filtering.  Only items associated with the entity
          * with the specified type display name will be returned.
          *
+         * @param entityTypeDisplayName the value to set
          * @return this builder instance
          */
         public Builder entityTypeDisplayName(String entityTypeDisplayName) {
@@ -242,10 +305,14 @@ public class ListAssociatedEntitiesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -253,10 +320,14 @@ public class ListAssociatedEntitiesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -264,11 +335,16 @@ public class ListAssociatedEntitiesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -276,10 +352,14 @@ public class ListAssociatedEntitiesRequest
             return this;
         }
 
+        /**
+         * The attribute used to sort the returned entities
+         */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned entities
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -287,10 +367,14 @@ public class ListAssociatedEntitiesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -384,7 +468,8 @@ public class ListAssociatedEntitiesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -400,6 +485,10 @@ public class ListAssociatedEntitiesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

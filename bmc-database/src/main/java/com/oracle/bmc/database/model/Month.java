@@ -27,9 +27,17 @@ public final class Month {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the month of the year.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Name name;
 
+        /**
+         * Name of the month of the year.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(Name name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -127,6 +135,10 @@ public final class Month {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Name name;
 
+    /**
+     * Name of the month of the year.
+     * @return the value
+     **/
     public Name getName() {
         return name;
     }

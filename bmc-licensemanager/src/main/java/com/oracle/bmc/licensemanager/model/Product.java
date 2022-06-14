@@ -29,27 +29,49 @@ public final class Product {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the product.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the product.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Units required for the missing product.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Double count;
 
+        /**
+         * Units required for the missing product.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Double count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-
+        /**
+         * Product category base or option.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private ProductCategory category;
 
+        /**
+         * Product category base or option.
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(ProductCategory category) {
             this.category = category;
             this.__explicitlySet__.add("category");
@@ -91,6 +113,10 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the product.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -101,6 +127,10 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Double count;
 
+    /**
+     * Units required for the missing product.
+     * @return the value
+     **/
     public Double getCount() {
         return count;
     }
@@ -111,6 +141,10 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final ProductCategory category;
 
+    /**
+     * Product category base or option.
+     * @return the value
+     **/
     public ProductCategory getCategory() {
         return category;
     }

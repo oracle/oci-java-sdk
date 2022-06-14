@@ -18,6 +18,9 @@ public class UpdateTransferDeviceRequest
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
@@ -26,6 +29,9 @@ public class UpdateTransferDeviceRequest
      */
     private String transferDeviceLabel;
 
+    /**
+     * Label of the Transfer Device
+     */
     public String getTransferDeviceLabel() {
         return transferDeviceLabel;
     }
@@ -34,6 +40,9 @@ public class UpdateTransferDeviceRequest
      */
     private com.oracle.bmc.dts.model.UpdateTransferDeviceDetails updateTransferDeviceDetails;
 
+    /**
+     * fields to update
+     */
     public com.oracle.bmc.dts.model.UpdateTransferDeviceDetails getUpdateTransferDeviceDetails() {
         return updateTransferDeviceDetails;
     }
@@ -44,6 +53,11 @@ public class UpdateTransferDeviceRequest
      */
     private String ifMatch;
 
+    /**
+     * The entity tag to match. Optional, if set, the update will be successful only if the
+     * object's tag matches the tag specified in the request.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -66,10 +80,14 @@ public class UpdateTransferDeviceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -77,10 +95,14 @@ public class UpdateTransferDeviceRequest
             return this;
         }
 
+        /**
+         * Label of the Transfer Device
+         */
         private String transferDeviceLabel = null;
 
         /**
          * Label of the Transfer Device
+         * @param transferDeviceLabel the value to set
          * @return this builder instance
          */
         public Builder transferDeviceLabel(String transferDeviceLabel) {
@@ -88,11 +110,15 @@ public class UpdateTransferDeviceRequest
             return this;
         }
 
+        /**
+         * fields to update
+         */
         private com.oracle.bmc.dts.model.UpdateTransferDeviceDetails updateTransferDeviceDetails =
                 null;
 
         /**
          * fields to update
+         * @param updateTransferDeviceDetails the value to set
          * @return this builder instance
          */
         public Builder updateTransferDeviceDetails(
@@ -101,12 +127,18 @@ public class UpdateTransferDeviceRequest
             return this;
         }
 
+        /**
+         * The entity tag to match. Optional, if set, the update will be successful only if the
+         * object's tag matches the tag specified in the request.
+         *
+         */
         private String ifMatch = null;
 
         /**
          * The entity tag to match. Optional, if set, the update will be successful only if the
          * object's tag matches the tag specified in the request.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -199,7 +231,8 @@ public class UpdateTransferDeviceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -209,6 +242,10 @@ public class UpdateTransferDeviceRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

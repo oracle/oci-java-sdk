@@ -19,6 +19,9 @@ public class CreateInstanceAgentCommandRequest
     private com.oracle.bmc.computeinstanceagent.model.CreateInstanceAgentCommandDetails
             createInstanceAgentCommandDetails;
 
+    /**
+     * Create Instance agent command details
+     */
     public com.oracle.bmc.computeinstanceagent.model.CreateInstanceAgentCommandDetails
             getCreateInstanceAgentCommandDetails() {
         return createInstanceAgentCommandDetails;
@@ -30,6 +33,11 @@ public class CreateInstanceAgentCommandRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,6 +51,14 @@ public class CreateInstanceAgentCommandRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -65,11 +81,15 @@ public class CreateInstanceAgentCommandRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Create Instance agent command details
+         */
         private com.oracle.bmc.computeinstanceagent.model.CreateInstanceAgentCommandDetails
                 createInstanceAgentCommandDetails = null;
 
         /**
          * Create Instance agent command details
+         * @param createInstanceAgentCommandDetails the value to set
          * @return this builder instance
          */
         public Builder createInstanceAgentCommandDetails(
@@ -79,12 +99,18 @@ public class CreateInstanceAgentCommandRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -92,6 +118,14 @@ public class CreateInstanceAgentCommandRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -101,6 +135,7 @@ public class CreateInstanceAgentCommandRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -192,7 +227,8 @@ public class CreateInstanceAgentCommandRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -201,6 +237,10 @@ public class CreateInstanceAgentCommandRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,9 @@ public class GetNatGatewayRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String natGatewayId;
 
+    /**
+     * The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     public String getNatGatewayId() {
         return natGatewayId;
     }
@@ -27,10 +30,14 @@ public class GetNatGatewayRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         private String natGatewayId = null;
 
         /**
          * The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param natGatewayId the value to set
          * @return this builder instance
          */
         public Builder natGatewayId(String natGatewayId) {
@@ -106,12 +113,17 @@ public class GetNatGatewayRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().natGatewayId(natGatewayId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class ListIncidentResourceTypesRequest
      */
     private String problemType;
 
+    /**
+     * The kind of support request.
+     */
     public String getProblemType() {
         return problemType;
     }
@@ -25,6 +28,9 @@ public class ListIncidentResourceTypesRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the tenancy.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -33,6 +39,9 @@ public class ListIncidentResourceTypesRequest
      */
     private String csi;
 
+    /**
+     * The Customer Support Identifier associated with the support account.
+     */
     public String getCsi() {
         return csi;
     }
@@ -41,6 +50,9 @@ public class ListIncidentResourceTypesRequest
      */
     private String ocid;
 
+    /**
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     */
     public String getOcid() {
         return ocid;
     }
@@ -49,6 +61,9 @@ public class ListIncidentResourceTypesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,6 +73,10 @@ public class ListIncidentResourceTypesRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -67,6 +86,10 @@ public class ListIncidentResourceTypesRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -75,6 +98,9 @@ public class ListIncidentResourceTypesRequest
      */
     private com.oracle.bmc.cims.model.SortBy sortBy;
 
+    /**
+     * The key to use to sort the returned items.
+     */
     public com.oracle.bmc.cims.model.SortBy getSortBy() {
         return sortBy;
     }
@@ -83,6 +109,9 @@ public class ListIncidentResourceTypesRequest
      */
     private com.oracle.bmc.cims.model.SortOrder sortOrder;
 
+    /**
+     * The order to sort the results in.
+     */
     public com.oracle.bmc.cims.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -91,6 +120,9 @@ public class ListIncidentResourceTypesRequest
      */
     private String name;
 
+    /**
+     * The user-friendly name of the incident type.
+     */
     public String getName() {
         return name;
     }
@@ -99,6 +131,9 @@ public class ListIncidentResourceTypesRequest
      */
     private String homeregion;
 
+    /**
+     * The region of the tenancy.
+     */
     public String getHomeregion() {
         return homeregion;
     }
@@ -110,10 +145,14 @@ public class ListIncidentResourceTypesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The kind of support request.
+         */
         private String problemType = null;
 
         /**
          * The kind of support request.
+         * @param problemType the value to set
          * @return this builder instance
          */
         public Builder problemType(String problemType) {
@@ -121,10 +160,14 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * The OCID of the tenancy.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the tenancy.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -132,10 +175,14 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * The Customer Support Identifier associated with the support account.
+         */
         private String csi = null;
 
         /**
          * The Customer Support Identifier associated with the support account.
+         * @param csi the value to set
          * @return this builder instance
          */
         public Builder csi(String csi) {
@@ -143,10 +190,14 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         */
         private String ocid = null;
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * @param ocid the value to set
          * @return this builder instance
          */
         public Builder ocid(String ocid) {
@@ -154,10 +205,14 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -165,11 +220,16 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -177,11 +237,16 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -189,10 +254,14 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * The key to use to sort the returned items.
+         */
         private com.oracle.bmc.cims.model.SortBy sortBy = null;
 
         /**
          * The key to use to sort the returned items.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(com.oracle.bmc.cims.model.SortBy sortBy) {
@@ -200,10 +269,14 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * The order to sort the results in.
+         */
         private com.oracle.bmc.cims.model.SortOrder sortOrder = null;
 
         /**
          * The order to sort the results in.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.cims.model.SortOrder sortOrder) {
@@ -211,10 +284,14 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * The user-friendly name of the incident type.
+         */
         private String name = null;
 
         /**
          * The user-friendly name of the incident type.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -222,10 +299,14 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
+        /**
+         * The region of the tenancy.
+         */
         private String homeregion = null;
 
         /**
          * The region of the tenancy.
+         * @param homeregion the value to set
          * @return this builder instance
          */
         public Builder homeregion(String homeregion) {
@@ -321,7 +402,8 @@ public class ListIncidentResourceTypesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -338,6 +420,10 @@ public class ListIncidentResourceTypesRequest
                 .homeregion(homeregion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

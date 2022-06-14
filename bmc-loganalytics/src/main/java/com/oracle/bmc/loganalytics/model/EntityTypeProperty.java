@@ -31,18 +31,37 @@ public final class EntityTypeProperty {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Log analytics entity type property name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Log analytics entity type property name.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Description for the log analytics entity type property.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description for the log analytics entity type property.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -85,6 +104,11 @@ public final class EntityTypeProperty {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Log analytics entity type property name.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -96,6 +120,11 @@ public final class EntityTypeProperty {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description for the log analytics entity type property.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

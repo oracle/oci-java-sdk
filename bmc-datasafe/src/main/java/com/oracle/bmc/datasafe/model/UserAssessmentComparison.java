@@ -34,27 +34,53 @@ public final class UserAssessmentComparison {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The current state of the user assessment comparison.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the user assessment comparison.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * List containing maps as values.
+         * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private java.util.List<Object> summary;
 
+        /**
+         * List containing maps as values.
+         * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+         *
+         * @param summary the value to set
+         * @return this builder
+         **/
         public Builder summary(java.util.List<Object> summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
@@ -149,6 +175,10 @@ public final class UserAssessmentComparison {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the user assessment comparison.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -159,6 +189,10 @@ public final class UserAssessmentComparison {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -171,6 +205,12 @@ public final class UserAssessmentComparison {
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final java.util.List<Object> summary;
 
+    /**
+     * List containing maps as values.
+     * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     *
+     * @return the value
+     **/
     public java.util.List<Object> getSummary() {
         return summary;
     }

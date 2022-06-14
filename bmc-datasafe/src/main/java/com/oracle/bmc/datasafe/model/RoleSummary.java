@@ -48,63 +48,113 @@ public final class RoleSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the role.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("roleName")
         private String roleName;
 
+        /**
+         * Name of the role.
+         * @param roleName the value to set
+         * @return this builder
+         **/
         public Builder roleName(String roleName) {
             this.roleName = roleName;
             this.__explicitlySet__.add("roleName");
             return this;
         }
-
+        /**
+         * Type of authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private String authenticationType;
 
+        /**
+         * Type of authentication.
+         * @param authenticationType the value to set
+         * @return this builder
+         **/
         public Builder authenticationType(String authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
             return this;
         }
-
+        /**
+         * Is password required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPasswordRequired")
         private Boolean isPasswordRequired;
 
+        /**
+         * Is password required.
+         * @param isPasswordRequired the value to set
+         * @return this builder
+         **/
         public Builder isPasswordRequired(Boolean isPasswordRequired) {
             this.isPasswordRequired = isPasswordRequired;
             this.__explicitlySet__.add("isPasswordRequired");
             return this;
         }
-
+        /**
+         * Is the role common.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCommon")
         private Boolean isCommon;
 
+        /**
+         * Is the role common.
+         * @param isCommon the value to set
+         * @return this builder
+         **/
         public Builder isCommon(Boolean isCommon) {
             this.isCommon = isCommon;
             this.__explicitlySet__.add("isCommon");
             return this;
         }
-
+        /**
+         * Is the role oracle maintained.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOracleMaintained")
         private Boolean isOracleMaintained;
 
+        /**
+         * Is the role oracle maintained.
+         * @param isOracleMaintained the value to set
+         * @return this builder
+         **/
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
             this.isOracleMaintained = isOracleMaintained;
             this.__explicitlySet__.add("isOracleMaintained");
             return this;
         }
-
+        /**
+         * Is the role inherited.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInherited")
         private Boolean isInherited;
 
+        /**
+         * Is the role inherited.
+         * @param isInherited the value to set
+         * @return this builder
+         **/
         public Builder isInherited(Boolean isInherited) {
             this.isInherited = isInherited;
             this.__explicitlySet__.add("isInherited");
             return this;
         }
-
+        /**
+         * Is the role implicit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isImplicit")
         private Boolean isImplicit;
 
+        /**
+         * Is the role implicit.
+         * @param isImplicit the value to set
+         * @return this builder
+         **/
         public Builder isImplicit(Boolean isImplicit) {
             this.isImplicit = isImplicit;
             this.__explicitlySet__.add("isImplicit");
@@ -161,6 +211,10 @@ public final class RoleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("roleName")
     private final String roleName;
 
+    /**
+     * Name of the role.
+     * @return the value
+     **/
     public String getRoleName() {
         return roleName;
     }
@@ -171,6 +225,10 @@ public final class RoleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final String authenticationType;
 
+    /**
+     * Type of authentication.
+     * @return the value
+     **/
     public String getAuthenticationType() {
         return authenticationType;
     }
@@ -181,6 +239,10 @@ public final class RoleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPasswordRequired")
     private final Boolean isPasswordRequired;
 
+    /**
+     * Is password required.
+     * @return the value
+     **/
     public Boolean getIsPasswordRequired() {
         return isPasswordRequired;
     }
@@ -191,6 +253,10 @@ public final class RoleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isCommon")
     private final Boolean isCommon;
 
+    /**
+     * Is the role common.
+     * @return the value
+     **/
     public Boolean getIsCommon() {
         return isCommon;
     }
@@ -201,6 +267,10 @@ public final class RoleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isOracleMaintained")
     private final Boolean isOracleMaintained;
 
+    /**
+     * Is the role oracle maintained.
+     * @return the value
+     **/
     public Boolean getIsOracleMaintained() {
         return isOracleMaintained;
     }
@@ -211,6 +281,10 @@ public final class RoleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isInherited")
     private final Boolean isInherited;
 
+    /**
+     * Is the role inherited.
+     * @return the value
+     **/
     public Boolean getIsInherited() {
         return isInherited;
     }
@@ -221,6 +295,10 @@ public final class RoleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isImplicit")
     private final Boolean isImplicit;
 
+    /**
+     * Is the role implicit.
+     * @return the value
+     **/
     public Boolean getIsImplicit() {
         return isImplicit;
     }

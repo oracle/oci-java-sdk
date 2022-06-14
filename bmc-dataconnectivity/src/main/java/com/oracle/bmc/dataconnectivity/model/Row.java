@@ -27,9 +27,17 @@ public final class Row {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of all the sampled rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
+        /**
+         * Array of all the sampled rows.
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -71,6 +79,10 @@ public final class Row {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
+    /**
+     * Array of all the sampled rows.
+     * @return the value
+     **/
     public java.util.List<String> getValues() {
         return values;
     }

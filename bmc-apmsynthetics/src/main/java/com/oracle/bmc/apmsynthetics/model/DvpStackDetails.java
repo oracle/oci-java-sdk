@@ -42,6 +42,10 @@ public class DvpStackDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dvpVersion")
     private final String dvpVersion;
 
+    /**
+     * Version of DVP.
+     * @return the value
+     **/
     public String getDvpVersion() {
         return dvpVersion;
     }

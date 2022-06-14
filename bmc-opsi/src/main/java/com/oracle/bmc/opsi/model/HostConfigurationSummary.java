@@ -103,6 +103,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("hostInsightId")
     private final String hostInsightId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+     * @return the value
+     **/
     public String getHostInsightId() {
         return hostInsightId;
     }
@@ -113,6 +117,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -123,6 +131,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * The host name. The host name is unique amongst the hosts managed by the same management agent.
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -189,6 +201,13 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
+    /**
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     *
+     * @return the value
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }
@@ -199,6 +218,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
+    /**
+     * Platform version.
+     * @return the value
+     **/
     public String getPlatformVersion() {
         return platformVersion;
     }
@@ -209,6 +232,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("platformVendor")
     private final String platformVendor;
 
+    /**
+     * Platform vendor.
+     * @return the value
+     **/
     public String getPlatformVendor() {
         return platformVendor;
     }
@@ -220,6 +247,11 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
     private final Integer totalCpus;
 
+    /**
+     * Total CPU on this host.
+     *
+     * @return the value
+     **/
     public Integer getTotalCpus() {
         return totalCpus;
     }
@@ -231,6 +263,11 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGBs")
     private final Double totalMemoryInGBs;
 
+    /**
+     * Total amount of usable physical memory in gibabytes
+     *
+     * @return the value
+     **/
     public Double getTotalMemoryInGBs() {
         return totalMemoryInGBs;
     }
@@ -241,6 +278,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuArchitecture")
     private final String cpuArchitecture;
 
+    /**
+     * CPU architechure
+     * @return the value
+     **/
     public String getCpuArchitecture() {
         return cpuArchitecture;
     }
@@ -252,6 +293,11 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCacheInMBs")
     private final Double cpuCacheInMBs;
 
+    /**
+     * Size of cache memory in megabytes.
+     *
+     * @return the value
+     **/
     public Double getCpuCacheInMBs() {
         return cpuCacheInMBs;
     }
@@ -262,6 +308,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuVendor")
     private final String cpuVendor;
 
+    /**
+     * Name of the CPU vendor.
+     * @return the value
+     **/
     public String getCpuVendor() {
         return cpuVendor;
     }
@@ -273,6 +323,11 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuFrequencyInMhz")
     private final Double cpuFrequencyInMhz;
 
+    /**
+     * Clock frequency of the processor in megahertz.
+     *
+     * @return the value
+     **/
     public Double getCpuFrequencyInMhz() {
         return cpuFrequencyInMhz;
     }
@@ -283,6 +338,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuImplementation")
     private final String cpuImplementation;
 
+    /**
+     * Model name of processor.
+     * @return the value
+     **/
     public String getCpuImplementation() {
         return cpuImplementation;
     }
@@ -294,6 +353,11 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("coresPerSocket")
     private final Integer coresPerSocket;
 
+    /**
+     * Number of cores per socket.
+     *
+     * @return the value
+     **/
     public Integer getCoresPerSocket() {
         return coresPerSocket;
     }
@@ -304,6 +368,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("totalSockets")
     private final Integer totalSockets;
 
+    /**
+     * Number of total sockets.
+     * @return the value
+     **/
     public Integer getTotalSockets() {
         return totalSockets;
     }
@@ -314,6 +382,10 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("threadsPerSocket")
     private final Integer threadsPerSocket;
 
+    /**
+     * Number of threads per socket.
+     * @return the value
+     **/
     public Integer getThreadsPerSocket() {
         return threadsPerSocket;
     }
@@ -325,6 +397,11 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isHyperThreadingEnabled")
     private final Boolean isHyperThreadingEnabled;
 
+    /**
+     * Indicates if hyper-threading is enabled or not
+     *
+     * @return the value
+     **/
     public Boolean getIsHyperThreadingEnabled() {
         return isHyperThreadingEnabled;
     }
@@ -337,6 +414,12 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -349,6 +432,12 @@ public class HostConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }

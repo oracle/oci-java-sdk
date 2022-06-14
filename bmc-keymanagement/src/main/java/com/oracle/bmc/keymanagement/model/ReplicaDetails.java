@@ -28,18 +28,35 @@ public final class ReplicaDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The replica region
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * The replica region
+         *
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * Replication status associated with a replicationId
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * Replication status associated with a replicationId
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -82,6 +99,11 @@ public final class ReplicaDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * The replica region
+     *
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -139,6 +161,10 @@ public final class ReplicaDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * Replication status associated with a replicationId
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }

@@ -16,6 +16,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String targetDatabaseId;
 
+    /**
+     * The OCID of the Data Safe target database.
+     */
     public String getTargetDatabaseId() {
         return targetDatabaseId;
     }
@@ -24,6 +27,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -48,6 +60,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> schemaName;
 
+    /**
+     * A filter to return only items related to specific schema name.
+     */
     public java.util.List<String> getSchemaName() {
         return schemaName;
     }
@@ -92,6 +107,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -137,6 +155,10 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -145,6 +167,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Boolean isOracleMaintained;
 
+    /**
+     * A filter to return only items related to specific type of schema.
+     */
     public Boolean getIsOracleMaintained() {
         return isOracleMaintained;
     }
@@ -153,6 +178,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String schemaNameContains;
 
+    /**
+     * A filter to return only items if schema name contains a specific string.
+     */
     public String getSchemaNameContains() {
         return schemaNameContains;
     }
@@ -164,10 +192,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the Data Safe target database.
+         */
         private String targetDatabaseId = null;
 
         /**
          * The OCID of the Data Safe target database.
+         * @param targetDatabaseId the value to set
          * @return this builder instance
          */
         public Builder targetDatabaseId(String targetDatabaseId) {
@@ -175,10 +207,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -186,10 +222,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -197,10 +237,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -208,10 +252,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only items related to specific schema name.
+         */
         private java.util.List<String> schemaName = null;
 
         /**
          * A filter to return only items related to specific schema name.
+         * @param schemaName the value to set
          * @return this builder instance
          */
         public Builder schemaName(java.util.List<String> schemaName) {
@@ -221,16 +269,21 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. A filter to return only items related to specific schema name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder schemaName(String singularValue) {
             return this.schemaName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -238,11 +291,16 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field used for sorting. Only one sorting order (sortOrder) can be specified.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -250,10 +308,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only items related to specific type of schema.
+         */
         private Boolean isOracleMaintained = null;
 
         /**
          * A filter to return only items related to specific type of schema.
+         * @param isOracleMaintained the value to set
          * @return this builder instance
          */
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
@@ -261,10 +323,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only items if schema name contains a specific string.
+         */
         private String schemaNameContains = null;
 
         /**
          * A filter to return only items if schema name contains a specific string.
+         * @param schemaNameContains the value to set
          * @return this builder instance
          */
         public Builder schemaNameContains(String schemaNameContains) {
@@ -356,7 +422,8 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -371,6 +438,10 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .schemaNameContains(schemaNameContains);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

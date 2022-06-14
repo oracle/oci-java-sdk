@@ -27,9 +27,17 @@ package com.oracle.bmc.datasafe.model;
 public final class OnPremiseConnector extends ConnectionOption {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the on-premises connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onPremConnectorId")
         private String onPremConnectorId;
 
+        /**
+         * The OCID of the on-premises connector.
+         * @param onPremConnectorId the value to set
+         * @return this builder
+         **/
         public Builder onPremConnectorId(String onPremConnectorId) {
             this.onPremConnectorId = onPremConnectorId;
             this.__explicitlySet__.add("onPremConnectorId");
@@ -77,6 +85,10 @@ public final class OnPremiseConnector extends ConnectionOption {
     @com.fasterxml.jackson.annotation.JsonProperty("onPremConnectorId")
     private final String onPremConnectorId;
 
+    /**
+     * The OCID of the on-premises connector.
+     * @return the value
+     **/
     public String getOnPremConnectorId() {
         return onPremConnectorId;
     }

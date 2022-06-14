@@ -17,6 +17,9 @@ public class ListProtectionCapabilityGroupTagsRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListProtectionCapabilityGroupTagsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +41,11 @@ public class ListProtectionCapabilityGroupTagsRequest
      */
     private String page;
 
+    /**
+     * A token representing the position at which to start retrieving results.
+     * This must come from the {@code opc-next-page} header field of a previous response.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -43,6 +54,9 @@ public class ListProtectionCapabilityGroupTagsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -51,6 +65,9 @@ public class ListProtectionCapabilityGroupTagsRequest
      */
     private com.oracle.bmc.waf.model.ProtectionCapabilitySummary.Type type;
 
+    /**
+     * A filter to return only resources that matches given type.
+     */
     public com.oracle.bmc.waf.model.ProtectionCapabilitySummary.Type getType() {
         return type;
     }
@@ -59,6 +76,9 @@ public class ListProtectionCapabilityGroupTagsRequest
      */
     private com.oracle.bmc.waf.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.waf.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -108,6 +128,12 @@ public class ListProtectionCapabilityGroupTagsRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     * Default order for name is ascending.
+     * If no value is specified name is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -116,6 +142,9 @@ public class ListProtectionCapabilityGroupTagsRequest
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire name given.
+     */
     public String getName() {
         return name;
     }
@@ -127,10 +156,14 @@ public class ListProtectionCapabilityGroupTagsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -138,10 +171,14 @@ public class ListProtectionCapabilityGroupTagsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -149,12 +186,18 @@ public class ListProtectionCapabilityGroupTagsRequest
             return this;
         }
 
+        /**
+         * A token representing the position at which to start retrieving results.
+         * This must come from the {@code opc-next-page} header field of a previous response.
+         *
+         */
         private String page = null;
 
         /**
          * A token representing the position at which to start retrieving results.
          * This must come from the {@code opc-next-page} header field of a previous response.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -162,10 +205,14 @@ public class ListProtectionCapabilityGroupTagsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -173,10 +220,14 @@ public class ListProtectionCapabilityGroupTagsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that matches given type.
+         */
         private com.oracle.bmc.waf.model.ProtectionCapabilitySummary.Type type = null;
 
         /**
          * A filter to return only resources that matches given type.
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(com.oracle.bmc.waf.model.ProtectionCapabilitySummary.Type type) {
@@ -184,10 +235,14 @@ public class ListProtectionCapabilityGroupTagsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.waf.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.waf.model.SortOrder sortOrder) {
@@ -195,6 +250,12 @@ public class ListProtectionCapabilityGroupTagsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for name is ascending.
+         * If no value is specified name is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -202,6 +263,7 @@ public class ListProtectionCapabilityGroupTagsRequest
          * Default order for name is ascending.
          * If no value is specified name is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -209,10 +271,14 @@ public class ListProtectionCapabilityGroupTagsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name given.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -303,7 +369,8 @@ public class ListProtectionCapabilityGroupTagsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -317,6 +384,10 @@ public class ListProtectionCapabilityGroupTagsRequest
                 .name(name);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

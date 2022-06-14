@@ -15,6 +15,12 @@ public class GetCloudVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetCloudVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.database.model.Update update;
 
+    /**
+     * The returned Update instance.
+     * @return the value
+     */
     public com.oracle.bmc.database.model.Update getUpdate() {
         return update;
     }
@@ -46,15 +56,35 @@ public class GetCloudVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Update instance.
+         */
         private com.oracle.bmc.database.model.Update update;
 
+        /**
+         * The returned Update instance.
+         * @param update the value to set
+         * @return this builder
+         */
         public Builder update(com.oracle.bmc.database.model.Update update) {
             this.update = update;
             return this;
@@ -72,11 +102,19 @@ public class GetCloudVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetCloudVmClusterUpdateResponse build() {
             return new GetCloudVmClusterUpdateResponse(__httpStatusCode__, opcRequestId, update);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

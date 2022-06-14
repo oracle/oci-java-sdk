@@ -17,6 +17,9 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,11 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private String resourceType;
 
+    /**
+     * Filter by resource.
+     * Supported values are HOST , STORAGE_SERVER and DATABASE
+     *
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -37,6 +45,11 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private String resourceMetric;
 
+    /**
+     * Filter by resource metric.
+     * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+     *
+     */
     public String getResourceMetric() {
         return resourceMetric;
     }
@@ -49,6 +62,13 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private String analysisTimeInterval;
 
+    /**
+     * Specify time period in ISO 8601 format with respect to current time.
+     * Default is last 30 days represented by P30D.
+     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     *
+     */
     public String getAnalysisTimeInterval() {
         return analysisTimeInterval;
     }
@@ -62,6 +82,14 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.Date timeIntervalStart;
 
+    /**
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -74,6 +102,13 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.Date timeIntervalEnd;
 
+    /**
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -83,6 +118,10 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.List<String> exadataInsightId;
 
+    /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
     }
@@ -93,6 +132,11 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.List<String> exadataType;
 
+    /**
+     * Filter by one or more Exadata types.
+     * Possible value are DBMACHINE, EXACS, and EXACC.
+     *
+     */
     public java.util.List<String> getExadataType() {
         return exadataType;
     }
@@ -102,6 +146,10 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.List<String> cdbName;
 
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
     public java.util.List<String> getCdbName() {
         return cdbName;
     }
@@ -111,6 +159,10 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.List<String> hostName;
 
+    /**
+     * Filter by hostname.
+     *
+     */
     public java.util.List<String> getHostName() {
         return hostName;
     }
@@ -122,6 +174,12 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -131,6 +189,10 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private Integer percentile;
 
+    /**
+     * Percentile values of daily usage to be used for computing the aggregate resource usage.
+     *
+     */
     public Integer getPercentile() {
         return percentile;
     }
@@ -143,6 +205,13 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.List<String> definedTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
@@ -154,6 +223,12 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.List<String> freeformTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
@@ -168,6 +243,15 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.List<String> definedTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
@@ -180,6 +264,13 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private java.util.List<String> freeformTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
@@ -190,6 +281,11 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -201,10 +297,14 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -212,12 +312,18 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
             return this;
         }
 
+        /**
+         * Filter by resource.
+         * Supported values are HOST , STORAGE_SERVER and DATABASE
+         *
+         */
         private String resourceType = null;
 
         /**
          * Filter by resource.
          * Supported values are HOST , STORAGE_SERVER and DATABASE
          *
+         * @param resourceType the value to set
          * @return this builder instance
          */
         public Builder resourceType(String resourceType) {
@@ -225,12 +331,18 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
             return this;
         }
 
+        /**
+         * Filter by resource metric.
+         * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+         *
+         */
         private String resourceMetric = null;
 
         /**
          * Filter by resource metric.
          * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
          *
+         * @param resourceMetric the value to set
          * @return this builder instance
          */
         public Builder resourceMetric(String resourceMetric) {
@@ -238,6 +350,13 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
             return this;
         }
 
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         *
+         */
         private String analysisTimeInterval = null;
 
         /**
@@ -246,6 +365,7 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
          * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
          *
+         * @param analysisTimeInterval the value to set
          * @return this builder instance
          */
         public Builder analysisTimeInterval(String analysisTimeInterval) {
@@ -253,6 +373,14 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
             return this;
         }
 
+        /**
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
+         */
         private java.util.Date timeIntervalStart = null;
 
         /**
@@ -262,6 +390,7 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * timeIntervalStart and timeIntervalEnd parameters are used together.
          * If analysisTimeInterval is specified, this parameter is ignored.
          *
+         * @param timeIntervalStart the value to set
          * @return this builder instance
          */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
@@ -269,6 +398,13 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
             return this;
         }
 
+        /**
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
+         */
         private java.util.Date timeIntervalEnd = null;
 
         /**
@@ -277,6 +413,7 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * timeIntervalStart and timeIntervalEnd are used together.
          * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
+         * @param timeIntervalEnd the value to set
          * @return this builder instance
          */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
@@ -284,11 +421,16 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
             return this;
         }
 
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private java.util.List<String> exadataInsightId = null;
 
         /**
          * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param exadataInsightId the value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
@@ -299,18 +441,25 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
         /**
          * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(String singularValue) {
             return this.exadataInsightId(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by one or more Exadata types.
+         * Possible value are DBMACHINE, EXACS, and EXACC.
+         *
+         */
         private java.util.List<String> exadataType = null;
 
         /**
          * Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param exadataType the value to set
          * @return this builder instance
          */
         public Builder exadataType(java.util.List<String> exadataType) {
@@ -322,17 +471,23 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * Singular setter. Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataType(String singularValue) {
             return this.exadataType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by one or more cdb name.
+         *
+         */
         private java.util.List<String> cdbName = null;
 
         /**
          * Filter by one or more cdb name.
          *
+         * @param cdbName the value to set
          * @return this builder instance
          */
         public Builder cdbName(java.util.List<String> cdbName) {
@@ -343,17 +498,23 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
         /**
          * Singular setter. Filter by one or more cdb name.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder cdbName(String singularValue) {
             return this.cdbName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by hostname.
+         *
+         */
         private java.util.List<String> hostName = null;
 
         /**
          * Filter by hostname.
          *
+         * @param hostName the value to set
          * @return this builder instance
          */
         public Builder hostName(java.util.List<String> hostName) {
@@ -364,12 +525,19 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
         /**
          * Singular setter. Filter by hostname.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder hostName(String singularValue) {
             return this.hostName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -377,6 +545,7 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -384,11 +553,16 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
             return this;
         }
 
+        /**
+         * Percentile values of daily usage to be used for computing the aggregate resource usage.
+         *
+         */
         private Integer percentile = null;
 
         /**
          * Percentile values of daily usage to be used for computing the aggregate resource usage.
          *
+         * @param percentile the value to set
          * @return this builder instance
          */
         public Builder percentile(Integer percentile) {
@@ -396,6 +570,13 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
             return this;
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagEquals = null;
 
         /**
@@ -404,6 +585,7 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagEquals the value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(java.util.List<String> definedTagEquals) {
@@ -417,12 +599,19 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(String singularValue) {
             return this.definedTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
@@ -430,6 +619,7 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagEquals the value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(java.util.List<String> freeformTagEquals) {
@@ -442,12 +632,22 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(String singularValue) {
             return this.freeformTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagExists = null;
 
         /**
@@ -458,6 +658,7 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagExists the value to set
          * @return this builder instance
          */
         public Builder definedTagExists(java.util.List<String> definedTagExists) {
@@ -473,12 +674,20 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagExists(String singularValue) {
             return this.definedTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagExists = null;
 
         /**
@@ -487,6 +696,7 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagExists the value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(java.util.List<String> freeformTagExists) {
@@ -500,18 +710,25 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(String singularValue) {
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -622,7 +839,8 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -645,6 +863,10 @@ public class SummarizeExadataInsightResourceUsageAggregatedRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

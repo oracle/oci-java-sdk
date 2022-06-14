@@ -29,27 +29,49 @@ public final class ConfigValue {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * configuration list item type, either CUSTOM or MANAGED
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listType")
         private ConfigurationListItemType listType;
 
+        /**
+         * configuration list item type, either CUSTOM or MANAGED
+         * @param listType the value to set
+         * @return this builder
+         **/
         public Builder listType(ConfigurationListItemType listType) {
             this.listType = listType;
             this.__explicitlySet__.add("listType");
             return this;
         }
-
+        /**
+         * type of the managed list
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedListType")
         private String managedListType;
 
+        /**
+         * type of the managed list
+         * @param managedListType the value to set
+         * @return this builder
+         **/
         public Builder managedListType(String managedListType) {
             this.managedListType = managedListType;
             this.__explicitlySet__.add("managedListType");
             return this;
         }
-
+        /**
+         * configuration value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * configuration value
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -94,6 +116,10 @@ public final class ConfigValue {
     @com.fasterxml.jackson.annotation.JsonProperty("listType")
     private final ConfigurationListItemType listType;
 
+    /**
+     * configuration list item type, either CUSTOM or MANAGED
+     * @return the value
+     **/
     public ConfigurationListItemType getListType() {
         return listType;
     }
@@ -104,6 +130,10 @@ public final class ConfigValue {
     @com.fasterxml.jackson.annotation.JsonProperty("managedListType")
     private final String managedListType;
 
+    /**
+     * type of the managed list
+     * @return the value
+     **/
     public String getManagedListType() {
         return managedListType;
     }
@@ -114,6 +144,10 @@ public final class ConfigValue {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * configuration value
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

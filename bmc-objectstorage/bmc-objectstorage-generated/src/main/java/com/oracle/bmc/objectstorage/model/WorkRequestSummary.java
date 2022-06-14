@@ -56,36 +56,77 @@ public final class WorkRequestSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
+        /**
+         * The type of work request.
+         * @param operationType the value to set
+         * @return this builder
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-
+        /**
+         * The status of a specified work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of a specified work request.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The id of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The id of the work request.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request. Work
+         * requests are scoped to the same compartment as the resource the work request affects.
+         * <p>
+         * If the work request affects multiple resources and those resources are not in the same compartment, the OCID of
+         * the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
+         * another compartment. In this case, the OCID of the source compartment is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request. Work
+         * requests are scoped to the same compartment as the resource the work request affects.
+         * <p>
+         * If the work request affects multiple resources and those resources are not in the same compartment, the OCID of
+         * the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
+         * another compartment. In this case, the OCID of the source compartment is used.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -100,37 +141,77 @@ public final class WorkRequestSummary {
             this.__explicitlySet__.add("resources");
             return this;
         }
-
+        /**
+         * Percentage of the work request completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
+        /**
+         * Percentage of the work request completed.
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-
+        /**
+         * The date and time the work request was created, as described in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * The date and time the work request was created, as described in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * The date and time the work request was started, as described in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The date and time the work request was started, as described in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The date and time the work request was finished, as described in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The date and time the work request was finished, as described in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
@@ -239,6 +320,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
+    /**
+     * The type of work request.
+     * @return the value
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
@@ -300,6 +385,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of a specified work request.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -310,6 +399,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The id of the work request.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -326,6 +419,16 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request. Work
+     * requests are scoped to the same compartment as the resource the work request affects.
+     * <p>
+     * If the work request affects multiple resources and those resources are not in the same compartment, the OCID of
+     * the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
+     * another compartment. In this case, the OCID of the source compartment is used.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -343,6 +446,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
+    /**
+     * Percentage of the work request completed.
+     * @return the value
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
@@ -355,6 +462,12 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * The date and time the work request was created, as described in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -367,6 +480,12 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The date and time the work request was started, as described in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -379,6 +498,12 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The date and time the work request was finished, as described in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }

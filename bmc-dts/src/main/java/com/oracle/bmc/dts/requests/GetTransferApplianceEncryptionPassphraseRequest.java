@@ -17,6 +17,9 @@ public class GetTransferApplianceEncryptionPassphraseRequest
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
@@ -25,6 +28,9 @@ public class GetTransferApplianceEncryptionPassphraseRequest
      */
     private String transferApplianceLabel;
 
+    /**
+     * Label of the Transfer Appliance
+     */
     public String getTransferApplianceLabel() {
         return transferApplianceLabel;
     }
@@ -36,10 +42,14 @@ public class GetTransferApplianceEncryptionPassphraseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -47,10 +57,14 @@ public class GetTransferApplianceEncryptionPassphraseRequest
             return this;
         }
 
+        /**
+         * Label of the Transfer Appliance
+         */
         private String transferApplianceLabel = null;
 
         /**
          * Label of the Transfer Appliance
+         * @param transferApplianceLabel the value to set
          * @return this builder instance
          */
         public Builder transferApplianceLabel(String transferApplianceLabel) {
@@ -130,12 +144,17 @@ public class GetTransferApplianceEncryptionPassphraseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().id(id).transferApplianceLabel(transferApplianceLabel);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

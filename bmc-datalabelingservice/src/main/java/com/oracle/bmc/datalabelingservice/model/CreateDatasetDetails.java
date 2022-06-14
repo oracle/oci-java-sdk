@@ -62,36 +62,65 @@ public final class CreateDatasetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name for the resource.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A user provided description of the dataset
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A user provided description of the dataset
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The OCID of the compartment of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment of the resource.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The annotation format name required for labeling records.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("annotationFormat")
         private String annotationFormat;
 
+        /**
+         * The annotation format name required for labeling records.
+         * @param annotationFormat the value to set
+         * @return this builder
+         **/
         public Builder annotationFormat(String annotationFormat) {
             this.annotationFormat = annotationFormat;
             this.__explicitlySet__.add("annotationFormat");
@@ -134,28 +163,57 @@ public final class CreateDatasetDetails {
             this.__explicitlySet__.add("labelSet");
             return this;
         }
-
+        /**
+         * The labeling instructions for human labelers in rich text format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelingInstructions")
         private String labelingInstructions;
 
+        /**
+         * The labeling instructions for human labelers in rich text format
+         * @param labelingInstructions the value to set
+         * @return this builder
+         **/
         public Builder labelingInstructions(String labelingInstructions) {
             this.labelingInstructions = labelingInstructions;
             this.__explicitlySet__.add("labelingInstructions");
             return this;
         }
-
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -222,6 +280,10 @@ public final class CreateDatasetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name for the resource.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -232,6 +294,10 @@ public final class CreateDatasetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A user provided description of the dataset
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -242,6 +308,10 @@ public final class CreateDatasetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment of the resource.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -252,6 +322,10 @@ public final class CreateDatasetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("annotationFormat")
     private final String annotationFormat;
 
+    /**
+     * The annotation format name required for labeling records.
+     * @return the value
+     **/
     public String getAnnotationFormat() {
         return annotationFormat;
     }
@@ -290,6 +364,10 @@ public final class CreateDatasetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("labelingInstructions")
     private final String labelingInstructions;
 
+    /**
+     * The labeling instructions for human labelers in rich text format
+     * @return the value
+     **/
     public String getLabelingInstructions() {
         return labelingInstructions;
     }
@@ -302,6 +380,12 @@ public final class CreateDatasetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -314,6 +398,12 @@ public final class CreateDatasetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -31,18 +31,35 @@ public final class TerraformVersionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A supported Terraform version. Example: {@code 0.12.x}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A supported Terraform version. Example: {@code 0.12.x}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Indicates whether this Terraform version is used by default in {@link #createStack(CreateStackRequest) createStack}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Indicates whether this Terraform version is used by default in {@link #createStack(CreateStackRequest) createStack}.
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -85,6 +102,11 @@ public final class TerraformVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A supported Terraform version. Example: {@code 0.12.x}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -95,6 +117,10 @@ public final class TerraformVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Indicates whether this Terraform version is used by default in {@link #createStack(CreateStackRequest) createStack}.
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }

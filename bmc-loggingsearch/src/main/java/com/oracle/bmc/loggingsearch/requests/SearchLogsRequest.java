@@ -19,6 +19,10 @@ public class SearchLogsRequest
      */
     private com.oracle.bmc.loggingsearch.model.SearchLogsDetails searchLogsDetails;
 
+    /**
+     * Search request.
+     *
+     */
     public com.oracle.bmc.loggingsearch.model.SearchLogsDetails getSearchLogsDetails() {
         return searchLogsDetails;
     }
@@ -29,6 +33,11 @@ public class SearchLogsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,6 +47,10 @@ public class SearchLogsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a response. Pagination is not supported in this API.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -48,6 +61,11 @@ public class SearchLogsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -69,11 +87,16 @@ public class SearchLogsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Search request.
+         *
+         */
         private com.oracle.bmc.loggingsearch.model.SearchLogsDetails searchLogsDetails = null;
 
         /**
          * Search request.
          *
+         * @param searchLogsDetails the value to set
          * @return this builder instance
          */
         public Builder searchLogsDetails(
@@ -82,12 +105,18 @@ public class SearchLogsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -95,11 +124,16 @@ public class SearchLogsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a response. Pagination is not supported in this API.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a response. Pagination is not supported in this API.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -107,12 +141,18 @@ public class SearchLogsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
          * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -205,7 +245,8 @@ public class SearchLogsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +256,10 @@ public class SearchLogsRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

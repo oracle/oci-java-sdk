@@ -17,6 +17,9 @@ public class ListBillingSchedulesRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,10 @@ public class ListBillingSchedulesRequest
      */
     private String subscriptionId;
 
+    /**
+     * This param is used to get only the billing schedules for a particular Subscription Id
+     *
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -35,6 +42,10 @@ public class ListBillingSchedulesRequest
      */
     private String subscribedServiceId;
 
+    /**
+     * This param is used to get only the billing schedules for a particular Subscribed Service
+     *
+     */
     public String getSubscribedServiceId() {
         return subscribedServiceId;
     }
@@ -46,6 +57,12 @@ public class ListBillingSchedulesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: '500'
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -55,6 +72,10 @@ public class ListBillingSchedulesRequest
      */
     private String page;
 
+    /**
+     * The value of the 'opc-next-page' response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -101,6 +122,10 @@ public class ListBillingSchedulesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -147,6 +172,10 @@ public class ListBillingSchedulesRequest
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ('sortOrder').
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -156,6 +185,10 @@ public class ListBillingSchedulesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -165,6 +198,10 @@ public class ListBillingSchedulesRequest
      */
     private String xOneOriginRegion;
 
+    /**
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+     *
+     */
     public String getXOneOriginRegion() {
         return xOneOriginRegion;
     }
@@ -176,10 +213,14 @@ public class ListBillingSchedulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -187,11 +228,16 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
+        /**
+         * This param is used to get only the billing schedules for a particular Subscription Id
+         *
+         */
         private String subscriptionId = null;
 
         /**
          * This param is used to get only the billing schedules for a particular Subscription Id
          *
+         * @param subscriptionId the value to set
          * @return this builder instance
          */
         public Builder subscriptionId(String subscriptionId) {
@@ -199,11 +245,16 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
+        /**
+         * This param is used to get only the billing schedules for a particular Subscribed Service
+         *
+         */
         private String subscribedServiceId = null;
 
         /**
          * This param is used to get only the billing schedules for a particular Subscribed Service
          *
+         * @param subscribedServiceId the value to set
          * @return this builder instance
          */
         public Builder subscribedServiceId(String subscribedServiceId) {
@@ -211,6 +262,12 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+         * <p>
+         * Example: '500'
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -218,6 +275,7 @@ public class ListBillingSchedulesRequest
          * <p>
          * Example: '500'
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -225,11 +283,16 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
+        /**
+         * The value of the 'opc-next-page' response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the 'opc-next-page' response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -237,11 +300,16 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ('ASC') or descending ('DESC').
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ('ASC') or descending ('DESC').
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -249,11 +317,16 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ('sortOrder').
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can provide one sort order ('sortOrder').
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -261,11 +334,16 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -273,11 +351,16 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
+        /**
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+         *
+         */
         private String xOneOriginRegion = null;
 
         /**
          * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
          *
+         * @param xOneOriginRegion the value to set
          * @return this builder instance
          */
         public Builder xOneOriginRegion(String xOneOriginRegion) {
@@ -369,7 +452,8 @@ public class ListBillingSchedulesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -384,6 +468,10 @@ public class ListBillingSchedulesRequest
                 .xOneOriginRegion(xOneOriginRegion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,9 @@ public class GetRoverNodeRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String roverNodeId;
 
+    /**
+     * Unique RoverNode identifier
+     */
     public String getRoverNodeId() {
         return roverNodeId;
     }
@@ -24,6 +27,9 @@ public class GetRoverNodeRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetRoverNodeRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique RoverNode identifier
+         */
         private String roverNodeId = null;
 
         /**
          * Unique RoverNode identifier
+         * @param roverNodeId the value to set
          * @return this builder instance
          */
         public Builder roverNodeId(String roverNodeId) {
@@ -46,10 +56,14 @@ public class GetRoverNodeRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetRoverNodeRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().roverNodeId(roverNodeId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

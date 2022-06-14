@@ -29,18 +29,53 @@ public final class BackendHealth {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The general health status of the specified backend server as reported by the primary and standby load balancers.
+         * <p>
+         *   **OK:** Both health checks returned {@code OK}.
+         * <p>
+         *   **WARNING:** One health check returned {@code OK} and one did not.
+         * <p>
+         *   **CRITICAL:** Neither health check returned {@code OK}.
+         * <p>
+         *   **UNKNOWN:** One or both health checks returned {@code UNKNOWN}, or the system was unable to retrieve metrics at this time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The general health status of the specified backend server as reported by the primary and standby load balancers.
+         * <p>
+         *   **OK:** Both health checks returned {@code OK}.
+         * <p>
+         *   **WARNING:** One health check returned {@code OK} and one did not.
+         * <p>
+         *   **CRITICAL:** Neither health check returned {@code OK}.
+         * <p>
+         *   **UNKNOWN:** One or both health checks returned {@code UNKNOWN}, or the system was unable to retrieve metrics at this time.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * A list of the most recent health check results returned for the specified backend server.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
         private java.util.List<HealthCheckResult> healthCheckResults;
 
+        /**
+         * A list of the most recent health check results returned for the specified backend server.
+         *
+         * @param healthCheckResults the value to set
+         * @return this builder
+         **/
         public Builder healthCheckResults(java.util.List<HealthCheckResult> healthCheckResults) {
             this.healthCheckResults = healthCheckResults;
             this.__explicitlySet__.add("healthCheckResults");
@@ -150,6 +185,19 @@ public final class BackendHealth {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The general health status of the specified backend server as reported by the primary and standby load balancers.
+     * <p>
+     *   **OK:** Both health checks returned {@code OK}.
+     * <p>
+     *   **WARNING:** One health check returned {@code OK} and one did not.
+     * <p>
+     *   **CRITICAL:** Neither health check returned {@code OK}.
+     * <p>
+     *   **UNKNOWN:** One or both health checks returned {@code UNKNOWN}, or the system was unable to retrieve metrics at this time.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -161,6 +209,11 @@ public final class BackendHealth {
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
     private final java.util.List<HealthCheckResult> healthCheckResults;
 
+    /**
+     * A list of the most recent health check results returned for the specified backend server.
+     *
+     * @return the value
+     **/
     public java.util.List<HealthCheckResult> getHealthCheckResults() {
         return healthCheckResults;
     }

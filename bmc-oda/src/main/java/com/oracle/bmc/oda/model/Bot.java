@@ -81,162 +81,303 @@ public final class Bot {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique immutable identifier that was assigned when the resource was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique immutable identifier that was assigned when the resource was created.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         *
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The resource's display name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The resource's display name.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The resource's category.  This is used to group resource's together.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
+        /**
+         * The resource's category.  This is used to group resource's together.
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-
+        /**
+         * A short description of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A short description of the resource.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The resource's namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The resource's namespace.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * The resource's current state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The resource's current state.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The resource's publish state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private BotPublishState lifecycleDetails;
 
+        /**
+         * The resource's publish state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(BotPublishState lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The ODA Platform Version for this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
         private String platformVersion;
 
+        /**
+         * The ODA Platform Version for this resource.
+         * @param platformVersion the value to set
+         * @return this builder
+         **/
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = platformVersion;
             this.__explicitlySet__.add("platformVersion");
             return this;
         }
-
+        /**
+         * The unique identifier for the base reource (when this resource extends another).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baseId")
         private String baseId;
 
+        /**
+         * The unique identifier for the base reource (when this resource extends another).
+         * @param baseId the value to set
+         * @return this builder
+         **/
         public Builder baseId(String baseId) {
             this.baseId = baseId;
             this.__explicitlySet__.add("baseId");
             return this;
         }
-
+        /**
+         * The multilingual mode for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("multilingualMode")
         private BotMultilingualMode multilingualMode;
 
+        /**
+         * The multilingual mode for the resource.
+         * @param multilingualMode the value to set
+         * @return this builder
+         **/
         public Builder multilingualMode(BotMultilingualMode multilingualMode) {
             this.multilingualMode = multilingualMode;
             this.__explicitlySet__.add("multilingualMode");
             return this;
         }
-
+        /**
+         * The primary language for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryLanguageTag")
         private String primaryLanguageTag;
 
+        /**
+         * The primary language for the resource.
+         * @param primaryLanguageTag the value to set
+         * @return this builder
+         **/
         public Builder primaryLanguageTag(String primaryLanguageTag) {
             this.primaryLanguageTag = primaryLanguageTag;
             this.__explicitlySet__.add("primaryLanguageTag");
             return this;
         }
-
+        /**
+         * A list of native languages supported by this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nativeLanguageTags")
         private java.util.List<String> nativeLanguageTags;
 
+        /**
+         * A list of native languages supported by this resource.
+         * @param nativeLanguageTags the value to set
+         * @return this builder
+         **/
         public Builder nativeLanguageTags(java.util.List<String> nativeLanguageTags) {
             this.nativeLanguageTags = nativeLanguageTags;
             this.__explicitlySet__.add("nativeLanguageTags");
             return this;
         }
-
+        /**
+         * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -316,6 +457,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique immutable identifier that was assigned when the resource was created.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -327,6 +472,11 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -338,6 +488,11 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+     *
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -349,6 +504,11 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The resource's display name.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -359,6 +519,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * The resource's category.  This is used to group resource's together.
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }
@@ -369,6 +533,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A short description of the resource.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -379,6 +547,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The resource's namespace.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -389,6 +561,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The resource's current state.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -399,6 +575,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final BotPublishState lifecycleDetails;
 
+    /**
+     * The resource's publish state.
+     * @return the value
+     **/
     public BotPublishState getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -409,6 +589,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
+    /**
+     * The ODA Platform Version for this resource.
+     * @return the value
+     **/
     public String getPlatformVersion() {
         return platformVersion;
     }
@@ -419,6 +603,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("baseId")
     private final String baseId;
 
+    /**
+     * The unique identifier for the base reource (when this resource extends another).
+     * @return the value
+     **/
     public String getBaseId() {
         return baseId;
     }
@@ -429,6 +617,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("multilingualMode")
     private final BotMultilingualMode multilingualMode;
 
+    /**
+     * The multilingual mode for the resource.
+     * @return the value
+     **/
     public BotMultilingualMode getMultilingualMode() {
         return multilingualMode;
     }
@@ -439,6 +631,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("primaryLanguageTag")
     private final String primaryLanguageTag;
 
+    /**
+     * The primary language for the resource.
+     * @return the value
+     **/
     public String getPrimaryLanguageTag() {
         return primaryLanguageTag;
     }
@@ -449,6 +645,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("nativeLanguageTags")
     private final java.util.List<String> nativeLanguageTags;
 
+    /**
+     * A list of native languages supported by this resource.
+     * @return the value
+     **/
     public java.util.List<String> getNativeLanguageTags() {
         return nativeLanguageTags;
     }
@@ -459,6 +659,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -469,6 +673,10 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -481,6 +689,12 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -493,6 +707,12 @@ public final class Bot {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

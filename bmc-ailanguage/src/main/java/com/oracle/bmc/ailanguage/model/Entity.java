@@ -33,54 +33,101 @@ public final class Entity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
 
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         * @param offset the value to set
+         * @return this builder
+         **/
         public Builder offset(Integer offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-
+        /**
+         * Length of entity text
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
+        /**
+         * Length of entity text
+         * @param length the value to set
+         * @return this builder
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-
+        /**
+         * Entity text like name of person, location, and so on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * Entity text like name of person, location, and so on.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-
+        /**
+         * Type of entity text like PER, LOC, GPE and NOPE.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Type of entity text like PER, LOC, GPE and NOPE.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * This flag is to indicate if it is PII entity or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPii")
         private Boolean isPii;
 
+        /**
+         * This flag is to indicate if it is PII entity or not.
+         * @param isPii the value to set
+         * @return this builder
+         **/
         public Builder isPii(Boolean isPii) {
             this.isPii = isPii;
             this.__explicitlySet__.add("isPii");
             return this;
         }
-
+        /**
+         * Score or confidence of extracted entity type.
+         * Example: {@code 0.9999856066867399}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
+        /**
+         * Score or confidence of extracted entity type.
+         * Example: {@code 0.9999856066867399}
+         *
+         * @param score the value to set
+         * @return this builder
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -128,6 +175,10 @@ public final class Entity {
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Integer offset;
 
+    /**
+     * The number of Unicode code points preceding this entity in the submitted text.
+     * @return the value
+     **/
     public Integer getOffset() {
         return offset;
     }
@@ -138,6 +189,10 @@ public final class Entity {
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
+    /**
+     * Length of entity text
+     * @return the value
+     **/
     public Integer getLength() {
         return length;
     }
@@ -148,6 +203,10 @@ public final class Entity {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * Entity text like name of person, location, and so on.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }
@@ -158,6 +217,10 @@ public final class Entity {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Type of entity text like PER, LOC, GPE and NOPE.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -168,6 +231,10 @@ public final class Entity {
     @com.fasterxml.jackson.annotation.JsonProperty("isPii")
     private final Boolean isPii;
 
+    /**
+     * This flag is to indicate if it is PII entity or not.
+     * @return the value
+     **/
     public Boolean getIsPii() {
         return isPii;
     }
@@ -180,6 +247,12 @@ public final class Entity {
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
+    /**
+     * Score or confidence of extracted entity type.
+     * Example: {@code 0.9999856066867399}
+     *
+     * @return the value
+     **/
     public Double getScore() {
         return score;
     }

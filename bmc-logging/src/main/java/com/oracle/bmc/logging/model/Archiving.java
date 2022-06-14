@@ -27,9 +27,17 @@ public final class Archiving {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * True if archiving enabled. This field is now decrecated, you should use cloud flow to enable archiving.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * True if archiving enabled. This field is now decrecated, you should use cloud flow to enable archiving.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -71,6 +79,10 @@ public final class Archiving {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * True if archiving enabled. This field is now decrecated, you should use cloud flow to enable archiving.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }

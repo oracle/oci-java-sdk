@@ -32,9 +32,17 @@ public final class CreateSubCategoryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for the subcategory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
         private String subCategoryKey;
 
+        /**
+         * Unique identifier for the subcategory.
+         * @param subCategoryKey the value to set
+         * @return this builder
+         **/
         public Builder subCategoryKey(String subCategoryKey) {
             this.subCategoryKey = subCategoryKey;
             this.__explicitlySet__.add("subCategoryKey");
@@ -76,6 +84,10 @@ public final class CreateSubCategoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
     private final String subCategoryKey;
 
+    /**
+     * Unique identifier for the subcategory.
+     * @return the value
+     **/
     public String getSubCategoryKey() {
         return subCategoryKey;
     }

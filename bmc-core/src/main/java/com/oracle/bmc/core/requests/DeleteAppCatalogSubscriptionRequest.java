@@ -17,6 +17,9 @@ public class DeleteAppCatalogSubscriptionRequest
      */
     private String listingId;
 
+    /**
+     * The OCID of the listing.
+     */
     public String getListingId() {
         return listingId;
     }
@@ -25,6 +28,9 @@ public class DeleteAppCatalogSubscriptionRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -33,6 +39,9 @@ public class DeleteAppCatalogSubscriptionRequest
      */
     private String resourceVersion;
 
+    /**
+     * Listing Resource Version.
+     */
     public String getResourceVersion() {
         return resourceVersion;
     }
@@ -44,10 +53,14 @@ public class DeleteAppCatalogSubscriptionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the listing.
+         */
         private String listingId = null;
 
         /**
          * The OCID of the listing.
+         * @param listingId the value to set
          * @return this builder instance
          */
         public Builder listingId(String listingId) {
@@ -55,10 +68,14 @@ public class DeleteAppCatalogSubscriptionRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -66,10 +83,14 @@ public class DeleteAppCatalogSubscriptionRequest
             return this;
         }
 
+        /**
+         * Listing Resource Version.
+         */
         private String resourceVersion = null;
 
         /**
          * Listing Resource Version.
+         * @param resourceVersion the value to set
          * @return this builder instance
          */
         public Builder resourceVersion(String resourceVersion) {
@@ -149,7 +170,8 @@ public class DeleteAppCatalogSubscriptionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -158,6 +180,10 @@ public class DeleteAppCatalogSubscriptionRequest
                 .resourceVersion(resourceVersion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

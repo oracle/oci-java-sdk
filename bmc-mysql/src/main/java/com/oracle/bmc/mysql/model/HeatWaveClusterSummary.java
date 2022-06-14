@@ -45,45 +45,97 @@ public final class HeatWaveClusterSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape determines resources to allocate to the HeatWave
+         * nodes - CPU cores, memory.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * The shape determines resources to allocate to the HeatWave
+         * nodes - CPU cores, memory.
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * The number of analytics-processing compute instances, of the
+         * specified shape, in the HeatWave cluster.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
         private Integer clusterSize;
 
+        /**
+         * The number of analytics-processing compute instances, of the
+         * specified shape, in the HeatWave cluster.
+         *
+         * @param clusterSize the value to set
+         * @return this builder
+         **/
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = clusterSize;
             this.__explicitlySet__.add("clusterSize");
             return this;
         }
-
+        /**
+         * The current state of the MySQL HeatWave cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private HeatWaveCluster.LifecycleState lifecycleState;
 
+        /**
+         * The current state of the MySQL HeatWave cluster.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(HeatWaveCluster.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the HeatWave cluster was created,
+         * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the HeatWave cluster was created,
+         * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the HeatWave cluster was last updated,
+         * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the HeatWave cluster was last updated,
+         * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -134,6 +186,12 @@ public final class HeatWaveClusterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * The shape determines resources to allocate to the HeatWave
+     * nodes - CPU cores, memory.
+     *
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -146,6 +204,12 @@ public final class HeatWaveClusterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
     private final Integer clusterSize;
 
+    /**
+     * The number of analytics-processing compute instances, of the
+     * specified shape, in the HeatWave cluster.
+     *
+     * @return the value
+     **/
     public Integer getClusterSize() {
         return clusterSize;
     }
@@ -156,6 +220,10 @@ public final class HeatWaveClusterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final HeatWaveCluster.LifecycleState lifecycleState;
 
+    /**
+     * The current state of the MySQL HeatWave cluster.
+     * @return the value
+     **/
     public HeatWaveCluster.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -168,6 +236,12 @@ public final class HeatWaveClusterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the HeatWave cluster was created,
+     * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -180,6 +254,12 @@ public final class HeatWaveClusterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the HeatWave cluster was last updated,
+     * as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

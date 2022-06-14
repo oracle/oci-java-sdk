@@ -32,18 +32,45 @@ public final class ObjectLifecyclePolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date and time the object lifecycle policy was created, as described in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the object lifecycle policy was created, as described in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The live lifecycle policy on the bucket.
+         * <p>
+         * For an example of this value, see the
+         * [PutObjectLifecyclePolicy API documentation](https://docs.cloud.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ObjectLifecycleRule> items;
 
+        /**
+         * The live lifecycle policy on the bucket.
+         * <p>
+         * For an example of this value, see the
+         * [PutObjectLifecyclePolicy API documentation](https://docs.cloud.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ObjectLifecycleRule> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -87,6 +114,12 @@ public final class ObjectLifecyclePolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the object lifecycle policy was created, as described in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -101,6 +134,14 @@ public final class ObjectLifecyclePolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ObjectLifecycleRule> items;
 
+    /**
+     * The live lifecycle policy on the bucket.
+     * <p>
+     * For an example of this value, see the
+     * [PutObjectLifecyclePolicy API documentation](https://docs.cloud.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
+     *
+     * @return the value
+     **/
     public java.util.List<ObjectLifecycleRule> getItems() {
         return items;
     }

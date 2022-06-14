@@ -28,18 +28,33 @@ public final class Category {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for the category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categoryKey")
         private String categoryKey;
 
+        /**
+         * Unique identifier for the category.
+         * @param categoryKey the value to set
+         * @return this builder
+         **/
         public Builder categoryKey(String categoryKey) {
             this.categoryKey = categoryKey;
             this.__explicitlySet__.add("categoryKey");
             return this;
         }
-
+        /**
+         * The name of the category. For example, {@code Compute} or {@code Identity}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the category. For example, {@code Compute} or {@code Identity}.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -81,6 +96,10 @@ public final class Category {
     @com.fasterxml.jackson.annotation.JsonProperty("categoryKey")
     private final String categoryKey;
 
+    /**
+     * Unique identifier for the category.
+     * @return the value
+     **/
     public String getCategoryKey() {
         return categoryKey;
     }
@@ -91,6 +110,10 @@ public final class Category {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the category. For example, {@code Compute} or {@code Identity}.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

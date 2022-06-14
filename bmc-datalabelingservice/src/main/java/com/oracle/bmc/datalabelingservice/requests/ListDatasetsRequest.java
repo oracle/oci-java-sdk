@@ -16,6 +16,9 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String id;
 
+    /**
+     * Unique Dataset OCID
+     */
     public String getId() {
         return id;
     }
@@ -32,6 +38,9 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String annotationFormat;
 
+    /**
+     * A filter to return only resources that match the entire annotation format given.
+     */
     public String getAnnotationFormat() {
         return annotationFormat;
     }
@@ -40,6 +49,9 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.datalabelingservice.model.Dataset.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources whose lifecycleState matches this query param.
+     */
     public com.oracle.bmc.datalabelingservice.model.Dataset.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -48,6 +60,9 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -56,6 +71,9 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -64,6 +82,9 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -72,6 +93,9 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.datalabelingservice.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.datalabelingservice.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -118,6 +142,10 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -126,6 +154,9 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -137,10 +168,14 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -148,10 +183,14 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Dataset OCID
+         */
         private String id = null;
 
         /**
          * Unique Dataset OCID
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -159,10 +198,14 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire annotation format given.
+         */
         private String annotationFormat = null;
 
         /**
          * A filter to return only resources that match the entire annotation format given.
+         * @param annotationFormat the value to set
          * @return this builder instance
          */
         public Builder annotationFormat(String annotationFormat) {
@@ -170,11 +213,15 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A filter to return only resources whose lifecycleState matches this query param.
+         */
         private com.oracle.bmc.datalabelingservice.model.Dataset.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to return only resources whose lifecycleState matches this query param.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -183,10 +230,14 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -194,10 +245,14 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -205,10 +260,14 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -216,10 +275,14 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.datalabelingservice.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.datalabelingservice.model.SortOrder sortOrder) {
@@ -227,11 +290,16 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -239,10 +307,14 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -336,7 +408,8 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -352,6 +425,10 @@ public class ListDatasetsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

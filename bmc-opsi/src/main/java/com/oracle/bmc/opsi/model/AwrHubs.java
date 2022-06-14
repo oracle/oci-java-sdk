@@ -27,9 +27,17 @@ public final class AwrHubs {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Awr Hub Object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("awrHubs")
         private Object awrHubs;
 
+        /**
+         * Awr Hub Object.
+         * @param awrHubs the value to set
+         * @return this builder
+         **/
         public Builder awrHubs(Object awrHubs) {
             this.awrHubs = awrHubs;
             this.__explicitlySet__.add("awrHubs");
@@ -71,6 +79,10 @@ public final class AwrHubs {
     @com.fasterxml.jackson.annotation.JsonProperty("awrHubs")
     private final Object awrHubs;
 
+    /**
+     * Awr Hub Object.
+     * @return the value
+     **/
     public Object getAwrHubs() {
         return awrHubs;
     }

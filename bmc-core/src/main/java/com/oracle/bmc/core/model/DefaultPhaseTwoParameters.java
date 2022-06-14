@@ -38,29 +38,51 @@ public final class DefaultPhaseTwoParameters {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Default phase two encryption algorithms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultEncryptionAlgorithms")
         private java.util.List<String> defaultEncryptionAlgorithms;
 
+        /**
+         * Default phase two encryption algorithms.
+         * @param defaultEncryptionAlgorithms the value to set
+         * @return this builder
+         **/
         public Builder defaultEncryptionAlgorithms(
                 java.util.List<String> defaultEncryptionAlgorithms) {
             this.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
             this.__explicitlySet__.add("defaultEncryptionAlgorithms");
             return this;
         }
-
+        /**
+         * Default phase two authentication algorithms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultAuthenticationAlgorithms")
         private java.util.List<String> defaultAuthenticationAlgorithms;
 
+        /**
+         * Default phase two authentication algorithms.
+         * @param defaultAuthenticationAlgorithms the value to set
+         * @return this builder
+         **/
         public Builder defaultAuthenticationAlgorithms(
                 java.util.List<String> defaultAuthenticationAlgorithms) {
             this.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
             this.__explicitlySet__.add("defaultAuthenticationAlgorithms");
             return this;
         }
-
+        /**
+         * Default perfect forward secrecy Diffie-Hellman groups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPfsDhGroup")
         private String defaultPfsDhGroup;
 
+        /**
+         * Default perfect forward secrecy Diffie-Hellman groups.
+         * @param defaultPfsDhGroup the value to set
+         * @return this builder
+         **/
         public Builder defaultPfsDhGroup(String defaultPfsDhGroup) {
             this.defaultPfsDhGroup = defaultPfsDhGroup;
             this.__explicitlySet__.add("defaultPfsDhGroup");
@@ -109,6 +131,10 @@ public final class DefaultPhaseTwoParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultEncryptionAlgorithms")
     private final java.util.List<String> defaultEncryptionAlgorithms;
 
+    /**
+     * Default phase two encryption algorithms.
+     * @return the value
+     **/
     public java.util.List<String> getDefaultEncryptionAlgorithms() {
         return defaultEncryptionAlgorithms;
     }
@@ -119,6 +145,10 @@ public final class DefaultPhaseTwoParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultAuthenticationAlgorithms")
     private final java.util.List<String> defaultAuthenticationAlgorithms;
 
+    /**
+     * Default phase two authentication algorithms.
+     * @return the value
+     **/
     public java.util.List<String> getDefaultAuthenticationAlgorithms() {
         return defaultAuthenticationAlgorithms;
     }
@@ -129,6 +159,10 @@ public final class DefaultPhaseTwoParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPfsDhGroup")
     private final String defaultPfsDhGroup;
 
+    /**
+     * Default perfect forward secrecy Diffie-Hellman groups.
+     * @return the value
+     **/
     public String getDefaultPfsDhGroup() {
         return defaultPfsDhGroup;
     }

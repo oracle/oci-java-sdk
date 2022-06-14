@@ -30,9 +30,17 @@ public final class QueryableFieldCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A collection of queryable field summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<QueryableFieldSummary> items;
 
+        /**
+         * A collection of queryable field summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<QueryableFieldSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class QueryableFieldCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<QueryableFieldSummary> items;
 
+    /**
+     * A collection of queryable field summaries.
+     * @return the value
+     **/
     public java.util.List<QueryableFieldSummary> getItems() {
         return items;
     }

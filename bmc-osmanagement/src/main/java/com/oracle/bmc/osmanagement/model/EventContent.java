@@ -30,27 +30,49 @@ public final class EventContent {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Status of the event content
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentAvailability")
         private ContentAvailability contentAvailability;
 
+        /**
+         * Status of the event content
+         * @param contentAvailability the value to set
+         * @return this builder
+         **/
         public Builder contentAvailability(ContentAvailability contentAvailability) {
             this.contentAvailability = contentAvailability;
             this.__explicitlySet__.add("contentAvailability");
             return this;
         }
-
+        /**
+         * Path to the event content on the instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instancePath")
         private String instancePath;
 
+        /**
+         * Path to the event content on the instance
+         * @param instancePath the value to set
+         * @return this builder
+         **/
         public Builder instancePath(String instancePath) {
             this.instancePath = instancePath;
             this.__explicitlySet__.add("instancePath");
             return this;
         }
-
+        /**
+         * size in bytes of the event content (size of the zip file uploaded)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Integer size;
 
+        /**
+         * size in bytes of the event content (size of the zip file uploaded)
+         * @param size the value to set
+         * @return this builder
+         **/
         public Builder size(Integer size) {
             this.size = size;
             this.__explicitlySet__.add("size");
@@ -95,6 +117,10 @@ public final class EventContent {
     @com.fasterxml.jackson.annotation.JsonProperty("contentAvailability")
     private final ContentAvailability contentAvailability;
 
+    /**
+     * Status of the event content
+     * @return the value
+     **/
     public ContentAvailability getContentAvailability() {
         return contentAvailability;
     }
@@ -105,6 +131,10 @@ public final class EventContent {
     @com.fasterxml.jackson.annotation.JsonProperty("instancePath")
     private final String instancePath;
 
+    /**
+     * Path to the event content on the instance
+     * @return the value
+     **/
     public String getInstancePath() {
         return instancePath;
     }
@@ -115,6 +145,10 @@ public final class EventContent {
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Integer size;
 
+    /**
+     * size in bytes of the event content (size of the zip file uploaded)
+     * @return the value
+     **/
     public Integer getSize() {
         return size;
     }

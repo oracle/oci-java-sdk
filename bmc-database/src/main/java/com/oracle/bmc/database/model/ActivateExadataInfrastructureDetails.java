@@ -30,9 +30,17 @@ public final class ActivateExadataInfrastructureDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The activation zip file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activationFile")
         private byte[] activationFile;
 
+        /**
+         * The activation zip file.
+         * @param activationFile the value to set
+         * @return this builder
+         **/
         public Builder activationFile(byte[] activationFile) {
             this.activationFile = activationFile;
             this.__explicitlySet__.add("activationFile");
@@ -75,6 +83,10 @@ public final class ActivateExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("activationFile")
     private final byte[] activationFile;
 
+    /**
+     * The activation zip file.
+     * @return the value
+     **/
     public byte[] getActivationFile() {
         return activationFile;
     }

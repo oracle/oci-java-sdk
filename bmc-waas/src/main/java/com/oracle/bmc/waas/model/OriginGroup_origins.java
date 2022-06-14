@@ -30,18 +30,33 @@ public final class OriginGroup_origins {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The IP address or CIDR notation of the origin server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("origin")
         private String origin;
 
+        /**
+         * The IP address or CIDR notation of the origin server.
+         * @param origin the value to set
+         * @return this builder
+         **/
         public Builder origin(String origin) {
             this.origin = origin;
             this.__explicitlySet__.add("origin");
             return this;
         }
-
+        /**
+         * The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
+        /**
+         * The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
+         * @param weight the value to set
+         * @return this builder
+         **/
         public Builder weight(Integer weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
@@ -83,6 +98,10 @@ public final class OriginGroup_origins {
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     private final String origin;
 
+    /**
+     * The IP address or CIDR notation of the origin server.
+     * @return the value
+     **/
     public String getOrigin() {
         return origin;
     }
@@ -93,6 +112,10 @@ public final class OriginGroup_origins {
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     private final Integer weight;
 
+    /**
+     * The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
+     * @return the value
+     **/
     public Integer getWeight() {
         return weight;
     }

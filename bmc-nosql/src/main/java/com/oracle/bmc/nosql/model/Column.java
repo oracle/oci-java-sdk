@@ -30,36 +30,65 @@ public final class Column {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The column name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The column name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The column type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * The column type.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The column nullable flag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isNullable")
         private Boolean isNullable;
 
+        /**
+         * The column nullable flag.
+         * @param isNullable the value to set
+         * @return this builder
+         **/
         public Builder isNullable(Boolean isNullable) {
             this.isNullable = isNullable;
             this.__explicitlySet__.add("isNullable");
             return this;
         }
-
+        /**
+         * The column default value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
+        /**
+         * The column default value.
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -105,6 +134,10 @@ public final class Column {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The column name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -115,6 +148,10 @@ public final class Column {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * The column type.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -125,6 +162,10 @@ public final class Column {
     @com.fasterxml.jackson.annotation.JsonProperty("isNullable")
     private final Boolean isNullable;
 
+    /**
+     * The column nullable flag.
+     * @return the value
+     **/
     public Boolean getIsNullable() {
         return isNullable;
     }
@@ -135,6 +176,10 @@ public final class Column {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
+    /**
+     * The column default value.
+     * @return the value
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }

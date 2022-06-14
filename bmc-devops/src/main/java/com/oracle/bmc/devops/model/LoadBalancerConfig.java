@@ -34,27 +34,49 @@ public final class LoadBalancerConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
+        /**
+         * The OCID of the load balancer.
+         * @param loadBalancerId the value to set
+         * @return this builder
+         **/
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
-
+        /**
+         * Name of the load balancer listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listenerName")
         private String listenerName;
 
+        /**
+         * Name of the load balancer listener.
+         * @param listenerName the value to set
+         * @return this builder
+         **/
         public Builder listenerName(String listenerName) {
             this.listenerName = listenerName;
             this.__explicitlySet__.add("listenerName");
             return this;
         }
-
+        /**
+         * Listen port for the backend server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendPort")
         private Integer backendPort;
 
+        /**
+         * Listen port for the backend server.
+         * @param backendPort the value to set
+         * @return this builder
+         **/
         public Builder backendPort(Integer backendPort) {
             this.backendPort = backendPort;
             this.__explicitlySet__.add("backendPort");
@@ -100,6 +122,10 @@ public final class LoadBalancerConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
+    /**
+     * The OCID of the load balancer.
+     * @return the value
+     **/
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -110,6 +136,10 @@ public final class LoadBalancerConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("listenerName")
     private final String listenerName;
 
+    /**
+     * Name of the load balancer listener.
+     * @return the value
+     **/
     public String getListenerName() {
         return listenerName;
     }
@@ -120,6 +150,10 @@ public final class LoadBalancerConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("backendPort")
     private final Integer backendPort;
 
+    /**
+     * Listen port for the backend server.
+     * @return the value
+     **/
     public Integer getBackendPort() {
         return backendPort;
     }

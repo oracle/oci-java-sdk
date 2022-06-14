@@ -153,37 +153,71 @@ public final class MacsManagedExternalHostInsight extends HostInsight {
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * Platform name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformName")
         private String platformName;
 
+        /**
+         * Platform name.
+         * @param platformName the value to set
+         * @return this builder
+         **/
         public Builder platformName(String platformName) {
             this.platformName = platformName;
             this.__explicitlySet__.add("platformName");
             return this;
         }
-
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         * @param platformType the value to set
+         * @return this builder
+         **/
         public Builder platformType(PlatformType platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
             return this;
         }
-
+        /**
+         * Platform version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
         private String platformVersion;
 
+        /**
+         * Platform version.
+         * @param platformVersion the value to set
+         * @return this builder
+         **/
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = platformVersion;
             this.__explicitlySet__.add("platformVersion");
@@ -303,6 +337,10 @@ public final class MacsManagedExternalHostInsight extends HostInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -313,6 +351,10 @@ public final class MacsManagedExternalHostInsight extends HostInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("platformName")
     private final String platformName;
 
+    /**
+     * Platform name.
+     * @return the value
+     **/
     public String getPlatformName() {
         return platformName;
     }
@@ -379,6 +421,13 @@ public final class MacsManagedExternalHostInsight extends HostInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
+    /**
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     *
+     * @return the value
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }
@@ -389,6 +438,10 @@ public final class MacsManagedExternalHostInsight extends HostInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
+    /**
+     * Platform version.
+     * @return the value
+     **/
     public String getPlatformVersion() {
         return platformVersion;
     }

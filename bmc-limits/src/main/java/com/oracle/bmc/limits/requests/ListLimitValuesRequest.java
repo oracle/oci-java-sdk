@@ -17,6 +17,10 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +29,9 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String serviceName;
 
+    /**
+     * The target service name.
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -70,6 +77,9 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * Filter entries by scope type.
+     */
     public ScopeType getScopeType() {
         return scopeType;
     }
@@ -79,6 +89,10 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String availabilityDomain;
 
+    /**
+     * Filter entries by availability domain. This implies that only AD-specific values are returned.
+     *
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -87,6 +101,9 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String name;
 
+    /**
+     * Optional field, can be used to see a specific resource limit value.
+     */
     public String getName() {
         return name;
     }
@@ -132,6 +149,10 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The field to sort by. The sorting is by availabilityDomain, as a second level field, if available.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -178,6 +199,10 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -187,6 +212,10 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -196,6 +225,10 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -206,6 +239,11 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -217,11 +255,16 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -229,10 +272,14 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The target service name.
+         */
         private String serviceName = null;
 
         /**
          * The target service name.
+         * @param serviceName the value to set
          * @return this builder instance
          */
         public Builder serviceName(String serviceName) {
@@ -240,10 +287,14 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Filter entries by scope type.
+         */
         private ScopeType scopeType = null;
 
         /**
          * Filter entries by scope type.
+         * @param scopeType the value to set
          * @return this builder instance
          */
         public Builder scopeType(ScopeType scopeType) {
@@ -251,11 +302,16 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Filter entries by availability domain. This implies that only AD-specific values are returned.
+         *
+         */
         private String availabilityDomain = null;
 
         /**
          * Filter entries by availability domain. This implies that only AD-specific values are returned.
          *
+         * @param availabilityDomain the value to set
          * @return this builder instance
          */
         public Builder availabilityDomain(String availabilityDomain) {
@@ -263,10 +319,14 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Optional field, can be used to see a specific resource limit value.
+         */
         private String name = null;
 
         /**
          * Optional field, can be used to see a specific resource limit value.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -274,11 +334,16 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The field to sort by. The sorting is by availabilityDomain, as a second level field, if available.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. The sorting is by availabilityDomain, as a second level field, if available.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -286,11 +351,16 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -298,11 +368,16 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -310,11 +385,16 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -322,12 +402,18 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -421,7 +507,8 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -437,6 +524,10 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

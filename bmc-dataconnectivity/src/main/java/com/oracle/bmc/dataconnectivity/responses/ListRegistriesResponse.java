@@ -16,6 +16,13 @@ public class ListRegistriesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -28,6 +35,13 @@ public class ListRegistriesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of {@code Registry}s. If this header appears in the response, then this
+     * is a partial list of Registries. Include this value as the {@code page} parameter in a subsequent
+     * GET request to get the next batch of Registries.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -38,6 +52,10 @@ public class ListRegistriesResponse extends com.oracle.bmc.responses.BmcResponse
     private com.oracle.bmc.dataconnectivity.model.RegistrySummaryCollection
             registrySummaryCollection;
 
+    /**
+     * The returned RegistrySummaryCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.dataconnectivity.model.RegistrySummaryCollection
             getRegistrySummaryCollection() {
         return registrySummaryCollection;
@@ -69,23 +87,59 @@ public class ListRegistriesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of {@code Registry}s. If this header appears in the response, then this
+         * is a partial list of Registries. Include this value as the {@code page} parameter in a subsequent
+         * GET request to get the next batch of Registries.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of {@code Registry}s. If this header appears in the response, then this
+         * is a partial list of Registries. Include this value as the {@code page} parameter in a subsequent
+         * GET request to get the next batch of Registries.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned RegistrySummaryCollection instance.
+         */
         private com.oracle.bmc.dataconnectivity.model.RegistrySummaryCollection
                 registrySummaryCollection;
 
+        /**
+         * The returned RegistrySummaryCollection instance.
+         * @param registrySummaryCollection the value to set
+         * @return this builder
+         */
         public Builder registrySummaryCollection(
                 com.oracle.bmc.dataconnectivity.model.RegistrySummaryCollection
                         registrySummaryCollection) {
@@ -106,12 +160,20 @@ public class ListRegistriesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListRegistriesResponse build() {
             return new ListRegistriesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, registrySummaryCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

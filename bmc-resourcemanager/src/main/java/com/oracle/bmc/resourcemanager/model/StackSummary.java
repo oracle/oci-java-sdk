@@ -55,81 +55,185 @@ public final class StackSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier of the specified stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier of the specified stack.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Unique identifier of the compartment in which the stack resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Unique identifier of the compartment in which the stack resides.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Human-readable display name for the stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Human-readable display name for the stack.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * General description of the stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * General description of the stack.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The date and time when the stack was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time when the stack was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The current lifecycle state of the stack.
+         * For more information about stack lifecycle states in Resource Manager, see
+         * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+         * <p>
+         * Allowable values:
+         * - CREATING
+         * - ACTIVE
+         * - DELETING
+         * - DELETED
+         * - FAILED
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Stack.LifecycleState lifecycleState;
 
+        /**
+         * The current lifecycle state of the stack.
+         * For more information about stack lifecycle states in Resource Manager, see
+         * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+         * <p>
+         * Allowable values:
+         * - CREATING
+         * - ACTIVE
+         * - DELETING
+         * - DELETED
+         * - FAILED
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(Stack.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The version of Terraform specified for the stack. Example: {@code 0.12.x}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
         private String terraformVersion;
 
+        /**
+         * The version of Terraform specified for the stack. Example: {@code 0.12.x}
+         *
+         * @param terraformVersion the value to set
+         * @return this builder
+         **/
         public Builder terraformVersion(String terraformVersion) {
             this.terraformVersion = terraformVersion;
             this.__explicitlySet__.add("terraformVersion");
             return this;
         }
-
+        /**
+         * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -191,6 +295,10 @@ public final class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier of the specified stack.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -201,6 +309,10 @@ public final class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Unique identifier of the compartment in which the stack resides.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -211,6 +323,10 @@ public final class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Human-readable display name for the stack.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -221,6 +337,10 @@ public final class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * General description of the stack.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -234,6 +354,13 @@ public final class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time when the stack was created.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -254,6 +381,20 @@ public final class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Stack.LifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the stack.
+     * For more information about stack lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+     * <p>
+     * Allowable values:
+     * - CREATING
+     * - ACTIVE
+     * - DELETING
+     * - DELETED
+     * - FAILED
+     *
+     * @return the value
+     **/
     public Stack.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -265,6 +406,11 @@ public final class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
     private final String terraformVersion;
 
+    /**
+     * The version of Terraform specified for the stack. Example: {@code 0.12.x}
+     *
+     * @return the value
+     **/
     public String getTerraformVersion() {
         return terraformVersion;
     }
@@ -278,6 +424,13 @@ public final class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -291,6 +444,13 @@ public final class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

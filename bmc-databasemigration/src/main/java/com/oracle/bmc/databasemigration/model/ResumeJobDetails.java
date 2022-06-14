@@ -28,9 +28,21 @@ public final class ResumeJobDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of a migration phase. The Job will wait after executing this
+         * phase until Resume Job endpoint is called again.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("waitAfter")
         private OdmsJobPhases waitAfter;
 
+        /**
+         * Name of a migration phase. The Job will wait after executing this
+         * phase until Resume Job endpoint is called again.
+         *
+         * @param waitAfter the value to set
+         * @return this builder
+         **/
         public Builder waitAfter(OdmsJobPhases waitAfter) {
             this.waitAfter = waitAfter;
             this.__explicitlySet__.add("waitAfter");
@@ -74,6 +86,12 @@ public final class ResumeJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("waitAfter")
     private final OdmsJobPhases waitAfter;
 
+    /**
+     * Name of a migration phase. The Job will wait after executing this
+     * phase until Resume Job endpoint is called again.
+     *
+     * @return the value
+     **/
     public OdmsJobPhases getWaitAfter() {
         return waitAfter;
     }

@@ -30,18 +30,33 @@ public final class UpdateIdpGroupMappingDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The idp group name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
         private String idpGroupName;
 
+        /**
+         * The idp group name.
+         * @param idpGroupName the value to set
+         * @return this builder
+         **/
         public Builder idpGroupName(String idpGroupName) {
             this.idpGroupName = idpGroupName;
             this.__explicitlySet__.add("idpGroupName");
             return this;
         }
-
+        /**
+         * The OCID of the group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
+        /**
+         * The OCID of the group.
+         * @param groupId the value to set
+         * @return this builder
+         **/
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             this.__explicitlySet__.add("groupId");
@@ -84,6 +99,10 @@ public final class UpdateIdpGroupMappingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
     private final String idpGroupName;
 
+    /**
+     * The idp group name.
+     * @return the value
+     **/
     public String getIdpGroupName() {
         return idpGroupName;
     }
@@ -94,6 +113,10 @@ public final class UpdateIdpGroupMappingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
 
+    /**
+     * The OCID of the group.
+     * @return the value
+     **/
     public String getGroupId() {
         return groupId;
     }

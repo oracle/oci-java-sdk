@@ -70,10 +70,17 @@ public final class RepositoryTag extends RepositoryRef {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * SHA-1 hash value of the object pointed to by the tag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectId")
         private String objectId;
 
+        /**
+         * SHA-1 hash value of the object pointed to by the tag.
+         * @param objectId the value to set
+         * @return this builder
+         **/
         public Builder objectId(String objectId) {
             this.objectId = objectId;
             this.__explicitlySet__.add("objectId");
@@ -140,6 +147,10 @@ public final class RepositoryTag extends RepositoryRef {
     @com.fasterxml.jackson.annotation.JsonProperty("objectId")
     private final String objectId;
 
+    /**
+     * SHA-1 hash value of the object pointed to by the tag.
+     * @return the value
+     **/
     public String getObjectId() {
         return objectId;
     }

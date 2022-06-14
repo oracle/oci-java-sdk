@@ -17,6 +17,9 @@ public class GetAutonomousDatabaseBackupRequest
      */
     private String autonomousDatabaseBackupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     */
     public String getAutonomousDatabaseBackupId() {
         return autonomousDatabaseBackupId;
     }
@@ -26,6 +29,10 @@ public class GetAutonomousDatabaseBackupRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,10 +44,14 @@ public class GetAutonomousDatabaseBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         */
         private String autonomousDatabaseBackupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * @param autonomousDatabaseBackupId the value to set
          * @return this builder instance
          */
         public Builder autonomousDatabaseBackupId(String autonomousDatabaseBackupId) {
@@ -48,11 +59,16 @@ public class GetAutonomousDatabaseBackupRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -130,7 +146,8 @@ public class GetAutonomousDatabaseBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -138,6 +155,10 @@ public class GetAutonomousDatabaseBackupRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

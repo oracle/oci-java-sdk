@@ -29,9 +29,17 @@ public final class RevokeCertificateAuthorityVersionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The reason the certificate or certificate authority was revoked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
         private RevocationReason revocationReason;
 
+        /**
+         * The reason the certificate or certificate authority was revoked.
+         * @param revocationReason the value to set
+         * @return this builder
+         **/
         public Builder revocationReason(RevocationReason revocationReason) {
             this.revocationReason = revocationReason;
             this.__explicitlySet__.add("revocationReason");
@@ -74,6 +82,10 @@ public final class RevokeCertificateAuthorityVersionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
     private final RevocationReason revocationReason;
 
+    /**
+     * The reason the certificate or certificate authority was revoked.
+     * @return the value
+     **/
     public RevocationReason getRevocationReason() {
         return revocationReason;
     }

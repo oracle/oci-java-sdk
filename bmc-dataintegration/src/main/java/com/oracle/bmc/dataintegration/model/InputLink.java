@@ -78,10 +78,17 @@ public final class InputLink extends FlowPortLink {
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The from link reference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fromLink")
         private String fromLink;
 
+        /**
+         * The from link reference.
+         * @param fromLink the value to set
+         * @return this builder
+         **/
         public Builder fromLink(String fromLink) {
             this.fromLink = fromLink;
             this.__explicitlySet__.add("fromLink");
@@ -164,6 +171,10 @@ public final class InputLink extends FlowPortLink {
     @com.fasterxml.jackson.annotation.JsonProperty("fromLink")
     private final String fromLink;
 
+    /**
+     * The from link reference.
+     * @return the value
+     **/
     public String getFromLink() {
         return fromLink;
     }

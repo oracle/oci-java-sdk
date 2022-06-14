@@ -33,6 +33,7 @@ public final class ApiSpecificationRouteResponsePolicies {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("headerTransformations")
         private HeaderTransformationPolicy headerTransformations;
 

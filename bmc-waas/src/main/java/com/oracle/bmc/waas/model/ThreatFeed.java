@@ -30,36 +30,65 @@ public final class ThreatFeed {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique key of the threat intelligence feed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The unique key of the threat intelligence feed.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The name of the threat intelligence feed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the threat intelligence feed.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-
+        /**
+         * The description of the threat intelligence feed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the threat intelligence feed.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -105,6 +134,10 @@ public final class ThreatFeed {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The unique key of the threat intelligence feed.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -115,6 +148,10 @@ public final class ThreatFeed {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the threat intelligence feed.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -173,6 +210,10 @@ public final class ThreatFeed {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The action to take when traffic is flagged as malicious by data from the threat intelligence feed. If unspecified, defaults to {@code OFF}.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }
@@ -183,6 +224,10 @@ public final class ThreatFeed {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the threat intelligence feed.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

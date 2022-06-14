@@ -16,6 +16,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -32,6 +38,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -40,6 +49,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String businessName;
 
+    /**
+     * A filter to return only resources that match the entire business name given. The match is not case sensitive.
+     */
     public String getBusinessName() {
         return businessName;
     }
@@ -51,6 +63,12 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String displayOrBusinessNameContains;
 
+    /**
+     * A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayOrBusinessNameContains=Cu.*
+     * The above would match all folders with display name or business name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
+     */
     public String getDisplayOrBusinessNameContains() {
         return displayOrBusinessNameContains;
     }
@@ -62,6 +80,12 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String displayNameContains;
 
+    /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
+     */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
@@ -70,6 +94,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+     */
     public com.oracle.bmc.datacatalog.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -78,6 +105,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String parentFolderKey;
 
+    /**
+     * Unique folder key.
+     */
     public String getParentFolderKey() {
         return parentFolderKey;
     }
@@ -86,6 +116,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String path;
 
+    /**
+     * Full path of the resource for resources that support paths.
+     */
     public String getPath() {
         return path;
     }
@@ -94,6 +127,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String externalKey;
 
+    /**
+     * Unique external identifier of this resource in the external source system.
+     */
     public String getExternalKey() {
         return externalKey;
     }
@@ -102,6 +138,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.Date timeCreated;
 
+    /**
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -110,6 +149,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.Date timeUpdated;
 
+    /**
+     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -118,6 +160,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String createdById;
 
+    /**
+     * OCID of the user who created the resource.
+     */
     public String getCreatedById() {
         return createdById;
     }
@@ -126,6 +171,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String updatedById;
 
+    /**
+     * OCID of the user who updated the resource.
+     */
     public String getUpdatedById() {
         return updatedById;
     }
@@ -134,6 +182,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.datacatalog.model.HarvestStatus harvestStatus;
 
+    /**
+     * Harvest status of the harvestable resource as updated by the harvest process.
+     */
     public com.oracle.bmc.datacatalog.model.HarvestStatus getHarvestStatus() {
         return harvestStatus;
     }
@@ -142,6 +193,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String lastJobKey;
 
+    /**
+     * Key of the last harvest process to update this resource.
+     */
     public String getLastJobKey() {
         return lastJobKey;
     }
@@ -197,6 +251,10 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Specifies the fields to return in a folder summary response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -243,6 +301,10 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -287,6 +349,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -295,6 +360,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -303,6 +371,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -311,6 +382,9 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -322,10 +396,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -333,10 +411,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -344,10 +426,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -355,10 +441,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire business name given. The match is not case sensitive.
+         */
         private String businessName = null;
 
         /**
          * A filter to return only resources that match the entire business name given. The match is not case sensitive.
+         * @param businessName the value to set
          * @return this builder instance
          */
         public Builder businessName(String businessName) {
@@ -366,6 +456,12 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayOrBusinessNameContains=Cu.*
+         * The above would match all folders with display name or business name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
+         */
         private String displayOrBusinessNameContains = null;
 
         /**
@@ -373,6 +469,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * For Example : /folders?displayOrBusinessNameContains=Cu.*
          * The above would match all folders with display name or business name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
+         * @param displayOrBusinessNameContains the value to set
          * @return this builder instance
          */
         public Builder displayOrBusinessNameContains(String displayOrBusinessNameContains) {
@@ -380,6 +477,12 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
+         */
         private String displayNameContains = null;
 
         /**
@@ -387,6 +490,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * For Example : /folders?displayNameContains=Cu.*
          * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
+         * @param displayNameContains the value to set
          * @return this builder instance
          */
         public Builder displayNameContains(String displayNameContains) {
@@ -394,10 +498,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         */
         private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -406,10 +514,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique folder key.
+         */
         private String parentFolderKey = null;
 
         /**
          * Unique folder key.
+         * @param parentFolderKey the value to set
          * @return this builder instance
          */
         public Builder parentFolderKey(String parentFolderKey) {
@@ -417,10 +529,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Full path of the resource for resources that support paths.
+         */
         private String path = null;
 
         /**
          * Full path of the resource for resources that support paths.
+         * @param path the value to set
          * @return this builder instance
          */
         public Builder path(String path) {
@@ -428,10 +544,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique external identifier of this resource in the external source system.
+         */
         private String externalKey = null;
 
         /**
          * Unique external identifier of this resource in the external source system.
+         * @param externalKey the value to set
          * @return this builder instance
          */
         public Builder externalKey(String externalKey) {
@@ -439,10 +559,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
         private java.util.Date timeCreated = null;
 
         /**
          * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeCreated the value to set
          * @return this builder instance
          */
         public Builder timeCreated(java.util.Date timeCreated) {
@@ -450,10 +574,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
         private java.util.Date timeUpdated = null;
 
         /**
          * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeUpdated the value to set
          * @return this builder instance
          */
         public Builder timeUpdated(java.util.Date timeUpdated) {
@@ -461,10 +589,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * OCID of the user who created the resource.
+         */
         private String createdById = null;
 
         /**
          * OCID of the user who created the resource.
+         * @param createdById the value to set
          * @return this builder instance
          */
         public Builder createdById(String createdById) {
@@ -472,10 +604,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * OCID of the user who updated the resource.
+         */
         private String updatedById = null;
 
         /**
          * OCID of the user who updated the resource.
+         * @param updatedById the value to set
          * @return this builder instance
          */
         public Builder updatedById(String updatedById) {
@@ -483,10 +619,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Harvest status of the harvestable resource as updated by the harvest process.
+         */
         private com.oracle.bmc.datacatalog.model.HarvestStatus harvestStatus = null;
 
         /**
          * Harvest status of the harvestable resource as updated by the harvest process.
+         * @param harvestStatus the value to set
          * @return this builder instance
          */
         public Builder harvestStatus(com.oracle.bmc.datacatalog.model.HarvestStatus harvestStatus) {
@@ -494,10 +634,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Key of the last harvest process to update this resource.
+         */
         private String lastJobKey = null;
 
         /**
          * Key of the last harvest process to update this resource.
+         * @param lastJobKey the value to set
          * @return this builder instance
          */
         public Builder lastJobKey(String lastJobKey) {
@@ -505,11 +649,16 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Specifies the fields to return in a folder summary response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in a folder summary response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -520,17 +669,23 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Singular setter. Specifies the fields to return in a folder summary response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -538,10 +693,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -549,10 +708,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -560,10 +723,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -571,10 +738,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -692,7 +863,8 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -720,6 +892,10 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

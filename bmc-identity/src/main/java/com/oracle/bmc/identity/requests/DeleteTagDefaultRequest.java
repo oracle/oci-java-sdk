@@ -16,6 +16,9 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String tagDefaultId;
 
+    /**
+     * The OCID of the tag default.
+     */
     public String getTagDefaultId() {
         return tagDefaultId;
     }
@@ -26,6 +29,11 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,8 +45,25 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     public static class Builder
@@ -48,10 +73,14 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag default.
+         */
         private String tagDefaultId = null;
 
         /**
          * The OCID of the tag default.
+         * @param tagDefaultId the value to set
          * @return this builder instance
          */
         public Builder tagDefaultId(String tagDefaultId) {
@@ -59,12 +88,18 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -72,6 +107,12 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -79,10 +120,26 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
             this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -117,6 +174,7 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
             tagDefaultId(o.getTagDefaultId());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -152,18 +210,28 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
             request.tagDefaultId = tagDefaultId;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new DeleteTagDefaultRequest(tagDefaultId, opcRequestId, ifMatch);
+            // new DeleteTagDefaultRequest(tagDefaultId, opcRequestId, ifMatch, isLockOverride);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().tagDefaultId(tagDefaultId).opcRequestId(opcRequestId).ifMatch(ifMatch);
+        return new Builder()
+                .tagDefaultId(tagDefaultId)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch)
+                .isLockOverride(isLockOverride);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,6 +244,7 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",tagDefaultId=").append(String.valueOf(this.tagDefaultId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +262,8 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
         return super.equals(o)
                 && java.util.Objects.equals(this.tagDefaultId, other.tagDefaultId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -203,6 +273,9 @@ public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.tagDefaultId == null ? 43 : this.tagDefaultId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

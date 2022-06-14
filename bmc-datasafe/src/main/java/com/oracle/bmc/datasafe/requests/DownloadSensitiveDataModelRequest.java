@@ -18,6 +18,9 @@ public class DownloadSensitiveDataModelRequest
      */
     private String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -27,6 +30,9 @@ public class DownloadSensitiveDataModelRequest
     private com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
             downloadSensitiveDataModelDetails;
 
+    /**
+     * Details to download a sensitive data model file.
+     */
     public com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
             getDownloadSensitiveDataModelDetails() {
         return downloadSensitiveDataModelDetails;
@@ -36,6 +42,9 @@ public class DownloadSensitiveDataModelRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,10 +67,14 @@ public class DownloadSensitiveDataModelRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
+         * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
@@ -69,11 +82,15 @@ public class DownloadSensitiveDataModelRequest
             return this;
         }
 
+        /**
+         * Details to download a sensitive data model file.
+         */
         private com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
                 downloadSensitiveDataModelDetails = null;
 
         /**
          * Details to download a sensitive data model file.
+         * @param downloadSensitiveDataModelDetails the value to set
          * @return this builder instance
          */
         public Builder downloadSensitiveDataModelDetails(
@@ -83,10 +100,14 @@ public class DownloadSensitiveDataModelRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -177,7 +198,8 @@ public class DownloadSensitiveDataModelRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -186,6 +208,10 @@ public class DownloadSensitiveDataModelRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

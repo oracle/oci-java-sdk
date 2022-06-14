@@ -18,6 +18,9 @@ public class RemoveDrgRouteDistributionStatementsRequest
      */
     private String drgRouteDistributionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+     */
     public String getDrgRouteDistributionId() {
         return drgRouteDistributionId;
     }
@@ -28,6 +31,10 @@ public class RemoveDrgRouteDistributionStatementsRequest
     private com.oracle.bmc.core.model.RemoveDrgRouteDistributionStatementsDetails
             removeDrgRouteDistributionStatementsDetails;
 
+    /**
+     * Request with one or more route distribution statements to remove from the route distribution.
+     *
+     */
     public com.oracle.bmc.core.model.RemoveDrgRouteDistributionStatementsDetails
             getRemoveDrgRouteDistributionStatementsDetails() {
         return removeDrgRouteDistributionStatementsDetails;
@@ -51,10 +58,14 @@ public class RemoveDrgRouteDistributionStatementsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+         */
         private String drgRouteDistributionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+         * @param drgRouteDistributionId the value to set
          * @return this builder instance
          */
         public Builder drgRouteDistributionId(String drgRouteDistributionId) {
@@ -62,12 +73,17 @@ public class RemoveDrgRouteDistributionStatementsRequest
             return this;
         }
 
+        /**
+         * Request with one or more route distribution statements to remove from the route distribution.
+         *
+         */
         private com.oracle.bmc.core.model.RemoveDrgRouteDistributionStatementsDetails
                 removeDrgRouteDistributionStatementsDetails = null;
 
         /**
          * Request with one or more route distribution statements to remove from the route distribution.
          *
+         * @param removeDrgRouteDistributionStatementsDetails the value to set
          * @return this builder instance
          */
         public Builder removeDrgRouteDistributionStatementsDetails(
@@ -163,7 +179,8 @@ public class RemoveDrgRouteDistributionStatementsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -172,6 +189,10 @@ public class RemoveDrgRouteDistributionStatementsRequest
                         removeDrgRouteDistributionStatementsDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

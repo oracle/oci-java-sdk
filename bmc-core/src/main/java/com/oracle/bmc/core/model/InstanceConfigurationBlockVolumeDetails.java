@@ -35,6 +35,7 @@ public final class InstanceConfigurationBlockVolumeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("attachDetails")
         private InstanceConfigurationAttachVolumeDetails attachDetails;
 
@@ -52,10 +53,17 @@ public final class InstanceConfigurationBlockVolumeDetails {
             this.__explicitlySet__.add("createDetails");
             return this;
         }
-
+        /**
+         * The OCID of the volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
+        /**
+         * The OCID of the volume.
+         * @param volumeId the value to set
+         * @return this builder
+         **/
         public Builder volumeId(String volumeId) {
             this.volumeId = volumeId;
             this.__explicitlySet__.add("volumeId");
@@ -116,6 +124,10 @@ public final class InstanceConfigurationBlockVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
+    /**
+     * The OCID of the volume.
+     * @return the value
+     **/
     public String getVolumeId() {
         return volumeId;
     }

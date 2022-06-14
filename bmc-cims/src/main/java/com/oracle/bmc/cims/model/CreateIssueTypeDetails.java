@@ -32,9 +32,17 @@ public final class CreateIssueTypeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for the issue type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issueTypeKey")
         private String issueTypeKey;
 
+        /**
+         * Unique identifier for the issue type.
+         * @param issueTypeKey the value to set
+         * @return this builder
+         **/
         public Builder issueTypeKey(String issueTypeKey) {
             this.issueTypeKey = issueTypeKey;
             this.__explicitlySet__.add("issueTypeKey");
@@ -76,6 +84,10 @@ public final class CreateIssueTypeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeKey")
     private final String issueTypeKey;
 
+    /**
+     * Unique identifier for the issue type.
+     * @return the value
+     **/
     public String getIssueTypeKey() {
         return issueTypeKey;
     }

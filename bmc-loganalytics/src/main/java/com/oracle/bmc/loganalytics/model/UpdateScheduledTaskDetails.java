@@ -54,6 +54,14 @@ public class UpdateScheduledTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name that is changeable and that does not have to be unique.
+     * Format: a leading alphanumeric, followed by zero or more
+     * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
+     * No trailing spaces allowed.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -66,6 +74,12 @@ public class UpdateScheduledTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -78,6 +92,12 @@ public class UpdateScheduledTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -90,6 +110,12 @@ public class UpdateScheduledTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
     private final java.util.List<Schedule> schedules;
 
+    /**
+     * Schedules may be updated for task types SAVED_SEARCH and PURGE.
+     * Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
+     *
+     * @return the value
+     **/
     public java.util.List<Schedule> getSchedules() {
         return schedules;
     }

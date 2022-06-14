@@ -31,18 +31,33 @@ public final class ResourceInsightCurrentUtilization {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of db ids with low usage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private java.util.List<String> low;
 
+        /**
+         * List of db ids with low usage
+         * @param low the value to set
+         * @return this builder
+         **/
         public Builder low(java.util.List<String> low) {
             this.low = low;
             this.__explicitlySet__.add("low");
             return this;
         }
-
+        /**
+         * List of db ids with high usage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private java.util.List<String> high;
 
+        /**
+         * List of db ids with high usage
+         * @param high the value to set
+         * @return this builder
+         **/
         public Builder high(java.util.List<String> high) {
             this.high = high;
             this.__explicitlySet__.add("high");
@@ -85,6 +100,10 @@ public final class ResourceInsightCurrentUtilization {
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final java.util.List<String> low;
 
+    /**
+     * List of db ids with low usage
+     * @return the value
+     **/
     public java.util.List<String> getLow() {
         return low;
     }
@@ -95,6 +114,10 @@ public final class ResourceInsightCurrentUtilization {
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final java.util.List<String> high;
 
+    /**
+     * List of db ids with high usage
+     * @return the value
+     **/
     public java.util.List<String> getHigh() {
         return high;
     }

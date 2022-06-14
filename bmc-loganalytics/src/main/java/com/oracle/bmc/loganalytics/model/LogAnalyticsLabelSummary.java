@@ -68,117 +68,215 @@ public final class LogAnalyticsLabelSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The alias list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aliases")
         private java.util.List<LogAnalyticsLabelAlias> aliases;
 
+        /**
+         * The alias list.
+         * @param aliases the value to set
+         * @return this builder
+         **/
         public Builder aliases(java.util.List<LogAnalyticsLabelAlias> aliases) {
             this.aliases = aliases;
             this.__explicitlySet__.add("aliases");
             return this;
         }
-
+        /**
+         * The source usage count for this label.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countUsageInSource")
         private Long countUsageInSource;
 
+        /**
+         * The source usage count for this label.
+         * @param countUsageInSource the value to set
+         * @return this builder
+         **/
         public Builder countUsageInSource(Long countUsageInSource) {
             this.countUsageInSource = countUsageInSource;
             this.__explicitlySet__.add("countUsageInSource");
             return this;
         }
-
+        /**
+         * The type of suggestion for label usage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suggestType")
         private Long suggestType;
 
+        /**
+         * The type of suggestion for label usage.
+         * @param suggestType the value to set
+         * @return this builder
+         **/
         public Builder suggestType(Long suggestType) {
             this.suggestType = suggestType;
             this.__explicitlySet__.add("suggestType");
             return this;
         }
-
+        /**
+         * The label description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The label description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The label display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The label display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The label edit version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
+        /**
+         * The label edit version.
+         * @param editVersion the value to set
+         * @return this builder
+         **/
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-
+        /**
+         * The label impact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("impact")
         private String impact;
 
+        /**
+         * The label impact.
+         * @param impact the value to set
+         * @return this builder
+         **/
         public Builder impact(String impact) {
             this.impact = impact;
             this.__explicitlySet__.add("impact");
             return this;
         }
-
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined label.  A value of true denotes a built in label.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined label.  A value of true denotes a built in label.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-
+        /**
+         * The label name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The label name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Priority priority;
 
+        /**
+         * The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
+         * @param priority the value to set
+         * @return this builder
+         **/
         public Builder priority(Priority priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
             return this;
         }
-
+        /**
+         * The label recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
         private String recommendation;
 
+        /**
+         * The label recommendation.
+         * @param recommendation the value to set
+         * @return this builder
+         **/
         public Builder recommendation(String recommendation) {
             this.recommendation = recommendation;
             this.__explicitlySet__.add("recommendation");
             return this;
         }
-
+        /**
+         * The label type.  Valid values are (INFO, PROBLEM). INFO is default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The label type.  Valid values are (INFO, PROBLEM). INFO is default.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the label has been deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUserDeleted")
         private Boolean isUserDeleted;
 
+        /**
+         * A flag indicating whether or not the label has been deleted.
+         *
+         * @param isUserDeleted the value to set
+         * @return this builder
+         **/
         public Builder isUserDeleted(Boolean isUserDeleted) {
             this.isUserDeleted = isUserDeleted;
             this.__explicitlySet__.add("isUserDeleted");
@@ -247,6 +345,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("aliases")
     private final java.util.List<LogAnalyticsLabelAlias> aliases;
 
+    /**
+     * The alias list.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsLabelAlias> getAliases() {
         return aliases;
     }
@@ -257,6 +359,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("countUsageInSource")
     private final Long countUsageInSource;
 
+    /**
+     * The source usage count for this label.
+     * @return the value
+     **/
     public Long getCountUsageInSource() {
         return countUsageInSource;
     }
@@ -267,6 +373,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("suggestType")
     private final Long suggestType;
 
+    /**
+     * The type of suggestion for label usage.
+     * @return the value
+     **/
     public Long getSuggestType() {
         return suggestType;
     }
@@ -277,6 +387,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The label description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -287,6 +401,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The label display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -297,6 +415,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
+    /**
+     * The label edit version.
+     * @return the value
+     **/
     public Long getEditVersion() {
         return editVersion;
     }
@@ -307,6 +429,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("impact")
     private final String impact;
 
+    /**
+     * The label impact.
+     * @return the value
+     **/
     public String getImpact() {
         return impact;
     }
@@ -319,6 +445,12 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * The system flag.  A value of false denotes a custom, or user
+     * defined label.  A value of true denotes a built in label.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -329,6 +461,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The label name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -389,6 +525,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Priority priority;
 
+    /**
+     * The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
+     * @return the value
+     **/
     public Priority getPriority() {
         return priority;
     }
@@ -399,6 +539,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     private final String recommendation;
 
+    /**
+     * The label recommendation.
+     * @return the value
+     **/
     public String getRecommendation() {
         return recommendation;
     }
@@ -455,6 +599,10 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The label type.  Valid values are (INFO, PROBLEM). INFO is default.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -466,6 +614,11 @@ public final class LogAnalyticsLabelSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isUserDeleted")
     private final Boolean isUserDeleted;
 
+    /**
+     * A flag indicating whether or not the label has been deleted.
+     *
+     * @return the value
+     **/
     public Boolean getIsUserDeleted() {
         return isUserDeleted;
     }

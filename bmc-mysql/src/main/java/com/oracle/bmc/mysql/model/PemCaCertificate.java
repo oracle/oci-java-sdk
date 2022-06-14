@@ -25,9 +25,17 @@ package com.oracle.bmc.mysql.model;
 public final class PemCaCertificate extends CaCertificate {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The string containing the CA certificate in PEM format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contents")
         private String contents;
 
+        /**
+         * The string containing the CA certificate in PEM format.
+         * @param contents the value to set
+         * @return this builder
+         **/
         public Builder contents(String contents) {
             this.contents = contents;
             this.__explicitlySet__.add("contents");
@@ -75,6 +83,10 @@ public final class PemCaCertificate extends CaCertificate {
     @com.fasterxml.jackson.annotation.JsonProperty("contents")
     private final String contents;
 
+    /**
+     * The string containing the CA certificate in PEM format.
+     * @return the value
+     **/
     public String getContents() {
         return contents;
     }

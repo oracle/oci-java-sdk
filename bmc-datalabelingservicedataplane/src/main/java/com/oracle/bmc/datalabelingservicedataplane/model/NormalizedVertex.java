@@ -28,18 +28,33 @@ public final class NormalizedVertex {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The X axis coordinate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("x")
         private Float x;
 
+        /**
+         * The X axis coordinate.
+         * @param x the value to set
+         * @return this builder
+         **/
         public Builder x(Float x) {
             this.x = x;
             this.__explicitlySet__.add("x");
             return this;
         }
-
+        /**
+         * The Y axis coordinate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("y")
         private Float y;
 
+        /**
+         * The Y axis coordinate.
+         * @param y the value to set
+         * @return this builder
+         **/
         public Builder y(Float y) {
             this.y = y;
             this.__explicitlySet__.add("y");
@@ -81,6 +96,10 @@ public final class NormalizedVertex {
     @com.fasterxml.jackson.annotation.JsonProperty("x")
     private final Float x;
 
+    /**
+     * The X axis coordinate.
+     * @return the value
+     **/
     public Float getX() {
         return x;
     }
@@ -91,6 +110,10 @@ public final class NormalizedVertex {
     @com.fasterxml.jackson.annotation.JsonProperty("y")
     private final Float y;
 
+    /**
+     * The Y axis coordinate.
+     * @return the value
+     **/
     public Float getY() {
         return y;
     }

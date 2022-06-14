@@ -33,6 +33,10 @@ package com.oracle.bmc.apmconfig.model;
         name = "METRIC_GROUP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateOptionsDetails.class,
+        name = "OPTIONS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateApdexRulesDetails.class,
         name = "APDEX"
     )
@@ -57,6 +61,12 @@ public class CreateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -69,6 +79,12 @@ public class CreateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

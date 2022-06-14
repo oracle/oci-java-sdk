@@ -48,6 +48,11 @@ public class SearchListingsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("matchingContextType")
     private final MatchingContextTypeEnum matchingContextType;
 
+    /**
+     * The type of matching context returned in the response. If you specify HIGHLIGHTS, then the service will highlight fragments in its response. The default value is NONE.
+     *
+     * @return the value
+     **/
     public MatchingContextTypeEnum getMatchingContextType() {
         return matchingContextType;
     }

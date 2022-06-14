@@ -32,27 +32,49 @@ public final class ConsumerGroupPrivilegeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the granted consumer group privilege.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the granted consumer group privilege.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
         private GrantOption grantOption;
 
+        /**
+         * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
+         * @param grantOption the value to set
+         * @return this builder
+         **/
         public Builder grantOption(GrantOption grantOption) {
             this.grantOption = grantOption;
             this.__explicitlySet__.add("grantOption");
             return this;
         }
-
+        /**
+         * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("initialGroup")
         private InitialGroup initialGroup;
 
+        /**
+         * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
+         * @param initialGroup the value to set
+         * @return this builder
+         **/
         public Builder initialGroup(InitialGroup initialGroup) {
             this.initialGroup = initialGroup;
             this.__explicitlySet__.add("initialGroup");
@@ -98,6 +120,10 @@ public final class ConsumerGroupPrivilegeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the granted consumer group privilege.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -156,6 +182,10 @@ public final class ConsumerGroupPrivilegeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
     private final GrantOption grantOption;
 
+    /**
+     * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
+     * @return the value
+     **/
     public GrantOption getGrantOption() {
         return grantOption;
     }
@@ -214,6 +244,10 @@ public final class ConsumerGroupPrivilegeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("initialGroup")
     private final InitialGroup initialGroup;
 
+    /**
+     * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
+     * @return the value
+     **/
     public InitialGroup getInitialGroup() {
         return initialGroup;
     }

@@ -44,45 +44,81 @@ public final class ManagementAgentPluginDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Plugin Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginId")
         private String pluginId;
 
+        /**
+         * Plugin Id
+         * @param pluginId the value to set
+         * @return this builder
+         **/
         public Builder pluginId(String pluginId) {
             this.pluginId = pluginId;
             this.__explicitlySet__.add("pluginId");
             return this;
         }
-
+        /**
+         * Management Agent Plugin Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
         private String pluginName;
 
+        /**
+         * Management Agent Plugin Name
+         * @param pluginName the value to set
+         * @return this builder
+         **/
         public Builder pluginName(String pluginName) {
             this.pluginName = pluginName;
             this.__explicitlySet__.add("pluginName");
             return this;
         }
-
+        /**
+         * Management Agent Plugin Identifier, can be renamed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
         private String pluginDisplayName;
 
+        /**
+         * Management Agent Plugin Identifier, can be renamed
+         * @param pluginDisplayName the value to set
+         * @return this builder
+         **/
         public Builder pluginDisplayName(String pluginDisplayName) {
             this.pluginDisplayName = pluginDisplayName;
             this.__explicitlySet__.add("pluginDisplayName");
             return this;
         }
-
+        /**
+         * Plugin Version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginVersion")
         private String pluginVersion;
 
+        /**
+         * Plugin Version
+         * @param pluginVersion the value to set
+         * @return this builder
+         **/
         public Builder pluginVersion(String pluginVersion) {
             this.pluginVersion = pluginVersion;
             this.__explicitlySet__.add("pluginVersion");
             return this;
         }
-
+        /**
+         * flag indicating whether the plugin is in enabled mode or disabled mode.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * flag indicating whether the plugin is in enabled mode or disabled mode.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -131,6 +167,10 @@ public final class ManagementAgentPluginDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pluginId")
     private final String pluginId;
 
+    /**
+     * Plugin Id
+     * @return the value
+     **/
     public String getPluginId() {
         return pluginId;
     }
@@ -141,6 +181,10 @@ public final class ManagementAgentPluginDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
     private final String pluginName;
 
+    /**
+     * Management Agent Plugin Name
+     * @return the value
+     **/
     public String getPluginName() {
         return pluginName;
     }
@@ -151,6 +195,10 @@ public final class ManagementAgentPluginDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
     private final String pluginDisplayName;
 
+    /**
+     * Management Agent Plugin Identifier, can be renamed
+     * @return the value
+     **/
     public String getPluginDisplayName() {
         return pluginDisplayName;
     }
@@ -161,6 +209,10 @@ public final class ManagementAgentPluginDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pluginVersion")
     private final String pluginVersion;
 
+    /**
+     * Plugin Version
+     * @return the value
+     **/
     public String getPluginVersion() {
         return pluginVersion;
     }
@@ -171,6 +223,10 @@ public final class ManagementAgentPluginDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * flag indicating whether the plugin is in enabled mode or disabled mode.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }

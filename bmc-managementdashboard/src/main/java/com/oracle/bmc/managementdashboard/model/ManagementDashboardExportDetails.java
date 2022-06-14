@@ -30,9 +30,17 @@ public final class ManagementDashboardExportDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of dashboards.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dashboards")
         private java.util.List<ManagementDashboardForImportExportDetails> dashboards;
 
+        /**
+         * Array of dashboards.
+         * @param dashboards the value to set
+         * @return this builder
+         **/
         public Builder dashboards(
                 java.util.List<ManagementDashboardForImportExportDetails> dashboards) {
             this.dashboards = dashboards;
@@ -76,6 +84,10 @@ public final class ManagementDashboardExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dashboards")
     private final java.util.List<ManagementDashboardForImportExportDetails> dashboards;
 
+    /**
+     * Array of dashboards.
+     * @return the value
+     **/
     public java.util.List<ManagementDashboardForImportExportDetails> getDashboards() {
         return dashboards;
     }

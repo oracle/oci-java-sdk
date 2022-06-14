@@ -17,6 +17,9 @@ public class DeleteAcceptedAgreementRequest
      */
     private String acceptedAgreementId;
 
+    /**
+     * The unique identifier for the accepted terms of use agreement.
+     */
     public String getAcceptedAgreementId() {
         return acceptedAgreementId;
     }
@@ -25,6 +28,9 @@ public class DeleteAcceptedAgreementRequest
      */
     private String signature;
 
+    /**
+     * Previously, the signature generated for the listing package terms of use agreement, but now deprecated and ignored.
+     */
     public String getSignature() {
         return signature;
     }
@@ -35,6 +41,11 @@ public class DeleteAcceptedAgreementRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +57,12 @@ public class DeleteAcceptedAgreementRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to
+     * the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
+     * deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -57,10 +74,14 @@ public class DeleteAcceptedAgreementRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the accepted terms of use agreement.
+         */
         private String acceptedAgreementId = null;
 
         /**
          * The unique identifier for the accepted terms of use agreement.
+         * @param acceptedAgreementId the value to set
          * @return this builder instance
          */
         public Builder acceptedAgreementId(String acceptedAgreementId) {
@@ -68,10 +89,14 @@ public class DeleteAcceptedAgreementRequest
             return this;
         }
 
+        /**
+         * Previously, the signature generated for the listing package terms of use agreement, but now deprecated and ignored.
+         */
         private String signature = null;
 
         /**
          * Previously, the signature generated for the listing package terms of use agreement, but now deprecated and ignored.
+         * @param signature the value to set
          * @return this builder instance
          */
         public Builder signature(String signature) {
@@ -79,12 +104,18 @@ public class DeleteAcceptedAgreementRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -92,6 +123,12 @@ public class DeleteAcceptedAgreementRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to
+         * the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
+         * deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -99,6 +136,7 @@ public class DeleteAcceptedAgreementRequest
          * the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
          * deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -180,7 +218,8 @@ public class DeleteAcceptedAgreementRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +229,10 @@ public class DeleteAcceptedAgreementRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

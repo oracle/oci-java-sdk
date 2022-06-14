@@ -14,6 +14,11 @@ public class GetUserAssessmentComparisonResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class GetUserAssessmentComparisonResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.datasafe.model.UserAssessmentComparison userAssessmentComparison;
 
+    /**
+     * The returned UserAssessmentComparison instance.
+     * @return the value
+     */
     public com.oracle.bmc.datasafe.model.UserAssessmentComparison getUserAssessmentComparison() {
         return userAssessmentComparison;
     }
@@ -49,15 +58,33 @@ public class GetUserAssessmentComparisonResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned UserAssessmentComparison instance.
+         */
         private com.oracle.bmc.datasafe.model.UserAssessmentComparison userAssessmentComparison;
 
+        /**
+         * The returned UserAssessmentComparison instance.
+         * @param userAssessmentComparison the value to set
+         * @return this builder
+         */
         public Builder userAssessmentComparison(
                 com.oracle.bmc.datasafe.model.UserAssessmentComparison userAssessmentComparison) {
             this.userAssessmentComparison = userAssessmentComparison;
@@ -76,12 +103,20 @@ public class GetUserAssessmentComparisonResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetUserAssessmentComparisonResponse build() {
             return new GetUserAssessmentComparisonResponse(
                     __httpStatusCode__, opcRequestId, userAssessmentComparison);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

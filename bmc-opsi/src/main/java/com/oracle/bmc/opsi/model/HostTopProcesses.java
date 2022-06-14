@@ -34,91 +34,165 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * process id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pid")
         private java.math.BigDecimal pid;
 
+        /**
+         * process id
+         * @param pid the value to set
+         * @return this builder
+         **/
         public Builder pid(java.math.BigDecimal pid) {
             this.pid = pid;
             this.__explicitlySet__.add("pid");
             return this;
         }
-
+        /**
+         * User that started the process
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * User that started the process
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * Memory utilization percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryUtilizationPercent")
         private Double memoryUtilizationPercent;
 
+        /**
+         * Memory utilization percentage
+         * @param memoryUtilizationPercent the value to set
+         * @return this builder
+         **/
         public Builder memoryUtilizationPercent(Double memoryUtilizationPercent) {
             this.memoryUtilizationPercent = memoryUtilizationPercent;
             this.__explicitlySet__.add("memoryUtilizationPercent");
             return this;
         }
-
+        /**
+         * CPU utilization percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationPercent")
         private Double cpuUtilizationPercent;
 
+        /**
+         * CPU utilization percentage
+         * @param cpuUtilizationPercent the value to set
+         * @return this builder
+         **/
         public Builder cpuUtilizationPercent(Double cpuUtilizationPercent) {
             this.cpuUtilizationPercent = cpuUtilizationPercent;
             this.__explicitlySet__.add("cpuUtilizationPercent");
             return this;
         }
-
+        /**
+         * CPU usage in seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuUsageInSeconds")
         private Double cpuUsageInSeconds;
 
+        /**
+         * CPU usage in seconds
+         * @param cpuUsageInSeconds the value to set
+         * @return this builder
+         **/
         public Builder cpuUsageInSeconds(Double cpuUsageInSeconds) {
             this.cpuUsageInSeconds = cpuUsageInSeconds;
             this.__explicitlySet__.add("cpuUsageInSeconds");
             return this;
         }
-
+        /**
+         * Command line executed for the process
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("command")
         private String command;
 
+        /**
+         * Command line executed for the process
+         * @param command the value to set
+         * @return this builder
+         **/
         public Builder command(String command) {
             this.command = command;
             this.__explicitlySet__.add("command");
             return this;
         }
-
+        /**
+         * Virtual memory in megabytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("virtualMemoryInMBs")
         private Double virtualMemoryInMBs;
 
+        /**
+         * Virtual memory in megabytes
+         * @param virtualMemoryInMBs the value to set
+         * @return this builder
+         **/
         public Builder virtualMemoryInMBs(Double virtualMemoryInMBs) {
             this.virtualMemoryInMBs = virtualMemoryInMBs;
             this.__explicitlySet__.add("virtualMemoryInMBs");
             return this;
         }
-
+        /**
+         * Physical memory in megabytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("physicalMemoryInMBs")
         private Double physicalMemoryInMBs;
 
+        /**
+         * Physical memory in megabytes
+         * @param physicalMemoryInMBs the value to set
+         * @return this builder
+         **/
         public Builder physicalMemoryInMBs(Double physicalMemoryInMBs) {
             this.physicalMemoryInMBs = physicalMemoryInMBs;
             this.__explicitlySet__.add("physicalMemoryInMBs");
             return this;
         }
-
+        /**
+         * Process Start Time
+         * Example: {@code "2020-03-31T00:00:00.000Z"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private java.util.Date startTime;
 
+        /**
+         * Process Start Time
+         * Example: {@code "2020-03-31T00:00:00.000Z"}
+         *
+         * @param startTime the value to set
+         * @return this builder
+         **/
         public Builder startTime(java.util.Date startTime) {
             this.startTime = startTime;
             this.__explicitlySet__.add("startTime");
             return this;
         }
-
+        /**
+         * Number of processes running at the time of collection
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalProcesses")
         private java.math.BigDecimal totalProcesses;
 
+        /**
+         * Number of processes running at the time of collection
+         * @param totalProcesses the value to set
+         * @return this builder
+         **/
         public Builder totalProcesses(java.math.BigDecimal totalProcesses) {
             this.totalProcesses = totalProcesses;
             this.__explicitlySet__.add("totalProcesses");
@@ -209,6 +283,10 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("pid")
     private final java.math.BigDecimal pid;
 
+    /**
+     * process id
+     * @return the value
+     **/
     public java.math.BigDecimal getPid() {
         return pid;
     }
@@ -219,6 +297,10 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * User that started the process
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -229,6 +311,10 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUtilizationPercent")
     private final Double memoryUtilizationPercent;
 
+    /**
+     * Memory utilization percentage
+     * @return the value
+     **/
     public Double getMemoryUtilizationPercent() {
         return memoryUtilizationPercent;
     }
@@ -239,6 +325,10 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationPercent")
     private final Double cpuUtilizationPercent;
 
+    /**
+     * CPU utilization percentage
+     * @return the value
+     **/
     public Double getCpuUtilizationPercent() {
         return cpuUtilizationPercent;
     }
@@ -249,6 +339,10 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUsageInSeconds")
     private final Double cpuUsageInSeconds;
 
+    /**
+     * CPU usage in seconds
+     * @return the value
+     **/
     public Double getCpuUsageInSeconds() {
         return cpuUsageInSeconds;
     }
@@ -259,6 +353,10 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("command")
     private final String command;
 
+    /**
+     * Command line executed for the process
+     * @return the value
+     **/
     public String getCommand() {
         return command;
     }
@@ -269,6 +367,10 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("virtualMemoryInMBs")
     private final Double virtualMemoryInMBs;
 
+    /**
+     * Virtual memory in megabytes
+     * @return the value
+     **/
     public Double getVirtualMemoryInMBs() {
         return virtualMemoryInMBs;
     }
@@ -279,6 +381,10 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("physicalMemoryInMBs")
     private final Double physicalMemoryInMBs;
 
+    /**
+     * Physical memory in megabytes
+     * @return the value
+     **/
     public Double getPhysicalMemoryInMBs() {
         return physicalMemoryInMBs;
     }
@@ -291,6 +397,12 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
     private final java.util.Date startTime;
 
+    /**
+     * Process Start Time
+     * Example: {@code "2020-03-31T00:00:00.000Z"}
+     *
+     * @return the value
+     **/
     public java.util.Date getStartTime() {
         return startTime;
     }
@@ -301,6 +413,10 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("totalProcesses")
     private final java.math.BigDecimal totalProcesses;
 
+    /**
+     * Number of processes running at the time of collection
+     * @return the value
+     **/
     public java.math.BigDecimal getTotalProcesses() {
         return totalProcesses;
     }

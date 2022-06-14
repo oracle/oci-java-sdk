@@ -40,36 +40,71 @@ public final class SuggestDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
+        /**
+         * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
             return this;
         }
-
+        /**
+         * Query seeking suggestions for.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
 
+        /**
+         * Query seeking suggestions for.
+         *
+         * @param queryString the value to set
+         * @return this builder
+         **/
         public Builder queryString(String queryString) {
             this.queryString = queryString;
             this.__explicitlySet__.add("queryString");
             return this;
         }
-
+        /**
+         * Default subsystem to qualify fields with in the queryString if not specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
         private SubSystemName subSystem;
 
+        /**
+         * Default subsystem to qualify fields with in the queryString if not specified.
+         *
+         * @param subSystem the value to set
+         * @return this builder
+         **/
         public Builder subSystem(SubSystemName subSystem) {
             this.subSystem = subSystem;
             this.__explicitlySet__.add("subSystem");
@@ -117,6 +152,10 @@ public final class SuggestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -128,6 +167,11 @@ public final class SuggestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
+    /**
+     * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
+     *
+     * @return the value
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -139,6 +183,11 @@ public final class SuggestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     private final String queryString;
 
+    /**
+     * Query seeking suggestions for.
+     *
+     * @return the value
+     **/
     public String getQueryString() {
         return queryString;
     }
@@ -150,6 +199,11 @@ public final class SuggestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
     private final SubSystemName subSystem;
 
+    /**
+     * Default subsystem to qualify fields with in the queryString if not specified.
+     *
+     * @return the value
+     **/
     public SubSystemName getSubSystem() {
         return subSystem;
     }

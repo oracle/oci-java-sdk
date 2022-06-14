@@ -42,45 +42,101 @@ public final class ExportKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the master encryption key associated with the key version you want to export.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
+        /**
+         * The OCID of the master encryption key associated with the key version you want to export.
+         * @param keyId the value to set
+         * @return this builder
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-
+        /**
+         * The OCID of the specific key version to export. If not specified, the service exports the current key version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
         private String keyVersionId;
 
+        /**
+         * The OCID of the specific key version to export. If not specified, the service exports the current key version.
+         *
+         * @param keyVersionId the value to set
+         * @return this builder
+         **/
         public Builder keyVersionId(String keyVersionId) {
             this.keyVersionId = keyVersionId;
             this.__explicitlySet__.add("keyVersionId");
             return this;
         }
-
+        /**
+         * The encryption algorithm to use to encrypt exportable key material from a software-backed key. Specifying {@code RSA_OAEP_AES_SHA256}
+         * invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped by the RSA public
+         * wrapping key provided along with the request, creating a wrapped temporary AES key. The temporary AES key is also used to wrap
+         * the exportable key material. The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing
+         * concatenated blob output that jointly represents them. Specifying {@code RSA_OAEP_SHA256} means that the software key is wrapped by
+         * the RSA public wrapping key provided along with the request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private Algorithm algorithm;
 
+        /**
+         * The encryption algorithm to use to encrypt exportable key material from a software-backed key. Specifying {@code RSA_OAEP_AES_SHA256}
+         * invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped by the RSA public
+         * wrapping key provided along with the request, creating a wrapped temporary AES key. The temporary AES key is also used to wrap
+         * the exportable key material. The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing
+         * concatenated blob output that jointly represents them. Specifying {@code RSA_OAEP_SHA256} means that the software key is wrapped by
+         * the RSA public wrapping key provided along with the request.
+         *
+         * @param algorithm the value to set
+         * @return this builder
+         **/
         public Builder algorithm(Algorithm algorithm) {
             this.algorithm = algorithm;
             this.__explicitlySet__.add("algorithm");
             return this;
         }
-
+        /**
+         * The PEM format of the 2048-bit, 3072-bit, or 4096-bit RSA wrapping key in your possession that you want to use to encrypt the key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
+        /**
+         * The PEM format of the 2048-bit, 3072-bit, or 4096-bit RSA wrapping key in your possession that you want to use to encrypt the key.
+         *
+         * @param publicKey the value to set
+         * @return this builder
+         **/
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
             return this;
         }
-
+        /**
+         * Information that provides context for audit logging. You can provide this additional
+         * data as key-value pairs to include in the audit logs when audit logging is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
         private java.util.Map<String, String> loggingContext;
 
+        /**
+         * Information that provides context for audit logging. You can provide this additional
+         * data as key-value pairs to include in the audit logs when audit logging is enabled.
+         *
+         * @param loggingContext the value to set
+         * @return this builder
+         **/
         public Builder loggingContext(java.util.Map<String, String> loggingContext) {
             this.loggingContext = loggingContext;
             this.__explicitlySet__.add("loggingContext");
@@ -128,6 +184,10 @@ public final class ExportKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
+    /**
+     * The OCID of the master encryption key associated with the key version you want to export.
+     * @return the value
+     **/
     public String getKeyId() {
         return keyId;
     }
@@ -139,6 +199,11 @@ public final class ExportKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
     private final String keyVersionId;
 
+    /**
+     * The OCID of the specific key version to export. If not specified, the service exports the current key version.
+     *
+     * @return the value
+     **/
     public String getKeyVersionId() {
         return keyVersionId;
     }
@@ -196,6 +261,16 @@ public final class ExportKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     private final Algorithm algorithm;
 
+    /**
+     * The encryption algorithm to use to encrypt exportable key material from a software-backed key. Specifying {@code RSA_OAEP_AES_SHA256}
+     * invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped by the RSA public
+     * wrapping key provided along with the request, creating a wrapped temporary AES key. The temporary AES key is also used to wrap
+     * the exportable key material. The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing
+     * concatenated blob output that jointly represents them. Specifying {@code RSA_OAEP_SHA256} means that the software key is wrapped by
+     * the RSA public wrapping key provided along with the request.
+     *
+     * @return the value
+     **/
     public Algorithm getAlgorithm() {
         return algorithm;
     }
@@ -207,6 +282,11 @@ public final class ExportKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
+    /**
+     * The PEM format of the 2048-bit, 3072-bit, or 4096-bit RSA wrapping key in your possession that you want to use to encrypt the key.
+     *
+     * @return the value
+     **/
     public String getPublicKey() {
         return publicKey;
     }
@@ -219,6 +299,12 @@ public final class ExportKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
     private final java.util.Map<String, String> loggingContext;
 
+    /**
+     * Information that provides context for audit logging. You can provide this additional
+     * data as key-value pairs to include in the audit logs when audit logging is enabled.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getLoggingContext() {
         return loggingContext;
     }

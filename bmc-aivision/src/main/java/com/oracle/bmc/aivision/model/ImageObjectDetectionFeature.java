@@ -27,18 +27,33 @@ package com.oracle.bmc.aivision.model;
 public final class ImageObjectDetectionFeature extends ImageFeature {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The maximum number of results to return.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
         private Integer maxResults;
 
+        /**
+         * The maximum number of results to return.
+         * @param maxResults the value to set
+         * @return this builder
+         **/
         public Builder maxResults(Integer maxResults) {
             this.maxResults = maxResults;
             this.__explicitlySet__.add("maxResults");
             return this;
         }
-
+        /**
+         * The custom model ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
+        /**
+         * The custom model ID.
+         * @param modelId the value to set
+         * @return this builder
+         **/
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
@@ -88,6 +103,10 @@ public final class ImageObjectDetectionFeature extends ImageFeature {
     @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
     private final Integer maxResults;
 
+    /**
+     * The maximum number of results to return.
+     * @return the value
+     **/
     public Integer getMaxResults() {
         return maxResults;
     }
@@ -98,6 +117,10 @@ public final class ImageObjectDetectionFeature extends ImageFeature {
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
+    /**
+     * The custom model ID.
+     * @return the value
+     **/
     public String getModelId() {
         return modelId;
     }

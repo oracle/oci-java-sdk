@@ -41,27 +41,55 @@ public final class NotebookSessionConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
+         *
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
         private Integer blockStorageSizeInGBs;
 
+        /**
+         * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+         *
+         * @param blockStorageSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder blockStorageSizeInGBs(Integer blockStorageSizeInGBs) {
             this.blockStorageSizeInGBs = blockStorageSizeInGBs;
             this.__explicitlySet__.add("blockStorageSizeInGBs");
             return this;
         }
-
+        /**
+         * A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -124,6 +152,11 @@ public final class NotebookSessionConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
+     *
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -135,6 +168,11 @@ public final class NotebookSessionConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
     private final Integer blockStorageSizeInGBs;
 
+    /**
+     * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+     *
+     * @return the value
+     **/
     public Integer getBlockStorageSizeInGBs() {
         return blockStorageSizeInGBs;
     }
@@ -146,6 +184,11 @@ public final class NotebookSessionConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }

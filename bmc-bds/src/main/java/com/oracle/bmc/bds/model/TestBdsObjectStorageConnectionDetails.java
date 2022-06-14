@@ -32,27 +32,49 @@ public final class TestBdsObjectStorageConnectionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An Oracle Cloud Infrastructure URI to which this connection must be attempted. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUri")
         private String objectStorageUri;
 
+        /**
+         * An Oracle Cloud Infrastructure URI to which this connection must be attempted. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * @param objectStorageUri the value to set
+         * @return this builder
+         **/
         public Builder objectStorageUri(String objectStorageUri) {
             this.objectStorageUri = objectStorageUri;
             this.__explicitlySet__.add("objectStorageUri");
             return this;
         }
-
+        /**
+         * Base64 passphrase used to secure the private key which will be created on user behalf.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
         private String passphrase;
 
+        /**
+         * Base64 passphrase used to secure the private key which will be created on user behalf.
+         * @param passphrase the value to set
+         * @return this builder
+         **/
         public Builder passphrase(String passphrase) {
             this.passphrase = passphrase;
             this.__explicitlySet__.add("passphrase");
             return this;
         }
-
+        /**
+         * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageRegion")
         private String objectStorageRegion;
 
+        /**
+         * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
+         * @param objectStorageRegion the value to set
+         * @return this builder
+         **/
         public Builder objectStorageRegion(String objectStorageRegion) {
             this.objectStorageRegion = objectStorageRegion;
             this.__explicitlySet__.add("objectStorageRegion");
@@ -99,6 +121,10 @@ public final class TestBdsObjectStorageConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUri")
     private final String objectStorageUri;
 
+    /**
+     * An Oracle Cloud Infrastructure URI to which this connection must be attempted. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return the value
+     **/
     public String getObjectStorageUri() {
         return objectStorageUri;
     }
@@ -109,6 +135,10 @@ public final class TestBdsObjectStorageConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
     private final String passphrase;
 
+    /**
+     * Base64 passphrase used to secure the private key which will be created on user behalf.
+     * @return the value
+     **/
     public String getPassphrase() {
         return passphrase;
     }
@@ -119,6 +149,10 @@ public final class TestBdsObjectStorageConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageRegion")
     private final String objectStorageRegion;
 
+    /**
+     * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
+     * @return the value
+     **/
     public String getObjectStorageRegion() {
         return objectStorageRegion;
     }

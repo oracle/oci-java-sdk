@@ -27,6 +27,7 @@ public final class ExportBotDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private StorageLocation target;
 

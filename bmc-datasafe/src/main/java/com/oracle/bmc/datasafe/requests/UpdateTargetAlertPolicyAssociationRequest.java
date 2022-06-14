@@ -18,6 +18,9 @@ public class UpdateTargetAlertPolicyAssociationRequest
      */
     private String targetAlertPolicyAssociationId;
 
+    /**
+     * The OCID of the target-alert policy association.
+     */
     public String getTargetAlertPolicyAssociationId() {
         return targetAlertPolicyAssociationId;
     }
@@ -27,6 +30,9 @@ public class UpdateTargetAlertPolicyAssociationRequest
     private com.oracle.bmc.datasafe.model.UpdateTargetAlertPolicyAssociationDetails
             updateTargetAlertPolicyAssociationDetails;
 
+    /**
+     * The details used to update the target-alert policy association.
+     */
     public com.oracle.bmc.datasafe.model.UpdateTargetAlertPolicyAssociationDetails
             getUpdateTargetAlertPolicyAssociationDetails() {
         return updateTargetAlertPolicyAssociationDetails;
@@ -41,6 +47,14 @@ public class UpdateTargetAlertPolicyAssociationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class UpdateTargetAlertPolicyAssociationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateTargetAlertPolicyAssociationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target-alert policy association.
+         */
         private String targetAlertPolicyAssociationId = null;
 
         /**
          * The OCID of the target-alert policy association.
+         * @param targetAlertPolicyAssociationId the value to set
          * @return this builder instance
          */
         public Builder targetAlertPolicyAssociationId(String targetAlertPolicyAssociationId) {
@@ -82,11 +103,15 @@ public class UpdateTargetAlertPolicyAssociationRequest
             return this;
         }
 
+        /**
+         * The details used to update the target-alert policy association.
+         */
         private com.oracle.bmc.datasafe.model.UpdateTargetAlertPolicyAssociationDetails
                 updateTargetAlertPolicyAssociationDetails = null;
 
         /**
          * The details used to update the target-alert policy association.
+         * @param updateTargetAlertPolicyAssociationDetails the value to set
          * @return this builder instance
          */
         public Builder updateTargetAlertPolicyAssociationDetails(
@@ -97,6 +122,14 @@ public class UpdateTargetAlertPolicyAssociationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -106,6 +139,7 @@ public class UpdateTargetAlertPolicyAssociationRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -113,10 +147,14 @@ public class UpdateTargetAlertPolicyAssociationRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -213,7 +251,8 @@ public class UpdateTargetAlertPolicyAssociationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -224,6 +263,10 @@ public class UpdateTargetAlertPolicyAssociationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

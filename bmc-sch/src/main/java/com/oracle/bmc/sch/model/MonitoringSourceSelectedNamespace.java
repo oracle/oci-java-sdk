@@ -32,9 +32,23 @@ public final class MonitoringSourceSelectedNamespace {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The source service or application to use when querying for metric data points. Must begin with {@code oci_}.
+         * <p>
+         * Example: {@code oci_computeagent}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The source service or application to use when querying for metric data points. Must begin with {@code oci_}.
+         * <p>
+         * Example: {@code oci_computeagent}
+         *
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -89,6 +103,13 @@ public final class MonitoringSourceSelectedNamespace {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The source service or application to use when querying for metric data points. Must begin with {@code oci_}.
+     * <p>
+     * Example: {@code oci_computeagent}
+     *
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }

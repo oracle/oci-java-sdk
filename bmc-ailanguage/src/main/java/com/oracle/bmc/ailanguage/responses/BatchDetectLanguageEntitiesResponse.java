@@ -15,6 +15,12 @@ public class BatchDetectLanguageEntitiesResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class BatchDetectLanguageEntitiesResponse extends com.oracle.bmc.response
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageEntitiesResult
             batchDetectLanguageEntitiesResult;
 
+    /**
+     * The returned BatchDetectLanguageEntitiesResult instance.
+     * @return the value
+     */
     public com.oracle.bmc.ailanguage.model.BatchDetectLanguageEntitiesResult
             getBatchDetectLanguageEntitiesResult() {
         return batchDetectLanguageEntitiesResult;
@@ -53,16 +63,36 @@ public class BatchDetectLanguageEntitiesResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned BatchDetectLanguageEntitiesResult instance.
+         */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguageEntitiesResult
                 batchDetectLanguageEntitiesResult;
 
+        /**
+         * The returned BatchDetectLanguageEntitiesResult instance.
+         * @param batchDetectLanguageEntitiesResult the value to set
+         * @return this builder
+         */
         public Builder batchDetectLanguageEntitiesResult(
                 com.oracle.bmc.ailanguage.model.BatchDetectLanguageEntitiesResult
                         batchDetectLanguageEntitiesResult) {
@@ -82,12 +112,20 @@ public class BatchDetectLanguageEntitiesResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public BatchDetectLanguageEntitiesResponse build() {
             return new BatchDetectLanguageEntitiesResponse(
                     __httpStatusCode__, opcRequestId, batchDetectLanguageEntitiesResult);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

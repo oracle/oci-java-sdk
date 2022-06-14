@@ -46,10 +46,17 @@ public final class UpdateEmManagedExternalExadataInsightDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoSyncEnabled")
         private Boolean isAutoSyncEnabled;
 
+        /**
+         * Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
+         * @param isAutoSyncEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAutoSyncEnabled(Boolean isAutoSyncEnabled) {
             this.isAutoSyncEnabled = isAutoSyncEnabled;
             this.__explicitlySet__.add("isAutoSyncEnabled");
@@ -105,6 +112,10 @@ public final class UpdateEmManagedExternalExadataInsightDetails
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoSyncEnabled")
     private final Boolean isAutoSyncEnabled;
 
+    /**
+     * Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
+     * @return the value
+     **/
     public Boolean getIsAutoSyncEnabled() {
         return isAutoSyncEnabled;
     }

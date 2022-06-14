@@ -36,28 +36,53 @@ public final class CreateObjectStorageConfigSourceDetails extends CreateConfigSo
             this.__explicitlySet__.add("workingDirectory");
             return this;
         }
-
+        /**
+         * The name of the bucket's region.
+         * Example: {@code us-phoenix-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * The name of the bucket's region.
+         * Example: {@code us-phoenix-1}
+         *
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * The Object Storage namespace that contains the bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The Object Storage namespace that contains the bucket.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * The name of the bucket that contains the Terraform configuration files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * The name of the bucket that contains the Terraform configuration files.
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
@@ -116,6 +141,12 @@ public final class CreateObjectStorageConfigSourceDetails extends CreateConfigSo
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * The name of the bucket's region.
+     * Example: {@code us-phoenix-1}
+     *
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -126,6 +157,10 @@ public final class CreateObjectStorageConfigSourceDetails extends CreateConfigSo
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The Object Storage namespace that contains the bucket.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -136,6 +171,10 @@ public final class CreateObjectStorageConfigSourceDetails extends CreateConfigSo
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * The name of the bucket that contains the Terraform configuration files.
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }

@@ -49,45 +49,91 @@ public final class PhaseStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Phase name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private OdmsJobPhases name;
 
+        /**
+         * Phase name
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(OdmsJobPhases name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Phase status
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobPhaseStatus status;
 
+        /**
+         * Phase status
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(JobPhaseStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Duration of the phase in milliseconds
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
         private Integer durationInMs;
 
+        /**
+         * Duration of the phase in milliseconds
+         *
+         * @param durationInMs the value to set
+         * @return this builder
+         **/
         public Builder durationInMs(Integer durationInMs) {
             this.durationInMs = durationInMs;
             this.__explicitlySet__.add("durationInMs");
             return this;
         }
-
+        /**
+         * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAdvisorReportAvailable")
         private Boolean isAdvisorReportAvailable;
 
+        /**
+         * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+         *
+         * @param isAdvisorReportAvailable the value to set
+         * @return this builder
+         **/
         public Builder isAdvisorReportAvailable(Boolean isAdvisorReportAvailable) {
             this.isAdvisorReportAvailable = isAdvisorReportAvailable;
             this.__explicitlySet__.add("isAdvisorReportAvailable");
             return this;
         }
-
+        /**
+         * Summary of phase status results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extract")
         private java.util.List<PhaseExtractEntry> extract;
 
+        /**
+         * Summary of phase status results.
+         *
+         * @param extract the value to set
+         * @return this builder
+         **/
         public Builder extract(java.util.List<PhaseExtractEntry> extract) {
             this.extract = extract;
             this.__explicitlySet__.add("extract");
@@ -102,10 +148,19 @@ public final class PhaseStatus {
             this.__explicitlySet__.add("logLocation");
             return this;
         }
-
+        /**
+         * Percent progress of job phase.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("progress")
         private Integer progress;
 
+        /**
+         * Percent progress of job phase.
+         *
+         * @param progress the value to set
+         * @return this builder
+         **/
         public Builder progress(Integer progress) {
             this.progress = progress;
             this.__explicitlySet__.add("progress");
@@ -163,6 +218,11 @@ public final class PhaseStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final OdmsJobPhases name;
 
+    /**
+     * Phase name
+     *
+     * @return the value
+     **/
     public OdmsJobPhases getName() {
         return name;
     }
@@ -174,6 +234,11 @@ public final class PhaseStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobPhaseStatus status;
 
+    /**
+     * Phase status
+     *
+     * @return the value
+     **/
     public JobPhaseStatus getStatus() {
         return status;
     }
@@ -185,6 +250,11 @@ public final class PhaseStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
     private final Integer durationInMs;
 
+    /**
+     * Duration of the phase in milliseconds
+     *
+     * @return the value
+     **/
     public Integer getDurationInMs() {
         return durationInMs;
     }
@@ -196,6 +266,11 @@ public final class PhaseStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("isAdvisorReportAvailable")
     private final Boolean isAdvisorReportAvailable;
 
+    /**
+     * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+     *
+     * @return the value
+     **/
     public Boolean getIsAdvisorReportAvailable() {
         return isAdvisorReportAvailable;
     }
@@ -207,6 +282,11 @@ public final class PhaseStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("extract")
     private final java.util.List<PhaseExtractEntry> extract;
 
+    /**
+     * Summary of phase status results.
+     *
+     * @return the value
+     **/
     public java.util.List<PhaseExtractEntry> getExtract() {
         return extract;
     }
@@ -225,6 +305,11 @@ public final class PhaseStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("progress")
     private final Integer progress;
 
+    /**
+     * Percent progress of job phase.
+     *
+     * @return the value
+     **/
     public Integer getProgress() {
         return progress;
     }

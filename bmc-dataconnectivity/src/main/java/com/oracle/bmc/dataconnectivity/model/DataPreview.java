@@ -34,36 +34,65 @@ public final class DataPreview {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the entity for which data preview was requested
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
+        /**
+         * Name of the entity for which data preview was requested
+         * @param entityName the value to set
+         * @return this builder
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-
+        /**
+         * Total number of rows taken for sampling
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleRowsCount")
         private Integer sampleRowsCount;
 
+        /**
+         * Total number of rows taken for sampling
+         * @param sampleRowsCount the value to set
+         * @return this builder
+         **/
         public Builder sampleRowsCount(Integer sampleRowsCount) {
             this.sampleRowsCount = sampleRowsCount;
             this.__explicitlySet__.add("sampleRowsCount");
             return this;
         }
-
+        /**
+         * Array of column definition for the preview result
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<Column> columns;
 
+        /**
+         * Array of column definition for the preview result
+         * @param columns the value to set
+         * @return this builder
+         **/
         public Builder columns(java.util.List<Column> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-
+        /**
+         * Array of rows values for the preview result
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rows")
         private java.util.List<Row> rows;
 
+        /**
+         * Array of rows values for the preview result
+         * @param rows the value to set
+         * @return this builder
+         **/
         public Builder rows(java.util.List<Row> rows) {
             this.rows = rows;
             this.__explicitlySet__.add("rows");
@@ -109,6 +138,10 @@ public final class DataPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
+    /**
+     * Name of the entity for which data preview was requested
+     * @return the value
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -119,6 +152,10 @@ public final class DataPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("sampleRowsCount")
     private final Integer sampleRowsCount;
 
+    /**
+     * Total number of rows taken for sampling
+     * @return the value
+     **/
     public Integer getSampleRowsCount() {
         return sampleRowsCount;
     }
@@ -129,6 +166,10 @@ public final class DataPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<Column> columns;
 
+    /**
+     * Array of column definition for the preview result
+     * @return the value
+     **/
     public java.util.List<Column> getColumns() {
         return columns;
     }
@@ -139,6 +180,10 @@ public final class DataPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("rows")
     private final java.util.List<Row> rows;
 
+    /**
+     * Array of rows values for the preview result
+     * @return the value
+     **/
     public java.util.List<Row> getRows() {
         return rows;
     }

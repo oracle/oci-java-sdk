@@ -47,54 +47,97 @@ public final class WorkRequestSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The identifier of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The identifier of the work request.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The identifier of the compartment that contains the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The identifier of the compartment that contains the work request.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The identifier of the Digital Assistant instance to which this work request pertains.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("odaInstanceId")
         private String odaInstanceId;
 
+        /**
+         * The identifier of the Digital Assistant instance to which this work request pertains.
+         * @param odaInstanceId the value to set
+         * @return this builder
+         **/
         public Builder odaInstanceId(String odaInstanceId) {
             this.odaInstanceId = odaInstanceId;
             this.__explicitlySet__.add("odaInstanceId");
             return this;
         }
-
+        /**
+         * The type of the operation that's associated with the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestAction")
         private RequestAction requestAction;
 
+        /**
+         * The type of the operation that's associated with the work request.
+         * @param requestAction the value to set
+         * @return this builder
+         **/
         public Builder requestAction(RequestAction requestAction) {
             this.requestAction = requestAction;
             this.__explicitlySet__.add("requestAction");
             return this;
         }
-
+        /**
+         * The status of current work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of current work request.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The resources that this work request affects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
+        /**
+         * The resources that this work request affects.
+         * @param resources the value to set
+         * @return this builder
+         **/
         public Builder resources(java.util.List<WorkRequestResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
@@ -144,6 +187,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The identifier of the work request.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -154,6 +201,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The identifier of the compartment that contains the work request.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -164,6 +215,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("odaInstanceId")
     private final String odaInstanceId;
 
+    /**
+     * The identifier of the Digital Assistant instance to which this work request pertains.
+     * @return the value
+     **/
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -251,6 +306,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("requestAction")
     private final RequestAction requestAction;
 
+    /**
+     * The type of the operation that's associated with the work request.
+     * @return the value
+     **/
     public RequestAction getRequestAction() {
         return requestAction;
     }
@@ -312,6 +371,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of current work request.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -322,6 +385,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
+    /**
+     * The resources that this work request affects.
+     * @return the value
+     **/
     public java.util.List<WorkRequestResource> getResources() {
         return resources;
     }

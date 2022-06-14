@@ -45,54 +45,97 @@ public final class ParsedContent {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of field names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
         private java.util.List<String> fieldNames;
 
+        /**
+         * List of field names.
+         * @param fieldNames the value to set
+         * @return this builder
+         **/
         public Builder fieldNames(java.util.List<String> fieldNames) {
             this.fieldNames = fieldNames;
             this.__explicitlySet__.add("fieldNames");
             return this;
         }
-
+        /**
+         * List of field display names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayNames")
         private java.util.List<String> fieldDisplayNames;
 
+        /**
+         * List of field display names.
+         * @param fieldDisplayNames the value to set
+         * @return this builder
+         **/
         public Builder fieldDisplayNames(java.util.List<String> fieldDisplayNames) {
             this.fieldDisplayNames = fieldDisplayNames;
             this.__explicitlySet__.add("fieldDisplayNames");
             return this;
         }
-
+        /**
+         * Parsed field values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldValues")
         private java.util.List<ParsedField> parsedFieldValues;
 
+        /**
+         * Parsed field values.
+         * @param parsedFieldValues the value to set
+         * @return this builder
+         **/
         public Builder parsedFieldValues(java.util.List<ParsedField> parsedFieldValues) {
             this.parsedFieldValues = parsedFieldValues;
             this.__explicitlySet__.add("parsedFieldValues");
             return this;
         }
-
+        /**
+         * Sample log entries picked up from the given file for validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logContent")
         private String logContent;
 
+        /**
+         * Sample log entries picked up from the given file for validation.
+         * @param logContent the value to set
+         * @return this builder
+         **/
         public Builder logContent(String logContent) {
             this.logContent = logContent;
             this.__explicitlySet__.add("logContent");
             return this;
         }
-
+        /**
+         * Sample Size taken for validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleSize")
         private Integer sampleSize;
 
+        /**
+         * Sample Size taken for validation.
+         * @param sampleSize the value to set
+         * @return this builder
+         **/
         public Builder sampleSize(Integer sampleSize) {
             this.sampleSize = sampleSize;
             this.__explicitlySet__.add("sampleSize");
             return this;
         }
-
+        /**
+         * Match Status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
         private String matchStatus;
 
+        /**
+         * Match Status.
+         * @param matchStatus the value to set
+         * @return this builder
+         **/
         public Builder matchStatus(String matchStatus) {
             this.matchStatus = matchStatus;
             this.__explicitlySet__.add("matchStatus");
@@ -147,6 +190,10 @@ public final class ParsedContent {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
     private final java.util.List<String> fieldNames;
 
+    /**
+     * List of field names.
+     * @return the value
+     **/
     public java.util.List<String> getFieldNames() {
         return fieldNames;
     }
@@ -157,6 +204,10 @@ public final class ParsedContent {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayNames")
     private final java.util.List<String> fieldDisplayNames;
 
+    /**
+     * List of field display names.
+     * @return the value
+     **/
     public java.util.List<String> getFieldDisplayNames() {
         return fieldDisplayNames;
     }
@@ -167,6 +218,10 @@ public final class ParsedContent {
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldValues")
     private final java.util.List<ParsedField> parsedFieldValues;
 
+    /**
+     * Parsed field values.
+     * @return the value
+     **/
     public java.util.List<ParsedField> getParsedFieldValues() {
         return parsedFieldValues;
     }
@@ -177,6 +232,10 @@ public final class ParsedContent {
     @com.fasterxml.jackson.annotation.JsonProperty("logContent")
     private final String logContent;
 
+    /**
+     * Sample log entries picked up from the given file for validation.
+     * @return the value
+     **/
     public String getLogContent() {
         return logContent;
     }
@@ -187,6 +246,10 @@ public final class ParsedContent {
     @com.fasterxml.jackson.annotation.JsonProperty("sampleSize")
     private final Integer sampleSize;
 
+    /**
+     * Sample Size taken for validation.
+     * @return the value
+     **/
     public Integer getSampleSize() {
         return sampleSize;
     }
@@ -197,6 +260,10 @@ public final class ParsedContent {
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
     private final String matchStatus;
 
+    /**
+     * Match Status.
+     * @return the value
+     **/
     public String getMatchStatus() {
         return matchStatus;
     }

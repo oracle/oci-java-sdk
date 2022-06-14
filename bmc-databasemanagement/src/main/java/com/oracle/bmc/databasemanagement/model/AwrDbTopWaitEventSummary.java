@@ -31,27 +31,49 @@ public final class AwrDbTopWaitEventSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the event.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the event.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The wait count per second.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("waitsPerSec")
         private Double waitsPerSec;
 
+        /**
+         * The wait count per second.
+         * @param waitsPerSec the value to set
+         * @return this builder
+         **/
         public Builder waitsPerSec(Double waitsPerSec) {
             this.waitsPerSec = waitsPerSec;
             this.__explicitlySet__.add("waitsPerSec");
             return this;
         }
-
+        /**
+         * The average wait time per second.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("avgWaitTimePerSec")
         private Double avgWaitTimePerSec;
 
+        /**
+         * The average wait time per second.
+         * @param avgWaitTimePerSec the value to set
+         * @return this builder
+         **/
         public Builder avgWaitTimePerSec(Double avgWaitTimePerSec) {
             this.avgWaitTimePerSec = avgWaitTimePerSec;
             this.__explicitlySet__.add("avgWaitTimePerSec");
@@ -97,6 +119,10 @@ public final class AwrDbTopWaitEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the event.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -107,6 +133,10 @@ public final class AwrDbTopWaitEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("waitsPerSec")
     private final Double waitsPerSec;
 
+    /**
+     * The wait count per second.
+     * @return the value
+     **/
     public Double getWaitsPerSec() {
         return waitsPerSec;
     }
@@ -117,6 +147,10 @@ public final class AwrDbTopWaitEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("avgWaitTimePerSec")
     private final Double avgWaitTimePerSec;
 
+    /**
+     * The average wait time per second.
+     * @return the value
+     **/
     public Double getAvgWaitTimePerSec() {
         return avgWaitTimePerSec;
     }

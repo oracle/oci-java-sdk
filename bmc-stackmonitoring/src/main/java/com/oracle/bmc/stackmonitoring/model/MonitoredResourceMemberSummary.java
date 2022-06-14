@@ -59,91 +59,174 @@ public final class MonitoredResourceMemberSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Monitored resource identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * Monitored resource identifier
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * Monitored resource name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * Monitored resource name
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * Monitored resource display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
         private String resourceDisplayName;
 
+        /**
+         * Monitored resource display name.
+         * @param resourceDisplayName the value to set
+         * @return this builder
+         **/
         public Builder resourceDisplayName(String resourceDisplayName) {
             this.resourceDisplayName = resourceDisplayName;
             this.__explicitlySet__.add("resourceDisplayName");
             return this;
         }
-
+        /**
+         * Monitored resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * Monitored resource type
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * Monitored Resource Host
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * Monitored Resource Host
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * Parent monitored resource identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
+        /**
+         * Parent monitored resource identifier
+         * @param parentId the value to set
+         * @return this builder
+         **/
         public Builder parentId(String parentId) {
             this.parentId = parentId;
             this.__explicitlySet__.add("parentId");
             return this;
         }
-
+        /**
+         * The current state of the Resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ResourceLifecycleState lifecycleState;
 
+        /**
+         * The current state of the Resource.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(ResourceLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -206,6 +289,10 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * Monitored resource identifier
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -216,6 +303,10 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * Monitored resource name
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -226,6 +317,10 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
     private final String resourceDisplayName;
 
+    /**
+     * Monitored resource display name.
+     * @return the value
+     **/
     public String getResourceDisplayName() {
         return resourceDisplayName;
     }
@@ -236,6 +331,10 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * Monitored resource type
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -246,6 +345,10 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * Monitored Resource Host
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -256,6 +359,10 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
+    /**
+     * Parent monitored resource identifier
+     * @return the value
+     **/
     public String getParentId() {
         return parentId;
     }
@@ -266,6 +373,10 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ResourceLifecycleState lifecycleState;
 
+    /**
+     * The current state of the Resource.
+     * @return the value
+     **/
     public ResourceLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -278,6 +389,12 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -290,6 +407,12 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -302,6 +425,12 @@ public final class MonitoredResourceMemberSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

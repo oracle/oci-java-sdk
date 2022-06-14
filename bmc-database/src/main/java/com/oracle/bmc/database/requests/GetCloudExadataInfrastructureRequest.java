@@ -17,6 +17,9 @@ public class GetCloudExadataInfrastructureRequest
      */
     private String cloudExadataInfrastructureId;
 
+    /**
+     * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCloudExadataInfrastructureId() {
         return cloudExadataInfrastructureId;
     }
@@ -26,6 +29,10 @@ public class GetCloudExadataInfrastructureRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,10 +44,14 @@ public class GetCloudExadataInfrastructureRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String cloudExadataInfrastructureId = null;
 
         /**
          * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param cloudExadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
@@ -48,11 +59,16 @@ public class GetCloudExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -131,7 +147,8 @@ public class GetCloudExadataInfrastructureRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -139,6 +156,10 @@ public class GetCloudExadataInfrastructureRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

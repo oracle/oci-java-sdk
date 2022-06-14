@@ -13,6 +13,10 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -24,6 +28,12 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String etag;
 
+    /**
+     * The entity tag (ETag) for the retention rule.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -42,6 +56,10 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.Date lastModified;
 
+    /**
+     * The time the retention rule was last modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29)
+     * @return the value
+     */
     public java.util.Date getLastModified() {
         return lastModified;
     }
@@ -51,6 +69,10 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.objectstorage.model.RetentionRule retentionRule;
 
+    /**
+     * The returned RetentionRule instance.
+     * @return the value
+     */
     public com.oracle.bmc.objectstorage.model.RetentionRule getRetentionRule() {
         return retentionRule;
     }
@@ -86,36 +108,80 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The entity tag (ETag) for the retention rule.
+         */
         private String etag;
 
+        /**
+         * The entity tag (ETag) for the retention rule.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The time the retention rule was last modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29)
+         */
         private java.util.Date lastModified;
 
+        /**
+         * The time the retention rule was last modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29)
+         * @param lastModified the value to set
+         * @return this builder
+         */
         public Builder lastModified(java.util.Date lastModified) {
             this.lastModified = lastModified;
             return this;
         }
 
+        /**
+         * The returned RetentionRule instance.
+         */
         private com.oracle.bmc.objectstorage.model.RetentionRule retentionRule;
 
+        /**
+         * The returned RetentionRule instance.
+         * @param retentionRule the value to set
+         * @return this builder
+         */
         public Builder retentionRule(
                 com.oracle.bmc.objectstorage.model.RetentionRule retentionRule) {
             this.retentionRule = retentionRule;
@@ -137,6 +203,10 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetRetentionRuleResponse build() {
             return new GetRetentionRuleResponse(
                     __httpStatusCode__,
@@ -148,6 +218,10 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

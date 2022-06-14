@@ -50,63 +50,113 @@ public final class Captcha {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique URL path at which to show the CAPTCHA challenge.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * The unique URL path at which to show the CAPTCHA challenge.
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-
+        /**
+         * The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to {@code 300}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionExpirationInSeconds")
         private Integer sessionExpirationInSeconds;
 
+        /**
+         * The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to {@code 300}.
+         * @param sessionExpirationInSeconds the value to set
+         * @return this builder
+         **/
         public Builder sessionExpirationInSeconds(Integer sessionExpirationInSeconds) {
             this.sessionExpirationInSeconds = sessionExpirationInSeconds;
             this.__explicitlySet__.add("sessionExpirationInSeconds");
             return this;
         }
-
+        /**
+         * The title used when displaying a CAPTCHA challenge. If unspecified, defaults to {@code Are you human?}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
+        /**
+         * The title used when displaying a CAPTCHA challenge. If unspecified, defaults to {@code Are you human?}
+         * @param title the value to set
+         * @return this builder
+         **/
         public Builder title(String title) {
             this.title = title;
             this.__explicitlySet__.add("title");
             return this;
         }
-
+        /**
+         * The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerText")
         private String headerText;
 
+        /**
+         * The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
+         * @param headerText the value to set
+         * @return this builder
+         **/
         public Builder headerText(String headerText) {
             this.headerText = headerText;
             this.__explicitlySet__.add("headerText");
             return this;
         }
-
+        /**
+         * The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("footerText")
         private String footerText;
 
+        /**
+         * The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
+         * @param footerText the value to set
+         * @return this builder
+         **/
         public Builder footerText(String footerText) {
             this.footerText = footerText;
             this.__explicitlySet__.add("footerText");
             return this;
         }
-
+        /**
+         * The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to {@code The CAPTCHA was incorrect. Try again.}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failureMessage")
         private String failureMessage;
 
+        /**
+         * The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to {@code The CAPTCHA was incorrect. Try again.}
+         * @param failureMessage the value to set
+         * @return this builder
+         **/
         public Builder failureMessage(String failureMessage) {
             this.failureMessage = failureMessage;
             this.__explicitlySet__.add("failureMessage");
             return this;
         }
-
+        /**
+         * The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to {@code Yes, I am human}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("submitLabel")
         private String submitLabel;
 
+        /**
+         * The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to {@code Yes, I am human}.
+         * @param submitLabel the value to set
+         * @return this builder
+         **/
         public Builder submitLabel(String submitLabel) {
             this.submitLabel = submitLabel;
             this.__explicitlySet__.add("submitLabel");
@@ -163,6 +213,10 @@ public final class Captcha {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * The unique URL path at which to show the CAPTCHA challenge.
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }
@@ -173,6 +227,10 @@ public final class Captcha {
     @com.fasterxml.jackson.annotation.JsonProperty("sessionExpirationInSeconds")
     private final Integer sessionExpirationInSeconds;
 
+    /**
+     * The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to {@code 300}.
+     * @return the value
+     **/
     public Integer getSessionExpirationInSeconds() {
         return sessionExpirationInSeconds;
     }
@@ -183,6 +241,10 @@ public final class Captcha {
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
+    /**
+     * The title used when displaying a CAPTCHA challenge. If unspecified, defaults to {@code Are you human?}
+     * @return the value
+     **/
     public String getTitle() {
         return title;
     }
@@ -193,6 +255,10 @@ public final class Captcha {
     @com.fasterxml.jackson.annotation.JsonProperty("headerText")
     private final String headerText;
 
+    /**
+     * The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
+     * @return the value
+     **/
     public String getHeaderText() {
         return headerText;
     }
@@ -203,6 +269,10 @@ public final class Captcha {
     @com.fasterxml.jackson.annotation.JsonProperty("footerText")
     private final String footerText;
 
+    /**
+     * The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
+     * @return the value
+     **/
     public String getFooterText() {
         return footerText;
     }
@@ -213,6 +283,10 @@ public final class Captcha {
     @com.fasterxml.jackson.annotation.JsonProperty("failureMessage")
     private final String failureMessage;
 
+    /**
+     * The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to {@code The CAPTCHA was incorrect. Try again.}
+     * @return the value
+     **/
     public String getFailureMessage() {
         return failureMessage;
     }
@@ -223,6 +297,10 @@ public final class Captcha {
     @com.fasterxml.jackson.annotation.JsonProperty("submitLabel")
     private final String submitLabel;
 
+    /**
+     * The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to {@code Yes, I am human}.
+     * @return the value
+     **/
     public String getSubmitLabel() {
         return submitLabel;
     }

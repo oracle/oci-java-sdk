@@ -31,18 +31,33 @@ public final class RecommendationStrategySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The display name of the recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The display name of the recommendation.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The list of strategies used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("strategies")
         private java.util.List<Strategy> strategies;
 
+        /**
+         * The list of strategies used.
+         * @param strategies the value to set
+         * @return this builder
+         **/
         public Builder strategies(java.util.List<Strategy> strategies) {
             this.strategies = strategies;
             this.__explicitlySet__.add("strategies");
@@ -85,6 +100,10 @@ public final class RecommendationStrategySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The display name of the recommendation.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -95,6 +114,10 @@ public final class RecommendationStrategySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("strategies")
     private final java.util.List<Strategy> strategies;
 
+    /**
+     * The list of strategies used.
+     * @return the value
+     **/
     public java.util.List<Strategy> getStrategies() {
         return strategies;
     }

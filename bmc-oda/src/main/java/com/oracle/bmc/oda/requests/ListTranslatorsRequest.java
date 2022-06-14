@@ -16,6 +16,9 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -24,6 +27,9 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String id;
 
+    /**
+     * Unique Translator identifier.
+     */
     public String getId() {
         return id;
     }
@@ -32,6 +38,9 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private com.oracle.bmc.oda.model.TranslationService type;
 
+    /**
+     * List only Translators of this type.
+     */
     public com.oracle.bmc.oda.model.TranslationService getType() {
         return type;
     }
@@ -43,6 +52,12 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String name;
 
+    /**
+     * List only Translators with this name. Translator names are unique and may not change.
+     * <p>
+     * Example: {@code MyTranslator}
+     *
+     */
     public String getName() {
         return name;
     }
@@ -51,6 +66,9 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private com.oracle.bmc.oda.model.LifecycleState lifecycleState;
 
+    /**
+     * List only the resources that are in this lifecycle state.
+     */
     public com.oracle.bmc.oda.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -59,6 +77,9 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -73,6 +94,15 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The page at which to start retrieving results.
+     * <p>
+     * You get this value from the {@code opc-next-page} header in a previous list request.
+     * To retireve the first page, omit this query parameter.
+     * <p>
+     * Example: {@code MToxMA==}
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -117,6 +147,9 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -171,6 +204,13 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
+     * <p>
+     * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending.
+     * For all other sort fields the default sort order is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -179,6 +219,9 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -190,10 +233,14 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -201,10 +248,14 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique Translator identifier.
+         */
         private String id = null;
 
         /**
          * Unique Translator identifier.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -212,10 +263,14 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * List only Translators of this type.
+         */
         private com.oracle.bmc.oda.model.TranslationService type = null;
 
         /**
          * List only Translators of this type.
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(com.oracle.bmc.oda.model.TranslationService type) {
@@ -223,6 +278,12 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * List only Translators with this name. Translator names are unique and may not change.
+         * <p>
+         * Example: {@code MyTranslator}
+         *
+         */
         private String name = null;
 
         /**
@@ -230,6 +291,7 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * <p>
          * Example: {@code MyTranslator}
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -237,10 +299,14 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * List only the resources that are in this lifecycle state.
+         */
         private com.oracle.bmc.oda.model.LifecycleState lifecycleState = null;
 
         /**
          * List only the resources that are in this lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(com.oracle.bmc.oda.model.LifecycleState lifecycleState) {
@@ -248,10 +314,14 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -259,6 +329,15 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The page at which to start retrieving results.
+         * <p>
+         * You get this value from the {@code opc-next-page} header in a previous list request.
+         * To retireve the first page, omit this query parameter.
+         * <p>
+         * Example: {@code MToxMA==}
+         *
+         */
         private String page = null;
 
         /**
@@ -269,6 +348,7 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * <p>
          * Example: {@code MToxMA==}
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -276,10 +356,14 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -287,6 +371,13 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code timeCreated}.
+         * <p>
+         * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending.
+         * For all other sort fields the default sort order is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -295,6 +386,7 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * The default sort order for {@code timeCreated} and {@code timeUpdated} is descending.
          * For all other sort fields the default sort order is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -302,10 +394,14 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -399,7 +495,8 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -415,6 +512,10 @@ public class ListTranslatorsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

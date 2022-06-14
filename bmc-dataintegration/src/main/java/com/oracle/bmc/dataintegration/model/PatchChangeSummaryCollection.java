@@ -29,9 +29,17 @@ public final class PatchChangeSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of patch summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PatchChangeSummary> items;
 
+        /**
+         * The array of patch summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<PatchChangeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class PatchChangeSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PatchChangeSummary> items;
 
+    /**
+     * The array of patch summaries.
+     * @return the value
+     **/
     public java.util.List<PatchChangeSummary> getItems() {
         return items;
     }

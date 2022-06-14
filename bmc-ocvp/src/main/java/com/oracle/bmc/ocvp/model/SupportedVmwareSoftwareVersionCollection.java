@@ -30,9 +30,17 @@ public final class SupportedVmwareSoftwareVersionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of the supported versions of bundled VMware software.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SupportedVmwareSoftwareVersionSummary> items;
 
+        /**
+         * A list of the supported versions of bundled VMware software.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SupportedVmwareSoftwareVersionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class SupportedVmwareSoftwareVersionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SupportedVmwareSoftwareVersionSummary> items;
 
+    /**
+     * A list of the supported versions of bundled VMware software.
+     * @return the value
+     **/
     public java.util.List<SupportedVmwareSoftwareVersionSummary> getItems() {
         return items;
     }

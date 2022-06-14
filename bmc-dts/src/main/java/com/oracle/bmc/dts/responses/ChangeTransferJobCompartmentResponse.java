@@ -13,6 +13,10 @@ public class ChangeTransferJobCompartmentResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class ChangeTransferJobCompartmentResponse extends com.oracle.bmc.respons
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See 'if-match'.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -42,15 +50,31 @@ public class ChangeTransferJobCompartmentResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See 'if-match'.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See 'if-match'.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
@@ -68,11 +92,19 @@ public class ChangeTransferJobCompartmentResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ChangeTransferJobCompartmentResponse build() {
             return new ChangeTransferJobCompartmentResponse(__httpStatusCode__, opcRequestId, etag);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

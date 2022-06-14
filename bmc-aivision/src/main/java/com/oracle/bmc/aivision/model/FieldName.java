@@ -34,18 +34,33 @@ public final class FieldName {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the field.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The confidence score between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
+        /**
+         * The confidence score between 0 and 1.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -60,10 +75,17 @@ public final class FieldName {
             this.__explicitlySet__.add("boundingPolygon");
             return this;
         }
-
+        /**
+         * The indexes of the words in the field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
         private java.util.List<Integer> wordIndexes;
 
+        /**
+         * The indexes of the words in the field name.
+         * @param wordIndexes the value to set
+         * @return this builder
+         **/
         public Builder wordIndexes(java.util.List<Integer> wordIndexes) {
             this.wordIndexes = wordIndexes;
             this.__explicitlySet__.add("wordIndexes");
@@ -109,6 +131,10 @@ public final class FieldName {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the field.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -119,6 +145,10 @@ public final class FieldName {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
+    /**
+     * The confidence score between 0 and 1.
+     * @return the value
+     **/
     public Float getConfidence() {
         return confidence;
     }
@@ -136,6 +166,10 @@ public final class FieldName {
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     private final java.util.List<Integer> wordIndexes;
 
+    /**
+     * The indexes of the words in the field name.
+     * @return the value
+     **/
     public java.util.List<Integer> getWordIndexes() {
         return wordIndexes;
     }

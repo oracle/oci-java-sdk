@@ -29,9 +29,17 @@ public final class AlertsAggregationDimension {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * GroupBy value used in aggregation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.Map<String, String> groupBy;
 
+        /**
+         * GroupBy value used in aggregation.
+         * @param groupBy the value to set
+         * @return this builder
+         **/
         public Builder groupBy(java.util.Map<String, String> groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
@@ -73,6 +81,10 @@ public final class AlertsAggregationDimension {
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.Map<String, String> groupBy;
 
+    /**
+     * GroupBy value used in aggregation.
+     * @return the value
+     **/
     public java.util.Map<String, String> getGroupBy() {
         return groupBy;
     }

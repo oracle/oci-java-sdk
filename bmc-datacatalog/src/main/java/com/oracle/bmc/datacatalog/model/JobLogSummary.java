@@ -48,54 +48,101 @@ public final class JobLogSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique key of the job log that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique key of the job log that is immutable.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The unique key of the parent job execution for which the log resource was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
         private String jobExecutionKey;
 
+        /**
+         * The unique key of the parent job execution for which the log resource was created.
+         * @param jobExecutionKey the value to set
+         * @return this builder
+         **/
         public Builder jobExecutionKey(String jobExecutionKey) {
             this.jobExecutionKey = jobExecutionKey;
             this.__explicitlySet__.add("jobExecutionKey");
             return this;
         }
-
+        /**
+         * URI to the job log instance in the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
+        /**
+         * URI to the job log instance in the API.
+         * @param uri the value to set
+         * @return this builder
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-
+        /**
+         * The date and time the job log was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the job log was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Severity level for this log.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private String severity;
 
+        /**
+         * Severity level for this log.
+         * @param severity the value to set
+         * @return this builder
+         **/
         public Builder severity(String severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-
+        /**
+         * Message for this job log.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logMessage")
         private String logMessage;
 
+        /**
+         * Message for this job log.
+         * @param logMessage the value to set
+         * @return this builder
+         **/
         public Builder logMessage(String logMessage) {
             this.logMessage = logMessage;
             this.__explicitlySet__.add("logMessage");
@@ -144,6 +191,10 @@ public final class JobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique key of the job log that is immutable.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -154,6 +205,10 @@ public final class JobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
     private final String jobExecutionKey;
 
+    /**
+     * The unique key of the parent job execution for which the log resource was created.
+     * @return the value
+     **/
     public String getJobExecutionKey() {
         return jobExecutionKey;
     }
@@ -164,6 +219,10 @@ public final class JobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
+    /**
+     * URI to the job log instance in the API.
+     * @return the value
+     **/
     public String getUri() {
         return uri;
     }
@@ -176,6 +235,12 @@ public final class JobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the job log was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -186,6 +251,10 @@ public final class JobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final String severity;
 
+    /**
+     * Severity level for this log.
+     * @return the value
+     **/
     public String getSeverity() {
         return severity;
     }
@@ -196,6 +265,10 @@ public final class JobLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("logMessage")
     private final String logMessage;
 
+    /**
+     * Message for this job log.
+     * @return the value
+     **/
     public String getLogMessage() {
         return logMessage;
     }

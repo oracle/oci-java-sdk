@@ -32,27 +32,49 @@ public final class UpdateBulkProblemStatusDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Action taken by user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ProblemLifecycleDetail status;
 
+        /**
+         * Action taken by user
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(ProblemLifecycleDetail status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * List of ProblemIds to be passed in to update the Problem status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemIds")
         private java.util.List<String> problemIds;
 
+        /**
+         * List of ProblemIds to be passed in to update the Problem status.
+         * @param problemIds the value to set
+         * @return this builder
+         **/
         public Builder problemIds(java.util.List<String> problemIds) {
             this.problemIds = problemIds;
             this.__explicitlySet__.add("problemIds");
             return this;
         }
-
+        /**
+         * User defined comment to be passed in to update the problem.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
+        /**
+         * User defined comment to be passed in to update the problem.
+         * @param comment the value to set
+         * @return this builder
+         **/
         public Builder comment(String comment) {
             this.comment = comment;
             this.__explicitlySet__.add("comment");
@@ -96,6 +118,10 @@ public final class UpdateBulkProblemStatusDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ProblemLifecycleDetail status;
 
+    /**
+     * Action taken by user
+     * @return the value
+     **/
     public ProblemLifecycleDetail getStatus() {
         return status;
     }
@@ -106,6 +132,10 @@ public final class UpdateBulkProblemStatusDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("problemIds")
     private final java.util.List<String> problemIds;
 
+    /**
+     * List of ProblemIds to be passed in to update the Problem status.
+     * @return the value
+     **/
     public java.util.List<String> getProblemIds() {
         return problemIds;
     }
@@ -116,6 +146,10 @@ public final class UpdateBulkProblemStatusDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
+    /**
+     * User defined comment to be passed in to update the problem.
+     * @return the value
+     **/
     public String getComment() {
         return comment;
     }

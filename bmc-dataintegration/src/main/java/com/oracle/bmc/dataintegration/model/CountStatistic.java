@@ -27,9 +27,17 @@ public final class CountStatistic {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of statistics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectTypeCountList")
         private java.util.List<CountStatisticSummary> objectTypeCountList;
 
+        /**
+         * The array of statistics.
+         * @param objectTypeCountList the value to set
+         * @return this builder
+         **/
         public Builder objectTypeCountList(
                 java.util.List<CountStatisticSummary> objectTypeCountList) {
             this.objectTypeCountList = objectTypeCountList;
@@ -72,6 +80,10 @@ public final class CountStatistic {
     @com.fasterxml.jackson.annotation.JsonProperty("objectTypeCountList")
     private final java.util.List<CountStatisticSummary> objectTypeCountList;
 
+    /**
+     * The array of statistics.
+     * @return the value
+     **/
     public java.util.List<CountStatisticSummary> getObjectTypeCountList() {
         return objectTypeCountList;
     }

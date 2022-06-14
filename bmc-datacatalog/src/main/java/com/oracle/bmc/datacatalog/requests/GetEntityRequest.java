@@ -16,6 +16,9 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -32,6 +38,9 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String entityKey;
 
+    /**
+     * Unique entity key.
+     */
     public String getEntityKey() {
         return entityKey;
     }
@@ -40,6 +49,9 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Boolean isIncludeObjectRelationships;
 
+    /**
+     * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+     */
     public Boolean getIsIncludeObjectRelationships() {
         return isIncludeObjectRelationships;
     }
@@ -106,6 +118,10 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * Specifies the fields to return in an entity response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -114,6 +130,9 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -125,10 +144,14 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -136,10 +159,14 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -147,10 +174,14 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique entity key.
+         */
         private String entityKey = null;
 
         /**
          * Unique entity key.
+         * @param entityKey the value to set
          * @return this builder instance
          */
         public Builder entityKey(String entityKey) {
@@ -158,10 +189,14 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+         */
         private Boolean isIncludeObjectRelationships = null;
 
         /**
          * Indicates whether the list of objects and their relationships to this object will be provided in the response.
+         * @param isIncludeObjectRelationships the value to set
          * @return this builder instance
          */
         public Builder isIncludeObjectRelationships(Boolean isIncludeObjectRelationships) {
@@ -169,11 +204,16 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Specifies the fields to return in an entity response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in an entity response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -184,16 +224,21 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Singular setter. Specifies the fields to return in an entity response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -279,7 +324,8 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -291,6 +337,10 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -69,72 +69,131 @@ public final class DiscoveryJob {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of Discovery job
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of Discovery job
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the Compartment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the Compartment
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
         private DiscoveryType discoveryType;
 
+        /**
+         * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
+         *
+         * @param discoveryType the value to set
+         * @return this builder
+         **/
         public Builder discoveryType(DiscoveryType discoveryType) {
             this.discoveryType = discoveryType;
             this.__explicitlySet__.add("discoveryType");
             return this;
         }
-
+        /**
+         * Specifies the status of the discovery job
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * Specifies the status of the discovery job
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The short summary of the status of the discovery job
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
         private String statusMessage;
 
+        /**
+         * The short summary of the status of the discovery job
+         * @param statusMessage the value to set
+         * @return this builder
+         **/
         public Builder statusMessage(String statusMessage) {
             this.statusMessage = statusMessage;
             this.__explicitlySet__.add("statusMessage");
             return this;
         }
-
+        /**
+         * The OCID of Tenant
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
+        /**
+         * The OCID of Tenant
+         * @param tenantId the value to set
+         * @return this builder
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-
+        /**
+         * The OCID of user in which the job is submitted
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
+        /**
+         * The OCID of user in which the job is submitted
+         * @param userId the value to set
+         * @return this builder
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-
+        /**
+         * Client who submits discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryClient")
         private String discoveryClient;
 
+        /**
+         * Client who submits discovery job.
+         * @param discoveryClient the value to set
+         * @return this builder
+         **/
         public Builder discoveryClient(String discoveryClient) {
             this.discoveryClient = discoveryClient;
             this.__explicitlySet__.add("discoveryClient");
@@ -149,47 +208,94 @@ public final class DiscoveryJob {
             this.__explicitlySet__.add("discoveryDetails");
             return this;
         }
-
+        /**
+         * The time the discovery Job was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the discovery Job was updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the DiscoveryJob Resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the DiscoveryJob Resource.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -260,6 +366,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of Discovery job
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -270,6 +380,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the Compartment
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -331,6 +445,11 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
     private final DiscoveryType discoveryType;
 
+    /**
+     * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
+     *
+     * @return the value
+     **/
     public DiscoveryType getDiscoveryType() {
         return discoveryType;
     }
@@ -392,6 +511,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * Specifies the status of the discovery job
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -402,6 +525,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
     private final String statusMessage;
 
+    /**
+     * The short summary of the status of the discovery job
+     * @return the value
+     **/
     public String getStatusMessage() {
         return statusMessage;
     }
@@ -412,6 +539,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
+    /**
+     * The OCID of Tenant
+     * @return the value
+     **/
     public String getTenantId() {
         return tenantId;
     }
@@ -422,6 +553,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
+    /**
+     * The OCID of user in which the job is submitted
+     * @return the value
+     **/
     public String getUserId() {
         return userId;
     }
@@ -432,6 +567,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryClient")
     private final String discoveryClient;
 
+    /**
+     * Client who submits discovery job.
+     * @return the value
+     **/
     public String getDiscoveryClient() {
         return discoveryClient;
     }
@@ -449,6 +588,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the discovery Job was updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -459,6 +602,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the DiscoveryJob Resource.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -471,6 +618,12 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -483,6 +636,12 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -495,6 +654,12 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

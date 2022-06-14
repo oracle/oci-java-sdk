@@ -50,63 +50,139 @@ public final class SqlInsightThresholds {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Degradation Percent Threshold is used to derive degrading SQLs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("degradationInPct")
         private Integer degradationInPct;
 
+        /**
+         * Degradation Percent Threshold is used to derive degrading SQLs.
+         *
+         * @param degradationInPct the value to set
+         * @return this builder
+         **/
         public Builder degradationInPct(Integer degradationInPct) {
             this.degradationInPct = degradationInPct;
             this.__explicitlySet__.add("degradationInPct");
             return this;
         }
-
+        /**
+         * Variability Percent Threshold is used to derive variant SQLs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variability")
         private Float variability;
 
+        /**
+         * Variability Percent Threshold is used to derive variant SQLs.
+         *
+         * @param variability the value to set
+         * @return this builder
+         **/
         public Builder variability(Float variability) {
             this.variability = variability;
             this.__explicitlySet__.add("variability");
             return this;
         }
-
+        /**
+         * Inefficiency Percent Threshold is used to derive inefficient SQLs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inefficiencyInPct")
         private Integer inefficiencyInPct;
 
+        /**
+         * Inefficiency Percent Threshold is used to derive inefficient SQLs.
+         *
+         * @param inefficiencyInPct the value to set
+         * @return this builder
+         **/
         public Builder inefficiencyInPct(Integer inefficiencyInPct) {
             this.inefficiencyInPct = inefficiencyInPct;
             this.__explicitlySet__.add("inefficiencyInPct");
             return this;
         }
-
+        /**
+         * PctIncreaseInIO is used for deriving insights for SQLs which are degrading or
+         * variant or inefficient. And these SQLs should also have increasing change in IO Time
+         * beyond threshold. Insights are derived using linear regression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("increaseInIOInPct")
         private Integer increaseInIOInPct;
 
+        /**
+         * PctIncreaseInIO is used for deriving insights for SQLs which are degrading or
+         * variant or inefficient. And these SQLs should also have increasing change in IO Time
+         * beyond threshold. Insights are derived using linear regression.
+         *
+         * @param increaseInIOInPct the value to set
+         * @return this builder
+         **/
         public Builder increaseInIOInPct(Integer increaseInIOInPct) {
             this.increaseInIOInPct = increaseInIOInPct;
             this.__explicitlySet__.add("increaseInIOInPct");
             return this;
         }
-
+        /**
+         * PctIncreaseInCPU is used for deriving insights for SQLs which are degrading or
+         * variant or inefficient. And these SQLs should also have increasing change in CPU Time
+         * beyond threshold. Insights are derived using linear regression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("increaseInCPUInPct")
         private Integer increaseInCPUInPct;
 
+        /**
+         * PctIncreaseInCPU is used for deriving insights for SQLs which are degrading or
+         * variant or inefficient. And these SQLs should also have increasing change in CPU Time
+         * beyond threshold. Insights are derived using linear regression.
+         *
+         * @param increaseInCPUInPct the value to set
+         * @return this builder
+         **/
         public Builder increaseInCPUInPct(Integer increaseInCPUInPct) {
             this.increaseInCPUInPct = increaseInCPUInPct;
             this.__explicitlySet__.add("increaseInCPUInPct");
             return this;
         }
-
+        /**
+         * PctIncreaseInIO is used for deriving insights for SQLs which are degrading or
+         * variant or inefficient. And these SQLs should also have increasing change in
+         * Other Wait Time beyond threshold. Insights are derived using linear regression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("increaseInInefficientWaitInPct")
         private Integer increaseInInefficientWaitInPct;
 
+        /**
+         * PctIncreaseInIO is used for deriving insights for SQLs which are degrading or
+         * variant or inefficient. And these SQLs should also have increasing change in
+         * Other Wait Time beyond threshold. Insights are derived using linear regression.
+         *
+         * @param increaseInInefficientWaitInPct the value to set
+         * @return this builder
+         **/
         public Builder increaseInInefficientWaitInPct(Integer increaseInInefficientWaitInPct) {
             this.increaseInInefficientWaitInPct = increaseInInefficientWaitInPct;
             this.__explicitlySet__.add("increaseInInefficientWaitInPct");
             return this;
         }
-
+        /**
+         * Improved Percent Threshold is used to derive improving SQLs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("improvedInPct")
         private Integer improvedInPct;
 
+        /**
+         * Improved Percent Threshold is used to derive improving SQLs.
+         *
+         * @param improvedInPct the value to set
+         * @return this builder
+         **/
         public Builder improvedInPct(Integer improvedInPct) {
             this.improvedInPct = improvedInPct;
             this.__explicitlySet__.add("improvedInPct");
@@ -164,6 +240,11 @@ public final class SqlInsightThresholds {
     @com.fasterxml.jackson.annotation.JsonProperty("degradationInPct")
     private final Integer degradationInPct;
 
+    /**
+     * Degradation Percent Threshold is used to derive degrading SQLs.
+     *
+     * @return the value
+     **/
     public Integer getDegradationInPct() {
         return degradationInPct;
     }
@@ -175,6 +256,11 @@ public final class SqlInsightThresholds {
     @com.fasterxml.jackson.annotation.JsonProperty("variability")
     private final Float variability;
 
+    /**
+     * Variability Percent Threshold is used to derive variant SQLs.
+     *
+     * @return the value
+     **/
     public Float getVariability() {
         return variability;
     }
@@ -186,6 +272,11 @@ public final class SqlInsightThresholds {
     @com.fasterxml.jackson.annotation.JsonProperty("inefficiencyInPct")
     private final Integer inefficiencyInPct;
 
+    /**
+     * Inefficiency Percent Threshold is used to derive inefficient SQLs.
+     *
+     * @return the value
+     **/
     public Integer getInefficiencyInPct() {
         return inefficiencyInPct;
     }
@@ -199,6 +290,13 @@ public final class SqlInsightThresholds {
     @com.fasterxml.jackson.annotation.JsonProperty("increaseInIOInPct")
     private final Integer increaseInIOInPct;
 
+    /**
+     * PctIncreaseInIO is used for deriving insights for SQLs which are degrading or
+     * variant or inefficient. And these SQLs should also have increasing change in IO Time
+     * beyond threshold. Insights are derived using linear regression.
+     *
+     * @return the value
+     **/
     public Integer getIncreaseInIOInPct() {
         return increaseInIOInPct;
     }
@@ -212,6 +310,13 @@ public final class SqlInsightThresholds {
     @com.fasterxml.jackson.annotation.JsonProperty("increaseInCPUInPct")
     private final Integer increaseInCPUInPct;
 
+    /**
+     * PctIncreaseInCPU is used for deriving insights for SQLs which are degrading or
+     * variant or inefficient. And these SQLs should also have increasing change in CPU Time
+     * beyond threshold. Insights are derived using linear regression.
+     *
+     * @return the value
+     **/
     public Integer getIncreaseInCPUInPct() {
         return increaseInCPUInPct;
     }
@@ -225,6 +330,13 @@ public final class SqlInsightThresholds {
     @com.fasterxml.jackson.annotation.JsonProperty("increaseInInefficientWaitInPct")
     private final Integer increaseInInefficientWaitInPct;
 
+    /**
+     * PctIncreaseInIO is used for deriving insights for SQLs which are degrading or
+     * variant or inefficient. And these SQLs should also have increasing change in
+     * Other Wait Time beyond threshold. Insights are derived using linear regression.
+     *
+     * @return the value
+     **/
     public Integer getIncreaseInInefficientWaitInPct() {
         return increaseInInefficientWaitInPct;
     }
@@ -236,6 +348,11 @@ public final class SqlInsightThresholds {
     @com.fasterxml.jackson.annotation.JsonProperty("improvedInPct")
     private final Integer improvedInPct;
 
+    /**
+     * Improved Percent Threshold is used to derive improving SQLs.
+     *
+     * @return the value
+     **/
     public Integer getImprovedInPct() {
         return improvedInPct;
     }

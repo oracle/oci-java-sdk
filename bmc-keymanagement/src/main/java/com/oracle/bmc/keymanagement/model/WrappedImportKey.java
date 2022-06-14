@@ -28,18 +28,43 @@ public final class WrappedImportKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key material to import, wrapped by the vault's RSA public wrapping key and base64-encoded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyMaterial")
         private String keyMaterial;
 
+        /**
+         * The key material to import, wrapped by the vault's RSA public wrapping key and base64-encoded.
+         * @param keyMaterial the value to set
+         * @return this builder
+         **/
         public Builder keyMaterial(String keyMaterial) {
             this.keyMaterial = keyMaterial;
             this.__explicitlySet__.add("keyMaterial");
             return this;
         }
-
+        /**
+         * The wrapping mechanism to use during key import.
+         * {@code RSA_OAEP_AES_SHA256} invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped
+         * by the vault's RSA public wrapping key, creating a wrapped temporary AES key. The temporary AES key is also used to wrap the private key material.
+         * The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing concatenated blob output that jointly represents them.
+         * {@code RSA_OAEP_SHA256} means that the exportable key material is wrapped by the vault's RSA public wrapping key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wrappingAlgorithm")
         private WrappingAlgorithm wrappingAlgorithm;
 
+        /**
+         * The wrapping mechanism to use during key import.
+         * {@code RSA_OAEP_AES_SHA256} invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped
+         * by the vault's RSA public wrapping key, creating a wrapped temporary AES key. The temporary AES key is also used to wrap the private key material.
+         * The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing concatenated blob output that jointly represents them.
+         * {@code RSA_OAEP_SHA256} means that the exportable key material is wrapped by the vault's RSA public wrapping key.
+         *
+         * @param wrappingAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder wrappingAlgorithm(WrappingAlgorithm wrappingAlgorithm) {
             this.wrappingAlgorithm = wrappingAlgorithm;
             this.__explicitlySet__.add("wrappingAlgorithm");
@@ -82,6 +107,10 @@ public final class WrappedImportKey {
     @com.fasterxml.jackson.annotation.JsonProperty("keyMaterial")
     private final String keyMaterial;
 
+    /**
+     * The key material to import, wrapped by the vault's RSA public wrapping key and base64-encoded.
+     * @return the value
+     **/
     public String getKeyMaterial() {
         return keyMaterial;
     }
@@ -137,6 +166,15 @@ public final class WrappedImportKey {
     @com.fasterxml.jackson.annotation.JsonProperty("wrappingAlgorithm")
     private final WrappingAlgorithm wrappingAlgorithm;
 
+    /**
+     * The wrapping mechanism to use during key import.
+     * {@code RSA_OAEP_AES_SHA256} invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped
+     * by the vault's RSA public wrapping key, creating a wrapped temporary AES key. The temporary AES key is also used to wrap the private key material.
+     * The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing concatenated blob output that jointly represents them.
+     * {@code RSA_OAEP_SHA256} means that the exportable key material is wrapped by the vault's RSA public wrapping key.
+     *
+     * @return the value
+     **/
     public WrappingAlgorithm getWrappingAlgorithm() {
         return wrappingAlgorithm;
     }

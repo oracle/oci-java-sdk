@@ -31,6 +31,7 @@ public final class PaySubscriptionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("subscription")
         private Subscription subscription;
 
@@ -39,19 +40,33 @@ public final class PaySubscriptionDetails {
             this.__explicitlySet__.add("subscription");
             return this;
         }
-
+        /**
+         * Language code
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
+        /**
+         * Language code
+         * @param languageCode the value to set
+         * @return this builder
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
         }
-
+        /**
+         * User email
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
+        /**
+         * User email
+         * @param email the value to set
+         * @return this builder
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
@@ -104,6 +119,10 @@ public final class PaySubscriptionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
+    /**
+     * Language code
+     * @return the value
+     **/
     public String getLanguageCode() {
         return languageCode;
     }
@@ -114,6 +133,10 @@ public final class PaySubscriptionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
+    /**
+     * User email
+     * @return the value
+     **/
     public String getEmail() {
         return email;
     }

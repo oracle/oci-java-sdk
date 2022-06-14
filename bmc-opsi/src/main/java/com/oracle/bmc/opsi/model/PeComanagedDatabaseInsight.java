@@ -153,10 +153,17 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
             this.__explicitlySet__.add("databaseConnectionStatusDetails");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
         private String opsiPrivateEndpointId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         * @param opsiPrivateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             this.__explicitlySet__.add("opsiPrivateEndpointId");
@@ -180,37 +187,65 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         * @param databaseId the value to set
+         * @return this builder
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-
+        /**
+         * Name of database
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
+        /**
+         * Name of database
+         * @param databaseName the value to set
+         * @return this builder
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-
+        /**
+         * Display name of database
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
         private String databaseDisplayName;
 
+        /**
+         * Display name of database
+         * @param databaseDisplayName the value to set
+         * @return this builder
+         **/
         public Builder databaseDisplayName(String databaseDisplayName) {
             this.databaseDisplayName = databaseDisplayName;
             this.__explicitlySet__.add("databaseDisplayName");
             return this;
         }
-
+        /**
+         * OCI database resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
+        /**
+         * OCI database resource type
+         * @param databaseResourceType the value to set
+         * @return this builder
+         **/
         public Builder databaseResourceType(String databaseResourceType) {
             this.databaseResourceType = databaseResourceType;
             this.__explicitlySet__.add("databaseResourceType");
@@ -342,6 +377,10 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
     private final String opsiPrivateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * @return the value
+     **/
     public String getOpsiPrivateEndpointId() {
         return opsiPrivateEndpointId;
     }
@@ -366,6 +405,10 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * @return the value
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
@@ -376,6 +419,10 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
+    /**
+     * Name of database
+     * @return the value
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
@@ -386,6 +433,10 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
     private final String databaseDisplayName;
 
+    /**
+     * Display name of database
+     * @return the value
+     **/
     public String getDatabaseDisplayName() {
         return databaseDisplayName;
     }
@@ -396,6 +447,10 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
     private final String databaseResourceType;
 
+    /**
+     * OCI database resource type
+     * @return the value
+     **/
     public String getDatabaseResourceType() {
         return databaseResourceType;
     }

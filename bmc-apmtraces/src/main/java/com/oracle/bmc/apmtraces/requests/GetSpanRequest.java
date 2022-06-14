@@ -17,6 +17,10 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String apmDomainId;
 
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -26,6 +30,10 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String spanKey;
 
+    /**
+     * Unique Application Performance Monitoring span identifier (spanId).
+     *
+     */
     public String getSpanKey() {
         return spanKey;
     }
@@ -35,6 +43,10 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String traceKey;
 
+    /**
+     * Unique Application Performance Monitoring trace identifier (traceId).
+     *
+     */
     public String getTraceKey() {
         return traceKey;
     }
@@ -45,6 +57,11 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -55,11 +72,16 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM Domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -67,11 +89,16 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * Unique Application Performance Monitoring span identifier (spanId).
+         *
+         */
         private String spanKey = null;
 
         /**
          * Unique Application Performance Monitoring span identifier (spanId).
          *
+         * @param spanKey the value to set
          * @return this builder instance
          */
         public Builder spanKey(String spanKey) {
@@ -79,11 +106,16 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * Unique Application Performance Monitoring trace identifier (traceId).
+         *
+         */
         private String traceKey = null;
 
         /**
          * Unique Application Performance Monitoring trace identifier (traceId).
          *
+         * @param traceKey the value to set
          * @return this builder instance
          */
         public Builder traceKey(String traceKey) {
@@ -91,12 +123,18 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -178,7 +216,8 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -188,6 +227,10 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -27,9 +27,17 @@ package com.oracle.bmc.aivision.model;
 public final class DocumentTextDetectionFeature extends DocumentFeature {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether or not to generate a searchable PDF file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("generateSearchablePdf")
         private Boolean generateSearchablePdf;
 
+        /**
+         * Whether or not to generate a searchable PDF file.
+         * @param generateSearchablePdf the value to set
+         * @return this builder
+         **/
         public Builder generateSearchablePdf(Boolean generateSearchablePdf) {
             this.generateSearchablePdf = generateSearchablePdf;
             this.__explicitlySet__.add("generateSearchablePdf");
@@ -78,6 +86,10 @@ public final class DocumentTextDetectionFeature extends DocumentFeature {
     @com.fasterxml.jackson.annotation.JsonProperty("generateSearchablePdf")
     private final Boolean generateSearchablePdf;
 
+    /**
+     * Whether or not to generate a searchable PDF file.
+     * @return the value
+     **/
     public Boolean getGenerateSearchablePdf() {
         return generateSearchablePdf;
     }

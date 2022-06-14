@@ -91,10 +91,17 @@ public final class CreateDbHomeWithVmClusterIdFromBackupDetails extends CreateDb
             this.__explicitlySet__.add("isDesupportedVersion");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * @param vmClusterId the value to set
+         * @return this builder
+         **/
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = vmClusterId;
             this.__explicitlySet__.add("vmClusterId");
@@ -187,6 +194,10 @@ public final class CreateDbHomeWithVmClusterIdFromBackupDetails extends CreateDb
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * @return the value
+     **/
     public String getVmClusterId() {
         return vmClusterId;
     }

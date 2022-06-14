@@ -34,27 +34,55 @@ public final class BulkEditTagsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment where the bulk tag edit request is submitted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment where the bulk tag edit request is submitted.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The resources to be updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<BulkEditResource> resources;
 
+        /**
+         * The resources to be updated.
+         *
+         * @param resources the value to set
+         * @return this builder
+         **/
         public Builder resources(java.util.List<BulkEditResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
             return this;
         }
-
+        /**
+         * The operations associated with the request to bulk edit tags.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bulkEditOperations")
         private java.util.List<BulkEditOperationDetails> bulkEditOperations;
 
+        /**
+         * The operations associated with the request to bulk edit tags.
+         *
+         * @param bulkEditOperations the value to set
+         * @return this builder
+         **/
         public Builder bulkEditOperations(
                 java.util.List<BulkEditOperationDetails> bulkEditOperations) {
             this.bulkEditOperations = bulkEditOperations;
@@ -102,6 +130,11 @@ public final class BulkEditTagsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment where the bulk tag edit request is submitted.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -113,6 +146,11 @@ public final class BulkEditTagsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<BulkEditResource> resources;
 
+    /**
+     * The resources to be updated.
+     *
+     * @return the value
+     **/
     public java.util.List<BulkEditResource> getResources() {
         return resources;
     }
@@ -124,6 +162,11 @@ public final class BulkEditTagsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bulkEditOperations")
     private final java.util.List<BulkEditOperationDetails> bulkEditOperations;
 
+    /**
+     * The operations associated with the request to bulk edit tags.
+     *
+     * @return the value
+     **/
     public java.util.List<BulkEditOperationDetails> getBulkEditOperations() {
         return bulkEditOperations;
     }

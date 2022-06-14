@@ -48,54 +48,97 @@ public final class TopUtilizedResourceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * Resource canonical name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * Resource canonical name.
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
         private String resourceCompartmentId;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
+         * @param resourceCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder resourceCompartmentId(String resourceCompartmentId) {
             this.resourceCompartmentId = resourceCompartmentId;
             this.__explicitlySet__.add("resourceCompartmentId");
             return this;
         }
-
+        /**
+         * The display name of the compartment that contains the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentName")
         private String resourceCompartmentName;
 
+        /**
+         * The display name of the compartment that contains the resource.
+         * @param resourceCompartmentName the value to set
+         * @return this builder
+         **/
         public Builder resourceCompartmentName(String resourceCompartmentName) {
             this.resourceCompartmentName = resourceCompartmentName;
             this.__explicitlySet__.add("resourceCompartmentName");
             return this;
         }
-
+        /**
+         * Number of license units consumed by the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalUnits")
         private Double totalUnits;
 
+        /**
+         * Number of license units consumed by the resource.
+         * @param totalUnits the value to set
+         * @return this builder
+         **/
         public Builder totalUnits(Double totalUnits) {
             this.totalUnits = totalUnits;
             this.__explicitlySet__.add("totalUnits");
             return this;
         }
-
+        /**
+         * The resource unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitType")
         private ResourceUnit unitType;
 
+        /**
+         * The resource unit.
+         * @param unitType the value to set
+         * @return this builder
+         **/
         public Builder unitType(ResourceUnit unitType) {
             this.unitType = unitType;
             this.__explicitlySet__.add("unitType");
@@ -150,6 +193,10 @@ public final class TopUtilizedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -160,6 +207,10 @@ public final class TopUtilizedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * Resource canonical name.
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -170,6 +221,10 @@ public final class TopUtilizedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
     private final String resourceCompartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
+     * @return the value
+     **/
     public String getResourceCompartmentId() {
         return resourceCompartmentId;
     }
@@ -180,6 +235,10 @@ public final class TopUtilizedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentName")
     private final String resourceCompartmentName;
 
+    /**
+     * The display name of the compartment that contains the resource.
+     * @return the value
+     **/
     public String getResourceCompartmentName() {
         return resourceCompartmentName;
     }
@@ -190,6 +249,10 @@ public final class TopUtilizedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("totalUnits")
     private final Double totalUnits;
 
+    /**
+     * Number of license units consumed by the resource.
+     * @return the value
+     **/
     public Double getTotalUnits() {
         return totalUnits;
     }
@@ -200,6 +263,10 @@ public final class TopUtilizedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
     private final ResourceUnit unitType;
 
+    /**
+     * The resource unit.
+     * @return the value
+     **/
     public ResourceUnit getUnitType() {
         return unitType;
     }

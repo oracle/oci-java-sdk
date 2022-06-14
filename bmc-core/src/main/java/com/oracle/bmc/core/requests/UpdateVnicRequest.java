@@ -17,6 +17,9 @@ public class UpdateVnicRequest
      */
     private String vnicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+     */
     public String getVnicId() {
         return vnicId;
     }
@@ -25,6 +28,9 @@ public class UpdateVnicRequest
      */
     private com.oracle.bmc.core.model.UpdateVnicDetails updateVnicDetails;
 
+    /**
+     * Details object for updating a VNIC.
+     */
     public com.oracle.bmc.core.model.UpdateVnicDetails getUpdateVnicDetails() {
         return updateVnicDetails;
     }
@@ -36,6 +42,12 @@ public class UpdateVnicRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -57,10 +69,14 @@ public class UpdateVnicRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         */
         private String vnicId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         * @param vnicId the value to set
          * @return this builder instance
          */
         public Builder vnicId(String vnicId) {
@@ -68,10 +84,14 @@ public class UpdateVnicRequest
             return this;
         }
 
+        /**
+         * Details object for updating a VNIC.
+         */
         private com.oracle.bmc.core.model.UpdateVnicDetails updateVnicDetails = null;
 
         /**
          * Details object for updating a VNIC.
+         * @param updateVnicDetails the value to set
          * @return this builder instance
          */
         public Builder updateVnicDetails(
@@ -80,6 +100,12 @@ public class UpdateVnicRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -87,6 +113,7 @@ public class UpdateVnicRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -177,12 +204,17 @@ public class UpdateVnicRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().vnicId(vnicId).updateVnicDetails(updateVnicDetails).ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

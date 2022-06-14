@@ -30,18 +30,33 @@ public final class MerchantDefinedData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Promotion type code.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("promoType")
         private String promoType;
 
+        /**
+         * Promotion type code.
+         * @param promoType the value to set
+         * @return this builder
+         **/
         public Builder promoType(String promoType) {
             this.promoType = promoType;
             this.__explicitlySet__.add("promoType");
             return this;
         }
-
+        /**
+         * Cloud account name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAccountName")
         private String cloudAccountName;
 
+        /**
+         * Cloud account name.
+         * @param cloudAccountName the value to set
+         * @return this builder
+         **/
         public Builder cloudAccountName(String cloudAccountName) {
             this.cloudAccountName = cloudAccountName;
             this.__explicitlySet__.add("cloudAccountName");
@@ -84,6 +99,10 @@ public final class MerchantDefinedData {
     @com.fasterxml.jackson.annotation.JsonProperty("promoType")
     private final String promoType;
 
+    /**
+     * Promotion type code.
+     * @return the value
+     **/
     public String getPromoType() {
         return promoType;
     }
@@ -94,6 +113,10 @@ public final class MerchantDefinedData {
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAccountName")
     private final String cloudAccountName;
 
+    /**
+     * Cloud account name.
+     * @return the value
+     **/
     public String getCloudAccountName() {
         return cloudAccountName;
     }

@@ -13,6 +13,10 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
+    /**
+     * The returned TransferApplianceEntitlement instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.TransferApplianceEntitlement getTransferApplianceEntitlement() {
         return transferApplianceEntitlement;
     }
@@ -48,15 +56,31 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned TransferApplianceEntitlement instance.
+         */
         private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
+        /**
+         * The returned TransferApplianceEntitlement instance.
+         * @param transferApplianceEntitlement the value to set
+         * @return this builder
+         */
         public Builder transferApplianceEntitlement(
                 com.oracle.bmc.dts.model.TransferApplianceEntitlement
                         transferApplianceEntitlement) {
@@ -76,12 +100,20 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetTransferApplianceEntitlementResponse build() {
             return new GetTransferApplianceEntitlementResponse(
                     __httpStatusCode__, opcRequestId, transferApplianceEntitlement);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

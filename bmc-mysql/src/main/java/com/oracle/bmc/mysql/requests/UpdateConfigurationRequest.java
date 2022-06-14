@@ -18,6 +18,9 @@ public class UpdateConfigurationRequest
      */
     private String configurationId;
 
+    /**
+     * The OCID of the Configuration.
+     */
     public String getConfigurationId() {
         return configurationId;
     }
@@ -26,6 +29,9 @@ public class UpdateConfigurationRequest
      */
     private com.oracle.bmc.mysql.model.UpdateConfigurationDetails updateConfigurationDetails;
 
+    /**
+     * Request to update a Configuration.
+     */
     public com.oracle.bmc.mysql.model.UpdateConfigurationDetails getUpdateConfigurationDetails() {
         return updateConfigurationDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateConfigurationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a
+     * resource, set the {@code If-Match} header to the value of the etag from a
+     * previous GET or POST response for that resource. The resource will be
+     * updated or deleted only if the etag you provide matches the resource's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +64,12 @@ public class UpdateConfigurationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -72,10 +92,14 @@ public class UpdateConfigurationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the Configuration.
+         */
         private String configurationId = null;
 
         /**
          * The OCID of the Configuration.
+         * @param configurationId the value to set
          * @return this builder instance
          */
         public Builder configurationId(String configurationId) {
@@ -83,11 +107,15 @@ public class UpdateConfigurationRequest
             return this;
         }
 
+        /**
+         * Request to update a Configuration.
+         */
         private com.oracle.bmc.mysql.model.UpdateConfigurationDetails updateConfigurationDetails =
                 null;
 
         /**
          * Request to update a Configuration.
+         * @param updateConfigurationDetails the value to set
          * @return this builder instance
          */
         public Builder updateConfigurationDetails(
@@ -96,6 +124,14 @@ public class UpdateConfigurationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code If-Match} header to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -105,6 +141,7 @@ public class UpdateConfigurationRequest
          * updated or deleted only if the etag you provide matches the resource's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -112,6 +149,12 @@ public class UpdateConfigurationRequest
             return this;
         }
 
+        /**
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -119,6 +162,7 @@ public class UpdateConfigurationRequest
          * contact Oracle about a specific request, please provide the request
          * ID that you supplied in this header with the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -211,7 +255,8 @@ public class UpdateConfigurationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -221,6 +266,10 @@ public class UpdateConfigurationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

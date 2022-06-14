@@ -48,63 +48,113 @@ public final class Classifier {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier of the classifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier of the classifier.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The display name of the classifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The display name of the classifier.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The label associated with the classifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
+        /**
+         * The label associated with the classifier.
+         * @param label the value to set
+         * @return this builder
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-
+        /**
+         * The description of the classifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the classifier.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The list of issues.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issueTypeList")
         private java.util.List<IssueType> issueTypeList;
 
+        /**
+         * The list of issues.
+         * @param issueTypeList the value to set
+         * @return this builder
+         **/
         public Builder issueTypeList(java.util.List<IssueType> issueTypeList) {
             this.issueTypeList = issueTypeList;
             this.__explicitlySet__.add("issueTypeList");
             return this;
         }
-
+        /**
+         * The scope of the service category or resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
+        /**
+         * The scope of the service category or resource.
+         * @param scope the value to set
+         * @return this builder
+         **/
         public Builder scope(Scope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-
+        /**
+         * The unit to use to measure the service category or resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
+        /**
+         * The unit to use to measure the service category or resource.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -154,6 +204,10 @@ public final class Classifier {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier of the classifier.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -164,6 +218,10 @@ public final class Classifier {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The display name of the classifier.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -174,6 +232,10 @@ public final class Classifier {
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
+    /**
+     * The label associated with the classifier.
+     * @return the value
+     **/
     public String getLabel() {
         return label;
     }
@@ -184,6 +246,10 @@ public final class Classifier {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the classifier.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -194,6 +260,10 @@ public final class Classifier {
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeList")
     private final java.util.List<IssueType> issueTypeList;
 
+    /**
+     * The list of issues.
+     * @return the value
+     **/
     public java.util.List<IssueType> getIssueTypeList() {
         return issueTypeList;
     }
@@ -253,6 +323,10 @@ public final class Classifier {
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
+    /**
+     * The scope of the service category or resource.
+     * @return the value
+     **/
     public Scope getScope() {
         return scope;
     }
@@ -310,6 +384,10 @@ public final class Classifier {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
+    /**
+     * The unit to use to measure the service category or resource.
+     * @return the value
+     **/
     public Unit getUnit() {
         return unit;
     }

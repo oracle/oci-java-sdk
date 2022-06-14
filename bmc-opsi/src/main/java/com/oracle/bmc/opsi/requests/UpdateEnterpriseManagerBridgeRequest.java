@@ -18,6 +18,9 @@ public class UpdateEnterpriseManagerBridgeRequest
      */
     private String enterpriseManagerBridgeId;
 
+    /**
+     * Unique Enterprise Manager bridge identifier
+     */
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
@@ -27,6 +30,9 @@ public class UpdateEnterpriseManagerBridgeRequest
     private com.oracle.bmc.opsi.model.UpdateEnterpriseManagerBridgeDetails
             updateEnterpriseManagerBridgeDetails;
 
+    /**
+     * The configuration to be updated.
+     */
     public com.oracle.bmc.opsi.model.UpdateEnterpriseManagerBridgeDetails
             getUpdateEnterpriseManagerBridgeDetails() {
         return updateEnterpriseManagerBridgeDetails;
@@ -39,6 +45,12 @@ public class UpdateEnterpriseManagerBridgeRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +61,11 @@ public class UpdateEnterpriseManagerBridgeRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateEnterpriseManagerBridgeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Enterprise Manager bridge identifier
+         */
         private String enterpriseManagerBridgeId = null;
 
         /**
          * Unique Enterprise Manager bridge identifier
+         * @param enterpriseManagerBridgeId the value to set
          * @return this builder instance
          */
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
@@ -82,11 +103,15 @@ public class UpdateEnterpriseManagerBridgeRequest
             return this;
         }
 
+        /**
+         * The configuration to be updated.
+         */
         private com.oracle.bmc.opsi.model.UpdateEnterpriseManagerBridgeDetails
                 updateEnterpriseManagerBridgeDetails = null;
 
         /**
          * The configuration to be updated.
+         * @param updateEnterpriseManagerBridgeDetails the value to set
          * @return this builder instance
          */
         public Builder updateEnterpriseManagerBridgeDetails(
@@ -96,6 +121,12 @@ public class UpdateEnterpriseManagerBridgeRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -103,6 +134,7 @@ public class UpdateEnterpriseManagerBridgeRequest
          * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -110,12 +142,18 @@ public class UpdateEnterpriseManagerBridgeRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +247,8 @@ public class UpdateEnterpriseManagerBridgeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +258,10 @@ public class UpdateEnterpriseManagerBridgeRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

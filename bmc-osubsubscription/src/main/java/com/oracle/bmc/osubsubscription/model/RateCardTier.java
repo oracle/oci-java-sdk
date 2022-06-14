@@ -30,27 +30,55 @@ public final class RateCardTier {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Rate card tier quantity range
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upToQuantity")
         private String upToQuantity;
 
+        /**
+         * Rate card tier quantity range
+         *
+         * @param upToQuantity the value to set
+         * @return this builder
+         **/
         public Builder upToQuantity(String upToQuantity) {
             this.upToQuantity = upToQuantity;
             this.__explicitlySet__.add("upToQuantity");
             return this;
         }
-
+        /**
+         * Rate card tier net unit price
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
+        /**
+         * Rate card tier net unit price
+         *
+         * @param netUnitPrice the value to set
+         * @return this builder
+         **/
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = netUnitPrice;
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-
+        /**
+         * Rate card tier overage price
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overagePrice")
         private String overagePrice;
 
+        /**
+         * Rate card tier overage price
+         *
+         * @param overagePrice the value to set
+         * @return this builder
+         **/
         public Builder overagePrice(String overagePrice) {
             this.overagePrice = overagePrice;
             this.__explicitlySet__.add("overagePrice");
@@ -96,6 +124,11 @@ public final class RateCardTier {
     @com.fasterxml.jackson.annotation.JsonProperty("upToQuantity")
     private final String upToQuantity;
 
+    /**
+     * Rate card tier quantity range
+     *
+     * @return the value
+     **/
     public String getUpToQuantity() {
         return upToQuantity;
     }
@@ -107,6 +140,11 @@ public final class RateCardTier {
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
+    /**
+     * Rate card tier net unit price
+     *
+     * @return the value
+     **/
     public String getNetUnitPrice() {
         return netUnitPrice;
     }
@@ -118,6 +156,11 @@ public final class RateCardTier {
     @com.fasterxml.jackson.annotation.JsonProperty("overagePrice")
     private final String overagePrice;
 
+    /**
+     * Rate card tier overage price
+     *
+     * @return the value
+     **/
     public String getOveragePrice() {
         return overagePrice;
     }

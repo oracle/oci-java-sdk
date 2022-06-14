@@ -33,36 +33,65 @@ public final class CustomPropertySetUsage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique Identifier of the attribute which is ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique Identifier of the attribute which is ID
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Name of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Name of the custom property
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The custom property value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The custom property value
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * Namespace name of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
+        /**
+         * Namespace name of the custom property
+         * @param namespaceName the value to set
+         * @return this builder
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
@@ -109,6 +138,10 @@ public final class CustomPropertySetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique Identifier of the attribute which is ID
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -119,6 +152,10 @@ public final class CustomPropertySetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Name of the custom property
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -129,6 +166,10 @@ public final class CustomPropertySetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The custom property value
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -139,6 +180,10 @@ public final class CustomPropertySetUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
+    /**
+     * Namespace name of the custom property
+     * @return the value
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }

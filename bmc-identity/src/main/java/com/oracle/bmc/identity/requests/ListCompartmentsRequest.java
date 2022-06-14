@@ -17,6 +17,10 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +30,10 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -35,6 +43,10 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -93,6 +105,16 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * Valid values are {@code ANY} and {@code ACCESSIBLE}. Default is {@code ANY}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). For the compartments on which the user indirectly has
+     * INSPECT permissions, a restricted set of fields is returned.
+     * <p>
+     * When set to {@code ANY} permissions are not checked.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -106,6 +128,14 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false. Can only be set to true when performing
+     * ListCompartments on the tenancy (root compartment).
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of {@code accessLevel}.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -115,6 +145,10 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String name;
 
+    /**
+     * A filter to only return resources that match the given name exactly.
+     *
+     */
     public String getName() {
         return name;
     }
@@ -175,6 +209,17 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for NAME is ascending. The NAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by Availability Domain if the scope of the resource type is within a
+     * single Availability Domain. If you call one of these "List" operations without specifying
+     * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -223,6 +268,11 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
+     * is case sensitive.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -232,6 +282,10 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private com.oracle.bmc.identity.model.Compartment.LifecycleState lifecycleState;
 
+    /**
+     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     *
+     */
     public com.oracle.bmc.identity.model.Compartment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -243,11 +297,16 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -255,11 +314,16 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -267,11 +331,16 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -279,6 +348,16 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Valid values are {@code ANY} and {@code ACCESSIBLE}. Default is {@code ANY}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). For the compartments on which the user indirectly has
+         * INSPECT permissions, a restricted set of fields is returned.
+         * <p>
+         * When set to {@code ANY} permissions are not checked.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -290,6 +369,7 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * When set to {@code ANY} permissions are not checked.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -297,6 +377,14 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Default is false. Can only be set to true when performing
+         * ListCompartments on the tenancy (root compartment).
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -306,6 +394,7 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
          * and all compartments and subcompartments in the tenancy are
          * returned depending on the the setting of {@code accessLevel}.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -313,11 +402,16 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given name exactly.
+         *
+         */
         private String name = null;
 
         /**
          * A filter to only return resources that match the given name exactly.
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -325,6 +419,17 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for NAME is ascending. The NAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by Availability Domain if the scope of the resource type is within a
+         * single Availability Domain. If you call one of these "List" operations without specifying
+         * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -337,6 +442,7 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
          * single Availability Domain. If you call one of these "List" operations without specifying
          * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -344,12 +450,18 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
+         * is case sensitive.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
          * is case sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -357,11 +469,16 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+         *
+         */
         private com.oracle.bmc.identity.model.Compartment.LifecycleState lifecycleState = null;
 
         /**
          * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -454,7 +571,8 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -469,6 +587,10 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

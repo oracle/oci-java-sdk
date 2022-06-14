@@ -17,6 +17,9 @@ public class SummarizeManagementAgentPluginCountsRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment to which a request will be scoped.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class SummarizeManagementAgentPluginCountsRequest
      */
     private com.oracle.bmc.managementagent.model.ManagementAgentPluginGroupBy groupBy;
 
+    /**
+     * The field by which to group Management Agent Plugins
+     */
     public com.oracle.bmc.managementagent.model.ManagementAgentPluginGroupBy getGroupBy() {
         return groupBy;
     }
@@ -33,6 +39,9 @@ public class SummarizeManagementAgentPluginCountsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -41,6 +50,9 @@ public class SummarizeManagementAgentPluginCountsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,10 +64,14 @@ public class SummarizeManagementAgentPluginCountsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment to which a request will be scoped.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment to which a request will be scoped.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -63,10 +79,14 @@ public class SummarizeManagementAgentPluginCountsRequest
             return this;
         }
 
+        /**
+         * The field by which to group Management Agent Plugins
+         */
         private com.oracle.bmc.managementagent.model.ManagementAgentPluginGroupBy groupBy = null;
 
         /**
          * The field by which to group Management Agent Plugins
+         * @param groupBy the value to set
          * @return this builder instance
          */
         public Builder groupBy(
@@ -75,10 +95,14 @@ public class SummarizeManagementAgentPluginCountsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -86,10 +110,14 @@ public class SummarizeManagementAgentPluginCountsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -172,7 +200,8 @@ public class SummarizeManagementAgentPluginCountsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -182,6 +211,10 @@ public class SummarizeManagementAgentPluginCountsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

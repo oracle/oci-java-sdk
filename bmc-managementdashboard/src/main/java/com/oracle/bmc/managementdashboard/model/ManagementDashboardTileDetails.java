@@ -67,108 +67,193 @@ public final class ManagementDashboardTileDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Display name of the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the saved search.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * ID of the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
         private String savedSearchId;
 
+        /**
+         * ID of the saved search.
+         * @param savedSearchId the value to set
+         * @return this builder
+         **/
         public Builder savedSearchId(String savedSearchId) {
             this.savedSearchId = savedSearchId;
             this.__explicitlySet__.add("savedSearchId");
             return this;
         }
-
+        /**
+         * Tile's row number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("row")
         private Integer row;
 
+        /**
+         * Tile's row number.
+         * @param row the value to set
+         * @return this builder
+         **/
         public Builder row(Integer row) {
             this.row = row;
             this.__explicitlySet__.add("row");
             return this;
         }
-
+        /**
+         * Tile's column number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("column")
         private Integer column;
 
+        /**
+         * Tile's column number.
+         * @param column the value to set
+         * @return this builder
+         **/
         public Builder column(Integer column) {
             this.column = column;
             this.__explicitlySet__.add("column");
             return this;
         }
-
+        /**
+         * The number of rows the tile occupies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("height")
         private Integer height;
 
+        /**
+         * The number of rows the tile occupies.
+         * @param height the value to set
+         * @return this builder
+         **/
         public Builder height(Integer height) {
             this.height = height;
             this.__explicitlySet__.add("height");
             return this;
         }
-
+        /**
+         * The number of columns the tile occupies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("width")
         private Integer width;
 
+        /**
+         * The number of columns the tile occupies.
+         * @param width the value to set
+         * @return this builder
+         **/
         public Builder width(Integer width) {
             this.width = width;
             this.__explicitlySet__.add("width");
             return this;
         }
-
+        /**
+         * JSON that contains internationalization options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nls")
         private Object nls;
 
+        /**
+         * JSON that contains internationalization options.
+         * @param nls the value to set
+         * @return this builder
+         **/
         public Builder nls(Object nls) {
             this.nls = nls;
             this.__explicitlySet__.add("nls");
             return this;
         }
-
+        /**
+         * JSON that contains user interface options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
         private Object uiConfig;
 
+        /**
+         * JSON that contains user interface options.
+         * @param uiConfig the value to set
+         * @return this builder
+         **/
         public Builder uiConfig(Object uiConfig) {
             this.uiConfig = uiConfig;
             this.__explicitlySet__.add("uiConfig");
             return this;
         }
-
+        /**
+         * Array of JSON that contain data source options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
         private java.util.List<Object> dataConfig;
 
+        /**
+         * Array of JSON that contain data source options.
+         * @param dataConfig the value to set
+         * @return this builder
+         **/
         public Builder dataConfig(java.util.List<Object> dataConfig) {
             this.dataConfig = dataConfig;
             this.__explicitlySet__.add("dataConfig");
             return this;
         }
-
+        /**
+         * Current state of the saved search.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
+        /**
+         * Current state of the saved search.
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-
+        /**
+         * Drill-down configuration to define the destination of a drill-down action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
         private Object drilldownConfig;
 
+        /**
+         * Drill-down configuration to define the destination of a drill-down action.
+         * @param drilldownConfig the value to set
+         * @return this builder
+         **/
         public Builder drilldownConfig(Object drilldownConfig) {
             this.drilldownConfig = drilldownConfig;
             this.__explicitlySet__.add("drilldownConfig");
             return this;
         }
-
+        /**
+         * Specifies the saved search parameters values
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parametersMap")
         private Object parametersMap;
 
+        /**
+         * Specifies the saved search parameters values
+         * @param parametersMap the value to set
+         * @return this builder
+         **/
         public Builder parametersMap(Object parametersMap) {
             this.parametersMap = parametersMap;
             this.__explicitlySet__.add("parametersMap");
@@ -235,6 +320,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the saved search.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -245,6 +334,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
     private final String savedSearchId;
 
+    /**
+     * ID of the saved search.
+     * @return the value
+     **/
     public String getSavedSearchId() {
         return savedSearchId;
     }
@@ -255,6 +348,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("row")
     private final Integer row;
 
+    /**
+     * Tile's row number.
+     * @return the value
+     **/
     public Integer getRow() {
         return row;
     }
@@ -265,6 +362,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("column")
     private final Integer column;
 
+    /**
+     * Tile's column number.
+     * @return the value
+     **/
     public Integer getColumn() {
         return column;
     }
@@ -275,6 +376,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("height")
     private final Integer height;
 
+    /**
+     * The number of rows the tile occupies.
+     * @return the value
+     **/
     public Integer getHeight() {
         return height;
     }
@@ -285,6 +390,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("width")
     private final Integer width;
 
+    /**
+     * The number of columns the tile occupies.
+     * @return the value
+     **/
     public Integer getWidth() {
         return width;
     }
@@ -295,6 +404,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
     private final Object nls;
 
+    /**
+     * JSON that contains internationalization options.
+     * @return the value
+     **/
     public Object getNls() {
         return nls;
     }
@@ -305,6 +418,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     private final Object uiConfig;
 
+    /**
+     * JSON that contains user interface options.
+     * @return the value
+     **/
     public Object getUiConfig() {
         return uiConfig;
     }
@@ -315,6 +432,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     private final java.util.List<Object> dataConfig;
 
+    /**
+     * Array of JSON that contain data source options.
+     * @return the value
+     **/
     public java.util.List<Object> getDataConfig() {
         return dataConfig;
     }
@@ -373,6 +494,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
+    /**
+     * Current state of the saved search.
+     * @return the value
+     **/
     public State getState() {
         return state;
     }
@@ -383,6 +508,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
     private final Object drilldownConfig;
 
+    /**
+     * Drill-down configuration to define the destination of a drill-down action.
+     * @return the value
+     **/
     public Object getDrilldownConfig() {
         return drilldownConfig;
     }
@@ -393,6 +522,10 @@ public final class ManagementDashboardTileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parametersMap")
     private final Object parametersMap;
 
+    /**
+     * Specifies the saved search parameters values
+     * @return the value
+     **/
     public Object getParametersMap() {
         return parametersMap;
     }

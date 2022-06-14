@@ -29,9 +29,17 @@ public final class BuildRunSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of build run summary items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<BuildRunSummary> items;
 
+        /**
+         * Array of build run summary items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<BuildRunSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class BuildRunSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<BuildRunSummary> items;
 
+    /**
+     * Array of build run summary items.
+     * @return the value
+     **/
     public java.util.List<BuildRunSummary> getItems() {
         return items;
     }

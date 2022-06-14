@@ -18,6 +18,9 @@ public class PutLogsRequest
      */
     private String logId;
 
+    /**
+     * OCID of a log to work with.
+     */
     public String getLogId() {
         return logId;
     }
@@ -26,6 +29,9 @@ public class PutLogsRequest
      */
     private com.oracle.bmc.loggingingestion.model.PutLogsDetails putLogsDetails;
 
+    /**
+     * The logs to emit.
+     */
     public com.oracle.bmc.loggingingestion.model.PutLogsDetails getPutLogsDetails() {
         return putLogsDetails;
     }
@@ -36,6 +42,11 @@ public class PutLogsRequest
      */
     private java.util.Date timestampOpcAgentProcessing;
 
+    /**
+     * Effective timestamp, for when the agent started processing the log
+     * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
+     *
+     */
     public java.util.Date getTimestampOpcAgentProcessing() {
         return timestampOpcAgentProcessing;
     }
@@ -44,6 +55,9 @@ public class PutLogsRequest
      */
     private String opcAgentVersion;
 
+    /**
+     * Version of the agent sending the request.
+     */
     public String getOpcAgentVersion() {
         return opcAgentVersion;
     }
@@ -54,6 +68,11 @@ public class PutLogsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -75,10 +94,14 @@ public class PutLogsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of a log to work with.
+         */
         private String logId = null;
 
         /**
          * OCID of a log to work with.
+         * @param logId the value to set
          * @return this builder instance
          */
         public Builder logId(String logId) {
@@ -86,10 +109,14 @@ public class PutLogsRequest
             return this;
         }
 
+        /**
+         * The logs to emit.
+         */
         private com.oracle.bmc.loggingingestion.model.PutLogsDetails putLogsDetails = null;
 
         /**
          * The logs to emit.
+         * @param putLogsDetails the value to set
          * @return this builder instance
          */
         public Builder putLogsDetails(
@@ -98,12 +125,18 @@ public class PutLogsRequest
             return this;
         }
 
+        /**
+         * Effective timestamp, for when the agent started processing the log
+         * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
+         *
+         */
         private java.util.Date timestampOpcAgentProcessing = null;
 
         /**
          * Effective timestamp, for when the agent started processing the log
          * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
          *
+         * @param timestampOpcAgentProcessing the value to set
          * @return this builder instance
          */
         public Builder timestampOpcAgentProcessing(java.util.Date timestampOpcAgentProcessing) {
@@ -111,10 +144,14 @@ public class PutLogsRequest
             return this;
         }
 
+        /**
+         * Version of the agent sending the request.
+         */
         private String opcAgentVersion = null;
 
         /**
          * Version of the agent sending the request.
+         * @param opcAgentVersion the value to set
          * @return this builder instance
          */
         public Builder opcAgentVersion(String opcAgentVersion) {
@@ -122,12 +159,18 @@ public class PutLogsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -222,7 +265,8 @@ public class PutLogsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -233,6 +277,10 @@ public class PutLogsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

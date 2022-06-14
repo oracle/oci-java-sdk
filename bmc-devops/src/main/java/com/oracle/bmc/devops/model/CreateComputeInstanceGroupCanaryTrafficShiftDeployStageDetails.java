@@ -83,10 +83,17 @@ public final class CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetail
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A compute instance group canary stage OCID for load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceGroupCanaryDeployStageId")
         private String computeInstanceGroupCanaryDeployStageId;
 
+        /**
+         * A compute instance group canary stage OCID for load balancer.
+         * @param computeInstanceGroupCanaryDeployStageId the value to set
+         * @return this builder
+         **/
         public Builder computeInstanceGroupCanaryDeployStageId(
                 String computeInstanceGroupCanaryDeployStageId) {
             this.computeInstanceGroupCanaryDeployStageId = computeInstanceGroupCanaryDeployStageId;
@@ -178,6 +185,10 @@ public final class CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetail
     @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceGroupCanaryDeployStageId")
     private final String computeInstanceGroupCanaryDeployStageId;
 
+    /**
+     * A compute instance group canary stage OCID for load balancer.
+     * @return the value
+     **/
     public String getComputeInstanceGroupCanaryDeployStageId() {
         return computeInstanceGroupCanaryDeployStageId;
     }

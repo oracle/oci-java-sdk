@@ -72,55 +72,120 @@ public final class Key {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment that contains this master encryption key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains this master encryption key.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The OCID of the key version used in cryptographic operations. During key rotation, the service might be
+         * in a transitional state where this or a newer key version are used intermittently. The {@code currentKeyVersion}
+         * property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentKeyVersion")
         private String currentKeyVersion;
 
+        /**
+         * The OCID of the key version used in cryptographic operations. During key rotation, the service might be
+         * in a transitional state where this or a newer key version are used intermittently. The {@code currentKeyVersion}
+         * property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
+         *
+         * @param currentKeyVersion the value to set
+         * @return this builder
+         **/
         public Builder currentKeyVersion(String currentKeyVersion) {
             this.currentKeyVersion = currentKeyVersion;
             this.__explicitlySet__.add("currentKeyVersion");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name for the key. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name for the key. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The OCID of the key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the key.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -135,55 +200,123 @@ public final class Key {
             this.__explicitlySet__.add("keyShape");
             return this;
         }
-
+        /**
+         * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+         * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+         * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+         * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+         * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
+        /**
+         * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+         * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+         * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+         * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+         * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+         *
+         * @param protectionMode the value to set
+         * @return this builder
+         **/
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
             return this;
         }
-
+        /**
+         * The key's current lifecycle state.
+         * <p>
+         * Example: {@code ENABLED}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The key's current lifecycle state.
+         * <p>
+         * Example: {@code ENABLED}
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
 
+        /**
+         * An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfDeletion the value to set
+         * @return this builder
+         **/
         public Builder timeOfDeletion(java.util.Date timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             this.__explicitlySet__.add("timeOfDeletion");
             return this;
         }
-
+        /**
+         * The OCID of the vault that contains this key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
+        /**
+         * The OCID of the vault that contains this key.
+         * @param vaultId the value to set
+         * @return this builder
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
-
+        /**
+         * The OCID of the key from which this key was restored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyId")
         private String restoredFromKeyId;
 
+        /**
+         * The OCID of the key from which this key was restored.
+         * @param restoredFromKeyId the value to set
+         * @return this builder
+         **/
         public Builder restoredFromKeyId(String restoredFromKeyId) {
             this.restoredFromKeyId = restoredFromKeyId;
             this.__explicitlySet__.add("restoredFromKeyId");
@@ -274,6 +407,10 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains this master encryption key.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -287,6 +424,13 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("currentKeyVersion")
     private final String currentKeyVersion;
 
+    /**
+     * The OCID of the key version used in cryptographic operations. During key rotation, the service might be
+     * in a transitional state where this or a newer key version are used intermittently. The {@code currentKeyVersion}
+     * property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
+     *
+     * @return the value
+     **/
     public String getCurrentKeyVersion() {
         return currentKeyVersion;
     }
@@ -300,6 +444,13 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -312,6 +463,12 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name for the key. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -325,6 +482,13 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -335,6 +499,10 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the key.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -410,6 +578,15 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
 
+    /**
+     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+     * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+     * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+     *
+     * @return the value
+     **/
     public ProtectionMode getProtectionMode() {
         return protectionMode;
     }
@@ -485,6 +662,13 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The key's current lifecycle state.
+     * <p>
+     * Example: {@code ENABLED}
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -498,6 +682,13 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -510,6 +701,12 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     private final java.util.Date timeOfDeletion;
 
+    /**
+     * An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfDeletion() {
         return timeOfDeletion;
     }
@@ -520,6 +717,10 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
+    /**
+     * The OCID of the vault that contains this key.
+     * @return the value
+     **/
     public String getVaultId() {
         return vaultId;
     }
@@ -530,6 +731,10 @@ public final class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyId")
     private final String restoredFromKeyId;
 
+    /**
+     * The OCID of the key from which this key was restored.
+     * @return the value
+     **/
     public String getRestoredFromKeyId() {
         return restoredFromKeyId;
     }

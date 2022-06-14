@@ -45,10 +45,21 @@ public final class SimpleLookupPolicy extends ResponseCacheLookupPolicy {
             this.__explicitlySet__.add("isPrivateCachingEnabled");
             return this;
         }
-
+        /**
+         * A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within
+         * ${} delimiters. Only the request context is available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cacheKeyAdditions")
         private java.util.List<String> cacheKeyAdditions;
 
+        /**
+         * A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within
+         * ${} delimiters. Only the request context is available.
+         *
+         * @param cacheKeyAdditions the value to set
+         * @return this builder
+         **/
         public Builder cacheKeyAdditions(java.util.List<String> cacheKeyAdditions) {
             this.cacheKeyAdditions = cacheKeyAdditions;
             this.__explicitlySet__.add("cacheKeyAdditions");
@@ -105,6 +116,12 @@ public final class SimpleLookupPolicy extends ResponseCacheLookupPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("cacheKeyAdditions")
     private final java.util.List<String> cacheKeyAdditions;
 
+    /**
+     * A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within
+     * ${} delimiters. Only the request context is available.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getCacheKeyAdditions() {
         return cacheKeyAdditions;
     }

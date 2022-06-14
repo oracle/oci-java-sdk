@@ -54,54 +54,97 @@ public final class MultipartUpload {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Object Storage namespace in which the in-progress multipart upload is stored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The Object Storage namespace in which the in-progress multipart upload is stored.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * The bucket in which the in-progress multipart upload is stored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
+        /**
+         * The bucket in which the in-progress multipart upload is stored.
+         * @param bucket the value to set
+         * @return this builder
+         **/
         public Builder bucket(String bucket) {
             this.bucket = bucket;
             this.__explicitlySet__.add("bucket");
             return this;
         }
-
+        /**
+         * The object name of the in-progress multipart upload.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("object")
         private String object;
 
+        /**
+         * The object name of the in-progress multipart upload.
+         * @param object the value to set
+         * @return this builder
+         **/
         public Builder object(String object) {
             this.object = object;
             this.__explicitlySet__.add("object");
             return this;
         }
-
+        /**
+         * The unique identifier for the in-progress multipart upload.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
         private String uploadId;
 
+        /**
+         * The unique identifier for the in-progress multipart upload.
+         * @param uploadId the value to set
+         * @return this builder
+         **/
         public Builder uploadId(String uploadId) {
             this.uploadId = uploadId;
             this.__explicitlySet__.add("uploadId");
             return this;
         }
-
+        /**
+         * The date and time the upload was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the upload was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The storage tier that the object is stored in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
         private StorageTier storageTier;
 
+        /**
+         * The storage tier that the object is stored in.
+         * @param storageTier the value to set
+         * @return this builder
+         **/
         public Builder storageTier(StorageTier storageTier) {
             this.storageTier = storageTier;
             this.__explicitlySet__.add("storageTier");
@@ -151,6 +194,10 @@ public final class MultipartUpload {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The Object Storage namespace in which the in-progress multipart upload is stored.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -161,6 +208,10 @@ public final class MultipartUpload {
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
+    /**
+     * The bucket in which the in-progress multipart upload is stored.
+     * @return the value
+     **/
     public String getBucket() {
         return bucket;
     }
@@ -171,6 +222,10 @@ public final class MultipartUpload {
     @com.fasterxml.jackson.annotation.JsonProperty("object")
     private final String object;
 
+    /**
+     * The object name of the in-progress multipart upload.
+     * @return the value
+     **/
     public String getObject() {
         return object;
     }
@@ -181,6 +236,10 @@ public final class MultipartUpload {
     @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
     private final String uploadId;
 
+    /**
+     * The unique identifier for the in-progress multipart upload.
+     * @return the value
+     **/
     public String getUploadId() {
         return uploadId;
     }
@@ -191,6 +250,10 @@ public final class MultipartUpload {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the upload was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -201,6 +264,10 @@ public final class MultipartUpload {
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
     private final StorageTier storageTier;
 
+    /**
+     * The storage tier that the object is stored in.
+     * @return the value
+     **/
     public StorageTier getStorageTier() {
         return storageTier;
     }

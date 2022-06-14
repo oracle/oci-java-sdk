@@ -37,36 +37,73 @@ public final class NotebookSessionShapeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the notebook session shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the notebook session shape.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The number of cores associated with this notebook session shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
         private Integer coreCount;
 
+        /**
+         * The number of cores associated with this notebook session shape.
+         *
+         * @param coreCount the value to set
+         * @return this builder
+         **/
         public Builder coreCount(Integer coreCount) {
             this.coreCount = coreCount;
             this.__explicitlySet__.add("coreCount");
             return this;
         }
-
+        /**
+         * The amount of memory in GBs associated with this notebook session shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
+        /**
+         * The amount of memory in GBs associated with this notebook session shape.
+         *
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Integer memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-
+        /**
+         * The family that the compute shape belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
         private NotebookSessionShapeSeries shapeSeries;
 
+        /**
+         * The family that the compute shape belongs to.
+         *
+         * @param shapeSeries the value to set
+         * @return this builder
+         **/
         public Builder shapeSeries(NotebookSessionShapeSeries shapeSeries) {
             this.shapeSeries = shapeSeries;
             this.__explicitlySet__.add("shapeSeries");
@@ -114,6 +151,11 @@ public final class NotebookSessionShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the notebook session shape.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -125,6 +167,11 @@ public final class NotebookSessionShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
     private final Integer coreCount;
 
+    /**
+     * The number of cores associated with this notebook session shape.
+     *
+     * @return the value
+     **/
     public Integer getCoreCount() {
         return coreCount;
     }
@@ -136,6 +183,11 @@ public final class NotebookSessionShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
+    /**
+     * The amount of memory in GBs associated with this notebook session shape.
+     *
+     * @return the value
+     **/
     public Integer getMemoryInGBs() {
         return memoryInGBs;
     }
@@ -147,6 +199,11 @@ public final class NotebookSessionShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
     private final NotebookSessionShapeSeries shapeSeries;
 
+    /**
+     * The family that the compute shape belongs to.
+     *
+     * @return the value
+     **/
     public NotebookSessionShapeSeries getShapeSeries() {
         return shapeSeries;
     }

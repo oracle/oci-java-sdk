@@ -41,36 +41,65 @@ public final class AddressRateLimiting {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Enables or disables the address rate limiting Web Application Firewall feature.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Enables or disables the address rate limiting Web Application Firewall feature.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The number of allowed requests per second from one IP address. If unspecified, defaults to {@code 1}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedRatePerAddress")
         private Integer allowedRatePerAddress;
 
+        /**
+         * The number of allowed requests per second from one IP address. If unspecified, defaults to {@code 1}.
+         * @param allowedRatePerAddress the value to set
+         * @return this builder
+         **/
         public Builder allowedRatePerAddress(Integer allowedRatePerAddress) {
             this.allowedRatePerAddress = allowedRatePerAddress;
             this.__explicitlySet__.add("allowedRatePerAddress");
             return this;
         }
-
+        /**
+         * The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to {@code 10}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxDelayedCountPerAddress")
         private Integer maxDelayedCountPerAddress;
 
+        /**
+         * The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to {@code 10}.
+         * @param maxDelayedCountPerAddress the value to set
+         * @return this builder
+         **/
         public Builder maxDelayedCountPerAddress(Integer maxDelayedCountPerAddress) {
             this.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
             this.__explicitlySet__.add("maxDelayedCountPerAddress");
             return this;
         }
-
+        /**
+         * The response status code returned when a request is blocked. If unspecified, defaults to {@code 503}. The list of available response codes: {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockResponseCode")
         private Integer blockResponseCode;
 
+        /**
+         * The response status code returned when a request is blocked. If unspecified, defaults to {@code 503}. The list of available response codes: {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
+         * @param blockResponseCode the value to set
+         * @return this builder
+         **/
         public Builder blockResponseCode(Integer blockResponseCode) {
             this.blockResponseCode = blockResponseCode;
             this.__explicitlySet__.add("blockResponseCode");
@@ -121,6 +150,10 @@ public final class AddressRateLimiting {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Enables or disables the address rate limiting Web Application Firewall feature.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -131,6 +164,10 @@ public final class AddressRateLimiting {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedRatePerAddress")
     private final Integer allowedRatePerAddress;
 
+    /**
+     * The number of allowed requests per second from one IP address. If unspecified, defaults to {@code 1}.
+     * @return the value
+     **/
     public Integer getAllowedRatePerAddress() {
         return allowedRatePerAddress;
     }
@@ -141,6 +178,10 @@ public final class AddressRateLimiting {
     @com.fasterxml.jackson.annotation.JsonProperty("maxDelayedCountPerAddress")
     private final Integer maxDelayedCountPerAddress;
 
+    /**
+     * The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to {@code 10}.
+     * @return the value
+     **/
     public Integer getMaxDelayedCountPerAddress() {
         return maxDelayedCountPerAddress;
     }
@@ -151,6 +192,10 @@ public final class AddressRateLimiting {
     @com.fasterxml.jackson.annotation.JsonProperty("blockResponseCode")
     private final Integer blockResponseCode;
 
+    /**
+     * The response status code returned when a request is blocked. If unspecified, defaults to {@code 503}. The list of available response codes: {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
+     * @return the value
+     **/
     public Integer getBlockResponseCode() {
         return blockResponseCode;
     }

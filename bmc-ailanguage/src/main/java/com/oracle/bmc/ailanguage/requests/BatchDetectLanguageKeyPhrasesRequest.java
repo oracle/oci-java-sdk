@@ -20,6 +20,10 @@ public class BatchDetectLanguageKeyPhrasesRequest
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesDetails
             batchDetectLanguageKeyPhrasesDetails;
 
+    /**
+     * The details to make keyPhrase detect call.
+     *
+     */
     public com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesDetails
             getBatchDetectLanguageKeyPhrasesDetails() {
         return batchDetectLanguageKeyPhrasesDetails;
@@ -29,6 +33,9 @@ public class BatchDetectLanguageKeyPhrasesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,12 +58,17 @@ public class BatchDetectLanguageKeyPhrasesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details to make keyPhrase detect call.
+         *
+         */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesDetails
                 batchDetectLanguageKeyPhrasesDetails = null;
 
         /**
          * The details to make keyPhrase detect call.
          *
+         * @param batchDetectLanguageKeyPhrasesDetails the value to set
          * @return this builder instance
          */
         public Builder batchDetectLanguageKeyPhrasesDetails(
@@ -66,10 +78,14 @@ public class BatchDetectLanguageKeyPhrasesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -160,7 +176,8 @@ public class BatchDetectLanguageKeyPhrasesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -168,6 +185,10 @@ public class BatchDetectLanguageKeyPhrasesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

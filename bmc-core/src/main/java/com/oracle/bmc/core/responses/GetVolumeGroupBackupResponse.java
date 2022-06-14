@@ -14,6 +14,11 @@ public class GetVolumeGroupBackupResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetVolumeGroupBackupResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetVolumeGroupBackupResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
+    /**
+     * The returned VolumeGroupBackup instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.VolumeGroupBackup getVolumeGroupBackup() {
         return volumeGroupBackup;
     }
@@ -63,22 +78,52 @@ public class GetVolumeGroupBackupResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned VolumeGroupBackup instance.
+         */
         private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
+        /**
+         * The returned VolumeGroupBackup instance.
+         * @param volumeGroupBackup the value to set
+         * @return this builder
+         */
         public Builder volumeGroupBackup(
                 com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup) {
             this.volumeGroupBackup = volumeGroupBackup;
@@ -98,12 +143,20 @@ public class GetVolumeGroupBackupResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetVolumeGroupBackupResponse build() {
             return new GetVolumeGroupBackupResponse(
                     __httpStatusCode__, etag, opcRequestId, volumeGroupBackup);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

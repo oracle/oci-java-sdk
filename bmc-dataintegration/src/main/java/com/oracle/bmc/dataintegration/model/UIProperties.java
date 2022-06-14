@@ -28,18 +28,33 @@ public final class UIProperties {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The X coordinate of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coordinateX")
         private java.math.BigDecimal coordinateX;
 
+        /**
+         * The X coordinate of the object.
+         * @param coordinateX the value to set
+         * @return this builder
+         **/
         public Builder coordinateX(java.math.BigDecimal coordinateX) {
             this.coordinateX = coordinateX;
             this.__explicitlySet__.add("coordinateX");
             return this;
         }
-
+        /**
+         * The Y coordinate of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coordinateY")
         private java.math.BigDecimal coordinateY;
 
+        /**
+         * The Y coordinate of the object.
+         * @param coordinateY the value to set
+         * @return this builder
+         **/
         public Builder coordinateY(java.math.BigDecimal coordinateY) {
             this.coordinateY = coordinateY;
             this.__explicitlySet__.add("coordinateY");
@@ -81,6 +96,10 @@ public final class UIProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("coordinateX")
     private final java.math.BigDecimal coordinateX;
 
+    /**
+     * The X coordinate of the object.
+     * @return the value
+     **/
     public java.math.BigDecimal getCoordinateX() {
         return coordinateX;
     }
@@ -91,6 +110,10 @@ public final class UIProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("coordinateY")
     private final java.math.BigDecimal coordinateY;
 
+    /**
+     * The Y coordinate of the object.
+     * @return the value
+     **/
     public java.math.BigDecimal getCoordinateY() {
         return coordinateY;
     }

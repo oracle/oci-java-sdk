@@ -29,9 +29,17 @@ public final class MemoryAggregateMetrics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Memory Usage metrics grouped by memorypool for a specific Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryUsage")
         private java.util.List<MetricDataPoint> memoryUsage;
 
+        /**
+         * The Memory Usage metrics grouped by memorypool for a specific Managed Database.
+         * @param memoryUsage the value to set
+         * @return this builder
+         **/
         public Builder memoryUsage(java.util.List<MetricDataPoint> memoryUsage) {
             this.memoryUsage = memoryUsage;
             this.__explicitlySet__.add("memoryUsage");
@@ -73,6 +81,10 @@ public final class MemoryAggregateMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUsage")
     private final java.util.List<MetricDataPoint> memoryUsage;
 
+    /**
+     * The Memory Usage metrics grouped by memorypool for a specific Managed Database.
+     * @return the value
+     **/
     public java.util.List<MetricDataPoint> getMemoryUsage() {
         return memoryUsage;
     }

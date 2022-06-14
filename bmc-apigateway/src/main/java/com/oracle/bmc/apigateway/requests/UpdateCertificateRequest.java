@@ -18,6 +18,9 @@ public class UpdateCertificateRequest
      */
     private String certificateId;
 
+    /**
+     * The ocid of the certificate.
+     */
     public String getCertificateId() {
         return certificateId;
     }
@@ -26,6 +29,9 @@ public class UpdateCertificateRequest
      */
     private com.oracle.bmc.apigateway.model.UpdateCertificateDetails updateCertificateDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.apigateway.model.UpdateCertificateDetails getUpdateCertificateDetails() {
         return updateCertificateDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateCertificateRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +61,9 @@ public class UpdateCertificateRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request id for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,10 +86,14 @@ public class UpdateCertificateRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ocid of the certificate.
+         */
         private String certificateId = null;
 
         /**
          * The ocid of the certificate.
+         * @param certificateId the value to set
          * @return this builder instance
          */
         public Builder certificateId(String certificateId) {
@@ -80,11 +101,15 @@ public class UpdateCertificateRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.apigateway.model.UpdateCertificateDetails updateCertificateDetails =
                 null;
 
         /**
          * The information to be updated.
+         * @param updateCertificateDetails the value to set
          * @return this builder instance
          */
         public Builder updateCertificateDetails(
@@ -93,6 +118,14 @@ public class UpdateCertificateRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -102,6 +135,7 @@ public class UpdateCertificateRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -109,10 +143,14 @@ public class UpdateCertificateRequest
             return this;
         }
 
+        /**
+         * The client request id for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request id for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -205,7 +243,8 @@ public class UpdateCertificateRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +254,10 @@ public class UpdateCertificateRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

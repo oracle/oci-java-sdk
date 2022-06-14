@@ -27,18 +27,33 @@ package com.oracle.bmc.aianomalydetection.model;
 public final class InfluxDetailsV2v0 extends InfluxDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Bucket Name for influx connection
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * Bucket Name for influx connection
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-
+        /**
+         * Org name for the influx db
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("organizationName")
         private String organizationName;
 
+        /**
+         * Org name for the influx db
+         * @param organizationName the value to set
+         * @return this builder
+         **/
         public Builder organizationName(String organizationName) {
             this.organizationName = organizationName;
             this.__explicitlySet__.add("organizationName");
@@ -88,6 +103,10 @@ public final class InfluxDetailsV2v0 extends InfluxDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * Bucket Name for influx connection
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }
@@ -98,6 +117,10 @@ public final class InfluxDetailsV2v0 extends InfluxDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("organizationName")
     private final String organizationName;
 
+    /**
+     * Org name for the influx db
+     * @return the value
+     **/
     public String getOrganizationName() {
         return organizationName;
     }

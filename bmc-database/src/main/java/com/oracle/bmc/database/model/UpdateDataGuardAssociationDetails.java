@@ -44,36 +44,113 @@ public final class UpdateDataGuardAssociationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A strong password for the 'SYS', 'SYSTEM', and 'PDB Admin' users to apply during standby creation.
+         * <p>
+         * The password must contain no fewer than nine characters and include:
+         * <p>
+         * At least two uppercase characters.
+         * <p>
+         * At least two lowercase characters.
+         * <p>
+         * At least two numeric characters.
+         * <p>
+         * At least two special characters. Valid special characters include "_", "#", and "-" only.
+         * <p>
+         **The password MUST be the same as the primary admin password.**
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
 
+        /**
+         * A strong password for the 'SYS', 'SYSTEM', and 'PDB Admin' users to apply during standby creation.
+         * <p>
+         * The password must contain no fewer than nine characters and include:
+         * <p>
+         * At least two uppercase characters.
+         * <p>
+         * At least two lowercase characters.
+         * <p>
+         * At least two numeric characters.
+         * <p>
+         * At least two special characters. Valid special characters include "_", "#", and "-" only.
+         * <p>
+         **The password MUST be the same as the primary admin password.**
+         *
+         * @param databaseAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder databaseAdminPassword(String databaseAdminPassword) {
             this.databaseAdminPassword = databaseAdminPassword;
             this.__explicitlySet__.add("databaseAdminPassword");
             return this;
         }
-
+        /**
+         * The protection mode for the Data Guard association's primary and standby database. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
+        /**
+         * The protection mode for the Data Guard association's primary and standby database. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         * @param protectionMode the value to set
+         * @return this builder
+         **/
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
             return this;
         }
-
+        /**
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified 'protectionMode':
+         * * MAXIMUM_AVAILABILITY - Use SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - Use ASYNC
+         * * MAXIMUM_PROTECTION - Use SYNC
+         * <p>
+         * For more information, see
+         * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+         * in the Oracle Data Guard documentation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transportType")
         private TransportType transportType;
 
+        /**
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified 'protectionMode':
+         * * MAXIMUM_AVAILABILITY - Use SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - Use ASYNC
+         * * MAXIMUM_PROTECTION - Use SYNC
+         * <p>
+         * For more information, see
+         * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+         * in the Oracle Data Guard documentation.
+         *
+         * @param transportType the value to set
+         * @return this builder
+         **/
         public Builder transportType(TransportType transportType) {
             this.transportType = transportType;
             this.__explicitlySet__.add("transportType");
             return this;
         }
-
+        /**
+         * True if active Data Guard is enabled. Update this parameter to change the Data Guard setting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
         private Boolean isActiveDataGuardEnabled;
 
+        /**
+         * True if active Data Guard is enabled. Update this parameter to change the Data Guard setting.
+         * @param isActiveDataGuardEnabled the value to set
+         * @return this builder
+         **/
         public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
             this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             this.__explicitlySet__.add("isActiveDataGuardEnabled");
@@ -137,6 +214,23 @@ public final class UpdateDataGuardAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
     private final String databaseAdminPassword;
 
+    /**
+     * A strong password for the 'SYS', 'SYSTEM', and 'PDB Admin' users to apply during standby creation.
+     * <p>
+     * The password must contain no fewer than nine characters and include:
+     * <p>
+     * At least two uppercase characters.
+     * <p>
+     * At least two lowercase characters.
+     * <p>
+     * At least two numeric characters.
+     * <p>
+     * At least two special characters. Valid special characters include "_", "#", and "-" only.
+     * <p>
+     **The password MUST be the same as the primary admin password.**
+     *
+     * @return the value
+     **/
     public String getDatabaseAdminPassword() {
         return databaseAdminPassword;
     }
@@ -189,6 +283,13 @@ public final class UpdateDataGuardAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
 
+    /**
+     * The protection mode for the Data Guard association's primary and standby database. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     * @return the value
+     **/
     public ProtectionMode getProtectionMode() {
         return protectionMode;
     }
@@ -251,6 +352,18 @@ public final class UpdateDataGuardAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
     private final TransportType transportType;
 
+    /**
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified 'protectionMode':
+     * * MAXIMUM_AVAILABILITY - Use SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - Use ASYNC
+     * * MAXIMUM_PROTECTION - Use SYNC
+     * <p>
+     * For more information, see
+     * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+     * in the Oracle Data Guard documentation.
+     *
+     * @return the value
+     **/
     public TransportType getTransportType() {
         return transportType;
     }
@@ -261,6 +374,10 @@ public final class UpdateDataGuardAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
     private final Boolean isActiveDataGuardEnabled;
 
+    /**
+     * True if active Data Guard is enabled. Update this parameter to change the Data Guard setting.
+     * @return the value
+     **/
     public Boolean getIsActiveDataGuardEnabled() {
         return isActiveDataGuardEnabled;
     }

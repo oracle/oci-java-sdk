@@ -17,6 +17,9 @@ public class ListConnectionValidationsRequest
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -25,6 +28,9 @@ public class ListConnectionValidationsRequest
      */
     private String key;
 
+    /**
+     * Used to filter by the key of the object.
+     */
     public String getKey() {
         return key;
     }
@@ -33,6 +39,9 @@ public class ListConnectionValidationsRequest
      */
     private String name;
 
+    /**
+     * Used to filter by the name of the object.
+     */
     public String getName() {
         return name;
     }
@@ -41,6 +50,9 @@ public class ListConnectionValidationsRequest
      */
     private String identifier;
 
+    /**
+     * Used to filter by the identifier of the object.
+     */
     public String getIdentifier() {
         return identifier;
     }
@@ -49,6 +61,9 @@ public class ListConnectionValidationsRequest
      */
     private java.util.List<String> fields;
 
+    /**
+     * Specifies the fields to get for an object.
+     */
     public java.util.List<String> getFields() {
         return fields;
     }
@@ -57,6 +72,9 @@ public class ListConnectionValidationsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -65,6 +83,9 @@ public class ListConnectionValidationsRequest
      */
     private Integer limit;
 
+    /**
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -110,6 +131,9 @@ public class ListConnectionValidationsRequest
         }
     };
 
+    /**
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -154,6 +178,9 @@ public class ListConnectionValidationsRequest
         }
     };
 
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -165,6 +192,12 @@ public class ListConnectionValidationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -173,6 +206,9 @@ public class ListConnectionValidationsRequest
      */
     private String endpointId;
 
+    /**
+     * Endpoint Id used for getDataAssetFullDetails.
+     */
     public String getEndpointId() {
         return endpointId;
     }
@@ -184,10 +220,14 @@ public class ListConnectionValidationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -195,10 +235,14 @@ public class ListConnectionValidationsRequest
             return this;
         }
 
+        /**
+         * Used to filter by the key of the object.
+         */
         private String key = null;
 
         /**
          * Used to filter by the key of the object.
+         * @param key the value to set
          * @return this builder instance
          */
         public Builder key(String key) {
@@ -206,10 +250,14 @@ public class ListConnectionValidationsRequest
             return this;
         }
 
+        /**
+         * Used to filter by the name of the object.
+         */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -217,10 +265,14 @@ public class ListConnectionValidationsRequest
             return this;
         }
 
+        /**
+         * Used to filter by the identifier of the object.
+         */
         private String identifier = null;
 
         /**
          * Used to filter by the identifier of the object.
+         * @param identifier the value to set
          * @return this builder instance
          */
         public Builder identifier(String identifier) {
@@ -228,10 +280,14 @@ public class ListConnectionValidationsRequest
             return this;
         }
 
+        /**
+         * Specifies the fields to get for an object.
+         */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<String> fields) {
@@ -241,16 +297,21 @@ public class ListConnectionValidationsRequest
 
         /**
          * Singular setter. Specifies the fields to get for an object.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(String singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -258,10 +319,14 @@ public class ListConnectionValidationsRequest
             return this;
         }
 
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -269,10 +334,14 @@ public class ListConnectionValidationsRequest
             return this;
         }
 
+        /**
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         */
         private SortBy sortBy = null;
 
         /**
          * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -280,10 +349,14 @@ public class ListConnectionValidationsRequest
             return this;
         }
 
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -291,6 +364,12 @@ public class ListConnectionValidationsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -298,6 +377,7 @@ public class ListConnectionValidationsRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -305,10 +385,14 @@ public class ListConnectionValidationsRequest
             return this;
         }
 
+        /**
+         * Endpoint Id used for getDataAssetFullDetails.
+         */
         private String endpointId = null;
 
         /**
          * Endpoint Id used for getDataAssetFullDetails.
+         * @param endpointId the value to set
          * @return this builder instance
          */
         public Builder endpointId(String endpointId) {
@@ -404,7 +488,8 @@ public class ListConnectionValidationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -421,6 +506,10 @@ public class ListConnectionValidationsRequest
                 .endpointId(endpointId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -53,72 +53,129 @@ public final class RepositoryPathSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * File or directory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * File or directory.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Size of file or directory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
+        /**
+         * Size of file or directory.
+         * @param sizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-
+        /**
+         * Name of file or directory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of file or directory.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Path to file or directory in a repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Path to file or directory in a repository.
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * SHA-1 checksum of blob or tree.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sha")
         private String sha;
 
+        /**
+         * SHA-1 checksum of blob or tree.
+         * @param sha the value to set
+         * @return this builder
+         **/
         public Builder sha(String sha) {
             this.sha = sha;
             this.__explicitlySet__.add("sha");
             return this;
         }
-
+        /**
+         * The git URL of the submodule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("submoduleGitUrl")
         private String submoduleGitUrl;
 
+        /**
+         * The git URL of the submodule.
+         * @param submoduleGitUrl the value to set
+         * @return this builder
+         **/
         public Builder submoduleGitUrl(String submoduleGitUrl) {
             this.submoduleGitUrl = submoduleGitUrl;
             this.__explicitlySet__.add("submoduleGitUrl");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -178,6 +235,10 @@ public final class RepositoryPathSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * File or directory.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -188,6 +249,10 @@ public final class RepositoryPathSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
+    /**
+     * Size of file or directory.
+     * @return the value
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
@@ -198,6 +263,10 @@ public final class RepositoryPathSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of file or directory.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -208,6 +277,10 @@ public final class RepositoryPathSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Path to file or directory in a repository.
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -218,6 +291,10 @@ public final class RepositoryPathSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sha")
     private final String sha;
 
+    /**
+     * SHA-1 checksum of blob or tree.
+     * @return the value
+     **/
     public String getSha() {
         return sha;
     }
@@ -228,6 +305,10 @@ public final class RepositoryPathSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("submoduleGitUrl")
     private final String submoduleGitUrl;
 
+    /**
+     * The git URL of the submodule.
+     * @return the value
+     **/
     public String getSubmoduleGitUrl() {
         return submoduleGitUrl;
     }
@@ -238,6 +319,10 @@ public final class RepositoryPathSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -248,6 +333,10 @@ public final class RepositoryPathSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

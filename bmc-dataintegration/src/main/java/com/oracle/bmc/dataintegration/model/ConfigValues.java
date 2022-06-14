@@ -30,9 +30,17 @@ public final class ConfigValues {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The configuration parameter values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configParamValues")
         private java.util.Map<String, ConfigParameterValue> configParamValues;
 
+        /**
+         * The configuration parameter values.
+         * @param configParamValues the value to set
+         * @return this builder
+         **/
         public Builder configParamValues(
                 java.util.Map<String, ConfigParameterValue> configParamValues) {
             this.configParamValues = configParamValues;
@@ -85,6 +93,10 @@ public final class ConfigValues {
     @com.fasterxml.jackson.annotation.JsonProperty("configParamValues")
     private final java.util.Map<String, ConfigParameterValue> configParamValues;
 
+    /**
+     * The configuration parameter values.
+     * @return the value
+     **/
     public java.util.Map<String, ConfigParameterValue> getConfigParamValues() {
         return configParamValues;
     }

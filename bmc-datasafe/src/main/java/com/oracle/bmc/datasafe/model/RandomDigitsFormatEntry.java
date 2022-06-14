@@ -42,19 +42,45 @@ public final class RandomDigitsFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The minimum number of digits the generated values should have. It can be
+         * any integer greater than zero, but it must be less than or equal to the
+         * end length.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startLength")
         private Integer startLength;
 
+        /**
+         * The minimum number of digits the generated values should have. It can be
+         * any integer greater than zero, but it must be less than or equal to the
+         * end length.
+         *
+         * @param startLength the value to set
+         * @return this builder
+         **/
         public Builder startLength(Integer startLength) {
             this.startLength = startLength;
             this.__explicitlySet__.add("startLength");
             return this;
         }
-
+        /**
+         * The maximum number of digits the generated values should have. It can
+         * be any integer greater than zero, but it must be greater than or equal
+         * to the start length.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endLength")
         private Integer endLength;
 
+        /**
+         * The maximum number of digits the generated values should have. It can
+         * be any integer greater than zero, but it must be greater than or equal
+         * to the start length.
+         *
+         * @param endLength the value to set
+         * @return this builder
+         **/
         public Builder endLength(Integer endLength) {
             this.endLength = endLength;
             this.__explicitlySet__.add("endLength");
@@ -110,6 +136,13 @@ public final class RandomDigitsFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("startLength")
     private final Integer startLength;
 
+    /**
+     * The minimum number of digits the generated values should have. It can be
+     * any integer greater than zero, but it must be less than or equal to the
+     * end length.
+     *
+     * @return the value
+     **/
     public Integer getStartLength() {
         return startLength;
     }
@@ -123,6 +156,13 @@ public final class RandomDigitsFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("endLength")
     private final Integer endLength;
 
+    /**
+     * The maximum number of digits the generated values should have. It can
+     * be any integer greater than zero, but it must be greater than or equal
+     * to the start length.
+     *
+     * @return the value
+     **/
     public Integer getEndLength() {
         return endLength;
     }

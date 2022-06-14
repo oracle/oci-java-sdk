@@ -29,9 +29,17 @@ public final class AccessibleCompartmentResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The compartments metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentsMetadata")
         private java.util.List<CompartmentMetadata> compartmentsMetadata;
 
+        /**
+         * The compartments metadata.
+         * @param compartmentsMetadata the value to set
+         * @return this builder
+         **/
         public Builder compartmentsMetadata(
                 java.util.List<CompartmentMetadata> compartmentsMetadata) {
             this.compartmentsMetadata = compartmentsMetadata;
@@ -75,6 +83,10 @@ public final class AccessibleCompartmentResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentsMetadata")
     private final java.util.List<CompartmentMetadata> compartmentsMetadata;
 
+    /**
+     * The compartments metadata.
+     * @return the value
+     **/
     public java.util.List<CompartmentMetadata> getCompartmentsMetadata() {
         return compartmentsMetadata;
     }

@@ -77,6 +77,11 @@ public class PlatformConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("isSecureBootEnabled")
     private final Boolean isSecureBootEnabled;
 
+    /**
+     * Whether Secure Boot is enabled on the instance.
+     *
+     * @return the value
+     **/
     public Boolean getIsSecureBootEnabled() {
         return isSecureBootEnabled;
     }
@@ -88,6 +93,11 @@ public class PlatformConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("isTrustedPlatformModuleEnabled")
     private final Boolean isTrustedPlatformModuleEnabled;
 
+    /**
+     * Whether the Trusted Platform Module (TPM) is enabled on the instance.
+     *
+     * @return the value
+     **/
     public Boolean getIsTrustedPlatformModuleEnabled() {
         return isTrustedPlatformModuleEnabled;
     }
@@ -99,6 +109,11 @@ public class PlatformConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("isMeasuredBootEnabled")
     private final Boolean isMeasuredBootEnabled;
 
+    /**
+     * Whether the Measured Boot feature is enabled on the instance.
+     *
+     * @return the value
+     **/
     public Boolean getIsMeasuredBootEnabled() {
         return isMeasuredBootEnabled;
     }

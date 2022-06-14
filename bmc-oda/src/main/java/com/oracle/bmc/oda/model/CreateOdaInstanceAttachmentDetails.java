@@ -50,36 +50,65 @@ public final class CreateOdaInstanceAttachmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which this ODA instance is being attached.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachToId")
         private String attachToId;
 
+        /**
+         * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which this ODA instance is being attached.
+         * @param attachToId the value to set
+         * @return this builder
+         **/
         public Builder attachToId(String attachToId) {
             this.attachToId = attachToId;
             this.__explicitlySet__.add("attachToId");
             return this;
         }
-
+        /**
+         * The type of target instance which this ODA instance is being attached.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
         private AttachmentType attachmentType;
 
+        /**
+         * The type of target instance which this ODA instance is being attached.
+         * @param attachmentType the value to set
+         * @return this builder
+         **/
         public Builder attachmentType(AttachmentType attachmentType) {
             this.attachmentType = attachmentType;
             this.__explicitlySet__.add("attachmentType");
             return this;
         }
-
+        /**
+         * Attachment specific metadata. Defined by the target service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachmentMetadata")
         private String attachmentMetadata;
 
+        /**
+         * Attachment specific metadata. Defined by the target service.
+         * @param attachmentMetadata the value to set
+         * @return this builder
+         **/
         public Builder attachmentMetadata(String attachmentMetadata) {
             this.attachmentMetadata = attachmentMetadata;
             this.__explicitlySet__.add("attachmentMetadata");
             return this;
         }
-
+        /**
+         * List of operations that are restricted while this instance is attached.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
         private java.util.List<String> restrictedOperations;
 
+        /**
+         * List of operations that are restricted while this instance is attached.
+         * @param restrictedOperations the value to set
+         * @return this builder
+         **/
         public Builder restrictedOperations(java.util.List<String> restrictedOperations) {
             this.restrictedOperations = restrictedOperations;
             this.__explicitlySet__.add("restrictedOperations");
@@ -94,19 +123,41 @@ public final class CreateOdaInstanceAttachmentDetails {
             this.__explicitlySet__.add("owner");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -164,6 +215,10 @@ public final class CreateOdaInstanceAttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("attachToId")
     private final String attachToId;
 
+    /**
+     * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which this ODA instance is being attached.
+     * @return the value
+     **/
     public String getAttachToId() {
         return attachToId;
     }
@@ -208,6 +263,10 @@ public final class CreateOdaInstanceAttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
     private final AttachmentType attachmentType;
 
+    /**
+     * The type of target instance which this ODA instance is being attached.
+     * @return the value
+     **/
     public AttachmentType getAttachmentType() {
         return attachmentType;
     }
@@ -218,6 +277,10 @@ public final class CreateOdaInstanceAttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentMetadata")
     private final String attachmentMetadata;
 
+    /**
+     * Attachment specific metadata. Defined by the target service.
+     * @return the value
+     **/
     public String getAttachmentMetadata() {
         return attachmentMetadata;
     }
@@ -228,6 +291,10 @@ public final class CreateOdaInstanceAttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
     private final java.util.List<String> restrictedOperations;
 
+    /**
+     * List of operations that are restricted while this instance is attached.
+     * @return the value
+     **/
     public java.util.List<String> getRestrictedOperations() {
         return restrictedOperations;
     }
@@ -247,6 +314,12 @@ public final class CreateOdaInstanceAttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -259,6 +332,12 @@ public final class CreateOdaInstanceAttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -51,72 +51,129 @@ public final class Organization {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID of the organization.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * A display name for the organization. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A display name for the organization. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * OCID of the compartment containing the organization. Always a tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment containing the organization. Always a tenancy OCID.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name of the tenancy that is the organization parent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentName")
         private String parentName;
 
+        /**
+         * The name of the tenancy that is the organization parent.
+         * @param parentName the value to set
+         * @return this builder
+         **/
         public Builder parentName(String parentName) {
             this.parentName = parentName;
             this.__explicitlySet__.add("parentName");
             return this;
         }
-
+        /**
+         * OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
         private String defaultUcmSubscriptionId;
 
+        /**
+         * OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
+         * @param defaultUcmSubscriptionId the value to set
+         * @return this builder
+         **/
         public Builder defaultUcmSubscriptionId(String defaultUcmSubscriptionId) {
             this.defaultUcmSubscriptionId = defaultUcmSubscriptionId;
             this.__explicitlySet__.add("defaultUcmSubscriptionId");
             return this;
         }
-
+        /**
+         * Lifecycle state of the organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * Lifecycle state of the organization.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Date-time when this organization was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date-time when this organization was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Date-time when this organization was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Date-time when this organization was last updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -175,6 +232,10 @@ public final class Organization {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID of the organization.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -185,6 +246,10 @@ public final class Organization {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A display name for the organization. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -195,6 +260,10 @@ public final class Organization {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment containing the organization. Always a tenancy OCID.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -205,6 +274,10 @@ public final class Organization {
     @com.fasterxml.jackson.annotation.JsonProperty("parentName")
     private final String parentName;
 
+    /**
+     * The name of the tenancy that is the organization parent.
+     * @return the value
+     **/
     public String getParentName() {
         return parentName;
     }
@@ -215,6 +288,10 @@ public final class Organization {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
     private final String defaultUcmSubscriptionId;
 
+    /**
+     * OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
+     * @return the value
+     **/
     public String getDefaultUcmSubscriptionId() {
         return defaultUcmSubscriptionId;
     }
@@ -277,6 +354,10 @@ public final class Organization {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * Lifecycle state of the organization.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -287,6 +368,10 @@ public final class Organization {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date-time when this organization was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -297,6 +382,10 @@ public final class Organization {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Date-time when this organization was last updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

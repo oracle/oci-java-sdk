@@ -29,18 +29,41 @@ public final class Validity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidityNotBefore")
         private java.util.Date timeOfValidityNotBefore;
 
+        /**
+         * The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfValidityNotBefore the value to set
+         * @return this builder
+         **/
         public Builder timeOfValidityNotBefore(java.util.Date timeOfValidityNotBefore) {
             this.timeOfValidityNotBefore = timeOfValidityNotBefore;
             this.__explicitlySet__.add("timeOfValidityNotBefore");
             return this;
         }
-
+        /**
+         * The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidityNotAfter")
         private java.util.Date timeOfValidityNotAfter;
 
+        /**
+         * The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfValidityNotAfter the value to set
+         * @return this builder
+         **/
         public Builder timeOfValidityNotAfter(java.util.Date timeOfValidityNotAfter) {
             this.timeOfValidityNotAfter = timeOfValidityNotAfter;
             this.__explicitlySet__.add("timeOfValidityNotAfter");
@@ -86,6 +109,12 @@ public final class Validity {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidityNotBefore")
     private final java.util.Date timeOfValidityNotBefore;
 
+    /**
+     * The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfValidityNotBefore() {
         return timeOfValidityNotBefore;
     }
@@ -98,6 +127,12 @@ public final class Validity {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidityNotAfter")
     private final java.util.Date timeOfValidityNotAfter;
 
+    /**
+     * The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfValidityNotAfter() {
         return timeOfValidityNotAfter;
     }

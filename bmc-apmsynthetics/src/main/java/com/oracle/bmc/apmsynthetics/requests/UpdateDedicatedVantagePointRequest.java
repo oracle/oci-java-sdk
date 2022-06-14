@@ -19,6 +19,10 @@ public class UpdateDedicatedVantagePointRequest
      */
     private String apmDomainId;
 
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -27,6 +31,9 @@ public class UpdateDedicatedVantagePointRequest
      */
     private String dedicatedVantagePointId;
 
+    /**
+     * The OCID of the dedicated vantage point.
+     */
     public String getDedicatedVantagePointId() {
         return dedicatedVantagePointId;
     }
@@ -36,6 +43,9 @@ public class UpdateDedicatedVantagePointRequest
     private com.oracle.bmc.apmsynthetics.model.UpdateDedicatedVantagePointDetails
             updateDedicatedVantagePointDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.apmsynthetics.model.UpdateDedicatedVantagePointDetails
             getUpdateDedicatedVantagePointDetails() {
         return updateDedicatedVantagePointDetails;
@@ -50,6 +60,14 @@ public class UpdateDedicatedVantagePointRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -60,6 +78,11 @@ public class UpdateDedicatedVantagePointRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -82,11 +105,16 @@ public class UpdateDedicatedVantagePointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -94,10 +122,14 @@ public class UpdateDedicatedVantagePointRequest
             return this;
         }
 
+        /**
+         * The OCID of the dedicated vantage point.
+         */
         private String dedicatedVantagePointId = null;
 
         /**
          * The OCID of the dedicated vantage point.
+         * @param dedicatedVantagePointId the value to set
          * @return this builder instance
          */
         public Builder dedicatedVantagePointId(String dedicatedVantagePointId) {
@@ -105,11 +137,15 @@ public class UpdateDedicatedVantagePointRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.apmsynthetics.model.UpdateDedicatedVantagePointDetails
                 updateDedicatedVantagePointDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateDedicatedVantagePointDetails the value to set
          * @return this builder instance
          */
         public Builder updateDedicatedVantagePointDetails(
@@ -119,6 +155,14 @@ public class UpdateDedicatedVantagePointRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -128,6 +172,7 @@ public class UpdateDedicatedVantagePointRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -135,12 +180,18 @@ public class UpdateDedicatedVantagePointRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -236,7 +287,8 @@ public class UpdateDedicatedVantagePointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -247,6 +299,10 @@ public class UpdateDedicatedVantagePointRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

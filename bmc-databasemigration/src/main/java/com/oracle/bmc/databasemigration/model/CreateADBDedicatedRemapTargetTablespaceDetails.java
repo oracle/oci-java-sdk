@@ -29,9 +29,19 @@ public final class CreateADBDedicatedRemapTargetTablespaceDetails
         extends CreateTargetTypeTablespaceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of tablespace at target to which the source database tablespace need to be remapped.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
         private String remapTarget;
 
+        /**
+         * Name of tablespace at target to which the source database tablespace need to be remapped.
+         *
+         * @param remapTarget the value to set
+         * @return this builder
+         **/
         public Builder remapTarget(String remapTarget) {
             this.remapTarget = remapTarget;
             this.__explicitlySet__.add("remapTarget");
@@ -81,6 +91,11 @@ public final class CreateADBDedicatedRemapTargetTablespaceDetails
     @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
     private final String remapTarget;
 
+    /**
+     * Name of tablespace at target to which the source database tablespace need to be remapped.
+     *
+     * @return the value
+     **/
     public String getRemapTarget() {
         return remapTarget;
     }

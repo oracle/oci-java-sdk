@@ -49,36 +49,79 @@ public final class UpdateBackendSetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The network load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest) listNetworkLoadBalancersPolicies} operation.
+         * <p>
+         * Example: {@code FIVE_TUPLE}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
 
+        /**
+         * The network load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest) listNetworkLoadBalancersPolicies} operation.
+         * <p>
+         * Example: {@code FIVE_TUPLE}
+         *
+         * @param policy the value to set
+         * @return this builder
+         **/
         public Builder policy(String policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
             return this;
         }
-
+        /**
+         * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
+         * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+         * The value is true by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
         private Boolean isPreserveSource;
 
+        /**
+         * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
+         * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+         * The value is true by default.
+         *
+         * @param isPreserveSource the value to set
+         * @return this builder
+         **/
         public Builder isPreserveSource(Boolean isPreserveSource) {
             this.isPreserveSource = isPreserveSource;
             this.__explicitlySet__.add("isPreserveSource");
             return this;
         }
-
+        /**
+         * The IP version associated with the backend set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
         private IpVersion ipVersion;
 
+        /**
+         * The IP version associated with the backend set.
+         * @param ipVersion the value to set
+         * @return this builder
+         **/
         public Builder ipVersion(IpVersion ipVersion) {
             this.ipVersion = ipVersion;
             this.__explicitlySet__.add("ipVersion");
             return this;
         }
-
+        /**
+         * An array of backends associated with the backend set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backends")
         private java.util.List<BackendDetails> backends;
 
+        /**
+         * An array of backends associated with the backend set.
+         * @param backends the value to set
+         * @return this builder
+         **/
         public Builder backends(java.util.List<BackendDetails> backends) {
             this.backends = backends;
             this.__explicitlySet__.add("backends");
@@ -140,6 +183,14 @@ public final class UpdateBackendSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final String policy;
 
+    /**
+     * The network load balancer policy for the backend set. To get a list of available policies, use the
+     * {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest) listNetworkLoadBalancersPolicies} operation.
+     * <p>
+     * Example: {@code FIVE_TUPLE}
+     *
+     * @return the value
+     **/
     public String getPolicy() {
         return policy;
     }
@@ -153,6 +204,13 @@ public final class UpdateBackendSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
     private final Boolean isPreserveSource;
 
+    /**
+     * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
+     * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+     * The value is true by default.
+     *
+     * @return the value
+     **/
     public Boolean getIsPreserveSource() {
         return isPreserveSource;
     }
@@ -163,6 +221,10 @@ public final class UpdateBackendSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
     private final IpVersion ipVersion;
 
+    /**
+     * The IP version associated with the backend set.
+     * @return the value
+     **/
     public IpVersion getIpVersion() {
         return ipVersion;
     }
@@ -173,6 +235,10 @@ public final class UpdateBackendSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("backends")
     private final java.util.List<BackendDetails> backends;
 
+    /**
+     * An array of backends associated with the backend set.
+     * @return the value
+     **/
     public java.util.List<BackendDetails> getBackends() {
         return backends;
     }

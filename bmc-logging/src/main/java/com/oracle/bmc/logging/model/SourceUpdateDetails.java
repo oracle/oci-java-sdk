@@ -29,9 +29,17 @@ public final class SourceUpdateDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Log category parameters are stored here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.Map<String, String> parameters;
 
+        /**
+         * Log category parameters are stored here.
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.Map<String, String> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -73,6 +81,10 @@ public final class SourceUpdateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.Map<String, String> parameters;
 
+    /**
+     * Log category parameters are stored here.
+     * @return the value
+     **/
     public java.util.Map<String, String> getParameters() {
         return parameters;
     }

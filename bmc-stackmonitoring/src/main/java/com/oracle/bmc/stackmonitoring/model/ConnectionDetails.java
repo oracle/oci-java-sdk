@@ -47,54 +47,97 @@ public final class ConnectionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Protocol used in DB connection string when connecting to external database service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * Protocol used in DB connection string when connecting to external database service.
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * Listener Port number used for connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * Listener Port number used for connection requests.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * Database connector Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
+        /**
+         * Database connector Identifier
+         * @param connectorId the value to set
+         * @return this builder
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
             return this;
         }
-
+        /**
+         * Service name used for connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * Service name used for connection requests.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-
+        /**
+         * UniqueName used for database connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
+        /**
+         * UniqueName used for database connection requests.
+         * @param dbUniqueName the value to set
+         * @return this builder
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
-
+        /**
+         * dbId of the database
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbId")
         private String dbId;
 
+        /**
+         * dbId of the database
+         * @param dbId the value to set
+         * @return this builder
+         **/
         public Builder dbId(String dbId) {
             this.dbId = dbId;
             this.__explicitlySet__.add("dbId");
@@ -192,6 +235,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * Protocol used in DB connection string when connecting to external database service.
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
@@ -202,6 +249,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * Listener Port number used for connection requests.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -212,6 +263,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
+    /**
+     * Database connector Identifier
+     * @return the value
+     **/
     public String getConnectorId() {
         return connectorId;
     }
@@ -222,6 +277,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * Service name used for connection requests.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }
@@ -232,6 +291,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
+    /**
+     * UniqueName used for database connection requests.
+     * @return the value
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
@@ -242,6 +305,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
     private final String dbId;
 
+    /**
+     * dbId of the database
+     * @return the value
+     **/
     public String getDbId() {
         return dbId;
     }

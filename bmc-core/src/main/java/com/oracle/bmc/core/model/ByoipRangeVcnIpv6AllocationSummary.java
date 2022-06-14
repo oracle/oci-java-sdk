@@ -34,36 +34,73 @@ public final class ByoipRangeVcnIpv6AllocationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
         private String byoipRangeId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
+         * @param byoipRangeId the value to set
+         * @return this builder
+         **/
         public Builder byoipRangeId(String byoipRangeId) {
             this.byoipRangeId = byoipRangeId;
             this.__explicitlySet__.add("byoipRangeId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the {@code ByoipRange}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the {@code ByoipRange}.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
+         * Each VCN allocation must be /64 or larger.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
+        /**
+         * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
+         * Each VCN allocation must be /64 or larger.
+         *
+         * @param ipv6CidrBlock the value to set
+         * @return this builder
+         **/
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             this.ipv6CidrBlock = ipv6CidrBlock;
             this.__explicitlySet__.add("ipv6CidrBlock");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code Vcn} resource to which the ByoipRange belongs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code Vcn} resource to which the ByoipRange belongs.
+         *
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
@@ -111,6 +148,10 @@ public final class ByoipRangeVcnIpv6AllocationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
     private final String byoipRangeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
+     * @return the value
+     **/
     public String getByoipRangeId() {
         return byoipRangeId;
     }
@@ -122,6 +163,11 @@ public final class ByoipRangeVcnIpv6AllocationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the {@code ByoipRange}.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -134,6 +180,12 @@ public final class ByoipRangeVcnIpv6AllocationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
+    /**
+     * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
+     * Each VCN allocation must be /64 or larger.
+     *
+     * @return the value
+     **/
     public String getIpv6CidrBlock() {
         return ipv6CidrBlock;
     }
@@ -145,6 +197,11 @@ public final class ByoipRangeVcnIpv6AllocationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code Vcn} resource to which the ByoipRange belongs.
+     *
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }

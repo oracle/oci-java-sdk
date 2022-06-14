@@ -98,207 +98,415 @@ public final class DatabaseParameterSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The parameter name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The parameter type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The parameter type.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The parameter value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The parameter value.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The parameter value in a user-friendly format. For example, if the {@code value} property shows the value 262144 for a big integer parameter, then the {@code displayValue} property will show the value 256K.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayValue")
         private String displayValue;
 
+        /**
+         * The parameter value in a user-friendly format. For example, if the {@code value} property shows the value 262144 for a big integer parameter, then the {@code displayValue} property will show the value 256K.
+         *
+         * @param displayValue the value to set
+         * @return this builder
+         **/
         public Builder displayValue(String displayValue) {
             this.displayValue = displayValue;
             this.__explicitlySet__.add("displayValue");
             return this;
         }
-
+        /**
+         * The parameter number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("number")
         private java.math.BigDecimal number;
 
+        /**
+         * The parameter number.
+         * @param number the value to set
+         * @return this builder
+         **/
         public Builder number(java.math.BigDecimal number) {
             this.number = number;
             this.__explicitlySet__.add("number");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter is set to the default value ({@code TRUE}) or the parameter value was specified in the parameter file ({@code FALSE}).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Indicates whether the parameter is set to the default value ({@code TRUE}) or the parameter value was specified in the parameter file ({@code FALSE}).
+         *
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter can be changed with {@code ALTER SESSION} ({@code TRUE}) or not ({@code FALSE})
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSessionModifiable")
         private Boolean isSessionModifiable;
 
+        /**
+         * Indicates whether the parameter can be changed with {@code ALTER SESSION} ({@code TRUE}) or not ({@code FALSE})
+         *
+         * @param isSessionModifiable the value to set
+         * @return this builder
+         **/
         public Builder isSessionModifiable(Boolean isSessionModifiable) {
             this.isSessionModifiable = isSessionModifiable;
             this.__explicitlySet__.add("isSessionModifiable");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter can be changed with {@code ALTER SYSTEM} and when the change takes effect:
+         * - IMMEDIATE: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect immediately.
+         * - DEFERRED: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect in subsequent sessions.
+         * - FALSE: Parameter cannot be changed with {@code ALTER SYSTEM} unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystemModifiable")
         private IsSystemModifiable isSystemModifiable;
 
+        /**
+         * Indicates whether the parameter can be changed with {@code ALTER SYSTEM} and when the change takes effect:
+         * - IMMEDIATE: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect immediately.
+         * - DEFERRED: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect in subsequent sessions.
+         * - FALSE: Parameter cannot be changed with {@code ALTER SYSTEM} unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
+         *
+         * @param isSystemModifiable the value to set
+         * @return this builder
+         **/
         public Builder isSystemModifiable(IsSystemModifiable isSystemModifiable) {
             this.isSystemModifiable = isSystemModifiable;
             this.__explicitlySet__.add("isSystemModifiable");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter can be modified on a per-PDB basis ({@code TRUE}) or not ({@code FALSE}). In a non-CDB, the value of this property is {@code null}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPdbModifiable")
         private Boolean isPdbModifiable;
 
+        /**
+         * Indicates whether the parameter can be modified on a per-PDB basis ({@code TRUE}) or not ({@code FALSE}). In a non-CDB, the value of this property is {@code null}.
+         *
+         * @param isPdbModifiable the value to set
+         * @return this builder
+         **/
         public Builder isPdbModifiable(Boolean isPdbModifiable) {
             this.isPdbModifiable = isPdbModifiable;
             this.__explicitlySet__.add("isPdbModifiable");
             return this;
         }
-
+        /**
+         * For parameters that can be changed with {@code ALTER SYSTEM}, indicates whether the value of the parameter can be different for every instance ({@code TRUE}) or whether the parameter must have the same value for all Real Application Clusters instances ({@code FALSE}). For other parameters, this is always {@code FALSE}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInstanceModifiable")
         private Boolean isInstanceModifiable;
 
+        /**
+         * For parameters that can be changed with {@code ALTER SYSTEM}, indicates whether the value of the parameter can be different for every instance ({@code TRUE}) or whether the parameter must have the same value for all Real Application Clusters instances ({@code FALSE}). For other parameters, this is always {@code FALSE}.
+         *
+         * @param isInstanceModifiable the value to set
+         * @return this builder
+         **/
         public Builder isInstanceModifiable(Boolean isInstanceModifiable) {
             this.isInstanceModifiable = isInstanceModifiable;
             this.__explicitlySet__.add("isInstanceModifiable");
             return this;
         }
-
+        /**
+         * Indicates how the parameter was modified. If an {@code ALTER SYSTEM} was performed, the value will be {@code MODIFIED}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isModified")
         private IsModified isModified;
 
+        /**
+         * Indicates how the parameter was modified. If an {@code ALTER SYSTEM} was performed, the value will be {@code MODIFIED}.
+         *
+         * @param isModified the value to set
+         * @return this builder
+         **/
         public Builder isModified(IsModified isModified) {
             this.isModified = isModified;
             this.__explicitlySet__.add("isModified");
             return this;
         }
-
+        /**
+         * Indicates whether Oracle adjusted the input value to a more suitable value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAdjusted")
         private Boolean isAdjusted;
 
+        /**
+         * Indicates whether Oracle adjusted the input value to a more suitable value.
+         * @param isAdjusted the value to set
+         * @return this builder
+         **/
         public Builder isAdjusted(Boolean isAdjusted) {
             this.isAdjusted = isAdjusted;
             this.__explicitlySet__.add("isAdjusted");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter has been deprecated ({@code TRUE}) or not ({@code FALSE}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeprecated")
         private Boolean isDeprecated;
 
+        /**
+         * Indicates whether the parameter has been deprecated ({@code TRUE}) or not ({@code FALSE}).
+         * @param isDeprecated the value to set
+         * @return this builder
+         **/
         public Builder isDeprecated(Boolean isDeprecated) {
             this.isDeprecated = isDeprecated;
             this.__explicitlySet__.add("isDeprecated");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter is a basic parameter ({@code TRUE}) or not ({@code FALSE}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBasic")
         private Boolean isBasic;
 
+        /**
+         * Indicates whether the parameter is a basic parameter ({@code TRUE}) or not ({@code FALSE}).
+         * @param isBasic the value to set
+         * @return this builder
+         **/
         public Builder isBasic(Boolean isBasic) {
             this.isBasic = isBasic;
             this.__explicitlySet__.add("isBasic");
             return this;
         }
-
+        /**
+         * The description of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the parameter.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ordinal")
         private java.math.BigDecimal ordinal;
 
+        /**
+         * The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
+         *
+         * @param ordinal the value to set
+         * @return this builder
+         **/
         public Builder ordinal(java.math.BigDecimal ordinal) {
             this.ordinal = ordinal;
             this.__explicitlySet__.add("ordinal");
             return this;
         }
-
+        /**
+         * The comments associated with the most recent update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateComment")
         private String updateComment;
 
+        /**
+         * The comments associated with the most recent update.
+         * @param updateComment the value to set
+         * @return this builder
+         **/
         public Builder updateComment(String updateComment) {
             this.updateComment = updateComment;
             this.__explicitlySet__.add("updateComment");
             return this;
         }
-
+        /**
+         * The ID of the database container to which the data pertains.
+         * Possible values include:
+         * - {@code 0}: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
+         * - {@code 1}: This value is used for data that pertain to only the root container.
+         * - {@code n}: Where n is the applicable container ID for the data.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerId")
         private java.math.BigDecimal containerId;
 
+        /**
+         * The ID of the database container to which the data pertains.
+         * Possible values include:
+         * - {@code 0}: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
+         * - {@code 1}: This value is used for data that pertain to only the root container.
+         * - {@code n}: Where n is the applicable container ID for the data.
+         *
+         * @param containerId the value to set
+         * @return this builder
+         **/
         public Builder containerId(java.math.BigDecimal containerId) {
             this.containerId = containerId;
             this.__explicitlySet__.add("containerId");
             return this;
         }
-
+        /**
+         * The parameter category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
+        /**
+         * The parameter category.
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-
+        /**
+         * Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases.
+         * A {@code UNIQUE} parameter is one which is unique to each Oracle Real Application
+         * Clusters (Oracle RAC) instance. For example, the parameter {@code INSTANCE_NUMBER}
+         * must have different values in each instance. An {@code IDENTICAL} parameter must
+         * have the same value for every instance. For example, the parameter
+         * {@code DB_BLOCK_SIZE} must have the same value in all instances.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("constraint")
         private Constraint constraint;
 
+        /**
+         * Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases.
+         * A {@code UNIQUE} parameter is one which is unique to each Oracle Real Application
+         * Clusters (Oracle RAC) instance. For example, the parameter {@code INSTANCE_NUMBER}
+         * must have different values in each instance. An {@code IDENTICAL} parameter must
+         * have the same value for every instance. For example, the parameter
+         * {@code DB_BLOCK_SIZE} must have the same value in all instances.
+         *
+         * @param constraint the value to set
+         * @return this builder
+         **/
         public Builder constraint(Constraint constraint) {
             this.constraint = constraint;
             this.__explicitlySet__.add("constraint");
             return this;
         }
-
+        /**
+         * The database instance SID for which the parameter is defined.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sid")
         private String sid;
 
+        /**
+         * The database instance SID for which the parameter is defined.
+         * @param sid the value to set
+         * @return this builder
+         **/
         public Builder sid(String sid) {
             this.sid = sid;
             this.__explicitlySet__.add("sid");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter was specified in the server parameter file ({@code TRUE}) or not ({@code FALSE}). Applicable only when the parameter source is {@code SPFILE}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSpecified")
         private Boolean isSpecified;
 
+        /**
+         * Indicates whether the parameter was specified in the server parameter file ({@code TRUE}) or not ({@code FALSE}). Applicable only when the parameter source is {@code SPFILE}.
+         *
+         * @param isSpecified the value to set
+         * @return this builder
+         **/
         public Builder isSpecified(Boolean isSpecified) {
             this.isSpecified = isSpecified;
             this.__explicitlySet__.add("isSpecified");
             return this;
         }
-
+        /**
+         * A list of allowed values for this parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<AllowedParameterValue> allowedValues;
 
+        /**
+         * A list of allowed values for this parameter.
+         * @param allowedValues the value to set
+         * @return this builder
+         **/
         public Builder allowedValues(java.util.List<AllowedParameterValue> allowedValues) {
             this.allowedValues = allowedValues;
             this.__explicitlySet__.add("allowedValues");
@@ -387,6 +595,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The parameter name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -447,6 +659,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The parameter type.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -457,6 +673,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The parameter value.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -468,6 +688,11 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayValue")
     private final String displayValue;
 
+    /**
+     * The parameter value in a user-friendly format. For example, if the {@code value} property shows the value 262144 for a big integer parameter, then the {@code displayValue} property will show the value 256K.
+     *
+     * @return the value
+     **/
     public String getDisplayValue() {
         return displayValue;
     }
@@ -478,6 +703,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("number")
     private final java.math.BigDecimal number;
 
+    /**
+     * The parameter number.
+     * @return the value
+     **/
     public java.math.BigDecimal getNumber() {
         return number;
     }
@@ -489,6 +718,11 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Indicates whether the parameter is set to the default value ({@code TRUE}) or the parameter value was specified in the parameter file ({@code FALSE}).
+     *
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -500,6 +734,11 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSessionModifiable")
     private final Boolean isSessionModifiable;
 
+    /**
+     * Indicates whether the parameter can be changed with {@code ALTER SESSION} ({@code TRUE}) or not ({@code FALSE})
+     *
+     * @return the value
+     **/
     public Boolean getIsSessionModifiable() {
         return isSessionModifiable;
     }
@@ -567,6 +806,14 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystemModifiable")
     private final IsSystemModifiable isSystemModifiable;
 
+    /**
+     * Indicates whether the parameter can be changed with {@code ALTER SYSTEM} and when the change takes effect:
+     * - IMMEDIATE: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect immediately.
+     * - DEFERRED: Parameter can be changed with {@code ALTER SYSTEM} regardless of the type of parameter file used to start the instance. The change takes effect in subsequent sessions.
+     * - FALSE: Parameter cannot be changed with {@code ALTER SYSTEM} unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
+     *
+     * @return the value
+     **/
     public IsSystemModifiable getIsSystemModifiable() {
         return isSystemModifiable;
     }
@@ -578,6 +825,11 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPdbModifiable")
     private final Boolean isPdbModifiable;
 
+    /**
+     * Indicates whether the parameter can be modified on a per-PDB basis ({@code TRUE}) or not ({@code FALSE}). In a non-CDB, the value of this property is {@code null}.
+     *
+     * @return the value
+     **/
     public Boolean getIsPdbModifiable() {
         return isPdbModifiable;
     }
@@ -589,6 +841,11 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isInstanceModifiable")
     private final Boolean isInstanceModifiable;
 
+    /**
+     * For parameters that can be changed with {@code ALTER SYSTEM}, indicates whether the value of the parameter can be different for every instance ({@code TRUE}) or whether the parameter must have the same value for all Real Application Clusters instances ({@code FALSE}). For other parameters, this is always {@code FALSE}.
+     *
+     * @return the value
+     **/
     public Boolean getIsInstanceModifiable() {
         return isInstanceModifiable;
     }
@@ -649,6 +906,11 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isModified")
     private final IsModified isModified;
 
+    /**
+     * Indicates how the parameter was modified. If an {@code ALTER SYSTEM} was performed, the value will be {@code MODIFIED}.
+     *
+     * @return the value
+     **/
     public IsModified getIsModified() {
         return isModified;
     }
@@ -659,6 +921,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isAdjusted")
     private final Boolean isAdjusted;
 
+    /**
+     * Indicates whether Oracle adjusted the input value to a more suitable value.
+     * @return the value
+     **/
     public Boolean getIsAdjusted() {
         return isAdjusted;
     }
@@ -669,6 +935,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDeprecated")
     private final Boolean isDeprecated;
 
+    /**
+     * Indicates whether the parameter has been deprecated ({@code TRUE}) or not ({@code FALSE}).
+     * @return the value
+     **/
     public Boolean getIsDeprecated() {
         return isDeprecated;
     }
@@ -679,6 +949,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isBasic")
     private final Boolean isBasic;
 
+    /**
+     * Indicates whether the parameter is a basic parameter ({@code TRUE}) or not ({@code FALSE}).
+     * @return the value
+     **/
     public Boolean getIsBasic() {
         return isBasic;
     }
@@ -689,6 +963,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the parameter.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -700,6 +978,11 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("ordinal")
     private final java.math.BigDecimal ordinal;
 
+    /**
+     * The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getOrdinal() {
         return ordinal;
     }
@@ -710,6 +993,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("updateComment")
     private final String updateComment;
 
+    /**
+     * The comments associated with the most recent update.
+     * @return the value
+     **/
     public String getUpdateComment() {
         return updateComment;
     }
@@ -725,6 +1012,15 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("containerId")
     private final java.math.BigDecimal containerId;
 
+    /**
+     * The ID of the database container to which the data pertains.
+     * Possible values include:
+     * - {@code 0}: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
+     * - {@code 1}: This value is used for data that pertain to only the root container.
+     * - {@code n}: Where n is the applicable container ID for the data.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getContainerId() {
         return containerId;
     }
@@ -735,6 +1031,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * The parameter category.
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }
@@ -806,6 +1106,16 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("constraint")
     private final Constraint constraint;
 
+    /**
+     * Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases.
+     * A {@code UNIQUE} parameter is one which is unique to each Oracle Real Application
+     * Clusters (Oracle RAC) instance. For example, the parameter {@code INSTANCE_NUMBER}
+     * must have different values in each instance. An {@code IDENTICAL} parameter must
+     * have the same value for every instance. For example, the parameter
+     * {@code DB_BLOCK_SIZE} must have the same value in all instances.
+     *
+     * @return the value
+     **/
     public Constraint getConstraint() {
         return constraint;
     }
@@ -816,6 +1126,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sid")
     private final String sid;
 
+    /**
+     * The database instance SID for which the parameter is defined.
+     * @return the value
+     **/
     public String getSid() {
         return sid;
     }
@@ -827,6 +1141,11 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSpecified")
     private final Boolean isSpecified;
 
+    /**
+     * Indicates whether the parameter was specified in the server parameter file ({@code TRUE}) or not ({@code FALSE}). Applicable only when the parameter source is {@code SPFILE}.
+     *
+     * @return the value
+     **/
     public Boolean getIsSpecified() {
         return isSpecified;
     }
@@ -837,6 +1156,10 @@ public final class DatabaseParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<AllowedParameterValue> allowedValues;
 
+    /**
+     * A list of allowed values for this parameter.
+     * @return the value
+     **/
     public java.util.List<AllowedParameterValue> getAllowedValues() {
         return allowedValues;
     }

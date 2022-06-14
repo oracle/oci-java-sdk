@@ -31,18 +31,37 @@ public final class ApplicationTraceConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Define if tracing is enabled for the resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Define if tracing is enabled for the resource.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
 
+        /**
+         * The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
+         *
+         * @param domainId the value to set
+         * @return this builder
+         **/
         public Builder domainId(String domainId) {
             this.domainId = domainId;
             this.__explicitlySet__.add("domainId");
@@ -85,6 +104,11 @@ public final class ApplicationTraceConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Define if tracing is enabled for the resource.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -96,6 +120,11 @@ public final class ApplicationTraceConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     private final String domainId;
 
+    /**
+     * The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
+     *
+     * @return the value
+     **/
     public String getDomainId() {
         return domainId;
     }

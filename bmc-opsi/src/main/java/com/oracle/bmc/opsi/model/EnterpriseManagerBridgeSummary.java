@@ -68,118 +68,222 @@ public final class EnterpriseManagerBridgeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Enterprise Manager bridge identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Enterprise Manager bridge identifier
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Compartment identifier of the Enterprise Manager bridge
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment identifier of the Enterprise Manager bridge
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * User-friedly name of Enterprise Manager Bridge that does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * User-friedly name of Enterprise Manager Bridge that does not have to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Object Storage Namespace Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespaceName")
         private String objectStorageNamespaceName;
 
+        /**
+         * Object Storage Namespace Name
+         * @param objectStorageNamespaceName the value to set
+         * @return this builder
+         **/
         public Builder objectStorageNamespaceName(String objectStorageNamespaceName) {
             this.objectStorageNamespaceName = objectStorageNamespaceName;
             this.__explicitlySet__.add("objectStorageNamespaceName");
             return this;
         }
-
+        /**
+         * Object Storage Bucket Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketName")
         private String objectStorageBucketName;
 
+        /**
+         * Object Storage Bucket Name
+         * @param objectStorageBucketName the value to set
+         * @return this builder
+         **/
         public Builder objectStorageBucketName(String objectStorageBucketName) {
             this.objectStorageBucketName = objectStorageBucketName;
             this.__explicitlySet__.add("objectStorageBucketName");
             return this;
         }
-
+        /**
+         * A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketStatusDetails")
         private String objectStorageBucketStatusDetails;
 
+        /**
+         * A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
+         * @param objectStorageBucketStatusDetails the value to set
+         * @return this builder
+         **/
         public Builder objectStorageBucketStatusDetails(String objectStorageBucketStatusDetails) {
             this.objectStorageBucketStatusDetails = objectStorageBucketStatusDetails;
             this.__explicitlySet__.add("objectStorageBucketStatusDetails");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the Enterprise Manager bridge.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the Enterprise Manager bridge.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -249,6 +353,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Enterprise Manager bridge identifier
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -259,6 +367,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment identifier of the Enterprise Manager bridge
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -269,6 +381,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * User-friedly name of Enterprise Manager Bridge that does not have to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -279,6 +395,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespaceName")
     private final String objectStorageNamespaceName;
 
+    /**
+     * Object Storage Namespace Name
+     * @return the value
+     **/
     public String getObjectStorageNamespaceName() {
         return objectStorageNamespaceName;
     }
@@ -289,6 +409,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketName")
     private final String objectStorageBucketName;
 
+    /**
+     * Object Storage Bucket Name
+     * @return the value
+     **/
     public String getObjectStorageBucketName() {
         return objectStorageBucketName;
     }
@@ -299,6 +423,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketStatusDetails")
     private final String objectStorageBucketStatusDetails;
 
+    /**
+     * A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
+     * @return the value
+     **/
     public String getObjectStorageBucketStatusDetails() {
         return objectStorageBucketStatusDetails;
     }
@@ -311,6 +439,12 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -323,6 +457,12 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -335,6 +475,12 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -345,6 +491,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -355,6 +505,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -365,6 +519,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the Enterprise Manager bridge.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -375,6 +533,10 @@ public final class EnterpriseManagerBridgeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }

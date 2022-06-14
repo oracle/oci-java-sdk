@@ -16,6 +16,9 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String tableNameOrId;
 
+    /**
+     * A table name within the compartment, or a table OCID.
+     */
     public String getTableNameOrId() {
         return tableNameOrId;
     }
@@ -27,6 +30,12 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String compartmentId;
 
+    /**
+     * The ID of a table's compartment. When a table is identified
+     * by name, the compartmentId is often needed to provide
+     * context for interpreting the name.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -35,6 +44,9 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +58,12 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.Date timeStart;
 
+    /**
+     * The start time to use for the request. If no time range
+     * is set for this request, the most recent complete usage
+     * record is returned.
+     *
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -54,6 +72,9 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.Date timeEnd;
 
+    /**
+     * The end time to use for the request.
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -62,6 +83,9 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -73,6 +97,12 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start
+     * retrieving results. This is usually retrieved from a previous
+     * list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -84,10 +114,14 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A table name within the compartment, or a table OCID.
+         */
         private String tableNameOrId = null;
 
         /**
          * A table name within the compartment, or a table OCID.
+         * @param tableNameOrId the value to set
          * @return this builder instance
          */
         public Builder tableNameOrId(String tableNameOrId) {
@@ -95,6 +129,12 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The ID of a table's compartment. When a table is identified
+         * by name, the compartmentId is often needed to provide
+         * context for interpreting the name.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -102,6 +142,7 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * by name, the compartmentId is often needed to provide
          * context for interpreting the name.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -109,10 +150,14 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -120,6 +165,12 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The start time to use for the request. If no time range
+         * is set for this request, the most recent complete usage
+         * record is returned.
+         *
+         */
         private java.util.Date timeStart = null;
 
         /**
@@ -127,6 +178,7 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * is set for this request, the most recent complete usage
          * record is returned.
          *
+         * @param timeStart the value to set
          * @return this builder instance
          */
         public Builder timeStart(java.util.Date timeStart) {
@@ -134,10 +186,14 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The end time to use for the request.
+         */
         private java.util.Date timeEnd = null;
 
         /**
          * The end time to use for the request.
+         * @param timeEnd the value to set
          * @return this builder instance
          */
         public Builder timeEnd(java.util.Date timeEnd) {
@@ -145,10 +201,14 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -156,6 +216,12 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start
+         * retrieving results. This is usually retrieved from a previous
+         * list call.
+         *
+         */
         private String page = null;
 
         /**
@@ -163,6 +229,7 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * retrieving results. This is usually retrieved from a previous
          * list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -250,7 +317,8 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -263,6 +331,10 @@ public class ListTableUsageRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

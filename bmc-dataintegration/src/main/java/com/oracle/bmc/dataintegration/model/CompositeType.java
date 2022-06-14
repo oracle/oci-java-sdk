@@ -87,10 +87,17 @@ public final class CompositeType extends BaseType {
             this.__explicitlySet__.add("parentType");
             return this;
         }
-
+        /**
+         * An array of elements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("elements")
         private java.util.List<TypedObject> elements;
 
+        /**
+         * An array of elements.
+         * @param elements the value to set
+         * @return this builder
+         **/
         public Builder elements(java.util.List<TypedObject> elements) {
             this.elements = elements;
             this.__explicitlySet__.add("elements");
@@ -184,6 +191,10 @@ public final class CompositeType extends BaseType {
     @com.fasterxml.jackson.annotation.JsonProperty("elements")
     private final java.util.List<TypedObject> elements;
 
+    /**
+     * An array of elements.
+     * @return the value
+     **/
     public java.util.List<TypedObject> getElements() {
         return elements;
     }

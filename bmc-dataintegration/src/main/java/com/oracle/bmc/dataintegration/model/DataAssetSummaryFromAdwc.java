@@ -134,28 +134,49 @@ public final class DataAssetSummaryFromAdwc extends DataAssetSummary {
             this.__explicitlySet__.add("metadata");
             return this;
         }
-
+        /**
+         * The Autonomous Data Warehouse instance service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * The Autonomous Data Warehouse instance service name.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-
+        /**
+         * Array of service names that are available for selection in the serviceName property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceNames")
         private java.util.List<String> serviceNames;
 
+        /**
+         * Array of service names that are available for selection in the serviceName property.
+         * @param serviceNames the value to set
+         * @return this builder
+         **/
         public Builder serviceNames(java.util.List<String> serviceNames) {
             this.serviceNames = serviceNames;
             this.__explicitlySet__.add("serviceNames");
             return this;
         }
-
+        /**
+         * The Autonomous Data Warehouse driver class.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
         private String driverClass;
 
+        /**
+         * The Autonomous Data Warehouse driver class.
+         * @param driverClass the value to set
+         * @return this builder
+         **/
         public Builder driverClass(String driverClass) {
             this.driverClass = driverClass;
             this.__explicitlySet__.add("driverClass");
@@ -276,6 +297,10 @@ public final class DataAssetSummaryFromAdwc extends DataAssetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * The Autonomous Data Warehouse instance service name.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }
@@ -286,6 +311,10 @@ public final class DataAssetSummaryFromAdwc extends DataAssetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceNames")
     private final java.util.List<String> serviceNames;
 
+    /**
+     * Array of service names that are available for selection in the serviceName property.
+     * @return the value
+     **/
     public java.util.List<String> getServiceNames() {
         return serviceNames;
     }
@@ -296,6 +325,10 @@ public final class DataAssetSummaryFromAdwc extends DataAssetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     private final String driverClass;
 
+    /**
+     * The Autonomous Data Warehouse driver class.
+     * @return the value
+     **/
     public String getDriverClass() {
         return driverClass;
     }

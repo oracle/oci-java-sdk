@@ -41,36 +41,69 @@ public final class AppCatalogListingResourceVersionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the listing this resource version belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
+        /**
+         * The OCID of the listing this resource version belongs to.
+         * @param listingId the value to set
+         * @return this builder
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-
+        /**
+         * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+         * Example: {@code 2018-03-20T12:32:53.532Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
         private java.util.Date timePublished;
 
+        /**
+         * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+         * Example: {@code 2018-03-20T12:32:53.532Z}
+         *
+         * @param timePublished the value to set
+         * @return this builder
+         **/
         public Builder timePublished(java.util.Date timePublished) {
             this.timePublished = timePublished;
             this.__explicitlySet__.add("timePublished");
             return this;
         }
-
+        /**
+         * OCID of the listing resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
         private String listingResourceId;
 
+        /**
+         * OCID of the listing resource.
+         * @param listingResourceId the value to set
+         * @return this builder
+         **/
         public Builder listingResourceId(String listingResourceId) {
             this.listingResourceId = listingResourceId;
             this.__explicitlySet__.add("listingResourceId");
             return this;
         }
-
+        /**
+         * Resource Version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
         private String listingResourceVersion;
 
+        /**
+         * Resource Version.
+         * @param listingResourceVersion the value to set
+         * @return this builder
+         **/
         public Builder listingResourceVersion(String listingResourceVersion) {
             this.listingResourceVersion = listingResourceVersion;
             this.__explicitlySet__.add("listingResourceVersion");
@@ -118,6 +151,10 @@ public final class AppCatalogListingResourceVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * The OCID of the listing this resource version belongs to.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -130,6 +167,12 @@ public final class AppCatalogListingResourceVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
     private final java.util.Date timePublished;
 
+    /**
+     * Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+     * Example: {@code 2018-03-20T12:32:53.532Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimePublished() {
         return timePublished;
     }
@@ -140,6 +183,10 @@ public final class AppCatalogListingResourceVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
     private final String listingResourceId;
 
+    /**
+     * OCID of the listing resource.
+     * @return the value
+     **/
     public String getListingResourceId() {
         return listingResourceId;
     }
@@ -150,6 +197,10 @@ public final class AppCatalogListingResourceVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
     private final String listingResourceVersion;
 
+    /**
+     * Resource Version.
+     * @return the value
+     **/
     public String getListingResourceVersion() {
         return listingResourceVersion;
     }

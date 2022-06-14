@@ -34,27 +34,103 @@ public final class Certificate {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+         * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+         * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_certificate_bundle}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
+        /**
+         * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+         * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+         * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_certificate_bundle}
+         *
+         * @param certificateName the value to set
+         * @return this builder
+         **/
         public Builder certificateName(String certificateName) {
             this.certificateName = certificateName;
             this.__explicitlySet__.add("certificateName");
             return this;
         }
-
+        /**
+         * The public certificate, in PEM format, that you received from your SSL certificate provider.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN CERTIFICATE-----
+         *     MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
+         *     A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
+         *     MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl
+         *     YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw
+         *     ...
+         *     -----END CERTIFICATE-----
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
         private String publicCertificate;
 
+        /**
+         * The public certificate, in PEM format, that you received from your SSL certificate provider.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN CERTIFICATE-----
+         *     MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
+         *     A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
+         *     MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl
+         *     YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw
+         *     ...
+         *     -----END CERTIFICATE-----
+         *
+         * @param publicCertificate the value to set
+         * @return this builder
+         **/
         public Builder publicCertificate(String publicCertificate) {
             this.publicCertificate = publicCertificate;
             this.__explicitlySet__.add("publicCertificate");
             return this;
         }
-
+        /**
+         * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN CERTIFICATE-----
+         *     MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+         *     EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+         *     VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+         *     aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+         *     ...
+         *     -----END CERTIFICATE-----
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
+        /**
+         * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN CERTIFICATE-----
+         *     MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+         *     EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+         *     VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+         *     aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+         *     ...
+         *     -----END CERTIFICATE-----
+         *
+         * @param caCertificate the value to set
+         * @return this builder
+         **/
         public Builder caCertificate(String caCertificate) {
             this.caCertificate = caCertificate;
             this.__explicitlySet__.add("caCertificate");
@@ -105,6 +181,15 @@ public final class Certificate {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
     private final String certificateName;
 
+    /**
+     * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+     * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+     * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_certificate_bundle}
+     *
+     * @return the value
+     **/
     public String getCertificateName() {
         return certificateName;
     }
@@ -126,6 +211,21 @@ public final class Certificate {
     @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
     private final String publicCertificate;
 
+    /**
+     * The public certificate, in PEM format, that you received from your SSL certificate provider.
+     * <p>
+     * Example:
+     * <p>
+     * -----BEGIN CERTIFICATE-----
+     *     MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
+     *     A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
+     *     MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl
+     *     YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw
+     *     ...
+     *     -----END CERTIFICATE-----
+     *
+     * @return the value
+     **/
     public String getPublicCertificate() {
         return publicCertificate;
     }
@@ -147,6 +247,21 @@ public final class Certificate {
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
     private final String caCertificate;
 
+    /**
+     * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+     * <p>
+     * Example:
+     * <p>
+     * -----BEGIN CERTIFICATE-----
+     *     MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+     *     EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+     *     VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+     *     aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+     *     ...
+     *     -----END CERTIFICATE-----
+     *
+     * @return the value
+     **/
     public String getCaCertificate() {
         return caCertificate;
     }

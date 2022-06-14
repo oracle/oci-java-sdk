@@ -36,36 +36,99 @@ public final class Service {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A string that represents the regional public IP address ranges for the Oracle service or
+         * services covered by this {@code Service} object. Also known as the {@code Service} object's *service
+         * CIDR label*.
+         * <p>
+         * When you set up a route rule to route traffic to the service gateway, use this value as the
+         * rule's destination. See {@link RouteTable}. Also, when you set up
+         * a security list rule to cover traffic with the service gateway, use the {@code cidrBlock} value
+         * as the rule's destination (for an egress rule) or the source (for an ingress rule).
+         * See {@link SecurityList}.
+         * <p>
+         * Example: {@code oci-phx-objectstorage}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        /**
+         * A string that represents the regional public IP address ranges for the Oracle service or
+         * services covered by this {@code Service} object. Also known as the {@code Service} object's *service
+         * CIDR label*.
+         * <p>
+         * When you set up a route rule to route traffic to the service gateway, use this value as the
+         * rule's destination. See {@link RouteTable}. Also, when you set up
+         * a security list rule to cover traffic with the service gateway, use the {@code cidrBlock} value
+         * as the rule's destination (for an egress rule) or the source (for an ingress rule).
+         * See {@link SecurityList}.
+         * <p>
+         * Example: {@code oci-phx-objectstorage}
+         *
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
-
+        /**
+         * Description of the Oracle service or services covered by this {@code Service} object.
+         * <p>
+         * Example: {@code OCI PHX Object Storage}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the Oracle service or services covered by this {@code Service} object.
+         * <p>
+         * Example: {@code OCI PHX Object Storage}
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The {@code Service} object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The {@code Service} object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Name of the {@code Service} object. This name can change and is not guaranteed to be unique.
+         * <p>
+         * Example: {@code OCI PHX Object Storage}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the {@code Service} object. This name can change and is not guaranteed to be unique.
+         * <p>
+         * Example: {@code OCI PHX Object Storage}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -122,6 +185,21 @@ public final class Service {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
+    /**
+     * A string that represents the regional public IP address ranges for the Oracle service or
+     * services covered by this {@code Service} object. Also known as the {@code Service} object's *service
+     * CIDR label*.
+     * <p>
+     * When you set up a route rule to route traffic to the service gateway, use this value as the
+     * rule's destination. See {@link RouteTable}. Also, when you set up
+     * a security list rule to cover traffic with the service gateway, use the {@code cidrBlock} value
+     * as the rule's destination (for an egress rule) or the source (for an ingress rule).
+     * See {@link SecurityList}.
+     * <p>
+     * Example: {@code oci-phx-objectstorage}
+     *
+     * @return the value
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }
@@ -135,6 +213,13 @@ public final class Service {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the Oracle service or services covered by this {@code Service} object.
+     * <p>
+     * Example: {@code OCI PHX Object Storage}
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -145,6 +230,10 @@ public final class Service {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The {@code Service} object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -158,6 +247,13 @@ public final class Service {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the {@code Service} object. This name can change and is not guaranteed to be unique.
+     * <p>
+     * Example: {@code OCI PHX Object Storage}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

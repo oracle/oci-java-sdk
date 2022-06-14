@@ -35,10 +35,17 @@ public final class DataObjectCustomColumnUnit extends DataObjectColumnUnit {
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Custom column unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
+        /**
+         * Custom column unit.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -87,6 +94,10 @@ public final class DataObjectCustomColumnUnit extends DataObjectColumnUnit {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
+    /**
+     * Custom column unit.
+     * @return the value
+     **/
     public String getUnit() {
         return unit;
     }

@@ -60,10 +60,17 @@ public final class ValueNumber extends FieldValue {
             this.__explicitlySet__.add("wordIndexes");
             return this;
         }
-
+        /**
+         * The number value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Float value;
 
+        /**
+         * The number value.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Float value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -122,6 +129,10 @@ public final class ValueNumber extends FieldValue {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Float value;
 
+    /**
+     * The number value.
+     * @return the value
+     **/
     public Float getValue() {
         return value;
     }

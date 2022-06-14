@@ -17,6 +17,9 @@ public class PublishDigitalAssistantRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -25,6 +28,9 @@ public class PublishDigitalAssistantRequest
      */
     private String digitalAssistantId;
 
+    /**
+     * Unique Digital Assistant identifier.
+     */
     public String getDigitalAssistantId() {
         return digitalAssistantId;
     }
@@ -39,6 +45,15 @@ public class PublishDigitalAssistantRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +62,9 @@ public class PublishDigitalAssistantRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,10 +76,14 @@ public class PublishDigitalAssistantRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -69,10 +91,14 @@ public class PublishDigitalAssistantRequest
             return this;
         }
 
+        /**
+         * Unique Digital Assistant identifier.
+         */
         private String digitalAssistantId = null;
 
         /**
          * Unique Digital Assistant identifier.
+         * @param digitalAssistantId the value to set
          * @return this builder instance
          */
         public Builder digitalAssistantId(String digitalAssistantId) {
@@ -80,6 +106,15 @@ public class PublishDigitalAssistantRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -90,6 +125,7 @@ public class PublishDigitalAssistantRequest
          * instance only if the etag that you provide matches the instance's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -97,10 +133,14 @@ public class PublishDigitalAssistantRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -182,7 +222,8 @@ public class PublishDigitalAssistantRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -192,6 +233,10 @@ public class PublishDigitalAssistantRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

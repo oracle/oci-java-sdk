@@ -28,18 +28,33 @@ public final class CostAnalysisUI {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The graph type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("graph")
         private Graph graph;
 
+        /**
+         * The graph type.
+         * @param graph the value to set
+         * @return this builder
+         **/
         public Builder graph(Graph graph) {
             this.graph = graph;
             this.__explicitlySet__.add("graph");
             return this;
         }
-
+        /**
+         * A cumulative graph.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCumulativeGraph")
         private Boolean isCumulativeGraph;
 
+        /**
+         * A cumulative graph.
+         * @param isCumulativeGraph the value to set
+         * @return this builder
+         **/
         public Builder isCumulativeGraph(Boolean isCumulativeGraph) {
             this.isCumulativeGraph = isCumulativeGraph;
             this.__explicitlySet__.add("isCumulativeGraph");
@@ -129,6 +144,10 @@ public final class CostAnalysisUI {
     @com.fasterxml.jackson.annotation.JsonProperty("graph")
     private final Graph graph;
 
+    /**
+     * The graph type.
+     * @return the value
+     **/
     public Graph getGraph() {
         return graph;
     }
@@ -139,6 +158,10 @@ public final class CostAnalysisUI {
     @com.fasterxml.jackson.annotation.JsonProperty("isCumulativeGraph")
     private final Boolean isCumulativeGraph;
 
+    /**
+     * A cumulative graph.
+     * @return the value
+     **/
     public Boolean getIsCumulativeGraph() {
         return isCumulativeGraph;
     }

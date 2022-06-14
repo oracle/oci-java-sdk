@@ -34,18 +34,33 @@ public final class DataAssetExportScope {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique key of the object selected for export.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectKey")
         private String objectKey;
 
+        /**
+         * Unique key of the object selected for export.
+         * @param objectKey the value to set
+         * @return this builder
+         **/
         public Builder objectKey(String objectKey) {
             this.objectKey = objectKey;
             this.__explicitlySet__.add("objectKey");
             return this;
         }
-
+        /**
+         * Array of type keys selected for export.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportTypeIds")
         private java.util.List<String> exportTypeIds;
 
+        /**
+         * Array of type keys selected for export.
+         * @param exportTypeIds the value to set
+         * @return this builder
+         **/
         public Builder exportTypeIds(java.util.List<String> exportTypeIds) {
             this.exportTypeIds = exportTypeIds;
             this.__explicitlySet__.add("exportTypeIds");
@@ -87,6 +102,10 @@ public final class DataAssetExportScope {
     @com.fasterxml.jackson.annotation.JsonProperty("objectKey")
     private final String objectKey;
 
+    /**
+     * Unique key of the object selected for export.
+     * @return the value
+     **/
     public String getObjectKey() {
         return objectKey;
     }
@@ -97,6 +116,10 @@ public final class DataAssetExportScope {
     @com.fasterxml.jackson.annotation.JsonProperty("exportTypeIds")
     private final java.util.List<String> exportTypeIds;
 
+    /**
+     * Array of type keys selected for export.
+     * @return the value
+     **/
     public java.util.List<String> getExportTypeIds() {
         return exportTypeIds;
     }

@@ -15,6 +15,12 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages of results remain.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -26,6 +32,12 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +47,10 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.email.model.DkimCollection dkimCollection;
 
+    /**
+     * The returned DkimCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.email.model.DkimCollection getDkimCollection() {
         return dkimCollection;
     }
@@ -64,22 +80,54 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DkimCollection instance.
+         */
         private com.oracle.bmc.email.model.DkimCollection dkimCollection;
 
+        /**
+         * The returned DkimCollection instance.
+         * @param dkimCollection the value to set
+         * @return this builder
+         */
         public Builder dkimCollection(com.oracle.bmc.email.model.DkimCollection dkimCollection) {
             this.dkimCollection = dkimCollection;
             return this;
@@ -98,12 +146,20 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListDkimsResponse build() {
             return new ListDkimsResponse(
                     __httpStatusCode__, opcNextPage, opcRequestId, dkimCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

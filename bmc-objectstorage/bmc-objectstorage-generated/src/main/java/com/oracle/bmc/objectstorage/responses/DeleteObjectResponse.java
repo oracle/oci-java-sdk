@@ -13,6 +13,10 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -24,6 +28,12 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.Date lastModified;
 
+    /**
+     * The time the object was deleted, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * @return the value
+     */
     public java.util.Date getLastModified() {
         return lastModified;
     }
@@ -44,6 +58,12 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String versionId;
 
+    /**
+     * The {@code versionId} of the delete marker created as a result of the DELETE Object.
+     * If the request contains a specific {@code versionId}, then this response header will be the same as the requested {@code versionId} of the object that was deleted.
+     *
+     * @return the value
+     */
     public String getVersionId() {
         return versionId;
     }
@@ -54,6 +74,11 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private Boolean isDeleteMarker;
 
+    /**
+     * This is {@code true} if the deleted object is a delete marker, otherwise {@code false}
+     *
+     * @return the value
+     */
     public Boolean getIsDeleteMarker() {
         return isDeleteMarker;
     }
@@ -89,36 +114,86 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The time the object was deleted, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         */
         private java.util.Date lastModified;
 
+        /**
+         * The time the object was deleted, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * @param lastModified the value to set
+         * @return this builder
+         */
         public Builder lastModified(java.util.Date lastModified) {
             this.lastModified = lastModified;
             return this;
         }
 
+        /**
+         * The {@code versionId} of the delete marker created as a result of the DELETE Object.
+         * If the request contains a specific {@code versionId}, then this response header will be the same as the requested {@code versionId} of the object that was deleted.
+         *
+         */
         private String versionId;
 
+        /**
+         * The {@code versionId} of the delete marker created as a result of the DELETE Object.
+         * If the request contains a specific {@code versionId}, then this response header will be the same as the requested {@code versionId} of the object that was deleted.
+         *
+         * @param versionId the value to set
+         * @return this builder
+         */
         public Builder versionId(String versionId) {
             this.versionId = versionId;
             return this;
         }
 
+        /**
+         * This is {@code true} if the deleted object is a delete marker, otherwise {@code false}
+         *
+         */
         private Boolean isDeleteMarker;
 
+        /**
+         * This is {@code true} if the deleted object is a delete marker, otherwise {@code false}
+         *
+         * @param isDeleteMarker the value to set
+         * @return this builder
+         */
         public Builder isDeleteMarker(Boolean isDeleteMarker) {
             this.isDeleteMarker = isDeleteMarker;
             return this;
@@ -139,6 +214,10 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public DeleteObjectResponse build() {
             return new DeleteObjectResponse(
                     __httpStatusCode__,
@@ -150,6 +229,10 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

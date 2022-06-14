@@ -33,36 +33,69 @@ public final class AppCatalogListingSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the region free ocid of the listing resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
+        /**
+         * the region free ocid of the listing resource.
+         * @param listingId the value to set
+         * @return this builder
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The short summary for the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
+        /**
+         * The short summary for the listing.
+         * @param summary the value to set
+         * @return this builder
+         **/
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-
+        /**
+         * The name of the publisher who published this listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
         private String publisherName;
 
+        /**
+         * The name of the publisher who published this listing.
+         * @param publisherName the value to set
+         * @return this builder
+         **/
         public Builder publisherName(String publisherName) {
             this.publisherName = publisherName;
             this.__explicitlySet__.add("publisherName");
@@ -109,6 +142,10 @@ public final class AppCatalogListingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * the region free ocid of the listing resource.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -121,6 +158,12 @@ public final class AppCatalogListingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -131,6 +174,10 @@ public final class AppCatalogListingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
+    /**
+     * The short summary for the listing.
+     * @return the value
+     **/
     public String getSummary() {
         return summary;
     }
@@ -141,6 +188,10 @@ public final class AppCatalogListingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
     private final String publisherName;
 
+    /**
+     * The name of the publisher who published this listing.
+     * @return the value
+     **/
     public String getPublisherName() {
         return publisherName;
     }

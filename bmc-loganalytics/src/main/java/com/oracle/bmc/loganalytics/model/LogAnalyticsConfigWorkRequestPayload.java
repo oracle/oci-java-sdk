@@ -41,36 +41,65 @@ public final class LogAnalyticsConfigWorkRequestPayload {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The source name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
+        /**
+         * The source name.
+         * @param sourceName the value to set
+         * @return this builder
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-
+        /**
+         * The entity unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
+        /**
+         * The entity unique identifier.
+         * @param entityId the value to set
+         * @return this builder
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-
+        /**
+         * The lookup reference as an integer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
         private Long lookupReference;
 
+        /**
+         * The lookup reference as an integer.
+         * @param lookupReference the value to set
+         * @return this builder
+         **/
         public Builder lookupReference(Long lookupReference) {
             this.lookupReference = lookupReference;
             this.__explicitlySet__.add("lookupReference");
             return this;
         }
-
+        /**
+         * lookupReference
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
         private String lookupReferenceString;
 
+        /**
+         * lookupReference
+         * @param lookupReferenceString the value to set
+         * @return this builder
+         **/
         public Builder lookupReferenceString(String lookupReferenceString) {
             this.lookupReferenceString = lookupReferenceString;
             this.__explicitlySet__.add("lookupReferenceString");
@@ -118,6 +147,10 @@ public final class LogAnalyticsConfigWorkRequestPayload {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * The source name.
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }
@@ -128,6 +161,10 @@ public final class LogAnalyticsConfigWorkRequestPayload {
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
+    /**
+     * The entity unique identifier.
+     * @return the value
+     **/
     public String getEntityId() {
         return entityId;
     }
@@ -138,6 +175,10 @@ public final class LogAnalyticsConfigWorkRequestPayload {
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
     private final Long lookupReference;
 
+    /**
+     * The lookup reference as an integer.
+     * @return the value
+     **/
     public Long getLookupReference() {
         return lookupReference;
     }
@@ -148,6 +189,10 @@ public final class LogAnalyticsConfigWorkRequestPayload {
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
     private final String lookupReferenceString;
 
+    /**
+     * lookupReference
+     * @return the value
+     **/
     public String getLookupReferenceString() {
         return lookupReferenceString;
     }

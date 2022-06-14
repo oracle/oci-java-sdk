@@ -15,6 +15,12 @@ public class ListJobDefinitionsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class ListJobDefinitionsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcNextPage;
 
+    /**
+     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -34,6 +45,10 @@ public class ListJobDefinitionsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.datacatalog.model.JobDefinitionCollection jobDefinitionCollection;
 
+    /**
+     * The returned JobDefinitionCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.datacatalog.model.JobDefinitionCollection getJobDefinitionCollection() {
         return jobDefinitionCollection;
     }
@@ -63,22 +78,52 @@ public class ListJobDefinitionsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned JobDefinitionCollection instance.
+         */
         private com.oracle.bmc.datacatalog.model.JobDefinitionCollection jobDefinitionCollection;
 
+        /**
+         * The returned JobDefinitionCollection instance.
+         * @param jobDefinitionCollection the value to set
+         * @return this builder
+         */
         public Builder jobDefinitionCollection(
                 com.oracle.bmc.datacatalog.model.JobDefinitionCollection jobDefinitionCollection) {
             this.jobDefinitionCollection = jobDefinitionCollection;
@@ -98,12 +143,20 @@ public class ListJobDefinitionsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListJobDefinitionsResponse build() {
             return new ListJobDefinitionsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, jobDefinitionCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class GetAutonomousExadataInfrastructureRequest
      */
     private String autonomousExadataInfrastructureId;
 
+    /**
+     * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousExadataInfrastructureId() {
         return autonomousExadataInfrastructureId;
     }
@@ -28,10 +31,14 @@ public class GetAutonomousExadataInfrastructureRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousExadataInfrastructureId = null;
 
         /**
          * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousExadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
@@ -108,12 +115,17 @@ public class GetAutonomousExadataInfrastructureRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().autonomousExadataInfrastructureId(autonomousExadataInfrastructureId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,18 +28,33 @@ public final class TextSpan {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The offset of the selected text within the entire text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private java.math.BigDecimal offset;
 
+        /**
+         * The offset of the selected text within the entire text.
+         * @param offset the value to set
+         * @return this builder
+         **/
         public Builder offset(java.math.BigDecimal offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-
+        /**
+         * The length of the selected text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private java.math.BigDecimal length;
 
+        /**
+         * The length of the selected text.
+         * @param length the value to set
+         * @return this builder
+         **/
         public Builder length(java.math.BigDecimal length) {
             this.length = length;
             this.__explicitlySet__.add("length");
@@ -81,6 +96,10 @@ public final class TextSpan {
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final java.math.BigDecimal offset;
 
+    /**
+     * The offset of the selected text within the entire text.
+     * @return the value
+     **/
     public java.math.BigDecimal getOffset() {
         return offset;
     }
@@ -91,6 +110,10 @@ public final class TextSpan {
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final java.math.BigDecimal length;
 
+    /**
+     * The length of the selected text.
+     * @return the value
+     **/
     public java.math.BigDecimal getLength() {
         return length;
     }

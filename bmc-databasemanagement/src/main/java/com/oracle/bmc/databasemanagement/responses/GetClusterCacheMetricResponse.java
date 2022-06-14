@@ -15,6 +15,12 @@ public class GetClusterCacheMetricResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetClusterCacheMetricResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.databasemanagement.model.ClusterCacheMetric clusterCacheMetric;
 
+    /**
+     * The returned ClusterCacheMetric instance.
+     * @return the value
+     */
     public com.oracle.bmc.databasemanagement.model.ClusterCacheMetric getClusterCacheMetric() {
         return clusterCacheMetric;
     }
@@ -46,15 +56,35 @@ public class GetClusterCacheMetricResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ClusterCacheMetric instance.
+         */
         private com.oracle.bmc.databasemanagement.model.ClusterCacheMetric clusterCacheMetric;
 
+        /**
+         * The returned ClusterCacheMetric instance.
+         * @param clusterCacheMetric the value to set
+         * @return this builder
+         */
         public Builder clusterCacheMetric(
                 com.oracle.bmc.databasemanagement.model.ClusterCacheMetric clusterCacheMetric) {
             this.clusterCacheMetric = clusterCacheMetric;
@@ -73,12 +103,20 @@ public class GetClusterCacheMetricResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetClusterCacheMetricResponse build() {
             return new GetClusterCacheMetricResponse(
                     __httpStatusCode__, opcRequestId, clusterCacheMetric);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

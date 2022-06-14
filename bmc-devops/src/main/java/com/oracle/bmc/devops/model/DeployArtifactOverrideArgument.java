@@ -31,27 +31,49 @@ public final class DeployArtifactOverrideArgument {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the artifact to which this parameter applies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
         private String deployArtifactId;
 
+        /**
+         * The OCID of the artifact to which this parameter applies.
+         * @param deployArtifactId the value to set
+         * @return this builder
+         **/
         public Builder deployArtifactId(String deployArtifactId) {
             this.deployArtifactId = deployArtifactId;
             this.__explicitlySet__.add("deployArtifactId");
             return this;
         }
-
+        /**
+         * Name of the parameter (case-sensitive).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the parameter (case-sensitive).
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Value of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * Value of the parameter.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -95,6 +117,10 @@ public final class DeployArtifactOverrideArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
     private final String deployArtifactId;
 
+    /**
+     * The OCID of the artifact to which this parameter applies.
+     * @return the value
+     **/
     public String getDeployArtifactId() {
         return deployArtifactId;
     }
@@ -105,6 +131,10 @@ public final class DeployArtifactOverrideArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the parameter (case-sensitive).
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -115,6 +145,10 @@ public final class DeployArtifactOverrideArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * Value of the parameter.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

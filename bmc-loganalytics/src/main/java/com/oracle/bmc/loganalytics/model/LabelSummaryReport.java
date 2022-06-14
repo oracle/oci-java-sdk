@@ -30,18 +30,33 @@ public final class LabelSummaryReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The count of custom (user defined) labels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
         private Integer nonOobCount;
 
+        /**
+         * The count of custom (user defined) labels.
+         * @param nonOobCount the value to set
+         * @return this builder
+         **/
         public Builder nonOobCount(Integer nonOobCount) {
             this.nonOobCount = nonOobCount;
             this.__explicitlySet__.add("nonOobCount");
             return this;
         }
-
+        /**
+         * The count of built in labels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
         private Integer oobCount;
 
+        /**
+         * The count of built in labels.
+         * @param oobCount the value to set
+         * @return this builder
+         **/
         public Builder oobCount(Integer oobCount) {
             this.oobCount = oobCount;
             this.__explicitlySet__.add("oobCount");
@@ -83,6 +98,10 @@ public final class LabelSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
     private final Integer nonOobCount;
 
+    /**
+     * The count of custom (user defined) labels.
+     * @return the value
+     **/
     public Integer getNonOobCount() {
         return nonOobCount;
     }
@@ -93,6 +112,10 @@ public final class LabelSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
     private final Integer oobCount;
 
+    /**
+     * The count of built in labels.
+     * @return the value
+     **/
     public Integer getOobCount() {
         return oobCount;
     }

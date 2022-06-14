@@ -18,6 +18,9 @@ public class CreateDataAssetRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class CreateDataAssetRequest
      */
     private com.oracle.bmc.datacatalog.model.CreateDataAssetDetails createDataAssetDetails;
 
+    /**
+     * The information used to create the data asset.
+     */
     public com.oracle.bmc.datacatalog.model.CreateDataAssetDetails getCreateDataAssetDetails() {
         return createDataAssetDetails;
     }
@@ -34,6 +40,9 @@ public class CreateDataAssetRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,6 +56,14 @@ public class CreateDataAssetRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -69,10 +86,14 @@ public class CreateDataAssetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -80,11 +101,15 @@ public class CreateDataAssetRequest
             return this;
         }
 
+        /**
+         * The information used to create the data asset.
+         */
         private com.oracle.bmc.datacatalog.model.CreateDataAssetDetails createDataAssetDetails =
                 null;
 
         /**
          * The information used to create the data asset.
+         * @param createDataAssetDetails the value to set
          * @return this builder instance
          */
         public Builder createDataAssetDetails(
@@ -93,10 +118,14 @@ public class CreateDataAssetRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -104,6 +133,14 @@ public class CreateDataAssetRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -113,6 +150,7 @@ public class CreateDataAssetRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -205,7 +243,8 @@ public class CreateDataAssetRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +254,10 @@ public class CreateDataAssetRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

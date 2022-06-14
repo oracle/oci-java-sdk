@@ -29,9 +29,17 @@ public final class EnterpriseManagerBridges {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Enterprise Manager Bridge Object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridges")
         private Object enterpriseManagerBridges;
 
+        /**
+         * Enterprise Manager Bridge Object.
+         * @param enterpriseManagerBridges the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerBridges(Object enterpriseManagerBridges) {
             this.enterpriseManagerBridges = enterpriseManagerBridges;
             this.__explicitlySet__.add("enterpriseManagerBridges");
@@ -74,6 +82,10 @@ public final class EnterpriseManagerBridges {
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridges")
     private final Object enterpriseManagerBridges;
 
+    /**
+     * Enterprise Manager Bridge Object.
+     * @return the value
+     **/
     public Object getEnterpriseManagerBridges() {
         return enterpriseManagerBridges;
     }

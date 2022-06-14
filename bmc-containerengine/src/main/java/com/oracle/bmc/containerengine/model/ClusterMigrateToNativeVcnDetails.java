@@ -31,18 +31,35 @@ public final class ClusterMigrateToNativeVcnDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The network configuration for access to the Cluster control plane.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointConfig")
         private ClusterEndpointConfig endpointConfig;
 
+        /**
+         * The network configuration for access to the Cluster control plane.
+         *
+         * @param endpointConfig the value to set
+         * @return this builder
+         **/
         public Builder endpointConfig(ClusterEndpointConfig endpointConfig) {
             this.endpointConfig = endpointConfig;
             this.__explicitlySet__.add("endpointConfig");
             return this;
         }
-
+        /**
+         * The optional override of the non-native endpoint decommission time after migration is complete. Defaults to 30 days.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("decommissionDelayDuration")
         private String decommissionDelayDuration;
 
+        /**
+         * The optional override of the non-native endpoint decommission time after migration is complete. Defaults to 30 days.
+         * @param decommissionDelayDuration the value to set
+         * @return this builder
+         **/
         public Builder decommissionDelayDuration(String decommissionDelayDuration) {
             this.decommissionDelayDuration = decommissionDelayDuration;
             this.__explicitlySet__.add("decommissionDelayDuration");
@@ -88,6 +105,11 @@ public final class ClusterMigrateToNativeVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("endpointConfig")
     private final ClusterEndpointConfig endpointConfig;
 
+    /**
+     * The network configuration for access to the Cluster control plane.
+     *
+     * @return the value
+     **/
     public ClusterEndpointConfig getEndpointConfig() {
         return endpointConfig;
     }
@@ -98,6 +120,10 @@ public final class ClusterMigrateToNativeVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("decommissionDelayDuration")
     private final String decommissionDelayDuration;
 
+    /**
+     * The optional override of the non-native endpoint decommission time after migration is complete. Defaults to 30 days.
+     * @return the value
+     **/
     public String getDecommissionDelayDuration() {
         return decommissionDelayDuration;
     }

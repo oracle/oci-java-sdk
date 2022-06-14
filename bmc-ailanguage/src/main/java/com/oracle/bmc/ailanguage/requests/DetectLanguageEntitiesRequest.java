@@ -20,6 +20,10 @@ public class DetectLanguageEntitiesRequest
     private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails
             detectLanguageEntitiesDetails;
 
+    /**
+     * The details to make a Entity detect call.
+     *
+     */
     public com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails
             getDetectLanguageEntitiesDetails() {
         return detectLanguageEntitiesDetails;
@@ -29,6 +33,9 @@ public class DetectLanguageEntitiesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +44,9 @@ public class DetectLanguageEntitiesRequest
      */
     private com.oracle.bmc.ailanguage.model.NerModelVersion modelVersion;
 
+    /**
+     * Named Entity Recognition model versions. By default user will get output from V2.1 implementation.
+     */
     public com.oracle.bmc.ailanguage.model.NerModelVersion getModelVersion() {
         return modelVersion;
     }
@@ -47,6 +57,11 @@ public class DetectLanguageEntitiesRequest
      */
     private Boolean isPii;
 
+    /**
+     * If this parameter is set to true, you only get PII (Personally identifiable information) entities
+     * like PhoneNumber, Email, Person, and so on. Default value is false.
+     *
+     */
     public Boolean getIsPii() {
         return isPii;
     }
@@ -69,12 +84,17 @@ public class DetectLanguageEntitiesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details to make a Entity detect call.
+         *
+         */
         private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails
                 detectLanguageEntitiesDetails = null;
 
         /**
          * The details to make a Entity detect call.
          *
+         * @param detectLanguageEntitiesDetails the value to set
          * @return this builder instance
          */
         public Builder detectLanguageEntitiesDetails(
@@ -84,10 +104,14 @@ public class DetectLanguageEntitiesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -95,10 +119,14 @@ public class DetectLanguageEntitiesRequest
             return this;
         }
 
+        /**
+         * Named Entity Recognition model versions. By default user will get output from V2.1 implementation.
+         */
         private com.oracle.bmc.ailanguage.model.NerModelVersion modelVersion = null;
 
         /**
          * Named Entity Recognition model versions. By default user will get output from V2.1 implementation.
+         * @param modelVersion the value to set
          * @return this builder instance
          */
         public Builder modelVersion(com.oracle.bmc.ailanguage.model.NerModelVersion modelVersion) {
@@ -106,12 +134,18 @@ public class DetectLanguageEntitiesRequest
             return this;
         }
 
+        /**
+         * If this parameter is set to true, you only get PII (Personally identifiable information) entities
+         * like PhoneNumber, Email, Person, and so on. Default value is false.
+         *
+         */
         private Boolean isPii = null;
 
         /**
          * If this parameter is set to true, you only get PII (Personally identifiable information) entities
          * like PhoneNumber, Email, Person, and so on. Default value is false.
          *
+         * @param isPii the value to set
          * @return this builder instance
          */
         public Builder isPii(Boolean isPii) {
@@ -204,7 +238,8 @@ public class DetectLanguageEntitiesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -214,6 +249,10 @@ public class DetectLanguageEntitiesRequest
                 .isPii(isPii);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class ListAllowedDomainLicenseTypesRequest
      */
     private String currentLicenseTypeName;
 
+    /**
+     * The license type of the identity domain.
+     */
     public String getCurrentLicenseTypeName() {
         return currentLicenseTypeName;
     }
@@ -27,6 +30,11 @@ public class ListAllowedDomainLicenseTypesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,10 +46,14 @@ public class ListAllowedDomainLicenseTypesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The license type of the identity domain.
+         */
         private String currentLicenseTypeName = null;
 
         /**
          * The license type of the identity domain.
+         * @param currentLicenseTypeName the value to set
          * @return this builder instance
          */
         public Builder currentLicenseTypeName(String currentLicenseTypeName) {
@@ -49,12 +61,18 @@ public class ListAllowedDomainLicenseTypesRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -133,7 +151,8 @@ public class ListAllowedDomainLicenseTypesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -141,6 +160,10 @@ public class ListAllowedDomainLicenseTypesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

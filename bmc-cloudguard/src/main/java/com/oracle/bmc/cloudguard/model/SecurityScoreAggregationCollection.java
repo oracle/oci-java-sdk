@@ -29,9 +29,17 @@ public final class SecurityScoreAggregationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The items consist of all the SecurityScoreAggregation objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SecurityScoreAggregation> items;
 
+        /**
+         * The items consist of all the SecurityScoreAggregation objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SecurityScoreAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class SecurityScoreAggregationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SecurityScoreAggregation> items;
 
+    /**
+     * The items consist of all the SecurityScoreAggregation objects.
+     * @return the value
+     **/
     public java.util.List<SecurityScoreAggregation> getItems() {
         return items;
     }

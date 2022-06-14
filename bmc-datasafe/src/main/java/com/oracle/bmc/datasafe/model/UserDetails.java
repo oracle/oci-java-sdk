@@ -46,54 +46,97 @@ public final class UserDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the user.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The status of the user account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * The status of the user account.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The name of the profile assigned to the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profile")
         private String profile;
 
+        /**
+         * The name of the profile assigned to the user.
+         * @param profile the value to set
+         * @return this builder
+         **/
         public Builder profile(String profile) {
             this.profile = profile;
             this.__explicitlySet__.add("profile");
             return this;
         }
-
+        /**
+         * The default tablespace of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
         private String tablespace;
 
+        /**
+         * The default tablespace of the user.
+         * @param tablespace the value to set
+         * @return this builder
+         **/
         public Builder tablespace(String tablespace) {
             this.tablespace = tablespace;
             this.__explicitlySet__.add("tablespace");
             return this;
         }
-
+        /**
+         * Indicates whether or not the user is predefined by ORACLE.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUserPredefinedByOracle")
         private Boolean isUserPredefinedByOracle;
 
+        /**
+         * Indicates whether or not the user is predefined by ORACLE.
+         * @param isUserPredefinedByOracle the value to set
+         * @return this builder
+         **/
         public Builder isUserPredefinedByOracle(Boolean isUserPredefinedByOracle) {
             this.isUserPredefinedByOracle = isUserPredefinedByOracle;
             this.__explicitlySet__.add("isUserPredefinedByOracle");
             return this;
         }
-
+        /**
+         * The authentication type of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AuthenticationType authenticationType;
 
+        /**
+         * The authentication type of the user.
+         * @param authenticationType the value to set
+         * @return this builder
+         **/
         public Builder authenticationType(AuthenticationType authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
@@ -148,6 +191,10 @@ public final class UserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the user.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -158,6 +205,10 @@ public final class UserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * The status of the user account.
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }
@@ -168,6 +219,10 @@ public final class UserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
     private final String profile;
 
+    /**
+     * The name of the profile assigned to the user.
+     * @return the value
+     **/
     public String getProfile() {
         return profile;
     }
@@ -178,6 +233,10 @@ public final class UserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
     private final String tablespace;
 
+    /**
+     * The default tablespace of the user.
+     * @return the value
+     **/
     public String getTablespace() {
         return tablespace;
     }
@@ -188,6 +247,10 @@ public final class UserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isUserPredefinedByOracle")
     private final Boolean isUserPredefinedByOracle;
 
+    /**
+     * Indicates whether or not the user is predefined by ORACLE.
+     * @return the value
+     **/
     public Boolean getIsUserPredefinedByOracle() {
         return isUserPredefinedByOracle;
     }
@@ -233,6 +296,10 @@ public final class UserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final AuthenticationType authenticationType;
 
+    /**
+     * The authentication type of the user.
+     * @return the value
+     **/
     public AuthenticationType getAuthenticationType() {
         return authenticationType;
     }

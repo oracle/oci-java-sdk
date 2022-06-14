@@ -17,6 +17,9 @@ public class ListManagementAgentInstallKeysRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment to which a request will be scoped.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListManagementAgentInstallKeysRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -33,6 +39,9 @@ public class ListManagementAgentInstallKeysRequest
      */
     private String accessLevel;
 
+    /**
+     * Value of this is always "ACCESSIBLE" and any other value is not supported.
+     */
     public String getAccessLevel() {
         return accessLevel;
     }
@@ -41,6 +50,9 @@ public class ListManagementAgentInstallKeysRequest
      */
     private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState;
 
+    /**
+     * Filter to return only Management Agents in the particular lifecycle state.
+     */
     public com.oracle.bmc.managementagent.model.LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -49,6 +61,9 @@ public class ListManagementAgentInstallKeysRequest
      */
     private String displayName;
 
+    /**
+     * The display name for which the Key needs to be listed.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -57,6 +72,9 @@ public class ListManagementAgentInstallKeysRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -101,6 +119,9 @@ public class ListManagementAgentInstallKeysRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -147,6 +168,10 @@ public class ListManagementAgentInstallKeysRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -155,6 +180,9 @@ public class ListManagementAgentInstallKeysRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -166,10 +194,14 @@ public class ListManagementAgentInstallKeysRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment to which a request will be scoped.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment to which a request will be scoped.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -177,10 +209,14 @@ public class ListManagementAgentInstallKeysRequest
             return this;
         }
 
+        /**
+         * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -188,10 +224,14 @@ public class ListManagementAgentInstallKeysRequest
             return this;
         }
 
+        /**
+         * Value of this is always "ACCESSIBLE" and any other value is not supported.
+         */
         private String accessLevel = null;
 
         /**
          * Value of this is always "ACCESSIBLE" and any other value is not supported.
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(String accessLevel) {
@@ -199,10 +239,14 @@ public class ListManagementAgentInstallKeysRequest
             return this;
         }
 
+        /**
+         * Filter to return only Management Agents in the particular lifecycle state.
+         */
         private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState = null;
 
         /**
          * Filter to return only Management Agents in the particular lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -211,10 +255,14 @@ public class ListManagementAgentInstallKeysRequest
             return this;
         }
 
+        /**
+         * The display name for which the Key needs to be listed.
+         */
         private String displayName = null;
 
         /**
          * The display name for which the Key needs to be listed.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -222,10 +270,14 @@ public class ListManagementAgentInstallKeysRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -233,10 +285,14 @@ public class ListManagementAgentInstallKeysRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -244,11 +300,16 @@ public class ListManagementAgentInstallKeysRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -256,10 +317,14 @@ public class ListManagementAgentInstallKeysRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -352,7 +417,8 @@ public class ListManagementAgentInstallKeysRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -367,6 +433,10 @@ public class ListManagementAgentInstallKeysRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

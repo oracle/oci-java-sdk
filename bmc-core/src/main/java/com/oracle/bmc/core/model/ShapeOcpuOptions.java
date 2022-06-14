@@ -31,18 +31,37 @@ public final class ShapeOcpuOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The minimum number of OCPUs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Float min;
 
+        /**
+         * The minimum number of OCPUs.
+         *
+         * @param min the value to set
+         * @return this builder
+         **/
         public Builder min(Float min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-
+        /**
+         * The maximum number of OCPUs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Float max;
 
+        /**
+         * The maximum number of OCPUs.
+         *
+         * @param max the value to set
+         * @return this builder
+         **/
         public Builder max(Float max) {
             this.max = max;
             this.__explicitlySet__.add("max");
@@ -85,6 +104,11 @@ public final class ShapeOcpuOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Float min;
 
+    /**
+     * The minimum number of OCPUs.
+     *
+     * @return the value
+     **/
     public Float getMin() {
         return min;
     }
@@ -96,6 +120,11 @@ public final class ShapeOcpuOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Float max;
 
+    /**
+     * The maximum number of OCPUs.
+     *
+     * @return the value
+     **/
     public Float getMax() {
         return max;
     }

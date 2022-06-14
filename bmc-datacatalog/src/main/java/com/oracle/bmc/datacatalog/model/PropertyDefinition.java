@@ -32,36 +32,65 @@ public final class PropertyDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the property.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The properties value type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * The properties value type.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Whether instances of the type are required to set this property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
+        /**
+         * Whether instances of the type are required to set this property.
+         * @param isRequired the value to set
+         * @return this builder
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
             return this;
         }
-
+        /**
+         * Indicates if this property value can be updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUpdatable")
         private Boolean isUpdatable;
 
+        /**
+         * Indicates if this property value can be updated.
+         * @param isUpdatable the value to set
+         * @return this builder
+         **/
         public Builder isUpdatable(Boolean isUpdatable) {
             this.isUpdatable = isUpdatable;
             this.__explicitlySet__.add("isUpdatable");
@@ -108,6 +137,10 @@ public final class PropertyDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the property.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -118,6 +151,10 @@ public final class PropertyDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * The properties value type.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -128,6 +165,10 @@ public final class PropertyDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
+    /**
+     * Whether instances of the type are required to set this property.
+     * @return the value
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }
@@ -138,6 +179,10 @@ public final class PropertyDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("isUpdatable")
     private final Boolean isUpdatable;
 
+    /**
+     * Indicates if this property value can be updated.
+     * @return the value
+     **/
     public Boolean getIsUpdatable() {
         return isUpdatable;
     }

@@ -28,18 +28,37 @@ public final class DNS {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total DNS resolution duration, in milliseconds. Calculated using {@code domainLookupEnd}
+         * minus {@code domainLookupStart}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainLookupDuration")
         private Double domainLookupDuration;
 
+        /**
+         * Total DNS resolution duration, in milliseconds. Calculated using {@code domainLookupEnd}
+         * minus {@code domainLookupStart}.
+         *
+         * @param domainLookupDuration the value to set
+         * @return this builder
+         **/
         public Builder domainLookupDuration(Double domainLookupDuration) {
             this.domainLookupDuration = domainLookupDuration;
             this.__explicitlySet__.add("domainLookupDuration");
             return this;
         }
-
+        /**
+         * The addresses returned by DNS resolution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addresses")
         private java.util.List<String> addresses;
 
+        /**
+         * The addresses returned by DNS resolution.
+         * @param addresses the value to set
+         * @return this builder
+         **/
         public Builder addresses(java.util.List<String> addresses) {
             this.addresses = addresses;
             this.__explicitlySet__.add("addresses");
@@ -84,6 +103,12 @@ public final class DNS {
     @com.fasterxml.jackson.annotation.JsonProperty("domainLookupDuration")
     private final Double domainLookupDuration;
 
+    /**
+     * Total DNS resolution duration, in milliseconds. Calculated using {@code domainLookupEnd}
+     * minus {@code domainLookupStart}.
+     *
+     * @return the value
+     **/
     public Double getDomainLookupDuration() {
         return domainLookupDuration;
     }
@@ -94,6 +119,10 @@ public final class DNS {
     @com.fasterxml.jackson.annotation.JsonProperty("addresses")
     private final java.util.List<String> addresses;
 
+    /**
+     * The addresses returned by DNS resolution.
+     * @return the value
+     **/
     public java.util.List<String> getAddresses() {
         return addresses;
     }

@@ -86,126 +86,225 @@ public final class SubscriptionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Subscription id identifier (OCID).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Subscription id identifier (OCID).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Subscription plan number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionPlanNumber")
         private String subscriptionPlanNumber;
 
+        /**
+         * Subscription plan number.
+         * @param subscriptionPlanNumber the value to set
+         * @return this builder
+         **/
         public Builder subscriptionPlanNumber(String subscriptionPlanNumber) {
             this.subscriptionPlanNumber = subscriptionPlanNumber;
             this.__explicitlySet__.add("subscriptionPlanNumber");
             return this;
         }
-
+        /**
+         * Subscription plan type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planType")
         private PlanType planType;
 
+        /**
+         * Subscription plan type.
+         * @param planType the value to set
+         * @return this builder
+         **/
         public Builder planType(PlanType planType) {
             this.planType = planType;
             this.__explicitlySet__.add("planType");
             return this;
         }
-
+        /**
+         * Start date of the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
+        /**
+         * Start date of the subscription.
+         * @param timeStart the value to set
+         * @return this builder
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-
+        /**
+         * Ship to customer account site address id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctSiteId")
         private String shipToCustAcctSiteId;
 
+        /**
+         * Ship to customer account site address id.
+         * @param shipToCustAcctSiteId the value to set
+         * @return this builder
+         **/
         public Builder shipToCustAcctSiteId(String shipToCustAcctSiteId) {
             this.shipToCustAcctSiteId = shipToCustAcctSiteId;
             this.__explicitlySet__.add("shipToCustAcctSiteId");
             return this;
         }
-
+        /**
+         * Ship to customer account role.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctRoleId")
         private String shipToCustAcctRoleId;
 
+        /**
+         * Ship to customer account role.
+         * @param shipToCustAcctRoleId the value to set
+         * @return this builder
+         **/
         public Builder shipToCustAcctRoleId(String shipToCustAcctRoleId) {
             this.shipToCustAcctRoleId = shipToCustAcctRoleId;
             this.__explicitlySet__.add("shipToCustAcctRoleId");
             return this;
         }
-
+        /**
+         * Bill to customer Account id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("billToCustAccountId")
         private String billToCustAccountId;
 
+        /**
+         * Bill to customer Account id.
+         * @param billToCustAccountId the value to set
+         * @return this builder
+         **/
         public Builder billToCustAccountId(String billToCustAccountId) {
             this.billToCustAccountId = billToCustAccountId;
             this.__explicitlySet__.add("billToCustAccountId");
             return this;
         }
-
+        /**
+         * Payment intension.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
         private Boolean isIntentToPay;
 
+        /**
+         * Payment intension.
+         * @param isIntentToPay the value to set
+         * @return this builder
+         **/
         public Builder isIntentToPay(Boolean isIntentToPay) {
             this.isIntentToPay = isIntentToPay;
             this.__explicitlySet__.add("isIntentToPay");
             return this;
         }
-
+        /**
+         * Currency code
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
+        /**
+         * Currency code
+         * @param currencyCode the value to set
+         * @return this builder
+         **/
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-
+        /**
+         * GSI Subscription external code.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gsiOrgCode")
         private String gsiOrgCode;
 
+        /**
+         * GSI Subscription external code.
+         * @param gsiOrgCode the value to set
+         * @return this builder
+         **/
         public Builder gsiOrgCode(String gsiOrgCode) {
             this.gsiOrgCode = gsiOrgCode;
             this.__explicitlySet__.add("gsiOrgCode");
             return this;
         }
-
+        /**
+         * Language short code (en, de, hu, etc)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
+        /**
+         * Language short code (en, de, hu, etc)
+         * @param languageCode the value to set
+         * @return this builder
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
         }
-
+        /**
+         * GSI organization external identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("organizationId")
         private String organizationId;
 
+        /**
+         * GSI organization external identifier.
+         * @param organizationId the value to set
+         * @return this builder
+         **/
         public Builder organizationId(String organizationId) {
             this.organizationId = organizationId;
             this.__explicitlySet__.add("organizationId");
             return this;
         }
-
+        /**
+         * Status of the upgrade.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upgradeState")
         private UpgradeState upgradeState;
 
+        /**
+         * Status of the upgrade.
+         * @param upgradeState the value to set
+         * @return this builder
+         **/
         public Builder upgradeState(UpgradeState upgradeState) {
             this.upgradeState = upgradeState;
             this.__explicitlySet__.add("upgradeState");
             return this;
         }
-
+        /**
+         * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upgradeStateDetails")
         private UpgradeStateDetails upgradeStateDetails;
 
+        /**
+         * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+         * @param upgradeStateDetails the value to set
+         * @return this builder
+         **/
         public Builder upgradeStateDetails(UpgradeStateDetails upgradeStateDetails) {
             this.upgradeStateDetails = upgradeStateDetails;
             this.__explicitlySet__.add("upgradeStateDetails");
@@ -220,10 +319,17 @@ public final class SubscriptionSummary {
             this.__explicitlySet__.add("taxInfo");
             return this;
         }
-
+        /**
+         * Payment option list of a subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paymentOptions")
         private java.util.List<PaymentOption> paymentOptions;
 
+        /**
+         * Payment option list of a subscription.
+         * @param paymentOptions the value to set
+         * @return this builder
+         **/
         public Builder paymentOptions(java.util.List<PaymentOption> paymentOptions) {
             this.paymentOptions = paymentOptions;
             this.__explicitlySet__.add("paymentOptions");
@@ -247,10 +353,17 @@ public final class SubscriptionSummary {
             this.__explicitlySet__.add("billingAddress");
             return this;
         }
-
+        /**
+         * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePlanUpgrade")
         private java.util.Date timePlanUpgrade;
 
+        /**
+         * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+         * @param timePlanUpgrade the value to set
+         * @return this builder
+         **/
         public Builder timePlanUpgrade(java.util.Date timePlanUpgrade) {
             this.timePlanUpgrade = timePlanUpgrade;
             this.__explicitlySet__.add("timePlanUpgrade");
@@ -331,6 +444,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Subscription id identifier (OCID).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -341,6 +458,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionPlanNumber")
     private final String subscriptionPlanNumber;
 
+    /**
+     * Subscription plan number.
+     * @return the value
+     **/
     public String getSubscriptionPlanNumber() {
         return subscriptionPlanNumber;
     }
@@ -399,6 +520,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("planType")
     private final PlanType planType;
 
+    /**
+     * Subscription plan type.
+     * @return the value
+     **/
     public PlanType getPlanType() {
         return planType;
     }
@@ -409,6 +534,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
+    /**
+     * Start date of the subscription.
+     * @return the value
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -419,6 +548,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctSiteId")
     private final String shipToCustAcctSiteId;
 
+    /**
+     * Ship to customer account site address id.
+     * @return the value
+     **/
     public String getShipToCustAcctSiteId() {
         return shipToCustAcctSiteId;
     }
@@ -429,6 +562,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctRoleId")
     private final String shipToCustAcctRoleId;
 
+    /**
+     * Ship to customer account role.
+     * @return the value
+     **/
     public String getShipToCustAcctRoleId() {
         return shipToCustAcctRoleId;
     }
@@ -439,6 +576,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("billToCustAccountId")
     private final String billToCustAccountId;
 
+    /**
+     * Bill to customer Account id.
+     * @return the value
+     **/
     public String getBillToCustAccountId() {
         return billToCustAccountId;
     }
@@ -449,6 +590,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
     private final Boolean isIntentToPay;
 
+    /**
+     * Payment intension.
+     * @return the value
+     **/
     public Boolean getIsIntentToPay() {
         return isIntentToPay;
     }
@@ -459,6 +604,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
+    /**
+     * Currency code
+     * @return the value
+     **/
     public String getCurrencyCode() {
         return currencyCode;
     }
@@ -469,6 +618,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("gsiOrgCode")
     private final String gsiOrgCode;
 
+    /**
+     * GSI Subscription external code.
+     * @return the value
+     **/
     public String getGsiOrgCode() {
         return gsiOrgCode;
     }
@@ -479,6 +632,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
+    /**
+     * Language short code (en, de, hu, etc)
+     * @return the value
+     **/
     public String getLanguageCode() {
         return languageCode;
     }
@@ -489,6 +646,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("organizationId")
     private final String organizationId;
 
+    /**
+     * GSI organization external identifier.
+     * @return the value
+     **/
     public String getOrganizationId() {
         return organizationId;
     }
@@ -549,6 +710,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("upgradeState")
     private final UpgradeState upgradeState;
 
+    /**
+     * Status of the upgrade.
+     * @return the value
+     **/
     public UpgradeState getUpgradeState() {
         return upgradeState;
     }
@@ -607,6 +772,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("upgradeStateDetails")
     private final UpgradeStateDetails upgradeStateDetails;
 
+    /**
+     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+     * @return the value
+     **/
     public UpgradeStateDetails getUpgradeStateDetails() {
         return upgradeStateDetails;
     }
@@ -624,6 +793,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("paymentOptions")
     private final java.util.List<PaymentOption> paymentOptions;
 
+    /**
+     * Payment option list of a subscription.
+     * @return the value
+     **/
     public java.util.List<PaymentOption> getPaymentOptions() {
         return paymentOptions;
     }
@@ -648,6 +821,10 @@ public final class SubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timePlanUpgrade")
     private final java.util.Date timePlanUpgrade;
 
+    /**
+     * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+     * @return the value
+     **/
     public java.util.Date getTimePlanUpgrade() {
         return timePlanUpgrade;
     }

@@ -39,36 +39,71 @@ public final class ZoneTransferServer {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The server's IP address (IPv4 or IPv6).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
 
+        /**
+         * The server's IP address (IPv4 or IPv6).
+         * @param address the value to set
+         * @return this builder
+         **/
         public Builder address(String address) {
             this.address = address;
             this.__explicitlySet__.add("address");
             return this;
         }
-
+        /**
+         * The server's port.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The server's port.
+         *
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * A Boolean flag indicating whether or not the server is a zone data transfer source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTransferSource")
         private Boolean isTransferSource;
 
+        /**
+         * A Boolean flag indicating whether or not the server is a zone data transfer source.
+         *
+         * @param isTransferSource the value to set
+         * @return this builder
+         **/
         public Builder isTransferSource(Boolean isTransferSource) {
             this.isTransferSource = isTransferSource;
             this.__explicitlySet__.add("isTransferSource");
             return this;
         }
-
+        /**
+         * A Boolean flag indicating whether or not the server is a zone data transfer destination.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTransferDestination")
         private Boolean isTransferDestination;
 
+        /**
+         * A Boolean flag indicating whether or not the server is a zone data transfer destination.
+         *
+         * @param isTransferDestination the value to set
+         * @return this builder
+         **/
         public Builder isTransferDestination(Boolean isTransferDestination) {
             this.isTransferDestination = isTransferDestination;
             this.__explicitlySet__.add("isTransferDestination");
@@ -115,6 +150,10 @@ public final class ZoneTransferServer {
     @com.fasterxml.jackson.annotation.JsonProperty("address")
     private final String address;
 
+    /**
+     * The server's IP address (IPv4 or IPv6).
+     * @return the value
+     **/
     public String getAddress() {
         return address;
     }
@@ -126,6 +165,11 @@ public final class ZoneTransferServer {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The server's port.
+     *
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -137,6 +181,11 @@ public final class ZoneTransferServer {
     @com.fasterxml.jackson.annotation.JsonProperty("isTransferSource")
     private final Boolean isTransferSource;
 
+    /**
+     * A Boolean flag indicating whether or not the server is a zone data transfer source.
+     *
+     * @return the value
+     **/
     public Boolean getIsTransferSource() {
         return isTransferSource;
     }
@@ -148,6 +197,11 @@ public final class ZoneTransferServer {
     @com.fasterxml.jackson.annotation.JsonProperty("isTransferDestination")
     private final Boolean isTransferDestination;
 
+    /**
+     * A Boolean flag indicating whether or not the server is a zone data transfer destination.
+     *
+     * @return the value
+     **/
     public Boolean getIsTransferDestination() {
         return isTransferDestination;
     }

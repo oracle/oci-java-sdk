@@ -29,9 +29,17 @@ public final class DatabaseConfigurationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of database insight configurations summary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DatabaseConfigurationSummary> items;
 
+        /**
+         * Array of database insight configurations summary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DatabaseConfigurationSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class DatabaseConfigurationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DatabaseConfigurationSummary> items;
 
+    /**
+     * Array of database insight configurations summary objects.
+     * @return the value
+     **/
     public java.util.List<DatabaseConfigurationSummary> getItems() {
         return items;
     }

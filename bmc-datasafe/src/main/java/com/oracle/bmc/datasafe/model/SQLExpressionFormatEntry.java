@@ -40,10 +40,27 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The SQL expression to be used to generate the masked values. It can
+         * consist of one or more values, operators, and SQL functions that
+         * evaluate to a value. It can also contain substitution columns from
+         * the same table. Specify the substitution columns within percent (%)
+         * symbols.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlExpression")
         private String sqlExpression;
 
+        /**
+         * The SQL expression to be used to generate the masked values. It can
+         * consist of one or more values, operators, and SQL functions that
+         * evaluate to a value. It can also contain substitution columns from
+         * the same table. Specify the substitution columns within percent (%)
+         * symbols.
+         *
+         * @param sqlExpression the value to set
+         * @return this builder
+         **/
         public Builder sqlExpression(String sqlExpression) {
             this.sqlExpression = sqlExpression;
             this.__explicitlySet__.add("sqlExpression");
@@ -98,6 +115,15 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlExpression")
     private final String sqlExpression;
 
+    /**
+     * The SQL expression to be used to generate the masked values. It can
+     * consist of one or more values, operators, and SQL functions that
+     * evaluate to a value. It can also contain substitution columns from
+     * the same table. Specify the substitution columns within percent (%)
+     * symbols.
+     *
+     * @return the value
+     **/
     public String getSqlExpression() {
         return sqlExpression;
     }

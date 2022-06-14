@@ -29,9 +29,17 @@ public final class ScheduledTaskCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of scheduled task summary information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ScheduledTaskSummary> items;
 
+        /**
+         * Array of scheduled task summary information.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ScheduledTaskSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ScheduledTaskCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ScheduledTaskSummary> items;
 
+    /**
+     * Array of scheduled task summary information.
+     * @return the value
+     **/
     public java.util.List<ScheduledTaskSummary> getItems() {
         return items;
     }

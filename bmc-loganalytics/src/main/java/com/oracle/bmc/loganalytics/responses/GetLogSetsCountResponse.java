@@ -14,6 +14,11 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.loganalytics.model.LogSetsCount logSetsCount;
 
+    /**
+     * The returned LogSetsCount instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LogSetsCount getLogSetsCount() {
         return logSetsCount;
     }
@@ -45,15 +54,33 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LogSetsCount instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogSetsCount logSetsCount;
 
+        /**
+         * The returned LogSetsCount instance.
+         * @param logSetsCount the value to set
+         * @return this builder
+         */
         public Builder logSetsCount(com.oracle.bmc.loganalytics.model.LogSetsCount logSetsCount) {
             this.logSetsCount = logSetsCount;
             return this;
@@ -71,11 +98,19 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetLogSetsCountResponse build() {
             return new GetLogSetsCountResponse(__httpStatusCode__, opcRequestId, logSetsCount);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,7 @@ package com.oracle.bmc.resourcemanager.model;
 public final class PlanJobOperationDetails extends JobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
         private TerraformAdvancedOptions terraformAdvancedOptions;
 

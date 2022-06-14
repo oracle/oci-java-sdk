@@ -93,83 +93,178 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             this.__explicitlySet__.add("peerSidPrefix");
             return this;
         }
-
+        /**
+         * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system.
+         * Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+         * <p>
+         * To get a list of all shapes, use the {@link #listDbSystemShapes(ListDbSystemShapesRequest) listDbSystemShapes} operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system.
+         * Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+         * <p>
+         * To get a list of all shapes, use the {@link #listDbSystemShapes(ListDbSystemShapesRequest) listDbSystemShapes} operation.
+         *
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The number of OCPU cores available for AMD-based virtual machine DB systems.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
+        /**
+         * The number of OCPU cores available for AMD-based virtual machine DB systems.
+         * @param cpuCoreCount the value to set
+         * @return this builder
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-
+        /**
+         * The block storage volume performance level. Valid values are {@code BALANCED} and {@code HIGH_PERFORMANCE}. See [Block Volume Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
         private StorageVolumePerformanceMode storageVolumePerformanceMode;
 
+        /**
+         * The block storage volume performance level. Valid values are {@code BALANCED} and {@code HIGH_PERFORMANCE}. See [Block Volume Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+         *
+         * @param storageVolumePerformanceMode the value to set
+         * @return this builder
+         **/
         public Builder storageVolumePerformanceMode(
                 StorageVolumePerformanceMode storageVolumePerformanceMode) {
             this.storageVolumePerformanceMode = storageVolumePerformanceMode;
             this.__explicitlySet__.add("storageVolumePerformanceMode");
             return this;
         }
-
+        /**
+         * The OCID of the subnet the DB system is associated with.
+         * **Subnet Restrictions:**
+         * - For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+         * <p>
+         * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+         * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+         * This restriction applies to both the client subnet and backup subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of the subnet the DB system is associated with.
+         * **Subnet Restrictions:**
+         * - For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+         * <p>
+         * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+         * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+         * This restriction applies to both the client subnet and backup subnet.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
-
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
         private java.util.List<String> backupNetworkNsgIds;
 
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         *
+         * @param backupNetworkNsgIds the value to set
+         * @return this builder
+         **/
         public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
             this.backupNetworkNsgIds = backupNetworkNsgIds;
             this.__explicitlySet__.add("backupNetworkNsgIds");
             return this;
         }
-
+        /**
+         * The hostname for the DB node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The hostname for the DB node.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -281,6 +376,10 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -291,6 +390,10 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -305,6 +408,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system.
+     * Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+     * <p>
+     * To get a list of all shapes, use the {@link #listDbSystemShapes(ListDbSystemShapesRequest) listDbSystemShapes} operation.
+     *
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -315,6 +426,10 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
+    /**
+     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * @return the value
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
@@ -362,6 +477,11 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
     private final StorageVolumePerformanceMode storageVolumePerformanceMode;
 
+    /**
+     * The block storage volume performance level. Valid values are {@code BALANCED} and {@code HIGH_PERFORMANCE}. See [Block Volume Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     *
+     * @return the value
+     **/
     public StorageVolumePerformanceMode getStorageVolumePerformanceMode() {
         return storageVolumePerformanceMode;
     }
@@ -379,6 +499,17 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of the subnet the DB system is associated with.
+     * **Subnet Restrictions:**
+     * - For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+     * <p>
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+     * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+     * This restriction applies to both the client subnet and backup subnet.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -392,6 +523,13 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -403,6 +541,11 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
+    /**
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getBackupNetworkNsgIds() {
         return backupNetworkNsgIds;
     }
@@ -413,6 +556,10 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The hostname for the DB node.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }

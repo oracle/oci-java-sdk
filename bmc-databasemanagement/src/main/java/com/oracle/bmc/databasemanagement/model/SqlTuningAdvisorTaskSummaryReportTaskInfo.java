@@ -53,72 +53,129 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
+        /**
+         * The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(Long id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the SQL Tuning Advisor task.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The owner of the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
+        /**
+         * The owner of the SQL Tuning Advisor task.
+         * @param owner the value to set
+         * @return this builder
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-
+        /**
+         * The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private SqlTuningTaskStatusTypes status;
 
+        /**
+         * The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(SqlTuningTaskStatusTypes status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The start time of the task execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The start time of the task execution.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The end time of the task execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
+        /**
+         * The end time of the task execution.
+         * @param timeEnded the value to set
+         * @return this builder
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-
+        /**
+         * The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runningTime")
         private Integer runningTime;
 
+        /**
+         * The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
+         * @param runningTime the value to set
+         * @return this builder
+         **/
         public Builder runningTime(Integer runningTime) {
             this.runningTime = runningTime;
             this.__explicitlySet__.add("runningTime");
@@ -177,6 +234,10 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
+    /**
+     * The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public Long getId() {
         return id;
     }
@@ -187,6 +248,10 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the SQL Tuning Advisor task.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -197,6 +262,10 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -207,6 +276,10 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
+    /**
+     * The owner of the SQL Tuning Advisor task.
+     * @return the value
+     **/
     public String getOwner() {
         return owner;
     }
@@ -217,6 +290,10 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final SqlTuningTaskStatusTypes status;
 
+    /**
+     * The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
+     * @return the value
+     **/
     public SqlTuningTaskStatusTypes getStatus() {
         return status;
     }
@@ -227,6 +304,10 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The start time of the task execution.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -237,6 +318,10 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
+    /**
+     * The end time of the task execution.
+     * @return the value
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
@@ -247,6 +332,10 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("runningTime")
     private final Integer runningTime;
 
+    /**
+     * The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
+     * @return the value
+     **/
     public Integer getRunningTime() {
         return runningTime;
     }

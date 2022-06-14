@@ -31,18 +31,33 @@ public final class DataAssetPermissionsSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique key of the parent data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
+        /**
+         * The unique key of the parent data asset.
+         * @param dataAssetKey the value to set
+         * @return this builder
+         **/
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
             return this;
         }
-
+        /**
+         * An array of permissions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userPermissions")
         private java.util.List<String> userPermissions;
 
+        /**
+         * An array of permissions.
+         * @param userPermissions the value to set
+         * @return this builder
+         **/
         public Builder userPermissions(java.util.List<String> userPermissions) {
             this.userPermissions = userPermissions;
             this.__explicitlySet__.add("userPermissions");
@@ -86,6 +101,10 @@ public final class DataAssetPermissionsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     private final String dataAssetKey;
 
+    /**
+     * The unique key of the parent data asset.
+     * @return the value
+     **/
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -96,6 +115,10 @@ public final class DataAssetPermissionsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userPermissions")
     private final java.util.List<String> userPermissions;
 
+    /**
+     * An array of permissions.
+     * @return the value
+     **/
     public java.util.List<String> getUserPermissions() {
         return userPermissions;
     }

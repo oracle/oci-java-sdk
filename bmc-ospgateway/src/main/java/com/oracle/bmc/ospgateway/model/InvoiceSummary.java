@@ -105,171 +105,305 @@ public final class InvoiceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Invoice identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceId")
         private String invoiceId;
 
+        /**
+         * Invoice identifier
+         * @param invoiceId the value to set
+         * @return this builder
+         **/
         public Builder invoiceId(String invoiceId) {
             this.invoiceId = invoiceId;
             this.__explicitlySet__.add("invoiceId");
             return this;
         }
-
+        /**
+         * Invoice external reference
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceNumber")
         private String invoiceNumber;
 
+        /**
+         * Invoice external reference
+         * @param invoiceNumber the value to set
+         * @return this builder
+         **/
         public Builder invoiceNumber(String invoiceNumber) {
             this.invoiceNumber = invoiceNumber;
             this.__explicitlySet__.add("invoiceNumber");
             return this;
         }
-
+        /**
+         * PC invoice identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internalInvoiceId")
         private String internalInvoiceId;
 
+        /**
+         * PC invoice identifier
+         * @param internalInvoiceId the value to set
+         * @return this builder
+         **/
         public Builder internalInvoiceId(String internalInvoiceId) {
             this.internalInvoiceId = internalInvoiceId;
             this.__explicitlySet__.add("internalInvoiceId");
             return this;
         }
-
+        /**
+         * Is credit card payment eligible
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCreditCardPayable")
         private Boolean isCreditCardPayable;
 
+        /**
+         * Is credit card payment eligible
+         * @param isCreditCardPayable the value to set
+         * @return this builder
+         **/
         public Builder isCreditCardPayable(Boolean isCreditCardPayable) {
             this.isCreditCardPayable = isCreditCardPayable;
             this.__explicitlySet__.add("isCreditCardPayable");
             return this;
         }
-
+        /**
+         * Invoice status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceStatus")
         private InvoiceStatus invoiceStatus;
 
+        /**
+         * Invoice status
+         * @param invoiceStatus the value to set
+         * @return this builder
+         **/
         public Builder invoiceStatus(InvoiceStatus invoiceStatus) {
             this.invoiceStatus = invoiceStatus;
             this.__explicitlySet__.add("invoiceStatus");
             return this;
         }
-
+        /**
+         * Type of invoice
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceType")
         private InvoiceType invoiceType;
 
+        /**
+         * Type of invoice
+         * @param invoiceType the value to set
+         * @return this builder
+         **/
         public Builder invoiceType(InvoiceType invoiceType) {
             this.invoiceType = invoiceType;
             this.__explicitlySet__.add("invoiceType");
             return this;
         }
-
+        /**
+         * Is the invoice has been already payed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaid")
         private Boolean isPaid;
 
+        /**
+         * Is the invoice has been already payed
+         * @param isPaid the value to set
+         * @return this builder
+         **/
         public Builder isPaid(Boolean isPaid) {
             this.isPaid = isPaid;
             this.__explicitlySet__.add("isPaid");
             return this;
         }
-
+        /**
+         * Whether invoice can be payed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPayable")
         private Boolean isPayable;
 
+        /**
+         * Whether invoice can be payed
+         * @param isPayable the value to set
+         * @return this builder
+         **/
         public Builder isPayable(Boolean isPayable) {
             this.isPayable = isPayable;
             this.__explicitlySet__.add("isPayable");
             return this;
         }
-
+        /**
+         * Invoice amount
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmount")
         private java.math.BigDecimal invoiceAmount;
 
+        /**
+         * Invoice amount
+         * @param invoiceAmount the value to set
+         * @return this builder
+         **/
         public Builder invoiceAmount(java.math.BigDecimal invoiceAmount) {
             this.invoiceAmount = invoiceAmount;
             this.__explicitlySet__.add("invoiceAmount");
             return this;
         }
-
+        /**
+         * Invoice amount due
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountDue")
         private java.math.BigDecimal invoiceAmountDue;
 
+        /**
+         * Invoice amount due
+         * @param invoiceAmountDue the value to set
+         * @return this builder
+         **/
         public Builder invoiceAmountDue(java.math.BigDecimal invoiceAmountDue) {
             this.invoiceAmountDue = invoiceAmountDue;
             this.__explicitlySet__.add("invoiceAmountDue");
             return this;
         }
-
+        /**
+         * Invoice amount credit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountCredited")
         private java.math.BigDecimal invoiceAmountCredited;
 
+        /**
+         * Invoice amount credit
+         * @param invoiceAmountCredited the value to set
+         * @return this builder
+         **/
         public Builder invoiceAmountCredited(java.math.BigDecimal invoiceAmountCredited) {
             this.invoiceAmountCredited = invoiceAmountCredited;
             this.__explicitlySet__.add("invoiceAmountCredited");
             return this;
         }
-
+        /**
+         * Invoice amount adjust
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountAdjusted")
         private java.math.BigDecimal invoiceAmountAdjusted;
 
+        /**
+         * Invoice amount adjust
+         * @param invoiceAmountAdjusted the value to set
+         * @return this builder
+         **/
         public Builder invoiceAmountAdjusted(java.math.BigDecimal invoiceAmountAdjusted) {
             this.invoiceAmountAdjusted = invoiceAmountAdjusted;
             this.__explicitlySet__.add("invoiceAmountAdjusted");
             return this;
         }
-
+        /**
+         * Invoice amount applied
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountApplied")
         private java.math.BigDecimal invoiceAmountApplied;
 
+        /**
+         * Invoice amount applied
+         * @param invoiceAmountApplied the value to set
+         * @return this builder
+         **/
         public Builder invoiceAmountApplied(java.math.BigDecimal invoiceAmountApplied) {
             this.invoiceAmountApplied = invoiceAmountApplied;
             this.__explicitlySet__.add("invoiceAmountApplied");
             return this;
         }
-
+        /**
+         * Due date of invoice amount
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeInvoiceDue")
         private java.util.Date timeInvoiceDue;
 
+        /**
+         * Due date of invoice amount
+         * @param timeInvoiceDue the value to set
+         * @return this builder
+         **/
         public Builder timeInvoiceDue(java.util.Date timeInvoiceDue) {
             this.timeInvoiceDue = timeInvoiceDue;
             this.__explicitlySet__.add("timeInvoiceDue");
             return this;
         }
-
+        /**
+         * Is the last payment failed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaymentFailed")
         private Boolean isPaymentFailed;
 
+        /**
+         * Is the last payment failed
+         * @param isPaymentFailed the value to set
+         * @return this builder
+         **/
         public Builder isPaymentFailed(Boolean isPaymentFailed) {
             this.isPaymentFailed = isPaymentFailed;
             this.__explicitlySet__.add("isPaymentFailed");
             return this;
         }
-
+        /**
+         * Invoice amount in dispute
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountInDispute")
         private java.math.BigDecimal invoiceAmountInDispute;
 
+        /**
+         * Invoice amount in dispute
+         * @param invoiceAmountInDispute the value to set
+         * @return this builder
+         **/
         public Builder invoiceAmountInDispute(java.math.BigDecimal invoiceAmountInDispute) {
             this.invoiceAmountInDispute = invoiceAmountInDispute;
             this.__explicitlySet__.add("invoiceAmountInDispute");
             return this;
         }
-
+        /**
+         * Invoice reference number
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceRefNumber")
         private String invoiceRefNumber;
 
+        /**
+         * Invoice reference number
+         * @param invoiceRefNumber the value to set
+         * @return this builder
+         **/
         public Builder invoiceRefNumber(String invoiceRefNumber) {
             this.invoiceRefNumber = invoiceRefNumber;
             this.__explicitlySet__.add("invoiceRefNumber");
             return this;
         }
-
+        /**
+         * Invoice PO number
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoicePoNumber")
         private String invoicePoNumber;
 
+        /**
+         * Invoice PO number
+         * @param invoicePoNumber the value to set
+         * @return this builder
+         **/
         public Builder invoicePoNumber(String invoicePoNumber) {
             this.invoicePoNumber = invoicePoNumber;
             this.__explicitlySet__.add("invoicePoNumber");
             return this;
         }
-
+        /**
+         * Date of invoice
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeInvoice")
         private java.util.Date timeInvoice;
 
+        /**
+         * Date of invoice
+         * @param timeInvoice the value to set
+         * @return this builder
+         **/
         public Builder timeInvoice(java.util.Date timeInvoice) {
             this.timeInvoice = timeInvoice;
             this.__explicitlySet__.add("timeInvoice");
@@ -284,28 +418,49 @@ public final class InvoiceSummary {
             this.__explicitlySet__.add("currency");
             return this;
         }
-
+        /**
+         * Is emailing pdf allowed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPdfEmailAvailable")
         private Boolean isPdfEmailAvailable;
 
+        /**
+         * Is emailing pdf allowed
+         * @param isPdfEmailAvailable the value to set
+         * @return this builder
+         **/
         public Builder isPdfEmailAvailable(Boolean isPdfEmailAvailable) {
             this.isPdfEmailAvailable = isPdfEmailAvailable;
             this.__explicitlySet__.add("isPdfEmailAvailable");
             return this;
         }
-
+        /**
+         * Is view access allowed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDisplayViewPdf")
         private Boolean isDisplayViewPdf;
 
+        /**
+         * Is view access allowed
+         * @param isDisplayViewPdf the value to set
+         * @return this builder
+         **/
         public Builder isDisplayViewPdf(Boolean isDisplayViewPdf) {
             this.isDisplayViewPdf = isDisplayViewPdf;
             this.__explicitlySet__.add("isDisplayViewPdf");
             return this;
         }
-
+        /**
+         * Is pdf download access allowed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDisplayDownloadPdf")
         private Boolean isDisplayDownloadPdf;
 
+        /**
+         * Is pdf download access allowed
+         * @param isDisplayDownloadPdf the value to set
+         * @return this builder
+         **/
         public Builder isDisplayDownloadPdf(Boolean isDisplayDownloadPdf) {
             this.isDisplayDownloadPdf = isDisplayDownloadPdf;
             this.__explicitlySet__.add("isDisplayDownloadPdf");
@@ -320,19 +475,33 @@ public final class InvoiceSummary {
             this.__explicitlySet__.add("lastPaymentDetail");
             return this;
         }
-
+        /**
+         * Name of the bill to customer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partyName")
         private String partyName;
 
+        /**
+         * Name of the bill to customer
+         * @param partyName the value to set
+         * @return this builder
+         **/
         public Builder partyName(String partyName) {
             this.partyName = partyName;
             this.__explicitlySet__.add("partyName");
             return this;
         }
-
+        /**
+         * List of subscription identifiers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionIds")
         private java.util.List<String> subscriptionIds;
 
+        /**
+         * List of subscription identifiers
+         * @param subscriptionIds the value to set
+         * @return this builder
+         **/
         public Builder subscriptionIds(java.util.List<String> subscriptionIds) {
             this.subscriptionIds = subscriptionIds;
             this.__explicitlySet__.add("subscriptionIds");
@@ -427,6 +596,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceId")
     private final String invoiceId;
 
+    /**
+     * Invoice identifier
+     * @return the value
+     **/
     public String getInvoiceId() {
         return invoiceId;
     }
@@ -437,6 +610,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceNumber")
     private final String invoiceNumber;
 
+    /**
+     * Invoice external reference
+     * @return the value
+     **/
     public String getInvoiceNumber() {
         return invoiceNumber;
     }
@@ -447,6 +624,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("internalInvoiceId")
     private final String internalInvoiceId;
 
+    /**
+     * PC invoice identifier
+     * @return the value
+     **/
     public String getInternalInvoiceId() {
         return internalInvoiceId;
     }
@@ -457,6 +638,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isCreditCardPayable")
     private final Boolean isCreditCardPayable;
 
+    /**
+     * Is credit card payment eligible
+     * @return the value
+     **/
     public Boolean getIsCreditCardPayable() {
         return isCreditCardPayable;
     }
@@ -517,6 +702,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceStatus")
     private final InvoiceStatus invoiceStatus;
 
+    /**
+     * Invoice status
+     * @return the value
+     **/
     public InvoiceStatus getInvoiceStatus() {
         return invoiceStatus;
     }
@@ -581,6 +770,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceType")
     private final InvoiceType invoiceType;
 
+    /**
+     * Type of invoice
+     * @return the value
+     **/
     public InvoiceType getInvoiceType() {
         return invoiceType;
     }
@@ -591,6 +784,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPaid")
     private final Boolean isPaid;
 
+    /**
+     * Is the invoice has been already payed
+     * @return the value
+     **/
     public Boolean getIsPaid() {
         return isPaid;
     }
@@ -601,6 +798,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPayable")
     private final Boolean isPayable;
 
+    /**
+     * Whether invoice can be payed
+     * @return the value
+     **/
     public Boolean getIsPayable() {
         return isPayable;
     }
@@ -611,6 +812,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmount")
     private final java.math.BigDecimal invoiceAmount;
 
+    /**
+     * Invoice amount
+     * @return the value
+     **/
     public java.math.BigDecimal getInvoiceAmount() {
         return invoiceAmount;
     }
@@ -621,6 +826,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountDue")
     private final java.math.BigDecimal invoiceAmountDue;
 
+    /**
+     * Invoice amount due
+     * @return the value
+     **/
     public java.math.BigDecimal getInvoiceAmountDue() {
         return invoiceAmountDue;
     }
@@ -631,6 +840,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountCredited")
     private final java.math.BigDecimal invoiceAmountCredited;
 
+    /**
+     * Invoice amount credit
+     * @return the value
+     **/
     public java.math.BigDecimal getInvoiceAmountCredited() {
         return invoiceAmountCredited;
     }
@@ -641,6 +854,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountAdjusted")
     private final java.math.BigDecimal invoiceAmountAdjusted;
 
+    /**
+     * Invoice amount adjust
+     * @return the value
+     **/
     public java.math.BigDecimal getInvoiceAmountAdjusted() {
         return invoiceAmountAdjusted;
     }
@@ -651,6 +868,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountApplied")
     private final java.math.BigDecimal invoiceAmountApplied;
 
+    /**
+     * Invoice amount applied
+     * @return the value
+     **/
     public java.math.BigDecimal getInvoiceAmountApplied() {
         return invoiceAmountApplied;
     }
@@ -661,6 +882,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeInvoiceDue")
     private final java.util.Date timeInvoiceDue;
 
+    /**
+     * Due date of invoice amount
+     * @return the value
+     **/
     public java.util.Date getTimeInvoiceDue() {
         return timeInvoiceDue;
     }
@@ -671,6 +896,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPaymentFailed")
     private final Boolean isPaymentFailed;
 
+    /**
+     * Is the last payment failed
+     * @return the value
+     **/
     public Boolean getIsPaymentFailed() {
         return isPaymentFailed;
     }
@@ -681,6 +910,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceAmountInDispute")
     private final java.math.BigDecimal invoiceAmountInDispute;
 
+    /**
+     * Invoice amount in dispute
+     * @return the value
+     **/
     public java.math.BigDecimal getInvoiceAmountInDispute() {
         return invoiceAmountInDispute;
     }
@@ -691,6 +924,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceRefNumber")
     private final String invoiceRefNumber;
 
+    /**
+     * Invoice reference number
+     * @return the value
+     **/
     public String getInvoiceRefNumber() {
         return invoiceRefNumber;
     }
@@ -701,6 +938,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("invoicePoNumber")
     private final String invoicePoNumber;
 
+    /**
+     * Invoice PO number
+     * @return the value
+     **/
     public String getInvoicePoNumber() {
         return invoicePoNumber;
     }
@@ -711,6 +952,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeInvoice")
     private final java.util.Date timeInvoice;
 
+    /**
+     * Date of invoice
+     * @return the value
+     **/
     public java.util.Date getTimeInvoice() {
         return timeInvoice;
     }
@@ -728,6 +973,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPdfEmailAvailable")
     private final Boolean isPdfEmailAvailable;
 
+    /**
+     * Is emailing pdf allowed
+     * @return the value
+     **/
     public Boolean getIsPdfEmailAvailable() {
         return isPdfEmailAvailable;
     }
@@ -738,6 +987,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDisplayViewPdf")
     private final Boolean isDisplayViewPdf;
 
+    /**
+     * Is view access allowed
+     * @return the value
+     **/
     public Boolean getIsDisplayViewPdf() {
         return isDisplayViewPdf;
     }
@@ -748,6 +1001,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDisplayDownloadPdf")
     private final Boolean isDisplayDownloadPdf;
 
+    /**
+     * Is pdf download access allowed
+     * @return the value
+     **/
     public Boolean getIsDisplayDownloadPdf() {
         return isDisplayDownloadPdf;
     }
@@ -765,6 +1022,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("partyName")
     private final String partyName;
 
+    /**
+     * Name of the bill to customer
+     * @return the value
+     **/
     public String getPartyName() {
         return partyName;
     }
@@ -775,6 +1036,10 @@ public final class InvoiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionIds")
     private final java.util.List<String> subscriptionIds;
 
+    /**
+     * List of subscription identifiers
+     * @return the value
+     **/
     public java.util.List<String> getSubscriptionIds() {
         return subscriptionIds;
     }

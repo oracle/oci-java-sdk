@@ -29,9 +29,17 @@ public final class SensitiveTypeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of sensitive type summary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SensitiveTypeSummary> items;
 
+        /**
+         * An array of sensitive type summary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SensitiveTypeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class SensitiveTypeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SensitiveTypeSummary> items;
 
+    /**
+     * An array of sensitive type summary objects.
+     * @return the value
+     **/
     public java.util.List<SensitiveTypeSummary> getItems() {
         return items;
     }

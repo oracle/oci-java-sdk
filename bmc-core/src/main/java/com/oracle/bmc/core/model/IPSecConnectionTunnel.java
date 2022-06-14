@@ -89,72 +89,149 @@ public final class IPSecConnectionTunnel {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The IP address of the Oracle VPN headend for the connection.
+         * <p>
+         * Example: {@code 203.0.113.21}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpnIp")
         private String vpnIp;
 
+        /**
+         * The IP address of the Oracle VPN headend for the connection.
+         * <p>
+         * Example: {@code 203.0.113.21}
+         *
+         * @param vpnIp the value to set
+         * @return this builder
+         **/
         public Builder vpnIp(String vpnIp) {
             this.vpnIp = vpnIp;
             this.__explicitlySet__.add("vpnIp");
             return this;
         }
-
+        /**
+         * The IP address of the CPE device's VPN headend.
+         * <p>
+         * Example: {@code 203.0.113.22}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeIp")
         private String cpeIp;
 
+        /**
+         * The IP address of the CPE device's VPN headend.
+         * <p>
+         * Example: {@code 203.0.113.22}
+         *
+         * @param cpeIp the value to set
+         * @return this builder
+         **/
         public Builder cpeIp(String cpeIp) {
             this.cpeIp = cpeIp;
             this.__explicitlySet__.add("cpeIp");
             return this;
         }
-
+        /**
+         * The status of the tunnel based on IPSec protocol characteristics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the tunnel based on IPSec protocol characteristics.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Internet Key Exchange protocol version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
         private IkeVersion ikeVersion;
 
+        /**
+         * Internet Key Exchange protocol version.
+         *
+         * @param ikeVersion the value to set
+         * @return this builder
+         **/
         public Builder ikeVersion(IkeVersion ikeVersion) {
             this.ikeVersion = ikeVersion;
             this.__explicitlySet__.add("ikeVersion");
             return this;
         }
-
+        /**
+         * The tunnel's lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The tunnel's lifecycle state.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -178,64 +255,157 @@ public final class IPSecConnectionTunnel {
             this.__explicitlySet__.add("encryptionDomainConfig");
             return this;
         }
-
+        /**
+         * The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routing")
         private Routing routing;
 
+        /**
+         * The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
+         *
+         * @param routing the value to set
+         * @return this builder
+         **/
         public Builder routing(Routing routing) {
             this.routing = routing;
             this.__explicitlySet__.add("routing");
             return this;
         }
-
+        /**
+         * The date and time the IPSec tunnel was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the IPSec tunnel was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
         private java.util.Date timeStatusUpdated;
 
+        /**
+         * When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeStatusUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeStatusUpdated(java.util.Date timeStatusUpdated) {
             this.timeStatusUpdated = timeStatusUpdated;
             this.__explicitlySet__.add("timeStatusUpdated");
             return this;
         }
-
+        /**
+         * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleCanInitiate")
         private OracleCanInitiate oracleCanInitiate;
 
+        /**
+         * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+         *
+         * @param oracleCanInitiate the value to set
+         * @return this builder
+         **/
         public Builder oracleCanInitiate(OracleCanInitiate oracleCanInitiate) {
             this.oracleCanInitiate = oracleCanInitiate;
             this.__explicitlySet__.add("oracleCanInitiate");
             return this;
         }
-
+        /**
+         * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+         * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+         * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+         * <p>
+         * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+         * <p>
+         * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+         * even if it senses there may be a NAT device in use.
+         * <p>
+         *
+         * .
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
         private NatTranslationEnabled natTranslationEnabled;
 
+        /**
+         * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+         * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+         * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+         * <p>
+         * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+         * <p>
+         * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+         * even if it senses there may be a NAT device in use.
+         * <p>
+         *
+         * .
+         *
+         * @param natTranslationEnabled the value to set
+         * @return this builder
+         **/
         public Builder natTranslationEnabled(NatTranslationEnabled natTranslationEnabled) {
             this.natTranslationEnabled = natTranslationEnabled;
             this.__explicitlySet__.add("natTranslationEnabled");
             return this;
         }
-
+        /**
+         * Dead peer detection (DPD) mode set on the Oracle side of the connection.
+         * This mode sets whether Oracle can only respond to a request from the CPE device to start DPD,
+         * or both respond to and initiate requests.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
         private DpdMode dpdMode;
 
+        /**
+         * Dead peer detection (DPD) mode set on the Oracle side of the connection.
+         * This mode sets whether Oracle can only respond to a request from the CPE device to start DPD,
+         * or both respond to and initiate requests.
+         *
+         * @param dpdMode the value to set
+         * @return this builder
+         **/
         public Builder dpdMode(DpdMode dpdMode) {
             this.dpdMode = dpdMode;
             this.__explicitlySet__.add("dpdMode");
             return this;
         }
-
+        /**
+         * DPD timeout in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
         private Integer dpdTimeoutInSec;
 
+        /**
+         * DPD timeout in seconds.
+         * @param dpdTimeoutInSec the value to set
+         * @return this builder
+         **/
         public Builder dpdTimeoutInSec(Integer dpdTimeoutInSec) {
             this.dpdTimeoutInSec = dpdTimeoutInSec;
             this.__explicitlySet__.add("dpdTimeoutInSec");
@@ -335,6 +505,11 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -345,6 +520,10 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -358,6 +537,13 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("vpnIp")
     private final String vpnIp;
 
+    /**
+     * The IP address of the Oracle VPN headend for the connection.
+     * <p>
+     * Example: {@code 203.0.113.21}
+     *
+     * @return the value
+     **/
     public String getVpnIp() {
         return vpnIp;
     }
@@ -371,6 +557,13 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("cpeIp")
     private final String cpeIp;
 
+    /**
+     * The IP address of the CPE device's VPN headend.
+     * <p>
+     * Example: {@code 203.0.113.22}
+     *
+     * @return the value
+     **/
     public String getCpeIp() {
         return cpeIp;
     }
@@ -430,6 +623,10 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the tunnel based on IPSec protocol characteristics.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -490,6 +687,11 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
     private final IkeVersion ikeVersion;
 
+    /**
+     * Internet Key Exchange protocol version.
+     *
+     * @return the value
+     **/
     public IkeVersion getIkeVersion() {
         return ikeVersion;
     }
@@ -550,6 +752,10 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The tunnel's lifecycle state.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -562,6 +768,12 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -637,6 +849,11 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
     private final Routing routing;
 
+    /**
+     * The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
+     *
+     * @return the value
+     **/
     public Routing getRouting() {
         return routing;
     }
@@ -650,6 +867,13 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the IPSec tunnel was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -663,6 +887,13 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
     private final java.util.Date timeStatusUpdated;
 
+    /**
+     * When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStatusUpdated() {
         return timeStatusUpdated;
     }
@@ -723,6 +954,11 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("oracleCanInitiate")
     private final OracleCanInitiate oracleCanInitiate;
 
+    /**
+     * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+     *
+     * @return the value
+     **/
     public OracleCanInitiate getOracleCanInitiate() {
         return oracleCanInitiate;
     }
@@ -804,6 +1040,21 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
     private final NatTranslationEnabled natTranslationEnabled;
 
+    /**
+     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+     * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+     * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * <p>
+     * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * <p>
+     * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+     * even if it senses there may be a NAT device in use.
+     * <p>
+     *
+     * .
+     *
+     * @return the value
+     **/
     public NatTranslationEnabled getNatTranslationEnabled() {
         return natTranslationEnabled;
     }
@@ -868,6 +1119,13 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
     private final DpdMode dpdMode;
 
+    /**
+     * Dead peer detection (DPD) mode set on the Oracle side of the connection.
+     * This mode sets whether Oracle can only respond to a request from the CPE device to start DPD,
+     * or both respond to and initiate requests.
+     *
+     * @return the value
+     **/
     public DpdMode getDpdMode() {
         return dpdMode;
     }
@@ -878,6 +1136,10 @@ public final class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
     private final Integer dpdTimeoutInSec;
 
+    /**
+     * DPD timeout in seconds.
+     * @return the value
+     **/
     public Integer getDpdTimeoutInSec() {
         return dpdTimeoutInSec;
     }

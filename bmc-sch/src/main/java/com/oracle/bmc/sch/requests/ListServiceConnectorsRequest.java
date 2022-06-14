@@ -18,6 +18,10 @@ public class ListServiceConnectorsRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -29,6 +33,12 @@ public class ListServiceConnectorsRequest
      */
     private com.oracle.bmc.sch.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state.
+     * <p>
+     * Example: {@code ACTIVE}
+     *
+     */
     public com.oracle.bmc.sch.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -40,6 +50,12 @@ public class ListServiceConnectorsRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     * <p>
+     * Example: {@code example_service_connector}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -51,6 +67,12 @@ public class ListServiceConnectorsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return
+     * in a paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -62,6 +84,12 @@ public class ListServiceConnectorsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the opc-next-page response header from the previous
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -71,6 +99,10 @@ public class ListServiceConnectorsRequest
      */
     private com.oracle.bmc.sch.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public com.oracle.bmc.sch.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -119,6 +151,11 @@ public class ListServiceConnectorsRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for {@code timeCreated} is descending.
+     * Default order for {@code displayName} is ascending. If no value is specified {@code timeCreated} is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -129,6 +166,11 @@ public class ListServiceConnectorsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -140,11 +182,16 @@ public class ListServiceConnectorsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -152,6 +199,12 @@ public class ListServiceConnectorsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state.
+         * <p>
+         * Example: {@code ACTIVE}
+         *
+         */
         private com.oracle.bmc.sch.model.LifecycleState lifecycleState = null;
 
         /**
@@ -159,6 +212,7 @@ public class ListServiceConnectorsRequest
          * <p>
          * Example: {@code ACTIVE}
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(com.oracle.bmc.sch.model.LifecycleState lifecycleState) {
@@ -166,6 +220,12 @@ public class ListServiceConnectorsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         * <p>
+         * Example: {@code example_service_connector}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -173,6 +233,7 @@ public class ListServiceConnectorsRequest
          * <p>
          * Example: {@code example_service_connector}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -180,6 +241,12 @@ public class ListServiceConnectorsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return
+         * in a paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -187,6 +254,7 @@ public class ListServiceConnectorsRequest
          * in a paginated "List" call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -194,6 +262,12 @@ public class ListServiceConnectorsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the opc-next-page response header from the previous
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -201,6 +275,7 @@ public class ListServiceConnectorsRequest
          * "List" call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -208,11 +283,16 @@ public class ListServiceConnectorsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private com.oracle.bmc.sch.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.sch.model.SortOrder sortOrder) {
@@ -220,12 +300,18 @@ public class ListServiceConnectorsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for {@code timeCreated} is descending.
+         * Default order for {@code displayName} is ascending. If no value is specified {@code timeCreated} is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for {@code timeCreated} is descending.
          * Default order for {@code displayName} is ascending. If no value is specified {@code timeCreated} is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -233,12 +319,18 @@ public class ListServiceConnectorsRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -328,7 +420,8 @@ public class ListServiceConnectorsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -342,6 +435,10 @@ public class ListServiceConnectorsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

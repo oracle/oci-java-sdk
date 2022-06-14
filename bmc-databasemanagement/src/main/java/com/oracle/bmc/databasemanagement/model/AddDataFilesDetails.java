@@ -60,6 +60,7 @@ public final class AddDataFilesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
         private TablespaceAdminCredentialDetails credentialDetails;
 
@@ -68,82 +69,163 @@ public final class AddDataFilesDetails {
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
-
+        /**
+         * Specifies whether the file is a data file or temp file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileType")
         private FileType fileType;
 
+        /**
+         * Specifies whether the file is a data file or temp file.
+         *
+         * @param fileType the value to set
+         * @return this builder
+         **/
         public Builder fileType(FileType fileType) {
             this.fileType = fileType;
             this.__explicitlySet__.add("fileType");
             return this;
         }
-
+        /**
+         * The list of data files or temp files added to the tablespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataFiles")
         private java.util.List<String> dataFiles;
 
+        /**
+         * The list of data files or temp files added to the tablespace.
+         *
+         * @param dataFiles the value to set
+         * @return this builder
+         **/
         public Builder dataFiles(java.util.List<String> dataFiles) {
             this.dataFiles = dataFiles;
             this.__explicitlySet__.add("dataFiles");
             return this;
         }
-
+        /**
+         * The number of data files or temp files to be added for the tablespace. This is for Oracle Managed Files only.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileCount")
         private Integer fileCount;
 
+        /**
+         * The number of data files or temp files to be added for the tablespace. This is for Oracle Managed Files only.
+         *
+         * @param fileCount the value to set
+         * @return this builder
+         **/
         public Builder fileCount(Integer fileCount) {
             this.fileCount = fileCount;
             this.__explicitlySet__.add("fileCount");
             return this;
         }
-
+        /**
+         * The size of each data file or temp file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSize")
         private TablespaceStorageSize fileSize;
 
+        /**
+         * The size of each data file or temp file.
+         *
+         * @param fileSize the value to set
+         * @return this builder
+         **/
         public Builder fileSize(TablespaceStorageSize fileSize) {
             this.fileSize = fileSize;
             this.__explicitlySet__.add("fileSize");
             return this;
         }
-
+        /**
+         * Specifies whether Oracle can reuse the data file or temp file. Reuse is only allowed when the file name is provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReusable")
         private Boolean isReusable;
 
+        /**
+         * Specifies whether Oracle can reuse the data file or temp file. Reuse is only allowed when the file name is provided.
+         *
+         * @param isReusable the value to set
+         * @return this builder
+         **/
         public Builder isReusable(Boolean isReusable) {
             this.isReusable = isReusable;
             this.__explicitlySet__.add("isReusable");
             return this;
         }
-
+        /**
+         * Specifies whether the data file or temp file can be extended automatically.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
         private Boolean isAutoExtensible;
 
+        /**
+         * Specifies whether the data file or temp file can be extended automatically.
+         *
+         * @param isAutoExtensible the value to set
+         * @return this builder
+         **/
         public Builder isAutoExtensible(Boolean isAutoExtensible) {
             this.isAutoExtensible = isAutoExtensible;
             this.__explicitlySet__.add("isAutoExtensible");
             return this;
         }
-
+        /**
+         * The size of the next increment of disk space to be allocated automatically when more extents are required.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoExtendNextSize")
         private TablespaceStorageSize autoExtendNextSize;
 
+        /**
+         * The size of the next increment of disk space to be allocated automatically when more extents are required.
+         *
+         * @param autoExtendNextSize the value to set
+         * @return this builder
+         **/
         public Builder autoExtendNextSize(TablespaceStorageSize autoExtendNextSize) {
             this.autoExtendNextSize = autoExtendNextSize;
             this.__explicitlySet__.add("autoExtendNextSize");
             return this;
         }
-
+        /**
+         * The maximum disk space allowed for automatic extension of the data files or temp files.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoExtendMaxSize")
         private TablespaceStorageSize autoExtendMaxSize;
 
+        /**
+         * The maximum disk space allowed for automatic extension of the data files or temp files.
+         *
+         * @param autoExtendMaxSize the value to set
+         * @return this builder
+         **/
         public Builder autoExtendMaxSize(TablespaceStorageSize autoExtendMaxSize) {
             this.autoExtendMaxSize = autoExtendMaxSize;
             this.__explicitlySet__.add("autoExtendMaxSize");
             return this;
         }
-
+        /**
+         * Specifies whether the disk space of the data file or temp file can be limited.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMaxSizeUnlimited")
         private Boolean isMaxSizeUnlimited;
 
+        /**
+         * Specifies whether the disk space of the data file or temp file can be limited.
+         *
+         * @param isMaxSizeUnlimited the value to set
+         * @return this builder
+         **/
         public Builder isMaxSizeUnlimited(Boolean isMaxSizeUnlimited) {
             this.isMaxSizeUnlimited = isMaxSizeUnlimited;
             this.__explicitlySet__.add("isMaxSizeUnlimited");
@@ -250,6 +332,11 @@ public final class AddDataFilesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fileType")
     private final FileType fileType;
 
+    /**
+     * Specifies whether the file is a data file or temp file.
+     *
+     * @return the value
+     **/
     public FileType getFileType() {
         return fileType;
     }
@@ -261,6 +348,11 @@ public final class AddDataFilesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataFiles")
     private final java.util.List<String> dataFiles;
 
+    /**
+     * The list of data files or temp files added to the tablespace.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getDataFiles() {
         return dataFiles;
     }
@@ -272,6 +364,11 @@ public final class AddDataFilesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fileCount")
     private final Integer fileCount;
 
+    /**
+     * The number of data files or temp files to be added for the tablespace. This is for Oracle Managed Files only.
+     *
+     * @return the value
+     **/
     public Integer getFileCount() {
         return fileCount;
     }
@@ -283,6 +380,11 @@ public final class AddDataFilesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fileSize")
     private final TablespaceStorageSize fileSize;
 
+    /**
+     * The size of each data file or temp file.
+     *
+     * @return the value
+     **/
     public TablespaceStorageSize getFileSize() {
         return fileSize;
     }
@@ -294,6 +396,11 @@ public final class AddDataFilesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isReusable")
     private final Boolean isReusable;
 
+    /**
+     * Specifies whether Oracle can reuse the data file or temp file. Reuse is only allowed when the file name is provided.
+     *
+     * @return the value
+     **/
     public Boolean getIsReusable() {
         return isReusable;
     }
@@ -305,6 +412,11 @@ public final class AddDataFilesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
     private final Boolean isAutoExtensible;
 
+    /**
+     * Specifies whether the data file or temp file can be extended automatically.
+     *
+     * @return the value
+     **/
     public Boolean getIsAutoExtensible() {
         return isAutoExtensible;
     }
@@ -316,6 +428,11 @@ public final class AddDataFilesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendNextSize")
     private final TablespaceStorageSize autoExtendNextSize;
 
+    /**
+     * The size of the next increment of disk space to be allocated automatically when more extents are required.
+     *
+     * @return the value
+     **/
     public TablespaceStorageSize getAutoExtendNextSize() {
         return autoExtendNextSize;
     }
@@ -327,6 +444,11 @@ public final class AddDataFilesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendMaxSize")
     private final TablespaceStorageSize autoExtendMaxSize;
 
+    /**
+     * The maximum disk space allowed for automatic extension of the data files or temp files.
+     *
+     * @return the value
+     **/
     public TablespaceStorageSize getAutoExtendMaxSize() {
         return autoExtendMaxSize;
     }
@@ -338,6 +460,11 @@ public final class AddDataFilesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isMaxSizeUnlimited")
     private final Boolean isMaxSizeUnlimited;
 
+    /**
+     * Specifies whether the disk space of the data file or temp file can be limited.
+     *
+     * @return the value
+     **/
     public Boolean getIsMaxSizeUnlimited() {
         return isMaxSizeUnlimited;
     }

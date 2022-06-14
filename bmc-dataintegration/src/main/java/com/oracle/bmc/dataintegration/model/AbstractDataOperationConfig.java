@@ -55,6 +55,10 @@ public class AbstractDataOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("metadataConfigProperties")
     private final java.util.Map<String, String> metadataConfigProperties;
 
+    /**
+     * This map is used for passing extra metatdata configuration that is required by read / write operation.
+     * @return the value
+     **/
     public java.util.Map<String, String> getMetadataConfigProperties() {
         return metadataConfigProperties;
     }
@@ -65,6 +69,10 @@ public class AbstractDataOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("derivedAttributes")
     private final java.util.Map<String, String> derivedAttributes;
 
+    /**
+     * this map is used for passing BIP report parameter values.
+     * @return the value
+     **/
     public java.util.Map<String, String> getDerivedAttributes() {
         return derivedAttributes;
     }

@@ -29,9 +29,23 @@ public final class SqlTuningTaskReturn {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The identifier of the task being started or cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint
+         * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningTaskId")
         private Long sqlTuningTaskId;
 
+        /**
+         * The identifier of the task being started or cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint
+         * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
+         *
+         * @param sqlTuningTaskId the value to set
+         * @return this builder
+         **/
         public Builder sqlTuningTaskId(Long sqlTuningTaskId) {
             this.sqlTuningTaskId = sqlTuningTaskId;
             this.__explicitlySet__.add("sqlTuningTaskId");
@@ -76,6 +90,13 @@ public final class SqlTuningTaskReturn {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningTaskId")
     private final Long sqlTuningTaskId;
 
+    /**
+     * The identifier of the task being started or cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * It can be retrieved from the following endpoint
+     * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
+     *
+     * @return the value
+     **/
     public Long getSqlTuningTaskId() {
         return sqlTuningTaskId;
     }

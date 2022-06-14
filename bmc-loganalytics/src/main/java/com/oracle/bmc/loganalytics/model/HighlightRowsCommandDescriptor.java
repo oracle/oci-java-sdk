@@ -72,19 +72,37 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * User specified color to highlight matches with if found.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("color")
         private String color;
 
+        /**
+         * User specified color to highlight matches with if found.
+         *
+         * @param color the value to set
+         * @return this builder
+         **/
         public Builder color(String color) {
             this.color = color;
             this.__explicitlySet__.add("color");
             return this;
         }
-
+        /**
+         * List of terms or phrases to find to mark the result row as highlighted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keywords")
         private java.util.List<String> keywords;
 
+        /**
+         * List of terms or phrases to find to mark the result row as highlighted.
+         *
+         * @param keywords the value to set
+         * @return this builder
+         **/
         public Builder keywords(java.util.List<String> keywords) {
             this.keywords = keywords;
             this.__explicitlySet__.add("keywords");
@@ -156,6 +174,11 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
     @com.fasterxml.jackson.annotation.JsonProperty("color")
     private final String color;
 
+    /**
+     * User specified color to highlight matches with if found.
+     *
+     * @return the value
+     **/
     public String getColor() {
         return color;
     }
@@ -167,6 +190,11 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
     @com.fasterxml.jackson.annotation.JsonProperty("keywords")
     private final java.util.List<String> keywords;
 
+    /**
+     * List of terms or phrases to find to mark the result row as highlighted.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getKeywords() {
         return keywords;
     }

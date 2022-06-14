@@ -16,6 +16,9 @@ public class GetServiceGatewayRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String serviceGatewayId;
 
+    /**
+     * The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     public String getServiceGatewayId() {
         return serviceGatewayId;
     }
@@ -27,10 +30,14 @@ public class GetServiceGatewayRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         private String serviceGatewayId = null;
 
         /**
          * The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param serviceGatewayId the value to set
          * @return this builder instance
          */
         public Builder serviceGatewayId(String serviceGatewayId) {
@@ -106,12 +113,17 @@ public class GetServiceGatewayRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().serviceGatewayId(serviceGatewayId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

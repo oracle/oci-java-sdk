@@ -81,28 +81,59 @@ public final class CreateSaml2IdentityProviderDetails extends CreateIdentityProv
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The URL for retrieving the identity provider's metadata,
+         * which contains information required for federating.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
         private String metadataUrl;
 
+        /**
+         * The URL for retrieving the identity provider's metadata,
+         * which contains information required for federating.
+         *
+         * @param metadataUrl the value to set
+         * @return this builder
+         **/
         public Builder metadataUrl(String metadataUrl) {
             this.metadataUrl = metadataUrl;
             this.__explicitlySet__.add("metadataUrl");
             return this;
         }
-
+        /**
+         * The XML that contains the information required for federating.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private String metadata;
 
+        /**
+         * The XML that contains the information required for federating.
+         *
+         * @param metadata the value to set
+         * @return this builder
+         **/
         public Builder metadata(String metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
-
+        /**
+         * Extra name value pairs associated with this identity provider.
+         * Example: {@code {"clientId": "app_sf3kdjf3"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformAttributes")
         private java.util.Map<String, String> freeformAttributes;
 
+        /**
+         * Extra name value pairs associated with this identity provider.
+         * Example: {@code {"clientId": "app_sf3kdjf3"}}
+         *
+         * @param freeformAttributes the value to set
+         * @return this builder
+         **/
         public Builder freeformAttributes(java.util.Map<String, String> freeformAttributes) {
             this.freeformAttributes = freeformAttributes;
             this.__explicitlySet__.add("freeformAttributes");
@@ -182,6 +213,12 @@ public final class CreateSaml2IdentityProviderDetails extends CreateIdentityProv
     @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
     private final String metadataUrl;
 
+    /**
+     * The URL for retrieving the identity provider's metadata,
+     * which contains information required for federating.
+     *
+     * @return the value
+     **/
     public String getMetadataUrl() {
         return metadataUrl;
     }
@@ -193,6 +230,11 @@ public final class CreateSaml2IdentityProviderDetails extends CreateIdentityProv
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final String metadata;
 
+    /**
+     * The XML that contains the information required for federating.
+     *
+     * @return the value
+     **/
     public String getMetadata() {
         return metadata;
     }
@@ -205,6 +247,12 @@ public final class CreateSaml2IdentityProviderDetails extends CreateIdentityProv
     @com.fasterxml.jackson.annotation.JsonProperty("freeformAttributes")
     private final java.util.Map<String, String> freeformAttributes;
 
+    /**
+     * Extra name value pairs associated with this identity provider.
+     * Example: {@code {"clientId": "app_sf3kdjf3"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformAttributes() {
         return freeformAttributes;
     }

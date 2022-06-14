@@ -30,18 +30,35 @@ public final class SteeringPolicyFilterAnswerData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("answerCondition")
         private String answerCondition;
 
+        /**
+         * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+         *
+         * @param answerCondition the value to set
+         * @return this builder
+         **/
         public Builder answerCondition(String answerCondition) {
             this.answerCondition = answerCondition;
             this.__explicitlySet__.add("answerCondition");
             return this;
         }
-
+        /**
+         * Keeps the answer only if the value is {@code true}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldKeep")
         private Boolean shouldKeep;
 
+        /**
+         * Keeps the answer only if the value is {@code true}.
+         * @param shouldKeep the value to set
+         * @return this builder
+         **/
         public Builder shouldKeep(Boolean shouldKeep) {
             this.shouldKeep = shouldKeep;
             this.__explicitlySet__.add("shouldKeep");
@@ -86,6 +103,11 @@ public final class SteeringPolicyFilterAnswerData {
     @com.fasterxml.jackson.annotation.JsonProperty("answerCondition")
     private final String answerCondition;
 
+    /**
+     * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+     *
+     * @return the value
+     **/
     public String getAnswerCondition() {
         return answerCondition;
     }
@@ -96,6 +118,10 @@ public final class SteeringPolicyFilterAnswerData {
     @com.fasterxml.jackson.annotation.JsonProperty("shouldKeep")
     private final Boolean shouldKeep;
 
+    /**
+     * Keeps the answer only if the value is {@code true}.
+     * @return the value
+     **/
     public Boolean getShouldKeep() {
         return shouldKeep;
     }

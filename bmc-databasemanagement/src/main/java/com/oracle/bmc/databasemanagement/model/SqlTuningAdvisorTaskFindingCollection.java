@@ -30,9 +30,17 @@ public final class SqlTuningAdvisorTaskFindingCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of the findings for a tuning task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SqlTuningAdvisorTaskFindingSummary> items;
 
+        /**
+         * An array of the findings for a tuning task.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SqlTuningAdvisorTaskFindingSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class SqlTuningAdvisorTaskFindingCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SqlTuningAdvisorTaskFindingSummary> items;
 
+    /**
+     * An array of the findings for a tuning task.
+     * @return the value
+     **/
     public java.util.List<SqlTuningAdvisorTaskFindingSummary> getItems() {
         return items;
     }

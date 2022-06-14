@@ -19,6 +19,9 @@ public class CreateNetworkLoadBalancerRequest
     private com.oracle.bmc.networkloadbalancer.model.CreateNetworkLoadBalancerDetails
             createNetworkLoadBalancerDetails;
 
+    /**
+     * Details for the new network load balancer.
+     */
     public com.oracle.bmc.networkloadbalancer.model.CreateNetworkLoadBalancerDetails
             getCreateNetworkLoadBalancerDetails() {
         return createNetworkLoadBalancerDetails;
@@ -33,6 +36,14 @@ public class CreateNetworkLoadBalancerRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+     * server error without risk of rerunning that same action. Retry tokens expire after 24
+     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -43,6 +54,11 @@ public class CreateNetworkLoadBalancerRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,11 +81,15 @@ public class CreateNetworkLoadBalancerRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new network load balancer.
+         */
         private com.oracle.bmc.networkloadbalancer.model.CreateNetworkLoadBalancerDetails
                 createNetworkLoadBalancerDetails = null;
 
         /**
          * Details for the new network load balancer.
+         * @param createNetworkLoadBalancerDetails the value to set
          * @return this builder instance
          */
         public Builder createNetworkLoadBalancerDetails(
@@ -79,6 +99,14 @@ public class CreateNetworkLoadBalancerRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+         * server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -88,6 +116,7 @@ public class CreateNetworkLoadBalancerRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -95,12 +124,18 @@ public class CreateNetworkLoadBalancerRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -192,7 +227,8 @@ public class CreateNetworkLoadBalancerRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -201,6 +237,10 @@ public class CreateNetworkLoadBalancerRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

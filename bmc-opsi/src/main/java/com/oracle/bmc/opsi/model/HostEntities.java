@@ -34,19 +34,33 @@ public final class HostEntities extends HostConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Name of the database entity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
+        /**
+         * Name of the database entity
+         * @param entityName the value to set
+         * @return this builder
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-
+        /**
+         * Type of the database entity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * Type of the database entity
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -98,6 +112,10 @@ public final class HostEntities extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
+    /**
+     * Name of the database entity
+     * @return the value
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -108,6 +126,10 @@ public final class HostEntities extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * Type of the database entity
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }

@@ -37,18 +37,49 @@ package com.oracle.bmc.loadbalancer.model;
 public final class AddHttpRequestHeaderRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A header name that conforms to RFC 7230.
+         * <p>
+         * Example: {@code example_header_name}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("header")
         private String header;
 
+        /**
+         * A header name that conforms to RFC 7230.
+         * <p>
+         * Example: {@code example_header_name}
+         *
+         * @param header the value to set
+         * @return this builder
+         **/
         public Builder header(String header) {
             this.header = header;
             this.__explicitlySet__.add("header");
             return this;
         }
-
+        /**
+         * A header value that conforms to RFC 7230. With the following exceptions:
+         * *  value cannot contain {@code $}
+         * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
+         * <p>
+         * Example: {@code example_value}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * A header value that conforms to RFC 7230. With the following exceptions:
+         * *  value cannot contain {@code $}
+         * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
+         * <p>
+         * Example: {@code example_value}
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -100,6 +131,13 @@ public final class AddHttpRequestHeaderRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("header")
     private final String header;
 
+    /**
+     * A header name that conforms to RFC 7230.
+     * <p>
+     * Example: {@code example_header_name}
+     *
+     * @return the value
+     **/
     public String getHeader() {
         return header;
     }
@@ -115,6 +153,15 @@ public final class AddHttpRequestHeaderRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * A header value that conforms to RFC 7230. With the following exceptions:
+     * *  value cannot contain {@code $}
+     * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
+     * <p>
+     * Example: {@code example_value}
+     *
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

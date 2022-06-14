@@ -56,73 +56,272 @@ public final class SSLConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The maximum depth for peer certificate chain verification.
+         * <p>
+         * Example: {@code 3}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
         private Integer verifyDepth;
 
+        /**
+         * The maximum depth for peer certificate chain verification.
+         * <p>
+         * Example: {@code 3}
+         *
+         * @param verifyDepth the value to set
+         * @return this builder
+         **/
         public Builder verifyDepth(Integer verifyDepth) {
             this.verifyDepth = verifyDepth;
             this.__explicitlySet__.add("verifyDepth");
             return this;
         }
-
+        /**
+         * Whether the load balancer listener should verify peer certificates.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
         private Boolean verifyPeerCertificate;
 
+        /**
+         * Whether the load balancer listener should verify peer certificates.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param verifyPeerCertificate the value to set
+         * @return this builder
+         **/
         public Builder verifyPeerCertificate(Boolean verifyPeerCertificate) {
             this.verifyPeerCertificate = verifyPeerCertificate;
             this.__explicitlySet__.add("verifyPeerCertificate");
             return this;
         }
-
+        /**
+         * Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
+         * <p>
+         * Example: {@code [ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustedCertificateAuthorityIds")
         private java.util.List<String> trustedCertificateAuthorityIds;
 
+        /**
+         * Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
+         * <p>
+         * Example: {@code [ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]}
+         *
+         * @param trustedCertificateAuthorityIds the value to set
+         * @return this builder
+         **/
         public Builder trustedCertificateAuthorityIds(
                 java.util.List<String> trustedCertificateAuthorityIds) {
             this.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
             this.__explicitlySet__.add("trustedCertificateAuthorityIds");
             return this;
         }
-
+        /**
+         * Ids for OCI certificates service certificates. Currently only a single Id may be passed.
+         * <p>
+         * Example: {@code [ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateIds")
         private java.util.List<String> certificateIds;
 
+        /**
+         * Ids for OCI certificates service certificates. Currently only a single Id may be passed.
+         * <p>
+         * Example: {@code [ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]}
+         *
+         * @param certificateIds the value to set
+         * @return this builder
+         **/
         public Builder certificateIds(java.util.List<String> certificateIds) {
             this.certificateIds = certificateIds;
             this.__explicitlySet__.add("certificateIds");
             return this;
         }
-
+        /**
+         * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+         * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+         * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_certificate_bundle}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
+        /**
+         * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+         * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+         * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_certificate_bundle}
+         *
+         * @param certificateName the value to set
+         * @return this builder
+         **/
         public Builder certificateName(String certificateName) {
             this.certificateName = certificateName;
             this.__explicitlySet__.add("certificateName");
             return this;
         }
-
+        /**
+         * When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client
+         * ciphers.
+         * <p>
+         **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This
+         *           field is ignored when the {@code SSLConfiguration} object is associated with a backend set.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serverOrderPreference")
         private ServerOrderPreference serverOrderPreference;
 
+        /**
+         * When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client
+         * ciphers.
+         * <p>
+         **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This
+         *           field is ignored when the {@code SSLConfiguration} object is associated with a backend set.
+         *
+         * @param serverOrderPreference the value to set
+         * @return this builder
+         **/
         public Builder serverOrderPreference(ServerOrderPreference serverOrderPreference) {
             this.serverOrderPreference = serverOrderPreference;
             this.__explicitlySet__.add("serverOrderPreference");
             return this;
         }
-
+        /**
+         * The name of the cipher suite to use for HTTPS or SSL connections.
+         * <p>
+         * If this field is not specified, the default is {@code oci-default-ssl-cipher-suite-v1}.
+         * <p>
+         **Notes:**
+         * <p>
+         *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher
+         *    suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+         * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured
+         *    certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA
+         *    certificates.
+         * *  If the cipher configuration is not modified after load balancer creation, the {@code GET} operation returns
+         *    {@code oci-default-ssl-cipher-suite-v1} as the value of this field in the SSL configuration for existing listeners
+         *    that predate this feature.
+         * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the {@code GET}
+         *    operation returns {@code oci-customized-ssl-cipher-suite} as the value of this field in the SSL configuration for
+         *    existing listeners that predate this feature.
+         * *  The {@code GET} operation returns {@code oci-wider-compatible-ssl-cipher-suite-v1} as the value of this field in the SSL
+         *    configuration for existing backend sets that predate this feature.
+         * *  If the {@code GET} operation on a listener returns {@code oci-customized-ssl-cipher-suite} as the value of this field,
+         *    you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+         * *  The {@code oci-customized-ssl-cipher-suite} Oracle reserved cipher suite name is not accepted as valid input for
+         *    this field.
+         * <p>
+         * example: {@code example_cipher_suite}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cipherSuiteName")
         private String cipherSuiteName;
 
+        /**
+         * The name of the cipher suite to use for HTTPS or SSL connections.
+         * <p>
+         * If this field is not specified, the default is {@code oci-default-ssl-cipher-suite-v1}.
+         * <p>
+         **Notes:**
+         * <p>
+         *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher
+         *    suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+         * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured
+         *    certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA
+         *    certificates.
+         * *  If the cipher configuration is not modified after load balancer creation, the {@code GET} operation returns
+         *    {@code oci-default-ssl-cipher-suite-v1} as the value of this field in the SSL configuration for existing listeners
+         *    that predate this feature.
+         * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the {@code GET}
+         *    operation returns {@code oci-customized-ssl-cipher-suite} as the value of this field in the SSL configuration for
+         *    existing listeners that predate this feature.
+         * *  The {@code GET} operation returns {@code oci-wider-compatible-ssl-cipher-suite-v1} as the value of this field in the SSL
+         *    configuration for existing backend sets that predate this feature.
+         * *  If the {@code GET} operation on a listener returns {@code oci-customized-ssl-cipher-suite} as the value of this field,
+         *    you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+         * *  The {@code oci-customized-ssl-cipher-suite} Oracle reserved cipher suite name is not accepted as valid input for
+         *    this field.
+         * <p>
+         * example: {@code example_cipher_suite}
+         *
+         * @param cipherSuiteName the value to set
+         * @return this builder
+         **/
         public Builder cipherSuiteName(String cipherSuiteName) {
             this.cipherSuiteName = cipherSuiteName;
             this.__explicitlySet__.add("cipherSuiteName");
             return this;
         }
-
+        /**
+         * A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+         * <p>
+         * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure
+         * connection ensures that all data passed between the client and the server is private.
+         * <p>
+         * The Load Balancing service supports the following protocols:
+         * <p>
+         *  TLSv1
+         * *  TLSv1.1
+         * *  TLSv1.2
+         * <p>
+         * If this field is not specified, TLSv1.2 is the default.
+         * <p>
+         **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+         * <p>
+         **Notes:**
+         * <p>
+         *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher
+         *    suite.
+         * *  For all existing load balancer listeners and backend sets that predate this feature, the {@code GET} operation
+         *    displays a list of SSL protocols currently used by those resources.
+         * <p>
+         * example: {@code ["TLSv1.1", "TLSv1.2"]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocols")
         private java.util.List<String> protocols;
 
+        /**
+         * A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+         * <p>
+         * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure
+         * connection ensures that all data passed between the client and the server is private.
+         * <p>
+         * The Load Balancing service supports the following protocols:
+         * <p>
+         *  TLSv1
+         * *  TLSv1.1
+         * *  TLSv1.2
+         * <p>
+         * If this field is not specified, TLSv1.2 is the default.
+         * <p>
+         **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+         * <p>
+         **Notes:**
+         * <p>
+         *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher
+         *    suite.
+         * *  For all existing load balancer listeners and backend sets that predate this feature, the {@code GET} operation
+         *    displays a list of SSL protocols currently used by those resources.
+         * <p>
+         * example: {@code ["TLSv1.1", "TLSv1.2"]}
+         *
+         * @param protocols the value to set
+         * @return this builder
+         **/
         public Builder protocols(java.util.List<String> protocols) {
             this.protocols = protocols;
             this.__explicitlySet__.add("protocols");
@@ -184,6 +383,13 @@ public final class SSLConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
     private final Integer verifyDepth;
 
+    /**
+     * The maximum depth for peer certificate chain verification.
+     * <p>
+     * Example: {@code 3}
+     *
+     * @return the value
+     **/
     public Integer getVerifyDepth() {
         return verifyDepth;
     }
@@ -197,6 +403,13 @@ public final class SSLConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
     private final Boolean verifyPeerCertificate;
 
+    /**
+     * Whether the load balancer listener should verify peer certificates.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
     public Boolean getVerifyPeerCertificate() {
         return verifyPeerCertificate;
     }
@@ -210,6 +423,13 @@ public final class SSLConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("trustedCertificateAuthorityIds")
     private final java.util.List<String> trustedCertificateAuthorityIds;
 
+    /**
+     * Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
+     * <p>
+     * Example: {@code [ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getTrustedCertificateAuthorityIds() {
         return trustedCertificateAuthorityIds;
     }
@@ -223,6 +443,13 @@ public final class SSLConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateIds")
     private final java.util.List<String> certificateIds;
 
+    /**
+     * Ids for OCI certificates service certificates. Currently only a single Id may be passed.
+     * <p>
+     * Example: {@code [ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getCertificateIds() {
         return certificateIds;
     }
@@ -238,6 +465,15 @@ public final class SSLConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
     private final String certificateName;
 
+    /**
+     * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+     * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+     * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_certificate_bundle}
+     *
+     * @return the value
+     **/
     public String getCertificateName() {
         return certificateName;
     }
@@ -306,6 +542,15 @@ public final class SSLConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("serverOrderPreference")
     private final ServerOrderPreference serverOrderPreference;
 
+    /**
+     * When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client
+     * ciphers.
+     * <p>
+     **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This
+     *           field is ignored when the {@code SSLConfiguration} object is associated with a backend set.
+     *
+     * @return the value
+     **/
     public ServerOrderPreference getServerOrderPreference() {
         return serverOrderPreference;
     }
@@ -341,6 +586,35 @@ public final class SSLConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("cipherSuiteName")
     private final String cipherSuiteName;
 
+    /**
+     * The name of the cipher suite to use for HTTPS or SSL connections.
+     * <p>
+     * If this field is not specified, the default is {@code oci-default-ssl-cipher-suite-v1}.
+     * <p>
+     **Notes:**
+     * <p>
+     *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher
+     *    suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+     * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured
+     *    certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA
+     *    certificates.
+     * *  If the cipher configuration is not modified after load balancer creation, the {@code GET} operation returns
+     *    {@code oci-default-ssl-cipher-suite-v1} as the value of this field in the SSL configuration for existing listeners
+     *    that predate this feature.
+     * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the {@code GET}
+     *    operation returns {@code oci-customized-ssl-cipher-suite} as the value of this field in the SSL configuration for
+     *    existing listeners that predate this feature.
+     * *  The {@code GET} operation returns {@code oci-wider-compatible-ssl-cipher-suite-v1} as the value of this field in the SSL
+     *    configuration for existing backend sets that predate this feature.
+     * *  If the {@code GET} operation on a listener returns {@code oci-customized-ssl-cipher-suite} as the value of this field,
+     *    you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+     * *  The {@code oci-customized-ssl-cipher-suite} Oracle reserved cipher suite name is not accepted as valid input for
+     *    this field.
+     * <p>
+     * example: {@code example_cipher_suite}
+     *
+     * @return the value
+     **/
     public String getCipherSuiteName() {
         return cipherSuiteName;
     }
@@ -375,6 +649,34 @@ public final class SSLConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("protocols")
     private final java.util.List<String> protocols;
 
+    /**
+     * A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+     * <p>
+     * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure
+     * connection ensures that all data passed between the client and the server is private.
+     * <p>
+     * The Load Balancing service supports the following protocols:
+     * <p>
+     *  TLSv1
+     * *  TLSv1.1
+     * *  TLSv1.2
+     * <p>
+     * If this field is not specified, TLSv1.2 is the default.
+     * <p>
+     **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+     * <p>
+     **Notes:**
+     * <p>
+     *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+     * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher
+     *    suite.
+     * *  For all existing load balancer listeners and backend sets that predate this feature, the {@code GET} operation
+     *    displays a list of SSL protocols currently used by those resources.
+     * <p>
+     * example: {@code ["TLSv1.1", "TLSv1.2"]}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getProtocols() {
         return protocols;
     }

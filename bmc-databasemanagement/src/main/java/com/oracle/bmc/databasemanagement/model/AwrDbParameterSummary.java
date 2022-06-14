@@ -50,63 +50,121 @@ public final class AwrDbParameterSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the parameter.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The database instance number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
         private Integer instanceNumber;
 
+        /**
+         * The database instance number.
+         * @param instanceNumber the value to set
+         * @return this builder
+         **/
         public Builder instanceNumber(Integer instanceNumber) {
             this.instanceNumber = instanceNumber;
             this.__explicitlySet__.add("instanceNumber");
             return this;
         }
-
+        /**
+         * The parameter value when the period began.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("beginValue")
         private String beginValue;
 
+        /**
+         * The parameter value when the period began.
+         * @param beginValue the value to set
+         * @return this builder
+         **/
         public Builder beginValue(String beginValue) {
             this.beginValue = beginValue;
             this.__explicitlySet__.add("beginValue");
             return this;
         }
-
+        /**
+         * The parameter value when the period ended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endValue")
         private String endValue;
 
+        /**
+         * The parameter value when the period ended.
+         * @param endValue the value to set
+         * @return this builder
+         **/
         public Builder endValue(String endValue) {
             this.endValue = endValue;
             this.__explicitlySet__.add("endValue");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter value changed within the period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isChanged")
         private Boolean isChanged;
 
+        /**
+         * Indicates whether the parameter value changed within the period.
+         * @param isChanged the value to set
+         * @return this builder
+         **/
         public Builder isChanged(Boolean isChanged) {
             this.isChanged = isChanged;
             this.__explicitlySet__.add("isChanged");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter has been modified after instance startup:
+         *  - MODIFIED - Parameter has been modified with ALTER SESSION
+         *  - SYSTEM_MOD - Parameter has been modified with ALTER SYSTEM (which causes all the currently logged in sessions\u2019 values to be modified)
+         *  - FALSE - Parameter has not been modified after instance startup
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueModified")
         private String valueModified;
 
+        /**
+         * Indicates whether the parameter has been modified after instance startup:
+         *  - MODIFIED - Parameter has been modified with ALTER SESSION
+         *  - SYSTEM_MOD - Parameter has been modified with ALTER SYSTEM (which causes all the currently logged in sessions\u2019 values to be modified)
+         *  - FALSE - Parameter has not been modified after instance startup
+         *
+         * @param valueModified the value to set
+         * @return this builder
+         **/
         public Builder valueModified(String valueModified) {
             this.valueModified = valueModified;
             this.__explicitlySet__.add("valueModified");
             return this;
         }
-
+        /**
+         * Indicates whether the parameter value in the end snapshot is the default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Indicates whether the parameter value in the end snapshot is the default.
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -163,6 +221,10 @@ public final class AwrDbParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the parameter.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -173,6 +235,10 @@ public final class AwrDbParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
     private final Integer instanceNumber;
 
+    /**
+     * The database instance number.
+     * @return the value
+     **/
     public Integer getInstanceNumber() {
         return instanceNumber;
     }
@@ -183,6 +249,10 @@ public final class AwrDbParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("beginValue")
     private final String beginValue;
 
+    /**
+     * The parameter value when the period began.
+     * @return the value
+     **/
     public String getBeginValue() {
         return beginValue;
     }
@@ -193,6 +263,10 @@ public final class AwrDbParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("endValue")
     private final String endValue;
 
+    /**
+     * The parameter value when the period ended.
+     * @return the value
+     **/
     public String getEndValue() {
         return endValue;
     }
@@ -203,6 +277,10 @@ public final class AwrDbParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isChanged")
     private final Boolean isChanged;
 
+    /**
+     * Indicates whether the parameter value changed within the period.
+     * @return the value
+     **/
     public Boolean getIsChanged() {
         return isChanged;
     }
@@ -217,6 +295,14 @@ public final class AwrDbParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("valueModified")
     private final String valueModified;
 
+    /**
+     * Indicates whether the parameter has been modified after instance startup:
+     *  - MODIFIED - Parameter has been modified with ALTER SESSION
+     *  - SYSTEM_MOD - Parameter has been modified with ALTER SYSTEM (which causes all the currently logged in sessions\u2019 values to be modified)
+     *  - FALSE - Parameter has not been modified after instance startup
+     *
+     * @return the value
+     **/
     public String getValueModified() {
         return valueModified;
     }
@@ -227,6 +313,10 @@ public final class AwrDbParameterSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Indicates whether the parameter value in the end snapshot is the default.
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }

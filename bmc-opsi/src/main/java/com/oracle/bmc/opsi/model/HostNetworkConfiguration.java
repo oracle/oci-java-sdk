@@ -36,28 +36,49 @@ public final class HostNetworkConfiguration extends HostConfigurationMetricGroup
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Name of the network interface
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interfaceName")
         private String interfaceName;
 
+        /**
+         * Name of the network interface
+         * @param interfaceName the value to set
+         * @return this builder
+         **/
         public Builder interfaceName(String interfaceName) {
             this.interfaceName = interfaceName;
             this.__explicitlySet__.add("interfaceName");
             return this;
         }
-
+        /**
+         * IP address (IPv4 or IPv6) of the network interface
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * IP address (IPv4 or IPv6) of the network interface
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-
+        /**
+         * MAC address of the network interface. MAC address is a 12-digit hexadecimal number separated by colons or dashes or dots. Following formats are accepted: MM:MM:MM:SS:SS:SS, MM-MM-MM-SS-SS-SS, MM.MM.MM.SS.SS.SS, MMM:MMM:SSS:SSS, MMM-MMM-SSS-SSS, MMM.MMM.SSS.SSS, MMMM:MMSS:SSSS, MMMM-MMSS-SSSS, MMMM.MMSS.SSSS
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
         private String macAddress;
 
+        /**
+         * MAC address of the network interface. MAC address is a 12-digit hexadecimal number separated by colons or dashes or dots. Following formats are accepted: MM:MM:MM:SS:SS:SS, MM-MM-MM-SS-SS-SS, MM.MM.MM.SS.SS.SS, MMM:MMM:SSS:SSS, MMM-MMM-SSS-SSS, MMM.MMM.SSS.SSS, MMMM:MMSS:SSSS, MMMM-MMSS-SSSS, MMMM.MMSS.SSSS
+         * @param macAddress the value to set
+         * @return this builder
+         **/
         public Builder macAddress(String macAddress) {
             this.macAddress = macAddress;
             this.__explicitlySet__.add("macAddress");
@@ -117,6 +138,10 @@ public final class HostNetworkConfiguration extends HostConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("interfaceName")
     private final String interfaceName;
 
+    /**
+     * Name of the network interface
+     * @return the value
+     **/
     public String getInterfaceName() {
         return interfaceName;
     }
@@ -127,6 +152,10 @@ public final class HostNetworkConfiguration extends HostConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * IP address (IPv4 or IPv6) of the network interface
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
@@ -137,6 +166,10 @@ public final class HostNetworkConfiguration extends HostConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
     private final String macAddress;
 
+    /**
+     * MAC address of the network interface. MAC address is a 12-digit hexadecimal number separated by colons or dashes or dots. Following formats are accepted: MM:MM:MM:SS:SS:SS, MM-MM-MM-SS-SS-SS, MM.MM.MM.SS.SS.SS, MMM:MMM:SSS:SSS, MMM-MMM-SSS-SSS, MMM.MMM.SSS.SSS, MMMM:MMSS:SSSS, MMMM-MMSS-SSSS, MMMM.MMSS.SSSS
+     * @return the value
+     **/
     public String getMacAddress() {
         return macAddress;
     }

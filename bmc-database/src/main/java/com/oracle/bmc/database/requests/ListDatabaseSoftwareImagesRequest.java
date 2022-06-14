@@ -17,6 +17,9 @@ public class ListDatabaseSoftwareImagesRequest
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListDatabaseSoftwareImagesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -33,6 +39,9 @@ public class ListDatabaseSoftwareImagesRequest
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -79,6 +88,10 @@ public class ListDatabaseSoftwareImagesRequest
         }
     };
 
+    /**
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -123,6 +136,9 @@ public class ListDatabaseSoftwareImagesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -132,6 +148,9 @@ public class ListDatabaseSoftwareImagesRequest
     private com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.LifecycleState
             lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -141,6 +160,9 @@ public class ListDatabaseSoftwareImagesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -149,6 +171,9 @@ public class ListDatabaseSoftwareImagesRequest
      */
     private com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.ImageType imageType;
 
+    /**
+     * A filter to return only resources that match the given image type exactly.
+     */
     public com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.ImageType getImageType() {
         return imageType;
     }
@@ -158,6 +183,9 @@ public class ListDatabaseSoftwareImagesRequest
     private com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.ImageShapeFamily
             imageShapeFamily;
 
+    /**
+     * A filter to return only resources that match the given image shape family exactly.
+     */
     public com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.ImageShapeFamily
             getImageShapeFamily() {
         return imageShapeFamily;
@@ -167,6 +195,9 @@ public class ListDatabaseSoftwareImagesRequest
      */
     private Boolean isUpgradeSupported;
 
+    /**
+     * If provided, filters the results to the set of database versions which are supported for Upgrade.
+     */
     public Boolean getIsUpgradeSupported() {
         return isUpgradeSupported;
     }
@@ -178,10 +209,14 @@ public class ListDatabaseSoftwareImagesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -189,10 +224,14 @@ public class ListDatabaseSoftwareImagesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -200,10 +239,14 @@ public class ListDatabaseSoftwareImagesRequest
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -211,11 +254,16 @@ public class ListDatabaseSoftwareImagesRequest
             return this;
         }
 
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -223,10 +271,14 @@ public class ListDatabaseSoftwareImagesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -234,11 +286,15 @@ public class ListDatabaseSoftwareImagesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.LifecycleState
                 lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -248,10 +304,14 @@ public class ListDatabaseSoftwareImagesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -259,11 +319,15 @@ public class ListDatabaseSoftwareImagesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given image type exactly.
+         */
         private com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.ImageType imageType =
                 null;
 
         /**
          * A filter to return only resources that match the given image type exactly.
+         * @param imageType the value to set
          * @return this builder instance
          */
         public Builder imageType(
@@ -272,11 +336,15 @@ public class ListDatabaseSoftwareImagesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given image shape family exactly.
+         */
         private com.oracle.bmc.database.model.DatabaseSoftwareImageSummary.ImageShapeFamily
                 imageShapeFamily = null;
 
         /**
          * A filter to return only resources that match the given image shape family exactly.
+         * @param imageShapeFamily the value to set
          * @return this builder instance
          */
         public Builder imageShapeFamily(
@@ -286,10 +354,14 @@ public class ListDatabaseSoftwareImagesRequest
             return this;
         }
 
+        /**
+         * If provided, filters the results to the set of database versions which are supported for Upgrade.
+         */
         private Boolean isUpgradeSupported = null;
 
         /**
          * If provided, filters the results to the set of database versions which are supported for Upgrade.
+         * @param isUpgradeSupported the value to set
          * @return this builder instance
          */
         public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
@@ -383,7 +455,8 @@ public class ListDatabaseSoftwareImagesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -399,6 +472,10 @@ public class ListDatabaseSoftwareImagesRequest
                 .isUpgradeSupported(isUpgradeSupported);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

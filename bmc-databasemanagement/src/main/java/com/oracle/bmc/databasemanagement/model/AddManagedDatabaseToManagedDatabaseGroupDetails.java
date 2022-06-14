@@ -29,9 +29,19 @@ public final class AddManagedDatabaseToManagedDatabaseGroupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
         private String managedDatabaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         *
+         * @param managedDatabaseId the value to set
+         * @return this builder
+         **/
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = managedDatabaseId;
             this.__explicitlySet__.add("managedDatabaseId");
@@ -75,6 +85,11 @@ public final class AddManagedDatabaseToManagedDatabaseGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
     private final String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     *
+     * @return the value
+     **/
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }

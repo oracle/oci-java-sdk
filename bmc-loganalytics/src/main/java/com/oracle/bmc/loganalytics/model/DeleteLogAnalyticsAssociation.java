@@ -50,63 +50,113 @@ public final class DeleteLogAnalyticsAssociation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The agent unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
+        /**
+         * The agent unique identifier.
+         * @param agentId the value to set
+         * @return this builder
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-
+        /**
+         * The source name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
+        /**
+         * The source name.
+         * @param sourceName the value to set
+         * @return this builder
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-
+        /**
+         * The source type internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceTypeName")
         private String sourceTypeName;
 
+        /**
+         * The source type internal name.
+         * @param sourceTypeName the value to set
+         * @return this builder
+         **/
         public Builder sourceTypeName(String sourceTypeName) {
             this.sourceTypeName = sourceTypeName;
             this.__explicitlySet__.add("sourceTypeName");
             return this;
         }
-
+        /**
+         * The entity unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
+        /**
+         * The entity unique identifier.
+         * @param entityId the value to set
+         * @return this builder
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-
+        /**
+         * The entity type internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
         private String entityTypeName;
 
+        /**
+         * The entity type internal name.
+         * @param entityTypeName the value to set
+         * @return this builder
+         **/
         public Builder entityTypeName(String entityTypeName) {
             this.entityTypeName = entityTypeName;
             this.__explicitlySet__.add("entityTypeName");
             return this;
         }
-
+        /**
+         * The host name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * The host name.
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * The log group unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
+        /**
+         * The log group unique identifier.
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
@@ -163,6 +213,10 @@ public final class DeleteLogAnalyticsAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
+    /**
+     * The agent unique identifier.
+     * @return the value
+     **/
     public String getAgentId() {
         return agentId;
     }
@@ -173,6 +227,10 @@ public final class DeleteLogAnalyticsAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * The source name.
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }
@@ -183,6 +241,10 @@ public final class DeleteLogAnalyticsAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTypeName")
     private final String sourceTypeName;
 
+    /**
+     * The source type internal name.
+     * @return the value
+     **/
     public String getSourceTypeName() {
         return sourceTypeName;
     }
@@ -193,6 +255,10 @@ public final class DeleteLogAnalyticsAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
+    /**
+     * The entity unique identifier.
+     * @return the value
+     **/
     public String getEntityId() {
         return entityId;
     }
@@ -203,6 +269,10 @@ public final class DeleteLogAnalyticsAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
     private final String entityTypeName;
 
+    /**
+     * The entity type internal name.
+     * @return the value
+     **/
     public String getEntityTypeName() {
         return entityTypeName;
     }
@@ -213,6 +283,10 @@ public final class DeleteLogAnalyticsAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * The host name.
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -223,6 +297,10 @@ public final class DeleteLogAnalyticsAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
+    /**
+     * The log group unique identifier.
+     * @return the value
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }

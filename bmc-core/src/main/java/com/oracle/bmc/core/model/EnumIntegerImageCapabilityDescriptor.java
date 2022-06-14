@@ -35,19 +35,33 @@ public final class EnumIntegerImageCapabilityDescriptor extends ImageCapabilityS
             this.__explicitlySet__.add("source");
             return this;
         }
-
+        /**
+         * the list of values for the enum
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<Integer> values;
 
+        /**
+         * the list of values for the enum
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<Integer> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
             return this;
         }
-
+        /**
+         * the default value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private Integer defaultValue;
 
+        /**
+         * the default value
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(Integer defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -99,6 +113,10 @@ public final class EnumIntegerImageCapabilityDescriptor extends ImageCapabilityS
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<Integer> values;
 
+    /**
+     * the list of values for the enum
+     * @return the value
+     **/
     public java.util.List<Integer> getValues() {
         return values;
     }
@@ -109,6 +127,10 @@ public final class EnumIntegerImageCapabilityDescriptor extends ImageCapabilityS
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final Integer defaultValue;
 
+    /**
+     * the default value
+     * @return the value
+     **/
     public Integer getDefaultValue() {
         return defaultValue;
     }

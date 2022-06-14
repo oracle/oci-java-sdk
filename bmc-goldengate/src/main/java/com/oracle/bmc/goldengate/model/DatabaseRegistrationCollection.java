@@ -30,9 +30,19 @@ public final class DatabaseRegistrationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of DatabaseRegistration summaries.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DatabaseRegistrationSummary> items;
 
+        /**
+         * An array of DatabaseRegistration summaries.
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DatabaseRegistrationSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +85,11 @@ public final class DatabaseRegistrationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DatabaseRegistrationSummary> items;
 
+    /**
+     * An array of DatabaseRegistration summaries.
+     *
+     * @return the value
+     **/
     public java.util.List<DatabaseRegistrationSummary> getItems() {
         return items;
     }

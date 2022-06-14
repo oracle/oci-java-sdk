@@ -44,45 +44,81 @@ public final class CreateBdsMetastoreConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The display name of the metastore configuration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the metastore configuration
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the Data Catalog metastore.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
         private String metastoreId;
 
+        /**
+         * The OCID of the Data Catalog metastore.
+         * @param metastoreId the value to set
+         * @return this builder
+         **/
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = metastoreId;
             this.__explicitlySet__.add("metastoreId");
             return this;
         }
-
+        /**
+         * The ID of BDS Api Key used for Data Catalog metastore integration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyId")
         private String bdsApiKeyId;
 
+        /**
+         * The ID of BDS Api Key used for Data Catalog metastore integration.
+         * @param bdsApiKeyId the value to set
+         * @return this builder
+         **/
         public Builder bdsApiKeyId(String bdsApiKeyId) {
             this.bdsApiKeyId = bdsApiKeyId;
             this.__explicitlySet__.add("bdsApiKeyId");
             return this;
         }
-
+        /**
+         * Base-64 encoded passphrase of the BDS Api Key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
         private String bdsApiKeyPassphrase;
 
+        /**
+         * Base-64 encoded passphrase of the BDS Api Key.
+         * @param bdsApiKeyPassphrase the value to set
+         * @return this builder
+         **/
         public Builder bdsApiKeyPassphrase(String bdsApiKeyPassphrase) {
             this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
             this.__explicitlySet__.add("bdsApiKeyPassphrase");
             return this;
         }
-
+        /**
+         * Base-64 encoded password for the cluster admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
+        /**
+         * Base-64 encoded password for the cluster admin user.
+         * @param clusterAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
@@ -135,6 +171,10 @@ public final class CreateBdsMetastoreConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the metastore configuration
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -145,6 +185,10 @@ public final class CreateBdsMetastoreConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
     private final String metastoreId;
 
+    /**
+     * The OCID of the Data Catalog metastore.
+     * @return the value
+     **/
     public String getMetastoreId() {
         return metastoreId;
     }
@@ -155,6 +199,10 @@ public final class CreateBdsMetastoreConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyId")
     private final String bdsApiKeyId;
 
+    /**
+     * The ID of BDS Api Key used for Data Catalog metastore integration.
+     * @return the value
+     **/
     public String getBdsApiKeyId() {
         return bdsApiKeyId;
     }
@@ -165,6 +213,10 @@ public final class CreateBdsMetastoreConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
     private final String bdsApiKeyPassphrase;
 
+    /**
+     * Base-64 encoded passphrase of the BDS Api Key.
+     * @return the value
+     **/
     public String getBdsApiKeyPassphrase() {
         return bdsApiKeyPassphrase;
     }
@@ -175,6 +227,10 @@ public final class CreateBdsMetastoreConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     * @return the value
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }

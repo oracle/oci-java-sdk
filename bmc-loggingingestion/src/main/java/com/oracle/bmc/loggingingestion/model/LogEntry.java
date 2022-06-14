@@ -31,27 +31,57 @@ public final class LogEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The log entry content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("data")
         private String data;
 
+        /**
+         * The log entry content.
+         * @param data the value to set
+         * @return this builder
+         **/
         public Builder data(String data) {
             this.data = data;
             this.__explicitlySet__.add("data");
             return this;
         }
-
+        /**
+         * UUID uniquely representing this logEntry. This is not an OCID related
+         * to any oracle resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * UUID uniquely representing this logEntry. This is not an OCID related
+         * to any oracle resource.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string with milliseconds precision.
+         * If unspecified, defaults to PutLogsDetails.defaultlogentrytime.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("time")
         private java.util.Date time;
 
+        /**
+         * Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string with milliseconds precision.
+         * If unspecified, defaults to PutLogsDetails.defaultlogentrytime.
+         *
+         * @param time the value to set
+         * @return this builder
+         **/
         public Builder time(java.util.Date time) {
             this.time = time;
             this.__explicitlySet__.add("time");
@@ -93,6 +123,10 @@ public final class LogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     private final String data;
 
+    /**
+     * The log entry content.
+     * @return the value
+     **/
     public String getData() {
         return data;
     }
@@ -105,6 +139,12 @@ public final class LogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * UUID uniquely representing this logEntry. This is not an OCID related
+     * to any oracle resource.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -117,6 +157,12 @@ public final class LogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     private final java.util.Date time;
 
+    /**
+     * Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string with milliseconds precision.
+     * If unspecified, defaults to PutLogsDetails.defaultlogentrytime.
+     *
+     * @return the value
+     **/
     public java.util.Date getTime() {
         return time;
     }

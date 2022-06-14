@@ -34,18 +34,37 @@ public final class HeatWaveClusterSchemaMemoryEstimate {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
+        /**
+         * The name of the schema.
+         * @param schemaName the value to set
+         * @return this builder
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-
+        /**
+         * Estimated memory footprints for MySQL user tables of the schema
+         * when loaded to HeatWave cluster memory.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("perTableEstimates")
         private java.util.List<HeatWaveClusterTableMemoryEstimate> perTableEstimates;
 
+        /**
+         * Estimated memory footprints for MySQL user tables of the schema
+         * when loaded to HeatWave cluster memory.
+         *
+         * @param perTableEstimates the value to set
+         * @return this builder
+         **/
         public Builder perTableEstimates(
                 java.util.List<HeatWaveClusterTableMemoryEstimate> perTableEstimates) {
             this.perTableEstimates = perTableEstimates;
@@ -90,6 +109,10 @@ public final class HeatWaveClusterSchemaMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
+    /**
+     * The name of the schema.
+     * @return the value
+     **/
     public String getSchemaName() {
         return schemaName;
     }
@@ -102,6 +125,12 @@ public final class HeatWaveClusterSchemaMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("perTableEstimates")
     private final java.util.List<HeatWaveClusterTableMemoryEstimate> perTableEstimates;
 
+    /**
+     * Estimated memory footprints for MySQL user tables of the schema
+     * when loaded to HeatWave cluster memory.
+     *
+     * @return the value
+     **/
     public java.util.List<HeatWaveClusterTableMemoryEstimate> getPerTableEstimates() {
         return perTableEstimates;
     }

@@ -144,10 +144,17 @@ public final class BitbucketCloudTrigger extends Trigger {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * The endpoint that listens to trigger events.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
         private String triggerUrl;
 
+        /**
+         * The endpoint that listens to trigger events.
+         * @param triggerUrl the value to set
+         * @return this builder
+         **/
         public Builder triggerUrl(String triggerUrl) {
             this.triggerUrl = triggerUrl;
             this.__explicitlySet__.add("triggerUrl");
@@ -251,6 +258,10 @@ public final class BitbucketCloudTrigger extends Trigger {
     @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
     private final String triggerUrl;
 
+    /**
+     * The endpoint that listens to trigger events.
+     * @return the value
+     **/
     public String getTriggerUrl() {
         return triggerUrl;
     }

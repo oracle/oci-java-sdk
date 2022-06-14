@@ -29,9 +29,17 @@ public final class LogAnalyticsMetaSourceTypeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of meta source types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsMetaSourceType> items;
 
+        /**
+         * An array of meta source types.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsMetaSourceType> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class LogAnalyticsMetaSourceTypeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsMetaSourceType> items;
 
+    /**
+     * An array of meta source types.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsMetaSourceType> getItems() {
         return items;
     }

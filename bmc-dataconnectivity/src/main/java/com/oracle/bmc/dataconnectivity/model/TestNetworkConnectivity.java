@@ -36,27 +36,49 @@ public final class TestNetworkConnectivity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Last line from network validation command execution output.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkValidationOutput")
         private String networkValidationOutput;
 
+        /**
+         * Last line from network validation command execution output.
+         * @param networkValidationOutput the value to set
+         * @return this builder
+         **/
         public Builder networkValidationOutput(String networkValidationOutput) {
             this.networkValidationOutput = networkValidationOutput;
             this.__explicitlySet__.add("networkValidationOutput");
             return this;
         }
-
+        /**
+         * True if the data asset is has a valid network path.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReachable")
         private Boolean isReachable;
 
+        /**
+         * True if the data asset is has a valid network path.
+         * @param isReachable the value to set
+         * @return this builder
+         **/
         public Builder isReachable(Boolean isReachable) {
             this.isReachable = isReachable;
             this.__explicitlySet__.add("isReachable");
             return this;
         }
-
+        /**
+         * Exception or error message encountered while testing network reachability for the data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exceptionMessage")
         private String exceptionMessage;
 
+        /**
+         * Exception or error message encountered while testing network reachability for the data asset.
+         * @param exceptionMessage the value to set
+         * @return this builder
+         **/
         public Builder exceptionMessage(String exceptionMessage) {
             this.exceptionMessage = exceptionMessage;
             this.__explicitlySet__.add("exceptionMessage");
@@ -103,6 +125,10 @@ public final class TestNetworkConnectivity {
     @com.fasterxml.jackson.annotation.JsonProperty("networkValidationOutput")
     private final String networkValidationOutput;
 
+    /**
+     * Last line from network validation command execution output.
+     * @return the value
+     **/
     public String getNetworkValidationOutput() {
         return networkValidationOutput;
     }
@@ -113,6 +139,10 @@ public final class TestNetworkConnectivity {
     @com.fasterxml.jackson.annotation.JsonProperty("isReachable")
     private final Boolean isReachable;
 
+    /**
+     * True if the data asset is has a valid network path.
+     * @return the value
+     **/
     public Boolean getIsReachable() {
         return isReachable;
     }
@@ -123,6 +153,10 @@ public final class TestNetworkConnectivity {
     @com.fasterxml.jackson.annotation.JsonProperty("exceptionMessage")
     private final String exceptionMessage;
 
+    /**
+     * Exception or error message encountered while testing network reachability for the data asset.
+     * @return the value
+     **/
     public String getExceptionMessage() {
         return exceptionMessage;
     }

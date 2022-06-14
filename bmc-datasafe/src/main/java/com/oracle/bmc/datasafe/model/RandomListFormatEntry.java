@@ -38,10 +38,25 @@ public final class RandomListFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A comma-separated list of values to be used to replace column values.
+         * The list can be of strings, numbers, or dates. The data type of each
+         * value in the list must be compatible with the data type of the column.
+         * The number of entries in the list cannot be more than 999.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("randomList")
         private java.util.List<String> randomList;
 
+        /**
+         * A comma-separated list of values to be used to replace column values.
+         * The list can be of strings, numbers, or dates. The data type of each
+         * value in the list must be compatible with the data type of the column.
+         * The number of entries in the list cannot be more than 999.
+         *
+         * @param randomList the value to set
+         * @return this builder
+         **/
         public Builder randomList(java.util.List<String> randomList) {
             this.randomList = randomList;
             this.__explicitlySet__.add("randomList");
@@ -93,6 +108,14 @@ public final class RandomListFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("randomList")
     private final java.util.List<String> randomList;
 
+    /**
+     * A comma-separated list of values to be used to replace column values.
+     * The list can be of strings, numbers, or dates. The data type of each
+     * value in the list must be compatible with the data type of the column.
+     * The number of entries in the list cannot be more than 999.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getRandomList() {
         return randomList;
     }

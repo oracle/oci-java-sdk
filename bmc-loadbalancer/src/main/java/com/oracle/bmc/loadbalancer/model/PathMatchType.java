@@ -27,9 +27,45 @@ public final class PathMatchType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies how the load balancing service compares a {@link #pathRoute(PathRouteRequest) pathRoute}
+         * object's {@code path} string against the incoming URI.
+         * <p>
+         *  **EXACT_MATCH** - Looks for a {@code path} string that exactly matches the incoming URI path.
+         * <p>
+         *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the {@code path} string with the best, longest match of the beginning
+         *    portion of the incoming URI path.
+         * <p>
+         *  **PREFIX_MATCH** - Looks for a {@code path} string that matches the beginning portion of the incoming URI path.
+         * <p>
+         *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
+         * <p>
+         * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
+         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchType")
         private MatchType matchType;
 
+        /**
+         * Specifies how the load balancing service compares a {@link #pathRoute(PathRouteRequest) pathRoute}
+         * object's {@code path} string against the incoming URI.
+         * <p>
+         *  **EXACT_MATCH** - Looks for a {@code path} string that exactly matches the incoming URI path.
+         * <p>
+         *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the {@code path} string with the best, longest match of the beginning
+         *    portion of the incoming URI path.
+         * <p>
+         *  **PREFIX_MATCH** - Looks for a {@code path} string that matches the beginning portion of the incoming URI path.
+         * <p>
+         *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
+         * <p>
+         * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
+         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+         *
+         * @param matchType the value to set
+         * @return this builder
+         **/
         public Builder matchType(MatchType matchType) {
             this.matchType = matchType;
             this.__explicitlySet__.add("matchType");
@@ -149,6 +185,24 @@ public final class PathMatchType {
     @com.fasterxml.jackson.annotation.JsonProperty("matchType")
     private final MatchType matchType;
 
+    /**
+     * Specifies how the load balancing service compares a {@link #pathRoute(PathRouteRequest) pathRoute}
+     * object's {@code path} string against the incoming URI.
+     * <p>
+     *  **EXACT_MATCH** - Looks for a {@code path} string that exactly matches the incoming URI path.
+     * <p>
+     *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the {@code path} string with the best, longest match of the beginning
+     *    portion of the incoming URI path.
+     * <p>
+     *  **PREFIX_MATCH** - Looks for a {@code path} string that matches the beginning portion of the incoming URI path.
+     * <p>
+     *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
+     * <p>
+     * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
+     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     *
+     * @return the value
+     **/
     public MatchType getMatchType() {
         return matchType;
     }

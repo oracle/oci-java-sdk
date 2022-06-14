@@ -13,6 +13,10 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +28,12 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +45,12 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the work request, used to track the progress of the
+     * restore operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -44,6 +60,10 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.keymanagement.model.Vault vault;
 
+    /**
+     * The returned Vault instance.
+     * @return the value
+     */
     public com.oracle.bmc.keymanagement.model.Vault getVault() {
         return vault;
     }
@@ -76,29 +96,69 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the work request, used to track the progress of the
+         * restore operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the work request, used to track the progress of the
+         * restore operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * The returned Vault instance.
+         */
         private com.oracle.bmc.keymanagement.model.Vault vault;
 
+        /**
+         * The returned Vault instance.
+         * @param vault the value to set
+         * @return this builder
+         */
         public Builder vault(com.oracle.bmc.keymanagement.model.Vault vault) {
             this.vault = vault;
             return this;
@@ -118,12 +178,20 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public RestoreVaultFromObjectStoreResponse build() {
             return new RestoreVaultFromObjectStoreResponse(
                     __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, vault);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

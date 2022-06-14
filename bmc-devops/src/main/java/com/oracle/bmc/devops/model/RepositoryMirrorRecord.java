@@ -44,45 +44,91 @@ public final class RepositoryMirrorRecord {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Mirror status of current mirror entry.
+         * QUEUED - Mirroring Queued
+         * RUNNING - Mirroring is Running
+         * PASSED - Mirroring Passed
+         * FAILED - Mirroring Failed
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
         private MirrorStatus mirrorStatus;
 
+        /**
+         * Mirror status of current mirror entry.
+         * QUEUED - Mirroring Queued
+         * RUNNING - Mirroring is Running
+         * PASSED - Mirroring Passed
+         * FAILED - Mirroring Failed
+         *
+         * @param mirrorStatus the value to set
+         * @return this builder
+         **/
         public Builder mirrorStatus(MirrorStatus mirrorStatus) {
             this.mirrorStatus = mirrorStatus;
             this.__explicitlySet__.add("mirrorStatus");
             return this;
         }
-
+        /**
+         * Workrequest ID to track current mirror operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
+        /**
+         * Workrequest ID to track current mirror operation.
+         * @param workRequestId the value to set
+         * @return this builder
+         **/
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
             return this;
         }
-
+        /**
+         * The time to enqueue a mirror operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnqueued")
         private java.util.Date timeEnqueued;
 
+        /**
+         * The time to enqueue a mirror operation.
+         * @param timeEnqueued the value to set
+         * @return this builder
+         **/
         public Builder timeEnqueued(java.util.Date timeEnqueued) {
             this.timeEnqueued = timeEnqueued;
             this.__explicitlySet__.add("timeEnqueued");
             return this;
         }
-
+        /**
+         * The time to start a mirror operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The time to start a mirror operation.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The time taken to complete a mirror operation. Value is null if not completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
+        /**
+         * The time taken to complete a mirror operation. Value is null if not completed.
+         * @param timeEnded the value to set
+         * @return this builder
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
@@ -192,6 +238,15 @@ public final class RepositoryMirrorRecord {
     @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
     private final MirrorStatus mirrorStatus;
 
+    /**
+     * Mirror status of current mirror entry.
+     * QUEUED - Mirroring Queued
+     * RUNNING - Mirroring is Running
+     * PASSED - Mirroring Passed
+     * FAILED - Mirroring Failed
+     *
+     * @return the value
+     **/
     public MirrorStatus getMirrorStatus() {
         return mirrorStatus;
     }
@@ -202,6 +257,10 @@ public final class RepositoryMirrorRecord {
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
+    /**
+     * Workrequest ID to track current mirror operation.
+     * @return the value
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -212,6 +271,10 @@ public final class RepositoryMirrorRecord {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnqueued")
     private final java.util.Date timeEnqueued;
 
+    /**
+     * The time to enqueue a mirror operation.
+     * @return the value
+     **/
     public java.util.Date getTimeEnqueued() {
         return timeEnqueued;
     }
@@ -222,6 +285,10 @@ public final class RepositoryMirrorRecord {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The time to start a mirror operation.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -232,6 +299,10 @@ public final class RepositoryMirrorRecord {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
+    /**
+     * The time taken to complete a mirror operation. Value is null if not completed.
+     * @return the value
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }

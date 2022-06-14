@@ -27,9 +27,17 @@ package com.oracle.bmc.core.model;
 public final class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeGroupSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the volume group backup to restore from.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupBackupId")
         private String volumeGroupBackupId;
 
+        /**
+         * The OCID of the volume group backup to restore from.
+         * @param volumeGroupBackupId the value to set
+         * @return this builder
+         **/
         public Builder volumeGroupBackupId(String volumeGroupBackupId) {
             this.volumeGroupBackupId = volumeGroupBackupId;
             this.__explicitlySet__.add("volumeGroupBackupId");
@@ -78,6 +86,10 @@ public final class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeG
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupBackupId")
     private final String volumeGroupBackupId;
 
+    /**
+     * The OCID of the volume group backup to restore from.
+     * @return the value
+     **/
     public String getVolumeGroupBackupId() {
         return volumeGroupBackupId;
     }

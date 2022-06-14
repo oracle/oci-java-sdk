@@ -18,6 +18,10 @@ public class PublishMessageRequest
      */
     private String topicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+     *
+     */
     public String getTopicId() {
         return topicId;
     }
@@ -26,6 +30,9 @@ public class PublishMessageRequest
      */
     private com.oracle.bmc.ons.model.MessageDetails messageDetails;
 
+    /**
+     * The message to publish.
+     */
     public com.oracle.bmc.ons.model.MessageDetails getMessageDetails() {
         return messageDetails;
     }
@@ -36,6 +43,11 @@ public class PublishMessageRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -94,6 +106,16 @@ public class PublishMessageRequest
         }
     };
 
+    /**
+     * **Deprecated.**
+     * Support for JSON is deprecated.
+     * You can send a JSON payload even when transmitting the payload as a raw string.
+     * Configure your receiving system to read the raw payload as JSON format.
+     * <p>
+     * Type of message body in the request.
+     * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
+     *
+     */
     public MessageType getMessageType() {
         return messageType;
     }
@@ -115,11 +137,16 @@ public class PublishMessageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+         *
+         */
         private String topicId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
          *
+         * @param topicId the value to set
          * @return this builder instance
          */
         public Builder topicId(String topicId) {
@@ -127,10 +154,14 @@ public class PublishMessageRequest
             return this;
         }
 
+        /**
+         * The message to publish.
+         */
         private com.oracle.bmc.ons.model.MessageDetails messageDetails = null;
 
         /**
          * The message to publish.
+         * @param messageDetails the value to set
          * @return this builder instance
          */
         public Builder messageDetails(com.oracle.bmc.ons.model.MessageDetails messageDetails) {
@@ -138,12 +169,18 @@ public class PublishMessageRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -151,6 +188,16 @@ public class PublishMessageRequest
             return this;
         }
 
+        /**
+         * **Deprecated.**
+         * Support for JSON is deprecated.
+         * You can send a JSON payload even when transmitting the payload as a raw string.
+         * Configure your receiving system to read the raw payload as JSON format.
+         * <p>
+         * Type of message body in the request.
+         * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
+         *
+         */
         private MessageType messageType = null;
 
         /**
@@ -162,6 +209,7 @@ public class PublishMessageRequest
          * Type of message body in the request.
          * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
          *
+         * @param messageType the value to set
          * @return this builder instance
          */
         public Builder messageType(MessageType messageType) {
@@ -254,7 +302,8 @@ public class PublishMessageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -264,6 +313,10 @@ public class PublishMessageRequest
                 .messageType(messageType);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

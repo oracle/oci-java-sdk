@@ -17,6 +17,9 @@ public class ListPingProbeResultsRequest
      */
     private String probeConfigurationId;
 
+    /**
+     * The OCID of a monitor or on-demand probe.
+     */
     public String getProbeConfigurationId() {
         return probeConfigurationId;
     }
@@ -27,6 +30,11 @@ public class ListPingProbeResultsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +44,10 @@ public class ListPingProbeResultsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -46,6 +58,11 @@ public class ListPingProbeResultsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -54,6 +71,9 @@ public class ListPingProbeResultsRequest
      */
     private Double startTimeGreaterThanOrEqualTo;
 
+    /**
+     * Returns results with a {@code startTime} equal to or greater than the specified value.
+     */
     public Double getStartTimeGreaterThanOrEqualTo() {
         return startTimeGreaterThanOrEqualTo;
     }
@@ -62,6 +82,9 @@ public class ListPingProbeResultsRequest
      */
     private Double startTimeLessThanOrEqualTo;
 
+    /**
+     * Returns results with a {@code startTime} equal to or less than the specified value.
+     */
     public Double getStartTimeLessThanOrEqualTo() {
         return startTimeLessThanOrEqualTo;
     }
@@ -106,6 +129,9 @@ public class ListPingProbeResultsRequest
         }
     };
 
+    /**
+     * Controls the sort order of results.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -114,6 +140,9 @@ public class ListPingProbeResultsRequest
      */
     private String target;
 
+    /**
+     * Filters results that match the {@code target}.
+     */
     public String getTarget() {
         return target;
     }
@@ -125,10 +154,14 @@ public class ListPingProbeResultsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of a monitor or on-demand probe.
+         */
         private String probeConfigurationId = null;
 
         /**
          * The OCID of a monitor or on-demand probe.
+         * @param probeConfigurationId the value to set
          * @return this builder instance
          */
         public Builder probeConfigurationId(String probeConfigurationId) {
@@ -136,12 +169,18 @@ public class ListPingProbeResultsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -149,11 +188,16 @@ public class ListPingProbeResultsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -161,12 +205,18 @@ public class ListPingProbeResultsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header
+         * from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header
          * from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -174,10 +224,14 @@ public class ListPingProbeResultsRequest
             return this;
         }
 
+        /**
+         * Returns results with a {@code startTime} equal to or greater than the specified value.
+         */
         private Double startTimeGreaterThanOrEqualTo = null;
 
         /**
          * Returns results with a {@code startTime} equal to or greater than the specified value.
+         * @param startTimeGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder startTimeGreaterThanOrEqualTo(Double startTimeGreaterThanOrEqualTo) {
@@ -185,10 +239,14 @@ public class ListPingProbeResultsRequest
             return this;
         }
 
+        /**
+         * Returns results with a {@code startTime} equal to or less than the specified value.
+         */
         private Double startTimeLessThanOrEqualTo = null;
 
         /**
          * Returns results with a {@code startTime} equal to or less than the specified value.
+         * @param startTimeLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder startTimeLessThanOrEqualTo(Double startTimeLessThanOrEqualTo) {
@@ -196,10 +254,14 @@ public class ListPingProbeResultsRequest
             return this;
         }
 
+        /**
+         * Controls the sort order of results.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Controls the sort order of results.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -207,10 +269,14 @@ public class ListPingProbeResultsRequest
             return this;
         }
 
+        /**
+         * Filters results that match the {@code target}.
+         */
         private String target = null;
 
         /**
          * Filters results that match the {@code target}.
+         * @param target the value to set
          * @return this builder instance
          */
         public Builder target(String target) {
@@ -300,7 +366,8 @@ public class ListPingProbeResultsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -314,6 +381,10 @@ public class ListPingProbeResultsRequest
                 .target(target);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

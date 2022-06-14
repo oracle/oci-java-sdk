@@ -18,6 +18,9 @@ public class EnableDatabaseInsightRequest
      */
     private com.oracle.bmc.opsi.model.EnableDatabaseInsightDetails enableDatabaseInsightDetails;
 
+    /**
+     * Details for the database to be enabled in Operations Insights.
+     */
     public com.oracle.bmc.opsi.model.EnableDatabaseInsightDetails
             getEnableDatabaseInsightDetails() {
         return enableDatabaseInsightDetails;
@@ -27,6 +30,9 @@ public class EnableDatabaseInsightRequest
      */
     private String databaseInsightId;
 
+    /**
+     * Unique database insight identifier
+     */
     public String getDatabaseInsightId() {
         return databaseInsightId;
     }
@@ -38,6 +44,12 @@ public class EnableDatabaseInsightRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +60,11 @@ public class EnableDatabaseInsightRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,15 @@ public class EnableDatabaseInsightRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * operations, such as a resource being deleted or purged from the system.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,11 +110,15 @@ public class EnableDatabaseInsightRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the database to be enabled in Operations Insights.
+         */
         private com.oracle.bmc.opsi.model.EnableDatabaseInsightDetails
                 enableDatabaseInsightDetails = null;
 
         /**
          * Details for the database to be enabled in Operations Insights.
+         * @param enableDatabaseInsightDetails the value to set
          * @return this builder instance
          */
         public Builder enableDatabaseInsightDetails(
@@ -98,10 +128,14 @@ public class EnableDatabaseInsightRequest
             return this;
         }
 
+        /**
+         * Unique database insight identifier
+         */
         private String databaseInsightId = null;
 
         /**
          * Unique database insight identifier
+         * @param databaseInsightId the value to set
          * @return this builder instance
          */
         public Builder databaseInsightId(String databaseInsightId) {
@@ -109,6 +143,12 @@ public class EnableDatabaseInsightRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -116,6 +156,7 @@ public class EnableDatabaseInsightRequest
          * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -123,12 +164,18 @@ public class EnableDatabaseInsightRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +183,15 @@ public class EnableDatabaseInsightRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request that can be retried in case of a timeout or
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -146,6 +202,7 @@ public class EnableDatabaseInsightRequest
          *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
          * operations, such as a resource being deleted or purged from the system.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -240,7 +297,8 @@ public class EnableDatabaseInsightRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -251,6 +309,10 @@ public class EnableDatabaseInsightRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

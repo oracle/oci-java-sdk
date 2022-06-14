@@ -64,91 +64,161 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The IDs of the Skills and Digital Assistants that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventSinkBotIds")
         private java.util.List<String> eventSinkBotIds;
 
+        /**
+         * The IDs of the Skills and Digital Assistants that the Channel is routed to.
+         * @param eventSinkBotIds the value to set
+         * @return this builder
+         **/
         public Builder eventSinkBotIds(java.util.List<String> eventSinkBotIds) {
             this.eventSinkBotIds = eventSinkBotIds;
             this.__explicitlySet__.add("eventSinkBotIds");
             return this;
         }
-
+        /**
+         * The topic inbound messages are received on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inboundMessageTopic")
         private String inboundMessageTopic;
 
+        /**
+         * The topic inbound messages are received on.
+         * @param inboundMessageTopic the value to set
+         * @return this builder
+         **/
         public Builder inboundMessageTopic(String inboundMessageTopic) {
             this.inboundMessageTopic = inboundMessageTopic;
             this.__explicitlySet__.add("inboundMessageTopic");
             return this;
         }
-
+        /**
+         * The topic outbound messages are sent on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outboundMessageTopic")
         private String outboundMessageTopic;
 
+        /**
+         * The topic outbound messages are sent on.
+         * @param outboundMessageTopic the value to set
+         * @return this builder
+         **/
         public Builder outboundMessageTopic(String outboundMessageTopic) {
             this.outboundMessageTopic = outboundMessageTopic;
             this.__explicitlySet__.add("outboundMessageTopic");
             return this;
         }
-
+        /**
+         * The Oracle Streaming Service bootstrap servers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
         private String bootstrapServers;
 
+        /**
+         * The Oracle Streaming Service bootstrap servers.
+         * @param bootstrapServers the value to set
+         * @return this builder
+         **/
         public Builder bootstrapServers(String bootstrapServers) {
             this.bootstrapServers = bootstrapServers;
             this.__explicitlySet__.add("bootstrapServers");
             return this;
         }
-
+        /**
+         * The security protocol to use when conecting to the Oracle Streaming Service. See Oracle Streaming Service documentation for a list of valid values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private String securityProtocol;
 
+        /**
+         * The security protocol to use when conecting to the Oracle Streaming Service. See Oracle Streaming Service documentation for a list of valid values.
+         * @param securityProtocol the value to set
+         * @return this builder
+         **/
         public Builder securityProtocol(String securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
-
+        /**
+         * The SASL mechanmism to use when conecting to the Oracle Streaming Service. See Oracle Streaming Service documentation for a list of valid values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("saslMechanism")
         private String saslMechanism;
 
+        /**
+         * The SASL mechanmism to use when conecting to the Oracle Streaming Service. See Oracle Streaming Service documentation for a list of valid values.
+         * @param saslMechanism the value to set
+         * @return this builder
+         **/
         public Builder saslMechanism(String saslMechanism) {
             this.saslMechanism = saslMechanism;
             this.__explicitlySet__.add("saslMechanism");
             return this;
         }
-
+        /**
+         * The tenancy to use when connecting to the Oracle Streaming Service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
         private String tenancyName;
 
+        /**
+         * The tenancy to use when connecting to the Oracle Streaming Service.
+         * @param tenancyName the value to set
+         * @return this builder
+         **/
         public Builder tenancyName(String tenancyName) {
             this.tenancyName = tenancyName;
             this.__explicitlySet__.add("tenancyName");
             return this;
         }
-
+        /**
+         * The user name to use when connecting to the Oracle Streaming Service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The user name to use when connecting to the Oracle Streaming Service.
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The stream pool OCI to use when connecting to the Oracle Streaming Service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
         private String streamPoolId;
 
+        /**
+         * The stream pool OCI to use when connecting to the Oracle Streaming Service.
+         * @param streamPoolId the value to set
+         * @return this builder
+         **/
         public Builder streamPoolId(String streamPoolId) {
             this.streamPoolId = streamPoolId;
             this.__explicitlySet__.add("streamPoolId");
             return this;
         }
-
+        /**
+         * The authentication token to use when connecting to the Oracle Streaming Service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authToken")
         private String authToken;
 
+        /**
+         * The authentication token to use when connecting to the Oracle Streaming Service.
+         * @param authToken the value to set
+         * @return this builder
+         **/
         public Builder authToken(String authToken) {
             this.authToken = authToken;
             this.__explicitlySet__.add("authToken");
@@ -249,6 +319,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("eventSinkBotIds")
     private final java.util.List<String> eventSinkBotIds;
 
+    /**
+     * The IDs of the Skills and Digital Assistants that the Channel is routed to.
+     * @return the value
+     **/
     public java.util.List<String> getEventSinkBotIds() {
         return eventSinkBotIds;
     }
@@ -259,6 +333,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("inboundMessageTopic")
     private final String inboundMessageTopic;
 
+    /**
+     * The topic inbound messages are received on.
+     * @return the value
+     **/
     public String getInboundMessageTopic() {
         return inboundMessageTopic;
     }
@@ -269,6 +347,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("outboundMessageTopic")
     private final String outboundMessageTopic;
 
+    /**
+     * The topic outbound messages are sent on.
+     * @return the value
+     **/
     public String getOutboundMessageTopic() {
         return outboundMessageTopic;
     }
@@ -279,6 +361,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
     private final String bootstrapServers;
 
+    /**
+     * The Oracle Streaming Service bootstrap servers.
+     * @return the value
+     **/
     public String getBootstrapServers() {
         return bootstrapServers;
     }
@@ -289,6 +375,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final String securityProtocol;
 
+    /**
+     * The security protocol to use when conecting to the Oracle Streaming Service. See Oracle Streaming Service documentation for a list of valid values.
+     * @return the value
+     **/
     public String getSecurityProtocol() {
         return securityProtocol;
     }
@@ -299,6 +389,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("saslMechanism")
     private final String saslMechanism;
 
+    /**
+     * The SASL mechanmism to use when conecting to the Oracle Streaming Service. See Oracle Streaming Service documentation for a list of valid values.
+     * @return the value
+     **/
     public String getSaslMechanism() {
         return saslMechanism;
     }
@@ -309,6 +403,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     private final String tenancyName;
 
+    /**
+     * The tenancy to use when connecting to the Oracle Streaming Service.
+     * @return the value
+     **/
     public String getTenancyName() {
         return tenancyName;
     }
@@ -319,6 +417,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The user name to use when connecting to the Oracle Streaming Service.
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -329,6 +431,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
     private final String streamPoolId;
 
+    /**
+     * The stream pool OCI to use when connecting to the Oracle Streaming Service.
+     * @return the value
+     **/
     public String getStreamPoolId() {
         return streamPoolId;
     }
@@ -339,6 +445,10 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
     private final String authToken;
 
+    /**
+     * The authentication token to use when connecting to the Oracle Streaming Service.
+     * @return the value
+     **/
     public String getAuthToken() {
         return authToken;
     }

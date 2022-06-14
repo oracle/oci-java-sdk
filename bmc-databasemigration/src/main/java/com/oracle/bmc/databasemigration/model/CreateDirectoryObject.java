@@ -33,18 +33,37 @@ public final class CreateDirectoryObject {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of directory object in database
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of directory object in database
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Absolute path of directory on database server
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Absolute path of directory on database server
+         *
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
@@ -87,6 +106,11 @@ public final class CreateDirectoryObject {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of directory object in database
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -98,6 +122,11 @@ public final class CreateDirectoryObject {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Absolute path of directory on database server
+     *
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }

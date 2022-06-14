@@ -28,18 +28,33 @@ public final class UsageAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Aggregate the result by.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.List<String> groupBy;
 
+        /**
+         * Aggregate the result by.
+         * @param groupBy the value to set
+         * @return this builder
+         **/
         public Builder groupBy(java.util.List<String> groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
             return this;
         }
-
+        /**
+         * A list of usage items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<UsageSummary> items;
 
+        /**
+         * A list of usage items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<UsageSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -81,6 +96,10 @@ public final class UsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.List<String> groupBy;
 
+    /**
+     * Aggregate the result by.
+     * @return the value
+     **/
     public java.util.List<String> getGroupBy() {
         return groupBy;
     }
@@ -91,6 +110,10 @@ public final class UsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<UsageSummary> items;
 
+    /**
+     * A list of usage items.
+     * @return the value
+     **/
     public java.util.List<UsageSummary> getItems() {
         return items;
     }

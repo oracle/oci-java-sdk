@@ -28,9 +28,27 @@ package com.oracle.bmc.loadbalancer.model;
 public final class SourceIpAddressCondition extends RuleCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
+         * <p>
+         * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
+         * <p>
+         * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
         private String attributeValue;
 
+        /**
+         * An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
+         * <p>
+         * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
+         * <p>
+         * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
+         *
+         * @param attributeValue the value to set
+         * @return this builder
+         **/
         public Builder attributeValue(String attributeValue) {
             this.attributeValue = attributeValue;
             this.__explicitlySet__.add("attributeValue");
@@ -83,6 +101,15 @@ public final class SourceIpAddressCondition extends RuleCondition {
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
     private final String attributeValue;
 
+    /**
+     * An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
+     * <p>
+     * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
+     * <p>
+     * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
+     *
+     * @return the value
+     **/
     public String getAttributeValue() {
         return attributeValue;
     }

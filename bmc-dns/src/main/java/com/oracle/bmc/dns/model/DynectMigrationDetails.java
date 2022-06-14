@@ -42,37 +42,74 @@ public final class DynectMigrationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * DynECT customer name the zone belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerName")
         private String customerName;
 
+        /**
+         * DynECT customer name the zone belongs to.
+         *
+         * @param customerName the value to set
+         * @return this builder
+         **/
         public Builder customerName(String customerName) {
             this.customerName = customerName;
             this.__explicitlySet__.add("customerName");
             return this;
         }
-
+        /**
+         * DynECT API username to perform the migration with.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * DynECT API username to perform the migration with.
+         *
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-
+        /**
+         * DynECT API password for the provided username.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * DynECT API password for the provided username.
+         *
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
-
+        /**
+         * A map of fully-qualified domain names (FQDNs) to an array of {@code MigrationReplacement} objects.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("httpRedirectReplacements")
         private java.util.Map<String, java.util.List<MigrationReplacement>>
                 httpRedirectReplacements;
 
+        /**
+         * A map of fully-qualified domain names (FQDNs) to an array of {@code MigrationReplacement} objects.
+         *
+         * @param httpRedirectReplacements the value to set
+         * @return this builder
+         **/
         public Builder httpRedirectReplacements(
                 java.util.Map<String, java.util.List<MigrationReplacement>>
                         httpRedirectReplacements) {
@@ -123,6 +160,11 @@ public final class DynectMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customerName")
     private final String customerName;
 
+    /**
+     * DynECT customer name the zone belongs to.
+     *
+     * @return the value
+     **/
     public String getCustomerName() {
         return customerName;
     }
@@ -134,6 +176,11 @@ public final class DynectMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * DynECT API username to perform the migration with.
+     *
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -145,6 +192,11 @@ public final class DynectMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * DynECT API password for the provided username.
+     *
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }
@@ -157,6 +209,11 @@ public final class DynectMigrationDetails {
     private final java.util.Map<String, java.util.List<MigrationReplacement>>
             httpRedirectReplacements;
 
+    /**
+     * A map of fully-qualified domain names (FQDNs) to an array of {@code MigrationReplacement} objects.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.List<MigrationReplacement>>
             getHttpRedirectReplacements() {
         return httpRedirectReplacements;

@@ -14,6 +14,11 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +46,10 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.blockchain.model.ScaledBlockchainPlatformPreview
             scaledBlockchainPlatformPreview;
 
+    /**
+     * The returned ScaledBlockchainPlatformPreview instance.
+     * @return the value
+     */
     public com.oracle.bmc.blockchain.model.ScaledBlockchainPlatformPreview
             getScaledBlockchainPlatformPreview() {
         return scaledBlockchainPlatformPreview;
@@ -66,23 +81,53 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ScaledBlockchainPlatformPreview instance.
+         */
         private com.oracle.bmc.blockchain.model.ScaledBlockchainPlatformPreview
                 scaledBlockchainPlatformPreview;
 
+        /**
+         * The returned ScaledBlockchainPlatformPreview instance.
+         * @param scaledBlockchainPlatformPreview the value to set
+         * @return this builder
+         */
         public Builder scaledBlockchainPlatformPreview(
                 com.oracle.bmc.blockchain.model.ScaledBlockchainPlatformPreview
                         scaledBlockchainPlatformPreview) {
@@ -103,12 +148,20 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public PreviewScaleBlockchainPlatformResponse build() {
             return new PreviewScaleBlockchainPlatformResponse(
                     __httpStatusCode__, etag, opcRequestId, scaledBlockchainPlatformPreview);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

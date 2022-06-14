@@ -17,6 +17,10 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +31,11 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * Default: 10
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -38,6 +47,12 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the opc-next-page response header from the previous
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -49,6 +64,12 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private com.oracle.bmc.events.model.Rule.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only rules that match the lifecycle state in this parameter.
+     * <p>
+     * Example: {@code Creating}
+     *
+     */
     public com.oracle.bmc.events.model.Rule.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -61,6 +82,13 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String displayName;
 
+    /**
+     * A filter to return only rules with descriptions that match the displayName string
+     * in this parameter.
+     * <p>
+     * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -120,6 +148,16 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * Specifies the attribute with which to sort the rules.
+     * <p>
+     * Default: {@code timeCreated}
+     * <p>
+     * **TIME_CREATED:** Sorts by timeCreated.
+     * * **DISPLAY_NAME:** Sorts by displayName.
+     * * **ID:** Sorts by id.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -172,6 +210,13 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -182,6 +227,11 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -193,11 +243,16 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -205,12 +260,18 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+         * Default: 10
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
          * Default: 10
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -218,6 +279,12 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For list pagination. The value of the opc-next-page response header from the previous
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -225,6 +292,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * "List" call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -232,6 +300,12 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only rules that match the lifecycle state in this parameter.
+         * <p>
+         * Example: {@code Creating}
+         *
+         */
         private com.oracle.bmc.events.model.Rule.LifecycleState lifecycleState = null;
 
         /**
@@ -239,6 +313,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * <p>
          * Example: {@code Creating}
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -247,6 +322,13 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only rules with descriptions that match the displayName string
+         * in this parameter.
+         * <p>
+         * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -255,6 +337,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * <p>
          * Example: {@code "This rule sends a notification upon completion of DbaaS backup."}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -262,6 +345,16 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Specifies the attribute with which to sort the rules.
+         * <p>
+         * Default: {@code timeCreated}
+         * <p>
+         * **TIME_CREATED:** Sorts by timeCreated.
+         * * **DISPLAY_NAME:** Sorts by displayName.
+         * * **ID:** Sorts by id.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -273,6 +366,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * * **DISPLAY_NAME:** Sorts by displayName.
          * * **ID:** Sorts by id.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -280,6 +374,13 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Specifies sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -288,6 +389,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * **ASC:** Ascending sort order.
          * * **DESC:** Descending sort order.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -295,12 +397,18 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -390,7 +498,8 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -404,6 +513,10 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

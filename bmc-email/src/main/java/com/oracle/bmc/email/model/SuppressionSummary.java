@@ -44,45 +44,87 @@ public final class SuppressionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID for the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID for the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The email address of the suppression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
+        /**
+         * The email address of the suppression.
+         * @param emailAddress the value to set
+         * @return this builder
+         **/
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
             return this;
         }
-
+        /**
+         * The unique OCID of the suppression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique OCID of the suppression.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The reason that the email address was suppressed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private Reason reason;
 
+        /**
+         * The reason that the email address was suppressed.
+         * @param reason the value to set
+         * @return this builder
+         **/
         public Builder reason(Reason reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
             return this;
         }
-
+        /**
+         * The date and time a recipient's email address was added to the
+         * suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time a recipient's email address was added to the
+         * suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -130,6 +172,10 @@ public final class SuppressionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID for the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -140,6 +186,10 @@ public final class SuppressionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
+    /**
+     * The email address of the suppression.
+     * @return the value
+     **/
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -150,6 +200,10 @@ public final class SuppressionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique OCID of the suppression.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -211,6 +265,10 @@ public final class SuppressionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final Reason reason;
 
+    /**
+     * The reason that the email address was suppressed.
+     * @return the value
+     **/
     public Reason getReason() {
         return reason;
     }
@@ -224,6 +282,13 @@ public final class SuppressionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time a recipient's email address was added to the
+     * suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

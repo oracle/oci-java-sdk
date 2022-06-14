@@ -29,9 +29,17 @@ public final class AlertPolicyRuleCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of alert policy rules summary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AlertPolicyRuleSummary> items;
 
+        /**
+         * Array of alert policy rules summary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AlertPolicyRuleSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AlertPolicyRuleCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AlertPolicyRuleSummary> items;
 
+    /**
+     * Array of alert policy rules summary
+     * @return the value
+     **/
     public java.util.List<AlertPolicyRuleSummary> getItems() {
         return items;
     }

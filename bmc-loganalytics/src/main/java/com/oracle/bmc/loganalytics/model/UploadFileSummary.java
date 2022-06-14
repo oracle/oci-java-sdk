@@ -74,135 +74,241 @@ public final class UploadFileSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique internal identifier to refer upload file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reference")
         private String reference;
 
+        /**
+         * Unique internal identifier to refer upload file.
+         * @param reference the value to set
+         * @return this builder
+         **/
         public Builder reference(String reference) {
             this.reference = reference;
             this.__explicitlySet__.add("reference");
             return this;
         }
-
+        /**
+         * Name of the file
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the file
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Processing status of the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * Processing status of the file.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Number of estimated chunks for this file. A chunk is a portion of the log file used for the processing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalChunks")
         private java.math.BigDecimal totalChunks;
 
+        /**
+         * Number of estimated chunks for this file. A chunk is a portion of the log file used for the processing.
+         * @param totalChunks the value to set
+         * @return this builder
+         **/
         public Builder totalChunks(java.math.BigDecimal totalChunks) {
             this.totalChunks = totalChunks;
             this.__explicitlySet__.add("totalChunks");
             return this;
         }
-
+        /**
+         * Number of chunks processed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chunksConsumed")
         private java.math.BigDecimal chunksConsumed;
 
+        /**
+         * Number of chunks processed.
+         * @param chunksConsumed the value to set
+         * @return this builder
+         **/
         public Builder chunksConsumed(java.math.BigDecimal chunksConsumed) {
             this.chunksConsumed = chunksConsumed;
             this.__explicitlySet__.add("chunksConsumed");
             return this;
         }
-
+        /**
+         * Number of chunks processed successfully.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chunksSuccess")
         private java.math.BigDecimal chunksSuccess;
 
+        /**
+         * Number of chunks processed successfully.
+         * @param chunksSuccess the value to set
+         * @return this builder
+         **/
         public Builder chunksSuccess(java.math.BigDecimal chunksSuccess) {
             this.chunksSuccess = chunksSuccess;
             this.__explicitlySet__.add("chunksSuccess");
             return this;
         }
-
+        /**
+         * Number of chunks failed processing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chunksFail")
         private java.math.BigDecimal chunksFail;
 
+        /**
+         * Number of chunks failed processing.
+         * @param chunksFail the value to set
+         * @return this builder
+         **/
         public Builder chunksFail(java.math.BigDecimal chunksFail) {
             this.chunksFail = chunksFail;
             this.__explicitlySet__.add("chunksFail");
             return this;
         }
-
+        /**
+         * The time when this file processing started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The time when this file processing started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * Name of the log source used for processing this file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
+        /**
+         * Name of the log source used for processing this file.
+         * @param sourceName the value to set
+         * @return this builder
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-
+        /**
+         * Name of the entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * Name of the entity type.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * Name of the entity associated with the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
+        /**
+         * Name of the entity associated with the file.
+         * @param entityName the value to set
+         * @return this builder
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-
+        /**
+         * (Deprecated) Name of the log namespace associated with the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logNamespace")
         private String logNamespace;
 
+        /**
+         * (Deprecated) Name of the log namespace associated with the file.
+         * @param logNamespace the value to set
+         * @return this builder
+         **/
         public Builder logNamespace(String logNamespace) {
             this.logNamespace = logNamespace;
             this.__explicitlySet__.add("logNamespace");
             return this;
         }
-
+        /**
+         * Log group OCID associated with the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
+        /**
+         * Log group OCID associated with the file.
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
-
+        /**
+         * Name of the log group associated with the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupName")
         private String logGroupName;
 
+        /**
+         * Name of the log group associated with the file.
+         * @param logGroupName the value to set
+         * @return this builder
+         **/
         public Builder logGroupName(String logGroupName) {
             this.logGroupName = logGroupName;
             this.__explicitlySet__.add("logGroupName");
             return this;
         }
-
+        /**
+         * The details about upload processing failure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
         private String failureDetails;
 
+        /**
+         * The details about upload processing failure.
+         * @param failureDetails the value to set
+         * @return this builder
+         **/
         public Builder failureDetails(String failureDetails) {
             this.failureDetails = failureDetails;
             this.__explicitlySet__.add("failureDetails");
@@ -275,6 +381,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("reference")
     private final String reference;
 
+    /**
+     * Unique internal identifier to refer upload file.
+     * @return the value
+     **/
     public String getReference() {
         return reference;
     }
@@ -285,6 +395,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the file
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -343,6 +457,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * Processing status of the file.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -353,6 +471,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("totalChunks")
     private final java.math.BigDecimal totalChunks;
 
+    /**
+     * Number of estimated chunks for this file. A chunk is a portion of the log file used for the processing.
+     * @return the value
+     **/
     public java.math.BigDecimal getTotalChunks() {
         return totalChunks;
     }
@@ -363,6 +485,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("chunksConsumed")
     private final java.math.BigDecimal chunksConsumed;
 
+    /**
+     * Number of chunks processed.
+     * @return the value
+     **/
     public java.math.BigDecimal getChunksConsumed() {
         return chunksConsumed;
     }
@@ -373,6 +499,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("chunksSuccess")
     private final java.math.BigDecimal chunksSuccess;
 
+    /**
+     * Number of chunks processed successfully.
+     * @return the value
+     **/
     public java.math.BigDecimal getChunksSuccess() {
         return chunksSuccess;
     }
@@ -383,6 +513,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("chunksFail")
     private final java.math.BigDecimal chunksFail;
 
+    /**
+     * Number of chunks failed processing.
+     * @return the value
+     **/
     public java.math.BigDecimal getChunksFail() {
         return chunksFail;
     }
@@ -393,6 +527,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The time when this file processing started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -403,6 +541,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * Name of the log source used for processing this file.
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }
@@ -413,6 +555,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * Name of the entity type.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -423,6 +569,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
+    /**
+     * Name of the entity associated with the file.
+     * @return the value
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -433,6 +583,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("logNamespace")
     private final String logNamespace;
 
+    /**
+     * (Deprecated) Name of the log namespace associated with the file.
+     * @return the value
+     **/
     public String getLogNamespace() {
         return logNamespace;
     }
@@ -443,6 +597,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
+    /**
+     * Log group OCID associated with the file.
+     * @return the value
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -453,6 +611,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupName")
     private final String logGroupName;
 
+    /**
+     * Name of the log group associated with the file.
+     * @return the value
+     **/
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -463,6 +625,10 @@ public final class UploadFileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
     private final String failureDetails;
 
+    /**
+     * The details about upload processing failure.
+     * @return the value
+     **/
     public String getFailureDetails() {
         return failureDetails;
     }

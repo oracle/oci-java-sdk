@@ -44,45 +44,89 @@ public final class WorkRequestResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The way in which this resource was affected by this work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionResult")
         private WorkRequestActionResult actionResult;
 
+        /**
+         * The way in which this resource was affected by this work request.
+         *
+         * @param actionResult the value to set
+         * @return this builder
+         **/
         public Builder actionResult(WorkRequestActionResult actionResult) {
             this.actionResult = actionResult;
             this.__explicitlySet__.add("actionResult");
             return this;
         }
-
+        /**
+         * The type of the resource the work request is affecting.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private WorkRequestResourceType resourceType;
 
+        /**
+         * The type of the resource the work request is affecting.
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(WorkRequestResourceType resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The OCID of the resource the work request is affecting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * The OCID of the resource the work request is affecting.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * The URI of the affected resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
         private String resourceUri;
 
+        /**
+         * The URI of the affected resource.
+         *
+         * @param resourceUri the value to set
+         * @return this builder
+         **/
         public Builder resourceUri(String resourceUri) {
             this.resourceUri = resourceUri;
             this.__explicitlySet__.add("resourceUri");
             return this;
         }
-
+        /**
+         * Additional metadata of the resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
+        /**
+         * Additional metadata of the resource.
+         *
+         * @param metadata the value to set
+         * @return this builder
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -132,6 +176,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("actionResult")
     private final WorkRequestActionResult actionResult;
 
+    /**
+     * The way in which this resource was affected by this work request.
+     *
+     * @return the value
+     **/
     public WorkRequestActionResult getActionResult() {
         return actionResult;
     }
@@ -143,6 +192,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final WorkRequestResourceType resourceType;
 
+    /**
+     * The type of the resource the work request is affecting.
+     *
+     * @return the value
+     **/
     public WorkRequestResourceType getResourceType() {
         return resourceType;
     }
@@ -153,6 +207,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * The OCID of the resource the work request is affecting.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -164,6 +222,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
     private final String resourceUri;
 
+    /**
+     * The URI of the affected resource.
+     *
+     * @return the value
+     **/
     public String getResourceUri() {
         return resourceUri;
     }
@@ -175,6 +238,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
+    /**
+     * Additional metadata of the resource.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }

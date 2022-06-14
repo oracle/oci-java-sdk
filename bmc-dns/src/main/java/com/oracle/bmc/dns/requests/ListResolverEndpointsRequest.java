@@ -17,6 +17,9 @@ public class ListResolverEndpointsRequest
      */
     private String resolverId;
 
+    /**
+     * The OCID of the target resolver.
+     */
     public String getResolverId() {
         return resolverId;
     }
@@ -28,6 +31,12 @@ public class ListResolverEndpointsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +45,9 @@ public class ListResolverEndpointsRequest
      */
     private String name;
 
+    /**
+     * The name of a resource.
+     */
     public String getName() {
         return name;
     }
@@ -45,6 +57,10 @@ public class ListResolverEndpointsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -54,6 +70,10 @@ public class ListResolverEndpointsRequest
      */
     private Long limit;
 
+    /**
+     * The maximum number of items to return in a page of the collection.
+     *
+     */
     public Long getLimit() {
         return limit;
     }
@@ -63,6 +83,10 @@ public class ListResolverEndpointsRequest
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
+    /**
+     * The order to sort the resources.
+     *
+     */
     public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -107,6 +131,9 @@ public class ListResolverEndpointsRequest
         }
     };
 
+    /**
+     * The field by which to sort resolver endpoints.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -115,6 +142,9 @@ public class ListResolverEndpointsRequest
      */
     private com.oracle.bmc.dns.model.ResolverEndpointSummary.LifecycleState lifecycleState;
 
+    /**
+     * The state of a resource.
+     */
     public com.oracle.bmc.dns.model.ResolverEndpointSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -124,6 +154,10 @@ public class ListResolverEndpointsRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -135,10 +169,14 @@ public class ListResolverEndpointsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target resolver.
+         */
         private String resolverId = null;
 
         /**
          * The OCID of the target resolver.
+         * @param resolverId the value to set
          * @return this builder instance
          */
         public Builder resolverId(String resolverId) {
@@ -146,6 +184,12 @@ public class ListResolverEndpointsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -153,6 +197,7 @@ public class ListResolverEndpointsRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -160,10 +205,14 @@ public class ListResolverEndpointsRequest
             return this;
         }
 
+        /**
+         * The name of a resource.
+         */
         private String name = null;
 
         /**
          * The name of a resource.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -171,11 +220,16 @@ public class ListResolverEndpointsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -183,11 +237,16 @@ public class ListResolverEndpointsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a page of the collection.
+         *
+         */
         private Long limit = null;
 
         /**
          * The maximum number of items to return in a page of the collection.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Long limit) {
@@ -195,11 +254,16 @@ public class ListResolverEndpointsRequest
             return this;
         }
 
+        /**
+         * The order to sort the resources.
+         *
+         */
         private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
 
         /**
          * The order to sort the resources.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.dns.model.SortOrder sortOrder) {
@@ -207,10 +271,14 @@ public class ListResolverEndpointsRequest
             return this;
         }
 
+        /**
+         * The field by which to sort resolver endpoints.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field by which to sort resolver endpoints.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -218,11 +286,15 @@ public class ListResolverEndpointsRequest
             return this;
         }
 
+        /**
+         * The state of a resource.
+         */
         private com.oracle.bmc.dns.model.ResolverEndpointSummary.LifecycleState lifecycleState =
                 null;
 
         /**
          * The state of a resource.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -231,11 +303,16 @@ public class ListResolverEndpointsRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -327,7 +404,8 @@ public class ListResolverEndpointsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -342,6 +420,10 @@ public class ListResolverEndpointsRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

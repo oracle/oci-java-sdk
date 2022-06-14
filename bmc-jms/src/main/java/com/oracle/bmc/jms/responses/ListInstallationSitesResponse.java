@@ -15,6 +15,12 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages of results remain.
+     * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -36,6 +49,10 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.jms.model.InstallationSiteCollection installationSiteCollection;
 
+    /**
+     * The returned InstallationSiteCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.jms.model.InstallationSiteCollection getInstallationSiteCollection() {
         return installationSiteCollection;
     }
@@ -65,22 +82,56 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain.
+         * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain.
+         * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned InstallationSiteCollection instance.
+         */
         private com.oracle.bmc.jms.model.InstallationSiteCollection installationSiteCollection;
 
+        /**
+         * The returned InstallationSiteCollection instance.
+         * @param installationSiteCollection the value to set
+         * @return this builder
+         */
         public Builder installationSiteCollection(
                 com.oracle.bmc.jms.model.InstallationSiteCollection installationSiteCollection) {
             this.installationSiteCollection = installationSiteCollection;
@@ -100,12 +151,20 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListInstallationSitesResponse build() {
             return new ListInstallationSitesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, installationSiteCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,9 +29,17 @@ public final class ProblemHistoryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of ProblemHistorySummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ProblemHistorySummary> items;
 
+        /**
+         * List of ProblemHistorySummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ProblemHistorySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ProblemHistoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ProblemHistorySummary> items;
 
+    /**
+     * List of ProblemHistorySummary
+     * @return the value
+     **/
     public java.util.List<ProblemHistorySummary> getItems() {
         return items;
     }

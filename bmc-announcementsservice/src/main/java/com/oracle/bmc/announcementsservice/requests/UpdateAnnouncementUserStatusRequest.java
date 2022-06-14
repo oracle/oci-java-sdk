@@ -18,6 +18,9 @@ public class UpdateAnnouncementUserStatusRequest
      */
     private String announcementId;
 
+    /**
+     * The OCID of the announcement.
+     */
     public String getAnnouncementId() {
         return announcementId;
     }
@@ -26,6 +29,9 @@ public class UpdateAnnouncementUserStatusRequest
      */
     private com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails statusDetails;
 
+    /**
+     * The information to use to update the announcement's read status.
+     */
     public com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails
             getStatusDetails() {
         return statusDetails;
@@ -35,6 +41,9 @@ public class UpdateAnnouncementUserStatusRequest
      */
     private String ifMatch;
 
+    /**
+     * The locking version, used for optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -45,6 +54,11 @@ public class UpdateAnnouncementUserStatusRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,10 +81,14 @@ public class UpdateAnnouncementUserStatusRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the announcement.
+         */
         private String announcementId = null;
 
         /**
          * The OCID of the announcement.
+         * @param announcementId the value to set
          * @return this builder instance
          */
         public Builder announcementId(String announcementId) {
@@ -78,11 +96,15 @@ public class UpdateAnnouncementUserStatusRequest
             return this;
         }
 
+        /**
+         * The information to use to update the announcement's read status.
+         */
         private com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails
                 statusDetails = null;
 
         /**
          * The information to use to update the announcement's read status.
+         * @param statusDetails the value to set
          * @return this builder instance
          */
         public Builder statusDetails(
@@ -92,10 +114,14 @@ public class UpdateAnnouncementUserStatusRequest
             return this;
         }
 
+        /**
+         * The locking version, used for optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * The locking version, used for optimistic concurrency control.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -103,12 +129,18 @@ public class UpdateAnnouncementUserStatusRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -202,7 +234,8 @@ public class UpdateAnnouncementUserStatusRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -212,6 +245,10 @@ public class UpdateAnnouncementUserStatusRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

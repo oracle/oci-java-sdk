@@ -19,6 +19,10 @@ public class UpdateStorageRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,9 @@ public class UpdateStorageRequest
      */
     private com.oracle.bmc.loganalytics.model.UpdateStorageDetails updateStorageDetails;
 
+    /**
+     * This is the archiving configuration
+     */
     public com.oracle.bmc.loganalytics.model.UpdateStorageDetails getUpdateStorageDetails() {
         return updateStorageDetails;
     }
@@ -35,6 +42,9 @@ public class UpdateStorageRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +58,14 @@ public class UpdateStorageRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -74,11 +92,16 @@ public class UpdateStorageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -86,10 +109,14 @@ public class UpdateStorageRequest
             return this;
         }
 
+        /**
+         * This is the archiving configuration
+         */
         private com.oracle.bmc.loganalytics.model.UpdateStorageDetails updateStorageDetails = null;
 
         /**
          * This is the archiving configuration
+         * @param updateStorageDetails the value to set
          * @return this builder instance
          */
         public Builder updateStorageDetails(
@@ -98,10 +125,14 @@ public class UpdateStorageRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -109,6 +140,14 @@ public class UpdateStorageRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +157,7 @@ public class UpdateStorageRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -210,7 +250,8 @@ public class UpdateStorageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -220,6 +261,10 @@ public class UpdateStorageRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

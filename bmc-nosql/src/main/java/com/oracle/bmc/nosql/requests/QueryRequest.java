@@ -17,6 +17,9 @@ public class QueryRequest
      */
     private com.oracle.bmc.nosql.model.QueryDetails queryDetails;
 
+    /**
+     * SQL query statement and ancillary information.
+     */
     public com.oracle.bmc.nosql.model.QueryDetails getQueryDetails() {
         return queryDetails;
     }
@@ -25,6 +28,9 @@ public class QueryRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -36,6 +42,12 @@ public class QueryRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start
+     * retrieving results. This is usually retrieved from a previous
+     * list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -44,6 +56,9 @@ public class QueryRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,10 +80,14 @@ public class QueryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * SQL query statement and ancillary information.
+         */
         private com.oracle.bmc.nosql.model.QueryDetails queryDetails = null;
 
         /**
          * SQL query statement and ancillary information.
+         * @param queryDetails the value to set
          * @return this builder instance
          */
         public Builder queryDetails(com.oracle.bmc.nosql.model.QueryDetails queryDetails) {
@@ -76,10 +95,14 @@ public class QueryRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -87,6 +110,12 @@ public class QueryRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start
+         * retrieving results. This is usually retrieved from a previous
+         * list call.
+         *
+         */
         private String page = null;
 
         /**
@@ -94,6 +123,7 @@ public class QueryRequest
          * retrieving results. This is usually retrieved from a previous
          * list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -101,10 +131,14 @@ public class QueryRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -197,7 +231,8 @@ public class QueryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +242,10 @@ public class QueryRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

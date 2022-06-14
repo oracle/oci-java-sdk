@@ -53,6 +53,7 @@ public final class IngressSecurityRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("icmpOptions")
         private IcmpOptions icmpOptions;
 
@@ -61,37 +62,121 @@ public final class IngressSecurityRule {
             this.__explicitlySet__.add("icmpOptions");
             return this;
         }
-
+        /**
+         * A stateless rule allows traffic in one direction. Remember to add a corresponding
+         * stateless rule in the other direction if you need to support bidirectional traffic. For
+         * example, if ingress traffic allows TCP destination port 80, there should be an egress
+         * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
+         * and a corresponding rule is not necessary for bidirectional traffic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
         private Boolean isStateless;
 
+        /**
+         * A stateless rule allows traffic in one direction. Remember to add a corresponding
+         * stateless rule in the other direction if you need to support bidirectional traffic. For
+         * example, if ingress traffic allows TCP destination port 80, there should be an egress
+         * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
+         * and a corresponding rule is not necessary for bidirectional traffic.
+         *
+         * @param isStateless the value to set
+         * @return this builder
+         **/
         public Builder isStateless(Boolean isStateless) {
             this.isStateless = isStateless;
             this.__explicitlySet__.add("isStateless");
             return this;
         }
-
+        /**
+         * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
+         * defined in
+         * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+         * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
+        /**
+         * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
+         * defined in
+         * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+         * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+         *
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * Conceptually, this is the range of IP addresses that a packet coming into the instance
+         * can come from.
+         * <p>
+         * Allowed values:
+         * <p>
+         * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
+         *     IPv6 addressing is supported for all commercial and government regions. See
+         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * The {@code cidrBlock} value for a {@link Service}, if you're
+         *     setting up a security list rule for traffic coming from a particular {@code Service} through
+         *     a service gateway. For example: {@code oci-phx-objectstorage}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
 
+        /**
+         * Conceptually, this is the range of IP addresses that a packet coming into the instance
+         * can come from.
+         * <p>
+         * Allowed values:
+         * <p>
+         * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
+         *     IPv6 addressing is supported for all commercial and government regions. See
+         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * The {@code cidrBlock} value for a {@link Service}, if you're
+         *     setting up a security list rule for traffic coming from a particular {@code Service} through
+         *     a service gateway. For example: {@code oci-phx-objectstorage}.
+         *
+         * @param source the value to set
+         * @return this builder
+         **/
         public Builder source(String source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-
+        /**
+         * Type of source for the rule. The default is {@code CIDR_BLOCK}.
+         * <p>
+         * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
+         * <p>
+         * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
+         *     {@link Service} (the rule is for traffic coming from a
+         *     particular {@code Service} through a service gateway).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
+        /**
+         * Type of source for the rule. The default is {@code CIDR_BLOCK}.
+         * <p>
+         * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
+         * <p>
+         * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
+         *     {@link Service} (the rule is for traffic coming from a
+         *     particular {@code Service} through a service gateway).
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         **/
         public Builder sourceType(SourceType sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
@@ -115,10 +200,19 @@ public final class IngressSecurityRule {
             this.__explicitlySet__.add("udpOptions");
             return this;
         }
-
+        /**
+         * An optional description of your choice for the rule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * An optional description of your choice for the rule.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -189,6 +283,15 @@ public final class IngressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
     private final Boolean isStateless;
 
+    /**
+     * A stateless rule allows traffic in one direction. Remember to add a corresponding
+     * stateless rule in the other direction if you need to support bidirectional traffic. For
+     * example, if ingress traffic allows TCP destination port 80, there should be an egress
+     * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
+     * and a corresponding rule is not necessary for bidirectional traffic.
+     *
+     * @return the value
+     **/
     public Boolean getIsStateless() {
         return isStateless;
     }
@@ -203,6 +306,14 @@ public final class IngressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final String protocol;
 
+    /**
+     * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
+     * defined in
+     * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+     * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+     *
+     * @return the value
+     **/
     public String getProtocol() {
         return protocol;
     }
@@ -225,6 +336,22 @@ public final class IngressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
+    /**
+     * Conceptually, this is the range of IP addresses that a packet coming into the instance
+     * can come from.
+     * <p>
+     * Allowed values:
+     * <p>
+     * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
+     *     IPv6 addressing is supported for all commercial and government regions. See
+     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * The {@code cidrBlock} value for a {@link Service}, if you're
+     *     setting up a security list rule for traffic coming from a particular {@code Service} through
+     *     a service gateway. For example: {@code oci-phx-objectstorage}.
+     *
+     * @return the value
+     **/
     public String getSource() {
         return source;
     }
@@ -297,6 +424,17 @@ public final class IngressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
+    /**
+     * Type of source for the rule. The default is {@code CIDR_BLOCK}.
+     * <p>
+     * {@code CIDR_BLOCK}: If the rule's {@code source} is an IP address range in CIDR notation.
+     * <p>
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code source} is the {@code cidrBlock} value for a
+     *     {@link Service} (the rule is for traffic coming from a
+     *     particular {@code Service} through a service gateway).
+     *
+     * @return the value
+     **/
     public SourceType getSourceType() {
         return sourceType;
     }
@@ -322,6 +460,11 @@ public final class IngressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * An optional description of your choice for the rule.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

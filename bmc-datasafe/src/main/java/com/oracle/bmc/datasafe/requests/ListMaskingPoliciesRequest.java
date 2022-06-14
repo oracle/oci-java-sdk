@@ -16,6 +16,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String maskingPolicyId;
 
+    /**
+     * A filter to return only the resources that match the specified masking policy OCID.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -33,6 +39,10 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -41,6 +51,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -49,6 +62,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -57,6 +73,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.datasafe.model.MaskingLifecycleState lifecycleState;
 
+    /**
+     * A filter to return only the resources that match the specified lifecycle states.
+     */
     public com.oracle.bmc.datasafe.model.MaskingLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -101,6 +120,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -149,6 +171,11 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+     * The default order for displayName is ascending. The displayName sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -157,6 +184,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String sensitiveDataModelId;
 
+    /**
+     * A filter to return only the resources that match the specified sensitive data model OCID.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -165,6 +195,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String targetId;
 
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -177,6 +210,13 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -192,6 +232,16 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private java.util.Date timeCreatedLessThan;
 
+    /**
+     * Search for resources that were created before a specific date.
+     * Specifying this parameter corresponding {@code timeCreatedLessThan}
+     * parameter will retrieve all resources created before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
@@ -202,6 +252,11 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -254,6 +309,13 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -262,6 +324,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -273,10 +338,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -284,10 +353,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only the resources that match the specified masking policy OCID.
+         */
         private String maskingPolicyId = null;
 
         /**
          * A filter to return only the resources that match the specified masking policy OCID.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -295,11 +368,16 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the specified display name.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -307,10 +385,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -318,10 +400,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -329,10 +415,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only the resources that match the specified lifecycle states.
+         */
         private com.oracle.bmc.datasafe.model.MaskingLifecycleState lifecycleState = null;
 
         /**
          * A filter to return only the resources that match the specified lifecycle states.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -341,10 +431,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -352,12 +446,18 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+         * The default order for displayName is ascending. The displayName sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
          * The default order for displayName is ascending. The displayName sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -365,10 +465,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only the resources that match the specified sensitive data model OCID.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * A filter to return only the resources that match the specified sensitive data model OCID.
+         * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
@@ -376,10 +480,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -387,6 +495,13 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
@@ -395,6 +510,7 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedGreaterThanOrEqualTo(
@@ -403,6 +519,16 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Search for resources that were created before a specific date.
+         * Specifying this parameter corresponding {@code timeCreatedLessThan}
+         * parameter will retrieve all resources created before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
@@ -414,6 +540,7 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
@@ -421,12 +548,18 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -434,6 +567,13 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -442,6 +582,7 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -449,10 +590,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -556,7 +701,8 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -577,6 +723,10 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

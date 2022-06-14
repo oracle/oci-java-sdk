@@ -16,6 +16,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String associatedResourceId;
 
+    /**
+     * A filter to return the target databases that are associated to the resource id passed in as a parameter value.
+     */
     public String getAssociatedResourceId() {
         return associatedResourceId;
     }
@@ -32,6 +38,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String targetDatabaseId;
 
+    /**
+     * A filter to return the target database that matches the specified OCID.
+     */
     public String getTargetDatabaseId() {
         return targetDatabaseId;
     }
@@ -41,6 +50,10 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -49,6 +62,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState lifecycleState;
 
+    /**
+     * A filter to return the target databases that matches the current state of the target database.
+     */
     public com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -57,6 +73,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.datasafe.model.DatabaseType databaseType;
 
+    /**
+     * A filter to return target databases that match the database type of the target database.
+     */
     public com.oracle.bmc.datasafe.model.DatabaseType getDatabaseType() {
         return databaseType;
     }
@@ -65,6 +84,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.datasafe.model.InfrastructureType infrastructureType;
 
+    /**
+     * A filter to return target databases that match the infrastructure type of the target database.
+     */
     public com.oracle.bmc.datasafe.model.InfrastructureType getInfrastructureType() {
         return infrastructureType;
     }
@@ -73,6 +95,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -81,6 +106,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -91,6 +119,11 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -143,6 +176,13 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -187,6 +227,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -237,6 +280,12 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+     * The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -245,6 +294,9 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -256,10 +308,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -267,10 +323,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return the target databases that are associated to the resource id passed in as a parameter value.
+         */
         private String associatedResourceId = null;
 
         /**
          * A filter to return the target databases that are associated to the resource id passed in as a parameter value.
+         * @param associatedResourceId the value to set
          * @return this builder instance
          */
         public Builder associatedResourceId(String associatedResourceId) {
@@ -278,10 +338,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return the target database that matches the specified OCID.
+         */
         private String targetDatabaseId = null;
 
         /**
          * A filter to return the target database that matches the specified OCID.
+         * @param targetDatabaseId the value to set
          * @return this builder instance
          */
         public Builder targetDatabaseId(String targetDatabaseId) {
@@ -289,11 +353,16 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the specified display name.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -301,10 +370,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return the target databases that matches the current state of the target database.
+         */
         private com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState lifecycleState = null;
 
         /**
          * A filter to return the target databases that matches the current state of the target database.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -313,10 +386,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return target databases that match the database type of the target database.
+         */
         private com.oracle.bmc.datasafe.model.DatabaseType databaseType = null;
 
         /**
          * A filter to return target databases that match the database type of the target database.
+         * @param databaseType the value to set
          * @return this builder instance
          */
         public Builder databaseType(com.oracle.bmc.datasafe.model.DatabaseType databaseType) {
@@ -324,10 +401,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return target databases that match the infrastructure type of the target database.
+         */
         private com.oracle.bmc.datasafe.model.InfrastructureType infrastructureType = null;
 
         /**
          * A filter to return target databases that match the infrastructure type of the target database.
+         * @param infrastructureType the value to set
          * @return this builder instance
          */
         public Builder infrastructureType(
@@ -336,10 +417,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -347,10 +432,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -358,12 +447,18 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -371,6 +466,13 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -379,6 +481,7 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -386,10 +489,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -397,6 +504,12 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+         * The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -404,6 +517,7 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
          * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
          * The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -411,10 +525,14 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -516,7 +634,8 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -536,6 +655,10 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

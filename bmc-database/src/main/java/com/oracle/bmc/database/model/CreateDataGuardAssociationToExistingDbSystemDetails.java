@@ -93,19 +93,41 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             this.__explicitlySet__.add("peerSidPrefix");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
+         * You must supply this value if creationType is {@code ExistingDbSystem}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
         private String peerDbSystemId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
+         * You must supply this value if creationType is {@code ExistingDbSystem}.
+         *
+         * @param peerDbSystemId the value to set
+         * @return this builder
+         **/
         public Builder peerDbSystemId(String peerDbSystemId) {
             this.peerDbSystemId = peerDbSystemId;
             this.__explicitlySet__.add("peerDbSystemId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+         * You must supply this value to create standby database with an existing DB home
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
         private String peerDbHomeId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+         * You must supply this value to create standby database with an existing DB home
+         *
+         * @param peerDbHomeId the value to set
+         * @return this builder
+         **/
         public Builder peerDbHomeId(String peerDbHomeId) {
             this.peerDbHomeId = peerDbHomeId;
             this.__explicitlySet__.add("peerDbHomeId");
@@ -191,6 +213,12 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
     private final String peerDbSystemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
+     * You must supply this value if creationType is {@code ExistingDbSystem}.
+     *
+     * @return the value
+     **/
     public String getPeerDbSystemId() {
         return peerDbSystemId;
     }
@@ -203,6 +231,12 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
     private final String peerDbHomeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+     * You must supply this value to create standby database with an existing DB home
+     *
+     * @return the value
+     **/
     public String getPeerDbHomeId() {
         return peerDbHomeId;
     }

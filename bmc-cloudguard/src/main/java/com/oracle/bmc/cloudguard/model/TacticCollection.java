@@ -27,9 +27,17 @@ public final class TacticCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of tactic summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TacticSummary> items;
 
+        /**
+         * List of tactic summary.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TacticSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class TacticCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TacticSummary> items;
 
+    /**
+     * List of tactic summary.
+     * @return the value
+     **/
     public java.util.List<TacticSummary> getItems() {
         return items;
     }

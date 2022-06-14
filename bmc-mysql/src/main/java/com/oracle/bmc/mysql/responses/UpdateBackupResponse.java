@@ -15,8 +15,42 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
+    /**
+     * The returned Backup instance, or null if {@link #isNotModified()} is true.
+     */
+    private com.oracle.bmc.mysql.model.Backup backup;
+
+    /**
+     * The returned Backup instance, or null if {@link #isNotModified()} is true.
+     * @return the value
+     */
+    public com.oracle.bmc.mysql.model.Backup getBackup() {
+        return backup;
     }
 
     /**
@@ -27,15 +61,34 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    /**
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
+     * @param true if the object was not modified
+     */
     public boolean isNotModified() {
         return isNotModified;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "isNotModified"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "backup",
+        "isNotModified"
+    })
     private UpdateBackupResponse(
-            int __httpStatusCode__, String opcRequestId, boolean isNotModified) {
+            int __httpStatusCode__,
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.mysql.model.Backup backup,
+            boolean isNotModified) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.backup = backup;
         this.isNotModified = isNotModified;
     }
 
@@ -47,15 +100,72 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        /**
+         * The returned Backup instance, or null if {@link #isNotModified()} is true.
+         */
+        private com.oracle.bmc.mysql.model.Backup backup;
+
+        /**
+         * The returned Backup instance, or null if {@link #isNotModified()} is true.
+         * @param backup the value to set
+         * @return this builder
+         */
+        public Builder backup(com.oracle.bmc.mysql.model.Backup backup) {
+            this.backup = backup;
+            return this;
+        }
+
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         */
         private boolean isNotModified;
 
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         * @param true if the object was not modified
+         */
         public Builder isNotModified(boolean isNotModified) {
             this.isNotModified = isNotModified;
             return this;
@@ -68,16 +178,26 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
         public Builder copy(UpdateBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
-
+            etag(o.getEtag());
+            backup(o.getBackup());
             isNotModified(o.isNotModified());
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateBackupResponse build() {
-            return new UpdateBackupResponse(__httpStatusCode__, opcRequestId, isNotModified);
+            return new UpdateBackupResponse(
+                    __httpStatusCode__, opcRequestId, etag, backup, isNotModified);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -88,6 +208,8 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",backup=").append(String.valueOf(backup));
         sb.append(",isNotModified=").append(isNotModified);
         sb.append(")");
         return sb.toString();
@@ -105,6 +227,8 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
         UpdateBackupResponse other = (UpdateBackupResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.backup, other.backup)
                 && this.isNotModified == other.isNotModified;
     }
 
@@ -113,6 +237,8 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.backup == null ? 43 : this.backup.hashCode());
         result = (result * PRIME) + (this.isNotModified ? 79 : 97);
         return result;
     }

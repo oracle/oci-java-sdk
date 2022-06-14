@@ -14,10 +14,13 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
                 com.oracle.bmc.databasetools.model.UpdateDatabaseToolsPrivateEndpointDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      */
     private String databaseToolsPrivateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
+     */
     public String getDatabaseToolsPrivateEndpointId() {
         return databaseToolsPrivateEndpointId;
     }
@@ -27,6 +30,9 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
     private com.oracle.bmc.databasetools.model.UpdateDatabaseToolsPrivateEndpointDetails
             updateDatabaseToolsPrivateEndpointDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.databasetools.model.UpdateDatabaseToolsPrivateEndpointDetails
             getUpdateDatabaseToolsPrivateEndpointDetails() {
         return updateDatabaseToolsPrivateEndpointDetails;
@@ -41,6 +47,14 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
+         */
         private String databaseToolsPrivateEndpointId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
+         * @param databaseToolsPrivateEndpointId the value to set
          * @return this builder instance
          */
         public Builder databaseToolsPrivateEndpointId(String databaseToolsPrivateEndpointId) {
@@ -82,11 +103,15 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.databasetools.model.UpdateDatabaseToolsPrivateEndpointDetails
                 updateDatabaseToolsPrivateEndpointDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateDatabaseToolsPrivateEndpointDetails the value to set
          * @return this builder instance
          */
         public Builder updateDatabaseToolsPrivateEndpointDetails(
@@ -97,6 +122,14 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -106,6 +139,7 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -113,10 +147,14 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -213,7 +251,8 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -224,6 +263,10 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

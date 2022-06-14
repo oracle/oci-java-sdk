@@ -35,10 +35,17 @@ public final class FreeTextSearchDetails extends SearchDetails {
             this.__explicitlySet__.add("matchingContextType");
             return this;
         }
-
+        /**
+         * The text to search for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * The text to search for.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
@@ -88,6 +95,10 @@ public final class FreeTextSearchDetails extends SearchDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * The text to search for.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }

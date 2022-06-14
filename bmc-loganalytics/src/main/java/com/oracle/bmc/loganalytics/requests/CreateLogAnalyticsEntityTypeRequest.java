@@ -19,6 +19,10 @@ public class CreateLogAnalyticsEntityTypeRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -28,6 +32,9 @@ public class CreateLogAnalyticsEntityTypeRequest
     private com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEntityTypeDetails
             createLogAnalyticsEntityTypeDetails;
 
+    /**
+     * Definition for custom log analytics entity type.
+     */
     public com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEntityTypeDetails
             getCreateLogAnalyticsEntityTypeDetails() {
         return createLogAnalyticsEntityTypeDetails;
@@ -37,6 +44,9 @@ public class CreateLogAnalyticsEntityTypeRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +60,14 @@ public class CreateLogAnalyticsEntityTypeRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -77,11 +95,16 @@ public class CreateLogAnalyticsEntityTypeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -89,11 +112,15 @@ public class CreateLogAnalyticsEntityTypeRequest
             return this;
         }
 
+        /**
+         * Definition for custom log analytics entity type.
+         */
         private com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEntityTypeDetails
                 createLogAnalyticsEntityTypeDetails = null;
 
         /**
          * Definition for custom log analytics entity type.
+         * @param createLogAnalyticsEntityTypeDetails the value to set
          * @return this builder instance
          */
         public Builder createLogAnalyticsEntityTypeDetails(
@@ -103,10 +130,14 @@ public class CreateLogAnalyticsEntityTypeRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -114,6 +145,14 @@ public class CreateLogAnalyticsEntityTypeRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -123,6 +162,7 @@ public class CreateLogAnalyticsEntityTypeRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -216,7 +256,8 @@ public class CreateLogAnalyticsEntityTypeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -226,6 +267,10 @@ public class CreateLogAnalyticsEntityTypeRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

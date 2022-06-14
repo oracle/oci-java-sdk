@@ -16,6 +16,9 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -24,6 +27,9 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String skillId;
 
+    /**
+     * Unique Skill identifier.
+     */
     public String getSkillId() {
         return skillId;
     }
@@ -32,6 +38,9 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String parameterName;
 
+    /**
+     * The name of a Skill Parameter.
+     */
     public String getParameterName() {
         return parameterName;
     }
@@ -40,6 +49,9 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,10 +63,14 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -62,10 +78,14 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique Skill identifier.
+         */
         private String skillId = null;
 
         /**
          * Unique Skill identifier.
+         * @param skillId the value to set
          * @return this builder instance
          */
         public Builder skillId(String skillId) {
@@ -73,10 +93,14 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The name of a Skill Parameter.
+         */
         private String parameterName = null;
 
         /**
          * The name of a Skill Parameter.
+         * @param parameterName the value to set
          * @return this builder instance
          */
         public Builder parameterName(String parameterName) {
@@ -84,10 +108,14 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -169,7 +197,8 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -179,6 +208,10 @@ public class GetSkillParameterRequest extends com.oracle.bmc.requests.BmcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

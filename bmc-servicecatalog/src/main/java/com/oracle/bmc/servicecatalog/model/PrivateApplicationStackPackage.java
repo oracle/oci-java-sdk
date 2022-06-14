@@ -71,19 +71,33 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The content URL of the terraform configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
         private String contentUrl;
 
+        /**
+         * The content URL of the terraform configuration.
+         * @param contentUrl the value to set
+         * @return this builder
+         **/
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = contentUrl;
             this.__explicitlySet__.add("contentUrl");
             return this;
         }
-
+        /**
+         * The MIME type of the terraform configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private String mimeType;
 
+        /**
+         * The MIME type of the terraform configuration.
+         * @param mimeType the value to set
+         * @return this builder
+         **/
         public Builder mimeType(String mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
@@ -154,6 +168,10 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
     private final String contentUrl;
 
+    /**
+     * The content URL of the terraform configuration.
+     * @return the value
+     **/
     public String getContentUrl() {
         return contentUrl;
     }
@@ -164,6 +182,10 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final String mimeType;
 
+    /**
+     * The MIME type of the terraform configuration.
+     * @return the value
+     **/
     public String getMimeType() {
         return mimeType;
     }

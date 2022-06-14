@@ -29,9 +29,17 @@ public final class LogAnalyticsParserFunctionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of parser function.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsParserFunction> items;
 
+        /**
+         * An array of parser function.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsParserFunction> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class LogAnalyticsParserFunctionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsParserFunction> items;
 
+    /**
+     * An array of parser function.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParserFunction> getItems() {
         return items;
     }

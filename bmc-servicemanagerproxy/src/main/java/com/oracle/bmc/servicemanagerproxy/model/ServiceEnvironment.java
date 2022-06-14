@@ -53,36 +53,77 @@ public final class ServiceEnvironment {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unqiue identifier for the entitlement related to the environment.
+         * <p>
+         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unqiue identifier for the entitlement related to the environment.
+         * <p>
+         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The unique subscription ID associated with the service environment ID.
+         * <p>
+         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
+        /**
+         * The unique subscription ID associated with the service environment ID.
+         * <p>
+         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
-
+        /**
+         * Status of the entitlement registration for the service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ServiceEntitlementRegistrationStatus status;
 
+        /**
+         * Status of the entitlement registration for the service.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(ServiceEntitlementRegistrationStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -97,19 +138,33 @@ public final class ServiceEnvironment {
             this.__explicitlySet__.add("serviceDefinition");
             return this;
         }
-
+        /**
+         * The URL for the console.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consoleUrl")
         private String consoleUrl;
 
+        /**
+         * The URL for the console.
+         * @param consoleUrl the value to set
+         * @return this builder
+         **/
         public Builder consoleUrl(String consoleUrl) {
             this.consoleUrl = consoleUrl;
             this.__explicitlySet__.add("consoleUrl");
             return this;
         }
-
+        /**
+         * Array of service environment end points.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceEnvironmentEndpoints")
         private java.util.List<ServiceEnvironmentEndPointOverview> serviceEnvironmentEndpoints;
 
+        /**
+         * Array of service environment end points.
+         * @param serviceEnvironmentEndpoints the value to set
+         * @return this builder
+         **/
         public Builder serviceEnvironmentEndpoints(
                 java.util.List<ServiceEnvironmentEndPointOverview> serviceEnvironmentEndpoints) {
             this.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
@@ -170,6 +225,13 @@ public final class ServiceEnvironment {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unqiue identifier for the entitlement related to the environment.
+     * <p>
+     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -183,6 +245,13 @@ public final class ServiceEnvironment {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
+    /**
+     * The unique subscription ID associated with the service environment ID.
+     * <p>
+     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -193,6 +262,10 @@ public final class ServiceEnvironment {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ServiceEntitlementRegistrationStatus status;
 
+    /**
+     * Status of the entitlement registration for the service.
+     * @return the value
+     **/
     public ServiceEntitlementRegistrationStatus getStatus() {
         return status;
     }
@@ -203,6 +276,10 @@ public final class ServiceEnvironment {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -220,6 +297,10 @@ public final class ServiceEnvironment {
     @com.fasterxml.jackson.annotation.JsonProperty("consoleUrl")
     private final String consoleUrl;
 
+    /**
+     * The URL for the console.
+     * @return the value
+     **/
     public String getConsoleUrl() {
         return consoleUrl;
     }
@@ -230,6 +311,10 @@ public final class ServiceEnvironment {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceEnvironmentEndpoints")
     private final java.util.List<ServiceEnvironmentEndPointOverview> serviceEnvironmentEndpoints;
 
+    /**
+     * Array of service environment end points.
+     * @return the value
+     **/
     public java.util.List<ServiceEnvironmentEndPointOverview> getServiceEnvironmentEndpoints() {
         return serviceEnvironmentEndpoints;
     }

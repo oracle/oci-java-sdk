@@ -29,18 +29,33 @@ public final class WorkloadType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("atp")
         private Float atp;
 
+        /**
+         * The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+         * @param atp the value to set
+         * @return this builder
+         **/
         public Builder atp(Float atp) {
             this.atp = atp;
             this.__explicitlySet__.add("atp");
             return this;
         }
-
+        /**
+         * The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adw")
         private Float adw;
 
+        /**
+         * The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+         * @param adw the value to set
+         * @return this builder
+         **/
         public Builder adw(Float adw) {
             this.adw = adw;
             this.__explicitlySet__.add("adw");
@@ -82,6 +97,10 @@ public final class WorkloadType {
     @com.fasterxml.jackson.annotation.JsonProperty("atp")
     private final Float atp;
 
+    /**
+     * The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+     * @return the value
+     **/
     public Float getAtp() {
         return atp;
     }
@@ -92,6 +111,10 @@ public final class WorkloadType {
     @com.fasterxml.jackson.annotation.JsonProperty("adw")
     private final Float adw;
 
+    /**
+     * The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+     * @return the value
+     **/
     public Float getAdw() {
         return adw;
     }

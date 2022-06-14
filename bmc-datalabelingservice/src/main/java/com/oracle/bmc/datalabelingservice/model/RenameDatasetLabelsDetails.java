@@ -33,6 +33,7 @@ public final class RenameDatasetLabelsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceLabelSet")
         private LabelSet sourceLabelSet;
 

@@ -29,9 +29,17 @@ public final class AnomalyDetectResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list to hold anomaly points grouped by timestamp/row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectionResults")
         private java.util.List<DetectionResultItem> detectionResults;
 
+        /**
+         * A list to hold anomaly points grouped by timestamp/row.
+         * @param detectionResults the value to set
+         * @return this builder
+         **/
         public Builder detectionResults(java.util.List<DetectionResultItem> detectionResults) {
             this.detectionResults = detectionResults;
             this.__explicitlySet__.add("detectionResults");
@@ -73,6 +81,10 @@ public final class AnomalyDetectResult {
     @com.fasterxml.jackson.annotation.JsonProperty("detectionResults")
     private final java.util.List<DetectionResultItem> detectionResults;
 
+    /**
+     * A list to hold anomaly points grouped by timestamp/row.
+     * @return the value
+     **/
     public java.util.List<DetectionResultItem> getDetectionResults() {
         return detectionResults;
     }

@@ -14,6 +14,11 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -29,6 +34,16 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcNextPage;
 
+    /**
+     * Retrieves the next page of paginated list items. If the {@code opc-next-page}
+     * header appears in the response, additional pages of results remain.
+     * To receive the next page, include the header value in the {@code page} param.
+     * If the {@code opc-next-page} header does not appear in the response, there
+     * are no more list items to get. For more information about list pagination,
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -39,6 +54,10 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
             privateEndpointCollection;
 
+    /**
+     * The returned PrivateEndpointCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
             getPrivateEndpointCollection() {
         return privateEndpointCollection;
@@ -70,23 +89,61 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Retrieves the next page of paginated list items. If the {@code opc-next-page}
+         * header appears in the response, additional pages of results remain.
+         * To receive the next page, include the header value in the {@code page} param.
+         * If the {@code opc-next-page} header does not appear in the response, there
+         * are no more list items to get. For more information about list pagination,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * Retrieves the next page of paginated list items. If the {@code opc-next-page}
+         * header appears in the response, additional pages of results remain.
+         * To receive the next page, include the header value in the {@code page} param.
+         * If the {@code opc-next-page} header does not appear in the response, there
+         * are no more list items to get. For more information about list pagination,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned PrivateEndpointCollection instance.
+         */
         private com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
                 privateEndpointCollection;
 
+        /**
+         * The returned PrivateEndpointCollection instance.
+         * @param privateEndpointCollection the value to set
+         * @return this builder
+         */
         public Builder privateEndpointCollection(
                 com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
                         privateEndpointCollection) {
@@ -107,12 +164,20 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListPrivateEndpointsResponse build() {
             return new ListPrivateEndpointsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, privateEndpointCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

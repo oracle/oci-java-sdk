@@ -29,9 +29,17 @@ public final class RevokeAccessRequestDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Comment specified by the approver explaining why the approval is revoked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
         private String approverComment;
 
+        /**
+         * Comment specified by the approver explaining why the approval is revoked.
+         * @param approverComment the value to set
+         * @return this builder
+         **/
         public Builder approverComment(String approverComment) {
             this.approverComment = approverComment;
             this.__explicitlySet__.add("approverComment");
@@ -74,6 +82,10 @@ public final class RevokeAccessRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
     private final String approverComment;
 
+    /**
+     * Comment specified by the approver explaining why the approval is revoked.
+     * @return the value
+     **/
     public String getApproverComment() {
         return approverComment;
     }

@@ -53,10 +53,17 @@ public final class ImageSourceViaObjectStorageUriDetails extends ImageSourceDeta
             this.__explicitlySet__.add("sourceImageType");
             return this;
         }
-
+        /**
+         * The Object Storage URL for the image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceUri")
         private String sourceUri;
 
+        /**
+         * The Object Storage URL for the image.
+         * @param sourceUri the value to set
+         * @return this builder
+         **/
         public Builder sourceUri(String sourceUri) {
             this.sourceUri = sourceUri;
             this.__explicitlySet__.add("sourceUri");
@@ -114,6 +121,10 @@ public final class ImageSourceViaObjectStorageUriDetails extends ImageSourceDeta
     @com.fasterxml.jackson.annotation.JsonProperty("sourceUri")
     private final String sourceUri;
 
+    /**
+     * The Object Storage URL for the image.
+     * @return the value
+     **/
     public String getSourceUri() {
         return sourceUri;
     }

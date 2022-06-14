@@ -48,54 +48,97 @@ public final class SummaryStatistics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The smallest number in the data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimum")
         private Double minimum;
 
+        /**
+         * The smallest number in the data set.
+         * @param minimum the value to set
+         * @return this builder
+         **/
         public Builder minimum(Double minimum) {
             this.minimum = minimum;
             this.__explicitlySet__.add("minimum");
             return this;
         }
-
+        /**
+         * The largest number in the data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximum")
         private Double maximum;
 
+        /**
+         * The largest number in the data set.
+         * @param maximum the value to set
+         * @return this builder
+         **/
         public Builder maximum(Double maximum) {
             this.maximum = maximum;
             this.__explicitlySet__.add("maximum");
             return this;
         }
-
+        /**
+         * The average number in the data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("average")
         private Double average;
 
+        /**
+         * The average number in the data set.
+         * @param average the value to set
+         * @return this builder
+         **/
         public Builder average(Double average) {
             this.average = average;
             this.__explicitlySet__.add("average");
             return this;
         }
-
+        /**
+         * The middle number in the data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("median")
         private Double median;
 
+        /**
+         * The middle number in the data set.
+         * @param median the value to set
+         * @return this builder
+         **/
         public Builder median(Double median) {
             this.median = median;
             this.__explicitlySet__.add("median");
             return this;
         }
-
+        /**
+         * The middle number between the smallest number and the median of the data set. It's also known as the 25th quartile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lowerQuartile")
         private Double lowerQuartile;
 
+        /**
+         * The middle number between the smallest number and the median of the data set. It's also known as the 25th quartile.
+         * @param lowerQuartile the value to set
+         * @return this builder
+         **/
         public Builder lowerQuartile(Double lowerQuartile) {
             this.lowerQuartile = lowerQuartile;
             this.__explicitlySet__.add("lowerQuartile");
             return this;
         }
-
+        /**
+         * The middle number between the median and the largest number of the data set. It's also known as the 75th quartile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upperQuartile")
         private Double upperQuartile;
 
+        /**
+         * The middle number between the median and the largest number of the data set. It's also known as the 75th quartile.
+         * @param upperQuartile the value to set
+         * @return this builder
+         **/
         public Builder upperQuartile(Double upperQuartile) {
             this.upperQuartile = upperQuartile;
             this.__explicitlySet__.add("upperQuartile");
@@ -145,6 +188,10 @@ public final class SummaryStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("minimum")
     private final Double minimum;
 
+    /**
+     * The smallest number in the data set.
+     * @return the value
+     **/
     public Double getMinimum() {
         return minimum;
     }
@@ -155,6 +202,10 @@ public final class SummaryStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("maximum")
     private final Double maximum;
 
+    /**
+     * The largest number in the data set.
+     * @return the value
+     **/
     public Double getMaximum() {
         return maximum;
     }
@@ -165,6 +216,10 @@ public final class SummaryStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("average")
     private final Double average;
 
+    /**
+     * The average number in the data set.
+     * @return the value
+     **/
     public Double getAverage() {
         return average;
     }
@@ -175,6 +230,10 @@ public final class SummaryStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("median")
     private final Double median;
 
+    /**
+     * The middle number in the data set.
+     * @return the value
+     **/
     public Double getMedian() {
         return median;
     }
@@ -185,6 +244,10 @@ public final class SummaryStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("lowerQuartile")
     private final Double lowerQuartile;
 
+    /**
+     * The middle number between the smallest number and the median of the data set. It's also known as the 25th quartile.
+     * @return the value
+     **/
     public Double getLowerQuartile() {
         return lowerQuartile;
     }
@@ -195,6 +258,10 @@ public final class SummaryStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("upperQuartile")
     private final Double upperQuartile;
 
+    /**
+     * The middle number between the median and the largest number of the data set. It's also known as the 75th quartile.
+     * @return the value
+     **/
     public Double getUpperQuartile() {
         return upperQuartile;
     }

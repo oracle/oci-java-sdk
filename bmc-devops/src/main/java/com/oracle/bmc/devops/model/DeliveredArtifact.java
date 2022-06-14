@@ -47,6 +47,10 @@ public class DeliveredArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
     private final String deployArtifactId;
 
+    /**
+     * The OCID of the deployment artifact definition.
+     * @return the value
+     **/
     public String getDeployArtifactId() {
         return deployArtifactId;
     }
@@ -57,6 +61,10 @@ public class DeliveredArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("outputArtifactName")
     private final String outputArtifactName;
 
+    /**
+     * Name of the output artifact defined in the build specification file.
+     * @return the value
+     **/
     public String getOutputArtifactName() {
         return outputArtifactName;
     }

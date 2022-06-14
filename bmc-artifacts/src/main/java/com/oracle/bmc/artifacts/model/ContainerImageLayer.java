@@ -31,27 +31,49 @@ public final class ContainerImageLayer {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The sha256 digest of the image layer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("digest")
         private String digest;
 
+        /**
+         * The sha256 digest of the image layer.
+         * @param digest the value to set
+         * @return this builder
+         **/
         public Builder digest(String digest) {
             this.digest = digest;
             this.__explicitlySet__.add("digest");
             return this;
         }
-
+        /**
+         * The size of the layer in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
+        /**
+         * The size of the layer in bytes.
+         * @param sizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-
+        /**
+         * An RFC 3339 timestamp indicating when the layer was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * An RFC 3339 timestamp indicating when the layer was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -97,6 +119,10 @@ public final class ContainerImageLayer {
     @com.fasterxml.jackson.annotation.JsonProperty("digest")
     private final String digest;
 
+    /**
+     * The sha256 digest of the image layer.
+     * @return the value
+     **/
     public String getDigest() {
         return digest;
     }
@@ -107,6 +133,10 @@ public final class ContainerImageLayer {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
+    /**
+     * The size of the layer in bytes.
+     * @return the value
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
@@ -117,6 +147,10 @@ public final class ContainerImageLayer {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * An RFC 3339 timestamp indicating when the layer was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

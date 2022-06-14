@@ -15,6 +15,12 @@ public class ConsumerHeartbeatResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class ConsumerHeartbeatResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.streaming.model.Cursor cursor;
 
+    /**
+     * The returned Cursor instance.
+     * @return the value
+     */
     public com.oracle.bmc.streaming.model.Cursor getCursor() {
         return cursor;
     }
@@ -46,15 +56,35 @@ public class ConsumerHeartbeatResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Cursor instance.
+         */
         private com.oracle.bmc.streaming.model.Cursor cursor;
 
+        /**
+         * The returned Cursor instance.
+         * @param cursor the value to set
+         * @return this builder
+         */
         public Builder cursor(com.oracle.bmc.streaming.model.Cursor cursor) {
             this.cursor = cursor;
             return this;
@@ -72,11 +102,19 @@ public class ConsumerHeartbeatResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ConsumerHeartbeatResponse build() {
             return new ConsumerHeartbeatResponse(__httpStatusCode__, opcRequestId, cursor);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

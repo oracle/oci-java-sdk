@@ -17,6 +17,9 @@ public class UpdateVlanRequest
      */
     private String vlanId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     */
     public String getVlanId() {
         return vlanId;
     }
@@ -25,6 +28,9 @@ public class UpdateVlanRequest
      */
     private com.oracle.bmc.core.model.UpdateVlanDetails updateVlanDetails;
 
+    /**
+     * Details object for updating a subnet.
+     */
     public com.oracle.bmc.core.model.UpdateVlanDetails getUpdateVlanDetails() {
         return updateVlanDetails;
     }
@@ -36,6 +42,12 @@ public class UpdateVlanRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -46,6 +58,11 @@ public class UpdateVlanRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,10 +84,14 @@ public class UpdateVlanRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+         */
         private String vlanId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+         * @param vlanId the value to set
          * @return this builder instance
          */
         public Builder vlanId(String vlanId) {
@@ -78,10 +99,14 @@ public class UpdateVlanRequest
             return this;
         }
 
+        /**
+         * Details object for updating a subnet.
+         */
         private com.oracle.bmc.core.model.UpdateVlanDetails updateVlanDetails = null;
 
         /**
          * Details object for updating a subnet.
+         * @param updateVlanDetails the value to set
          * @return this builder instance
          */
         public Builder updateVlanDetails(
@@ -90,6 +115,12 @@ public class UpdateVlanRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -97,6 +128,7 @@ public class UpdateVlanRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -104,12 +136,18 @@ public class UpdateVlanRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -202,7 +240,8 @@ public class UpdateVlanRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -212,6 +251,10 @@ public class UpdateVlanRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

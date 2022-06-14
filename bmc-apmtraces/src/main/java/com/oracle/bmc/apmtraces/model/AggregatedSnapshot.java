@@ -33,18 +33,37 @@ public final class AggregatedSnapshot {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Aggregated snapshot details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private java.util.List<SnapshotDetail> details;
 
+        /**
+         * Aggregated snapshot details.
+         *
+         * @param details the value to set
+         * @return this builder
+         **/
         public Builder details(java.util.List<SnapshotDetail> details) {
             this.details = details;
             this.__explicitlySet__.add("details");
             return this;
         }
-
+        /**
+         * List of aggregated stack trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedStackTraces")
         private java.util.List<AggregatedStackTrace> aggregatedStackTraces;
 
+        /**
+         * List of aggregated stack trace.
+         *
+         * @param aggregatedStackTraces the value to set
+         * @return this builder
+         **/
         public Builder aggregatedStackTraces(
                 java.util.List<AggregatedStackTrace> aggregatedStackTraces) {
             this.aggregatedStackTraces = aggregatedStackTraces;
@@ -90,6 +109,11 @@ public final class AggregatedSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final java.util.List<SnapshotDetail> details;
 
+    /**
+     * Aggregated snapshot details.
+     *
+     * @return the value
+     **/
     public java.util.List<SnapshotDetail> getDetails() {
         return details;
     }
@@ -101,6 +125,11 @@ public final class AggregatedSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedStackTraces")
     private final java.util.List<AggregatedStackTrace> aggregatedStackTraces;
 
+    /**
+     * List of aggregated stack trace.
+     *
+     * @return the value
+     **/
     public java.util.List<AggregatedStackTrace> getAggregatedStackTraces() {
         return aggregatedStackTraces;
     }

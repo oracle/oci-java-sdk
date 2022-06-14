@@ -33,36 +33,73 @@ public final class AttachLoadBalancerDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to attach to the instance pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to attach to the instance pool.
+         *
+         * @param loadBalancerId the value to set
+         * @return this builder
+         **/
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
-
+        /**
+         * The name of the backend set on the load balancer to add instances to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
         private String backendSetName;
 
+        /**
+         * The name of the backend set on the load balancer to add instances to.
+         * @param backendSetName the value to set
+         * @return this builder
+         **/
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = backendSetName;
             this.__explicitlySet__.add("backendSetName");
             return this;
         }
-
+        /**
+         * The port value to use when creating the backend set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The port value to use when creating the backend set.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * Indicates which VNIC on each instance in the pool should be used to associate with the load balancer.
+         * Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration
+         * that is associated with the instance pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicSelection")
         private String vnicSelection;
 
+        /**
+         * Indicates which VNIC on each instance in the pool should be used to associate with the load balancer.
+         * Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration
+         * that is associated with the instance pool.
+         *
+         * @param vnicSelection the value to set
+         * @return this builder
+         **/
         public Builder vnicSelection(String vnicSelection) {
             this.vnicSelection = vnicSelection;
             this.__explicitlySet__.add("vnicSelection");
@@ -111,6 +148,11 @@ public final class AttachLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to attach to the instance pool.
+     *
+     * @return the value
+     **/
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -121,6 +163,10 @@ public final class AttachLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
     private final String backendSetName;
 
+    /**
+     * The name of the backend set on the load balancer to add instances to.
+     * @return the value
+     **/
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -131,6 +177,10 @@ public final class AttachLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The port value to use when creating the backend set.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -144,6 +194,13 @@ public final class AttachLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vnicSelection")
     private final String vnicSelection;
 
+    /**
+     * Indicates which VNIC on each instance in the pool should be used to associate with the load balancer.
+     * Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration
+     * that is associated with the instance pool.
+     *
+     * @return the value
+     **/
     public String getVnicSelection() {
         return vnicSelection;
     }

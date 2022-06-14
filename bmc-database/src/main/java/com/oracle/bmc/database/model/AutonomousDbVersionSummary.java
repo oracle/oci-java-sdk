@@ -54,72 +54,143 @@ public final class AutonomousDbVersionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A valid Oracle Database version for Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * A valid Oracle Database version for Autonomous Database.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The Autonomous Database workload type. The following values are valid:
+         * <p>
+         * - OLTP - indicates an Autonomous Transaction Processing database
+         * - DW - indicates an Autonomous Data Warehouse database
+         * - AJD - indicates an Autonomous JSON Database
+         * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
+        /**
+         * The Autonomous Database workload type. The following values are valid:
+         * <p>
+         * - OLTP - indicates an Autonomous Transaction Processing database
+         * - DW - indicates an Autonomous Data Warehouse database
+         * - AJD - indicates an Autonomous JSON Database
+         * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         *
+         * @param dbWorkload the value to set
+         * @return this builder
+         **/
         public Builder dbWorkload(DbWorkload dbWorkload) {
             this.dbWorkload = dbWorkload;
             this.__explicitlySet__.add("dbWorkload");
             return this;
         }
-
+        /**
+         * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
         private Boolean isDedicated;
 
+        /**
+         * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+         *
+         * @param isDedicated the value to set
+         * @return this builder
+         **/
         public Builder isDedicated(Boolean isDedicated) {
             this.isDedicated = isDedicated;
             this.__explicitlySet__.add("isDedicated");
             return this;
         }
-
+        /**
+         * A URL that points to a detailed description of the Autonomous Database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
+        /**
+         * A URL that points to a detailed description of the Autonomous Database version.
+         * @param details the value to set
+         * @return this builder
+         **/
         public Builder details(String details) {
             this.details = details;
             this.__explicitlySet__.add("details");
             return this;
         }
-
+        /**
+         * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
         private Boolean isFreeTierEnabled;
 
+        /**
+         * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+         * @param isFreeTierEnabled the value to set
+         * @return this builder
+         **/
         public Builder isFreeTierEnabled(Boolean isFreeTierEnabled) {
             this.isFreeTierEnabled = isFreeTierEnabled;
             this.__explicitlySet__.add("isFreeTierEnabled");
             return this;
         }
-
+        /**
+         * True if this version of the Oracle Database software has payments enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
         private Boolean isPaidEnabled;
 
+        /**
+         * True if this version of the Oracle Database software has payments enabled.
+         * @param isPaidEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPaidEnabled(Boolean isPaidEnabled) {
             this.isPaidEnabled = isPaidEnabled;
             this.__explicitlySet__.add("isPaidEnabled");
             return this;
         }
-
+        /**
+         * True if this version of the Oracle Database software's default is free.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForFree")
         private Boolean isDefaultForFree;
 
+        /**
+         * True if this version of the Oracle Database software's default is free.
+         * @param isDefaultForFree the value to set
+         * @return this builder
+         **/
         public Builder isDefaultForFree(Boolean isDefaultForFree) {
             this.isDefaultForFree = isDefaultForFree;
             this.__explicitlySet__.add("isDefaultForFree");
             return this;
         }
-
+        /**
+         * True if this version of the Oracle Database software's default is paid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForPaid")
         private Boolean isDefaultForPaid;
 
+        /**
+         * True if this version of the Oracle Database software's default is paid.
+         * @param isDefaultForPaid the value to set
+         * @return this builder
+         **/
         public Builder isDefaultForPaid(Boolean isDefaultForPaid) {
             this.isDefaultForPaid = isDefaultForPaid;
             this.__explicitlySet__.add("isDefaultForPaid");
@@ -178,6 +249,10 @@ public final class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * A valid Oracle Database version for Autonomous Database.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -250,6 +325,16 @@ public final class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final DbWorkload dbWorkload;
 
+    /**
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
+     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     *
+     * @return the value
+     **/
     public DbWorkload getDbWorkload() {
         return dbWorkload;
     }
@@ -261,6 +346,11 @@ public final class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
     private final Boolean isDedicated;
 
+    /**
+     * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     *
+     * @return the value
+     **/
     public Boolean getIsDedicated() {
         return isDedicated;
     }
@@ -271,6 +361,10 @@ public final class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
+    /**
+     * A URL that points to a detailed description of the Autonomous Database version.
+     * @return the value
+     **/
     public String getDetails() {
         return details;
     }
@@ -281,6 +375,10 @@ public final class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
     private final Boolean isFreeTierEnabled;
 
+    /**
+     * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+     * @return the value
+     **/
     public Boolean getIsFreeTierEnabled() {
         return isFreeTierEnabled;
     }
@@ -291,6 +389,10 @@ public final class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
     private final Boolean isPaidEnabled;
 
+    /**
+     * True if this version of the Oracle Database software has payments enabled.
+     * @return the value
+     **/
     public Boolean getIsPaidEnabled() {
         return isPaidEnabled;
     }
@@ -301,6 +403,10 @@ public final class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForFree")
     private final Boolean isDefaultForFree;
 
+    /**
+     * True if this version of the Oracle Database software's default is free.
+     * @return the value
+     **/
     public Boolean getIsDefaultForFree() {
         return isDefaultForFree;
     }
@@ -311,6 +417,10 @@ public final class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForPaid")
     private final Boolean isDefaultForPaid;
 
+    /**
+     * True if this version of the Oracle Database software's default is paid.
+     * @return the value
+     **/
     public Boolean getIsDefaultForPaid() {
         return isDefaultForPaid;
     }

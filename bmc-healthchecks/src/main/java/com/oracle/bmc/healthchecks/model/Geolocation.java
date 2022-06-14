@@ -48,63 +48,133 @@ public final class Geolocation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An opaque identifier for the geographic location of the vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("geoKey")
         private String geoKey;
 
+        /**
+         * An opaque identifier for the geographic location of the vantage point.
+         * @param geoKey the value to set
+         * @return this builder
+         **/
         public Builder geoKey(String geoKey) {
             this.geoKey = geoKey;
             this.__explicitlySet__.add("geoKey");
             return this;
         }
-
+        /**
+         * The ISO 3166-2 code for this location's first-level administrative
+         * division, either a US state or Canadian province. Only included for locations
+         * in the US or Canada. For a list of codes, see
+         * [Country Codes](https://www.iso.org/obp/ui/#search).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminDivCode")
         private String adminDivCode;
 
+        /**
+         * The ISO 3166-2 code for this location's first-level administrative
+         * division, either a US state or Canadian province. Only included for locations
+         * in the US or Canada. For a list of codes, see
+         * [Country Codes](https://www.iso.org/obp/ui/#search).
+         *
+         * @param adminDivCode the value to set
+         * @return this builder
+         **/
         public Builder adminDivCode(String adminDivCode) {
             this.adminDivCode = adminDivCode;
             this.__explicitlySet__.add("adminDivCode");
             return this;
         }
-
+        /**
+         * Common English-language name for the city.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cityName")
         private String cityName;
 
+        /**
+         * Common English-language name for the city.
+         *
+         * @param cityName the value to set
+         * @return this builder
+         **/
         public Builder cityName(String cityName) {
             this.cityName = cityName;
             this.__explicitlySet__.add("cityName");
             return this;
         }
-
+        /**
+         * The ISO 3166-1 alpha-2 country code. For a list of codes,
+         * see [Country Codes](https://www.iso.org/obp/ui/#search).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
         private String countryCode;
 
+        /**
+         * The ISO 3166-1 alpha-2 country code. For a list of codes,
+         * see [Country Codes](https://www.iso.org/obp/ui/#search).
+         *
+         * @param countryCode the value to set
+         * @return this builder
+         **/
         public Builder countryCode(String countryCode) {
             this.countryCode = countryCode;
             this.__explicitlySet__.add("countryCode");
             return this;
         }
-
+        /**
+         * The common English-language name for the country.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryName")
         private String countryName;
 
+        /**
+         * The common English-language name for the country.
+         *
+         * @param countryName the value to set
+         * @return this builder
+         **/
         public Builder countryName(String countryName) {
             this.countryName = countryName;
             this.__explicitlySet__.add("countryName");
             return this;
         }
-
+        /**
+         * Degrees north of the Equator.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latitude")
         private Float latitude;
 
+        /**
+         * Degrees north of the Equator.
+         *
+         * @param latitude the value to set
+         * @return this builder
+         **/
         public Builder latitude(Float latitude) {
             this.latitude = latitude;
             this.__explicitlySet__.add("latitude");
             return this;
         }
-
+        /**
+         * Degrees east of the prime meridian.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("longitude")
         private Float longitude;
 
+        /**
+         * Degrees east of the prime meridian.
+         *
+         * @param longitude the value to set
+         * @return this builder
+         **/
         public Builder longitude(Float longitude) {
             this.longitude = longitude;
             this.__explicitlySet__.add("longitude");
@@ -161,6 +231,10 @@ public final class Geolocation {
     @com.fasterxml.jackson.annotation.JsonProperty("geoKey")
     private final String geoKey;
 
+    /**
+     * An opaque identifier for the geographic location of the vantage point.
+     * @return the value
+     **/
     public String getGeoKey() {
         return geoKey;
     }
@@ -175,6 +249,14 @@ public final class Geolocation {
     @com.fasterxml.jackson.annotation.JsonProperty("adminDivCode")
     private final String adminDivCode;
 
+    /**
+     * The ISO 3166-2 code for this location's first-level administrative
+     * division, either a US state or Canadian province. Only included for locations
+     * in the US or Canada. For a list of codes, see
+     * [Country Codes](https://www.iso.org/obp/ui/#search).
+     *
+     * @return the value
+     **/
     public String getAdminDivCode() {
         return adminDivCode;
     }
@@ -186,6 +268,11 @@ public final class Geolocation {
     @com.fasterxml.jackson.annotation.JsonProperty("cityName")
     private final String cityName;
 
+    /**
+     * Common English-language name for the city.
+     *
+     * @return the value
+     **/
     public String getCityName() {
         return cityName;
     }
@@ -198,6 +285,12 @@ public final class Geolocation {
     @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
     private final String countryCode;
 
+    /**
+     * The ISO 3166-1 alpha-2 country code. For a list of codes,
+     * see [Country Codes](https://www.iso.org/obp/ui/#search).
+     *
+     * @return the value
+     **/
     public String getCountryCode() {
         return countryCode;
     }
@@ -209,6 +302,11 @@ public final class Geolocation {
     @com.fasterxml.jackson.annotation.JsonProperty("countryName")
     private final String countryName;
 
+    /**
+     * The common English-language name for the country.
+     *
+     * @return the value
+     **/
     public String getCountryName() {
         return countryName;
     }
@@ -220,6 +318,11 @@ public final class Geolocation {
     @com.fasterxml.jackson.annotation.JsonProperty("latitude")
     private final Float latitude;
 
+    /**
+     * Degrees north of the Equator.
+     *
+     * @return the value
+     **/
     public Float getLatitude() {
         return latitude;
     }
@@ -231,6 +334,11 @@ public final class Geolocation {
     @com.fasterxml.jackson.annotation.JsonProperty("longitude")
     private final Float longitude;
 
+    /**
+     * Degrees east of the prime meridian.
+     *
+     * @return the value
+     **/
     public Float getLongitude() {
         return longitude;
     }

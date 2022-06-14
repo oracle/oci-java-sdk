@@ -35,18 +35,49 @@ public final class Region {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+         * the full list of supported 3-letter region codes.
+         * <p>
+         * Example: {@code PHX}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The key of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+         * the full list of supported 3-letter region codes.
+         * <p>
+         * Example: {@code PHX}
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -92,6 +123,14 @@ public final class Region {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The key of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+     * the full list of supported 3-letter region codes.
+     * <p>
+     * Example: {@code PHX}
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -106,6 +145,14 @@ public final class Region {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+     * for the full list of supported region names.
+     * <p>
+     * Example: {@code us-phoenix-1}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

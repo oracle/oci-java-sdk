@@ -14,6 +14,11 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +29,10 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
             logAnalyticsConfigWorkRequest;
 
+    /**
+     * The returned LogAnalyticsConfigWorkRequest instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
             getLogAnalyticsConfigWorkRequest() {
         return logAnalyticsConfigWorkRequest;
@@ -52,16 +61,34 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LogAnalyticsConfigWorkRequest instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
                 logAnalyticsConfigWorkRequest;
 
+        /**
+         * The returned LogAnalyticsConfigWorkRequest instance.
+         * @param logAnalyticsConfigWorkRequest the value to set
+         * @return this builder
+         */
         public Builder logAnalyticsConfigWorkRequest(
                 com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
                         logAnalyticsConfigWorkRequest) {
@@ -81,12 +108,20 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetConfigWorkRequestResponse build() {
             return new GetConfigWorkRequestResponse(
                     __httpStatusCode__, opcRequestId, logAnalyticsConfigWorkRequest);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

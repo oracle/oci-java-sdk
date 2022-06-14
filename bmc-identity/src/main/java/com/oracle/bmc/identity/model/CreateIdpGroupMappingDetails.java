@@ -30,18 +30,37 @@ public final class CreateIdpGroupMappingDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the IdP group you want to map.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
         private String idpGroupName;
 
+        /**
+         * The name of the IdP group you want to map.
+         * @param idpGroupName the value to set
+         * @return this builder
+         **/
         public Builder idpGroupName(String idpGroupName) {
             this.idpGroupName = idpGroupName;
             this.__explicitlySet__.add("idpGroupName");
             return this;
         }
-
+        /**
+         * The OCID of the IAM Service {@link Group}
+         * you want to map to the IdP group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
+        /**
+         * The OCID of the IAM Service {@link Group}
+         * you want to map to the IdP group.
+         *
+         * @param groupId the value to set
+         * @return this builder
+         **/
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             this.__explicitlySet__.add("groupId");
@@ -84,6 +103,10 @@ public final class CreateIdpGroupMappingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
     private final String idpGroupName;
 
+    /**
+     * The name of the IdP group you want to map.
+     * @return the value
+     **/
     public String getIdpGroupName() {
         return idpGroupName;
     }
@@ -96,6 +119,12 @@ public final class CreateIdpGroupMappingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
 
+    /**
+     * The OCID of the IAM Service {@link Group}
+     * you want to map to the IdP group.
+     *
+     * @return the value
+     **/
     public String getGroupId() {
         return groupId;
     }

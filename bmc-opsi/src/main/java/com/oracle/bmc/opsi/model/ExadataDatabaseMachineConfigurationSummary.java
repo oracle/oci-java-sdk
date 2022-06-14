@@ -99,19 +99,33 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Enterprise Manager Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
         private String enterpriseManagerIdentifier;
 
+        /**
+         * Enterprise Manager Unique Identifier
+         * @param enterpriseManagerIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
             this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             this.__explicitlySet__.add("enterpriseManagerIdentifier");
             return this;
         }
-
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
         private String enterpriseManagerBridgeId;
 
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         * @param enterpriseManagerBridgeId the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             this.__explicitlySet__.add("enterpriseManagerBridgeId");
@@ -199,6 +213,10 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
     private final String enterpriseManagerIdentifier;
 
+    /**
+     * Enterprise Manager Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerIdentifier() {
         return enterpriseManagerIdentifier;
     }
@@ -209,6 +227,10 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
     private final String enterpriseManagerBridgeId;
 
+    /**
+     * OPSI Enterprise Manager Bridge OCID
+     * @return the value
+     **/
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }

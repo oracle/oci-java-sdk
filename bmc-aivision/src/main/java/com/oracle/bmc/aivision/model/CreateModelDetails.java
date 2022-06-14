@@ -68,63 +68,113 @@ public final class CreateModelDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A human-friendly name for the model, which can be changed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A human-friendly name for the model, which can be changed.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * An optional description of the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * An optional description of the model.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The model version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The model version
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
             return this;
         }
-
+        /**
+         * Which type of Vision model this is.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private Model.ModelType modelType;
 
+        /**
+         * Which type of Vision model this is.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(Model.ModelType modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-
+        /**
+         * The compartment identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment identifier.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isQuickMode")
         private Boolean isQuickMode;
 
+        /**
+         * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
+         * @param isQuickMode the value to set
+         * @return this builder
+         **/
         public Builder isQuickMode(Boolean isQuickMode) {
             this.isQuickMode = isQuickMode;
             this.__explicitlySet__.add("isQuickMode");
             return this;
         }
-
+        /**
+         * The maximum model training duration in hours, expressed as a decimal fraction.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTrainingDurationInHours")
         private Double maxTrainingDurationInHours;
 
+        /**
+         * The maximum model training duration in hours, expressed as a decimal fraction.
+         * @param maxTrainingDurationInHours the value to set
+         * @return this builder
+         **/
         public Builder maxTrainingDurationInHours(Double maxTrainingDurationInHours) {
             this.maxTrainingDurationInHours = maxTrainingDurationInHours;
             this.__explicitlySet__.add("maxTrainingDurationInHours");
@@ -157,28 +207,57 @@ public final class CreateModelDetails {
             this.__explicitlySet__.add("validationDataset");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
+         * @param projectId the value to set
+         * @return this builder
+         **/
         public Builder projectId(String projectId) {
             this.projectId = projectId;
             this.__explicitlySet__.add("projectId");
             return this;
         }
-
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -248,6 +327,10 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A human-friendly name for the model, which can be changed.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -258,6 +341,10 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * An optional description of the model.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -268,6 +355,10 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The model version
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -278,6 +369,10 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final Model.ModelType modelType;
 
+    /**
+     * Which type of Vision model this is.
+     * @return the value
+     **/
     public Model.ModelType getModelType() {
         return modelType;
     }
@@ -288,6 +383,10 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment identifier.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -298,6 +397,10 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isQuickMode")
     private final Boolean isQuickMode;
 
+    /**
+     * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
+     * @return the value
+     **/
     public Boolean getIsQuickMode() {
         return isQuickMode;
     }
@@ -308,6 +411,10 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxTrainingDurationInHours")
     private final Double maxTrainingDurationInHours;
 
+    /**
+     * The maximum model training duration in hours, expressed as a decimal fraction.
+     * @return the value
+     **/
     public Double getMaxTrainingDurationInHours() {
         return maxTrainingDurationInHours;
     }
@@ -339,6 +446,10 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
+     * @return the value
+     **/
     public String getProjectId() {
         return projectId;
     }
@@ -351,6 +462,12 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -363,6 +480,12 @@ public final class CreateModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -17,6 +17,9 @@ public class ListDatabaseParametersRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -25,6 +28,9 @@ public class ListDatabaseParametersRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -77,6 +83,13 @@ public class ListDatabaseParametersRequest
         }
     };
 
+    /**
+     * The source used to list database parameters. {@code CURRENT} is used to get the
+     * database parameters that are currently in effect for the database
+     * instance. {@code SPFILE} is used to list parameters from the server parameter
+     * file. Default is {@code CURRENT}.
+     *
+     */
     public Source getSource() {
         return source;
     }
@@ -86,6 +99,10 @@ public class ListDatabaseParametersRequest
      */
     private String name;
 
+    /**
+     * A filter to return all parameters that have the text given in their names.
+     *
+     */
     public String getName() {
         return name;
     }
@@ -95,6 +112,10 @@ public class ListDatabaseParametersRequest
      */
     private Boolean isAllowedValuesIncluded;
 
+    /**
+     * When true, results include a list of valid values for parameters (if applicable).
+     *
+     */
     public Boolean getIsAllowedValuesIncluded() {
         return isAllowedValuesIncluded;
     }
@@ -142,6 +163,11 @@ public class ListDatabaseParametersRequest
         }
     };
 
+    /**
+     * The field to sort information by. Only one sortOrder can be used. The
+     * default sort order for {@code NAME} is ascending and it is case-sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -150,6 +176,9 @@ public class ListDatabaseParametersRequest
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -161,10 +190,14 @@ public class ListDatabaseParametersRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -172,10 +205,14 @@ public class ListDatabaseParametersRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -183,6 +220,13 @@ public class ListDatabaseParametersRequest
             return this;
         }
 
+        /**
+         * The source used to list database parameters. {@code CURRENT} is used to get the
+         * database parameters that are currently in effect for the database
+         * instance. {@code SPFILE} is used to list parameters from the server parameter
+         * file. Default is {@code CURRENT}.
+         *
+         */
         private Source source = null;
 
         /**
@@ -191,6 +235,7 @@ public class ListDatabaseParametersRequest
          * instance. {@code SPFILE} is used to list parameters from the server parameter
          * file. Default is {@code CURRENT}.
          *
+         * @param source the value to set
          * @return this builder instance
          */
         public Builder source(Source source) {
@@ -198,11 +243,16 @@ public class ListDatabaseParametersRequest
             return this;
         }
 
+        /**
+         * A filter to return all parameters that have the text given in their names.
+         *
+         */
         private String name = null;
 
         /**
          * A filter to return all parameters that have the text given in their names.
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -210,11 +260,16 @@ public class ListDatabaseParametersRequest
             return this;
         }
 
+        /**
+         * When true, results include a list of valid values for parameters (if applicable).
+         *
+         */
         private Boolean isAllowedValuesIncluded = null;
 
         /**
          * When true, results include a list of valid values for parameters (if applicable).
          *
+         * @param isAllowedValuesIncluded the value to set
          * @return this builder instance
          */
         public Builder isAllowedValuesIncluded(Boolean isAllowedValuesIncluded) {
@@ -222,12 +277,18 @@ public class ListDatabaseParametersRequest
             return this;
         }
 
+        /**
+         * The field to sort information by. Only one sortOrder can be used. The
+         * default sort order for {@code NAME} is ascending and it is case-sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort information by. Only one sortOrder can be used. The
          * default sort order for {@code NAME} is ascending and it is case-sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -235,10 +296,14 @@ public class ListDatabaseParametersRequest
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -326,7 +391,8 @@ public class ListDatabaseParametersRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -339,6 +405,10 @@ public class ListDatabaseParametersRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

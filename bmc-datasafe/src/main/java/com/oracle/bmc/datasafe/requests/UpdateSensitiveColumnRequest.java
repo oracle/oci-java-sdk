@@ -18,6 +18,9 @@ public class UpdateSensitiveColumnRequest
      */
     private String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -26,6 +29,9 @@ public class UpdateSensitiveColumnRequest
      */
     private String sensitiveColumnKey;
 
+    /**
+     * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
+     */
     public String getSensitiveColumnKey() {
         return sensitiveColumnKey;
     }
@@ -34,6 +40,9 @@ public class UpdateSensitiveColumnRequest
      */
     private com.oracle.bmc.datasafe.model.UpdateSensitiveColumnDetails updateSensitiveColumnDetails;
 
+    /**
+     * Details to update a sensitive column.
+     */
     public com.oracle.bmc.datasafe.model.UpdateSensitiveColumnDetails
             getUpdateSensitiveColumnDetails() {
         return updateSensitiveColumnDetails;
@@ -48,6 +57,14 @@ public class UpdateSensitiveColumnRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -56,6 +73,9 @@ public class UpdateSensitiveColumnRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -78,10 +98,14 @@ public class UpdateSensitiveColumnRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
+         * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
@@ -89,10 +113,14 @@ public class UpdateSensitiveColumnRequest
             return this;
         }
 
+        /**
+         * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
+         */
         private String sensitiveColumnKey = null;
 
         /**
          * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
+         * @param sensitiveColumnKey the value to set
          * @return this builder instance
          */
         public Builder sensitiveColumnKey(String sensitiveColumnKey) {
@@ -100,11 +128,15 @@ public class UpdateSensitiveColumnRequest
             return this;
         }
 
+        /**
+         * Details to update a sensitive column.
+         */
         private com.oracle.bmc.datasafe.model.UpdateSensitiveColumnDetails
                 updateSensitiveColumnDetails = null;
 
         /**
          * Details to update a sensitive column.
+         * @param updateSensitiveColumnDetails the value to set
          * @return this builder instance
          */
         public Builder updateSensitiveColumnDetails(
@@ -114,6 +146,14 @@ public class UpdateSensitiveColumnRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -123,6 +163,7 @@ public class UpdateSensitiveColumnRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -130,10 +171,14 @@ public class UpdateSensitiveColumnRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -228,7 +273,8 @@ public class UpdateSensitiveColumnRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -239,6 +285,10 @@ public class UpdateSensitiveColumnRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

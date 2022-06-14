@@ -30,18 +30,33 @@ public final class SearchResultSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total number of search results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultCount")
         private Integer resultCount;
 
+        /**
+         * Total number of search results.
+         * @param resultCount the value to set
+         * @return this builder
+         **/
         public Builder resultCount(Integer resultCount) {
             this.resultCount = resultCount;
             this.__explicitlySet__.add("resultCount");
             return this;
         }
-
+        /**
+         * Total number of field schema information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldCount")
         private Integer fieldCount;
 
+        /**
+         * Total number of field schema information.
+         * @param fieldCount the value to set
+         * @return this builder
+         **/
         public Builder fieldCount(Integer fieldCount) {
             this.fieldCount = fieldCount;
             this.__explicitlySet__.add("fieldCount");
@@ -83,6 +98,10 @@ public final class SearchResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resultCount")
     private final Integer resultCount;
 
+    /**
+     * Total number of search results.
+     * @return the value
+     **/
     public Integer getResultCount() {
         return resultCount;
     }
@@ -93,6 +112,10 @@ public final class SearchResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldCount")
     private final Integer fieldCount;
 
+    /**
+     * Total number of field schema information.
+     * @return the value
+     **/
     public Integer getFieldCount() {
         return fieldCount;
     }

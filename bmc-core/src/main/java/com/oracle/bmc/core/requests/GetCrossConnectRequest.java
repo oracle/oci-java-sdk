@@ -16,6 +16,9 @@ public class GetCrossConnectRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String crossConnectId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+     */
     public String getCrossConnectId() {
         return crossConnectId;
     }
@@ -27,10 +30,14 @@ public class GetCrossConnectRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+         */
         private String crossConnectId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+         * @param crossConnectId the value to set
          * @return this builder instance
          */
         public Builder crossConnectId(String crossConnectId) {
@@ -106,12 +113,17 @@ public class GetCrossConnectRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().crossConnectId(crossConnectId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

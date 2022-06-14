@@ -18,6 +18,9 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
      */
     private String networkSecurityGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+     */
     public String getNetworkSecurityGroupId() {
         return networkSecurityGroupId;
     }
@@ -29,6 +32,11 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
     private com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails
             updateNetworkSecurityGroupSecurityRulesDetails;
 
+    /**
+     * Request with one or more security rules associated with the network security group that
+     * will be updated.
+     *
+     */
     public com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails
             getUpdateNetworkSecurityGroupSecurityRulesDetails() {
         return updateNetworkSecurityGroupSecurityRulesDetails;
@@ -52,10 +60,14 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         */
         private String networkSecurityGroupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         * @param networkSecurityGroupId the value to set
          * @return this builder instance
          */
         public Builder networkSecurityGroupId(String networkSecurityGroupId) {
@@ -63,6 +75,11 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
             return this;
         }
 
+        /**
+         * Request with one or more security rules associated with the network security group that
+         * will be updated.
+         *
+         */
         private com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails
                 updateNetworkSecurityGroupSecurityRulesDetails = null;
 
@@ -70,6 +87,7 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
          * Request with one or more security rules associated with the network security group that
          * will be updated.
          *
+         * @param updateNetworkSecurityGroupSecurityRulesDetails the value to set
          * @return this builder instance
          */
         public Builder updateNetworkSecurityGroupSecurityRulesDetails(
@@ -166,7 +184,8 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -175,6 +194,10 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
                         updateNetworkSecurityGroupSecurityRulesDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

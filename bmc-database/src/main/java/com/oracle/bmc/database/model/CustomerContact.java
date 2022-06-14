@@ -28,9 +28,17 @@ public final class CustomerContact {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The email address used by Oracle to send notifications regarding databases and infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
+        /**
+         * The email address used by Oracle to send notifications regarding databases and infrastructure.
+         * @param email the value to set
+         * @return this builder
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
@@ -72,6 +80,10 @@ public final class CustomerContact {
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
+    /**
+     * The email address used by Oracle to send notifications regarding databases and infrastructure.
+     * @return the value
+     **/
     public String getEmail() {
         return email;
     }

@@ -132,19 +132,33 @@ public final class Intersect extends Operator {
             this.__explicitlySet__.add("opConfigValues");
             return this;
         }
-
+        /**
+         * intersectType
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intersectType")
         private IntersectType intersectType;
 
+        /**
+         * intersectType
+         * @param intersectType the value to set
+         * @return this builder
+         **/
         public Builder intersectType(IntersectType intersectType) {
             this.intersectType = intersectType;
             this.__explicitlySet__.add("intersectType");
             return this;
         }
-
+        /**
+         * The information about the intersect all.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAll")
         private Boolean isAll;
 
+        /**
+         * The information about the intersect all.
+         * @param isAll the value to set
+         * @return this builder
+         **/
         public Builder isAll(Boolean isAll) {
             this.isAll = isAll;
             this.__explicitlySet__.add("isAll");
@@ -296,6 +310,10 @@ public final class Intersect extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("intersectType")
     private final IntersectType intersectType;
 
+    /**
+     * intersectType
+     * @return the value
+     **/
     public IntersectType getIntersectType() {
         return intersectType;
     }
@@ -306,6 +324,10 @@ public final class Intersect extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("isAll")
     private final Boolean isAll;
 
+    /**
+     * The information about the intersect all.
+     * @return the value
+     **/
     public Boolean getIsAll() {
         return isAll;
     }

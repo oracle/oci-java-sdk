@@ -28,18 +28,33 @@ public final class RefreshRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The current security token that is to be renewed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentToken")
         private String currentToken;
 
+        /**
+         * The current security token that is to be renewed.
+         * @param currentToken the value to set
+         * @return this builder
+         **/
         public Builder currentToken(String currentToken) {
             this.currentToken = currentToken;
             this.__explicitlySet__.add("currentToken");
             return this;
         }
-
+        /**
+         * An optional new public for the new token. If not supplied, currentToken's public key will be used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newPublicKey")
         private String newPublicKey;
 
+        /**
+         * An optional new public for the new token. If not supplied, currentToken's public key will be used.
+         * @param newPublicKey the value to set
+         * @return this builder
+         **/
         public Builder newPublicKey(String newPublicKey) {
             this.newPublicKey = newPublicKey;
             this.__explicitlySet__.add("newPublicKey");
@@ -82,6 +97,10 @@ public final class RefreshRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("currentToken")
     private final String currentToken;
 
+    /**
+     * The current security token that is to be renewed.
+     * @return the value
+     **/
     public String getCurrentToken() {
         return currentToken;
     }
@@ -92,6 +111,10 @@ public final class RefreshRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("newPublicKey")
     private final String newPublicKey;
 
+    /**
+     * An optional new public for the new token. If not supplied, currentToken's public key will be used.
+     * @return the value
+     **/
     public String getNewPublicKey() {
         return newPublicKey;
     }

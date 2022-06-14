@@ -60,100 +60,274 @@ public final class CreateVcnDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * **Deprecated.** Do *not* set this value. Use {@code cidrBlocks} instead.
+         * Example: {@code 10.0.0.0/16}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        /**
+         * **Deprecated.** Do *not* set this value. Use {@code cidrBlocks} instead.
+         * Example: {@code 10.0.0.0/16}
+         *
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
-
+        /**
+         * The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
+         * - The CIDR blocks must be valid.
+         * - They must not overlap with each other or with the on-premises network CIDR block.
+         * - The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN.
+         * <p>
+         **Important:** Do *not* specify a value for {@code cidrBlock}. Use this parameter instead.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
         private java.util.List<String> cidrBlocks;
 
+        /**
+         * The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
+         * - The CIDR blocks must be valid.
+         * - They must not overlap with each other or with the on-premises network CIDR block.
+         * - The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN.
+         * <p>
+         **Important:** Do *not* specify a value for {@code cidrBlock}. Use this parameter instead.
+         *
+         * @param cidrBlocks the value to set
+         * @return this builder
+         **/
         public Builder cidrBlocks(java.util.List<String> cidrBlocks) {
             this.cidrBlocks = cidrBlocks;
             this.__explicitlySet__.add("cidrBlocks");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+         * - The CIDR blocks must be valid.
+         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+         * <p>
+         **Important:** Do *not* specify a value for {@code ipv6CidrBlock}. Use this parameter instead.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
         private java.util.List<String> ipv6PrivateCidrBlocks;
 
+        /**
+         * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+         * - The CIDR blocks must be valid.
+         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+         * <p>
+         **Important:** Do *not* specify a value for {@code ipv6CidrBlock}. Use this parameter instead.
+         *
+         * @param ipv6PrivateCidrBlocks the value to set
+         * @return this builder
+         **/
         public Builder ipv6PrivateCidrBlocks(java.util.List<String> ipv6PrivateCidrBlocks) {
             this.ipv6PrivateCidrBlocks = ipv6PrivateCidrBlocks;
             this.__explicitlySet__.add("ipv6PrivateCidrBlocks");
             return this;
         }
-
+        /**
+         * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56
+         * size for an IPv6 enabled VCN.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOracleGuaAllocationEnabled")
         private Boolean isOracleGuaAllocationEnabled;
 
+        /**
+         * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56
+         * size for an IPv6 enabled VCN.
+         *
+         * @param isOracleGuaAllocationEnabled the value to set
+         * @return this builder
+         **/
         public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
             this.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
             this.__explicitlySet__.add("isOracleGuaAllocationEnabled");
             return this;
         }
-
+        /**
+         * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrDetails")
         private java.util.List<Byoipv6CidrDetails> byoipv6CidrDetails;
 
+        /**
+         * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         *
+         * @param byoipv6CidrDetails the value to set
+         * @return this builder
+         **/
         public Builder byoipv6CidrDetails(java.util.List<Byoipv6CidrDetails> byoipv6CidrDetails) {
             this.byoipv6CidrDetails = byoipv6CidrDetails;
             this.__explicitlySet__.add("byoipv6CidrDetails");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+         * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+         * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * Not required to be unique, but it's a best practice to set unique DNS labels
+         * for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter.
+         * The value cannot be changed.
+         * <p>
+         * You must set this value if you want instances to be able to use hostnames to
+         * resolve other instances in the VCN. Otherwise the Internet and VCN Resolver
+         * will not work.
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code vcn1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
 
+        /**
+         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+         * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+         * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * Not required to be unique, but it's a best practice to set unique DNS labels
+         * for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter.
+         * The value cannot be changed.
+         * <p>
+         * You must set this value if you want instances to be able to use hostnames to
+         * resolve other instances in the VCN. Otherwise the Internet and VCN Resolver
+         * will not work.
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code vcn1}
+         *
+         * @param dnsLabel the value to set
+         * @return this builder
+         **/
         public Builder dnsLabel(String dnsLabel) {
             this.dnsLabel = dnsLabel;
             this.__explicitlySet__.add("dnsLabel");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Whether IPv6 is enabled for the VCN. Default is {@code false}.
+         * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
+         * You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}.
+         * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code true}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIpv6Enabled")
         private Boolean isIpv6Enabled;
 
+        /**
+         * Whether IPv6 is enabled for the VCN. Default is {@code false}.
+         * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
+         * You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}.
+         * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code true}
+         *
+         * @param isIpv6Enabled the value to set
+         * @return this builder
+         **/
         public Builder isIpv6Enabled(Boolean isIpv6Enabled) {
             this.isIpv6Enabled = isIpv6Enabled;
             this.__explicitlySet__.add("isIpv6Enabled");
@@ -220,6 +394,12 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
+    /**
+     * **Deprecated.** Do *not* set this value. Use {@code cidrBlocks} instead.
+     * Example: {@code 10.0.0.0/16}
+     *
+     * @return the value
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }
@@ -236,6 +416,16 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
     private final java.util.List<String> cidrBlocks;
 
+    /**
+     * The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
+     * - The CIDR blocks must be valid.
+     * - They must not overlap with each other or with the on-premises network CIDR block.
+     * - The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN.
+     * <p>
+     **Important:** Do *not* specify a value for {@code cidrBlock}. Use this parameter instead.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getCidrBlocks() {
         return cidrBlocks;
     }
@@ -246,6 +436,10 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -262,6 +456,16 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
     private final java.util.List<String> ipv6PrivateCidrBlocks;
 
+    /**
+     * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+     * - The CIDR blocks must be valid.
+     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+     * <p>
+     **Important:** Do *not* specify a value for {@code ipv6CidrBlock}. Use this parameter instead.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getIpv6PrivateCidrBlocks() {
         return ipv6PrivateCidrBlocks;
     }
@@ -274,6 +478,12 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isOracleGuaAllocationEnabled")
     private final Boolean isOracleGuaAllocationEnabled;
 
+    /**
+     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56
+     * size for an IPv6 enabled VCN.
+     *
+     * @return the value
+     **/
     public Boolean getIsOracleGuaAllocationEnabled() {
         return isOracleGuaAllocationEnabled;
     }
@@ -285,6 +495,11 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrDetails")
     private final java.util.List<Byoipv6CidrDetails> byoipv6CidrDetails;
 
+    /**
+     * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     *
+     * @return the value
+     **/
     public java.util.List<Byoipv6CidrDetails> getByoipv6CidrDetails() {
         return byoipv6CidrDetails;
     }
@@ -299,6 +514,14 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -311,6 +534,12 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -336,6 +565,25 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
     private final String dnsLabel;
 
+    /**
+     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+     * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * Not required to be unique, but it's a best practice to set unique DNS labels
+     * for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter.
+     * The value cannot be changed.
+     * <p>
+     * You must set this value if you want instances to be able to use hostnames to
+     * resolve other instances in the VCN. Otherwise the Internet and VCN Resolver
+     * will not work.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: {@code vcn1}
+     *
+     * @return the value
+     **/
     public String getDnsLabel() {
         return dnsLabel;
     }
@@ -350,6 +598,14 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -366,6 +622,16 @@ public final class CreateVcnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isIpv6Enabled")
     private final Boolean isIpv6Enabled;
 
+    /**
+     * Whether IPv6 is enabled for the VCN. Default is {@code false}.
+     * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
+     * You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}.
+     * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
     public Boolean getIsIpv6Enabled() {
         return isIpv6Enabled;
     }

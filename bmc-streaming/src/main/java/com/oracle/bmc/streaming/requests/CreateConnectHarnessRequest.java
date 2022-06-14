@@ -18,6 +18,9 @@ public class CreateConnectHarnessRequest
      */
     private com.oracle.bmc.streaming.model.CreateConnectHarnessDetails createConnectHarnessDetails;
 
+    /**
+     * The connect harness to create.
+     */
     public com.oracle.bmc.streaming.model.CreateConnectHarnessDetails
             getCreateConnectHarnessDetails() {
         return createConnectHarnessDetails;
@@ -29,6 +32,11 @@ public class CreateConnectHarnessRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +45,9 @@ public class CreateConnectHarnessRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -59,11 +70,15 @@ public class CreateConnectHarnessRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The connect harness to create.
+         */
         private com.oracle.bmc.streaming.model.CreateConnectHarnessDetails
                 createConnectHarnessDetails = null;
 
         /**
          * The connect harness to create.
+         * @param createConnectHarnessDetails the value to set
          * @return this builder instance
          */
         public Builder createConnectHarnessDetails(
@@ -73,12 +88,18 @@ public class CreateConnectHarnessRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -86,10 +107,14 @@ public class CreateConnectHarnessRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -180,7 +205,8 @@ public class CreateConnectHarnessRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +215,10 @@ public class CreateConnectHarnessRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

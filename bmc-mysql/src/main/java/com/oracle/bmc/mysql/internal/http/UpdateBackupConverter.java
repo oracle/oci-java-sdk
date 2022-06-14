@@ -75,11 +75,15 @@ public class UpdateBackupConverter {
                                         "Transform function invoked for com.oracle.bmc.mysql.responses.UpdateBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.mysql.model.Backup>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.mysql.model.Backup.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.mysql.model.Backup>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
@@ -91,6 +95,7 @@ public class UpdateBackupConverter {
                                                                 rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
+                                    builder.backup(response.getItem());
                                     builder.isNotModified(false);
                                 } else {
                                     builder.isNotModified(true);
@@ -106,6 +111,15 @@ public class UpdateBackupConverter {
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
                                                     String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "etag");
+                                if (etagHeader.isPresent()) {
+                                    builder.etag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "etag", etagHeader.get().get(0), String.class));
                                 }
 
                                 com.oracle.bmc.mysql.responses.UpdateBackupResponse

@@ -19,6 +19,10 @@ public class UpdateGroupRequest
      */
     private String streamId;
 
+    /**
+     * The OCID of the stream.
+     *
+     */
     public String getStreamId() {
         return streamId;
     }
@@ -27,6 +31,9 @@ public class UpdateGroupRequest
      */
     private String groupName;
 
+    /**
+     * The name of the consumer group.
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -35,6 +42,9 @@ public class UpdateGroupRequest
      */
     private com.oracle.bmc.streaming.model.UpdateGroupDetails updateGroupDetails;
 
+    /**
+     * The information used to modify the group.
+     */
     public com.oracle.bmc.streaming.model.UpdateGroupDetails getUpdateGroupDetails() {
         return updateGroupDetails;
     }
@@ -45,6 +55,11 @@ public class UpdateGroupRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -66,11 +81,16 @@ public class UpdateGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the stream.
+         *
+         */
         private String streamId = null;
 
         /**
          * The OCID of the stream.
          *
+         * @param streamId the value to set
          * @return this builder instance
          */
         public Builder streamId(String streamId) {
@@ -78,10 +98,14 @@ public class UpdateGroupRequest
             return this;
         }
 
+        /**
+         * The name of the consumer group.
+         */
         private String groupName = null;
 
         /**
          * The name of the consumer group.
+         * @param groupName the value to set
          * @return this builder instance
          */
         public Builder groupName(String groupName) {
@@ -89,10 +113,14 @@ public class UpdateGroupRequest
             return this;
         }
 
+        /**
+         * The information used to modify the group.
+         */
         private com.oracle.bmc.streaming.model.UpdateGroupDetails updateGroupDetails = null;
 
         /**
          * The information used to modify the group.
+         * @param updateGroupDetails the value to set
          * @return this builder instance
          */
         public Builder updateGroupDetails(
@@ -101,12 +129,18 @@ public class UpdateGroupRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -199,7 +233,8 @@ public class UpdateGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -209,6 +244,10 @@ public class UpdateGroupRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

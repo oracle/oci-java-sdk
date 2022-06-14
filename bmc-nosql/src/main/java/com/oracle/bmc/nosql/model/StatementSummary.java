@@ -45,54 +45,99 @@ public final class StatementSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The operation represented in the statement, e.g. CREATE_TABLE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
 
+        /**
+         * The operation represented in the statement, e.g. CREATE_TABLE.
+         *
+         * @param operation the value to set
+         * @return this builder
+         **/
         public Builder operation(Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-
+        /**
+         * The table name from the SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
+        /**
+         * The table name from the SQL statement.
+         * @param tableName the value to set
+         * @return this builder
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-
+        /**
+         * The index name from the SQL statement, if present.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexName")
         private String indexName;
 
+        /**
+         * The index name from the SQL statement, if present.
+         * @param indexName the value to set
+         * @return this builder
+         **/
         public Builder indexName(String indexName) {
             this.indexName = indexName;
             this.__explicitlySet__.add("indexName");
             return this;
         }
-
+        /**
+         * True if the statement includes "IF EXISTS."
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIfExists")
         private Boolean isIfExists;
 
+        /**
+         * True if the statement includes "IF EXISTS."
+         * @param isIfExists the value to set
+         * @return this builder
+         **/
         public Builder isIfExists(Boolean isIfExists) {
             this.isIfExists = isIfExists;
             this.__explicitlySet__.add("isIfExists");
             return this;
         }
-
+        /**
+         * True if the statement includes "IF NOT EXISTS."
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
         private Boolean isIfNotExists;
 
+        /**
+         * True if the statement includes "IF NOT EXISTS."
+         * @param isIfNotExists the value to set
+         * @return this builder
+         **/
         public Builder isIfNotExists(Boolean isIfNotExists) {
             this.isIfNotExists = isIfNotExists;
             this.__explicitlySet__.add("isIfNotExists");
             return this;
         }
-
+        /**
+         * If present, indicates a syntax error in the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntaxError")
         private String syntaxError;
 
+        /**
+         * If present, indicates a syntax error in the statement.
+         * @param syntaxError the value to set
+         * @return this builder
+         **/
         public Builder syntaxError(String syntaxError) {
             this.syntaxError = syntaxError;
             this.__explicitlySet__.add("syntaxError");
@@ -204,6 +249,11 @@ public final class StatementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final Operation operation;
 
+    /**
+     * The operation represented in the statement, e.g. CREATE_TABLE.
+     *
+     * @return the value
+     **/
     public Operation getOperation() {
         return operation;
     }
@@ -214,6 +264,10 @@ public final class StatementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
+    /**
+     * The table name from the SQL statement.
+     * @return the value
+     **/
     public String getTableName() {
         return tableName;
     }
@@ -224,6 +278,10 @@ public final class StatementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("indexName")
     private final String indexName;
 
+    /**
+     * The index name from the SQL statement, if present.
+     * @return the value
+     **/
     public String getIndexName() {
         return indexName;
     }
@@ -234,6 +292,10 @@ public final class StatementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isIfExists")
     private final Boolean isIfExists;
 
+    /**
+     * True if the statement includes "IF EXISTS."
+     * @return the value
+     **/
     public Boolean getIsIfExists() {
         return isIfExists;
     }
@@ -244,6 +306,10 @@ public final class StatementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
     private final Boolean isIfNotExists;
 
+    /**
+     * True if the statement includes "IF NOT EXISTS."
+     * @return the value
+     **/
     public Boolean getIsIfNotExists() {
         return isIfNotExists;
     }
@@ -254,6 +320,10 @@ public final class StatementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("syntaxError")
     private final String syntaxError;
 
+    /**
+     * If present, indicates a syntax error in the statement.
+     * @return the value
+     **/
     public String getSyntaxError() {
         return syntaxError;
     }

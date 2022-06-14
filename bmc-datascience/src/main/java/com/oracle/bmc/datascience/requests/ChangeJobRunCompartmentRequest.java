@@ -18,6 +18,9 @@ public class ChangeJobRunCompartmentRequest
      */
     private String jobRunId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+     */
     public String getJobRunId() {
         return jobRunId;
     }
@@ -27,6 +30,9 @@ public class ChangeJobRunCompartmentRequest
     private com.oracle.bmc.datascience.model.ChangeJobRunCompartmentDetails
             changeJobRunCompartmentDetails;
 
+    /**
+     * Details for changing the compartment of a job.
+     */
     public com.oracle.bmc.datascience.model.ChangeJobRunCompartmentDetails
             getChangeJobRunCompartmentDetails() {
         return changeJobRunCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeJobRunCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +64,10 @@ public class ChangeJobRunCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -72,10 +90,14 @@ public class ChangeJobRunCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+         */
         private String jobRunId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+         * @param jobRunId the value to set
          * @return this builder instance
          */
         public Builder jobRunId(String jobRunId) {
@@ -83,11 +105,15 @@ public class ChangeJobRunCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for changing the compartment of a job.
+         */
         private com.oracle.bmc.datascience.model.ChangeJobRunCompartmentDetails
                 changeJobRunCompartmentDetails = null;
 
         /**
          * Details for changing the compartment of a job.
+         * @param changeJobRunCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeJobRunCompartmentDetails(
@@ -97,6 +123,14 @@ public class ChangeJobRunCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -106,6 +140,7 @@ public class ChangeJobRunCompartmentRequest
          * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -113,11 +148,16 @@ public class ChangeJobRunCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -210,7 +250,8 @@ public class ChangeJobRunCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -220,6 +261,10 @@ public class ChangeJobRunCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

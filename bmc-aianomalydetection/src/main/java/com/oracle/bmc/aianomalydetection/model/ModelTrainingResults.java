@@ -47,45 +47,81 @@ public final class ModelTrainingResults {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The final-achieved model accuracy metric on individual value level
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fap")
         private Float fap;
 
+        /**
+         * The final-achieved model accuracy metric on individual value level
+         * @param fap the value to set
+         * @return this builder
+         **/
         public Builder fap(Float fap) {
             this.fap = fap;
             this.__explicitlySet__.add("fap");
             return this;
         }
-
+        /**
+         * The model accuracy metric on timestamp level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("multivariateFap")
         private Float multivariateFap;
 
+        /**
+         * The model accuracy metric on timestamp level.
+         * @param multivariateFap the value to set
+         * @return this builder
+         **/
         public Builder multivariateFap(Float multivariateFap) {
             this.multivariateFap = multivariateFap;
             this.__explicitlySet__.add("multivariateFap");
             return this;
         }
-
+        /**
+         * A boolean value to indicate if train goal/targetFap is achieved for trained model
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTrainingGoalAchieved")
         private Boolean isTrainingGoalAchieved;
 
+        /**
+         * A boolean value to indicate if train goal/targetFap is achieved for trained model
+         * @param isTrainingGoalAchieved the value to set
+         * @return this builder
+         **/
         public Builder isTrainingGoalAchieved(Boolean isTrainingGoalAchieved) {
             this.isTrainingGoalAchieved = isTrainingGoalAchieved;
             this.__explicitlySet__.add("isTrainingGoalAchieved");
             return this;
         }
-
+        /**
+         * A warning message to explain the reason when targetFap cannot be achieved for trained model
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warning")
         private String warning;
 
+        /**
+         * A warning message to explain the reason when targetFap cannot be achieved for trained model
+         * @param warning the value to set
+         * @return this builder
+         **/
         public Builder warning(String warning) {
             this.warning = warning;
             this.__explicitlySet__.add("warning");
             return this;
         }
-
+        /**
+         * The list of signal details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signalDetails")
         private java.util.List<PerSignalDetails> signalDetails;
 
+        /**
+         * The list of signal details.
+         * @param signalDetails the value to set
+         * @return this builder
+         **/
         public Builder signalDetails(java.util.List<PerSignalDetails> signalDetails) {
             this.signalDetails = signalDetails;
             this.__explicitlySet__.add("signalDetails");
@@ -149,6 +185,10 @@ public final class ModelTrainingResults {
     @com.fasterxml.jackson.annotation.JsonProperty("fap")
     private final Float fap;
 
+    /**
+     * The final-achieved model accuracy metric on individual value level
+     * @return the value
+     **/
     public Float getFap() {
         return fap;
     }
@@ -159,6 +199,10 @@ public final class ModelTrainingResults {
     @com.fasterxml.jackson.annotation.JsonProperty("multivariateFap")
     private final Float multivariateFap;
 
+    /**
+     * The model accuracy metric on timestamp level.
+     * @return the value
+     **/
     public Float getMultivariateFap() {
         return multivariateFap;
     }
@@ -169,6 +213,10 @@ public final class ModelTrainingResults {
     @com.fasterxml.jackson.annotation.JsonProperty("isTrainingGoalAchieved")
     private final Boolean isTrainingGoalAchieved;
 
+    /**
+     * A boolean value to indicate if train goal/targetFap is achieved for trained model
+     * @return the value
+     **/
     public Boolean getIsTrainingGoalAchieved() {
         return isTrainingGoalAchieved;
     }
@@ -179,6 +227,10 @@ public final class ModelTrainingResults {
     @com.fasterxml.jackson.annotation.JsonProperty("warning")
     private final String warning;
 
+    /**
+     * A warning message to explain the reason when targetFap cannot be achieved for trained model
+     * @return the value
+     **/
     public String getWarning() {
         return warning;
     }
@@ -189,6 +241,10 @@ public final class ModelTrainingResults {
     @com.fasterxml.jackson.annotation.JsonProperty("signalDetails")
     private final java.util.List<PerSignalDetails> signalDetails;
 
+    /**
+     * The list of signal details.
+     * @return the value
+     **/
     public java.util.List<PerSignalDetails> getSignalDetails() {
         return signalDetails;
     }

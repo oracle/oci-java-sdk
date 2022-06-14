@@ -13,6 +13,10 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -31,6 +39,10 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.devops.model.DeployEnvironmentCollection deployEnvironmentCollection;
 
+    /**
+     * The returned DeployEnvironmentCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.devops.model.DeployEnvironmentCollection
             getDeployEnvironmentCollection() {
         return deployEnvironmentCollection;
@@ -61,22 +73,46 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned DeployEnvironmentCollection instance.
+         */
         private com.oracle.bmc.devops.model.DeployEnvironmentCollection deployEnvironmentCollection;
 
+        /**
+         * The returned DeployEnvironmentCollection instance.
+         * @param deployEnvironmentCollection the value to set
+         * @return this builder
+         */
         public Builder deployEnvironmentCollection(
                 com.oracle.bmc.devops.model.DeployEnvironmentCollection
                         deployEnvironmentCollection) {
@@ -97,12 +133,20 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListDeployEnvironmentsResponse build() {
             return new ListDeployEnvironmentsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, deployEnvironmentCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

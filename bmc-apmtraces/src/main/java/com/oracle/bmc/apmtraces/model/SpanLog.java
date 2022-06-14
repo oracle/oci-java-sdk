@@ -29,18 +29,37 @@ public final class SpanLog {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Key that specifies the log name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logKey")
         private String logKey;
 
+        /**
+         * Key that specifies the log name.
+         *
+         * @param logKey the value to set
+         * @return this builder
+         **/
         public Builder logKey(String logKey) {
             this.logKey = logKey;
             this.__explicitlySet__.add("logKey");
             return this;
         }
-
+        /**
+         * Value associated with the log key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logValue")
         private String logValue;
 
+        /**
+         * Value associated with the log key.
+         *
+         * @param logValue the value to set
+         * @return this builder
+         **/
         public Builder logValue(String logValue) {
             this.logValue = logValue;
             this.__explicitlySet__.add("logValue");
@@ -83,6 +102,11 @@ public final class SpanLog {
     @com.fasterxml.jackson.annotation.JsonProperty("logKey")
     private final String logKey;
 
+    /**
+     * Key that specifies the log name.
+     *
+     * @return the value
+     **/
     public String getLogKey() {
         return logKey;
     }
@@ -94,6 +118,11 @@ public final class SpanLog {
     @com.fasterxml.jackson.annotation.JsonProperty("logValue")
     private final String logValue;
 
+    /**
+     * Value associated with the log key.
+     *
+     * @return the value
+     **/
     public String getLogValue() {
         return logValue;
     }

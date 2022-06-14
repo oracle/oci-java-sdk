@@ -116,10 +116,17 @@ public final class UpdateDataAssetFromAmazonS3 extends UpdateDataAssetDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-
+        /**
+         * The region for Amazon s3
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * The region for Amazon s3
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
@@ -211,6 +218,10 @@ public final class UpdateDataAssetFromAmazonS3 extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * The region for Amazon s3
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }

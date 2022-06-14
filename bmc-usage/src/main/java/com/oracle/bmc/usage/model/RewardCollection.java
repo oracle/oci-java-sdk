@@ -28,6 +28,7 @@ public final class RewardCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private RewardDetails summary;
 
@@ -36,10 +37,17 @@ public final class RewardCollection {
             this.__explicitlySet__.add("summary");
             return this;
         }
-
+        /**
+         * The monthly summary of rewards.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<MonthlyRewardSummary> items;
 
+        /**
+         * The monthly summary of rewards.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<MonthlyRewardSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -88,6 +96,10 @@ public final class RewardCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<MonthlyRewardSummary> items;
 
+    /**
+     * The monthly summary of rewards.
+     * @return the value
+     **/
     public java.util.List<MonthlyRewardSummary> getItems() {
         return items;
     }

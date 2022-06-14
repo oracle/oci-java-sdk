@@ -74,109 +74,218 @@ public final class VolumeGroupReplica {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The availability domain of the volume group replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain of the volume group replica.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the volume group replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the volume group replica.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The OCID for the volume group replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID for the volume group replica.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The current state of a volume group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of a volume group.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The aggregate size of the volume group replica in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
+        /**
+         * The aggregate size of the volume group replica in GBs.
+         * @param sizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder sizeInGBs(Long sizeInGBs) {
             this.sizeInGBs = sizeInGBs;
             this.__explicitlySet__.add("sizeInGBs");
             return this;
         }
-
+        /**
+         * The OCID of the source volume group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
         private String volumeGroupId;
 
+        /**
+         * The OCID of the source volume group.
+         * @param volumeGroupId the value to set
+         * @return this builder
+         **/
         public Builder volumeGroupId(String volumeGroupId) {
             this.volumeGroupId = volumeGroupId;
             this.__explicitlySet__.add("volumeGroupId");
             return this;
         }
-
+        /**
+         * The date and time the volume group replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the volume group replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Volume replicas within this volume group replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memberReplicas")
         private java.util.List<MemberReplica> memberReplicas;
 
+        /**
+         * Volume replicas within this volume group replica.
+         * @param memberReplicas the value to set
+         * @return this builder
+         **/
         public Builder memberReplicas(java.util.List<MemberReplica> memberReplicas) {
             this.memberReplicas = memberReplicas;
             this.__explicitlySet__.add("memberReplicas");
             return this;
         }
-
+        /**
+         * The date and time the volume group replica was last synced from the source volume group.
+         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
         private java.util.Date timeLastSynced;
 
+        /**
+         * The date and time the volume group replica was last synced from the source volume group.
+         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeLastSynced the value to set
+         * @return this builder
+         **/
         public Builder timeLastSynced(java.util.Date timeLastSynced) {
             this.timeLastSynced = timeLastSynced;
             this.__explicitlySet__.add("timeLastSynced");
@@ -243,6 +352,10 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain of the volume group replica.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -253,6 +366,10 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the volume group replica.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -267,6 +384,14 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -279,6 +404,12 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -293,6 +424,14 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -303,6 +442,10 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID for the volume group replica.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -365,6 +508,10 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of a volume group.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -375,6 +522,10 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     private final Long sizeInGBs;
 
+    /**
+     * The aggregate size of the volume group replica in GBs.
+     * @return the value
+     **/
     public Long getSizeInGBs() {
         return sizeInGBs;
     }
@@ -385,6 +536,10 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
     private final String volumeGroupId;
 
+    /**
+     * The OCID of the source volume group.
+     * @return the value
+     **/
     public String getVolumeGroupId() {
         return volumeGroupId;
     }
@@ -395,6 +550,10 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the volume group replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -405,6 +564,10 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("memberReplicas")
     private final java.util.List<MemberReplica> memberReplicas;
 
+    /**
+     * Volume replicas within this volume group replica.
+     * @return the value
+     **/
     public java.util.List<MemberReplica> getMemberReplicas() {
         return memberReplicas;
     }
@@ -417,6 +580,12 @@ public final class VolumeGroupReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
     private final java.util.Date timeLastSynced;
 
+    /**
+     * The date and time the volume group replica was last synced from the source volume group.
+     * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeLastSynced() {
         return timeLastSynced;
     }

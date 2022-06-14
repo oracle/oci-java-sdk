@@ -37,10 +37,17 @@ public final class DatabaseUpgradeWithDatabaseSoftwareImageDetails
             this.__explicitlySet__.add("options");
             return this;
         }
-
+        /**
+         * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
+        /**
+         * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+         * @param databaseSoftwareImageId the value to set
+         * @return this builder
+         **/
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             this.__explicitlySet__.add("databaseSoftwareImageId");
@@ -92,6 +99,10 @@ public final class DatabaseUpgradeWithDatabaseSoftwareImageDetails
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
+    /**
+     * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+     * @return the value
+     **/
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
     }

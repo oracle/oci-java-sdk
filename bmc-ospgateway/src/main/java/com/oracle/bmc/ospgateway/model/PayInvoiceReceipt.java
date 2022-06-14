@@ -31,27 +31,49 @@ public final class PayInvoiceReceipt {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Url of the Payment Service
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * Url of the Payment Service
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-
+        /**
+         * Payment header id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerId")
         private String headerId;
 
+        /**
+         * Payment header id
+         * @param headerId the value to set
+         * @return this builder
+         **/
         public Builder headerId(String headerId) {
             this.headerId = headerId;
             this.__explicitlySet__.add("headerId");
             return this;
         }
-
+        /**
+         * Token created for Payment Service
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("token")
         private String token;
 
+        /**
+         * Token created for Payment Service
+         * @param token the value to set
+         * @return this builder
+         **/
         public Builder token(String token) {
             this.token = token;
             this.__explicitlySet__.add("token");
@@ -93,6 +115,10 @@ public final class PayInvoiceReceipt {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * Url of the Payment Service
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }
@@ -103,6 +129,10 @@ public final class PayInvoiceReceipt {
     @com.fasterxml.jackson.annotation.JsonProperty("headerId")
     private final String headerId;
 
+    /**
+     * Payment header id
+     * @return the value
+     **/
     public String getHeaderId() {
         return headerId;
     }
@@ -113,6 +143,10 @@ public final class PayInvoiceReceipt {
     @com.fasterxml.jackson.annotation.JsonProperty("token")
     private final String token;
 
+    /**
+     * Token created for Payment Service
+     * @return the value
+     **/
     public String getToken() {
         return token;
     }

@@ -74,6 +74,10 @@ public class AttributeProfileResult {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of attribute
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -126,6 +130,10 @@ public class AttributeProfileResult {
     @com.fasterxml.jackson.annotation.JsonProperty("valueFrequencies")
     private final java.util.List<ObjectFreqStat> valueFrequencies;
 
+    /**
+     * Top N value frequencies for the column as described already in profile config topNValueFrequency property.
+     * @return the value
+     **/
     public java.util.List<ObjectFreqStat> getValueFrequencies() {
         return valueFrequencies;
     }

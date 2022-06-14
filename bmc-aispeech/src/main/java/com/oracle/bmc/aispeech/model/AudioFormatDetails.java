@@ -33,36 +33,65 @@ public final class AudioFormatDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Input file format. Example - WAV.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private String format;
 
+        /**
+         * Input file format. Example - WAV.
+         * @param format the value to set
+         * @return this builder
+         **/
         public Builder format(String format) {
             this.format = format;
             this.__explicitlySet__.add("format");
             return this;
         }
-
+        /**
+         * Input file number of channels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfChannels")
         private Integer numberOfChannels;
 
+        /**
+         * Input file number of channels.
+         * @param numberOfChannels the value to set
+         * @return this builder
+         **/
         public Builder numberOfChannels(Integer numberOfChannels) {
             this.numberOfChannels = numberOfChannels;
             this.__explicitlySet__.add("numberOfChannels");
             return this;
         }
-
+        /**
+         * Input file encoding. Example - PCM.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encoding")
         private String encoding;
 
+        /**
+         * Input file encoding. Example - PCM.
+         * @param encoding the value to set
+         * @return this builder
+         **/
         public Builder encoding(String encoding) {
             this.encoding = encoding;
             this.__explicitlySet__.add("encoding");
             return this;
         }
-
+        /**
+         * Input file sampleRate. Example - 16000
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleRateInHz")
         private Integer sampleRateInHz;
 
+        /**
+         * Input file sampleRate. Example - 16000
+         * @param sampleRateInHz the value to set
+         * @return this builder
+         **/
         public Builder sampleRateInHz(Integer sampleRateInHz) {
             this.sampleRateInHz = sampleRateInHz;
             this.__explicitlySet__.add("sampleRateInHz");
@@ -109,6 +138,10 @@ public final class AudioFormatDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final String format;
 
+    /**
+     * Input file format. Example - WAV.
+     * @return the value
+     **/
     public String getFormat() {
         return format;
     }
@@ -119,6 +152,10 @@ public final class AudioFormatDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfChannels")
     private final Integer numberOfChannels;
 
+    /**
+     * Input file number of channels.
+     * @return the value
+     **/
     public Integer getNumberOfChannels() {
         return numberOfChannels;
     }
@@ -129,6 +166,10 @@ public final class AudioFormatDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     private final String encoding;
 
+    /**
+     * Input file encoding. Example - PCM.
+     * @return the value
+     **/
     public String getEncoding() {
         return encoding;
     }
@@ -139,6 +180,10 @@ public final class AudioFormatDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sampleRateInHz")
     private final Integer sampleRateInHz;
 
+    /**
+     * Input file sampleRate. Example - 16000
+     * @return the value
+     **/
     public Integer getSampleRateInHz() {
         return sampleRateInHz;
     }

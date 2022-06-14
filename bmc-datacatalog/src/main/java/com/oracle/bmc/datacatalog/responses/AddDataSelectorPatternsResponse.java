@@ -14,6 +14,11 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.datacatalog.model.DataAsset dataAsset;
 
+    /**
+     * The returned DataAsset instance.
+     * @return the value
+     */
     public com.oracle.bmc.datacatalog.model.DataAsset getDataAsset() {
         return dataAsset;
     }
@@ -58,22 +73,52 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DataAsset instance.
+         */
         private com.oracle.bmc.datacatalog.model.DataAsset dataAsset;
 
+        /**
+         * The returned DataAsset instance.
+         * @param dataAsset the value to set
+         * @return this builder
+         */
         public Builder dataAsset(com.oracle.bmc.datacatalog.model.DataAsset dataAsset) {
             this.dataAsset = dataAsset;
             return this;
@@ -92,12 +137,20 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public AddDataSelectorPatternsResponse build() {
             return new AddDataSelectorPatternsResponse(
                     __httpStatusCode__, etag, opcRequestId, dataAsset);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

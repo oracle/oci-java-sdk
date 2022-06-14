@@ -29,9 +29,17 @@ public final class UserAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of user aggregation data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<java.util.Map<String, Object>> items;
 
+        /**
+         * The array of user aggregation data.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<java.util.Map<String, Object>> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class UserAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<java.util.Map<String, Object>> items;
 
+    /**
+     * The array of user aggregation data.
+     * @return the value
+     **/
     public java.util.List<java.util.Map<String, Object>> getItems() {
         return items;
     }

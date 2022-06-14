@@ -28,18 +28,37 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
         extends InstanceConfigurationInstanceSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The size of the boot volume in GBs. The minimum value is 50 GB and the maximum
+         * value is 32,768 GB (32 TB).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
         private Long bootVolumeSizeInGBs;
 
+        /**
+         * The size of the boot volume in GBs. The minimum value is 50 GB and the maximum
+         * value is 32,768 GB (32 TB).
+         *
+         * @param bootVolumeSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder bootVolumeSizeInGBs(Long bootVolumeSizeInGBs) {
             this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
             this.__explicitlySet__.add("bootVolumeSizeInGBs");
             return this;
         }
-
+        /**
+         * The OCID of the image used to boot the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The OCID of the image used to boot the instance.
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
@@ -94,6 +113,12 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
     private final Long bootVolumeSizeInGBs;
 
+    /**
+     * The size of the boot volume in GBs. The minimum value is 50 GB and the maximum
+     * value is 32,768 GB (32 TB).
+     *
+     * @return the value
+     **/
     public Long getBootVolumeSizeInGBs() {
         return bootVolumeSizeInGBs;
     }
@@ -104,6 +129,10 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The OCID of the image used to boot the instance.
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }

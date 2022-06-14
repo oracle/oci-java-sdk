@@ -18,6 +18,9 @@ public class LaunchInstanceRequest
      */
     private com.oracle.bmc.core.model.LaunchInstanceDetails launchInstanceDetails;
 
+    /**
+     * Instance details
+     */
     public com.oracle.bmc.core.model.LaunchInstanceDetails getLaunchInstanceDetails() {
         return launchInstanceDetails;
     }
@@ -31,6 +34,14 @@ public class LaunchInstanceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -52,10 +63,14 @@ public class LaunchInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Instance details
+         */
         private com.oracle.bmc.core.model.LaunchInstanceDetails launchInstanceDetails = null;
 
         /**
          * Instance details
+         * @param launchInstanceDetails the value to set
          * @return this builder instance
          */
         public Builder launchInstanceDetails(
@@ -64,6 +79,14 @@ public class LaunchInstanceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -73,6 +96,7 @@ public class LaunchInstanceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -161,7 +185,8 @@ public class LaunchInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -169,6 +194,10 @@ public class LaunchInstanceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

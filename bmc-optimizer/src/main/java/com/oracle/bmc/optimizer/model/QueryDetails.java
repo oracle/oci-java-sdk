@@ -27,9 +27,21 @@ public final class QueryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The query describing which resources to search for.
+         * For more information, see [Query Language Syntax](https://docs.cloud.oracle.com/iaas/Content/CloudAdvisor/Reference/query-syntax.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
+        /**
+         * The query describing which resources to search for.
+         * For more information, see [Query Language Syntax](https://docs.cloud.oracle.com/iaas/Content/CloudAdvisor/Reference/query-syntax.htm).
+         *
+         * @param query the value to set
+         * @return this builder
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
@@ -73,6 +85,12 @@ public final class QueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
+    /**
+     * The query describing which resources to search for.
+     * For more information, see [Query Language Syntax](https://docs.cloud.oracle.com/iaas/Content/CloudAdvisor/Reference/query-syntax.htm).
+     *
+     * @return the value
+     **/
     public String getQuery() {
         return query;
     }

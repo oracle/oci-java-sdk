@@ -27,9 +27,23 @@ package com.oracle.bmc.aispeech.model;
 public final class ProfanityTranscriptionFilter extends TranscriptionFilter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * - {@code MASK}: Will mask detected profanity in transcription.
+         * - {@code REMOVE}: Will replace profane word with * in transcription.
+         * - {@code TAG}: Will tag profane word as profanity but will show actual word.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
+        /**
+         * - {@code MASK}: Will mask detected profanity in transcription.
+         * - {@code REMOVE}: Will replace profane word with * in transcription.
+         * - {@code TAG}: Will tag profane word as profanity but will show actual word.
+         *
+         * @param mode the value to set
+         * @return this builder
+         **/
         public Builder mode(Mode mode) {
             this.mode = mode;
             this.__explicitlySet__.add("mode");
@@ -130,6 +144,13 @@ public final class ProfanityTranscriptionFilter extends TranscriptionFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
+    /**
+     * - {@code MASK}: Will mask detected profanity in transcription.
+     * - {@code REMOVE}: Will replace profane word with * in transcription.
+     * - {@code TAG}: Will tag profane word as profanity but will show actual word.
+     *
+     * @return the value
+     **/
     public Mode getMode() {
         return mode;
     }

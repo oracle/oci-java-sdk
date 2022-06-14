@@ -42,6 +42,10 @@ public class CreatePrivateApplicationPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The package version.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

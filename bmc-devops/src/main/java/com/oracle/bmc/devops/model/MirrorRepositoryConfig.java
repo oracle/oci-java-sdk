@@ -32,18 +32,33 @@ public final class MirrorRepositoryConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Upstream git repository connection identifer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
+        /**
+         * Upstream git repository connection identifer.
+         * @param connectorId the value to set
+         * @return this builder
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
             return this;
         }
-
+        /**
+         * URL of external repository you want to mirror.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
 
+        /**
+         * URL of external repository you want to mirror.
+         * @param repositoryUrl the value to set
+         * @return this builder
+         **/
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             this.__explicitlySet__.add("repositoryUrl");
@@ -98,6 +113,10 @@ public final class MirrorRepositoryConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
+    /**
+     * Upstream git repository connection identifer.
+     * @return the value
+     **/
     public String getConnectorId() {
         return connectorId;
     }
@@ -108,6 +127,10 @@ public final class MirrorRepositoryConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
+    /**
+     * URL of external repository you want to mirror.
+     * @return the value
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }

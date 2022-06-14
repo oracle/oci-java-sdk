@@ -31,18 +31,37 @@ public final class StackMonitoringConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of Stack Monitoring.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringStatus")
         private StackMonitoringStatus stackMonitoringStatus;
 
+        /**
+         * The status of Stack Monitoring.
+         * @param stackMonitoringStatus the value to set
+         * @return this builder
+         **/
         public Builder stackMonitoringStatus(StackMonitoringStatus stackMonitoringStatus) {
             this.stackMonitoringStatus = stackMonitoringStatus;
             this.__explicitlySet__.add("stackMonitoringStatus");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConnectorId")
         private String stackMonitoringConnectorId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         * @param stackMonitoringConnectorId the value to set
+         * @return this builder
+         **/
         public Builder stackMonitoringConnectorId(String stackMonitoringConnectorId) {
             this.stackMonitoringConnectorId = stackMonitoringConnectorId;
             this.__explicitlySet__.add("stackMonitoringConnectorId");
@@ -139,6 +158,10 @@ public final class StackMonitoringConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringStatus")
     private final StackMonitoringStatus stackMonitoringStatus;
 
+    /**
+     * The status of Stack Monitoring.
+     * @return the value
+     **/
     public StackMonitoringStatus getStackMonitoringStatus() {
         return stackMonitoringStatus;
     }
@@ -151,6 +174,12 @@ public final class StackMonitoringConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConnectorId")
     private final String stackMonitoringConnectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+     *
+     * @return the value
+     **/
     public String getStackMonitoringConnectorId() {
         return stackMonitoringConnectorId;
     }

@@ -16,6 +16,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -24,6 +27,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -32,6 +38,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.List<String> fields;
 
+    /**
+     * Specifies the fields to get for an object.
+     */
     public java.util.List<String> getFields() {
         return fields;
     }
@@ -48,6 +60,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.List<String> includeTypes;
 
+    /**
+     * DataAsset type which needs to be listed while listing dataAssets
+     */
     public java.util.List<String> getIncludeTypes() {
         return includeTypes;
     }
@@ -93,6 +108,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -137,6 +155,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -145,6 +166,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String name;
 
+    /**
+     * Used to filter by the name of the object.
+     */
     public String getName() {
         return name;
     }
@@ -156,6 +180,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -164,6 +194,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.List<String> excludeTypes;
 
+    /**
+     * Types which wont be listed while listing dataAsset/Connection
+     */
     public java.util.List<String> getExcludeTypes() {
         return excludeTypes;
     }
@@ -209,6 +242,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
+     */
     public FavoritesQueryParam getFavoritesQueryParam() {
         return favoritesQueryParam;
     }
@@ -217,6 +253,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String folderId;
 
+    /**
+     * Unique key of the folder.
+     */
     public String getFolderId() {
         return folderId;
     }
@@ -225,6 +264,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.List<String> endpointIds;
 
+    /**
+     * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+     */
     public java.util.List<String> getEndpointIds() {
         return endpointIds;
     }
@@ -233,6 +275,9 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.List<String> excludeEndpointIds;
 
+    /**
+     * Endpoints which will be excluded while listing dataAssets
+     */
     public java.util.List<String> getExcludeEndpointIds() {
         return excludeEndpointIds;
     }
@@ -244,10 +289,14 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -255,10 +304,14 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -266,10 +319,14 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -277,10 +334,14 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Specifies the fields to get for an object.
+         */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<String> fields) {
@@ -290,16 +351,21 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Singular setter. Specifies the fields to get for an object.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(String singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * DataAsset type which needs to be listed while listing dataAssets
+         */
         private java.util.List<String> includeTypes = null;
 
         /**
          * DataAsset type which needs to be listed while listing dataAssets
+         * @param includeTypes the value to set
          * @return this builder instance
          */
         public Builder includeTypes(java.util.List<String> includeTypes) {
@@ -309,16 +375,21 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Singular setter. DataAsset type which needs to be listed while listing dataAssets
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder includeTypes(String singularValue) {
             return this.includeTypes(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         */
         private SortBy sortBy = null;
 
         /**
          * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -326,10 +397,14 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -337,10 +412,14 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Used to filter by the name of the object.
+         */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -348,6 +427,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -355,6 +440,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -362,10 +448,14 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Types which wont be listed while listing dataAsset/Connection
+         */
         private java.util.List<String> excludeTypes = null;
 
         /**
          * Types which wont be listed while listing dataAsset/Connection
+         * @param excludeTypes the value to set
          * @return this builder instance
          */
         public Builder excludeTypes(java.util.List<String> excludeTypes) {
@@ -375,16 +465,21 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Singular setter. Types which wont be listed while listing dataAsset/Connection
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder excludeTypes(String singularValue) {
             return this.excludeTypes(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
+         */
         private FavoritesQueryParam favoritesQueryParam = null;
 
         /**
          * If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
+         * @param favoritesQueryParam the value to set
          * @return this builder instance
          */
         public Builder favoritesQueryParam(FavoritesQueryParam favoritesQueryParam) {
@@ -392,10 +487,14 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique key of the folder.
+         */
         private String folderId = null;
 
         /**
          * Unique key of the folder.
+         * @param folderId the value to set
          * @return this builder instance
          */
         public Builder folderId(String folderId) {
@@ -403,10 +502,14 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+         */
         private java.util.List<String> endpointIds = null;
 
         /**
          * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+         * @param endpointIds the value to set
          * @return this builder instance
          */
         public Builder endpointIds(java.util.List<String> endpointIds) {
@@ -416,16 +519,21 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Singular setter. Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder endpointIds(String singularValue) {
             return this.endpointIds(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Endpoints which will be excluded while listing dataAssets
+         */
         private java.util.List<String> excludeEndpointIds = null;
 
         /**
          * Endpoints which will be excluded while listing dataAssets
+         * @param excludeEndpointIds the value to set
          * @return this builder instance
          */
         public Builder excludeEndpointIds(java.util.List<String> excludeEndpointIds) {
@@ -435,6 +543,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Singular setter. Endpoints which will be excluded while listing dataAssets
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder excludeEndpointIds(String singularValue) {
@@ -535,7 +644,8 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -555,6 +665,10 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .excludeEndpointIds(excludeEndpointIds);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

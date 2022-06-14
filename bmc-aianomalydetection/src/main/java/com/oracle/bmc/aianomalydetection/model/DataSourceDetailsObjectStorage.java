@@ -27,27 +27,49 @@ package com.oracle.bmc.aianomalydetection.model;
 public final class DataSourceDetailsObjectStorage extends DataSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Object storage namespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Object storage namespace
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * Object storage bucket name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * Object storage bucket name
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-
+        /**
+         * File name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * File name
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
@@ -101,6 +123,10 @@ public final class DataSourceDetailsObjectStorage extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Object storage namespace
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -111,6 +137,10 @@ public final class DataSourceDetailsObjectStorage extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * Object storage bucket name
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }
@@ -121,6 +151,10 @@ public final class DataSourceDetailsObjectStorage extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * File name
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }

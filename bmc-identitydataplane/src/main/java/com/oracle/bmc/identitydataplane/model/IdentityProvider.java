@@ -57,90 +57,161 @@ public final class IdentityProvider {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The id of the provider.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The id of the provider.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the provider.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the provider.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name of the tenant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
         private String tenantName;
 
+        /**
+         * The name of the tenant.
+         * @param tenantName the value to set
+         * @return this builder
+         **/
         public Builder tenantName(String tenantName) {
             this.tenantName = tenantName;
             this.__explicitlySet__.add("tenantName");
             return this;
         }
-
+        /**
+         * The id of the tenant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
+        /**
+         * The id of the tenant.
+         * @param tenantId the value to set
+         * @return this builder
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-
+        /**
+         * The SAML endpoint where user will be redirected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redirectUri")
         private String redirectUri;
 
+        /**
+         * The SAML endpoint where user will be redirected.
+         * @param redirectUri the value to set
+         * @return this builder
+         **/
         public Builder redirectUri(String redirectUri) {
             this.redirectUri = redirectUri;
             this.__explicitlySet__.add("redirectUri");
             return this;
         }
-
+        /**
+         * The signing certificate of the provider.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
         private String signingCertificate;
 
+        /**
+         * The signing certificate of the provider.
+         * @param signingCertificate the value to set
+         * @return this builder
+         **/
         public Builder signingCertificate(String signingCertificate) {
             this.signingCertificate = signingCertificate;
             this.__explicitlySet__.add("signingCertificate");
             return this;
         }
-
+        /**
+         * The type of the provider.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * The type of the provider.
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * The id of the service provider entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceProviderEntityId")
         private String serviceProviderEntityId;
 
+        /**
+         * The id of the service provider entity.
+         * @param serviceProviderEntityId the value to set
+         * @return this builder
+         **/
         public Builder serviceProviderEntityId(String serviceProviderEntityId) {
             this.serviceProviderEntityId = serviceProviderEntityId;
             this.__explicitlySet__.add("serviceProviderEntityId");
             return this;
         }
-
+        /**
+         * Whether to force authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("forceAuthentication")
         private Boolean forceAuthentication;
 
+        /**
+         * Whether to force authentication.
+         * @param forceAuthentication the value to set
+         * @return this builder
+         **/
         public Builder forceAuthentication(Boolean forceAuthentication) {
             this.forceAuthentication = forceAuthentication;
             this.__explicitlySet__.add("forceAuthentication");
             return this;
         }
-
+        /**
+         * Authentication context class refs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authnContextClassRefs")
         private java.util.List<String> authnContextClassRefs;
 
+        /**
+         * Authentication context class refs.
+         * @param authnContextClassRefs the value to set
+         * @return this builder
+         **/
         public Builder authnContextClassRefs(java.util.List<String> authnContextClassRefs) {
             this.authnContextClassRefs = authnContextClassRefs;
             this.__explicitlySet__.add("authnContextClassRefs");
@@ -203,6 +274,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The id of the provider.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -213,6 +288,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the provider.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -223,6 +302,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
     private final String tenantName;
 
+    /**
+     * The name of the tenant.
+     * @return the value
+     **/
     public String getTenantName() {
         return tenantName;
     }
@@ -233,6 +316,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
+    /**
+     * The id of the tenant.
+     * @return the value
+     **/
     public String getTenantId() {
         return tenantId;
     }
@@ -243,6 +330,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUri")
     private final String redirectUri;
 
+    /**
+     * The SAML endpoint where user will be redirected.
+     * @return the value
+     **/
     public String getRedirectUri() {
         return redirectUri;
     }
@@ -253,6 +344,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
     private final String signingCertificate;
 
+    /**
+     * The signing certificate of the provider.
+     * @return the value
+     **/
     public String getSigningCertificate() {
         return signingCertificate;
     }
@@ -297,6 +392,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * The type of the provider.
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
@@ -307,6 +406,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceProviderEntityId")
     private final String serviceProviderEntityId;
 
+    /**
+     * The id of the service provider entity.
+     * @return the value
+     **/
     public String getServiceProviderEntityId() {
         return serviceProviderEntityId;
     }
@@ -317,6 +420,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("forceAuthentication")
     private final Boolean forceAuthentication;
 
+    /**
+     * Whether to force authentication.
+     * @return the value
+     **/
     public Boolean getForceAuthentication() {
         return forceAuthentication;
     }
@@ -327,6 +434,10 @@ public final class IdentityProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("authnContextClassRefs")
     private final java.util.List<String> authnContextClassRefs;
 
+    /**
+     * Authentication context class refs.
+     * @return the value
+     **/
     public java.util.List<String> getAuthnContextClassRefs() {
         return authnContextClassRefs;
     }

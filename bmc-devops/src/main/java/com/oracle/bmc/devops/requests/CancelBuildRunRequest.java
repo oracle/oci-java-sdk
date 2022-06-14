@@ -18,6 +18,9 @@ public class CancelBuildRunRequest
      */
     private com.oracle.bmc.devops.model.CancelBuildRunDetails cancelBuildRunDetails;
 
+    /**
+     * Parameter details required to cancel a build run.
+     */
     public com.oracle.bmc.devops.model.CancelBuildRunDetails getCancelBuildRunDetails() {
         return cancelBuildRunDetails;
     }
@@ -26,6 +29,9 @@ public class CancelBuildRunRequest
      */
     private String buildRunId;
 
+    /**
+     * Unique build run identifier.
+     */
     public String getBuildRunId() {
         return buildRunId;
     }
@@ -34,6 +40,9 @@ public class CancelBuildRunRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -42,6 +51,9 @@ public class CancelBuildRunRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +62,9 @@ public class CancelBuildRunRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -71,10 +86,14 @@ public class CancelBuildRunRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Parameter details required to cancel a build run.
+         */
         private com.oracle.bmc.devops.model.CancelBuildRunDetails cancelBuildRunDetails = null;
 
         /**
          * Parameter details required to cancel a build run.
+         * @param cancelBuildRunDetails the value to set
          * @return this builder instance
          */
         public Builder cancelBuildRunDetails(
@@ -83,10 +102,14 @@ public class CancelBuildRunRequest
             return this;
         }
 
+        /**
+         * Unique build run identifier.
+         */
         private String buildRunId = null;
 
         /**
          * Unique build run identifier.
+         * @param buildRunId the value to set
          * @return this builder instance
          */
         public Builder buildRunId(String buildRunId) {
@@ -94,10 +117,14 @@ public class CancelBuildRunRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -105,10 +132,14 @@ public class CancelBuildRunRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -116,10 +147,14 @@ public class CancelBuildRunRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -214,7 +249,8 @@ public class CancelBuildRunRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -225,6 +261,10 @@ public class CancelBuildRunRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

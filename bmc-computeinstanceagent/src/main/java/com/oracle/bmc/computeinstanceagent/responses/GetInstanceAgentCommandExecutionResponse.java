@@ -14,6 +14,11 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +46,10 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
     private com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecution
             instanceAgentCommandExecution;
 
+    /**
+     * The returned InstanceAgentCommandExecution instance.
+     * @return the value
+     */
     public com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecution
             getInstanceAgentCommandExecution() {
         return instanceAgentCommandExecution;
@@ -66,23 +81,53 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned InstanceAgentCommandExecution instance.
+         */
         private com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecution
                 instanceAgentCommandExecution;
 
+        /**
+         * The returned InstanceAgentCommandExecution instance.
+         * @param instanceAgentCommandExecution the value to set
+         * @return this builder
+         */
         public Builder instanceAgentCommandExecution(
                 com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecution
                         instanceAgentCommandExecution) {
@@ -103,12 +148,20 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetInstanceAgentCommandExecutionResponse build() {
             return new GetInstanceAgentCommandExecutionResponse(
                     __httpStatusCode__, etag, opcRequestId, instanceAgentCommandExecution);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

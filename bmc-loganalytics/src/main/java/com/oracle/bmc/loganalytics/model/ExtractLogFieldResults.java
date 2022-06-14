@@ -29,9 +29,17 @@ public final class ExtractLogFieldResults {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The log field path values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paths")
         private java.util.List<String> paths;
 
+        /**
+         * The log field path values.
+         * @param paths the value to set
+         * @return this builder
+         **/
         public Builder paths(java.util.List<String> paths) {
             this.paths = paths;
             this.__explicitlySet__.add("paths");
@@ -73,6 +81,10 @@ public final class ExtractLogFieldResults {
     @com.fasterxml.jackson.annotation.JsonProperty("paths")
     private final java.util.List<String> paths;
 
+    /**
+     * The log field path values.
+     * @return the value
+     **/
     public java.util.List<String> getPaths() {
         return paths;
     }

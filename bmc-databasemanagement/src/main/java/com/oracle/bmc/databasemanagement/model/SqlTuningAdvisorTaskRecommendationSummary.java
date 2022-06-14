@@ -60,90 +60,163 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
         private Long sqlTuningAdvisorTaskId;
 
+        /**
+         * The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlTuningAdvisorTaskId the value to set
+         * @return this builder
+         **/
         public Builder sqlTuningAdvisorTaskId(Long sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             this.__explicitlySet__.add("sqlTuningAdvisorTaskId");
             return this;
         }
-
+        /**
+         * The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectId")
         private Long sqlTuningAdvisorTaskObjectId;
 
+        /**
+         * The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param sqlTuningAdvisorTaskObjectId the value to set
+         * @return this builder
+         **/
         public Builder sqlTuningAdvisorTaskObjectId(Long sqlTuningAdvisorTaskObjectId) {
             this.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
             this.__explicitlySet__.add("sqlTuningAdvisorTaskObjectId");
             return this;
         }
-
+        /**
+         * The unique identifier of the recommendation in the scope of the task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
         private Integer recommendationKey;
 
+        /**
+         * The unique identifier of the recommendation in the scope of the task.
+         * @param recommendationKey the value to set
+         * @return this builder
+         **/
         public Builder recommendationKey(Integer recommendationKey) {
             this.recommendationKey = recommendationKey;
             this.__explicitlySet__.add("recommendationKey");
             return this;
         }
-
+        /**
+         * Type of recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationType")
         private RecommendationType recommendationType;
 
+        /**
+         * Type of recommendation.
+         * @param recommendationType the value to set
+         * @return this builder
+         **/
         public Builder recommendationType(RecommendationType recommendationType) {
             this.recommendationType = recommendationType;
             this.__explicitlySet__.add("recommendationType");
             return this;
         }
-
+        /**
+         * Summary of the issue found in the SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("finding")
         private String finding;
 
+        /**
+         * Summary of the issue found in the SQL statement.
+         * @param finding the value to set
+         * @return this builder
+         **/
         public Builder finding(String finding) {
             this.finding = finding;
             this.__explicitlySet__.add("finding");
             return this;
         }
-
+        /**
+         * The recommendation for a specific finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
         private String recommendation;
 
+        /**
+         * The recommendation for a specific finding.
+         * @param recommendation the value to set
+         * @return this builder
+         **/
         public Builder recommendation(String recommendation) {
             this.recommendation = recommendation;
             this.__explicitlySet__.add("recommendation");
             return this;
         }
-
+        /**
+         * Describes the reasoning behind the recommendation and how it relates to the finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rationale")
         private String rationale;
 
+        /**
+         * Describes the reasoning behind the recommendation and how it relates to the finding.
+         * @param rationale the value to set
+         * @return this builder
+         **/
         public Builder rationale(String rationale) {
             this.rationale = rationale;
             this.__explicitlySet__.add("rationale");
             return this;
         }
-
+        /**
+         * The percentage benefit of this implementation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("benefit")
         private Float benefit;
 
+        /**
+         * The percentage benefit of this implementation.
+         * @param benefit the value to set
+         * @return this builder
+         **/
         public Builder benefit(Float benefit) {
             this.benefit = benefit;
             this.__explicitlySet__.add("benefit");
             return this;
         }
-
+        /**
+         * Action sql to be implemented based on the recommendation result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("implementActionSql")
         private String implementActionSql;
 
+        /**
+         * Action sql to be implemented based on the recommendation result.
+         * @param implementActionSql the value to set
+         * @return this builder
+         **/
         public Builder implementActionSql(String implementActionSql) {
             this.implementActionSql = implementActionSql;
             this.__explicitlySet__.add("implementActionSql");
             return this;
         }
-
+        /**
+         * Indicates whether a SQL Profile recommendation uses parallel execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isParallelExecution")
         private Boolean isParallelExecution;
 
+        /**
+         * Indicates whether a SQL Profile recommendation uses parallel execution.
+         * @param isParallelExecution the value to set
+         * @return this builder
+         **/
         public Builder isParallelExecution(Boolean isParallelExecution) {
             this.isParallelExecution = isParallelExecution;
             this.__explicitlySet__.add("isParallelExecution");
@@ -206,6 +279,10 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
     private final Long sqlTuningAdvisorTaskId;
 
+    /**
+     * The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public Long getSqlTuningAdvisorTaskId() {
         return sqlTuningAdvisorTaskId;
     }
@@ -217,6 +294,11 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectId")
     private final Long sqlTuningAdvisorTaskObjectId;
 
+    /**
+     * The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     **/
     public Long getSqlTuningAdvisorTaskObjectId() {
         return sqlTuningAdvisorTaskObjectId;
     }
@@ -227,6 +309,10 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
     private final Integer recommendationKey;
 
+    /**
+     * The unique identifier of the recommendation in the scope of the task.
+     * @return the value
+     **/
     public Integer getRecommendationKey() {
         return recommendationKey;
     }
@@ -290,6 +376,10 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationType")
     private final RecommendationType recommendationType;
 
+    /**
+     * Type of recommendation.
+     * @return the value
+     **/
     public RecommendationType getRecommendationType() {
         return recommendationType;
     }
@@ -300,6 +390,10 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("finding")
     private final String finding;
 
+    /**
+     * Summary of the issue found in the SQL statement.
+     * @return the value
+     **/
     public String getFinding() {
         return finding;
     }
@@ -310,6 +404,10 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     private final String recommendation;
 
+    /**
+     * The recommendation for a specific finding.
+     * @return the value
+     **/
     public String getRecommendation() {
         return recommendation;
     }
@@ -320,6 +418,10 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("rationale")
     private final String rationale;
 
+    /**
+     * Describes the reasoning behind the recommendation and how it relates to the finding.
+     * @return the value
+     **/
     public String getRationale() {
         return rationale;
     }
@@ -330,6 +432,10 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("benefit")
     private final Float benefit;
 
+    /**
+     * The percentage benefit of this implementation.
+     * @return the value
+     **/
     public Float getBenefit() {
         return benefit;
     }
@@ -340,6 +446,10 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("implementActionSql")
     private final String implementActionSql;
 
+    /**
+     * Action sql to be implemented based on the recommendation result.
+     * @return the value
+     **/
     public String getImplementActionSql() {
         return implementActionSql;
     }
@@ -350,6 +460,10 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isParallelExecution")
     private final Boolean isParallelExecution;
 
+    /**
+     * Indicates whether a SQL Profile recommendation uses parallel execution.
+     * @return the value
+     **/
     public Boolean getIsParallelExecution() {
         return isParallelExecution;
     }

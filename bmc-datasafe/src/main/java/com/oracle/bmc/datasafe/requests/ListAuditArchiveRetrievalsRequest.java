@@ -17,6 +17,9 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,10 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -36,6 +43,11 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -88,6 +100,13 @@ public class ListAuditArchiveRetrievalsRequest
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -96,6 +115,9 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private String auditArchiveRetrievalId;
 
+    /**
+     * OCID of the archive retrieval.
+     */
     public String getAuditArchiveRetrievalId() {
         return auditArchiveRetrievalId;
     }
@@ -104,6 +126,9 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private String targetId;
 
+    /**
+     * The OCID of the target associated with the archive retrieval.
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -112,6 +137,9 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -120,6 +148,9 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -128,6 +159,9 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private com.oracle.bmc.datasafe.model.AuditArchiveRetrievalLifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that matches the specified lifecycle state.
+     */
     public com.oracle.bmc.datasafe.model.AuditArchiveRetrievalLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -136,6 +170,9 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private java.util.Date timeOfExpiry;
 
+    /**
+     * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
+     */
     public java.util.Date getTimeOfExpiry() {
         return timeOfExpiry;
     }
@@ -180,6 +217,9 @@ public class ListAuditArchiveRetrievalsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -230,6 +270,12 @@ public class ListAuditArchiveRetrievalsRequest
         }
     };
 
+    /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+     * The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -238,6 +284,9 @@ public class ListAuditArchiveRetrievalsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -249,10 +298,14 @@ public class ListAuditArchiveRetrievalsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -260,11 +313,16 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the specified display name.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -272,12 +330,18 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -285,6 +349,13 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -293,6 +364,7 @@ public class ListAuditArchiveRetrievalsRequest
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -300,10 +372,14 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * OCID of the archive retrieval.
+         */
         private String auditArchiveRetrievalId = null;
 
         /**
          * OCID of the archive retrieval.
+         * @param auditArchiveRetrievalId the value to set
          * @return this builder instance
          */
         public Builder auditArchiveRetrievalId(String auditArchiveRetrievalId) {
@@ -311,10 +387,14 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * The OCID of the target associated with the archive retrieval.
+         */
         private String targetId = null;
 
         /**
          * The OCID of the target associated with the archive retrieval.
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -322,10 +402,14 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -333,10 +417,14 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -344,11 +432,15 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that matches the specified lifecycle state.
+         */
         private com.oracle.bmc.datasafe.model.AuditArchiveRetrievalLifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to return only resources that matches the specified lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -357,10 +449,14 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
+         */
         private java.util.Date timeOfExpiry = null;
 
         /**
          * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
+         * @param timeOfExpiry the value to set
          * @return this builder instance
          */
         public Builder timeOfExpiry(java.util.Date timeOfExpiry) {
@@ -368,10 +464,14 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -379,6 +479,12 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+         * The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -386,6 +492,7 @@ public class ListAuditArchiveRetrievalsRequest
          * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
          * The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -393,10 +500,14 @@ public class ListAuditArchiveRetrievalsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -496,7 +607,8 @@ public class ListAuditArchiveRetrievalsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -515,6 +627,10 @@ public class ListAuditArchiveRetrievalsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

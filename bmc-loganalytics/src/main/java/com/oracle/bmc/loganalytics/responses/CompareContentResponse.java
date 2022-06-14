@@ -14,6 +14,11 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.loganalytics.model.CompareContentResult compareContentResult;
 
+    /**
+     * The returned CompareContentResult instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.CompareContentResult getCompareContentResult() {
         return compareContentResult;
     }
@@ -49,15 +58,33 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned CompareContentResult instance.
+         */
         private com.oracle.bmc.loganalytics.model.CompareContentResult compareContentResult;
 
+        /**
+         * The returned CompareContentResult instance.
+         * @param compareContentResult the value to set
+         * @return this builder
+         */
         public Builder compareContentResult(
                 com.oracle.bmc.loganalytics.model.CompareContentResult compareContentResult) {
             this.compareContentResult = compareContentResult;
@@ -76,12 +103,20 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CompareContentResponse build() {
             return new CompareContentResponse(
                     __httpStatusCode__, opcRequestId, compareContentResult);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

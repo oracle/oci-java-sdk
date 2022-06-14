@@ -17,12 +17,13 @@ public class GetAutoScalingConfigurationRequest
      */
     private String autoScalingConfigurationId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+     */
     public String getAutoScalingConfigurationId() {
         return autoScalingConfigurationId;
     }
-    /**
-     *
-     */
+
     private String opcRequestId;
 
     public String getOpcRequestId() {
@@ -36,10 +37,14 @@ public class GetAutoScalingConfigurationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         */
         private String autoScalingConfigurationId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         * @param autoScalingConfigurationId the value to set
          * @return this builder instance
          */
         public Builder autoScalingConfigurationId(String autoScalingConfigurationId) {
@@ -51,6 +56,7 @@ public class GetAutoScalingConfigurationRequest
 
         /**
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,7 +134,8 @@ public class GetAutoScalingConfigurationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -136,6 +143,10 @@ public class GetAutoScalingConfigurationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

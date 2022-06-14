@@ -59,90 +59,191 @@ public final class ContainerImageSignatureSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment in which the container repository exists.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment in which the container repository exists.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.
+         * <p>
+         * Example: {@code wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.
+         * <p>
+         * Example: {@code wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image signature.
+         * <p>
+         * Example: {@code ocid1.containerimagesignature.oc1..exampleuniqueID}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image signature.
+         * <p>
+         * Example: {@code ocid1.containerimagesignature.oc1..exampleuniqueID}
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
+         * <p>
+         * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
+         * <p>
+         * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+         *
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.
+         * <p>
+         * Example: {@code ocid1.key.oc1..exampleuniqueID}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.
+         * <p>
+         * Example: {@code ocid1.key.oc1..exampleuniqueID}
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
+         * <p>
+         * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
+         * <p>
+         * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
+         *
+         * @param kmsKeyVersionId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = kmsKeyVersionId;
             this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
-
+        /**
+         * The base64 encoded signature payload that was signed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * The base64 encoded signature payload that was signed.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signature")
         private String signature;
 
+        /**
+         * The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
+         * @param signature the value to set
+         * @return this builder
+         **/
         public Builder signature(String signature) {
             this.signature = signature;
             this.__explicitlySet__.add("signature");
             return this;
         }
-
+        /**
+         * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
         private SigningAlgorithm signingAlgorithm;
 
+        /**
+         * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+         * @param signingAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder signingAlgorithm(SigningAlgorithm signingAlgorithm) {
             this.signingAlgorithm = signingAlgorithm;
             this.__explicitlySet__.add("signingAlgorithm");
             return this;
         }
-
+        /**
+         * An RFC 3339 timestamp indicating when the image was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * An RFC 3339 timestamp indicating when the image was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -205,6 +306,10 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment in which the container repository exists.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -218,6 +323,13 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.
+     * <p>
+     * Example: {@code wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -231,6 +343,13 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image signature.
+     * <p>
+     * Example: {@code ocid1.containerimagesignature.oc1..exampleuniqueID}
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -244,6 +363,13 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
+     * <p>
+     * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+     *
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }
@@ -257,6 +383,13 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.
+     * <p>
+     * Example: {@code ocid1.key.oc1..exampleuniqueID}
+     *
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -270,6 +403,13 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
+     * <p>
+     * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
+     *
+     * @return the value
+     **/
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
@@ -280,6 +420,10 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * The base64 encoded signature payload that was signed.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -290,6 +434,10 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
     private final String signature;
 
+    /**
+     * The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
+     * @return the value
+     **/
     public String getSignature() {
         return signature;
     }
@@ -350,6 +498,10 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
     private final SigningAlgorithm signingAlgorithm;
 
+    /**
+     * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+     * @return the value
+     **/
     public SigningAlgorithm getSigningAlgorithm() {
         return signingAlgorithm;
     }
@@ -360,6 +512,10 @@ public final class ContainerImageSignatureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * An RFC 3339 timestamp indicating when the image was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

@@ -41,36 +41,101 @@ public final class CreateInstancePoolPlacementConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The availability domain to place instances.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain to place instances.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The fault domains to place instances.
+         * <p>
+         * If you don't provide any values, the system makes a best effort to distribute
+         * instances across all fault domains based on capacity.
+         * <p>
+         * To distribute the instances evenly across selected fault domains, provide a
+         * set of fault domains. For example, you might want instances to be evenly
+         * distributed if your applications require high availability.
+         * <p>
+         * To get a list of fault domains, use the
+         * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation
+         * in the Identity and Access Management Service API.
+         * <p>
+         * Example: {@code [FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
         private java.util.List<String> faultDomains;
 
+        /**
+         * The fault domains to place instances.
+         * <p>
+         * If you don't provide any values, the system makes a best effort to distribute
+         * instances across all fault domains based on capacity.
+         * <p>
+         * To distribute the instances evenly across selected fault domains, provide a
+         * set of fault domains. For example, you might want instances to be evenly
+         * distributed if your applications require high availability.
+         * <p>
+         * To get a list of fault domains, use the
+         * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation
+         * in the Identity and Access Management Service API.
+         * <p>
+         * Example: {@code [FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]}
+         *
+         * @param faultDomains the value to set
+         * @return this builder
+         **/
         public Builder faultDomains(java.util.List<String> faultDomains) {
             this.faultDomains = faultDomains;
             this.__explicitlySet__.add("faultDomains");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
         private String primarySubnetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         *
+         * @param primarySubnetId the value to set
+         * @return this builder
+         **/
         public Builder primarySubnetId(String primarySubnetId) {
             this.primarySubnetId = primarySubnetId;
             this.__explicitlySet__.add("primarySubnetId");
             return this;
         }
-
+        /**
+         * The set of secondary VNIC data for instances in the pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnicSubnets")
         private java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets;
 
+        /**
+         * The set of secondary VNIC data for instances in the pool.
+         * @param secondaryVnicSubnets the value to set
+         * @return this builder
+         **/
         public Builder secondaryVnicSubnets(
                 java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets) {
             this.secondaryVnicSubnets = secondaryVnicSubnets;
@@ -125,6 +190,13 @@ public final class CreateInstancePoolPlacementConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain to place instances.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -149,6 +221,24 @@ public final class CreateInstancePoolPlacementConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
     private final java.util.List<String> faultDomains;
 
+    /**
+     * The fault domains to place instances.
+     * <p>
+     * If you don't provide any values, the system makes a best effort to distribute
+     * instances across all fault domains based on capacity.
+     * <p>
+     * To distribute the instances evenly across selected fault domains, provide a
+     * set of fault domains. For example, you might want instances to be evenly
+     * distributed if your applications require high availability.
+     * <p>
+     * To get a list of fault domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation
+     * in the Identity and Access Management Service API.
+     * <p>
+     * Example: {@code [FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getFaultDomains() {
         return faultDomains;
     }
@@ -160,6 +250,11 @@ public final class CreateInstancePoolPlacementConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
     private final String primarySubnetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     *
+     * @return the value
+     **/
     public String getPrimarySubnetId() {
         return primarySubnetId;
     }
@@ -170,6 +265,10 @@ public final class CreateInstancePoolPlacementConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnicSubnets")
     private final java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets;
 
+    /**
+     * The set of secondary VNIC data for instances in the pool.
+     * @return the value
+     **/
     public java.util.List<InstancePoolPlacementSecondaryVnicSubnet> getSecondaryVnicSubnets() {
         return secondaryVnicSubnets;
     }

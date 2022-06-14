@@ -28,9 +28,35 @@ public final class AccessLogPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Enables pushing of access logs to the legacy OCI Object Storage log archival bucket.
+         * <p>
+         * Oracle recommends using the OCI Logging service to enable, retrieve, and query access logs
+         * for an API Deployment. If there is an active log object for the API Deployment and its
+         * category is set to 'access' in OCI Logging service, the logs will not be uploaded to the
+         * legacy OCI Object Storage log archival bucket.
+         * <p>
+         * Please note that the functionality to push to the legacy OCI Object Storage log
+         * archival bucket has been deprecated and will be removed in the future.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Enables pushing of access logs to the legacy OCI Object Storage log archival bucket.
+         * <p>
+         * Oracle recommends using the OCI Logging service to enable, retrieve, and query access logs
+         * for an API Deployment. If there is an active log object for the API Deployment and its
+         * category is set to 'access' in OCI Logging service, the logs will not be uploaded to the
+         * legacy OCI Object Storage log archival bucket.
+         * <p>
+         * Please note that the functionality to push to the legacy OCI Object Storage log
+         * archival bucket has been deprecated and will be removed in the future.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -81,6 +107,19 @@ public final class AccessLogPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Enables pushing of access logs to the legacy OCI Object Storage log archival bucket.
+     * <p>
+     * Oracle recommends using the OCI Logging service to enable, retrieve, and query access logs
+     * for an API Deployment. If there is an active log object for the API Deployment and its
+     * category is set to 'access' in OCI Logging service, the logs will not be uploaded to the
+     * legacy OCI Object Storage log archival bucket.
+     * <p>
+     * Please note that the functionality to push to the legacy OCI Object Storage log
+     * archival bucket has been deprecated and will be removed in the future.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }

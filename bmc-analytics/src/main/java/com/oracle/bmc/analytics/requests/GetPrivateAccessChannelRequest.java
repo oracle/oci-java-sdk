@@ -18,6 +18,10 @@ public class GetPrivateAccessChannelRequest
      */
     private String privateAccessChannelKey;
 
+    /**
+     * The unique identifier key of the Private Access Channel.
+     *
+     */
     public String getPrivateAccessChannelKey() {
         return privateAccessChannelKey;
     }
@@ -27,6 +31,10 @@ public class GetPrivateAccessChannelRequest
      */
     private String analyticsInstanceId;
 
+    /**
+     * The OCID of the AnalyticsInstance.
+     *
+     */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
@@ -37,6 +45,11 @@ public class GetPrivateAccessChannelRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,11 +61,16 @@ public class GetPrivateAccessChannelRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier key of the Private Access Channel.
+         *
+         */
         private String privateAccessChannelKey = null;
 
         /**
          * The unique identifier key of the Private Access Channel.
          *
+         * @param privateAccessChannelKey the value to set
          * @return this builder instance
          */
         public Builder privateAccessChannelKey(String privateAccessChannelKey) {
@@ -60,11 +78,16 @@ public class GetPrivateAccessChannelRequest
             return this;
         }
 
+        /**
+         * The OCID of the AnalyticsInstance.
+         *
+         */
         private String analyticsInstanceId = null;
 
         /**
          * The OCID of the AnalyticsInstance.
          *
+         * @param analyticsInstanceId the value to set
          * @return this builder instance
          */
         public Builder analyticsInstanceId(String analyticsInstanceId) {
@@ -72,12 +95,18 @@ public class GetPrivateAccessChannelRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -157,7 +186,8 @@ public class GetPrivateAccessChannelRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -166,6 +196,10 @@ public class GetPrivateAccessChannelRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

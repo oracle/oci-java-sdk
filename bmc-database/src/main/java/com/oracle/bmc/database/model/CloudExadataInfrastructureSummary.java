@@ -84,108 +84,195 @@ public final class CloudExadataInfrastructureSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The current lifecycle state of the cloud Exadata infrastructure resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current lifecycle state of the cloud Exadata infrastructure resource.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The model name of the cloud Exadata infrastructure resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * The model name of the cloud Exadata infrastructure resource.
+         *
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The name of the availability domain that the cloud Exadata infrastructure resource is located in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The name of the availability domain that the cloud Exadata infrastructure resource is located in.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The number of compute servers for the cloud Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Integer computeCount;
 
+        /**
+         * The number of compute servers for the cloud Exadata infrastructure.
+         * @param computeCount the value to set
+         * @return this builder
+         **/
         public Builder computeCount(Integer computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
             return this;
         }
-
+        /**
+         * The number of storage servers for the cloud Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
         private Integer storageCount;
 
+        /**
+         * The number of storage servers for the cloud Exadata infrastructure.
+         * @param storageCount the value to set
+         * @return this builder
+         **/
         public Builder storageCount(Integer storageCount) {
             this.storageCount = storageCount;
             this.__explicitlySet__.add("storageCount");
             return this;
         }
-
+        /**
+         * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalStorageSizeInGBs")
         private Integer totalStorageSizeInGBs;
 
+        /**
+         * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+         * @param totalStorageSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder totalStorageSizeInGBs(Integer totalStorageSizeInGBs) {
             this.totalStorageSizeInGBs = totalStorageSizeInGBs;
             this.__explicitlySet__.add("totalStorageSizeInGBs");
             return this;
         }
-
+        /**
+         * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableStorageSizeInGBs")
         private Integer availableStorageSizeInGBs;
 
+        /**
+         * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+         * @param availableStorageSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder availableStorageSizeInGBs(Integer availableStorageSizeInGBs) {
             this.availableStorageSizeInGBs = availableStorageSizeInGBs;
             this.__explicitlySet__.add("availableStorageSizeInGBs");
             return this;
         }
-
+        /**
+         * The date and time the cloud Exadata infrastructure resource was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the cloud Exadata infrastructure resource was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current lifecycle state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -200,47 +287,100 @@ public final class CloudExadataInfrastructureSummary {
             this.__explicitlySet__.add("maintenanceWindow");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
         private String lastMaintenanceRunId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+         * @param lastMaintenanceRunId the value to set
+         * @return this builder
+         **/
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
             this.lastMaintenanceRunId = lastMaintenanceRunId;
             this.__explicitlySet__.add("lastMaintenanceRunId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
         private String nextMaintenanceRunId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+         * @param nextMaintenanceRunId the value to set
+         * @return this builder
+         **/
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             this.nextMaintenanceRunId = nextMaintenanceRunId;
             this.__explicitlySet__.add("nextMaintenanceRunId");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The list of customer email addresses that receive information from Oracle about the specified OCI Database service resource.
+         * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+         * Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
         private java.util.List<CustomerContact> customerContacts;
 
+        /**
+         * The list of customer email addresses that receive information from Oracle about the specified OCI Database service resource.
+         * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+         * Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+         *
+         * @param customerContacts the value to set
+         * @return this builder
+         **/
         public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
             this.customerContacts = customerContacts;
             this.__explicitlySet__.add("customerContacts");
@@ -319,6 +459,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -329,6 +473,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -392,6 +540,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the cloud Exadata infrastructure resource.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -402,6 +554,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -413,6 +569,11 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * The model name of the cloud Exadata infrastructure resource.
+     *
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -423,6 +584,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The name of the availability domain that the cloud Exadata infrastructure resource is located in.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -433,6 +598,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Integer computeCount;
 
+    /**
+     * The number of compute servers for the cloud Exadata infrastructure.
+     * @return the value
+     **/
     public Integer getComputeCount() {
         return computeCount;
     }
@@ -443,6 +612,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
     private final Integer storageCount;
 
+    /**
+     * The number of storage servers for the cloud Exadata infrastructure.
+     * @return the value
+     **/
     public Integer getStorageCount() {
         return storageCount;
     }
@@ -453,6 +626,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("totalStorageSizeInGBs")
     private final Integer totalStorageSizeInGBs;
 
+    /**
+     * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+     * @return the value
+     **/
     public Integer getTotalStorageSizeInGBs() {
         return totalStorageSizeInGBs;
     }
@@ -463,6 +640,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availableStorageSizeInGBs")
     private final Integer availableStorageSizeInGBs;
 
+    /**
+     * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+     * @return the value
+     **/
     public Integer getAvailableStorageSizeInGBs() {
         return availableStorageSizeInGBs;
     }
@@ -473,6 +654,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the cloud Exadata infrastructure resource was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -483,6 +668,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current lifecycle state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -500,6 +689,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
     private final String lastMaintenanceRunId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+     * @return the value
+     **/
     public String getLastMaintenanceRunId() {
         return lastMaintenanceRunId;
     }
@@ -510,6 +703,10 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
     private final String nextMaintenanceRunId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+     * @return the value
+     **/
     public String getNextMaintenanceRunId() {
         return nextMaintenanceRunId;
     }
@@ -524,6 +721,14 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -536,6 +741,12 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -549,6 +760,13 @@ public final class CloudExadataInfrastructureSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
     private final java.util.List<CustomerContact> customerContacts;
 
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified OCI Database service resource.
+     * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+     * Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+     *
+     * @return the value
+     **/
     public java.util.List<CustomerContact> getCustomerContacts() {
         return customerContacts;
     }

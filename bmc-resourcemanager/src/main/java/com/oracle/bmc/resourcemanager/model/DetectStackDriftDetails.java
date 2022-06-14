@@ -30,9 +30,25 @@ public final class DetectStackDriftDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of resources in the specified stack to detect drift for. Each resource is identified by a resource address,
+         * which is a string derived from the resource type and name specified in the stack's Terraform configuration plus an optional index.
+         * For example, the resource address for the fourth Compute instance with the name "test_instance" is oci_core_instance.test_instance[3].
+         * For more details and examples of resource addresses, see the Terraform documentation at [Resource spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAddresses")
         private java.util.List<String> resourceAddresses;
 
+        /**
+         * The list of resources in the specified stack to detect drift for. Each resource is identified by a resource address,
+         * which is a string derived from the resource type and name specified in the stack's Terraform configuration plus an optional index.
+         * For example, the resource address for the fourth Compute instance with the name "test_instance" is oci_core_instance.test_instance[3].
+         * For more details and examples of resource addresses, see the Terraform documentation at [Resource spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
+         *
+         * @param resourceAddresses the value to set
+         * @return this builder
+         **/
         public Builder resourceAddresses(java.util.List<String> resourceAddresses) {
             this.resourceAddresses = resourceAddresses;
             this.__explicitlySet__.add("resourceAddresses");
@@ -78,6 +94,14 @@ public final class DetectStackDriftDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAddresses")
     private final java.util.List<String> resourceAddresses;
 
+    /**
+     * The list of resources in the specified stack to detect drift for. Each resource is identified by a resource address,
+     * which is a string derived from the resource type and name specified in the stack's Terraform configuration plus an optional index.
+     * For example, the resource address for the fourth Compute instance with the name "test_instance" is oci_core_instance.test_instance[3].
+     * For more details and examples of resource addresses, see the Terraform documentation at [Resource spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
+     *
+     * @return the value
+     **/
     public java.util.List<String> getResourceAddresses() {
         return resourceAddresses;
     }

@@ -35,109 +35,193 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Name of the database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
         private String instanceName;
 
+        /**
+         * Name of the database instance.
+         * @param instanceName the value to set
+         * @return this builder
+         **/
         public Builder instanceName(String instanceName) {
             this.instanceName = instanceName;
             this.__explicitlySet__.add("instanceName");
             return this;
         }
-
+        /**
+         * Host name of the database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * Host name of the database instance.
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * Total number of CPUs allocated for the host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
         private Integer cpuCount;
 
+        /**
+         * Total number of CPUs allocated for the host.
+         * @param cpuCount the value to set
+         * @return this builder
+         **/
         public Builder cpuCount(Integer cpuCount) {
             this.cpuCount = cpuCount;
             this.__explicitlySet__.add("cpuCount");
             return this;
         }
-
+        /**
+         * Total amount of usable Physical RAM Memory available in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostMemoryCapacity")
         private Double hostMemoryCapacity;
 
+        /**
+         * Total amount of usable Physical RAM Memory available in gigabytes.
+         * @param hostMemoryCapacity the value to set
+         * @return this builder
+         **/
         public Builder hostMemoryCapacity(Double hostMemoryCapacity) {
             this.hostMemoryCapacity = hostMemoryCapacity;
             this.__explicitlySet__.add("hostMemoryCapacity");
             return this;
         }
-
+        /**
+         * Database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Database version.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Indicates whether the instance is mounted in cluster database mode (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parallel")
         private String parallel;
 
+        /**
+         * Indicates whether the instance is mounted in cluster database mode (YES) or not (NO).
+         * @param parallel the value to set
+         * @return this builder
+         **/
         public Builder parallel(String parallel) {
             this.parallel = parallel;
             this.__explicitlySet__.add("parallel");
             return this;
         }
-
+        /**
+         * Role (permissions) of the database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceRole")
         private String instanceRole;
 
+        /**
+         * Role (permissions) of the database instance.
+         * @param instanceRole the value to set
+         * @return this builder
+         **/
         public Builder instanceRole(String instanceRole) {
             this.instanceRole = instanceRole;
             this.__explicitlySet__.add("instanceRole");
             return this;
         }
-
+        /**
+         * Indicates if logins are allowed or restricted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logins")
         private String logins;
 
+        /**
+         * Indicates if logins are allowed or restricted.
+         * @param logins the value to set
+         * @return this builder
+         **/
         public Builder logins(String logins) {
             this.logins = logins;
             this.__explicitlySet__.add("logins");
             return this;
         }
-
+        /**
+         * Status of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseStatus")
         private String databaseStatus;
 
+        /**
+         * Status of the database.
+         * @param databaseStatus the value to set
+         * @return this builder
+         **/
         public Builder databaseStatus(String databaseStatus) {
             this.databaseStatus = databaseStatus;
             this.__explicitlySet__.add("databaseStatus");
             return this;
         }
-
+        /**
+         * Status of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * Status of the instance.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The edition of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("edition")
         private String edition;
 
+        /**
+         * The edition of the database.
+         * @param edition the value to set
+         * @return this builder
+         **/
         public Builder edition(String edition) {
             this.edition = edition;
             this.__explicitlySet__.add("edition");
             return this;
         }
-
+        /**
+         * Start up time of the database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startupTime")
         private java.util.Date startupTime;
 
+        /**
+         * Start up time of the database instance.
+         * @param startupTime the value to set
+         * @return this builder
+         **/
         public Builder startupTime(java.util.Date startupTime) {
             this.startupTime = startupTime;
             this.__explicitlySet__.add("startupTime");
@@ -236,6 +320,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
     private final String instanceName;
 
+    /**
+     * Name of the database instance.
+     * @return the value
+     **/
     public String getInstanceName() {
         return instanceName;
     }
@@ -246,6 +334,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * Host name of the database instance.
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -256,6 +348,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
     private final Integer cpuCount;
 
+    /**
+     * Total number of CPUs allocated for the host.
+     * @return the value
+     **/
     public Integer getCpuCount() {
         return cpuCount;
     }
@@ -266,6 +362,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("hostMemoryCapacity")
     private final Double hostMemoryCapacity;
 
+    /**
+     * Total amount of usable Physical RAM Memory available in gigabytes.
+     * @return the value
+     **/
     public Double getHostMemoryCapacity() {
         return hostMemoryCapacity;
     }
@@ -276,6 +376,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Database version.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -286,6 +390,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("parallel")
     private final String parallel;
 
+    /**
+     * Indicates whether the instance is mounted in cluster database mode (YES) or not (NO).
+     * @return the value
+     **/
     public String getParallel() {
         return parallel;
     }
@@ -296,6 +404,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceRole")
     private final String instanceRole;
 
+    /**
+     * Role (permissions) of the database instance.
+     * @return the value
+     **/
     public String getInstanceRole() {
         return instanceRole;
     }
@@ -306,6 +418,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("logins")
     private final String logins;
 
+    /**
+     * Indicates if logins are allowed or restricted.
+     * @return the value
+     **/
     public String getLogins() {
         return logins;
     }
@@ -316,6 +432,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseStatus")
     private final String databaseStatus;
 
+    /**
+     * Status of the database.
+     * @return the value
+     **/
     public String getDatabaseStatus() {
         return databaseStatus;
     }
@@ -326,6 +446,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * Status of the instance.
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }
@@ -336,6 +460,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("edition")
     private final String edition;
 
+    /**
+     * The edition of the database.
+     * @return the value
+     **/
     public String getEdition() {
         return edition;
     }
@@ -346,6 +474,10 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("startupTime")
     private final java.util.Date startupTime;
 
+    /**
+     * Start up time of the database instance.
+     * @return the value
+     **/
     public java.util.Date getStartupTime() {
         return startupTime;
     }

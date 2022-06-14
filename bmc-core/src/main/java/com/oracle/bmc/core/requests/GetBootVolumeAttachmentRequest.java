@@ -17,6 +17,9 @@ public class GetBootVolumeAttachmentRequest
      */
     private String bootVolumeAttachmentId;
 
+    /**
+     * The OCID of the boot volume attachment.
+     */
     public String getBootVolumeAttachmentId() {
         return bootVolumeAttachmentId;
     }
@@ -28,10 +31,14 @@ public class GetBootVolumeAttachmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the boot volume attachment.
+         */
         private String bootVolumeAttachmentId = null;
 
         /**
          * The OCID of the boot volume attachment.
+         * @param bootVolumeAttachmentId the value to set
          * @return this builder instance
          */
         public Builder bootVolumeAttachmentId(String bootVolumeAttachmentId) {
@@ -107,12 +114,17 @@ public class GetBootVolumeAttachmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().bootVolumeAttachmentId(bootVolumeAttachmentId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

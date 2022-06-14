@@ -14,6 +14,11 @@ public class SuggestResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class SuggestResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.SuggestOutput suggestOutput;
 
+    /**
+     * The returned SuggestOutput instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.SuggestOutput getSuggestOutput() {
         return suggestOutput;
     }
@@ -45,15 +54,33 @@ public class SuggestResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned SuggestOutput instance.
+         */
         private com.oracle.bmc.loganalytics.model.SuggestOutput suggestOutput;
 
+        /**
+         * The returned SuggestOutput instance.
+         * @param suggestOutput the value to set
+         * @return this builder
+         */
         public Builder suggestOutput(
                 com.oracle.bmc.loganalytics.model.SuggestOutput suggestOutput) {
             this.suggestOutput = suggestOutput;
@@ -72,11 +99,19 @@ public class SuggestResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public SuggestResponse build() {
             return new SuggestResponse(__httpStatusCode__, opcRequestId, suggestOutput);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

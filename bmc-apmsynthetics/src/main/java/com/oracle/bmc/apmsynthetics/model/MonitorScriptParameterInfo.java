@@ -37,6 +37,7 @@ public final class MonitorScriptParameterInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("monitorScriptParameter")
         private MonitorScriptParameter monitorScriptParameter;
 
@@ -45,19 +46,39 @@ public final class MonitorScriptParameterInfo {
             this.__explicitlySet__.add("monitorScriptParameter");
             return this;
         }
-
+        /**
+         * Describes if  the parameter value is secret and should be kept confidential.
+         * isSecret is specified in either CreateScript or UpdateScript API.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSecret")
         private Boolean isSecret;
 
+        /**
+         * Describes if  the parameter value is secret and should be kept confidential.
+         * isSecret is specified in either CreateScript or UpdateScript API.
+         *
+         * @param isSecret the value to set
+         * @return this builder
+         **/
         public Builder isSecret(Boolean isSecret) {
             this.isSecret = isSecret;
             this.__explicitlySet__.add("isSecret");
             return this;
         }
-
+        /**
+         * If parameter value is default or overwritten.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverwritten")
         private Boolean isOverwritten;
 
+        /**
+         * If parameter value is default or overwritten.
+         *
+         * @param isOverwritten the value to set
+         * @return this builder
+         **/
         public Builder isOverwritten(Boolean isOverwritten) {
             this.isOverwritten = isOverwritten;
             this.__explicitlySet__.add("isOverwritten");
@@ -112,6 +133,12 @@ public final class MonitorScriptParameterInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("isSecret")
     private final Boolean isSecret;
 
+    /**
+     * Describes if  the parameter value is secret and should be kept confidential.
+     * isSecret is specified in either CreateScript or UpdateScript API.
+     *
+     * @return the value
+     **/
     public Boolean getIsSecret() {
         return isSecret;
     }
@@ -123,6 +150,11 @@ public final class MonitorScriptParameterInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("isOverwritten")
     private final Boolean isOverwritten;
 
+    /**
+     * If parameter value is default or overwritten.
+     *
+     * @return the value
+     **/
     public Boolean getIsOverwritten() {
         return isOverwritten;
     }

@@ -32,27 +32,77 @@ public final class Suppression {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Human-readable reason for suppressing alarm notifications.
+         * It does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Oracle recommends including tracking information for the event or associated work,
+         * such as a ticket number.
+         * <p>
+         * Example: {@code Planned outage due to change IT-1234.}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Human-readable reason for suppressing alarm notifications.
+         * It does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Oracle recommends including tracking information for the event or associated work,
+         * such as a ticket number.
+         * <p>
+         * Example: {@code Planned outage due to change IT-1234.}
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
         private java.util.Date timeSuppressFrom;
 
+        /**
+         * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         * @param timeSuppressFrom the value to set
+         * @return this builder
+         **/
         public Builder timeSuppressFrom(java.util.Date timeSuppressFrom) {
             this.timeSuppressFrom = timeSuppressFrom;
             this.__explicitlySet__.add("timeSuppressFrom");
             return this;
         }
-
+        /**
+         * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T02:02:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")
         private java.util.Date timeSuppressUntil;
 
+        /**
+         * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T02:02:29.600Z}
+         *
+         * @param timeSuppressUntil the value to set
+         * @return this builder
+         **/
         public Builder timeSuppressUntil(java.util.Date timeSuppressUntil) {
             this.timeSuppressUntil = timeSuppressUntil;
             this.__explicitlySet__.add("timeSuppressUntil");
@@ -106,6 +156,18 @@ public final class Suppression {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Human-readable reason for suppressing alarm notifications.
+     * It does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Oracle recommends including tracking information for the event or associated work,
+     * such as a ticket number.
+     * <p>
+     * Example: {@code Planned outage due to change IT-1234.}
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -119,6 +181,13 @@ public final class Suppression {
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
     private final java.util.Date timeSuppressFrom;
 
+    /**
+     * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2019-02-01T01:02:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeSuppressFrom() {
         return timeSuppressFrom;
     }
@@ -132,6 +201,13 @@ public final class Suppression {
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")
     private final java.util.Date timeSuppressUntil;
 
+    /**
+     * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2019-02-01T02:02:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeSuppressUntil() {
         return timeSuppressUntil;
     }

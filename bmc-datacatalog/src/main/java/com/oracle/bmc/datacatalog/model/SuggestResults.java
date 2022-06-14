@@ -36,36 +36,65 @@ public final class SuggestResults {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total number of items returned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
         private Integer totalCount;
 
+        /**
+         * Total number of items returned.
+         * @param totalCount the value to set
+         * @return this builder
+         **/
         public Builder totalCount(Integer totalCount) {
             this.totalCount = totalCount;
             this.__explicitlySet__.add("totalCount");
             return this;
         }
-
+        /**
+         * Time taken to compute the result, in milliseconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchLatencyInMs")
         private Integer searchLatencyInMs;
 
+        /**
+         * Time taken to compute the result, in milliseconds.
+         * @param searchLatencyInMs the value to set
+         * @return this builder
+         **/
         public Builder searchLatencyInMs(Integer searchLatencyInMs) {
             this.searchLatencyInMs = searchLatencyInMs;
             this.__explicitlySet__.add("searchLatencyInMs");
             return this;
         }
-
+        /**
+         * Input string for which the potential matches are computed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputText")
         private String inputText;
 
+        /**
+         * Input string for which the potential matches are computed.
+         * @param inputText the value to set
+         * @return this builder
+         **/
         public Builder inputText(String inputText) {
             this.inputText = inputText;
             this.__explicitlySet__.add("inputText");
             return this;
         }
-
+        /**
+         * List of suggestions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SuggestListItem> items;
 
+        /**
+         * List of suggestions.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SuggestListItem> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -112,6 +141,10 @@ public final class SuggestResults {
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
     private final Integer totalCount;
 
+    /**
+     * Total number of items returned.
+     * @return the value
+     **/
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -122,6 +155,10 @@ public final class SuggestResults {
     @com.fasterxml.jackson.annotation.JsonProperty("searchLatencyInMs")
     private final Integer searchLatencyInMs;
 
+    /**
+     * Time taken to compute the result, in milliseconds.
+     * @return the value
+     **/
     public Integer getSearchLatencyInMs() {
         return searchLatencyInMs;
     }
@@ -132,6 +169,10 @@ public final class SuggestResults {
     @com.fasterxml.jackson.annotation.JsonProperty("inputText")
     private final String inputText;
 
+    /**
+     * Input string for which the potential matches are computed.
+     * @return the value
+     **/
     public String getInputText() {
         return inputText;
     }
@@ -142,6 +183,10 @@ public final class SuggestResults {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SuggestListItem> items;
 
+    /**
+     * List of suggestions.
+     * @return the value
+     **/
     public java.util.List<SuggestListItem> getItems() {
         return items;
     }

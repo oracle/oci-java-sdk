@@ -15,6 +15,12 @@ public class ListWebAppFirewallPoliciesResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListWebAppFirewallPoliciesResponse extends com.oracle.bmc.responses
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -36,6 +49,10 @@ public class ListWebAppFirewallPoliciesResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.waf.model.WebAppFirewallPolicyCollection webAppFirewallPolicyCollection;
 
+    /**
+     * The returned WebAppFirewallPolicyCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.waf.model.WebAppFirewallPolicyCollection
             getWebAppFirewallPolicyCollection() {
         return webAppFirewallPolicyCollection;
@@ -67,23 +84,57 @@ public class ListWebAppFirewallPoliciesResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned WebAppFirewallPolicyCollection instance.
+         */
         private com.oracle.bmc.waf.model.WebAppFirewallPolicyCollection
                 webAppFirewallPolicyCollection;
 
+        /**
+         * The returned WebAppFirewallPolicyCollection instance.
+         * @param webAppFirewallPolicyCollection the value to set
+         * @return this builder
+         */
         public Builder webAppFirewallPolicyCollection(
                 com.oracle.bmc.waf.model.WebAppFirewallPolicyCollection
                         webAppFirewallPolicyCollection) {
@@ -104,12 +155,20 @@ public class ListWebAppFirewallPoliciesResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListWebAppFirewallPoliciesResponse build() {
             return new ListWebAppFirewallPoliciesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, webAppFirewallPolicyCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

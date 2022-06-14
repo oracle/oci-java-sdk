@@ -31,18 +31,35 @@ public final class SqlStatisticsTimeSeriesByPlanAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Plan hash value for the SQL Execution Plan
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planHash")
         private Long planHash;
 
+        /**
+         * Plan hash value for the SQL Execution Plan
+         * @param planHash the value to set
+         * @return this builder
+         **/
         public Builder planHash(Long planHash) {
             this.planHash = planHash;
             this.__explicitlySet__.add("planHash");
             return this;
         }
-
+        /**
+         * SQL performance statistics for a given plan
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statistics")
         private java.util.List<SqlStatisticsTimeSeries> statistics;
 
+        /**
+         * SQL performance statistics for a given plan
+         *
+         * @param statistics the value to set
+         * @return this builder
+         **/
         public Builder statistics(java.util.List<SqlStatisticsTimeSeries> statistics) {
             this.statistics = statistics;
             this.__explicitlySet__.add("statistics");
@@ -85,6 +102,10 @@ public final class SqlStatisticsTimeSeriesByPlanAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
     private final Long planHash;
 
+    /**
+     * Plan hash value for the SQL Execution Plan
+     * @return the value
+     **/
     public Long getPlanHash() {
         return planHash;
     }
@@ -96,6 +117,11 @@ public final class SqlStatisticsTimeSeriesByPlanAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
     private final java.util.List<SqlStatisticsTimeSeries> statistics;
 
+    /**
+     * SQL performance statistics for a given plan
+     *
+     * @return the value
+     **/
     public java.util.List<SqlStatisticsTimeSeries> getStatistics() {
         return statistics;
     }

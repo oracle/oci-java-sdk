@@ -19,6 +19,9 @@ public class CreateAnnouncementSubscriptionRequest
     private com.oracle.bmc.announcementsservice.model.CreateAnnouncementSubscriptionDetails
             createAnnouncementSubscriptionDetails;
 
+    /**
+     * Details of the new announcement subscription.
+     */
     public com.oracle.bmc.announcementsservice.model.CreateAnnouncementSubscriptionDetails
             getCreateAnnouncementSubscriptionDetails() {
         return createAnnouncementSubscriptionDetails;
@@ -33,6 +36,14 @@ public class CreateAnnouncementSubscriptionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -43,6 +54,11 @@ public class CreateAnnouncementSubscriptionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,11 +83,15 @@ public class CreateAnnouncementSubscriptionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details of the new announcement subscription.
+         */
         private com.oracle.bmc.announcementsservice.model.CreateAnnouncementSubscriptionDetails
                 createAnnouncementSubscriptionDetails = null;
 
         /**
          * Details of the new announcement subscription.
+         * @param createAnnouncementSubscriptionDetails the value to set
          * @return this builder instance
          */
         public Builder createAnnouncementSubscriptionDetails(
@@ -81,6 +101,14 @@ public class CreateAnnouncementSubscriptionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -90,6 +118,7 @@ public class CreateAnnouncementSubscriptionRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -97,12 +126,18 @@ public class CreateAnnouncementSubscriptionRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -196,7 +231,8 @@ public class CreateAnnouncementSubscriptionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -205,6 +241,10 @@ public class CreateAnnouncementSubscriptionRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -47,54 +47,99 @@ public final class CreateDatabaseFromBackupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
+        /**
+         * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param backupId the value to set
+         * @return this builder
+         **/
         public Builder backupId(String backupId) {
             this.backupId = backupId;
             this.__explicitlySet__.add("backupId");
             return this;
         }
-
+        /**
+         * The password to open the TDE wallet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupTDEPassword")
         private String backupTDEPassword;
 
+        /**
+         * The password to open the TDE wallet.
+         * @param backupTDEPassword the value to set
+         * @return this builder
+         **/
         public Builder backupTDEPassword(String backupTDEPassword) {
             this.backupTDEPassword = backupTDEPassword;
             this.__explicitlySet__.add("backupTDEPassword");
             return this;
         }
-
+        /**
+         * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
+        /**
+         * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+         * @param adminPassword the value to set
+         * @return this builder
+         **/
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
-
+        /**
+         * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
+        /**
+         * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
+         * @param dbUniqueName the value to set
+         * @return this builder
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
-
+        /**
+         * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
+        /**
+         * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         * @param dbName the value to set
+         * @return this builder
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-
+        /**
+         * Specifies a prefix for the {@code Oracle SID} of the database to be created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
         private String sidPrefix;
 
+        /**
+         * Specifies a prefix for the {@code Oracle SID} of the database to be created.
+         *
+         * @param sidPrefix the value to set
+         * @return this builder
+         **/
         public Builder sidPrefix(String sidPrefix) {
             this.sidPrefix = sidPrefix;
             this.__explicitlySet__.add("sidPrefix");
@@ -149,6 +194,10 @@ public final class CreateDatabaseFromBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
+    /**
+     * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getBackupId() {
         return backupId;
     }
@@ -159,6 +208,10 @@ public final class CreateDatabaseFromBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("backupTDEPassword")
     private final String backupTDEPassword;
 
+    /**
+     * The password to open the TDE wallet.
+     * @return the value
+     **/
     public String getBackupTDEPassword() {
         return backupTDEPassword;
     }
@@ -169,6 +222,10 @@ public final class CreateDatabaseFromBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     private final String adminPassword;
 
+    /**
+     * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+     * @return the value
+     **/
     public String getAdminPassword() {
         return adminPassword;
     }
@@ -179,6 +236,10 @@ public final class CreateDatabaseFromBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
+    /**
+     * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
+     * @return the value
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
@@ -189,6 +250,10 @@ public final class CreateDatabaseFromBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
+    /**
+     * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * @return the value
+     **/
     public String getDbName() {
         return dbName;
     }
@@ -200,6 +265,11 @@ public final class CreateDatabaseFromBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
     private final String sidPrefix;
 
+    /**
+     * Specifies a prefix for the {@code Oracle SID} of the database to be created.
+     *
+     * @return the value
+     **/
     public String getSidPrefix() {
         return sidPrefix;
     }

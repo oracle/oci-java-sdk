@@ -111,56 +111,105 @@ public final class CreateAutonomousContainerDatabaseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The display name for the Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name for the Autonomous Container Database.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * **Deprecated.** The {@code DB_UNIQUE_NAME} value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
+        /**
+         * **Deprecated.** The {@code DB_UNIQUE_NAME} value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         *
+         * @param dbUniqueName the value to set
+         * @return this builder
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
-
+        /**
+         * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceLevelAgreementType")
         private ServiceLevelAgreementType serviceLevelAgreementType;
 
+        /**
+         * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+         * @param serviceLevelAgreementType the value to set
+         * @return this builder
+         **/
         public Builder serviceLevelAgreementType(
                 ServiceLevelAgreementType serviceLevelAgreementType) {
             this.serviceLevelAgreementType = serviceLevelAgreementType;
             this.__explicitlySet__.add("serviceLevelAgreementType");
             return this;
         }
-
+        /**
+         * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code cloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
         private String autonomousExadataInfrastructureId;
 
+        /**
+         * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code cloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
+         *
+         * @param autonomousExadataInfrastructureId the value to set
+         * @return this builder
+         **/
         public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
             this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             this.__explicitlySet__.add("autonomousExadataInfrastructureId");
             return this;
         }
-
+        /**
+         * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code peerCloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousExadataInfrastructureId")
         private String peerAutonomousExadataInfrastructureId;
 
+        /**
+         * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code peerCloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
+         *
+         * @param peerAutonomousExadataInfrastructureId the value to set
+         * @return this builder
+         **/
         public Builder peerAutonomousExadataInfrastructureId(
                 String peerAutonomousExadataInfrastructureId) {
             this.peerAutonomousExadataInfrastructureId = peerAutonomousExadataInfrastructureId;
             this.__explicitlySet__.add("peerAutonomousExadataInfrastructureId");
             return this;
         }
-
+        /**
+         * The display name for the peer Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseDisplayName")
         private String peerAutonomousContainerDatabaseDisplayName;
 
+        /**
+         * The display name for the peer Autonomous Container Database.
+         * @param peerAutonomousContainerDatabaseDisplayName the value to set
+         * @return this builder
+         **/
         public Builder peerAutonomousContainerDatabaseDisplayName(
                 String peerAutonomousContainerDatabaseDisplayName) {
             this.peerAutonomousContainerDatabaseDisplayName =
@@ -168,47 +217,96 @@ public final class CreateAutonomousContainerDatabaseDetails {
             this.__explicitlySet__.add("peerAutonomousContainerDatabaseDisplayName");
             return this;
         }
-
+        /**
+         * The protection mode of this Autonomous Data Guard association. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
+        /**
+         * The protection mode of this Autonomous Data Guard association. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         * @param protectionMode the value to set
+         * @return this builder
+         **/
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
             return this;
         }
-
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
         private Boolean isAutomaticFailoverEnabled;
 
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         *
+         * @param isAutomaticFailoverEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
             this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             this.__explicitlySet__.add("isAutomaticFailoverEnabled");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
         private String peerCloudAutonomousVmClusterId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         * @param peerCloudAutonomousVmClusterId the value to set
+         * @return this builder
+         **/
         public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
             this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             this.__explicitlySet__.add("peerCloudAutonomousVmClusterId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
         private String peerAutonomousVmClusterId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
+         *
+         * @param peerAutonomousVmClusterId the value to set
+         * @return this builder
+         **/
         public Builder peerAutonomousVmClusterId(String peerAutonomousVmClusterId) {
             this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
             this.__explicitlySet__.add("peerAutonomousVmClusterId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database
+         * will be created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "peerAutonomousContainerDatabaseCompartmentId")
         private String peerAutonomousContainerDatabaseCompartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database
+         * will be created.
+         *
+         * @param peerAutonomousContainerDatabaseCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder peerAutonomousContainerDatabaseCompartmentId(
                 String peerAutonomousContainerDatabaseCompartmentId) {
             this.peerAutonomousContainerDatabaseCompartmentId =
@@ -230,46 +328,83 @@ public final class CreateAutonomousContainerDatabaseDetails {
             this.__explicitlySet__.add("peerAutonomousContainerDatabaseBackupConfig");
             return this;
         }
-
+        /**
+         * **Deprecated.** The {@code DB_UNIQUE_NAME} of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
         private String peerDbUniqueName;
 
+        /**
+         * **Deprecated.** The {@code DB_UNIQUE_NAME} of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         *
+         * @param peerDbUniqueName the value to set
+         * @return this builder
+         **/
         public Builder peerDbUniqueName(String peerDbUniqueName) {
             this.peerDbUniqueName = peerDbUniqueName;
             this.__explicitlySet__.add("peerDbUniqueName");
             return this;
         }
-
+        /**
+         * The OCID of the Autonomous VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
         private String autonomousVmClusterId;
 
+        /**
+         * The OCID of the Autonomous VM Cluster.
+         * @param autonomousVmClusterId the value to set
+         * @return this builder
+         **/
         public Builder autonomousVmClusterId(String autonomousVmClusterId) {
             this.autonomousVmClusterId = autonomousVmClusterId;
             this.__explicitlySet__.add("autonomousVmClusterId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
         private String cloudAutonomousVmClusterId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         * @param cloudAutonomousVmClusterId the value to set
+         * @return this builder
+         **/
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
             this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             this.__explicitlySet__.add("cloudAutonomousVmClusterId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Database Patch model preference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
         private PatchModel patchModel;
 
+        /**
+         * Database Patch model preference.
+         * @param patchModel the value to set
+         * @return this builder
+         **/
         public Builder patchModel(PatchModel patchModel) {
             this.patchModel = patchModel;
             this.__explicitlySet__.add("patchModel");
@@ -284,28 +419,65 @@ public final class CreateAutonomousContainerDatabaseDetails {
             this.__explicitlySet__.add("maintenanceWindowDetails");
             return this;
         }
-
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         * This value represents the number of days before scheduled maintenance of the primary database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
         private Integer standbyMaintenanceBufferInDays;
 
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         * This value represents the number of days before scheduled maintenance of the primary database.
+         *
+         * @param standbyMaintenanceBufferInDays the value to set
+         * @return this builder
+         **/
         public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
             this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -321,37 +493,67 @@ public final class CreateAutonomousContainerDatabaseDetails {
             this.__explicitlySet__.add("backupConfig");
             return this;
         }
-
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         *
+         * @param kmsKeyVersionId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = kmsKeyVersionId;
             this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param vaultId the value to set
+         * @return this builder
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         * @param keyStoreId the value to set
+         * @return this builder
+         **/
         public Builder keyStoreId(String keyStoreId) {
             this.keyStoreId = keyStoreId;
             this.__explicitlySet__.add("keyStoreId");
@@ -451,6 +653,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name for the Autonomous Container Database.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -462,6 +668,11 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
+    /**
+     * **Deprecated.** The {@code DB_UNIQUE_NAME} value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     *
+     * @return the value
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
@@ -507,6 +718,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLevelAgreementType")
     private final ServiceLevelAgreementType serviceLevelAgreementType;
 
+    /**
+     * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+     * @return the value
+     **/
     public ServiceLevelAgreementType getServiceLevelAgreementType() {
         return serviceLevelAgreementType;
     }
@@ -518,6 +733,11 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
     private final String autonomousExadataInfrastructureId;
 
+    /**
+     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code cloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
+     *
+     * @return the value
+     **/
     public String getAutonomousExadataInfrastructureId() {
         return autonomousExadataInfrastructureId;
     }
@@ -529,6 +749,11 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousExadataInfrastructureId")
     private final String peerAutonomousExadataInfrastructureId;
 
+    /**
+     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code peerCloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
+     *
+     * @return the value
+     **/
     public String getPeerAutonomousExadataInfrastructureId() {
         return peerAutonomousExadataInfrastructureId;
     }
@@ -539,6 +764,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseDisplayName")
     private final String peerAutonomousContainerDatabaseDisplayName;
 
+    /**
+     * The display name for the peer Autonomous Container Database.
+     * @return the value
+     **/
     public String getPeerAutonomousContainerDatabaseDisplayName() {
         return peerAutonomousContainerDatabaseDisplayName;
     }
@@ -590,6 +819,13 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
 
+    /**
+     * The protection mode of this Autonomous Data Guard association. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     * @return the value
+     **/
     public ProtectionMode getProtectionMode() {
         return protectionMode;
     }
@@ -601,6 +837,11 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
     private final Boolean isAutomaticFailoverEnabled;
 
+    /**
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     *
+     * @return the value
+     **/
     public Boolean getIsAutomaticFailoverEnabled() {
         return isAutomaticFailoverEnabled;
     }
@@ -611,6 +852,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
     private final String peerCloudAutonomousVmClusterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+     * @return the value
+     **/
     public String getPeerCloudAutonomousVmClusterId() {
         return peerCloudAutonomousVmClusterId;
     }
@@ -622,6 +867,11 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
     private final String peerAutonomousVmClusterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
+     *
+     * @return the value
+     **/
     public String getPeerAutonomousVmClusterId() {
         return peerAutonomousVmClusterId;
     }
@@ -634,6 +884,12 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseCompartmentId")
     private final String peerAutonomousContainerDatabaseCompartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database
+     * will be created.
+     *
+     * @return the value
+     **/
     public String getPeerAutonomousContainerDatabaseCompartmentId() {
         return peerAutonomousContainerDatabaseCompartmentId;
     }
@@ -654,6 +910,11 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
     private final String peerDbUniqueName;
 
+    /**
+     * **Deprecated.** The {@code DB_UNIQUE_NAME} of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     *
+     * @return the value
+     **/
     public String getPeerDbUniqueName() {
         return peerDbUniqueName;
     }
@@ -664,6 +925,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
     private final String autonomousVmClusterId;
 
+    /**
+     * The OCID of the Autonomous VM Cluster.
+     * @return the value
+     **/
     public String getAutonomousVmClusterId() {
         return autonomousVmClusterId;
     }
@@ -674,6 +939,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
     private final String cloudAutonomousVmClusterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+     * @return the value
+     **/
     public String getCloudAutonomousVmClusterId() {
         return cloudAutonomousVmClusterId;
     }
@@ -684,6 +953,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -729,6 +1002,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
     private final PatchModel patchModel;
 
+    /**
+     * Database Patch model preference.
+     * @return the value
+     **/
     public PatchModel getPatchModel() {
         return patchModel;
     }
@@ -748,6 +1025,12 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
     private final Integer standbyMaintenanceBufferInDays;
 
+    /**
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+     * This value represents the number of days before scheduled maintenance of the primary database.
+     *
+     * @return the value
+     **/
     public Integer getStandbyMaintenanceBufferInDays() {
         return standbyMaintenanceBufferInDays;
     }
@@ -762,6 +1045,14 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -774,6 +1065,12 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -791,6 +1088,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -802,6 +1103,11 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     * @return the value
+     **/
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
@@ -812,6 +1118,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
     public String getVaultId() {
         return vaultId;
     }
@@ -822,6 +1132,10 @@ public final class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     * @return the value
+     **/
     public String getKeyStoreId() {
         return keyStoreId;
     }

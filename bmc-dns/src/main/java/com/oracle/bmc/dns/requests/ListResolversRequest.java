@@ -16,6 +16,9 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment the resource belongs to.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +44,9 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String displayName;
 
+    /**
+     * The displayName of a resource.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -43,6 +55,9 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String id;
 
+    /**
+     * The OCID of a resource.
+     */
     public String getId() {
         return id;
     }
@@ -52,6 +67,10 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -61,6 +80,10 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Long limit;
 
+    /**
+     * The maximum number of items to return in a page of the collection.
+     *
+     */
     public Long getLimit() {
         return limit;
     }
@@ -70,6 +93,10 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
+    /**
+     * The order to sort the resources.
+     *
+     */
     public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -114,6 +141,9 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * The field by which to sort resolvers.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -122,6 +152,9 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.dns.model.ResolverSummary.LifecycleState lifecycleState;
 
+    /**
+     * The state of a resource.
+     */
     public com.oracle.bmc.dns.model.ResolverSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -131,6 +164,10 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -142,10 +179,14 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment the resource belongs to.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the resource belongs to.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -153,6 +194,12 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -160,6 +207,7 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -167,10 +215,14 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The displayName of a resource.
+         */
         private String displayName = null;
 
         /**
          * The displayName of a resource.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -178,10 +230,14 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The OCID of a resource.
+         */
         private String id = null;
 
         /**
          * The OCID of a resource.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -189,11 +245,16 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -201,11 +262,16 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a page of the collection.
+         *
+         */
         private Long limit = null;
 
         /**
          * The maximum number of items to return in a page of the collection.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Long limit) {
@@ -213,11 +279,16 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The order to sort the resources.
+         *
+         */
         private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
 
         /**
          * The order to sort the resources.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.dns.model.SortOrder sortOrder) {
@@ -225,10 +296,14 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The field by which to sort resolvers.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field by which to sort resolvers.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -236,10 +311,14 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The state of a resource.
+         */
         private com.oracle.bmc.dns.model.ResolverSummary.LifecycleState lifecycleState = null;
 
         /**
          * The state of a resource.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -248,11 +327,16 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -346,7 +430,8 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -362,6 +447,10 @@ public class ListResolversRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -31,36 +31,73 @@ public final class UpdateSshDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the host the SSH key is valid for.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * Name of the host the SSH key is valid for.
+         *
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * Private SSH key string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshkey")
         private String sshkey;
 
+        /**
+         * Private SSH key string.
+         *
+         * @param sshkey the value to set
+         * @return this builder
+         **/
         public Builder sshkey(String sshkey) {
             this.sshkey = sshkey;
             this.__explicitlySet__.add("sshkey");
             return this;
         }
-
+        /**
+         * SSH user
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("user")
         private String user;
 
+        /**
+         * SSH user
+         *
+         * @param user the value to set
+         * @return this builder
+         **/
         public Builder user(String user) {
             this.user = user;
             this.__explicitlySet__.add("user");
             return this;
         }
-
+        /**
+         * Sudo location
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sudoLocation")
         private String sudoLocation;
 
+        /**
+         * Sudo location
+         *
+         * @param sudoLocation the value to set
+         * @return this builder
+         **/
         public Builder sudoLocation(String sudoLocation) {
             this.sudoLocation = sudoLocation;
             this.__explicitlySet__.add("sudoLocation");
@@ -107,6 +144,11 @@ public final class UpdateSshDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * Name of the host the SSH key is valid for.
+     *
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -118,6 +160,11 @@ public final class UpdateSshDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sshkey")
     private final String sshkey;
 
+    /**
+     * Private SSH key string.
+     *
+     * @return the value
+     **/
     public String getSshkey() {
         return sshkey;
     }
@@ -129,6 +176,11 @@ public final class UpdateSshDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("user")
     private final String user;
 
+    /**
+     * SSH user
+     *
+     * @return the value
+     **/
     public String getUser() {
         return user;
     }
@@ -140,6 +192,11 @@ public final class UpdateSshDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sudoLocation")
     private final String sudoLocation;
 
+    /**
+     * Sudo location
+     *
+     * @return the value
+     **/
     public String getSudoLocation() {
         return sudoLocation;
     }

@@ -85,172 +85,336 @@ public final class OperatorControl {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the operator control.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Name of the operator control. The name must be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatorControlName")
         private String operatorControlName;
 
+        /**
+         * Name of the operator control. The name must be unique.
+         * @param operatorControlName the value to set
+         * @return this builder
+         **/
         public Builder operatorControlName(String operatorControlName) {
             this.operatorControlName = operatorControlName;
             this.__explicitlySet__.add("operatorControlName");
             return this;
         }
-
+        /**
+         * Description of operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of operator control.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * List of users who can approve an access request associated with a target resource under the governance of this operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approversList")
         private java.util.List<String> approversList;
 
+        /**
+         * List of users who can approve an access request associated with a target resource under the governance of this operator control.
+         * @param approversList the value to set
+         * @return this builder
+         **/
         public Builder approversList(java.util.List<String> approversList) {
             this.approversList = approversList;
             this.__explicitlySet__.add("approversList");
             return this;
         }
-
+        /**
+         * List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverGroupsList")
         private java.util.List<String> approverGroupsList;
 
+        /**
+         * List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
+         * @param approverGroupsList the value to set
+         * @return this builder
+         **/
         public Builder approverGroupsList(java.util.List<String> approverGroupsList) {
             this.approverGroupsList = approverGroupsList;
             this.__explicitlySet__.add("approverGroupsList");
             return this;
         }
-
+        /**
+         * List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be
+         * automatically approved if the access request only contain operator actions in the pre-approved list.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preApprovedOpActionList")
         private java.util.List<String> preApprovedOpActionList;
 
+        /**
+         * List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be
+         * automatically approved if the access request only contain operator actions in the pre-approved list.
+         *
+         * @param preApprovedOpActionList the value to set
+         * @return this builder
+         **/
         public Builder preApprovedOpActionList(java.util.List<String> preApprovedOpActionList) {
             this.preApprovedOpActionList = preApprovedOpActionList;
             this.__explicitlySet__.add("preApprovedOpActionList");
             return this;
         }
-
+        /**
+         * List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit
+         * approval. Access requests associated with a resource governed by this operator control will be
+         * require explicit approval if the access request contains any operator action in this list.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approvalRequiredOpActionList")
         private java.util.List<String> approvalRequiredOpActionList;
 
+        /**
+         * List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit
+         * approval. Access requests associated with a resource governed by this operator control will be
+         * require explicit approval if the access request contains any operator action in this list.
+         *
+         * @param approvalRequiredOpActionList the value to set
+         * @return this builder
+         **/
         public Builder approvalRequiredOpActionList(
                 java.util.List<String> approvalRequiredOpActionList) {
             this.approvalRequiredOpActionList = approvalRequiredOpActionList;
             this.__explicitlySet__.add("approvalRequiredOpActionList");
             return this;
         }
-
+        /**
+         * Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control
+         * will be auto-approved.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFullyPreApproved")
         private Boolean isFullyPreApproved;
 
+        /**
+         * Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control
+         * will be auto-approved.
+         *
+         * @param isFullyPreApproved the value to set
+         * @return this builder
+         **/
         public Builder isFullyPreApproved(Boolean isFullyPreApproved) {
             this.isFullyPreApproved = isFullyPreApproved;
             this.__explicitlySet__.add("isFullyPreApproved");
             return this;
         }
-
+        /**
+         * List of emailId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
         private java.util.List<String> emailIdList;
 
+        /**
+         * List of emailId.
+         *
+         * @param emailIdList the value to set
+         * @return this builder
+         **/
         public Builder emailIdList(java.util.List<String> emailIdList) {
             this.emailIdList = emailIdList;
             this.__explicitlySet__.add("emailIdList");
             return this;
         }
-
+        /**
+         * resourceType for which the OperatorControl is applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private ResourceTypes resourceType;
 
+        /**
+         * resourceType for which the OperatorControl is applicable
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(ResourceTypes resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemMessage")
         private String systemMessage;
 
+        /**
+         * System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
+         * @param systemMessage the value to set
+         * @return this builder
+         **/
         public Builder systemMessage(String systemMessage) {
             this.systemMessage = systemMessage;
             this.__explicitlySet__.add("systemMessage");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the operator control.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The current lifecycle state of the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OperatorControlLifecycleStates lifecycleState;
 
+        /**
+         * The current lifecycle state of the operator control.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(OperatorControlLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfCreation")
         private java.util.Date timeOfCreation;
 
+        /**
+         * Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         * @param timeOfCreation the value to set
+         * @return this builder
+         **/
         public Builder timeOfCreation(java.util.Date timeOfCreation) {
             this.timeOfCreation = timeOfCreation;
             this.__explicitlySet__.add("timeOfCreation");
             return this;
         }
-
+        /**
+         * Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfModification")
         private java.util.Date timeOfModification;
 
+        /**
+         * Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         * @param timeOfModification the value to set
+         * @return this builder
+         **/
         public Builder timeOfModification(java.util.Date timeOfModification) {
             this.timeOfModification = timeOfModification;
             this.__explicitlySet__.add("timeOfModification");
             return this;
         }
-
+        /**
+         * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
+         * Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests
+         * raised on target resources governed by the deleted operator control.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
 
+        /**
+         * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
+         * Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests
+         * raised on target resources governed by the deleted operator control.
+         *
+         * @param timeOfDeletion the value to set
+         * @return this builder
+         **/
         public Builder timeOfDeletion(java.util.Date timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             this.__explicitlySet__.add("timeOfDeletion");
             return this;
         }
-
+        /**
+         * Description associated with the latest modification of the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedInfo")
         private String lastModifiedInfo;
 
+        /**
+         * Description associated with the latest modification of the operator control.
+         * @param lastModifiedInfo the value to set
+         * @return this builder
+         **/
         public Builder lastModifiedInfo(String lastModifiedInfo) {
             this.lastModifiedInfo = lastModifiedInfo;
             this.__explicitlySet__.add("lastModifiedInfo");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -332,6 +496,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the operator control.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -342,6 +510,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("operatorControlName")
     private final String operatorControlName;
 
+    /**
+     * Name of the operator control. The name must be unique.
+     * @return the value
+     **/
     public String getOperatorControlName() {
         return operatorControlName;
     }
@@ -352,6 +524,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of operator control.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -362,6 +538,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("approversList")
     private final java.util.List<String> approversList;
 
+    /**
+     * List of users who can approve an access request associated with a target resource under the governance of this operator control.
+     * @return the value
+     **/
     public java.util.List<String> getApproversList() {
         return approversList;
     }
@@ -372,6 +552,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("approverGroupsList")
     private final java.util.List<String> approverGroupsList;
 
+    /**
+     * List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
+     * @return the value
+     **/
     public java.util.List<String> getApproverGroupsList() {
         return approverGroupsList;
     }
@@ -384,6 +568,12 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("preApprovedOpActionList")
     private final java.util.List<String> preApprovedOpActionList;
 
+    /**
+     * List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be
+     * automatically approved if the access request only contain operator actions in the pre-approved list.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getPreApprovedOpActionList() {
         return preApprovedOpActionList;
     }
@@ -397,6 +587,13 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("approvalRequiredOpActionList")
     private final java.util.List<String> approvalRequiredOpActionList;
 
+    /**
+     * List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit
+     * approval. Access requests associated with a resource governed by this operator control will be
+     * require explicit approval if the access request contains any operator action in this list.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getApprovalRequiredOpActionList() {
         return approvalRequiredOpActionList;
     }
@@ -409,6 +606,12 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("isFullyPreApproved")
     private final Boolean isFullyPreApproved;
 
+    /**
+     * Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control
+     * will be auto-approved.
+     *
+     * @return the value
+     **/
     public Boolean getIsFullyPreApproved() {
         return isFullyPreApproved;
     }
@@ -420,6 +623,11 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
     private final java.util.List<String> emailIdList;
 
+    /**
+     * List of emailId.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getEmailIdList() {
         return emailIdList;
     }
@@ -430,6 +638,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceTypes resourceType;
 
+    /**
+     * resourceType for which the OperatorControl is applicable
+     * @return the value
+     **/
     public ResourceTypes getResourceType() {
         return resourceType;
     }
@@ -440,6 +652,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("systemMessage")
     private final String systemMessage;
 
+    /**
+     * System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
+     * @return the value
+     **/
     public String getSystemMessage() {
         return systemMessage;
     }
@@ -450,6 +666,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the operator control.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -460,6 +680,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OperatorControlLifecycleStates lifecycleState;
 
+    /**
+     * The current lifecycle state of the operator control.
+     * @return the value
+     **/
     public OperatorControlLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -471,6 +695,11 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfCreation")
     private final java.util.Date timeOfCreation;
 
+    /**
+     * Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfCreation() {
         return timeOfCreation;
     }
@@ -482,6 +711,11 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfModification")
     private final java.util.Date timeOfModification;
 
+    /**
+     * Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfModification() {
         return timeOfModification;
     }
@@ -495,6 +729,13 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     private final java.util.Date timeOfDeletion;
 
+    /**
+     * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
+     * Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests
+     * raised on target resources governed by the deleted operator control.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfDeletion() {
         return timeOfDeletion;
     }
@@ -505,6 +746,10 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedInfo")
     private final String lastModifiedInfo;
 
+    /**
+     * Description associated with the latest modification of the operator control.
+     * @return the value
+     **/
     public String getLastModifiedInfo() {
         return lastModifiedInfo;
     }
@@ -516,6 +761,11 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -527,6 +777,11 @@ public final class OperatorControl {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

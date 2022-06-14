@@ -32,27 +32,77 @@ public final class CopyVolumeGroupBackupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the destination region.
+         * <p>
+         * Example: {@code us-ashburn-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
         private String destinationRegion;
 
+        /**
+         * The name of the destination region.
+         * <p>
+         * Example: {@code us-ashburn-1}
+         *
+         * @param destinationRegion the value to set
+         * @return this builder
+         **/
         public Builder destinationRegion(String destinationRegion) {
             this.destinationRegion = destinationRegion;
             this.__explicitlySet__.add("destinationRegion");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the Key Management key in the destination region which will be the master encryption key
+         * for the copied volume group backup.
+         * If you do not specify this attribute the volume group backup will be encrypted with the Oracle-provided encryption
+         * key when it is copied to the destination region.
+         * <p>
+         *
+         * For more information about the Key Management service and encryption keys, see
+         * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the Key Management key in the destination region which will be the master encryption key
+         * for the copied volume group backup.
+         * If you do not specify this attribute the volume group backup will be encrypted with the Oracle-provided encryption
+         * key when it is copied to the destination region.
+         * <p>
+         *
+         * For more information about the Key Management service and encryption keys, see
+         * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
@@ -101,6 +151,13 @@ public final class CopyVolumeGroupBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
     private final String destinationRegion;
 
+    /**
+     * The name of the destination region.
+     * <p>
+     * Example: {@code us-ashburn-1}
+     *
+     * @return the value
+     **/
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -113,6 +170,12 @@ public final class CopyVolumeGroupBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -132,6 +195,19 @@ public final class CopyVolumeGroupBackupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the Key Management key in the destination region which will be the master encryption key
+     * for the copied volume group backup.
+     * If you do not specify this attribute the volume group backup will be encrypted with the Oracle-provided encryption
+     * key when it is copied to the destination region.
+     * <p>
+     *
+     * For more information about the Key Management service and encryption keys, see
+     * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }

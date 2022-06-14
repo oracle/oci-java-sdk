@@ -53,18 +53,75 @@ public final class EgressSecurityRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Conceptually, this is the range of IP addresses that a packet originating from the instance
+         * can go to.
+         * <p>
+         * Allowed values:
+         * <p>
+         * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
+         *     Note that IPv6 addressing is currently supported only in certain regions. See
+         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * The {@code cidrBlock} value for a {@link Service}, if you're
+         *     setting up a security list rule for traffic destined for a particular {@code Service} through
+         *     a service gateway. For example: {@code oci-phx-objectstorage}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
 
+        /**
+         * Conceptually, this is the range of IP addresses that a packet originating from the instance
+         * can go to.
+         * <p>
+         * Allowed values:
+         * <p>
+         * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
+         *     Note that IPv6 addressing is currently supported only in certain regions. See
+         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * The {@code cidrBlock} value for a {@link Service}, if you're
+         *     setting up a security list rule for traffic destined for a particular {@code Service} through
+         *     a service gateway. For example: {@code oci-phx-objectstorage}.
+         *
+         * @param destination the value to set
+         * @return this builder
+         **/
         public Builder destination(String destination) {
             this.destination = destination;
             this.__explicitlySet__.add("destination");
             return this;
         }
-
+        /**
+         * Type of destination for the rule. The default is {@code CIDR_BLOCK}.
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+         * <p>
+         * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
+         *     {@link Service} (the rule is for traffic destined for a
+         *     particular {@code Service} through a service gateway).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private DestinationType destinationType;
 
+        /**
+         * Type of destination for the rule. The default is {@code CIDR_BLOCK}.
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+         * <p>
+         * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
+         *     {@link Service} (the rule is for traffic destined for a
+         *     particular {@code Service} through a service gateway).
+         *
+         * @param destinationType the value to set
+         * @return this builder
+         **/
         public Builder destinationType(DestinationType destinationType) {
             this.destinationType = destinationType;
             this.__explicitlySet__.add("destinationType");
@@ -79,19 +136,51 @@ public final class EgressSecurityRule {
             this.__explicitlySet__.add("icmpOptions");
             return this;
         }
-
+        /**
+         * A stateless rule allows traffic in one direction. Remember to add a corresponding
+         * stateless rule in the other direction if you need to support bidirectional traffic. For
+         * example, if egress traffic allows TCP destination port 80, there should be an ingress
+         * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
+         * and a corresponding rule is not necessary for bidirectional traffic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
         private Boolean isStateless;
 
+        /**
+         * A stateless rule allows traffic in one direction. Remember to add a corresponding
+         * stateless rule in the other direction if you need to support bidirectional traffic. For
+         * example, if egress traffic allows TCP destination port 80, there should be an ingress
+         * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
+         * and a corresponding rule is not necessary for bidirectional traffic.
+         *
+         * @param isStateless the value to set
+         * @return this builder
+         **/
         public Builder isStateless(Boolean isStateless) {
             this.isStateless = isStateless;
             this.__explicitlySet__.add("isStateless");
             return this;
         }
-
+        /**
+         * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
+         * defined in
+         * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+         * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
+        /**
+         * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
+         * defined in
+         * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+         * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+         *
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
@@ -115,10 +204,19 @@ public final class EgressSecurityRule {
             this.__explicitlySet__.add("udpOptions");
             return this;
         }
-
+        /**
+         * An optional description of your choice for the rule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * An optional description of your choice for the rule.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -189,6 +287,22 @@ public final class EgressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
 
+    /**
+     * Conceptually, this is the range of IP addresses that a packet originating from the instance
+     * can go to.
+     * <p>
+     * Allowed values:
+     * <p>
+     * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
+     *     Note that IPv6 addressing is currently supported only in certain regions. See
+     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * The {@code cidrBlock} value for a {@link Service}, if you're
+     *     setting up a security list rule for traffic destined for a particular {@code Service} through
+     *     a service gateway. For example: {@code oci-phx-objectstorage}.
+     *
+     * @return the value
+     **/
     public String getDestination() {
         return destination;
     }
@@ -265,6 +379,19 @@ public final class EgressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     private final DestinationType destinationType;
 
+    /**
+     * Type of destination for the rule. The default is {@code CIDR_BLOCK}.
+     * <p>
+     * Allowed values:
+     * <p>
+     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+     * <p>
+     * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
+     *     {@link Service} (the rule is for traffic destined for a
+     *     particular {@code Service} through a service gateway).
+     *
+     * @return the value
+     **/
     public DestinationType getDestinationType() {
         return destinationType;
     }
@@ -287,6 +414,15 @@ public final class EgressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
     private final Boolean isStateless;
 
+    /**
+     * A stateless rule allows traffic in one direction. Remember to add a corresponding
+     * stateless rule in the other direction if you need to support bidirectional traffic. For
+     * example, if egress traffic allows TCP destination port 80, there should be an ingress
+     * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
+     * and a corresponding rule is not necessary for bidirectional traffic.
+     *
+     * @return the value
+     **/
     public Boolean getIsStateless() {
         return isStateless;
     }
@@ -301,6 +437,14 @@ public final class EgressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final String protocol;
 
+    /**
+     * The transport protocol. Specify either {@code all} or an IPv4 protocol number as
+     * defined in
+     * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+     * Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+     *
+     * @return the value
+     **/
     public String getProtocol() {
         return protocol;
     }
@@ -326,6 +470,11 @@ public final class EgressSecurityRule {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * An optional description of your choice for the rule.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

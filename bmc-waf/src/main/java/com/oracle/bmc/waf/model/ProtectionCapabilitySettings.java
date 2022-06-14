@@ -48,54 +48,111 @@ public final class ProtectionCapabilitySettings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxNumberOfArguments")
         private Integer maxNumberOfArguments;
 
+        /**
+         * Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
+         *
+         * @param maxNumberOfArguments the value to set
+         * @return this builder
+         **/
         public Builder maxNumberOfArguments(Integer maxNumberOfArguments) {
             this.maxNumberOfArguments = maxNumberOfArguments;
             this.__explicitlySet__.add("maxNumberOfArguments");
             return this;
         }
-
+        /**
+         * Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxSingleArgumentLength")
         private Integer maxSingleArgumentLength;
 
+        /**
+         * Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
+         *
+         * @param maxSingleArgumentLength the value to set
+         * @return this builder
+         **/
         public Builder maxSingleArgumentLength(Integer maxSingleArgumentLength) {
             this.maxSingleArgumentLength = maxSingleArgumentLength;
             this.__explicitlySet__.add("maxSingleArgumentLength");
             return this;
         }
-
+        /**
+         * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTotalArgumentLength")
         private Integer maxTotalArgumentLength;
 
+        /**
+         * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
+         *
+         * @param maxTotalArgumentLength the value to set
+         * @return this builder
+         **/
         public Builder maxTotalArgumentLength(Integer maxTotalArgumentLength) {
             this.maxTotalArgumentLength = maxTotalArgumentLength;
             this.__explicitlySet__.add("maxTotalArgumentLength");
             return this;
         }
-
+        /**
+         * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaders")
         private Integer maxHttpRequestHeaders;
 
+        /**
+         * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
+         *
+         * @param maxHttpRequestHeaders the value to set
+         * @return this builder
+         **/
         public Builder maxHttpRequestHeaders(Integer maxHttpRequestHeaders) {
             this.maxHttpRequestHeaders = maxHttpRequestHeaders;
             this.__explicitlySet__.add("maxHttpRequestHeaders");
             return this;
         }
-
+        /**
+         * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaderLength")
         private Integer maxHttpRequestHeaderLength;
 
+        /**
+         * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
+         *
+         * @param maxHttpRequestHeaderLength the value to set
+         * @return this builder
+         **/
         public Builder maxHttpRequestHeaderLength(Integer maxHttpRequestHeaderLength) {
             this.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
             this.__explicitlySet__.add("maxHttpRequestHeaderLength");
             return this;
         }
-
+        /**
+         * List of allowed HTTP methods. Each value as a RFC7230 formated token string.
+         * Used in protection capability 911100: Restrict HTTP Request Methods.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedHttpMethods")
         private java.util.List<String> allowedHttpMethods;
 
+        /**
+         * List of allowed HTTP methods. Each value as a RFC7230 formated token string.
+         * Used in protection capability 911100: Restrict HTTP Request Methods.
+         *
+         * @param allowedHttpMethods the value to set
+         * @return this builder
+         **/
         public Builder allowedHttpMethods(java.util.List<String> allowedHttpMethods) {
             this.allowedHttpMethods = allowedHttpMethods;
             this.__explicitlySet__.add("allowedHttpMethods");
@@ -151,6 +208,11 @@ public final class ProtectionCapabilitySettings {
     @com.fasterxml.jackson.annotation.JsonProperty("maxNumberOfArguments")
     private final Integer maxNumberOfArguments;
 
+    /**
+     * Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
+     *
+     * @return the value
+     **/
     public Integer getMaxNumberOfArguments() {
         return maxNumberOfArguments;
     }
@@ -162,6 +224,11 @@ public final class ProtectionCapabilitySettings {
     @com.fasterxml.jackson.annotation.JsonProperty("maxSingleArgumentLength")
     private final Integer maxSingleArgumentLength;
 
+    /**
+     * Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
+     *
+     * @return the value
+     **/
     public Integer getMaxSingleArgumentLength() {
         return maxSingleArgumentLength;
     }
@@ -173,6 +240,11 @@ public final class ProtectionCapabilitySettings {
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalArgumentLength")
     private final Integer maxTotalArgumentLength;
 
+    /**
+     * Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
+     *
+     * @return the value
+     **/
     public Integer getMaxTotalArgumentLength() {
         return maxTotalArgumentLength;
     }
@@ -184,6 +256,11 @@ public final class ProtectionCapabilitySettings {
     @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaders")
     private final Integer maxHttpRequestHeaders;
 
+    /**
+     * Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
+     *
+     * @return the value
+     **/
     public Integer getMaxHttpRequestHeaders() {
         return maxHttpRequestHeaders;
     }
@@ -195,6 +272,11 @@ public final class ProtectionCapabilitySettings {
     @com.fasterxml.jackson.annotation.JsonProperty("maxHttpRequestHeaderLength")
     private final Integer maxHttpRequestHeaderLength;
 
+    /**
+     * Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
+     *
+     * @return the value
+     **/
     public Integer getMaxHttpRequestHeaderLength() {
         return maxHttpRequestHeaderLength;
     }
@@ -207,6 +289,12 @@ public final class ProtectionCapabilitySettings {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedHttpMethods")
     private final java.util.List<String> allowedHttpMethods;
 
+    /**
+     * List of allowed HTTP methods. Each value as a RFC7230 formated token string.
+     * Used in protection capability 911100: Restrict HTTP Request Methods.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getAllowedHttpMethods() {
         return allowedHttpMethods;
     }

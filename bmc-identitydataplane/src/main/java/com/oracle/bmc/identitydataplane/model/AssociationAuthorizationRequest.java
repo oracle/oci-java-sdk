@@ -29,9 +29,17 @@ public final class AssociationAuthorizationRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of authorization requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requests")
         private java.util.List<AuthorizationRequest> requests;
 
+        /**
+         * The list of authorization requests.
+         * @param requests the value to set
+         * @return this builder
+         **/
         public Builder requests(java.util.List<AuthorizationRequest> requests) {
             this.requests = requests;
             this.__explicitlySet__.add("requests");
@@ -74,6 +82,10 @@ public final class AssociationAuthorizationRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("requests")
     private final java.util.List<AuthorizationRequest> requests;
 
+    /**
+     * The list of authorization requests.
+     * @return the value
+     **/
     public java.util.List<AuthorizationRequest> getRequests() {
         return requests;
     }

@@ -13,6 +13,10 @@ public class CreateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class CreateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String etag;
 
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -31,6 +39,10 @@ public class CreateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.dts.model.NewTransferDevice newTransferDevice;
 
+    /**
+     * The returned NewTransferDevice instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.NewTransferDevice getNewTransferDevice() {
         return newTransferDevice;
     }
@@ -60,22 +72,46 @@ public class CreateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         *
+         */
         private String etag;
 
+        /**
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned NewTransferDevice instance.
+         */
         private com.oracle.bmc.dts.model.NewTransferDevice newTransferDevice;
 
+        /**
+         * The returned NewTransferDevice instance.
+         * @param newTransferDevice the value to set
+         * @return this builder
+         */
         public Builder newTransferDevice(
                 com.oracle.bmc.dts.model.NewTransferDevice newTransferDevice) {
             this.newTransferDevice = newTransferDevice;
@@ -95,12 +131,20 @@ public class CreateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateTransferDeviceResponse build() {
             return new CreateTransferDeviceResponse(
                     __httpStatusCode__, opcRequestId, etag, newTransferDevice);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

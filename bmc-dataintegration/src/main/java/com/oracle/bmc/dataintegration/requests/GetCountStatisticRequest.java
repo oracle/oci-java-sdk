@@ -16,6 +16,9 @@ public class GetCountStatisticRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -24,6 +27,9 @@ public class GetCountStatisticRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String countStatisticKey;
 
+    /**
+     * A unique key of the container object, such as workspace, project, and so on, to count statistics for. The statistics is fetched for the given key.
+     */
     public String getCountStatisticKey() {
         return countStatisticKey;
     }
@@ -35,6 +41,12 @@ public class GetCountStatisticRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,10 +58,14 @@ public class GetCountStatisticRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -57,10 +73,14 @@ public class GetCountStatisticRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A unique key of the container object, such as workspace, project, and so on, to count statistics for. The statistics is fetched for the given key.
+         */
         private String countStatisticKey = null;
 
         /**
          * A unique key of the container object, such as workspace, project, and so on, to count statistics for. The statistics is fetched for the given key.
+         * @param countStatisticKey the value to set
          * @return this builder instance
          */
         public Builder countStatisticKey(String countStatisticKey) {
@@ -68,6 +88,12 @@ public class GetCountStatisticRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -75,6 +101,7 @@ public class GetCountStatisticRequest extends com.oracle.bmc.requests.BmcRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -154,7 +181,8 @@ public class GetCountStatisticRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -163,6 +191,10 @@ public class GetCountStatisticRequest extends com.oracle.bmc.requests.BmcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

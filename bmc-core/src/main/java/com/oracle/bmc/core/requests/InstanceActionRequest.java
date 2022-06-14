@@ -18,6 +18,9 @@ public class InstanceActionRequest
      */
     private String instanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -26,6 +29,9 @@ public class InstanceActionRequest
      */
     private String action;
 
+    /**
+     * The action to perform on the instance.
+     */
     public String getAction() {
         return action;
     }
@@ -39,6 +45,14 @@ public class InstanceActionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -50,6 +64,12 @@ public class InstanceActionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,6 +78,9 @@ public class InstanceActionRequest
      */
     private com.oracle.bmc.core.model.InstancePowerActionDetails instancePowerActionDetails;
 
+    /**
+     * Instance Power Action details
+     */
     public com.oracle.bmc.core.model.InstancePowerActionDetails getInstancePowerActionDetails() {
         return instancePowerActionDetails;
     }
@@ -79,10 +102,14 @@ public class InstanceActionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         */
         private String instanceId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         * @param instanceId the value to set
          * @return this builder instance
          */
         public Builder instanceId(String instanceId) {
@@ -90,10 +117,14 @@ public class InstanceActionRequest
             return this;
         }
 
+        /**
+         * The action to perform on the instance.
+         */
         private String action = null;
 
         /**
          * The action to perform on the instance.
+         * @param action the value to set
          * @return this builder instance
          */
         public Builder action(String action) {
@@ -101,6 +132,14 @@ public class InstanceActionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -110,6 +149,7 @@ public class InstanceActionRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -117,6 +157,12 @@ public class InstanceActionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -124,6 +170,7 @@ public class InstanceActionRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -131,11 +178,15 @@ public class InstanceActionRequest
             return this;
         }
 
+        /**
+         * Instance Power Action details
+         */
         private com.oracle.bmc.core.model.InstancePowerActionDetails instancePowerActionDetails =
                 null;
 
         /**
          * Instance Power Action details
+         * @param instancePowerActionDetails the value to set
          * @return this builder instance
          */
         public Builder instancePowerActionDetails(
@@ -231,7 +282,8 @@ public class InstanceActionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -242,6 +294,10 @@ public class InstanceActionRequest
                 .instancePowerActionDetails(instancePowerActionDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

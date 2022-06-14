@@ -45,54 +45,101 @@ public final class RecalledData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the end of the time range of the related data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
+        /**
+         * This is the end of the time range of the related data
+         * @param timeDataEnded the value to set
+         * @return this builder
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-
+        /**
+         * This is the start of the time range of the related data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
+        /**
+         * This is the start of the time range of the related data
+         * @param timeDataStarted the value to set
+         * @return this builder
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-
+        /**
+         * This is the time when the first recall operation was started for this RecalledData
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * This is the time when the first recall operation was started for this RecalledData
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * This is the status of the recall
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * This is the status of the recall
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * This is the number of recall operations for this recall.  Note one RecalledData can be merged from the results
+         * of several recall operations if the time duration of the results of the recall operations overlap.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recallCount")
         private Integer recallCount;
 
+        /**
+         * This is the number of recall operations for this recall.  Note one RecalledData can be merged from the results
+         * of several recall operations if the time duration of the results of the recall operations overlap.
+         *
+         * @param recallCount the value to set
+         * @return this builder
+         **/
         public Builder recallCount(Integer recallCount) {
             this.recallCount = recallCount;
             this.__explicitlySet__.add("recallCount");
             return this;
         }
-
+        /**
+         * This is the size in bytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUsageInBytes")
         private Long storageUsageInBytes;
 
+        /**
+         * This is the size in bytes
+         * @param storageUsageInBytes the value to set
+         * @return this builder
+         **/
         public Builder storageUsageInBytes(Long storageUsageInBytes) {
             this.storageUsageInBytes = storageUsageInBytes;
             this.__explicitlySet__.add("storageUsageInBytes");
@@ -147,6 +194,10 @@ public final class RecalledData {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
+    /**
+     * This is the end of the time range of the related data
+     * @return the value
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
@@ -157,6 +208,10 @@ public final class RecalledData {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
+    /**
+     * This is the start of the time range of the related data
+     * @return the value
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
@@ -167,6 +222,10 @@ public final class RecalledData {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * This is the time when the first recall operation was started for this RecalledData
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -224,6 +283,10 @@ public final class RecalledData {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * This is the status of the recall
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -236,6 +299,12 @@ public final class RecalledData {
     @com.fasterxml.jackson.annotation.JsonProperty("recallCount")
     private final Integer recallCount;
 
+    /**
+     * This is the number of recall operations for this recall.  Note one RecalledData can be merged from the results
+     * of several recall operations if the time duration of the results of the recall operations overlap.
+     *
+     * @return the value
+     **/
     public Integer getRecallCount() {
         return recallCount;
     }
@@ -246,6 +315,10 @@ public final class RecalledData {
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsageInBytes")
     private final Long storageUsageInBytes;
 
+    /**
+     * This is the size in bytes
+     * @return the value
+     **/
     public Long getStorageUsageInBytes() {
         return storageUsageInBytes;
     }

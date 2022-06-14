@@ -29,27 +29,63 @@ public final class SqlPlanInsights {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * SQL Plan Insight text.
+         * For example {@code Number of Plans Used}, {@code Most Executed Plan},
+         *   {@code Best Performing Plan}, {@code Worst Performing Plan},
+         *   {@code Plan With Most IO},
+         *   {@code Plan with Most CPU}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * SQL Plan Insight text.
+         * For example {@code Number of Plans Used}, {@code Most Executed Plan},
+         *   {@code Best Performing Plan}, {@code Worst Performing Plan},
+         *   {@code Plan With Most IO},
+         *   {@code Plan with Most CPU}
+         *
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-
+        /**
+         * SQL execution plan hash value for a given insight. For example {@code Most Executed Plan} insight will have value as "3975467901"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Long value;
 
+        /**
+         * SQL execution plan hash value for a given insight. For example {@code Most Executed Plan} insight will have value as "3975467901"
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Long value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * SQL Insight category. For example PLANS_USED, MOST_EXECUTED, BEST_PERFORMER, WORST_PERFORMER, MOST_CPU or MOST_IO.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
+        /**
+         * SQL Insight category. For example PLANS_USED, MOST_EXECUTED, BEST_PERFORMER, WORST_PERFORMER, MOST_CPU or MOST_IO.
+         *
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
@@ -96,6 +132,15 @@ public final class SqlPlanInsights {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * SQL Plan Insight text.
+     * For example {@code Number of Plans Used}, {@code Most Executed Plan},
+     *   {@code Best Performing Plan}, {@code Worst Performing Plan},
+     *   {@code Plan With Most IO},
+     *   {@code Plan with Most CPU}
+     *
+     * @return the value
+     **/
     public String getText() {
         return text;
     }
@@ -107,6 +152,11 @@ public final class SqlPlanInsights {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Long value;
 
+    /**
+     * SQL execution plan hash value for a given insight. For example {@code Most Executed Plan} insight will have value as "3975467901"
+     *
+     * @return the value
+     **/
     public Long getValue() {
         return value;
     }
@@ -118,6 +168,11 @@ public final class SqlPlanInsights {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * SQL Insight category. For example PLANS_USED, MOST_EXECUTED, BEST_PERFORMER, WORST_PERFORMER, MOST_CPU or MOST_IO.
+     *
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }

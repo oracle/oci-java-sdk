@@ -30,9 +30,27 @@ public final class RemoveVcnIpv6CidrDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This field is not required and should only be specified when removing ULA or private IPv6 prefix or an IPv6 GUA assigned by Oracle or BYOIPv6 prefix
+         * from a VCN's IPv6 address space.
+         * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code 2001:0db8:0123::/56}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
+        /**
+         * This field is not required and should only be specified when removing ULA or private IPv6 prefix or an IPv6 GUA assigned by Oracle or BYOIPv6 prefix
+         * from a VCN's IPv6 address space.
+         * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code 2001:0db8:0123::/56}
+         *
+         * @param ipv6CidrBlock the value to set
+         * @return this builder
+         **/
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             this.ipv6CidrBlock = ipv6CidrBlock;
             this.__explicitlySet__.add("ipv6CidrBlock");
@@ -79,6 +97,15 @@ public final class RemoveVcnIpv6CidrDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
+    /**
+     * This field is not required and should only be specified when removing ULA or private IPv6 prefix or an IPv6 GUA assigned by Oracle or BYOIPv6 prefix
+     * from a VCN's IPv6 address space.
+     * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: {@code 2001:0db8:0123::/56}
+     *
+     * @return the value
+     **/
     public String getIpv6CidrBlock() {
         return ipv6CidrBlock;
     }

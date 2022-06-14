@@ -29,27 +29,49 @@ public final class Region {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the region.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the region.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The code of the region.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
+        /**
+         * The code of the region.
+         * @param code the value to set
+         * @return this builder
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-
+        /**
+         * Countries in the region.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countries")
         private java.util.List<Item> countries;
 
+        /**
+         * Countries in the region.
+         * @param countries the value to set
+         * @return this builder
+         **/
         public Builder countries(java.util.List<Item> countries) {
             this.countries = countries;
             this.__explicitlySet__.add("countries");
@@ -91,6 +113,10 @@ public final class Region {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the region.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -101,6 +127,10 @@ public final class Region {
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
+    /**
+     * The code of the region.
+     * @return the value
+     **/
     public String getCode() {
         return code;
     }
@@ -111,6 +141,10 @@ public final class Region {
     @com.fasterxml.jackson.annotation.JsonProperty("countries")
     private final java.util.List<Item> countries;
 
+    /**
+     * Countries in the region.
+     * @return the value
+     **/
     public java.util.List<Item> getCountries() {
         return countries;
     }

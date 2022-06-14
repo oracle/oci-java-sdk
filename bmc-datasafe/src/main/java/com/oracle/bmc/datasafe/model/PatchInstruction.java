@@ -50,6 +50,10 @@ public class PatchInstruction {
     @com.fasterxml.jackson.annotation.JsonProperty("selection")
     private final String selection;
 
+    /**
+     * The set of values to which the operation applies as a [JMESPath expression](https://jmespath.org/specification.html) for evaluation against the context resource. An operation fails if the selection yields an exception, except as otherwise specified. Note that comparisons involving non-primitive values (objects or arrays) are not supported and will always evaluate to false.
+     * @return the value
+     **/
     public String getSelection() {
         return selection;
     }

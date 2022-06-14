@@ -47,54 +47,97 @@ public final class ScheduledRunSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ocid representing unique shedule run
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The ocid representing unique shedule run
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The ocid representing unique shedule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleId")
         private String scheduleId;
 
+        /**
+         * The ocid representing unique shedule
+         * @param scheduleId the value to set
+         * @return this builder
+         **/
         public Builder scheduleId(String scheduleId) {
             this.scheduleId = scheduleId;
             this.__explicitlySet__.add("scheduleId");
             return this;
         }
-
+        /**
+         * The time when schedule started executing
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time when schedule started executing
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time when schedule finished executing
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The time when schedule finished executing
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * Specifies if the schedule job was run successfully or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ScheduledRun.LifecycleState lifecycleState;
 
+        /**
+         * Specifies if the schedule job was run successfully or not.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(ScheduledRun.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Additional details about scheduled run failure
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional details about scheduled run failure
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -149,6 +192,10 @@ public final class ScheduledRunSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The ocid representing unique shedule run
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -159,6 +206,10 @@ public final class ScheduledRunSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleId")
     private final String scheduleId;
 
+    /**
+     * The ocid representing unique shedule
+     * @return the value
+     **/
     public String getScheduleId() {
         return scheduleId;
     }
@@ -169,6 +220,10 @@ public final class ScheduledRunSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time when schedule started executing
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -179,6 +234,10 @@ public final class ScheduledRunSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The time when schedule finished executing
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -189,6 +248,10 @@ public final class ScheduledRunSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ScheduledRun.LifecycleState lifecycleState;
 
+    /**
+     * Specifies if the schedule job was run successfully or not.
+     * @return the value
+     **/
     public ScheduledRun.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -199,6 +262,10 @@ public final class ScheduledRunSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional details about scheduled run failure
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }

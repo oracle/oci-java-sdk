@@ -179,10 +179,17 @@ public final class CreateEntityShapeFromSQL extends CreateEntityShapeDetails {
             this.__explicitlySet__.add("entityProperties");
             return this;
         }
-
+        /**
+         * sqlQuery
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlQuery")
         private String sqlQuery;
 
+        /**
+         * sqlQuery
+         * @param sqlQuery the value to set
+         * @return this builder
+         **/
         public Builder sqlQuery(String sqlQuery) {
             this.sqlQuery = sqlQuery;
             this.__explicitlySet__.add("sqlQuery");
@@ -302,6 +309,10 @@ public final class CreateEntityShapeFromSQL extends CreateEntityShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlQuery")
     private final String sqlQuery;
 
+    /**
+     * sqlQuery
+     * @return the value
+     **/
     public String getSqlQuery() {
         return sqlQuery;
     }

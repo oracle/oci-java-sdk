@@ -34,6 +34,7 @@ public final class UpdateGoldenGateSettings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("extract")
         private UpdateExtract extract;
 
@@ -51,10 +52,19 @@ public final class UpdateGoldenGateSettings {
             this.__explicitlySet__.add("replicat");
             return this;
         }
-
+        /**
+         * ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("acceptableLag")
         private Integer acceptableLag;
 
+        /**
+         * ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+         *
+         * @param acceptableLag the value to set
+         * @return this builder
+         **/
         public Builder acceptableLag(Integer acceptableLag) {
             this.acceptableLag = acceptableLag;
             this.__explicitlySet__.add("acceptableLag");
@@ -115,6 +125,11 @@ public final class UpdateGoldenGateSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("acceptableLag")
     private final Integer acceptableLag;
 
+    /**
+     * ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+     *
+     * @return the value
+     **/
     public Integer getAcceptableLag() {
         return acceptableLag;
     }

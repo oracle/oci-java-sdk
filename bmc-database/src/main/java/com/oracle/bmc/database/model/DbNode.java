@@ -90,189 +90,371 @@ public final class DbNode {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database node.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+         * @param dbSystemId the value to set
+         * @return this builder
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VNIC.
+         * @param vnicId the value to set
+         * @return this builder
+         **/
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
         private String backupVnicId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+         * @param backupVnicId the value to set
+         * @return this builder
+         **/
         public Builder backupVnicId(String backupVnicId) {
             this.backupVnicId = backupVnicId;
             this.__explicitlySet__.add("backupVnicId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to get the IP address
+         * needed to make a database connection.
+         * <p>
+         **Note:** Applies only to Exadata Cloud Service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostIpId")
         private String hostIpId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to get the IP address
+         * needed to make a database connection.
+         * <p>
+         **Note:** Applies only to Exadata Cloud Service.
+         *
+         * @param hostIpId the value to set
+         * @return this builder
+         **/
         public Builder hostIpId(String hostIpId) {
             this.hostIpId = hostIpId;
             this.__explicitlySet__.add("hostIpId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to get the IP address
+         * needed to make a database connection.
+         * <p>
+         **Note:** Applies only to Exadata Cloud Service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupIpId")
         private String backupIpId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to get the IP address
+         * needed to make a database connection.
+         * <p>
+         **Note:** Applies only to Exadata Cloud Service.
+         *
+         * @param backupIpId the value to set
+         * @return this builder
+         **/
         public Builder backupIpId(String backupIpId) {
             this.backupIpId = backupIpId;
             this.__explicitlySet__.add("backupIpId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the second VNIC.
+         * <p>
+         **Note:** Applies only to Exadata Cloud Service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnic2Id")
         private String vnic2Id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the second VNIC.
+         * <p>
+         **Note:** Applies only to Exadata Cloud Service.
+         *
+         * @param vnic2Id the value to set
+         * @return this builder
+         **/
         public Builder vnic2Id(String vnic2Id) {
             this.vnic2Id = vnic2Id;
             this.__explicitlySet__.add("vnic2Id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
+         * <p>
+         **Note:** Applies only to Exadata Cloud Service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupVnic2Id")
         private String backupVnic2Id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
+         * <p>
+         **Note:** Applies only to Exadata Cloud Service.
+         *
+         * @param backupVnic2Id the value to set
+         * @return this builder
+         **/
         public Builder backupVnic2Id(String backupVnic2Id) {
             this.backupVnic2Id = backupVnic2Id;
             this.__explicitlySet__.add("backupVnic2Id");
             return this;
         }
-
+        /**
+         * The current state of the database node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the database node.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The host name for the database node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The host name for the database node.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * The name of the Fault Domain the instance is contained in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
+        /**
+         * The name of the Fault Domain the instance is contained in.
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-
+        /**
+         * The date and time that the database node was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time that the database node was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareStorageSizeInGB")
         private Integer softwareStorageSizeInGB;
 
+        /**
+         * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
+         *
+         * @param softwareStorageSizeInGB the value to set
+         * @return this builder
+         **/
         public Builder softwareStorageSizeInGB(Integer softwareStorageSizeInGB) {
             this.softwareStorageSizeInGB = softwareStorageSizeInGB;
             this.__explicitlySet__.add("softwareStorageSizeInGB");
             return this;
         }
-
+        /**
+         * The type of database node maintenance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceType")
         private MaintenanceType maintenanceType;
 
+        /**
+         * The type of database node maintenance.
+         * @param maintenanceType the value to set
+         * @return this builder
+         **/
         public Builder maintenanceType(MaintenanceType maintenanceType) {
             this.maintenanceType = maintenanceType;
             this.__explicitlySet__.add("maintenanceType");
             return this;
         }
-
+        /**
+         * Start date and time of maintenance window.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceWindowStart")
         private java.util.Date timeMaintenanceWindowStart;
 
+        /**
+         * Start date and time of maintenance window.
+         * @param timeMaintenanceWindowStart the value to set
+         * @return this builder
+         **/
         public Builder timeMaintenanceWindowStart(java.util.Date timeMaintenanceWindowStart) {
             this.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
             this.__explicitlySet__.add("timeMaintenanceWindowStart");
             return this;
         }
-
+        /**
+         * End date and time of maintenance window.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceWindowEnd")
         private java.util.Date timeMaintenanceWindowEnd;
 
+        /**
+         * End date and time of maintenance window.
+         * @param timeMaintenanceWindowEnd the value to set
+         * @return this builder
+         **/
         public Builder timeMaintenanceWindowEnd(java.util.Date timeMaintenanceWindowEnd) {
             this.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
             this.__explicitlySet__.add("timeMaintenanceWindowEnd");
             return this;
         }
-
+        /**
+         * Additional information about the planned maintenance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
         private String additionalDetails;
 
+        /**
+         * Additional information about the planned maintenance.
+         * @param additionalDetails the value to set
+         * @return this builder
+         **/
         public Builder additionalDetails(String additionalDetails) {
             this.additionalDetails = additionalDetails;
             this.__explicitlySet__.add("additionalDetails");
             return this;
         }
-
+        /**
+         * The number of CPU cores enabled on the Db node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
+        /**
+         * The number of CPU cores enabled on the Db node.
+         * @param cpuCoreCount the value to set
+         * @return this builder
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-
+        /**
+         * The allocated memory in GBs on the Db node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
+        /**
+         * The allocated memory in GBs on the Db node.
+         * @param memorySizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
-
+        /**
+         * The allocated local node storage in GBs on the Db node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
         private Integer dbNodeStorageSizeInGBs;
 
+        /**
+         * The allocated local node storage in GBs on the Db node.
+         * @param dbNodeStorageSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
             this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
             this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
         private String dbServerId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
+         * @param dbServerId the value to set
+         * @return this builder
+         **/
         public Builder dbServerId(String dbServerId) {
             this.dbServerId = dbServerId;
             this.__explicitlySet__.add("dbServerId");
@@ -357,6 +539,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database node.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -367,6 +553,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     * @return the value
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -377,6 +567,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VNIC.
+     * @return the value
+     **/
     public String getVnicId() {
         return vnicId;
     }
@@ -387,6 +581,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
     private final String backupVnicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+     * @return the value
+     **/
     public String getBackupVnicId() {
         return backupVnicId;
     }
@@ -402,6 +600,15 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("hostIpId")
     private final String hostIpId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the
+     * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to get the IP address
+     * needed to make a database connection.
+     * <p>
+     **Note:** Applies only to Exadata Cloud Service.
+     *
+     * @return the value
+     **/
     public String getHostIpId() {
         return hostIpId;
     }
@@ -417,6 +624,15 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("backupIpId")
     private final String backupIpId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the
+     * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to get the IP address
+     * needed to make a database connection.
+     * <p>
+     **Note:** Applies only to Exadata Cloud Service.
+     *
+     * @return the value
+     **/
     public String getBackupIpId() {
         return backupIpId;
     }
@@ -430,6 +646,13 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("vnic2Id")
     private final String vnic2Id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the second VNIC.
+     * <p>
+     **Note:** Applies only to Exadata Cloud Service.
+     *
+     * @return the value
+     **/
     public String getVnic2Id() {
         return vnic2Id;
     }
@@ -443,6 +666,13 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("backupVnic2Id")
     private final String backupVnic2Id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
+     * <p>
+     **Note:** Applies only to Exadata Cloud Service.
+     *
+     * @return the value
+     **/
     public String getBackupVnic2Id() {
         return backupVnic2Id;
     }
@@ -508,6 +738,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the database node.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -518,6 +752,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The host name for the database node.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -528,6 +766,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
+    /**
+     * The name of the Fault Domain the instance is contained in.
+     * @return the value
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
@@ -538,6 +780,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time that the database node was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -549,6 +795,11 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareStorageSizeInGB")
     private final Integer softwareStorageSizeInGB;
 
+    /**
+     * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
+     *
+     * @return the value
+     **/
     public Integer getSoftwareStorageSizeInGB() {
         return softwareStorageSizeInGB;
     }
@@ -606,6 +857,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceType")
     private final MaintenanceType maintenanceType;
 
+    /**
+     * The type of database node maintenance.
+     * @return the value
+     **/
     public MaintenanceType getMaintenanceType() {
         return maintenanceType;
     }
@@ -616,6 +871,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceWindowStart")
     private final java.util.Date timeMaintenanceWindowStart;
 
+    /**
+     * Start date and time of maintenance window.
+     * @return the value
+     **/
     public java.util.Date getTimeMaintenanceWindowStart() {
         return timeMaintenanceWindowStart;
     }
@@ -626,6 +885,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceWindowEnd")
     private final java.util.Date timeMaintenanceWindowEnd;
 
+    /**
+     * End date and time of maintenance window.
+     * @return the value
+     **/
     public java.util.Date getTimeMaintenanceWindowEnd() {
         return timeMaintenanceWindowEnd;
     }
@@ -636,6 +899,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     private final String additionalDetails;
 
+    /**
+     * Additional information about the planned maintenance.
+     * @return the value
+     **/
     public String getAdditionalDetails() {
         return additionalDetails;
     }
@@ -646,6 +913,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
+    /**
+     * The number of CPU cores enabled on the Db node.
+     * @return the value
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
@@ -656,6 +927,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
+    /**
+     * The allocated memory in GBs on the Db node.
+     * @return the value
+     **/
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
@@ -666,6 +941,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
     private final Integer dbNodeStorageSizeInGBs;
 
+    /**
+     * The allocated local node storage in GBs on the Db node.
+     * @return the value
+     **/
     public Integer getDbNodeStorageSizeInGBs() {
         return dbNodeStorageSizeInGBs;
     }
@@ -676,6 +955,10 @@ public final class DbNode {
     @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
     private final String dbServerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
+     * @return the value
+     **/
     public String getDbServerId() {
         return dbServerId;
     }

@@ -54,37 +54,65 @@ public final class CreateEmManagedExternalHostInsightDetails extends CreateHostI
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Enterprise Manager Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
         private String enterpriseManagerIdentifier;
 
+        /**
+         * Enterprise Manager Unique Identifier
+         * @param enterpriseManagerIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
             this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             this.__explicitlySet__.add("enterpriseManagerIdentifier");
             return this;
         }
-
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
         private String enterpriseManagerBridgeId;
 
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         * @param enterpriseManagerBridgeId the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             this.__explicitlySet__.add("enterpriseManagerBridgeId");
             return this;
         }
-
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
         private String enterpriseManagerEntityIdentifier;
 
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         * @param enterpriseManagerEntityIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
             this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             this.__explicitlySet__.add("enterpriseManagerEntityIdentifier");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         * @param exadataInsightId the value to set
+         * @return this builder
+         **/
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
@@ -158,6 +186,10 @@ public final class CreateEmManagedExternalHostInsightDetails extends CreateHostI
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
     private final String enterpriseManagerIdentifier;
 
+    /**
+     * Enterprise Manager Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerIdentifier() {
         return enterpriseManagerIdentifier;
     }
@@ -168,6 +200,10 @@ public final class CreateEmManagedExternalHostInsightDetails extends CreateHostI
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
     private final String enterpriseManagerBridgeId;
 
+    /**
+     * OPSI Enterprise Manager Bridge OCID
+     * @return the value
+     **/
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
@@ -178,6 +214,10 @@ public final class CreateEmManagedExternalHostInsightDetails extends CreateHostI
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
     private final String enterpriseManagerEntityIdentifier;
 
+    /**
+     * Enterprise Manager Entity Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityIdentifier() {
         return enterpriseManagerEntityIdentifier;
     }
@@ -188,6 +228,10 @@ public final class CreateEmManagedExternalHostInsightDetails extends CreateHostI
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     * @return the value
+     **/
     public String getExadataInsightId() {
         return exadataInsightId;
     }

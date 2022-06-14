@@ -154,37 +154,65 @@ public final class ComputeInstanceGroupBlueGreenDeployStage extends DeployStage 
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * First compute instance group environment OCID for deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentIdA")
         private String deployEnvironmentIdA;
 
+        /**
+         * First compute instance group environment OCID for deployment.
+         * @param deployEnvironmentIdA the value to set
+         * @return this builder
+         **/
         public Builder deployEnvironmentIdA(String deployEnvironmentIdA) {
             this.deployEnvironmentIdA = deployEnvironmentIdA;
             this.__explicitlySet__.add("deployEnvironmentIdA");
             return this;
         }
-
+        /**
+         * Second compute instance group environment OCID for deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentIdB")
         private String deployEnvironmentIdB;
 
+        /**
+         * Second compute instance group environment OCID for deployment.
+         * @param deployEnvironmentIdB the value to set
+         * @return this builder
+         **/
         public Builder deployEnvironmentIdB(String deployEnvironmentIdB) {
             this.deployEnvironmentIdB = deployEnvironmentIdB;
             this.__explicitlySet__.add("deployEnvironmentIdB");
             return this;
         }
-
+        /**
+         * The OCID of the artifact that contains the deployment specification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
         private String deploymentSpecDeployArtifactId;
 
+        /**
+         * The OCID of the artifact that contains the deployment specification.
+         * @param deploymentSpecDeployArtifactId the value to set
+         * @return this builder
+         **/
         public Builder deploymentSpecDeployArtifactId(String deploymentSpecDeployArtifactId) {
             this.deploymentSpecDeployArtifactId = deploymentSpecDeployArtifactId;
             this.__explicitlySet__.add("deploymentSpecDeployArtifactId");
             return this;
         }
-
+        /**
+         * The list of file artifact OCIDs to deploy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
         private java.util.List<String> deployArtifactIds;
 
+        /**
+         * The list of file artifact OCIDs to deploy.
+         * @param deployArtifactIds the value to set
+         * @return this builder
+         **/
         public Builder deployArtifactIds(java.util.List<String> deployArtifactIds) {
             this.deployArtifactIds = deployArtifactIds;
             this.__explicitlySet__.add("deployArtifactIds");
@@ -358,6 +386,10 @@ public final class ComputeInstanceGroupBlueGreenDeployStage extends DeployStage 
     @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentIdA")
     private final String deployEnvironmentIdA;
 
+    /**
+     * First compute instance group environment OCID for deployment.
+     * @return the value
+     **/
     public String getDeployEnvironmentIdA() {
         return deployEnvironmentIdA;
     }
@@ -368,6 +400,10 @@ public final class ComputeInstanceGroupBlueGreenDeployStage extends DeployStage 
     @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentIdB")
     private final String deployEnvironmentIdB;
 
+    /**
+     * Second compute instance group environment OCID for deployment.
+     * @return the value
+     **/
     public String getDeployEnvironmentIdB() {
         return deployEnvironmentIdB;
     }
@@ -378,6 +414,10 @@ public final class ComputeInstanceGroupBlueGreenDeployStage extends DeployStage 
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
     private final String deploymentSpecDeployArtifactId;
 
+    /**
+     * The OCID of the artifact that contains the deployment specification.
+     * @return the value
+     **/
     public String getDeploymentSpecDeployArtifactId() {
         return deploymentSpecDeployArtifactId;
     }
@@ -388,6 +428,10 @@ public final class ComputeInstanceGroupBlueGreenDeployStage extends DeployStage 
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
     private final java.util.List<String> deployArtifactIds;
 
+    /**
+     * The list of file artifact OCIDs to deploy.
+     * @return the value
+     **/
     public java.util.List<String> getDeployArtifactIds() {
         return deployArtifactIds;
     }

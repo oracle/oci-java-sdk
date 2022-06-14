@@ -18,6 +18,9 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
      */
     private String libraryMaskingFormatId;
 
+    /**
+     * The OCID of the library masking format.
+     */
     public String getLibraryMaskingFormatId() {
         return libraryMaskingFormatId;
     }
@@ -27,6 +30,9 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
     private com.oracle.bmc.datasafe.model.ChangeLibraryMaskingFormatCompartmentDetails
             changeLibraryMaskingFormatCompartmentDetails;
 
+    /**
+     * Details to change the compartment of a library masking format.
+     */
     public com.oracle.bmc.datasafe.model.ChangeLibraryMaskingFormatCompartmentDetails
             getChangeLibraryMaskingFormatCompartmentDetails() {
         return changeLibraryMaskingFormatCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -53,6 +67,13 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -61,6 +82,9 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -83,10 +107,14 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the library masking format.
+         */
         private String libraryMaskingFormatId = null;
 
         /**
          * The OCID of the library masking format.
+         * @param libraryMaskingFormatId the value to set
          * @return this builder instance
          */
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
@@ -94,11 +122,15 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
             return this;
         }
 
+        /**
+         * Details to change the compartment of a library masking format.
+         */
         private com.oracle.bmc.datasafe.model.ChangeLibraryMaskingFormatCompartmentDetails
                 changeLibraryMaskingFormatCompartmentDetails = null;
 
         /**
          * Details to change the compartment of a library masking format.
+         * @param changeLibraryMaskingFormatCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeLibraryMaskingFormatCompartmentDetails(
@@ -109,6 +141,14 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +158,7 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -125,6 +166,13 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -133,6 +181,7 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -140,10 +189,14 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -242,7 +295,8 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -254,6 +308,10 @@ public class ChangeLibraryMaskingFormatCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

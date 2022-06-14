@@ -34,27 +34,49 @@ public final class StepInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The currnet input sequence match.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputSequenceCurrentMatch")
         private String inputSequenceCurrentMatch;
 
+        /**
+         * The currnet input sequence match.
+         * @param inputSequenceCurrentMatch the value to set
+         * @return this builder
+         **/
         public Builder inputSequenceCurrentMatch(String inputSequenceCurrentMatch) {
             this.inputSequenceCurrentMatch = inputSequenceCurrentMatch;
             this.__explicitlySet__.add("inputSequenceCurrentMatch");
             return this;
         }
-
+        /**
+         * The regular expression engine class name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regexEngineClassName")
         private String regexEngineClassName;
 
+        /**
+         * The regular expression engine class name.
+         * @param regexEngineClassName the value to set
+         * @return this builder
+         **/
         public Builder regexEngineClassName(String regexEngineClassName) {
             this.regexEngineClassName = regexEngineClassName;
             this.__explicitlySet__.add("regexEngineClassName");
             return this;
         }
-
+        /**
+         * The step count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
         private Integer stepCount;
 
+        /**
+         * The step count.
+         * @param stepCount the value to set
+         * @return this builder
+         **/
         public Builder stepCount(Integer stepCount) {
             this.stepCount = stepCount;
             this.__explicitlySet__.add("stepCount");
@@ -100,6 +122,10 @@ public final class StepInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("inputSequenceCurrentMatch")
     private final String inputSequenceCurrentMatch;
 
+    /**
+     * The currnet input sequence match.
+     * @return the value
+     **/
     public String getInputSequenceCurrentMatch() {
         return inputSequenceCurrentMatch;
     }
@@ -110,6 +136,10 @@ public final class StepInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("regexEngineClassName")
     private final String regexEngineClassName;
 
+    /**
+     * The regular expression engine class name.
+     * @return the value
+     **/
     public String getRegexEngineClassName() {
         return regexEngineClassName;
     }
@@ -120,6 +150,10 @@ public final class StepInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
     private final Integer stepCount;
 
+    /**
+     * The step count.
+     * @return the value
+     **/
     public Integer getStepCount() {
         return stepCount;
     }

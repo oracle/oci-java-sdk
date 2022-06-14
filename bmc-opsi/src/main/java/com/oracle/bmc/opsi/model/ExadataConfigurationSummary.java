@@ -66,6 +66,10 @@ public class ExadataConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     * @return the value
+     **/
     public String getExadataInsightId() {
         return exadataInsightId;
     }
@@ -76,6 +80,10 @@ public class ExadataConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -86,6 +94,10 @@ public class ExadataConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataName")
     private final String exadataName;
 
+    /**
+     * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
+     * @return the value
+     **/
     public String getExadataName() {
         return exadataName;
     }
@@ -96,6 +108,10 @@ public class ExadataConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
     private final String exadataDisplayName;
 
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     * @return the value
+     **/
     public String getExadataDisplayName() {
         return exadataDisplayName;
     }
@@ -106,6 +122,10 @@ public class ExadataConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataType")
     private final ExadataType exadataType;
 
+    /**
+     * Operations Insights internal representation of the the Exadata system type.
+     * @return the value
+     **/
     public ExadataType getExadataType() {
         return exadataType;
     }
@@ -116,6 +136,10 @@ public class ExadataConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataRackType")
     private final ExadataRackType exadataRackType;
 
+    /**
+     * Exadata rack type.
+     * @return the value
+     **/
     public ExadataRackType getExadataRackType() {
         return exadataRackType;
     }
@@ -128,6 +152,12 @@ public class ExadataConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -140,6 +170,12 @@ public class ExadataConfigurationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }

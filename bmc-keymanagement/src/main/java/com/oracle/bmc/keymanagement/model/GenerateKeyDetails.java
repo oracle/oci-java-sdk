@@ -44,27 +44,55 @@ public final class GenerateKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Information that can be used to provide an encryption context for the encrypted data.
+         * The length of the string representation of the associated data must be fewer than 4096
+         * characters.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
         private java.util.Map<String, String> associatedData;
 
+        /**
+         * Information that can be used to provide an encryption context for the encrypted data.
+         * The length of the string representation of the associated data must be fewer than 4096
+         * characters.
+         *
+         * @param associatedData the value to set
+         * @return this builder
+         **/
         public Builder associatedData(java.util.Map<String, String> associatedData) {
             this.associatedData = associatedData;
             this.__explicitlySet__.add("associatedData");
             return this;
         }
-
+        /**
+         * If true, the generated key is also returned unencrypted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("includePlaintextKey")
         private Boolean includePlaintextKey;
 
+        /**
+         * If true, the generated key is also returned unencrypted.
+         * @param includePlaintextKey the value to set
+         * @return this builder
+         **/
         public Builder includePlaintextKey(Boolean includePlaintextKey) {
             this.includePlaintextKey = includePlaintextKey;
             this.__explicitlySet__.add("includePlaintextKey");
             return this;
         }
-
+        /**
+         * The OCID of the master encryption key to encrypt the generated data encryption key with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
+        /**
+         * The OCID of the master encryption key to encrypt the generated data encryption key with.
+         * @param keyId the value to set
+         * @return this builder
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
@@ -79,10 +107,21 @@ public final class GenerateKeyDetails {
             this.__explicitlySet__.add("keyShape");
             return this;
         }
-
+        /**
+         * Information that provides context for audit logging. You can provide this additional
+         * data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
         private java.util.Map<String, String> loggingContext;
 
+        /**
+         * Information that provides context for audit logging. You can provide this additional
+         * data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+         *
+         * @param loggingContext the value to set
+         * @return this builder
+         **/
         public Builder loggingContext(java.util.Map<String, String> loggingContext) {
             this.loggingContext = loggingContext;
             this.__explicitlySet__.add("loggingContext");
@@ -134,6 +173,13 @@ public final class GenerateKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
     private final java.util.Map<String, String> associatedData;
 
+    /**
+     * Information that can be used to provide an encryption context for the encrypted data.
+     * The length of the string representation of the associated data must be fewer than 4096
+     * characters.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getAssociatedData() {
         return associatedData;
     }
@@ -144,6 +190,10 @@ public final class GenerateKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("includePlaintextKey")
     private final Boolean includePlaintextKey;
 
+    /**
+     * If true, the generated key is also returned unencrypted.
+     * @return the value
+     **/
     public Boolean getIncludePlaintextKey() {
         return includePlaintextKey;
     }
@@ -154,6 +204,10 @@ public final class GenerateKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
+    /**
+     * The OCID of the master encryption key to encrypt the generated data encryption key with.
+     * @return the value
+     **/
     public String getKeyId() {
         return keyId;
     }
@@ -173,6 +227,12 @@ public final class GenerateKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
     private final java.util.Map<String, String> loggingContext;
 
+    /**
+     * Information that provides context for audit logging. You can provide this additional
+     * data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getLoggingContext() {
         return loggingContext;
     }

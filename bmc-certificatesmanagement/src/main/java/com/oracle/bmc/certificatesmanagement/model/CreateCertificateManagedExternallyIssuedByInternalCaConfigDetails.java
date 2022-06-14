@@ -36,10 +36,17 @@ public final class CreateCertificateManagedExternallyIssuedByInternalCaConfigDet
             this.__explicitlySet__.add("versionName");
             return this;
         }
-
+        /**
+         * The OCID of the private CA.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issuerCertificateAuthorityId")
         private String issuerCertificateAuthorityId;
 
+        /**
+         * The OCID of the private CA.
+         * @param issuerCertificateAuthorityId the value to set
+         * @return this builder
+         **/
         public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             this.__explicitlySet__.add("issuerCertificateAuthorityId");
@@ -54,10 +61,17 @@ public final class CreateCertificateManagedExternallyIssuedByInternalCaConfigDet
             this.__explicitlySet__.add("validity");
             return this;
         }
-
+        /**
+         * The certificate signing request (in PEM format).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("csrPem")
         private String csrPem;
 
+        /**
+         * The certificate signing request (in PEM format).
+         * @param csrPem the value to set
+         * @return this builder
+         **/
         public Builder csrPem(String csrPem) {
             this.csrPem = csrPem;
             this.__explicitlySet__.add("csrPem");
@@ -117,6 +131,10 @@ public final class CreateCertificateManagedExternallyIssuedByInternalCaConfigDet
     @com.fasterxml.jackson.annotation.JsonProperty("issuerCertificateAuthorityId")
     private final String issuerCertificateAuthorityId;
 
+    /**
+     * The OCID of the private CA.
+     * @return the value
+     **/
     public String getIssuerCertificateAuthorityId() {
         return issuerCertificateAuthorityId;
     }
@@ -134,6 +152,10 @@ public final class CreateCertificateManagedExternallyIssuedByInternalCaConfigDet
     @com.fasterxml.jackson.annotation.JsonProperty("csrPem")
     private final String csrPem;
 
+    /**
+     * The certificate signing request (in PEM format).
+     * @return the value
+     **/
     public String getCsrPem() {
         return csrPem;
     }

@@ -30,9 +30,19 @@ public final class MigrationObjectCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Database objects to exclude/include from migration
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<MigrationObjectSummary> items;
 
+        /**
+         * Database objects to exclude/include from migration
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<MigrationObjectSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +85,11 @@ public final class MigrationObjectCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<MigrationObjectSummary> items;
 
+    /**
+     * Database objects to exclude/include from migration
+     *
+     * @return the value
+     **/
     public java.util.List<MigrationObjectSummary> getItems() {
         return items;
     }

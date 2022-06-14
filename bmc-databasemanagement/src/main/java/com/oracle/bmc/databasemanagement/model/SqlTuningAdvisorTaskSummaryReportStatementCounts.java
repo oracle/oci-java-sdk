@@ -33,36 +33,65 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of distinct SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("distinctSql")
         private Integer distinctSql;
 
+        /**
+         * The number of distinct SQL statements.
+         * @param distinctSql the value to set
+         * @return this builder
+         **/
         public Builder distinctSql(Integer distinctSql) {
             this.distinctSql = distinctSql;
             this.__explicitlySet__.add("distinctSql");
             return this;
         }
-
+        /**
+         * The total number of SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSql")
         private Integer totalSql;
 
+        /**
+         * The total number of SQL statements.
+         * @param totalSql the value to set
+         * @return this builder
+         **/
         public Builder totalSql(Integer totalSql) {
             this.totalSql = totalSql;
             this.__explicitlySet__.add("totalSql");
             return this;
         }
-
+        /**
+         * The number of distinct SQL statements with findings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("findingCount")
         private Integer findingCount;
 
+        /**
+         * The number of distinct SQL statements with findings.
+         * @param findingCount the value to set
+         * @return this builder
+         **/
         public Builder findingCount(Integer findingCount) {
             this.findingCount = findingCount;
             this.__explicitlySet__.add("findingCount");
             return this;
         }
-
+        /**
+         * The number of distinct SQL statements with errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
         private Integer errorCount;
 
+        /**
+         * The number of distinct SQL statements with errors.
+         * @param errorCount the value to set
+         * @return this builder
+         **/
         public Builder errorCount(Integer errorCount) {
             this.errorCount = errorCount;
             this.__explicitlySet__.add("errorCount");
@@ -110,6 +139,10 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("distinctSql")
     private final Integer distinctSql;
 
+    /**
+     * The number of distinct SQL statements.
+     * @return the value
+     **/
     public Integer getDistinctSql() {
         return distinctSql;
     }
@@ -120,6 +153,10 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("totalSql")
     private final Integer totalSql;
 
+    /**
+     * The total number of SQL statements.
+     * @return the value
+     **/
     public Integer getTotalSql() {
         return totalSql;
     }
@@ -130,6 +167,10 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("findingCount")
     private final Integer findingCount;
 
+    /**
+     * The number of distinct SQL statements with findings.
+     * @return the value
+     **/
     public Integer getFindingCount() {
         return findingCount;
     }
@@ -140,6 +181,10 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
     private final Integer errorCount;
 
+    /**
+     * The number of distinct SQL statements with errors.
+     * @return the value
+     **/
     public Integer getErrorCount() {
         return errorCount;
     }

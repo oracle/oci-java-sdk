@@ -43,45 +43,91 @@ public final class ParseQueryOutput {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Display string formatted by query builder of user specified query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
 
+        /**
+         * Display string formatted by query builder of user specified query string.
+         *
+         * @param displayQueryString the value to set
+         * @return this builder
+         **/
         public Builder displayQueryString(String displayQueryString) {
             this.displayQueryString = displayQueryString;
             this.__explicitlySet__.add("displayQueryString");
             return this;
         }
-
+        /**
+         * Internal string formatted by query builder of user specified query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
         private String internalQueryString;
 
+        /**
+         * Internal string formatted by query builder of user specified query string.
+         *
+         * @param internalQueryString the value to set
+         * @return this builder
+         **/
         public Builder internalQueryString(String internalQueryString) {
             this.internalQueryString = internalQueryString;
             this.__explicitlySet__.add("internalQueryString");
             return this;
         }
-
+        /**
+         * List of columns returned by the specified query string as result output.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<AbstractColumn> columns;
 
+        /**
+         * List of columns returned by the specified query string as result output.
+         *
+         * @param columns the value to set
+         * @return this builder
+         **/
         public Builder columns(java.util.List<AbstractColumn> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-
+        /**
+         * Operation response time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
         private Long responseTimeInMs;
 
+        /**
+         * Operation response time.
+         *
+         * @param responseTimeInMs the value to set
+         * @return this builder
+         **/
         public Builder responseTimeInMs(Long responseTimeInMs) {
             this.responseTimeInMs = responseTimeInMs;
             this.__explicitlySet__.add("responseTimeInMs");
             return this;
         }
-
+        /**
+         * List of querylanguage command descriptors, describing the specfied query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commands")
         private java.util.List<AbstractCommandDescriptor> commands;
 
+        /**
+         * List of querylanguage command descriptors, describing the specfied query string.
+         *
+         * @param commands the value to set
+         * @return this builder
+         **/
         public Builder commands(java.util.List<AbstractCommandDescriptor> commands) {
             this.commands = commands;
             this.__explicitlySet__.add("commands");
@@ -135,6 +181,11 @@ public final class ParseQueryOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
     private final String displayQueryString;
 
+    /**
+     * Display string formatted by query builder of user specified query string.
+     *
+     * @return the value
+     **/
     public String getDisplayQueryString() {
         return displayQueryString;
     }
@@ -146,6 +197,11 @@ public final class ParseQueryOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
     private final String internalQueryString;
 
+    /**
+     * Internal string formatted by query builder of user specified query string.
+     *
+     * @return the value
+     **/
     public String getInternalQueryString() {
         return internalQueryString;
     }
@@ -157,6 +213,11 @@ public final class ParseQueryOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<AbstractColumn> columns;
 
+    /**
+     * List of columns returned by the specified query string as result output.
+     *
+     * @return the value
+     **/
     public java.util.List<AbstractColumn> getColumns() {
         return columns;
     }
@@ -168,6 +229,11 @@ public final class ParseQueryOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
     private final Long responseTimeInMs;
 
+    /**
+     * Operation response time.
+     *
+     * @return the value
+     **/
     public Long getResponseTimeInMs() {
         return responseTimeInMs;
     }
@@ -179,6 +245,11 @@ public final class ParseQueryOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("commands")
     private final java.util.List<AbstractCommandDescriptor> commands;
 
+    /**
+     * List of querylanguage command descriptors, describing the specfied query string.
+     *
+     * @return the value
+     **/
     public java.util.List<AbstractCommandDescriptor> getCommands() {
         return commands;
     }

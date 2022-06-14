@@ -18,6 +18,9 @@ public class UpdateBackupDestinationRequest
      */
     private String backupDestinationId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.
+     */
     public String getBackupDestinationId() {
         return backupDestinationId;
     }
@@ -29,6 +32,11 @@ public class UpdateBackupDestinationRequest
     private com.oracle.bmc.database.model.UpdateBackupDestinationDetails
             updateBackupDestinationDetails;
 
+    /**
+     * For a RECOVERY_APPLIANCE backup destination, request to update the connection string and/or the list of VPC users.
+     * For an NFS backup destination, request to update the NFS location.
+     *
+     */
     public com.oracle.bmc.database.model.UpdateBackupDestinationDetails
             getUpdateBackupDestinationDetails() {
         return updateBackupDestinationDetails;
@@ -41,6 +49,12 @@ public class UpdateBackupDestinationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +64,10 @@ public class UpdateBackupDestinationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -72,10 +90,14 @@ public class UpdateBackupDestinationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
         private String backupDestinationId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param backupDestinationId the value to set
          * @return this builder instance
          */
         public Builder backupDestinationId(String backupDestinationId) {
@@ -83,6 +105,11 @@ public class UpdateBackupDestinationRequest
             return this;
         }
 
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, request to update the connection string and/or the list of VPC users.
+         * For an NFS backup destination, request to update the NFS location.
+         *
+         */
         private com.oracle.bmc.database.model.UpdateBackupDestinationDetails
                 updateBackupDestinationDetails = null;
 
@@ -90,6 +117,7 @@ public class UpdateBackupDestinationRequest
          * For a RECOVERY_APPLIANCE backup destination, request to update the connection string and/or the list of VPC users.
          * For an NFS backup destination, request to update the NFS location.
          *
+         * @param updateBackupDestinationDetails the value to set
          * @return this builder instance
          */
         public Builder updateBackupDestinationDetails(
@@ -99,6 +127,12 @@ public class UpdateBackupDestinationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -106,6 +140,7 @@ public class UpdateBackupDestinationRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -113,11 +148,16 @@ public class UpdateBackupDestinationRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -210,7 +250,8 @@ public class UpdateBackupDestinationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -220,6 +261,10 @@ public class UpdateBackupDestinationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,27 +29,49 @@ public final class RuleSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * id of the rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * id of the rule
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * description of the rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * description of the rule
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * List of parameters applicable for rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<OperatorSummary> parameters;
 
+        /**
+         * List of parameters applicable for rule
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.List<OperatorSummary> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -92,6 +114,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * id of the rule
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -102,6 +128,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * description of the rule
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -112,6 +142,10 @@ public final class RuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<OperatorSummary> parameters;
 
+    /**
+     * List of parameters applicable for rule
+     * @return the value
+     **/
     public java.util.List<OperatorSummary> getParameters() {
         return parameters;
     }

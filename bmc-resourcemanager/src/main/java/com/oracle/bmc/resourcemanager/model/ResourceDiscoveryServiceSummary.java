@@ -31,18 +31,43 @@ public final class ResourceDiscoveryServiceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A supported service. Example: {@code core}
+         * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A supported service. Example: {@code core}
+         * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The scope of the service as used with Resource Discovery.
+         * This property determines the type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code COMPARTMENT}).
+         * For example, {@code identity} is at the root compartment scope while {@code database} is at the compartment scope.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryScope")
         private DiscoveryScope discoveryScope;
 
+        /**
+         * The scope of the service as used with Resource Discovery.
+         * This property determines the type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code COMPARTMENT}).
+         * For example, {@code identity} is at the root compartment scope while {@code database} is at the compartment scope.
+         *
+         * @param discoveryScope the value to set
+         * @return this builder
+         **/
         public Builder discoveryScope(DiscoveryScope discoveryScope) {
             this.discoveryScope = discoveryScope;
             this.__explicitlySet__.add("discoveryScope");
@@ -87,6 +112,12 @@ public final class ResourceDiscoveryServiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A supported service. Example: {@code core}
+     * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -151,6 +182,13 @@ public final class ResourceDiscoveryServiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryScope")
     private final DiscoveryScope discoveryScope;
 
+    /**
+     * The scope of the service as used with Resource Discovery.
+     * This property determines the type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code COMPARTMENT}).
+     * For example, {@code identity} is at the root compartment scope while {@code database} is at the compartment scope.
+     *
+     * @return the value
+     **/
     public DiscoveryScope getDiscoveryScope() {
         return discoveryScope;
     }

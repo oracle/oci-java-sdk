@@ -144,353 +144,627 @@ public final class Tablespace {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the tablespace.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The type of tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of tablespace.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The status of the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the tablespace.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The tablespace block size.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockSizeBytes")
         private java.math.BigDecimal blockSizeBytes;
 
+        /**
+         * The tablespace block size.
+         * @param blockSizeBytes the value to set
+         * @return this builder
+         **/
         public Builder blockSizeBytes(java.math.BigDecimal blockSizeBytes) {
             this.blockSizeBytes = blockSizeBytes;
             this.__explicitlySet__.add("blockSizeBytes");
             return this;
         }
-
+        /**
+         * The default logging attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logging")
         private Logging logging;
 
+        /**
+         * The default logging attribute.
+         * @param logging the value to set
+         * @return this builder
+         **/
         public Builder logging(Logging logging) {
             this.logging = logging;
             this.__explicitlySet__.add("logging");
             return this;
         }
-
+        /**
+         * Indicates whether the tablespace is under Force Logging mode.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isForceLogging")
         private Boolean isForceLogging;
 
+        /**
+         * Indicates whether the tablespace is under Force Logging mode.
+         * @param isForceLogging the value to set
+         * @return this builder
+         **/
         public Builder isForceLogging(Boolean isForceLogging) {
             this.isForceLogging = isForceLogging;
             this.__explicitlySet__.add("isForceLogging");
             return this;
         }
-
+        /**
+         * Indicates whether the extents in the tablespace are Locally managed or Dictionary managed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extentManagement")
         private ExtentManagement extentManagement;
 
+        /**
+         * Indicates whether the extents in the tablespace are Locally managed or Dictionary managed.
+         * @param extentManagement the value to set
+         * @return this builder
+         **/
         public Builder extentManagement(ExtentManagement extentManagement) {
             this.extentManagement = extentManagement;
             this.__explicitlySet__.add("extentManagement");
             return this;
         }
-
+        /**
+         * The type of extent allocation in effect for the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allocationType")
         private AllocationType allocationType;
 
+        /**
+         * The type of extent allocation in effect for the tablespace.
+         * @param allocationType the value to set
+         * @return this builder
+         **/
         public Builder allocationType(AllocationType allocationType) {
             this.allocationType = allocationType;
             this.__explicitlySet__.add("allocationType");
             return this;
         }
-
+        /**
+         * Indicates whether the tablespace is plugged in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPluggedIn")
         private Boolean isPluggedIn;
 
+        /**
+         * Indicates whether the tablespace is plugged in.
+         * @param isPluggedIn the value to set
+         * @return this builder
+         **/
         public Builder isPluggedIn(Boolean isPluggedIn) {
             this.isPluggedIn = isPluggedIn;
             this.__explicitlySet__.add("isPluggedIn");
             return this;
         }
-
+        /**
+         * Indicates whether the free and used segment space in the tablespace is managed using free lists (MANUAL) or bitmaps (AUTO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("segmentSpaceManagement")
         private SegmentSpaceManagement segmentSpaceManagement;
 
+        /**
+         * Indicates whether the free and used segment space in the tablespace is managed using free lists (MANUAL) or bitmaps (AUTO).
+         * @param segmentSpaceManagement the value to set
+         * @return this builder
+         **/
         public Builder segmentSpaceManagement(SegmentSpaceManagement segmentSpaceManagement) {
             this.segmentSpaceManagement = segmentSpaceManagement;
             this.__explicitlySet__.add("segmentSpaceManagement");
             return this;
         }
-
+        /**
+         * Indicates whether default table compression is enabled or disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultTableCompression")
         private DefaultTableCompression defaultTableCompression;
 
+        /**
+         * Indicates whether default table compression is enabled or disabled.
+         * @param defaultTableCompression the value to set
+         * @return this builder
+         **/
         public Builder defaultTableCompression(DefaultTableCompression defaultTableCompression) {
             this.defaultTableCompression = defaultTableCompression;
             this.__explicitlySet__.add("defaultTableCompression");
             return this;
         }
-
+        /**
+         * Indicates whether undo retention guarantee is enabled for the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retention")
         private Retention retention;
 
+        /**
+         * Indicates whether undo retention guarantee is enabled for the tablespace.
+         * @param retention the value to set
+         * @return this builder
+         **/
         public Builder retention(Retention retention) {
             this.retention = retention;
             this.__explicitlySet__.add("retention");
             return this;
         }
-
+        /**
+         * Indicates whether the tablespace is a Bigfile tablespace or a Smallfile tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBigfile")
         private Boolean isBigfile;
 
+        /**
+         * Indicates whether the tablespace is a Bigfile tablespace or a Smallfile tablespace.
+         * @param isBigfile the value to set
+         * @return this builder
+         **/
         public Builder isBigfile(Boolean isBigfile) {
             this.isBigfile = isBigfile;
             this.__explicitlySet__.add("isBigfile");
             return this;
         }
-
+        /**
+         * Indicates whether predicates are evaluated by Host or by Storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("predicateEvaluation")
         private PredicateEvaluation predicateEvaluation;
 
+        /**
+         * Indicates whether predicates are evaluated by Host or by Storage.
+         * @param predicateEvaluation the value to set
+         * @return this builder
+         **/
         public Builder predicateEvaluation(PredicateEvaluation predicateEvaluation) {
             this.predicateEvaluation = predicateEvaluation;
             this.__explicitlySet__.add("predicateEvaluation");
             return this;
         }
-
+        /**
+         * Indicates whether the tablespace is encrypted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEncrypted")
         private Boolean isEncrypted;
 
+        /**
+         * Indicates whether the tablespace is encrypted.
+         * @param isEncrypted the value to set
+         * @return this builder
+         **/
         public Builder isEncrypted(Boolean isEncrypted) {
             this.isEncrypted = isEncrypted;
             this.__explicitlySet__.add("isEncrypted");
             return this;
         }
-
+        /**
+         * The operation type for which default compression is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compressFor")
         private CompressFor compressFor;
 
+        /**
+         * The operation type for which default compression is enabled.
+         * @param compressFor the value to set
+         * @return this builder
+         **/
         public Builder compressFor(CompressFor compressFor) {
             this.compressFor = compressFor;
             this.__explicitlySet__.add("compressFor");
             return this;
         }
-
+        /**
+         * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemory")
         private DefaultInMemory defaultInMemory;
 
+        /**
+         * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
+         * @param defaultInMemory the value to set
+         * @return this builder
+         **/
         public Builder defaultInMemory(DefaultInMemory defaultInMemory) {
             this.defaultInMemory = defaultInMemory;
             this.__explicitlySet__.add("defaultInMemory");
             return this;
         }
-
+        /**
+         * Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryPriority")
         private DefaultInMemoryPriority defaultInMemoryPriority;
 
+        /**
+         * Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
+         * @param defaultInMemoryPriority the value to set
+         * @return this builder
+         **/
         public Builder defaultInMemoryPriority(DefaultInMemoryPriority defaultInMemoryPriority) {
             this.defaultInMemoryPriority = defaultInMemoryPriority;
             this.__explicitlySet__.add("defaultInMemoryPriority");
             return this;
         }
-
+        /**
+         * Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryDistribute")
         private DefaultInMemoryDistribute defaultInMemoryDistribute;
 
+        /**
+         * Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
+         * @param defaultInMemoryDistribute the value to set
+         * @return this builder
+         **/
         public Builder defaultInMemoryDistribute(
                 DefaultInMemoryDistribute defaultInMemoryDistribute) {
             this.defaultInMemoryDistribute = defaultInMemoryDistribute;
             this.__explicitlySet__.add("defaultInMemoryDistribute");
             return this;
         }
-
+        /**
+         * Indicates the default compression level for the IM column store for the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryCompression")
         private DefaultInMemoryCompression defaultInMemoryCompression;
 
+        /**
+         * Indicates the default compression level for the IM column store for the tablespace.
+         * @param defaultInMemoryCompression the value to set
+         * @return this builder
+         **/
         public Builder defaultInMemoryCompression(
                 DefaultInMemoryCompression defaultInMemoryCompression) {
             this.defaultInMemoryCompression = defaultInMemoryCompression;
             this.__explicitlySet__.add("defaultInMemoryCompression");
             return this;
         }
-
+        /**
+         * Indicates the duplicate setting for the IM column store in an Oracle RAC environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryDuplicate")
         private DefaultInMemoryDuplicate defaultInMemoryDuplicate;
 
+        /**
+         * Indicates the duplicate setting for the IM column store in an Oracle RAC environment.
+         * @param defaultInMemoryDuplicate the value to set
+         * @return this builder
+         **/
         public Builder defaultInMemoryDuplicate(DefaultInMemoryDuplicate defaultInMemoryDuplicate) {
             this.defaultInMemoryDuplicate = defaultInMemoryDuplicate;
             this.__explicitlySet__.add("defaultInMemoryDuplicate");
             return this;
         }
-
+        /**
+         * Indicates whether the tablespace is for shared tablespace, or for local temporary tablespace for leaf (read-only) instances, or for local temporary tablespace for all instance types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shared")
         private Shared shared;
 
+        /**
+         * Indicates whether the tablespace is for shared tablespace, or for local temporary tablespace for leaf (read-only) instances, or for local temporary tablespace for all instance types.
+         * @param shared the value to set
+         * @return this builder
+         **/
         public Builder shared(Shared shared) {
             this.shared = shared;
             this.__explicitlySet__.add("shared");
             return this;
         }
-
+        /**
+         * Indicates whether default index compression is enabled or disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultIndexCompression")
         private DefaultIndexCompression defaultIndexCompression;
 
+        /**
+         * Indicates whether default index compression is enabled or disabled.
+         * @param defaultIndexCompression the value to set
+         * @return this builder
+         **/
         public Builder defaultIndexCompression(DefaultIndexCompression defaultIndexCompression) {
             this.defaultIndexCompression = defaultIndexCompression;
             this.__explicitlySet__.add("defaultIndexCompression");
             return this;
         }
-
+        /**
+         * The operation type for which default index compression is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexCompressFor")
         private IndexCompressFor indexCompressFor;
 
+        /**
+         * The operation type for which default index compression is enabled.
+         * @param indexCompressFor the value to set
+         * @return this builder
+         **/
         public Builder indexCompressFor(IndexCompressFor indexCompressFor) {
             this.indexCompressFor = indexCompressFor;
             this.__explicitlySet__.add("indexCompressFor");
             return this;
         }
-
+        /**
+         * This specifies the default value for the CELLMEMORY attribute that tables created in the tablespace will inherit unless the behavior is overridden explicitly. This column is intended for use with Oracle Exadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultCellMemory")
         private String defaultCellMemory;
 
+        /**
+         * This specifies the default value for the CELLMEMORY attribute that tables created in the tablespace will inherit unless the behavior is overridden explicitly. This column is intended for use with Oracle Exadata.
+         * @param defaultCellMemory the value to set
+         * @return this builder
+         **/
         public Builder defaultCellMemory(String defaultCellMemory) {
             this.defaultCellMemory = defaultCellMemory;
             this.__explicitlySet__.add("defaultCellMemory");
             return this;
         }
-
+        /**
+         * Indicates how the IM column store is populated on various instances by default for the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryService")
         private DefaultInMemoryService defaultInMemoryService;
 
+        /**
+         * Indicates how the IM column store is populated on various instances by default for the tablespace.
+         * @param defaultInMemoryService the value to set
+         * @return this builder
+         **/
         public Builder defaultInMemoryService(DefaultInMemoryService defaultInMemoryService) {
             this.defaultInMemoryService = defaultInMemoryService;
             this.__explicitlySet__.add("defaultInMemoryService");
             return this;
         }
-
+        /**
+         * Indicates the service name for the service on which the IM column store should be populated by default for the tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryServiceName")
         private String defaultInMemoryServiceName;
 
+        /**
+         * Indicates the service name for the service on which the IM column store should be populated by default for the tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
+         * @param defaultInMemoryServiceName the value to set
+         * @return this builder
+         **/
         public Builder defaultInMemoryServiceName(String defaultInMemoryServiceName) {
             this.defaultInMemoryServiceName = defaultInMemoryServiceName;
             this.__explicitlySet__.add("defaultInMemoryServiceName");
             return this;
         }
-
+        /**
+         * The lost write protection setting for the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lostWriteProtect")
         private LostWriteProtect lostWriteProtect;
 
+        /**
+         * The lost write protection setting for the tablespace.
+         * @param lostWriteProtect the value to set
+         * @return this builder
+         **/
         public Builder lostWriteProtect(LostWriteProtect lostWriteProtect) {
             this.lostWriteProtect = lostWriteProtect;
             this.__explicitlySet__.add("lostWriteProtect");
             return this;
         }
-
+        /**
+         * Indicates whether this is a chunk tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isChunkTablespace")
         private Boolean isChunkTablespace;
 
+        /**
+         * Indicates whether this is a chunk tablespace.
+         * @param isChunkTablespace the value to set
+         * @return this builder
+         **/
         public Builder isChunkTablespace(Boolean isChunkTablespace) {
             this.isChunkTablespace = isChunkTablespace;
             this.__explicitlySet__.add("isChunkTablespace");
             return this;
         }
-
+        /**
+         * The temporary tablespace group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tempGroup")
         private String tempGroup;
 
+        /**
+         * The temporary tablespace group.
+         * @param tempGroup the value to set
+         * @return this builder
+         **/
         public Builder tempGroup(String tempGroup) {
             this.tempGroup = tempGroup;
             this.__explicitlySet__.add("tempGroup");
             return this;
         }
-
+        /**
+         * The maximum tablespace size in KB. If the tablespace contains any data files with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its data files is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only data files with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all data files in the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxSizeKB")
         private java.math.BigDecimal maxSizeKB;
 
+        /**
+         * The maximum tablespace size in KB. If the tablespace contains any data files with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its data files is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only data files with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all data files in the tablespace.
+         * @param maxSizeKB the value to set
+         * @return this builder
+         **/
         public Builder maxSizeKB(java.math.BigDecimal maxSizeKB) {
             this.maxSizeKB = maxSizeKB;
             this.__explicitlySet__.add("maxSizeKB");
             return this;
         }
-
+        /**
+         * The allocated tablespace size in KB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allocatedSizeKB")
         private java.math.BigDecimal allocatedSizeKB;
 
+        /**
+         * The allocated tablespace size in KB.
+         * @param allocatedSizeKB the value to set
+         * @return this builder
+         **/
         public Builder allocatedSizeKB(java.math.BigDecimal allocatedSizeKB) {
             this.allocatedSizeKB = allocatedSizeKB;
             this.__explicitlySet__.add("allocatedSizeKB");
             return this;
         }
-
+        /**
+         * The size of the tablespace available for user data in KB. The difference between tablespace size and user data size is used for storing metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userSizeKB")
         private java.math.BigDecimal userSizeKB;
 
+        /**
+         * The size of the tablespace available for user data in KB. The difference between tablespace size and user data size is used for storing metadata.
+         * @param userSizeKB the value to set
+         * @return this builder
+         **/
         public Builder userSizeKB(java.math.BigDecimal userSizeKB) {
             this.userSizeKB = userSizeKB;
             this.__explicitlySet__.add("userSizeKB");
             return this;
         }
-
+        /**
+         * The free space available in the tablespace in KB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeSpaceKB")
         private java.math.BigDecimal freeSpaceKB;
 
+        /**
+         * The free space available in the tablespace in KB.
+         * @param freeSpaceKB the value to set
+         * @return this builder
+         **/
         public Builder freeSpaceKB(java.math.BigDecimal freeSpaceKB) {
             this.freeSpaceKB = freeSpaceKB;
             this.__explicitlySet__.add("freeSpaceKB");
             return this;
         }
-
+        /**
+         * The total space used by the tablespace in KB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedSpaceKB")
         private java.math.BigDecimal usedSpaceKB;
 
+        /**
+         * The total space used by the tablespace in KB.
+         * @param usedSpaceKB the value to set
+         * @return this builder
+         **/
         public Builder usedSpaceKB(java.math.BigDecimal usedSpaceKB) {
             this.usedSpaceKB = usedSpaceKB;
             this.__explicitlySet__.add("usedSpaceKB");
             return this;
         }
-
+        /**
+         * The percentage of used space out of the maximum available space in the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAvailable")
         private Double usedPercentAvailable;
 
+        /**
+         * The percentage of used space out of the maximum available space in the tablespace.
+         * @param usedPercentAvailable the value to set
+         * @return this builder
+         **/
         public Builder usedPercentAvailable(Double usedPercentAvailable) {
             this.usedPercentAvailable = usedPercentAvailable;
             this.__explicitlySet__.add("usedPercentAvailable");
             return this;
         }
-
+        /**
+         * The percentage of used space out of the total allocated space in the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAllocated")
         private Double usedPercentAllocated;
 
+        /**
+         * The percentage of used space out of the total allocated space in the tablespace.
+         * @param usedPercentAllocated the value to set
+         * @return this builder
+         **/
         public Builder usedPercentAllocated(Double usedPercentAllocated) {
             this.usedPercentAllocated = usedPercentAllocated;
             this.__explicitlySet__.add("usedPercentAllocated");
             return this;
         }
-
+        /**
+         * Indicates whether this is the default tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Indicates whether this is the default tablespace.
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-
+        /**
+         * A list of the data files associated with the tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datafiles")
         private java.util.List<Datafile> datafiles;
 
+        /**
+         * A list of the data files associated with the tablespace.
+         * @param datafiles the value to set
+         * @return this builder
+         **/
         public Builder datafiles(java.util.List<Datafile> datafiles) {
             this.datafiles = datafiles;
             this.__explicitlySet__.add("datafiles");
@@ -611,6 +885,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the tablespace.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -669,6 +947,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of tablespace.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -727,6 +1009,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the tablespace.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -737,6 +1023,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("blockSizeBytes")
     private final java.math.BigDecimal blockSizeBytes;
 
+    /**
+     * The tablespace block size.
+     * @return the value
+     **/
     public java.math.BigDecimal getBlockSizeBytes() {
         return blockSizeBytes;
     }
@@ -795,6 +1085,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("logging")
     private final Logging logging;
 
+    /**
+     * The default logging attribute.
+     * @return the value
+     **/
     public Logging getLogging() {
         return logging;
     }
@@ -805,6 +1099,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("isForceLogging")
     private final Boolean isForceLogging;
 
+    /**
+     * Indicates whether the tablespace is under Force Logging mode.
+     * @return the value
+     **/
     public Boolean getIsForceLogging() {
         return isForceLogging;
     }
@@ -863,6 +1161,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("extentManagement")
     private final ExtentManagement extentManagement;
 
+    /**
+     * Indicates whether the extents in the tablespace are Locally managed or Dictionary managed.
+     * @return the value
+     **/
     public ExtentManagement getExtentManagement() {
         return extentManagement;
     }
@@ -922,6 +1224,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("allocationType")
     private final AllocationType allocationType;
 
+    /**
+     * The type of extent allocation in effect for the tablespace.
+     * @return the value
+     **/
     public AllocationType getAllocationType() {
         return allocationType;
     }
@@ -932,6 +1238,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("isPluggedIn")
     private final Boolean isPluggedIn;
 
+    /**
+     * Indicates whether the tablespace is plugged in.
+     * @return the value
+     **/
     public Boolean getIsPluggedIn() {
         return isPluggedIn;
     }
@@ -990,6 +1300,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("segmentSpaceManagement")
     private final SegmentSpaceManagement segmentSpaceManagement;
 
+    /**
+     * Indicates whether the free and used segment space in the tablespace is managed using free lists (MANUAL) or bitmaps (AUTO).
+     * @return the value
+     **/
     public SegmentSpaceManagement getSegmentSpaceManagement() {
         return segmentSpaceManagement;
     }
@@ -1048,6 +1362,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultTableCompression")
     private final DefaultTableCompression defaultTableCompression;
 
+    /**
+     * Indicates whether default table compression is enabled or disabled.
+     * @return the value
+     **/
     public DefaultTableCompression getDefaultTableCompression() {
         return defaultTableCompression;
     }
@@ -1107,6 +1425,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("retention")
     private final Retention retention;
 
+    /**
+     * Indicates whether undo retention guarantee is enabled for the tablespace.
+     * @return the value
+     **/
     public Retention getRetention() {
         return retention;
     }
@@ -1117,6 +1439,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("isBigfile")
     private final Boolean isBigfile;
 
+    /**
+     * Indicates whether the tablespace is a Bigfile tablespace or a Smallfile tablespace.
+     * @return the value
+     **/
     public Boolean getIsBigfile() {
         return isBigfile;
     }
@@ -1175,6 +1501,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("predicateEvaluation")
     private final PredicateEvaluation predicateEvaluation;
 
+    /**
+     * Indicates whether predicates are evaluated by Host or by Storage.
+     * @return the value
+     **/
     public PredicateEvaluation getPredicateEvaluation() {
         return predicateEvaluation;
     }
@@ -1185,6 +1515,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("isEncrypted")
     private final Boolean isEncrypted;
 
+    /**
+     * Indicates whether the tablespace is encrypted.
+     * @return the value
+     **/
     public Boolean getIsEncrypted() {
         return isEncrypted;
     }
@@ -1249,6 +1583,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("compressFor")
     private final CompressFor compressFor;
 
+    /**
+     * The operation type for which default compression is enabled.
+     * @return the value
+     **/
     public CompressFor getCompressFor() {
         return compressFor;
     }
@@ -1307,6 +1645,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemory")
     private final DefaultInMemory defaultInMemory;
 
+    /**
+     * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
+     * @return the value
+     **/
     public DefaultInMemory getDefaultInMemory() {
         return defaultInMemory;
     }
@@ -1368,6 +1710,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryPriority")
     private final DefaultInMemoryPriority defaultInMemoryPriority;
 
+    /**
+     * Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
+     * @return the value
+     **/
     public DefaultInMemoryPriority getDefaultInMemoryPriority() {
         return defaultInMemoryPriority;
     }
@@ -1428,6 +1774,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryDistribute")
     private final DefaultInMemoryDistribute defaultInMemoryDistribute;
 
+    /**
+     * Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
+     * @return the value
+     **/
     public DefaultInMemoryDistribute getDefaultInMemoryDistribute() {
         return defaultInMemoryDistribute;
     }
@@ -1490,6 +1840,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryCompression")
     private final DefaultInMemoryCompression defaultInMemoryCompression;
 
+    /**
+     * Indicates the default compression level for the IM column store for the tablespace.
+     * @return the value
+     **/
     public DefaultInMemoryCompression getDefaultInMemoryCompression() {
         return defaultInMemoryCompression;
     }
@@ -1549,6 +1903,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryDuplicate")
     private final DefaultInMemoryDuplicate defaultInMemoryDuplicate;
 
+    /**
+     * Indicates the duplicate setting for the IM column store in an Oracle RAC environment.
+     * @return the value
+     **/
     public DefaultInMemoryDuplicate getDefaultInMemoryDuplicate() {
         return defaultInMemoryDuplicate;
     }
@@ -1607,6 +1965,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("shared")
     private final Shared shared;
 
+    /**
+     * Indicates whether the tablespace is for shared tablespace, or for local temporary tablespace for leaf (read-only) instances, or for local temporary tablespace for all instance types.
+     * @return the value
+     **/
     public Shared getShared() {
         return shared;
     }
@@ -1665,6 +2027,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultIndexCompression")
     private final DefaultIndexCompression defaultIndexCompression;
 
+    /**
+     * Indicates whether default index compression is enabled or disabled.
+     * @return the value
+     **/
     public DefaultIndexCompression getDefaultIndexCompression() {
         return defaultIndexCompression;
     }
@@ -1724,6 +2090,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("indexCompressFor")
     private final IndexCompressFor indexCompressFor;
 
+    /**
+     * The operation type for which default index compression is enabled.
+     * @return the value
+     **/
     public IndexCompressFor getIndexCompressFor() {
         return indexCompressFor;
     }
@@ -1734,6 +2104,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultCellMemory")
     private final String defaultCellMemory;
 
+    /**
+     * This specifies the default value for the CELLMEMORY attribute that tables created in the tablespace will inherit unless the behavior is overridden explicitly. This column is intended for use with Oracle Exadata.
+     * @return the value
+     **/
     public String getDefaultCellMemory() {
         return defaultCellMemory;
     }
@@ -1794,6 +2168,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryService")
     private final DefaultInMemoryService defaultInMemoryService;
 
+    /**
+     * Indicates how the IM column store is populated on various instances by default for the tablespace.
+     * @return the value
+     **/
     public DefaultInMemoryService getDefaultInMemoryService() {
         return defaultInMemoryService;
     }
@@ -1804,6 +2182,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryServiceName")
     private final String defaultInMemoryServiceName;
 
+    /**
+     * Indicates the service name for the service on which the IM column store should be populated by default for the tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
+     * @return the value
+     **/
     public String getDefaultInMemoryServiceName() {
         return defaultInMemoryServiceName;
     }
@@ -1863,6 +2245,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("lostWriteProtect")
     private final LostWriteProtect lostWriteProtect;
 
+    /**
+     * The lost write protection setting for the tablespace.
+     * @return the value
+     **/
     public LostWriteProtect getLostWriteProtect() {
         return lostWriteProtect;
     }
@@ -1873,6 +2259,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("isChunkTablespace")
     private final Boolean isChunkTablespace;
 
+    /**
+     * Indicates whether this is a chunk tablespace.
+     * @return the value
+     **/
     public Boolean getIsChunkTablespace() {
         return isChunkTablespace;
     }
@@ -1883,6 +2273,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("tempGroup")
     private final String tempGroup;
 
+    /**
+     * The temporary tablespace group.
+     * @return the value
+     **/
     public String getTempGroup() {
         return tempGroup;
     }
@@ -1893,6 +2287,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("maxSizeKB")
     private final java.math.BigDecimal maxSizeKB;
 
+    /**
+     * The maximum tablespace size in KB. If the tablespace contains any data files with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its data files is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only data files with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all data files in the tablespace.
+     * @return the value
+     **/
     public java.math.BigDecimal getMaxSizeKB() {
         return maxSizeKB;
     }
@@ -1903,6 +2301,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("allocatedSizeKB")
     private final java.math.BigDecimal allocatedSizeKB;
 
+    /**
+     * The allocated tablespace size in KB.
+     * @return the value
+     **/
     public java.math.BigDecimal getAllocatedSizeKB() {
         return allocatedSizeKB;
     }
@@ -1913,6 +2315,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("userSizeKB")
     private final java.math.BigDecimal userSizeKB;
 
+    /**
+     * The size of the tablespace available for user data in KB. The difference between tablespace size and user data size is used for storing metadata.
+     * @return the value
+     **/
     public java.math.BigDecimal getUserSizeKB() {
         return userSizeKB;
     }
@@ -1923,6 +2329,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("freeSpaceKB")
     private final java.math.BigDecimal freeSpaceKB;
 
+    /**
+     * The free space available in the tablespace in KB.
+     * @return the value
+     **/
     public java.math.BigDecimal getFreeSpaceKB() {
         return freeSpaceKB;
     }
@@ -1933,6 +2343,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("usedSpaceKB")
     private final java.math.BigDecimal usedSpaceKB;
 
+    /**
+     * The total space used by the tablespace in KB.
+     * @return the value
+     **/
     public java.math.BigDecimal getUsedSpaceKB() {
         return usedSpaceKB;
     }
@@ -1943,6 +2357,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAvailable")
     private final Double usedPercentAvailable;
 
+    /**
+     * The percentage of used space out of the maximum available space in the tablespace.
+     * @return the value
+     **/
     public Double getUsedPercentAvailable() {
         return usedPercentAvailable;
     }
@@ -1953,6 +2371,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAllocated")
     private final Double usedPercentAllocated;
 
+    /**
+     * The percentage of used space out of the total allocated space in the tablespace.
+     * @return the value
+     **/
     public Double getUsedPercentAllocated() {
         return usedPercentAllocated;
     }
@@ -1963,6 +2385,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Indicates whether this is the default tablespace.
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -1973,6 +2399,10 @@ public final class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("datafiles")
     private final java.util.List<Datafile> datafiles;
 
+    /**
+     * A list of the data files associated with the tablespace.
+     * @return the value
+     **/
     public java.util.List<Datafile> getDatafiles() {
         return datafiles;
     }

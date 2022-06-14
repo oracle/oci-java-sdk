@@ -30,18 +30,33 @@ public final class ConfigProvider {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The configuration provider bindings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bindings")
         private java.util.Map<String, ParameterValue> bindings;
 
+        /**
+         * The configuration provider bindings.
+         * @param bindings the value to set
+         * @return this builder
+         **/
         public Builder bindings(java.util.Map<String, ParameterValue> bindings) {
             this.bindings = bindings;
             this.__explicitlySet__.add("bindings");
             return this;
         }
-
+        /**
+         * The child providers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("childProviders")
         private java.util.Map<String, ConfigProvider> childProviders;
 
+        /**
+         * The child providers.
+         * @param childProviders the value to set
+         * @return this builder
+         **/
         public Builder childProviders(java.util.Map<String, ConfigProvider> childProviders) {
             this.childProviders = childProviders;
             this.__explicitlySet__.add("childProviders");
@@ -83,6 +98,10 @@ public final class ConfigProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("bindings")
     private final java.util.Map<String, ParameterValue> bindings;
 
+    /**
+     * The configuration provider bindings.
+     * @return the value
+     **/
     public java.util.Map<String, ParameterValue> getBindings() {
         return bindings;
     }
@@ -93,6 +112,10 @@ public final class ConfigProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("childProviders")
     private final java.util.Map<String, ConfigProvider> childProviders;
 
+    /**
+     * The child providers.
+     * @return the value
+     **/
     public java.util.Map<String, ConfigProvider> getChildProviders() {
         return childProviders;
     }

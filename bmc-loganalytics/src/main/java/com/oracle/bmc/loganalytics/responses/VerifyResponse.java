@@ -14,6 +14,11 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.VerifyOutput verifyOutput;
 
+    /**
+     * The returned VerifyOutput instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.VerifyOutput getVerifyOutput() {
         return verifyOutput;
     }
@@ -45,15 +54,33 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned VerifyOutput instance.
+         */
         private com.oracle.bmc.loganalytics.model.VerifyOutput verifyOutput;
 
+        /**
+         * The returned VerifyOutput instance.
+         * @param verifyOutput the value to set
+         * @return this builder
+         */
         public Builder verifyOutput(com.oracle.bmc.loganalytics.model.VerifyOutput verifyOutput) {
             this.verifyOutput = verifyOutput;
             return this;
@@ -71,11 +98,19 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public VerifyResponse build() {
             return new VerifyResponse(__httpStatusCode__, opcRequestId, verifyOutput);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

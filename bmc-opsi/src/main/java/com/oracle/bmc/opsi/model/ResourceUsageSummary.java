@@ -44,45 +44,85 @@ public final class ResourceUsageSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         * @param exadataInsightId the value to set
+         * @return this builder
+         **/
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
             return this;
         }
-
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         * @param usage the value to set
+         * @return this builder
+         **/
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
             return this;
         }
-
+        /**
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
+        /**
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         * @param capacity the value to set
+         * @return this builder
+         **/
         public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
             return this;
         }
-
+        /**
+         * Resource utilization in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
         private Double utilizationPercent;
 
+        /**
+         * Resource utilization in percentage
+         * @param utilizationPercent the value to set
+         * @return this builder
+         **/
         public Builder utilizationPercent(Double utilizationPercent) {
             this.utilizationPercent = utilizationPercent;
             this.__explicitlySet__.add("utilizationPercent");
             return this;
         }
-
+        /**
+         * Change in resource utilization in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
         private Double usageChangePercent;
 
+        /**
+         * Change in resource utilization in percentage
+         * @param usageChangePercent the value to set
+         * @return this builder
+         **/
         public Builder usageChangePercent(Double usageChangePercent) {
             this.usageChangePercent = usageChangePercent;
             this.__explicitlySet__.add("usageChangePercent");
@@ -135,6 +175,10 @@ public final class ResourceUsageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     * @return the value
+     **/
     public String getExadataInsightId() {
         return exadataInsightId;
     }
@@ -146,6 +190,11 @@ public final class ResourceUsageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
+    /**
+     * Total amount used of the resource metric type (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getUsage() {
         return usage;
     }
@@ -157,6 +206,11 @@ public final class ResourceUsageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
+    /**
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getCapacity() {
         return capacity;
     }
@@ -167,6 +221,10 @@ public final class ResourceUsageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
     private final Double utilizationPercent;
 
+    /**
+     * Resource utilization in percentage
+     * @return the value
+     **/
     public Double getUtilizationPercent() {
         return utilizationPercent;
     }
@@ -177,6 +235,10 @@ public final class ResourceUsageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
     private final Double usageChangePercent;
 
+    /**
+     * Change in resource utilization in percentage
+     * @return the value
+     **/
     public Double getUsageChangePercent() {
         return usageChangePercent;
     }

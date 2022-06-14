@@ -30,9 +30,19 @@ public final class DeploymentUpgradeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of Deployment Upgrade summaries.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DeploymentUpgradeSummary> items;
 
+        /**
+         * An array of Deployment Upgrade summaries.
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DeploymentUpgradeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +85,11 @@ public final class DeploymentUpgradeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DeploymentUpgradeSummary> items;
 
+    /**
+     * An array of Deployment Upgrade summaries.
+     *
+     * @return the value
+     **/
     public java.util.List<DeploymentUpgradeSummary> getItems() {
         return items;
     }

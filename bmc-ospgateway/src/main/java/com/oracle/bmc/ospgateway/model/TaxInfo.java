@@ -42,45 +42,81 @@ public final class TaxInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Tay payer identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taxPayerId")
         private String taxPayerId;
 
+        /**
+         * Tay payer identifier.
+         * @param taxPayerId the value to set
+         * @return this builder
+         **/
         public Builder taxPayerId(String taxPayerId) {
             this.taxPayerId = taxPayerId;
             this.__explicitlySet__.add("taxPayerId");
             return this;
         }
-
+        /**
+         * Tax registration number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taxRegNumber")
         private String taxRegNumber;
 
+        /**
+         * Tax registration number.
+         * @param taxRegNumber the value to set
+         * @return this builder
+         **/
         public Builder taxRegNumber(String taxRegNumber) {
             this.taxRegNumber = taxRegNumber;
             this.__explicitlySet__.add("taxRegNumber");
             return this;
         }
-
+        /**
+         * Tax exemption reason code.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCode")
         private String noTaxReasonCode;
 
+        /**
+         * Tax exemption reason code.
+         * @param noTaxReasonCode the value to set
+         * @return this builder
+         **/
         public Builder noTaxReasonCode(String noTaxReasonCode) {
             this.noTaxReasonCode = noTaxReasonCode;
             this.__explicitlySet__.add("noTaxReasonCode");
             return this;
         }
-
+        /**
+         * Tax exemption reason description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCodeDetails")
         private String noTaxReasonCodeDetails;
 
+        /**
+         * Tax exemption reason description.
+         * @param noTaxReasonCodeDetails the value to set
+         * @return this builder
+         **/
         public Builder noTaxReasonCodeDetails(String noTaxReasonCodeDetails) {
             this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
             this.__explicitlySet__.add("noTaxReasonCodeDetails");
             return this;
         }
-
+        /**
+         * Brazilian companies' CNPJ number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taxCnpj")
         private String taxCnpj;
 
+        /**
+         * Brazilian companies' CNPJ number.
+         * @param taxCnpj the value to set
+         * @return this builder
+         **/
         public Builder taxCnpj(String taxCnpj) {
             this.taxCnpj = taxCnpj;
             this.__explicitlySet__.add("taxCnpj");
@@ -133,6 +169,10 @@ public final class TaxInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("taxPayerId")
     private final String taxPayerId;
 
+    /**
+     * Tay payer identifier.
+     * @return the value
+     **/
     public String getTaxPayerId() {
         return taxPayerId;
     }
@@ -143,6 +183,10 @@ public final class TaxInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("taxRegNumber")
     private final String taxRegNumber;
 
+    /**
+     * Tax registration number.
+     * @return the value
+     **/
     public String getTaxRegNumber() {
         return taxRegNumber;
     }
@@ -153,6 +197,10 @@ public final class TaxInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCode")
     private final String noTaxReasonCode;
 
+    /**
+     * Tax exemption reason code.
+     * @return the value
+     **/
     public String getNoTaxReasonCode() {
         return noTaxReasonCode;
     }
@@ -163,6 +211,10 @@ public final class TaxInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("noTaxReasonCodeDetails")
     private final String noTaxReasonCodeDetails;
 
+    /**
+     * Tax exemption reason description.
+     * @return the value
+     **/
     public String getNoTaxReasonCodeDetails() {
         return noTaxReasonCodeDetails;
     }
@@ -173,6 +225,10 @@ public final class TaxInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("taxCnpj")
     private final String taxCnpj;
 
+    /**
+     * Brazilian companies' CNPJ number.
+     * @return the value
+     **/
     public String getTaxCnpj() {
         return taxCnpj;
     }

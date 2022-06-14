@@ -19,6 +19,9 @@ public class CreateTargetAlertPolicyAssociationRequest
     private com.oracle.bmc.datasafe.model.CreateTargetAlertPolicyAssociationDetails
             createTargetAlertPolicyAssociationDetails;
 
+    /**
+     * The details used to create a new target-alert policy association.
+     */
     public com.oracle.bmc.datasafe.model.CreateTargetAlertPolicyAssociationDetails
             getCreateTargetAlertPolicyAssociationDetails() {
         return createTargetAlertPolicyAssociationDetails;
@@ -32,6 +35,13 @@ public class CreateTargetAlertPolicyAssociationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -40,6 +50,9 @@ public class CreateTargetAlertPolicyAssociationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,11 +75,15 @@ public class CreateTargetAlertPolicyAssociationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details used to create a new target-alert policy association.
+         */
         private com.oracle.bmc.datasafe.model.CreateTargetAlertPolicyAssociationDetails
                 createTargetAlertPolicyAssociationDetails = null;
 
         /**
          * The details used to create a new target-alert policy association.
+         * @param createTargetAlertPolicyAssociationDetails the value to set
          * @return this builder instance
          */
         public Builder createTargetAlertPolicyAssociationDetails(
@@ -77,6 +94,13 @@ public class CreateTargetAlertPolicyAssociationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -85,6 +109,7 @@ public class CreateTargetAlertPolicyAssociationRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -92,10 +117,14 @@ public class CreateTargetAlertPolicyAssociationRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -190,7 +219,8 @@ public class CreateTargetAlertPolicyAssociationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -200,6 +230,10 @@ public class CreateTargetAlertPolicyAssociationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

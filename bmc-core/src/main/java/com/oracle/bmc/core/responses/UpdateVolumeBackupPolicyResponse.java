@@ -14,6 +14,11 @@ public class UpdateVolumeBackupPolicyResponse extends com.oracle.bmc.responses.B
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class UpdateVolumeBackupPolicyResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class UpdateVolumeBackupPolicyResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.core.model.VolumeBackupPolicy volumeBackupPolicy;
 
+    /**
+     * The returned VolumeBackupPolicy instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.VolumeBackupPolicy getVolumeBackupPolicy() {
         return volumeBackupPolicy;
     }
@@ -63,22 +78,52 @@ public class UpdateVolumeBackupPolicyResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned VolumeBackupPolicy instance.
+         */
         private com.oracle.bmc.core.model.VolumeBackupPolicy volumeBackupPolicy;
 
+        /**
+         * The returned VolumeBackupPolicy instance.
+         * @param volumeBackupPolicy the value to set
+         * @return this builder
+         */
         public Builder volumeBackupPolicy(
                 com.oracle.bmc.core.model.VolumeBackupPolicy volumeBackupPolicy) {
             this.volumeBackupPolicy = volumeBackupPolicy;
@@ -98,12 +143,20 @@ public class UpdateVolumeBackupPolicyResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateVolumeBackupPolicyResponse build() {
             return new UpdateVolumeBackupPolicyResponse(
                     __httpStatusCode__, etag, opcRequestId, volumeBackupPolicy);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

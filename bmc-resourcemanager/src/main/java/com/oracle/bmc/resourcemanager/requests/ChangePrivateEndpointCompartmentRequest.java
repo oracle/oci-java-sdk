@@ -18,6 +18,9 @@ public class ChangePrivateEndpointCompartmentRequest
      */
     private String privateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     */
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -27,6 +30,9 @@ public class ChangePrivateEndpointCompartmentRequest
     private com.oracle.bmc.resourcemanager.model.ChangePrivateEndpointCompartmentDetails
             changePrivateEndpointCompartmentDetails;
 
+    /**
+     * Defines the properties of changePrivateEndpointCompartment operation.
+     */
     public com.oracle.bmc.resourcemanager.model.ChangePrivateEndpointCompartmentDetails
             getChangePrivateEndpointCompartmentDetails() {
         return changePrivateEndpointCompartmentDetails;
@@ -39,6 +45,12 @@ public class ChangePrivateEndpointCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +61,11 @@ public class ChangePrivateEndpointCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,14 @@ public class ChangePrivateEndpointCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of retrying the same action. Retry tokens expire after
+     * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+     * if a resource has been deleted and purged from the system, then a retry of the original
+     * creation request may be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,10 +109,14 @@ public class ChangePrivateEndpointCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
         private String privateEndpointId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         * @param privateEndpointId the value to set
          * @return this builder instance
          */
         public Builder privateEndpointId(String privateEndpointId) {
@@ -95,11 +124,15 @@ public class ChangePrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * Defines the properties of changePrivateEndpointCompartment operation.
+         */
         private com.oracle.bmc.resourcemanager.model.ChangePrivateEndpointCompartmentDetails
                 changePrivateEndpointCompartmentDetails = null;
 
         /**
          * Defines the properties of changePrivateEndpointCompartment operation.
+         * @param changePrivateEndpointCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changePrivateEndpointCompartmentDetails(
@@ -109,6 +142,12 @@ public class ChangePrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -116,6 +155,7 @@ public class ChangePrivateEndpointCompartmentRequest
          * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -123,12 +163,18 @@ public class ChangePrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +182,14 @@ public class ChangePrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of retrying the same action. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -145,6 +199,7 @@ public class ChangePrivateEndpointCompartmentRequest
          * if a resource has been deleted and purged from the system, then a retry of the original
          * creation request may be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -242,7 +297,8 @@ public class ChangePrivateEndpointCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -253,6 +309,10 @@ public class ChangePrivateEndpointCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

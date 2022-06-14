@@ -29,9 +29,17 @@ public final class VbInstanceSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The collection of VbInstanceSummary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<VbInstanceSummary> items;
 
+        /**
+         * The collection of VbInstanceSummary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<VbInstanceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class VbInstanceSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<VbInstanceSummary> items;
 
+    /**
+     * The collection of VbInstanceSummary objects.
+     * @return the value
+     **/
     public java.util.List<VbInstanceSummary> getItems() {
         return items;
     }

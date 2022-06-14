@@ -17,6 +17,9 @@ public class SummarizeManagementAgentCountsRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment to which a request will be scoped.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class SummarizeManagementAgentCountsRequest
      */
     private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentGroupBy> groupBy;
 
+    /**
+     * The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+     */
     public java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentGroupBy>
             getGroupBy() {
         return groupBy;
@@ -34,6 +40,9 @@ public class SummarizeManagementAgentCountsRequest
      */
     private Boolean hasPlugins;
 
+    /**
+     * When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
+     */
     public Boolean getHasPlugins() {
         return hasPlugins;
     }
@@ -42,6 +51,9 @@ public class SummarizeManagementAgentCountsRequest
      */
     private com.oracle.bmc.managementagent.model.InstallTypes installType;
 
+    /**
+     * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+     */
     public com.oracle.bmc.managementagent.model.InstallTypes getInstallType() {
         return installType;
     }
@@ -50,6 +62,9 @@ public class SummarizeManagementAgentCountsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -58,6 +73,9 @@ public class SummarizeManagementAgentCountsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,10 +87,14 @@ public class SummarizeManagementAgentCountsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment to which a request will be scoped.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment to which a request will be scoped.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -80,11 +102,15 @@ public class SummarizeManagementAgentCountsRequest
             return this;
         }
 
+        /**
+         * The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+         */
         private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentGroupBy>
                 groupBy = null;
 
         /**
          * The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+         * @param groupBy the value to set
          * @return this builder instance
          */
         public Builder groupBy(
@@ -96,16 +122,21 @@ public class SummarizeManagementAgentCountsRequest
 
         /**
          * Singular setter. The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder groupBy(ManagementAgentGroupBy singularValue) {
             return this.groupBy(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
+         */
         private Boolean hasPlugins = null;
 
         /**
          * When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
+         * @param hasPlugins the value to set
          * @return this builder instance
          */
         public Builder hasPlugins(Boolean hasPlugins) {
@@ -113,10 +144,14 @@ public class SummarizeManagementAgentCountsRequest
             return this;
         }
 
+        /**
+         * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+         */
         private com.oracle.bmc.managementagent.model.InstallTypes installType = null;
 
         /**
          * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+         * @param installType the value to set
          * @return this builder instance
          */
         public Builder installType(com.oracle.bmc.managementagent.model.InstallTypes installType) {
@@ -124,10 +159,14 @@ public class SummarizeManagementAgentCountsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -135,10 +174,14 @@ public class SummarizeManagementAgentCountsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -225,7 +268,8 @@ public class SummarizeManagementAgentCountsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -237,6 +281,10 @@ public class SummarizeManagementAgentCountsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

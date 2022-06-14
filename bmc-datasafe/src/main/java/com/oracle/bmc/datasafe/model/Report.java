@@ -60,100 +60,194 @@ public final class Report {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the report.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Name of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Name of the report.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the report definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reportDefinitionId")
         private String reportDefinitionId;
 
+        /**
+         * The OCID of the report definition.
+         * @param reportDefinitionId the value to set
+         * @return this builder
+         **/
         public Builder reportDefinitionId(String reportDefinitionId) {
             this.reportDefinitionId = reportDefinitionId;
             this.__explicitlySet__.add("reportDefinitionId");
             return this;
         }
-
+        /**
+         * Specifies a description of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Specifies a description of the report.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The OCID of the compartment containing the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment containing the report.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Specifies the format of report to be excel or pdf
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
+        /**
+         * Specifies the format of report to be excel or pdf
+         * @param mimeType the value to set
+         * @return this builder
+         **/
         public Builder mimeType(MimeType mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
             return this;
         }
-
+        /**
+         * Specifies the time at which the report was generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
         private java.util.Date timeGenerated;
 
+        /**
+         * Specifies the time at which the report was generated.
+         * @param timeGenerated the value to set
+         * @return this builder
+         **/
         public Builder timeGenerated(java.util.Date timeGenerated) {
             this.timeGenerated = timeGenerated;
             this.__explicitlySet__.add("timeGenerated");
             return this;
         }
-
+        /**
+         * The current state of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ReportLifecycleState lifecycleState;
 
+        /**
+         * The current state of the report.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(ReportLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -218,6 +312,10 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the report.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -228,6 +326,10 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Name of the report.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -238,6 +340,10 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("reportDefinitionId")
     private final String reportDefinitionId;
 
+    /**
+     * The OCID of the report definition.
+     * @return the value
+     **/
     public String getReportDefinitionId() {
         return reportDefinitionId;
     }
@@ -248,6 +354,10 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Specifies a description of the report.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -258,6 +368,10 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment containing the report.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -316,6 +430,10 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
+    /**
+     * Specifies the format of report to be excel or pdf
+     * @return the value
+     **/
     public MimeType getMimeType() {
         return mimeType;
     }
@@ -326,6 +444,10 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
     private final java.util.Date timeGenerated;
 
+    /**
+     * Specifies the time at which the report was generated.
+     * @return the value
+     **/
     public java.util.Date getTimeGenerated() {
         return timeGenerated;
     }
@@ -336,6 +458,10 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ReportLifecycleState lifecycleState;
 
+    /**
+     * The current state of the report.
+     * @return the value
+     **/
     public ReportLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -349,6 +475,13 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -362,6 +495,13 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -374,6 +514,12 @@ public final class Report {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

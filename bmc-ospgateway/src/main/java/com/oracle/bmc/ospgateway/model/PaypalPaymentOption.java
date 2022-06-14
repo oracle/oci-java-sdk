@@ -44,37 +44,65 @@ public final class PaypalPaymentOption extends PaymentOption {
             this.__explicitlySet__.add("walletTransactionId");
             return this;
         }
-
+        /**
+         * The email address of the paypal user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
+        /**
+         * The email address of the paypal user.
+         * @param emailAddress the value to set
+         * @return this builder
+         **/
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
             return this;
         }
-
+        /**
+         * First name of the paypal user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
+        /**
+         * First name of the paypal user.
+         * @param firstName the value to set
+         * @return this builder
+         **/
         public Builder firstName(String firstName) {
             this.firstName = firstName;
             this.__explicitlySet__.add("firstName");
             return this;
         }
-
+        /**
+         * Last name of the paypal user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
+        /**
+         * Last name of the paypal user.
+         * @param lastName the value to set
+         * @return this builder
+         **/
         public Builder lastName(String lastName) {
             this.lastName = lastName;
             this.__explicitlySet__.add("lastName");
             return this;
         }
-
+        /**
+         * Agreement id for the paypal account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extBillingAgreementId")
         private String extBillingAgreementId;
 
+        /**
+         * Agreement id for the paypal account.
+         * @param extBillingAgreementId the value to set
+         * @return this builder
+         **/
         public Builder extBillingAgreementId(String extBillingAgreementId) {
             this.extBillingAgreementId = extBillingAgreementId;
             this.__explicitlySet__.add("extBillingAgreementId");
@@ -144,6 +172,10 @@ public final class PaypalPaymentOption extends PaymentOption {
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
+    /**
+     * The email address of the paypal user.
+     * @return the value
+     **/
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -154,6 +186,10 @@ public final class PaypalPaymentOption extends PaymentOption {
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
+    /**
+     * First name of the paypal user.
+     * @return the value
+     **/
     public String getFirstName() {
         return firstName;
     }
@@ -164,6 +200,10 @@ public final class PaypalPaymentOption extends PaymentOption {
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
+    /**
+     * Last name of the paypal user.
+     * @return the value
+     **/
     public String getLastName() {
         return lastName;
     }
@@ -174,6 +214,10 @@ public final class PaypalPaymentOption extends PaymentOption {
     @com.fasterxml.jackson.annotation.JsonProperty("extBillingAgreementId")
     private final String extBillingAgreementId;
 
+    /**
+     * Agreement id for the paypal account.
+     * @return the value
+     **/
     public String getExtBillingAgreementId() {
         return extBillingAgreementId;
     }

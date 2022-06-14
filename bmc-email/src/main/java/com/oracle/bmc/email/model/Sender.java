@@ -54,81 +54,171 @@ public final class Sender {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID for the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID for the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Email address of the sender.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
+        /**
+         * Email address of the sender.
+         * @param emailAddress the value to set
+         * @return this builder
+         **/
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
             return this;
         }
-
+        /**
+         * The unique OCID of the sender.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique OCID of the sender.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Value of the SPF field. For more information about SPF, please see
+         * [SPF Authentication](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSpf")
         private Boolean isSpf;
 
+        /**
+         * Value of the SPF field. For more information about SPF, please see
+         * [SPF Authentication](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+         *
+         * @param isSpf the value to set
+         * @return this builder
+         **/
         public Builder isSpf(Boolean isSpf) {
             this.isSpf = isSpf;
             this.__explicitlySet__.add("isSpf");
             return this;
         }
-
+        /**
+         * The sender's current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The sender's current lifecycle state.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ"
+         * format with a Z offset, as defined by RFC 3339.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ"
+         * format with a Z offset, as defined by RFC 3339.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The email domain used to assert responsibility for emails sent from this sender.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailDomainId")
         private String emailDomainId;
 
+        /**
+         * The email domain used to assert responsibility for emails sent from this sender.
+         *
+         * @param emailDomainId the value to set
+         * @return this builder
+         **/
         public Builder emailDomainId(String emailDomainId) {
             this.emailDomainId = emailDomainId;
             this.__explicitlySet__.add("emailDomainId");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -190,6 +280,10 @@ public final class Sender {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID for the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -200,6 +294,10 @@ public final class Sender {
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
+    /**
+     * Email address of the sender.
+     * @return the value
+     **/
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -210,6 +308,10 @@ public final class Sender {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique OCID of the sender.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -222,6 +324,12 @@ public final class Sender {
     @com.fasterxml.jackson.annotation.JsonProperty("isSpf")
     private final Boolean isSpf;
 
+    /**
+     * Value of the SPF field. For more information about SPF, please see
+     * [SPF Authentication](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+     *
+     * @return the value
+     **/
     public Boolean getIsSpf() {
         return isSpf;
     }
@@ -282,6 +390,10 @@ public final class Sender {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The sender's current lifecycle state.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -294,6 +406,12 @@ public final class Sender {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ"
+     * format with a Z offset, as defined by RFC 3339.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -305,6 +423,11 @@ public final class Sender {
     @com.fasterxml.jackson.annotation.JsonProperty("emailDomainId")
     private final String emailDomainId;
 
+    /**
+     * The email domain used to assert responsibility for emails sent from this sender.
+     *
+     * @return the value
+     **/
     public String getEmailDomainId() {
         return emailDomainId;
     }
@@ -319,6 +442,14 @@ public final class Sender {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -333,6 +464,14 @@ public final class Sender {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

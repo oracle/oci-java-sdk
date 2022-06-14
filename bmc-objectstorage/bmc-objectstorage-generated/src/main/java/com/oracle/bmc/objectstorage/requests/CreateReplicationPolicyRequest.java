@@ -18,6 +18,9 @@ public class CreateReplicationPolicyRequest
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -28,6 +31,11 @@ public class CreateReplicationPolicyRequest
      */
     private String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -37,6 +45,9 @@ public class CreateReplicationPolicyRequest
     private com.oracle.bmc.objectstorage.model.CreateReplicationPolicyDetails
             createReplicationPolicyDetails;
 
+    /**
+     * The replication policy.
+     */
     public com.oracle.bmc.objectstorage.model.CreateReplicationPolicyDetails
             getCreateReplicationPolicyDetails() {
         return createReplicationPolicyDetails;
@@ -46,6 +57,9 @@ public class CreateReplicationPolicyRequest
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -68,10 +82,14 @@ public class CreateReplicationPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -79,12 +97,18 @@ public class CreateReplicationPolicyRequest
             return this;
         }
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         */
         private String bucketName = null;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
          * Example: {@code my-new-bucket1}
          *
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -92,11 +116,15 @@ public class CreateReplicationPolicyRequest
             return this;
         }
 
+        /**
+         * The replication policy.
+         */
         private com.oracle.bmc.objectstorage.model.CreateReplicationPolicyDetails
                 createReplicationPolicyDetails = null;
 
         /**
          * The replication policy.
+         * @param createReplicationPolicyDetails the value to set
          * @return this builder instance
          */
         public Builder createReplicationPolicyDetails(
@@ -106,10 +134,14 @@ public class CreateReplicationPolicyRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -203,7 +235,8 @@ public class CreateReplicationPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -213,6 +246,10 @@ public class CreateReplicationPolicyRequest
                 .opcClientRequestId(opcClientRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

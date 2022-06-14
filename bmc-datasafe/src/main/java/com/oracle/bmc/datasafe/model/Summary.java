@@ -45,54 +45,97 @@ public final class Summary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the report summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the report summary.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
+        /**
+         * Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+         * @param isHidden the value to set
+         * @return this builder
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-
+        /**
+         * Specifies the order in which the summary must be displayed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
         private Integer displayOrder;
 
+        /**
+         * Specifies the order in which the summary must be displayed.
+         * @param displayOrder the value to set
+         * @return this builder
+         **/
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = displayOrder;
             this.__explicitlySet__.add("displayOrder");
             return this;
         }
-
+        /**
+         * A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupByFieldName")
         private String groupByFieldName;
 
+        /**
+         * A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
+         * @param groupByFieldName the value to set
+         * @return this builder
+         **/
         public Builder groupByFieldName(String groupByFieldName) {
             this.groupByFieldName = groupByFieldName;
             this.__explicitlySet__.add("groupByFieldName");
             return this;
         }
-
+        /**
+         * Name of the key or count of object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countOf")
         private String countOf;
 
+        /**
+         * Name of the key or count of object.
+         * @param countOf the value to set
+         * @return this builder
+         **/
         public Builder countOf(String countOf) {
             this.countOf = countOf;
             this.__explicitlySet__.add("countOf");
             return this;
         }
-
+        /**
+         * Additional scim filters used to get the specific summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
         private String scimFilter;
 
+        /**
+         * Additional scim filters used to get the specific summary.
+         * @param scimFilter the value to set
+         * @return this builder
+         **/
         public Builder scimFilter(String scimFilter) {
             this.scimFilter = scimFilter;
             this.__explicitlySet__.add("scimFilter");
@@ -142,6 +185,10 @@ public final class Summary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the report summary.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -152,6 +199,10 @@ public final class Summary {
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
+    /**
+     * Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+     * @return the value
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
@@ -162,6 +213,10 @@ public final class Summary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
     private final Integer displayOrder;
 
+    /**
+     * Specifies the order in which the summary must be displayed.
+     * @return the value
+     **/
     public Integer getDisplayOrder() {
         return displayOrder;
     }
@@ -172,6 +227,10 @@ public final class Summary {
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFieldName")
     private final String groupByFieldName;
 
+    /**
+     * A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
+     * @return the value
+     **/
     public String getGroupByFieldName() {
         return groupByFieldName;
     }
@@ -182,6 +241,10 @@ public final class Summary {
     @com.fasterxml.jackson.annotation.JsonProperty("countOf")
     private final String countOf;
 
+    /**
+     * Name of the key or count of object.
+     * @return the value
+     **/
     public String getCountOf() {
         return countOf;
     }
@@ -192,6 +255,10 @@ public final class Summary {
     @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
     private final String scimFilter;
 
+    /**
+     * Additional scim filters used to get the specific summary.
+     * @return the value
+     **/
     public String getScimFilter() {
         return scimFilter;
     }

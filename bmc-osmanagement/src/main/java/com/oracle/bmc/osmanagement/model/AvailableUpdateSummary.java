@@ -59,90 +59,161 @@ public final class AvailableUpdateSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Package name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Package name
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Unique identifier for the package available for update. NOTE - This is not an OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Unique identifier for the package available for update. NOTE - This is not an OCID
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The purpose of this update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateTypes updateType;
 
+        /**
+         * The purpose of this update.
+         * @param updateType the value to set
+         * @return this builder
+         **/
         public Builder updateType(UpdateTypes updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-
+        /**
+         * Type of the package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Type of the package
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Version of the installed package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installedVersion")
         private String installedVersion;
 
+        /**
+         * Version of the installed package
+         * @param installedVersion the value to set
+         * @return this builder
+         **/
         public Builder installedVersion(String installedVersion) {
             this.installedVersion = installedVersion;
             this.__explicitlySet__.add("installedVersion");
             return this;
         }
-
+        /**
+         * Version of the package available for update
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableVersion")
         private String availableVersion;
 
+        /**
+         * Version of the package available for update
+         * @param availableVersion the value to set
+         * @return this builder
+         **/
         public Builder availableVersion(String availableVersion) {
             this.availableVersion = availableVersion;
             this.__explicitlySet__.add("availableVersion");
             return this;
         }
-
+        /**
+         * The architecture for which this package was built
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
+        /**
+         * The architecture for which this package was built
+         * @param architecture the value to set
+         * @return this builder
+         **/
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-
+        /**
+         * List of errata containing this update
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errata")
         private java.util.List<Id> errata;
 
+        /**
+         * List of errata containing this update
+         * @param errata the value to set
+         * @return this builder
+         **/
         public Builder errata(java.util.List<Id> errata) {
             this.errata = errata;
             this.__explicitlySet__.add("errata");
             return this;
         }
-
+        /**
+         * List of CVEs applicable to this erratum
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
         private java.util.List<String> relatedCves;
 
+        /**
+         * List of CVEs applicable to this erratum
+         * @param relatedCves the value to set
+         * @return this builder
+         **/
         public Builder relatedCves(java.util.List<String> relatedCves) {
             this.relatedCves = relatedCves;
             this.__explicitlySet__.add("relatedCves");
             return this;
         }
-
+        /**
+         * list of software sources that provide the software package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<SoftwareSourceId> softwareSources;
 
+        /**
+         * list of software sources that provide the software package
+         * @param softwareSources the value to set
+         * @return this builder
+         **/
         public Builder softwareSources(java.util.List<SoftwareSourceId> softwareSources) {
             this.softwareSources = softwareSources;
             this.__explicitlySet__.add("softwareSources");
@@ -205,6 +276,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Package name
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -215,6 +290,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Unique identifier for the package available for update. NOTE - This is not an OCID
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -225,6 +304,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateTypes updateType;
 
+    /**
+     * The purpose of this update.
+     * @return the value
+     **/
     public UpdateTypes getUpdateType() {
         return updateType;
     }
@@ -235,6 +318,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Type of the package
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -245,6 +332,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("installedVersion")
     private final String installedVersion;
 
+    /**
+     * Version of the installed package
+     * @return the value
+     **/
     public String getInstalledVersion() {
         return installedVersion;
     }
@@ -255,6 +346,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availableVersion")
     private final String availableVersion;
 
+    /**
+     * Version of the package available for update
+     * @return the value
+     **/
     public String getAvailableVersion() {
         return availableVersion;
     }
@@ -265,6 +360,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
+    /**
+     * The architecture for which this package was built
+     * @return the value
+     **/
     public String getArchitecture() {
         return architecture;
     }
@@ -275,6 +374,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("errata")
     private final java.util.List<Id> errata;
 
+    /**
+     * List of errata containing this update
+     * @return the value
+     **/
     public java.util.List<Id> getErrata() {
         return errata;
     }
@@ -285,6 +388,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
     private final java.util.List<String> relatedCves;
 
+    /**
+     * List of CVEs applicable to this erratum
+     * @return the value
+     **/
     public java.util.List<String> getRelatedCves() {
         return relatedCves;
     }
@@ -295,6 +402,10 @@ public final class AvailableUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<SoftwareSourceId> softwareSources;
 
+    /**
+     * list of software sources that provide the software package
+     * @return the value
+     **/
     public java.util.List<SoftwareSourceId> getSoftwareSources() {
         return softwareSources;
     }

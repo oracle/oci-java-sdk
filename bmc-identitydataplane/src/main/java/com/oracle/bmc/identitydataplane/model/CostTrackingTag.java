@@ -39,36 +39,65 @@ public final class CostTrackingTag {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The tag namespace id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Id")
         private String tagNamespaceId;
 
+        /**
+         * The tag namespace id.
+         * @param tagNamespaceId the value to set
+         * @return this builder
+         **/
         public Builder tagNamespaceId(String tagNamespaceId) {
             this.tagNamespaceId = tagNamespaceId;
             this.__explicitlySet__.add("tagNamespaceId");
             return this;
         }
-
+        /**
+         * The tag namespace name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Name")
         private String tagNamespaceName;
 
+        /**
+         * The tag namespace name.
+         * @param tagNamespaceName the value to set
+         * @return this builder
+         **/
         public Builder tagNamespaceName(String tagNamespaceName) {
             this.tagNamespaceName = tagNamespaceName;
             this.__explicitlySet__.add("tagNamespaceName");
             return this;
         }
-
+        /**
+         * The tag definition id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Id")
         private String tagDefinitionId;
 
+        /**
+         * The tag definition id.
+         * @param tagDefinitionId the value to set
+         * @return this builder
+         **/
         public Builder tagDefinitionId(String tagDefinitionId) {
             this.tagDefinitionId = tagDefinitionId;
             this.__explicitlySet__.add("tagDefinitionId");
             return this;
         }
-
+        /**
+         * The tag definition name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Name")
         private String tagDefinitionName;
 
+        /**
+         * The tag definition name.
+         * @param tagDefinitionName the value to set
+         * @return this builder
+         **/
         public Builder tagDefinitionName(String tagDefinitionName) {
             this.tagDefinitionName = tagDefinitionName;
             this.__explicitlySet__.add("tagDefinitionName");
@@ -116,6 +145,10 @@ public final class CostTrackingTag {
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Id")
     private final String tagNamespaceId;
 
+    /**
+     * The tag namespace id.
+     * @return the value
+     **/
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
@@ -126,6 +159,10 @@ public final class CostTrackingTag {
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Name")
     private final String tagNamespaceName;
 
+    /**
+     * The tag namespace name.
+     * @return the value
+     **/
     public String getTagNamespaceName() {
         return tagNamespaceName;
     }
@@ -136,6 +173,10 @@ public final class CostTrackingTag {
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Id")
     private final String tagDefinitionId;
 
+    /**
+     * The tag definition id.
+     * @return the value
+     **/
     public String getTagDefinitionId() {
         return tagDefinitionId;
     }
@@ -146,6 +187,10 @@ public final class CostTrackingTag {
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Name")
     private final String tagDefinitionName;
 
+    /**
+     * The tag definition name.
+     * @return the value
+     **/
     public String getTagDefinitionName() {
         return tagDefinitionName;
     }

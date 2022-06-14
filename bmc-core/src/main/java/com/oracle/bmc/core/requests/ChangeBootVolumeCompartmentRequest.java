@@ -18,6 +18,9 @@ public class ChangeBootVolumeCompartmentRequest
      */
     private String bootVolumeId;
 
+    /**
+     * The OCID of the boot volume.
+     */
     public String getBootVolumeId() {
         return bootVolumeId;
     }
@@ -27,6 +30,9 @@ public class ChangeBootVolumeCompartmentRequest
     private com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails
             changeBootVolumeCompartmentDetails;
 
+    /**
+     * Request to change the compartment of given boot volume.
+     */
     public com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails
             getChangeBootVolumeCompartmentDetails() {
         return changeBootVolumeCompartmentDetails;
@@ -38,6 +44,11 @@ public class ChangeBootVolumeCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,10 +71,14 @@ public class ChangeBootVolumeCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the boot volume.
+         */
         private String bootVolumeId = null;
 
         /**
          * The OCID of the boot volume.
+         * @param bootVolumeId the value to set
          * @return this builder instance
          */
         public Builder bootVolumeId(String bootVolumeId) {
@@ -71,11 +86,15 @@ public class ChangeBootVolumeCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of given boot volume.
+         */
         private com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails
                 changeBootVolumeCompartmentDetails = null;
 
         /**
          * Request to change the compartment of given boot volume.
+         * @param changeBootVolumeCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeBootVolumeCompartmentDetails(
@@ -85,12 +104,18 @@ public class ChangeBootVolumeCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -181,7 +206,8 @@ public class ChangeBootVolumeCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +216,10 @@ public class ChangeBootVolumeCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

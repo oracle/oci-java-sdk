@@ -44,45 +44,99 @@ public final class UpdateAuditProfileDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The description of the audit profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the audit profile.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The display name of the audit profile. The name does not have to be unique, and it's changeable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the audit profile. The name does not have to be unique, and it's changeable.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
+         * potentially incurring additional charges. The default value is inherited from the global settings.
+         * You can change at the global level or at the target level.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsageEnabled")
         private Boolean isPaidUsageEnabled;
 
+        /**
+         * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
+         * potentially incurring additional charges. The default value is inherited from the global settings.
+         * You can change at the global level or at the target level.
+         *
+         * @param isPaidUsageEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPaidUsageEnabled(Boolean isPaidUsageEnabled) {
             this.isPaidUsageEnabled = isPaidUsageEnabled;
             this.__explicitlySet__.add("isPaidUsageEnabled");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -136,6 +190,10 @@ public final class UpdateAuditProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the audit profile.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -146,6 +204,10 @@ public final class UpdateAuditProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the audit profile. The name does not have to be unique, and it's changeable.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -159,6 +221,13 @@ public final class UpdateAuditProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsageEnabled")
     private final Boolean isPaidUsageEnabled;
 
+    /**
+     * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
+     * potentially incurring additional charges. The default value is inherited from the global settings.
+     * You can change at the global level or at the target level.
+     *
+     * @return the value
+     **/
     public Boolean getIsPaidUsageEnabled() {
         return isPaidUsageEnabled;
     }
@@ -172,6 +241,13 @@ public final class UpdateAuditProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -185,6 +261,13 @@ public final class UpdateAuditProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

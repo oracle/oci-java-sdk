@@ -25,9 +25,19 @@ package com.oracle.bmc.database.model;
 public final class SelfMountDetails extends MountTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
         private String localMountPointPath;
 
+        /**
+         * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+         *
+         * @param localMountPointPath the value to set
+         * @return this builder
+         **/
         public Builder localMountPointPath(String localMountPointPath) {
             this.localMountPointPath = localMountPointPath;
             this.__explicitlySet__.add("localMountPointPath");
@@ -76,6 +86,11 @@ public final class SelfMountDetails extends MountTypeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
     private final String localMountPointPath;
 
+    /**
+     * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+     *
+     * @return the value
+     **/
     public String getLocalMountPointPath() {
         return localMountPointPath;
     }

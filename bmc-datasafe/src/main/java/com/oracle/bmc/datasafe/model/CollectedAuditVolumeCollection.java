@@ -29,9 +29,17 @@ public final class CollectedAuditVolumeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of collected audit volume summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<CollectedAuditVolumeSummary> items;
 
+        /**
+         * Array of collected audit volume summary.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<CollectedAuditVolumeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class CollectedAuditVolumeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<CollectedAuditVolumeSummary> items;
 
+    /**
+     * Array of collected audit volume summary.
+     * @return the value
+     **/
     public java.util.List<CollectedAuditVolumeSummary> getItems() {
         return items;
     }

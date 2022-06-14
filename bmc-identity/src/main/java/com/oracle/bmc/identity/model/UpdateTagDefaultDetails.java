@@ -30,18 +30,51 @@ public final class UpdateTagDefaultDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The default value for the tag definition. This will be applied to all resources created in the Compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The default value for the tag definition. This will be applied to all resources created in the Compartment.
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * If you specify that a value is required, a value is set during resource creation (either by
+         * the user creating the resource or another tag defualt). If no value is set, resource
+         * creation is blocked.
+         * <p>
+         * If the {@code isRequired} flag is set to "true", the value is set during resource creation.
+         * * If the {@code isRequired} flag is set to "false", the value you enter is set during resource creation.
+         * <p>
+         * Example: {@code false}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
+        /**
+         * If you specify that a value is required, a value is set during resource creation (either by
+         * the user creating the resource or another tag defualt). If no value is set, resource
+         * creation is blocked.
+         * <p>
+         * If the {@code isRequired} flag is set to "true", the value is set during resource creation.
+         * * If the {@code isRequired} flag is set to "false", the value you enter is set during resource creation.
+         * <p>
+         * Example: {@code false}
+         *
+         * @param isRequired the value to set
+         * @return this builder
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
@@ -84,6 +117,11 @@ public final class UpdateTagDefaultDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The default value for the tag definition. This will be applied to all resources created in the Compartment.
+     *
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -102,6 +140,18 @@ public final class UpdateTagDefaultDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
+    /**
+     * If you specify that a value is required, a value is set during resource creation (either by
+     * the user creating the resource or another tag defualt). If no value is set, resource
+     * creation is blocked.
+     * <p>
+     * If the {@code isRequired} flag is set to "true", the value is set during resource creation.
+     * * If the {@code isRequired} flag is set to "false", the value you enter is set during resource creation.
+     * <p>
+     * Example: {@code false}
+     *
+     * @return the value
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }

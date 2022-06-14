@@ -42,36 +42,65 @@ public final class AutonomousDatabaseStandbySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lagTimeInSeconds")
         private Integer lagTimeInSeconds;
 
+        /**
+         * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+         * @param lagTimeInSeconds the value to set
+         * @return this builder
+         **/
         public Builder lagTimeInSeconds(Integer lagTimeInSeconds) {
             this.lagTimeInSeconds = lagTimeInSeconds;
             this.__explicitlySet__.add("lagTimeInSeconds");
             return this;
         }
-
+        /**
+         * The current state of the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the Autonomous Database.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current lifecycle state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
         private java.util.Date timeDataGuardRoleChanged;
 
+        /**
+         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+         * @param timeDataGuardRoleChanged the value to set
+         * @return this builder
+         **/
         public Builder timeDataGuardRoleChanged(java.util.Date timeDataGuardRoleChanged) {
             this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             this.__explicitlySet__.add("timeDataGuardRoleChanged");
@@ -122,6 +151,10 @@ public final class AutonomousDatabaseStandbySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lagTimeInSeconds")
     private final Integer lagTimeInSeconds;
 
+    /**
+     * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+     * @return the value
+     **/
     public Integer getLagTimeInSeconds() {
         return lagTimeInSeconds;
     }
@@ -199,6 +232,10 @@ public final class AutonomousDatabaseStandbySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the Autonomous Database.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -209,6 +246,10 @@ public final class AutonomousDatabaseStandbySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current lifecycle state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -219,6 +260,10 @@ public final class AutonomousDatabaseStandbySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
     private final java.util.Date timeDataGuardRoleChanged;
 
+    /**
+     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+     * @return the value
+     **/
     public java.util.Date getTimeDataGuardRoleChanged() {
         return timeDataGuardRoleChanged;
     }

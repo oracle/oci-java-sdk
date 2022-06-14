@@ -16,6 +16,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String datasetId;
 
+    /**
+     * Filter the results by the OCID of the dataset.
+     */
     public String getDatasetId() {
         return datasetId;
     }
@@ -33,6 +39,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
     private com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
             lifecycleState;
 
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -42,6 +51,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String id;
 
+    /**
+     * The unique OCID identifier.
+     */
     public String getId() {
         return id;
     }
@@ -50,6 +62,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String updatedBy;
 
+    /**
+     * The OCID of the principal which updated the annotation.
+     */
     public String getUpdatedBy() {
         return updatedBy;
     }
@@ -58,6 +73,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String recordId;
 
+    /**
+     * The OCID of the record annotated.
+     */
     public String getRecordId() {
         return recordId;
     }
@@ -67,6 +85,10 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * The date and time the resource was created, in the timestamp format defined by RFC3339.
+     *
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -76,6 +98,10 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private java.util.Date timeCreatedLessThanOrEqualTo;
 
+    /**
+     * The date and time the resource was created, in the timestamp format defined by RFC3339.
+     *
+     */
     public java.util.Date getTimeCreatedLessThanOrEqualTo() {
         return timeCreatedLessThanOrEqualTo;
     }
@@ -84,6 +110,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -92,6 +121,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -100,6 +132,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.datalabelingservicedataplane.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -144,6 +179,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. If no value is specified timeCreated is used by default.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -152,6 +190,9 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -163,10 +204,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -174,10 +219,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Filter the results by the OCID of the dataset.
+         */
         private String datasetId = null;
 
         /**
          * Filter the results by the OCID of the dataset.
+         * @param datasetId the value to set
          * @return this builder instance
          */
         public Builder datasetId(String datasetId) {
@@ -185,11 +234,15 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         */
         private com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
                 lifecycleState = null;
 
         /**
          * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -199,10 +252,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The unique OCID identifier.
+         */
         private String id = null;
 
         /**
          * The unique OCID identifier.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -210,10 +267,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The OCID of the principal which updated the annotation.
+         */
         private String updatedBy = null;
 
         /**
          * The OCID of the principal which updated the annotation.
+         * @param updatedBy the value to set
          * @return this builder instance
          */
         public Builder updatedBy(String updatedBy) {
@@ -221,10 +282,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The OCID of the record annotated.
+         */
         private String recordId = null;
 
         /**
          * The OCID of the record annotated.
+         * @param recordId the value to set
          * @return this builder instance
          */
         public Builder recordId(String recordId) {
@@ -232,11 +297,16 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The date and time the resource was created, in the timestamp format defined by RFC3339.
+         *
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
          * The date and time the resource was created, in the timestamp format defined by RFC3339.
          *
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedGreaterThanOrEqualTo(
@@ -245,11 +315,16 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The date and time the resource was created, in the timestamp format defined by RFC3339.
+         *
+         */
         private java.util.Date timeCreatedLessThanOrEqualTo = null;
 
         /**
          * The date and time the resource was created, in the timestamp format defined by RFC3339.
          *
+         * @param timeCreatedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedLessThanOrEqualTo(java.util.Date timeCreatedLessThanOrEqualTo) {
@@ -257,10 +332,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -268,10 +347,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -279,10 +362,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(
@@ -291,10 +378,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. If no value is specified timeCreated is used by default.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. If no value is specified timeCreated is used by default.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -302,10 +393,14 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -405,7 +500,8 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -424,6 +520,10 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

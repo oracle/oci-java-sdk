@@ -42,45 +42,81 @@ public final class Anomaly {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of a signal where current anomaly point belongs to
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signalName")
         private String signalName;
 
+        /**
+         * Name of a signal where current anomaly point belongs to
+         * @param signalName the value to set
+         * @return this builder
+         **/
         public Builder signalName(String signalName) {
             this.signalName = signalName;
             this.__explicitlySet__.add("signalName");
             return this;
         }
-
+        /**
+         * The actual value for the anomaly point at given signal and timestamp/row
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actualValue")
         private Double actualValue;
 
+        /**
+         * The actual value for the anomaly point at given signal and timestamp/row
+         * @param actualValue the value to set
+         * @return this builder
+         **/
         public Builder actualValue(Double actualValue) {
             this.actualValue = actualValue;
             this.__explicitlySet__.add("actualValue");
             return this;
         }
-
+        /**
+         * The estimated value for the anomaly point at given signal and timestamp/row
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedValue")
         private Double estimatedValue;
 
+        /**
+         * The estimated value for the anomaly point at given signal and timestamp/row
+         * @param estimatedValue the value to set
+         * @return this builder
+         **/
         public Builder estimatedValue(Double estimatedValue) {
             this.estimatedValue = estimatedValue;
             this.__explicitlySet__.add("estimatedValue");
             return this;
         }
-
+        /**
+         * The value imputed by one of IDP step for missing values in origin data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imputedValue")
         private Double imputedValue;
 
+        /**
+         * The value imputed by one of IDP step for missing values in origin data
+         * @param imputedValue the value to set
+         * @return this builder
+         **/
         public Builder imputedValue(Double imputedValue) {
             this.imputedValue = imputedValue;
             this.__explicitlySet__.add("imputedValue");
             return this;
         }
-
+        /**
+         * A significant score ranged from 0 to 1 to each anomaly point
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("anomalyScore")
         private Double anomalyScore;
 
+        /**
+         * A significant score ranged from 0 to 1 to each anomaly point
+         * @param anomalyScore the value to set
+         * @return this builder
+         **/
         public Builder anomalyScore(Double anomalyScore) {
             this.anomalyScore = anomalyScore;
             this.__explicitlySet__.add("anomalyScore");
@@ -129,6 +165,10 @@ public final class Anomaly {
     @com.fasterxml.jackson.annotation.JsonProperty("signalName")
     private final String signalName;
 
+    /**
+     * Name of a signal where current anomaly point belongs to
+     * @return the value
+     **/
     public String getSignalName() {
         return signalName;
     }
@@ -139,6 +179,10 @@ public final class Anomaly {
     @com.fasterxml.jackson.annotation.JsonProperty("actualValue")
     private final Double actualValue;
 
+    /**
+     * The actual value for the anomaly point at given signal and timestamp/row
+     * @return the value
+     **/
     public Double getActualValue() {
         return actualValue;
     }
@@ -149,6 +193,10 @@ public final class Anomaly {
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedValue")
     private final Double estimatedValue;
 
+    /**
+     * The estimated value for the anomaly point at given signal and timestamp/row
+     * @return the value
+     **/
     public Double getEstimatedValue() {
         return estimatedValue;
     }
@@ -159,6 +207,10 @@ public final class Anomaly {
     @com.fasterxml.jackson.annotation.JsonProperty("imputedValue")
     private final Double imputedValue;
 
+    /**
+     * The value imputed by one of IDP step for missing values in origin data
+     * @return the value
+     **/
     public Double getImputedValue() {
         return imputedValue;
     }
@@ -169,6 +221,10 @@ public final class Anomaly {
     @com.fasterxml.jackson.annotation.JsonProperty("anomalyScore")
     private final Double anomalyScore;
 
+    /**
+     * A significant score ranged from 0 to 1 to each anomaly point
+     * @return the value
+     **/
     public Double getAnomalyScore() {
         return anomalyScore;
     }

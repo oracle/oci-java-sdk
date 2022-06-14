@@ -17,6 +17,9 @@ public class UpdateSkillRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -25,6 +28,9 @@ public class UpdateSkillRequest
      */
     private String skillId;
 
+    /**
+     * Unique Skill identifier.
+     */
     public String getSkillId() {
         return skillId;
     }
@@ -33,6 +39,9 @@ public class UpdateSkillRequest
      */
     private com.oracle.bmc.oda.model.UpdateSkillDetails updateSkillDetails;
 
+    /**
+     * Property values to update the Skill.
+     */
     public com.oracle.bmc.oda.model.UpdateSkillDetails getUpdateSkillDetails() {
         return updateSkillDetails;
     }
@@ -47,6 +56,15 @@ public class UpdateSkillRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -55,6 +73,9 @@ public class UpdateSkillRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -76,10 +97,14 @@ public class UpdateSkillRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -87,10 +112,14 @@ public class UpdateSkillRequest
             return this;
         }
 
+        /**
+         * Unique Skill identifier.
+         */
         private String skillId = null;
 
         /**
          * Unique Skill identifier.
+         * @param skillId the value to set
          * @return this builder instance
          */
         public Builder skillId(String skillId) {
@@ -98,10 +127,14 @@ public class UpdateSkillRequest
             return this;
         }
 
+        /**
+         * Property values to update the Skill.
+         */
         private com.oracle.bmc.oda.model.UpdateSkillDetails updateSkillDetails = null;
 
         /**
          * Property values to update the Skill.
+         * @param updateSkillDetails the value to set
          * @return this builder instance
          */
         public Builder updateSkillDetails(
@@ -110,6 +143,15 @@ public class UpdateSkillRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -120,6 +162,7 @@ public class UpdateSkillRequest
          * instance only if the etag that you provide matches the instance's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -127,10 +170,14 @@ public class UpdateSkillRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -225,7 +272,8 @@ public class UpdateSkillRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -236,6 +284,10 @@ public class UpdateSkillRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

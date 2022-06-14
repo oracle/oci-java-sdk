@@ -29,9 +29,17 @@ public final class AssociableEntityCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of entities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AssociableEntity> items;
 
+        /**
+         * An array of entities.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AssociableEntity> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AssociableEntityCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AssociableEntity> items;
 
+    /**
+     * An array of entities.
+     * @return the value
+     **/
     public java.util.List<AssociableEntity> getItems() {
         return items;
     }

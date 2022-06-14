@@ -16,6 +16,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String maskingReportId;
 
+    /**
+     * The OCID of the masking report.
+     */
     public String getMaskingReportId() {
         return maskingReportId;
     }
@@ -24,6 +27,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -32,6 +38,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -76,6 +85,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -122,6 +134,10 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for all the fields is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -130,6 +146,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<String> schemaName;
 
+    /**
+     * A filter to return only items related to specific schema name.
+     */
     public java.util.List<String> getSchemaName() {
         return schemaName;
     }
@@ -138,6 +157,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<String> objectName;
 
+    /**
+     * A filter to return only items related to a specific object name.
+     */
     public java.util.List<String> getObjectName() {
         return objectName;
     }
@@ -146,6 +168,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<String> columnName;
 
+    /**
+     * A filter to return only a specific column based on column name.
+     */
     public java.util.List<String> getColumnName() {
         return columnName;
     }
@@ -191,6 +216,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * A filter to return only items related to a specific object type.
+     */
     public java.util.List<ObjectType> getObjectType() {
         return objectType;
     }
@@ -199,6 +227,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<String> maskingColumnGroup;
 
+    /**
+     * A filter to return only the resources that match the specified masking column group.
+     */
     public java.util.List<String> getMaskingColumnGroup() {
         return maskingColumnGroup;
     }
@@ -207,6 +238,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String sensitiveTypeId;
 
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
@@ -215,6 +249,9 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -226,10 +263,14 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the masking report.
+         */
         private String maskingReportId = null;
 
         /**
          * The OCID of the masking report.
+         * @param maskingReportId the value to set
          * @return this builder instance
          */
         public Builder maskingReportId(String maskingReportId) {
@@ -237,10 +278,14 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -248,10 +293,14 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -259,10 +308,14 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -270,11 +323,16 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order for all the fields is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can specify only one sort order (sortOrder). The default order for all the fields is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -282,10 +340,14 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only items related to specific schema name.
+         */
         private java.util.List<String> schemaName = null;
 
         /**
          * A filter to return only items related to specific schema name.
+         * @param schemaName the value to set
          * @return this builder instance
          */
         public Builder schemaName(java.util.List<String> schemaName) {
@@ -295,16 +357,21 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. A filter to return only items related to specific schema name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder schemaName(String singularValue) {
             return this.schemaName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only items related to a specific object name.
+         */
         private java.util.List<String> objectName = null;
 
         /**
          * A filter to return only items related to a specific object name.
+         * @param objectName the value to set
          * @return this builder instance
          */
         public Builder objectName(java.util.List<String> objectName) {
@@ -314,16 +381,21 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. A filter to return only items related to a specific object name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder objectName(String singularValue) {
             return this.objectName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only a specific column based on column name.
+         */
         private java.util.List<String> columnName = null;
 
         /**
          * A filter to return only a specific column based on column name.
+         * @param columnName the value to set
          * @return this builder instance
          */
         public Builder columnName(java.util.List<String> columnName) {
@@ -333,16 +405,21 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. A filter to return only a specific column based on column name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder columnName(String singularValue) {
             return this.columnName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only items related to a specific object type.
+         */
         private java.util.List<ObjectType> objectType = null;
 
         /**
          * A filter to return only items related to a specific object type.
+         * @param objectType the value to set
          * @return this builder instance
          */
         public Builder objectType(java.util.List<ObjectType> objectType) {
@@ -352,16 +429,21 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. A filter to return only items related to a specific object type.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder objectType(ObjectType singularValue) {
             return this.objectType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only the resources that match the specified masking column group.
+         */
         private java.util.List<String> maskingColumnGroup = null;
 
         /**
          * A filter to return only the resources that match the specified masking column group.
+         * @param maskingColumnGroup the value to set
          * @return this builder instance
          */
         public Builder maskingColumnGroup(java.util.List<String> maskingColumnGroup) {
@@ -371,16 +453,21 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. A filter to return only the resources that match the specified masking column group.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder maskingColumnGroup(String singularValue) {
             return this.maskingColumnGroup(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only items related to a specific sensitive type OCID.
+         */
         private String sensitiveTypeId = null;
 
         /**
          * A filter to return only items related to a specific sensitive type OCID.
+         * @param sensitiveTypeId the value to set
          * @return this builder instance
          */
         public Builder sensitiveTypeId(String sensitiveTypeId) {
@@ -388,10 +475,14 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -489,7 +580,8 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -507,6 +599,10 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

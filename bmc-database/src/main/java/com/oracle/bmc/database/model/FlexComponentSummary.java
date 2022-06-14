@@ -46,36 +46,65 @@ public final class FlexComponentSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the Flex Component used for the DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Flex Component used for the DB system.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
         private Integer minimumCoreCount;
 
+        /**
+         * The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
+         * @param minimumCoreCount the value to set
+         * @return this builder
+         **/
         public Builder minimumCoreCount(Integer minimumCoreCount) {
             this.minimumCoreCount = minimumCoreCount;
             this.__explicitlySet__.add("minimumCoreCount");
             return this;
         }
-
+        /**
+         * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
         private Integer availableCoreCount;
 
+        /**
+         * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
+         * @param availableCoreCount the value to set
+         * @return this builder
+         **/
         public Builder availableCoreCount(Integer availableCoreCount) {
             this.availableCoreCount = availableCoreCount;
             this.__explicitlySet__.add("availableCoreCount");
             return this;
         }
-
+        /**
+         * The maximum  storage that can be enabled on the Storage Server for this Flex Component.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableDbStorageInGBs")
         private Integer availableDbStorageInGBs;
 
+        /**
+         * The maximum  storage that can be enabled on the Storage Server for this Flex Component.
+         * @param availableDbStorageInGBs the value to set
+         * @return this builder
+         **/
         public Builder availableDbStorageInGBs(Integer availableDbStorageInGBs) {
             this.availableDbStorageInGBs = availableDbStorageInGBs;
             this.__explicitlySet__.add("availableDbStorageInGBs");
@@ -123,6 +152,10 @@ public final class FlexComponentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Flex Component used for the DB system.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -133,6 +166,10 @@ public final class FlexComponentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
     private final Integer minimumCoreCount;
 
+    /**
+     * The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
+     * @return the value
+     **/
     public Integer getMinimumCoreCount() {
         return minimumCoreCount;
     }
@@ -143,6 +180,10 @@ public final class FlexComponentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
     private final Integer availableCoreCount;
 
+    /**
+     * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
+     * @return the value
+     **/
     public Integer getAvailableCoreCount() {
         return availableCoreCount;
     }
@@ -153,6 +194,10 @@ public final class FlexComponentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availableDbStorageInGBs")
     private final Integer availableDbStorageInGBs;
 
+    /**
+     * The maximum  storage that can be enabled on the Storage Server for this Flex Component.
+     * @return the value
+     **/
     public Integer getAvailableDbStorageInGBs() {
         return availableDbStorageInGBs;
     }

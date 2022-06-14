@@ -18,6 +18,9 @@ public class UpdateServiceGatewayRequest
      */
     private String serviceGatewayId;
 
+    /**
+     * The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     public String getServiceGatewayId() {
         return serviceGatewayId;
     }
@@ -26,6 +29,9 @@ public class UpdateServiceGatewayRequest
      */
     private com.oracle.bmc.core.model.UpdateServiceGatewayDetails updateServiceGatewayDetails;
 
+    /**
+     * Details object for updating a service gateway.
+     */
     public com.oracle.bmc.core.model.UpdateServiceGatewayDetails getUpdateServiceGatewayDetails() {
         return updateServiceGatewayDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateServiceGatewayRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -59,10 +71,14 @@ public class UpdateServiceGatewayRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         private String serviceGatewayId = null;
 
         /**
          * The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param serviceGatewayId the value to set
          * @return this builder instance
          */
         public Builder serviceGatewayId(String serviceGatewayId) {
@@ -70,11 +86,15 @@ public class UpdateServiceGatewayRequest
             return this;
         }
 
+        /**
+         * Details object for updating a service gateway.
+         */
         private com.oracle.bmc.core.model.UpdateServiceGatewayDetails updateServiceGatewayDetails =
                 null;
 
         /**
          * Details object for updating a service gateway.
+         * @param updateServiceGatewayDetails the value to set
          * @return this builder instance
          */
         public Builder updateServiceGatewayDetails(
@@ -83,6 +103,12 @@ public class UpdateServiceGatewayRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -90,6 +116,7 @@ public class UpdateServiceGatewayRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -180,7 +207,8 @@ public class UpdateServiceGatewayRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +217,10 @@ public class UpdateServiceGatewayRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

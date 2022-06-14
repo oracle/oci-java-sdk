@@ -68,118 +68,238 @@ public final class UpdateEntityDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("businessName")
         private String businessName;
 
+        /**
+         * Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+         * @param businessName the value to set
+         * @return this builder
+         **/
         public Builder businessName(String businessName) {
             this.businessName = businessName;
             this.__explicitlySet__.add("businessName");
             return this;
         }
-
+        /**
+         * Detailed description of a data entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of a data entity.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Last modified timestamp of the object in the external system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
         private java.util.Date timeExternal;
 
+        /**
+         * Last modified timestamp of the object in the external system.
+         * @param timeExternal the value to set
+         * @return this builder
+         **/
         public Builder timeExternal(java.util.Date timeExternal) {
             this.timeExternal = timeExternal;
             this.__explicitlySet__.add("timeExternal");
             return this;
         }
-
+        /**
+         * Property to indicate if the object is a physical materialized object or virtual. For example, View.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLogical")
         private Boolean isLogical;
 
+        /**
+         * Property to indicate if the object is a physical materialized object or virtual. For example, View.
+         * @param isLogical the value to set
+         * @return this builder
+         **/
         public Builder isLogical(Boolean isLogical) {
             this.isLogical = isLogical;
             this.__explicitlySet__.add("isLogical");
             return this;
         }
-
+        /**
+         * Property to indicate if the object is a sub object of a parent physical object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPartition")
         private Boolean isPartition;
 
+        /**
+         * Property to indicate if the object is a sub object of a parent physical object.
+         * @param isPartition the value to set
+         * @return this builder
+         **/
         public Builder isPartition(Boolean isPartition) {
             this.isPartition = isPartition;
             this.__explicitlySet__.add("isPartition");
             return this;
         }
-
+        /**
+         * Key of the associated folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("folderKey")
         private String folderKey;
 
+        /**
+         * Key of the associated folder.
+         * @param folderKey the value to set
+         * @return this builder
+         **/
         public Builder folderKey(String folderKey) {
             this.folderKey = folderKey;
             this.__explicitlySet__.add("folderKey");
             return this;
         }
-
+        /**
+         * Key of the associated pattern if this is a logical entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternKey")
         private String patternKey;
 
+        /**
+         * Key of the associated pattern if this is a logical entity.
+         * @param patternKey the value to set
+         * @return this builder
+         **/
         public Builder patternKey(String patternKey) {
             this.patternKey = patternKey;
             this.__explicitlySet__.add("patternKey");
             return this;
         }
-
+        /**
+         * The expression realized after resolving qualifiers . Used in deriving this logical entity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
         private String realizedExpression;
 
+        /**
+         * The expression realized after resolving qualifiers . Used in deriving this logical entity
+         * @param realizedExpression the value to set
+         * @return this builder
+         **/
         public Builder realizedExpression(String realizedExpression) {
             this.realizedExpression = realizedExpression;
             this.__explicitlySet__.add("realizedExpression");
             return this;
         }
-
+        /**
+         * Status of the object as updated by the harvest process. When an entity object is created, it's harvest status
+         * will indicate if the entity's metadata has been fully harvested or not. The harvest process can perform
+         * shallow harvesting to allow users to browse the metadata and can on-demand deep harvest on any object
+         * This requires a harvest status indicator for catalog objects.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("harvestStatus")
         private HarvestStatus harvestStatus;
 
+        /**
+         * Status of the object as updated by the harvest process. When an entity object is created, it's harvest status
+         * will indicate if the entity's metadata has been fully harvested or not. The harvest process can perform
+         * shallow harvesting to allow users to browse the metadata and can on-demand deep harvest on any object
+         * This requires a harvest status indicator for catalog objects.
+         *
+         * @param harvestStatus the value to set
+         * @return this builder
+         **/
         public Builder harvestStatus(HarvestStatus harvestStatus) {
             this.harvestStatus = harvestStatus;
             this.__explicitlySet__.add("harvestStatus");
             return this;
         }
-
+        /**
+         * Key of the last harvest process to update this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastJobKey")
         private String lastJobKey;
 
+        /**
+         * Key of the last harvest process to update this object.
+         * @param lastJobKey the value to set
+         * @return this builder
+         **/
         public Builder lastJobKey(String lastJobKey) {
             this.lastJobKey = lastJobKey;
             this.__explicitlySet__.add("lastJobKey");
             return this;
         }
-
+        /**
+         * The list of customized properties along with the values for this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
         private java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+        /**
+         * The list of customized properties along with the values for this object
+         * @param customPropertyMembers the value to set
+         * @return this builder
+         **/
         public Builder customPropertyMembers(
                 java.util.List<CustomPropertySetUsage> customPropertyMembers) {
             this.customPropertyMembers = customPropertyMembers;
             this.__explicitlySet__.add("customPropertyMembers");
             return this;
         }
-
+        /**
+         * A map of maps that contains the properties which are specific to the entity type. Each entity type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * entities have required properties within the "default" category. To determine the set of required and
+         * optional properties for an entity type, a query can be done on '/types?type=dataEntity' that returns a
+         * collection of all entity types. The appropriate entity type, which includes definitions of all of
+         * it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
+        /**
+         * A map of maps that contains the properties which are specific to the entity type. Each entity type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * entities have required properties within the "default" category. To determine the set of required and
+         * optional properties for an entity type, a query can be done on '/types?type=dataEntity' that returns a
+         * collection of all entity types. The appropriate entity type, which includes definitions of all of
+         * it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+         *
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -250,6 +370,12 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -260,6 +386,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("businessName")
     private final String businessName;
 
+    /**
+     * Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+     * @return the value
+     **/
     public String getBusinessName() {
         return businessName;
     }
@@ -270,6 +400,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of a data entity.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -280,6 +414,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
     private final java.util.Date timeExternal;
 
+    /**
+     * Last modified timestamp of the object in the external system.
+     * @return the value
+     **/
     public java.util.Date getTimeExternal() {
         return timeExternal;
     }
@@ -290,6 +428,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isLogical")
     private final Boolean isLogical;
 
+    /**
+     * Property to indicate if the object is a physical materialized object or virtual. For example, View.
+     * @return the value
+     **/
     public Boolean getIsLogical() {
         return isLogical;
     }
@@ -300,6 +442,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPartition")
     private final Boolean isPartition;
 
+    /**
+     * Property to indicate if the object is a sub object of a parent physical object.
+     * @return the value
+     **/
     public Boolean getIsPartition() {
         return isPartition;
     }
@@ -310,6 +456,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("folderKey")
     private final String folderKey;
 
+    /**
+     * Key of the associated folder.
+     * @return the value
+     **/
     public String getFolderKey() {
         return folderKey;
     }
@@ -320,6 +470,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("patternKey")
     private final String patternKey;
 
+    /**
+     * Key of the associated pattern if this is a logical entity.
+     * @return the value
+     **/
     public String getPatternKey() {
         return patternKey;
     }
@@ -330,6 +484,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
     private final String realizedExpression;
 
+    /**
+     * The expression realized after resolving qualifiers . Used in deriving this logical entity
+     * @return the value
+     **/
     public String getRealizedExpression() {
         return realizedExpression;
     }
@@ -344,6 +502,14 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("harvestStatus")
     private final HarvestStatus harvestStatus;
 
+    /**
+     * Status of the object as updated by the harvest process. When an entity object is created, it's harvest status
+     * will indicate if the entity's metadata has been fully harvested or not. The harvest process can perform
+     * shallow harvesting to allow users to browse the metadata and can on-demand deep harvest on any object
+     * This requires a harvest status indicator for catalog objects.
+     *
+     * @return the value
+     **/
     public HarvestStatus getHarvestStatus() {
         return harvestStatus;
     }
@@ -354,6 +520,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lastJobKey")
     private final String lastJobKey;
 
+    /**
+     * Key of the last harvest process to update this object.
+     * @return the value
+     **/
     public String getLastJobKey() {
         return lastJobKey;
     }
@@ -364,6 +534,10 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
     private final java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+    /**
+     * The list of customized properties along with the values for this object
+     * @return the value
+     **/
     public java.util.List<CustomPropertySetUsage> getCustomPropertyMembers() {
         return customPropertyMembers;
     }
@@ -382,6 +556,18 @@ public final class UpdateEntityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
+    /**
+     * A map of maps that contains the properties which are specific to the entity type. Each entity type
+     * definition defines it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * entities have required properties within the "default" category. To determine the set of required and
+     * optional properties for an entity type, a query can be done on '/types?type=dataEntity' that returns a
+     * collection of all entity types. The appropriate entity type, which includes definitions of all of
+     * it's properties, can be identified from this collection.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }

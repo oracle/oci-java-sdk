@@ -18,6 +18,9 @@ public class UpdateAuditPolicyRequest
      */
     private String auditPolicyId;
 
+    /**
+     * Unique audit policy identifier.
+     */
     public String getAuditPolicyId() {
         return auditPolicyId;
     }
@@ -26,6 +29,9 @@ public class UpdateAuditPolicyRequest
      */
     private com.oracle.bmc.datasafe.model.UpdateAuditPolicyDetails updateAuditPolicyDetails;
 
+    /**
+     * Details to update the audit policy.
+     */
     public com.oracle.bmc.datasafe.model.UpdateAuditPolicyDetails getUpdateAuditPolicyDetails() {
         return updateAuditPolicyDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateAuditPolicyRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +61,9 @@ public class UpdateAuditPolicyRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,10 +86,14 @@ public class UpdateAuditPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique audit policy identifier.
+         */
         private String auditPolicyId = null;
 
         /**
          * Unique audit policy identifier.
+         * @param auditPolicyId the value to set
          * @return this builder instance
          */
         public Builder auditPolicyId(String auditPolicyId) {
@@ -80,11 +101,15 @@ public class UpdateAuditPolicyRequest
             return this;
         }
 
+        /**
+         * Details to update the audit policy.
+         */
         private com.oracle.bmc.datasafe.model.UpdateAuditPolicyDetails updateAuditPolicyDetails =
                 null;
 
         /**
          * Details to update the audit policy.
+         * @param updateAuditPolicyDetails the value to set
          * @return this builder instance
          */
         public Builder updateAuditPolicyDetails(
@@ -93,6 +118,14 @@ public class UpdateAuditPolicyRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -102,6 +135,7 @@ public class UpdateAuditPolicyRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -109,10 +143,14 @@ public class UpdateAuditPolicyRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -205,7 +243,8 @@ public class UpdateAuditPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +254,10 @@ public class UpdateAuditPolicyRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

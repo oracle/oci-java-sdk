@@ -30,18 +30,33 @@ public final class OCPUs {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCpu")
         private Float totalCpu;
 
+        /**
+         * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
+         * @param totalCpu the value to set
+         * @return this builder
+         **/
         public Builder totalCpu(Float totalCpu) {
             this.totalCpu = totalCpu;
             this.__explicitlySet__.add("totalCpu");
             return this;
         }
-
+        /**
+         * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumedCpu")
         private Float consumedCpu;
 
+        /**
+         * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
+         * @param consumedCpu the value to set
+         * @return this builder
+         **/
         public Builder consumedCpu(Float consumedCpu) {
             this.consumedCpu = consumedCpu;
             this.__explicitlySet__.add("consumedCpu");
@@ -95,6 +110,10 @@ public final class OCPUs {
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpu")
     private final Float totalCpu;
 
+    /**
+     * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
+     * @return the value
+     **/
     public Float getTotalCpu() {
         return totalCpu;
     }
@@ -105,6 +124,10 @@ public final class OCPUs {
     @com.fasterxml.jackson.annotation.JsonProperty("consumedCpu")
     private final Float consumedCpu;
 
+    /**
+     * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
+     * @return the value
+     **/
     public Float getConsumedCpu() {
         return consumedCpu;
     }

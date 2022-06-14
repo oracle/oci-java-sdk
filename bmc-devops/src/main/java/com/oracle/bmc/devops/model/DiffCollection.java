@@ -27,9 +27,17 @@ public final class DiffCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of objects describing differences for all changed files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DiffSummary> items;
 
+        /**
+         * List of objects describing differences for all changed files.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DiffSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class DiffCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DiffSummary> items;
 
+    /**
+     * List of objects describing differences for all changed files.
+     * @return the value
+     **/
     public java.util.List<DiffSummary> getItems() {
         return items;
     }

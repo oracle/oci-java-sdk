@@ -16,6 +16,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String waasPolicyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     */
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
@@ -24,6 +27,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 20}.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
@@ -48,6 +60,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.Date timeObservedGreaterThanOrEqualTo;
 
+    /**
+     * A filter that matches log entries where the observed event occurred on or after a date and time specified in RFC 3339 format. If unspecified, defaults to two hours before receipt of the request.
+     */
     public java.util.Date getTimeObservedGreaterThanOrEqualTo() {
         return timeObservedGreaterThanOrEqualTo;
     }
@@ -56,6 +71,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.Date timeObservedLessThan;
 
+    /**
+     * A filter that matches log entries where the observed event occurred before a date and time, specified in RFC 3339 format.
+     */
     public java.util.Date getTimeObservedLessThan() {
         return timeObservedLessThan;
     }
@@ -64,6 +82,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String textContains;
 
+    /**
+     * A full text search for logs.
+     */
     public String getTextContains() {
         return textContains;
     }
@@ -72,6 +93,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> accessRuleKey;
 
+    /**
+     * Filters logs by access rule key.
+     */
     public java.util.List<String> getAccessRuleKey() {
         return accessRuleKey;
     }
@@ -119,6 +143,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Filters logs by Web Application Firewall action.
+     */
     public java.util.List<Action> getAction() {
         return action;
     }
@@ -127,6 +154,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> clientAddress;
 
+    /**
+     * Filters logs by client IP address.
+     */
     public java.util.List<String> getClientAddress() {
         return clientAddress;
     }
@@ -135,6 +165,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> countryCode;
 
+    /**
+     * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     */
     public java.util.List<String> getCountryCode() {
         return countryCode;
     }
@@ -143,6 +176,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> countryName;
 
+    /**
+     * Filter logs by country name.
+     */
     public java.util.List<String> getCountryName() {
         return countryName;
     }
@@ -151,6 +187,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> fingerprint;
 
+    /**
+     * Filter logs by device fingerprint.
+     */
     public java.util.List<String> getFingerprint() {
         return fingerprint;
     }
@@ -201,6 +240,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Filter logs by HTTP method.
+     */
     public java.util.List<HttpMethod> getHttpMethod() {
         return httpMethod;
     }
@@ -209,6 +251,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> incidentKey;
 
+    /**
+     * Filter logs by incident key.
+     */
     public java.util.List<String> getIncidentKey() {
         return incidentKey;
     }
@@ -260,6 +305,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Filter by log type. For more information about WAF logs, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+     */
     public java.util.List<LogType> getLogType() {
         return logType;
     }
@@ -268,6 +316,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> originAddress;
 
+    /**
+     * Filter by origin IP address.
+     */
     public java.util.List<String> getOriginAddress() {
         return originAddress;
     }
@@ -276,6 +327,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> referrer;
 
+    /**
+     * Filter by referrer.
+     */
     public java.util.List<String> getReferrer() {
         return referrer;
     }
@@ -284,6 +338,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> requestUrl;
 
+    /**
+     * Filter by request URL.
+     */
     public java.util.List<String> getRequestUrl() {
         return requestUrl;
     }
@@ -292,6 +349,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<Integer> responseCode;
 
+    /**
+     * Filter by response code.
+     */
     public java.util.List<Integer> getResponseCode() {
         return responseCode;
     }
@@ -300,6 +360,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> threatFeedKey;
 
+    /**
+     * Filter by threat feed key.
+     */
     public java.util.List<String> getThreatFeedKey() {
         return threatFeedKey;
     }
@@ -308,6 +371,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> userAgent;
 
+    /**
+     * Filter by user agent.
+     */
     public java.util.List<String> getUserAgent() {
         return userAgent;
     }
@@ -316,6 +382,9 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> protectionRuleKey;
 
+    /**
+     * Filter by protection rule key.
+     */
     public java.util.List<String> getProtectionRuleKey() {
         return protectionRuleKey;
     }
@@ -327,10 +396,14 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         */
         private String waasPolicyId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         * @param waasPolicyId the value to set
          * @return this builder instance
          */
         public Builder waasPolicyId(String waasPolicyId) {
@@ -338,10 +411,14 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -349,10 +426,14 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 20}.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 20}.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -360,10 +441,14 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous paginated call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -371,10 +456,14 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter that matches log entries where the observed event occurred on or after a date and time specified in RFC 3339 format. If unspecified, defaults to two hours before receipt of the request.
+         */
         private java.util.Date timeObservedGreaterThanOrEqualTo = null;
 
         /**
          * A filter that matches log entries where the observed event occurred on or after a date and time specified in RFC 3339 format. If unspecified, defaults to two hours before receipt of the request.
+         * @param timeObservedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeObservedGreaterThanOrEqualTo(
@@ -383,10 +472,14 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter that matches log entries where the observed event occurred before a date and time, specified in RFC 3339 format.
+         */
         private java.util.Date timeObservedLessThan = null;
 
         /**
          * A filter that matches log entries where the observed event occurred before a date and time, specified in RFC 3339 format.
+         * @param timeObservedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeObservedLessThan(java.util.Date timeObservedLessThan) {
@@ -394,10 +487,14 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A full text search for logs.
+         */
         private String textContains = null;
 
         /**
          * A full text search for logs.
+         * @param textContains the value to set
          * @return this builder instance
          */
         public Builder textContains(String textContains) {
@@ -405,10 +502,14 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Filters logs by access rule key.
+         */
         private java.util.List<String> accessRuleKey = null;
 
         /**
          * Filters logs by access rule key.
+         * @param accessRuleKey the value to set
          * @return this builder instance
          */
         public Builder accessRuleKey(java.util.List<String> accessRuleKey) {
@@ -418,16 +519,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filters logs by access rule key.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder accessRuleKey(String singularValue) {
             return this.accessRuleKey(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filters logs by Web Application Firewall action.
+         */
         private java.util.List<Action> action = null;
 
         /**
          * Filters logs by Web Application Firewall action.
+         * @param action the value to set
          * @return this builder instance
          */
         public Builder action(java.util.List<Action> action) {
@@ -437,16 +543,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filters logs by Web Application Firewall action.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder action(Action singularValue) {
             return this.action(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filters logs by client IP address.
+         */
         private java.util.List<String> clientAddress = null;
 
         /**
          * Filters logs by client IP address.
+         * @param clientAddress the value to set
          * @return this builder instance
          */
         public Builder clientAddress(java.util.List<String> clientAddress) {
@@ -456,16 +567,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filters logs by client IP address.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder clientAddress(String singularValue) {
             return this.clientAddress(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         */
         private java.util.List<String> countryCode = null;
 
         /**
          * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         * @param countryCode the value to set
          * @return this builder instance
          */
         public Builder countryCode(java.util.List<String> countryCode) {
@@ -475,16 +591,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder countryCode(String singularValue) {
             return this.countryCode(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter logs by country name.
+         */
         private java.util.List<String> countryName = null;
 
         /**
          * Filter logs by country name.
+         * @param countryName the value to set
          * @return this builder instance
          */
         public Builder countryName(java.util.List<String> countryName) {
@@ -494,16 +615,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter logs by country name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder countryName(String singularValue) {
             return this.countryName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter logs by device fingerprint.
+         */
         private java.util.List<String> fingerprint = null;
 
         /**
          * Filter logs by device fingerprint.
+         * @param fingerprint the value to set
          * @return this builder instance
          */
         public Builder fingerprint(java.util.List<String> fingerprint) {
@@ -513,16 +639,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter logs by device fingerprint.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fingerprint(String singularValue) {
             return this.fingerprint(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter logs by HTTP method.
+         */
         private java.util.List<HttpMethod> httpMethod = null;
 
         /**
          * Filter logs by HTTP method.
+         * @param httpMethod the value to set
          * @return this builder instance
          */
         public Builder httpMethod(java.util.List<HttpMethod> httpMethod) {
@@ -532,16 +663,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter logs by HTTP method.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder httpMethod(HttpMethod singularValue) {
             return this.httpMethod(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter logs by incident key.
+         */
         private java.util.List<String> incidentKey = null;
 
         /**
          * Filter logs by incident key.
+         * @param incidentKey the value to set
          * @return this builder instance
          */
         public Builder incidentKey(java.util.List<String> incidentKey) {
@@ -551,16 +687,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter logs by incident key.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder incidentKey(String singularValue) {
             return this.incidentKey(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by log type. For more information about WAF logs, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         */
         private java.util.List<LogType> logType = null;
 
         /**
          * Filter by log type. For more information about WAF logs, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * @param logType the value to set
          * @return this builder instance
          */
         public Builder logType(java.util.List<LogType> logType) {
@@ -570,16 +711,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by log type. For more information about WAF logs, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder logType(LogType singularValue) {
             return this.logType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by origin IP address.
+         */
         private java.util.List<String> originAddress = null;
 
         /**
          * Filter by origin IP address.
+         * @param originAddress the value to set
          * @return this builder instance
          */
         public Builder originAddress(java.util.List<String> originAddress) {
@@ -589,16 +735,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by origin IP address.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder originAddress(String singularValue) {
             return this.originAddress(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by referrer.
+         */
         private java.util.List<String> referrer = null;
 
         /**
          * Filter by referrer.
+         * @param referrer the value to set
          * @return this builder instance
          */
         public Builder referrer(java.util.List<String> referrer) {
@@ -608,16 +759,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by referrer.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder referrer(String singularValue) {
             return this.referrer(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by request URL.
+         */
         private java.util.List<String> requestUrl = null;
 
         /**
          * Filter by request URL.
+         * @param requestUrl the value to set
          * @return this builder instance
          */
         public Builder requestUrl(java.util.List<String> requestUrl) {
@@ -627,16 +783,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by request URL.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder requestUrl(String singularValue) {
             return this.requestUrl(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by response code.
+         */
         private java.util.List<Integer> responseCode = null;
 
         /**
          * Filter by response code.
+         * @param responseCode the value to set
          * @return this builder instance
          */
         public Builder responseCode(java.util.List<Integer> responseCode) {
@@ -646,16 +807,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by response code.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder responseCode(Integer singularValue) {
             return this.responseCode(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by threat feed key.
+         */
         private java.util.List<String> threatFeedKey = null;
 
         /**
          * Filter by threat feed key.
+         * @param threatFeedKey the value to set
          * @return this builder instance
          */
         public Builder threatFeedKey(java.util.List<String> threatFeedKey) {
@@ -665,16 +831,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by threat feed key.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder threatFeedKey(String singularValue) {
             return this.threatFeedKey(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by user agent.
+         */
         private java.util.List<String> userAgent = null;
 
         /**
          * Filter by user agent.
+         * @param userAgent the value to set
          * @return this builder instance
          */
         public Builder userAgent(java.util.List<String> userAgent) {
@@ -684,16 +855,21 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by user agent.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder userAgent(String singularValue) {
             return this.userAgent(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by protection rule key.
+         */
         private java.util.List<String> protectionRuleKey = null;
 
         /**
          * Filter by protection rule key.
+         * @param protectionRuleKey the value to set
          * @return this builder instance
          */
         public Builder protectionRuleKey(java.util.List<String> protectionRuleKey) {
@@ -703,6 +879,7 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by protection rule key.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder protectionRuleKey(String singularValue) {
@@ -821,7 +998,8 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -850,6 +1028,10 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .protectionRuleKey(protectionRuleKey);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

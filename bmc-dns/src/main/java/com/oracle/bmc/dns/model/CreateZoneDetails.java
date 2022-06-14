@@ -66,37 +66,75 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
+         * zones.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
         private ZoneType zoneType;
 
+        /**
+         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
+         * zones.
+         *
+         * @param zoneType the value to set
+         * @return this builder
+         **/
         public Builder zoneType(ZoneType zoneType) {
             this.zoneType = zoneType;
             this.__explicitlySet__.add("zoneType");
             return this;
         }
-
+        /**
+         * This value will be null for zones in the global DNS.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("viewId")
         private String viewId;
 
+        /**
+         * This value will be null for zones in the global DNS.
+         *
+         * @param viewId the value to set
+         * @return this builder
+         **/
         public Builder viewId(String viewId) {
             this.viewId = viewId;
             this.__explicitlySet__.add("viewId");
             return this;
         }
-
+        /**
+         * The scope of the zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
+        /**
+         * The scope of the zone.
+         * @param scope the value to set
+         * @return this builder
+         **/
         public Builder scope(Scope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-
+        /**
+         * External master servers for the zone. {@code externalMasters} becomes a
+         * required parameter when the {@code zoneType} value is {@code SECONDARY}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
         private java.util.List<ExternalMaster> externalMasters;
 
+        /**
+         * External master servers for the zone. {@code externalMasters} becomes a
+         * required parameter when the {@code zoneType} value is {@code SECONDARY}.
+         *
+         * @param externalMasters the value to set
+         * @return this builder
+         **/
         public Builder externalMasters(java.util.List<ExternalMaster> externalMasters) {
             this.externalMasters = externalMasters;
             this.__explicitlySet__.add("externalMasters");
@@ -211,6 +249,12 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
     private final ZoneType zoneType;
 
+    /**
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
+     * zones.
+     *
+     * @return the value
+     **/
     public ZoneType getZoneType() {
         return zoneType;
     }
@@ -222,6 +266,11 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("viewId")
     private final String viewId;
 
+    /**
+     * This value will be null for zones in the global DNS.
+     *
+     * @return the value
+     **/
     public String getViewId() {
         return viewId;
     }
@@ -232,6 +281,10 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
+    /**
+     * The scope of the zone.
+     * @return the value
+     **/
     public Scope getScope() {
         return scope;
     }
@@ -244,6 +297,12 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
     private final java.util.List<ExternalMaster> externalMasters;
 
+    /**
+     * External master servers for the zone. {@code externalMasters} becomes a
+     * required parameter when the {@code zoneType} value is {@code SECONDARY}.
+     *
+     * @return the value
+     **/
     public java.util.List<ExternalMaster> getExternalMasters() {
         return externalMasters;
     }

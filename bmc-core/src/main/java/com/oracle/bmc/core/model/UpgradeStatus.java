@@ -30,27 +30,55 @@ public final class UpgradeStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The {@code drgId} of the upgraded DRG.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
+        /**
+         * The {@code drgId} of the upgraded DRG.
+         *
+         * @param drgId the value to set
+         * @return this builder
+         **/
         public Builder drgId(String drgId) {
             this.drgId = drgId;
             this.__explicitlySet__.add("drgId");
             return this;
         }
-
+        /**
+         * The current upgrade status of the DRG attachment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The current upgrade status of the DRG attachment.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The number of upgraded connections.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upgradedConnections")
         private String upgradedConnections;
 
+        /**
+         * The number of upgraded connections.
+         *
+         * @param upgradedConnections the value to set
+         * @return this builder
+         **/
         public Builder upgradedConnections(String upgradedConnections) {
             this.upgradedConnections = upgradedConnections;
             this.__explicitlySet__.add("upgradedConnections");
@@ -96,6 +124,11 @@ public final class UpgradeStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
+    /**
+     * The {@code drgId} of the upgraded DRG.
+     *
+     * @return the value
+     **/
     public String getDrgId() {
         return drgId;
     }
@@ -156,6 +189,11 @@ public final class UpgradeStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The current upgrade status of the DRG attachment.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -167,6 +205,11 @@ public final class UpgradeStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("upgradedConnections")
     private final String upgradedConnections;
 
+    /**
+     * The number of upgraded connections.
+     *
+     * @return the value
+     **/
     public String getUpgradedConnections() {
         return upgradedConnections;
     }

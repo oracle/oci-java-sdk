@@ -17,6 +17,9 @@ public class RequestSummarizedTrendSecurityScoresRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class RequestSummarizedTrendSecurityScoresRequest
      */
     private java.util.Date timeScoreComputedGreaterThanOrEqualTo;
 
+    /**
+     * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+     */
     public java.util.Date getTimeScoreComputedGreaterThanOrEqualTo() {
         return timeScoreComputedGreaterThanOrEqualTo;
     }
@@ -33,6 +39,9 @@ public class RequestSummarizedTrendSecurityScoresRequest
      */
     private java.util.Date timeScoreComputedLessThanOrEqualTo;
 
+    /**
+     * End time for a filter. If end time is not specified, end time will be set to today's current time.
+     */
     public java.util.Date getTimeScoreComputedLessThanOrEqualTo() {
         return timeScoreComputedLessThanOrEqualTo;
     }
@@ -41,6 +50,9 @@ public class RequestSummarizedTrendSecurityScoresRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -49,6 +61,9 @@ public class RequestSummarizedTrendSecurityScoresRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -57,6 +72,9 @@ public class RequestSummarizedTrendSecurityScoresRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,10 +86,14 @@ public class RequestSummarizedTrendSecurityScoresRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -79,10 +101,14 @@ public class RequestSummarizedTrendSecurityScoresRequest
             return this;
         }
 
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+         */
         private java.util.Date timeScoreComputedGreaterThanOrEqualTo = null;
 
         /**
          * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+         * @param timeScoreComputedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeScoreComputedGreaterThanOrEqualTo(
@@ -91,10 +117,14 @@ public class RequestSummarizedTrendSecurityScoresRequest
             return this;
         }
 
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to today's current time.
+         */
         private java.util.Date timeScoreComputedLessThanOrEqualTo = null;
 
         /**
          * End time for a filter. If end time is not specified, end time will be set to today's current time.
+         * @param timeScoreComputedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeScoreComputedLessThanOrEqualTo(
@@ -103,10 +133,14 @@ public class RequestSummarizedTrendSecurityScoresRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -114,10 +148,14 @@ public class RequestSummarizedTrendSecurityScoresRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -125,10 +163,14 @@ public class RequestSummarizedTrendSecurityScoresRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -215,7 +257,8 @@ public class RequestSummarizedTrendSecurityScoresRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -227,6 +270,10 @@ public class RequestSummarizedTrendSecurityScoresRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

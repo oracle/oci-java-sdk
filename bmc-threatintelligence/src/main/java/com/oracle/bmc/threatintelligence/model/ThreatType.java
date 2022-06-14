@@ -29,27 +29,49 @@ public final class ThreatType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the threat type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the threat type
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the threat type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the threat type
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The list of supporting attribution information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attribution")
         private java.util.List<DataAttribution> attribution;
 
+        /**
+         * The list of supporting attribution information.
+         * @param attribution the value to set
+         * @return this builder
+         **/
         public Builder attribution(java.util.List<DataAttribution> attribution) {
             this.attribution = attribution;
             this.__explicitlySet__.add("attribution");
@@ -91,6 +113,10 @@ public final class ThreatType {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the threat type
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -101,6 +127,10 @@ public final class ThreatType {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the threat type
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -111,6 +141,10 @@ public final class ThreatType {
     @com.fasterxml.jackson.annotation.JsonProperty("attribution")
     private final java.util.List<DataAttribution> attribution;
 
+    /**
+     * The list of supporting attribution information.
+     * @return the value
+     **/
     public java.util.List<DataAttribution> getAttribution() {
         return attribution;
     }

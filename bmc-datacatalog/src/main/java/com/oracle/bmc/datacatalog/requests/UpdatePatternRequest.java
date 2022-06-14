@@ -18,6 +18,9 @@ public class UpdatePatternRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class UpdatePatternRequest
      */
     private String patternKey;
 
+    /**
+     * Unique pattern key.
+     */
     public String getPatternKey() {
         return patternKey;
     }
@@ -34,6 +40,9 @@ public class UpdatePatternRequest
      */
     private com.oracle.bmc.datacatalog.model.UpdatePatternDetails updatePatternDetails;
 
+    /**
+     * The information to be updated in the pattern.
+     */
     public com.oracle.bmc.datacatalog.model.UpdatePatternDetails getUpdatePatternDetails() {
         return updatePatternDetails;
     }
@@ -47,6 +56,14 @@ public class UpdatePatternRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -55,6 +72,9 @@ public class UpdatePatternRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -76,10 +96,14 @@ public class UpdatePatternRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -87,10 +111,14 @@ public class UpdatePatternRequest
             return this;
         }
 
+        /**
+         * Unique pattern key.
+         */
         private String patternKey = null;
 
         /**
          * Unique pattern key.
+         * @param patternKey the value to set
          * @return this builder instance
          */
         public Builder patternKey(String patternKey) {
@@ -98,10 +126,14 @@ public class UpdatePatternRequest
             return this;
         }
 
+        /**
+         * The information to be updated in the pattern.
+         */
         private com.oracle.bmc.datacatalog.model.UpdatePatternDetails updatePatternDetails = null;
 
         /**
          * The information to be updated in the pattern.
+         * @param updatePatternDetails the value to set
          * @return this builder instance
          */
         public Builder updatePatternDetails(
@@ -110,6 +142,14 @@ public class UpdatePatternRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -119,6 +159,7 @@ public class UpdatePatternRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -126,10 +167,14 @@ public class UpdatePatternRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -224,7 +269,8 @@ public class UpdatePatternRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -235,6 +281,10 @@ public class UpdatePatternRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

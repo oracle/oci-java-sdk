@@ -51,63 +51,121 @@ public final class SummarizeHostInsightResourceUsageAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
+        /**
+         * The start timestamp that was passed into the request.
+         * @param timeIntervalStart the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
+        /**
+         * The end timestamp that was passed into the request.
+         * @param timeIntervalEnd the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-
+        /**
+         * Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
         private ResourceMetric resourceMetric;
 
+        /**
+         * Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
+         *
+         * @param resourceMetric the value to set
+         * @return this builder
+         **/
         public Builder resourceMetric(ResourceMetric resourceMetric) {
             this.resourceMetric = resourceMetric;
             this.__explicitlySet__.add("resourceMetric");
             return this;
         }
-
+        /**
+         * Displays usage unit (CORES, GB)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
         private UsageUnit usageUnit;
 
+        /**
+         * Displays usage unit (CORES, GB)
+         *
+         * @param usageUnit the value to set
+         * @return this builder
+         **/
         public Builder usageUnit(UsageUnit usageUnit) {
             this.usageUnit = usageUnit;
             this.__explicitlySet__.add("usageUnit");
             return this;
         }
-
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         * @param usage the value to set
+         * @return this builder
+         **/
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
             return this;
         }
-
+        /**
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
+        /**
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         *
+         * @param capacity the value to set
+         * @return this builder
+         **/
         public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
             return this;
         }
-
+        /**
+         * Percentage change in resource usage during the current period calculated using linear regression functions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
         private Double usageChangePercent;
 
+        /**
+         * Percentage change in resource usage during the current period calculated using linear regression functions
+         * @param usageChangePercent the value to set
+         * @return this builder
+         **/
         public Builder usageChangePercent(Double usageChangePercent) {
             this.usageChangePercent = usageChangePercent;
             this.__explicitlySet__.add("usageChangePercent");
@@ -164,6 +222,10 @@ public final class SummarizeHostInsightResourceUsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
+    /**
+     * The start timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -174,6 +236,10 @@ public final class SummarizeHostInsightResourceUsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
+    /**
+     * The end timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -235,6 +301,11 @@ public final class SummarizeHostInsightResourceUsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
     private final ResourceMetric resourceMetric;
 
+    /**
+     * Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
+     *
+     * @return the value
+     **/
     public ResourceMetric getResourceMetric() {
         return resourceMetric;
     }
@@ -246,6 +317,11 @@ public final class SummarizeHostInsightResourceUsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
     private final UsageUnit usageUnit;
 
+    /**
+     * Displays usage unit (CORES, GB)
+     *
+     * @return the value
+     **/
     public UsageUnit getUsageUnit() {
         return usageUnit;
     }
@@ -257,6 +333,11 @@ public final class SummarizeHostInsightResourceUsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
+    /**
+     * Total amount used of the resource metric type (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getUsage() {
         return usage;
     }
@@ -268,6 +349,11 @@ public final class SummarizeHostInsightResourceUsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
+    /**
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getCapacity() {
         return capacity;
     }
@@ -278,6 +364,10 @@ public final class SummarizeHostInsightResourceUsageAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
     private final Double usageChangePercent;
 
+    /**
+     * Percentage change in resource usage during the current period calculated using linear regression functions
+     * @return the value
+     **/
     public Double getUsageChangePercent() {
         return usageChangePercent;
     }

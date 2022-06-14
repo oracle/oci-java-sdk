@@ -17,6 +17,9 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,11 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private String resourceMetric;
 
+    /**
+     * Filter by resource metric.
+     * Supported values are CPU , STORAGE, MEMORY and IO.
+     *
+     */
     public String getResourceMetric() {
         return resourceMetric;
     }
@@ -39,6 +47,13 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private String analysisTimeInterval;
 
+    /**
+     * Specify time period in ISO 8601 format with respect to current time.
+     * Default is last 30 days represented by P30D.
+     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     *
+     */
     public String getAnalysisTimeInterval() {
         return analysisTimeInterval;
     }
@@ -52,6 +67,14 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.Date timeIntervalStart;
 
+    /**
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -64,6 +87,13 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.Date timeIntervalEnd;
 
+    /**
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -125,6 +155,11 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         }
     };
 
+    /**
+     * Filter by one or more database type.
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+     *
+     */
     public java.util.List<DatabaseType> getDatabaseType() {
         return databaseType;
     }
@@ -134,6 +169,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> databaseId;
 
+    /**
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
+     */
     public java.util.List<String> getDatabaseId() {
         return databaseId;
     }
@@ -143,6 +182,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> id;
 
+    /**
+     * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public java.util.List<String> getId() {
         return id;
     }
@@ -152,6 +195,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> exadataInsightId;
 
+    /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
     }
@@ -161,6 +208,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> cdbName;
 
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
     public java.util.List<String> getCdbName() {
         return cdbName;
     }
@@ -217,6 +268,14 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         }
     };
 
+    /**
+     * Filter by utilization level by the following buckets:
+     *   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.
+     *   - LOW_UTILIZATION: DBs with utilization lower than 25.
+     *   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.
+     *   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
+     *
+     */
     public UtilizationLevel getUtilizationLevel() {
         return utilizationLevel;
     }
@@ -228,6 +287,12 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -237,6 +302,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -284,6 +353,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         }
     };
 
+    /**
+     * Sorts using end timestamp , capacity or baseCapacity
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -293,6 +366,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private String tablespaceName;
 
+    /**
+     * Tablespace name for a database
+     *
+     */
     public String getTablespaceName() {
         return tablespaceName;
     }
@@ -302,6 +379,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> hostName;
 
+    /**
+     * Filter by one or more hostname.
+     *
+     */
     public java.util.List<String> getHostName() {
         return hostName;
     }
@@ -313,6 +394,12 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private Boolean isDatabaseInstanceLevelMetrics;
 
+    /**
+     * Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+     * When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+     * whole database which contains an instance on this host.
+     *
+     */
     public Boolean getIsDatabaseInstanceLevelMetrics() {
         return isDatabaseInstanceLevelMetrics;
     }
@@ -323,6 +410,11 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -335,6 +427,13 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> definedTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
@@ -346,6 +445,12 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> freeformTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
@@ -360,6 +465,15 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> definedTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
@@ -372,6 +486,13 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private java.util.List<String> freeformTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
@@ -381,6 +502,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -392,10 +517,14 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -403,12 +532,18 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * Filter by resource metric.
+         * Supported values are CPU , STORAGE, MEMORY and IO.
+         *
+         */
         private String resourceMetric = null;
 
         /**
          * Filter by resource metric.
          * Supported values are CPU , STORAGE, MEMORY and IO.
          *
+         * @param resourceMetric the value to set
          * @return this builder instance
          */
         public Builder resourceMetric(String resourceMetric) {
@@ -416,6 +551,13 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         *
+         */
         private String analysisTimeInterval = null;
 
         /**
@@ -424,6 +566,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
          * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
          *
+         * @param analysisTimeInterval the value to set
          * @return this builder instance
          */
         public Builder analysisTimeInterval(String analysisTimeInterval) {
@@ -431,6 +574,14 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
+         */
         private java.util.Date timeIntervalStart = null;
 
         /**
@@ -440,6 +591,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * timeIntervalStart and timeIntervalEnd parameters are used together.
          * If analysisTimeInterval is specified, this parameter is ignored.
          *
+         * @param timeIntervalStart the value to set
          * @return this builder instance
          */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
@@ -447,6 +599,13 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
+         */
         private java.util.Date timeIntervalEnd = null;
 
         /**
@@ -455,6 +614,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * timeIntervalStart and timeIntervalEnd are used together.
          * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
+         * @param timeIntervalEnd the value to set
          * @return this builder instance
          */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
@@ -462,12 +622,18 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         *
+         */
         private java.util.List<DatabaseType> databaseType = null;
 
         /**
          * Filter by one or more database type.
          * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
          *
+         * @param databaseType the value to set
          * @return this builder instance
          */
         public Builder databaseType(java.util.List<DatabaseType> databaseType) {
@@ -479,17 +645,23 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * Singular setter. Filter by one or more database type.
          * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder databaseType(DatabaseType singularValue) {
             return this.databaseType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
+         */
         private java.util.List<String> databaseId = null;
 
         /**
          * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(java.util.List<String> databaseId) {
@@ -500,17 +672,23 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         /**
          * Singular setter. Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder databaseId(String singularValue) {
             return this.databaseId(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private java.util.List<String> id = null;
 
         /**
          * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(java.util.List<String> id) {
@@ -521,17 +699,23 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         /**
          * Singular setter. Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder id(String singularValue) {
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private java.util.List<String> exadataInsightId = null;
 
         /**
          * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param exadataInsightId the value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
@@ -542,17 +726,23 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         /**
          * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(String singularValue) {
             return this.exadataInsightId(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by one or more cdb name.
+         *
+         */
         private java.util.List<String> cdbName = null;
 
         /**
          * Filter by one or more cdb name.
          *
+         * @param cdbName the value to set
          * @return this builder instance
          */
         public Builder cdbName(java.util.List<String> cdbName) {
@@ -563,12 +753,21 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         /**
          * Singular setter. Filter by one or more cdb name.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder cdbName(String singularValue) {
             return this.cdbName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by utilization level by the following buckets:
+         *   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.
+         *   - LOW_UTILIZATION: DBs with utilization lower than 25.
+         *   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.
+         *   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
+         *
+         */
         private UtilizationLevel utilizationLevel = null;
 
         /**
@@ -578,6 +777,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          *   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.
          *   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.
          *
+         * @param utilizationLevel the value to set
          * @return this builder instance
          */
         public Builder utilizationLevel(UtilizationLevel utilizationLevel) {
@@ -585,6 +785,12 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -592,6 +798,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -599,11 +806,16 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.opsi.model.SortOrder sortOrder) {
@@ -611,11 +823,16 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * Sorts using end timestamp , capacity or baseCapacity
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * Sorts using end timestamp , capacity or baseCapacity
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -623,11 +840,16 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * Tablespace name for a database
+         *
+         */
         private String tablespaceName = null;
 
         /**
          * Tablespace name for a database
          *
+         * @param tablespaceName the value to set
          * @return this builder instance
          */
         public Builder tablespaceName(String tablespaceName) {
@@ -635,11 +857,16 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * Filter by one or more hostname.
+         *
+         */
         private java.util.List<String> hostName = null;
 
         /**
          * Filter by one or more hostname.
          *
+         * @param hostName the value to set
          * @return this builder instance
          */
         public Builder hostName(java.util.List<String> hostName) {
@@ -650,12 +877,19 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
         /**
          * Singular setter. Filter by one or more hostname.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder hostName(String singularValue) {
             return this.hostName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+         * When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+         * whole database which contains an instance on this host.
+         *
+         */
         private Boolean isDatabaseInstanceLevelMetrics = null;
 
         /**
@@ -663,6 +897,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
          * whole database which contains an instance on this host.
          *
+         * @param isDatabaseInstanceLevelMetrics the value to set
          * @return this builder instance
          */
         public Builder isDatabaseInstanceLevelMetrics(Boolean isDatabaseInstanceLevelMetrics) {
@@ -670,12 +905,18 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -683,6 +924,13 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this;
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagEquals = null;
 
         /**
@@ -691,6 +939,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagEquals the value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(java.util.List<String> definedTagEquals) {
@@ -704,12 +953,19 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(String singularValue) {
             return this.definedTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
@@ -717,6 +973,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagEquals the value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(java.util.List<String> freeformTagEquals) {
@@ -729,12 +986,22 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(String singularValue) {
             return this.freeformTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagExists = null;
 
         /**
@@ -745,6 +1012,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagExists the value to set
          * @return this builder instance
          */
         public Builder definedTagExists(java.util.List<String> definedTagExists) {
@@ -760,12 +1028,20 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagExists(String singularValue) {
             return this.definedTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagExists = null;
 
         /**
@@ -774,6 +1050,7 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagExists the value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(java.util.List<String> freeformTagExists) {
@@ -787,17 +1064,23 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(String singularValue) {
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * A flag to search all resources within a given compartment and all sub-compartments.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -920,7 +1203,8 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -949,6 +1233,10 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
                 .compartmentIdInSubtree(compartmentIdInSubtree);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

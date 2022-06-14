@@ -80,81 +80,153 @@ public final class CertificateSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the certificate.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the certificate authority (CA) that issued the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issuerCertificateAuthorityId")
         private String issuerCertificateAuthorityId;
 
+        /**
+         * The OCID of the certificate authority (CA) that issued the certificate.
+         * @param issuerCertificateAuthorityId the value to set
+         * @return this builder
+         **/
         public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             this.__explicitlySet__.add("issuerCertificateAuthorityId");
             return this;
         }
-
+        /**
+         * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A brief description of the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A brief description of the certificate.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
 
+        /**
+         * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfDeletion the value to set
+         * @return this builder
+         **/
         public Builder timeOfDeletion(java.util.Date timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             this.__explicitlySet__.add("timeOfDeletion");
             return this;
         }
-
+        /**
+         * The current lifecycle state of the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private CertificateLifecycleState lifecycleState;
 
+        /**
+         * The current lifecycle state of the certificate.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(CertificateLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the certificate.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * An optional list of rules that control how the certificate is used and managed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateRules")
         private java.util.List<CertificateRule> certificateRules;
 
+        /**
+         * An optional list of rules that control how the certificate is used and managed.
+         * @param certificateRules the value to set
+         * @return this builder
+         **/
         public Builder certificateRules(java.util.List<CertificateRule> certificateRules) {
             this.certificateRules = certificateRules;
             this.__explicitlySet__.add("certificateRules");
@@ -178,55 +250,109 @@ public final class CertificateSummary {
             this.__explicitlySet__.add("subject");
             return this;
         }
-
+        /**
+         * The origin of the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configType")
         private CertificateConfigType configType;
 
+        /**
+         * The origin of the certificate.
+         * @param configType the value to set
+         * @return this builder
+         **/
         public Builder configType(CertificateConfigType configType) {
             this.configType = configType;
             this.__explicitlySet__.add("configType");
             return this;
         }
-
+        /**
+         * The algorithm used to create key pairs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyAlgorithm")
         private KeyAlgorithm keyAlgorithm;
 
+        /**
+         * The algorithm used to create key pairs.
+         * @param keyAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder keyAlgorithm(KeyAlgorithm keyAlgorithm) {
             this.keyAlgorithm = keyAlgorithm;
             this.__explicitlySet__.add("keyAlgorithm");
             return this;
         }
-
+        /**
+         * The algorithm used to sign the public key certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signatureAlgorithm")
         private SignatureAlgorithm signatureAlgorithm;
 
+        /**
+         * The algorithm used to sign the public key certificate.
+         * @param signatureAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder signatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
             this.signatureAlgorithm = signatureAlgorithm;
             this.__explicitlySet__.add("signatureAlgorithm");
             return this;
         }
-
+        /**
+         * The name of the profile used to create the certificate, which depends on the type of certificate you need.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateProfileType")
         private CertificateProfileType certificateProfileType;
 
+        /**
+         * The name of the profile used to create the certificate, which depends on the type of certificate you need.
+         * @param certificateProfileType the value to set
+         * @return this builder
+         **/
         public Builder certificateProfileType(CertificateProfileType certificateProfileType) {
             this.certificateProfileType = certificateProfileType;
             this.__explicitlySet__.add("certificateProfileType");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -304,6 +430,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the certificate.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -314,6 +444,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("issuerCertificateAuthorityId")
     private final String issuerCertificateAuthorityId;
 
+    /**
+     * The OCID of the certificate authority (CA) that issued the certificate.
+     * @return the value
+     **/
     public String getIssuerCertificateAuthorityId() {
         return issuerCertificateAuthorityId;
     }
@@ -324,6 +458,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -334,6 +472,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A brief description of the certificate.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -346,6 +488,12 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -358,6 +506,12 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     private final java.util.Date timeOfDeletion;
 
+    /**
+     * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfDeletion() {
         return timeOfDeletion;
     }
@@ -368,6 +522,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final CertificateLifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the certificate.
+     * @return the value
+     **/
     public CertificateLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -378,6 +536,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the certificate.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -388,6 +550,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateRules")
     private final java.util.List<CertificateRule> certificateRules;
 
+    /**
+     * An optional list of rules that control how the certificate is used and managed.
+     * @return the value
+     **/
     public java.util.List<CertificateRule> getCertificateRules() {
         return certificateRules;
     }
@@ -412,6 +578,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("configType")
     private final CertificateConfigType configType;
 
+    /**
+     * The origin of the certificate.
+     * @return the value
+     **/
     public CertificateConfigType getConfigType() {
         return configType;
     }
@@ -422,6 +592,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("keyAlgorithm")
     private final KeyAlgorithm keyAlgorithm;
 
+    /**
+     * The algorithm used to create key pairs.
+     * @return the value
+     **/
     public KeyAlgorithm getKeyAlgorithm() {
         return keyAlgorithm;
     }
@@ -432,6 +606,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("signatureAlgorithm")
     private final SignatureAlgorithm signatureAlgorithm;
 
+    /**
+     * The algorithm used to sign the public key certificate.
+     * @return the value
+     **/
     public SignatureAlgorithm getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -442,6 +620,10 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateProfileType")
     private final CertificateProfileType certificateProfileType;
 
+    /**
+     * The name of the profile used to create the certificate, which depends on the type of certificate you need.
+     * @return the value
+     **/
     public CertificateProfileType getCertificateProfileType() {
         return certificateProfileType;
     }
@@ -455,6 +637,13 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -468,6 +657,13 @@ public final class CertificateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -27,9 +27,17 @@ package com.oracle.bmc.core.model;
 public final class BootVolumeSourceFromBootVolumeDetails extends BootVolumeSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the boot volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the boot volume.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -78,6 +86,10 @@ public final class BootVolumeSourceFromBootVolumeDetails extends BootVolumeSourc
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the boot volume.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }

@@ -28,18 +28,33 @@ public final class Device {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The device name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The device name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The flag denoting whether device is available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAvailable")
         private Boolean isAvailable;
 
+        /**
+         * The flag denoting whether device is available.
+         * @param isAvailable the value to set
+         * @return this builder
+         **/
         public Builder isAvailable(Boolean isAvailable) {
             this.isAvailable = isAvailable;
             this.__explicitlySet__.add("isAvailable");
@@ -81,6 +96,10 @@ public final class Device {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The device name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -91,6 +110,10 @@ public final class Device {
     @com.fasterxml.jackson.annotation.JsonProperty("isAvailable")
     private final Boolean isAvailable;
 
+    /**
+     * The flag denoting whether device is available.
+     * @return the value
+     **/
     public Boolean getIsAvailable() {
         return isAvailable;
     }

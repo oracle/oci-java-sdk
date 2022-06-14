@@ -48,54 +48,107 @@ public final class LogAnalyticsEmBridgeSummaryReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Total number of ACTIVE enterprise manager bridges.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activeEmBridgeCount")
         private Integer activeEmBridgeCount;
 
+        /**
+         * Total number of ACTIVE enterprise manager bridges.
+         *
+         * @param activeEmBridgeCount the value to set
+         * @return this builder
+         **/
         public Builder activeEmBridgeCount(Integer activeEmBridgeCount) {
             this.activeEmBridgeCount = activeEmBridgeCount;
             this.__explicitlySet__.add("activeEmBridgeCount");
             return this;
         }
-
+        /**
+         * Number of enterprise manager bridges in CREATING state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("creatingEmBridgeCount")
         private Integer creatingEmBridgeCount;
 
+        /**
+         * Number of enterprise manager bridges in CREATING state.
+         *
+         * @param creatingEmBridgeCount the value to set
+         * @return this builder
+         **/
         public Builder creatingEmBridgeCount(Integer creatingEmBridgeCount) {
             this.creatingEmBridgeCount = creatingEmBridgeCount;
             this.__explicitlySet__.add("creatingEmBridgeCount");
             return this;
         }
-
+        /**
+         * Number of enterprise manager bridges in NEEDS_ATTENTION state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("needsAttentionEmBridgeCount")
         private Integer needsAttentionEmBridgeCount;
 
+        /**
+         * Number of enterprise manager bridges in NEEDS_ATTENTION state.
+         *
+         * @param needsAttentionEmBridgeCount the value to set
+         * @return this builder
+         **/
         public Builder needsAttentionEmBridgeCount(Integer needsAttentionEmBridgeCount) {
             this.needsAttentionEmBridgeCount = needsAttentionEmBridgeCount;
             this.__explicitlySet__.add("needsAttentionEmBridgeCount");
             return this;
         }
-
+        /**
+         * Number of enterprise manager bridges in DELETED state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deletedEmBridgeCount")
         private Integer deletedEmBridgeCount;
 
+        /**
+         * Number of enterprise manager bridges in DELETED state.
+         *
+         * @param deletedEmBridgeCount the value to set
+         * @return this builder
+         **/
         public Builder deletedEmBridgeCount(Integer deletedEmBridgeCount) {
             this.deletedEmBridgeCount = deletedEmBridgeCount;
             this.__explicitlySet__.add("deletedEmBridgeCount");
             return this;
         }
-
+        /**
+         * Total number of enterprise manager bridges.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalEmBridgeCount")
         private Integer totalEmBridgeCount;
 
+        /**
+         * Total number of enterprise manager bridges.
+         *
+         * @param totalEmBridgeCount the value to set
+         * @return this builder
+         **/
         public Builder totalEmBridgeCount(Integer totalEmBridgeCount) {
             this.totalEmBridgeCount = totalEmBridgeCount;
             this.__explicitlySet__.add("totalEmBridgeCount");
@@ -150,6 +203,10 @@ public final class LogAnalyticsEmBridgeSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -161,6 +218,11 @@ public final class LogAnalyticsEmBridgeSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("activeEmBridgeCount")
     private final Integer activeEmBridgeCount;
 
+    /**
+     * Total number of ACTIVE enterprise manager bridges.
+     *
+     * @return the value
+     **/
     public Integer getActiveEmBridgeCount() {
         return activeEmBridgeCount;
     }
@@ -172,6 +234,11 @@ public final class LogAnalyticsEmBridgeSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("creatingEmBridgeCount")
     private final Integer creatingEmBridgeCount;
 
+    /**
+     * Number of enterprise manager bridges in CREATING state.
+     *
+     * @return the value
+     **/
     public Integer getCreatingEmBridgeCount() {
         return creatingEmBridgeCount;
     }
@@ -183,6 +250,11 @@ public final class LogAnalyticsEmBridgeSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("needsAttentionEmBridgeCount")
     private final Integer needsAttentionEmBridgeCount;
 
+    /**
+     * Number of enterprise manager bridges in NEEDS_ATTENTION state.
+     *
+     * @return the value
+     **/
     public Integer getNeedsAttentionEmBridgeCount() {
         return needsAttentionEmBridgeCount;
     }
@@ -194,6 +266,11 @@ public final class LogAnalyticsEmBridgeSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("deletedEmBridgeCount")
     private final Integer deletedEmBridgeCount;
 
+    /**
+     * Number of enterprise manager bridges in DELETED state.
+     *
+     * @return the value
+     **/
     public Integer getDeletedEmBridgeCount() {
         return deletedEmBridgeCount;
     }
@@ -205,6 +282,11 @@ public final class LogAnalyticsEmBridgeSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("totalEmBridgeCount")
     private final Integer totalEmBridgeCount;
 
+    /**
+     * Total number of enterprise manager bridges.
+     *
+     * @return the value
+     **/
     public Integer getTotalEmBridgeCount() {
         return totalEmBridgeCount;
     }

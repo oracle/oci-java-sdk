@@ -29,27 +29,49 @@ public final class ReferenceUsedBy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key of the published object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The key of the published object.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The name of an published object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of an published object.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name path of the published object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namePath")
         private String namePath;
 
+        /**
+         * The name path of the published object.
+         * @param namePath the value to set
+         * @return this builder
+         **/
         public Builder namePath(String namePath) {
             this.namePath = namePath;
             this.__explicitlySet__.add("namePath");
@@ -91,6 +113,10 @@ public final class ReferenceUsedBy {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The key of the published object.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -101,6 +127,10 @@ public final class ReferenceUsedBy {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of an published object.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -111,6 +141,10 @@ public final class ReferenceUsedBy {
     @com.fasterxml.jackson.annotation.JsonProperty("namePath")
     private final String namePath;
 
+    /**
+     * The name path of the published object.
+     * @return the value
+     **/
     public String getNamePath() {
         return namePath;
     }

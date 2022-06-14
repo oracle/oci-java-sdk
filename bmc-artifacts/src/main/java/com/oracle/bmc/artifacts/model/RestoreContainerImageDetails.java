@@ -29,9 +29,17 @@ public final class RestoreContainerImageDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Optional version to associate with image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Optional version to associate with image.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -73,6 +81,10 @@ public final class RestoreContainerImageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Optional version to associate with image.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

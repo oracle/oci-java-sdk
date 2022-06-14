@@ -29,9 +29,17 @@ public final class AccessRequestHistoryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * contains AccessRequestHistorySummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AccessRequestHistorySummary> items;
 
+        /**
+         * contains AccessRequestHistorySummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AccessRequestHistorySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AccessRequestHistoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AccessRequestHistorySummary> items;
 
+    /**
+     * contains AccessRequestHistorySummary
+     * @return the value
+     **/
     public java.util.List<AccessRequestHistorySummary> getItems() {
         return items;
     }

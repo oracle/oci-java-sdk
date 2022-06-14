@@ -32,27 +32,49 @@ public final class LoadBalancerTrafficShiftRolloutPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies number of batches for this stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchCount")
         private Integer batchCount;
 
+        /**
+         * Specifies number of batches for this stage.
+         * @param batchCount the value to set
+         * @return this builder
+         **/
         public Builder batchCount(Integer batchCount) {
             this.batchCount = batchCount;
             this.__explicitlySet__.add("batchCount");
             return this;
         }
-
+        /**
+         * Specifies delay in seconds between batches. The default delay is 1 minute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchDelayInSeconds")
         private Integer batchDelayInSeconds;
 
+        /**
+         * Specifies delay in seconds between batches. The default delay is 1 minute.
+         * @param batchDelayInSeconds the value to set
+         * @return this builder
+         **/
         public Builder batchDelayInSeconds(Integer batchDelayInSeconds) {
             this.batchDelayInSeconds = batchDelayInSeconds;
             this.__explicitlySet__.add("batchDelayInSeconds");
             return this;
         }
-
+        /**
+         * Indicates the criteria to stop.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rampLimitPercent")
         private Float rampLimitPercent;
 
+        /**
+         * Indicates the criteria to stop.
+         * @param rampLimitPercent the value to set
+         * @return this builder
+         **/
         public Builder rampLimitPercent(Float rampLimitPercent) {
             this.rampLimitPercent = rampLimitPercent;
             this.__explicitlySet__.add("rampLimitPercent");
@@ -99,6 +121,10 @@ public final class LoadBalancerTrafficShiftRolloutPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("batchCount")
     private final Integer batchCount;
 
+    /**
+     * Specifies number of batches for this stage.
+     * @return the value
+     **/
     public Integer getBatchCount() {
         return batchCount;
     }
@@ -109,6 +135,10 @@ public final class LoadBalancerTrafficShiftRolloutPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("batchDelayInSeconds")
     private final Integer batchDelayInSeconds;
 
+    /**
+     * Specifies delay in seconds between batches. The default delay is 1 minute.
+     * @return the value
+     **/
     public Integer getBatchDelayInSeconds() {
         return batchDelayInSeconds;
     }
@@ -119,6 +149,10 @@ public final class LoadBalancerTrafficShiftRolloutPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("rampLimitPercent")
     private final Float rampLimitPercent;
 
+    /**
+     * Indicates the criteria to stop.
+     * @return the value
+     **/
     public Float getRampLimitPercent() {
         return rampLimitPercent;
     }

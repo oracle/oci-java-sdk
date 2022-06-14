@@ -14,6 +14,11 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -35,6 +45,12 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,6 +61,11 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String location;
 
+    /**
+     * Location of the resource.
+     *
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -55,6 +76,11 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String contentLocation;
 
+    /**
+     * Content Location of the resource.
+     *
+     * @return the value
+     */
     public String getContentLocation() {
         return contentLocation;
     }
@@ -64,6 +90,10 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.waf.model.WebAppFirewall webAppFirewall;
 
+    /**
+     * The returned WebAppFirewall instance.
+     * @return the value
+     */
     public com.oracle.bmc.waf.model.WebAppFirewall getWebAppFirewall() {
         return webAppFirewall;
     }
@@ -102,43 +132,103 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Location of the resource.
+         *
+         */
         private String location;
 
+        /**
+         * Location of the resource.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * Content Location of the resource.
+         *
+         */
         private String contentLocation;
 
+        /**
+         * Content Location of the resource.
+         *
+         * @param contentLocation the value to set
+         * @return this builder
+         */
         public Builder contentLocation(String contentLocation) {
             this.contentLocation = contentLocation;
             return this;
         }
 
+        /**
+         * The returned WebAppFirewall instance.
+         */
         private com.oracle.bmc.waf.model.WebAppFirewall webAppFirewall;
 
+        /**
+         * The returned WebAppFirewall instance.
+         * @param webAppFirewall the value to set
+         * @return this builder
+         */
         public Builder webAppFirewall(com.oracle.bmc.waf.model.WebAppFirewall webAppFirewall) {
             this.webAppFirewall = webAppFirewall;
             return this;
@@ -160,6 +250,10 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateWebAppFirewallResponse build() {
             return new CreateWebAppFirewallResponse(
                     __httpStatusCode__,
@@ -172,6 +266,10 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

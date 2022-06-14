@@ -18,6 +18,11 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    /**
+     * Compartment OCID to list resources in. See compartmentIdInSubtree
+     *      for nested compartments traversal.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +31,9 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Boolean isCompartmentIdInSubtree;
 
+    /**
+     * Specifies whether or not nested compartments should be traversed. Defaults to false.
+     */
     public Boolean getIsCompartmentIdInSubtree() {
         return isCompartmentIdInSubtree;
     }
@@ -34,6 +42,9 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String displayName;
 
+    /**
+     * Resource name
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -44,6 +55,11 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -53,6 +69,10 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -101,6 +121,11 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * The field to sort by (one column only). Default sort order is
+     * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -147,6 +172,10 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -157,6 +186,11 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -168,12 +202,18 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Compartment OCID to list resources in. See compartmentIdInSubtree
+         *      for nested compartments traversal.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * Compartment OCID to list resources in. See compartmentIdInSubtree
          *      for nested compartments traversal.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -181,10 +221,14 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Specifies whether or not nested compartments should be traversed. Defaults to false.
+         */
         private Boolean isCompartmentIdInSubtree = null;
 
         /**
          * Specifies whether or not nested compartments should be traversed. Defaults to false.
+         * @param isCompartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder isCompartmentIdInSubtree(Boolean isCompartmentIdInSubtree) {
@@ -192,10 +236,14 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Resource name
+         */
         private String displayName = null;
 
         /**
          * Resource name
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -203,12 +251,18 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
          * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -216,11 +270,16 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -228,12 +287,18 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The field to sort by (one column only). Default sort order is
+         * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by (one column only). Default sort order is
          * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -241,11 +306,16 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -253,12 +323,18 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -348,7 +424,8 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -362,6 +439,10 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

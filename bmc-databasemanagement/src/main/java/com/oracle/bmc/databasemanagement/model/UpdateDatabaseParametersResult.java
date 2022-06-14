@@ -30,9 +30,19 @@ public final class UpdateDatabaseParametersResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A map with the parameter name as key and its update status as value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private java.util.Map<String, DatabaseParameterUpdateStatus> status;
 
+        /**
+         * A map with the parameter name as key and its update status as value.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(java.util.Map<String, DatabaseParameterUpdateStatus> status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -76,6 +86,11 @@ public final class UpdateDatabaseParametersResult {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final java.util.Map<String, DatabaseParameterUpdateStatus> status;
 
+    /**
+     * A map with the parameter name as key and its update status as value.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, DatabaseParameterUpdateStatus> getStatus() {
         return status;
     }

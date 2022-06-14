@@ -56,36 +56,65 @@ public final class ApplicationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Identifier of the application from a service catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
+        /**
+         * Identifier of the application from a service catalog.
+         * @param entityId the value to set
+         * @return this builder
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-
+        /**
+         * The type of an application in the service catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The type of an application in the service catalog.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The name that service catalog should use to display this application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name that service catalog should use to display this application.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Indicates whether the application is featured.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
         private Boolean isFeatured;
 
+        /**
+         * Indicates whether the application is featured.
+         * @param isFeatured the value to set
+         * @return this builder
+         **/
         public Builder isFeatured(Boolean isFeatured) {
             this.isFeatured = isFeatured;
             this.__explicitlySet__.add("isFeatured");
@@ -100,10 +129,17 @@ public final class ApplicationSummary {
             this.__explicitlySet__.add("publisher");
             return this;
         }
-
+        /**
+         * A short description of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
         private String shortDescription;
 
+        /**
+         * A short description of the application.
+         * @param shortDescription the value to set
+         * @return this builder
+         **/
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = shortDescription;
             this.__explicitlySet__.add("shortDescription");
@@ -118,19 +154,33 @@ public final class ApplicationSummary {
             this.__explicitlySet__.add("logo");
             return this;
         }
-
+        /**
+         * Summary of the pricing types available across all packages in the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pricingType")
         private PricingTypeEnum pricingType;
 
+        /**
+         * Summary of the pricing types available across all packages in the application.
+         * @param pricingType the value to set
+         * @return this builder
+         **/
         public Builder pricingType(PricingTypeEnum pricingType) {
             this.pricingType = pricingType;
             this.__explicitlySet__.add("pricingType");
             return this;
         }
-
+        /**
+         * The type of the packages withing the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private PackageTypeEnum packageType;
 
+        /**
+         * The type of the packages withing the application.
+         * @param packageType the value to set
+         * @return this builder
+         **/
         public Builder packageType(PackageTypeEnum packageType) {
             this.packageType = packageType;
             this.__explicitlySet__.add("packageType");
@@ -191,6 +241,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
+    /**
+     * Identifier of the application from a service catalog.
+     * @return the value
+     **/
     public String getEntityId() {
         return entityId;
     }
@@ -201,6 +255,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The type of an application in the service catalog.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -211,6 +269,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name that service catalog should use to display this application.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -221,6 +283,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
     private final Boolean isFeatured;
 
+    /**
+     * Indicates whether the application is featured.
+     * @return the value
+     **/
     public Boolean getIsFeatured() {
         return isFeatured;
     }
@@ -238,6 +304,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     private final String shortDescription;
 
+    /**
+     * A short description of the application.
+     * @return the value
+     **/
     public String getShortDescription() {
         return shortDescription;
     }
@@ -255,6 +325,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("pricingType")
     private final PricingTypeEnum pricingType;
 
+    /**
+     * Summary of the pricing types available across all packages in the application.
+     * @return the value
+     **/
     public PricingTypeEnum getPricingType() {
         return pricingType;
     }
@@ -265,6 +339,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final PackageTypeEnum packageType;
 
+    /**
+     * The type of the packages withing the application.
+     * @return the value
+     **/
     public PackageTypeEnum getPackageType() {
         return packageType;
     }

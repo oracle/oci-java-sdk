@@ -59,90 +59,175 @@ public final class UpdateOperatorControlDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatorControlName")
         private String operatorControlName;
 
+        /**
+         * Name of the operator control.
+         * @param operatorControlName the value to set
+         * @return this builder
+         **/
         public Builder operatorControlName(String operatorControlName) {
             this.operatorControlName = operatorControlName;
             this.__explicitlySet__.add("operatorControlName");
             return this;
         }
-
+        /**
+         * Description of the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the operator control.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * List of users who can approve an access request associated with a target resource under the governance of this operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approversList")
         private java.util.List<String> approversList;
 
+        /**
+         * List of users who can approve an access request associated with a target resource under the governance of this operator control.
+         * @param approversList the value to set
+         * @return this builder
+         **/
         public Builder approversList(java.util.List<String> approversList) {
             this.approversList = approversList;
             this.__explicitlySet__.add("approversList");
             return this;
         }
-
+        /**
+         * List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverGroupsList")
         private java.util.List<String> approverGroupsList;
 
+        /**
+         * List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
+         * @param approverGroupsList the value to set
+         * @return this builder
+         **/
         public Builder approverGroupsList(java.util.List<String> approverGroupsList) {
             this.approverGroupsList = approverGroupsList;
             this.__explicitlySet__.add("approverGroupsList");
             return this;
         }
-
+        /**
+         * List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be
+         * automatically approved if the access request only contain operator actions in the pre-approved list.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preApprovedOpActionList")
         private java.util.List<String> preApprovedOpActionList;
 
+        /**
+         * List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be
+         * automatically approved if the access request only contain operator actions in the pre-approved list.
+         *
+         * @param preApprovedOpActionList the value to set
+         * @return this builder
+         **/
         public Builder preApprovedOpActionList(java.util.List<String> preApprovedOpActionList) {
             this.preApprovedOpActionList = preApprovedOpActionList;
             this.__explicitlySet__.add("preApprovedOpActionList");
             return this;
         }
-
+        /**
+         * Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control
+         * will be auto-approved.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFullyPreApproved")
         private Boolean isFullyPreApproved;
 
+        /**
+         * Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control
+         * will be auto-approved.
+         *
+         * @param isFullyPreApproved the value to set
+         * @return this builder
+         **/
         public Builder isFullyPreApproved(Boolean isFullyPreApproved) {
             this.isFullyPreApproved = isFullyPreApproved;
             this.__explicitlySet__.add("isFullyPreApproved");
             return this;
         }
-
+        /**
+         * List of emailId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
         private java.util.List<String> emailIdList;
 
+        /**
+         * List of emailId.
+         *
+         * @param emailIdList the value to set
+         * @return this builder
+         **/
         public Builder emailIdList(java.util.List<String> emailIdList) {
             this.emailIdList = emailIdList;
             this.__explicitlySet__.add("emailIdList");
             return this;
         }
-
+        /**
+         * System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemMessage")
         private String systemMessage;
 
+        /**
+         * System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
+         * @param systemMessage the value to set
+         * @return this builder
+         **/
         public Builder systemMessage(String systemMessage) {
             this.systemMessage = systemMessage;
             this.__explicitlySet__.add("systemMessage");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -206,6 +291,10 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("operatorControlName")
     private final String operatorControlName;
 
+    /**
+     * Name of the operator control.
+     * @return the value
+     **/
     public String getOperatorControlName() {
         return operatorControlName;
     }
@@ -216,6 +305,10 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the operator control.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -226,6 +319,10 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("approversList")
     private final java.util.List<String> approversList;
 
+    /**
+     * List of users who can approve an access request associated with a target resource under the governance of this operator control.
+     * @return the value
+     **/
     public java.util.List<String> getApproversList() {
         return approversList;
     }
@@ -236,6 +333,10 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("approverGroupsList")
     private final java.util.List<String> approverGroupsList;
 
+    /**
+     * List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
+     * @return the value
+     **/
     public java.util.List<String> getApproverGroupsList() {
         return approverGroupsList;
     }
@@ -248,6 +349,12 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("preApprovedOpActionList")
     private final java.util.List<String> preApprovedOpActionList;
 
+    /**
+     * List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be
+     * automatically approved if the access request only contain operator actions in the pre-approved list.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getPreApprovedOpActionList() {
         return preApprovedOpActionList;
     }
@@ -260,6 +367,12 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isFullyPreApproved")
     private final Boolean isFullyPreApproved;
 
+    /**
+     * Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control
+     * will be auto-approved.
+     *
+     * @return the value
+     **/
     public Boolean getIsFullyPreApproved() {
         return isFullyPreApproved;
     }
@@ -271,6 +384,11 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
     private final java.util.List<String> emailIdList;
 
+    /**
+     * List of emailId.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getEmailIdList() {
         return emailIdList;
     }
@@ -281,6 +399,10 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("systemMessage")
     private final String systemMessage;
 
+    /**
+     * System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
+     * @return the value
+     **/
     public String getSystemMessage() {
         return systemMessage;
     }
@@ -292,6 +414,11 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -303,6 +430,11 @@ public final class UpdateOperatorControlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

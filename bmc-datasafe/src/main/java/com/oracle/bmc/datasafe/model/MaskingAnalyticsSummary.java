@@ -32,9 +32,17 @@ public final class MaskingAnalyticsSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the aggregation metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private MetricName metricName;
 
+        /**
+         * The name of the aggregation metric.
+         * @param metricName the value to set
+         * @return this builder
+         **/
         public Builder metricName(MetricName metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
@@ -49,10 +57,17 @@ public final class MaskingAnalyticsSummary {
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * The total count for the aggregation metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Long count;
 
+        /**
+         * The total count for the aggregation metric.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Long count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -150,6 +165,10 @@ public final class MaskingAnalyticsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final MetricName metricName;
 
+    /**
+     * The name of the aggregation metric.
+     * @return the value
+     **/
     public MetricName getMetricName() {
         return metricName;
     }
@@ -167,6 +186,10 @@ public final class MaskingAnalyticsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Long count;
 
+    /**
+     * The total count for the aggregation metric.
+     * @return the value
+     **/
     public Long getCount() {
         return count;
     }

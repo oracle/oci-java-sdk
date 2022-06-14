@@ -30,18 +30,33 @@ public final class GithubFilterAttributes {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Branch for push event; source branch for pull requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headRef")
         private String headRef;
 
+        /**
+         * Branch for push event; source branch for pull requests.
+         * @param headRef the value to set
+         * @return this builder
+         **/
         public Builder headRef(String headRef) {
             this.headRef = headRef;
             this.__explicitlySet__.add("headRef");
             return this;
         }
-
+        /**
+         * The target branch for pull requests; not applicable for push requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baseRef")
         private String baseRef;
 
+        /**
+         * The target branch for pull requests; not applicable for push requests.
+         * @param baseRef the value to set
+         * @return this builder
+         **/
         public Builder baseRef(String baseRef) {
             this.baseRef = baseRef;
             this.__explicitlySet__.add("baseRef");
@@ -83,6 +98,10 @@ public final class GithubFilterAttributes {
     @com.fasterxml.jackson.annotation.JsonProperty("headRef")
     private final String headRef;
 
+    /**
+     * Branch for push event; source branch for pull requests.
+     * @return the value
+     **/
     public String getHeadRef() {
         return headRef;
     }
@@ -93,6 +112,10 @@ public final class GithubFilterAttributes {
     @com.fasterxml.jackson.annotation.JsonProperty("baseRef")
     private final String baseRef;
 
+    /**
+     * The target branch for pull requests; not applicable for push requests.
+     * @return the value
+     **/
     public String getBaseRef() {
         return baseRef;
     }

@@ -41,36 +41,65 @@ public final class ResponderExecutionTrendAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key-value pairs of dimensions and their names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
+        /**
+         * The key-value pairs of dimensions and their names.
+         * @param dimensionsMap the value to set
+         * @return this builder
+         **/
         public Builder dimensionsMap(java.util.Map<String, String> dimensionsMap) {
             this.dimensionsMap = dimensionsMap;
             this.__explicitlySet__.add("dimensionsMap");
             return this;
         }
-
+        /**
+         * Start Time in epoch seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTimestamp")
         private java.math.BigDecimal startTimestamp;
 
+        /**
+         * Start Time in epoch seconds
+         * @param startTimestamp the value to set
+         * @return this builder
+         **/
         public Builder startTimestamp(java.math.BigDecimal startTimestamp) {
             this.startTimestamp = startTimestamp;
             this.__explicitlySet__.add("startTimestamp");
             return this;
         }
-
+        /**
+         * Duration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
         private Integer durationInSeconds;
 
+        /**
+         * Duration
+         * @param durationInSeconds the value to set
+         * @return this builder
+         **/
         public Builder durationInSeconds(Integer durationInSeconds) {
             this.durationInSeconds = durationInSeconds;
             this.__explicitlySet__.add("durationInSeconds");
             return this;
         }
-
+        /**
+         * The number of remediations for a given time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The number of remediations for a given time.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -118,6 +147,10 @@ public final class ResponderExecutionTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
+    /**
+     * The key-value pairs of dimensions and their names.
+     * @return the value
+     **/
     public java.util.Map<String, String> getDimensionsMap() {
         return dimensionsMap;
     }
@@ -128,6 +161,10 @@ public final class ResponderExecutionTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("startTimestamp")
     private final java.math.BigDecimal startTimestamp;
 
+    /**
+     * Start Time in epoch seconds
+     * @return the value
+     **/
     public java.math.BigDecimal getStartTimestamp() {
         return startTimestamp;
     }
@@ -138,6 +175,10 @@ public final class ResponderExecutionTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
     private final Integer durationInSeconds;
 
+    /**
+     * Duration
+     * @return the value
+     **/
     public Integer getDurationInSeconds() {
         return durationInSeconds;
     }
@@ -148,6 +189,10 @@ public final class ResponderExecutionTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The number of remediations for a given time.
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

@@ -29,18 +29,35 @@ public final class Dimension {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the dimension.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the dimension.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The source to populate the dimension. This must not be specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueSource")
         private String valueSource;
 
+        /**
+         * The source to populate the dimension. This must not be specified.
+         *
+         * @param valueSource the value to set
+         * @return this builder
+         **/
         public Builder valueSource(String valueSource) {
             this.valueSource = valueSource;
             this.__explicitlySet__.add("valueSource");
@@ -82,6 +99,10 @@ public final class Dimension {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the dimension.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -93,6 +114,11 @@ public final class Dimension {
     @com.fasterxml.jackson.annotation.JsonProperty("valueSource")
     private final String valueSource;
 
+    /**
+     * The source to populate the dimension. This must not be specified.
+     *
+     * @return the value
+     **/
     public String getValueSource() {
         return valueSource;
     }

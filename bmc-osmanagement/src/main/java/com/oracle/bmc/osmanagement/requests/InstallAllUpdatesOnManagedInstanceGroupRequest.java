@@ -17,6 +17,9 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
      */
     private String managedInstanceGroupId;
 
+    /**
+     * OCID for the managed instance group
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
@@ -25,6 +28,9 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
      */
     private com.oracle.bmc.osmanagement.model.PackageUpdateTypes updateType;
 
+    /**
+     * The type of updates to be applied
+     */
     public com.oracle.bmc.osmanagement.model.PackageUpdateTypes getUpdateType() {
         return updateType;
     }
@@ -33,6 +39,9 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +55,14 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -57,10 +74,14 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID for the managed instance group
+         */
         private String managedInstanceGroupId = null;
 
         /**
          * OCID for the managed instance group
+         * @param managedInstanceGroupId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceGroupId(String managedInstanceGroupId) {
@@ -68,10 +89,14 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
             return this;
         }
 
+        /**
+         * The type of updates to be applied
+         */
         private com.oracle.bmc.osmanagement.model.PackageUpdateTypes updateType = null;
 
         /**
          * The type of updates to be applied
+         * @param updateType the value to set
          * @return this builder instance
          */
         public Builder updateType(com.oracle.bmc.osmanagement.model.PackageUpdateTypes updateType) {
@@ -79,10 +104,14 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -90,6 +119,14 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -99,6 +136,7 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -182,7 +220,8 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -192,6 +231,10 @@ public class InstallAllUpdatesOnManagedInstanceGroupRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

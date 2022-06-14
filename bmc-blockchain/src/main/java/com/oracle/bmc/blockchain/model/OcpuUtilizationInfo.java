@@ -31,27 +31,49 @@ public final class OcpuUtilizationInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Host name of VM
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * Host name of VM
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * Number of OCPU utilized
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuUtilizationNumber")
         private Float ocpuUtilizationNumber;
 
+        /**
+         * Number of OCPU utilized
+         * @param ocpuUtilizationNumber the value to set
+         * @return this builder
+         **/
         public Builder ocpuUtilizationNumber(Float ocpuUtilizationNumber) {
             this.ocpuUtilizationNumber = ocpuUtilizationNumber;
             this.__explicitlySet__.add("ocpuUtilizationNumber");
             return this;
         }
-
+        /**
+         * Number of total OCPU capacity on the host
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCapacityNumber")
         private Float ocpuCapacityNumber;
 
+        /**
+         * Number of total OCPU capacity on the host
+         * @param ocpuCapacityNumber the value to set
+         * @return this builder
+         **/
         public Builder ocpuCapacityNumber(Float ocpuCapacityNumber) {
             this.ocpuCapacityNumber = ocpuCapacityNumber;
             this.__explicitlySet__.add("ocpuCapacityNumber");
@@ -97,6 +119,10 @@ public final class OcpuUtilizationInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * Host name of VM
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -107,6 +133,10 @@ public final class OcpuUtilizationInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuUtilizationNumber")
     private final Float ocpuUtilizationNumber;
 
+    /**
+     * Number of OCPU utilized
+     * @return the value
+     **/
     public Float getOcpuUtilizationNumber() {
         return ocpuUtilizationNumber;
     }
@@ -117,6 +147,10 @@ public final class OcpuUtilizationInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCapacityNumber")
     private final Float ocpuCapacityNumber;
 
+    /**
+     * Number of total OCPU capacity on the host
+     * @return the value
+     **/
     public Float getOcpuCapacityNumber() {
         return ocpuCapacityNumber;
     }

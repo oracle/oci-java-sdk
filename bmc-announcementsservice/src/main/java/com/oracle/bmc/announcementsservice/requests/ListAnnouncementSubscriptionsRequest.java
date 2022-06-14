@@ -18,6 +18,10 @@ public class ListAnnouncementSubscriptionsRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +31,9 @@ public class ListAnnouncementSubscriptionsRequest
     private com.oracle.bmc.announcementsservice.model.AnnouncementSubscription.LifecycleState
             lifecycleState;
 
+    /**
+     * A filter to return only announcement subscriptions that match the given lifecycle state.
+     */
     public com.oracle.bmc.announcementsservice.model.AnnouncementSubscription.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -36,6 +43,9 @@ public class ListAnnouncementSubscriptionsRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -44,6 +54,9 @@ public class ListAnnouncementSubscriptionsRequest
      */
     private String id;
 
+    /**
+     * The OCID of the announcement subscription.
+     */
     public String getId() {
         return id;
     }
@@ -52,6 +65,9 @@ public class ListAnnouncementSubscriptionsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -60,6 +76,9 @@ public class ListAnnouncementSubscriptionsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -68,6 +87,9 @@ public class ListAnnouncementSubscriptionsRequest
      */
     private com.oracle.bmc.announcementsservice.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, whether ascending ('ASC') or descending ('DESC').
+     */
     public com.oracle.bmc.announcementsservice.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -114,6 +136,10 @@ public class ListAnnouncementSubscriptionsRequest
         }
     };
 
+    /**
+     * The criteria to sort by. You can specify only one sort order. The default sort order for the creation date of resources is descending. The default sort order for display names is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -124,6 +150,11 @@ public class ListAnnouncementSubscriptionsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -135,11 +166,16 @@ public class ListAnnouncementSubscriptionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -147,11 +183,15 @@ public class ListAnnouncementSubscriptionsRequest
             return this;
         }
 
+        /**
+         * A filter to return only announcement subscriptions that match the given lifecycle state.
+         */
         private com.oracle.bmc.announcementsservice.model.AnnouncementSubscription.LifecycleState
                 lifecycleState = null;
 
         /**
          * A filter to return only announcement subscriptions that match the given lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -161,10 +201,14 @@ public class ListAnnouncementSubscriptionsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -172,10 +216,14 @@ public class ListAnnouncementSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The OCID of the announcement subscription.
+         */
         private String id = null;
 
         /**
          * The OCID of the announcement subscription.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -183,10 +231,14 @@ public class ListAnnouncementSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -194,10 +246,14 @@ public class ListAnnouncementSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -205,10 +261,14 @@ public class ListAnnouncementSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, whether ascending ('ASC') or descending ('DESC').
+         */
         private com.oracle.bmc.announcementsservice.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether ascending ('ASC') or descending ('DESC').
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.announcementsservice.model.SortOrder sortOrder) {
@@ -216,11 +276,16 @@ public class ListAnnouncementSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The criteria to sort by. You can specify only one sort order. The default sort order for the creation date of resources is descending. The default sort order for display names is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The criteria to sort by. You can specify only one sort order. The default sort order for the creation date of resources is descending. The default sort order for display names is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -228,12 +293,18 @@ public class ListAnnouncementSubscriptionsRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -326,7 +397,8 @@ public class ListAnnouncementSubscriptionsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -341,6 +413,10 @@ public class ListAnnouncementSubscriptionsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

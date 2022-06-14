@@ -16,6 +16,9 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +40,11 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -86,6 +97,13 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -95,6 +113,10 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -105,6 +127,11 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * It is usually retrieved from a previous "List" call. For details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -120,6 +147,16 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String scimQuery;
 
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+     *
+     */
     public String getScimQuery() {
         return scimQuery;
     }
@@ -164,6 +201,9 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -236,6 +276,10 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * If this query parameter is specified, the result is sorted by this query parameter value.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -247,10 +291,14 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -258,10 +306,14 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -269,12 +321,18 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -282,6 +340,13 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -290,6 +355,7 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -297,11 +363,16 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
          * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -309,12 +380,18 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * It is usually retrieved from a previous "List" call. For details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * It is usually retrieved from a previous "List" call. For details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -322,6 +399,16 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+         *
+         */
         private String scimQuery = null;
 
         /**
@@ -333,6 +420,7 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * <p>
          **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
          *
+         * @param scimQuery the value to set
          * @return this builder instance
          */
         public Builder scimQuery(String scimQuery) {
@@ -340,10 +428,14 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -351,11 +443,16 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * If this query parameter is specified, the result is sorted by this query parameter value.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * If this query parameter is specified, the result is sorted by this query parameter value.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -447,7 +544,8 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -462,6 +560,10 @@ public class ListAuditEventsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .sortBy(sortBy);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

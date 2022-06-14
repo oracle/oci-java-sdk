@@ -35,28 +35,64 @@ public final class AddDrgRouteDistributionStatementDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The action is applied only if all of the match criteria is met.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
         private java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
 
+        /**
+         * The action is applied only if all of the match criteria is met.
+         *
+         * @param matchCriteria the value to set
+         * @return this builder
+         **/
         public Builder matchCriteria(
                 java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria) {
             this.matchCriteria = matchCriteria;
             this.__explicitlySet__.add("matchCriteria");
             return this;
         }
-
+        /**
+         * Accept: import/export the route "as is"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * Accept: import/export the route "as is"
+         *
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-
+        /**
+         * This field is used to specify the priority of each statement in a route distribution.
+         * The priority will be represented as a number between 0 and 65535 where a lower number
+         * indicates a higher priority. When a route is processed, statements are applied in the order
+         * defined by their priority. The first matching rule dictates the action that will be taken
+         * on the route.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
+        /**
+         * This field is used to specify the priority of each statement in a route distribution.
+         * The priority will be represented as a number between 0 and 65535 where a lower number
+         * indicates a higher priority. When a route is processed, statements are applied in the order
+         * defined by their priority. The first matching rule dictates the action that will be taken
+         * on the route.
+         *
+         * @param priority the value to set
+         * @return this builder
+         **/
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
@@ -103,6 +139,11 @@ public final class AddDrgRouteDistributionStatementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
     private final java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
 
+    /**
+     * The action is applied only if all of the match criteria is met.
+     *
+     * @return the value
+     **/
     public java.util.List<DrgRouteDistributionMatchCriteria> getMatchCriteria() {
         return matchCriteria;
     }
@@ -149,6 +190,11 @@ public final class AddDrgRouteDistributionStatementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * Accept: import/export the route "as is"
+     *
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }
@@ -164,6 +210,15 @@ public final class AddDrgRouteDistributionStatementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
+    /**
+     * This field is used to specify the priority of each statement in a route distribution.
+     * The priority will be represented as a number between 0 and 65535 where a lower number
+     * indicates a higher priority. When a route is processed, statements are applied in the order
+     * defined by their priority. The first matching rule dictates the action that will be taken
+     * on the route.
+     *
+     * @return the value
+     **/
     public Integer getPriority() {
         return priority;
     }

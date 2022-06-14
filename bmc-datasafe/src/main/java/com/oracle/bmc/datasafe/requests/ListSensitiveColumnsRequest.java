@@ -17,6 +17,9 @@ public class ListSensitiveColumnsRequest
      */
     private String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -29,6 +32,13 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -44,6 +54,16 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.Date timeCreatedLessThan;
 
+    /**
+     * Search for resources that were created before a specific date.
+     * Specifying this parameter corresponding {@code timeCreatedLessThan}
+     * parameter will retrieve all resources created before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
@@ -57,6 +77,14 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.Date timeUpdatedGreaterThanOrEqualTo;
 
+    /**
+     * Search for resources that were updated after a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+     * parameter will retrieve all resources updated after the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     *
+     */
     public java.util.Date getTimeUpdatedGreaterThanOrEqualTo() {
         return timeUpdatedGreaterThanOrEqualTo;
     }
@@ -70,6 +98,14 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.Date timeUpdatedLessThan;
 
+    /**
+     * Search for resources that were updated before a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+     * parameter will retrieve all resources updated before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     *
+     */
     public java.util.Date getTimeUpdatedLessThan() {
         return timeUpdatedLessThan;
     }
@@ -79,6 +115,9 @@ public class ListSensitiveColumnsRequest
     private com.oracle.bmc.datasafe.model.SensitiveColumnLifecycleState
             sensitiveColumnLifecycleState;
 
+    /**
+     * Filters the sensitive column resources with the given lifecycle state values.
+     */
     public com.oracle.bmc.datasafe.model.SensitiveColumnLifecycleState
             getSensitiveColumnLifecycleState() {
         return sensitiveColumnLifecycleState;
@@ -88,6 +127,9 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.List<String> schemaName;
 
+    /**
+     * A filter to return only items related to specific schema name.
+     */
     public java.util.List<String> getSchemaName() {
         return schemaName;
     }
@@ -96,6 +138,9 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.List<String> objectName;
 
+    /**
+     * A filter to return only items related to a specific object name.
+     */
     public java.util.List<String> getObjectName() {
         return objectName;
     }
@@ -104,6 +149,9 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.List<String> columnName;
 
+    /**
+     * A filter to return only a specific column based on column name.
+     */
     public java.util.List<String> getColumnName() {
         return columnName;
     }
@@ -149,6 +197,9 @@ public class ListSensitiveColumnsRequest
         }
     };
 
+    /**
+     * A filter to return only items related to a specific object type.
+     */
     public java.util.List<ObjectType> getObjectType() {
         return objectType;
     }
@@ -157,6 +208,9 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.List<String> dataType;
 
+    /**
+     * A filter to return only the resources that match the specified data types.
+     */
     public java.util.List<String> getDataType() {
         return dataType;
     }
@@ -201,6 +255,9 @@ public class ListSensitiveColumnsRequest
         }
     };
 
+    /**
+     * A filter to return only the sensitive columns that match the specified status.
+     */
     public java.util.List<Status> getStatus() {
         return status;
     }
@@ -209,6 +266,9 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.List<String> sensitiveTypeId;
 
+    /**
+     * A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+     */
     public java.util.List<String> getSensitiveTypeId() {
         return sensitiveTypeId;
     }
@@ -217,6 +277,9 @@ public class ListSensitiveColumnsRequest
      */
     private java.util.List<String> parentColumnKey;
 
+    /**
+     * A filter to return only the sensitive columns that are children of one of the columns identified by the specified keys.
+     */
     public java.util.List<String> getParentColumnKey() {
         return parentColumnKey;
     }
@@ -272,6 +335,14 @@ public class ListSensitiveColumnsRequest
         }
     };
 
+    /**
+     * A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE,
+     * it returns the sensitive columns that do not have any parent. The response includes the parent columns as
+     * well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the
+     * child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED,
+     * it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+     *
+     */
     public java.util.List<RelationType> getRelationType() {
         return relationType;
     }
@@ -280,6 +351,9 @@ public class ListSensitiveColumnsRequest
      */
     private String columnGroup;
 
+    /**
+     * A filter to return only the sensitive columns that belong to the specified column group.
+     */
     public String getColumnGroup() {
         return columnGroup;
     }
@@ -288,6 +362,9 @@ public class ListSensitiveColumnsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -296,6 +373,9 @@ public class ListSensitiveColumnsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -340,6 +420,9 @@ public class ListSensitiveColumnsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -390,6 +473,11 @@ public class ListSensitiveColumnsRequest
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+     * The default order for schemaName, objectName, and columnName is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -398,6 +486,9 @@ public class ListSensitiveColumnsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -409,10 +500,14 @@ public class ListSensitiveColumnsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
+         * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
@@ -420,6 +515,13 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
@@ -428,6 +530,7 @@ public class ListSensitiveColumnsRequest
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedGreaterThanOrEqualTo(
@@ -436,6 +539,16 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * Search for resources that were created before a specific date.
+         * Specifying this parameter corresponding {@code timeCreatedLessThan}
+         * parameter will retrieve all resources created before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
@@ -447,6 +560,7 @@ public class ListSensitiveColumnsRequest
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
@@ -454,6 +568,14 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * Search for resources that were updated after a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+         * parameter will retrieve all resources updated after the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         *
+         */
         private java.util.Date timeUpdatedGreaterThanOrEqualTo = null;
 
         /**
@@ -463,6 +585,7 @@ public class ListSensitiveColumnsRequest
          * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
          *
+         * @param timeUpdatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeUpdatedGreaterThanOrEqualTo(
@@ -471,6 +594,14 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * Search for resources that were updated before a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+         * parameter will retrieve all resources updated before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         *
+         */
         private java.util.Date timeUpdatedLessThan = null;
 
         /**
@@ -480,6 +611,7 @@ public class ListSensitiveColumnsRequest
          * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
          *
+         * @param timeUpdatedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeUpdatedLessThan(java.util.Date timeUpdatedLessThan) {
@@ -487,11 +619,15 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * Filters the sensitive column resources with the given lifecycle state values.
+         */
         private com.oracle.bmc.datasafe.model.SensitiveColumnLifecycleState
                 sensitiveColumnLifecycleState = null;
 
         /**
          * Filters the sensitive column resources with the given lifecycle state values.
+         * @param sensitiveColumnLifecycleState the value to set
          * @return this builder instance
          */
         public Builder sensitiveColumnLifecycleState(
@@ -501,10 +637,14 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * A filter to return only items related to specific schema name.
+         */
         private java.util.List<String> schemaName = null;
 
         /**
          * A filter to return only items related to specific schema name.
+         * @param schemaName the value to set
          * @return this builder instance
          */
         public Builder schemaName(java.util.List<String> schemaName) {
@@ -514,16 +654,21 @@ public class ListSensitiveColumnsRequest
 
         /**
          * Singular setter. A filter to return only items related to specific schema name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder schemaName(String singularValue) {
             return this.schemaName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only items related to a specific object name.
+         */
         private java.util.List<String> objectName = null;
 
         /**
          * A filter to return only items related to a specific object name.
+         * @param objectName the value to set
          * @return this builder instance
          */
         public Builder objectName(java.util.List<String> objectName) {
@@ -533,16 +678,21 @@ public class ListSensitiveColumnsRequest
 
         /**
          * Singular setter. A filter to return only items related to a specific object name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder objectName(String singularValue) {
             return this.objectName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only a specific column based on column name.
+         */
         private java.util.List<String> columnName = null;
 
         /**
          * A filter to return only a specific column based on column name.
+         * @param columnName the value to set
          * @return this builder instance
          */
         public Builder columnName(java.util.List<String> columnName) {
@@ -552,16 +702,21 @@ public class ListSensitiveColumnsRequest
 
         /**
          * Singular setter. A filter to return only a specific column based on column name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder columnName(String singularValue) {
             return this.columnName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only items related to a specific object type.
+         */
         private java.util.List<ObjectType> objectType = null;
 
         /**
          * A filter to return only items related to a specific object type.
+         * @param objectType the value to set
          * @return this builder instance
          */
         public Builder objectType(java.util.List<ObjectType> objectType) {
@@ -571,16 +726,21 @@ public class ListSensitiveColumnsRequest
 
         /**
          * Singular setter. A filter to return only items related to a specific object type.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder objectType(ObjectType singularValue) {
             return this.objectType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only the resources that match the specified data types.
+         */
         private java.util.List<String> dataType = null;
 
         /**
          * A filter to return only the resources that match the specified data types.
+         * @param dataType the value to set
          * @return this builder instance
          */
         public Builder dataType(java.util.List<String> dataType) {
@@ -590,16 +750,21 @@ public class ListSensitiveColumnsRequest
 
         /**
          * Singular setter. A filter to return only the resources that match the specified data types.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder dataType(String singularValue) {
             return this.dataType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only the sensitive columns that match the specified status.
+         */
         private java.util.List<Status> status = null;
 
         /**
          * A filter to return only the sensitive columns that match the specified status.
+         * @param status the value to set
          * @return this builder instance
          */
         public Builder status(java.util.List<Status> status) {
@@ -609,16 +774,21 @@ public class ListSensitiveColumnsRequest
 
         /**
          * Singular setter. A filter to return only the sensitive columns that match the specified status.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder status(Status singularValue) {
             return this.status(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+         */
         private java.util.List<String> sensitiveTypeId = null;
 
         /**
          * A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+         * @param sensitiveTypeId the value to set
          * @return this builder instance
          */
         public Builder sensitiveTypeId(java.util.List<String> sensitiveTypeId) {
@@ -628,16 +798,21 @@ public class ListSensitiveColumnsRequest
 
         /**
          * Singular setter. A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder sensitiveTypeId(String singularValue) {
             return this.sensitiveTypeId(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only the sensitive columns that are children of one of the columns identified by the specified keys.
+         */
         private java.util.List<String> parentColumnKey = null;
 
         /**
          * A filter to return only the sensitive columns that are children of one of the columns identified by the specified keys.
+         * @param parentColumnKey the value to set
          * @return this builder instance
          */
         public Builder parentColumnKey(java.util.List<String> parentColumnKey) {
@@ -647,12 +822,21 @@ public class ListSensitiveColumnsRequest
 
         /**
          * Singular setter. A filter to return only the sensitive columns that are children of one of the columns identified by the specified keys.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder parentColumnKey(String singularValue) {
             return this.parentColumnKey(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE,
+         * it returns the sensitive columns that do not have any parent. The response includes the parent columns as
+         * well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the
+         * child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED,
+         * it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+         *
+         */
         private java.util.List<RelationType> relationType = null;
 
         /**
@@ -662,6 +846,7 @@ public class ListSensitiveColumnsRequest
          * child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED,
          * it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
          *
+         * @param relationType the value to set
          * @return this builder instance
          */
         public Builder relationType(java.util.List<RelationType> relationType) {
@@ -676,16 +861,21 @@ public class ListSensitiveColumnsRequest
          * child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED,
          * it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder relationType(RelationType singularValue) {
             return this.relationType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only the sensitive columns that belong to the specified column group.
+         */
         private String columnGroup = null;
 
         /**
          * A filter to return only the sensitive columns that belong to the specified column group.
+         * @param columnGroup the value to set
          * @return this builder instance
          */
         public Builder columnGroup(String columnGroup) {
@@ -693,10 +883,14 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -704,10 +898,14 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -715,10 +913,14 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -726,12 +928,18 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+         * The default order for schemaName, objectName, and columnName is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
          * The default order for schemaName, objectName, and columnName is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -739,10 +947,14 @@ public class ListSensitiveColumnsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -858,7 +1070,8 @@ public class ListSensitiveColumnsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -885,6 +1098,10 @@ public class ListSensitiveColumnsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

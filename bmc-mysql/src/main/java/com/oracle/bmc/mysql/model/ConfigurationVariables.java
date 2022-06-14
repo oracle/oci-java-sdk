@@ -191,493 +191,946 @@ public final class ConfigurationVariables {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ("completion_type")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("completionType")
         private CompletionType completionType;
 
+        /**
+         * ("completion_type")
+         * @param completionType the value to set
+         * @return this builder
+         **/
         public Builder completionType(CompletionType completionType) {
             this.completionType = completionType;
             this.__explicitlySet__.add("completionType");
             return this;
         }
-
+        /**
+         * ("default_authentication_plugin")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultAuthenticationPlugin")
         private DefaultAuthenticationPlugin defaultAuthenticationPlugin;
 
+        /**
+         * ("default_authentication_plugin")
+         * @param defaultAuthenticationPlugin the value to set
+         * @return this builder
+         **/
         public Builder defaultAuthenticationPlugin(
                 DefaultAuthenticationPlugin defaultAuthenticationPlugin) {
             this.defaultAuthenticationPlugin = defaultAuthenticationPlugin;
             this.__explicitlySet__.add("defaultAuthenticationPlugin");
             return this;
         }
-
+        /**
+         * ("transaction_isolation")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transactionIsolation")
         private TransactionIsolation transactionIsolation;
 
+        /**
+         * ("transaction_isolation")
+         * @param transactionIsolation the value to set
+         * @return this builder
+         **/
         public Builder transactionIsolation(TransactionIsolation transactionIsolation) {
             this.transactionIsolation = transactionIsolation;
             this.__explicitlySet__.add("transactionIsolation");
             return this;
         }
-
+        /**
+         * ("innodb_ft_server_stopword_table")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtServerStopwordTable")
         private String innodbFtServerStopwordTable;
 
+        /**
+         * ("innodb_ft_server_stopword_table")
+         * @param innodbFtServerStopwordTable the value to set
+         * @return this builder
+         **/
         public Builder innodbFtServerStopwordTable(String innodbFtServerStopwordTable) {
             this.innodbFtServerStopwordTable = innodbFtServerStopwordTable;
             this.__explicitlySet__.add("innodbFtServerStopwordTable");
             return this;
         }
-
+        /**
+         * ("mandatory_roles")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mandatoryRoles")
         private String mandatoryRoles;
 
+        /**
+         * ("mandatory_roles")
+         * @param mandatoryRoles the value to set
+         * @return this builder
+         **/
         public Builder mandatoryRoles(String mandatoryRoles) {
             this.mandatoryRoles = mandatoryRoles;
             this.__explicitlySet__.add("mandatoryRoles");
             return this;
         }
-
+        /**
+         * ("autocommit")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autocommit")
         private Boolean autocommit;
 
+        /**
+         * ("autocommit")
+         * @param autocommit the value to set
+         * @return this builder
+         **/
         public Builder autocommit(Boolean autocommit) {
             this.autocommit = autocommit;
             this.__explicitlySet__.add("autocommit");
             return this;
         }
-
+        /**
+         * ("foreign_key_checks")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("foreignKeyChecks")
         private Boolean foreignKeyChecks;
 
+        /**
+         * ("foreign_key_checks")
+         * @param foreignKeyChecks the value to set
+         * @return this builder
+         **/
         public Builder foreignKeyChecks(Boolean foreignKeyChecks) {
             this.foreignKeyChecks = foreignKeyChecks;
             this.__explicitlySet__.add("foreignKeyChecks");
             return this;
         }
-
+        /**
+         * - EVENTUAL:
+         *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
+         *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
+         *     could be externalized on one member before the others. This also means that in the event of a primary failover,
+         *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
+         *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+         * - BEFORE_ON_PRIMARY_FAILOVER:
+         *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
+         *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
+         *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
+         *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
+         *     but does depend on the size of the backlog.
+         * - BEFORE:
+         *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
+         *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
+         *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
+         *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         * - AFTER:
+         *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
+         *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
+         *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
+         *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
+         *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
+         *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
+         *     provided by BEFORE_ON_PRIMARY_FAILOVER.
+         * - BEFORE_AND_AFTER:
+         *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
+         *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
+         *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupReplicationConsistency")
         private GroupReplicationConsistency groupReplicationConsistency;
 
+        /**
+         * - EVENTUAL:
+         *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
+         *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
+         *     could be externalized on one member before the others. This also means that in the event of a primary failover,
+         *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
+         *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+         * - BEFORE_ON_PRIMARY_FAILOVER:
+         *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
+         *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
+         *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
+         *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
+         *     but does depend on the size of the backlog.
+         * - BEFORE:
+         *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
+         *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
+         *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
+         *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         * - AFTER:
+         *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
+         *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
+         *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
+         *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
+         *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
+         *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
+         *     provided by BEFORE_ON_PRIMARY_FAILOVER.
+         * - BEFORE_AND_AFTER:
+         *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
+         *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
+         *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         *
+         * @param groupReplicationConsistency the value to set
+         * @return this builder
+         **/
         public Builder groupReplicationConsistency(
                 GroupReplicationConsistency groupReplicationConsistency) {
             this.groupReplicationConsistency = groupReplicationConsistency;
             this.__explicitlySet__.add("groupReplicationConsistency");
             return this;
         }
-
+        /**
+         * ("innodb_ft_enable_stopword")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtEnableStopword")
         private Boolean innodbFtEnableStopword;
 
+        /**
+         * ("innodb_ft_enable_stopword")
+         * @param innodbFtEnableStopword the value to set
+         * @return this builder
+         **/
         public Builder innodbFtEnableStopword(Boolean innodbFtEnableStopword) {
             this.innodbFtEnableStopword = innodbFtEnableStopword;
             this.__explicitlySet__.add("innodbFtEnableStopword");
             return this;
         }
-
+        /**
+         * ("local_infile")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localInfile")
         private Boolean localInfile;
 
+        /**
+         * ("local_infile")
+         * @param localInfile the value to set
+         * @return this builder
+         **/
         public Builder localInfile(Boolean localInfile) {
             this.localInfile = localInfile;
             this.__explicitlySet__.add("localInfile");
             return this;
         }
-
+        /**
+         * ("mysql_firewall_mode")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlFirewallMode")
         private Boolean mysqlFirewallMode;
 
+        /**
+         * ("mysql_firewall_mode")
+         * @param mysqlFirewallMode the value to set
+         * @return this builder
+         **/
         public Builder mysqlFirewallMode(Boolean mysqlFirewallMode) {
             this.mysqlFirewallMode = mysqlFirewallMode;
             this.__explicitlySet__.add("mysqlFirewallMode");
             return this;
         }
-
+        /**
+         * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxEnableHelloNotice")
         private Boolean mysqlxEnableHelloNotice;
 
+        /**
+         * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxEnableHelloNotice the value to set
+         * @return this builder
+         **/
         public Builder mysqlxEnableHelloNotice(Boolean mysqlxEnableHelloNotice) {
             this.mysqlxEnableHelloNotice = mysqlxEnableHelloNotice;
             this.__explicitlySet__.add("mysqlxEnableHelloNotice");
             return this;
         }
-
+        /**
+         * ("sql_require_primary_key")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlRequirePrimaryKey")
         private Boolean sqlRequirePrimaryKey;
 
+        /**
+         * ("sql_require_primary_key")
+         * @param sqlRequirePrimaryKey the value to set
+         * @return this builder
+         **/
         public Builder sqlRequirePrimaryKey(Boolean sqlRequirePrimaryKey) {
             this.sqlRequirePrimaryKey = sqlRequirePrimaryKey;
             this.__explicitlySet__.add("sqlRequirePrimaryKey");
             return this;
         }
-
+        /**
+         * ("sql_warnings")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlWarnings")
         private Boolean sqlWarnings;
 
+        /**
+         * ("sql_warnings")
+         * @param sqlWarnings the value to set
+         * @return this builder
+         **/
         public Builder sqlWarnings(Boolean sqlWarnings) {
             this.sqlWarnings = sqlWarnings;
             this.__explicitlySet__.add("sqlWarnings");
             return this;
         }
-
+        /**
+         * Sets the binary log expiration period in seconds.
+         * binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("binlogExpireLogsSeconds")
         private Integer binlogExpireLogsSeconds;
 
+        /**
+         * Sets the binary log expiration period in seconds.
+         * binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+         *
+         * @param binlogExpireLogsSeconds the value to set
+         * @return this builder
+         **/
         public Builder binlogExpireLogsSeconds(Integer binlogExpireLogsSeconds) {
             this.binlogExpireLogsSeconds = binlogExpireLogsSeconds;
             this.__explicitlySet__.add("binlogExpireLogsSeconds");
             return this;
         }
-
+        /**
+         * Configures the amount of table metadata added to the binary log when using row-based logging.
+         * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("binlogRowMetadata")
         private BinlogRowMetadata binlogRowMetadata;
 
+        /**
+         * Configures the amount of table metadata added to the binary log when using row-based logging.
+         * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+         *
+         * @param binlogRowMetadata the value to set
+         * @return this builder
+         **/
         public Builder binlogRowMetadata(BinlogRowMetadata binlogRowMetadata) {
             this.binlogRowMetadata = binlogRowMetadata;
             this.__explicitlySet__.add("binlogRowMetadata");
             return this;
         }
-
+        /**
+         * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
+         * binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("binlogRowValueOptions")
         private String binlogRowValueOptions;
 
+        /**
+         * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
+         * binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+         *
+         * @param binlogRowValueOptions the value to set
+         * @return this builder
+         **/
         public Builder binlogRowValueOptions(String binlogRowValueOptions) {
             this.binlogRowValueOptions = binlogRowValueOptions;
             this.__explicitlySet__.add("binlogRowValueOptions");
             return this;
         }
-
+        /**
+         * Enables compression for transactions that are written to binary log files on this server.
+         * binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("binlogTransactionCompression")
         private Boolean binlogTransactionCompression;
 
+        /**
+         * Enables compression for transactions that are written to binary log files on this server.
+         * binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+         *
+         * @param binlogTransactionCompression the value to set
+         * @return this builder
+         **/
         public Builder binlogTransactionCompression(Boolean binlogTransactionCompression) {
             this.binlogTransactionCompression = binlogTransactionCompression;
             this.__explicitlySet__.add("binlogTransactionCompression");
             return this;
         }
-
+        /**
+         * ("innodb_buffer_pool_size")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolSize")
         private Long innodbBufferPoolSize;
 
+        /**
+         * ("innodb_buffer_pool_size")
+         * @param innodbBufferPoolSize the value to set
+         * @return this builder
+         **/
         public Builder innodbBufferPoolSize(Long innodbBufferPoolSize) {
             this.innodbBufferPoolSize = innodbBufferPoolSize;
             this.__explicitlySet__.add("innodbBufferPoolSize");
             return this;
         }
-
+        /**
+         * ("innodb_ft_result_cache_limit")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtResultCacheLimit")
         private Integer innodbFtResultCacheLimit;
 
+        /**
+         * ("innodb_ft_result_cache_limit")
+         * @param innodbFtResultCacheLimit the value to set
+         * @return this builder
+         **/
         public Builder innodbFtResultCacheLimit(Integer innodbFtResultCacheLimit) {
             this.innodbFtResultCacheLimit = innodbFtResultCacheLimit;
             this.__explicitlySet__.add("innodbFtResultCacheLimit");
             return this;
         }
-
+        /**
+         * ("max_connections")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
         private Integer maxConnections;
 
+        /**
+         * ("max_connections")
+         * @param maxConnections the value to set
+         * @return this builder
+         **/
         public Builder maxConnections(Integer maxConnections) {
             this.maxConnections = maxConnections;
             this.__explicitlySet__.add("maxConnections");
             return this;
         }
-
+        /**
+         * ("max_prepared_stmt_count")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPreparedStmtCount")
         private Integer maxPreparedStmtCount;
 
+        /**
+         * ("max_prepared_stmt_count")
+         * @param maxPreparedStmtCount the value to set
+         * @return this builder
+         **/
         public Builder maxPreparedStmtCount(Integer maxPreparedStmtCount) {
             this.maxPreparedStmtCount = maxPreparedStmtCount;
             this.__explicitlySet__.add("maxPreparedStmtCount");
             return this;
         }
-
+        /**
+         * ("connect_timeout")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectTimeout")
         private Integer connectTimeout;
 
+        /**
+         * ("connect_timeout")
+         * @param connectTimeout the value to set
+         * @return this builder
+         **/
         public Builder connectTimeout(Integer connectTimeout) {
             this.connectTimeout = connectTimeout;
             this.__explicitlySet__.add("connectTimeout");
             return this;
         }
-
+        /**
+         * ("cte_max_recursion_depth")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cteMaxRecursionDepth")
         private Integer cteMaxRecursionDepth;
 
+        /**
+         * ("cte_max_recursion_depth")
+         * @param cteMaxRecursionDepth the value to set
+         * @return this builder
+         **/
         public Builder cteMaxRecursionDepth(Integer cteMaxRecursionDepth) {
             this.cteMaxRecursionDepth = cteMaxRecursionDepth;
             this.__explicitlySet__.add("cteMaxRecursionDepth");
             return this;
         }
-
+        /**
+         * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("generatedRandomPasswordLength")
         private Integer generatedRandomPasswordLength;
 
+        /**
+         * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+         * @param generatedRandomPasswordLength the value to set
+         * @return this builder
+         **/
         public Builder generatedRandomPasswordLength(Integer generatedRandomPasswordLength) {
             this.generatedRandomPasswordLength = generatedRandomPasswordLength;
             this.__explicitlySet__.add("generatedRandomPasswordLength");
             return this;
         }
-
+        /**
+         * ("information_schema_stats_expiry")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("informationSchemaStatsExpiry")
         private Integer informationSchemaStatsExpiry;
 
+        /**
+         * ("information_schema_stats_expiry")
+         * @param informationSchemaStatsExpiry the value to set
+         * @return this builder
+         **/
         public Builder informationSchemaStatsExpiry(Integer informationSchemaStatsExpiry) {
             this.informationSchemaStatsExpiry = informationSchemaStatsExpiry;
             this.__explicitlySet__.add("informationSchemaStatsExpiry");
             return this;
         }
-
+        /**
+         * ("innodb_buffer_pool_instances")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolInstances")
         private Integer innodbBufferPoolInstances;
 
+        /**
+         * ("innodb_buffer_pool_instances")
+         * @param innodbBufferPoolInstances the value to set
+         * @return this builder
+         **/
         public Builder innodbBufferPoolInstances(Integer innodbBufferPoolInstances) {
             this.innodbBufferPoolInstances = innodbBufferPoolInstances;
             this.__explicitlySet__.add("innodbBufferPoolInstances");
             return this;
         }
-
+        /**
+         * ("innodb_ft_max_token_size")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMaxTokenSize")
         private Integer innodbFtMaxTokenSize;
 
+        /**
+         * ("innodb_ft_max_token_size")
+         * @param innodbFtMaxTokenSize the value to set
+         * @return this builder
+         **/
         public Builder innodbFtMaxTokenSize(Integer innodbFtMaxTokenSize) {
             this.innodbFtMaxTokenSize = innodbFtMaxTokenSize;
             this.__explicitlySet__.add("innodbFtMaxTokenSize");
             return this;
         }
-
+        /**
+         * ("innodb_ft_min_token_size")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMinTokenSize")
         private Integer innodbFtMinTokenSize;
 
+        /**
+         * ("innodb_ft_min_token_size")
+         * @param innodbFtMinTokenSize the value to set
+         * @return this builder
+         **/
         public Builder innodbFtMinTokenSize(Integer innodbFtMinTokenSize) {
             this.innodbFtMinTokenSize = innodbFtMinTokenSize;
             this.__explicitlySet__.add("innodbFtMinTokenSize");
             return this;
         }
-
+        /**
+         * ("innodb_ft_num_word_optimize")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbFtNumWordOptimize")
         private Integer innodbFtNumWordOptimize;
 
+        /**
+         * ("innodb_ft_num_word_optimize")
+         * @param innodbFtNumWordOptimize the value to set
+         * @return this builder
+         **/
         public Builder innodbFtNumWordOptimize(Integer innodbFtNumWordOptimize) {
             this.innodbFtNumWordOptimize = innodbFtNumWordOptimize;
             this.__explicitlySet__.add("innodbFtNumWordOptimize");
             return this;
         }
-
+        /**
+         * ("innodb_lock_wait_timeout")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbLockWaitTimeout")
         private Integer innodbLockWaitTimeout;
 
+        /**
+         * ("innodb_lock_wait_timeout")
+         * @param innodbLockWaitTimeout the value to set
+         * @return this builder
+         **/
         public Builder innodbLockWaitTimeout(Integer innodbLockWaitTimeout) {
             this.innodbLockWaitTimeout = innodbLockWaitTimeout;
             this.__explicitlySet__.add("innodbLockWaitTimeout");
             return this;
         }
-
+        /**
+         * ("innodb_max_purge_lag")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLag")
         private Integer innodbMaxPurgeLag;
 
+        /**
+         * ("innodb_max_purge_lag")
+         * @param innodbMaxPurgeLag the value to set
+         * @return this builder
+         **/
         public Builder innodbMaxPurgeLag(Integer innodbMaxPurgeLag) {
             this.innodbMaxPurgeLag = innodbMaxPurgeLag;
             this.__explicitlySet__.add("innodbMaxPurgeLag");
             return this;
         }
-
+        /**
+         * ("innodb_max_purge_lag_delay")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLagDelay")
         private Integer innodbMaxPurgeLagDelay;
 
+        /**
+         * ("innodb_max_purge_lag_delay")
+         * @param innodbMaxPurgeLagDelay the value to set
+         * @return this builder
+         **/
         public Builder innodbMaxPurgeLagDelay(Integer innodbMaxPurgeLagDelay) {
             this.innodbMaxPurgeLagDelay = innodbMaxPurgeLagDelay;
             this.__explicitlySet__.add("innodbMaxPurgeLagDelay");
             return this;
         }
-
+        /**
+         * ("max_execution_time")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxExecutionTime")
         private Integer maxExecutionTime;
 
+        /**
+         * ("max_execution_time")
+         * @param maxExecutionTime the value to set
+         * @return this builder
+         **/
         public Builder maxExecutionTime(Integer maxExecutionTime) {
             this.maxExecutionTime = maxExecutionTime;
             this.__explicitlySet__.add("maxExecutionTime");
             return this;
         }
-
+        /**
+         * ("mysqlx_connect_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxConnectTimeout")
         private Integer mysqlxConnectTimeout;
 
+        /**
+         * ("mysqlx_connect_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxConnectTimeout the value to set
+         * @return this builder
+         **/
         public Builder mysqlxConnectTimeout(Integer mysqlxConnectTimeout) {
             this.mysqlxConnectTimeout = mysqlxConnectTimeout;
             this.__explicitlySet__.add("mysqlxConnectTimeout");
             return this;
         }
-
+        /**
+         * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDocumentIdUniquePrefix")
         private Integer mysqlxDocumentIdUniquePrefix;
 
+        /**
+         * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxDocumentIdUniquePrefix the value to set
+         * @return this builder
+         **/
         public Builder mysqlxDocumentIdUniquePrefix(Integer mysqlxDocumentIdUniquePrefix) {
             this.mysqlxDocumentIdUniquePrefix = mysqlxDocumentIdUniquePrefix;
             this.__explicitlySet__.add("mysqlxDocumentIdUniquePrefix");
             return this;
         }
-
+        /**
+         * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxIdleWorkerThreadTimeout")
         private Integer mysqlxIdleWorkerThreadTimeout;
 
+        /**
+         * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxIdleWorkerThreadTimeout the value to set
+         * @return this builder
+         **/
         public Builder mysqlxIdleWorkerThreadTimeout(Integer mysqlxIdleWorkerThreadTimeout) {
             this.mysqlxIdleWorkerThreadTimeout = mysqlxIdleWorkerThreadTimeout;
             this.__explicitlySet__.add("mysqlxIdleWorkerThreadTimeout");
             return this;
         }
-
+        /**
+         * ("mysqlx_interactive_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxInteractiveTimeout")
         private Integer mysqlxInteractiveTimeout;
 
+        /**
+         * ("mysqlx_interactive_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxInteractiveTimeout the value to set
+         * @return this builder
+         **/
         public Builder mysqlxInteractiveTimeout(Integer mysqlxInteractiveTimeout) {
             this.mysqlxInteractiveTimeout = mysqlxInteractiveTimeout;
             this.__explicitlySet__.add("mysqlxInteractiveTimeout");
             return this;
         }
-
+        /**
+         * ("mysqlx_max_allowed_packet") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMaxAllowedPacket")
         private Integer mysqlxMaxAllowedPacket;
 
+        /**
+         * ("mysqlx_max_allowed_packet") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxMaxAllowedPacket the value to set
+         * @return this builder
+         **/
         public Builder mysqlxMaxAllowedPacket(Integer mysqlxMaxAllowedPacket) {
             this.mysqlxMaxAllowedPacket = mysqlxMaxAllowedPacket;
             this.__explicitlySet__.add("mysqlxMaxAllowedPacket");
             return this;
         }
-
+        /**
+         * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMinWorkerThreads")
         private Integer mysqlxMinWorkerThreads;
 
+        /**
+         * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxMinWorkerThreads the value to set
+         * @return this builder
+         **/
         public Builder mysqlxMinWorkerThreads(Integer mysqlxMinWorkerThreads) {
             this.mysqlxMinWorkerThreads = mysqlxMinWorkerThreads;
             this.__explicitlySet__.add("mysqlxMinWorkerThreads");
             return this;
         }
-
+        /**
+         * ("mysqlx_read_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxReadTimeout")
         private Integer mysqlxReadTimeout;
 
+        /**
+         * ("mysqlx_read_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxReadTimeout the value to set
+         * @return this builder
+         **/
         public Builder mysqlxReadTimeout(Integer mysqlxReadTimeout) {
             this.mysqlxReadTimeout = mysqlxReadTimeout;
             this.__explicitlySet__.add("mysqlxReadTimeout");
             return this;
         }
-
+        /**
+         * ("mysqlx_wait_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWaitTimeout")
         private Integer mysqlxWaitTimeout;
 
+        /**
+         * ("mysqlx_wait_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxWaitTimeout the value to set
+         * @return this builder
+         **/
         public Builder mysqlxWaitTimeout(Integer mysqlxWaitTimeout) {
             this.mysqlxWaitTimeout = mysqlxWaitTimeout;
             this.__explicitlySet__.add("mysqlxWaitTimeout");
             return this;
         }
-
+        /**
+         * ("mysqlx_write_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWriteTimeout")
         private Integer mysqlxWriteTimeout;
 
+        /**
+         * ("mysqlx_write_timeout") DEPRECATED -- variable should not be settable and will be ignored
+         * @param mysqlxWriteTimeout the value to set
+         * @return this builder
+         **/
         public Builder mysqlxWriteTimeout(Integer mysqlxWriteTimeout) {
             this.mysqlxWriteTimeout = mysqlxWriteTimeout;
             this.__explicitlySet__.add("mysqlxWriteTimeout");
             return this;
         }
-
+        /**
+         * ("parser_max_mem_size")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserMaxMemSize")
         private Integer parserMaxMemSize;
 
+        /**
+         * ("parser_max_mem_size")
+         * @param parserMaxMemSize the value to set
+         * @return this builder
+         **/
         public Builder parserMaxMemSize(Integer parserMaxMemSize) {
             this.parserMaxMemSize = parserMaxMemSize;
             this.__explicitlySet__.add("parserMaxMemSize");
             return this;
         }
-
+        /**
+         * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryAllocBlockSize")
         private Integer queryAllocBlockSize;
 
+        /**
+         * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+         * @param queryAllocBlockSize the value to set
+         * @return this builder
+         **/
         public Builder queryAllocBlockSize(Integer queryAllocBlockSize) {
             this.queryAllocBlockSize = queryAllocBlockSize;
             this.__explicitlySet__.add("queryAllocBlockSize");
             return this;
         }
-
+        /**
+         * ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryPreallocSize")
         private Integer queryPreallocSize;
 
+        /**
+         * ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+         * @param queryPreallocSize the value to set
+         * @return this builder
+         **/
         public Builder queryPreallocSize(Integer queryPreallocSize) {
             this.queryPreallocSize = queryPreallocSize;
             this.__explicitlySet__.add("queryPreallocSize");
             return this;
         }
-
+        /**
+         * ("sql_mode")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlMode")
         private String sqlMode;
 
+        /**
+         * ("sql_mode")
+         * @param sqlMode the value to set
+         * @return this builder
+         **/
         public Builder sqlMode(String sqlMode) {
             this.sqlMode = sqlMode;
             this.__explicitlySet__.add("sqlMode");
             return this;
         }
-
+        /**
+         * Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateDefaultCompressionLevel")
         private Integer mysqlxDeflateDefaultCompressionLevel;
 
+        /**
+         * Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+         * @param mysqlxDeflateDefaultCompressionLevel the value to set
+         * @return this builder
+         **/
         public Builder mysqlxDeflateDefaultCompressionLevel(
                 Integer mysqlxDeflateDefaultCompressionLevel) {
             this.mysqlxDeflateDefaultCompressionLevel = mysqlxDeflateDefaultCompressionLevel;
             this.__explicitlySet__.add("mysqlxDeflateDefaultCompressionLevel");
             return this;
         }
-
+        /**
+         * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateMaxClientCompressionLevel")
         private Integer mysqlxDeflateMaxClientCompressionLevel;
 
+        /**
+         * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+         * @param mysqlxDeflateMaxClientCompressionLevel the value to set
+         * @return this builder
+         **/
         public Builder mysqlxDeflateMaxClientCompressionLevel(
                 Integer mysqlxDeflateMaxClientCompressionLevel) {
             this.mysqlxDeflateMaxClientCompressionLevel = mysqlxDeflateMaxClientCompressionLevel;
             this.__explicitlySet__.add("mysqlxDeflateMaxClientCompressionLevel");
             return this;
         }
-
+        /**
+         * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4MaxClientCompressionLevel")
         private Integer mysqlxLz4MaxClientCompressionLevel;
 
+        /**
+         * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+         * @param mysqlxLz4MaxClientCompressionLevel the value to set
+         * @return this builder
+         **/
         public Builder mysqlxLz4MaxClientCompressionLevel(
                 Integer mysqlxLz4MaxClientCompressionLevel) {
             this.mysqlxLz4MaxClientCompressionLevel = mysqlxLz4MaxClientCompressionLevel;
             this.__explicitlySet__.add("mysqlxLz4MaxClientCompressionLevel");
             return this;
         }
-
+        /**
+         * Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4DefaultCompressionLevel")
         private Integer mysqlxLz4DefaultCompressionLevel;
 
+        /**
+         * Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+         * @param mysqlxLz4DefaultCompressionLevel the value to set
+         * @return this builder
+         **/
         public Builder mysqlxLz4DefaultCompressionLevel(Integer mysqlxLz4DefaultCompressionLevel) {
             this.mysqlxLz4DefaultCompressionLevel = mysqlxLz4DefaultCompressionLevel;
             this.__explicitlySet__.add("mysqlxLz4DefaultCompressionLevel");
             return this;
         }
-
+        /**
+         * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdMaxClientCompressionLevel")
         private Integer mysqlxZstdMaxClientCompressionLevel;
 
+        /**
+         * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+         * @param mysqlxZstdMaxClientCompressionLevel the value to set
+         * @return this builder
+         **/
         public Builder mysqlxZstdMaxClientCompressionLevel(
                 Integer mysqlxZstdMaxClientCompressionLevel) {
             this.mysqlxZstdMaxClientCompressionLevel = mysqlxZstdMaxClientCompressionLevel;
             this.__explicitlySet__.add("mysqlxZstdMaxClientCompressionLevel");
             return this;
         }
-
+        /**
+         * Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdDefaultCompressionLevel")
         private Integer mysqlxZstdDefaultCompressionLevel;
 
+        /**
+         * Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+         * @param mysqlxZstdDefaultCompressionLevel the value to set
+         * @return this builder
+         **/
         public Builder mysqlxZstdDefaultCompressionLevel(
                 Integer mysqlxZstdDefaultCompressionLevel) {
             this.mysqlxZstdDefaultCompressionLevel = mysqlxZstdDefaultCompressionLevel;
             this.__explicitlySet__.add("mysqlxZstdDefaultCompressionLevel");
             return this;
         }
-
+        /**
+         * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlZstdDefaultCompressionLevel")
         private Integer mysqlZstdDefaultCompressionLevel;
 
+        /**
+         * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+         * @param mysqlZstdDefaultCompressionLevel the value to set
+         * @return this builder
+         **/
         public Builder mysqlZstdDefaultCompressionLevel(Integer mysqlZstdDefaultCompressionLevel) {
             this.mysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
             this.__explicitlySet__.add("mysqlZstdDefaultCompressionLevel");
@@ -884,6 +1337,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("completionType")
     private final CompletionType completionType;
 
+    /**
+     * ("completion_type")
+     * @return the value
+     **/
     public CompletionType getCompletionType() {
         return completionType;
     }
@@ -943,6 +1400,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultAuthenticationPlugin")
     private final DefaultAuthenticationPlugin defaultAuthenticationPlugin;
 
+    /**
+     * ("default_authentication_plugin")
+     * @return the value
+     **/
     public DefaultAuthenticationPlugin getDefaultAuthenticationPlugin() {
         return defaultAuthenticationPlugin;
     }
@@ -1004,6 +1465,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("transactionIsolation")
     private final TransactionIsolation transactionIsolation;
 
+    /**
+     * ("transaction_isolation")
+     * @return the value
+     **/
     public TransactionIsolation getTransactionIsolation() {
         return transactionIsolation;
     }
@@ -1014,6 +1479,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtServerStopwordTable")
     private final String innodbFtServerStopwordTable;
 
+    /**
+     * ("innodb_ft_server_stopword_table")
+     * @return the value
+     **/
     public String getInnodbFtServerStopwordTable() {
         return innodbFtServerStopwordTable;
     }
@@ -1024,6 +1493,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mandatoryRoles")
     private final String mandatoryRoles;
 
+    /**
+     * ("mandatory_roles")
+     * @return the value
+     **/
     public String getMandatoryRoles() {
         return mandatoryRoles;
     }
@@ -1034,6 +1507,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("autocommit")
     private final Boolean autocommit;
 
+    /**
+     * ("autocommit")
+     * @return the value
+     **/
     public Boolean getAutocommit() {
         return autocommit;
     }
@@ -1044,6 +1521,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("foreignKeyChecks")
     private final Boolean foreignKeyChecks;
 
+    /**
+     * ("foreign_key_checks")
+     * @return the value
+     **/
     public Boolean getForeignKeyChecks() {
         return foreignKeyChecks;
     }
@@ -1163,6 +1644,39 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("groupReplicationConsistency")
     private final GroupReplicationConsistency groupReplicationConsistency;
 
+    /**
+     * - EVENTUAL:
+     *     Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
+     *     A RW transaction does not wait for other members to apply a transaction. This means that a transaction
+     *     could be externalized on one member before the others. This also means that in the event of a primary failover,
+     *     the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
+     *     RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+     * - BEFORE_ON_PRIMARY_FAILOVER:
+     *     New RO or RW transactions with a newly elected primary that is applying backlog from the old
+     *     primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
+     *     intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
+     *     clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
+     *     but does depend on the size of the backlog.
+     * - BEFORE:
+     *     A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
+     *     transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
+     *     latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
+     *     used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+     * - AFTER:
+     *     A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
+     *     This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
+     *     a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
+     *     applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
+     *     reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
+     *     by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
+     *     provided by BEFORE_ON_PRIMARY_FAILOVER.
+     * - BEFORE_AND_AFTER:
+     *     A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
+     *     applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
+     *     This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+     *
+     * @return the value
+     **/
     public GroupReplicationConsistency getGroupReplicationConsistency() {
         return groupReplicationConsistency;
     }
@@ -1173,6 +1687,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtEnableStopword")
     private final Boolean innodbFtEnableStopword;
 
+    /**
+     * ("innodb_ft_enable_stopword")
+     * @return the value
+     **/
     public Boolean getInnodbFtEnableStopword() {
         return innodbFtEnableStopword;
     }
@@ -1183,6 +1701,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("localInfile")
     private final Boolean localInfile;
 
+    /**
+     * ("local_infile")
+     * @return the value
+     **/
     public Boolean getLocalInfile() {
         return localInfile;
     }
@@ -1193,6 +1715,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlFirewallMode")
     private final Boolean mysqlFirewallMode;
 
+    /**
+     * ("mysql_firewall_mode")
+     * @return the value
+     **/
     public Boolean getMysqlFirewallMode() {
         return mysqlFirewallMode;
     }
@@ -1203,6 +1729,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxEnableHelloNotice")
     private final Boolean mysqlxEnableHelloNotice;
 
+    /**
+     * ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Boolean getMysqlxEnableHelloNotice() {
         return mysqlxEnableHelloNotice;
     }
@@ -1213,6 +1743,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlRequirePrimaryKey")
     private final Boolean sqlRequirePrimaryKey;
 
+    /**
+     * ("sql_require_primary_key")
+     * @return the value
+     **/
     public Boolean getSqlRequirePrimaryKey() {
         return sqlRequirePrimaryKey;
     }
@@ -1223,6 +1757,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlWarnings")
     private final Boolean sqlWarnings;
 
+    /**
+     * ("sql_warnings")
+     * @return the value
+     **/
     public Boolean getSqlWarnings() {
         return sqlWarnings;
     }
@@ -1235,6 +1773,12 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("binlogExpireLogsSeconds")
     private final Integer binlogExpireLogsSeconds;
 
+    /**
+     * Sets the binary log expiration period in seconds.
+     * binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+     *
+     * @return the value
+     **/
     public Integer getBinlogExpireLogsSeconds() {
         return binlogExpireLogsSeconds;
     }
@@ -1297,6 +1841,12 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("binlogRowMetadata")
     private final BinlogRowMetadata binlogRowMetadata;
 
+    /**
+     * Configures the amount of table metadata added to the binary log when using row-based logging.
+     * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+     *
+     * @return the value
+     **/
     public BinlogRowMetadata getBinlogRowMetadata() {
         return binlogRowMetadata;
     }
@@ -1309,6 +1859,12 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("binlogRowValueOptions")
     private final String binlogRowValueOptions;
 
+    /**
+     * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
+     * binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+     *
+     * @return the value
+     **/
     public String getBinlogRowValueOptions() {
         return binlogRowValueOptions;
     }
@@ -1321,6 +1877,12 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("binlogTransactionCompression")
     private final Boolean binlogTransactionCompression;
 
+    /**
+     * Enables compression for transactions that are written to binary log files on this server.
+     * binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+     *
+     * @return the value
+     **/
     public Boolean getBinlogTransactionCompression() {
         return binlogTransactionCompression;
     }
@@ -1331,6 +1893,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolSize")
     private final Long innodbBufferPoolSize;
 
+    /**
+     * ("innodb_buffer_pool_size")
+     * @return the value
+     **/
     public Long getInnodbBufferPoolSize() {
         return innodbBufferPoolSize;
     }
@@ -1341,6 +1907,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtResultCacheLimit")
     private final Integer innodbFtResultCacheLimit;
 
+    /**
+     * ("innodb_ft_result_cache_limit")
+     * @return the value
+     **/
     public Integer getInnodbFtResultCacheLimit() {
         return innodbFtResultCacheLimit;
     }
@@ -1351,6 +1921,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
     private final Integer maxConnections;
 
+    /**
+     * ("max_connections")
+     * @return the value
+     **/
     public Integer getMaxConnections() {
         return maxConnections;
     }
@@ -1361,6 +1935,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("maxPreparedStmtCount")
     private final Integer maxPreparedStmtCount;
 
+    /**
+     * ("max_prepared_stmt_count")
+     * @return the value
+     **/
     public Integer getMaxPreparedStmtCount() {
         return maxPreparedStmtCount;
     }
@@ -1371,6 +1949,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("connectTimeout")
     private final Integer connectTimeout;
 
+    /**
+     * ("connect_timeout")
+     * @return the value
+     **/
     public Integer getConnectTimeout() {
         return connectTimeout;
     }
@@ -1381,6 +1963,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("cteMaxRecursionDepth")
     private final Integer cteMaxRecursionDepth;
 
+    /**
+     * ("cte_max_recursion_depth")
+     * @return the value
+     **/
     public Integer getCteMaxRecursionDepth() {
         return cteMaxRecursionDepth;
     }
@@ -1391,6 +1977,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("generatedRandomPasswordLength")
     private final Integer generatedRandomPasswordLength;
 
+    /**
+     * ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getGeneratedRandomPasswordLength() {
         return generatedRandomPasswordLength;
     }
@@ -1401,6 +1991,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("informationSchemaStatsExpiry")
     private final Integer informationSchemaStatsExpiry;
 
+    /**
+     * ("information_schema_stats_expiry")
+     * @return the value
+     **/
     public Integer getInformationSchemaStatsExpiry() {
         return informationSchemaStatsExpiry;
     }
@@ -1411,6 +2005,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolInstances")
     private final Integer innodbBufferPoolInstances;
 
+    /**
+     * ("innodb_buffer_pool_instances")
+     * @return the value
+     **/
     public Integer getInnodbBufferPoolInstances() {
         return innodbBufferPoolInstances;
     }
@@ -1421,6 +2019,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMaxTokenSize")
     private final Integer innodbFtMaxTokenSize;
 
+    /**
+     * ("innodb_ft_max_token_size")
+     * @return the value
+     **/
     public Integer getInnodbFtMaxTokenSize() {
         return innodbFtMaxTokenSize;
     }
@@ -1431,6 +2033,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtMinTokenSize")
     private final Integer innodbFtMinTokenSize;
 
+    /**
+     * ("innodb_ft_min_token_size")
+     * @return the value
+     **/
     public Integer getInnodbFtMinTokenSize() {
         return innodbFtMinTokenSize;
     }
@@ -1441,6 +2047,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbFtNumWordOptimize")
     private final Integer innodbFtNumWordOptimize;
 
+    /**
+     * ("innodb_ft_num_word_optimize")
+     * @return the value
+     **/
     public Integer getInnodbFtNumWordOptimize() {
         return innodbFtNumWordOptimize;
     }
@@ -1451,6 +2061,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbLockWaitTimeout")
     private final Integer innodbLockWaitTimeout;
 
+    /**
+     * ("innodb_lock_wait_timeout")
+     * @return the value
+     **/
     public Integer getInnodbLockWaitTimeout() {
         return innodbLockWaitTimeout;
     }
@@ -1461,6 +2075,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLag")
     private final Integer innodbMaxPurgeLag;
 
+    /**
+     * ("innodb_max_purge_lag")
+     * @return the value
+     **/
     public Integer getInnodbMaxPurgeLag() {
         return innodbMaxPurgeLag;
     }
@@ -1471,6 +2089,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("innodbMaxPurgeLagDelay")
     private final Integer innodbMaxPurgeLagDelay;
 
+    /**
+     * ("innodb_max_purge_lag_delay")
+     * @return the value
+     **/
     public Integer getInnodbMaxPurgeLagDelay() {
         return innodbMaxPurgeLagDelay;
     }
@@ -1481,6 +2103,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("maxExecutionTime")
     private final Integer maxExecutionTime;
 
+    /**
+     * ("max_execution_time")
+     * @return the value
+     **/
     public Integer getMaxExecutionTime() {
         return maxExecutionTime;
     }
@@ -1491,6 +2117,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxConnectTimeout")
     private final Integer mysqlxConnectTimeout;
 
+    /**
+     * ("mysqlx_connect_timeout") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getMysqlxConnectTimeout() {
         return mysqlxConnectTimeout;
     }
@@ -1501,6 +2131,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDocumentIdUniquePrefix")
     private final Integer mysqlxDocumentIdUniquePrefix;
 
+    /**
+     * ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getMysqlxDocumentIdUniquePrefix() {
         return mysqlxDocumentIdUniquePrefix;
     }
@@ -1511,6 +2145,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxIdleWorkerThreadTimeout")
     private final Integer mysqlxIdleWorkerThreadTimeout;
 
+    /**
+     * ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getMysqlxIdleWorkerThreadTimeout() {
         return mysqlxIdleWorkerThreadTimeout;
     }
@@ -1521,6 +2159,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxInteractiveTimeout")
     private final Integer mysqlxInteractiveTimeout;
 
+    /**
+     * ("mysqlx_interactive_timeout") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getMysqlxInteractiveTimeout() {
         return mysqlxInteractiveTimeout;
     }
@@ -1531,6 +2173,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMaxAllowedPacket")
     private final Integer mysqlxMaxAllowedPacket;
 
+    /**
+     * ("mysqlx_max_allowed_packet") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getMysqlxMaxAllowedPacket() {
         return mysqlxMaxAllowedPacket;
     }
@@ -1541,6 +2187,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMinWorkerThreads")
     private final Integer mysqlxMinWorkerThreads;
 
+    /**
+     * ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getMysqlxMinWorkerThreads() {
         return mysqlxMinWorkerThreads;
     }
@@ -1551,6 +2201,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxReadTimeout")
     private final Integer mysqlxReadTimeout;
 
+    /**
+     * ("mysqlx_read_timeout") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getMysqlxReadTimeout() {
         return mysqlxReadTimeout;
     }
@@ -1561,6 +2215,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWaitTimeout")
     private final Integer mysqlxWaitTimeout;
 
+    /**
+     * ("mysqlx_wait_timeout") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getMysqlxWaitTimeout() {
         return mysqlxWaitTimeout;
     }
@@ -1571,6 +2229,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWriteTimeout")
     private final Integer mysqlxWriteTimeout;
 
+    /**
+     * ("mysqlx_write_timeout") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getMysqlxWriteTimeout() {
         return mysqlxWriteTimeout;
     }
@@ -1581,6 +2243,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("parserMaxMemSize")
     private final Integer parserMaxMemSize;
 
+    /**
+     * ("parser_max_mem_size")
+     * @return the value
+     **/
     public Integer getParserMaxMemSize() {
         return parserMaxMemSize;
     }
@@ -1591,6 +2257,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("queryAllocBlockSize")
     private final Integer queryAllocBlockSize;
 
+    /**
+     * ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getQueryAllocBlockSize() {
         return queryAllocBlockSize;
     }
@@ -1601,6 +2271,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("queryPreallocSize")
     private final Integer queryPreallocSize;
 
+    /**
+     * ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+     * @return the value
+     **/
     public Integer getQueryPreallocSize() {
         return queryPreallocSize;
     }
@@ -1611,6 +2285,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlMode")
     private final String sqlMode;
 
+    /**
+     * ("sql_mode")
+     * @return the value
+     **/
     public String getSqlMode() {
         return sqlMode;
     }
@@ -1621,6 +2299,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateDefaultCompressionLevel")
     private final Integer mysqlxDeflateDefaultCompressionLevel;
 
+    /**
+     * Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+     * @return the value
+     **/
     public Integer getMysqlxDeflateDefaultCompressionLevel() {
         return mysqlxDeflateDefaultCompressionLevel;
     }
@@ -1631,6 +2313,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDeflateMaxClientCompressionLevel")
     private final Integer mysqlxDeflateMaxClientCompressionLevel;
 
+    /**
+     * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+     * @return the value
+     **/
     public Integer getMysqlxDeflateMaxClientCompressionLevel() {
         return mysqlxDeflateMaxClientCompressionLevel;
     }
@@ -1641,6 +2327,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4MaxClientCompressionLevel")
     private final Integer mysqlxLz4MaxClientCompressionLevel;
 
+    /**
+     * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+     * @return the value
+     **/
     public Integer getMysqlxLz4MaxClientCompressionLevel() {
         return mysqlxLz4MaxClientCompressionLevel;
     }
@@ -1651,6 +2341,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxLz4DefaultCompressionLevel")
     private final Integer mysqlxLz4DefaultCompressionLevel;
 
+    /**
+     * Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+     * @return the value
+     **/
     public Integer getMysqlxLz4DefaultCompressionLevel() {
         return mysqlxLz4DefaultCompressionLevel;
     }
@@ -1661,6 +2355,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdMaxClientCompressionLevel")
     private final Integer mysqlxZstdMaxClientCompressionLevel;
 
+    /**
+     * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+     * @return the value
+     **/
     public Integer getMysqlxZstdMaxClientCompressionLevel() {
         return mysqlxZstdMaxClientCompressionLevel;
     }
@@ -1671,6 +2369,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdDefaultCompressionLevel")
     private final Integer mysqlxZstdDefaultCompressionLevel;
 
+    /**
+     * Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+     * @return the value
+     **/
     public Integer getMysqlxZstdDefaultCompressionLevel() {
         return mysqlxZstdDefaultCompressionLevel;
     }
@@ -1681,6 +2383,10 @@ public final class ConfigurationVariables {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlZstdDefaultCompressionLevel")
     private final Integer mysqlZstdDefaultCompressionLevel;
 
+    /**
+     * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+     * @return the value
+     **/
     public Integer getMysqlZstdDefaultCompressionLevel() {
         return mysqlZstdDefaultCompressionLevel;
     }

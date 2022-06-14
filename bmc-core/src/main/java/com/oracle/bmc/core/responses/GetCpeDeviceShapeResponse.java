@@ -15,6 +15,12 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail;
 
+    /**
+     * The returned CpeDeviceShapeDetail instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.CpeDeviceShapeDetail getCpeDeviceShapeDetail() {
         return cpeDeviceShapeDetail;
     }
@@ -50,15 +60,35 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned CpeDeviceShapeDetail instance.
+         */
         private com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail;
 
+        /**
+         * The returned CpeDeviceShapeDetail instance.
+         * @param cpeDeviceShapeDetail the value to set
+         * @return this builder
+         */
         public Builder cpeDeviceShapeDetail(
                 com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail) {
             this.cpeDeviceShapeDetail = cpeDeviceShapeDetail;
@@ -77,12 +107,20 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetCpeDeviceShapeResponse build() {
             return new GetCpeDeviceShapeResponse(
                     __httpStatusCode__, opcRequestId, cpeDeviceShapeDetail);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,9 +29,17 @@ public final class ConditionMetadataTypeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * collection of condition types
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ConditionMetadataTypeSummary> items;
 
+        /**
+         * collection of condition types
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ConditionMetadataTypeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class ConditionMetadataTypeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ConditionMetadataTypeSummary> items;
 
+    /**
+     * collection of condition types
+     * @return the value
+     **/
     public java.util.List<ConditionMetadataTypeSummary> getItems() {
         return items;
     }

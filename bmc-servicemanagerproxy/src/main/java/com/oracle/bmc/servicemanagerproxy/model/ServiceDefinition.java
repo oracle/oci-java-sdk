@@ -32,27 +32,57 @@ public final class ServiceDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The service definition type. For example, a service definition type "RGBUOROMS"
+         * would be for the service "Oracle Retail Order Management Cloud Service".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * The service definition type. For example, a service definition type "RGBUOROMS"
+         * would be for the service "Oracle Retail Order Management Cloud Service".
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Short display name of the service. For example, "Retail Order Management".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shortDisplayName")
         private String shortDisplayName;
 
+        /**
+         * Short display name of the service. For example, "Retail Order Management".
+         *
+         * @param shortDisplayName the value to set
+         * @return this builder
+         **/
         public Builder shortDisplayName(String shortDisplayName) {
             this.shortDisplayName = shortDisplayName;
             this.__explicitlySet__.add("shortDisplayName");
@@ -100,6 +130,12 @@ public final class ServiceDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * The service definition type. For example, a service definition type "RGBUOROMS"
+     * would be for the service "Oracle Retail Order Management Cloud Service".
+     *
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -111,6 +147,11 @@ public final class ServiceDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -122,6 +163,11 @@ public final class ServiceDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("shortDisplayName")
     private final String shortDisplayName;
 
+    /**
+     * Short display name of the service. For example, "Retail Order Management".
+     *
+     * @return the value
+     **/
     public String getShortDisplayName() {
         return shortDisplayName;
     }

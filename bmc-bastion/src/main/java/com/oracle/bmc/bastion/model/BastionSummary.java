@@ -66,118 +66,230 @@ public final class BastionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of bastion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bastionType")
         private String bastionType;
 
+        /**
+         * The type of bastion.
+         * @param bastionType the value to set
+         * @return this builder
+         **/
         public Builder bastionType(String bastionType) {
             this.bastionType = bastionType;
             this.__explicitlySet__.add("bastionType");
             return this;
         }
-
+        /**
+         * The unique identifier (OCID) of the bastion, which can't be changed after creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique identifier (OCID) of the bastion, which can't be changed after creation.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the bastion, which can't be changed after creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the bastion, which can't be changed after creation.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The unique identifier (OCID) of the compartment where the bastion is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The unique identifier (OCID) of the compartment where the bastion is located.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetVcnId")
         private String targetVcnId;
 
+        /**
+         * The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
+         * @param targetVcnId the value to set
+         * @return this builder
+         **/
         public Builder targetVcnId(String targetVcnId) {
             this.targetVcnId = targetVcnId;
             this.__explicitlySet__.add("targetVcnId");
             return this;
         }
-
+        /**
+         * The unique identifier (OCID) of the subnet that the bastion connects to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetSubnetId")
         private String targetSubnetId;
 
+        /**
+         * The unique identifier (OCID) of the subnet that the bastion connects to.
+         * @param targetSubnetId the value to set
+         * @return this builder
+         **/
         public Builder targetSubnetId(String targetSubnetId) {
             this.targetSubnetId = targetSubnetId;
             this.__explicitlySet__.add("targetSubnetId");
             return this;
         }
-
+        /**
+         * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the bastion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private BastionLifecycleState lifecycleState;
 
+        /**
+         * The current state of the bastion.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(BastionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -246,6 +358,10 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("bastionType")
     private final String bastionType;
 
+    /**
+     * The type of bastion.
+     * @return the value
+     **/
     public String getBastionType() {
         return bastionType;
     }
@@ -256,6 +372,10 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique identifier (OCID) of the bastion, which can't be changed after creation.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -266,6 +386,10 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the bastion, which can't be changed after creation.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -276,6 +400,10 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The unique identifier (OCID) of the compartment where the bastion is located.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -286,6 +414,10 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("targetVcnId")
     private final String targetVcnId;
 
+    /**
+     * The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
+     * @return the value
+     **/
     public String getTargetVcnId() {
         return targetVcnId;
     }
@@ -296,6 +428,10 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("targetSubnetId")
     private final String targetSubnetId;
 
+    /**
+     * The unique identifier (OCID) of the subnet that the bastion connects to.
+     * @return the value
+     **/
     public String getTargetSubnetId() {
         return targetSubnetId;
     }
@@ -308,6 +444,12 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -320,6 +462,12 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -330,6 +478,10 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final BastionLifecycleState lifecycleState;
 
+    /**
+     * The current state of the bastion.
+     * @return the value
+     **/
     public BastionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -340,6 +492,10 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -352,6 +508,12 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -364,6 +526,12 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -376,6 +544,12 @@ public final class BastionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

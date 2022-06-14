@@ -17,6 +17,9 @@ public class GetModuleStreamProfileRequest
      */
     private String softwareSourceId;
 
+    /**
+     * The OCID of the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -25,6 +28,9 @@ public class GetModuleStreamProfileRequest
      */
     private String moduleName;
 
+    /**
+     * The name of the module
+     */
     public String getModuleName() {
         return moduleName;
     }
@@ -33,6 +39,9 @@ public class GetModuleStreamProfileRequest
      */
     private String streamName;
 
+    /**
+     * The name of the stream of the containing module
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -41,6 +50,9 @@ public class GetModuleStreamProfileRequest
      */
     private String profileName;
 
+    /**
+     * The name of the profile of the containing module stream
+     */
     public String getProfileName() {
         return profileName;
     }
@@ -49,6 +61,9 @@ public class GetModuleStreamProfileRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,10 +75,14 @@ public class GetModuleStreamProfileRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
          * The OCID of the software source.
+         * @param softwareSourceId the value to set
          * @return this builder instance
          */
         public Builder softwareSourceId(String softwareSourceId) {
@@ -71,10 +90,14 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
+        /**
+         * The name of the module
+         */
         private String moduleName = null;
 
         /**
          * The name of the module
+         * @param moduleName the value to set
          * @return this builder instance
          */
         public Builder moduleName(String moduleName) {
@@ -82,10 +105,14 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
+        /**
+         * The name of the stream of the containing module
+         */
         private String streamName = null;
 
         /**
          * The name of the stream of the containing module
+         * @param streamName the value to set
          * @return this builder instance
          */
         public Builder streamName(String streamName) {
@@ -93,10 +120,14 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
+        /**
+         * The name of the profile of the containing module stream
+         */
         private String profileName = null;
 
         /**
          * The name of the profile of the containing module stream
+         * @param profileName the value to set
          * @return this builder instance
          */
         public Builder profileName(String profileName) {
@@ -104,10 +135,14 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -191,7 +226,8 @@ public class GetModuleStreamProfileRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -202,6 +238,10 @@ public class GetModuleStreamProfileRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

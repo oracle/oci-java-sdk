@@ -29,9 +29,17 @@ public final class DetectLanguageSentimentsResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of detected aspects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aspects")
         private java.util.List<SentimentAspect> aspects;
 
+        /**
+         * List of detected aspects.
+         * @param aspects the value to set
+         * @return this builder
+         **/
         public Builder aspects(java.util.List<SentimentAspect> aspects) {
             this.aspects = aspects;
             this.__explicitlySet__.add("aspects");
@@ -74,6 +82,10 @@ public final class DetectLanguageSentimentsResult {
     @com.fasterxml.jackson.annotation.JsonProperty("aspects")
     private final java.util.List<SentimentAspect> aspects;
 
+    /**
+     * List of detected aspects.
+     * @return the value
+     **/
     public java.util.List<SentimentAspect> getAspects() {
         return aspects;
     }

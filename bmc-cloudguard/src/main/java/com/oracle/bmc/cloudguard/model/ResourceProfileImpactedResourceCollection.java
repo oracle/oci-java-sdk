@@ -30,9 +30,17 @@ public final class ResourceProfileImpactedResourceCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of ResourceProfileImpactedResourceSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceProfileImpactedResourceSummary> items;
 
+        /**
+         * List of ResourceProfileImpactedResourceSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ResourceProfileImpactedResourceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class ResourceProfileImpactedResourceCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceProfileImpactedResourceSummary> items;
 
+    /**
+     * List of ResourceProfileImpactedResourceSummary
+     * @return the value
+     **/
     public java.util.List<ResourceProfileImpactedResourceSummary> getItems() {
         return items;
     }

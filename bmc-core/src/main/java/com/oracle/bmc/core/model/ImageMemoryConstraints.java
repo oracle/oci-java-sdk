@@ -30,18 +30,33 @@ public final class ImageMemoryConstraints {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The minimum amount of memory, in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
         private Integer minInGBs;
 
+        /**
+         * The minimum amount of memory, in gigabytes.
+         * @param minInGBs the value to set
+         * @return this builder
+         **/
         public Builder minInGBs(Integer minInGBs) {
             this.minInGBs = minInGBs;
             this.__explicitlySet__.add("minInGBs");
             return this;
         }
-
+        /**
+         * The maximum amount of memory, in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
         private Integer maxInGBs;
 
+        /**
+         * The maximum amount of memory, in gigabytes.
+         * @param maxInGBs the value to set
+         * @return this builder
+         **/
         public Builder maxInGBs(Integer maxInGBs) {
             this.maxInGBs = maxInGBs;
             this.__explicitlySet__.add("maxInGBs");
@@ -83,6 +98,10 @@ public final class ImageMemoryConstraints {
     @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
     private final Integer minInGBs;
 
+    /**
+     * The minimum amount of memory, in gigabytes.
+     * @return the value
+     **/
     public Integer getMinInGBs() {
         return minInGBs;
     }
@@ -93,6 +112,10 @@ public final class ImageMemoryConstraints {
     @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
     private final Integer maxInGBs;
 
+    /**
+     * The maximum amount of memory, in gigabytes.
+     * @return the value
+     **/
     public Integer getMaxInGBs() {
         return maxInGBs;
     }

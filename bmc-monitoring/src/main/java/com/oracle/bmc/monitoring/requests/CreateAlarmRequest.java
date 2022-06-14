@@ -18,6 +18,9 @@ public class CreateAlarmRequest
      */
     private com.oracle.bmc.monitoring.model.CreateAlarmDetails createAlarmDetails;
 
+    /**
+     * Document for creating an alarm.
+     */
     public com.oracle.bmc.monitoring.model.CreateAlarmDetails getCreateAlarmDetails() {
         return createAlarmDetails;
     }
@@ -28,6 +31,11 @@ public class CreateAlarmRequest
      */
     private String opcRequestId;
 
+    /**
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +49,14 @@ public class CreateAlarmRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -62,10 +78,14 @@ public class CreateAlarmRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Document for creating an alarm.
+         */
         private com.oracle.bmc.monitoring.model.CreateAlarmDetails createAlarmDetails = null;
 
         /**
          * Document for creating an alarm.
+         * @param createAlarmDetails the value to set
          * @return this builder instance
          */
         public Builder createAlarmDetails(
@@ -74,12 +94,18 @@ public class CreateAlarmRequest
             return this;
         }
 
+        /**
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Customer part of the request identifier token. If you need to contact Oracle about a particular
          * request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -87,6 +113,14 @@ public class CreateAlarmRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -96,6 +130,7 @@ public class CreateAlarmRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -186,7 +221,8 @@ public class CreateAlarmRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -195,6 +231,10 @@ public class CreateAlarmRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

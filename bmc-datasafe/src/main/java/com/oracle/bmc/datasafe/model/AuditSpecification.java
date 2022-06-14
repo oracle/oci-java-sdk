@@ -67,99 +67,179 @@ public final class AuditSpecification {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
         private String auditPolicyName;
 
+        /**
+         * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+         *
+         * @param auditPolicyName the value to set
+         * @return this builder
+         **/
         public Builder auditPolicyName(String auditPolicyName) {
             this.auditPolicyName = auditPolicyName;
             this.__explicitlySet__.add("auditPolicyName");
             return this;
         }
-
+        /**
+         * Indicates the names of corresponding database policy ( or policies) in the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databasePolicyNames")
         private java.util.List<String> databasePolicyNames;
 
+        /**
+         * Indicates the names of corresponding database policy ( or policies) in the target database.
+         * @param databasePolicyNames the value to set
+         * @return this builder
+         **/
         public Builder databasePolicyNames(java.util.List<String> databasePolicyNames) {
             this.databasePolicyNames = databasePolicyNames;
             this.__explicitlySet__.add("databasePolicyNames");
             return this;
         }
-
+        /**
+         * The category to which the audit policy belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyCategory")
         private AuditPolicyCategory auditPolicyCategory;
 
+        /**
+         * The category to which the audit policy belongs.
+         * @param auditPolicyCategory the value to set
+         * @return this builder
+         **/
         public Builder auditPolicyCategory(AuditPolicyCategory auditPolicyCategory) {
             this.auditPolicyCategory = auditPolicyCategory;
             this.__explicitlySet__.add("auditPolicyCategory");
             return this;
         }
-
+        /**
+         * Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableStatus")
         private EnableStatus enableStatus;
 
+        /**
+         * Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
+         * @param enableStatus the value to set
+         * @return this builder
+         **/
         public Builder enableStatus(EnableStatus enableStatus) {
             this.enableStatus = enableStatus;
             this.__explicitlySet__.add("enableStatus");
             return this;
         }
-
+        /**
+         * Provides information about the policy that has been only partially enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partiallyEnabledMsg")
         private String partiallyEnabledMsg;
 
+        /**
+         * Provides information about the policy that has been only partially enabled.
+         * @param partiallyEnabledMsg the value to set
+         * @return this builder
+         **/
         public Builder partiallyEnabledMsg(String partiallyEnabledMsg) {
             this.partiallyEnabledMsg = partiallyEnabledMsg;
             this.__explicitlySet__.add("partiallyEnabledMsg");
             return this;
         }
-
+        /**
+         * Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabledForAllUsers")
         private Boolean isEnabledForAllUsers;
 
+        /**
+         * Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
+         * @param isEnabledForAllUsers the value to set
+         * @return this builder
+         **/
         public Builder isEnabledForAllUsers(Boolean isEnabledForAllUsers) {
             this.isEnabledForAllUsers = isEnabledForAllUsers;
             this.__explicitlySet__.add("isEnabledForAllUsers");
             return this;
         }
-
+        /**
+         * Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isViewOnly")
         private Boolean isViewOnly;
 
+        /**
+         * Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
+         * @param isViewOnly the value to set
+         * @return this builder
+         **/
         public Builder isViewOnly(Boolean isViewOnly) {
             this.isViewOnly = isViewOnly;
             this.__explicitlySet__.add("isViewOnly");
             return this;
         }
-
+        /**
+         * Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSeededInTarget")
         private Boolean isSeededInTarget;
 
+        /**
+         * Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
+         * @param isSeededInTarget the value to set
+         * @return this builder
+         **/
         public Builder isSeededInTarget(Boolean isSeededInTarget) {
             this.isSeededInTarget = isSeededInTarget;
             this.__explicitlySet__.add("isSeededInTarget");
             return this;
         }
-
+        /**
+         * Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSeededInDataSafe")
         private Boolean isSeededInDataSafe;
 
+        /**
+         * Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
+         * @param isSeededInDataSafe the value to set
+         * @return this builder
+         **/
         public Builder isSeededInDataSafe(Boolean isSeededInDataSafe) {
             this.isSeededInDataSafe = isSeededInDataSafe;
             this.__explicitlySet__.add("isSeededInDataSafe");
             return this;
         }
-
+        /**
+         * Indicates whether the policy is already created on the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCreated")
         private Boolean isCreated;
 
+        /**
+         * Indicates whether the policy is already created on the target database.
+         * @param isCreated the value to set
+         * @return this builder
+         **/
         public Builder isCreated(Boolean isCreated) {
             this.isCreated = isCreated;
             this.__explicitlySet__.add("isCreated");
             return this;
         }
-
+        /**
+         * Indicates on whom the audit policy is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabledEntities")
         private EnabledEntities enabledEntities;
 
+        /**
+         * Indicates on whom the audit policy is enabled.
+         * @param enabledEntities the value to set
+         * @return this builder
+         **/
         public Builder enabledEntities(EnabledEntities enabledEntities) {
             this.enabledEntities = enabledEntities;
             this.__explicitlySet__.add("enabledEntities");
@@ -225,6 +305,11 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
     private final String auditPolicyName;
 
+    /**
+     * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+     *
+     * @return the value
+     **/
     public String getAuditPolicyName() {
         return auditPolicyName;
     }
@@ -235,6 +320,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("databasePolicyNames")
     private final java.util.List<String> databasePolicyNames;
 
+    /**
+     * Indicates the names of corresponding database policy ( or policies) in the target database.
+     * @return the value
+     **/
     public java.util.List<String> getDatabasePolicyNames() {
         return databasePolicyNames;
     }
@@ -245,6 +334,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyCategory")
     private final AuditPolicyCategory auditPolicyCategory;
 
+    /**
+     * The category to which the audit policy belongs.
+     * @return the value
+     **/
     public AuditPolicyCategory getAuditPolicyCategory() {
         return auditPolicyCategory;
     }
@@ -304,6 +397,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("enableStatus")
     private final EnableStatus enableStatus;
 
+    /**
+     * Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
+     * @return the value
+     **/
     public EnableStatus getEnableStatus() {
         return enableStatus;
     }
@@ -314,6 +411,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("partiallyEnabledMsg")
     private final String partiallyEnabledMsg;
 
+    /**
+     * Provides information about the policy that has been only partially enabled.
+     * @return the value
+     **/
     public String getPartiallyEnabledMsg() {
         return partiallyEnabledMsg;
     }
@@ -324,6 +425,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabledForAllUsers")
     private final Boolean isEnabledForAllUsers;
 
+    /**
+     * Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
+     * @return the value
+     **/
     public Boolean getIsEnabledForAllUsers() {
         return isEnabledForAllUsers;
     }
@@ -334,6 +439,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("isViewOnly")
     private final Boolean isViewOnly;
 
+    /**
+     * Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
+     * @return the value
+     **/
     public Boolean getIsViewOnly() {
         return isViewOnly;
     }
@@ -344,6 +453,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("isSeededInTarget")
     private final Boolean isSeededInTarget;
 
+    /**
+     * Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
+     * @return the value
+     **/
     public Boolean getIsSeededInTarget() {
         return isSeededInTarget;
     }
@@ -354,6 +467,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("isSeededInDataSafe")
     private final Boolean isSeededInDataSafe;
 
+    /**
+     * Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
+     * @return the value
+     **/
     public Boolean getIsSeededInDataSafe() {
         return isSeededInDataSafe;
     }
@@ -364,6 +481,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("isCreated")
     private final Boolean isCreated;
 
+    /**
+     * Indicates whether the policy is already created on the target database.
+     * @return the value
+     **/
     public Boolean getIsCreated() {
         return isCreated;
     }
@@ -426,6 +547,10 @@ public final class AuditSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("enabledEntities")
     private final EnabledEntities enabledEntities;
 
+    /**
+     * Indicates on whom the audit policy is enabled.
+     * @return the value
+     **/
     public EnabledEntities getEnabledEntities() {
         return enabledEntities;
     }

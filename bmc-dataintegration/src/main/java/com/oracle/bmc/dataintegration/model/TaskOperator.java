@@ -132,55 +132,97 @@ public final class TaskOperator extends Operator {
             this.__explicitlySet__.add("opConfigValues");
             return this;
         }
-
+        /**
+         * The number of retry attempts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryAttempts")
         private Integer retryAttempts;
 
+        /**
+         * The number of retry attempts.
+         * @param retryAttempts the value to set
+         * @return this builder
+         **/
         public Builder retryAttempts(Integer retryAttempts) {
             this.retryAttempts = retryAttempts;
             this.__explicitlySet__.add("retryAttempts");
             return this;
         }
-
+        /**
+         * The unit for the retry delay.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryDelayUnit")
         private RetryDelayUnit retryDelayUnit;
 
+        /**
+         * The unit for the retry delay.
+         * @param retryDelayUnit the value to set
+         * @return this builder
+         **/
         public Builder retryDelayUnit(RetryDelayUnit retryDelayUnit) {
             this.retryDelayUnit = retryDelayUnit;
             this.__explicitlySet__.add("retryDelayUnit");
             return this;
         }
-
+        /**
+         * The retry delay, the unit for measurement is in the property retry delay unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryDelay")
         private Double retryDelay;
 
+        /**
+         * The retry delay, the unit for measurement is in the property retry delay unit.
+         * @param retryDelay the value to set
+         * @return this builder
+         **/
         public Builder retryDelay(Double retryDelay) {
             this.retryDelay = retryDelay;
             this.__explicitlySet__.add("retryDelay");
             return this;
         }
-
+        /**
+         * The expected duration for the task run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
         private Double expectedDuration;
 
+        /**
+         * The expected duration for the task run.
+         * @param expectedDuration the value to set
+         * @return this builder
+         **/
         public Builder expectedDuration(Double expectedDuration) {
             this.expectedDuration = expectedDuration;
             this.__explicitlySet__.add("expectedDuration");
             return this;
         }
-
+        /**
+         * The expected duration unit of measure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
         private ExpectedDurationUnit expectedDurationUnit;
 
+        /**
+         * The expected duration unit of measure.
+         * @param expectedDurationUnit the value to set
+         * @return this builder
+         **/
         public Builder expectedDurationUnit(ExpectedDurationUnit expectedDurationUnit) {
             this.expectedDurationUnit = expectedDurationUnit;
             this.__explicitlySet__.add("expectedDurationUnit");
             return this;
         }
-
+        /**
+         * The type of the task referenced in the task property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskType")
         private TaskType taskType;
 
+        /**
+         * The type of the task referenced in the task property.
+         * @param taskType the value to set
+         * @return this builder
+         **/
         public Builder taskType(TaskType taskType) {
             this.taskType = taskType;
             this.__explicitlySet__.add("taskType");
@@ -195,10 +237,25 @@ public final class TaskOperator extends Operator {
             this.__explicitlySet__.add("task");
             return this;
         }
-
+        /**
+         * The merge condition. The conditions are
+         * ALL_SUCCESS - All the preceeding operators need to be successful.
+         * ALL_FAILED - All the preceeding operators should have failed.
+         * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerRule")
         private TriggerRule triggerRule;
 
+        /**
+         * The merge condition. The conditions are
+         * ALL_SUCCESS - All the preceeding operators need to be successful.
+         * ALL_FAILED - All the preceeding operators should have failed.
+         * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
+         *
+         * @param triggerRule the value to set
+         * @return this builder
+         **/
         public Builder triggerRule(TriggerRule triggerRule) {
             this.triggerRule = triggerRule;
             this.__explicitlySet__.add("triggerRule");
@@ -339,6 +396,10 @@ public final class TaskOperator extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("retryAttempts")
     private final Integer retryAttempts;
 
+    /**
+     * The number of retry attempts.
+     * @return the value
+     **/
     public Integer getRetryAttempts() {
         return retryAttempts;
     }
@@ -399,6 +460,10 @@ public final class TaskOperator extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("retryDelayUnit")
     private final RetryDelayUnit retryDelayUnit;
 
+    /**
+     * The unit for the retry delay.
+     * @return the value
+     **/
     public RetryDelayUnit getRetryDelayUnit() {
         return retryDelayUnit;
     }
@@ -409,6 +474,10 @@ public final class TaskOperator extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("retryDelay")
     private final Double retryDelay;
 
+    /**
+     * The retry delay, the unit for measurement is in the property retry delay unit.
+     * @return the value
+     **/
     public Double getRetryDelay() {
         return retryDelay;
     }
@@ -419,6 +488,10 @@ public final class TaskOperator extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
     private final Double expectedDuration;
 
+    /**
+     * The expected duration for the task run.
+     * @return the value
+     **/
     public Double getExpectedDuration() {
         return expectedDuration;
     }
@@ -479,6 +552,10 @@ public final class TaskOperator extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
     private final ExpectedDurationUnit expectedDurationUnit;
 
+    /**
+     * The expected duration unit of measure.
+     * @return the value
+     **/
     public ExpectedDurationUnit getExpectedDurationUnit() {
         return expectedDurationUnit;
     }
@@ -541,6 +618,10 @@ public final class TaskOperator extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     private final TaskType taskType;
 
+    /**
+     * The type of the task referenced in the task property.
+     * @return the value
+     **/
     public TaskType getTaskType() {
         return taskType;
     }
@@ -615,6 +696,14 @@ public final class TaskOperator extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("triggerRule")
     private final TriggerRule triggerRule;
 
+    /**
+     * The merge condition. The conditions are
+     * ALL_SUCCESS - All the preceeding operators need to be successful.
+     * ALL_FAILED - All the preceeding operators should have failed.
+     * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
+     *
+     * @return the value
+     **/
     public TriggerRule getTriggerRule() {
         return triggerRule;
     }

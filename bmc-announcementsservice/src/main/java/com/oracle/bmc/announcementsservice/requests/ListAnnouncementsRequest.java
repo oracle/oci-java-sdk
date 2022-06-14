@@ -17,6 +17,10 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +29,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -33,6 +40,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -41,6 +51,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String announcementType;
 
+    /**
+     * The type of announcement.
+     */
     public String getAnnouncementType() {
         return announcementType;
     }
@@ -85,6 +98,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The announcement's current lifecycle state.
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -93,6 +109,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean isBanner;
 
+    /**
+     * Whether the announcement is displayed as a console banner.
+     */
     public Boolean getIsBanner() {
         return isBanner;
     }
@@ -143,6 +162,10 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The criteria to sort by. You can specify only one sort order.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -189,6 +212,10 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The sort order to use. (Sorting by {@code announcementType} orders the announcements list according to importance.)
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -197,6 +224,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.Date timeOneEarliestTime;
 
+    /**
+     * The boundary for the earliest {@code timeOneValue} date on announcements that you want to see.
+     */
     public java.util.Date getTimeOneEarliestTime() {
         return timeOneEarliestTime;
     }
@@ -205,6 +235,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.Date timeOneLatestTime;
 
+    /**
+     * The boundary for the latest {@code timeOneValue} date on announcements that you want to see.
+     */
     public java.util.Date getTimeOneLatestTime() {
         return timeOneLatestTime;
     }
@@ -213,6 +246,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String environmentName;
 
+    /**
+     * A filter to return only announcements that match a specific environment name.
+     */
     public String getEnvironmentName() {
         return environmentName;
     }
@@ -221,6 +257,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String service;
 
+    /**
+     * A filter to return only announcements affecting a specific service.
+     */
     public String getService() {
         return service;
     }
@@ -265,6 +304,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * A filter to return only announcements affecting a specific platform.
+     */
     public PlatformType getPlatformType() {
         return platformType;
     }
@@ -273,6 +315,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<String> excludeAnnouncementTypes;
 
+    /**
+     * Exclude The type of announcement.
+     */
     public java.util.List<String> getExcludeAnnouncementTypes() {
         return excludeAnnouncementTypes;
     }
@@ -283,6 +328,11 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -294,11 +344,16 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -306,10 +361,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -317,10 +376,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -328,10 +391,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The type of announcement.
+         */
         private String announcementType = null;
 
         /**
          * The type of announcement.
+         * @param announcementType the value to set
          * @return this builder instance
          */
         public Builder announcementType(String announcementType) {
@@ -339,10 +406,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The announcement's current lifecycle state.
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * The announcement's current lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState lifecycleState) {
@@ -350,10 +421,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Whether the announcement is displayed as a console banner.
+         */
         private Boolean isBanner = null;
 
         /**
          * Whether the announcement is displayed as a console banner.
+         * @param isBanner the value to set
          * @return this builder instance
          */
         public Builder isBanner(Boolean isBanner) {
@@ -361,11 +436,16 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The criteria to sort by. You can specify only one sort order.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The criteria to sort by. You can specify only one sort order.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -373,11 +453,16 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use. (Sorting by {@code announcementType} orders the announcements list according to importance.)
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use. (Sorting by {@code announcementType} orders the announcements list according to importance.)
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -385,10 +470,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The boundary for the earliest {@code timeOneValue} date on announcements that you want to see.
+         */
         private java.util.Date timeOneEarliestTime = null;
 
         /**
          * The boundary for the earliest {@code timeOneValue} date on announcements that you want to see.
+         * @param timeOneEarliestTime the value to set
          * @return this builder instance
          */
         public Builder timeOneEarliestTime(java.util.Date timeOneEarliestTime) {
@@ -396,10 +485,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The boundary for the latest {@code timeOneValue} date on announcements that you want to see.
+         */
         private java.util.Date timeOneLatestTime = null;
 
         /**
          * The boundary for the latest {@code timeOneValue} date on announcements that you want to see.
+         * @param timeOneLatestTime the value to set
          * @return this builder instance
          */
         public Builder timeOneLatestTime(java.util.Date timeOneLatestTime) {
@@ -407,10 +500,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only announcements that match a specific environment name.
+         */
         private String environmentName = null;
 
         /**
          * A filter to return only announcements that match a specific environment name.
+         * @param environmentName the value to set
          * @return this builder instance
          */
         public Builder environmentName(String environmentName) {
@@ -418,10 +515,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only announcements affecting a specific service.
+         */
         private String service = null;
 
         /**
          * A filter to return only announcements affecting a specific service.
+         * @param service the value to set
          * @return this builder instance
          */
         public Builder service(String service) {
@@ -429,10 +530,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only announcements affecting a specific platform.
+         */
         private PlatformType platformType = null;
 
         /**
          * A filter to return only announcements affecting a specific platform.
+         * @param platformType the value to set
          * @return this builder instance
          */
         public Builder platformType(PlatformType platformType) {
@@ -440,10 +545,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Exclude The type of announcement.
+         */
         private java.util.List<String> excludeAnnouncementTypes = null;
 
         /**
          * Exclude The type of announcement.
+         * @param excludeAnnouncementTypes the value to set
          * @return this builder instance
          */
         public Builder excludeAnnouncementTypes(java.util.List<String> excludeAnnouncementTypes) {
@@ -453,18 +562,25 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. Exclude The type of announcement.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder excludeAnnouncementTypes(String singularValue) {
             return this.excludeAnnouncementTypes(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -568,7 +684,8 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -589,6 +706,10 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

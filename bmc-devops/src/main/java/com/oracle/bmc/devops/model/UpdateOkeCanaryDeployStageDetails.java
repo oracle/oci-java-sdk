@@ -73,10 +73,17 @@ public final class UpdateOkeCanaryDeployStageDetails extends UpdateDeployStageDe
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * List of Kubernetes manifest artifact OCIDs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
         private java.util.List<String> kubernetesManifestDeployArtifactIds;
 
+        /**
+         * List of Kubernetes manifest artifact OCIDs.
+         * @param kubernetesManifestDeployArtifactIds the value to set
+         * @return this builder
+         **/
         public Builder kubernetesManifestDeployArtifactIds(
                 java.util.List<String> kubernetesManifestDeployArtifactIds) {
             this.kubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
@@ -151,6 +158,10 @@ public final class UpdateOkeCanaryDeployStageDetails extends UpdateDeployStageDe
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
     private final java.util.List<String> kubernetesManifestDeployArtifactIds;
 
+    /**
+     * List of Kubernetes manifest artifact OCIDs.
+     * @return the value
+     **/
     public java.util.List<String> getKubernetesManifestDeployArtifactIds() {
         return kubernetesManifestDeployArtifactIds;
     }

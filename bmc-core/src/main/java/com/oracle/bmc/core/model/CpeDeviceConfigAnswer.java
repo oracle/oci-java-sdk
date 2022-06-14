@@ -34,18 +34,37 @@ public final class CpeDeviceConfigAnswer {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A string that identifies the question to be answered. See the {@code key} attribute in
+         * {@link #cpeDeviceConfigQuestion(CpeDeviceConfigQuestionRequest) cpeDeviceConfigQuestion}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * A string that identifies the question to be answered. See the {@code key} attribute in
+         * {@link #cpeDeviceConfigQuestion(CpeDeviceConfigQuestionRequest) cpeDeviceConfigQuestion}.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The answer to the question.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The answer to the question.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -89,6 +108,12 @@ public final class CpeDeviceConfigAnswer {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * A string that identifies the question to be answered. See the {@code key} attribute in
+     * {@link #cpeDeviceConfigQuestion(CpeDeviceConfigQuestionRequest) cpeDeviceConfigQuestion}.
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -99,6 +124,10 @@ public final class CpeDeviceConfigAnswer {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The answer to the question.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

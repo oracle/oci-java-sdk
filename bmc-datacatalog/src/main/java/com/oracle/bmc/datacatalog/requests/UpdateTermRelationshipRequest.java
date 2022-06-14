@@ -18,6 +18,9 @@ public class UpdateTermRelationshipRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class UpdateTermRelationshipRequest
      */
     private String glossaryKey;
 
+    /**
+     * Unique glossary key.
+     */
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -34,6 +40,9 @@ public class UpdateTermRelationshipRequest
      */
     private String termKey;
 
+    /**
+     * Unique glossary term key.
+     */
     public String getTermKey() {
         return termKey;
     }
@@ -42,6 +51,9 @@ public class UpdateTermRelationshipRequest
      */
     private String termRelationshipKey;
 
+    /**
+     * Unique glossary term relationship key.
+     */
     public String getTermRelationshipKey() {
         return termRelationshipKey;
     }
@@ -51,6 +63,9 @@ public class UpdateTermRelationshipRequest
     private com.oracle.bmc.datacatalog.model.UpdateTermRelationshipDetails
             updateTermRelationshipDetails;
 
+    /**
+     * The information to be updated in the term relationship.
+     */
     public com.oracle.bmc.datacatalog.model.UpdateTermRelationshipDetails
             getUpdateTermRelationshipDetails() {
         return updateTermRelationshipDetails;
@@ -65,6 +80,14 @@ public class UpdateTermRelationshipRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -73,6 +96,9 @@ public class UpdateTermRelationshipRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -95,10 +121,14 @@ public class UpdateTermRelationshipRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -106,10 +136,14 @@ public class UpdateTermRelationshipRequest
             return this;
         }
 
+        /**
+         * Unique glossary key.
+         */
         private String glossaryKey = null;
 
         /**
          * Unique glossary key.
+         * @param glossaryKey the value to set
          * @return this builder instance
          */
         public Builder glossaryKey(String glossaryKey) {
@@ -117,10 +151,14 @@ public class UpdateTermRelationshipRequest
             return this;
         }
 
+        /**
+         * Unique glossary term key.
+         */
         private String termKey = null;
 
         /**
          * Unique glossary term key.
+         * @param termKey the value to set
          * @return this builder instance
          */
         public Builder termKey(String termKey) {
@@ -128,10 +166,14 @@ public class UpdateTermRelationshipRequest
             return this;
         }
 
+        /**
+         * Unique glossary term relationship key.
+         */
         private String termRelationshipKey = null;
 
         /**
          * Unique glossary term relationship key.
+         * @param termRelationshipKey the value to set
          * @return this builder instance
          */
         public Builder termRelationshipKey(String termRelationshipKey) {
@@ -139,11 +181,15 @@ public class UpdateTermRelationshipRequest
             return this;
         }
 
+        /**
+         * The information to be updated in the term relationship.
+         */
         private com.oracle.bmc.datacatalog.model.UpdateTermRelationshipDetails
                 updateTermRelationshipDetails = null;
 
         /**
          * The information to be updated in the term relationship.
+         * @param updateTermRelationshipDetails the value to set
          * @return this builder instance
          */
         public Builder updateTermRelationshipDetails(
@@ -153,6 +199,14 @@ public class UpdateTermRelationshipRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -162,6 +216,7 @@ public class UpdateTermRelationshipRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -169,10 +224,14 @@ public class UpdateTermRelationshipRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -271,7 +330,8 @@ public class UpdateTermRelationshipRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -284,6 +344,10 @@ public class UpdateTermRelationshipRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

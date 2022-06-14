@@ -375,28 +375,49 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         * @param autonomousDatabaseId the value to set
+         * @return this builder
+         **/
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             this.autonomousDatabaseId = autonomousDatabaseId;
             this.__explicitlySet__.add("autonomousDatabaseId");
             return this;
         }
-
+        /**
+         * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The Autonomous Database clone type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
         private CloneType cloneType;
 
+        /**
+         * The Autonomous Database clone type.
+         * @param cloneType the value to set
+         * @return this builder
+         **/
         public Builder cloneType(CloneType cloneType) {
             this.cloneType = cloneType;
             this.__explicitlySet__.add("cloneType");
@@ -610,6 +631,10 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     * @return the value
+     **/
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
@@ -620,6 +645,10 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -665,6 +694,10 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
     @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
     private final CloneType cloneType;
 
+    /**
+     * The Autonomous Database clone type.
+     * @return the value
+     **/
     public CloneType getCloneType() {
         return cloneType;
     }

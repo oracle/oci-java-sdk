@@ -32,27 +32,55 @@ public final class WorkRequestResourceSubTypeDetail {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Subtype of the work request resource like osn or peer.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subType")
         private String subType;
 
+        /**
+         * Subtype of the work request resource like osn or peer.
+         *
+         * @param subType the value to set
+         * @return this builder
+         **/
         public Builder subType(String subType) {
             this.subType = subType;
             this.__explicitlySet__.add("subType");
             return this;
         }
-
+        /**
+         * The identifier of the resource subType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subTypeKey")
         private String subTypeKey;
 
+        /**
+         * The identifier of the resource subType.
+         * @param subTypeKey the value to set
+         * @return this builder
+         **/
         public Builder subTypeKey(String subTypeKey) {
             this.subTypeKey = subTypeKey;
             this.__explicitlySet__.add("subTypeKey");
             return this;
         }
-
+        /**
+         * Status of the resource subType, as a result of the work tracked in this work request.
+         * A resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subTypeStatus")
         private SubTypeStatus subTypeStatus;
 
+        /**
+         * Status of the resource subType, as a result of the work tracked in this work request.
+         * A resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
+         *
+         * @param subTypeStatus the value to set
+         * @return this builder
+         **/
         public Builder subTypeStatus(SubTypeStatus subTypeStatus) {
             this.subTypeStatus = subTypeStatus;
             this.__explicitlySet__.add("subTypeStatus");
@@ -99,6 +127,11 @@ public final class WorkRequestResourceSubTypeDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("subType")
     private final String subType;
 
+    /**
+     * Subtype of the work request resource like osn or peer.
+     *
+     * @return the value
+     **/
     public String getSubType() {
         return subType;
     }
@@ -109,6 +142,10 @@ public final class WorkRequestResourceSubTypeDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("subTypeKey")
     private final String subTypeKey;
 
+    /**
+     * The identifier of the resource subType.
+     * @return the value
+     **/
     public String getSubTypeKey() {
         return subTypeKey;
     }
@@ -172,6 +209,12 @@ public final class WorkRequestResourceSubTypeDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("subTypeStatus")
     private final SubTypeStatus subTypeStatus;
 
+    /**
+     * Status of the resource subType, as a result of the work tracked in this work request.
+     * A resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
+     *
+     * @return the value
+     **/
     public SubTypeStatus getSubTypeStatus() {
         return subTypeStatus;
     }

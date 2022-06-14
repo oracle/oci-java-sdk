@@ -141,37 +141,65 @@ public final class Target extends CreateConnectivityValidationDetails {
             this.__explicitlySet__.add("entity");
             return this;
         }
-
+        /**
+         * Specifies the read access.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
         private Boolean isReadAccess;
 
+        /**
+         * Specifies the read access.
+         * @param isReadAccess the value to set
+         * @return this builder
+         **/
         public Builder isReadAccess(Boolean isReadAccess) {
             this.isReadAccess = isReadAccess;
             this.__explicitlySet__.add("isReadAccess");
             return this;
         }
-
+        /**
+         * Specifies the copy fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
         private Boolean isCopyFields;
 
+        /**
+         * Specifies the copy fields.
+         * @param isCopyFields the value to set
+         * @return this builder
+         **/
         public Builder isCopyFields(Boolean isCopyFields) {
             this.isCopyFields = isCopyFields;
             this.__explicitlySet__.add("isCopyFields");
             return this;
         }
-
+        /**
+         * Specifies if this uses a predefined shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
         private Boolean isPredefinedShape;
 
+        /**
+         * Specifies if this uses a predefined shape.
+         * @param isPredefinedShape the value to set
+         * @return this builder
+         **/
         public Builder isPredefinedShape(Boolean isPredefinedShape) {
             this.isPredefinedShape = isPredefinedShape;
             this.__explicitlySet__.add("isPredefinedShape");
             return this;
         }
-
+        /**
+         * Specifies the data property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataProperty")
         private DataProperty dataProperty;
 
+        /**
+         * Specifies the data property.
+         * @param dataProperty the value to set
+         * @return this builder
+         **/
         public Builder dataProperty(DataProperty dataProperty) {
             this.dataProperty = dataProperty;
             this.__explicitlySet__.add("dataProperty");
@@ -333,6 +361,10 @@ public final class Target extends CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
     private final Boolean isReadAccess;
 
+    /**
+     * Specifies the read access.
+     * @return the value
+     **/
     public Boolean getIsReadAccess() {
         return isReadAccess;
     }
@@ -343,6 +375,10 @@ public final class Target extends CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
     private final Boolean isCopyFields;
 
+    /**
+     * Specifies the copy fields.
+     * @return the value
+     **/
     public Boolean getIsCopyFields() {
         return isCopyFields;
     }
@@ -353,6 +389,10 @@ public final class Target extends CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
     private final Boolean isPredefinedShape;
 
+    /**
+     * Specifies if this uses a predefined shape.
+     * @return the value
+     **/
     public Boolean getIsPredefinedShape() {
         return isPredefinedShape;
     }
@@ -402,6 +442,10 @@ public final class Target extends CreateConnectivityValidationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataProperty")
     private final DataProperty dataProperty;
 
+    /**
+     * Specifies the data property.
+     * @return the value
+     **/
     public DataProperty getDataProperty() {
         return dataProperty;
     }

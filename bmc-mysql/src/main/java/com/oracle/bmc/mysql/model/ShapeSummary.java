@@ -38,36 +38,67 @@ public final class ShapeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the shape used for the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the shape used for the DB System.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The number of CPU Cores the Instance provides. These are "OCPU"s.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
+        /**
+         * The number of CPU Cores the Instance provides. These are "OCPU"s.
+         * @param cpuCoreCount the value to set
+         * @return this builder
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-
+        /**
+         * The amount of RAM the Instance provides. This is an IEC base-2 number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
+        /**
+         * The amount of RAM the Instance provides. This is an IEC base-2 number.
+         * @param memorySizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
-
+        /**
+         * What service features the shape is supported for.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSupportedFor")
         private java.util.List<IsSupportedFor> isSupportedFor;
 
+        /**
+         * What service features the shape is supported for.
+         *
+         * @param isSupportedFor the value to set
+         * @return this builder
+         **/
         public Builder isSupportedFor(java.util.List<IsSupportedFor> isSupportedFor) {
             this.isSupportedFor = isSupportedFor;
             this.__explicitlySet__.add("isSupportedFor");
@@ -114,6 +145,10 @@ public final class ShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the shape used for the DB System.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -124,6 +159,10 @@ public final class ShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
+    /**
+     * The number of CPU Cores the Instance provides. These are "OCPU"s.
+     * @return the value
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
@@ -134,6 +173,10 @@ public final class ShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
+    /**
+     * The amount of RAM the Instance provides. This is an IEC base-2 number.
+     * @return the value
+     **/
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
@@ -193,6 +236,11 @@ public final class ShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportedFor")
     private final java.util.List<IsSupportedFor> isSupportedFor;
 
+    /**
+     * What service features the shape is supported for.
+     *
+     * @return the value
+     **/
     public java.util.List<IsSupportedFor> getIsSupportedFor() {
         return isSupportedFor;
     }

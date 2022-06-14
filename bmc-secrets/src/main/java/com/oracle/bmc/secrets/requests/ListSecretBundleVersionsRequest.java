@@ -17,6 +17,9 @@ public class ListSecretBundleVersionsRequest
      */
     private String secretId;
 
+    /**
+     * The OCID of the secret.
+     */
     public String getSecretId() {
         return secretId;
     }
@@ -25,6 +28,9 @@ public class ListSecretBundleVersionsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +41,11 @@ public class ListSecretBundleVersionsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call. For information about pagination, see
+     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -45,6 +56,11 @@ public class ListSecretBundleVersionsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
+     * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -92,6 +108,11 @@ public class ListSecretBundleVersionsRequest
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order. The default
+     * order for {@code VERSION_NUMBER} is descending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -138,6 +159,10 @@ public class ListSecretBundleVersionsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -149,10 +174,14 @@ public class ListSecretBundleVersionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the secret.
+         */
         private String secretId = null;
 
         /**
          * The OCID of the secret.
+         * @param secretId the value to set
          * @return this builder instance
          */
         public Builder secretId(String secretId) {
@@ -160,10 +189,14 @@ public class ListSecretBundleVersionsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -171,12 +204,18 @@ public class ListSecretBundleVersionsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call. For information about pagination, see
          * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -184,12 +223,18 @@ public class ListSecretBundleVersionsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
+         * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
          * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -197,12 +242,18 @@ public class ListSecretBundleVersionsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order. The default
+         * order for {@code VERSION_NUMBER} is descending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can specify only one sort order. The default
          * order for {@code VERSION_NUMBER} is descending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -210,11 +261,16 @@ public class ListSecretBundleVersionsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -300,7 +356,8 @@ public class ListSecretBundleVersionsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -312,6 +369,10 @@ public class ListSecretBundleVersionsRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

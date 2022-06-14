@@ -14,6 +14,10 @@ public class GetClusterMigrateToNativeVcnStatusResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +29,12 @@ public class GetClusterMigrateToNativeVcnStatusResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +45,10 @@ public class GetClusterMigrateToNativeVcnStatusResponse
     private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
             clusterMigrateToNativeVcnStatus;
 
+    /**
+     * The returned ClusterMigrateToNativeVcnStatus instance.
+     * @return the value
+     */
     public com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
             getClusterMigrateToNativeVcnStatus() {
         return clusterMigrateToNativeVcnStatus;
@@ -66,23 +80,51 @@ public class GetClusterMigrateToNativeVcnStatusResponse
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ClusterMigrateToNativeVcnStatus instance.
+         */
         private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
                 clusterMigrateToNativeVcnStatus;
 
+        /**
+         * The returned ClusterMigrateToNativeVcnStatus instance.
+         * @param clusterMigrateToNativeVcnStatus the value to set
+         * @return this builder
+         */
         public Builder clusterMigrateToNativeVcnStatus(
                 com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
                         clusterMigrateToNativeVcnStatus) {
@@ -103,12 +145,20 @@ public class GetClusterMigrateToNativeVcnStatusResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetClusterMigrateToNativeVcnStatusResponse build() {
             return new GetClusterMigrateToNativeVcnStatusResponse(
                     __httpStatusCode__, etag, opcRequestId, clusterMigrateToNativeVcnStatus);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

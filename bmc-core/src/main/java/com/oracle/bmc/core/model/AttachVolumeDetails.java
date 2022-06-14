@@ -72,6 +72,10 @@ public class AttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("device")
     private final String device;
 
+    /**
+     * The device name. To retrieve a list of devices for a given instance, see {@link #listInstanceDevices(ListInstanceDevicesRequest) listInstanceDevices}.
+     * @return the value
+     **/
     public String getDevice() {
         return device;
     }
@@ -84,6 +88,12 @@ public class AttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -94,6 +104,10 @@ public class AttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The OCID of the instance.
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -104,6 +118,10 @@ public class AttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
     private final Boolean isReadOnly;
 
+    /**
+     * Whether the attachment was created in read-only mode.
+     * @return the value
+     **/
     public Boolean getIsReadOnly() {
         return isReadOnly;
     }
@@ -118,6 +136,14 @@ public class AttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
     private final Boolean isShareable;
 
+    /**
+     * Whether the attachment should be created in shareable mode. If an attachment
+     * is created in shareable mode, then other instances can attach the same volume, provided
+     * that they also create their attachments in shareable mode. Only certain volume types can
+     * be attached in shareable mode. Defaults to false if not specified.
+     *
+     * @return the value
+     **/
     public Boolean getIsShareable() {
         return isShareable;
     }
@@ -128,6 +154,10 @@ public class AttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
+    /**
+     * The OCID of the volume.
+     * @return the value
+     **/
     public String getVolumeId() {
         return volumeId;
     }

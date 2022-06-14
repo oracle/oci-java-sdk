@@ -82,6 +82,10 @@ public class CreateDbHomeBase {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-provided name of the Database Home.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -92,6 +96,10 @@ public class CreateDbHomeBase {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -103,6 +111,11 @@ public class CreateDbHomeBase {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     * @return the value
+     **/
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
@@ -113,6 +126,10 @@ public class CreateDbHomeBase {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
+    /**
+     * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * @return the value
+     **/
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
     }
@@ -127,6 +144,14 @@ public class CreateDbHomeBase {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -139,6 +164,12 @@ public class CreateDbHomeBase {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -149,6 +180,10 @@ public class CreateDbHomeBase {
     @com.fasterxml.jackson.annotation.JsonProperty("isDesupportedVersion")
     private final Boolean isDesupportedVersion;
 
+    /**
+     * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
+     * @return the value
+     **/
     public Boolean getIsDesupportedVersion() {
         return isDesupportedVersion;
     }

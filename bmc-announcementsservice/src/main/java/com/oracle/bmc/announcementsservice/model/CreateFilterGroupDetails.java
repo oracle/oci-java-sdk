@@ -30,18 +30,33 @@ public final class CreateFilterGroupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<Filter> filters;
 
+        /**
+         * A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
+         * @param filters the value to set
+         * @return this builder
+         **/
         public Builder filters(java.util.List<Filter> filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
@@ -83,6 +98,10 @@ public final class CreateFilterGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -93,6 +112,10 @@ public final class CreateFilterGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final java.util.List<Filter> filters;
 
+    /**
+     * A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
+     * @return the value
+     **/
     public java.util.List<Filter> getFilters() {
         return filters;
     }

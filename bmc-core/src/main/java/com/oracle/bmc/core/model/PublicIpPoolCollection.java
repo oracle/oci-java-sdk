@@ -29,9 +29,17 @@ public final class PublicIpPoolCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of public IP pool summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PublicIpPoolSummary> items;
 
+        /**
+         * A list of public IP pool summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<PublicIpPoolSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class PublicIpPoolCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PublicIpPoolSummary> items;
 
+    /**
+     * A list of public IP pool summaries.
+     * @return the value
+     **/
     public java.util.List<PublicIpPoolSummary> getItems() {
         return items;
     }

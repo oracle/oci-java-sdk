@@ -29,9 +29,17 @@ public final class CreateApiKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The public key.  Must be an RSA key in PEM format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The public key.  Must be an RSA key in PEM format.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
@@ -73,6 +81,10 @@ public final class CreateApiKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The public key.  Must be an RSA key in PEM format.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }

@@ -64,99 +64,223 @@ public final class InstanceShapeConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of OCPUs available to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
+        /**
+         * The total number of OCPUs available to the instance.
+         *
+         * @param ocpus the value to set
+         * @return this builder
+         **/
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         *
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Float memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+         * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * <p>
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
         private BaselineOcpuUtilization baselineOcpuUtilization;
 
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+         * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * <p>
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
+         *
+         * @param baselineOcpuUtilization the value to set
+         * @return this builder
+         **/
         public Builder baselineOcpuUtilization(BaselineOcpuUtilization baselineOcpuUtilization) {
             this.baselineOcpuUtilization = baselineOcpuUtilization;
             this.__explicitlySet__.add("baselineOcpuUtilization");
             return this;
         }
-
+        /**
+         * A short description of the instance's processor (CPU).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
         private String processorDescription;
 
+        /**
+         * A short description of the instance's processor (CPU).
+         *
+         * @param processorDescription the value to set
+         * @return this builder
+         **/
         public Builder processorDescription(String processorDescription) {
             this.processorDescription = processorDescription;
             this.__explicitlySet__.add("processorDescription");
             return this;
         }
-
+        /**
+         * The networking bandwidth available to the instance, in gigabits per second.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
         private Float networkingBandwidthInGbps;
 
+        /**
+         * The networking bandwidth available to the instance, in gigabits per second.
+         *
+         * @param networkingBandwidthInGbps the value to set
+         * @return this builder
+         **/
         public Builder networkingBandwidthInGbps(Float networkingBandwidthInGbps) {
             this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             this.__explicitlySet__.add("networkingBandwidthInGbps");
             return this;
         }
-
+        /**
+         * The maximum number of VNIC attachments for the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachments")
         private Integer maxVnicAttachments;
 
+        /**
+         * The maximum number of VNIC attachments for the instance.
+         *
+         * @param maxVnicAttachments the value to set
+         * @return this builder
+         **/
         public Builder maxVnicAttachments(Integer maxVnicAttachments) {
             this.maxVnicAttachments = maxVnicAttachments;
             this.__explicitlySet__.add("maxVnicAttachments");
             return this;
         }
-
+        /**
+         * The number of GPUs available to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpus")
         private Integer gpus;
 
+        /**
+         * The number of GPUs available to the instance.
+         *
+         * @param gpus the value to set
+         * @return this builder
+         **/
         public Builder gpus(Integer gpus) {
             this.gpus = gpus;
             this.__explicitlySet__.add("gpus");
             return this;
         }
-
+        /**
+         * A short description of the instance's graphics processing unit (GPU).
+         * <p>
+         * If the instance does not have any GPUs, this field is {@code null}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
         private String gpuDescription;
 
+        /**
+         * A short description of the instance's graphics processing unit (GPU).
+         * <p>
+         * If the instance does not have any GPUs, this field is {@code null}.
+         *
+         * @param gpuDescription the value to set
+         * @return this builder
+         **/
         public Builder gpuDescription(String gpuDescription) {
             this.gpuDescription = gpuDescription;
             this.__explicitlySet__.add("gpuDescription");
             return this;
         }
-
+        /**
+         * The number of local disks available to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localDisks")
         private Integer localDisks;
 
+        /**
+         * The number of local disks available to the instance.
+         *
+         * @param localDisks the value to set
+         * @return this builder
+         **/
         public Builder localDisks(Integer localDisks) {
             this.localDisks = localDisks;
             this.__explicitlySet__.add("localDisks");
             return this;
         }
-
+        /**
+         * The aggregate size of all local disks, in gigabytes.
+         * <p>
+         * If the instance does not have any local disks, this field is {@code null}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
         private Float localDisksTotalSizeInGBs;
 
+        /**
+         * The aggregate size of all local disks, in gigabytes.
+         * <p>
+         * If the instance does not have any local disks, this field is {@code null}.
+         *
+         * @param localDisksTotalSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder localDisksTotalSizeInGBs(Float localDisksTotalSizeInGBs) {
             this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
             this.__explicitlySet__.add("localDisksTotalSizeInGBs");
             return this;
         }
-
+        /**
+         * A short description of the local disks available to this instance.
+         * <p>
+         * If the instance does not have any local disks, this field is {@code null}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
         private String localDiskDescription;
 
+        /**
+         * A short description of the local disks available to this instance.
+         * <p>
+         * If the instance does not have any local disks, this field is {@code null}.
+         *
+         * @param localDiskDescription the value to set
+         * @return this builder
+         **/
         public Builder localDiskDescription(String localDiskDescription) {
             this.localDiskDescription = localDiskDescription;
             this.__explicitlySet__.add("localDiskDescription");
@@ -222,6 +346,11 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
+    /**
+     * The total number of OCPUs available to the instance.
+     *
+     * @return the value
+     **/
     public Float getOcpus() {
         return ocpus;
     }
@@ -233,6 +362,11 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
+    /**
+     * The total amount of memory available to the instance, in gigabytes.
+     *
+     * @return the value
+     **/
     public Float getMemoryInGBs() {
         return memoryInGBs;
     }
@@ -306,6 +440,17 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
     private final BaselineOcpuUtilization baselineOcpuUtilization;
 
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * <p>
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
+     *
+     * @return the value
+     **/
     public BaselineOcpuUtilization getBaselineOcpuUtilization() {
         return baselineOcpuUtilization;
     }
@@ -317,6 +462,11 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     private final String processorDescription;
 
+    /**
+     * A short description of the instance's processor (CPU).
+     *
+     * @return the value
+     **/
     public String getProcessorDescription() {
         return processorDescription;
     }
@@ -328,6 +478,11 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
     private final Float networkingBandwidthInGbps;
 
+    /**
+     * The networking bandwidth available to the instance, in gigabits per second.
+     *
+     * @return the value
+     **/
     public Float getNetworkingBandwidthInGbps() {
         return networkingBandwidthInGbps;
     }
@@ -339,6 +494,11 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachments")
     private final Integer maxVnicAttachments;
 
+    /**
+     * The maximum number of VNIC attachments for the instance.
+     *
+     * @return the value
+     **/
     public Integer getMaxVnicAttachments() {
         return maxVnicAttachments;
     }
@@ -350,6 +510,11 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("gpus")
     private final Integer gpus;
 
+    /**
+     * The number of GPUs available to the instance.
+     *
+     * @return the value
+     **/
     public Integer getGpus() {
         return gpus;
     }
@@ -363,6 +528,13 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
     private final String gpuDescription;
 
+    /**
+     * A short description of the instance's graphics processing unit (GPU).
+     * <p>
+     * If the instance does not have any GPUs, this field is {@code null}.
+     *
+     * @return the value
+     **/
     public String getGpuDescription() {
         return gpuDescription;
     }
@@ -374,6 +546,11 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("localDisks")
     private final Integer localDisks;
 
+    /**
+     * The number of local disks available to the instance.
+     *
+     * @return the value
+     **/
     public Integer getLocalDisks() {
         return localDisks;
     }
@@ -387,6 +564,13 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
     private final Float localDisksTotalSizeInGBs;
 
+    /**
+     * The aggregate size of all local disks, in gigabytes.
+     * <p>
+     * If the instance does not have any local disks, this field is {@code null}.
+     *
+     * @return the value
+     **/
     public Float getLocalDisksTotalSizeInGBs() {
         return localDisksTotalSizeInGBs;
     }
@@ -400,6 +584,13 @@ public final class InstanceShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
     private final String localDiskDescription;
 
+    /**
+     * A short description of the local disks available to this instance.
+     * <p>
+     * If the instance does not have any local disks, this field is {@code null}.
+     *
+     * @return the value
+     **/
     public String getLocalDiskDescription() {
         return localDiskDescription;
     }

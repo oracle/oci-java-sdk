@@ -30,9 +30,17 @@ public final class TemplateCategorySummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of template categories.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TemplateCategorySummary> items;
 
+        /**
+         * A list of template categories.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TemplateCategorySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class TemplateCategorySummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TemplateCategorySummary> items;
 
+    /**
+     * A list of template categories.
+     * @return the value
+     **/
     public java.util.List<TemplateCategorySummary> getItems() {
         return items;
     }

@@ -42,19 +42,33 @@ public final class CronSchedule extends Schedule {
             this.__explicitlySet__.add("timeOfFirstExecution");
             return this;
         }
-
+        /**
+         * Value in cron format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
+        /**
+         * Value in cron format.
+         * @param expression the value to set
+         * @return this builder
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
-
+        /**
+         * Time zone, by default UTC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
+        /**
+         * Time zone, by default UTC.
+         * @param timeZone the value to set
+         * @return this builder
+         **/
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
@@ -112,6 +126,10 @@ public final class CronSchedule extends Schedule {
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
+    /**
+     * Value in cron format.
+     * @return the value
+     **/
     public String getExpression() {
         return expression;
     }
@@ -122,6 +140,10 @@ public final class CronSchedule extends Schedule {
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
+    /**
+     * Time zone, by default UTC.
+     * @return the value
+     **/
     public String getTimeZone() {
         return timeZone;
     }

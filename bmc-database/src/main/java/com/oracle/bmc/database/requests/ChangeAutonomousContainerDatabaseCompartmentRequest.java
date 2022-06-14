@@ -18,6 +18,9 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
      */
     private com.oracle.bmc.database.model.ChangeCompartmentDetails changeCompartmentDetails;
 
+    /**
+     * Request to move Autonomous Container Database to a different compartment
+     */
     public com.oracle.bmc.database.model.ChangeCompartmentDetails getChangeCompartmentDetails() {
         return changeCompartmentDetails;
     }
@@ -26,6 +29,9 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
      */
     private String autonomousContainerDatabaseId;
 
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
     }
@@ -39,6 +45,14 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -48,6 +62,10 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -59,6 +77,12 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -81,11 +105,15 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to move Autonomous Container Database to a different compartment
+         */
         private com.oracle.bmc.database.model.ChangeCompartmentDetails changeCompartmentDetails =
                 null;
 
         /**
          * Request to move Autonomous Container Database to a different compartment
+         * @param changeCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeCompartmentDetails(
@@ -94,10 +122,14 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
             return this;
         }
 
+        /**
+         * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousContainerDatabaseId = null;
 
         /**
          * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousContainerDatabaseId the value to set
          * @return this builder instance
          */
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
@@ -105,6 +137,14 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -114,6 +154,7 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -121,11 +162,16 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -133,6 +179,12 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -140,6 +192,7 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -237,7 +290,8 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -248,6 +302,10 @@ public class ChangeAutonomousContainerDatabaseCompartmentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

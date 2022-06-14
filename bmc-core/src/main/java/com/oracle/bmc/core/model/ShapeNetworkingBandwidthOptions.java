@@ -35,27 +35,55 @@ public final class ShapeNetworkingBandwidthOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The minimum amount of networking bandwidth, in gigabits per second.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minInGbps")
         private Float minInGbps;
 
+        /**
+         * The minimum amount of networking bandwidth, in gigabits per second.
+         *
+         * @param minInGbps the value to set
+         * @return this builder
+         **/
         public Builder minInGbps(Float minInGbps) {
             this.minInGbps = minInGbps;
             this.__explicitlySet__.add("minInGbps");
             return this;
         }
-
+        /**
+         * The maximum amount of networking bandwidth, in gigabits per second.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxInGbps")
         private Float maxInGbps;
 
+        /**
+         * The maximum amount of networking bandwidth, in gigabits per second.
+         *
+         * @param maxInGbps the value to set
+         * @return this builder
+         **/
         public Builder maxInGbps(Float maxInGbps) {
             this.maxInGbps = maxInGbps;
             this.__explicitlySet__.add("maxInGbps");
             return this;
         }
-
+        /**
+         * The default amount of networking bandwidth per OCPU, in gigabits per second.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGbps")
         private Float defaultPerOcpuInGbps;
 
+        /**
+         * The default amount of networking bandwidth per OCPU, in gigabits per second.
+         *
+         * @param defaultPerOcpuInGbps the value to set
+         * @return this builder
+         **/
         public Builder defaultPerOcpuInGbps(Float defaultPerOcpuInGbps) {
             this.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
             this.__explicitlySet__.add("defaultPerOcpuInGbps");
@@ -102,6 +130,11 @@ public final class ShapeNetworkingBandwidthOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("minInGbps")
     private final Float minInGbps;
 
+    /**
+     * The minimum amount of networking bandwidth, in gigabits per second.
+     *
+     * @return the value
+     **/
     public Float getMinInGbps() {
         return minInGbps;
     }
@@ -113,6 +146,11 @@ public final class ShapeNetworkingBandwidthOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("maxInGbps")
     private final Float maxInGbps;
 
+    /**
+     * The maximum amount of networking bandwidth, in gigabits per second.
+     *
+     * @return the value
+     **/
     public Float getMaxInGbps() {
         return maxInGbps;
     }
@@ -124,6 +162,11 @@ public final class ShapeNetworkingBandwidthOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGbps")
     private final Float defaultPerOcpuInGbps;
 
+    /**
+     * The default amount of networking bandwidth per OCPU, in gigabits per second.
+     *
+     * @return the value
+     **/
     public Float getDefaultPerOcpuInGbps() {
         return defaultPerOcpuInGbps;
     }

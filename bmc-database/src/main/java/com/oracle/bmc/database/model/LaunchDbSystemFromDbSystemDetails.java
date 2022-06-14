@@ -263,10 +263,17 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             this.__explicitlySet__.add("privateIp");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
         private String sourceDbSystemId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+         * @param sourceDbSystemId the value to set
+         * @return this builder
+         **/
         public Builder sourceDbSystemId(String sourceDbSystemId) {
             this.sourceDbSystemId = sourceDbSystemId;
             this.__explicitlySet__.add("sourceDbSystemId");
@@ -281,10 +288,19 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             this.__explicitlySet__.add("dbHome");
             return this;
         }
-
+        /**
+         * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
+        /**
+         * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+         *
+         * @param licenseModel the value to set
+         * @return this builder
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
@@ -448,6 +464,10 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
     private final String sourceDbSystemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     * @return the value
+     **/
     public String getSourceDbSystemId() {
         return sourceDbSystemId;
     }
@@ -502,6 +522,11 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
+    /**
+     * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+     *
+     * @return the value
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }

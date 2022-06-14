@@ -27,9 +27,17 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class JsonFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The encoding for the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encoding")
         private String encoding;
 
+        /**
+         * The encoding for the file.
+         * @param encoding the value to set
+         * @return this builder
+         **/
         public Builder encoding(String encoding) {
             this.encoding = encoding;
             this.__explicitlySet__.add("encoding");
@@ -77,6 +85,10 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     private final String encoding;
 
+    /**
+     * The encoding for the file.
+     * @return the value
+     **/
     public String getEncoding() {
         return encoding;
     }

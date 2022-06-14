@@ -41,36 +41,73 @@ public final class CreateImportedPackageDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ID of the package to import.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentPackageId")
         private String currentPackageId;
 
+        /**
+         * ID of the package to import.
+         * @param currentPackageId the value to set
+         * @return this builder
+         **/
         public Builder currentPackageId(String currentPackageId) {
             this.currentPackageId = currentPackageId;
             this.__explicitlySet__.add("currentPackageId");
             return this;
         }
-
+        /**
+         * A list of parameter values to use when importing the given package. Must match those defined in the import contract.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameterValues")
         private java.util.Map<String, String> parameterValues;
 
+        /**
+         * A list of parameter values to use when importing the given package. Must match those defined in the import contract.
+         * @param parameterValues the value to set
+         * @return this builder
+         **/
         public Builder parameterValues(java.util.Map<String, String> parameterValues) {
             this.parameterValues = parameterValues;
             this.__explicitlySet__.add("parameterValues");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -119,6 +156,10 @@ public final class CreateImportedPackageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("currentPackageId")
     private final String currentPackageId;
 
+    /**
+     * ID of the package to import.
+     * @return the value
+     **/
     public String getCurrentPackageId() {
         return currentPackageId;
     }
@@ -129,6 +170,10 @@ public final class CreateImportedPackageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parameterValues")
     private final java.util.Map<String, String> parameterValues;
 
+    /**
+     * A list of parameter values to use when importing the given package. Must match those defined in the import contract.
+     * @return the value
+     **/
     public java.util.Map<String, String> getParameterValues() {
         return parameterValues;
     }
@@ -141,6 +186,12 @@ public final class CreateImportedPackageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -153,6 +204,12 @@ public final class CreateImportedPackageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

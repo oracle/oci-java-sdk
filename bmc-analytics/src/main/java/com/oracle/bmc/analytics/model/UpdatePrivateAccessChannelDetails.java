@@ -37,36 +37,77 @@ public final class UpdatePrivateAccessChannelDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Display Name of the Private Access Channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display Name of the Private Access Channel.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * OCID of the customer VCN peered with private access channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * OCID of the customer VCN peered with private access channel.
+         *
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-
+        /**
+         * OCID of the customer subnet connected to private access channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * OCID of the customer subnet connected to private access channel.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * List of Private Source DNS zones registered with Private Access Channel,
+         * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
+         * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateSourceDnsZones")
         private java.util.List<PrivateSourceDnsZone> privateSourceDnsZones;
 
+        /**
+         * List of Private Source DNS zones registered with Private Access Channel,
+         * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
+         * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+         *
+         * @param privateSourceDnsZones the value to set
+         * @return this builder
+         **/
         public Builder privateSourceDnsZones(
                 java.util.List<PrivateSourceDnsZone> privateSourceDnsZones) {
             this.privateSourceDnsZones = privateSourceDnsZones;
@@ -116,6 +157,11 @@ public final class UpdatePrivateAccessChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display Name of the Private Access Channel.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -127,6 +173,11 @@ public final class UpdatePrivateAccessChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * OCID of the customer VCN peered with private access channel.
+     *
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }
@@ -138,6 +189,11 @@ public final class UpdatePrivateAccessChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * OCID of the customer subnet connected to private access channel.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -151,6 +207,13 @@ public final class UpdatePrivateAccessChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("privateSourceDnsZones")
     private final java.util.List<PrivateSourceDnsZone> privateSourceDnsZones;
 
+    /**
+     * List of Private Source DNS zones registered with Private Access Channel,
+     * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
+     * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     *
+     * @return the value
+     **/
     public java.util.List<PrivateSourceDnsZone> getPrivateSourceDnsZones() {
         return privateSourceDnsZones;
     }

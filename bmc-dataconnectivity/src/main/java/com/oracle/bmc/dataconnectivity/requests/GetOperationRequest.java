@@ -16,6 +16,9 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -24,6 +27,9 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String connectionKey;
 
+    /**
+     * The connection key.
+     */
     public String getConnectionKey() {
         return connectionKey;
     }
@@ -32,6 +38,9 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String schemaResourceName;
 
+    /**
+     * The schema resource name used for retrieving schemas.
+     */
     public String getSchemaResourceName() {
         return schemaResourceName;
     }
@@ -40,6 +49,9 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String operationResourceName;
 
+    /**
+     * The opeartion resource name used for retrieving the details of operation.
+     */
     public String getOperationResourceName() {
         return operationResourceName;
     }
@@ -51,6 +63,12 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -59,6 +77,9 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String endpointId;
 
+    /**
+     * Endpoint Id used for getDataAssetFullDetails.
+     */
     public String getEndpointId() {
         return endpointId;
     }
@@ -70,10 +91,14 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -81,10 +106,14 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The connection key.
+         */
         private String connectionKey = null;
 
         /**
          * The connection key.
+         * @param connectionKey the value to set
          * @return this builder instance
          */
         public Builder connectionKey(String connectionKey) {
@@ -92,10 +121,14 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The schema resource name used for retrieving schemas.
+         */
         private String schemaResourceName = null;
 
         /**
          * The schema resource name used for retrieving schemas.
+         * @param schemaResourceName the value to set
          * @return this builder instance
          */
         public Builder schemaResourceName(String schemaResourceName) {
@@ -103,10 +136,14 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The opeartion resource name used for retrieving the details of operation.
+         */
         private String operationResourceName = null;
 
         /**
          * The opeartion resource name used for retrieving the details of operation.
+         * @param operationResourceName the value to set
          * @return this builder instance
          */
         public Builder operationResourceName(String operationResourceName) {
@@ -114,6 +151,12 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -121,6 +164,7 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,10 +172,14 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Endpoint Id used for getDataAssetFullDetails.
+         */
         private String endpointId = null;
 
         /**
          * Endpoint Id used for getDataAssetFullDetails.
+         * @param endpointId the value to set
          * @return this builder instance
          */
         public Builder endpointId(String endpointId) {
@@ -217,7 +265,8 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -229,6 +278,10 @@ public class GetOperationRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .endpointId(endpointId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

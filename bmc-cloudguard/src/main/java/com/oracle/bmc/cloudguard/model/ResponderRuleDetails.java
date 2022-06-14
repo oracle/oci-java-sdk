@@ -36,6 +36,7 @@ public final class ResponderRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private Condition condition;
 
@@ -44,28 +45,49 @@ public final class ResponderRuleDetails {
             this.__explicitlySet__.add("condition");
             return this;
         }
-
+        /**
+         * ResponderRule configurations
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<ResponderConfiguration> configurations;
 
+        /**
+         * ResponderRule configurations
+         * @param configurations the value to set
+         * @return this builder
+         **/
         public Builder configurations(java.util.List<ResponderConfiguration> configurations) {
             this.configurations = configurations;
             this.__explicitlySet__.add("configurations");
             return this;
         }
-
+        /**
+         * Identifies state for ResponderRule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Identifies state for ResponderRule
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * Execution Mode for ResponderRule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private ResponderModeTypes mode;
 
+        /**
+         * Execution Mode for ResponderRule
+         * @param mode the value to set
+         * @return this builder
+         **/
         public Builder mode(ResponderModeTypes mode) {
             this.mode = mode;
             this.__explicitlySet__.add("mode");
@@ -119,6 +141,10 @@ public final class ResponderRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<ResponderConfiguration> configurations;
 
+    /**
+     * ResponderRule configurations
+     * @return the value
+     **/
     public java.util.List<ResponderConfiguration> getConfigurations() {
         return configurations;
     }
@@ -129,6 +155,10 @@ public final class ResponderRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Identifies state for ResponderRule
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -139,6 +169,10 @@ public final class ResponderRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final ResponderModeTypes mode;
 
+    /**
+     * Execution Mode for ResponderRule
+     * @return the value
+     **/
     public ResponderModeTypes getMode() {
         return mode;
     }

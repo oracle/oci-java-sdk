@@ -27,9 +27,17 @@ package com.oracle.bmc.devops.model;
 public final class InlineDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * base64 Encoded String
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("base64EncodedContent")
         private byte[] base64EncodedContent;
 
+        /**
+         * base64 Encoded String
+         * @param base64EncodedContent the value to set
+         * @return this builder
+         **/
         public Builder base64EncodedContent(byte[] base64EncodedContent) {
             this.base64EncodedContent = base64EncodedContent;
             this.__explicitlySet__.add("base64EncodedContent");
@@ -78,6 +86,10 @@ public final class InlineDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.annotation.JsonProperty("base64EncodedContent")
     private final byte[] base64EncodedContent;
 
+    /**
+     * base64 Encoded String
+     * @return the value
+     **/
     public byte[] getBase64EncodedContent() {
         return base64EncodedContent;
     }

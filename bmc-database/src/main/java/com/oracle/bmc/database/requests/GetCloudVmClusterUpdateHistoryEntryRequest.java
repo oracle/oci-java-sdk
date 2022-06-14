@@ -17,6 +17,9 @@ public class GetCloudVmClusterUpdateHistoryEntryRequest
      */
     private String cloudVmClusterId;
 
+    /**
+     * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCloudVmClusterId() {
         return cloudVmClusterId;
     }
@@ -25,6 +28,9 @@ public class GetCloudVmClusterUpdateHistoryEntryRequest
      */
     private String updateHistoryEntryId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+     */
     public String getUpdateHistoryEntryId() {
         return updateHistoryEntryId;
     }
@@ -34,6 +40,10 @@ public class GetCloudVmClusterUpdateHistoryEntryRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,10 +55,14 @@ public class GetCloudVmClusterUpdateHistoryEntryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String cloudVmClusterId = null;
 
         /**
          * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param cloudVmClusterId the value to set
          * @return this builder instance
          */
         public Builder cloudVmClusterId(String cloudVmClusterId) {
@@ -56,10 +70,14 @@ public class GetCloudVmClusterUpdateHistoryEntryRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+         */
         private String updateHistoryEntryId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+         * @param updateHistoryEntryId the value to set
          * @return this builder instance
          */
         public Builder updateHistoryEntryId(String updateHistoryEntryId) {
@@ -67,11 +85,16 @@ public class GetCloudVmClusterUpdateHistoryEntryRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -152,7 +175,8 @@ public class GetCloudVmClusterUpdateHistoryEntryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -161,6 +185,10 @@ public class GetCloudVmClusterUpdateHistoryEntryRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

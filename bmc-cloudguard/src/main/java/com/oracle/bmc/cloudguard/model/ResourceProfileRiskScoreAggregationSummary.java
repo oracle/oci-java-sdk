@@ -41,36 +41,65 @@ public final class ResourceProfileRiskScoreAggregationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID for the resource profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
         private String resourceProfileId;
 
+        /**
+         * OCID for the resource profile
+         * @param resourceProfileId the value to set
+         * @return this builder
+         **/
         public Builder resourceProfileId(String resourceProfileId) {
             this.resourceProfileId = resourceProfileId;
             this.__explicitlySet__.add("resourceProfileId");
             return this;
         }
-
+        /**
+         * Display name for the resource profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileDisplayName")
         private String resourceProfileDisplayName;
 
+        /**
+         * Display name for the resource profile
+         * @param resourceProfileDisplayName the value to set
+         * @return this builder
+         **/
         public Builder resourceProfileDisplayName(String resourceProfileDisplayName) {
             this.resourceProfileDisplayName = resourceProfileDisplayName;
             this.__explicitlySet__.add("resourceProfileDisplayName");
             return this;
         }
-
+        /**
+         * Risk threshold
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
         private Integer riskThreshold;
 
+        /**
+         * Risk threshold
+         * @param riskThreshold the value to set
+         * @return this builder
+         **/
         public Builder riskThreshold(Integer riskThreshold) {
             this.riskThreshold = riskThreshold;
             this.__explicitlySet__.add("riskThreshold");
             return this;
         }
-
+        /**
+         * List of ResourceRiskScoreAggregation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceRiskScoreAggregation> items;
 
+        /**
+         * List of ResourceRiskScoreAggregation
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ResourceRiskScoreAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -118,6 +147,10 @@ public final class ResourceProfileRiskScoreAggregationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
     private final String resourceProfileId;
 
+    /**
+     * OCID for the resource profile
+     * @return the value
+     **/
     public String getResourceProfileId() {
         return resourceProfileId;
     }
@@ -128,6 +161,10 @@ public final class ResourceProfileRiskScoreAggregationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileDisplayName")
     private final String resourceProfileDisplayName;
 
+    /**
+     * Display name for the resource profile
+     * @return the value
+     **/
     public String getResourceProfileDisplayName() {
         return resourceProfileDisplayName;
     }
@@ -138,6 +175,10 @@ public final class ResourceProfileRiskScoreAggregationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
     private final Integer riskThreshold;
 
+    /**
+     * Risk threshold
+     * @return the value
+     **/
     public Integer getRiskThreshold() {
         return riskThreshold;
     }
@@ -148,6 +189,10 @@ public final class ResourceProfileRiskScoreAggregationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceRiskScoreAggregation> items;
 
+    /**
+     * List of ResourceRiskScoreAggregation
+     * @return the value
+     **/
     public java.util.List<ResourceRiskScoreAggregation> getItems() {
         return items;
     }

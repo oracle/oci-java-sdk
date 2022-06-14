@@ -42,45 +42,81 @@ public final class ImageResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The image ID associated with the product license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The image ID associated with the product license.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The listing name associated with the product license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingName")
         private String listingName;
 
+        /**
+         * The listing name associated with the product license.
+         * @param listingName the value to set
+         * @return this builder
+         **/
         public Builder listingName(String listingName) {
             this.listingName = listingName;
             this.__explicitlySet__.add("listingName");
             return this;
         }
-
+        /**
+         * The image publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisher")
         private String publisher;
 
+        /**
+         * The image publisher.
+         * @param publisher the value to set
+         * @return this builder
+         **/
         public Builder publisher(String publisher) {
             this.publisher = publisher;
             this.__explicitlySet__.add("publisher");
             return this;
         }
-
+        /**
+         * The image listing ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
+        /**
+         * The image listing ID.
+         * @param listingId the value to set
+         * @return this builder
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-
+        /**
+         * The image package version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
         private String packageVersion;
 
+        /**
+         * The image package version.
+         * @param packageVersion the value to set
+         * @return this builder
+         **/
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = packageVersion;
             this.__explicitlySet__.add("packageVersion");
@@ -128,6 +164,10 @@ public final class ImageResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The image ID associated with the product license.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -138,6 +178,10 @@ public final class ImageResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("listingName")
     private final String listingName;
 
+    /**
+     * The listing name associated with the product license.
+     * @return the value
+     **/
     public String getListingName() {
         return listingName;
     }
@@ -148,6 +192,10 @@ public final class ImageResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("publisher")
     private final String publisher;
 
+    /**
+     * The image publisher.
+     * @return the value
+     **/
     public String getPublisher() {
         return publisher;
     }
@@ -158,6 +206,10 @@ public final class ImageResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * The image listing ID.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -168,6 +220,10 @@ public final class ImageResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     private final String packageVersion;
 
+    /**
+     * The image package version.
+     * @return the value
+     **/
     public String getPackageVersion() {
         return packageVersion;
     }

@@ -30,27 +30,55 @@ public final class DbIormConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
+        /**
+         * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
+         *
+         * @param dbName the value to set
+         * @return this builder
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-
+        /**
+         * The relative priority of this database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("share")
         private Integer share;
 
+        /**
+         * The relative priority of this database.
+         *
+         * @param share the value to set
+         * @return this builder
+         **/
         public Builder share(Integer share) {
             this.share = share;
             this.__explicitlySet__.add("share");
             return this;
         }
-
+        /**
+         * The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flashCacheLimit")
         private String flashCacheLimit;
 
+        /**
+         * The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+         *
+         * @param flashCacheLimit the value to set
+         * @return this builder
+         **/
         public Builder flashCacheLimit(String flashCacheLimit) {
             this.flashCacheLimit = flashCacheLimit;
             this.__explicitlySet__.add("flashCacheLimit");
@@ -96,6 +124,11 @@ public final class DbIormConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
+    /**
+     * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
+     *
+     * @return the value
+     **/
     public String getDbName() {
         return dbName;
     }
@@ -107,6 +140,11 @@ public final class DbIormConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("share")
     private final Integer share;
 
+    /**
+     * The relative priority of this database.
+     *
+     * @return the value
+     **/
     public Integer getShare() {
         return share;
     }
@@ -118,6 +156,11 @@ public final class DbIormConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("flashCacheLimit")
     private final String flashCacheLimit;
 
+    /**
+     * The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+     *
+     * @return the value
+     **/
     public String getFlashCacheLimit() {
         return flashCacheLimit;
     }

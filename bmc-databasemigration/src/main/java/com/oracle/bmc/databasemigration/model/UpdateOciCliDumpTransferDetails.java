@@ -28,9 +28,19 @@ package com.oracle.bmc.databasemigration.model;
 public final class UpdateOciCliDumpTransferDetails extends UpdateHostDumpTransferDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Path to the OCI CLI installation in the node.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ociHome")
         private String ociHome;
 
+        /**
+         * Path to the OCI CLI installation in the node.
+         *
+         * @param ociHome the value to set
+         * @return this builder
+         **/
         public Builder ociHome(String ociHome) {
             this.ociHome = ociHome;
             this.__explicitlySet__.add("ociHome");
@@ -80,6 +90,11 @@ public final class UpdateOciCliDumpTransferDetails extends UpdateHostDumpTransfe
     @com.fasterxml.jackson.annotation.JsonProperty("ociHome")
     private final String ociHome;
 
+    /**
+     * Path to the OCI CLI installation in the node.
+     *
+     * @return the value
+     **/
     public String getOciHome() {
         return ociHome;
     }

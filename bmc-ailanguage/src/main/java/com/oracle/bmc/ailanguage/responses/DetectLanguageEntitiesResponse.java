@@ -15,6 +15,12 @@ public class DetectLanguageEntitiesResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class DetectLanguageEntitiesResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult
             detectLanguageEntitiesResult;
 
+    /**
+     * The returned DetectLanguageEntitiesResult instance.
+     * @return the value
+     */
     public com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult
             getDetectLanguageEntitiesResult() {
         return detectLanguageEntitiesResult;
@@ -53,16 +63,36 @@ public class DetectLanguageEntitiesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DetectLanguageEntitiesResult instance.
+         */
         private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult
                 detectLanguageEntitiesResult;
 
+        /**
+         * The returned DetectLanguageEntitiesResult instance.
+         * @param detectLanguageEntitiesResult the value to set
+         * @return this builder
+         */
         public Builder detectLanguageEntitiesResult(
                 com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult
                         detectLanguageEntitiesResult) {
@@ -82,12 +112,20 @@ public class DetectLanguageEntitiesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public DetectLanguageEntitiesResponse build() {
             return new DetectLanguageEntitiesResponse(
                     __httpStatusCode__, opcRequestId, detectLanguageEntitiesResult);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -44,45 +44,97 @@ public final class BulkApplyResourceAction {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique OCIDs of the resource actions that recommendations are applied to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceActionId")
         private String resourceActionId;
 
+        /**
+         * The unique OCIDs of the resource actions that recommendations are applied to.
+         * @param resourceActionId the value to set
+         * @return this builder
+         **/
         public Builder resourceActionId(String resourceActionId) {
             this.resourceActionId = resourceActionId;
             this.__explicitlySet__.add("resourceActionId");
             return this;
         }
-
+        /**
+         * The current status of the recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The current status of the recommendation.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The date and time the current status will change. The format is defined by RFC3339.
+         * <p>
+         * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
+         * date and time."
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
         private java.util.Date timeStatusEnd;
 
+        /**
+         * The date and time the current status will change. The format is defined by RFC3339.
+         * <p>
+         * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
+         * date and time."
+         *
+         * @param timeStatusEnd the value to set
+         * @return this builder
+         **/
         public Builder timeStatusEnd(java.util.Date timeStatusEnd) {
             this.timeStatusEnd = timeStatusEnd;
             this.__explicitlySet__.add("timeStatusEnd");
             return this;
         }
-
+        /**
+         * Additional parameter key-value pairs defining the resource action.
+         * For example:
+         * <p>
+         * {@code {"timeAmount": 15, "timeUnit": "seconds"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.Map<String, Object> parameters;
 
+        /**
+         * Additional parameter key-value pairs defining the resource action.
+         * For example:
+         * <p>
+         * {@code {"timeAmount": 15, "timeUnit": "seconds"}}
+         *
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
         }
-
+        /**
+         * The name of the strategy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("strategyName")
         private String strategyName;
 
+        /**
+         * The name of the strategy.
+         * @param strategyName the value to set
+         * @return this builder
+         **/
         public Builder strategyName(String strategyName) {
             this.strategyName = strategyName;
             this.__explicitlySet__.add("strategyName");
@@ -131,6 +183,10 @@ public final class BulkApplyResourceAction {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceActionId")
     private final String resourceActionId;
 
+    /**
+     * The unique OCIDs of the resource actions that recommendations are applied to.
+     * @return the value
+     **/
     public String getResourceActionId() {
         return resourceActionId;
     }
@@ -141,6 +197,10 @@ public final class BulkApplyResourceAction {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The current status of the recommendation.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -155,6 +215,14 @@ public final class BulkApplyResourceAction {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusEnd")
     private final java.util.Date timeStatusEnd;
 
+    /**
+     * The date and time the current status will change. The format is defined by RFC3339.
+     * <p>
+     * For example, "The current {@code postponed} status of the resource action will end and change to {@code pending} on this
+     * date and time."
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStatusEnd() {
         return timeStatusEnd;
     }
@@ -169,6 +237,14 @@ public final class BulkApplyResourceAction {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.Map<String, Object> parameters;
 
+    /**
+     * Additional parameter key-value pairs defining the resource action.
+     * For example:
+     * <p>
+     * {@code {"timeAmount": 15, "timeUnit": "seconds"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
@@ -179,6 +255,10 @@ public final class BulkApplyResourceAction {
     @com.fasterxml.jackson.annotation.JsonProperty("strategyName")
     private final String strategyName;
 
+    /**
+     * The name of the strategy.
+     * @return the value
+     **/
     public String getStrategyName() {
         return strategyName;
     }

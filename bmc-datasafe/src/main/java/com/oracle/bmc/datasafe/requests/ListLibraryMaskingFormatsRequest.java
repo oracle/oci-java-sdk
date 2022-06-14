@@ -17,6 +17,9 @@ public class ListLibraryMaskingFormatsRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListLibraryMaskingFormatsRequest
      */
     private String libraryMaskingFormatId;
 
+    /**
+     * A filter to return only the resources that match the specified library masking format OCID.
+     */
     public String getLibraryMaskingFormatId() {
         return libraryMaskingFormatId;
     }
@@ -35,6 +41,11 @@ public class ListLibraryMaskingFormatsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -87,6 +98,13 @@ public class ListLibraryMaskingFormatsRequest
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -96,6 +114,10 @@ public class ListLibraryMaskingFormatsRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -104,6 +126,9 @@ public class ListLibraryMaskingFormatsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -112,6 +137,9 @@ public class ListLibraryMaskingFormatsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -120,6 +148,9 @@ public class ListLibraryMaskingFormatsRequest
      */
     private com.oracle.bmc.datasafe.model.MaskingLifecycleState lifecycleState;
 
+    /**
+     * A filter to return only the resources that match the specified lifecycle states.
+     */
     public com.oracle.bmc.datasafe.model.MaskingLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -132,6 +163,13 @@ public class ListLibraryMaskingFormatsRequest
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -147,6 +185,16 @@ public class ListLibraryMaskingFormatsRequest
      */
     private java.util.Date timeCreatedLessThan;
 
+    /**
+     * Search for resources that were created before a specific date.
+     * Specifying this parameter corresponding {@code timeCreatedLessThan}
+     * parameter will retrieve all resources created before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
@@ -155,6 +203,9 @@ public class ListLibraryMaskingFormatsRequest
      */
     private com.oracle.bmc.datasafe.model.LibraryMaskingFormatSource libraryMaskingFormatSource;
 
+    /**
+     * A filter to return the library masking format resources based on the value of their source attribute.
+     */
     public com.oracle.bmc.datasafe.model.LibraryMaskingFormatSource
             getLibraryMaskingFormatSource() {
         return libraryMaskingFormatSource;
@@ -200,6 +251,9 @@ public class ListLibraryMaskingFormatsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -248,6 +302,11 @@ public class ListLibraryMaskingFormatsRequest
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+     * The default order for displayName is ascending. The displayName sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -256,6 +315,9 @@ public class ListLibraryMaskingFormatsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -267,10 +329,14 @@ public class ListLibraryMaskingFormatsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -278,10 +344,14 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that match the specified library masking format OCID.
+         */
         private String libraryMaskingFormatId = null;
 
         /**
          * A filter to return only the resources that match the specified library masking format OCID.
+         * @param libraryMaskingFormatId the value to set
          * @return this builder instance
          */
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
@@ -289,12 +359,18 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -302,6 +378,13 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -310,6 +393,7 @@ public class ListLibraryMaskingFormatsRequest
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -317,11 +401,16 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the specified display name.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -329,10 +418,14 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -340,10 +433,14 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -351,10 +448,14 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that match the specified lifecycle states.
+         */
         private com.oracle.bmc.datasafe.model.MaskingLifecycleState lifecycleState = null;
 
         /**
          * A filter to return only the resources that match the specified lifecycle states.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -363,6 +464,13 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
@@ -371,6 +479,7 @@ public class ListLibraryMaskingFormatsRequest
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedGreaterThanOrEqualTo(
@@ -379,6 +488,16 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * Search for resources that were created before a specific date.
+         * Specifying this parameter corresponding {@code timeCreatedLessThan}
+         * parameter will retrieve all resources created before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
@@ -390,6 +509,7 @@ public class ListLibraryMaskingFormatsRequest
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
@@ -397,11 +517,15 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * A filter to return the library masking format resources based on the value of their source attribute.
+         */
         private com.oracle.bmc.datasafe.model.LibraryMaskingFormatSource
                 libraryMaskingFormatSource = null;
 
         /**
          * A filter to return the library masking format resources based on the value of their source attribute.
+         * @param libraryMaskingFormatSource the value to set
          * @return this builder instance
          */
         public Builder libraryMaskingFormatSource(
@@ -411,10 +535,14 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -422,12 +550,18 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+         * The default order for displayName is ascending. The displayName sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
          * The default order for displayName is ascending. The displayName sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -435,10 +569,14 @@ public class ListLibraryMaskingFormatsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -540,7 +678,8 @@ public class ListLibraryMaskingFormatsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -560,6 +699,10 @@ public class ListLibraryMaskingFormatsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

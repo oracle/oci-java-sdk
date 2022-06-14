@@ -18,6 +18,10 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private String exadataInsightId;
 
+    /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     *
+     */
     public String getExadataInsightId() {
         return exadataInsightId;
     }
@@ -28,6 +32,11 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private String resourceType;
 
+    /**
+     * Filter by resource.
+     * Supported values are HOST , STORAGE_SERVER and DATABASE
+     *
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -38,6 +47,11 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private String resourceMetric;
 
+    /**
+     * Filter by resource metric.
+     * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+     *
+     */
     public String getResourceMetric() {
         return resourceMetric;
     }
@@ -50,6 +64,13 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private String analysisTimeInterval;
 
+    /**
+     * Specify time period in ISO 8601 format with respect to current time.
+     * Default is last 30 days represented by P30D.
+     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     *
+     */
     public String getAnalysisTimeInterval() {
         return analysisTimeInterval;
     }
@@ -63,6 +84,14 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private java.util.Date timeIntervalStart;
 
+    /**
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -75,6 +104,13 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private java.util.Date timeIntervalEnd;
 
+    /**
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -85,6 +121,11 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private java.util.List<String> exadataType;
 
+    /**
+     * Filter by one or more Exadata types.
+     * Possible value are DBMACHINE, EXACS, and EXACC.
+     *
+     */
     public java.util.List<String> getExadataType() {
         return exadataType;
     }
@@ -94,6 +135,10 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private java.util.List<String> cdbName;
 
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
     public java.util.List<String> getCdbName() {
         return cdbName;
     }
@@ -103,6 +148,10 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private java.util.List<String> hostName;
 
+    /**
+     * Filter by hostname.
+     *
+     */
     public java.util.List<String> getHostName() {
         return hostName;
     }
@@ -112,6 +161,10 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private Integer percentile;
 
+    /**
+     * Percentile values of daily usage to be used for computing the aggregate resource usage.
+     *
+     */
     public Integer getPercentile() {
         return percentile;
     }
@@ -121,6 +174,10 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -168,6 +225,10 @@ public class SummarizeExadataInsightResourceStatisticsRequest
         }
     };
 
+    /**
+     * The order in which resource statistics records are listed
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -181,6 +242,14 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -192,6 +261,12 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -202,6 +277,11 @@ public class SummarizeExadataInsightResourceStatisticsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -213,11 +293,16 @@ public class SummarizeExadataInsightResourceStatisticsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+         *
+         */
         private String exadataInsightId = null;
 
         /**
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
          *
+         * @param exadataInsightId the value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(String exadataInsightId) {
@@ -225,12 +310,18 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * Filter by resource.
+         * Supported values are HOST , STORAGE_SERVER and DATABASE
+         *
+         */
         private String resourceType = null;
 
         /**
          * Filter by resource.
          * Supported values are HOST , STORAGE_SERVER and DATABASE
          *
+         * @param resourceType the value to set
          * @return this builder instance
          */
         public Builder resourceType(String resourceType) {
@@ -238,12 +329,18 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * Filter by resource metric.
+         * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+         *
+         */
         private String resourceMetric = null;
 
         /**
          * Filter by resource metric.
          * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
          *
+         * @param resourceMetric the value to set
          * @return this builder instance
          */
         public Builder resourceMetric(String resourceMetric) {
@@ -251,6 +348,13 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         *
+         */
         private String analysisTimeInterval = null;
 
         /**
@@ -259,6 +363,7 @@ public class SummarizeExadataInsightResourceStatisticsRequest
          * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
          * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
          *
+         * @param analysisTimeInterval the value to set
          * @return this builder instance
          */
         public Builder analysisTimeInterval(String analysisTimeInterval) {
@@ -266,6 +371,14 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
+         */
         private java.util.Date timeIntervalStart = null;
 
         /**
@@ -275,6 +388,7 @@ public class SummarizeExadataInsightResourceStatisticsRequest
          * timeIntervalStart and timeIntervalEnd parameters are used together.
          * If analysisTimeInterval is specified, this parameter is ignored.
          *
+         * @param timeIntervalStart the value to set
          * @return this builder instance
          */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
@@ -282,6 +396,13 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
+         */
         private java.util.Date timeIntervalEnd = null;
 
         /**
@@ -290,6 +411,7 @@ public class SummarizeExadataInsightResourceStatisticsRequest
          * timeIntervalStart and timeIntervalEnd are used together.
          * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
+         * @param timeIntervalEnd the value to set
          * @return this builder instance
          */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
@@ -297,12 +419,18 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * Filter by one or more Exadata types.
+         * Possible value are DBMACHINE, EXACS, and EXACC.
+         *
+         */
         private java.util.List<String> exadataType = null;
 
         /**
          * Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param exadataType the value to set
          * @return this builder instance
          */
         public Builder exadataType(java.util.List<String> exadataType) {
@@ -314,17 +442,23 @@ public class SummarizeExadataInsightResourceStatisticsRequest
          * Singular setter. Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataType(String singularValue) {
             return this.exadataType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by one or more cdb name.
+         *
+         */
         private java.util.List<String> cdbName = null;
 
         /**
          * Filter by one or more cdb name.
          *
+         * @param cdbName the value to set
          * @return this builder instance
          */
         public Builder cdbName(java.util.List<String> cdbName) {
@@ -335,17 +469,23 @@ public class SummarizeExadataInsightResourceStatisticsRequest
         /**
          * Singular setter. Filter by one or more cdb name.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder cdbName(String singularValue) {
             return this.cdbName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by hostname.
+         *
+         */
         private java.util.List<String> hostName = null;
 
         /**
          * Filter by hostname.
          *
+         * @param hostName the value to set
          * @return this builder instance
          */
         public Builder hostName(java.util.List<String> hostName) {
@@ -356,17 +496,23 @@ public class SummarizeExadataInsightResourceStatisticsRequest
         /**
          * Singular setter. Filter by hostname.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder hostName(String singularValue) {
             return this.hostName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Percentile values of daily usage to be used for computing the aggregate resource usage.
+         *
+         */
         private Integer percentile = null;
 
         /**
          * Percentile values of daily usage to be used for computing the aggregate resource usage.
          *
+         * @param percentile the value to set
          * @return this builder instance
          */
         public Builder percentile(Integer percentile) {
@@ -374,11 +520,16 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.opsi.model.SortOrder sortOrder) {
@@ -386,11 +537,16 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * The order in which resource statistics records are listed
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The order in which resource statistics records are listed
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -398,6 +554,14 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -407,6 +571,7 @@ public class SummarizeExadataInsightResourceStatisticsRequest
          * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -414,6 +579,12 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -421,6 +592,7 @@ public class SummarizeExadataInsightResourceStatisticsRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -428,12 +600,18 @@ public class SummarizeExadataInsightResourceStatisticsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -539,7 +717,8 @@ public class SummarizeExadataInsightResourceStatisticsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -560,6 +739,10 @@ public class SummarizeExadataInsightResourceStatisticsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

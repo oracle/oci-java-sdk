@@ -30,18 +30,33 @@ public final class KernelVmCoreInformation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Kernel module responsible of the crash.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("component")
         private String component;
 
+        /**
+         * Kernel module responsible of the crash.
+         * @param component the value to set
+         * @return this builder
+         **/
         public Builder component(String component) {
             this.component = component;
             this.__explicitlySet__.add("component");
             return this;
         }
-
+        /**
+         * Crash backtrace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backtrace")
         private String backtrace;
 
+        /**
+         * Crash backtrace.
+         * @param backtrace the value to set
+         * @return this builder
+         **/
         public Builder backtrace(String backtrace) {
             this.backtrace = backtrace;
             this.__explicitlySet__.add("backtrace");
@@ -84,6 +99,10 @@ public final class KernelVmCoreInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("component")
     private final String component;
 
+    /**
+     * Kernel module responsible of the crash.
+     * @return the value
+     **/
     public String getComponent() {
         return component;
     }
@@ -94,6 +113,10 @@ public final class KernelVmCoreInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("backtrace")
     private final String backtrace;
 
+    /**
+     * Crash backtrace.
+     * @return the value
+     **/
     public String getBacktrace() {
         return backtrace;
     }

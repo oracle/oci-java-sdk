@@ -17,6 +17,9 @@ public class AbortMultipartUploadRequest
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +30,11 @@ public class AbortMultipartUploadRequest
      */
     private String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -37,6 +45,11 @@ public class AbortMultipartUploadRequest
      */
     private String objectName;
 
+    /**
+     * The name of the object. Avoid entering confidential information.
+     * Example: {@code test/object1.log}
+     *
+     */
     public String getObjectName() {
         return objectName;
     }
@@ -45,6 +58,9 @@ public class AbortMultipartUploadRequest
      */
     private String uploadId;
 
+    /**
+     * The upload ID for a multipart upload.
+     */
     public String getUploadId() {
         return uploadId;
     }
@@ -53,6 +69,9 @@ public class AbortMultipartUploadRequest
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -64,10 +83,14 @@ public class AbortMultipartUploadRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -75,12 +98,18 @@ public class AbortMultipartUploadRequest
             return this;
         }
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         */
         private String bucketName = null;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
          * Example: {@code my-new-bucket1}
          *
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -88,12 +117,18 @@ public class AbortMultipartUploadRequest
             return this;
         }
 
+        /**
+         * The name of the object. Avoid entering confidential information.
+         * Example: {@code test/object1.log}
+         *
+         */
         private String objectName = null;
 
         /**
          * The name of the object. Avoid entering confidential information.
          * Example: {@code test/object1.log}
          *
+         * @param objectName the value to set
          * @return this builder instance
          */
         public Builder objectName(String objectName) {
@@ -101,10 +136,14 @@ public class AbortMultipartUploadRequest
             return this;
         }
 
+        /**
+         * The upload ID for a multipart upload.
+         */
         private String uploadId = null;
 
         /**
          * The upload ID for a multipart upload.
+         * @param uploadId the value to set
          * @return this builder instance
          */
         public Builder uploadId(String uploadId) {
@@ -112,10 +151,14 @@ public class AbortMultipartUploadRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -199,7 +242,8 @@ public class AbortMultipartUploadRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -210,6 +254,10 @@ public class AbortMultipartUploadRequest
                 .opcClientRequestId(opcClientRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

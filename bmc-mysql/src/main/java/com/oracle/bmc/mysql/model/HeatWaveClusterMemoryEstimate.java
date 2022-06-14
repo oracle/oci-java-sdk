@@ -47,45 +47,87 @@ public final class HeatWaveClusterMemoryEstimate {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the DB System the HeatWave cluster memory estimate is associated with.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
+        /**
+         * The OCID of the DB System the HeatWave cluster memory estimate is associated with.
+         *
+         * @param dbSystemId the value to set
+         * @return this builder
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-
+        /**
+         * Current status of the Work Request generating the HeatWave cluster memory estimate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private HeatWaveClusterMemoryEstimateStatus status;
 
+        /**
+         * Current status of the Work Request generating the HeatWave cluster memory estimate.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(HeatWaveClusterMemoryEstimateStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The date and time that the Work Request to generate the HeatWave cluster memory estimate was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time that the Work Request to generate the HeatWave cluster memory estimate was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time that the HeatWave cluster memory estimate was generated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time that the HeatWave cluster memory estimate was generated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Collection of schemas with estimated memory footprints for MySQL user tables of each schema
+         * when loaded to HeatWave cluster memory.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableSchemas")
         private java.util.List<HeatWaveClusterSchemaMemoryEstimate> tableSchemas;
 
+        /**
+         * Collection of schemas with estimated memory footprints for MySQL user tables of each schema
+         * when loaded to HeatWave cluster memory.
+         *
+         * @param tableSchemas the value to set
+         * @return this builder
+         **/
         public Builder tableSchemas(
                 java.util.List<HeatWaveClusterSchemaMemoryEstimate> tableSchemas) {
             this.tableSchemas = tableSchemas;
@@ -136,6 +178,11 @@ public final class HeatWaveClusterMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
+    /**
+     * The OCID of the DB System the HeatWave cluster memory estimate is associated with.
+     *
+     * @return the value
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -146,6 +193,10 @@ public final class HeatWaveClusterMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final HeatWaveClusterMemoryEstimateStatus status;
 
+    /**
+     * Current status of the Work Request generating the HeatWave cluster memory estimate.
+     * @return the value
+     **/
     public HeatWaveClusterMemoryEstimateStatus getStatus() {
         return status;
     }
@@ -156,6 +207,10 @@ public final class HeatWaveClusterMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time that the Work Request to generate the HeatWave cluster memory estimate was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -166,6 +221,10 @@ public final class HeatWaveClusterMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time that the HeatWave cluster memory estimate was generated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -178,6 +237,12 @@ public final class HeatWaveClusterMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("tableSchemas")
     private final java.util.List<HeatWaveClusterSchemaMemoryEstimate> tableSchemas;
 
+    /**
+     * Collection of schemas with estimated memory footprints for MySQL user tables of each schema
+     * when loaded to HeatWave cluster memory.
+     *
+     * @return the value
+     **/
     public java.util.List<HeatWaveClusterSchemaMemoryEstimate> getTableSchemas() {
         return tableSchemas;
     }

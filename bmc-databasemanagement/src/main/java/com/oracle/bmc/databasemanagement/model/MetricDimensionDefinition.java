@@ -30,18 +30,33 @@ public final class MetricDimensionDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the dimension.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionName")
         private String dimensionName;
 
+        /**
+         * The name of the dimension.
+         * @param dimensionName the value to set
+         * @return this builder
+         **/
         public Builder dimensionName(String dimensionName) {
             this.dimensionName = dimensionName;
             this.__explicitlySet__.add("dimensionName");
             return this;
         }
-
+        /**
+         * The value of the dimension.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionValue")
         private String dimensionValue;
 
+        /**
+         * The value of the dimension.
+         * @param dimensionValue the value to set
+         * @return this builder
+         **/
         public Builder dimensionValue(String dimensionValue) {
             this.dimensionValue = dimensionValue;
             this.__explicitlySet__.add("dimensionValue");
@@ -85,6 +100,10 @@ public final class MetricDimensionDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionName")
     private final String dimensionName;
 
+    /**
+     * The name of the dimension.
+     * @return the value
+     **/
     public String getDimensionName() {
         return dimensionName;
     }
@@ -95,6 +114,10 @@ public final class MetricDimensionDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionValue")
     private final String dimensionValue;
 
+    /**
+     * The value of the dimension.
+     * @return the value
+     **/
     public String getDimensionValue() {
         return dimensionValue;
     }

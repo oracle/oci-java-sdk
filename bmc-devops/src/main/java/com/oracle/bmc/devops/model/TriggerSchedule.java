@@ -28,18 +28,47 @@ public final class TriggerSchedule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Different types of trigger schedule:
+         * NONE - No automated synchronization schedule.
+         * DEFAULT - Trigger schedule is every 30 minutes.
+         * CUSTOM - Custom triggering schedule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
         private ScheduleType scheduleType;
 
+        /**
+         * Different types of trigger schedule:
+         * NONE - No automated synchronization schedule.
+         * DEFAULT - Trigger schedule is every 30 minutes.
+         * CUSTOM - Custom triggering schedule.
+         *
+         * @param scheduleType the value to set
+         * @return this builder
+         **/
         public Builder scheduleType(ScheduleType scheduleType) {
             this.scheduleType = scheduleType;
             this.__explicitlySet__.add("scheduleType");
             return this;
         }
-
+        /**
+         * Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size.
+         * Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.
+         * You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customSchedule")
         private String customSchedule;
 
+        /**
+         * Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size.
+         * Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.
+         * You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+         *
+         * @param customSchedule the value to set
+         * @return this builder
+         **/
         public Builder customSchedule(String customSchedule) {
             this.customSchedule = customSchedule;
             this.__explicitlySet__.add("customSchedule");
@@ -139,6 +168,14 @@ public final class TriggerSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     private final ScheduleType scheduleType;
 
+    /**
+     * Different types of trigger schedule:
+     * NONE - No automated synchronization schedule.
+     * DEFAULT - Trigger schedule is every 30 minutes.
+     * CUSTOM - Custom triggering schedule.
+     *
+     * @return the value
+     **/
     public ScheduleType getScheduleType() {
         return scheduleType;
     }
@@ -152,6 +189,13 @@ public final class TriggerSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("customSchedule")
     private final String customSchedule;
 
+    /**
+     * Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size.
+     * Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.
+     * You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+     *
+     * @return the value
+     **/
     public String getCustomSchedule() {
         return customSchedule;
     }

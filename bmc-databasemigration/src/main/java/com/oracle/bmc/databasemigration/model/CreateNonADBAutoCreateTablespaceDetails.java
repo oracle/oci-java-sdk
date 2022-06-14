@@ -29,27 +29,55 @@ public final class CreateNonADBAutoCreateTablespaceDetails
         extends CreateTargetTypeTablespaceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * True to auto-create tablespace in the target Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoCreate")
         private Boolean isAutoCreate;
 
+        /**
+         * True to auto-create tablespace in the target Database.
+         *
+         * @param isAutoCreate the value to set
+         * @return this builder
+         **/
         public Builder isAutoCreate(Boolean isAutoCreate) {
             this.isAutoCreate = isAutoCreate;
             this.__explicitlySet__.add("isAutoCreate");
             return this;
         }
-
+        /**
+         * True set tablespace to big file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBigFile")
         private Boolean isBigFile;
 
+        /**
+         * True set tablespace to big file.
+         *
+         * @param isBigFile the value to set
+         * @return this builder
+         **/
         public Builder isBigFile(Boolean isBigFile) {
             this.isBigFile = isBigFile;
             this.__explicitlySet__.add("isBigFile");
             return this;
         }
-
+        /**
+         * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extendSizeInMBs")
         private Integer extendSizeInMBs;
 
+        /**
+         * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
+         *
+         * @param extendSizeInMBs the value to set
+         * @return this builder
+         **/
         public Builder extendSizeInMBs(Integer extendSizeInMBs) {
             this.extendSizeInMBs = extendSizeInMBs;
             this.__explicitlySet__.add("extendSizeInMBs");
@@ -106,6 +134,11 @@ public final class CreateNonADBAutoCreateTablespaceDetails
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoCreate")
     private final Boolean isAutoCreate;
 
+    /**
+     * True to auto-create tablespace in the target Database.
+     *
+     * @return the value
+     **/
     public Boolean getIsAutoCreate() {
         return isAutoCreate;
     }
@@ -117,6 +150,11 @@ public final class CreateNonADBAutoCreateTablespaceDetails
     @com.fasterxml.jackson.annotation.JsonProperty("isBigFile")
     private final Boolean isBigFile;
 
+    /**
+     * True set tablespace to big file.
+     *
+     * @return the value
+     **/
     public Boolean getIsBigFile() {
         return isBigFile;
     }
@@ -128,6 +166,11 @@ public final class CreateNonADBAutoCreateTablespaceDetails
     @com.fasterxml.jackson.annotation.JsonProperty("extendSizeInMBs")
     private final Integer extendSizeInMBs;
 
+    /**
+     * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
+     *
+     * @return the value
+     **/
     public Integer getExtendSizeInMBs() {
         return extendSizeInMBs;
     }

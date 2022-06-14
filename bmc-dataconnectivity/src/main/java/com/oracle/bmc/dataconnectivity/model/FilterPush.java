@@ -25,9 +25,17 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class FilterPush extends PushDownOperation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The filter condition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterCondition")
         private String filterCondition;
 
+        /**
+         * The filter condition.
+         * @param filterCondition the value to set
+         * @return this builder
+         **/
         public Builder filterCondition(String filterCondition) {
             this.filterCondition = filterCondition;
             this.__explicitlySet__.add("filterCondition");
@@ -75,6 +83,10 @@ public final class FilterPush extends PushDownOperation {
     @com.fasterxml.jackson.annotation.JsonProperty("filterCondition")
     private final String filterCondition;
 
+    /**
+     * The filter condition.
+     * @return the value
+     **/
     public String getFilterCondition() {
         return filterCondition;
     }

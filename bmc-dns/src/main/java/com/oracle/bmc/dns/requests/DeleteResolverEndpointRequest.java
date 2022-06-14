@@ -17,6 +17,9 @@ public class DeleteResolverEndpointRequest
      */
     private String resolverId;
 
+    /**
+     * The OCID of the target resolver.
+     */
     public String getResolverId() {
         return resolverId;
     }
@@ -25,6 +28,9 @@ public class DeleteResolverEndpointRequest
      */
     private String resolverEndpointName;
 
+    /**
+     * The name of the target resolver endpoint.
+     */
     public String getResolverEndpointName() {
         return resolverEndpointName;
     }
@@ -38,6 +44,14 @@ public class DeleteResolverEndpointRequest
      */
     private String ifMatch;
 
+    /**
+     * The {@code If-Match} header field makes the request method conditional on the
+     * existence of at least one current representation of the target resource,
+     * when the field-value is {@code *}, or having a current representation of the
+     * target resource that has an entity-tag matching a member of the list of
+     * entity-tags provided in the field-value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -51,6 +65,14 @@ public class DeleteResolverEndpointRequest
      */
     private String ifUnmodifiedSince;
 
+    /**
+     * The {@code If-Unmodified-Since} header field makes the request method
+     * conditional on the selected representation's last modification date being
+     * earlier than or equal to the date provided in the field-value.  This
+     * field accomplishes the same purpose as If-Match for cases where the user
+     * agent does not have an entity-tag for the representation.
+     *
+     */
     public String getIfUnmodifiedSince() {
         return ifUnmodifiedSince;
     }
@@ -62,6 +84,12 @@ public class DeleteResolverEndpointRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,6 +99,10 @@ public class DeleteResolverEndpointRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -82,10 +114,14 @@ public class DeleteResolverEndpointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target resolver.
+         */
         private String resolverId = null;
 
         /**
          * The OCID of the target resolver.
+         * @param resolverId the value to set
          * @return this builder instance
          */
         public Builder resolverId(String resolverId) {
@@ -93,10 +129,14 @@ public class DeleteResolverEndpointRequest
             return this;
         }
 
+        /**
+         * The name of the target resolver endpoint.
+         */
         private String resolverEndpointName = null;
 
         /**
          * The name of the target resolver endpoint.
+         * @param resolverEndpointName the value to set
          * @return this builder instance
          */
         public Builder resolverEndpointName(String resolverEndpointName) {
@@ -104,6 +144,14 @@ public class DeleteResolverEndpointRequest
             return this;
         }
 
+        /**
+         * The {@code If-Match} header field makes the request method conditional on the
+         * existence of at least one current representation of the target resource,
+         * when the field-value is {@code *}, or having a current representation of the
+         * target resource that has an entity-tag matching a member of the list of
+         * entity-tags provided in the field-value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -113,6 +161,7 @@ public class DeleteResolverEndpointRequest
          * target resource that has an entity-tag matching a member of the list of
          * entity-tags provided in the field-value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -120,6 +169,14 @@ public class DeleteResolverEndpointRequest
             return this;
         }
 
+        /**
+         * The {@code If-Unmodified-Since} header field makes the request method
+         * conditional on the selected representation's last modification date being
+         * earlier than or equal to the date provided in the field-value.  This
+         * field accomplishes the same purpose as If-Match for cases where the user
+         * agent does not have an entity-tag for the representation.
+         *
+         */
         private String ifUnmodifiedSince = null;
 
         /**
@@ -129,6 +186,7 @@ public class DeleteResolverEndpointRequest
          * field accomplishes the same purpose as If-Match for cases where the user
          * agent does not have an entity-tag for the representation.
          *
+         * @param ifUnmodifiedSince the value to set
          * @return this builder instance
          */
         public Builder ifUnmodifiedSince(String ifUnmodifiedSince) {
@@ -136,6 +194,12 @@ public class DeleteResolverEndpointRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -143,6 +207,7 @@ public class DeleteResolverEndpointRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -150,11 +215,16 @@ public class DeleteResolverEndpointRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -240,7 +310,8 @@ public class DeleteResolverEndpointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -252,6 +323,10 @@ public class DeleteResolverEndpointRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

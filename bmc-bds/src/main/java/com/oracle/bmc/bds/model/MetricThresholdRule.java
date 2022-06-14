@@ -31,27 +31,49 @@ public final class MetricThresholdRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
         private Integer durationInMinutes;
 
+        /**
+         * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         * @param durationInMinutes the value to set
+         * @return this builder
+         **/
         public Builder durationInMinutes(Integer durationInMinutes) {
             this.durationInMinutes = durationInMinutes;
             this.__explicitlySet__.add("durationInMinutes");
             return this;
         }
-
+        /**
+         * The comparison operator to use. Options are greater than (GT) or less than (LT).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
+        /**
+         * The comparison operator to use. Options are greater than (GT) or less than (LT).
+         * @param operator the value to set
+         * @return this builder
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
-
+        /**
+         * Integer non-negative value. 0 < value < 100
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
 
+        /**
+         * Integer non-negative value. 0 < value < 100
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Integer value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -97,6 +119,10 @@ public final class MetricThresholdRule {
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
     private final Integer durationInMinutes;
 
+    /**
+     * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+     * @return the value
+     **/
     public Integer getDurationInMinutes() {
         return durationInMinutes;
     }
@@ -155,6 +181,10 @@ public final class MetricThresholdRule {
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
+    /**
+     * The comparison operator to use. Options are greater than (GT) or less than (LT).
+     * @return the value
+     **/
     public Operator getOperator() {
         return operator;
     }
@@ -165,6 +195,10 @@ public final class MetricThresholdRule {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Integer value;
 
+    /**
+     * Integer non-negative value. 0 < value < 100
+     * @return the value
+     **/
     public Integer getValue() {
         return value;
     }

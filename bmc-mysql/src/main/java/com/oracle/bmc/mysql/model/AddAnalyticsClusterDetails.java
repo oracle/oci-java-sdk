@@ -32,18 +32,41 @@ public final class AddAnalyticsClusterDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape determines resources to allocate to the Analytics
+         * Cluster nodes - CPU cores, memory.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * The shape determines resources to allocate to the Analytics
+         * Cluster nodes - CPU cores, memory.
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * The number of analytics-processing nodes provisioned for the
+         * Analytics Cluster.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
         private Integer clusterSize;
 
+        /**
+         * The number of analytics-processing nodes provisioned for the
+         * Analytics Cluster.
+         *
+         * @param clusterSize the value to set
+         * @return this builder
+         **/
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = clusterSize;
             this.__explicitlySet__.add("clusterSize");
@@ -88,6 +111,12 @@ public final class AddAnalyticsClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * The shape determines resources to allocate to the Analytics
+     * Cluster nodes - CPU cores, memory.
+     *
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -100,6 +129,12 @@ public final class AddAnalyticsClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
     private final Integer clusterSize;
 
+    /**
+     * The number of analytics-processing nodes provisioned for the
+     * Analytics Cluster.
+     *
+     * @return the value
+     **/
     public Integer getClusterSize() {
         return clusterSize;
     }

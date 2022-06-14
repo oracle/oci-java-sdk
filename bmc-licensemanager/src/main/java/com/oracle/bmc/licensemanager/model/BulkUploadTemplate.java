@@ -29,9 +29,17 @@ public final class BulkUploadTemplate {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The bulk upload template.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("template")
         private String template;
 
+        /**
+         * The bulk upload template.
+         * @param template the value to set
+         * @return this builder
+         **/
         public Builder template(String template) {
             this.template = template;
             this.__explicitlySet__.add("template");
@@ -73,6 +81,10 @@ public final class BulkUploadTemplate {
     @com.fasterxml.jackson.annotation.JsonProperty("template")
     private final String template;
 
+    /**
+     * The bulk upload template.
+     * @return the value
+     **/
     public String getTemplate() {
         return template;
     }

@@ -75,136 +75,266 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
+         * Avoid entering confidential information.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Object Storage namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osNamespace")
         private String osNamespace;
 
+        /**
+         * Object Storage namespace.
+         * @param osNamespace the value to set
+         * @return this builder
+         **/
         public Builder osNamespace(String osNamespace) {
             this.osNamespace = osNamespace;
             this.__explicitlySet__.add("osNamespace");
             return this;
         }
-
+        /**
+         * Name of the Object Storage bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osBucketName")
         private String osBucketName;
 
+        /**
+         * Name of the Object Storage bucket.
+         * @param osBucketName the value to set
+         * @return this builder
+         **/
         public Builder osBucketName(String osBucketName) {
             this.osBucketName = osBucketName;
             this.__explicitlySet__.add("osBucketName");
             return this;
         }
-
+        /**
+         * The type of log collection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collectionType")
         private ObjectCollectionRuleCollectionTypes collectionType;
 
+        /**
+         * The type of log collection.
+         *
+         * @param collectionType the value to set
+         * @return this builder
+         **/
         public Builder collectionType(ObjectCollectionRuleCollectionTypes collectionType) {
             this.collectionType = collectionType;
             this.__explicitlySet__.add("collectionType");
             return this;
         }
-
+        /**
+         * The current state of the rule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ObjectCollectionRuleLifecycleStates lifecycleState;
 
+        /**
+         * The current state of the rule.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(ObjectCollectionRuleLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A detailed status of the life cycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A detailed status of the life cycle state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The time when this rule was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time when this rule was created. An RFC3339 formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time when this rule was last updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time when this rule was last updated. An RFC3339 formatted datetime string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Whether or not this rule is currently enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Whether or not this rule is currently enabled.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * When the filters are provided, only the objects matching the filters are picked up for processing.
+         * The matchType supported is exact match and accommodates wildcard "*".
+         * For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilters")
         private java.util.List<String> objectNameFilters;
 
+        /**
+         * When the filters are provided, only the objects matching the filters are picked up for processing.
+         * The matchType supported is exact match and accommodates wildcard "*".
+         * For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
+         *
+         * @param objectNameFilters the value to set
+         * @return this builder
+         **/
         public Builder objectNameFilters(java.util.List<String> objectNameFilters) {
             this.objectNameFilters = objectNameFilters;
             this.__explicitlySet__.add("objectNameFilters");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -277,6 +407,10 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -287,6 +421,10 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -299,6 +437,12 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -309,6 +453,10 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -319,6 +467,10 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("osNamespace")
     private final String osNamespace;
 
+    /**
+     * Object Storage namespace.
+     * @return the value
+     **/
     public String getOsNamespace() {
         return osNamespace;
     }
@@ -329,6 +481,10 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("osBucketName")
     private final String osBucketName;
 
+    /**
+     * Name of the Object Storage bucket.
+     * @return the value
+     **/
     public String getOsBucketName() {
         return osBucketName;
     }
@@ -340,6 +496,11 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("collectionType")
     private final ObjectCollectionRuleCollectionTypes collectionType;
 
+    /**
+     * The type of log collection.
+     *
+     * @return the value
+     **/
     public ObjectCollectionRuleCollectionTypes getCollectionType() {
         return collectionType;
     }
@@ -351,6 +512,11 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ObjectCollectionRuleLifecycleStates lifecycleState;
 
+    /**
+     * The current state of the rule.
+     *
+     * @return the value
+     **/
     public ObjectCollectionRuleLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -361,6 +527,10 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A detailed status of the life cycle state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -371,6 +541,10 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time when this rule was created. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -381,6 +555,10 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time when this rule was last updated. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -392,6 +570,11 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether or not this rule is currently enabled.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -405,6 +588,13 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilters")
     private final java.util.List<String> objectNameFilters;
 
+    /**
+     * When the filters are provided, only the objects matching the filters are picked up for processing.
+     * The matchType supported is exact match and accommodates wildcard "*".
+     * For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
+     *
+     * @return the value
+     **/
     public java.util.List<String> getObjectNameFilters() {
         return objectNameFilters;
     }
@@ -417,6 +607,12 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -429,6 +625,12 @@ public final class LogAnalyticsObjectCollectionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }

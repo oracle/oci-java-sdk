@@ -29,9 +29,17 @@ public final class RestartNodeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the node to be restarted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
         private String nodeId;
 
+        /**
+         * OCID of the node to be restarted.
+         * @param nodeId the value to set
+         * @return this builder
+         **/
         public Builder nodeId(String nodeId) {
             this.nodeId = nodeId;
             this.__explicitlySet__.add("nodeId");
@@ -73,6 +81,10 @@ public final class RestartNodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeId")
     private final String nodeId;
 
+    /**
+     * OCID of the node to be restarted.
+     * @return the value
+     **/
     public String getNodeId() {
         return nodeId;
     }

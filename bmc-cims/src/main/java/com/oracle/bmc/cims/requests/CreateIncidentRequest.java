@@ -17,6 +17,9 @@ public class CreateIncidentRequest
      */
     private com.oracle.bmc.cims.model.CreateIncident createIncidentDetails;
 
+    /**
+     * Incident information
+     */
     public com.oracle.bmc.cims.model.CreateIncident getCreateIncidentDetails() {
         return createIncidentDetails;
     }
@@ -25,6 +28,9 @@ public class CreateIncidentRequest
      */
     private String ocid;
 
+    /**
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     */
     public String getOcid() {
         return ocid;
     }
@@ -33,6 +39,9 @@ public class CreateIncidentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +50,9 @@ public class CreateIncidentRequest
      */
     private String homeregion;
 
+    /**
+     * The region of the tenancy.
+     */
     public String getHomeregion() {
         return homeregion;
     }
@@ -62,10 +74,14 @@ public class CreateIncidentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Incident information
+         */
         private com.oracle.bmc.cims.model.CreateIncident createIncidentDetails = null;
 
         /**
          * Incident information
+         * @param createIncidentDetails the value to set
          * @return this builder instance
          */
         public Builder createIncidentDetails(
@@ -74,10 +90,14 @@ public class CreateIncidentRequest
             return this;
         }
 
+        /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         */
         private String ocid = null;
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * @param ocid the value to set
          * @return this builder instance
          */
         public Builder ocid(String ocid) {
@@ -85,10 +105,14 @@ public class CreateIncidentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -96,10 +120,14 @@ public class CreateIncidentRequest
             return this;
         }
 
+        /**
+         * The region of the tenancy.
+         */
         private String homeregion = null;
 
         /**
          * The region of the tenancy.
+         * @param homeregion the value to set
          * @return this builder instance
          */
         public Builder homeregion(String homeregion) {
@@ -192,7 +220,8 @@ public class CreateIncidentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -202,6 +231,10 @@ public class CreateIncidentRequest
                 .homeregion(homeregion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

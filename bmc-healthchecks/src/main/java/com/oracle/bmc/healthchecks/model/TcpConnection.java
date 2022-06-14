@@ -36,36 +36,69 @@ public final class TcpConnection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The connection IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
 
+        /**
+         * The connection IP address.
+         * @param address the value to set
+         * @return this builder
+         **/
         public Builder address(String address) {
             this.address = address;
             this.__explicitlySet__.add("address");
             return this;
         }
-
+        /**
+         * The port.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The port.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * Total connect duration, calculated using {@code connectEnd} minus {@code connectStart}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectDuration")
         private Double connectDuration;
 
+        /**
+         * Total connect duration, calculated using {@code connectEnd} minus {@code connectStart}.
+         * @param connectDuration the value to set
+         * @return this builder
+         **/
         public Builder connectDuration(Double connectDuration) {
             this.connectDuration = connectDuration;
             this.__explicitlySet__.add("connectDuration");
             return this;
         }
-
+        /**
+         * The duration to secure the connection.  This value will be zero for
+         * insecure connections.  Calculated using {@code connectEnd} minus {@code secureConnectionStart}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secureConnectDuration")
         private Double secureConnectDuration;
 
+        /**
+         * The duration to secure the connection.  This value will be zero for
+         * insecure connections.  Calculated using {@code connectEnd} minus {@code secureConnectionStart}.
+         *
+         * @param secureConnectDuration the value to set
+         * @return this builder
+         **/
         public Builder secureConnectDuration(Double secureConnectDuration) {
             this.secureConnectDuration = secureConnectDuration;
             this.__explicitlySet__.add("secureConnectDuration");
@@ -112,6 +145,10 @@ public final class TcpConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("address")
     private final String address;
 
+    /**
+     * The connection IP address.
+     * @return the value
+     **/
     public String getAddress() {
         return address;
     }
@@ -122,6 +159,10 @@ public final class TcpConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The port.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -132,6 +173,10 @@ public final class TcpConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("connectDuration")
     private final Double connectDuration;
 
+    /**
+     * Total connect duration, calculated using {@code connectEnd} minus {@code connectStart}.
+     * @return the value
+     **/
     public Double getConnectDuration() {
         return connectDuration;
     }
@@ -144,6 +189,12 @@ public final class TcpConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("secureConnectDuration")
     private final Double secureConnectDuration;
 
+    /**
+     * The duration to secure the connection.  This value will be zero for
+     * insecure connections.  Calculated using {@code connectEnd} minus {@code secureConnectionStart}.
+     *
+     * @return the value
+     **/
     public Double getSecureConnectDuration() {
         return secureConnectDuration;
     }

@@ -27,9 +27,17 @@ public final class VerifyText {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Verification text in the response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * Verification text in the response.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
@@ -71,6 +79,10 @@ public final class VerifyText {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * Verification text in the response.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }

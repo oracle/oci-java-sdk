@@ -27,9 +27,17 @@ public final class DkimCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of dkims.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DkimSummary> items;
 
+        /**
+         * List of dkims.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DkimSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class DkimCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DkimSummary> items;
 
+    /**
+     * List of dkims.
+     * @return the value
+     **/
     public java.util.List<DkimSummary> getItems() {
         return items;
     }

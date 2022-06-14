@@ -18,6 +18,9 @@ public class UpdateScheduledJobRequest
      */
     private String scheduledJobId;
 
+    /**
+     * The ID of the scheduled job.
+     */
     public String getScheduledJobId() {
         return scheduledJobId;
     }
@@ -26,6 +29,9 @@ public class UpdateScheduledJobRequest
      */
     private com.oracle.bmc.osmanagement.model.UpdateScheduledJobDetails updateScheduledJobDetails;
 
+    /**
+     * Details about a Scheduled Job to update
+     */
     public com.oracle.bmc.osmanagement.model.UpdateScheduledJobDetails
             getUpdateScheduledJobDetails() {
         return updateScheduledJobDetails;
@@ -35,6 +41,9 @@ public class UpdateScheduledJobRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +57,14 @@ public class UpdateScheduledJobRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -70,10 +87,14 @@ public class UpdateScheduledJobRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the scheduled job.
+         */
         private String scheduledJobId = null;
 
         /**
          * The ID of the scheduled job.
+         * @param scheduledJobId the value to set
          * @return this builder instance
          */
         public Builder scheduledJobId(String scheduledJobId) {
@@ -81,11 +102,15 @@ public class UpdateScheduledJobRequest
             return this;
         }
 
+        /**
+         * Details about a Scheduled Job to update
+         */
         private com.oracle.bmc.osmanagement.model.UpdateScheduledJobDetails
                 updateScheduledJobDetails = null;
 
         /**
          * Details about a Scheduled Job to update
+         * @param updateScheduledJobDetails the value to set
          * @return this builder instance
          */
         public Builder updateScheduledJobDetails(
@@ -95,10 +120,14 @@ public class UpdateScheduledJobRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -106,6 +135,14 @@ public class UpdateScheduledJobRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -115,6 +152,7 @@ public class UpdateScheduledJobRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -207,7 +245,8 @@ public class UpdateScheduledJobRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +256,10 @@ public class UpdateScheduledJobRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

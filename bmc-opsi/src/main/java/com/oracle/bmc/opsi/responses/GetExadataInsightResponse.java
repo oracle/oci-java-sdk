@@ -14,6 +14,11 @@ public class GetExadataInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetExadataInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetExadataInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.opsi.model.ExadataInsight exadataInsight;
 
+    /**
+     * The returned ExadataInsight instance.
+     * @return the value
+     */
     public com.oracle.bmc.opsi.model.ExadataInsight getExadataInsight() {
         return exadataInsight;
     }
@@ -63,22 +78,52 @@ public class GetExadataInsightResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ExadataInsight instance.
+         */
         private com.oracle.bmc.opsi.model.ExadataInsight exadataInsight;
 
+        /**
+         * The returned ExadataInsight instance.
+         * @param exadataInsight the value to set
+         * @return this builder
+         */
         public Builder exadataInsight(com.oracle.bmc.opsi.model.ExadataInsight exadataInsight) {
             this.exadataInsight = exadataInsight;
             return this;
@@ -97,12 +142,20 @@ public class GetExadataInsightResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetExadataInsightResponse build() {
             return new GetExadataInsightResponse(
                     __httpStatusCode__, etag, opcRequestId, exadataInsight);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

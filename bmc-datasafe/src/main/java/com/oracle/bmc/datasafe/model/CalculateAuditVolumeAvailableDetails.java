@@ -31,18 +31,33 @@ public final class CalculateAuditVolumeAvailableDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditCollectionStartTime")
         private java.util.Date auditCollectionStartTime;
 
+        /**
+         * The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
+         * @param auditCollectionStartTime the value to set
+         * @return this builder
+         **/
         public Builder auditCollectionStartTime(java.util.Date auditCollectionStartTime) {
             this.auditCollectionStartTime = auditCollectionStartTime;
             this.__explicitlySet__.add("auditCollectionStartTime");
             return this;
         }
-
+        /**
+         * The trail locations for which the audit data volume has to be calculated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trailLocations")
         private java.util.List<String> trailLocations;
 
+        /**
+         * The trail locations for which the audit data volume has to be calculated.
+         * @param trailLocations the value to set
+         * @return this builder
+         **/
         public Builder trailLocations(java.util.List<String> trailLocations) {
             this.trailLocations = trailLocations;
             this.__explicitlySet__.add("trailLocations");
@@ -88,6 +103,10 @@ public final class CalculateAuditVolumeAvailableDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("auditCollectionStartTime")
     private final java.util.Date auditCollectionStartTime;
 
+    /**
+     * The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
+     * @return the value
+     **/
     public java.util.Date getAuditCollectionStartTime() {
         return auditCollectionStartTime;
     }
@@ -98,6 +117,10 @@ public final class CalculateAuditVolumeAvailableDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("trailLocations")
     private final java.util.List<String> trailLocations;
 
+    /**
+     * The trail locations for which the audit data volume has to be calculated.
+     * @return the value
+     **/
     public java.util.List<String> getTrailLocations() {
         return trailLocations;
     }

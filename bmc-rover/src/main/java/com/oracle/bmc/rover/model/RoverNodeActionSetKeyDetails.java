@@ -29,9 +29,17 @@ public final class RoverNodeActionSetKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The public key of the resource principal
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
+        /**
+         * The public key of the resource principal
+         * @param publicKey the value to set
+         * @return this builder
+         **/
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
@@ -73,6 +81,10 @@ public final class RoverNodeActionSetKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
+    /**
+     * The public key of the resource principal
+     * @return the value
+     **/
     public String getPublicKey() {
         return publicKey;
     }

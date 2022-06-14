@@ -16,6 +16,9 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String repositoryId;
 
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -24,6 +27,9 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String revision;
 
+    /**
+     * Retrieve file lines from specific revision.
+     */
     public String getRevision() {
         return revision;
     }
@@ -32,6 +38,9 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String filePath;
 
+    /**
+     * A filter to return only commits that affect any of the specified paths.
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -40,6 +49,9 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer startLineNumber;
 
+    /**
+     * Line number from where to start returning file lines.
+     */
     public Integer getStartLineNumber() {
         return startLineNumber;
     }
@@ -48,6 +60,9 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -56,6 +71,9 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,10 +85,14 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -78,10 +100,14 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Retrieve file lines from specific revision.
+         */
         private String revision = null;
 
         /**
          * Retrieve file lines from specific revision.
+         * @param revision the value to set
          * @return this builder instance
          */
         public Builder revision(String revision) {
@@ -89,10 +115,14 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * A filter to return only commits that affect any of the specified paths.
+         */
         private String filePath = null;
 
         /**
          * A filter to return only commits that affect any of the specified paths.
+         * @param filePath the value to set
          * @return this builder instance
          */
         public Builder filePath(String filePath) {
@@ -100,10 +130,14 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Line number from where to start returning file lines.
+         */
         private Integer startLineNumber = null;
 
         /**
          * Line number from where to start returning file lines.
+         * @param startLineNumber the value to set
          * @return this builder instance
          */
         public Builder startLineNumber(Integer startLineNumber) {
@@ -111,10 +145,14 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -122,10 +160,14 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -211,7 +253,8 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -223,6 +266,10 @@ public class GetRepoFileLinesRequest extends com.oracle.bmc.requests.BmcRequest<
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

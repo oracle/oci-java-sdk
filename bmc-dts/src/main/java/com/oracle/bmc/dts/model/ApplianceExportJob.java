@@ -113,6 +113,7 @@ public final class ApplianceExportJob {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -166,173 +167,306 @@ public final class ApplianceExportJob {
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A property that can contain details on the lifecycle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
         private String lifecycleStateDetails;
 
+        /**
+         * A property that can contain details on the lifecycle.
+         * @param lifecycleStateDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
             this.lifecycleStateDetails = lifecycleStateDetails;
             this.__explicitlySet__.add("lifecycleStateDetails");
             return this;
         }
-
+        /**
+         * Serial Number of the Appliance associated with this Export Job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applianceSerialNumber")
         private String applianceSerialNumber;
 
+        /**
+         * Serial Number of the Appliance associated with this Export Job.
+         * @param applianceSerialNumber the value to set
+         * @return this builder
+         **/
         public Builder applianceSerialNumber(String applianceSerialNumber) {
             this.applianceSerialNumber = applianceSerialNumber;
             this.__explicitlySet__.add("applianceSerialNumber");
             return this;
         }
-
+        /**
+         * Passphrase associated with the Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applianceDecryptionPassphrase")
         private String applianceDecryptionPassphrase;
 
+        /**
+         * Passphrase associated with the Appliance.
+         * @param applianceDecryptionPassphrase the value to set
+         * @return this builder
+         **/
         public Builder applianceDecryptionPassphrase(String applianceDecryptionPassphrase) {
             this.applianceDecryptionPassphrase = applianceDecryptionPassphrase;
             this.__explicitlySet__.add("applianceDecryptionPassphrase");
             return this;
         }
-
+        /**
+         * Shipping Vendor selected to ship the Appliance associated with this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applianceDeliveryVendor")
         private String applianceDeliveryVendor;
 
+        /**
+         * Shipping Vendor selected to ship the Appliance associated with this job.
+         * @param applianceDeliveryVendor the value to set
+         * @return this builder
+         **/
         public Builder applianceDeliveryVendor(String applianceDeliveryVendor) {
             this.applianceDeliveryVendor = applianceDeliveryVendor;
             this.__explicitlySet__.add("applianceDeliveryVendor");
             return this;
         }
-
+        /**
+         * Tracking number associated with the shipment while shipping the Appliance to Customer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applianceDeliveryTrackingNumber")
         private String applianceDeliveryTrackingNumber;
 
+        /**
+         * Tracking number associated with the shipment while shipping the Appliance to Customer.
+         * @param applianceDeliveryTrackingNumber the value to set
+         * @return this builder
+         **/
         public Builder applianceDeliveryTrackingNumber(String applianceDeliveryTrackingNumber) {
             this.applianceDeliveryTrackingNumber = applianceDeliveryTrackingNumber;
             this.__explicitlySet__.add("applianceDeliveryTrackingNumber");
             return this;
         }
-
+        /**
+         * Tracking number associated with the shipment while shipping the Appliance back to Oracle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applianceReturnDeliveryTrackingNumber")
         private String applianceReturnDeliveryTrackingNumber;
 
+        /**
+         * Tracking number associated with the shipment while shipping the Appliance back to Oracle.
+         * @param applianceReturnDeliveryTrackingNumber the value to set
+         * @return this builder
+         **/
         public Builder applianceReturnDeliveryTrackingNumber(
                 String applianceReturnDeliveryTrackingNumber) {
             this.applianceReturnDeliveryTrackingNumber = applianceReturnDeliveryTrackingNumber;
             this.__explicitlySet__.add("applianceReturnDeliveryTrackingNumber");
             return this;
         }
-
+        /**
+         * Unique number associated with the security tie used to seal the Appliance case.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sendingSecurityTie")
         private String sendingSecurityTie;
 
+        /**
+         * Unique number associated with the security tie used to seal the Appliance case.
+         * @param sendingSecurityTie the value to set
+         * @return this builder
+         **/
         public Builder sendingSecurityTie(String sendingSecurityTie) {
             this.sendingSecurityTie = sendingSecurityTie;
             this.__explicitlySet__.add("sendingSecurityTie");
             return this;
         }
-
+        /**
+         * Unique number associated with the return security tie used to seal the Appliance case.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("receivingSecurityTie")
         private String receivingSecurityTie;
 
+        /**
+         * Unique number associated with the return security tie used to seal the Appliance case.
+         * @param receivingSecurityTie the value to set
+         * @return this builder
+         **/
         public Builder receivingSecurityTie(String receivingSecurityTie) {
             this.receivingSecurityTie = receivingSecurityTie;
             this.__explicitlySet__.add("receivingSecurityTie");
             return this;
         }
-
+        /**
+         * List of objects with names matching this prefix would be part of this export job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
+        /**
+         * List of objects with names matching this prefix would be part of this export job.
+         * @param prefix the value to set
+         * @return this builder
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
             return this;
         }
-
+        /**
+         * The name of the first object in the range of objects that are expected to be part of this export job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rangeStart")
         private String rangeStart;
 
+        /**
+         * The name of the first object in the range of objects that are expected to be part of this export job.
+         * @param rangeStart the value to set
+         * @return this builder
+         **/
         public Builder rangeStart(String rangeStart) {
             this.rangeStart = rangeStart;
             this.__explicitlySet__.add("rangeStart");
             return this;
         }
-
+        /**
+         * The name of the last object in the range of objects that are expected to be part of this export job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rangeEnd")
         private String rangeEnd;
 
+        /**
+         * The name of the last object in the range of objects that are expected to be part of this export job.
+         * @param rangeEnd the value to set
+         * @return this builder
+         **/
         public Builder rangeEnd(String rangeEnd) {
             this.rangeEnd = rangeEnd;
             this.__explicitlySet__.add("rangeEnd");
             return this;
         }
-
+        /**
+         * Total number of objects that are exported in this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfObjects")
         private String numberOfObjects;
 
+        /**
+         * Total number of objects that are exported in this job.
+         * @param numberOfObjects the value to set
+         * @return this builder
+         **/
         public Builder numberOfObjects(String numberOfObjects) {
             this.numberOfObjects = numberOfObjects;
             this.__explicitlySet__.add("numberOfObjects");
             return this;
         }
-
+        /**
+         * Total size of objects in Bytes that are exported in this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSizeInBytes")
         private String totalSizeInBytes;
 
+        /**
+         * Total size of objects in Bytes that are exported in this job.
+         * @param totalSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder totalSizeInBytes(String totalSizeInBytes) {
             this.totalSizeInBytes = totalSizeInBytes;
             this.__explicitlySet__.add("totalSizeInBytes");
             return this;
         }
-
+        /**
+         * First object in the list of objects that are exported in this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("firstObject")
         private String firstObject;
 
+        /**
+         * First object in the list of objects that are exported in this job.
+         * @param firstObject the value to set
+         * @return this builder
+         **/
         public Builder firstObject(String firstObject) {
             this.firstObject = firstObject;
             this.__explicitlySet__.add("firstObject");
             return this;
         }
-
+        /**
+         * Last object in the list of objects that are exported in this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastObject")
         private String lastObject;
 
+        /**
+         * Last object in the list of objects that are exported in this job.
+         * @param lastObject the value to set
+         * @return this builder
+         **/
         public Builder lastObject(String lastObject) {
             this.lastObject = lastObject;
             this.__explicitlySet__.add("lastObject");
             return this;
         }
-
+        /**
+         * First object from which the next potential export job could start.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextObject")
         private String nextObject;
 
+        /**
+         * First object from which the next potential export job could start.
+         * @param nextObject the value to set
+         * @return this builder
+         **/
         public Builder nextObject(String nextObject) {
             this.nextObject = nextObject;
             this.__explicitlySet__.add("nextObject");
             return this;
         }
-
+        /**
+         * Url of the Manifest File associated with this export job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("manifestFile")
         private String manifestFile;
 
+        /**
+         * Url of the Manifest File associated with this export job.
+         * @param manifestFile the value to set
+         * @return this builder
+         **/
         public Builder manifestFile(String manifestFile) {
             this.manifestFile = manifestFile;
             this.__explicitlySet__.add("manifestFile");
             return this;
         }
-
+        /**
+         * md5 digest of the manifest file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("manifestMd5")
         private String manifestMd5;
 
+        /**
+         * md5 digest of the manifest file.
+         * @param manifestMd5 the value to set
+         * @return this builder
+         **/
         public Builder manifestMd5(String manifestMd5) {
             this.manifestMd5 = manifestMd5;
             this.__explicitlySet__.add("manifestMd5");
             return this;
         }
-
+        /**
+         * Polices to grant Data Transfer Service to access objects in the Bucket
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketAccessPolicies")
         private java.util.List<String> bucketAccessPolicies;
 
+        /**
+         * Polices to grant Data Transfer Service to access objects in the Bucket
+         * @param bucketAccessPolicies the value to set
+         * @return this builder
+         **/
         public Builder bucketAccessPolicies(java.util.List<String> bucketAccessPolicies) {
             this.bucketAccessPolicies = bucketAccessPolicies;
             this.__explicitlySet__.add("bucketAccessPolicies");
@@ -347,19 +481,49 @@ public final class ApplianceExportJob {
             this.__explicitlySet__.add("customerShippingAddress");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -555,6 +719,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
     private final String lifecycleStateDetails;
 
+    /**
+     * A property that can contain details on the lifecycle.
+     * @return the value
+     **/
     public String getLifecycleStateDetails() {
         return lifecycleStateDetails;
     }
@@ -565,6 +733,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("applianceSerialNumber")
     private final String applianceSerialNumber;
 
+    /**
+     * Serial Number of the Appliance associated with this Export Job.
+     * @return the value
+     **/
     public String getApplianceSerialNumber() {
         return applianceSerialNumber;
     }
@@ -575,6 +747,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("applianceDecryptionPassphrase")
     private final String applianceDecryptionPassphrase;
 
+    /**
+     * Passphrase associated with the Appliance.
+     * @return the value
+     **/
     public String getApplianceDecryptionPassphrase() {
         return applianceDecryptionPassphrase;
     }
@@ -585,6 +761,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("applianceDeliveryVendor")
     private final String applianceDeliveryVendor;
 
+    /**
+     * Shipping Vendor selected to ship the Appliance associated with this job.
+     * @return the value
+     **/
     public String getApplianceDeliveryVendor() {
         return applianceDeliveryVendor;
     }
@@ -595,6 +775,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("applianceDeliveryTrackingNumber")
     private final String applianceDeliveryTrackingNumber;
 
+    /**
+     * Tracking number associated with the shipment while shipping the Appliance to Customer.
+     * @return the value
+     **/
     public String getApplianceDeliveryTrackingNumber() {
         return applianceDeliveryTrackingNumber;
     }
@@ -605,6 +789,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("applianceReturnDeliveryTrackingNumber")
     private final String applianceReturnDeliveryTrackingNumber;
 
+    /**
+     * Tracking number associated with the shipment while shipping the Appliance back to Oracle.
+     * @return the value
+     **/
     public String getApplianceReturnDeliveryTrackingNumber() {
         return applianceReturnDeliveryTrackingNumber;
     }
@@ -615,6 +803,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("sendingSecurityTie")
     private final String sendingSecurityTie;
 
+    /**
+     * Unique number associated with the security tie used to seal the Appliance case.
+     * @return the value
+     **/
     public String getSendingSecurityTie() {
         return sendingSecurityTie;
     }
@@ -625,6 +817,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("receivingSecurityTie")
     private final String receivingSecurityTie;
 
+    /**
+     * Unique number associated with the return security tie used to seal the Appliance case.
+     * @return the value
+     **/
     public String getReceivingSecurityTie() {
         return receivingSecurityTie;
     }
@@ -635,6 +831,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
+    /**
+     * List of objects with names matching this prefix would be part of this export job.
+     * @return the value
+     **/
     public String getPrefix() {
         return prefix;
     }
@@ -645,6 +845,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("rangeStart")
     private final String rangeStart;
 
+    /**
+     * The name of the first object in the range of objects that are expected to be part of this export job.
+     * @return the value
+     **/
     public String getRangeStart() {
         return rangeStart;
     }
@@ -655,6 +859,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("rangeEnd")
     private final String rangeEnd;
 
+    /**
+     * The name of the last object in the range of objects that are expected to be part of this export job.
+     * @return the value
+     **/
     public String getRangeEnd() {
         return rangeEnd;
     }
@@ -665,6 +873,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfObjects")
     private final String numberOfObjects;
 
+    /**
+     * Total number of objects that are exported in this job.
+     * @return the value
+     **/
     public String getNumberOfObjects() {
         return numberOfObjects;
     }
@@ -675,6 +887,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("totalSizeInBytes")
     private final String totalSizeInBytes;
 
+    /**
+     * Total size of objects in Bytes that are exported in this job.
+     * @return the value
+     **/
     public String getTotalSizeInBytes() {
         return totalSizeInBytes;
     }
@@ -685,6 +901,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("firstObject")
     private final String firstObject;
 
+    /**
+     * First object in the list of objects that are exported in this job.
+     * @return the value
+     **/
     public String getFirstObject() {
         return firstObject;
     }
@@ -695,6 +915,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("lastObject")
     private final String lastObject;
 
+    /**
+     * Last object in the list of objects that are exported in this job.
+     * @return the value
+     **/
     public String getLastObject() {
         return lastObject;
     }
@@ -705,6 +929,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("nextObject")
     private final String nextObject;
 
+    /**
+     * First object from which the next potential export job could start.
+     * @return the value
+     **/
     public String getNextObject() {
         return nextObject;
     }
@@ -715,6 +943,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("manifestFile")
     private final String manifestFile;
 
+    /**
+     * Url of the Manifest File associated with this export job.
+     * @return the value
+     **/
     public String getManifestFile() {
         return manifestFile;
     }
@@ -725,6 +957,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("manifestMd5")
     private final String manifestMd5;
 
+    /**
+     * md5 digest of the manifest file.
+     * @return the value
+     **/
     public String getManifestMd5() {
         return manifestMd5;
     }
@@ -735,6 +971,10 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketAccessPolicies")
     private final java.util.List<String> bucketAccessPolicies;
 
+    /**
+     * Polices to grant Data Transfer Service to access objects in the Bucket
+     * @return the value
+     **/
     public java.util.List<String> getBucketAccessPolicies() {
         return bucketAccessPolicies;
     }
@@ -756,6 +996,14 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -770,6 +1018,14 @@ public final class ApplianceExportJob {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

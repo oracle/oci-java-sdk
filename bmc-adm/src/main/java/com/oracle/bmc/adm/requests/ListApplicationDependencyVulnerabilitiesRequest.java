@@ -17,6 +17,9 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private String vulnerabilityAuditId;
 
+    /**
+     * Unique Vulnerability Audit identifier path parameter.
+     */
     public String getVulnerabilityAuditId() {
         return vulnerabilityAuditId;
     }
@@ -25,6 +28,9 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private String vulnerabilityId;
 
+    /**
+     * A filter to return only Vulnerability Audits that match the specified id.
+     */
     public String getVulnerabilityId() {
         return vulnerabilityId;
     }
@@ -34,6 +40,10 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private Float cvssV3GreaterThanOrEqual;
 
+    /**
+     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
+     *
+     */
     public Float getCvssV3GreaterThanOrEqual() {
         return cvssV3GreaterThanOrEqual;
     }
@@ -43,6 +53,10 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private Float cvssV2GreaterThanOrEqual;
 
+    /**
+     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
+     *
+     */
     public Float getCvssV2GreaterThanOrEqual() {
         return cvssV2GreaterThanOrEqual;
     }
@@ -51,6 +65,9 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -59,6 +76,9 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private String page;
 
+    /**
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     */
     public String getPage() {
         return page;
     }
@@ -67,6 +87,9 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private com.oracle.bmc.adm.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.adm.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -117,6 +140,12 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     * Default order for gav is ascending where ascending corresponds to alphanumerical order.
+     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -125,6 +154,9 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private String gav;
 
+    /**
+     * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+     */
     public String getGav() {
         return gav;
     }
@@ -133,6 +165,9 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -144,10 +179,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Vulnerability Audit identifier path parameter.
+         */
         private String vulnerabilityAuditId = null;
 
         /**
          * Unique Vulnerability Audit identifier path parameter.
+         * @param vulnerabilityAuditId the value to set
          * @return this builder instance
          */
         public Builder vulnerabilityAuditId(String vulnerabilityAuditId) {
@@ -155,10 +194,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * A filter to return only Vulnerability Audits that match the specified id.
+         */
         private String vulnerabilityId = null;
 
         /**
          * A filter to return only Vulnerability Audits that match the specified id.
+         * @param vulnerabilityId the value to set
          * @return this builder instance
          */
         public Builder vulnerabilityId(String vulnerabilityId) {
@@ -166,11 +209,16 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
+         *
+         */
         private Float cvssV3GreaterThanOrEqual = null;
 
         /**
          * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
          *
+         * @param cvssV3GreaterThanOrEqual the value to set
          * @return this builder instance
          */
         public Builder cvssV3GreaterThanOrEqual(Float cvssV3GreaterThanOrEqual) {
@@ -178,11 +226,16 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
+         *
+         */
         private Float cvssV2GreaterThanOrEqual = null;
 
         /**
          * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
          *
+         * @param cvssV2GreaterThanOrEqual the value to set
          * @return this builder instance
          */
         public Builder cvssV2GreaterThanOrEqual(Float cvssV2GreaterThanOrEqual) {
@@ -190,10 +243,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -201,10 +258,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         */
         private String page = null;
 
         /**
          * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -212,10 +273,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.adm.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.adm.model.SortOrder sortOrder) {
@@ -223,6 +288,12 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for gav is ascending where ascending corresponds to alphanumerical order.
+         * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -230,6 +301,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
          * Default order for gav is ascending where ascending corresponds to alphanumerical order.
          * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -237,10 +309,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+         */
         private String gav = null;
 
         /**
          * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+         * @param gav the value to set
          * @return this builder instance
          */
         public Builder gav(String gav) {
@@ -248,10 +324,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -347,7 +427,8 @@ public class ListApplicationDependencyVulnerabilitiesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -363,6 +444,10 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

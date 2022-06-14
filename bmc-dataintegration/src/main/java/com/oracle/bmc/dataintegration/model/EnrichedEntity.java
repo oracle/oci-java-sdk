@@ -31,6 +31,7 @@ public final class EnrichedEntity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("entity")
         private DataEntity entity;
 
@@ -48,10 +49,17 @@ public final class EnrichedEntity {
             this.__explicitlySet__.add("dataFormat");
             return this;
         }
-
+        /**
+         * The model type for the entity which is referenced.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
+        /**
+         * The model type for the entity which is referenced.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
@@ -121,6 +129,10 @@ public final class EnrichedEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
+    /**
+     * The model type for the entity which is referenced.
+     * @return the value
+     **/
     public String getModelType() {
         return modelType;
     }

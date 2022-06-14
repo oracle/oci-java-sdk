@@ -16,6 +16,9 @@ public class GetUserAssessmentRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String userAssessmentId;
 
+    /**
+     * The OCID of the user assessment.
+     */
     public String getUserAssessmentId() {
         return userAssessmentId;
     }
@@ -24,6 +27,9 @@ public class GetUserAssessmentRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetUserAssessmentRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the user assessment.
+         */
         private String userAssessmentId = null;
 
         /**
          * The OCID of the user assessment.
+         * @param userAssessmentId the value to set
          * @return this builder instance
          */
         public Builder userAssessmentId(String userAssessmentId) {
@@ -46,10 +56,14 @@ public class GetUserAssessmentRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetUserAssessmentRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().userAssessmentId(userAssessmentId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

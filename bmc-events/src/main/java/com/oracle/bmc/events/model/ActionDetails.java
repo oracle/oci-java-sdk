@@ -55,6 +55,13 @@ public class ActionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether or not this action is currently enabled.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -67,6 +74,12 @@ public class ActionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering
+     * confidential information.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

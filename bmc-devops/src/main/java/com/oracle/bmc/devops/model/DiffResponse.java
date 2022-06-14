@@ -51,72 +51,129 @@ public final class DiffResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Boolean value to indicate if all changes are included in the response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areAllChangesIncluded")
         private Boolean areAllChangesIncluded;
 
+        /**
+         * Boolean value to indicate if all changes are included in the response.
+         * @param areAllChangesIncluded the value to set
+         * @return this builder
+         **/
         public Builder areAllChangesIncluded(Boolean areAllChangesIncluded) {
             this.areAllChangesIncluded = areAllChangesIncluded;
             this.__explicitlySet__.add("areAllChangesIncluded");
             return this;
         }
-
+        /**
+         * Count of each type of change in difference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeTypeCount")
         private java.util.Map<String, Integer> changeTypeCount;
 
+        /**
+         * Count of each type of change in difference.
+         * @param changeTypeCount the value to set
+         * @return this builder
+         **/
         public Builder changeTypeCount(java.util.Map<String, Integer> changeTypeCount) {
             this.changeTypeCount = changeTypeCount;
             this.__explicitlySet__.add("changeTypeCount");
             return this;
         }
-
+        /**
+         * The ID of the common commit between source and target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commonCommit")
         private String commonCommit;
 
+        /**
+         * The ID of the common commit between source and target.
+         * @param commonCommit the value to set
+         * @return this builder
+         **/
         public Builder commonCommit(String commonCommit) {
             this.commonCommit = commonCommit;
             this.__explicitlySet__.add("commonCommit");
             return this;
         }
-
+        /**
+         * The number of commits source is ahead of target by.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitsAheadCount")
         private Integer commitsAheadCount;
 
+        /**
+         * The number of commits source is ahead of target by.
+         * @param commitsAheadCount the value to set
+         * @return this builder
+         **/
         public Builder commitsAheadCount(Integer commitsAheadCount) {
             this.commitsAheadCount = commitsAheadCount;
             this.__explicitlySet__.add("commitsAheadCount");
             return this;
         }
-
+        /**
+         * The number of commits source is behind target by.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitsBehindCount")
         private Integer commitsBehindCount;
 
+        /**
+         * The number of commits source is behind target by.
+         * @param commitsBehindCount the value to set
+         * @return this builder
+         **/
         public Builder commitsBehindCount(Integer commitsBehindCount) {
             this.commitsBehindCount = commitsBehindCount;
             this.__explicitlySet__.add("commitsBehindCount");
             return this;
         }
-
+        /**
+         * The number of lines added in whole difference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addedLinesCount")
         private Integer addedLinesCount;
 
+        /**
+         * The number of lines added in whole difference.
+         * @param addedLinesCount the value to set
+         * @return this builder
+         **/
         public Builder addedLinesCount(Integer addedLinesCount) {
             this.addedLinesCount = addedLinesCount;
             this.__explicitlySet__.add("addedLinesCount");
             return this;
         }
-
+        /**
+         * The number of lines deleted in whole difference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deletedLinesCount")
         private Integer deletedLinesCount;
 
+        /**
+         * The number of lines deleted in whole difference.
+         * @param deletedLinesCount the value to set
+         * @return this builder
+         **/
         public Builder deletedLinesCount(Integer deletedLinesCount) {
             this.deletedLinesCount = deletedLinesCount;
             this.__explicitlySet__.add("deletedLinesCount");
             return this;
         }
-
+        /**
+         * List of changes in the difference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changes")
         private java.util.List<DiffResponseEntry> changes;
 
+        /**
+         * List of changes in the difference.
+         * @param changes the value to set
+         * @return this builder
+         **/
         public Builder changes(java.util.List<DiffResponseEntry> changes) {
             this.changes = changes;
             this.__explicitlySet__.add("changes");
@@ -175,6 +232,10 @@ public final class DiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("areAllChangesIncluded")
     private final Boolean areAllChangesIncluded;
 
+    /**
+     * Boolean value to indicate if all changes are included in the response.
+     * @return the value
+     **/
     public Boolean getAreAllChangesIncluded() {
         return areAllChangesIncluded;
     }
@@ -185,6 +246,10 @@ public final class DiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("changeTypeCount")
     private final java.util.Map<String, Integer> changeTypeCount;
 
+    /**
+     * Count of each type of change in difference.
+     * @return the value
+     **/
     public java.util.Map<String, Integer> getChangeTypeCount() {
         return changeTypeCount;
     }
@@ -195,6 +260,10 @@ public final class DiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("commonCommit")
     private final String commonCommit;
 
+    /**
+     * The ID of the common commit between source and target.
+     * @return the value
+     **/
     public String getCommonCommit() {
         return commonCommit;
     }
@@ -205,6 +274,10 @@ public final class DiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("commitsAheadCount")
     private final Integer commitsAheadCount;
 
+    /**
+     * The number of commits source is ahead of target by.
+     * @return the value
+     **/
     public Integer getCommitsAheadCount() {
         return commitsAheadCount;
     }
@@ -215,6 +288,10 @@ public final class DiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("commitsBehindCount")
     private final Integer commitsBehindCount;
 
+    /**
+     * The number of commits source is behind target by.
+     * @return the value
+     **/
     public Integer getCommitsBehindCount() {
         return commitsBehindCount;
     }
@@ -225,6 +302,10 @@ public final class DiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("addedLinesCount")
     private final Integer addedLinesCount;
 
+    /**
+     * The number of lines added in whole difference.
+     * @return the value
+     **/
     public Integer getAddedLinesCount() {
         return addedLinesCount;
     }
@@ -235,6 +316,10 @@ public final class DiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("deletedLinesCount")
     private final Integer deletedLinesCount;
 
+    /**
+     * The number of lines deleted in whole difference.
+     * @return the value
+     **/
     public Integer getDeletedLinesCount() {
         return deletedLinesCount;
     }
@@ -245,6 +330,10 @@ public final class DiffResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("changes")
     private final java.util.List<DiffResponseEntry> changes;
 
+    /**
+     * List of changes in the difference.
+     * @return the value
+     **/
     public java.util.List<DiffResponseEntry> getChanges() {
         return changes;
     }

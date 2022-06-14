@@ -79,6 +79,32 @@ public interface Identity extends AutoCloseable {
     ActivateMfaTotpDeviceResponse activateMfaTotpDevice(ActivateMfaTotpDeviceRequest request);
 
     /**
+     * Add a resource lock to a tag default.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AddTagDefaultLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddTagDefaultLock API.
+     */
+    AddTagDefaultLockResponse addTagDefaultLock(AddTagDefaultLockRequest request);
+
+    /**
+     * Add a resource lock to a tag namespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AddTagNamespaceLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddTagNamespaceLock API.
+     */
+    AddTagNamespaceLockResponse addTagNamespaceLock(AddTagNamespaceLockRequest request);
+
+    /**
      * Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
      * <p>
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
@@ -1058,7 +1084,6 @@ public interface Identity extends AutoCloseable {
      * tag from all resources in your tenancy.
      * <p>
      * These things happen immediately:
-     * \u00A0
      *   * If the tag was a cost-tracking tag, it no longer counts against your 10 cost-tracking
      *   tags limit, whether you first disabled it or not.
      *   * If the tag was used with dynamic groups, none of the rules that contain the tag will
@@ -2076,6 +2101,32 @@ public interface Identity extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RecoverCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RecoverCompartment API.
      */
     RecoverCompartmentResponse recoverCompartment(RecoverCompartmentRequest request);
+
+    /**
+     * Remove a resource lock from a tag default.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RemoveTagDefaultLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveTagDefaultLock API.
+     */
+    RemoveTagDefaultLockResponse removeTagDefaultLock(RemoveTagDefaultLockRequest request);
+
+    /**
+     * Remove a resource lock from a tag namespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RemoveTagNamespaceLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveTagNamespaceLock API.
+     */
+    RemoveTagNamespaceLockResponse removeTagNamespaceLock(RemoveTagNamespaceLockRequest request);
 
     /**
      * Removes a user from a group by deleting the corresponding `UserGroupMembership`.

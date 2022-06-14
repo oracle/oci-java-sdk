@@ -31,27 +31,49 @@ public final class FullPushDownTaskResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of of FullPushDownTask Response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
+        /**
+         * The type of of FullPushDownTask Response.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-
+        /**
+         * The error message in response object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * The error message in response object.
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-
+        /**
+         * The status of FullPushDownTask.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * The status of FullPushDownTask.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -97,6 +119,10 @@ public final class FullPushDownTaskResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
+    /**
+     * The type of of FullPushDownTask Response.
+     * @return the value
+     **/
     public String getModelType() {
         return modelType;
     }
@@ -107,6 +133,10 @@ public final class FullPushDownTaskResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * The error message in response object.
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -117,6 +147,10 @@ public final class FullPushDownTaskResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * The status of FullPushDownTask.
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }

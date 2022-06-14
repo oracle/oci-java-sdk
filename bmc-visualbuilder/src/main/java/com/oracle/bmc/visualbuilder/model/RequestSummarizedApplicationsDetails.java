@@ -29,9 +29,17 @@ public final class RequestSummarizedApplicationsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsOpenId")
         private String idcsOpenId;
 
+        /**
+         * Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
+         * @param idcsOpenId the value to set
+         * @return this builder
+         **/
         public Builder idcsOpenId(String idcsOpenId) {
             this.idcsOpenId = idcsOpenId;
             this.__explicitlySet__.add("idcsOpenId");
@@ -74,6 +82,10 @@ public final class RequestSummarizedApplicationsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("idcsOpenId")
     private final String idcsOpenId;
 
+    /**
+     * Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
+     * @return the value
+     **/
     public String getIdcsOpenId() {
         return idcsOpenId;
     }

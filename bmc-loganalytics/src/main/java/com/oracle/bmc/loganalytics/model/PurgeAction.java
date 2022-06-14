@@ -25,45 +25,93 @@ package com.oracle.bmc.loganalytics.model;
 public final class PurgeAction extends Action {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Purge query string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
 
+        /**
+         * Purge query string.
+         * @param queryString the value to set
+         * @return this builder
+         **/
         public Builder queryString(String queryString) {
             this.queryString = queryString;
             this.__explicitlySet__.add("queryString");
             return this;
         }
-
+        /**
+         * the type of the log data to be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private StorageDataType dataType;
 
+        /**
+         * the type of the log data to be purged
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(StorageDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * The duration of data to be retained, which is used to
+         * calculate the timeDataEnded when the task fires.
+         * The value should be negative.
+         * Purge duration in ISO 8601 extended format as described in
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
+         * The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purgeDuration")
         private String purgeDuration;
 
+        /**
+         * The duration of data to be retained, which is used to
+         * calculate the timeDataEnded when the task fires.
+         * The value should be negative.
+         * Purge duration in ISO 8601 extended format as described in
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
+         * The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+         *
+         * @param purgeDuration the value to set
+         * @return this builder
+         **/
         public Builder purgeDuration(String purgeDuration) {
             this.purgeDuration = purgeDuration;
             this.__explicitlySet__.add("purgeDuration");
             return this;
         }
-
+        /**
+         * the compartment OCID under which the data will be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purgeCompartmentId")
         private String purgeCompartmentId;
 
+        /**
+         * the compartment OCID under which the data will be purged
+         * @param purgeCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder purgeCompartmentId(String purgeCompartmentId) {
             this.purgeCompartmentId = purgeCompartmentId;
             this.__explicitlySet__.add("purgeCompartmentId");
             return this;
         }
-
+        /**
+         * if true, purge child compartments data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
+        /**
+         * if true, purge child compartments data
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
@@ -131,6 +179,10 @@ public final class PurgeAction extends Action {
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     private final String queryString;
 
+    /**
+     * Purge query string.
+     * @return the value
+     **/
     public String getQueryString() {
         return queryString;
     }
@@ -141,6 +193,10 @@ public final class PurgeAction extends Action {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final StorageDataType dataType;
 
+    /**
+     * the type of the log data to be purged
+     * @return the value
+     **/
     public StorageDataType getDataType() {
         return dataType;
     }
@@ -157,6 +213,16 @@ public final class PurgeAction extends Action {
     @com.fasterxml.jackson.annotation.JsonProperty("purgeDuration")
     private final String purgeDuration;
 
+    /**
+     * The duration of data to be retained, which is used to
+     * calculate the timeDataEnded when the task fires.
+     * The value should be negative.
+     * Purge duration in ISO 8601 extended format as described in
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations.
+     * The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+     *
+     * @return the value
+     **/
     public String getPurgeDuration() {
         return purgeDuration;
     }
@@ -167,6 +233,10 @@ public final class PurgeAction extends Action {
     @com.fasterxml.jackson.annotation.JsonProperty("purgeCompartmentId")
     private final String purgeCompartmentId;
 
+    /**
+     * the compartment OCID under which the data will be purged
+     * @return the value
+     **/
     public String getPurgeCompartmentId() {
         return purgeCompartmentId;
     }
@@ -177,6 +247,10 @@ public final class PurgeAction extends Action {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
+    /**
+     * if true, purge child compartments data
+     * @return the value
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }

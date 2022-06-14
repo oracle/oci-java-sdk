@@ -30,9 +30,17 @@ public final class SightingImpactedResourceCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of SightingImpactedResourceSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SightingImpactedResourceSummary> items;
 
+        /**
+         * List of SightingImpactedResourceSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SightingImpactedResourceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class SightingImpactedResourceCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SightingImpactedResourceSummary> items;
 
+    /**
+     * List of SightingImpactedResourceSummary
+     * @return the value
+     **/
     public java.util.List<SightingImpactedResourceSummary> getItems() {
         return items;
     }

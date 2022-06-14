@@ -59,90 +59,167 @@ public final class ObjectRelationship {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of relationship with the referencing object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relationshipType")
         private String relationshipType;
 
+        /**
+         * Type of relationship with the referencing object.
+         * @param relationshipType the value to set
+         * @return this builder
+         **/
         public Builder relationshipType(String relationshipType) {
             this.relationshipType = relationshipType;
             this.__explicitlySet__.add("relationshipType");
             return this;
         }
-
+        /**
+         * Unique id of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique id of the object.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the object.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Type name of the object. Type names can be found via the '/types' endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeName")
         private String typeName;
 
+        /**
+         * Type name of the object. Type names can be found via the '/types' endpoint.
+         * @param typeName the value to set
+         * @return this builder
+         **/
         public Builder typeName(String typeName) {
             this.typeName = typeName;
             this.__explicitlySet__.add("typeName");
             return this;
         }
-
+        /**
+         * Type key of the object. Type keys can be found via the '/types' endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
         private String typeKey;
 
+        /**
+         * Type key of the object. Type keys can be found via the '/types' endpoint.
+         * @param typeKey the value to set
+         * @return this builder
+         **/
         public Builder typeKey(String typeKey) {
             this.typeKey = typeKey;
             this.__explicitlySet__.add("typeKey");
             return this;
         }
-
+        /**
+         * The date and time the relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The last time a change was made to this reference. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The last time a change was made to this reference. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Full path of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Full path of the object.
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * Key of the parent object for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
         private String parentKey;
 
+        /**
+         * Key of the parent object for the resource.
+         * @param parentKey the value to set
+         * @return this builder
+         **/
         public Builder parentKey(String parentKey) {
             this.parentKey = parentKey;
             this.__explicitlySet__.add("parentKey");
             return this;
         }
-
+        /**
+         * Full path of the parent object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentPath")
         private String parentPath;
 
+        /**
+         * Full path of the parent object.
+         * @param parentPath the value to set
+         * @return this builder
+         **/
         public Builder parentPath(String parentPath) {
             this.parentPath = parentPath;
             this.__explicitlySet__.add("parentPath");
@@ -205,6 +282,10 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("relationshipType")
     private final String relationshipType;
 
+    /**
+     * Type of relationship with the referencing object.
+     * @return the value
+     **/
     public String getRelationshipType() {
         return relationshipType;
     }
@@ -215,6 +296,10 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique id of the object.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -225,6 +310,10 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the object.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -235,6 +324,10 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     private final String typeName;
 
+    /**
+     * Type name of the object. Type names can be found via the '/types' endpoint.
+     * @return the value
+     **/
     public String getTypeName() {
         return typeName;
     }
@@ -245,6 +338,10 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
     private final String typeKey;
 
+    /**
+     * Type key of the object. Type keys can be found via the '/types' endpoint.
+     * @return the value
+     **/
     public String getTypeKey() {
         return typeKey;
     }
@@ -257,6 +354,12 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -268,6 +371,11 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The last time a change was made to this reference. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -278,6 +386,10 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Full path of the object.
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -288,6 +400,10 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
     private final String parentKey;
 
+    /**
+     * Key of the parent object for the resource.
+     * @return the value
+     **/
     public String getParentKey() {
         return parentKey;
     }
@@ -298,6 +414,10 @@ public final class ObjectRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("parentPath")
     private final String parentPath;
 
+    /**
+     * Full path of the parent object.
+     * @return the value
+     **/
     public String getParentPath() {
         return parentPath;
     }

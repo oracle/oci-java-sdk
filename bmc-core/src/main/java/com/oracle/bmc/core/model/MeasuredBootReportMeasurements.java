@@ -32,18 +32,33 @@ public final class MeasuredBootReportMeasurements {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of expected PCR entries to use during verification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private java.util.List<MeasuredBootEntry> policy;
 
+        /**
+         * The list of expected PCR entries to use during verification.
+         * @param policy the value to set
+         * @return this builder
+         **/
         public Builder policy(java.util.List<MeasuredBootEntry> policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
             return this;
         }
-
+        /**
+         * The list of actual PCR entries measured during boot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actual")
         private java.util.List<MeasuredBootEntry> actual;
 
+        /**
+         * The list of actual PCR entries measured during boot.
+         * @param actual the value to set
+         * @return this builder
+         **/
         public Builder actual(java.util.List<MeasuredBootEntry> actual) {
             this.actual = actual;
             this.__explicitlySet__.add("actual");
@@ -86,6 +101,10 @@ public final class MeasuredBootReportMeasurements {
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final java.util.List<MeasuredBootEntry> policy;
 
+    /**
+     * The list of expected PCR entries to use during verification.
+     * @return the value
+     **/
     public java.util.List<MeasuredBootEntry> getPolicy() {
         return policy;
     }
@@ -96,6 +115,10 @@ public final class MeasuredBootReportMeasurements {
     @com.fasterxml.jackson.annotation.JsonProperty("actual")
     private final java.util.List<MeasuredBootEntry> actual;
 
+    /**
+     * The list of actual PCR entries measured during boot.
+     * @return the value
+     **/
     public java.util.List<MeasuredBootEntry> getActual() {
         return actual;
     }

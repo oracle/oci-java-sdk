@@ -29,6 +29,7 @@ public final class UpdateQueryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("queryDefinition")
         private QueryDefinition queryDefinition;
 

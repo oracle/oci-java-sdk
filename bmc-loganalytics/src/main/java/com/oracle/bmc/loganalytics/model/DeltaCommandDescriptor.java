@@ -72,10 +72,19 @@ public final class DeltaCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Value specified in DELTA command in queryString if set controlling whether delta is calculating difference between consecutive result rows or skipping N rows for each calculation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("step")
         private Integer step;
 
+        /**
+         * Value specified in DELTA command in queryString if set controlling whether delta is calculating difference between consecutive result rows or skipping N rows for each calculation.
+         *
+         * @param step the value to set
+         * @return this builder
+         **/
         public Builder step(Integer step) {
             this.step = step;
             this.__explicitlySet__.add("step");
@@ -143,6 +152,11 @@ public final class DeltaCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("step")
     private final Integer step;
 
+    /**
+     * Value specified in DELTA command in queryString if set controlling whether delta is calculating difference between consecutive result rows or skipping N rows for each calculation.
+     *
+     * @return the value
+     **/
     public Integer getStep() {
         return step;
     }

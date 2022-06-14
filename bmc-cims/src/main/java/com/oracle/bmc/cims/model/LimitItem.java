@@ -69,37 +69,65 @@ public final class LimitItem extends Item {
             this.__explicitlySet__.add("issueType");
             return this;
         }
-
+        /**
+         * The currently available limit of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentLimit")
         private Integer currentLimit;
 
+        /**
+         * The currently available limit of the resource.
+         * @param currentLimit the value to set
+         * @return this builder
+         **/
         public Builder currentLimit(Integer currentLimit) {
             this.currentLimit = currentLimit;
             this.__explicitlySet__.add("currentLimit");
             return this;
         }
-
+        /**
+         * The current usage of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
         private Integer currentUsage;
 
+        /**
+         * The current usage of the resource.
+         * @param currentUsage the value to set
+         * @return this builder
+         **/
         public Builder currentUsage(Integer currentUsage) {
             this.currentUsage = currentUsage;
             this.__explicitlySet__.add("currentUsage");
             return this;
         }
-
+        /**
+         * The requested limit for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
         private Integer requestedLimit;
 
+        /**
+         * The requested limit for the resource.
+         * @param requestedLimit the value to set
+         * @return this builder
+         **/
         public Builder requestedLimit(Integer requestedLimit) {
             this.requestedLimit = requestedLimit;
             this.__explicitlySet__.add("requestedLimit");
             return this;
         }
-
+        /**
+         * The status of the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limitStatus")
         private LimitStatus limitStatus;
 
+        /**
+         * The status of the request.
+         * @param limitStatus the value to set
+         * @return this builder
+         **/
         public Builder limitStatus(LimitStatus limitStatus) {
             this.limitStatus = limitStatus;
             this.__explicitlySet__.add("limitStatus");
@@ -178,6 +206,10 @@ public final class LimitItem extends Item {
     @com.fasterxml.jackson.annotation.JsonProperty("currentLimit")
     private final Integer currentLimit;
 
+    /**
+     * The currently available limit of the resource.
+     * @return the value
+     **/
     public Integer getCurrentLimit() {
         return currentLimit;
     }
@@ -188,6 +220,10 @@ public final class LimitItem extends Item {
     @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
     private final Integer currentUsage;
 
+    /**
+     * The current usage of the resource.
+     * @return the value
+     **/
     public Integer getCurrentUsage() {
         return currentUsage;
     }
@@ -198,6 +234,10 @@ public final class LimitItem extends Item {
     @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
     private final Integer requestedLimit;
 
+    /**
+     * The requested limit for the resource.
+     * @return the value
+     **/
     public Integer getRequestedLimit() {
         return requestedLimit;
     }
@@ -257,6 +297,10 @@ public final class LimitItem extends Item {
     @com.fasterxml.jackson.annotation.JsonProperty("limitStatus")
     private final LimitStatus limitStatus;
 
+    /**
+     * The status of the request.
+     * @return the value
+     **/
     public LimitStatus getLimitStatus() {
         return limitStatus;
     }

@@ -32,27 +32,49 @@ public final class ConfigureAutonomousDatabaseVaultKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param vaultId the value to set
+         * @return this builder
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
-
+        /**
+         * True if disable Customer Managed Keys and use Oracle Managed Keys.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUsingOracleManagedKeys")
         private Boolean isUsingOracleManagedKeys;
 
+        /**
+         * True if disable Customer Managed Keys and use Oracle Managed Keys.
+         * @param isUsingOracleManagedKeys the value to set
+         * @return this builder
+         **/
         public Builder isUsingOracleManagedKeys(Boolean isUsingOracleManagedKeys) {
             this.isUsingOracleManagedKeys = isUsingOracleManagedKeys;
             this.__explicitlySet__.add("isUsingOracleManagedKeys");
@@ -99,6 +121,10 @@ public final class ConfigureAutonomousDatabaseVaultKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -109,6 +135,10 @@ public final class ConfigureAutonomousDatabaseVaultKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
     public String getVaultId() {
         return vaultId;
     }
@@ -119,6 +149,10 @@ public final class ConfigureAutonomousDatabaseVaultKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isUsingOracleManagedKeys")
     private final Boolean isUsingOracleManagedKeys;
 
+    /**
+     * True if disable Customer Managed Keys and use Oracle Managed Keys.
+     * @return the value
+     **/
     public Boolean getIsUsingOracleManagedKeys() {
         return isUsingOracleManagedKeys;
     }

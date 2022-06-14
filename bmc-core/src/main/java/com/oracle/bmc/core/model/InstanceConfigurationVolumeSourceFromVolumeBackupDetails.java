@@ -28,9 +28,17 @@ public final class InstanceConfigurationVolumeSourceFromVolumeBackupDetails
         extends InstanceConfigurationVolumeSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the volume backup.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -79,6 +87,10 @@ public final class InstanceConfigurationVolumeSourceFromVolumeBackupDetails
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the volume backup.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }

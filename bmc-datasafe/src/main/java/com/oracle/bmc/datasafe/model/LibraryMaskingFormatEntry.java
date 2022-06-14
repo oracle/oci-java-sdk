@@ -40,10 +40,17 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The OCID of the library masking format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("libraryMaskingFormatId")
         private String libraryMaskingFormatId;
 
+        /**
+         * The OCID of the library masking format.
+         * @param libraryMaskingFormatId the value to set
+         * @return this builder
+         **/
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
             this.libraryMaskingFormatId = libraryMaskingFormatId;
             this.__explicitlySet__.add("libraryMaskingFormatId");
@@ -94,6 +101,10 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("libraryMaskingFormatId")
     private final String libraryMaskingFormatId;
 
+    /**
+     * The OCID of the library masking format.
+     * @return the value
+     **/
     public String getLibraryMaskingFormatId() {
         return libraryMaskingFormatId;
     }

@@ -76,99 +76,211 @@ public final class Policy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the policy.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment containing the policy (either the tenancy or another compartment).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment containing the policy (either the tenancy or another compartment).
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name you assign to the policy during creation. The name must be unique across all policies
+         * in the tenancy and cannot be changed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name you assign to the policy during creation. The name must be unique across all policies
+         * in the tenancy and cannot be changed.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * An array of one or more policy statements written in the policy language.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statements")
         private java.util.List<String> statements;
 
+        /**
+         * An array of one or more policy statements written in the policy language.
+         * @param statements the value to set
+         * @return this builder
+         **/
         public Builder statements(java.util.List<String> statements) {
             this.statements = statements;
             this.__explicitlySet__.add("statements");
             return this;
         }
-
+        /**
+         * The description you assign to the policy. Does not have to be unique, and it's changeable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description you assign to the policy. Does not have to be unique, and it's changeable.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Date and time the policy was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date and time the policy was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The policy's current state. After creating a policy, make sure its {@code lifecycleState} changes from CREATING to
+         * ACTIVE before using it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The policy's current state. After creating a policy, make sure its {@code lifecycleState} changes from CREATING to
+         * ACTIVE before using it.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The detailed status of INACTIVE lifecycleState.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
+        /**
+         * The detailed status of INACTIVE lifecycleState.
+         * @param inactiveStatus the value to set
+         * @return this builder
+         **/
         public Builder inactiveStatus(Long inactiveStatus) {
             this.inactiveStatus = inactiveStatus;
             this.__explicitlySet__.add("inactiveStatus");
             return this;
         }
-
+        /**
+         * The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
+         * policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
+         * date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
         private java.util.Date versionDate;
 
+        /**
+         * The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
+         * policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
+         * date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
+         *
+         * @param versionDate the value to set
+         * @return this builder
+         **/
         public Builder versionDate(java.util.Date versionDate) {
             this.versionDate = versionDate;
             this.__explicitlySet__.add("versionDate");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -234,6 +346,10 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the policy.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -245,6 +361,11 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment containing the policy (either the tenancy or another compartment).
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -257,6 +378,12 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name you assign to the policy during creation. The name must be unique across all policies
+     * in the tenancy and cannot be changed.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -267,6 +394,10 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("statements")
     private final java.util.List<String> statements;
 
+    /**
+     * An array of one or more policy statements written in the policy language.
+     * @return the value
+     **/
     public java.util.List<String> getStatements() {
         return statements;
     }
@@ -277,6 +408,10 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description you assign to the policy. Does not have to be unique, and it's changeable.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -290,6 +425,13 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time the policy was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -355,6 +497,12 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The policy's current state. After creating a policy, make sure its {@code lifecycleState} changes from CREATING to
+     * ACTIVE before using it.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -365,6 +513,10 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
+    /**
+     * The detailed status of INACTIVE lifecycleState.
+     * @return the value
+     **/
     public Long getInactiveStatus() {
         return inactiveStatus;
     }
@@ -378,6 +530,13 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
     private final java.util.Date versionDate;
 
+    /**
+     * The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
+     * policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
+     * date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
+     *
+     * @return the value
+     **/
     public java.util.Date getVersionDate() {
         return versionDate;
     }
@@ -391,6 +550,13 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -404,6 +570,13 @@ public final class Policy {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

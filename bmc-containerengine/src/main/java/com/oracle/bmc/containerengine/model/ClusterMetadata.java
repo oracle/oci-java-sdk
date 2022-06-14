@@ -54,81 +54,145 @@ public final class ClusterMetadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The time the cluster was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the cluster was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The user who created the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdByUserId")
         private String createdByUserId;
 
+        /**
+         * The user who created the cluster.
+         * @param createdByUserId the value to set
+         * @return this builder
+         **/
         public Builder createdByUserId(String createdByUserId) {
             this.createdByUserId = createdByUserId;
             this.__explicitlySet__.add("createdByUserId");
             return this;
         }
-
+        /**
+         * The OCID of the work request which created the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdByWorkRequestId")
         private String createdByWorkRequestId;
 
+        /**
+         * The OCID of the work request which created the cluster.
+         * @param createdByWorkRequestId the value to set
+         * @return this builder
+         **/
         public Builder createdByWorkRequestId(String createdByWorkRequestId) {
             this.createdByWorkRequestId = createdByWorkRequestId;
             this.__explicitlySet__.add("createdByWorkRequestId");
             return this;
         }
-
+        /**
+         * The time the cluster was deleted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDeleted")
         private java.util.Date timeDeleted;
 
+        /**
+         * The time the cluster was deleted.
+         * @param timeDeleted the value to set
+         * @return this builder
+         **/
         public Builder timeDeleted(java.util.Date timeDeleted) {
             this.timeDeleted = timeDeleted;
             this.__explicitlySet__.add("timeDeleted");
             return this;
         }
-
+        /**
+         * The user who deleted the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deletedByUserId")
         private String deletedByUserId;
 
+        /**
+         * The user who deleted the cluster.
+         * @param deletedByUserId the value to set
+         * @return this builder
+         **/
         public Builder deletedByUserId(String deletedByUserId) {
             this.deletedByUserId = deletedByUserId;
             this.__explicitlySet__.add("deletedByUserId");
             return this;
         }
-
+        /**
+         * The OCID of the work request which deleted the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deletedByWorkRequestId")
         private String deletedByWorkRequestId;
 
+        /**
+         * The OCID of the work request which deleted the cluster.
+         * @param deletedByWorkRequestId the value to set
+         * @return this builder
+         **/
         public Builder deletedByWorkRequestId(String deletedByWorkRequestId) {
             this.deletedByWorkRequestId = deletedByWorkRequestId;
             this.__explicitlySet__.add("deletedByWorkRequestId");
             return this;
         }
-
+        /**
+         * The time the cluster was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the cluster was updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The user who updated the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedByUserId")
         private String updatedByUserId;
 
+        /**
+         * The user who updated the cluster.
+         * @param updatedByUserId the value to set
+         * @return this builder
+         **/
         public Builder updatedByUserId(String updatedByUserId) {
             this.updatedByUserId = updatedByUserId;
             this.__explicitlySet__.add("updatedByUserId");
             return this;
         }
-
+        /**
+         * The OCID of the work request which updated the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedByWorkRequestId")
         private String updatedByWorkRequestId;
 
+        /**
+         * The OCID of the work request which updated the cluster.
+         * @param updatedByWorkRequestId the value to set
+         * @return this builder
+         **/
         public Builder updatedByWorkRequestId(String updatedByWorkRequestId) {
             this.updatedByWorkRequestId = updatedByWorkRequestId;
             this.__explicitlySet__.add("updatedByWorkRequestId");
@@ -189,6 +253,10 @@ public final class ClusterMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the cluster was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -199,6 +267,10 @@ public final class ClusterMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("createdByUserId")
     private final String createdByUserId;
 
+    /**
+     * The user who created the cluster.
+     * @return the value
+     **/
     public String getCreatedByUserId() {
         return createdByUserId;
     }
@@ -209,6 +281,10 @@ public final class ClusterMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("createdByWorkRequestId")
     private final String createdByWorkRequestId;
 
+    /**
+     * The OCID of the work request which created the cluster.
+     * @return the value
+     **/
     public String getCreatedByWorkRequestId() {
         return createdByWorkRequestId;
     }
@@ -219,6 +295,10 @@ public final class ClusterMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDeleted")
     private final java.util.Date timeDeleted;
 
+    /**
+     * The time the cluster was deleted.
+     * @return the value
+     **/
     public java.util.Date getTimeDeleted() {
         return timeDeleted;
     }
@@ -229,6 +309,10 @@ public final class ClusterMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("deletedByUserId")
     private final String deletedByUserId;
 
+    /**
+     * The user who deleted the cluster.
+     * @return the value
+     **/
     public String getDeletedByUserId() {
         return deletedByUserId;
     }
@@ -239,6 +323,10 @@ public final class ClusterMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("deletedByWorkRequestId")
     private final String deletedByWorkRequestId;
 
+    /**
+     * The OCID of the work request which deleted the cluster.
+     * @return the value
+     **/
     public String getDeletedByWorkRequestId() {
         return deletedByWorkRequestId;
     }
@@ -249,6 +337,10 @@ public final class ClusterMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the cluster was updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -259,6 +351,10 @@ public final class ClusterMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedByUserId")
     private final String updatedByUserId;
 
+    /**
+     * The user who updated the cluster.
+     * @return the value
+     **/
     public String getUpdatedByUserId() {
         return updatedByUserId;
     }
@@ -269,6 +365,10 @@ public final class ClusterMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedByWorkRequestId")
     private final String updatedByWorkRequestId;
 
+    /**
+     * The OCID of the work request which updated the cluster.
+     * @return the value
+     **/
     public String getUpdatedByWorkRequestId() {
         return updatedByWorkRequestId;
     }

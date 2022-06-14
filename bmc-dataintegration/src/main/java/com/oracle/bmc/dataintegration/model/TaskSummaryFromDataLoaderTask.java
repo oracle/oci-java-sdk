@@ -180,19 +180,33 @@ public final class TaskSummaryFromDataLoaderTask extends TaskSummary {
             this.__explicitlySet__.add("conditionalCompositeFieldMap");
             return this;
         }
-
+        /**
+         * Defines whether Data Loader task is used for single load or multiple
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSingleLoad")
         private Boolean isSingleLoad;
 
+        /**
+         * Defines whether Data Loader task is used for single load or multiple
+         * @param isSingleLoad the value to set
+         * @return this builder
+         **/
         public Builder isSingleLoad(Boolean isSingleLoad) {
             this.isSingleLoad = isSingleLoad;
             this.__explicitlySet__.add("isSingleLoad");
             return this;
         }
-
+        /**
+         * Defines the number of entities being loaded in parallel at a time for a Data Loader task
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parallelLoadLimit")
         private Integer parallelLoadLimit;
 
+        /**
+         * Defines the number of entities being loaded in parallel at a time for a Data Loader task
+         * @param parallelLoadLimit the value to set
+         * @return this builder
+         **/
         public Builder parallelLoadLimit(Integer parallelLoadLimit) {
             this.parallelLoadLimit = parallelLoadLimit;
             this.__explicitlySet__.add("parallelLoadLimit");
@@ -330,6 +344,10 @@ public final class TaskSummaryFromDataLoaderTask extends TaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleLoad")
     private final Boolean isSingleLoad;
 
+    /**
+     * Defines whether Data Loader task is used for single load or multiple
+     * @return the value
+     **/
     public Boolean getIsSingleLoad() {
         return isSingleLoad;
     }
@@ -340,6 +358,10 @@ public final class TaskSummaryFromDataLoaderTask extends TaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parallelLoadLimit")
     private final Integer parallelLoadLimit;
 
+    /**
+     * Defines the number of entities being loaded in parallel at a time for a Data Loader task
+     * @return the value
+     **/
     public Integer getParallelLoadLimit() {
         return parallelLoadLimit;
     }

@@ -18,6 +18,9 @@ public class CreateDisApplicationRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -27,6 +30,9 @@ public class CreateDisApplicationRequest
     private com.oracle.bmc.dataintegration.model.CreateDisApplicationDetails
             createDisApplicationDetails;
 
+    /**
+     * The details needed to create a DIS application.
+     */
     public com.oracle.bmc.dataintegration.model.CreateDisApplicationDetails
             getCreateDisApplicationDetails() {
         return createDisApplicationDetails;
@@ -39,6 +45,12 @@ public class CreateDisApplicationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +60,10 @@ public class CreateDisApplicationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -70,10 +86,14 @@ public class CreateDisApplicationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -81,11 +101,15 @@ public class CreateDisApplicationRequest
             return this;
         }
 
+        /**
+         * The details needed to create a DIS application.
+         */
         private com.oracle.bmc.dataintegration.model.CreateDisApplicationDetails
                 createDisApplicationDetails = null;
 
         /**
          * The details needed to create a DIS application.
+         * @param createDisApplicationDetails the value to set
          * @return this builder instance
          */
         public Builder createDisApplicationDetails(
@@ -95,6 +119,12 @@ public class CreateDisApplicationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -102,6 +132,7 @@ public class CreateDisApplicationRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -109,11 +140,16 @@ public class CreateDisApplicationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -207,7 +243,8 @@ public class CreateDisApplicationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +254,10 @@ public class CreateDisApplicationRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

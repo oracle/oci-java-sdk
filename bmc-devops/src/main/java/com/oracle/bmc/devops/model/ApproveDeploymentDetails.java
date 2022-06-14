@@ -31,27 +31,49 @@ public final class ApproveDeploymentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the stage which is marked for approval.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
         private String deployStageId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the stage which is marked for approval.
+         * @param deployStageId the value to set
+         * @return this builder
+         **/
         public Builder deployStageId(String deployStageId) {
             this.deployStageId = deployStageId;
             this.__explicitlySet__.add("deployStageId");
             return this;
         }
-
+        /**
+         * The reason for approving or rejecting the deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
+        /**
+         * The reason for approving or rejecting the deployment.
+         * @param reason the value to set
+         * @return this builder
+         **/
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
             return this;
         }
-
+        /**
+         * The action of Approve or Reject.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The action of Approve or Reject.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -95,6 +117,10 @@ public final class ApproveDeploymentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
     private final String deployStageId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the stage which is marked for approval.
+     * @return the value
+     **/
     public String getDeployStageId() {
         return deployStageId;
     }
@@ -105,6 +131,10 @@ public final class ApproveDeploymentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
+    /**
+     * The reason for approving or rejecting the deployment.
+     * @return the value
+     **/
     public String getReason() {
         return reason;
     }
@@ -150,6 +180,10 @@ public final class ApproveDeploymentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The action of Approve or Reject.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }

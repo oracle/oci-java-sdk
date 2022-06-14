@@ -58,81 +58,205 @@ public final class ExportSet {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The availability domain the export set is in. May be unset
+         * as a blank or NULL value.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain the export set is in. May be unset
+         * as a blank or NULL value.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My export set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My export set}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export set.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The current state of the export set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the export set.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Controls the maximum {@code tbytes}, {@code fbytes}, and {@code abytes},
+         * values reported by {@code NFS FSSTAT} calls through any associated
+         * mount targets. This is an advanced feature. For most
+         * applications, use the default value. The
+         * {@code tbytes} value reported by {@code FSSTAT} will be
+         * {@code maxFsStatBytes}. The value of {@code fbytes} and {@code abytes} will be
+         * {@code maxFsStatBytes} minus the metered size of the file
+         * system. If the metered size is larger than {@code maxFsStatBytes},
+         * then {@code fbytes} and {@code abytes} will both be '0'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatBytes")
         private Long maxFsStatBytes;
 
+        /**
+         * Controls the maximum {@code tbytes}, {@code fbytes}, and {@code abytes},
+         * values reported by {@code NFS FSSTAT} calls through any associated
+         * mount targets. This is an advanced feature. For most
+         * applications, use the default value. The
+         * {@code tbytes} value reported by {@code FSSTAT} will be
+         * {@code maxFsStatBytes}. The value of {@code fbytes} and {@code abytes} will be
+         * {@code maxFsStatBytes} minus the metered size of the file
+         * system. If the metered size is larger than {@code maxFsStatBytes},
+         * then {@code fbytes} and {@code abytes} will both be '0'.
+         *
+         * @param maxFsStatBytes the value to set
+         * @return this builder
+         **/
         public Builder maxFsStatBytes(Long maxFsStatBytes) {
             this.maxFsStatBytes = maxFsStatBytes;
             this.__explicitlySet__.add("maxFsStatBytes");
             return this;
         }
-
+        /**
+         * Controls the maximum {@code tfiles}, {@code ffiles}, and {@code afiles}
+         * values reported by {@code NFS FSSTAT} calls through any associated
+         * mount targets. This is an advanced feature. For most
+         * applications, use the default value. The
+         * {@code tfiles} value reported by {@code FSSTAT} will be
+         * {@code maxFsStatFiles}. The value of {@code ffiles} and {@code afiles} will be
+         * {@code maxFsStatFiles} minus the metered size of the file
+         * system. If the metered size is larger than {@code maxFsStatFiles},
+         * then {@code ffiles} and {@code afiles} will both be '0'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatFiles")
         private Long maxFsStatFiles;
 
+        /**
+         * Controls the maximum {@code tfiles}, {@code ffiles}, and {@code afiles}
+         * values reported by {@code NFS FSSTAT} calls through any associated
+         * mount targets. This is an advanced feature. For most
+         * applications, use the default value. The
+         * {@code tfiles} value reported by {@code FSSTAT} will be
+         * {@code maxFsStatFiles}. The value of {@code ffiles} and {@code afiles} will be
+         * {@code maxFsStatFiles} minus the metered size of the file
+         * system. If the metered size is larger than {@code maxFsStatFiles},
+         * then {@code ffiles} and {@code afiles} will both be '0'.
+         *
+         * @param maxFsStatFiles the value to set
+         * @return this builder
+         **/
         public Builder maxFsStatFiles(Long maxFsStatFiles) {
             this.maxFsStatFiles = maxFsStatFiles;
             this.__explicitlySet__.add("maxFsStatFiles");
             return this;
         }
-
+        /**
+         * The date and time the export set was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the export set was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
@@ -197,6 +321,14 @@ public final class ExportSet {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain the export set is in. May be unset
+     * as a blank or NULL value.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -207,6 +339,10 @@ public final class ExportSet {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -221,6 +357,14 @@ public final class ExportSet {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My export set}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -231,6 +375,10 @@ public final class ExportSet {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export set.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -291,6 +439,10 @@ public final class ExportSet {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the export set.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -310,6 +462,19 @@ public final class ExportSet {
     @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatBytes")
     private final Long maxFsStatBytes;
 
+    /**
+     * Controls the maximum {@code tbytes}, {@code fbytes}, and {@code abytes},
+     * values reported by {@code NFS FSSTAT} calls through any associated
+     * mount targets. This is an advanced feature. For most
+     * applications, use the default value. The
+     * {@code tbytes} value reported by {@code FSSTAT} will be
+     * {@code maxFsStatBytes}. The value of {@code fbytes} and {@code abytes} will be
+     * {@code maxFsStatBytes} minus the metered size of the file
+     * system. If the metered size is larger than {@code maxFsStatBytes},
+     * then {@code fbytes} and {@code abytes} will both be '0'.
+     *
+     * @return the value
+     **/
     public Long getMaxFsStatBytes() {
         return maxFsStatBytes;
     }
@@ -329,6 +494,19 @@ public final class ExportSet {
     @com.fasterxml.jackson.annotation.JsonProperty("maxFsStatFiles")
     private final Long maxFsStatFiles;
 
+    /**
+     * Controls the maximum {@code tfiles}, {@code ffiles}, and {@code afiles}
+     * values reported by {@code NFS FSSTAT} calls through any associated
+     * mount targets. This is an advanced feature. For most
+     * applications, use the default value. The
+     * {@code tfiles} value reported by {@code FSSTAT} will be
+     * {@code maxFsStatFiles}. The value of {@code ffiles} and {@code afiles} will be
+     * {@code maxFsStatFiles} minus the metered size of the file
+     * system. If the metered size is larger than {@code maxFsStatFiles},
+     * then {@code ffiles} and {@code afiles} will both be '0'.
+     *
+     * @return the value
+     **/
     public Long getMaxFsStatFiles() {
         return maxFsStatFiles;
     }
@@ -343,6 +521,14 @@ public final class ExportSet {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the export set was created, expressed
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -353,6 +539,10 @@ public final class ExportSet {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }

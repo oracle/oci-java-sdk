@@ -52,54 +52,97 @@ public final class AutonomousExadataInfrastructureShapeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the shape used for the Autonomous Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the shape used for the Autonomous Exadata Infrastructure.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
         private Integer availableCoreCount;
 
+        /**
+         * The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+         * @param availableCoreCount the value to set
+         * @return this builder
+         **/
         public Builder availableCoreCount(Integer availableCoreCount) {
             this.availableCoreCount = availableCoreCount;
             this.__explicitlySet__.add("availableCoreCount");
             return this;
         }
-
+        /**
+         * The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
         private Integer minimumCoreCount;
 
+        /**
+         * The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+         * @param minimumCoreCount the value to set
+         * @return this builder
+         **/
         public Builder minimumCoreCount(Integer minimumCoreCount) {
             this.minimumCoreCount = minimumCoreCount;
             this.__explicitlySet__.add("minimumCoreCount");
             return this;
         }
-
+        /**
+         * The increment in which core count can be increased or decreased.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
         private Integer coreCountIncrement;
 
+        /**
+         * The increment in which core count can be increased or decreased.
+         * @param coreCountIncrement the value to set
+         * @return this builder
+         **/
         public Builder coreCountIncrement(Integer coreCountIncrement) {
             this.coreCountIncrement = coreCountIncrement;
             this.__explicitlySet__.add("coreCountIncrement");
             return this;
         }
-
+        /**
+         * The minimum number of nodes available for the shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
         private Integer minimumNodeCount;
 
+        /**
+         * The minimum number of nodes available for the shape.
+         * @param minimumNodeCount the value to set
+         * @return this builder
+         **/
         public Builder minimumNodeCount(Integer minimumNodeCount) {
             this.minimumNodeCount = minimumNodeCount;
             this.__explicitlySet__.add("minimumNodeCount");
             return this;
         }
-
+        /**
+         * The maximum number of nodes available for the shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
         private Integer maximumNodeCount;
 
+        /**
+         * The maximum number of nodes available for the shape.
+         * @param maximumNodeCount the value to set
+         * @return this builder
+         **/
         public Builder maximumNodeCount(Integer maximumNodeCount) {
             this.maximumNodeCount = maximumNodeCount;
             this.__explicitlySet__.add("maximumNodeCount");
@@ -154,6 +197,10 @@ public final class AutonomousExadataInfrastructureShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the shape used for the Autonomous Exadata Infrastructure.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -164,6 +211,10 @@ public final class AutonomousExadataInfrastructureShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
     private final Integer availableCoreCount;
 
+    /**
+     * The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+     * @return the value
+     **/
     public Integer getAvailableCoreCount() {
         return availableCoreCount;
     }
@@ -174,6 +225,10 @@ public final class AutonomousExadataInfrastructureShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
     private final Integer minimumCoreCount;
 
+    /**
+     * The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+     * @return the value
+     **/
     public Integer getMinimumCoreCount() {
         return minimumCoreCount;
     }
@@ -184,6 +239,10 @@ public final class AutonomousExadataInfrastructureShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
     private final Integer coreCountIncrement;
 
+    /**
+     * The increment in which core count can be increased or decreased.
+     * @return the value
+     **/
     public Integer getCoreCountIncrement() {
         return coreCountIncrement;
     }
@@ -194,6 +253,10 @@ public final class AutonomousExadataInfrastructureShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
     private final Integer minimumNodeCount;
 
+    /**
+     * The minimum number of nodes available for the shape.
+     * @return the value
+     **/
     public Integer getMinimumNodeCount() {
         return minimumNodeCount;
     }
@@ -204,6 +267,10 @@ public final class AutonomousExadataInfrastructureShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
     private final Integer maximumNodeCount;
 
+    /**
+     * The maximum number of nodes available for the shape.
+     * @return the value
+     **/
     public Integer getMaximumNodeCount() {
         return maximumNodeCount;
     }

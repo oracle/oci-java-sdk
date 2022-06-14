@@ -52,63 +52,169 @@ public final class AuditEvent {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of event that happened.
+         * <p>
+         * The service that produces the event can also add, remove, or change the meaning of a field.
+         * A service implementing these type changes would publish a new version of an {@code eventType} and
+         * revise the {@code eventTypeVersion} field.
+         * <p>
+         * Example: {@code com.oraclecloud.ComputeApi.GetInstance}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventType")
         private String eventType;
 
+        /**
+         * The type of event that happened.
+         * <p>
+         * The service that produces the event can also add, remove, or change the meaning of a field.
+         * A service implementing these type changes would publish a new version of an {@code eventType} and
+         * revise the {@code eventTypeVersion} field.
+         * <p>
+         * Example: {@code com.oraclecloud.ComputeApi.GetInstance}
+         *
+         * @param eventType the value to set
+         * @return this builder
+         **/
         public Builder eventType(String eventType) {
             this.eventType = eventType;
             this.__explicitlySet__.add("eventType");
             return this;
         }
-
+        /**
+         * The version of the CloudEvents specification. The structure of the envelope follows the
+         * [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the
+         * [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
+         * <p>
+         * Audit uses version 0.1 specification of the CloudEvents event envelope.
+         * <p>
+         * Example: {@code 0.1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudEventsVersion")
         private String cloudEventsVersion;
 
+        /**
+         * The version of the CloudEvents specification. The structure of the envelope follows the
+         * [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the
+         * [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
+         * <p>
+         * Audit uses version 0.1 specification of the CloudEvents event envelope.
+         * <p>
+         * Example: {@code 0.1}
+         *
+         * @param cloudEventsVersion the value to set
+         * @return this builder
+         **/
         public Builder cloudEventsVersion(String cloudEventsVersion) {
             this.cloudEventsVersion = cloudEventsVersion;
             this.__explicitlySet__.add("cloudEventsVersion");
             return this;
         }
-
+        /**
+         * The version of the event type. This version applies to the payload of the event, not the envelope.
+         * Use {@code cloudEventsVersion} to determine the version of the envelope.
+         * <p>
+         * Example: {@code 2.0}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventTypeVersion")
         private String eventTypeVersion;
 
+        /**
+         * The version of the event type. This version applies to the payload of the event, not the envelope.
+         * Use {@code cloudEventsVersion} to determine the version of the envelope.
+         * <p>
+         * Example: {@code 2.0}
+         *
+         * @param eventTypeVersion the value to set
+         * @return this builder
+         **/
         public Builder eventTypeVersion(String eventTypeVersion) {
             this.eventTypeVersion = eventTypeVersion;
             this.__explicitlySet__.add("eventTypeVersion");
             return this;
         }
-
+        /**
+         * The source of the event.
+         * <p>
+         * Example: {@code ComputeApi}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
 
+        /**
+         * The source of the event.
+         * <p>
+         * Example: {@code ComputeApi}
+         *
+         * @param source the value to set
+         * @return this builder
+         **/
         public Builder source(String source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-
+        /**
+         * The GUID of the event.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventId")
         private String eventId;
 
+        /**
+         * The GUID of the event.
+         *
+         * @param eventId the value to set
+         * @return this builder
+         **/
         public Builder eventId(String eventId) {
             this.eventId = eventId;
             this.__explicitlySet__.add("eventId");
             return this;
         }
-
+        /**
+         * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2019-09-18T00:10:59.252Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
         private java.util.Date eventTime;
 
+        /**
+         * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2019-09-18T00:10:59.252Z}
+         *
+         * @param eventTime the value to set
+         * @return this builder
+         **/
         public Builder eventTime(java.util.Date eventTime) {
             this.eventTime = eventTime;
             this.__explicitlySet__.add("eventTime");
             return this;
         }
-
+        /**
+         * The content type of the data contained in {@code data}.
+         * <p>
+         * Example: {@code application/json}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private String contentType;
 
+        /**
+         * The content type of the data contained in {@code data}.
+         * <p>
+         * Example: {@code application/json}
+         *
+         * @param contentType the value to set
+         * @return this builder
+         **/
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             this.__explicitlySet__.add("contentType");
@@ -183,6 +289,17 @@ public final class AuditEvent {
     @com.fasterxml.jackson.annotation.JsonProperty("eventType")
     private final String eventType;
 
+    /**
+     * The type of event that happened.
+     * <p>
+     * The service that produces the event can also add, remove, or change the meaning of a field.
+     * A service implementing these type changes would publish a new version of an {@code eventType} and
+     * revise the {@code eventTypeVersion} field.
+     * <p>
+     * Example: {@code com.oraclecloud.ComputeApi.GetInstance}
+     *
+     * @return the value
+     **/
     public String getEventType() {
         return eventType;
     }
@@ -200,6 +317,17 @@ public final class AuditEvent {
     @com.fasterxml.jackson.annotation.JsonProperty("cloudEventsVersion")
     private final String cloudEventsVersion;
 
+    /**
+     * The version of the CloudEvents specification. The structure of the envelope follows the
+     * [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the
+     * [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
+     * <p>
+     * Audit uses version 0.1 specification of the CloudEvents event envelope.
+     * <p>
+     * Example: {@code 0.1}
+     *
+     * @return the value
+     **/
     public String getCloudEventsVersion() {
         return cloudEventsVersion;
     }
@@ -214,6 +342,14 @@ public final class AuditEvent {
     @com.fasterxml.jackson.annotation.JsonProperty("eventTypeVersion")
     private final String eventTypeVersion;
 
+    /**
+     * The version of the event type. This version applies to the payload of the event, not the envelope.
+     * Use {@code cloudEventsVersion} to determine the version of the envelope.
+     * <p>
+     * Example: {@code 2.0}
+     *
+     * @return the value
+     **/
     public String getEventTypeVersion() {
         return eventTypeVersion;
     }
@@ -227,6 +363,13 @@ public final class AuditEvent {
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
+    /**
+     * The source of the event.
+     * <p>
+     * Example: {@code ComputeApi}
+     *
+     * @return the value
+     **/
     public String getSource() {
         return source;
     }
@@ -238,6 +381,11 @@ public final class AuditEvent {
     @com.fasterxml.jackson.annotation.JsonProperty("eventId")
     private final String eventId;
 
+    /**
+     * The GUID of the event.
+     *
+     * @return the value
+     **/
     public String getEventId() {
         return eventId;
     }
@@ -251,6 +399,13 @@ public final class AuditEvent {
     @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
     private final java.util.Date eventTime;
 
+    /**
+     * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2019-09-18T00:10:59.252Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getEventTime() {
         return eventTime;
     }
@@ -264,6 +419,13 @@ public final class AuditEvent {
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     private final String contentType;
 
+    /**
+     * The content type of the data contained in {@code data}.
+     * <p>
+     * Example: {@code application/json}
+     *
+     * @return the value
+     **/
     public String getContentType() {
         return contentType;
     }

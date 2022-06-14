@@ -29,9 +29,17 @@ public final class AvailableRegionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Region availability for the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionName")
         private String regionName;
 
+        /**
+         * Region availability for the subscription.
+         * @param regionName the value to set
+         * @return this builder
+         **/
         public Builder regionName(String regionName) {
             this.regionName = regionName;
             this.__explicitlySet__.add("regionName");
@@ -73,6 +81,10 @@ public final class AvailableRegionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("regionName")
     private final String regionName;
 
+    /**
+     * Region availability for the subscription.
+     * @return the value
+     **/
     public String getRegionName() {
         return regionName;
     }

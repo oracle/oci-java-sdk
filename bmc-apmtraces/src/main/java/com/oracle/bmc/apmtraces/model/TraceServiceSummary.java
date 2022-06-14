@@ -32,27 +32,55 @@ public final class TraceServiceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name associated with the service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spanServiceName")
         private String spanServiceName;
 
+        /**
+         * Name associated with the service.
+         *
+         * @param spanServiceName the value to set
+         * @return this builder
+         **/
         public Builder spanServiceName(String spanServiceName) {
             this.spanServiceName = spanServiceName;
             this.__explicitlySet__.add("spanServiceName");
             return this;
         }
-
+        /**
+         * Number of spans for serviceName in the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSpans")
         private Long totalSpans;
 
+        /**
+         * Number of spans for serviceName in the trace.
+         *
+         * @param totalSpans the value to set
+         * @return this builder
+         **/
         public Builder totalSpans(Long totalSpans) {
             this.totalSpans = totalSpans;
             this.__explicitlySet__.add("totalSpans");
             return this;
         }
-
+        /**
+         * Number of spans with errors for serviceName in the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorSpans")
         private Long errorSpans;
 
+        /**
+         * Number of spans with errors for serviceName in the trace.
+         *
+         * @param errorSpans the value to set
+         * @return this builder
+         **/
         public Builder errorSpans(Long errorSpans) {
             this.errorSpans = errorSpans;
             this.__explicitlySet__.add("errorSpans");
@@ -99,6 +127,11 @@ public final class TraceServiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("spanServiceName")
     private final String spanServiceName;
 
+    /**
+     * Name associated with the service.
+     *
+     * @return the value
+     **/
     public String getSpanServiceName() {
         return spanServiceName;
     }
@@ -110,6 +143,11 @@ public final class TraceServiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("totalSpans")
     private final Long totalSpans;
 
+    /**
+     * Number of spans for serviceName in the trace.
+     *
+     * @return the value
+     **/
     public Long getTotalSpans() {
         return totalSpans;
     }
@@ -121,6 +159,11 @@ public final class TraceServiceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("errorSpans")
     private final Long errorSpans;
 
+    /**
+     * Number of spans with errors for serviceName in the trace.
+     *
+     * @return the value
+     **/
     public Long getErrorSpans() {
         return errorSpans;
     }

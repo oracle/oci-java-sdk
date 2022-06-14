@@ -18,6 +18,9 @@ public class ExecuteResponderExecutionRequest
      */
     private String responderExecutionId;
 
+    /**
+     * The identifier of the responder execution.
+     */
     public String getResponderExecutionId() {
         return responderExecutionId;
     }
@@ -26,6 +29,9 @@ public class ExecuteResponderExecutionRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -39,6 +45,14 @@ public class ExecuteResponderExecutionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +61,9 @@ public class ExecuteResponderExecutionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,6 +77,14 @@ public class ExecuteResponderExecutionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -69,6 +94,9 @@ public class ExecuteResponderExecutionRequest
     private com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails
             executeResponderExecutionDetails;
 
+    /**
+     * Details for Responder Configuration
+     */
     public com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails
             getExecuteResponderExecutionDetails() {
         return executeResponderExecutionDetails;
@@ -92,10 +120,14 @@ public class ExecuteResponderExecutionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The identifier of the responder execution.
+         */
         private String responderExecutionId = null;
 
         /**
          * The identifier of the responder execution.
+         * @param responderExecutionId the value to set
          * @return this builder instance
          */
         public Builder responderExecutionId(String responderExecutionId) {
@@ -103,10 +135,14 @@ public class ExecuteResponderExecutionRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -114,6 +150,14 @@ public class ExecuteResponderExecutionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -123,6 +167,7 @@ public class ExecuteResponderExecutionRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -130,10 +175,14 @@ public class ExecuteResponderExecutionRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -141,6 +190,14 @@ public class ExecuteResponderExecutionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -150,6 +207,7 @@ public class ExecuteResponderExecutionRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -157,11 +215,15 @@ public class ExecuteResponderExecutionRequest
             return this;
         }
 
+        /**
+         * Details for Responder Configuration
+         */
         private com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails
                 executeResponderExecutionDetails = null;
 
         /**
          * Details for Responder Configuration
+         * @param executeResponderExecutionDetails the value to set
          * @return this builder instance
          */
         public Builder executeResponderExecutionDetails(
@@ -261,7 +323,8 @@ public class ExecuteResponderExecutionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -273,6 +336,10 @@ public class ExecuteResponderExecutionRequest
                 .executeResponderExecutionDetails(executeResponderExecutionDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

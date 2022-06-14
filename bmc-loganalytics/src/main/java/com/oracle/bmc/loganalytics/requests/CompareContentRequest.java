@@ -19,6 +19,10 @@ public class CompareContentRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,9 @@ public class CompareContentRequest
      */
     private com.oracle.bmc.loganalytics.model.CompareContentDetails compareContentDetails;
 
+    /**
+     * The two payloads to be compared.
+     */
     public com.oracle.bmc.loganalytics.model.CompareContentDetails getCompareContentDetails() {
         return compareContentDetails;
     }
@@ -35,6 +42,9 @@ public class CompareContentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,11 +72,16 @@ public class CompareContentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -74,11 +89,15 @@ public class CompareContentRequest
             return this;
         }
 
+        /**
+         * The two payloads to be compared.
+         */
         private com.oracle.bmc.loganalytics.model.CompareContentDetails compareContentDetails =
                 null;
 
         /**
          * The two payloads to be compared.
+         * @param compareContentDetails the value to set
          * @return this builder instance
          */
         public Builder compareContentDetails(
@@ -87,10 +106,14 @@ public class CompareContentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -181,7 +204,8 @@ public class CompareContentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +214,10 @@ public class CompareContentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

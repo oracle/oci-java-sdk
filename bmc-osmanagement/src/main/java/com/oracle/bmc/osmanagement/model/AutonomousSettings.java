@@ -29,9 +29,17 @@ public final class AutonomousSettings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * True if daily updates are enabled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoUpdateEnabled")
         private Boolean isAutoUpdateEnabled;
 
+        /**
+         * True if daily updates are enabled
+         * @param isAutoUpdateEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAutoUpdateEnabled(Boolean isAutoUpdateEnabled) {
             this.isAutoUpdateEnabled = isAutoUpdateEnabled;
             this.__explicitlySet__.add("isAutoUpdateEnabled");
@@ -73,6 +81,10 @@ public final class AutonomousSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoUpdateEnabled")
     private final Boolean isAutoUpdateEnabled;
 
+    /**
+     * True if daily updates are enabled
+     * @return the value
+     **/
     public Boolean getIsAutoUpdateEnabled() {
         return isAutoUpdateEnabled;
     }

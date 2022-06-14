@@ -28,9 +28,17 @@ public final class ReachableIp {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An IP address for the Resource Manager service to use for connection to the private resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * An IP address for the Resource Manager service to use for connection to the private resource.
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
@@ -72,6 +80,10 @@ public final class ReachableIp {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * An IP address for the Resource Manager service to use for connection to the private resource.
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }

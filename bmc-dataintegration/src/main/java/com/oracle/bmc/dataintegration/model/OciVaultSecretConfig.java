@@ -27,9 +27,17 @@ package com.oracle.bmc.dataintegration.model;
 public final class OciVaultSecretConfig extends SecretConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the OCI vault secret
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
+        /**
+         * OCID of the OCI vault secret
+         * @param secretId the value to set
+         * @return this builder
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
@@ -77,6 +85,10 @@ public final class OciVaultSecretConfig extends SecretConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
+    /**
+     * OCID of the OCI vault secret
+     * @return the value
+     **/
     public String getSecretId() {
         return secretId;
     }

@@ -13,6 +13,10 @@ public class GenerateAutonomousDatabaseWalletResponse extends com.oracle.bmc.res
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +28,12 @@ public class GenerateAutonomousDatabaseWalletResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class GenerateAutonomousDatabaseWalletResponse extends com.oracle.bmc.res
      */
     private Long contentLength;
 
+    /**
+     * Size of the file.
+     * @return the value
+     */
     public Long getContentLength() {
         return contentLength;
     }
@@ -42,6 +56,10 @@ public class GenerateAutonomousDatabaseWalletResponse extends com.oracle.bmc.res
      */
     private java.util.Date lastModified;
 
+    /**
+     * The date and time the wallet was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return the value
+     */
     public java.util.Date getLastModified() {
         return lastModified;
     }
@@ -51,6 +69,10 @@ public class GenerateAutonomousDatabaseWalletResponse extends com.oracle.bmc.res
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -86,36 +108,80 @@ public class GenerateAutonomousDatabaseWalletResponse extends com.oracle.bmc.res
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Size of the file.
+         */
         private Long contentLength;
 
+        /**
+         * Size of the file.
+         * @param contentLength the value to set
+         * @return this builder
+         */
         public Builder contentLength(Long contentLength) {
             this.contentLength = contentLength;
             return this;
         }
 
+        /**
+         * The date and time the wallet was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
         private java.util.Date lastModified;
 
+        /**
+         * The date and time the wallet was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param lastModified the value to set
+         * @return this builder
+         */
         public Builder lastModified(java.util.Date lastModified) {
             this.lastModified = lastModified;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -136,6 +202,10 @@ public class GenerateAutonomousDatabaseWalletResponse extends com.oracle.bmc.res
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GenerateAutonomousDatabaseWalletResponse build() {
             return new GenerateAutonomousDatabaseWalletResponse(
                     __httpStatusCode__,
@@ -147,6 +217,10 @@ public class GenerateAutonomousDatabaseWalletResponse extends com.oracle.bmc.res
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

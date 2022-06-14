@@ -75,144 +75,273 @@ public final class ContainerImage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The compartment OCID to which the container image belongs. Inferred from the container repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment OCID to which the container image belongs. Inferred from the container repository.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user or principal that created the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user or principal that created the resource.
+         * @param createdBy the value to set
+         * @return this builder
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-
+        /**
+         * The container image digest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("digest")
         private String digest;
 
+        /**
+         * The container image digest.
+         * @param digest the value to set
+         * @return this builder
+         **/
         public Builder digest(String digest) {
             this.digest = digest;
             this.__explicitlySet__.add("digest");
             return this;
         }
-
+        /**
+         * The repository name and the most recent version associated with the image.
+         * If there are no versions associated with the image, then last known version and digest are used instead.
+         * If the last known version is unavailable, then 'unknown' is used instead of the version.
+         * <p>
+         * Example: {@code ubuntu:latest} or {@code ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The repository name and the most recent version associated with the image.
+         * If there are no versions associated with the image, then last known version and digest are used instead.
+         * If the last known version is unavailable, then 'unknown' is used instead of the version.
+         * <p>
+         * Example: {@code ubuntu:latest} or {@code ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
+         * <p>
+         * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
+         * <p>
+         * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Layers of which the image is composed, ordered by the layer digest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("layers")
         private java.util.List<ContainerImageLayer> layers;
 
+        /**
+         * Layers of which the image is composed, ordered by the layer digest.
+         * @param layers the value to set
+         * @return this builder
+         **/
         public Builder layers(java.util.List<ContainerImageLayer> layers) {
             this.layers = layers;
             this.__explicitlySet__.add("layers");
             return this;
         }
-
+        /**
+         * The total size of the container image layers in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("layersSizeInBytes")
         private Long layersSizeInBytes;
 
+        /**
+         * The total size of the container image layers in bytes.
+         * @param layersSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder layersSizeInBytes(Long layersSizeInBytes) {
             this.layersSizeInBytes = layersSizeInBytes;
             this.__explicitlySet__.add("layersSizeInBytes");
             return this;
         }
-
+        /**
+         * The current state of the container image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the container image.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The size of the container image manifest in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("manifestSizeInBytes")
         private Integer manifestSizeInBytes;
 
+        /**
+         * The size of the container image manifest in bytes.
+         * @param manifestSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder manifestSizeInBytes(Integer manifestSizeInBytes) {
             this.manifestSizeInBytes = manifestSizeInBytes;
             this.__explicitlySet__.add("manifestSizeInBytes");
             return this;
         }
-
+        /**
+         * Total number of pulls.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pullCount")
         private Long pullCount;
 
+        /**
+         * Total number of pulls.
+         * @param pullCount the value to set
+         * @return this builder
+         **/
         public Builder pullCount(Long pullCount) {
             this.pullCount = pullCount;
             this.__explicitlySet__.add("pullCount");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container repository.
+         * @param repositoryId the value to set
+         * @return this builder
+         **/
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
             return this;
         }
-
+        /**
+         * The container repository name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
         private String repositoryName;
 
+        /**
+         * The container repository name.
+         * @param repositoryName the value to set
+         * @return this builder
+         **/
         public Builder repositoryName(String repositoryName) {
             this.repositoryName = repositoryName;
             this.__explicitlySet__.add("repositoryName");
             return this;
         }
-
+        /**
+         * An RFC 3339 timestamp indicating when the image was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * An RFC 3339 timestamp indicating when the image was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * An RFC 3339 timestamp indicating when the image was last pulled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastPulled")
         private java.util.Date timeLastPulled;
 
+        /**
+         * An RFC 3339 timestamp indicating when the image was last pulled.
+         * @param timeLastPulled the value to set
+         * @return this builder
+         **/
         public Builder timeLastPulled(java.util.Date timeLastPulled) {
             this.timeLastPulled = timeLastPulled;
             this.__explicitlySet__.add("timeLastPulled");
             return this;
         }
-
+        /**
+         * The most recent version associated with this image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The most recent version associated with this image.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The versions associated with this image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versions")
         private java.util.List<ContainerVersion> versions;
 
+        /**
+         * The versions associated with this image.
+         * @param versions the value to set
+         * @return this builder
+         **/
         public Builder versions(java.util.List<ContainerVersion> versions) {
             this.versions = versions;
             this.__explicitlySet__.add("versions");
@@ -287,6 +416,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment OCID to which the container image belongs. Inferred from the container repository.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -297,6 +430,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user or principal that created the resource.
+     * @return the value
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
@@ -307,6 +444,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("digest")
     private final String digest;
 
+    /**
+     * The container image digest.
+     * @return the value
+     **/
     public String getDigest() {
         return digest;
     }
@@ -322,6 +463,15 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The repository name and the most recent version associated with the image.
+     * If there are no versions associated with the image, then last known version and digest are used instead.
+     * If the last known version is unavailable, then 'unknown' is used instead of the version.
+     * <p>
+     * Example: {@code ubuntu:latest} or {@code ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -335,6 +485,13 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container image.
+     * <p>
+     * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -345,6 +502,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("layers")
     private final java.util.List<ContainerImageLayer> layers;
 
+    /**
+     * Layers of which the image is composed, ordered by the layer digest.
+     * @return the value
+     **/
     public java.util.List<ContainerImageLayer> getLayers() {
         return layers;
     }
@@ -355,6 +516,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("layersSizeInBytes")
     private final Long layersSizeInBytes;
 
+    /**
+     * The total size of the container image layers in bytes.
+     * @return the value
+     **/
     public Long getLayersSizeInBytes() {
         return layersSizeInBytes;
     }
@@ -414,6 +579,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the container image.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -424,6 +593,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("manifestSizeInBytes")
     private final Integer manifestSizeInBytes;
 
+    /**
+     * The size of the container image manifest in bytes.
+     * @return the value
+     **/
     public Integer getManifestSizeInBytes() {
         return manifestSizeInBytes;
     }
@@ -434,6 +607,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("pullCount")
     private final Long pullCount;
 
+    /**
+     * Total number of pulls.
+     * @return the value
+     **/
     public Long getPullCount() {
         return pullCount;
     }
@@ -444,6 +621,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the container repository.
+     * @return the value
+     **/
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -454,6 +635,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
     private final String repositoryName;
 
+    /**
+     * The container repository name.
+     * @return the value
+     **/
     public String getRepositoryName() {
         return repositoryName;
     }
@@ -464,6 +649,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * An RFC 3339 timestamp indicating when the image was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -474,6 +663,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastPulled")
     private final java.util.Date timeLastPulled;
 
+    /**
+     * An RFC 3339 timestamp indicating when the image was last pulled.
+     * @return the value
+     **/
     public java.util.Date getTimeLastPulled() {
         return timeLastPulled;
     }
@@ -484,6 +677,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The most recent version associated with this image.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -494,6 +691,10 @@ public final class ContainerImage {
     @com.fasterxml.jackson.annotation.JsonProperty("versions")
     private final java.util.List<ContainerVersion> versions;
 
+    /**
+     * The versions associated with this image.
+     * @return the value
+     **/
     public java.util.List<ContainerVersion> getVersions() {
         return versions;
     }

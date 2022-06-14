@@ -29,9 +29,19 @@ public final class RemoveNetworkSecurityGroupSecurityRulesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Oracle-assigned ID of each {@link SecurityRule} to be deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityRuleIds")
         private java.util.List<String> securityRuleIds;
 
+        /**
+         * The Oracle-assigned ID of each {@link SecurityRule} to be deleted.
+         *
+         * @param securityRuleIds the value to set
+         * @return this builder
+         **/
         public Builder securityRuleIds(java.util.List<String> securityRuleIds) {
             this.securityRuleIds = securityRuleIds;
             this.__explicitlySet__.add("securityRuleIds");
@@ -75,6 +85,11 @@ public final class RemoveNetworkSecurityGroupSecurityRulesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("securityRuleIds")
     private final java.util.List<String> securityRuleIds;
 
+    /**
+     * The Oracle-assigned ID of each {@link SecurityRule} to be deleted.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getSecurityRuleIds() {
         return securityRuleIds;
     }

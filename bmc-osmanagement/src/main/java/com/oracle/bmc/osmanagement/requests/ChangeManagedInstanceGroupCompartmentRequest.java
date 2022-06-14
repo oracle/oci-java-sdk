@@ -18,6 +18,9 @@ public class ChangeManagedInstanceGroupCompartmentRequest
      */
     private String managedInstanceGroupId;
 
+    /**
+     * OCID for the managed instance group
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
@@ -27,6 +30,9 @@ public class ChangeManagedInstanceGroupCompartmentRequest
     private com.oracle.bmc.osmanagement.model.ChangeManagedInstanceGroupCompartmentDetails
             changeManagedInstanceGroupCompartmentDetails;
 
+    /**
+     * OCID for the compartment to which the resource will be moved.
+     */
     public com.oracle.bmc.osmanagement.model.ChangeManagedInstanceGroupCompartmentDetails
             getChangeManagedInstanceGroupCompartmentDetails() {
         return changeManagedInstanceGroupCompartmentDetails;
@@ -36,6 +42,9 @@ public class ChangeManagedInstanceGroupCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +58,14 @@ public class ChangeManagedInstanceGroupCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -62,6 +79,14 @@ public class ChangeManagedInstanceGroupCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -86,10 +111,14 @@ public class ChangeManagedInstanceGroupCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID for the managed instance group
+         */
         private String managedInstanceGroupId = null;
 
         /**
          * OCID for the managed instance group
+         * @param managedInstanceGroupId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceGroupId(String managedInstanceGroupId) {
@@ -97,11 +126,15 @@ public class ChangeManagedInstanceGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * OCID for the compartment to which the resource will be moved.
+         */
         private com.oracle.bmc.osmanagement.model.ChangeManagedInstanceGroupCompartmentDetails
                 changeManagedInstanceGroupCompartmentDetails = null;
 
         /**
          * OCID for the compartment to which the resource will be moved.
+         * @param changeManagedInstanceGroupCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeManagedInstanceGroupCompartmentDetails(
@@ -112,10 +145,14 @@ public class ChangeManagedInstanceGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -123,6 +160,14 @@ public class ChangeManagedInstanceGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -132,6 +177,7 @@ public class ChangeManagedInstanceGroupCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -139,6 +185,14 @@ public class ChangeManagedInstanceGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -148,6 +202,7 @@ public class ChangeManagedInstanceGroupCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -247,7 +302,8 @@ public class ChangeManagedInstanceGroupCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -259,6 +315,10 @@ public class ChangeManagedInstanceGroupCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

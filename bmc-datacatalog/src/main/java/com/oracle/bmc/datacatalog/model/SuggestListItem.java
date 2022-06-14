@@ -30,18 +30,33 @@ public final class SuggestListItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Potential string match. Matching is based on the frequency of usage within the catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suggestion")
         private String suggestion;
 
+        /**
+         * Potential string match. Matching is based on the frequency of usage within the catalog.
+         * @param suggestion the value to set
+         * @return this builder
+         **/
         public Builder suggestion(String suggestion) {
             this.suggestion = suggestion;
             this.__explicitlySet__.add("suggestion");
             return this;
         }
-
+        /**
+         * The number of objects which contain this suggestion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
         private Integer objectCount;
 
+        /**
+         * The number of objects which contain this suggestion.
+         * @param objectCount the value to set
+         * @return this builder
+         **/
         public Builder objectCount(Integer objectCount) {
             this.objectCount = objectCount;
             this.__explicitlySet__.add("objectCount");
@@ -83,6 +98,10 @@ public final class SuggestListItem {
     @com.fasterxml.jackson.annotation.JsonProperty("suggestion")
     private final String suggestion;
 
+    /**
+     * Potential string match. Matching is based on the frequency of usage within the catalog.
+     * @return the value
+     **/
     public String getSuggestion() {
         return suggestion;
     }
@@ -93,6 +112,10 @@ public final class SuggestListItem {
     @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
     private final Integer objectCount;
 
+    /**
+     * The number of objects which contain this suggestion.
+     * @return the value
+     **/
     public Integer getObjectCount() {
         return objectCount;
     }

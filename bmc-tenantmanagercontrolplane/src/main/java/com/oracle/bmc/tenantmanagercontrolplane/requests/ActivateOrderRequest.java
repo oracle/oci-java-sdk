@@ -19,6 +19,9 @@ public class ActivateOrderRequest
     private com.oracle.bmc.tenantmanagercontrolplane.model.ActivateOrderDetails
             activateOrderDetails;
 
+    /**
+     * The information needed to activate an order in a tenancy.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.ActivateOrderDetails
             getActivateOrderDetails() {
         return activateOrderDetails;
@@ -29,6 +32,10 @@ public class ActivateOrderRequest
      */
     private String activationToken;
 
+    /**
+     * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+     *
+     */
     public String getActivationToken() {
         return activationToken;
     }
@@ -42,6 +49,14 @@ public class ActivateOrderRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request, so it can be retried in case of a timeout or
+     * server error, without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -50,6 +65,9 @@ public class ActivateOrderRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -72,11 +90,15 @@ public class ActivateOrderRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The information needed to activate an order in a tenancy.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.ActivateOrderDetails
                 activateOrderDetails = null;
 
         /**
          * The information needed to activate an order in a tenancy.
+         * @param activateOrderDetails the value to set
          * @return this builder instance
          */
         public Builder activateOrderDetails(
@@ -86,11 +108,16 @@ public class ActivateOrderRequest
             return this;
         }
 
+        /**
+         * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+         *
+         */
         private String activationToken = null;
 
         /**
          * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
          *
+         * @param activationToken the value to set
          * @return this builder instance
          */
         public Builder activationToken(String activationToken) {
@@ -98,6 +125,14 @@ public class ActivateOrderRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request, so it can be retried in case of a timeout or
+         * server error, without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -107,6 +142,7 @@ public class ActivateOrderRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -114,10 +150,14 @@ public class ActivateOrderRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -211,7 +251,8 @@ public class ActivateOrderRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -221,6 +262,10 @@ public class ActivateOrderRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

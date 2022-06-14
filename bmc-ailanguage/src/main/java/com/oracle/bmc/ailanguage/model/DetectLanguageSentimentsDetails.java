@@ -29,9 +29,17 @@ public final class DetectLanguageSentimentsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Document text for detect sentiments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * Document text for detect sentiments.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
@@ -74,6 +82,10 @@ public final class DetectLanguageSentimentsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * Document text for detect sentiments.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }

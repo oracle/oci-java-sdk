@@ -41,18 +41,33 @@ public final class CallOperationConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of names of IN/INOUT parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inFields")
         private java.util.List<String> inFields;
 
+        /**
+         * List of names of IN/INOUT parameters.
+         * @param inFields the value to set
+         * @return this builder
+         **/
         public Builder inFields(java.util.List<String> inFields) {
             this.inFields = inFields;
             this.__explicitlySet__.add("inFields");
             return this;
         }
-
+        /**
+         * List of names of OUT/INOUT parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outFields")
         private java.util.List<String> outFields;
 
+        /**
+         * List of names of OUT/INOUT parameters.
+         * @param outFields the value to set
+         * @return this builder
+         **/
         public Builder outFields(java.util.List<String> outFields) {
             this.outFields = outFields;
             this.__explicitlySet__.add("outFields");
@@ -67,10 +82,17 @@ public final class CallOperationConfig {
             this.__explicitlySet__.add("callAttribute");
             return this;
         }
-
+        /**
+         * List of push down operations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pushDownOperations")
         private java.util.List<PushDownOperation> pushDownOperations;
 
+        /**
+         * List of push down operations.
+         * @param pushDownOperations the value to set
+         * @return this builder
+         **/
         public Builder pushDownOperations(java.util.List<PushDownOperation> pushDownOperations) {
             this.pushDownOperations = pushDownOperations;
             this.__explicitlySet__.add("pushDownOperations");
@@ -117,6 +139,10 @@ public final class CallOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("inFields")
     private final java.util.List<String> inFields;
 
+    /**
+     * List of names of IN/INOUT parameters.
+     * @return the value
+     **/
     public java.util.List<String> getInFields() {
         return inFields;
     }
@@ -127,6 +153,10 @@ public final class CallOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("outFields")
     private final java.util.List<String> outFields;
 
+    /**
+     * List of names of OUT/INOUT parameters.
+     * @return the value
+     **/
     public java.util.List<String> getOutFields() {
         return outFields;
     }
@@ -144,6 +174,10 @@ public final class CallOperationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("pushDownOperations")
     private final java.util.List<PushDownOperation> pushDownOperations;
 
+    /**
+     * List of push down operations.
+     * @return the value
+     **/
     public java.util.List<PushDownOperation> getPushDownOperations() {
         return pushDownOperations;
     }

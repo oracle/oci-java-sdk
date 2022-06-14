@@ -27,9 +27,17 @@ public final class ImportContract {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of resource type specific import contracts, one for each resource type listed in the package definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importContract")
         private java.util.List<ResourceTypeImportContract> importContract;
 
+        /**
+         * A list of resource type specific import contracts, one for each resource type listed in the package definition.
+         * @param importContract the value to set
+         * @return this builder
+         **/
         public Builder importContract(java.util.List<ResourceTypeImportContract> importContract) {
             this.importContract = importContract;
             this.__explicitlySet__.add("importContract");
@@ -71,6 +79,10 @@ public final class ImportContract {
     @com.fasterxml.jackson.annotation.JsonProperty("importContract")
     private final java.util.List<ResourceTypeImportContract> importContract;
 
+    /**
+     * A list of resource type specific import contracts, one for each resource type listed in the package definition.
+     * @return the value
+     **/
     public java.util.List<ResourceTypeImportContract> getImportContract() {
         return importContract;
     }

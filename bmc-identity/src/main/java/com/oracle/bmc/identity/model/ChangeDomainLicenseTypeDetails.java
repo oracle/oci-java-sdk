@@ -29,9 +29,17 @@ public final class ChangeDomainLicenseTypeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The license type of the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private String licenseType;
 
+        /**
+         * The license type of the identity domain.
+         * @param licenseType the value to set
+         * @return this builder
+         **/
         public Builder licenseType(String licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
@@ -74,6 +82,10 @@ public final class ChangeDomainLicenseTypeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final String licenseType;
 
+    /**
+     * The license type of the identity domain.
+     * @return the value
+     **/
     public String getLicenseType() {
         return licenseType;
     }

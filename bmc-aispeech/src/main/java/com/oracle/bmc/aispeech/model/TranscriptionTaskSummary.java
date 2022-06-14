@@ -56,81 +56,145 @@ public final class TranscriptionTaskSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the task.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * A user-friendly display name for the task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name for the task.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * How much progress the operation has made, vs the total amount of work that must be performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Integer percentComplete;
 
+        /**
+         * How much progress the operation has made, vs the total amount of work that must be performed.
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Integer percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-
+        /**
+         * Size of input file in Bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSizeInBytes")
         private Integer fileSizeInBytes;
 
+        /**
+         * Size of input file in Bytes.
+         * @param fileSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder fileSizeInBytes(Integer fileSizeInBytes) {
             this.fileSizeInBytes = fileSizeInBytes;
             this.__explicitlySet__.add("fileSizeInBytes");
             return this;
         }
-
+        /**
+         * Duration of input file in Seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileDurationInSeconds")
         private Integer fileDurationInSeconds;
 
+        /**
+         * Duration of input file in Seconds.
+         * @param fileDurationInSeconds the value to set
+         * @return this builder
+         **/
         public Builder fileDurationInSeconds(Integer fileDurationInSeconds) {
             this.fileDurationInSeconds = fileDurationInSeconds;
             this.__explicitlySet__.add("fileDurationInSeconds");
             return this;
         }
-
+        /**
+         * Task started time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * Task started time
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * Job finished time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * Job finished time
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * The current state of the Speech Job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private TranscriptionTask.LifecycleState lifecycleState;
 
+        /**
+         * The current state of the Speech Job.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(TranscriptionTask.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -191,6 +255,10 @@ public final class TranscriptionTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the task.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -201,6 +269,10 @@ public final class TranscriptionTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name for the task.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -211,6 +283,10 @@ public final class TranscriptionTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Integer percentComplete;
 
+    /**
+     * How much progress the operation has made, vs the total amount of work that must be performed.
+     * @return the value
+     **/
     public Integer getPercentComplete() {
         return percentComplete;
     }
@@ -221,6 +297,10 @@ public final class TranscriptionTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fileSizeInBytes")
     private final Integer fileSizeInBytes;
 
+    /**
+     * Size of input file in Bytes.
+     * @return the value
+     **/
     public Integer getFileSizeInBytes() {
         return fileSizeInBytes;
     }
@@ -231,6 +311,10 @@ public final class TranscriptionTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fileDurationInSeconds")
     private final Integer fileDurationInSeconds;
 
+    /**
+     * Duration of input file in Seconds.
+     * @return the value
+     **/
     public Integer getFileDurationInSeconds() {
         return fileDurationInSeconds;
     }
@@ -241,6 +325,10 @@ public final class TranscriptionTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * Task started time
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -251,6 +339,10 @@ public final class TranscriptionTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * Job finished time
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -261,6 +353,10 @@ public final class TranscriptionTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final TranscriptionTask.LifecycleState lifecycleState;
 
+    /**
+     * The current state of the Speech Job.
+     * @return the value
+     **/
     public TranscriptionTask.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -271,6 +367,10 @@ public final class TranscriptionTaskSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }

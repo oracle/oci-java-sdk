@@ -37,36 +37,65 @@ public final class MultipartUploadPartSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The current entity tag (ETag) for the part.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
+        /**
+         * The current entity tag (ETag) for the part.
+         * @param etag the value to set
+         * @return this builder
+         **/
         public Builder etag(String etag) {
             this.etag = etag;
             this.__explicitlySet__.add("etag");
             return this;
         }
-
+        /**
+         * The MD5 hash of the bytes of the part.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("md5")
         private String md5;
 
+        /**
+         * The MD5 hash of the bytes of the part.
+         * @param md5 the value to set
+         * @return this builder
+         **/
         public Builder md5(String md5) {
             this.md5 = md5;
             this.__explicitlySet__.add("md5");
             return this;
         }
-
+        /**
+         * The size of the part in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Long size;
 
+        /**
+         * The size of the part in bytes.
+         * @param size the value to set
+         * @return this builder
+         **/
         public Builder size(Long size) {
             this.size = size;
             this.__explicitlySet__.add("size");
             return this;
         }
-
+        /**
+         * The part number for this part.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private Integer partNumber;
 
+        /**
+         * The part number for this part.
+         * @param partNumber the value to set
+         * @return this builder
+         **/
         public Builder partNumber(Integer partNumber) {
             this.partNumber = partNumber;
             this.__explicitlySet__.add("partNumber");
@@ -113,6 +142,10 @@ public final class MultipartUploadPartSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     private final String etag;
 
+    /**
+     * The current entity tag (ETag) for the part.
+     * @return the value
+     **/
     public String getEtag() {
         return etag;
     }
@@ -123,6 +156,10 @@ public final class MultipartUploadPartSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("md5")
     private final String md5;
 
+    /**
+     * The MD5 hash of the bytes of the part.
+     * @return the value
+     **/
     public String getMd5() {
         return md5;
     }
@@ -133,6 +170,10 @@ public final class MultipartUploadPartSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Long size;
 
+    /**
+     * The size of the part in bytes.
+     * @return the value
+     **/
     public Long getSize() {
         return size;
     }
@@ -143,6 +184,10 @@ public final class MultipartUploadPartSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final Integer partNumber;
 
+    /**
+     * The part number for this part.
+     * @return the value
+     **/
     public Integer getPartNumber() {
         return partNumber;
     }

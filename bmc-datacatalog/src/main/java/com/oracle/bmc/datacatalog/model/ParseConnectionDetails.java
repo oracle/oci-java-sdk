@@ -43,6 +43,7 @@ public final class ParseConnectionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("connectionDetail")
         private Connection connectionDetail;
 
@@ -51,28 +52,49 @@ public final class ParseConnectionDetails {
             this.__explicitlySet__.add("connectionDetail");
             return this;
         }
-
+        /**
+         * The information used to parse the connection from the wallet file payload.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionPayload")
         private byte[] connectionPayload;
 
+        /**
+         * The information used to parse the connection from the wallet file payload.
+         * @param connectionPayload the value to set
+         * @return this builder
+         **/
         public Builder connectionPayload(byte[] connectionPayload) {
             this.connectionPayload = connectionPayload;
             this.__explicitlySet__.add("connectionPayload");
             return this;
         }
-
+        /**
+         * OCID of the OCI Vault secret holding the Oracle wallet to parse.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
         private String walletSecretId;
 
+        /**
+         * OCID of the OCI Vault secret holding the Oracle wallet to parse.
+         * @param walletSecretId the value to set
+         * @return this builder
+         **/
         public Builder walletSecretId(String walletSecretId) {
             this.walletSecretId = walletSecretId;
             this.__explicitlySet__.add("walletSecretId");
             return this;
         }
-
+        /**
+         * Name of the OCI Vault secret holding the Oracle wallet to parse.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("walletSecretName")
         private String walletSecretName;
 
+        /**
+         * Name of the OCI Vault secret holding the Oracle wallet to parse.
+         * @param walletSecretName the value to set
+         * @return this builder
+         **/
         public Builder walletSecretName(String walletSecretName) {
             this.walletSecretName = walletSecretName;
             this.__explicitlySet__.add("walletSecretName");
@@ -127,6 +149,10 @@ public final class ParseConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionPayload")
     private final byte[] connectionPayload;
 
+    /**
+     * The information used to parse the connection from the wallet file payload.
+     * @return the value
+     **/
     public byte[] getConnectionPayload() {
         return connectionPayload;
     }
@@ -137,6 +163,10 @@ public final class ParseConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
     private final String walletSecretId;
 
+    /**
+     * OCID of the OCI Vault secret holding the Oracle wallet to parse.
+     * @return the value
+     **/
     public String getWalletSecretId() {
         return walletSecretId;
     }
@@ -147,6 +177,10 @@ public final class ParseConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("walletSecretName")
     private final String walletSecretName;
 
+    /**
+     * Name of the OCI Vault secret holding the Oracle wallet to parse.
+     * @return the value
+     **/
     public String getWalletSecretName() {
         return walletSecretName;
     }

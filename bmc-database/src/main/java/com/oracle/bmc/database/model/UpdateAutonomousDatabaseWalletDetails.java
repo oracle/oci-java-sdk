@@ -30,9 +30,17 @@ public final class UpdateAutonomousDatabaseWalletDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be rotated. The default is {@code false}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldRotate")
         private Boolean shouldRotate;
 
+        /**
+         * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be rotated. The default is {@code false}.
+         * @param shouldRotate the value to set
+         * @return this builder
+         **/
         public Builder shouldRotate(Boolean shouldRotate) {
             this.shouldRotate = shouldRotate;
             this.__explicitlySet__.add("shouldRotate");
@@ -75,6 +83,10 @@ public final class UpdateAutonomousDatabaseWalletDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shouldRotate")
     private final Boolean shouldRotate;
 
+    /**
+     * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be rotated. The default is {@code false}.
+     * @return the value
+     **/
     public Boolean getShouldRotate() {
         return shouldRotate;
     }
