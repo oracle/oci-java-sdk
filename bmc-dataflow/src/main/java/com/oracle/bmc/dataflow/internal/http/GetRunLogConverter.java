@@ -7,7 +7,7 @@ package com.oracle.bmc.dataflow.internal.http;
 import com.oracle.bmc.dataflow.model.*;
 import com.oracle.bmc.dataflow.requests.*;
 import com.oracle.bmc.dataflow.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public class GetRunLogConverter {

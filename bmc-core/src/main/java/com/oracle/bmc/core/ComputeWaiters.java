@@ -584,9 +584,9 @@ public class ComputeWaiters {
             forBootVolumeAttachment(
                     GetBootVolumeAttachmentRequest request,
                     com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forBootVolumeAttachment(
@@ -609,7 +609,8 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forBootVolumeAttachment(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -633,9 +634,9 @@ public class ComputeWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forBootVolumeAttachment(
@@ -691,9 +692,9 @@ public class ComputeWaiters {
                     GetComputeCapacityReservationRequest request,
                     com.oracle.bmc.core.model.ComputeCapacityReservation.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forComputeCapacityReservation(
@@ -716,7 +717,8 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.ComputeCapacityReservation.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forComputeCapacityReservation(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -741,9 +743,9 @@ public class ComputeWaiters {
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.core.model.ComputeCapacityReservation.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forComputeCapacityReservation(
@@ -802,9 +804,9 @@ public class ComputeWaiters {
             forConsoleHistory(
                     GetConsoleHistoryRequest request,
                     com.oracle.bmc.core.model.ConsoleHistory.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forConsoleHistory(
@@ -826,7 +828,8 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forConsoleHistory(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -849,9 +852,9 @@ public class ComputeWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.core.model.ConsoleHistory.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forConsoleHistory(
@@ -903,9 +906,9 @@ public class ComputeWaiters {
             forDedicatedVmHost(
                     GetDedicatedVmHostRequest request,
                     com.oracle.bmc.core.model.DedicatedVmHost.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forDedicatedVmHost(
@@ -927,7 +930,8 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.DedicatedVmHost.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forDedicatedVmHost(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -950,9 +954,9 @@ public class ComputeWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.core.model.DedicatedVmHost.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forDedicatedVmHost(
@@ -1005,9 +1009,9 @@ public class ComputeWaiters {
     public com.oracle.bmc.waiter.Waiter<GetImageRequest, GetImageResponse> forImage(
             GetImageRequest request,
             com.oracle.bmc.core.model.Image.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forImage(
@@ -1028,7 +1032,8 @@ public class ComputeWaiters {
             com.oracle.bmc.core.model.Image.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forImage(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1050,9 +1055,9 @@ public class ComputeWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.core.model.Image.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forImage(
@@ -1101,9 +1106,9 @@ public class ComputeWaiters {
     public com.oracle.bmc.waiter.Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
             GetInstanceRequest request,
             com.oracle.bmc.core.model.Instance.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forInstance(
@@ -1124,7 +1129,8 @@ public class ComputeWaiters {
             com.oracle.bmc.core.model.Instance.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forInstance(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1146,9 +1152,9 @@ public class ComputeWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.core.model.Instance.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forInstance(
@@ -1201,9 +1207,9 @@ public class ComputeWaiters {
                     GetInstanceConsoleConnectionRequest request,
                     com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forInstanceConsoleConnection(
@@ -1226,7 +1232,8 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forInstanceConsoleConnection(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1251,9 +1258,9 @@ public class ComputeWaiters {
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forInstanceConsoleConnection(
@@ -1312,9 +1319,9 @@ public class ComputeWaiters {
             forVnicAttachment(
                     GetVnicAttachmentRequest request,
                     com.oracle.bmc.core.model.VnicAttachment.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forVnicAttachment(
@@ -1336,7 +1343,8 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.VnicAttachment.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forVnicAttachment(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1359,9 +1367,9 @@ public class ComputeWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.core.model.VnicAttachment.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forVnicAttachment(
@@ -1413,9 +1421,9 @@ public class ComputeWaiters {
             forVolumeAttachment(
                     GetVolumeAttachmentRequest request,
                     com.oracle.bmc.core.model.VolumeAttachment.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forVolumeAttachment(
@@ -1437,7 +1445,8 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forVolumeAttachment(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1460,9 +1469,9 @@ public class ComputeWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.core.model.VolumeAttachment.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forVolumeAttachment(

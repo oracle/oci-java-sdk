@@ -4,9 +4,9 @@
  */
 package com.oracle.bmc;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.regex.Pattern;
+
+import com.oracle.bmc.util.internal.StringUtils;
 
 /**
  * Oracle Cloud Infrastructure unique ID.

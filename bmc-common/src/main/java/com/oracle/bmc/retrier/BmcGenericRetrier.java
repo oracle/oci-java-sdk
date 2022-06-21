@@ -11,10 +11,10 @@ import com.oracle.bmc.waiter.GenericWaiter;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.mutable.MutableObject;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 
 /**
@@ -46,7 +46,7 @@ public class BmcGenericRetrier {
     public <REQUEST, RESPONSE> RESPONSE execute(
             @NonNull final REQUEST requestToUse,
             @NonNull final Function<REQUEST, RESPONSE> functionCall) {
-        MutableObject<BmcException> lastKnownException = new MutableObject<>();
+        AtomicReference<BmcException> lastKnownException = new AtomicReference<>();
         LOG.debug(
                 "Retry policy to use: {MaximumNumberAttempts={}, MinSleepBetween=0, MaxSleepBetween={}ms, ExponentialBackoffBase=2}",
                 RetryConfiguration.DEFAULT_MAX_RETRY_ATTEMPTS,
@@ -55,13 +55,13 @@ public class BmcGenericRetrier {
                 waiter.execute(
                         Suppliers.ofInstance(requestToUse),
                         (request) -> {
-                            if (lastKnownException.getValue() != null) {
+                            if (lastKnownException.get() != null) {
                                 // we know there was a previous exception, so this must be a retry
                                 LOG.debug(
                                         "Http Status Code: {}, Error Code: {}, Retrying: {}",
-                                        lastKnownException.getValue().getStatusCode(),
-                                        lastKnownException.getValue().getServiceCode(),
-                                        lastKnownException.getValue().getMessage());
+                                        lastKnownException.get().getStatusCode(),
+                                        lastKnownException.get().getServiceCode(),
+                                        lastKnownException.get().getMessage());
                             }
                             try {
                                 return doFunctionCall(request, functionCall);
@@ -74,7 +74,7 @@ public class BmcGenericRetrier {
                                             e.getMessage());
                                     throw e;
                                 }
-                                lastKnownException.setValue(e);
+                                lastKnownException.set(e);
                             }
                             return null;
                         },
@@ -84,7 +84,7 @@ public class BmcGenericRetrier {
             return response.get();
         }
 
-        throw lastKnownException.getValue();
+        throw lastKnownException.get();
     }
 
     /**

@@ -36,9 +36,9 @@ public class ServiceMeshWaiters {
             forAccessPolicy(
                     GetAccessPolicyRequest request,
                     com.oracle.bmc.servicemesh.model.AccessPolicy.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forAccessPolicy(
@@ -60,7 +60,8 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.servicemesh.model.AccessPolicy.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forAccessPolicy(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -83,9 +84,9 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.servicemesh.model.AccessPolicy.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forAccessPolicy(
@@ -140,9 +141,9 @@ public class ServiceMeshWaiters {
                     GetIngressGatewayRequest request,
                     com.oracle.bmc.servicemesh.model.IngressGateway.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forIngressGateway(
@@ -164,7 +165,8 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.servicemesh.model.IngressGateway.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forIngressGateway(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -188,9 +190,9 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.servicemesh.model.IngressGateway.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forIngressGateway(
@@ -247,9 +249,9 @@ public class ServiceMeshWaiters {
                     GetIngressGatewayRouteTableRequest request,
                     com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forIngressGatewayRouteTable(
@@ -273,7 +275,8 @@ public class ServiceMeshWaiters {
                             targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forIngressGatewayRouteTable(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -298,9 +301,9 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forIngressGatewayRouteTable(
@@ -359,9 +362,9 @@ public class ServiceMeshWaiters {
     public com.oracle.bmc.waiter.Waiter<GetMeshRequest, GetMeshResponse> forMesh(
             GetMeshRequest request,
             com.oracle.bmc.servicemesh.model.Mesh.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forMesh(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
@@ -381,7 +384,8 @@ public class ServiceMeshWaiters {
             com.oracle.bmc.servicemesh.model.Mesh.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forMesh(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -403,9 +407,9 @@ public class ServiceMeshWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.servicemesh.model.Mesh.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forMesh(
@@ -456,9 +460,9 @@ public class ServiceMeshWaiters {
                     GetVirtualDeploymentRequest request,
                     com.oracle.bmc.servicemesh.model.VirtualDeployment.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forVirtualDeployment(
@@ -480,7 +484,8 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.servicemesh.model.VirtualDeployment.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forVirtualDeployment(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -504,9 +509,9 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.servicemesh.model.VirtualDeployment.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forVirtualDeployment(
@@ -562,9 +567,9 @@ public class ServiceMeshWaiters {
                     GetVirtualServiceRequest request,
                     com.oracle.bmc.servicemesh.model.VirtualService.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forVirtualService(
@@ -586,7 +591,8 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.servicemesh.model.VirtualService.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forVirtualService(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -610,9 +616,9 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.servicemesh.model.VirtualService.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forVirtualService(
@@ -669,9 +675,9 @@ public class ServiceMeshWaiters {
                     GetVirtualServiceRouteTableRequest request,
                     com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forVirtualServiceRouteTable(
@@ -695,7 +701,8 @@ public class ServiceMeshWaiters {
                             targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forVirtualServiceRouteTable(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -720,9 +727,9 @@ public class ServiceMeshWaiters {
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forVirtualServiceRouteTable(

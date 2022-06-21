@@ -35,9 +35,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetAttributeRequest, GetAttributeResponse> forAttribute(
             GetAttributeRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forAttribute(
@@ -58,7 +58,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forAttribute(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -80,9 +81,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forAttribute(
@@ -133,9 +134,9 @@ public class DataCatalogWaiters {
             forAttributeTag(
                     GetAttributeTagRequest request,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forAttributeTag(
@@ -157,7 +158,8 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.datacatalog.model.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forAttributeTag(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -180,9 +182,9 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forAttributeTag(
@@ -233,9 +235,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetCatalogRequest, GetCatalogResponse> forCatalog(
             GetCatalogRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forCatalog(
@@ -256,7 +258,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forCatalog(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -278,9 +281,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forCatalog(
@@ -332,9 +335,9 @@ public class DataCatalogWaiters {
             forCatalogPrivateEndpoint(
                     GetCatalogPrivateEndpointRequest request,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forCatalogPrivateEndpoint(
@@ -357,7 +360,8 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.datacatalog.model.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forCatalogPrivateEndpoint(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -381,9 +385,9 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forCatalogPrivateEndpoint(
@@ -437,9 +441,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetConnectionRequest, GetConnectionResponse> forConnection(
             GetConnectionRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forConnection(
@@ -460,7 +464,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forConnection(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -482,9 +487,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forConnection(
@@ -535,9 +540,9 @@ public class DataCatalogWaiters {
             forCustomProperty(
                     GetCustomPropertyRequest request,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forCustomProperty(
@@ -559,7 +564,8 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.datacatalog.model.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forCustomProperty(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -582,9 +588,9 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forCustomProperty(
@@ -636,9 +642,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetDataAssetRequest, GetDataAssetResponse> forDataAsset(
             GetDataAssetRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forDataAsset(
@@ -659,7 +665,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forDataAsset(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -681,9 +688,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forDataAsset(
@@ -734,9 +741,9 @@ public class DataCatalogWaiters {
             forDataAssetTag(
                     GetDataAssetTagRequest request,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forDataAssetTag(
@@ -758,7 +765,8 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.datacatalog.model.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forDataAssetTag(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -781,9 +789,9 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forDataAssetTag(
@@ -834,9 +842,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetEntityRequest, GetEntityResponse> forEntity(
             GetEntityRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forEntity(
@@ -857,7 +865,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forEntity(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -879,9 +888,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forEntity(
@@ -930,9 +939,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetEntityTagRequest, GetEntityTagResponse> forEntityTag(
             GetEntityTagRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forEntityTag(
@@ -953,7 +962,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forEntityTag(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -975,9 +985,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forEntityTag(
@@ -1027,9 +1037,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetFolderRequest, GetFolderResponse> forFolder(
             GetFolderRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forFolder(
@@ -1050,7 +1060,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forFolder(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1072,9 +1083,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forFolder(
@@ -1123,9 +1134,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetFolderTagRequest, GetFolderTagResponse> forFolderTag(
             GetFolderTagRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forFolderTag(
@@ -1146,7 +1157,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forFolderTag(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1168,9 +1180,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forFolderTag(
@@ -1220,9 +1232,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetGlossaryRequest, GetGlossaryResponse> forGlossary(
             GetGlossaryRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forGlossary(
@@ -1243,7 +1255,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forGlossary(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1265,9 +1278,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forGlossary(
@@ -1317,9 +1330,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetJobRequest, GetJobResponse> forJob(
             GetJobRequest request,
             com.oracle.bmc.datacatalog.model.JobLifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forJob(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
@@ -1339,7 +1352,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.JobLifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forJob(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1361,9 +1375,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.JobLifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forJob(
@@ -1412,9 +1426,9 @@ public class DataCatalogWaiters {
             forJobDefinition(
                     GetJobDefinitionRequest request,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forJobDefinition(
@@ -1436,7 +1450,8 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.datacatalog.model.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forJobDefinition(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1459,9 +1474,9 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forJobDefinition(
@@ -1513,9 +1528,9 @@ public class DataCatalogWaiters {
             forJobExecution(
                     GetJobExecutionRequest request,
                     com.oracle.bmc.datacatalog.model.JobExecutionState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forJobExecution(
@@ -1537,7 +1552,8 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.datacatalog.model.JobExecutionState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forJobExecution(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1560,9 +1576,9 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.datacatalog.model.JobExecutionState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forJobExecution(
@@ -1612,9 +1628,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetMetastoreRequest, GetMetastoreResponse> forMetastore(
             GetMetastoreRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forMetastore(
@@ -1635,7 +1651,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forMetastore(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1657,9 +1674,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forMetastore(
@@ -1709,9 +1726,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetNamespaceRequest, GetNamespaceResponse> forNamespace(
             GetNamespaceRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forNamespace(
@@ -1732,7 +1749,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forNamespace(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1754,9 +1772,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forNamespace(
@@ -1806,9 +1824,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetPatternRequest, GetPatternResponse> forPattern(
             GetPatternRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forPattern(
@@ -1829,7 +1847,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forPattern(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1851,9 +1870,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forPattern(
@@ -1903,9 +1922,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetTermRequest, GetTermResponse> forTerm(
             GetTermRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forTerm(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
@@ -1925,7 +1944,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forTerm(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -1947,9 +1967,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forTerm(
@@ -1999,9 +2019,9 @@ public class DataCatalogWaiters {
             forTermRelationship(
                     GetTermRelationshipRequest request,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forTermRelationship(
@@ -2023,7 +2043,8 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.datacatalog.model.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forTermRelationship(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -2046,9 +2067,9 @@ public class DataCatalogWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forTermRelationship(
@@ -2100,9 +2121,9 @@ public class DataCatalogWaiters {
     public com.oracle.bmc.waiter.Waiter<GetTypeRequest, GetTypeResponse> forType(
             GetTypeRequest request,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forType(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
@@ -2122,7 +2143,8 @@ public class DataCatalogWaiters {
             com.oracle.bmc.datacatalog.model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forType(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -2144,9 +2166,9 @@ public class DataCatalogWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.datacatalog.model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forType(

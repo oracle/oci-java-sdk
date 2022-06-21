@@ -5,10 +5,9 @@
 package com.oracle.bmc.http;
 
 import com.oracle.bmc.util.JavaRuntimeUtils;
+import com.oracle.bmc.util.internal.Validate;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.Validate;
-import org.apache.commons.lang3.tuple.Pair;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
@@ -25,6 +24,7 @@ import org.glassfish.jersey.client.spi.ConnectorProvider;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 
 import javax.net.ssl.SSLContext;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -42,7 +42,6 @@ public class ApacheConnectorPropertiesClientConfigDecorator implements ClientCon
 
     @Override
     public void customizeClientConfig(ClientConfig clientConfig) {
-
         Validate.notNull(clientConfig, "ClientConfig must not be null");
 
         // Only configure ApacheConnectorProvider types
@@ -63,19 +62,19 @@ public class ApacheConnectorPropertiesClientConfigDecorator implements ClientCon
         // defined connection pooling config
         else if (config.isConnectionPooling()) {
             final Registry<ConnectionSocketFactory> registry = getRegistry();
-            final Pair<Integer, TimeUnit> ttl = config.getConnectionPoolConfig().getTtl();
+            final Map.Entry<Integer, TimeUnit> ttl = config.getConnectionPoolConfig().getTtl();
             final PoolingHttpClientConnectionManager poolConnectionManager;
             if (registry != null) {
                 poolConnectionManager =
                         (ttl != null)
                                 ? new PoolingHttpClientConnectionManager(
-                                        registry, null, null, null, ttl.getLeft(), ttl.getRight())
+                                        registry, null, null, null, ttl.getKey(), ttl.getValue())
                                 : new PoolingHttpClientConnectionManager(registry);
             } else {
                 poolConnectionManager =
                         (ttl != null)
                                 ? new PoolingHttpClientConnectionManager(
-                                        ttl.getLeft(), ttl.getRight())
+                                        ttl.getKey(), ttl.getValue())
                                 : new PoolingHttpClientConnectionManager();
             }
             poolConnectionManager.setMaxTotal(

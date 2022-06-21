@@ -36,7 +36,7 @@ import com.oracle.bmc.budget.responses.GetBudgetResponse;
 import com.oracle.bmc.budget.responses.UpdateAlertRuleResponse;
 import com.oracle.bmc.budget.responses.UpdateBudgetResponse;
 
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.math.BigDecimal;
 import java.util.Collections;

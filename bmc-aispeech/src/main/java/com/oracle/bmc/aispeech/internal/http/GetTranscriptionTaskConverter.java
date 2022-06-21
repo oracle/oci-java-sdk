@@ -8,7 +8,7 @@ import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.aispeech.model.*;
 import com.oracle.bmc.aispeech.requests.*;
 import com.oracle.bmc.aispeech.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class GetTranscriptionTaskConverter {

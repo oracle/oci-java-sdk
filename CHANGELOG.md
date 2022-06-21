@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.33.0 - 2022-06-21
+### Added
+- Support for the Network Firewall service
+- Support for smaller and larger HeatWave cluster nodes in the MySQL Database service
+- Support for CSV file type datasets for text labeling and JSONL in the Data Labeling service
+- Support for diagnostics in the Database Management service
+
+### Breaking Changes
+- Support for retries by default on operations of the Network Firewall service
+- Support for retries by default on the createAnnotation operation of the Data Labeling service
+
 ## 2.32.0 - 2022-06-14
 ### Added
 - Support for the Web Application Acceleration (WAA) service

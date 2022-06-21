@@ -6,7 +6,6 @@ package com.oracle.bmc.util.internal;
 
 import static org.junit.Assert.assertEquals;
 
-import org.apache.commons.lang3.SystemUtils;
 import org.junit.Test;
 
 public class FileUtilsTest {
@@ -26,7 +25,7 @@ public class FileUtilsTest {
         String homeDir = System.getProperty("user.home");
         String expandedPath = FileUtils.expandUserHome("~/foobar");
         // switch here to make sure test works regardless of platform
-        if (SystemUtils.IS_OS_WINDOWS) {
+        if (FileUtils.IS_OS_WINDOWS) {
             assertEquals(homeDir + "\\foobar", expandedPath);
         } else {
             assertEquals(homeDir + "/foobar", expandedPath);

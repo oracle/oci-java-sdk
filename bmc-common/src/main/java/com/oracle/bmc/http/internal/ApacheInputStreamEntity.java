@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.http.internal;
 
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 

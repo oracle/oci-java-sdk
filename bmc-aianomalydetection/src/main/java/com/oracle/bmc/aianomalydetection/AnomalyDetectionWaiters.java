@@ -37,9 +37,9 @@ public class AnomalyDetectionWaiters {
                     GetAiPrivateEndpointRequest request,
                     com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forAiPrivateEndpoint(
@@ -62,7 +62,8 @@ public class AnomalyDetectionWaiters {
                             targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forAiPrivateEndpoint(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -86,9 +87,9 @@ public class AnomalyDetectionWaiters {
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint.LifecycleState...
                             targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forAiPrivateEndpoint(
@@ -144,9 +145,9 @@ public class AnomalyDetectionWaiters {
     public com.oracle.bmc.waiter.Waiter<GetDataAssetRequest, GetDataAssetResponse> forDataAsset(
             GetDataAssetRequest request,
             com.oracle.bmc.aianomalydetection.model.DataAsset.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forDataAsset(
@@ -167,7 +168,8 @@ public class AnomalyDetectionWaiters {
             com.oracle.bmc.aianomalydetection.model.DataAsset.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forDataAsset(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -189,9 +191,9 @@ public class AnomalyDetectionWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.aianomalydetection.model.DataAsset.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forDataAsset(
@@ -243,9 +245,9 @@ public class AnomalyDetectionWaiters {
     public com.oracle.bmc.waiter.Waiter<GetModelRequest, GetModelResponse> forModel(
             GetModelRequest request,
             com.oracle.bmc.aianomalydetection.model.Model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forModel(
@@ -266,7 +268,8 @@ public class AnomalyDetectionWaiters {
             com.oracle.bmc.aianomalydetection.model.Model.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forModel(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -288,9 +291,9 @@ public class AnomalyDetectionWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.aianomalydetection.model.Model.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forModel(
@@ -340,9 +343,9 @@ public class AnomalyDetectionWaiters {
     public com.oracle.bmc.waiter.Waiter<GetProjectRequest, GetProjectResponse> forProject(
             GetProjectRequest request,
             com.oracle.bmc.aianomalydetection.model.Project.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null targetState values are not permitted");
 
         return forProject(
@@ -363,7 +366,8 @@ public class AnomalyDetectionWaiters {
             com.oracle.bmc.aianomalydetection.model.Project.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
 
         return forProject(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -385,9 +389,9 @@ public class AnomalyDetectionWaiters {
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
             com.oracle.bmc.aianomalydetection.model.Project.LifecycleState... targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
+        com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
+        com.oracle.bmc.util.internal.Validate.noNullElements(
                 targetStates, "Null target states are not permitted");
 
         return forProject(

@@ -28,6 +28,7 @@ public final class StartSqlTuningTaskDetails {
         "totalTimeLimitInMinutes",
         "scope",
         "statementTimeLimitInMinutes",
+        "sqlTuningSet",
         "sqlDetails",
         "timeStarted",
         "timeEnded"
@@ -39,6 +40,7 @@ public final class StartSqlTuningTaskDetails {
             Integer totalTimeLimitInMinutes,
             Scope scope,
             Integer statementTimeLimitInMinutes,
+            SqlTuningSetInput sqlTuningSet,
             java.util.List<SqlTuningTaskSqlDetail> sqlDetails,
             java.util.Date timeStarted,
             java.util.Date timeEnded) {
@@ -49,6 +51,7 @@ public final class StartSqlTuningTaskDetails {
         this.totalTimeLimitInMinutes = totalTimeLimitInMinutes;
         this.scope = scope;
         this.statementTimeLimitInMinutes = statementTimeLimitInMinutes;
+        this.sqlTuningSet = sqlTuningSet;
         this.sqlDetails = sqlDetails;
         this.timeStarted = timeStarted;
         this.timeEnded = timeEnded;
@@ -155,14 +158,29 @@ public final class StartSqlTuningTaskDetails {
             this.__explicitlySet__.add("statementTimeLimitInMinutes");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningSet")
+        private SqlTuningSetInput sqlTuningSet;
+
+        public Builder sqlTuningSet(SqlTuningSetInput sqlTuningSet) {
+            this.sqlTuningSet = sqlTuningSet;
+            this.__explicitlySet__.add("sqlTuningSet");
+            return this;
+        }
         /**
-         * The array of the details of SQL statement on which tuning is performed.
+         * The details of the SQL statement on which tuning is performed.
+         * To obtain the details of the SQL statement, you must provide either the sqlTuningSet
+         * or the tuple of sqlDetails/timeStarted/timeEnded.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlDetails")
         private java.util.List<SqlTuningTaskSqlDetail> sqlDetails;
 
         /**
-         * The array of the details of SQL statement on which tuning is performed.
+         * The details of the SQL statement on which tuning is performed.
+         * To obtain the details of the SQL statement, you must provide either the sqlTuningSet
+         * or the tuple of sqlDetails/timeStarted/timeEnded.
+         *
          * @param sqlDetails the value to set
          * @return this builder
          **/
@@ -216,6 +234,7 @@ public final class StartSqlTuningTaskDetails {
                             totalTimeLimitInMinutes,
                             scope,
                             statementTimeLimitInMinutes,
+                            sqlTuningSet,
                             sqlDetails,
                             timeStarted,
                             timeEnded);
@@ -232,6 +251,7 @@ public final class StartSqlTuningTaskDetails {
                             .totalTimeLimitInMinutes(o.getTotalTimeLimitInMinutes())
                             .scope(o.getScope())
                             .statementTimeLimitInMinutes(o.getStatementTimeLimitInMinutes())
+                            .sqlTuningSet(o.getSqlTuningSet())
                             .sqlDetails(o.getSqlDetails())
                             .timeStarted(o.getTimeStarted())
                             .timeEnded(o.getTimeEnded());
@@ -377,14 +397,27 @@ public final class StartSqlTuningTaskDetails {
         return statementTimeLimitInMinutes;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningSet")
+    private final SqlTuningSetInput sqlTuningSet;
+
+    public SqlTuningSetInput getSqlTuningSet() {
+        return sqlTuningSet;
+    }
+
     /**
-     * The array of the details of SQL statement on which tuning is performed.
+     * The details of the SQL statement on which tuning is performed.
+     * To obtain the details of the SQL statement, you must provide either the sqlTuningSet
+     * or the tuple of sqlDetails/timeStarted/timeEnded.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlDetails")
     private final java.util.List<SqlTuningTaskSqlDetail> sqlDetails;
 
     /**
-     * The array of the details of SQL statement on which tuning is performed.
+     * The details of the SQL statement on which tuning is performed.
+     * To obtain the details of the SQL statement, you must provide either the sqlTuningSet
+     * or the tuple of sqlDetails/timeStarted/timeEnded.
+     *
      * @return the value
      **/
     public java.util.List<SqlTuningTaskSqlDetail> getSqlDetails() {
@@ -431,6 +464,7 @@ public final class StartSqlTuningTaskDetails {
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", statementTimeLimitInMinutes=")
                 .append(String.valueOf(this.statementTimeLimitInMinutes));
+        sb.append(", sqlTuningSet=").append(String.valueOf(this.sqlTuningSet));
         sb.append(", sqlDetails=").append(String.valueOf(this.sqlDetails));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
@@ -457,6 +491,7 @@ public final class StartSqlTuningTaskDetails {
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(
                         this.statementTimeLimitInMinutes, other.statementTimeLimitInMinutes)
+                && java.util.Objects.equals(this.sqlTuningSet, other.sqlTuningSet)
                 && java.util.Objects.equals(this.sqlDetails, other.sqlDetails)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
@@ -485,6 +520,7 @@ public final class StartSqlTuningTaskDetails {
                         + (this.statementTimeLimitInMinutes == null
                                 ? 43
                                 : this.statementTimeLimitInMinutes.hashCode());
+        result = (result * PRIME) + (this.sqlTuningSet == null ? 43 : this.sqlTuningSet.hashCode());
         result = (result * PRIME) + (this.sqlDetails == null ? 43 : this.sqlDetails.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());

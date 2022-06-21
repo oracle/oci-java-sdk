@@ -11,19 +11,13 @@ import com.oracle.bmc.SdkClients;
 import com.oracle.bmc.graalvm.utils.ReflectionUtils;
 import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.svm.core.annotate.Alias;
-import com.oracle.svm.core.annotate.RecomputeFieldValue;
 import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
-import net.minidev.json.JSONStyle;
-import net.minidev.json.reader.BeansWriter;
-import net.minidev.json.reader.JsonWriterI;
-import org.apache.commons.lang3.ArrayUtils;
 import org.glassfish.hk2.utilities.DescriptorImpl;
 import org.graalvm.nativeimage.hosted.Feature;
 import org.graalvm.nativeimage.hosted.RuntimeReflection;
 import org.jvnet.hk2.internal.SystemDescriptor;
 
-import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -126,7 +120,7 @@ final class SdkAutomaticFeature implements Feature {
         final JsonSubTypes subTypes = type.getAnnotation(JsonSubTypes.class);
         if (subTypes != null) {
             final JsonSubTypes.Type[] types = subTypes.value();
-            if (ArrayUtils.isNotEmpty(types)) {
+            if (types != null && types.length > 0) {
                 for (JsonSubTypes.Type t : types) {
                     final Class<?> v = t.value();
                     if (includeInReflectiveData(reflectiveAccess, v)) {
@@ -171,24 +165,6 @@ final class SdkAutomaticFeature implements Feature {
 
     static boolean includeInReflectiveData(Set<Class<?>> reflectiveAccess, Type rt) {
         return rt.getTypeName().startsWith("com.oracle.bmc") && !reflectiveAccess.contains(rt);
-    }
-}
-
-@SuppressWarnings("unused")
-@TargetClass(className = "net.minidev.json.reader.JsonWriter")
-final class JsonWriterReplacement {
-    @RecomputeFieldValue(kind = RecomputeFieldValue.Kind.FromAlias)
-    @Alias
-    public static JsonWriterI<Object> beansWriterASM = new BeansWriter();
-}
-
-@SuppressWarnings("unused")
-@TargetClass(className = "net.minidev.json.reader.BeansWriterASM")
-final class BeansWriterASMReplacement {
-    @Substitute
-    public <E> void writeJSONString(E value, Appendable out, JSONStyle compression)
-            throws IOException {
-        new BeansWriter().writeJSONString(value, out, compression);
     }
 }
 

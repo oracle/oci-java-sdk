@@ -4,9 +4,9 @@
  */
 package com.oracle.bmc.http;
 
+import com.oracle.bmc.util.internal.Validate;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.Validate;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;

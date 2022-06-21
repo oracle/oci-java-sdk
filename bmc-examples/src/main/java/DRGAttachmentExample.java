@@ -52,7 +52,7 @@ import com.oracle.bmc.core.responses.CreateVcnResponse;
 import com.oracle.bmc.core.responses.GetIPSecConnectionResponse;
 import com.oracle.bmc.core.responses.ListDrgAttachmentsResponse;
 import com.oracle.bmc.workrequests.WorkRequestClient;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;

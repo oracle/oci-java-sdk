@@ -8,11 +8,11 @@ import com.google.common.annotations.VisibleForTesting;
 import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
 
+import com.oracle.bmc.util.internal.Validate;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.Validate;
 
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

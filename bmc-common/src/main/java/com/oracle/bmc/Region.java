@@ -24,11 +24,12 @@ import com.oracle.bmc.model.internal.JsonConverter;
 import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.NameUtils;
 import java.util.concurrent.locks.ReentrantLock;
+import com.oracle.bmc.util.internal.StringUtils;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 

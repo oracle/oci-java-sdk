@@ -6,14 +6,12 @@ package com.oracle.bmc.http.signing.internal;
 
 import java.security.interfaces.RSAPublicKey;
 import java.util.Set;
-
 import javax.annotation.Nonnull;
-
-import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
+import com.oracle.bmc.util.internal.Validate;
 
 /**
  * List of supported signed request versions with associated version rules.
@@ -65,7 +63,7 @@ public enum SignedRequestVersion implements Version {
 
     @Override
     public Optional<Error> validateKeyId(@Nonnull String keyId) {
-        Preconditions.checkArgument(!StringUtils.isBlank(keyId));
+        Validate.notBlank(keyId, "keyId may not be blank");
 
         boolean isKeyIdValid = false;
         for (KeyIdType idType : this.getSupportedKeyIdTypes()) {

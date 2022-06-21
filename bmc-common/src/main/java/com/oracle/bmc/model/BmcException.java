@@ -7,8 +7,8 @@ package com.oracle.bmc.model;
 import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.ServiceDetails;
 import com.oracle.bmc.http.internal.RFC3339DateFormat;
+import com.oracle.bmc.util.internal.StringUtils;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
 

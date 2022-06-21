@@ -24,7 +24,7 @@ import com.oracle.bmc.events.responses.CreateRuleResponse;
 import com.oracle.bmc.events.responses.GetRuleResponse;
 import com.oracle.bmc.events.responses.UpdateRuleResponse;
 import com.oracle.bmc.model.BmcException;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.io.Closeable;
 import java.io.IOException;

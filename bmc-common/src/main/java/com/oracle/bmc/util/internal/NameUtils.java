@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 /**
  * Utility functions related to naming
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class NameUtils {
+public enum NameUtils {
+    ; // prevent instantiation
+
     /**
      * Canonicalizes a name for use in enum types. This specifically is for enum ids (values) that matched
      * the enum name except were lower case and used hyphen delimiters vs upper case and underscores (enum naming convention)

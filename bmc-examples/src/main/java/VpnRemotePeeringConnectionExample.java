@@ -31,7 +31,7 @@ import com.oracle.bmc.core.responses.GetRemotePeeringConnectionResponse;
 import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.workrequests.WorkRequest;
 import com.oracle.bmc.workrequests.WorkRequestClient;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.util.concurrent.TimeUnit;
 

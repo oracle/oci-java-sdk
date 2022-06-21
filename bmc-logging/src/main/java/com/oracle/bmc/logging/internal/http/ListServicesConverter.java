@@ -8,7 +8,7 @@ import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.logging.model.*;
 import com.oracle.bmc.logging.requests.*;
 import com.oracle.bmc.logging.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class ListServicesConverter {

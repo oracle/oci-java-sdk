@@ -28,18 +28,28 @@ public final class TextDatasetFormatDetails extends DatasetFormatDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
 
+        @com.fasterxml.jackson.annotation.JsonProperty("textFileTypeMetadata")
+        private TextFileTypeMetadata textFileTypeMetadata;
+
+        public Builder textFileTypeMetadata(TextFileTypeMetadata textFileTypeMetadata) {
+            this.textFileTypeMetadata = textFileTypeMetadata;
+            this.__explicitlySet__.add("textFileTypeMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TextDatasetFormatDetails build() {
-            TextDatasetFormatDetails __instance__ = new TextDatasetFormatDetails();
+            TextDatasetFormatDetails __instance__ =
+                    new TextDatasetFormatDetails(textFileTypeMetadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TextDatasetFormatDetails o) {
-            Builder copiedBuilder = this;
+            Builder copiedBuilder = textFileTypeMetadata(o.getTextFileTypeMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -58,8 +68,16 @@ public final class TextDatasetFormatDetails extends DatasetFormatDetails {
     }
 
     @Deprecated
-    public TextDatasetFormatDetails() {
+    public TextDatasetFormatDetails(TextFileTypeMetadata textFileTypeMetadata) {
         super();
+        this.textFileTypeMetadata = textFileTypeMetadata;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("textFileTypeMetadata")
+    private final TextFileTypeMetadata textFileTypeMetadata;
+
+    public TextFileTypeMetadata getTextFileTypeMetadata() {
+        return textFileTypeMetadata;
     }
 
     @Override
@@ -67,6 +85,7 @@ public final class TextDatasetFormatDetails extends DatasetFormatDetails {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TextDatasetFormatDetails(");
         sb.append("super=").append(super.toString());
+        sb.append(", textFileTypeMetadata=").append(String.valueOf(this.textFileTypeMetadata));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -82,7 +101,8 @@ public final class TextDatasetFormatDetails extends DatasetFormatDetails {
         }
 
         TextDatasetFormatDetails other = (TextDatasetFormatDetails) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
+        return java.util.Objects.equals(this.textFileTypeMetadata, other.textFileTypeMetadata)
+                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
 
@@ -90,6 +110,11 @@ public final class TextDatasetFormatDetails extends DatasetFormatDetails {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.textFileTypeMetadata == null
+                                ? 43
+                                : this.textFileTypeMetadata.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

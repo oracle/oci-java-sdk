@@ -7,7 +7,7 @@ package client_side_encryption;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.*;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;

@@ -8,7 +8,7 @@ import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.loggingsearch.model.*;
 import com.oracle.bmc.loggingsearch.requests.*;
 import com.oracle.bmc.loggingsearch.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 public class SearchLogsConverter {

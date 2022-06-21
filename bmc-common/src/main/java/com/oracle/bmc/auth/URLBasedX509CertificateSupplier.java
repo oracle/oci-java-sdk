@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.auth;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
@@ -18,17 +20,15 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-
+import java.util.stream.Collectors;
 import javax.security.auth.Refreshable;
-
-import lombok.Builder;
-import lombok.Data;
-import lombok.NonNull;
-import org.apache.commons.io.IOUtils;
 
 import com.oracle.bmc.auth.internal.X509CertificateWithOriginalPem;
 import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
-
+import com.oracle.bmc.util.StreamUtils;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -193,7 +193,7 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
         IOException lastException = null;
         for (int retry = 0; retry < MAX_RETRIES; retry++) {
             try (InputStream is = getResourceStream(certificateResourceDetails)) {
-                return IOUtils.toString(is, StandardCharsets.UTF_8);
+                return StreamUtils.toString(is, StandardCharsets.UTF_8);
             } catch (IOException e) {
                 LOG.info("Attempt {} to open stream of certificate failed.", (retry + 1), e);
                 lastException = e;

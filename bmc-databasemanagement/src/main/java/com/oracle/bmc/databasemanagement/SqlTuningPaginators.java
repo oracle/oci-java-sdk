@@ -416,4 +416,120 @@ public class SqlTuningPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSqlTuningSets operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSqlTuningSetsResponse> listSqlTuningSetsResponseIterator(
+            final ListSqlTuningSetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSqlTuningSetsRequest.Builder, ListSqlTuningSetsRequest,
+                ListSqlTuningSetsResponse>(
+                new com.google.common.base.Supplier<ListSqlTuningSetsRequest.Builder>() {
+                    @Override
+                    public ListSqlTuningSetsRequest.Builder get() {
+                        return ListSqlTuningSetsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSqlTuningSetsResponse, String>() {
+                    @Override
+                    public String apply(ListSqlTuningSetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSqlTuningSetsRequest.Builder>,
+                        ListSqlTuningSetsRequest>() {
+                    @Override
+                    public ListSqlTuningSetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSqlTuningSetsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>() {
+                    @Override
+                    public ListSqlTuningSetsResponse apply(ListSqlTuningSetsRequest request) {
+                        return client.listSqlTuningSets(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.SqlTuningSetSummary} objects
+     * contained in responses from the listSqlTuningSets operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.SqlTuningSetSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.SqlTuningSetSummary>
+            listSqlTuningSetsRecordIterator(final ListSqlTuningSetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSqlTuningSetsRequest.Builder, ListSqlTuningSetsRequest,
+                ListSqlTuningSetsResponse,
+                com.oracle.bmc.databasemanagement.model.SqlTuningSetSummary>(
+                new com.google.common.base.Supplier<ListSqlTuningSetsRequest.Builder>() {
+                    @Override
+                    public ListSqlTuningSetsRequest.Builder get() {
+                        return ListSqlTuningSetsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSqlTuningSetsResponse, String>() {
+                    @Override
+                    public String apply(ListSqlTuningSetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSqlTuningSetsRequest.Builder>,
+                        ListSqlTuningSetsRequest>() {
+                    @Override
+                    public ListSqlTuningSetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSqlTuningSetsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>() {
+                    @Override
+                    public ListSqlTuningSetsResponse apply(ListSqlTuningSetsRequest request) {
+                        return client.listSqlTuningSets(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSqlTuningSetsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.SqlTuningSetSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.SqlTuningSetSummary>
+                            apply(ListSqlTuningSetsResponse response) {
+                        return response.getSqlTuningSetCollection().getItems();
+                    }
+                });
+    }
 }

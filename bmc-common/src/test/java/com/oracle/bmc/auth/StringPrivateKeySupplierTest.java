@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-import org.apache.commons.io.IOUtils;
+import com.oracle.bmc.util.StreamUtils;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -20,12 +20,12 @@ public class StringPrivateKeySupplierTest {
     public void testGet() throws IOException {
         StringPrivateKeySupplier s = new StringPrivateKeySupplier(DATA);
         InputStream is = s.get();
-        String read = IOUtils.toString(is, StandardCharsets.UTF_8);
+        String read = StreamUtils.toString(is, StandardCharsets.UTF_8);
         assertEquals(DATA, read);
 
         // get again
         is = s.get();
-        read = IOUtils.toString(is, StandardCharsets.UTF_8);
+        read = StreamUtils.toString(is, StandardCharsets.UTF_8);
         assertEquals(DATA, read);
     }
 }

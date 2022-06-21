@@ -3,7 +3,6 @@
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 import com.oracle.bmc.ConfigFileReader;
-import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.core.VirtualNetworkClient;
@@ -19,12 +18,14 @@ import com.oracle.bmc.database.requests.LaunchDbSystemRequest;
 import com.oracle.bmc.database.requests.TerminateDbSystemRequest;
 import com.oracle.bmc.database.responses.GetDbSystemResponse;
 import com.oracle.bmc.database.responses.LaunchDbSystemResponse;
+import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
 import com.oracle.bmc.waiter.MaxTimeTerminationStrategy;
-import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.List;
 
@@ -111,8 +112,9 @@ public class LaunchExaDbSystemWithSparseExample {
 
             final List<String> sshPublicKeys =
                     Arrays.asList(
-                            FileUtils.readFileToString(
-                                    new File(sshKeyfilePath), Charset.defaultCharset()));
+                            StreamUtils.toString(
+                                    new FileInputStream(new File(sshKeyfilePath)),
+                                    Charset.defaultCharset()));
 
             LaunchDbSystemDetails launchDbSystemDetails =
                     LaunchDbSystemDetails.builder()

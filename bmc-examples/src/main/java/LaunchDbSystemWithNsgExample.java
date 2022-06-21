@@ -24,7 +24,7 @@ import com.oracle.bmc.database.responses.LaunchDbSystemResponse;
 import com.oracle.bmc.database.responses.UpdateDbSystemResponse;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
 import com.oracle.bmc.waiter.MaxTimeTerminationStrategy;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

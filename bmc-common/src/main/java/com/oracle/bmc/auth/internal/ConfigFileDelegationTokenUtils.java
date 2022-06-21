@@ -5,8 +5,8 @@
 package com.oracle.bmc.auth.internal;
 
 import com.oracle.bmc.ConfigFileReader;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.util.internal.FileUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class ConfigFileDelegationTokenUtils {
 
         String delegationTokenFilePath = getDelegationTokenFilePath(effectiveConfigFile);
         if (StringUtils.isBlank(delegationTokenFilePath)) {
-            return StringUtils.EMPTY;
+            return "";
         }
         StringBuilder tokenBuilder = new StringBuilder();
         try (Stream<String> stream =

@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Specifies the dataset location in object storage. This requires that all records are in this bucket, and under this prefix. A dataset with objects in arbitrary locations across buckets or prefixes is not allowed.
+ * Specifies the dataset location in object storage. This requires that all records are in this bucket, and under this prefix. We do not support a dataset with objects in arbitrary locations across buckets or prefixes.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -61,13 +61,13 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
             return this;
         }
         /**
-         * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
         /**
-         * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          * @param prefix the value to set
          * @return this builder
          **/
@@ -145,13 +145,13 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
     }
 
     /**
-     * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+     * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
     /**
-     * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+     * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * @return the value
      **/
     public String getPrefix() {

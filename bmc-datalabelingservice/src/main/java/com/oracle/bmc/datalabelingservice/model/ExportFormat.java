@@ -101,6 +101,7 @@ public final class ExportFormat {
         Coco("COCO"),
         Yolo("YOLO"),
         PascalVoc("PASCAL_VOC"),
+        JsonlCompactPlusContent("JSONL_COMPACT_PLUS_CONTENT"),
         ;
 
         private final String value;

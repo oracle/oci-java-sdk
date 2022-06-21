@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagement.internal.http;
 import com.oracle.bmc.osmanagement.model.*;
 import com.oracle.bmc.osmanagement.requests.*;
 import com.oracle.bmc.osmanagement.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class GetEventContentConverter {

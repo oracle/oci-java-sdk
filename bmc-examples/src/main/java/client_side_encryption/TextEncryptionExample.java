@@ -8,7 +8,7 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.*;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.nio.charset.StandardCharsets;
 

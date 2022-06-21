@@ -8,7 +8,7 @@ import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.computeinstanceagent.model.*;
 import com.oracle.bmc.computeinstanceagent.requests.*;
 import com.oracle.bmc.computeinstanceagent.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 public class CreateInstanceAgentCommandConverter {

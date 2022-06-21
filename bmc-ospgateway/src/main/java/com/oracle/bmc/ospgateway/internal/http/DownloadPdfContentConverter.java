@@ -7,7 +7,7 @@ package com.oracle.bmc.ospgateway.internal.http;
 import com.oracle.bmc.ospgateway.model.*;
 import com.oracle.bmc.ospgateway.requests.*;
 import com.oracle.bmc.ospgateway.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class DownloadPdfContentConverter {

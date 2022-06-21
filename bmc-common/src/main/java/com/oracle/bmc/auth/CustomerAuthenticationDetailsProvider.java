@@ -6,8 +6,8 @@ package com.oracle.bmc.auth;
 
 import com.oracle.bmc.OCID;
 
+import com.oracle.bmc.util.internal.StringUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 
 @Slf4j
 public abstract class CustomerAuthenticationDetailsProvider

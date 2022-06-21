@@ -7,7 +7,6 @@ package com.oracle.bmc.auth.internal;
 import static org.junit.Assert.assertEquals;
 
 import com.oracle.bmc.ConfigFileReader;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;
@@ -41,7 +40,6 @@ public class ConfigFileDelegationTokenUtilsTest {
         PowerMockito.when(configFile.get("delegation_token_file"))
                 .thenReturn("src/test/resources/unit_test_delegation_file_does_not_exist");
 
-        assertEquals(
-                ConfigFileDelegationTokenUtils.parseAndGetToken(configFile), StringUtils.EMPTY);
+        assertEquals(ConfigFileDelegationTokenUtils.parseAndGetToken(configFile), "");
     }
 }

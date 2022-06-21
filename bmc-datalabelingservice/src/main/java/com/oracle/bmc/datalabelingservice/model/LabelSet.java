@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservice.model;
 
 /**
- * An ordered collection of Labels that are unique by name.
+ * An ordered collection of labels that are unique by name.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -29,13 +29,13 @@ public final class LabelSet {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An ordered collection of Labels that are unique by name.
+         * An ordered collection of labels that are unique by name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<Label> items;
 
         /**
-         * An ordered collection of Labels that are unique by name.
+         * An ordered collection of labels that are unique by name.
          * @param items the value to set
          * @return this builder
          **/
@@ -75,13 +75,13 @@ public final class LabelSet {
     }
 
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<Label> items;
 
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      * @return the value
      **/
     public java.util.List<Label> getItems() {

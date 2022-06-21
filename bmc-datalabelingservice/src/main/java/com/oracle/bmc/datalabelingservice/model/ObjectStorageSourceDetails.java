@@ -29,13 +29,13 @@ public final class ObjectStorageSourceDetails extends DatasetSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Namespace of the bucket that contains the dataset data source
+         * The namespace of the bucket that contains the dataset data source.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * Namespace of the bucket that contains the dataset data source
+         * The namespace of the bucket that contains the dataset data source.
          * @param namespace the value to set
          * @return this builder
          **/
@@ -45,13 +45,13 @@ public final class ObjectStorageSourceDetails extends DatasetSourceDetails {
             return this;
         }
         /**
-         * The object storage bucket that contains the dataset data source
+         * The object storage bucket that contains the dataset data source.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
         /**
-         * The object storage bucket that contains the dataset data source
+         * The object storage bucket that contains the dataset data source.
          * @param bucket the value to set
          * @return this builder
          **/
@@ -61,13 +61,13 @@ public final class ObjectStorageSourceDetails extends DatasetSourceDetails {
             return this;
         }
         /**
-         * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
         /**
-         * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          * @param prefix the value to set
          * @return this builder
          **/
@@ -117,13 +117,13 @@ public final class ObjectStorageSourceDetails extends DatasetSourceDetails {
     }
 
     /**
-     * Namespace of the bucket that contains the dataset data source
+     * The namespace of the bucket that contains the dataset data source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * Namespace of the bucket that contains the dataset data source
+     * The namespace of the bucket that contains the dataset data source.
      * @return the value
      **/
     public String getNamespace() {
@@ -131,13 +131,13 @@ public final class ObjectStorageSourceDetails extends DatasetSourceDetails {
     }
 
     /**
-     * The object storage bucket that contains the dataset data source
+     * The object storage bucket that contains the dataset data source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
     /**
-     * The object storage bucket that contains the dataset data source
+     * The object storage bucket that contains the dataset data source.
      * @return the value
      **/
     public String getBucket() {
@@ -145,13 +145,13 @@ public final class ObjectStorageSourceDetails extends DatasetSourceDetails {
     }
 
     /**
-     * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+     * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
     /**
-     * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+     * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * @return the value
      **/
     public String getPrefix() {

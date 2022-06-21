@@ -72,7 +72,6 @@ import com.oracle.bmc.identity.requests.ListAvailabilityDomainsRequest;
 import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.util.StreamUtils;
-import org.apache.commons.io.IOUtils;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -646,11 +645,11 @@ public class InvokeFunctionExample {
      * NB: You should restrict these routes further if you keep this piece of
      *     OCI infrastructure.
      *
-     * @param vcnClient     the service client to use to query a RouteTable.
-     * @param compartmentId of the RouteTable.
-     * @param vcnId         of the RouteTable's associated VCN.
-     * @param igId          of the RouteTable's associated InternetGateway.
-     * @param rtDisplayName of the RouteTable.
+     * @param vcnClient      the service client to use to query a RouteTable.
+     * @param compartmentId  of the RouteTable.
+     * @param vcnId          of the RouteTable's associated VCN.
+     * @param igId           of the RouteTable's associated InternetGateway.
+     * @param drtDisplayName of the RouteTable.
      * @return the InternetGateway.
      * @throws Exception
      */
@@ -757,7 +756,7 @@ public class InvokeFunctionExample {
      * @param compartmentId the OCID of the compartment which owns the VCN.
      * @param vcnId the ID of the VCN which will own the subnet.
      * @param displayName the display name of the subnet.
-     * @param availabilityDomain the availability domain where the subnet will be created.
+     * @param availabilityDomainName the availability domain where the subnet will be created.
      * @param subnetCidrBlock the subnet CidrBlock allocated from the parent VCN range.
      * @return the created subnet.
      * @throws Exception
@@ -1122,8 +1121,6 @@ public class InvokeFunctionExample {
      * @param fnInvokeClient the service client to use to delete the Function.
      * @param function the Function to invoke.
      * @param payload the payload to pass to the function.
-     *
-     * @throws Exception if there is an error when invoking the function.
      */
     private static String invokeFunction(
             final FunctionsInvokeClient fnInvokeClient,
@@ -1149,7 +1146,7 @@ public class InvokeFunctionExample {
 
             // Handle the response.
             response =
-                    IOUtils.toString(
+                    StreamUtils.toString(
                             invokeFunctionResponse.getInputStream(), StandardCharsets.UTF_8);
 
         } catch (final Exception e) {

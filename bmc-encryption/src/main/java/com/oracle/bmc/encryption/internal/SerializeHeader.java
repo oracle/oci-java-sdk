@@ -15,12 +15,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.encryption.KmsMasterKey;
 import com.oracle.bmc.encryption.MasterKeyProvider;
 import com.oracle.bmc.http.internal.RestClientFactory;
-import net.minidev.json.JSONObject;
 
 public class SerializeHeader {
     private final MasterKeyProvider provider;
-    private final static int INITIAL_OFFSET = 6; //version(short) + header_size(int)
-    private final static short VERSION = 1;
+    private static final int INITIAL_OFFSET = 6; //version(short) + header_size(int)
+    private static final short VERSION = 1;
+    private static final ObjectMapper OBJECT_MAPPER = RestClientFactory.getObjectMapper();
 
     public SerializeHeader(MasterKeyProvider provider) {
         this.provider = provider;
@@ -52,14 +52,22 @@ public class SerializeHeader {
                         kmsMasterKey.getKmsMasterKeyId(),
                         dataKey.getCiphertext());
 
-        String contextString = "";
-        if (context != null) {
-            JSONObject contextJson = new JSONObject(context);
-            contextString = contextJson.toJSONString();
-        }
+        String contextString = mapToJson(context);
         encryptionHeader.setEncryptionHeader(
                 encryptionKey, Base64.getEncoder().encodeToString(ivBytes), contextString);
         return encryptionHeader;
+    }
+
+    static String mapToJson(Map<String, ?> context) {
+        String contextString = "";
+        if (context != null) {
+            try {
+                contextString = OBJECT_MAPPER.writeValueAsString(context);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException("Failed to parse encryption header. ", e);
+            }
+        }
+        return contextString;
     }
 
     private String serializeJsonHeader(EncryptionHeader encryptionHeader) {

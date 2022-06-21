@@ -19,9 +19,9 @@ import com.oracle.bmc.ConfigFileReader.ConfigFile;
 import com.oracle.bmc.auth.internal.DelegationTokenConfigurator;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.auth.internal.ConfigFileDelegationTokenUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * Implementation of {@link AuthenticationDetailsProvider} that uses a standard
@@ -265,7 +265,7 @@ public class ConfigFileAuthenticationDetailsProvider
         private ConfigFileInstancePrincipalAuthenticationDetailsProvider(ConfigFile configFile) {
             this.delegate = InstancePrincipalsAuthenticationDetailsProvider.builder().build();
             String tenantId = configFile.get("tenancy");
-            if (tenantId == null) tenantId = StringUtils.EMPTY;
+            if (tenantId == null) tenantId = "";
             this.tenantId = tenantId;
             this.clientConfigurators = new ArrayList<>();
             try {

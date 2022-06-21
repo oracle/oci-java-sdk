@@ -18,8 +18,8 @@ import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
 import com.oracle.bmc.objectstorage.transfer.DownloadConfiguration;
 import com.oracle.bmc.objectstorage.transfer.DownloadManager;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.FileUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
@@ -115,7 +115,7 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
             assertFalse(getResponse.isNotModified());
             assertNotNull(getResponse.getInputStream());
             assertTrue(
-                    IOUtils.contentEquals(
+                    FileUtils.contentEquals(
                             new FileInputStream(TEST_FILE), getResponse.getInputStream()));
             assertEquals(originalEtag, getResponse.getETag());
             assertEquals(MediaType.APPLICATION_OCTET_STREAM, getResponse.getContentType());
@@ -146,7 +146,7 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
             assertFalse(getResponseIfMatchMatches.isNotModified());
             assertNotNull(getResponseIfMatchMatches.getInputStream());
             assertTrue(
-                    IOUtils.contentEquals(
+                    FileUtils.contentEquals(
                             new FileInputStream(TEST_FILE),
                             getResponseIfMatchMatches.getInputStream()));
 
@@ -162,7 +162,7 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
             assertFalse(getResponseIfNoneMatchModified.isNotModified());
             assertNotNull(getResponseIfNoneMatchModified.getInputStream());
             assertTrue(
-                    IOUtils.contentEquals(
+                    FileUtils.contentEquals(
                             new FileInputStream(TEST_FILE),
                             getResponseIfNoneMatchModified.getInputStream()));
 
@@ -235,7 +235,8 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
             assertNotNull(startAndEndResponse.getInputStream());
 
             InputStream expectedStream = getExpectedInputStream(range);
-            assertTrue(IOUtils.contentEquals(expectedStream, startAndEndResponse.getInputStream()));
+            assertTrue(
+                    FileUtils.contentEquals(expectedStream, startAndEndResponse.getInputStream()));
 
             range = new Range(1L, null);
             GetObjectResponse startOnlyResponse =
@@ -251,7 +252,7 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
             assertNotNull(startOnlyResponse.getInputStream());
 
             expectedStream = getExpectedInputStream(range);
-            assertTrue(IOUtils.contentEquals(expectedStream, startOnlyResponse.getInputStream()));
+            assertTrue(FileUtils.contentEquals(expectedStream, startOnlyResponse.getInputStream()));
 
             // on a 100 byte object, the range "-99" actually means "the last 99 bytes"
             range = new Range(null, TEST_FILE.length() - 1);
@@ -278,15 +279,15 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
             assertNotNull(endOnlyResponseNoManager.getInputStream());
             expectedStream = getExpectedInputStream(range);
             assertTrue(
-                    IOUtils.contentEquals(
+                    FileUtils.contentEquals(
                             expectedStream, endOnlyResponseNoManager.getInputStream()));
 
             assertNotNull(endOnlyResponse);
             assertNotNull(endOnlyResponse.getInputStream());
             expectedStream = getExpectedInputStream(range);
-            assertTrue(IOUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
+            assertTrue(FileUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
 
-            assertTrue(IOUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
+            assertTrue(FileUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
         } finally {
             DeleteObjectResponse deleteResponse =
                     CLIENT.deleteObject(
@@ -327,7 +328,7 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
             assertNotNull(endOnlyResponse.getInputStream());
             InputStream expectedStream = getExpectedInputStream(range);
 
-            assertTrue(IOUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
+            assertTrue(FileUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
         } finally {
             DeleteObjectResponse deleteResponse =
                     CLIENT.deleteObject(
@@ -380,14 +381,14 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
             assertNotNull(endOnlyResponseNoManager.getInputStream());
             InputStream expectedStream = getExpectedInputStream(range);
             assertTrue(
-                    IOUtils.contentEquals(
+                    FileUtils.contentEquals(
                             expectedStream, endOnlyResponseNoManager.getInputStream()));
 
             assertNotNull(endOnlyResponse);
             assertNotNull(endOnlyResponse.getInputStream());
             expectedStream = getExpectedInputStream(range);
 
-            assertTrue(IOUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
+            assertTrue(FileUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
         } finally {
             DeleteObjectResponse deleteResponse =
                     CLIENT.deleteObject(
@@ -439,14 +440,14 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
             assertNotNull(endOnlyResponseNoManager.getInputStream());
             InputStream expectedStream = getExpectedInputStream(range);
             assertTrue(
-                    IOUtils.contentEquals(
+                    FileUtils.contentEquals(
                             expectedStream, endOnlyResponseNoManager.getInputStream()));
 
             assertNotNull(endOnlyResponse);
             assertNotNull(endOnlyResponse.getInputStream());
             expectedStream = getExpectedInputStream(range);
 
-            assertTrue(IOUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
+            assertTrue(FileUtils.contentEquals(expectedStream, endOnlyResponse.getInputStream()));
         } finally {
             DeleteObjectResponse deleteResponse =
                     CLIENT.deleteObject(

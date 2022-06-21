@@ -45,13 +45,13 @@ import com.oracle.bmc.database.responses.UpdateVmClusterNetworkResponse;
 import com.oracle.bmc.database.responses.UpdateVmClusterResponse;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
 import com.oracle.bmc.waiter.MaxTimeTerminationStrategy;
+import com.oracle.bmc.util.StreamUtils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.apache.commons.io.FileUtils.readFileToByteArray;
 
 /**
  * This class provides a basic example of CRUD(Create, read, update, delete) operations on Exadata Cloud at Customer (ExaCC) Resources: Exadata Infrastructure, VmClusterNetwork and VmCluster using the Java SDK.
@@ -432,7 +432,7 @@ public class ExadataCloudAtCustomerResourcesExample {
 
         byte[] bArray = new byte[1024];
         try {
-            bArray = readFileToByteArray(file);
+            bArray = StreamUtils.toByteArray(new FileInputStream(file));
         } catch (Exception e) {
             System.out.println("Failed to read file " + ACTIVATION_KEY_FILE);
             e.printStackTrace();
