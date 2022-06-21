@@ -496,6 +496,47 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddmTasksResponse> addmTasks(
+            AddmTasksRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<AddmTasksRequest, AddmTasksResponse>
+                    handler) {
+        LOG.trace("Called async addmTasks");
+        final AddmTasksRequest interceptedRequest = AddmTasksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddmTasksConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddmTasksResponse>
+                transformer = AddmTasksConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbManagement",
+                "AddmTasks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/AddmTasksCollection/AddmTasks");
+
+        com.oracle.bmc.responses.AsyncHandler<AddmTasksRequest, AddmTasksResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<AddmTasksRequest, AddmTasksResponse>,
+                        java.util.concurrent.Future<AddmTasksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddmTasksRequest, AddmTasksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDatabaseParametersResponse> changeDatabaseParameters(
             ChangeDatabaseParametersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1107,6 +1148,53 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DropTablespaceRequest, DropTablespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateAwrSnapshotResponse> generateAwrSnapshot(
+            GenerateAwrSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateAwrSnapshotRequest, GenerateAwrSnapshotResponse>
+                    handler) {
+        LOG.trace("Called async generateAwrSnapshot");
+        final GenerateAwrSnapshotRequest interceptedRequest =
+                GenerateAwrSnapshotConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateAwrSnapshotConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateAwrSnapshotResponse>
+                transformer = GenerateAwrSnapshotConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbManagement",
+                "GenerateAwrSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SnapshotDetails/GenerateAwrSnapshot");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateAwrSnapshotRequest, GenerateAwrSnapshotResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateAwrSnapshotRequest, GenerateAwrSnapshotResponse>,
+                        java.util.concurrent.Future<GenerateAwrSnapshotResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateAwrSnapshotRequest, GenerateAwrSnapshotResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3020,6 +3108,56 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ResizeDataFileRequest, ResizeDataFileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RunHistoricAddmResponse> runHistoricAddm(
+            RunHistoricAddmRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RunHistoricAddmRequest, RunHistoricAddmResponse>
+                    handler) {
+        LOG.trace("Called async runHistoricAddm");
+        final RunHistoricAddmRequest interceptedRequest =
+                RunHistoricAddmConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RunHistoricAddmConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RunHistoricAddmResponse>
+                transformer = RunHistoricAddmConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbManagement",
+                "RunHistoricAddm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HistoricAddmResult/RunHistoricAddm");
+
+        com.oracle.bmc.responses.AsyncHandler<RunHistoricAddmRequest, RunHistoricAddmResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RunHistoricAddmRequest, RunHistoricAddmResponse>,
+                        java.util.concurrent.Future<RunHistoricAddmResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRunHistoricAddmDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RunHistoricAddmRequest, RunHistoricAddmResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

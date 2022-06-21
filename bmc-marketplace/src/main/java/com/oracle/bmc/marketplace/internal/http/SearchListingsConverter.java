@@ -8,7 +8,7 @@ import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.marketplace.model.*;
 import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class SearchListingsConverter {

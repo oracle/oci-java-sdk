@@ -8,10 +8,12 @@ import com.google.common.base.Preconditions;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.KeyPair;
 import java.time.Duration;
 import java.util.Optional;
@@ -97,9 +99,8 @@ public class FileBasedResourcePrincipalFederationClient
         String securityToken = "";
         try {
             securityToken =
-                    FileUtils.readFileToString(
-                            new File(this.resourcePrincipalSessionTokenPath),
-                            Charset.defaultCharset());
+                    new String(
+                            Files.readAllBytes(Paths.get(this.resourcePrincipalSessionTokenPath)));
         } catch (IOException e) {
             throw new RuntimeException("cannot read token from file", e);
         }

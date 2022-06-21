@@ -18,8 +18,6 @@ import javax.annotation.Nonnull;
 import com.oracle.bmc.http.internal.HttpDateUtils;
 import com.oracle.bmc.http.internal.WrappedWebTarget;
 
-import org.apache.commons.lang3.StringUtils;
-
 /**
  * Utility functions related to HTTP calls.
  * <p>
@@ -27,7 +25,8 @@ import org.apache.commons.lang3.StringUtils;
  * of the args passed in (vs. taking a generic Object and throwing an exception if the class
  * isn't supported at runtime).
  */
-public class HttpUtils {
+public enum HttpUtils {
+    ; // prevent instantiation
 
     /**
      * Encodes a path segment.
@@ -163,9 +162,7 @@ public class HttpUtils {
             List<T> values,
             CollectionFormatType collectionFormatType) {
 
-        if (StringUtils.isBlank(queryParamName)) {
-            throw new IllegalArgumentException("A non-blank queryParamName must be provided");
-        }
+        Validate.notBlank(queryParamName, "a non-blank queryParamName must be provided");
 
         if (values != null && !values.isEmpty()) {
             final List<Object> valuesToUse = new ArrayList<>();
@@ -197,22 +194,22 @@ public class HttpUtils {
                 target =
                         target.queryParam(
                                 queryParamName,
-                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, ',')));
+                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, ",")));
             } else if (collectionFormatType == CollectionFormatType.PipeSeparated) {
                 target =
                         target.queryParam(
                                 queryParamName,
-                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, '|')));
+                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, "|")));
             } else if (collectionFormatType == CollectionFormatType.SpaceSeparated) {
                 target =
                         target.queryParam(
                                 queryParamName,
-                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, ' ')));
+                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, " ")));
             } else if (collectionFormatType == CollectionFormatType.TabSeparated) {
                 target =
                         target.queryParam(
                                 queryParamName,
-                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, '\t')));
+                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, "\t")));
             } else if (collectionFormatType == CollectionFormatType.Multi) {
                 final Object[] encodedValuesToUse = new Object[valuesToUse.size()];
                 for (int i = 0; i < valuesToUse.size(); i++) {

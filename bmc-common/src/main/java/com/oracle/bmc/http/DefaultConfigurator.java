@@ -9,7 +9,6 @@ import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.util.internal.ReflectionUtils;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -71,7 +70,7 @@ public class DefaultConfigurator
         if (jerseyDefaultConnectorEnabledString != null
                 && !jerseyDefaultConnectorEnabledString.isEmpty()) {
             String trimmedValue = jerseyDefaultConnectorEnabledString.trim();
-            if (StringUtils.equalsIgnoreCase("true", trimmedValue)) {
+            if ("true".equalsIgnoreCase(trimmedValue)) {
                 return true;
             }
         }

@@ -38,7 +38,7 @@ import com.oracle.bmc.vault.requests.ScheduleSecretDeletionRequest;
 import com.oracle.bmc.vault.responses.CreateSecretResponse;
 import com.oracle.bmc.vault.responses.GetSecretResponse;
 import com.oracle.bmc.vault.responses.ScheduleSecretDeletionResponse;
-import org.apache.commons.io.IOUtils;
+import com.oracle.bmc.util.internal.FileUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -360,7 +360,7 @@ public class DatabaseToolsADBsConnectionWithPe {
             while ((entry = zis.getNextEntry()) != null) {
                 if (entry.getName().equals(fileName)) {
                     fileOut = new ByteArrayOutputStream();
-                    IOUtils.copy(zis, fileOut);
+                    FileUtils.copy(zis, fileOut);
                     break;
                 }
             }

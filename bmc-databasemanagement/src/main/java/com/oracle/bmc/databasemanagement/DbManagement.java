@@ -79,6 +79,20 @@ public interface DbManagement extends AutoCloseable {
             AddManagedDatabaseToManagedDatabaseGroupRequest request);
 
     /**
+     * Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/AddmTasksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddmTasks API.
+     */
+    AddmTasksResponse addmTasks(AddmTasksRequest request);
+
+    /**
      * Changes database parameter values. There are two kinds of database
      * parameters:
      * <p>
@@ -256,6 +270,19 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropTablespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropTablespace API.
      */
     DropTablespaceResponse dropTablespace(DropTablespaceRequest request);
+
+    /**
+     * Creates an AWR snapshot for the target database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GenerateAwrSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateAwrSnapshot API.
+     */
+    GenerateAwrSnapshotResponse generateAwrSnapshot(GenerateAwrSnapshotRequest request);
 
     /**
      * Gets the AWR report for the specific database.
@@ -822,6 +849,20 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ResizeDataFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResizeDataFile API.
      */
     ResizeDataFileResponse resizeDataFile(ResizeDataFileRequest request);
+
+    /**
+     * Creates and executes a historic ADDM task using the specified AWR snapshot IDs. If an existing ADDM task
+     * uses the provided awr snapshot IDs, the existing task will be returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/RunHistoricAddmExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RunHistoricAddm API.
+     */
+    RunHistoricAddmResponse runHistoricAddm(RunHistoricAddmRequest request);
 
     /**
      * Summarizes the AWR CPU resource limits and metrics for the specified database in AWR.

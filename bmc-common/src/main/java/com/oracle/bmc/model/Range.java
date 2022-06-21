@@ -4,10 +4,10 @@
  */
 package com.oracle.bmc.model;
 
+import com.oracle.bmc.util.internal.StringUtils;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * Class specifying a range-request is being made. Request mostly follows

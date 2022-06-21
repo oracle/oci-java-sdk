@@ -7,11 +7,10 @@ package com.oracle.bmc;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.oracle.bmc.util.internal.Validate;
 import lombok.Builder;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
-
-import org.apache.commons.lang3.Validate;
 
 /**
  * Factory class to create new {@link Service} instances.
@@ -57,7 +56,7 @@ public class Services {
             final String serviceEndpointPrefix,
             final String serviceEndpointTemplate,
             final String endpointServiceName) {
-        Validate.notBlank(serviceName);
+        Validate.notBlank(serviceName, "serviceName must be set to a non-empty string");
 
         final Service newInstance =
                 new BasicService(

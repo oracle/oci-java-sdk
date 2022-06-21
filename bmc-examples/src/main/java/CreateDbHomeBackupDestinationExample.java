@@ -9,8 +9,7 @@ import com.oracle.bmc.database.DatabaseClient;
 import com.oracle.bmc.database.model.*;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.util.*;
 import java.util.function.Function;
@@ -44,22 +43,22 @@ public class CreateDbHomeBackupDestinationExample {
                 "--dbName",
                 "A DbName. Generates a value if not specified.",
                 false,
-                o -> RandomStringUtils.randomAlphabetic(8)),
+                o -> StringUtils.randomAlphabetic(8)),
         DB_UNIQUE_NAME(
                 "--dbUniqueName",
                 "A DbUniqueName. Generates a value if not specified.",
                 false,
-                dbName -> dbName + "_" + RandomStringUtils.randomAlphabetic(2, 16)),
+                dbName -> dbName + "_" + StringUtils.randomAlphabetic(2, 16)),
         DB_PASSWORD(
                 "--dbPassword",
                 "The admin password for your DB. Generates a value if not specified.",
                 false,
                 o ->
-                        RandomStringUtils.random(16, "abcdefgABCDEFG#-_1234567890")
-                                + RandomStringUtils.random(2, "abcdefg")
-                                + RandomStringUtils.random(2, "ABCDEFG")
-                                + RandomStringUtils.random(2, "#-_")
-                                + RandomStringUtils.random(2, "1234567890")),
+                        StringUtils.random(16, "abcdefgABCDEFG#-_1234567890")
+                                + StringUtils.random(2, "abcdefg")
+                                + StringUtils.random(2, "ABCDEFG")
+                                + StringUtils.random(2, "#-_")
+                                + StringUtils.random(2, "1234567890")),
         DB_VERSION(
                 "--dbVersion",
                 String.format(
@@ -214,7 +213,7 @@ public class CreateDbHomeBackupDestinationExample {
 
         final CreateDbHomeBase details =
                 CreateDbHomeWithVmClusterIdDetails.builder()
-                        .displayName(RandomStringUtils.randomPrint(4, 96))
+                        .displayName(StringUtils.randomPrint(4, 96))
                         .database(databaseDetails)
                         .vmClusterId(vmClusterOcid)
                         .dbVersion(version)

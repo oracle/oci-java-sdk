@@ -689,6 +689,40 @@ public class SqlTuningClient implements SqlTuning {
     }
 
     @Override
+    public ListSqlTuningSetsResponse listSqlTuningSets(ListSqlTuningSetsRequest request) {
+        LOG.trace("Called listSqlTuningSets");
+        final ListSqlTuningSetsRequest interceptedRequest =
+                ListSqlTuningSetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlTuningSetsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSqlTuningSetsResponse>
+                transformer = ListSqlTuningSetsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SqlTuning",
+                "ListSqlTuningSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningSets");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public StartSqlTuningTaskResponse startSqlTuningTask(StartSqlTuningTaskRequest request) {
         LOG.trace("Called startSqlTuningTask");
         final StartSqlTuningTaskRequest interceptedRequest =

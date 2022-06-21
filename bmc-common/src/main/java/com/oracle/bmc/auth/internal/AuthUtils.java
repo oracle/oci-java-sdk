@@ -17,11 +17,11 @@ import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
+import java.util.Base64;
 
 import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
 import com.oracle.bmc.http.internal.RestClientFactory;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.Validate;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
 import org.bouncycastle.asn1.x500.RDN;
@@ -31,7 +31,6 @@ import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -54,7 +53,7 @@ public class AuthUtils {
      * @throws Error if there is an error
      */
     public static String getFingerPrint(X509Certificate certificate) {
-        Preconditions.checkNotNull(certificate);
+        Validate.notNull(certificate, "certificate may not be null");
         try {
             final byte[] encodedCertificate = getEncodedCertificate(certificate);
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -105,7 +104,7 @@ public class AuthUtils {
      * @return
      */
     public static Optional<RSAPublicKey> toPublicKeyFromJson(String json) {
-        Preconditions.checkArgument(!StringUtils.isBlank(json));
+        Validate.notBlank(json, "JSON for public key may not be blank");
 
         Optional<JWK> jwk = toJwk(json);
         if (!jwk.isPresent()) {
@@ -122,7 +121,7 @@ public class AuthUtils {
      * @return Optional of JWK
      */
     public static Optional<JWK> toJwk(String json) {
-        Preconditions.checkArgument(!StringUtils.isBlank(json));
+        Validate.notBlank(json, "JSON for JWK may not be blank");
 
         try {
             JWK jwk = OBJECT_MAPPER.readValue(json, JWK.class);
@@ -140,7 +139,7 @@ public class AuthUtils {
      * @return Optional of RSAPublicKey
      */
     public static Optional<RSAPublicKey> toPublicKeyFromJwk(final JWK jwk) {
-        Preconditions.checkNotNull(jwk);
+        Validate.notNull(jwk, "JWK may not be null");
 
         try {
             // modulus and exponent are unsigned, negative big integer should be converted to positive
@@ -151,11 +150,14 @@ public class AuthUtils {
                                             new RSAPublicKeySpec(
                                                     new BigInteger(
                                                             1,
-                                                            Base64.decodeBase64(jwk.getModulus())),
+                                                            Base64.getDecoder()
+                                                                    .decode(jwk.getModulus())),
                                                     new BigInteger(
                                                             1,
-                                                            Base64.decodeBase64(
-                                                                    jwk.getPublicExponent()))));
+                                                            Base64.getDecoder()
+                                                                    .decode(
+                                                                            jwk
+                                                                                    .getPublicExponent()))));
 
             return Optional.of(key);
         } catch (Exception ex) {
@@ -189,7 +191,7 @@ public class AuthUtils {
      */
     public static String base64EncodeNoChunking(RSAPublicKey publicKey) {
         return new String(
-                Base64.encodeBase64(publicKey.getEncoded(), false), StandardCharsets.UTF_8);
+                Base64.getEncoder().encode(publicKey.getEncoded()), StandardCharsets.UTF_8);
     }
 
     /**
@@ -201,7 +203,7 @@ public class AuthUtils {
     public static String base64EncodeNoChunking(X509Certificate certificate)
             throws CertificateEncodingException {
         return new String(
-                Base64.encodeBase64(getEncodedCertificate(certificate), false),
+                Base64.getEncoder().encode(getEncodedCertificate(certificate)),
                 StandardCharsets.UTF_8);
     }
 
@@ -217,10 +219,13 @@ public class AuthUtils {
 
     static byte[] getEncodedCertificateFromPem(String pemEncodedCertificate) {
         // strip out header and footer
-        return Base64.decodeBase64(
-                pemEncodedCertificate
-                        .replace("-----BEGIN CERTIFICATE-----", "")
-                        .replace("-----END CERTIFICATE-----", ""));
+        return Base64.getDecoder()
+                .decode(
+                        pemEncodedCertificate
+                                .replace("-----BEGIN CERTIFICATE-----", "")
+                                .replace("-----END CERTIFICATE-----", "")
+                                .replace("\n", "")
+                                .replace("\r", ""));
     }
 
     /**
@@ -229,7 +234,7 @@ public class AuthUtils {
      * @return the tenant id.
      */
     public static String getTenantIdFromCertificate(X509Certificate certificate) {
-        Preconditions.checkNotNull(certificate);
+        Validate.notNull(certificate, "certificate may not be null");
 
         X500Name name = new X500Name(certificate.getSubjectX500Principal().getName());
 

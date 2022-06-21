@@ -787,6 +787,50 @@ public class SqlTuningAsyncClient implements SqlTuningAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSqlTuningSetsResponse> listSqlTuningSets(
+            ListSqlTuningSetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>
+                    handler) {
+        LOG.trace("Called async listSqlTuningSets");
+        final ListSqlTuningSetsRequest interceptedRequest =
+                ListSqlTuningSetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlTuningSetsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSqlTuningSetsResponse>
+                transformer = ListSqlTuningSetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SqlTuning",
+                "ListSqlTuningSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningSets");
+
+        com.oracle.bmc.responses.AsyncHandler<ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>,
+                        java.util.concurrent.Future<ListSqlTuningSetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StartSqlTuningTaskResponse> startSqlTuningTask(
             StartSqlTuningTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

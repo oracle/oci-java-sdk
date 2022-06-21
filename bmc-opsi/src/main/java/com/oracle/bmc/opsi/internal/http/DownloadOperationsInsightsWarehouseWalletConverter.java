@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.internal.http;
 import com.oracle.bmc.opsi.model.*;
 import com.oracle.bmc.opsi.requests.*;
 import com.oracle.bmc.opsi.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class DownloadOperationsInsightsWarehouseWalletConverter {

@@ -4,16 +4,16 @@
  */
 package com.oracle.bmc.http;
 
+import com.oracle.bmc.util.internal.Validate;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.Validate;
-import org.apache.commons.lang3.tuple.Pair;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.glassfish.jersey.apache.connector.ApacheClientProperties;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.spi.ConnectorProvider;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -59,10 +59,10 @@ public class ApacheConnectionPoolingClientConfigDecorator implements ClientConfi
 
         LOG.info("ApacheConnectionPoolConfig: {}", config);
 
-        final Pair<Integer, TimeUnit> ttl = config.getTtl();
+        final Map.Entry<Integer, TimeUnit> ttl = config.getTtl();
         poolConnectionManager =
                 (ttl != null)
-                        ? new PoolingHttpClientConnectionManager(ttl.getLeft(), ttl.getRight())
+                        ? new PoolingHttpClientConnectionManager(ttl.getKey(), ttl.getValue())
                         : new PoolingHttpClientConnectionManager();
         poolConnectionManager.setMaxTotal(config.getTotalOpenConnections());
         poolConnectionManager.setDefaultMaxPerRoute(config.getDefaultMaxConnectionsPerRoute());

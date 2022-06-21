@@ -21,9 +21,7 @@ import com.oracle.bmc.core.responses.ListImagesResponse;
 import com.oracle.bmc.core.responses.ListShapesResponse;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.identity.model.AvailabilityDomain;
-import lombok.SneakyThrows;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 
@@ -32,7 +30,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Modifier;
-import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;

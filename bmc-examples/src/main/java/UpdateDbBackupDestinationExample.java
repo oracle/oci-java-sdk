@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.DbBackupConfig;
 import com.oracle.bmc.database.model.UpdateDatabaseDetails;
 import com.oracle.bmc.database.requests.UpdateDatabaseRequest;
 import com.oracle.bmc.database.responses.UpdateDatabaseResponse;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;

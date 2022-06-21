@@ -4,13 +4,12 @@
  */
 package com.oracle.bmc.http.internal;
 
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
-
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MultivaluedMap;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A client request filter to remove content-length.
@@ -43,7 +42,7 @@ public class ContentLengthFilter implements ClientRequestFilter {
 
         String contentLengthHeader = null;
         for (String key : headers.keySet()) {
-            if (StringUtils.equalsIgnoreCase(HttpHeaders.CONTENT_LENGTH, key)) {
+            if (HttpHeaders.CONTENT_LENGTH.equalsIgnoreCase(key)) {
                 contentLengthHeader = key;
             }
         }

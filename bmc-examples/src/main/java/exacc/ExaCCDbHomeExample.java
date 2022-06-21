@@ -20,9 +20,7 @@ import com.oracle.bmc.database.responses.CreateDbHomeResponse;
 import com.oracle.bmc.database.responses.GetDbHomeResponse;
 import com.oracle.bmc.database.responses.GetVmClusterResponse;
 import com.oracle.bmc.database.responses.ListDbHomesResponse;
-import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -32,6 +30,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.function.Function;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -59,22 +58,22 @@ public class ExaCCDbHomeExample {
                 "--dbName",
                 "A DbName. Generates a value if not specified.",
                 false,
-                o -> RandomStringUtils.randomAlphabetic(8)),
+                o -> StringUtils.randomAlphabetic(8)),
         DB_UNIQUE_NAME(
                 "--dbUniqueName",
                 "A DbUniqueName. Generates a value if not specified.",
                 false,
-                dbName -> dbName + "_" + RandomStringUtils.randomAlphabetic(2, 16)),
+                dbName -> dbName + "_" + StringUtils.randomAlphabetic(2, 16)),
         DB_PASSWORD(
                 "--dbPassword",
                 "The admin password for your DB. Generates a value if not specified.",
                 false,
                 o ->
-                        RandomStringUtils.random(16, "abcdefgABCDEFG#-_1234567890")
-                                + RandomStringUtils.random(2, "abcdefg")
-                                + RandomStringUtils.random(2, "ABCDEFG")
-                                + RandomStringUtils.random(2, "#-_")
-                                + RandomStringUtils.random(2, "1234567890")),
+                        StringUtils.random(16, "abcdefgABCDEFG#-_1234567890")
+                                + StringUtils.random(2, "abcdefg")
+                                + StringUtils.random(2, "ABCDEFG")
+                                + StringUtils.random(2, "#-_")
+                                + StringUtils.random(2, "1234567890")),
         DB_VERSION(
                 "--dbVersion",
                 String.format(
@@ -197,7 +196,7 @@ public class ExaCCDbHomeExample {
 
         final CreateDbHomeBase details =
                 CreateDbHomeWithVmClusterIdDetails.builder()
-                        .displayName(RandomStringUtils.randomPrint(4, 96))
+                        .displayName(StringUtils.randomPrint(4, 96))
                         .database(databaseDetails)
                         .vmClusterId(vmClusterOcid)
                         .dbVersion(version)
@@ -286,7 +285,7 @@ public class ExaCCDbHomeExample {
             throw new RuntimeException("Response from server was null.");
         } else if (response.getDbHome() == null
                 || StringUtils.isBlank(response.getDbHome().getId())
-                || ObjectUtils.notEqual(dbHomeOcid, response.getDbHome().getId())) {
+                || !Objects.equals(dbHomeOcid, response.getDbHome().getId())) {
             throw new RuntimeException(
                     "Response from server did not contain expected data! request id: "
                             + response.getOpcRequestId());

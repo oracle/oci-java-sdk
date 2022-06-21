@@ -5,8 +5,9 @@
 package com.oracle.bmc.http;
 
 import lombok.Data;
-import org.apache.commons.lang3.tuple.Pair;
 
+import java.util.AbstractMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /** The configurable parameters for a client's connection pool */
@@ -34,7 +35,7 @@ public class ApacheConnectionPoolConfig {
     /** The default max number of connections per route. */
     private final int defaultMaxConnectionsPerRoute;
     /** The time to live per connection. */
-    private final Pair<Integer, TimeUnit> ttl;
+    private final Map.Entry<Integer, TimeUnit> ttl;
 
     private ApacheConnectionPoolConfig(final Builder builder) {
         totalOpenConnections = builder.totalOpenConnections;
@@ -45,7 +46,7 @@ public class ApacheConnectionPoolConfig {
     public final static class Builder {
         private int totalOpenConnections;
         private int defaultMaxConnectionsPerRoute;
-        private Pair<Integer, TimeUnit> ttl;
+        private Map.Entry<Integer, TimeUnit> ttl;
 
         public Builder() {}
 
@@ -60,12 +61,14 @@ public class ApacheConnectionPoolConfig {
         }
 
         public Builder ttlInMillis(final int ttlInMillis) {
-            this.ttl = Pair.of(ttlInMillis, TimeUnit.MILLISECONDS);
+            this.ttl =
+                    new AbstractMap.SimpleEntry<Integer, TimeUnit>(
+                            ttlInMillis, TimeUnit.MILLISECONDS);
             return this;
         }
 
         public Builder ttl(final int ttl, final TimeUnit ttlTimeUnit) {
-            this.ttl = Pair.of(ttl, ttlTimeUnit);
+            this.ttl = new AbstractMap.SimpleEntry<Integer, TimeUnit>(ttl, ttlTimeUnit);
             return this;
         }
 

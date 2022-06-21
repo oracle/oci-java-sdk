@@ -7,7 +7,7 @@ package com.oracle.bmc.datascience.internal.http;
 import com.oracle.bmc.datascience.model.*;
 import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class GetJobArtifactContentConverter {

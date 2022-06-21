@@ -29,7 +29,7 @@ import com.oracle.bmc.core.requests.ListCrossconnectPortSpeedShapesRequest;
 import com.oracle.bmc.core.responses.UpdateCrossConnectResponse;
 import com.oracle.bmc.core.responses.GetCrossConnectResponse;
 import com.oracle.bmc.identity.IdentityClient;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

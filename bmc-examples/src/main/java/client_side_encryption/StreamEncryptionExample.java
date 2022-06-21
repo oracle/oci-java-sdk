@@ -11,8 +11,8 @@ import com.oracle.bmc.encryption.KmsMasterKey;
 import com.oracle.bmc.encryption.KmsMasterKeyProvider;
 import com.oracle.bmc.encryption.OciCrypto;
 import com.oracle.bmc.encryption.OciCryptoInputStream;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.FileUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -78,7 +78,7 @@ public class StreamEncryptionExample {
                         kmsMasterKeyProvider, fileInputStreamText, getSampleContext());
 
         // Encrypt data
-        IOUtils.copy(inputCipherStreamEncrypt, fileOutputStreamEnc);
+        FileUtils.copy(inputCipherStreamEncrypt, fileOutputStreamEnc);
         fileOutputStreamEnc.close();
         inputCipherStreamEncrypt.close();
 
@@ -93,7 +93,7 @@ public class StreamEncryptionExample {
                 ociCrypto.createDecryptingStream(kmsMasterKeyProvider, fileInputStreamEnc);
 
         // Decrypt data
-        IOUtils.copy(inputCipherStreamDecrypt, fileOutputStreamText);
+        FileUtils.copy(inputCipherStreamDecrypt, fileOutputStreamText);
         fileOutputStreamText.close();
         kmsMasterKey.close();
 

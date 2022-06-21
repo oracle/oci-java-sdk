@@ -4,11 +4,17 @@
  */
 package com.oracle.bmc.util;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 
 import org.junit.Test;
 
@@ -31,5 +37,95 @@ public class StreamUtilsTest {
         }
 
         file.delete();
+    }
+
+    @Test
+    public void testContentDiffers_Empty_Empty() throws IOException {
+        InputStream is1 = new ByteArrayInputStream(new byte[0]);
+        InputStream is2 = new ByteArrayInputStream(new byte[0]);
+        assertFalse(StreamUtils.contentDiffers(is1, is2).isPresent());
+    }
+
+    @Test
+    public void testContentDiffers_Same() throws IOException {
+        InputStream is1 = new ByteArrayInputStream(new byte[] {1, 2, 3});
+        InputStream is2 = new ByteArrayInputStream(new byte[] {1, 2, 3});
+        assertFalse(StreamUtils.contentDiffers(is1, is2).isPresent());
+    }
+
+    @Test
+    public void testContentDiffers_Differs() throws IOException {
+        InputStream is1 = new ByteArrayInputStream(new byte[] {1, 2, 3});
+        InputStream is2 = new ByteArrayInputStream(new byte[] {1, 2, 4});
+        assertEquals("At offset 2: 3 != 4", StreamUtils.contentDiffers(is1, is2).get());
+    }
+
+    @Test
+    public void testContentDiffers_FirstEndsTooSoon() throws IOException {
+        InputStream is1 = new ByteArrayInputStream(new byte[] {1, 2, 3});
+        InputStream is2 = new ByteArrayInputStream(new byte[] {1, 2, 3, 4});
+        assertEquals("At offset 3: -1 != 4", StreamUtils.contentDiffers(is1, is2).get());
+    }
+
+    @Test
+    public void testContentDiffers_SecondEndsTooSoon() throws IOException {
+        InputStream is1 = new ByteArrayInputStream(new byte[] {1, 2, 3, 4, 5});
+        InputStream is2 = new ByteArrayInputStream(new byte[] {1, 2, 3, 4});
+        assertEquals("At offset 4: 5 != -1", StreamUtils.contentDiffers(is1, is2).get());
+    }
+
+    @Test
+    public void testToString() {
+        String value = "this is a string" + System.lineSeparator() + "and the next line";
+        assertEquals(
+                value,
+                StreamUtils.toString(
+                        new ByteArrayInputStream(value.getBytes(Charset.defaultCharset())),
+                        Charset.defaultCharset()));
+
+        value =
+                "this is a string\nand the next line\rand a third line\r\nand a fourth line\n\rand is this a 5th line?";
+        assertEquals(
+                value,
+                StreamUtils.toString(
+                        new ByteArrayInputStream(value.getBytes(Charset.defaultCharset())),
+                        Charset.defaultCharset()));
+
+        value =
+                "this is a string"
+                        + System.lineSeparator()
+                        + "and the next line"
+                        + System.lineSeparator();
+        assertEquals(
+                value,
+                StreamUtils.toString(
+                        new ByteArrayInputStream(value.getBytes(Charset.defaultCharset())),
+                        Charset.defaultCharset()));
+    }
+
+    @Test
+    public void testToByteArray() throws IOException {
+        String value = "this is a string" + System.lineSeparator() + "and the next line";
+        assertArrayEquals(
+                value.getBytes(Charset.defaultCharset()),
+                StreamUtils.toByteArray(
+                        new ByteArrayInputStream(value.getBytes(Charset.defaultCharset()))));
+
+        value =
+                "this is a string\nand the next line\rand a third line\r\nand a fourth line\n\rand is this a 5th line?";
+        assertArrayEquals(
+                value.getBytes(Charset.defaultCharset()),
+                StreamUtils.toByteArray(
+                        new ByteArrayInputStream(value.getBytes(Charset.defaultCharset()))));
+
+        value =
+                "this is a string"
+                        + System.lineSeparator()
+                        + "and the next line"
+                        + System.lineSeparator();
+        assertArrayEquals(
+                value.getBytes(Charset.defaultCharset()),
+                StreamUtils.toByteArray(
+                        new ByteArrayInputStream(value.getBytes(Charset.defaultCharset()))));
     }
 }

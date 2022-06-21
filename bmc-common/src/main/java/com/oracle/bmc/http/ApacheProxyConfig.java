@@ -4,9 +4,9 @@
  */
 package com.oracle.bmc.http;
 
+import com.oracle.bmc.util.internal.StringUtils;
 import lombok.Builder;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
 
 /** Defines the proxy configuration for clients. */
 @Builder

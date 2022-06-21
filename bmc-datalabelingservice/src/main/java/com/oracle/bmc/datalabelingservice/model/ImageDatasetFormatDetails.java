@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservice.model;
 
 /**
- * Indicates the dataset is comprised of images.
+ * It indicates the dataset is comprised of images.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

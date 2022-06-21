@@ -7,7 +7,7 @@ package com.oracle.bmc.genericartifactscontent.internal.http;
 import com.oracle.bmc.genericartifactscontent.model.*;
 import com.oracle.bmc.genericartifactscontent.requests.*;
 import com.oracle.bmc.genericartifactscontent.responses.*;
-import org.apache.commons.lang3.Validate;
+import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetGenericArtifactContentConverter {

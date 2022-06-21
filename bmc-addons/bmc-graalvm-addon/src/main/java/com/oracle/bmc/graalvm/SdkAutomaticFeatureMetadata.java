@@ -77,6 +77,7 @@ package com.oracle.bmc.graalvm;
     com.oracle.bmc.marketplace.SdkClientsMetadata.class,
     com.oracle.bmc.monitoring.SdkClientsMetadata.class,
     com.oracle.bmc.mysql.SdkClientsMetadata.class,
+    com.oracle.bmc.networkfirewall.SdkClientsMetadata.class,
     com.oracle.bmc.networkloadbalancer.SdkClientsMetadata.class,
     com.oracle.bmc.nosql.SdkClientsMetadata.class,
     com.oracle.bmc.objectstorage.SdkClientsMetadata.class,

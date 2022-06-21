@@ -13,8 +13,8 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 
 import com.google.common.base.Charsets;
-import org.apache.commons.io.IOUtils;
 import com.google.common.base.Optional;
+import com.oracle.bmc.util.StreamUtils;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -24,7 +24,7 @@ public class AuthUtilsTest {
     @Test
     public void testBase64EncodeNoChunking() throws Exception {
         String key =
-                IOUtils.toString(
+                StreamUtils.toString(
                         new FileInputStream("src/test/resources/auth_utils_test_public.pem"),
                         Charsets.UTF_8);
 
@@ -89,10 +89,15 @@ public class AuthUtilsTest {
     @Test
     public void testGetEncodedCertificateFromPem() throws IOException {
         String fakeCert =
-                IOUtils.toString(
+                StreamUtils.toString(
                         new FileInputStream("src/test/resources/auth_utils_test_cert.pem"),
                         Charsets.UTF_8);
 
         byte[] encodedCertificateFromPem = AuthUtils.getEncodedCertificateFromPem(fakeCert);
+        String asBase64 = Base64.getEncoder().encodeToString(encodedCertificateFromPem);
+        System.out.println(asBase64);
+        assertEquals(
+                "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0Iq55yeKhH5Bjk+UUr537WZnWAyZBGLNm8gI0F/4+wht1PDuWq/ovx5Y9OONc3bcyGphYhUgBhEE94XHthqbFQzF7zc9MKH1IK6B7rimZ/J0/0WRnW7PI+xuTHyKGBZ+jJq5hV9T5WMk1hxGCMWhzEBqxQKLjU3BEUHp7A2DRQOT52uhkFNTut7koAGIJGfQQdyDFhK2jdm8J9u+C1OFWXyCOTQjpaZaMJpDSdZWhGmSTfwvU/4564KIkKGBsW9MfML/HI2f+Lm9FijycrhwLs6ysZkbS7pocqLAwq2Ou3QeoHReuuMySGd6Q721RlvzGbRSx2dWG4WXbSL67iF/EwIDAQAB",
+                asBase64);
     }
 }

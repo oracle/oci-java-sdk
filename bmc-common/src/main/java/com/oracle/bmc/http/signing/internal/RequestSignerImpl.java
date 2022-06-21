@@ -4,6 +4,25 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
+import java.security.interfaces.RSAPrivateKey;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TimeZone;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.Immutable;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
@@ -19,28 +38,10 @@ import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.io.DuplicatableInputStream;
 import com.oracle.bmc.io.internal.KeepOpenInputStream;
 import com.oracle.bmc.retrier.Retriers;
+import com.oracle.bmc.util.internal.StringUtils;
+import com.oracle.bmc.util.internal.Validate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang3.StringUtils;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.nio.charset.StandardCharsets;
-import java.security.interfaces.RSAPrivateKey;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.TimeZone;
 
 /**
  * Implementation of the {@linkplain RequestSigner} interface
@@ -148,11 +149,9 @@ public class RequestSignerImpl implements RequestSigner {
             final SigningConfiguration signingConfiguration) {
         Preconditions.checkArgument(null != algorithm, "algorithm must not be null");
         Preconditions.checkArgument(null != uri, "uri must not be null");
-        Preconditions.checkArgument(
-                !StringUtils.isBlank(httpMethod), "httpMethod must not be null or empty");
+        Validate.notBlank(httpMethod, "httpMethod must not be null or empty");
         Preconditions.checkArgument(null != headers, "headers must not be null");
-        Preconditions.checkArgument(
-                !StringUtils.isBlank(versionName), "versionName must not be null or empty");
+        Validate.notBlank(versionName, "versionName must not be null or empty");
 
         try {
             Version version = validateVersion(versionName, algorithm);
@@ -507,7 +506,7 @@ public class RequestSignerImpl implements RequestSigner {
         // encodeBase64String changed from chunked in v1.4 to not chunked in
         // v1.5 so we cannot rely on which version is going to be used by clients,
         // be explicit that this is not-chunked
-        return new String(Base64.encodeBase64(bytes, false), StandardCharsets.UTF_8);
+        return new String(Base64.getEncoder().encode(bytes), StandardCharsets.UTF_8);
     }
 
     private static SimpleDateFormat createFormatter() {

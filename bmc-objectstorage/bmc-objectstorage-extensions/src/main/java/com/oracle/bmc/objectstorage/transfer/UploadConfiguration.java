@@ -6,11 +6,11 @@ package com.oracle.bmc.objectstorage.transfer;
 
 import com.oracle.bmc.io.DuplicatableInputStream;
 
+import com.oracle.bmc.util.internal.Validate;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.Validate;
 
 /**
  * The configuration for the {@code UploadManager}.  For more information, please refer to the online documentation

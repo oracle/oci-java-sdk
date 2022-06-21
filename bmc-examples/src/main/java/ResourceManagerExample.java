@@ -36,10 +36,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
+import java.util.Base64;
 import net.jodah.failsafe.Failsafe;
 import net.jodah.failsafe.RetryPolicy;
 import net.jodah.failsafe.function.Predicate;
-import org.apache.commons.codec.binary.Base64;
 
 public class ResourceManagerExample {
 
@@ -188,7 +188,7 @@ public class ResourceManagerExample {
 
     private static String GetBase64EncodingForAFile(String filePath) throws IOException {
         byte[] fileData = Files.readAllBytes(Paths.get(filePath));
-        byte[] fileDataBase64Encoded = Base64.encodeBase64(fileData);
+        byte[] fileDataBase64Encoded = Base64.getEncoder().encode(fileData);
         return new String(fileDataBase64Encoded, StandardCharsets.UTF_8);
     }
 

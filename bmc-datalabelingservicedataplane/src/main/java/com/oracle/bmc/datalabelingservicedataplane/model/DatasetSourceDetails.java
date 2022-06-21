@@ -64,7 +64,7 @@ public class DatasetSourceDetails {
     }
 
     /**
-     * The source type.  OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+     * The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      **/
     public enum SourceType {
         ObjectStorage("OBJECT_STORAGE"),

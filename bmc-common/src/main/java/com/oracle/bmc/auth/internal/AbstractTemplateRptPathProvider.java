@@ -4,8 +4,8 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import com.oracle.bmc.util.internal.StringUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.text.StrSubstitutor;
 
 import java.util.Map;
 
@@ -30,7 +30,7 @@ public abstract class AbstractTemplateRptPathProvider implements RptPathProvider
     @Override
     public String getPath() {
         Map<String, String> replacements = getReplacements();
-        String path = StrSubstitutor.replace(pathTemplate, replacements, "{", "}");
+        String path = StringUtils.replace(pathTemplate, replacements, "{", "}");
         LOG.debug("Using path {}", path);
         return path;
     }

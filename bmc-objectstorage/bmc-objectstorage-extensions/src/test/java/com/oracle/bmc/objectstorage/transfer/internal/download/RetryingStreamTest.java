@@ -8,6 +8,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 import com.oracle.bmc.model.Range;
@@ -16,11 +17,12 @@ import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.transfer.DownloadConfiguration;
 import com.oracle.bmc.objectstorage.transfer.internal.download.chaos.IOExceptionThrowingObjectStorageClient;
-import org.apache.commons.io.IOUtils;
+import com.oracle.bmc.util.StreamUtils;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
@@ -90,9 +92,10 @@ public class RetryingStreamTest {
 
         InputStream expectedStream = new ByteArrayInputStream(data.substring(1).getBytes());
 
-        assertTrue(
-                IOUtils.contentEquals(
-                        expectedStream, new ByteArrayInputStream(baos.toByteArray())));
+        Optional<String> contentDiffers =
+                StreamUtils.contentDiffers(
+                        expectedStream, new ByteArrayInputStream(baos.toByteArray()));
+        assertFalse(contentDiffers.orElse(""), contentDiffers.isPresent());
 
         ArgumentCaptor<GetObjectRequest> argCaptor =
                 ArgumentCaptor.forClass(GetObjectRequest.class);

@@ -13,10 +13,9 @@ import java.security.interfaces.RSAPrivateKey;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.google.common.base.Preconditions;
 
+import com.oracle.bmc.util.internal.Validate;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -48,7 +47,7 @@ public class SignatureSigner {
         Preconditions.checkArgument(null != privateKey, "privateKey must not be null");
         Preconditions.checkArgument(
                 (null != message) && (0 < message.length), "message must not be null or empty");
-        Preconditions.checkArgument(!StringUtils.isBlank(algorithm));
+        Validate.notBlank(algorithm, "algorithm must be set to non-blank string");
 
         try {
             final Signature signature = Signature.getInstance(algorithm);

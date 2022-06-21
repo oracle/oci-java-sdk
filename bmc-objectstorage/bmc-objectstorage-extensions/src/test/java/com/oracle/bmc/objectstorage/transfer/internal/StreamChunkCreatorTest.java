@@ -10,8 +10,9 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,7 +23,7 @@ public class StreamChunkCreatorTest {
     private static final int CHUNK_SIZE = 5;
     private static final String[] CHUNKS =
             new String[] {"aaaaa", "bbbbb", "ccccc", "ddddd", "eeeee", "f"};
-    private static final String COMPLETE_STRING = StringUtils.join(CHUNKS);
+    private static final String COMPLETE_STRING = StringUtils.join(Arrays.asList(CHUNKS), "");
     private static final int[] RANDOM_ORDER = new int[] {3, 1, 5, 4, 0, 2};
 
     private InputStream stream;

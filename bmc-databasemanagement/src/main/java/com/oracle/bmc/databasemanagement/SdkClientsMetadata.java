@@ -10,6 +10,8 @@ import com.oracle.bmc.SdkClients;
 @SdkClients({
     DbManagementAsyncClient.class,
     DbManagementClient.class,
+    DiagnosabilityAsyncClient.class,
+    DiagnosabilityClient.class,
     SqlTuningAsyncClient.class,
     SqlTuningClient.class
 })

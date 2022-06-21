@@ -5,8 +5,8 @@
 package com.oracle.bmc.http;
 
 import com.oracle.bmc.util.JavaRuntimeUtils;
+import com.oracle.bmc.util.internal.Validate;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.Validate;
 import org.glassfish.jersey.SslConfigurator;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;

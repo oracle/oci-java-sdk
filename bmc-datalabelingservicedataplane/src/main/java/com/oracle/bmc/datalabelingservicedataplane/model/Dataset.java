@@ -80,13 +80,13 @@ public final class Dataset {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the dataset.
+         * The OCID of the Dataset.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the dataset.
+         * The OCID of the Dataset.
          * @param id the value to set
          * @return this builder
          **/
@@ -128,13 +128,13 @@ public final class Dataset {
             return this;
         }
         /**
-         * A user-provided description of the dataset
+         * A user provided description of the dataset
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A user-provided description of the dataset
+         * A user provided description of the dataset
          * @param description the value to set
          * @return this builder
          **/
@@ -160,13 +160,13 @@ public final class Dataset {
             return this;
         }
         /**
-         * The date and time the resource was updated, in the timestamp format defined by RFC3339.
+         * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the resource was updated, in the timestamp format defined by RFC3339.
+         * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -177,10 +177,10 @@ public final class Dataset {
         }
         /**
          * The state of a dataset.
-         * CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
+         * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
          * ACTIVE   - The dataset is ready for labeling.
-         * UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
-         * NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
+         * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+         * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
          * DELETING - The dataset and its related resources are being deleted.
          * DELETED  - The dataset has been deleted and is no longer available.
          * FAILED   - The dataset has failed due to validation or other errors.
@@ -191,10 +191,10 @@ public final class Dataset {
 
         /**
          * The state of a dataset.
-         * CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
+         * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
          * ACTIVE   - The dataset is ready for labeling.
-         * UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
-         * NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
+         * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+         * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
          * DELETING - The dataset and its related resources are being deleted.
          * DELETED  - The dataset has been deleted and is no longer available.
          * FAILED   - The dataset has failed due to validation or other errors.
@@ -420,13 +420,13 @@ public final class Dataset {
     }
 
     /**
-     * The OCID of the dataset.
+     * The OCID of the Dataset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the dataset.
+     * The OCID of the Dataset.
      * @return the value
      **/
     public String getId() {
@@ -462,13 +462,13 @@ public final class Dataset {
     }
 
     /**
-     * A user-provided description of the dataset
+     * A user provided description of the dataset
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user-provided description of the dataset
+     * A user provided description of the dataset
      * @return the value
      **/
     public String getDescription() {
@@ -490,13 +490,13 @@ public final class Dataset {
     }
 
     /**
-     * The date and time the resource was updated, in the timestamp format defined by RFC3339.
+     * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the resource was updated, in the timestamp format defined by RFC3339.
+     * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -505,10 +505,10 @@ public final class Dataset {
 
     /**
      * The state of a dataset.
-     * CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
+     * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
      * ACTIVE   - The dataset is ready for labeling.
-     * UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
-     * NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
+     * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+     * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
      * DELETING - The dataset and its related resources are being deleted.
      * DELETED  - The dataset has been deleted and is no longer available.
      * FAILED   - The dataset has failed due to validation or other errors.
@@ -566,10 +566,10 @@ public final class Dataset {
     };
     /**
      * The state of a dataset.
-     * CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
+     * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
      * ACTIVE   - The dataset is ready for labeling.
-     * UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
-     * NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
+     * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+     * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
      * DELETING - The dataset and its related resources are being deleted.
      * DELETED  - The dataset has been deleted and is no longer available.
      * FAILED   - The dataset has failed due to validation or other errors.
@@ -580,10 +580,10 @@ public final class Dataset {
 
     /**
      * The state of a dataset.
-     * CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
+     * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
      * ACTIVE   - The dataset is ready for labeling.
-     * UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
-     * NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
+     * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+     * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
      * DELETING - The dataset and its related resources are being deleted.
      * DELETED  - The dataset has been deleted and is no longer available.
      * FAILED   - The dataset has failed due to validation or other errors.

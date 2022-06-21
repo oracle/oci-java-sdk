@@ -4,15 +4,15 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.Immutable;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Preconditions;
-import org.apache.commons.lang3.StringUtils;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
+import com.oracle.bmc.util.internal.Validate;
 
 /**
  * Representation of a RSA public key in JSON Web Key (JWK) format.
@@ -49,9 +49,9 @@ public final class JWK {
             @JsonProperty("alg") @Nonnull String algorithm,
             @JsonProperty("use") @Nullable String use) {
 
-        Preconditions.checkArgument(!StringUtils.isBlank(kid));
-        Preconditions.checkArgument(!StringUtils.isBlank(n));
-        Preconditions.checkArgument(!StringUtils.isBlank(e));
+        Validate.notBlank(kid, "kid may not be blank");
+        Validate.notBlank(n, "n may not be blank");
+        Validate.notBlank(e, "e may not be blank");
         Preconditions.checkArgument(type.trim().equals(KEY_TYPE));
         this.n = n;
         this.e = e;

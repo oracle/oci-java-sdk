@@ -27,13 +27,13 @@ import com.oracle.bmc.identity.responses.CreateTagNamespaceResponse;
 import com.oracle.bmc.identity.responses.CreateTagResponse;
 import com.oracle.bmc.identity.responses.ListTagsResponse;
 import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.util.internal.StringUtils;
 import lombok.Getter;
 import lombok.NonNull;
 import net.jodah.failsafe.Failsafe;
 import net.jodah.failsafe.RetryPolicy;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.tuple.Pair;
 
+import java.util.AbstractMap;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,8 +54,10 @@ public class TaggingResourceHelper {
     private static final String D_TAG_NAME_1 = "java_sdk_tag_01";
     private static final String D_TAG_NAME_2 = "java_sdk_tag_02";
     private static final String D_TAG_NAME_3 = "java_sdk_tag_03";
-    private static final Pair<String, String> F_TAG_PAIR_1 = Pair.of("tag1", "value1");
-    private static final Pair<String, String> F_TAG_PAIR_2 = Pair.of("tag2", "value2");
+    private static final Map.Entry<String, String> F_TAG_PAIR_1 =
+            new AbstractMap.SimpleImmutableEntry<>("tag1", "value1");
+    private static final Map.Entry<String, String> F_TAG_PAIR_2 =
+            new AbstractMap.SimpleImmutableEntry<>("tag2", "value2");
 
     @Getter private String tagNamespaceId1;
     @Getter private Map<String, String> freeformTags;

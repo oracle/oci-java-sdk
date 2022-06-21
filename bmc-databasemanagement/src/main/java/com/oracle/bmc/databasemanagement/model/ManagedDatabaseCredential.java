@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The credential to connect to the managed database in order to get optimizer statistics gathering & advisor task details.
+ * The credential used to connect to the Managed Database and obtain the details of the optimizer statistics tasks.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -42,13 +42,13 @@ public class ManagedDatabaseCredential {
     }
 
     /**
-     * The user to connect to the database.
+     * The user name used to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The user to connect to the database.
+     * The user name used to connect to the database.
      * @return the value
      **/
     public String getUsername() {
@@ -138,7 +138,7 @@ public class ManagedDatabaseCredential {
     }
 
     /**
-     * The type of the credential has access to retrieve optimizer statistics gathering & advisor task details.
+     * Indicates the type of credential required to retrieve the details of the optimizer statistics tasks.
      **/
     public enum CredentialType {
         Secret("SECRET"),

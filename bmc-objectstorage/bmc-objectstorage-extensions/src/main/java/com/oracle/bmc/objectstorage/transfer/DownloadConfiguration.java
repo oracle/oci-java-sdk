@@ -5,8 +5,8 @@
 package com.oracle.bmc.objectstorage.transfer;
 
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
+import com.oracle.bmc.util.internal.Validate;
 import lombok.Getter;
-import org.apache.commons.lang3.Validate;
 
 import java.time.Duration;
 import java.util.concurrent.ExecutorService;

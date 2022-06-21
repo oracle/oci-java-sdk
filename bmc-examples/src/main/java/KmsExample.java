@@ -13,12 +13,13 @@ import com.oracle.bmc.keymanagement.KmsVaultClient;
 import com.oracle.bmc.keymanagement.model.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import java.util.Base64;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,9 +55,12 @@ public class KmsExample {
         final String vaultId = args[1];
         final String targetCompartmentForMove = args[2];
 
-        if (StringUtils.isBlank(compartmentId)
-                || StringUtils.isBlank(vaultId)
-                || StringUtils.isBlank(targetCompartmentForMove)) {
+        if (compartmentId == null
+                || compartmentId.trim().isEmpty()
+                || vaultId == null
+                || vaultId.trim().isEmpty()
+                || targetCompartmentForMove == null
+                || targetCompartmentForMove.trim().isEmpty()) {
             System.out.println(
                     "compartmentId, vaultId and targetCompartmentForMove cannot be empty or null");
             return;
@@ -636,7 +640,7 @@ public class KmsExample {
         EncryptDataDetails encryptDataDetails =
                 EncryptDataDetails.builder()
                         .keyId(keyId)
-                        .plaintext(Base64.encodeBase64String(plaintext.getBytes()))
+                        .plaintext(Base64.getEncoder().encodeToString(plaintext.getBytes()))
                         .loggingContext(getSampleLoggingContext())
                         .build();
         EncryptRequest encryptRequest =

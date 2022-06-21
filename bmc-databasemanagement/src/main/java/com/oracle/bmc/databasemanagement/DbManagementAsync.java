@@ -86,6 +86,22 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddmTasksResponse> addmTasks(
+            AddmTasksRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddmTasksRequest, AddmTasksResponse> handler);
+
+    /**
      * Changes database parameter values. There are two kinds of database
      * parameters:
      * <p>
@@ -304,6 +320,23 @@ public interface DbManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<DropTablespaceResponse> dropTablespace(
             DropTablespaceRequest request,
             com.oracle.bmc.responses.AsyncHandler<DropTablespaceRequest, DropTablespaceResponse>
+                    handler);
+
+    /**
+     * Creates an AWR snapshot for the target database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateAwrSnapshotResponse> generateAwrSnapshot(
+            GenerateAwrSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GenerateAwrSnapshotRequest, GenerateAwrSnapshotResponse>
                     handler);
 
     /**
@@ -1012,6 +1045,23 @@ public interface DbManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<ResizeDataFileResponse> resizeDataFile(
             ResizeDataFileRequest request,
             com.oracle.bmc.responses.AsyncHandler<ResizeDataFileRequest, ResizeDataFileResponse>
+                    handler);
+
+    /**
+     * Creates and executes a historic ADDM task using the specified AWR snapshot IDs. If an existing ADDM task
+     * uses the provided awr snapshot IDs, the existing task will be returned.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RunHistoricAddmResponse> runHistoricAddm(
+            RunHistoricAddmRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RunHistoricAddmRequest, RunHistoricAddmResponse>
                     handler);
 
     /**

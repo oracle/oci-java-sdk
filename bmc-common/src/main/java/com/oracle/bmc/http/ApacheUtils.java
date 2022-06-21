@@ -5,7 +5,7 @@
 package com.oracle.bmc.http;
 
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 import org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy;
 
 import java.util.Optional;

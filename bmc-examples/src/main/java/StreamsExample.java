@@ -38,7 +38,7 @@ import com.oracle.bmc.streaming.responses.PutMessagesResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 /**
  * This class provides an example of basic streaming usage.

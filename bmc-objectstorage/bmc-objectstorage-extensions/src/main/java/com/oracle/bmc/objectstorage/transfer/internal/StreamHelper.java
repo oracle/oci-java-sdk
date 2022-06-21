@@ -9,10 +9,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.DigestOutputStream;
 import java.security.MessageDigest;
-
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.codec.digest.MessageDigestAlgorithms;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 import com.oracle.bmc.util.StreamUtils;
 
@@ -56,7 +54,7 @@ public class StreamHelper {
      * @return The base64-encoded MD5 digest
      */
     public static String base64EncodeMd5Digest(byte[] buffer) {
-        return toBase64(DigestUtils.md5(buffer));
+        return toBase64(md5(buffer));
     }
 
     /**
@@ -65,7 +63,7 @@ public class StreamHelper {
      * @return A new DigestOutputStream
      */
     public static DigestOutputStream createMd5MessageOutputStream(OutputStream stream) {
-        return new DigestOutputStream(stream, DigestUtils.getDigest(MessageDigestAlgorithms.MD5));
+        return new DigestOutputStream(stream, getMd5MessageDigest());
     }
 
     /**
@@ -79,7 +77,7 @@ public class StreamHelper {
     }
 
     private static String toBase64(byte[] bytes) {
-        return new String(Base64.encodeBase64(bytes, false));
+        return new String(Base64.getEncoder().encode(bytes));
     }
 
     // no-op output stream
@@ -92,5 +90,19 @@ public class StreamHelper {
 
         @Override
         public void write(final byte[] b) throws IOException {}
+    }
+
+    private static byte[] md5(byte[] bytes) {
+        MessageDigest md = getMd5MessageDigest();
+        md.update(bytes);
+        return md.digest();
+    }
+
+    private static MessageDigest getMd5MessageDigest() {
+        try {
+            return MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException("Could not get MD5 digest", e);
+        }
     }
 }

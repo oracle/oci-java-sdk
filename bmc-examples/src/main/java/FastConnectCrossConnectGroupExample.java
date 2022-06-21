@@ -38,7 +38,7 @@ import com.oracle.bmc.core.responses.UpdateCrossConnectGroupResponse;
 import com.oracle.bmc.core.responses.GetCrossConnectGroupResponse;
 
 import com.oracle.bmc.identity.IdentityClient;
-import org.apache.commons.lang3.StringUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
