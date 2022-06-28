@@ -29,6 +29,14 @@ public final class Subscription {
         "regionAssignment",
         "lifecycleState",
         "skus",
+        "programType",
+        "customerCountryCode",
+        "cloudAmountCurrency",
+        "csiNumber",
+        "subscriptionTier",
+        "isGovernmentSubscription",
+        "promotion",
+        "purchaseEntitlementId",
         "startDate",
         "endDate",
         "timeUpdated",
@@ -44,6 +52,14 @@ public final class Subscription {
             String regionAssignment,
             SubscriptionLifecycleState lifecycleState,
             java.util.List<SubscriptionSku> skus,
+            String programType,
+            String customerCountryCode,
+            String cloudAmountCurrency,
+            String csiNumber,
+            String subscriptionTier,
+            Boolean isGovernmentSubscription,
+            java.util.List<Promotion> promotion,
+            String purchaseEntitlementId,
             java.util.Date startDate,
             java.util.Date endDate,
             java.util.Date timeUpdated,
@@ -58,6 +74,14 @@ public final class Subscription {
         this.regionAssignment = regionAssignment;
         this.lifecycleState = lifecycleState;
         this.skus = skus;
+        this.programType = programType;
+        this.customerCountryCode = customerCountryCode;
+        this.cloudAmountCurrency = cloudAmountCurrency;
+        this.csiNumber = csiNumber;
+        this.subscriptionTier = subscriptionTier;
+        this.isGovernmentSubscription = isGovernmentSubscription;
+        this.promotion = promotion;
+        this.purchaseEntitlementId = purchaseEntitlementId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.timeUpdated = timeUpdated;
@@ -211,6 +235,134 @@ public final class Subscription {
             return this;
         }
         /**
+         * Denotes any program that is associated with the subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("programType")
+        private String programType;
+
+        /**
+         * Denotes any program that is associated with the subscription.
+         * @param programType the value to set
+         * @return this builder
+         **/
+        public Builder programType(String programType) {
+            this.programType = programType;
+            this.__explicitlySet__.add("programType");
+            return this;
+        }
+        /**
+         * The country code for the customer associated with the subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("customerCountryCode")
+        private String customerCountryCode;
+
+        /**
+         * The country code for the customer associated with the subscription.
+         * @param customerCountryCode the value to set
+         * @return this builder
+         **/
+        public Builder customerCountryCode(String customerCountryCode) {
+            this.customerCountryCode = customerCountryCode;
+            this.__explicitlySet__.add("customerCountryCode");
+            return this;
+        }
+        /**
+         * The currency code for the customer associated with the subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAmountCurrency")
+        private String cloudAmountCurrency;
+
+        /**
+         * The currency code for the customer associated with the subscription.
+         * @param cloudAmountCurrency the value to set
+         * @return this builder
+         **/
+        public Builder cloudAmountCurrency(String cloudAmountCurrency) {
+            this.cloudAmountCurrency = cloudAmountCurrency;
+            this.__explicitlySet__.add("cloudAmountCurrency");
+            return this;
+        }
+        /**
+         * Customer service identifier for the customer associated with the subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
+        private String csiNumber;
+
+        /**
+         * Customer service identifier for the customer associated with the subscription.
+         * @param csiNumber the value to set
+         * @return this builder
+         **/
+        public Builder csiNumber(String csiNumber) {
+            this.csiNumber = csiNumber;
+            this.__explicitlySet__.add("csiNumber");
+            return this;
+        }
+        /**
+         * Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionTier")
+        private String subscriptionTier;
+
+        /**
+         * Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+         * @param subscriptionTier the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionTier(String subscriptionTier) {
+            this.subscriptionTier = subscriptionTier;
+            this.__explicitlySet__.add("subscriptionTier");
+            return this;
+        }
+        /**
+         * Denotes if the subscription is a government subscription or not.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isGovernmentSubscription")
+        private Boolean isGovernmentSubscription;
+
+        /**
+         * Denotes if the subscription is a government subscription or not.
+         * @param isGovernmentSubscription the value to set
+         * @return this builder
+         **/
+        public Builder isGovernmentSubscription(Boolean isGovernmentSubscription) {
+            this.isGovernmentSubscription = isGovernmentSubscription;
+            this.__explicitlySet__.add("isGovernmentSubscription");
+            return this;
+        }
+        /**
+         * List of promotions related to the subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("promotion")
+        private java.util.List<Promotion> promotion;
+
+        /**
+         * List of promotions related to the subscription.
+         * @param promotion the value to set
+         * @return this builder
+         **/
+        public Builder promotion(java.util.List<Promotion> promotion) {
+            this.promotion = promotion;
+            this.__explicitlySet__.add("promotion");
+            return this;
+        }
+        /**
+         * Purchase entitlement id associated with the subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("purchaseEntitlementId")
+        private String purchaseEntitlementId;
+
+        /**
+         * Purchase entitlement id associated with the subscription.
+         * @param purchaseEntitlementId the value to set
+         * @return this builder
+         **/
+        public Builder purchaseEntitlementId(String purchaseEntitlementId) {
+            this.purchaseEntitlementId = purchaseEntitlementId;
+            this.__explicitlySet__.add("purchaseEntitlementId");
+            return this;
+        }
+        /**
          * Subscription start time.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("startDate")
@@ -290,6 +442,14 @@ public final class Subscription {
                             regionAssignment,
                             lifecycleState,
                             skus,
+                            programType,
+                            customerCountryCode,
+                            cloudAmountCurrency,
+                            csiNumber,
+                            subscriptionTier,
+                            isGovernmentSubscription,
+                            promotion,
+                            purchaseEntitlementId,
                             startDate,
                             endDate,
                             timeUpdated,
@@ -310,6 +470,14 @@ public final class Subscription {
                             .regionAssignment(o.getRegionAssignment())
                             .lifecycleState(o.getLifecycleState())
                             .skus(o.getSkus())
+                            .programType(o.getProgramType())
+                            .customerCountryCode(o.getCustomerCountryCode())
+                            .cloudAmountCurrency(o.getCloudAmountCurrency())
+                            .csiNumber(o.getCsiNumber())
+                            .subscriptionTier(o.getSubscriptionTier())
+                            .isGovernmentSubscription(o.getIsGovernmentSubscription())
+                            .promotion(o.getPromotion())
+                            .purchaseEntitlementId(o.getPurchaseEntitlementId())
                             .startDate(o.getStartDate())
                             .endDate(o.getEndDate())
                             .timeUpdated(o.getTimeUpdated())
@@ -458,6 +626,118 @@ public final class Subscription {
     }
 
     /**
+     * Denotes any program that is associated with the subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("programType")
+    private final String programType;
+
+    /**
+     * Denotes any program that is associated with the subscription.
+     * @return the value
+     **/
+    public String getProgramType() {
+        return programType;
+    }
+
+    /**
+     * The country code for the customer associated with the subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerCountryCode")
+    private final String customerCountryCode;
+
+    /**
+     * The country code for the customer associated with the subscription.
+     * @return the value
+     **/
+    public String getCustomerCountryCode() {
+        return customerCountryCode;
+    }
+
+    /**
+     * The currency code for the customer associated with the subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAmountCurrency")
+    private final String cloudAmountCurrency;
+
+    /**
+     * The currency code for the customer associated with the subscription.
+     * @return the value
+     **/
+    public String getCloudAmountCurrency() {
+        return cloudAmountCurrency;
+    }
+
+    /**
+     * Customer service identifier for the customer associated with the subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
+    private final String csiNumber;
+
+    /**
+     * Customer service identifier for the customer associated with the subscription.
+     * @return the value
+     **/
+    public String getCsiNumber() {
+        return csiNumber;
+    }
+
+    /**
+     * Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionTier")
+    private final String subscriptionTier;
+
+    /**
+     * Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+     * @return the value
+     **/
+    public String getSubscriptionTier() {
+        return subscriptionTier;
+    }
+
+    /**
+     * Denotes if the subscription is a government subscription or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isGovernmentSubscription")
+    private final Boolean isGovernmentSubscription;
+
+    /**
+     * Denotes if the subscription is a government subscription or not.
+     * @return the value
+     **/
+    public Boolean getIsGovernmentSubscription() {
+        return isGovernmentSubscription;
+    }
+
+    /**
+     * List of promotions related to the subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("promotion")
+    private final java.util.List<Promotion> promotion;
+
+    /**
+     * List of promotions related to the subscription.
+     * @return the value
+     **/
+    public java.util.List<Promotion> getPromotion() {
+        return promotion;
+    }
+
+    /**
+     * Purchase entitlement id associated with the subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("purchaseEntitlementId")
+    private final String purchaseEntitlementId;
+
+    /**
+     * Purchase entitlement id associated with the subscription.
+     * @return the value
+     **/
+    public String getPurchaseEntitlementId() {
+        return purchaseEntitlementId;
+    }
+
+    /**
      * Subscription start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
@@ -526,6 +806,15 @@ public final class Subscription {
         sb.append(", regionAssignment=").append(String.valueOf(this.regionAssignment));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", skus=").append(String.valueOf(this.skus));
+        sb.append(", programType=").append(String.valueOf(this.programType));
+        sb.append(", customerCountryCode=").append(String.valueOf(this.customerCountryCode));
+        sb.append(", cloudAmountCurrency=").append(String.valueOf(this.cloudAmountCurrency));
+        sb.append(", csiNumber=").append(String.valueOf(this.csiNumber));
+        sb.append(", subscriptionTier=").append(String.valueOf(this.subscriptionTier));
+        sb.append(", isGovernmentSubscription=")
+                .append(String.valueOf(this.isGovernmentSubscription));
+        sb.append(", promotion=").append(String.valueOf(this.promotion));
+        sb.append(", purchaseEntitlementId=").append(String.valueOf(this.purchaseEntitlementId));
         sb.append(", startDate=").append(String.valueOf(this.startDate));
         sb.append(", endDate=").append(String.valueOf(this.endDate));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -554,6 +843,15 @@ public final class Subscription {
                 && java.util.Objects.equals(this.regionAssignment, other.regionAssignment)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.skus, other.skus)
+                && java.util.Objects.equals(this.programType, other.programType)
+                && java.util.Objects.equals(this.customerCountryCode, other.customerCountryCode)
+                && java.util.Objects.equals(this.cloudAmountCurrency, other.cloudAmountCurrency)
+                && java.util.Objects.equals(this.csiNumber, other.csiNumber)
+                && java.util.Objects.equals(this.subscriptionTier, other.subscriptionTier)
+                && java.util.Objects.equals(
+                        this.isGovernmentSubscription, other.isGovernmentSubscription)
+                && java.util.Objects.equals(this.promotion, other.promotion)
+                && java.util.Objects.equals(this.purchaseEntitlementId, other.purchaseEntitlementId)
                 && java.util.Objects.equals(this.startDate, other.startDate)
                 && java.util.Objects.equals(this.endDate, other.endDate)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -588,6 +886,32 @@ public final class Subscription {
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.skus == null ? 43 : this.skus.hashCode());
+        result = (result * PRIME) + (this.programType == null ? 43 : this.programType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerCountryCode == null
+                                ? 43
+                                : this.customerCountryCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAmountCurrency == null
+                                ? 43
+                                : this.cloudAmountCurrency.hashCode());
+        result = (result * PRIME) + (this.csiNumber == null ? 43 : this.csiNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionTier == null ? 43 : this.subscriptionTier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isGovernmentSubscription == null
+                                ? 43
+                                : this.isGovernmentSubscription.hashCode());
+        result = (result * PRIME) + (this.promotion == null ? 43 : this.promotion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.purchaseEntitlementId == null
+                                ? 43
+                                : this.purchaseEntitlementId.hashCode());
         result = (result * PRIME) + (this.startDate == null ? 43 : this.startDate.hashCode());
         result = (result * PRIME) + (this.endDate == null ? 43 : this.endDate.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());

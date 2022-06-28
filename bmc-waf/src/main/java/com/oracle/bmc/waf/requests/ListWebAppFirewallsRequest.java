@@ -49,12 +49,13 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    private java.util.List<WebAppFirewall.LifecycleState> lifecycleState;
+    private java.util.List<com.oracle.bmc.waf.model.WebAppFirewall.LifecycleState> lifecycleState;
 
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    public java.util.List<WebAppFirewall.LifecycleState> getLifecycleState() {
+    public java.util.List<com.oracle.bmc.waf.model.WebAppFirewall.LifecycleState>
+            getLifecycleState() {
         return lifecycleState;
     }
     /**
@@ -233,7 +234,8 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * A filter to return only resources that match the given lifecycleState.
          */
-        private java.util.List<WebAppFirewall.LifecycleState> lifecycleState = null;
+        private java.util.List<com.oracle.bmc.waf.model.WebAppFirewall.LifecycleState>
+                lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycleState.
@@ -241,7 +243,8 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
          * @return this builder instance
          */
         public Builder lifecycleState(
-                java.util.List<WebAppFirewall.LifecycleState> lifecycleState) {
+                java.util.List<com.oracle.bmc.waf.model.WebAppFirewall.LifecycleState>
+                        lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }
@@ -251,7 +254,8 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
          * @param singularValue the singular value to set
          * @return this builder instance
          */
-        public Builder lifecycleState(WebAppFirewall.LifecycleState singularValue) {
+        public Builder lifecycleState(
+                com.oracle.bmc.waf.model.WebAppFirewall.LifecycleState singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 

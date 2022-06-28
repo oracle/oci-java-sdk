@@ -133,6 +133,7 @@ public class Topology {
         Networking("NETWORKING"),
         Vcn("VCN"),
         Subnet("SUBNET"),
+        Path("PATH"),
         ;
 
         private final String value;

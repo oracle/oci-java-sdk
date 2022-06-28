@@ -26,12 +26,14 @@ public class ListWebAppFirewallPoliciesRequest
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    private java.util.List<WebAppFirewallPolicy.LifecycleState> lifecycleState;
+    private java.util.List<com.oracle.bmc.waf.model.WebAppFirewallPolicy.LifecycleState>
+            lifecycleState;
 
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    public java.util.List<WebAppFirewallPolicy.LifecycleState> getLifecycleState() {
+    public java.util.List<com.oracle.bmc.waf.model.WebAppFirewallPolicy.LifecycleState>
+            getLifecycleState() {
         return lifecycleState;
     }
     /**
@@ -189,7 +191,8 @@ public class ListWebAppFirewallPoliciesRequest
         /**
          * A filter to return only resources that match the given lifecycleState.
          */
-        private java.util.List<WebAppFirewallPolicy.LifecycleState> lifecycleState = null;
+        private java.util.List<com.oracle.bmc.waf.model.WebAppFirewallPolicy.LifecycleState>
+                lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycleState.
@@ -197,7 +200,8 @@ public class ListWebAppFirewallPoliciesRequest
          * @return this builder instance
          */
         public Builder lifecycleState(
-                java.util.List<WebAppFirewallPolicy.LifecycleState> lifecycleState) {
+                java.util.List<com.oracle.bmc.waf.model.WebAppFirewallPolicy.LifecycleState>
+                        lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }
@@ -207,7 +211,8 @@ public class ListWebAppFirewallPoliciesRequest
          * @param singularValue the singular value to set
          * @return this builder instance
          */
-        public Builder lifecycleState(WebAppFirewallPolicy.LifecycleState singularValue) {
+        public Builder lifecycleState(
+                com.oracle.bmc.waf.model.WebAppFirewallPolicy.LifecycleState singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 

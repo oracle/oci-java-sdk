@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.34.0 - 2022-06-28
+### Added
+- Support for the Network Monitoring service
+- Support for specifying application scan settings when creating or updating host scan recipes in the Vulnerability Scanning service
+- Support for moving data into an autonomous data warehouse in the Operations Insights service
+- Support for shared infrastructure autonomous database character sets in the Database service
+- Support for data collection logging events on Exadata instances in the Database service
+- Support for specifying boot volume VPUs when launching instances from images in the Compute service
+- Support for safe-deleting nodes in the Container Engine for Kubernetes service
+
+### Breaking Changes
+- Support for retries by default on operations of the Logging Analytics service
+
 ## 2.33.0 - 2022-06-21
 ### Added
 - Support for the Network Firewall service

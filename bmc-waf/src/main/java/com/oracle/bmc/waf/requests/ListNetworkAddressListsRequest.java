@@ -26,12 +26,14 @@ public class ListNetworkAddressListsRequest
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    private java.util.List<NetworkAddressList.LifecycleState> lifecycleState;
+    private java.util.List<com.oracle.bmc.waf.model.NetworkAddressList.LifecycleState>
+            lifecycleState;
 
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    public java.util.List<NetworkAddressList.LifecycleState> getLifecycleState() {
+    public java.util.List<com.oracle.bmc.waf.model.NetworkAddressList.LifecycleState>
+            getLifecycleState() {
         return lifecycleState;
     }
     /**
@@ -189,7 +191,8 @@ public class ListNetworkAddressListsRequest
         /**
          * A filter to return only resources that match the given lifecycleState.
          */
-        private java.util.List<NetworkAddressList.LifecycleState> lifecycleState = null;
+        private java.util.List<com.oracle.bmc.waf.model.NetworkAddressList.LifecycleState>
+                lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycleState.
@@ -197,7 +200,8 @@ public class ListNetworkAddressListsRequest
          * @return this builder instance
          */
         public Builder lifecycleState(
-                java.util.List<NetworkAddressList.LifecycleState> lifecycleState) {
+                java.util.List<com.oracle.bmc.waf.model.NetworkAddressList.LifecycleState>
+                        lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }
@@ -207,7 +211,8 @@ public class ListNetworkAddressListsRequest
          * @param singularValue the singular value to set
          * @return this builder instance
          */
-        public Builder lifecycleState(NetworkAddressList.LifecycleState singularValue) {
+        public Builder lifecycleState(
+                com.oracle.bmc.waf.model.NetworkAddressList.LifecycleState singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 

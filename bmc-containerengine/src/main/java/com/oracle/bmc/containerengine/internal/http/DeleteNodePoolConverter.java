@@ -39,6 +39,22 @@ public class DeleteNodePoolConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getNodePoolId()));
 
+        if (request.getOverrideEvictionGraceDuration() != null) {
+            target =
+                    target.queryParam(
+                            "overrideEvictionGraceDuration",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getOverrideEvictionGraceDuration()));
+        }
+
+        if (request.getIsForceDeletionAfterOverrideGraceDuration() != null) {
+            target =
+                    target.queryParam(
+                            "isForceDeletionAfterOverrideGraceDuration",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsForceDeletionAfterOverrideGraceDuration()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

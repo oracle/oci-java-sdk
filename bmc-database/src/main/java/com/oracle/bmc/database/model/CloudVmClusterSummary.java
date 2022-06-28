@@ -62,7 +62,8 @@ public final class CloudVmClusterSummary {
         "scanDnsName",
         "zoneId",
         "scanListenerPortTcp",
-        "scanListenerPortTcpSsl"
+        "scanListenerPortTcpSsl",
+        "dataCollectionOptions"
     })
     public CloudVmClusterSummary(
             String id,
@@ -104,7 +105,8 @@ public final class CloudVmClusterSummary {
             String scanDnsName,
             String zoneId,
             Integer scanListenerPortTcp,
-            Integer scanListenerPortTcpSsl) {
+            Integer scanListenerPortTcpSsl,
+            DataCollectionOptions dataCollectionOptions) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -146,6 +148,7 @@ public final class CloudVmClusterSummary {
         this.zoneId = zoneId;
         this.scanListenerPortTcp = scanListenerPortTcp;
         this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+        this.dataCollectionOptions = dataCollectionOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -882,6 +885,15 @@ public final class CloudVmClusterSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
+        private DataCollectionOptions dataCollectionOptions;
+
+        public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
+            this.dataCollectionOptions = dataCollectionOptions;
+            this.__explicitlySet__.add("dataCollectionOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -927,7 +939,8 @@ public final class CloudVmClusterSummary {
                             scanDnsName,
                             zoneId,
                             scanListenerPortTcp,
-                            scanListenerPortTcpSsl);
+                            scanListenerPortTcpSsl,
+                            dataCollectionOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -974,7 +987,8 @@ public final class CloudVmClusterSummary {
                             .scanDnsName(o.getScanDnsName())
                             .zoneId(o.getZoneId())
                             .scanListenerPortTcp(o.getScanListenerPortTcp())
-                            .scanListenerPortTcpSsl(o.getScanListenerPortTcpSsl());
+                            .scanListenerPortTcpSsl(o.getScanListenerPortTcpSsl())
+                            .dataCollectionOptions(o.getDataCollectionOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -1795,6 +1809,13 @@ public final class CloudVmClusterSummary {
         return scanListenerPortTcpSsl;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
+    private final DataCollectionOptions dataCollectionOptions;
+
+    public DataCollectionOptions getDataCollectionOptions() {
+        return dataCollectionOptions;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -1842,6 +1863,7 @@ public final class CloudVmClusterSummary {
         sb.append(", zoneId=").append(String.valueOf(this.zoneId));
         sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
         sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
+        sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -1901,6 +1923,7 @@ public final class CloudVmClusterSummary {
                 && java.util.Objects.equals(this.scanListenerPortTcp, other.scanListenerPortTcp)
                 && java.util.Objects.equals(
                         this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
+                && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -2002,6 +2025,11 @@ public final class CloudVmClusterSummary {
                         + (this.scanListenerPortTcpSsl == null
                                 ? 43
                                 : this.scanListenerPortTcpSsl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataCollectionOptions == null
+                                ? 43
+                                : this.dataCollectionOptions.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

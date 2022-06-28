@@ -643,13 +643,13 @@ public final class AutonomousContainerDatabaseSummary {
             return this;
         }
         /**
-         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
+         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
-         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
+         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
          * @param availableCpus the value to set
          * @return this builder
          **/
@@ -675,13 +675,13 @@ public final class AutonomousContainerDatabaseSummary {
             return this;
         }
         /**
-         * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
          * @param reclaimableCpus the value to set
          * @return this builder
          **/
@@ -1502,13 +1502,13 @@ public final class AutonomousContainerDatabaseSummary {
     }
 
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
      * @return the value
      **/
     public Float getAvailableCpus() {
@@ -1530,13 +1530,13 @@ public final class AutonomousContainerDatabaseSummary {
     }
 
     /**
-     * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * @return the value
      **/
     public Float getReclaimableCpus() {

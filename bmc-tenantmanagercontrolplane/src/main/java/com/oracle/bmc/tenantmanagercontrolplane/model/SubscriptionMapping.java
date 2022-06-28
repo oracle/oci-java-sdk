@@ -118,13 +118,13 @@ public final class SubscriptionMapping {
             return this;
         }
         /**
-         * Lifecycle state of the subscription mapping.
+         * Lifecycle state of the subscriptionMapping.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * Lifecycle state of the subscription mapping.
+         * Lifecycle state of the subscriptionMapping.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -285,7 +285,7 @@ public final class SubscriptionMapping {
     }
 
     /**
-     * Lifecycle state of the subscription mapping.
+     * Lifecycle state of the subscriptionMapping.
      **/
     public enum LifecycleState {
         Creating("CREATING"),
@@ -338,13 +338,13 @@ public final class SubscriptionMapping {
         }
     };
     /**
-     * Lifecycle state of the subscription mapping.
+     * Lifecycle state of the subscriptionMapping.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * Lifecycle state of the subscription mapping.
+     * Lifecycle state of the subscriptionMapping.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

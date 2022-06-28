@@ -650,13 +650,13 @@ public final class CloudAutonomousVmCluster {
             return this;
         }
         /**
-         * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
          * @param reclaimableCpus the value to set
          * @return this builder
          **/
@@ -1425,13 +1425,13 @@ public final class CloudAutonomousVmCluster {
     }
 
     /**
-     * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * @return the value
      **/
     public Float getReclaimableCpus() {

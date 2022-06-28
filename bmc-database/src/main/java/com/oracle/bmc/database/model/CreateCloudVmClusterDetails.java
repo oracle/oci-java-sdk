@@ -45,7 +45,8 @@ public final class CreateCloudVmClusterDetails {
         "backupNetworkNsgIds",
         "giVersion",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "dataCollectionOptions"
     })
     public CreateCloudVmClusterDetails(
             String compartmentId,
@@ -70,7 +71,8 @@ public final class CreateCloudVmClusterDetails {
             java.util.List<String> backupNetworkNsgIds,
             String giVersion,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            DataCollectionOptions dataCollectionOptions) {
         super();
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
@@ -95,6 +97,7 @@ public final class CreateCloudVmClusterDetails {
         this.giVersion = giVersion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.dataCollectionOptions = dataCollectionOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -547,6 +550,15 @@ public final class CreateCloudVmClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
+        private DataCollectionOptions dataCollectionOptions;
+
+        public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
+            this.dataCollectionOptions = dataCollectionOptions;
+            this.__explicitlySet__.add("dataCollectionOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -575,7 +587,8 @@ public final class CreateCloudVmClusterDetails {
                             backupNetworkNsgIds,
                             giVersion,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            dataCollectionOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -605,7 +618,8 @@ public final class CreateCloudVmClusterDetails {
                             .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
                             .giVersion(o.getGiVersion())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .dataCollectionOptions(o.getDataCollectionOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -1059,6 +1073,13 @@ public final class CreateCloudVmClusterDetails {
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
+    private final DataCollectionOptions dataCollectionOptions;
+
+    public DataCollectionOptions getDataCollectionOptions() {
+        return dataCollectionOptions;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -1088,6 +1109,7 @@ public final class CreateCloudVmClusterDetails {
         sb.append(", giVersion=").append(String.valueOf(this.giVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -1129,6 +1151,7 @@ public final class CreateCloudVmClusterDetails {
                 && java.util.Objects.equals(this.giVersion, other.giVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -1193,6 +1216,11 @@ public final class CreateCloudVmClusterDetails {
         result = (result * PRIME) + (this.giVersion == null ? 43 : this.giVersion.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataCollectionOptions == null
+                                ? 43
+                                : this.dataCollectionOptions.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

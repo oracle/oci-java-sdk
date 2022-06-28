@@ -58,7 +58,10 @@ public class ListStackResourceDriftDetailsRequest
      *   - DELETED
      *
      */
-    private java.util.List<StackResourceDriftSummary.ResourceDriftStatus> resourceDriftStatus;
+    private java.util.List<
+                    com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
+                            .ResourceDriftStatus>
+            resourceDriftStatus;
 
     /**
      * A filter that returns only resources that match the given drift status. The value is case-insensitive.
@@ -69,7 +72,10 @@ public class ListStackResourceDriftDetailsRequest
      *   - DELETED
      *
      */
-    public java.util.List<StackResourceDriftSummary.ResourceDriftStatus> getResourceDriftStatus() {
+    public java.util.List<
+                    com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
+                            .ResourceDriftStatus>
+            getResourceDriftStatus() {
         return resourceDriftStatus;
     }
     /**
@@ -168,8 +174,10 @@ public class ListStackResourceDriftDetailsRequest
          *   - DELETED
          *
          */
-        private java.util.List<StackResourceDriftSummary.ResourceDriftStatus> resourceDriftStatus =
-                null;
+        private java.util.List<
+                        com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
+                                .ResourceDriftStatus>
+                resourceDriftStatus = null;
 
         /**
          * A filter that returns only resources that match the given drift status. The value is case-insensitive.
@@ -183,7 +191,10 @@ public class ListStackResourceDriftDetailsRequest
          * @return this builder instance
          */
         public Builder resourceDriftStatus(
-                java.util.List<StackResourceDriftSummary.ResourceDriftStatus> resourceDriftStatus) {
+                java.util.List<
+                                com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
+                                        .ResourceDriftStatus>
+                        resourceDriftStatus) {
             this.resourceDriftStatus = resourceDriftStatus;
             return this;
         }
@@ -200,7 +211,8 @@ public class ListStackResourceDriftDetailsRequest
          * @return this builder instance
          */
         public Builder resourceDriftStatus(
-                StackResourceDriftSummary.ResourceDriftStatus singularValue) {
+                com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary.ResourceDriftStatus
+                        singularValue) {
             return this.resourceDriftStatus(java.util.Arrays.asList(singularValue));
         }
 

@@ -37,7 +37,8 @@ public final class CreateNodePoolDetails {
         "subnetIds",
         "nodeConfigDetails",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "nodeEvictionNodePoolSettings"
     })
     public CreateNodePoolDetails(
             String compartmentId,
@@ -55,7 +56,8 @@ public final class CreateNodePoolDetails {
             java.util.List<String> subnetIds,
             CreateNodePoolNodeConfigDetails nodeConfigDetails,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings) {
         super();
         this.compartmentId = compartmentId;
         this.clusterId = clusterId;
@@ -73,6 +75,7 @@ public final class CreateNodePoolDetails {
         this.nodeConfigDetails = nodeConfigDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -371,6 +374,16 @@ public final class CreateNodePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeEvictionNodePoolSettings")
+        private NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings;
+
+        public Builder nodeEvictionNodePoolSettings(
+                NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings) {
+            this.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
+            this.__explicitlySet__.add("nodeEvictionNodePoolSettings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -392,7 +405,8 @@ public final class CreateNodePoolDetails {
                             subnetIds,
                             nodeConfigDetails,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            nodeEvictionNodePoolSettings);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -415,7 +429,8 @@ public final class CreateNodePoolDetails {
                             .subnetIds(o.getSubnetIds())
                             .nodeConfigDetails(o.getNodeConfigDetails())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .nodeEvictionNodePoolSettings(o.getNodeEvictionNodePoolSettings());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -693,6 +708,13 @@ public final class CreateNodePoolDetails {
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeEvictionNodePoolSettings")
+    private final NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings;
+
+    public NodeEvictionNodePoolSettings getNodeEvictionNodePoolSettings() {
+        return nodeEvictionNodePoolSettings;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -713,6 +735,8 @@ public final class CreateNodePoolDetails {
         sb.append(", nodeConfigDetails=").append(String.valueOf(this.nodeConfigDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", nodeEvictionNodePoolSettings=")
+                .append(String.valueOf(this.nodeEvictionNodePoolSettings));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -744,6 +768,8 @@ public final class CreateNodePoolDetails {
                 && java.util.Objects.equals(this.nodeConfigDetails, other.nodeConfigDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.nodeEvictionNodePoolSettings, other.nodeEvictionNodePoolSettings)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -783,6 +809,11 @@ public final class CreateNodePoolDetails {
                         + (this.nodeConfigDetails == null ? 43 : this.nodeConfigDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodeEvictionNodePoolSettings == null
+                                ? 43
+                                : this.nodeEvictionNodePoolSettings.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

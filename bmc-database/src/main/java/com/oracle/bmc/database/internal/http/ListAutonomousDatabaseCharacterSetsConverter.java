@@ -35,6 +35,22 @@ public class ListAutonomousDatabaseCharacterSetsConverter {
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("autonomousDatabaseCharacterSets");
 
+        if (request.getIsShared() != null) {
+            target =
+                    target.queryParam(
+                            "isShared",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsShared()));
+        }
+
+        if (request.getCharacterSetType() != null) {
+            target =
+                    target.queryParam(
+                            "characterSetType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCharacterSetType().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
