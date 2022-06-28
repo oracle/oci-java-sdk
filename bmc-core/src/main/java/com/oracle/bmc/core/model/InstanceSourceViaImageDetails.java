@@ -77,13 +77,56 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+         * representing the Block Volume service's elastic performance options.
+         * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code 10}: Represents Balanced option.
+         * <p>
+         * {@code 20}: Represents Higher Performance option.
+         * <p>
+         * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         * <p>
+         * For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeVpusPerGB")
+        private Long bootVolumeVpusPerGB;
+
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+         * representing the Block Volume service's elastic performance options.
+         * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code 10}: Represents Balanced option.
+         * <p>
+         * {@code 20}: Represents Higher Performance option.
+         * <p>
+         * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         * <p>
+         * For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
+         *
+         * @param bootVolumeVpusPerGB the value to set
+         * @return this builder
+         **/
+        public Builder bootVolumeVpusPerGB(Long bootVolumeVpusPerGB) {
+            this.bootVolumeVpusPerGB = bootVolumeVpusPerGB;
+            this.__explicitlySet__.add("bootVolumeVpusPerGB");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceSourceViaImageDetails build() {
             InstanceSourceViaImageDetails __instance__ =
-                    new InstanceSourceViaImageDetails(bootVolumeSizeInGBs, imageId, kmsKeyId);
+                    new InstanceSourceViaImageDetails(
+                            bootVolumeSizeInGBs, imageId, kmsKeyId, bootVolumeVpusPerGB);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -93,7 +136,8 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
             Builder copiedBuilder =
                     bootVolumeSizeInGBs(o.getBootVolumeSizeInGBs())
                             .imageId(o.getImageId())
-                            .kmsKeyId(o.getKmsKeyId());
+                            .kmsKeyId(o.getKmsKeyId())
+                            .bootVolumeVpusPerGB(o.getBootVolumeVpusPerGB());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -113,11 +157,12 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
 
     @Deprecated
     public InstanceSourceViaImageDetails(
-            Long bootVolumeSizeInGBs, String imageId, String kmsKeyId) {
+            Long bootVolumeSizeInGBs, String imageId, String kmsKeyId, Long bootVolumeVpusPerGB) {
         super();
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.imageId = imageId;
         this.kmsKeyId = kmsKeyId;
+        this.bootVolumeVpusPerGB = bootVolumeVpusPerGB;
     }
 
     /**
@@ -164,6 +209,46 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
         return kmsKeyId;
     }
 
+    /**
+     * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+     * representing the Block Volume service's elastic performance options.
+     * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * <p>
+     * Allowed values:
+     * <p>
+     * {@code 10}: Represents Balanced option.
+     * <p>
+     * {@code 20}: Represents Higher Performance option.
+     * <p>
+     * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+     * <p>
+     * For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeVpusPerGB")
+    private final Long bootVolumeVpusPerGB;
+
+    /**
+     * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+     * representing the Block Volume service's elastic performance options.
+     * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * <p>
+     * Allowed values:
+     * <p>
+     * {@code 10}: Represents Balanced option.
+     * <p>
+     * {@code 20}: Represents Higher Performance option.
+     * <p>
+     * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+     * <p>
+     * For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
+     *
+     * @return the value
+     **/
+    public Long getBootVolumeVpusPerGB() {
+        return bootVolumeVpusPerGB;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -172,6 +257,7 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", bootVolumeVpusPerGB=").append(String.valueOf(this.bootVolumeVpusPerGB));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -190,6 +276,7 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
         return java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
                 && java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.bootVolumeVpusPerGB, other.bootVolumeVpusPerGB)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -205,6 +292,11 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
                                 : this.bootVolumeSizeInGBs.hashCode());
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bootVolumeVpusPerGB == null
+                                ? 43
+                                : this.bootVolumeVpusPerGB.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

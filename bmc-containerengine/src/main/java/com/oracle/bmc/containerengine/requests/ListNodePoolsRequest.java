@@ -150,6 +150,19 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     */
+    private java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
+            lifecycleState;
+
+    /**
+     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     */
+    public java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
+            getLifecycleState() {
+        return lifecycleState;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -293,6 +306,33 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         */
+        private java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
+                lifecycleState = null;
+
+        /**
+         * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * @param lifecycleState the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
+                        lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleState(NodePoolLifecycleState singularValue) {
+            return this.lifecycleState(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -328,6 +368,7 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -368,8 +409,9 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.lifecycleState = lifecycleState;
             return request;
-            // new ListNodePoolsRequest(compartmentId, clusterId, name, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListNodePoolsRequest(compartmentId, clusterId, name, limit, page, sortOrder, sortBy, opcRequestId, lifecycleState);
         }
     }
 
@@ -386,7 +428,8 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .lifecycleState(lifecycleState);
     }
 
     /**
@@ -410,6 +453,7 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
     }
@@ -432,7 +476,8 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
     }
 
     @Override
@@ -449,6 +494,9 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         return result;
     }
 }

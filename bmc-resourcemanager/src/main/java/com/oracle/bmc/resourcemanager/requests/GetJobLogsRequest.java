@@ -41,13 +41,13 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * A filter that returns only logs of a specified type.
      *
      */
-    private java.util.List<LogEntry.Type> type;
+    private java.util.List<com.oracle.bmc.resourcemanager.model.LogEntry.Type> type;
 
     /**
      * A filter that returns only logs of a specified type.
      *
      */
-    public java.util.List<LogEntry.Type> getType() {
+    public java.util.List<com.oracle.bmc.resourcemanager.model.LogEntry.Type> getType() {
         return type;
     }
     /**
@@ -223,7 +223,7 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * A filter that returns only logs of a specified type.
          *
          */
-        private java.util.List<LogEntry.Type> type = null;
+        private java.util.List<com.oracle.bmc.resourcemanager.model.LogEntry.Type> type = null;
 
         /**
          * A filter that returns only logs of a specified type.
@@ -231,7 +231,8 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * @param type the value to set
          * @return this builder instance
          */
-        public Builder type(java.util.List<LogEntry.Type> type) {
+        public Builder type(
+                java.util.List<com.oracle.bmc.resourcemanager.model.LogEntry.Type> type) {
             this.type = type;
             return this;
         }
@@ -242,7 +243,7 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * @param singularValue the singular value to set
          * @return this builder instance
          */
-        public Builder type(LogEntry.Type singularValue) {
+        public Builder type(com.oracle.bmc.resourcemanager.model.LogEntry.Type singularValue) {
             return this.type(java.util.Arrays.asList(singularValue));
         }
 

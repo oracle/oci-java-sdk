@@ -26,12 +26,14 @@ public class ListWebAppAccelerationPoliciesRequest
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    private java.util.List<WebAppAccelerationPolicy.LifecycleState> lifecycleState;
+    private java.util.List<com.oracle.bmc.waa.model.WebAppAccelerationPolicy.LifecycleState>
+            lifecycleState;
 
     /**
      * A filter to return only resources that match the given lifecycleState.
      */
-    public java.util.List<WebAppAccelerationPolicy.LifecycleState> getLifecycleState() {
+    public java.util.List<com.oracle.bmc.waa.model.WebAppAccelerationPolicy.LifecycleState>
+            getLifecycleState() {
         return lifecycleState;
     }
     /**
@@ -189,7 +191,8 @@ public class ListWebAppAccelerationPoliciesRequest
         /**
          * A filter to return only resources that match the given lifecycleState.
          */
-        private java.util.List<WebAppAccelerationPolicy.LifecycleState> lifecycleState = null;
+        private java.util.List<com.oracle.bmc.waa.model.WebAppAccelerationPolicy.LifecycleState>
+                lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycleState.
@@ -197,7 +200,8 @@ public class ListWebAppAccelerationPoliciesRequest
          * @return this builder instance
          */
         public Builder lifecycleState(
-                java.util.List<WebAppAccelerationPolicy.LifecycleState> lifecycleState) {
+                java.util.List<com.oracle.bmc.waa.model.WebAppAccelerationPolicy.LifecycleState>
+                        lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }
@@ -207,7 +211,8 @@ public class ListWebAppAccelerationPoliciesRequest
          * @param singularValue the singular value to set
          * @return this builder instance
          */
-        public Builder lifecycleState(WebAppAccelerationPolicy.LifecycleState singularValue) {
+        public Builder lifecycleState(
+                com.oracle.bmc.waa.model.WebAppAccelerationPolicy.LifecycleState singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 

@@ -25,6 +25,8 @@ public enum OperationType {
     HardTerminateTenancy("HARD_TERMINATE_TENANCY"),
     RestoreTenancy("RESTORE_TENANCY"),
     LogTenancyTerminationRequest("LOG_TENANCY_TERMINATION_REQUEST"),
+    SelfOptIn("SELF_OPT_IN"),
+    SelfOptOut("SELF_OPT_OUT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

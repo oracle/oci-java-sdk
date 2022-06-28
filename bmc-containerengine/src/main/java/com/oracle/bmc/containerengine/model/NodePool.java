@@ -21,6 +21,8 @@ public final class NodePool {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
+        "lifecycleState",
+        "lifecycleDetails",
         "compartmentId",
         "clusterId",
         "name",
@@ -40,10 +42,13 @@ public final class NodePool {
         "nodeConfigDetails",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "nodeEvictionNodePoolSettings"
     })
     public NodePool(
             String id,
+            NodePoolLifecycleState lifecycleState,
+            String lifecycleDetails,
             String compartmentId,
             String clusterId,
             String name,
@@ -63,9 +68,12 @@ public final class NodePool {
             NodePoolNodeConfigDetails nodeConfigDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings) {
         super();
         this.id = id;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.compartmentId = compartmentId;
         this.clusterId = clusterId;
         this.name = name;
@@ -86,6 +94,7 @@ public final class NodePool {
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -104,6 +113,38 @@ public final class NodePool {
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
+            return this;
+        }
+        /**
+         * The state of the nodepool.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private NodePoolLifecycleState lifecycleState;
+
+        /**
+         * The state of the nodepool.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(NodePoolLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Details about the state of the nodepool.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Details about the state of the nodepool.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
@@ -448,6 +489,16 @@ public final class NodePool {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeEvictionNodePoolSettings")
+        private NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings;
+
+        public Builder nodeEvictionNodePoolSettings(
+                NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings) {
+            this.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
+            this.__explicitlySet__.add("nodeEvictionNodePoolSettings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -455,6 +506,8 @@ public final class NodePool {
             NodePool __instance__ =
                     new NodePool(
                             id,
+                            lifecycleState,
+                            lifecycleDetails,
                             compartmentId,
                             clusterId,
                             name,
@@ -474,7 +527,8 @@ public final class NodePool {
                             nodeConfigDetails,
                             freeformTags,
                             definedTags,
-                            systemTags);
+                            systemTags,
+                            nodeEvictionNodePoolSettings);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -483,6 +537,8 @@ public final class NodePool {
         public Builder copy(NodePool o) {
             Builder copiedBuilder =
                     id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .lifecycleDetails(o.getLifecycleDetails())
                             .compartmentId(o.getCompartmentId())
                             .clusterId(o.getClusterId())
                             .name(o.getName())
@@ -502,7 +558,8 @@ public final class NodePool {
                             .nodeConfigDetails(o.getNodeConfigDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
+                            .systemTags(o.getSystemTags())
+                            .nodeEvictionNodePoolSettings(o.getNodeEvictionNodePoolSettings());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -532,6 +589,34 @@ public final class NodePool {
      **/
     public String getId() {
         return id;
+    }
+
+    /**
+     * The state of the nodepool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final NodePoolLifecycleState lifecycleState;
+
+    /**
+     * The state of the nodepool.
+     * @return the value
+     **/
+    public NodePoolLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /**
+     * Details about the state of the nodepool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Details about the state of the nodepool.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -834,11 +919,20 @@ public final class NodePool {
         return systemTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeEvictionNodePoolSettings")
+    private final NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings;
+
+    public NodeEvictionNodePoolSettings getNodeEvictionNodePoolSettings() {
+        return nodeEvictionNodePoolSettings;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NodePool(");
         sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", clusterId=").append(String.valueOf(this.clusterId));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -859,6 +953,8 @@ public final class NodePool {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", nodeEvictionNodePoolSettings=")
+                .append(String.valueOf(this.nodeEvictionNodePoolSettings));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -875,6 +971,8 @@ public final class NodePool {
 
         NodePool other = (NodePool) o;
         return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.clusterId, other.clusterId)
                 && java.util.Objects.equals(this.name, other.name)
@@ -895,6 +993,8 @@ public final class NodePool {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(
+                        this.nodeEvictionNodePoolSettings, other.nodeEvictionNodePoolSettings)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -903,6 +1003,12 @@ public final class NodePool {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -939,6 +1045,11 @@ public final class NodePool {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodeEvictionNodePoolSettings == null
+                                ? 43
+                                : this.nodeEvictionNodePoolSettings.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

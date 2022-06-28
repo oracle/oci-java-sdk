@@ -54,6 +54,32 @@ public class DeleteNodePoolRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Duration after which OKE will give up eviction of the pods on the node.
+     * PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+     *
+     */
+    private String overrideEvictionGraceDuration;
+
+    /**
+     * Duration after which OKE will give up eviction of the pods on the node.
+     * PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+     *
+     */
+    public String getOverrideEvictionGraceDuration() {
+        return overrideEvictionGraceDuration;
+    }
+    /**
+     * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+     */
+    private Boolean isForceDeletionAfterOverrideGraceDuration;
+
+    /**
+     * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+     */
+    public Boolean getIsForceDeletionAfterOverrideGraceDuration() {
+        return isForceDeletionAfterOverrideGraceDuration;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -118,6 +144,42 @@ public class DeleteNodePoolRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
+         * Duration after which OKE will give up eviction of the pods on the node.
+         * PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+         *
+         */
+        private String overrideEvictionGraceDuration = null;
+
+        /**
+         * Duration after which OKE will give up eviction of the pods on the node.
+         * PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+         *
+         * @param overrideEvictionGraceDuration the value to set
+         * @return this builder instance
+         */
+        public Builder overrideEvictionGraceDuration(String overrideEvictionGraceDuration) {
+            this.overrideEvictionGraceDuration = overrideEvictionGraceDuration;
+            return this;
+        }
+
+        /**
+         * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+         */
+        private Boolean isForceDeletionAfterOverrideGraceDuration = null;
+
+        /**
+         * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+         * @param isForceDeletionAfterOverrideGraceDuration the value to set
+         * @return this builder instance
+         */
+        public Builder isForceDeletionAfterOverrideGraceDuration(
+                Boolean isForceDeletionAfterOverrideGraceDuration) {
+            this.isForceDeletionAfterOverrideGraceDuration =
+                    isForceDeletionAfterOverrideGraceDuration;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -148,6 +210,9 @@ public class DeleteNodePoolRequest extends com.oracle.bmc.requests.BmcRequest<ja
             nodePoolId(o.getNodePoolId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            overrideEvictionGraceDuration(o.getOverrideEvictionGraceDuration());
+            isForceDeletionAfterOverrideGraceDuration(
+                    o.getIsForceDeletionAfterOverrideGraceDuration());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -183,8 +248,11 @@ public class DeleteNodePoolRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.nodePoolId = nodePoolId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.overrideEvictionGraceDuration = overrideEvictionGraceDuration;
+            request.isForceDeletionAfterOverrideGraceDuration =
+                    isForceDeletionAfterOverrideGraceDuration;
             return request;
-            // new DeleteNodePoolRequest(nodePoolId, ifMatch, opcRequestId);
+            // new DeleteNodePoolRequest(nodePoolId, ifMatch, opcRequestId, overrideEvictionGraceDuration, isForceDeletionAfterOverrideGraceDuration);
         }
     }
 
@@ -193,7 +261,13 @@ public class DeleteNodePoolRequest extends com.oracle.bmc.requests.BmcRequest<ja
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().nodePoolId(nodePoolId).ifMatch(ifMatch).opcRequestId(opcRequestId);
+        return new Builder()
+                .nodePoolId(nodePoolId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .overrideEvictionGraceDuration(overrideEvictionGraceDuration)
+                .isForceDeletionAfterOverrideGraceDuration(
+                        isForceDeletionAfterOverrideGraceDuration);
     }
 
     /**
@@ -212,6 +286,10 @@ public class DeleteNodePoolRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",nodePoolId=").append(String.valueOf(this.nodePoolId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",overrideEvictionGraceDuration=")
+                .append(String.valueOf(this.overrideEvictionGraceDuration));
+        sb.append(",isForceDeletionAfterOverrideGraceDuration=")
+                .append(String.valueOf(this.isForceDeletionAfterOverrideGraceDuration));
         sb.append(")");
         return sb.toString();
     }
@@ -229,7 +307,12 @@ public class DeleteNodePoolRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return super.equals(o)
                 && java.util.Objects.equals(this.nodePoolId, other.nodePoolId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.overrideEvictionGraceDuration, other.overrideEvictionGraceDuration)
+                && java.util.Objects.equals(
+                        this.isForceDeletionAfterOverrideGraceDuration,
+                        other.isForceDeletionAfterOverrideGraceDuration);
     }
 
     @Override
@@ -239,6 +322,16 @@ public class DeleteNodePoolRequest extends com.oracle.bmc.requests.BmcRequest<ja
         result = (result * PRIME) + (this.nodePoolId == null ? 43 : this.nodePoolId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.overrideEvictionGraceDuration == null
+                                ? 43
+                                : this.overrideEvictionGraceDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isForceDeletionAfterOverrideGraceDuration == null
+                                ? 43
+                                : this.isForceDeletionAfterOverrideGraceDuration.hashCode());
         return result;
     }
 }

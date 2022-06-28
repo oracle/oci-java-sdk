@@ -88,6 +88,15 @@ public class ListNodePoolsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getLifecycleState() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "lifecycleState",
+                            request.getLifecycleState(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

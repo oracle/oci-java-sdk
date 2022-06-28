@@ -64,6 +64,44 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
             this.__explicitlySet__.add("imageId");
             return this;
         }
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+         * representing the Block Volume service's elastic performance options.
+         * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code 10}: Represents Balanced option.
+         * <p>
+         * {@code 20}: Represents Higher Performance option.
+         * <p>
+         * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeVpusPerGB")
+        private Long bootVolumeVpusPerGB;
+
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+         * representing the Block Volume service's elastic performance options.
+         * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code 10}: Represents Balanced option.
+         * <p>
+         * {@code 20}: Represents Higher Performance option.
+         * <p>
+         * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         *
+         * @param bootVolumeVpusPerGB the value to set
+         * @return this builder
+         **/
+        public Builder bootVolumeVpusPerGB(Long bootVolumeVpusPerGB) {
+            this.bootVolumeVpusPerGB = bootVolumeVpusPerGB;
+            this.__explicitlySet__.add("bootVolumeVpusPerGB");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -71,7 +109,7 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
         public InstanceConfigurationInstanceSourceViaImageDetails build() {
             InstanceConfigurationInstanceSourceViaImageDetails __instance__ =
                     new InstanceConfigurationInstanceSourceViaImageDetails(
-                            bootVolumeSizeInGBs, imageId);
+                            bootVolumeSizeInGBs, imageId, bootVolumeVpusPerGB);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +117,9 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceConfigurationInstanceSourceViaImageDetails o) {
             Builder copiedBuilder =
-                    bootVolumeSizeInGBs(o.getBootVolumeSizeInGBs()).imageId(o.getImageId());
+                    bootVolumeSizeInGBs(o.getBootVolumeSizeInGBs())
+                            .imageId(o.getImageId())
+                            .bootVolumeVpusPerGB(o.getBootVolumeVpusPerGB());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -99,10 +139,11 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
 
     @Deprecated
     public InstanceConfigurationInstanceSourceViaImageDetails(
-            Long bootVolumeSizeInGBs, String imageId) {
+            Long bootVolumeSizeInGBs, String imageId, Long bootVolumeVpusPerGB) {
         super();
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.imageId = imageId;
+        this.bootVolumeVpusPerGB = bootVolumeVpusPerGB;
     }
 
     /**
@@ -137,6 +178,42 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
         return imageId;
     }
 
+    /**
+     * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+     * representing the Block Volume service's elastic performance options.
+     * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * <p>
+     * Allowed values:
+     * <p>
+     * {@code 10}: Represents Balanced option.
+     * <p>
+     * {@code 20}: Represents Higher Performance option.
+     * <p>
+     * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeVpusPerGB")
+    private final Long bootVolumeVpusPerGB;
+
+    /**
+     * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+     * representing the Block Volume service's elastic performance options.
+     * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * <p>
+     * Allowed values:
+     * <p>
+     * {@code 10}: Represents Balanced option.
+     * <p>
+     * {@code 20}: Represents Higher Performance option.
+     * <p>
+     * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+     *
+     * @return the value
+     **/
+    public Long getBootVolumeVpusPerGB() {
+        return bootVolumeVpusPerGB;
+    }
+
     @Override
     public String toString() {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
@@ -144,6 +221,7 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
         sb.append("super=").append(super.toString());
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
+        sb.append(", bootVolumeVpusPerGB=").append(String.valueOf(this.bootVolumeVpusPerGB));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -162,6 +240,7 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
                 (InstanceConfigurationInstanceSourceViaImageDetails) o;
         return java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
                 && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.bootVolumeVpusPerGB, other.bootVolumeVpusPerGB)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -176,6 +255,11 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
                                 ? 43
                                 : this.bootVolumeSizeInGBs.hashCode());
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bootVolumeVpusPerGB == null
+                                ? 43
+                                : this.bootVolumeVpusPerGB.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

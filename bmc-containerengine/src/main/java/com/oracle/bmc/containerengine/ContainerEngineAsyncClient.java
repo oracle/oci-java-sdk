@@ -642,6 +642,48 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteNodeResponse> deleteNode(
+            DeleteNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteNodeRequest, DeleteNodeResponse>
+                    handler) {
+        LOG.trace("Called async deleteNode");
+        final DeleteNodeRequest interceptedRequest = DeleteNodeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteNodeConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNodeResponse>
+                transformer = DeleteNodeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "DeleteNode",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNode");
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteNodeRequest, DeleteNodeResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteNodeRequest, DeleteNodeResponse>,
+                        java.util.concurrent.Future<DeleteNodeResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteNodeRequest, DeleteNodeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNodePoolResponse> deleteNodePool(
             DeleteNodePoolRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
