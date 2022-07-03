@@ -125,7 +125,6 @@ public class DataflowExample {
     System.out.println("Application count: " + listApplicationsResponse.getItems().size());
     listApplicationsResponse.getItems().stream().forEach(applicationSummary -> {
       System.out.println(applicationSummary.getId());
-      dataflowExample.deleteApplication(applicationSummary.getId());
     });
 
     System.out.println("===========================================================================================================================================================================================================================");
